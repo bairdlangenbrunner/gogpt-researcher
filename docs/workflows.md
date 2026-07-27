@@ -1,0 +1,78 @@
+# Workflow recipes
+
+Step-by-step command sequences for the workflows routed from `CLAUDE.md`. The GOGPT Editing Manual is authoritative for research rules; the SOPs (`docs/sops/`) are the operational rules; this file is the glue — which commands, in which order. Read the section for the workflow you're running, plus the relevant SOP(s).
+
+**Fresh-pull shorthand used throughout** (from `scripts/`):
+
+```
+python ../../gem-db-ops/gogpt/pull.py --output gem_export_gogpt.csv
+python pull_gem_db.py --map-only
+python scope_filter.py
+```
+
+→ fresh all-combustion CSV (~34.5k rows, 86 cols) + column-index map (`gem_export_gogpt.csv.colmap.json`) + GOGPT-scoped CSV (`gem_export_gogpt_scoped.csv`). The pull engine lives ONLY in the sibling `../gem-db-ops` repo; auth via `GEM_READONLY_DB_URL`. **Re-derive the colmap every run** — the schema can drift; `--map-only` errors loudly on missing/unknown columns (escalate drift to the user). `scope_filter.py` uses the authoritative `trackerSearch='GOGPT'` DB query when `GEM_READONLY_DB_URL` is set, else pass `--offline` for the fuel heuristic (weaker — note it in the batch record). **Keep the unfiltered CSV**: conversion/replacement checks need the coal/bioenergy side (shared plants, R-suffix replacement units, timepoint links).
+
+**How the workflows fit together.** Triage is the forward-looking chooser — `worklist.py` + the inferred-status sweep produce a *memo* recommending what to work. The doers turn a chosen scope into the actions/evidence *deliverable pair*: Update (§2) and Discovery (§3). QC (§5) is the backward-looking checker — memo + validation report, fixes route back into Update ("QC detects, Update fixes"). The campaign roster (§6) is the quarterly bookkeeping wrapper around all of it. So: **Triage (memo) → Update / Discovery (deliverables) → QC (memo → back to Update)**, inside a `campaigns/<quarter>/` cycle.
+
+**Model selection (who runs on what).** Subagent model choice follows the global dispatch-time rule (user-level CLAUDE.md — cheapest model genuinely good enough, chosen per dispatch, never pinned). In this repo the judgment-heavy work that stays in the top-tier main loop: scope calls, threshold/scope-gate judgments on discovery candidates, escalations, and the pre-build QC gate on any subagent output. Mechanical fan-out (per-plant source sweeps from a clear brief, URL verification passes, per-country worklist summarization) can go down-tier. Subagent output is never pre-trusted regardless of model — `qc_checks.py --staged`, the gem.wiki/banned-domain scan, and a URL spot-check run the same either way.
+
+**Batch artifact conventions.** Per-batch staging JSON lives in `batches/<scope>/staging/` (`staged_<lane>.json`, lanes and record shapes in `docs/reference/staged_json_schema.md`) — committed as the audit trail. Deliverables land in `batches/<scope>/deliverables/` named `gogpt_batch_<YYYYMMDD>_<HHMM>_ET_<scope>_<mode>_{actions.xlsx,evidence.md}` (stamp via `TZ=America/New_York date "+%Y%m%d_%H%M_ET"`; naming rules in `docs/reference/workbook_conventions.md`; xlsx gitignored, evidence md committed; never overwrite). When running `url_verifier.py`, export `URL_VERIFIER_LOG=<path into the batch's staging dir>` so every verification attempt lands in an append-only JSONL next to the staged JSON. Each batch gets one line in `batches/<scope>/INDEX.md` and (for cross-scope runs) a small md in `batches/run_records/`.
+
+## §1 Fresh pull + scope filter (start of every batch)
+
+1. Fresh-pull shorthand above. Confirm: CSV mtime changed, `--map-only` reports 86/86 known columns, scope filter prints kept/dropped counts (scoped view ≈ oil+gas only).
+2. If the pull fails on auth, ask the user to check `GEM_READONLY_DB_URL` (see `env.example`); never fall back to a stale CSV silently.
+3. For triage-only sessions this section plus §4 is the whole recipe.
+
+## §2 Update existing plants (most common)
+
+1. Fresh pull (§1).
+2. Confirm scope per Update SOP §2 — which country/countries (usually the quarter's assignment from `campaigns/<quarter>/roster.csv`), whether Data-Source backfill is in scope. Create `batches/<scope>/staging/` if new.
+3. `python worklist.py --country "<Country>"` → the priority-ordered worklist (`work/worklist_<tag>.csv`): in-development first, then shelved review, planned-retirement-this-year, mothballed, operating; 2y/4y inferred-status candidates flagged. Work it top-down.
+4. Per plant/unit on the worklist:
+   a. Source-search per Update SOP §4, using `docs/reference/source_roster.md` (tiering) and `docs/country_notes/<country>.md`. Harvest the record's EXISTING Data Source cells first — re-verifying a known-good source beats finding a new one (`confidence_tiers.md`).
+   b. Apply lifecycle rules per `docs/reference/lifecycle_rules.md` — status vocab, start-year/retired-year logic, the 2020-forward rule, inferred 2y/4y arithmetic.
+   c. Check the possible-updates backlog rows for this country (sheet ID in `sop_pointers.md`) and fold them into the same batch.
+   d. Conversion/replacement checks against the UNFILTERED export — a gas unit replacing a coal unit at a shared plant needs the GCPT side read (unit_conventions.md, R-suffix + timepoint rules).
+   e. Stage findings as `staged_updates.json` (+ `staged_qa.json` / `staged_entity.json` / `staged_monitor.json` as needed) per `staged_json_schema.md`. Project-level fields: set `applies_to_all_units` + `sibling_unit_ids`.
+5. `python url_verifier.py "<url>" "<claimed value>" ...` on every URL before it enters a staged record; record the verification result in the record's `verifications`.
+6. `python entity_lookup.py "<owner name>"` before staging any new owner/operator/parent (entities are shared across trackers and countries; a match anywhere = reuse the existing entity ID).
+7. `python qc_checks.py --staged batches/<scope>/staging/staged_updates.json` (and each other lane file) → must exit 0. Fix errors in the staging JSON, not by relaxing the checker.
+8. From `scripts/`: `python build_review_package.py --staging-dir ../batches/<scope>/staging --scope <scope> --mode update --output-dir ../batches/<scope>/deliverables` (use `--dry-run` first) → actions xlsx + evidence md.
+9. `python recalc.py ../batches/<scope>/deliverables/<actions.xlsx>` → zero formula errors.
+10. Add the INDEX.md line, update the campaign roster's `packet_file`, `present_files`.
+
+## §3 Discover new plants/units
+
+1. Fresh pull (§1). Confirm parameters per Discovery SOP §2 (region/country; threshold reminders: ≥50 MW generating, EU+UK ≥20 MW).
+2. **First standing input: the captive-power backlog** — `notes/backlog_captive_power_candidates.md` points at candidate JSONs in the sibling LNG repo. Dedup the lists against each other and against the scoped export before any web research (steps in that file).
+3. Sweeps per Discovery SOP: country regulator (country_notes + source_roster), trade press, sponsor IR. Candidates need named operator + specific site + concrete evidence.
+4. Dedup every candidate against the scoped export (GEM unit ID, name+coords) AND the unfiltered export (the plant may already exist with only coal units — then it's `newunits` on the existing plant, not `newplants`).
+5. Screen: capacity threshold on GENERATING MW only (never shaft/mechanical-drive); scope fuels per `controlled_vocab.md`. Passing candidates → `staged_newplants.json` (nested units) / `staged_newunits.json`; near-misses and thin-evidence candidates → `staged_monitor.json` with `recheck_by`, never discarded.
+6. `url_verifier.py` on all URLs; `entity_lookup.py` on every new entity name.
+7. `qc_checks.py --staged` on every lane file → exit 0; then build + recalc + INDEX.md as §2 steps 8–10 with `--mode discovery`.
+
+## §4 Triage (decide what to work on)
+
+1. Fresh pull (§1).
+2. `python worklist.py --all` (or per candidate country) → per-country priority counts + the inferred-status sweep (shelved-inferred ≥2y, cancelled-inferred ≥4y candidates with their evidence ages).
+3. Pull triage inputs per Triage SOP §3: the worklist, the quarter's roster state (`campaigns/<quarter>/roster.csv` — what's assigned/unworked), the possible-updates backlog volume per country, the captive-power backlog status, recent-quarter news signal.
+4. Produce a triage memo (markdown, not a deliverable): `batches/triage_<stamp>_ET.md` — recommended batch composition, each option naming the workflow and scope. The user decides before any batch starts.
+
+## §5 Quality control (QC pass / country close-out)
+
+Memo only; stages no edits. Full rules in the QC SOP — including the GC/Country checklist + validation report required before a roster row moves to `done`.
+
+1. Fresh pull (§1) — for a post-apply check the pull must postdate the user's apply.
+2. **Mechanical integrity**: `python qc_checks.py --csv gem_export_gogpt_scoped.csv --country "<Country>"` → vocab/threshold/year-logic/ownership violations in the live data.
+3. **Citation spot-check**: re-verify a stratified sample of existing Data Source URLs via `url_verifier.py` (dead / bot-blocked / value-missing verdicts). >25% dead in a country → recommend a Data-Source backfill Update there.
+4. **Accuracy spot-check** (agent-driven): ~20 unit sample (recently-edited, high-capacity operating, in-development); re-verify Status/Capacity/Fuel/Owner against cited refs + one fresh corroboration each. >10% unsupported → systemic flag, stop and discuss.
+5. **Post-apply check**: diff the batch's staged values against the fresh export — applied / not-applied / diverged per edit.
+6. Memo to `batches/qc_<stamp>_ET.md`; for a close-out, attach the validation report per QC SOP and update the roster row. Stop and ask before spinning up recommended follow-ups.
+
+## §6 Campaign roster refresh (quarterly cycle)
+
+1. New quarter: create `campaigns/<quarter>/` (copy the README from the prior quarter, update the slug).
+2. Fresh pull (§1), then `python build_campaign_roster.py --campaign <quarter>` → `campaigns/<quarter>/roster.csv` (per-country in-development/status counts, sorted by in-dev volume; the manual columns `assignee_role`/`assignment_status`/`packet_file`/`applied`/`notes` survive refreshes).
+3. Mirror the quarter's "Researcher Country Assignments" tab (sheet ID in `sop_pointers.md`) into `assignee_role` — **role names only, never personal names; this repo is public.**
+4. Re-run step 2 anytime mid-quarter to refresh counts; roster edits beyond the manual columns belong in the generator, not the CSV.
