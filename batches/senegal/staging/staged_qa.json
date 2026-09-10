@@ -1,0 +1,268 @@
+{
+  "meta": {
+    "lane": "qa",
+    "scope": {
+      "country": "Senegal",
+      "quarter": "q3-2026",
+      "csv": "gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-08-05T09:51:23-04:00",
+    "counts": {
+      "records": 10
+    }
+  },
+  "records": [
+    {
+      "gem_unit_id": "G100000407255",
+      "gem_plant_id": "",
+      "plant_name": "Cap des Biches power station",
+      "unit_name": "1",
+      "country": "Senegal",
+      "fields": {},
+      "current": {
+        "Parent(s)": "unknown [85.0%]; National Electricity Company of Senegal [15.0%]"
+      },
+      "refs": {},
+      "verifications": [
+        {
+          "url": "https://www.financialafrik.com/en/2026/04/25/senegal-senelec-becomes-sole-shareholder-of-west-african-energy-wae/",
+          "ok": true,
+          "contains_value": true
+        },
+        {
+          "url": "https://www.seneweb.com/en/news/Energie/energy-sovereignty-senelec-takes-full-control-of-west-african-energy_n_490677.html",
+          "ok": true,
+          "contains_value": true
+        }
+      ],
+      "concern_type": "attribution",
+      "tier": "high",
+      "independent": true,
+      "source_language": "en",
+      "recommendation": "Entity-record change (Parent(s) is computed from the owner entity graph, ownership-tracker maintained): set West Africa Energy SA's parent chain to National Electricity Company of Senegal [100.0%]. Senelec became sole shareholder of WAE on 2026-04-25, buying out the 85% held by a private consortium whose split was never disclosed.",
+      "researcher_notes": "Two independent verified sources (financialafrik.com 2026-04-25: Senelec 'becomes sole shareholder of West African Energy'; seneweb.com: 'brings the national company's stake to 100% of the capital of West African Energy'). Unit-row Owner(s) stays 'West Africa Energy SA [100%]' — no unit edit needed. Verified URLs: https://www.financialafrik.com/en/2026/04/25/senegal-senelec-becomes-sole-shareholder-of-west-african-energy-wae/ ; https://www.seneweb.com/en/news/Energie/energy-sovereignty-senelec-takes-full-control-of-west-african-energy_n_490677.html",
+      "action": "Review only — route to the entity/ownership update path."
+    },
+    {
+      "gem_unit_id": "G100000407257",
+      "gem_plant_id": "",
+      "plant_name": "Tobène power station",
+      "unit_name": "1",
+      "country": "Senegal",
+      "fields": {},
+      "current": {
+        "Parent(s)": "Amaya Capital; American Capital Energy & Infrastructure"
+      },
+      "refs": {},
+      "verifications": [
+        {
+          "url": "https://tobenepower.com/",
+          "ok": true,
+          "contains_value": true
+        },
+        {
+          "url": "https://www.amayacap.com/investments",
+          "ok": true,
+          "contains_value": true
+        },
+        {
+          "url": "https://www.africa50.com/media/news/article/azura-power-invests-in-tobene-power-in-senegal-through-its-pan-african-baseload-generation-platform-312/",
+          "ok": true,
+          "contains_value": true
+        }
+      ],
+      "concern_type": "attribution",
+      "tier": "high",
+      "independent": true,
+      "source_language": "en",
+      "recommendation": "Entity-record change: set Tobene Power SA's parent chain to Azura Power Holdings Ltd (GEM canonical name — already in the entity system via Mozambique; shareholders Actis LLP, Africa50 SA and Amaya Capital, no split disclosed) and REMOVE 'American Capital Energy & Infrastructure', which sold its Azura stake to Actis in Nov 2016, three years before Azura acquired Tobene (Oct 2019). The current chain appears to have copied Azura's pre-2016 Nigeria cap table.",
+      "researcher_notes": "Three independent verified sources: tobenepower.com (subsidiary of Azura Power Holdings), amayacap.com/investments (lists Tobene), africa50.com (Azura acquisition announcement). All entities already exist in the GEM entity system (seen on other trackers). Verified URLs: https://tobenepower.com/ ; https://www.amayacap.com/investments ; https://www.africa50.com/media/news/article/azura-power-invests-in-tobene-power-in-senegal-through-its-pan-african-baseload-generation-platform-312/ Canonical GEM entity names confirmed via entity_lookup.py: 'Azura Power Holdings Ltd' (1 unit, Mozambique), 'Actis LLP' (7 units), 'Africa50 SA' (2 units), 'Amaya Capital' (5 units) — reuse existing IDs, create nothing.",
+      "action": "Review only — route to the entity/ownership update path."
+    },
+    {
+      "gem_unit_id": "G100000413926",
+      "gem_plant_id": "",
+      "plant_name": "Kounoune power station",
+      "unit_name": "1",
+      "country": "Senegal",
+      "fields": {},
+      "current": {
+        "Parent(s)": ""
+      },
+      "refs": {},
+      "verifications": [
+        {
+          "url": "https://mp-nrg.com/kounoune/",
+          "ok": true,
+          "contains_value": true
+        },
+        {
+          "url": "https://ewsdata.rightsindevelopment.org/projects/d5c2b9c9d4-kounoune-power-sa/",
+          "ok": true,
+          "contains_value": true
+        }
+      ],
+      "concern_type": "attribution",
+      "tier": "high",
+      "independent": true,
+      "source_language": "en",
+      "recommendation": "Entity-record change: set Kounoune Power SA's parent to MP Energy (renamed from Melec PowerGen Inc). The 2019 Azura transaction covered Tobene only — Azura's portfolio does not include Kounoune. Parent share not publicly stated.",
+      "researcher_notes": "Two independent verified sources: mp-nrg.com/kounoune (MP Energy's own portfolio page) and ewsdata.rightsindevelopment.org ('All three assets are currently owned by Melec Powergen Inc', from DFI project documentation). Pairs with the updates-lane Owner(s) fill on this unit. Verified URLs: https://mp-nrg.com/kounoune/ ; https://ewsdata.rightsindevelopment.org/projects/d5c2b9c9d4-kounoune-power-sa/",
+      "action": "Review only — route to the entity/ownership update path."
+    },
+    {
+      "gem_unit_id": "G100000413543",
+      "gem_plant_id": "",
+      "plant_name": "Sadobala-Massawa Gold Mine power plant",
+      "unit_name": "1",
+      "country": "Senegal",
+      "fields": {},
+      "current": {
+        "Start year": ""
+      },
+      "refs": {},
+      "verifications": [],
+      "concern_type": "other",
+      "tier": "low",
+      "independent": false,
+      "source_language": "en",
+      "recommendation": "Pull the Endeavour Mining (or predecessor Teranga Gold / Mineral Deposits Ltd) NI 43-101 technical report for Sabodala-Massawa to date the power plant's commissioning, then fill Start year in a follow-on batch.",
+      "researcher_notes": "Start year is blank and very likely 2009: the mine poured first gold in March 2009 and mining-technology.com (2020 Wayback snapshot; live page 403s) confirms 'Power comes from a 36MW, on-site heavy fuel oil (HFO) power station' at a remote off-grid site. But no accessible source explicitly dates the POWER PLANT's commissioning, and an earlier research pass's claim of '25 MW commissioned early 2009' could not be verified on any retrievable page — so nothing is staged.",
+      "action": "Review only — no edit."
+    },
+    {
+      "gem_unit_id": "G100000408642",
+      "gem_plant_id": "",
+      "plant_name": "Karpowership (Senegal) Aysegul Sultan power station",
+      "unit_name": "1",
+      "country": "Senegal",
+      "fields": {},
+      "current": {
+        "Planned retire": "2025"
+      },
+      "refs": {},
+      "verifications": [],
+      "concern_type": "other",
+      "tier": "low",
+      "independent": false,
+      "source_language": "fr",
+      "recommendation": "Watch for a new Senelec-Karpowership contract term or an actual departure; if a new end date is published, stage Planned retire then. Consider whether the ~100 MW second vessel reported at Dakar (see monitor) affects this record.",
+      "researcher_notes": "The 2025 planned retirement passed without event (deletion staged in updates); no public source states the current contract end date — a documented transparency gap for Karpowership's Senegal operations.",
+      "action": "Review only — no edit."
+    },
+    {
+      "gem_unit_id": "G100000413926",
+      "gem_plant_id": "",
+      "plant_name": "Kounoune power station",
+      "unit_name": "1",
+      "country": "Senegal",
+      "fields": {},
+      "current": {},
+      "refs": {},
+      "verifications": [],
+      "concern_type": "other",
+      "tier": "low",
+      "independent": false,
+      "source_language": "en",
+      "recommendation": "All five Data Source cells cite only kounounepower.com, which is dead (HTTP 526). This batch adds two working URLs to Owners Data Source; a follow-on pass should find working corroboration for Status/Capacity/Fuel/Start year (e.g. Senelec annual reports, AfDB/MIGA project docs).",
+      "researcher_notes": "Link-rot: the unit's single citation domain no longer resolves. Operating status was corroborated in research via Senelec's 2024 annual report (88.18 GWh purchased from IPP Kounoune) but the report PDF's URL 404s — it moved; locate the current URL before citing.",
+      "action": "Review only — no edit."
+    },
+    {
+      "gem_unit_id": "G100000407257",
+      "gem_plant_id": "",
+      "plant_name": "Tobène power station",
+      "unit_name": "1",
+      "country": "Senegal",
+      "fields": {},
+      "current": {
+        "Fuel": "fossil gas: natural gas, fossil liquids: fuel oil"
+      },
+      "refs": {},
+      "verifications": [],
+      "concern_type": "attribution",
+      "tier": "low",
+      "independent": false,
+      "source_language": "en",
+      "recommendation": "Entity-record change: set Tobene Power SA's parent chain to Azura Power Holdings Ltd (GEM canonical name — already in the entity system via Mozambique; shareholders Actis LLP, Africa50 SA and Amaya Capital, no split disclosed) and REMOVE 'American Capital Energy & Infrastructure', which sold its Azura stake to Actis in Nov 2016, three years before Azura acquired Tobene (Oct 2019). The current chain appears to have copied Azura's pre-2016 Nigeria cap table.",
+      "researcher_notes": "The recorded fuel 'natural gas, fuel oil' may reflect the dual-fuel design rather than actual operation; Senegal's gas-to-power conversions were still pending as of mid-2026 (national timeline end-2028 to Q1 2029). Canonical GEM entity names confirmed via entity_lookup.py: 'Azura Power Holdings Ltd' (1 unit, Mozambique), 'Actis LLP' (7 units), 'Africa50 SA' (2 units), 'Amaya Capital' (5 units) — reuse existing IDs, create nothing.",
+      "action": "Review only — no edit."
+    },
+    {
+      "gem_unit_id": "G100000407256",
+      "gem_plant_id": "",
+      "plant_name": "Malicounda power station",
+      "unit_name": "1",
+      "country": "Senegal",
+      "fields": {},
+      "current": {},
+      "refs": {},
+      "verifications": [],
+      "concern_type": "other",
+      "tier": "low",
+      "independent": false,
+      "source_language": "en",
+      "recommendation": "Hygiene: the Owners Data Source cell contains its three URLs repeated three times (nine entries). When applying this batch's owner-source merge, also dedupe to one instance of each URL (no citation is being removed — same three sources remain).",
+      "researcher_notes": "Triplication is presumably an earlier copy-paste artifact; deduping does not violate the never-delete-datasources rule because every distinct URL is retained.",
+      "action": "Review only — dedupe during the updates-lane edit."
+    },
+    {
+      "gem_unit_id": "G100001017958",
+      "gem_plant_id": "",
+      "plant_name": "Sendou power station",
+      "unit_name": "Unit 1, timepoint 2",
+      "country": "Senegal",
+      "fields": {},
+      "current": {
+        "Status": "announced",
+        "Capacity (MW)": "125.0"
+      },
+      "refs": {},
+      "verifications": [],
+      "concern_type": "conversion-link",
+      "tier": "low",
+      "independent": false,
+      "source_language": "fr",
+      "recommendation": "Keep the gas-conversion timepoint at 'announced' — no EPC, FID or financing found. Recheck after the national gas-to-power program firms up (ministerial timeline: end-2028 to Q1 2029, single-source interview). Separately, the coal unit's (GCPT-side) current operating status is unclear from stale/conflicting sources, and FMO sold its CES loans to Kebe Capital in April 2025 (lender change only).",
+      "researcher_notes": "No edit supportable this batch: the conversion timeline rests on one ministerial interview syndicated across outlets (one origin), and one carrying outlet (news-pravda.com) is an unreliable aggregator. Cross-tracker note: any coal-unit status change belongs to GCPT, not this batch.",
+      "action": "Review only — no edit."
+    },
+    {
+      "gem_unit_id": "G100000407254",
+      "gem_plant_id": "",
+      "plant_name": "Cap des Biches (engine) power station",
+      "unit_name": "1",
+      "country": "Senegal",
+      "fields": {},
+      "current": {
+        "Fuel": "fossil gas: natural gas, fossil liquids: fuel oil",
+        "Status Detail": "the Cap des Biches power plant will transition from the combustion of heavy fuel oils to natural gas by mid-2023,"
+      },
+      "refs": {},
+      "verifications": [
+        {
+          "url": "https://www.contourglobal.com/assets/cap-des-biches/",
+          "ok": true,
+          "contains_value": true
+        },
+        {
+          "url": "https://www.contourglobal.com/portfolio-decarbonization/",
+          "ok": true,
+          "contains_value": true
+        },
+        {
+          "url": "https://mg.co.za/thought-leader/opinion/2026-03-13-ifcs-new-gas-projects-will-destroy-africa/",
+          "ok": true,
+          "contains_value": true
+        }
+      ],
+      "concern_type": "conversion-link",
+      "tier": "medium",
+      "independent": true,
+      "source_language": "en",
+      "recommendation": "The Fuel field lists natural gas but the plant still burns HFO only: ContourGlobal's current asset page describes 'five HFO fired diesel engines', and its decarbonization page dates the gas-conversion FID to 2025 with conversion 'expected by 2026' — the mid-2023 target in Status Detail was missed. Recommend (a) refreshing Status Detail to the revised FID-2025/target-2026 timeline, and (b) handling the HFO→LNG conversion via the fuel-timepoint mechanism when it completes, rather than editing Fuel now. Owner (ContourGlobal Ltd) and parent (KKR & Co) appear unchanged — no divestment found (ContourGlobal's 2025-26 sales to Patria were Brazilian assets). Watch the IFC 'CdB Gas Convers.' record (IFC-50638) and the ~EUR 105M refinancing reported closing May 2025 for the real conversion date.",
+      "researcher_notes": "Verified URLs (live, value-on-page): https://www.contourglobal.com/assets/cap-des-biches/ ('HFO', '86 MW') ; https://www.contourglobal.com/portfolio-decarbonization/ ('Final Investment Decision', '2025') ; https://mg.co.za/thought-leader/opinion/2026-03-13-ifcs-new-gas-projects-will-destroy-africa/ ('Cap des Biches', 'heavy fuel oil' — independent of ContourGlobal). The two contourglobal.com pages are one origin; the Mail & Guardian piece is a second, so the still-on-HFO finding has two independent origins. Note the DB's citation path /asset/cap-des-biches has moved to /assets/cap-des-biches/. Same gas-ready-vs-actual pattern as Tobène. Do not conflate this 86 MW ContourGlobal plant with the 366 MW West African Energy CC at the same site (G100000407255).",
+      "action": "Review only — refresh Status Detail; fuel change waits for the conversion timepoint."
+    }
+  ]
+}

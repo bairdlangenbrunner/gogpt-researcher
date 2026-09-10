@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "lane": "monitor",
+    "scope": {
+      "country": "Senegal",
+      "quarter": "q3-2026",
+      "csv": "gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-08-05T09:51:23-04:00",
+    "counts": {
+      "records": 2
+    }
+  },
+  "records": [
+    {
+      "gem_unit_id": "",
+      "gem_plant_id": "",
+      "plant_name": "Karpowership Dakar — possible second vessel",
+      "unit_name": "",
+      "country": "Senegal",
+      "fields": {},
+      "current": {},
+      "refs": {},
+      "verifications": [],
+      "monitor_reason": "Karpowership's Senegal supply is reported at ~335 MW total vs the 235 MW Aysegul Sultan in GEM, implying a ~100 MW second vessel (possibly 'Gökhan Bey' per a bot-blocked africa-energy page title); vessel identity, capacity and contract unconfirmed — single-origin evidence fails the add threshold.",
+      "recheck_by": "2026-12",
+      "tier": "low",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "GEM's unfiltered export has no second Senegal Karpowership unit (Goktay Bey is The Gambia). If confirmed, this is a newplants candidate (floating power plant).",
+      "action": "Monitor — recheck by 2026-12."
+    },
+    {
+      "gem_unit_id": "",
+      "gem_plant_id": "",
+      "plant_name": "Kirene (Ciments du Sahel) — possible second MAN plant",
+      "unit_name": "",
+      "country": "Senegal",
+      "fields": {},
+      "current": {},
+      "refs": {
+        "Status Data Source": [
+          "https://www.powermag.com/press-releases/man-energy-solutions-installs-over-225-mw-of-generation-capacity-in-west-africa/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.powermag.com/press-releases/man-energy-solutions-installs-over-225-mw-of-generation-capacity-in-west-africa/",
+          "ok": true,
+          "contains_value": true
+        }
+      ],
+      "monitor_reason": "MAN Energy Solutions' release reports a later ~54 MW plant (6x MAN 9L51/60) at Kirene for Ciments du Sahel (~2021), distinct from the 35 MW 18V32/40 unit in GEM — single source (OEM release), commissioning date and site details unconfirmed; fails the ≥2-source add threshold.",
+      "recheck_by": "2026-11",
+      "tier": "medium",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "If corroborated (e.g. Ciments du Sahel/MAN project pages, Senegalese press), stage as newunits at the existing Kyrene Cement power station location or a newplants record if it is a separate site. Captive plant — generating MW only.",
+      "action": "Monitor — recheck by 2026-11."
+    }
+  ]
+}
