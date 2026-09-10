@@ -3,7 +3,9 @@
 Distilled from `gem-db-ops/docs/gem_schema.dbml` (live-Postgres-derived DBML, 72
 tables) and the export/join logic in `gem-db-ops/gem_all_fields.py`
 (`export_gogpt_all_fields`, `GOGPT_COLUMNS`), cross-checked against the
-86-column header mirrored in `scripts/pull_gem_db.py` (`EXPECTED_COLUMNS`).
+86-column header held canonically in `gem-db-ops/gem_colmap.py`
+(`GOGPT_EXPECTED_COLUMNS`, aliased as `EXPECTED_COLUMNS` by
+`scripts/pull_gem_db.py`).
 
 This covers what a GOGPT researcher needs to read the CSV export and stage
 edits applied by hand in the live DB UI (gem-project-db.herokuapp.com). It
@@ -82,9 +84,10 @@ batch to batch — export row order is not stable.
 
 ## Column groups (86 columns)
 
-Canonical list: `GOGPT_COLUMNS` in `gem_all_fields.py`, mirrored as
-`EXPECTED_COLUMNS` (canonical-name → exact header string) in
-`scripts/pull_gem_db.py`. Grouped here by function rather than reproduced
+Canonical list: `GOGPT_COLUMNS` in `gem_all_fields.py`; the canonical-name →
+exact-header-string map is `GOGPT_EXPECTED_COLUMNS` in
+`gem-db-ops/gem_colmap.py` (this repo's `pull_gem_db.py` only aliases it as
+`EXPECTED_COLUMNS`). Grouped here by function rather than reproduced
 column-by-column:
 
 - **Record metadata**: `Last Updated`, `Researcher`, `Research status`,
@@ -201,9 +204,10 @@ Everything else in the 86 columns is researcher-editable.
 
 `pull_gem_db.py` re-derives the column-index map from the CSV header on
 every pull (`derive_column_map`) rather than trusting fixed offsets, and
-flags: (a) an `EXPECTED_COLUMNS` entry missing from the header — likely
+flags: (a) an expected-column entry missing from the header — likely
 renamed, check the live DB unit-edit page; (b) an unrecognized header
-column — new field, decide in-scope vs. backend-only. Update
-`EXPECTED_COLUMNS` (`pull_gem_db.py`) and `COMPUTED_COLUMNS`/
-`OUT_OF_SCOPE_COLUMNS` (`schema_constants.py`) together when the schema
-changes, and note the change here.
+column — new field, decide in-scope vs. backend-only. Add newly-appearing
+columns to `GOGPT_EXPECTED_COLUMNS` in `gem-db-ops/gem_colmap.py` (NOT here —
+that map is shared with the pull engine), update `COMPUTED_COLUMNS`/
+`OUT_OF_SCOPE_COLUMNS` (`schema_constants.py`) in the same pass, and note the
+change here.

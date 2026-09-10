@@ -41,6 +41,7 @@ import argparse
 import csv
 import json
 import os
+import re
 import subprocess
 import tempfile
 import sys
@@ -118,9 +119,11 @@ def lookup_local(name, country=None, csv_path=DEFAULT_CSV):
                 val = row[idx]
                 if not val:
                     continue
-                # Split on commas — owner field may be JV with multiple names
-                for part in val.split(","):
-                    part = part.strip()
+                # JV owner/parent strings separate entities with ";" (the
+                # export convention: "MP Energy [55.0%]; Africa50 SA [30.0%]");
+                # split on both ";" and "," and strip "[…%]" share brackets.
+                for part in re.split(r"[;,]", val):
+                    part = re.sub(r"\[[^\]]*\]", "", part).strip()
                     if "%" in part:
                         part = part.rsplit("(", 1)[0].rsplit(" ", 1)[0].strip()
                     if normalize_entity(part) == canonical:

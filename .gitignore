@@ -35,6 +35,14 @@ batches/*/deliverables/*.xlsx
 batches/*/archive/*.xlsx
 batches/old/
 
+# upstream/gogpt-tracker (verbatim import of the GOGPT leads' pipeline):
+# dumps are multi-MB and regenerable via scripts/export_to_dump.py; the
+# possible-updates CSV contains researcher names and this repo is PUBLIC —
+# it must never be committed (the global *.csv rule above also covers it;
+# this line is belt-and-suspenders documentation of intent).
+upstream/gogpt-tracker/data/GOGPTall*.xlsx
+upstream/gogpt-tracker/data/GEM_trackers__possible_updates__*.csv
+
 # Python
 .pytest_cache/
 __pycache__/

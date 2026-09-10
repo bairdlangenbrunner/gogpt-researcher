@@ -6,6 +6,16 @@ what's known. Delete bullets that don't apply rather than leaving them blank.
 One-line scope: gas/oil plant fleet size and how active this country is for
 GOGPT research (e.g. "large, well-documented gas fleet; low priority for oil").
 
+## Country context
+
+<!-- fields mirrored from the upstream context card (sections 2–4) so a batch
+     here captures the same orientation the leads' pipeline records -->
+
+- Grid operator / TSO: <name>
+- LNG / fuel-supply context: <import terminals, domestic gas, fuel-switch pressures>
+- Conflict zone (conflict-damage status rules apply): yes / no
+- Large country — split research by region: yes / no (<list regions if yes>)
+
 ## Regulators & official sources
 
 - <agency name> — <what it publishes: generation stats, thermal plant lists,
@@ -26,7 +36,7 @@ GOGPT research (e.g. "large, well-documented gas fleet; low priority for oil").
 - Naming convention quirks (transliteration, plant name vs. company name
   collisions)
 - Source-tier exceptions specific to this country
-- Language considerations
+- Language considerations, and local-language search terms worth reusing
 - Where proposed/under-construction plants tend to surface first (auction
   results, national power development plans, etc.)
 

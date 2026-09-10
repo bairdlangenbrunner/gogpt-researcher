@@ -33,6 +33,7 @@ strings / leaked formulas).
 |---|---|---|
 | `README` | — | first tab: mode, color legend (real swatches), per-sheet definitions for every tab present, read-only column groups, input-summary stats |
 | `edit_checklist` | `updates` | PRIMARY deliverable — one row per proposed cell edit: plant / unit / GEM IDs / column / **current → proposed** / confidence color / verified URLs to paste into the paired Data Source column / one-line `action`. A `done` checkbox column for the human. |
+| `edit_backend_format` | `updates`, `newplants`, `newunits` | the same edits in the export CSV's own table layout: one row per affected unit, all 86 export columns, in **final proposed form**. Colored cells are the changes (per-cell tier colors below; green+empty = staged deletion); Data Source cells hold existing URLs merged with the new ones. Uncolored cells = untouched current values. New plants/units render as blank-based rows (country/plant ID filled, plant-level fields duplicated across unit rows, whole record colored by its tier). Built from the batch's fresh export (`--export-csv`). |
 | `new_plants` | `newplants` | plant-level rows, each followed by its unit rows |
 | `new_units` | `newunits` | unit rows anchored to an existing `T####` |
 | `entity_additions` | `entity` | new entities to create first (entity edits precede plant edits in the UI) |

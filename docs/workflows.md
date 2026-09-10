@@ -16,7 +16,7 @@ python scope_filter.py
 
 **Model selection (who runs on what).** Subagent model choice follows the global dispatch-time rule (user-level CLAUDE.md — cheapest model genuinely good enough, chosen per dispatch, never pinned). In this repo the judgment-heavy work that stays in the top-tier main loop: scope calls, threshold/scope-gate judgments on discovery candidates, escalations, and the pre-build QC gate on any subagent output. Mechanical fan-out (per-plant source sweeps from a clear brief, URL verification passes, per-country worklist summarization) can go down-tier. Subagent output is never pre-trusted regardless of model — `qc_checks.py --staged`, the gem.wiki/banned-domain scan, and a URL spot-check run the same either way.
 
-**Batch artifact conventions.** Per-batch staging JSON lives in `batches/<scope>/staging/` (`staged_<lane>.json`, lanes and record shapes in `docs/reference/staged_json_schema.md`) — committed as the audit trail. Deliverables land in `batches/<scope>/deliverables/` named `gogpt_batch_<YYYYMMDD>_<HHMM>_ET_<scope>_<mode>_{actions.xlsx,evidence.md}` (stamp via `TZ=America/New_York date "+%Y%m%d_%H%M_ET"`; naming rules in `docs/reference/workbook_conventions.md`; xlsx gitignored, evidence md committed; never overwrite). When running `url_verifier.py`, export `URL_VERIFIER_LOG=<path into the batch's staging dir>` so every verification attempt lands in an append-only JSONL next to the staged JSON. Each batch gets one line in `batches/<scope>/INDEX.md` and (for cross-scope runs) a small md in `batches/run_records/`.
+**Batch artifact conventions.** Per-batch staging JSON lives in `batches/<scope>/staging/` (`staged_<lane>.json`, lanes and record shapes in `docs/reference/staged_json_schema.md`) — committed as the audit trail. When a scope runs a second mode in the same cycle (e.g. a discovery pass after an update batch), stage it in a separate per-mode dir — `batches/<scope>/staging-discovery/` — so the build doesn't re-include the other mode's lanes; point `--staging-dir` and `URL_VERIFIER_LOG` there. Deliverables land in `batches/<scope>/deliverables/` named `gogpt_batch_<YYYYMMDD>_<HHMM>_ET_<scope>_<mode>_{actions.xlsx,evidence.md}` (stamp via `TZ=America/New_York date "+%Y%m%d_%H%M_ET"`; naming rules in `docs/reference/workbook_conventions.md`; xlsx gitignored, evidence md committed; never overwrite). When running `url_verifier.py`, export `URL_VERIFIER_LOG=<path into the batch's staging dir>` so every verification attempt lands in an append-only JSONL next to the staged JSON. Each batch gets one line in `batches/<scope>/INDEX.md` and (for cross-scope runs) a small md in `batches/run_records/`.
 
 ## §1 Fresh pull + scope filter (start of every batch)
 
@@ -28,19 +28,23 @@ python scope_filter.py
 
 1. Fresh pull (§1).
 2. Confirm scope per Update SOP §2 — which country/countries (usually the quarter's assignment from `campaigns/<quarter>/roster.csv`), whether Data-Source backfill is in scope. Create `batches/<scope>/staging/` if new.
-3. `python worklist.py --country "<Country>"` → the priority-ordered worklist (`work/worklist_<tag>.csv`): in-development first, then shelved review, planned-retirement-this-year, mothballed, operating; 2y/4y inferred-status candidates flagged. Work it top-down.
-4. Per plant/unit on the worklist:
+3. `python worklist.py --country "<Country>"` → the priority-ordered worklist (`work/worklist_<tag>.csv`): in-development first, then shelved review, planned-retirement-this-year, mothballed, operating; 2y/4y inferred-status candidates flagged. Work it top-down. For a full-country assignment, the ladder sets priority but not coverage — after it's exhausted, sweep the remaining status groups in the upstream session order (new proposals → in-development → shelved/cancelled → operating → retired/mothballed) per Update SOP §3.
+4. **Cross-cutting scans** (adopted from the upstream pipeline — CLAUDE.md "Upstream"): `python export_to_dump.py` bridges the fresh scoped CSV into `upstream/gogpt-tracker/data/`, then from `upstream/gogpt-tracker/scripts/`:
+   - `python3 gogpt_csv_query.py --country "<Country>" --counts-only` — unit-counts baseline; reconcile a mismatch vs the roster/assignments tab before researching.
+   - `... --status operating --ownership-scan`, `... --in-progress-scan`, `... --duplicate-scan` — candidates fold into the worklist as extra rows/notes. Scans surface candidates only; nothing is staged from a scan without the normal research + verification path.
+   - `... --possible-updates [--pu-file <file>]` — the country's backlog rows (input to step 5c; takes the local CSV or a flattened Drive read of the live sheet).
+5. Per plant/unit on the worklist:
    a. Source-search per Update SOP §4, using `docs/reference/source_roster.md` (tiering) and `docs/country_notes/<country>.md`. Harvest the record's EXISTING Data Source cells first — re-verifying a known-good source beats finding a new one (`confidence_tiers.md`).
    b. Apply lifecycle rules per `docs/reference/lifecycle_rules.md` — status vocab, start-year/retired-year logic, the 2020-forward rule, inferred 2y/4y arithmetic.
    c. Check the possible-updates backlog rows for this country (sheet ID in `sop_pointers.md`) and fold them into the same batch.
    d. Conversion/replacement checks against the UNFILTERED export — a gas unit replacing a coal unit at a shared plant needs the GCPT side read (unit_conventions.md, R-suffix + timepoint rules).
    e. Stage findings as `staged_updates.json` (+ `staged_qa.json` / `staged_entity.json` / `staged_monitor.json` as needed) per `staged_json_schema.md`. Project-level fields: set `applies_to_all_units` + `sibling_unit_ids`.
-5. `python url_verifier.py "<url>" "<claimed value>" ...` on every URL before it enters a staged record; record the verification result in the record's `verifications`.
-6. `python entity_lookup.py "<owner name>"` before staging any new owner/operator/parent (entities are shared across trackers and countries; a match anywhere = reuse the existing entity ID).
-7. `python qc_checks.py --staged batches/<scope>/staging/staged_updates.json` (and each other lane file) → must exit 0. Fix errors in the staging JSON, not by relaxing the checker.
-8. From `scripts/`: `python build_review_package.py --staging-dir ../batches/<scope>/staging --scope <scope> --mode update --output-dir ../batches/<scope>/deliverables` (use `--dry-run` first) → actions xlsx + evidence md.
-9. `python recalc.py ../batches/<scope>/deliverables/<actions.xlsx>` → zero formula errors.
-10. Add the INDEX.md line, update the campaign roster's `packet_file`, `present_files`.
+6. `python url_verifier.py "<url>" "<claimed value>" ...` on every URL before it enters a staged record; record the verification result in the record's `verifications`.
+7. `python entity_lookup.py "<owner name>"` before staging any new owner/operator/parent (entities are shared across trackers and countries; a match anywhere = reuse the existing entity ID).
+8. `python qc_checks.py --staged batches/<scope>/staging/staged_updates.json` (and each other lane file) → must exit 0. Fix errors in the staging JSON, not by relaxing the checker.
+9. From `scripts/`: `python build_review_package.py --staging-dir ../batches/<scope>/staging --scope <scope> --mode update --output-dir ../batches/<scope>/deliverables` (use `--dry-run` first) → actions xlsx + evidence md.
+10. `python recalc.py ../batches/<scope>/deliverables/<actions.xlsx>` → zero formula errors.
+11. Add the INDEX.md line, update the campaign roster's `packet_file`, `present_files`.
 
 ## §3 Discover new plants/units
 

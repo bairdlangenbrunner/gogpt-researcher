@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GOGPT Researcher Launchpad — Q2 2026</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#fff;--bg2:#f7f7f5;--bg3:#f0efeb;--text:#1a1a18;--text2:#6b6b67;--texth:#9b9b96;
+    --bdr:rgba(0,0,0,.12);--bdr2:rgba(0,0,0,.2);
+    --g-bg:#EAF3DE;--g-bdr:#C0DD97;--g-text:#27500A;--g-mid:#3B6D11;
+    --b-bg:#E6F1FB;--b-bdr:#B5D4F4;--b-text:#0C447C;--b-mid:#185FA5;
+    --t-bg:#E1F5EE;--t-bdr:#9FE1CB;--t-text:#085041;--t-mid:#0F6E56;
+    --a-bg:#FAEEDA;--a-bdr:#FAC775;--a-text:#633806;--a-mid:#854F0B;
+    --gy-bg:#F1EFE8;--gy-bdr:#D3D1C7;--gy-text:#444441;--gy-mid:#5F5E5A;
+    --r-bg:#FCEBEB;--r-bdr:#F7C1C1;--r-text:#501313;--r-mid:#A32D2D;
+    --p-bg:#EEEDFE;--p-bdr:#CECBF6;--p-text:#26215C;--p-mid:#534AB7;
+    --us-bg:#EBF5FF;--us-bdr:#B5D4F4;--us-text:#0C447C;--us-mid:#185FA5;
+    --rad:8px;--radlg:12px;
+    --font:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --mono:'SF Mono','Fira Code','Consolas',monospace;
+  }
+  @media(prefers-color-scheme:dark){:root{
+    --bg:#1c1c1a;--bg2:#252523;--bg3:#2e2e2b;--text:#e8e8e4;--text2:#a0a09b;--texth:#6e6e6a;
+    --bdr:rgba(255,255,255,.1);--bdr2:rgba(255,255,255,.18);
+    --g-bg:#173404;--g-bdr:#3B6D11;--g-text:#C0DD97;--g-mid:#97C459;
+    --b-bg:#042C53;--b-bdr:#185FA5;--b-text:#B5D4F4;--b-mid:#378ADD;
+    --t-bg:#04342C;--t-bdr:#0F6E56;--t-text:#9FE1CB;--t-mid:#1D9E75;
+    --a-bg:#412402;--a-bdr:#854F0B;--a-text:#FAC775;--a-mid:#EF9F27;
+    --gy-bg:#2C2C2A;--gy-bdr:#5F5E5A;--gy-text:#D3D1C7;--gy-mid:#888780;
+    --r-bg:#501313;--r-bdr:#A32D2D;--r-text:#F7C1C1;--r-mid:#E24B4A;
+    --p-bg:#26215C;--p-bdr:#534AB7;--p-text:#CECBF6;--p-mid:#7F77DD;
+    --us-bg:#042C53;--us-bdr:#185FA5;--us-text:#B5D4F4;--us-mid:#378ADD;
+  }}
+  body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.5;padding:2rem 1rem}
+  .page{max-width:720px;margin:0 auto}
+  .intro{background:var(--b-bg);border:.5px solid var(--b-bdr);border-radius:var(--radlg);padding:1rem 1.25rem;margin-bottom:1.5rem}
+  .intro h1{font-size:15px;font-weight:600;color:var(--b-text);margin-bottom:4px}
+  .intro p,.intro li{font-size:13px;color:var(--b-text);opacity:.85;line-height:1.5}
+  .intro ol{padding-left:1.25rem;margin-top:6px}
+  .intro li{margin-bottom:2px}
+  .ph{margin-bottom:1.25rem}
+  .ph h2{font-size:20px;font-weight:600;color:var(--text);margin-bottom:4px}
+  .ph p{font-size:13px;color:var(--text2)}
+  .setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.25rem}
+  .sc{background:var(--bg);border:.5px solid var(--bdr);border-radius:var(--radlg);padding:12px 14px}
+  .sl{font-size:11px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .pbadge{font-size:10px;font-weight:500;padding:2px 7px;border-radius:10px;background:var(--t-bg);color:var(--t-mid);border:.5px solid var(--t-bdr)}
+  .sc input{width:100%;font-size:13px;padding:7px 9px;border-radius:var(--rad);border:.5px solid var(--bdr2);background:var(--bg2);color:var(--text);font-family:var(--font)}
+  .sc input:focus{outline:none;border-color:var(--b-mid)}
+  .lpath{font-family:var(--mono);font-size:11px;color:var(--text2);background:var(--bg3);border-radius:var(--rad);padding:6px 8px;margin-top:2px;word-break:break-all;line-height:1.5}
+  .shint{font-size:11px;color:var(--texth);margin-top:4px}
+  .us-row{display:flex;align-items:center;gap:12px;background:var(--us-bg);border:.5px solid var(--us-bdr);border-radius:var(--radlg);padding:10px 14px;margin-bottom:1.25rem}
+  .us-row h3{font-size:13px;font-weight:600;color:var(--us-text)}
+  .us-row p{font-size:11px;color:var(--us-mid);margin-top:1px}
+  .tog{position:relative;width:38px;height:22px;flex-shrink:0;margin-left:auto}
+  .tog input{opacity:0;width:0;height:0;position:absolute}
+  .trk{position:absolute;inset:0;background:var(--bdr2);border-radius:11px;cursor:pointer;transition:background .2s}
+  .trk::after{content:'';position:absolute;width:16px;height:16px;background:#fff;border-radius:50%;top:3px;left:3px;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+  .tog input:checked+.trk{background:var(--b-mid)}
+  .tog input:checked+.trk::after{transform:translateX(16px)}
+  .prog-row{background:var(--bg2);border-radius:var(--radlg);padding:12px 16px;margin-bottom:1.25rem;display:flex;align-items:center;gap:10px}
+  .dots{display:flex;gap:5px;flex-wrap:wrap}
+  .dot{width:10px;height:10px;border-radius:50%;cursor:pointer;transition:background .15s;flex-shrink:0}
+  .dot.done{background:#1D9E75}.dot.current{background:#378ADD;outline:2px solid #B5D4F4;outline-offset:1px}.dot.todo{background:#D3D1C7}
+  .plabel{font-size:12px;color:var(--text2);margin-left:auto;white-space:nowrap}
+  .xbanner{display:none;align-items:center;gap:10px;background:var(--g-bg);border:.5px solid var(--g-bdr);border-radius:var(--radlg);padding:11px 14px;margin-bottom:1.25rem;cursor:pointer;text-decoration:none}
+  .xbanner.on{display:flex}.xbanner:hover{filter:brightness(.97)}
+  .xbt{font-size:13px;font-weight:600;color:var(--g-text)}.xbs{font-size:11px;color:var(--g-mid);margin-top:1px}
+  .sessions{display:grid;gap:8px}
+  .card{background:var(--bg);border:.5px solid var(--bdr);border-radius:var(--radlg);overflow:hidden}
+  .card.us-card{border-color:var(--us-bdr)}.card.done{opacity:.7}
+  .ch{display:flex;align-items:center;gap:10px;padding:12px 14px;cursor:pointer;user-select:none}
+  .ch:hover{background:var(--bg2)}
+  .num{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0}
+  .ngy{background:var(--gy-bg);color:var(--gy-text)}.nb{background:var(--b-bg);color:var(--b-text)}
+  .nt{background:var(--t-bg);color:var(--t-text)}.na{background:var(--a-bg);color:var(--a-text)}
+  .ng{background:var(--g-bg);color:var(--g-text)}.nr{background:var(--r-bg);color:var(--r-text)}
+  .np{background:var(--p-bg);color:var(--p-text)}.nus{background:var(--us-bg);color:var(--us-text)}
+  .nok{background:var(--g-bg);color:var(--g-text)}
+  .ct{font-size:13px;font-weight:600;color:var(--text)}.cs{font-size:11px;color:var(--text2);margin-top:1px}
+  .chev{margin-left:auto;font-size:16px;color:var(--texth);transition:transform .2s;line-height:1}
+  .card.open .chev{transform:rotate(180deg)}
+  .dbadge{margin-left:auto;font-size:11px;padding:2px 8px;border-radius:10px;background:var(--g-bg);color:var(--g-mid);border:.5px solid var(--g-bdr)}
+  .ubadge{display:inline-flex;align-items:center;gap:3px;font-size:10px;padding:1px 6px;border-radius:4px;background:var(--us-bg);color:var(--us-mid);margin-left:6px;border:.5px solid var(--us-bdr);vertical-align:middle}
+  .obadge{display:inline-block;font-size:10px;padding:1px 6px;border-radius:4px;background:var(--p-bg);color:var(--p-mid);margin-left:6px;border:.5px solid var(--p-bdr);vertical-align:middle}
+  .body{display:none;padding:0 14px 14px}.card.open .body{display:block}
+  .tbox{background:var(--bg2);border-radius:var(--rad);padding:8px 12px;margin-bottom:10px}
+  .blabel{font-size:10px;font-weight:600;color:var(--texth);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+  .tphrase{font-family:var(--mono);font-size:13px;color:var(--text)}
+  .steps{list-style:none;display:grid;gap:5px;margin-bottom:10px}
+  .steps li{display:flex;gap:8px;font-size:12px;line-height:1.5;color:var(--text2)}
+  .sn{font-size:10px;font-weight:600;background:var(--bg3);color:var(--text2);border-radius:8px;min-width:18px;height:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+  .cmdblock{margin-bottom:10px}
+  .cmd{font-family:var(--mono);font-size:11px;background:var(--bg2);padding:7px 9px;border-radius:var(--rad);display:block;margin:4px 0;word-break:break-all;color:var(--text);line-height:1.6;border:.5px solid var(--bdr)}
+  .csub{font-size:11px;color:var(--text2);margin-bottom:2px}
+  .dl-box{background:var(--g-bg);border:.5px solid var(--g-bdr);border-radius:var(--rad);padding:8px 12px;margin-bottom:10px;font-size:12px;color:var(--g-text);line-height:1.5}
+  .pblock{background:var(--bg2);border:.5px solid var(--bdr);border-radius:var(--rad);padding:10px 12px;margin-bottom:10px}
+  .ptext{font-family:var(--mono);font-size:11.5px;color:var(--text);line-height:1.65;white-space:pre-wrap;word-break:break-all}
+  .urow{font-size:12px;color:var(--text2);margin-bottom:8px;display:flex;align-items:center;gap:5px}
+  .note{border-radius:var(--rad);padding:8px 11px;font-size:12px;line-height:1.5;border-left:3px solid;margin-top:8px}
+  .nw{background:var(--a-bg);border-color:var(--a-mid);color:var(--a-text)}
+  .nti{background:var(--t-bg);border-color:var(--t-mid);color:var(--t-text)}
+  .ni{background:var(--b-bg);border-color:var(--b-mid);color:var(--b-text)}
+  .nc{background:var(--r-bg);border-color:var(--r-mid);color:var(--r-text)}
+  .once-note{background:var(--t-bg);border:.5px solid var(--t-bdr);border-radius:var(--rad);padding:7px 10px;font-size:12px;color:var(--t-text);margin-bottom:10px}
+  button.cb,button.mb{font-size:12px;padding:5px 11px;border-radius:var(--rad);border:.5px solid var(--bdr2);background:var(--bg);color:var(--text2);cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:var(--font);margin-top:8px;transition:background .1s}
+  button.cb:hover{background:var(--bg2);color:var(--text)}
+  button.cb.copied{color:var(--g-mid);border-color:var(--g-bdr)}
+  button.mb{margin-top:10px}
+  button.mb:hover{background:var(--g-bg);color:var(--g-text);border-color:var(--g-bdr)}
+  .clabel{font-size:12px;color:var(--g-mid);margin-top:10px;display:flex;align-items:center;gap:5px}
+  @media(max-width:520px){.setup-grid{grid-template-columns:1fr};body{padding:1rem .75rem}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="intro">
+  <h1>How to use this file</h1>
+  <p>Open in any browser. Progress saves automatically. Everything is automated — Claude writes the context card at the end of each session. Your only job between sessions is download → re-upload.</p>
+  <ol>
+    <li>Type your name and country below</li>
+    <li>US state? Enable the toggle to show sessions 2b and 2c</li>
+    <li>Click a session card, copy the prompt, open a new Claude conversation, paste it in</li>
+    <li>Upload your context card when prompted — Claude updates it automatically</li>
+    <li>Download the updated card Claude outputs at the end of each session</li>
+    <li>Upload that card at the start of the next session</li>
+  </ol>
+</div>
+
+<div class="ph">
+  <h2>GOGPT researcher launchpad</h2>
+  <p>Q2 2026 · Global Energy Monitor</p>
+</div>
+
+<div class="setup-grid">
+  <div class="sc"><div class="sl">Your name</div><input type="text" id="inp-name" placeholder="e.g. Natalia" oninput="up()"></div>
+  <div class="sc"><div class="sl">Country / state</div><input type="text" id="inp-country" placeholder="e.g. Japan" oninput="up()"></div>
+  <div class="sc">
+    <div class="sl">GOGPT data file <span class="pbadge">in project</span></div>
+    <div class="lpath">/mnt/project/GOGPTall20260527T201349.csv</div>
+    <div class="shint">Already in your Claude project — no upload needed</div>
+  </div>
+  <div class="sc">
+    <div class="sl">Possible updates file <span class="pbadge">in project</span></div>
+    <div class="lpath">/mnt/project/GEM_trackers__possible_updates__gas_oil_plants_052326.csv</div>
+    <div class="shint">Already in your Claude project — no upload needed</div>
+  </div>
+</div>
+
+<div class="us-row">
+  <div><h3>🇺🇸 US state research</h3><p>Enable to show sessions 2b and 2c</p></div>
+  <label class="tog"><input type="checkbox" id="us-tog" onchange="togUS()"><div class="trk"></div></label>
+</div>
+
+<div class="prog-row">
+  <div id="pdots" class="dots"></div>
+  <div class="plabel" id="plabel">0 / 9 sessions done</div>
+</div>
+
+<a class="xbanner" id="xbanner" href="#" onclick="jumpExport(event)">
+  <span style="font-size:20px">📤</span>
+  <div><div class="xbt">Ready to export — jump to session 7</div><div class="xbs" id="xsub">Done sessions will appear in the report</div></div>
+  <span style="margin-left:auto;font-size:18px;color:var(--g-mid)">→</span>
+</a>
+
+<div class="sessions" id="slist"></div>
+</div>
+
+<script>
+const XP='/mnt/project/GOGPTall20260527T201349.csv';
+const PP='/mnt/project/GEM_trackers__possible_updates__gas_oil_plants_052326.csv';
+const C='[country]',N='[your name]';
+const RES=['s2','s2b','s2c','s3','s4','s5','s6'];
+const SK='gogpt_done_q2',UK='gogpt_us_q2';
+
+// In US-state mode the placeholder `c` is a state name. States live in the
+// State/Province column under Country/Area "United States", so emit the
+// --country/--state fragment accordingly. Non-US: plain --country.
+const CQ=(c)=>isUS?`--country "United States" --state "${c}"`:`--country "${c}"`;
+
+const DL=(session,cn)=>`<div class="dl-box">📥 <strong>Download the updated context card</strong> when Claude finishes — it replaces your current card. Session ${session} will be marked ✅ automatically.</div>`;
+
+const S=[
+  {id:'s0',n:'0',col:'np',title:'CSV query setup',sub:'Run once before your first country',once:true,us:false,
+   trig:()=>'Set up CSV query',
+   steps:['Open a new Claude conversation and type the trigger phrase below',
+          'Claude installs dependencies, copies both scripts from the project, runs a smoke test, and prints confirmed commands',
+          'No uploads needed'],
+   prompt:(c,n)=>'Set up CSV query',pl:'Trigger phrase',
+   note:{t:'nti',x:'Only needed once per update cycle. Skip if already done this cycle.'},ul:[]},
+
+  {id:'s1',n:'1',col:'nb',title:'Setup',sub:'Load context · generate context card',us:false,
+   trig:(c)=>`Set up ${c}`,
+   steps:['Copy COUNTRY_CONTEXT_CARD_TEMPLATE.md and rename to GOGPT_ContextCard_[country]_Q2_2026.md',
+          'Open a new Claude conversation, paste the prompt below, and upload the renamed template',
+          'Claude fetches guidelines, country tips, and keywords; runs unit counts; writes sections 1–4 directly into the card',
+          'Download the updated context card'],
+   prompt:(c,n)=>`Set up ${c}\n\nResearcher: ${n}`,pl:'Session 1 prompt',
+   dl:(c)=>DL('1',c),
+   note:{t:'nti',x:'US states: enable the "US state research" toggle above to reveal sessions 2b and 2c.'},ul:['Renamed context card template']},
+
+  {id:'s2',n:'2',col:'nt',title:'New proposals',sub:'Find plants not yet in the database',us:false,
+   trig:(c)=>`Research new proposals for ${c}`,
+   steps:['Upload your context card and paste the prompt below into a new Claude conversation',
+          'Claude searches datacenterdynamics.com, OEM releases, DFIs, province/region sources, and ministry sites',
+          'Claude writes all findings into Section 6a and outputs the updated card'],
+   prompt:(c,n)=>`Research new proposals for ${c}\n\n[Upload your context card]`,pl:'Session 2 prompt',
+   dl:(c)=>DL('2',c),ul:['Context card']},
+
+  {id:'s2b',n:'2b',col:'nus',title:'US state research',sub:'Air permits · IRP · ISO/RTO queue · EIA-860M',us:true,
+   trig:(c)=>`Run US state research for ${c}`,
+   steps:['Run after session 2, before session 3',
+          'Upload your context card and paste the prompt below into a new Claude conversation',
+          'Claude checks state air permits, utility commission dockets, IRP filings, ISO/RTO queue, and EIA-860M',
+          'Claude appends findings to Section 6a and outputs the updated card'],
+   prompt:(c,n)=>`Run US state research for ${c}\n\n[Upload your context card]`,pl:'Session 2b prompt',
+   dl:(c)=>DL('2b',c),
+   note:{t:'ni',x:'Covers PSD/NSR air permits, utility commission dockets, IRP filings, ISO/RTO interconnection queue, EIA-860M monthly file, and data centre gas plants.'},ul:['Context card']},
+
+  {id:'s2c',n:'2c',col:'nus',title:'EIP / Sierra Club matching',sub:'Cross-reference GEM IDs against EIP and SC tracking IDs',us:true,
+   trig:(c)=>`Run EIP/SC matching for ${c}`,
+   steps:['Run after session 2b, before session 3',
+          'Upload your context card and paste the prompt below into a new Claude conversation',
+          'Claude cross-references GEM unit IDs against EIP and Sierra Club IDs, flags discrepancies and unmatched units',
+          'Claude appends findings to Section 6a and outputs the updated card'],
+   prompt:(c,n)=>`Run EIP/SC matching for ${c}\n\n[Upload your context card]`,pl:'Session 2c prompt',
+   dl:(c)=>DL('2c',c),
+   note:{t:'nc',x:'Sierra Club data is confidential — never include SC IDs or SC-sourced data in any externally shareable output.'},ul:['Context card']},
+
+  {id:'s3',n:'3',col:'nt',title:'In-development units',sub:'Announced · pre-construction · construction',us:false,
+   trig:(c)=>`Research in-development for ${c}`,
+   steps:['Run the two commands below and copy both outputs',
+          'Upload your context card and paste the prompt (with both command outputs) into a new Claude conversation',
+          'Claude runs field checks, 404 sweep, and turbine searches',
+          'Claude writes flag blocks into Section 6b, possible updates into Section 6f, and outputs the updated card'],
+   prompt:(c,n)=>`Research in-development for ${c}\n\n[Upload your context card]\n\n--- UNIT LIST ---\n[paste output of command 1]\n\n--- POSSIBLE UPDATES ---\n[paste output of command 2]`,pl:'Session 3 prompt',
+   cmds:(c)=>[
+     {l:'Command 1 — unit list',v:`python3 gogpt_csv_query.py --file "${XP}" ${CQ(c)} --status in-development`},
+     {l:'Command 2 — possible updates',v:`python3 gogpt_csv_query.py --country "${c}" --possible-updates --pu-file "${PP}"`}],
+   dl:(c)=>DL('3',c),
+   note:{t:'nw',x:'Large countries: run a separate CSV query per region and open a fresh conversation for each.'},ul:['Context card']},
+
+  {id:'s4',n:'4',col:'na',title:'Shelved & cancelled units',sub:'Revivals · inferred status thresholds',us:false,
+   trig:(c)=>`Research shelved/cancelled for ${c}`,
+   steps:['Run the command below and copy the output',
+          'Upload your context card and paste the prompt (with command output) into a new Claude conversation',
+          'Claude checks revivals, missing years, and inferred thresholds',
+          'Claude writes flag blocks into Section 6c and outputs the updated card'],
+   prompt:(c,n)=>`Research shelved/cancelled for ${c}\n\n[Upload your context card]\n\n--- UNIT LIST ---\n[paste output of command below]`,pl:'Session 4 prompt',
+   cmds:(c)=>[{l:'Unit list',v:`python3 gogpt_csv_query.py --file "${XP}" ${CQ(c)} --status shelved-cancelled`}],
+   dl:(c)=>DL('4',c),ul:['Context card']},
+
+  {id:'s5',n:'5',col:'nt',title:'Operating units',sub:'Retirements · ownership · conflict zones',us:false,
+   trig:(c)=>`Research operating for ${c}`,
+   steps:['Run the command below and copy the output',
+          'Upload your context card and paste the prompt (with command output) into a new Claude conversation',
+          'Priority 1: planned retirement 2026 · Priority 2: conflict-zone units · then remaining checks',
+          'Claude writes flag blocks into Section 6d and outputs the updated card'],
+   prompt:(c,n)=>`Research operating for ${c}\n\n[Upload your context card]\n\n--- UNIT LIST ---\n[paste output of command below]`,pl:'Session 5 prompt',
+   cmds:(c)=>[{l:'Unit list',v:`python3 gogpt_csv_query.py --file "${XP}" ${CQ(c)} --status operating`}],
+   dl:(c)=>DL('5',c),ul:['Context card']},
+
+  {id:'s6',n:'6',col:'ngy',title:'Retired & mothballed units',sub:'Restarts · conflict damage · fuel conversion',us:false,
+   trig:(c)=>`Research retired/mothballed for ${c}`,
+   steps:['Run the command below and copy the output',
+          'Upload your context card and paste the prompt (with command output) into a new Claude conversation',
+          'Claude checks restarts, retirement accuracy, conflict damage, and fuel conversion fields',
+          'Claude writes flag blocks into Section 6e and outputs the updated card'],
+   prompt:(c,n)=>`Research retired/mothballed for ${c}\n\n[Upload your context card]\n\n--- UNIT LIST ---\n[paste output of command below]`,pl:'Session 6 prompt',
+   cmds:(c)=>[{l:'Unit list',v:`python3 gogpt_csv_query.py --file "${XP}" ${CQ(c)} --status retired`}],
+   dl:(c)=>DL('6',c),ul:['Context card']},
+
+  {id:'s7',n:'7',col:'ng',title:'Export QC report',sub:'Upload the card · Claude does the rest',us:false,
+   trig:(c)=>`Export QC report for ${c}`,
+   steps:['Upload your fully populated context card and paste the prompt below into a new Claude conversation',
+          'Claude counts flags automatically from the card — no manual counting needed',
+          'Claude checks all sections are populated, then produces both output files',
+          'Download: GOGPT_QC_[country]_May2026.docx · GOGPT_Changes_[country]_May2026.xlsx · updated context card'],
+   prompt:(c,n)=>`Export QC report for ${c}\n\nResearcher: ${n}\nDate: ${new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})}\n\n[Upload the fully populated context card]`,pl:'Session 7 prompt',
+   note:{t:'nw',x:'If Claude reports any sections are empty, run the missing sessions first and re-upload the card.'},ul:['Context card (fully populated)']},
+
+  {id:'s8',n:'8',col:'nr',title:'Wrap-up',sub:'Paste-ready blocks · mark done',us:false,
+   trig:(c)=>`Wrap up ${c}`,
+   steps:['Upload your context card and paste the prompt below into a new Claude conversation',
+          'Claude checks the session log and verifies all possible updates rows are resolved',
+          'Claude produces three paste-ready blocks: Country Tips & Trends · QC Checklist · Assignments update',
+          'Apply the blocks to Google Sheets, then mark the country done'],
+   prompt:(c,n)=>`Wrap up ${c}\n\n[Upload your context card]`,pl:'Session 8 prompt',
+   note:{t:'nw',x:'Claude will not produce the done block if any session is missing ✅ or any possible updates row is unresolved.'},ul:['Context card']}
+];
+
+let done=new Set(),isUS=false;
+try{done=new Set(JSON.parse(localStorage.getItem(SK)||'[]'))}catch(e){}
+try{isUS=localStorage.getItem(UK)==='true'}catch(e){}
+
+const vis=()=>S.filter(s=>!s.us||isUS);
+const anyR=()=>RES.some(id=>done.has(id));
+const rsum=()=>{const m={s2:'new proposals',s2b:'US state',s2c:'EIP/SC matching',s3:'in-development',s4:'shelved/cancelled',s5:'operating',s6:'retired/mothballed'};const d=RES.filter(id=>done.has(id)).map(id=>m[id]);return d.length?'Sections ready: '+d.join(', '):''};
+const v=()=>({c:document.getElementById('inp-country').value.trim()||C,n:document.getElementById('inp-name').value.trim()||N});
+
+function up(){const{c,n}=v();S.forEach(s=>{const pe=document.getElementById('p-'+s.id);if(pe)pe.textContent=s.prompt(c,n);const te=document.getElementById('t-'+s.id);if(te)te.textContent=s.trig(c);if(s.cmds)s.cmds(c).forEach((_,i)=>{const ce=document.getElementById(`c-${s.id}-${i}`);if(ce)ce.textContent=s.cmds(c)[i].v});const de=document.getElementById('dl-'+s.id);if(de&&s.dl)de.innerHTML=s.dl(s.n,c)})}
+
+function cp(id,btn){const t=document.getElementById(id).textContent;const ok=()=>{btn.textContent='✓ Copied';btn.classList.add('copied');setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied')},1500)};navigator.clipboard.writeText(t).then(ok).catch(()=>{const ta=document.createElement('textarea');ta.value=t;ta.style.cssText='position:fixed;opacity:0';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok()})}
+
+function mk(sid){done.add(sid);try{localStorage.setItem(SK,JSON.stringify([...done]))}catch(e){}ra()}
+function tog(sid){const el=document.getElementById('card-'+sid);const o=el.classList.contains('open');document.querySelectorAll('.card').forEach(c=>c.classList.remove('open'));if(!o)el.classList.add('open')}
+function togUS(){isUS=document.getElementById('us-tog').checked;try{localStorage.setItem(UK,isUS)}catch(e){}ra()}
+function jumpExport(e){e.preventDefault();const c=document.getElementById('card-s7');document.querySelectorAll('.card').forEach(x=>x.classList.remove('open'));c.classList.add('open');setTimeout(()=>c.scrollIntoView({behavior:'smooth',block:'start'}),50)}
+
+function rp(){const ss=vis();const d=ss.filter(s=>done.has(s.id)).length;document.getElementById('plabel').textContent=`${d} / ${ss.length} sessions done`;document.getElementById('pdots').innerHTML=ss.map((s,i)=>{const cl=done.has(s.id)?'done':(d===i?'current':'todo');return`<div class="dot ${cl}" title="Session ${s.n}: ${s.title}" onclick="tog('${s.id}')"></div>`}).join('')}
+
+function rx(){const b=document.getElementById('xbanner');b.style.display=anyR()?'flex':'none';if(anyR())document.getElementById('xsub').textContent=rsum()}
+
+function rs(){const{c,n}=v();document.getElementById('slist').innerHTML=vis().map(s=>{
+  const id=done.has(s.id);
+  const once=s.once?`<div class="once-note">Run once per update cycle — skip if already done.</div>`:'';
+  let cmh='';if(s.cmds){cmh=`<div class="cmdblock"><div class="blabel">Run these commands first — copy outputs into the prompt below</div>`+s.cmds(c).map((cmd,i)=>`<div style="margin-bottom:8px"><div class="csub">${cmd.l}</div><code class="cmd" id="c-${s.id}-${i}">${cmd.v}</code><button class="cb" onclick="cp('c-${s.id}-${i}',this)">Copy</button></div>`).join('')+`</div>`}
+  const ulh=s.ul&&s.ul.length?`<div class="urow">↑ Upload: ${s.ul.join(' · ')}</div>`:'';
+  const dlh=s.dl?`<div id="dl-${s.id}">${s.dl(s.n,c)}</div>`:'';
+  const nth=s.note?`<div class="note ${s.note.t}">${s.note.x}</div>`:'';
+  const ub=s.us?`<span class="ubadge">🇺🇸 US only</span>`:'';
+  const ob=s.once?`<span class="obadge">once</span>`:'';
+  return`<div class="card ${id?'done':''} ${s.us?'us-card':''}" id="card-${s.id}">
+    <div class="ch" onclick="tog('${s.id}')">
+      <div class="num ${id?'nok':s.col}">${id?'✓':s.n}</div>
+      <div><div class="ct">${s.title}${ub}${ob}</div><div class="cs">${s.sub}</div></div>
+      ${id?'<span class="dbadge">done</span>':'<span class="chev">⌄</span>'}
+    </div>
+    <div class="body">
+      ${once}
+      <div class="tbox"><div class="blabel">Trigger phrase</div><div class="tphrase" id="t-${s.id}">${s.trig(c)}</div></div>
+      <ul class="steps">${s.steps.map((st,i)=>`<li><span class="sn">${i+1}</span><span>${st}</span></li>`).join('')}</ul>
+      ${cmh}${ulh}
+      <div class="pblock"><div class="blabel">${s.pl||'Prompt'}</div><div class="ptext" id="p-${s.id}">${s.prompt(c,n)}</div><button class="cb" onclick="cp('p-${s.id}',this)">Copy prompt</button></div>
+      ${dlh}${nth}
+      ${!id?`<button class="mb" onclick="mk('${s.id}')">✓ Mark session done</button>`:`<div class="clabel">✓ Completed</div>`}
+    </div>
+  </div>`}).join('')}
+
+function ra(){document.getElementById('us-tog').checked=isUS;rs();rp();rx();up()}
+ra();
+</script>
+</body>
+</html>

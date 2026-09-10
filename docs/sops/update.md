@@ -1,6 +1,6 @@
 # GOGPT Update SOP
 
-Last revised: 2026-07-27 (rev 1 — initial GOGPT adaptation from lng-terminals-researcher rev 2)
+Last revised: 2026-08-04 (rev 2 — adopted the upstream pipeline's cross-cutting scans, counts baseline, and status-group coverage sweep; rev 1 2026-07-27 was the initial GOGPT adaptation from lng-terminals-researcher rev 2)
 
 Operational rules for updating existing plants and units in the GEM Global Oil and Gas Plant Tracker (GOGPT). This is the bread-and-butter workflow of the quarterly cycle: working an assigned country's units in priority order, refreshing statuses and values, filling missing datasources, and processing inferred-shelved/cancelled candidates.
 
@@ -40,9 +40,14 @@ Every batch starts from a fresh pull — never a cached CSV:
    3. **Units with planned retirement in the current year**
    4. **Other units with planned retirement**
 
-   The worklist also flags **shelved-inferred-2y** and **cancelled-inferred-4y candidates**: in-development units that have disappeared from company documents with no activity for 2 / 4 years (§4.1). Units outside the worklist are left untouched unless the user scopes them in.
+   The worklist also flags **shelved-inferred-2y** and **cancelled-inferred-4y candidates**: in-development units that have disappeared from company documents with no activity for 2 / 4 years (§4.1). Units outside the worklist are left untouched unless the user scopes them in — **except on a full-country assignment**, where the ladder sets priority but coverage must be complete: after the ladder is exhausted, sweep the remaining status groups in the upstream session order (new proposals → in-development → shelved/cancelled → operating → retired/mothballed), so every unit ends the batch with a Record of Full Updates entry (§5).
 
-**Work the "GEM trackers – possible updates" backlog DURING country research, not after.** Filter the backlog to the country at batch start and fold its items into the worklist — researching them alongside the country pass prevents duplicate review of the same plants.
+5. **Cross-cutting scans** (adopted from the upstream pipeline, `upstream/gogpt-tracker/` — see CLAUDE.md "Upstream"). Bridge the fresh scoped CSV with `python export_to_dump.py`, then run from `upstream/gogpt-tracker/scripts/`:
+   - `--counts-only` — the unit-counts baseline. A mismatch against the quarter's assignments tab is a discrepancy to reconcile *before* researching (upstream's Session-1 check).
+   - `--ownership-scan` (operating units), `--in-progress-scan`, `--duplicate-scan` — surface stale-ownership candidates, stuck in-progress units, and likely duplicate plant entries. Fold hits into the worklist as extra rows. **Scans surface candidates only** — a scan hit gets the normal research + verification path before anything is staged; never stage directly from scan output.
+   - `--possible-updates` — see the backlog rule below.
+
+**Work the "GEM trackers – possible updates" backlog DURING country research, not after.** Filter the backlog to the country at batch start and fold its items into the worklist — researching them alongside the country pass prevents duplicate review of the same plants. The upstream loader (`gogpt_csv_query.py --possible-updates`, optionally `--pu-file` with a flattened Drive read of the live sheet) does this filtering, including dropping rows already marked done.
 
 ## §4 Update sub-types
 
@@ -128,6 +133,12 @@ GEM's owner/operator entity system is shared across all trackers; duplicate enti
 2. Match found anywhere → use the existing entity ID; do NOT stage a new entity.
 3. No match locally or remotely → stage in the `entity` lane with the lookup attempts logged. The human creates the entity via the web UI ("Adding a New Owner" flow in the manual) before applying the dependent edits.
 4. Check spelling variants deliberately — the manual's canonical warning is the same entity under a slightly different spelling.
+5. **Parent findings are never unit edits.** `Parent(s)` is a computed column
+   (derived from `company.gemParents`, the ownership-tracker team's curated
+   chain — see `gem_db_schema.md`); the build script rejects it as an edit
+   target. Stage a parent correction as a `qa` record (`concern_type:
+   attribution`) recommending the entity-record change, with the verified
+   sources in `researcher_notes`.
 
 ## §9 Project-level vs unit-level edits
 
@@ -153,7 +164,7 @@ Fix every failure before building; a deliberate exception gets a `qa` record exp
 1. Confirm scope with the user; mark the roster row `in progress`; create `batches/<country-scope>/{staging,deliverables,archive}` with a `meta.json`
 2. Fresh pull chain: `python ../../gem-db-ops/gogpt/pull.py` → `python pull_gem_db.py --map-only` → `python scope_filter.py` (§3)
 3. `python worklist.py --country <name>` → priority-ordered worklist + inferred-status flags
-4. Pull the country's "GEM trackers – possible updates" items into the worklist (§3)
+4. `python export_to_dump.py`, then the upstream cross-cutting scans — counts baseline, ownership / in-progress / duplicate — folding hits into the worklist, and pull the country's "GEM trackers – possible updates" items in via `--possible-updates` (§3.5)
 5. For each worklist unit, in priority order: source-search (start from `docs/country_notes/` and the manual's country resources), apply §4 rules, stage records into the lanes, color per §6
 6. `python url_verifier.py` on every staged URL (§7.1); re-verify pre-existing URLs on touched rows
 7. `python entity_lookup.py` for every new entity reference (§8)
@@ -167,6 +178,7 @@ Fix every failure before building; a deliberate exception gets a `qa` record exp
 When the human has applied the batch, the country isn't done until:
 
 - Every worklist unit has a Record of Full Updates entry — `updated` or `no changes` (§5)
+- Unit counts re-run on a freshly bridged dump (`--counts-only`) and reconciled against the assignments tab — the close-out counts must be explainable by the batch's own staged changes
 - Assigned Comments in the database are reviewed and resolved
 - The country's "GEM trackers – possible updates" items are cleared (researched + annotated with initials/date/notes)
 - Country Tips are updated with anything learned (mirror durable findings into `docs/country_notes/`)

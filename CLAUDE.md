@@ -16,6 +16,7 @@ Where things live — **read on demand as the workflow dictates, not at session 
 - **Workflow recipes** — `docs/workflows.md`: step-by-step command sequences for every workflow below.
 - **Reference docs** — `docs/reference/` (`lifecycle_rules.md`, `unit_conventions.md`, `controlled_vocab.md`, `gem_db_schema.md`, `source_roster.md`, `datasource_conventions.md`, `wiki_pages.md`, `staged_json_schema.md`, `workbook_conventions.md`, `confidence_tiers.md`, `sop_pointers.md`) and `docs/country_notes/`.
 - **Scripts** — `scripts/` (each script's docstring is its manual).
+- **Upstream pipeline** — `upstream/gogpt-tracker/`: verbatim import of the GOGPT leads' own tooling (see "Upstream" section below).
 - **Backlog** — `notes/backlog_captive_power_candidates.md`: the seeded first discovery input, pointing at candidate JSONs in the sibling LNG repo.
 
 ## The batch input (and THE scope gotcha)
@@ -28,9 +29,20 @@ python pull_gem_db.py --map-only          # derive the 86-column index map (.col
 python scope_filter.py                    # derive gem_export_gogpt_scoped.csv
 ```
 
-The pull engine lives ONLY in the sibling `../gem-db-ops` repo (no engine copies here); auth via `GEM_READONLY_DB_URL`.
+The pull engine lives ONLY in the sibling `../gem-db-ops` repo (no engine copies here); auth via `GEM_READONLY_DB_URL`. `pull_gem_db.py` only derives the column map — the canonical 86-column expected-header map is `GOGPT_EXPECTED_COLUMNS` in `../gem-db-ops/gem_colmap.py`, so **new GEM columns get added there**, with `schema_constants.py`'s `COMPUTED_COLUMNS`/`OUT_OF_SCOPE_COLUMNS` updated in the same pass.
 
 **Scope gotcha — the export is NOT GOGPT-only.** It contains ALL combustion units: oil + gas, but also coal (GCPT) and bioenergy (GBPT) units, ~34.5k rows. `scope_filter.py` derives the GOGPT-scoped view (authoritative `trackerSearch='GOGPT'` query when the DB is reachable; fuel heuristic with `--offline`). Research and worklists run on the SCOPED csv; **keep the unfiltered csv** — coal-to-gas conversions, replacements, and shared plants need the GCPT/GBPT side visible.
+
+## Upstream: the GOGPT leads' own pipeline (`upstream/gogpt-tracker/`)
+
+`upstream/gogpt-tracker/` is a verbatim import (2026-08) of the pipeline the GOGPT team leads built and run: session-based country research recorded in per-country context cards, cross-cutting scans, and the compile step that builds GEM's published spreadsheet. Treat it as vendored upstream code:
+
+- **Never edit files under `upstream/` as part of this repo's workflows.** Refinements intended for the leads are deliberate, discussed-first changes made there so they stay clean diffs to hand back.
+- **This repo's output contract is unchanged** — batches produce the actions/evidence deliverable pair. The upstream context-card/QC-report flow is their deliverable, not this repo's.
+- **What the research process adopts from upstream** (wired into the Update SOP §3 and `docs/workflows.md` §2): the cross-cutting scans (`--ownership-scan`, `--in-progress-scan`, `--duplicate-scan`, `--possible-updates`), the unit-counts baseline check against the assignments tab, and full-country coverage by status group (their session order). Scans surface candidates only — they never auto-stage anything (upstream invariant, kept).
+- **The bridge**: `scripts/export_to_dump.py` converts the fresh scoped pull into a `GOGPTall*.xlsx` dump in `upstream/gogpt-tracker/data/`; the upstream scripts auto-detect the newest dump, so after bridging they run on batch-fresh data instead of the bundled cycle dump. Run it right after the §1 pull chain whenever a workflow calls the scans.
+- `upstream/gogpt-tracker/docs/METHODOLOGY.md` is the leads' distilled methodology; the Editing Manual remains authoritative and conflicts escalate per the rule below. Upstream has its own `requirements.txt` (pandas/xlsxwriter — not merged into this repo's).
+- **Public-repo privacy**: the upstream data files stay untracked — the possible-updates CSV contains researcher names, and this repo is public. Never let personal names from upstream content into commits.
 
 ## Read the manual + relevant SOPs first
 

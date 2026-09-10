@@ -106,13 +106,15 @@ docs/
 
 scripts/                     Python tools called by the workflows
   paths.py                   Repo-relative path helpers (no hard-coded absolutes)
-  pull_gem_db.py             Column-index map + schema-drift detection (engine lives in ../gem-db-ops)
+  pull_gem_db.py             Column-index map + schema-drift detection (both the engine and the
+                             canonical 86-column map live in ../gem-db-ops/gem_colmap.py)
   scope_filter.py            Derive the GOGPT-only view from the all-combustion export
   worklist.py                Priority-ladder triage worklist + inferred-status sweep
   qc_checks.py               Mechanical validation of CSV slices and staged records
   schema_constants.py        Controlled vocab, thresholds, out-of-scope columns
   colmap.py                  Load the derived column map
   url_verifier.py            Verify a URL works and shows the claimed value
+  export_to_dump.py          Bridge the fresh scoped pull into the upstream dump format
   entity_lookup.py           Check whether a company already exists in GEM's entity system
   normalize.py               Standardize country/entity names, parse ownership shares
   build_review_package.py    Assemble staged JSON into the actions xlsx + evidence md
@@ -127,6 +129,13 @@ batches/                     Everything a batch produces (see batches/README.md)
 campaigns/                   One dir per quarter; roster.csv tracks the country cycle
 notes/                       Ad-hoc memos; the captive-power seed backlog lives here
 work/                        Scratch — worklists and derived outputs (gitignored)
+
+upstream/
+  gogpt-tracker/             Verbatim import of the GOGPT leads' own pipeline —
+                             scans, context cards, publish compile. Never edited
+                             by this repo's workflows; see CLAUDE.md "Upstream".
+                             Its data dumps are gitignored (regenerate via
+                             scripts/export_to_dump.py after a fresh pull).
 ```
 
 ## Hard rules
@@ -147,6 +156,11 @@ A non-exhaustive list (full list in `CLAUDE.md`):
 
 This scaffolding follows GEM's GOGPT Editing Manual. The manual is
 authoritative; this repo encodes how the agent applies it operationally.
+
+The GOGPT team leads' own research pipeline is imported verbatim at
+`upstream/gogpt-tracker/` — its cross-cutting scans and counts baseline are
+wired into the Update workflow, and its `docs/METHODOLOGY.md` is their
+distilled statement of the manual's scope and status rules.
 
 ## Sibling repos
 

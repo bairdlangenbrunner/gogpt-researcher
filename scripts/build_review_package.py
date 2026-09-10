@@ -34,14 +34,18 @@ Usage (from scripts/):
     # add --dry-run to validate without writing files
 """
 import argparse
+import csv
 import datetime
 import json
+import re
 import sys
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).parent))
 from schema_constants import READ_ONLY_COLUMNS
+from colmap import load_colmap
+from paths import gem_export_csv
 
 LANES = ["updates", "qa", "entity", "monitor", "newplants", "newunits"]
 
@@ -57,6 +61,16 @@ SHEET_DESCRIPTIONS = {
                        "the way the web UI is walked. Paste the value into the "
                        "column and the URLs into its Data Source column "
                        "(merge, never replace). 'done' column is yours."),
+    "edit_backend_format": ("The updates-lane edits plus new plants/units "
+                            "laid out in the export CSV's own table format: "
+                            "one row per "
+                            "affected unit, all 86 columns, in FINAL proposed "
+                            "form. Colored cells are the changes (color = "
+                            "confidence tier; blue = re-verified unchanged; "
+                            "green+empty = staged deletion); Data Source "
+                            "cells show existing URLs merged with the new "
+                            "ones. Uncolored cells are untouched current "
+                            "values."),
     "new_plants": "Candidate new plants (plant-level row, then its unit rows).",
     "new_units": "New units at existing plants (anchored to a T#### plant ID).",
     "entity_additions": ("New entities to create BEFORE plant edits that link "
@@ -165,7 +179,123 @@ def checklist_rows(lanes):
     return rows
 
 
-def build_xlsx(lanes, out_path):
+def _split_urls(cell):
+    """Split an export Data Source cell into its URLs (', ' / ';' separated)."""
+    return [u for u in (p.strip() for p in re.split(r"[;,]\s*", cell or "")) if u]
+
+
+def backend_format_rows(lanes, export_csv):
+    """The updates/newplants/newunits lanes rendered as full export-layout rows
+    (edit_backend_format).
+
+    One row per affected unit, every export column, in FINAL proposed form:
+    staged values applied, Data Source cells merged (existing URLs kept, new
+    ones appended — merge-never-replace). New plants/units start from a blank
+    row (country filled from the record), one row per staged unit with the
+    plant-level fields duplicated across its unit rows, mirroring how the
+    export lays plants out. Returns (header, rows, fills) where fills maps
+    (row_index, col_index) -> tier key for coloring.
+    """
+    updates = lanes.get("updates", [])
+    new_recs = lanes.get("newplants", []) + lanes.get("newunits", [])
+    if not (updates or new_recs):
+        return None, [], {}
+    colmap = load_colmap(export_csv)
+    header = colmap["_header_columns"]
+    col_idx = {h: i for i, h in enumerate(header)}
+    i_uid = col_idx["GEM unit ID"]
+
+    wanted = {r.get("gem_unit_id") for r in updates if r.get("gem_unit_id")}
+    current_rows = {}
+    with open(export_csv, encoding="utf-8-sig") as f:
+        reader = csv.reader(f)
+        next(reader)
+        for row in reader:
+            if len(row) > i_uid and row[i_uid] in wanted:
+                current_rows[row[i_uid]] = row
+
+    rows, fills = [], {}
+    for rec in sorted(updates, key=lambda r: (r.get("country", ""),
+                                              r.get("plant_name", ""),
+                                              r.get("unit_name", ""))):
+        uid = rec.get("gem_unit_id", "")
+        base = current_rows.get(uid)
+        if base is None:
+            print(f"  WARNING: {uid}: not in export CSV — "
+                  "edit_backend_format row built from staged fields only")
+            base = [""] * len(header)
+            if uid and "GEM unit ID" in col_idx:
+                base[i_uid] = uid
+        row = list(base)
+        r_i = len(rows)
+        for col, proposed in rec.get("fields", {}).items():
+            if col not in col_idx:
+                print(f"  WARNING: {uid}: column {col!r} not in export header — "
+                      "skipped in edit_backend_format")
+                continue
+            c_i = col_idx[col]
+            current = rec.get("current", {}).get(col, base[c_i])
+            if rec.get("delete"):
+                row[c_i] = ""
+                tier = "high"          # green + empty = staged deletion
+            else:
+                row[c_i] = proposed
+                tier = ("reverified" if str(proposed) == str(current)
+                        else rec.get("tier", "medium"))
+            fills[(r_i, c_i)] = tier
+            ref_col = ref_col_for(col)
+            new_urls = rec.get("refs", {}).get(ref_col, [])
+            if new_urls and ref_col in col_idx:
+                ds_i = col_idx[ref_col]
+                merged = _split_urls(row[ds_i])
+                merged += [u for u in new_urls if u not in merged]
+                row[ds_i] = ", ".join(merged)
+                fills[(r_i, ds_i)] = tier
+        rows.append(row)
+
+    def apply_staged(row, r_i, fields, refs, tier, ident):
+        for col, val in fields.items():
+            if col not in col_idx:
+                print(f"  WARNING: {ident}: column {col!r} not in export "
+                      "header — skipped in edit_backend_format")
+                continue
+            row[col_idx[col]] = val
+            fills[(r_i, col_idx[col])] = tier
+        for ref_col, urls in refs.items():
+            if ref_col not in col_idx:
+                print(f"  WARNING: {ident}: column {ref_col!r} not in export "
+                      "header — skipped in edit_backend_format")
+                continue
+            ds_i = col_idx[ref_col]
+            merged = _split_urls(row[ds_i])
+            merged += [u for u in urls if u not in merged]
+            row[ds_i] = ", ".join(merged)
+            fills[(r_i, ds_i)] = tier
+
+    for rec in sorted(new_recs, key=lambda r: (r.get("country", ""),
+                                               r.get("plant_name", ""),
+                                               r.get("unit_name", ""))):
+        ident = rec.get("plant_name", "?")
+        tier = rec.get("tier", "medium")
+        base = [""] * len(header)
+        if rec.get("country") and "Country/Area" in col_idx:
+            base[col_idx["Country/Area"]] = rec["country"]
+        if rec.get("gem_plant_id") and "GEM plant ID" in col_idx:
+            base[col_idx["GEM plant ID"]] = rec["gem_plant_id"]
+        for unit in rec.get("units") or [None]:
+            row = list(base)
+            r_i = len(rows)
+            apply_staged(row, r_i, rec.get("fields", {}),
+                         rec.get("refs", {}), tier, ident)
+            if unit is not None:
+                apply_staged(row, r_i, unit.get("fields", {}),
+                             unit.get("refs", {}), tier,
+                             f"{ident} / {unit.get('unit_name', '?')}")
+            rows.append(row)
+    return header, rows, fills
+
+
+def build_xlsx(lanes, out_path, export_csv=None):
     from openpyxl import Workbook
     from openpyxl.styles import Font, PatternFill
 
@@ -217,6 +347,28 @@ def build_xlsx(lanes, out_path):
                "column", "current", "proposed", "confidence", "refs_to_paste",
                "action", "done"],
               checklist_rows(lanes), tier_col=7)
+
+    # edit_backend_format: updates lane in the export CSV's own table layout,
+    # per-cell tier coloring (workbook_conventions.md).
+    if export_csv is not None:
+        bf_header, bf_rows, bf_fills = backend_format_rows(lanes, export_csv)
+        if bf_rows:
+            ws = wb.create_sheet("edit_backend_format")
+            ws.append(bf_header)
+            for c in ws[1]:
+                c.font = bold
+            for r_i, row in enumerate(bf_rows):
+                ws.append(row)
+                for c_i in range(len(row)):
+                    tier = bf_fills.get((r_i, c_i))
+                    if tier:
+                        ws.cell(row=r_i + 2, column=c_i + 1).fill = \
+                            PatternFill("solid", fgColor=TIER_FILLS[tier])
+            ws.freeze_panes = "A2"
+            for i, h in enumerate(bf_header, start=1):
+                letter = ws.cell(row=1, column=i).column_letter
+                ws.column_dimensions[letter].width = min(
+                    32, max(10, len(str(h)) + 2))
 
     def flat(rec, extra_cols):
         return ([rec.get("country", ""), rec.get("plant_name", ""),
@@ -299,6 +451,9 @@ def main():
                    choices=["update", "discovery", "triage", "qc"])
     p.add_argument("--output-dir", default=None,
                    help="default: <staging-dir>/../deliverables")
+    p.add_argument("--export-csv", default=str(gem_export_csv()),
+                   help="fresh export CSV backing the edit_backend_format "
+                        "sheet (default: the standard pull location)")
     p.add_argument("--dry-run", action="store_true")
     args = p.parse_args()
 
@@ -335,7 +490,13 @@ def main():
         sys.exit(f"ERROR: {base}_* already exists — never overwrite; rerun for "
                  "a fresh stamp")
 
-    build_xlsx(lanes, xlsx_path)
+    export_csv = Path(args.export_csv)
+    if lanes.get("updates") and not export_csv.exists():
+        sys.exit(f"ERROR: export CSV not found at {export_csv} — the "
+                 "edit_backend_format sheet needs the fresh pull "
+                 "(run the §1 pull chain, or pass --export-csv)")
+    build_xlsx(lanes, xlsx_path,
+               export_csv=export_csv if export_csv.exists() else None)
     build_evidence(lanes, md_path, stamp, args.scope, args.mode)
     print(f"wrote {xlsx_path}\nwrote {md_path}\n"
           f"next: python recalc.py {xlsx_path}")
