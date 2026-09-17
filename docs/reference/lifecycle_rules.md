@@ -67,6 +67,11 @@ gas-plant changes since then, not to backfill history before the tracker existed
   `unit_conventions.md`.
 - Maintenance/upgrade without a turbine replacement does **not** get a new start year; the
   original start year stands (only capacity/technology/retirement year may change).
+- **Operating units with an unknown start year** (Q4 2026 required deliverable, per the
+  kickoff doc): re-research, capped at ~10 minutes per unit. If sources pin only the
+  decade, enter the decade midpoint (e.g. "1975" for "the 1970s") and add an internal
+  note saying the year is a decade estimate. Unit-level Other IDs (EIA-860M generator
+  ID, national registries) are the fastest route to an exact year.
 
 ## Retired year / planned retire year
 
@@ -95,6 +100,31 @@ conflict"** checkbox (between Status and Status Details) and assign status as fo
   in Status Details explaining the call.
 - **`retired`** only when there is explicit indication the plant will not be rebuilt and
   has been decommissioned indefinitely.
+
+## How status edits are entered: the status timeline (2026 DB change)
+
+The DB no longer overwrites status or planned-year fields; every edit is a **new
+timeline entry** and existing entries are never edited or deleted (Status Timeline
+Training doc — link in `sop_pointers.md`). What we research is unchanged; how it is
+entered is:
+
+| entry type | what it records | year rule | fields |
+|---|---|---|---|
+| **Milestone** | a status change that has actually happened (announced → pre-construction, construction → operating, → retired, → cancelled …) | this year or earlier | status, year it happened, source, note |
+| **Scheduled event** | a status the unit is projected to reach (planned operating year, planned construction start, planned retirement) | this year or later | status, event year, **source year** (when the schedule was reported), source |
+
+- Current status = the most recent milestone; **Planned start year and planned retire
+  year now live in the scheduled timeline** as `operating` / `retired` scheduled events.
+- A pushed-back start year is a *new* scheduled `operating` event with the new year and
+  the new source year — the old projection stays as history.
+- One research finding often stages several entries (Case B in the training doc: a
+  pre-construction milestone **plus** a scheduled `operating` 2029 event).
+- For the actions workbook this means a status change stages `status + year + source`
+  and a projected year stages `status + event year + source year + source`; the
+  evidence.md says which entry type each staged row is. Whether inferred statuses carry
+  the inference year or no year as their milestone year is answered in the training
+  doc's Case D video — confirm before staging the first inferred batch under the new
+  model.
 
 ## Year-end rollover rule
 

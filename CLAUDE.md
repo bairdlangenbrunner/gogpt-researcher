@@ -11,13 +11,14 @@ Scaffolding for an agentic research workflow that helps a GEM researcher update 
 
 Where things live — **read on demand as the workflow dictates, not at session start**:
 
-- **The GOGPT Editing Manual** (Google Doc) — the authoritative methodology. Not in the repo; doc IDs for it and every other GEM doc in `docs/reference/sop_pointers.md`.
+- **The GOGPT Editing Manual** (Google Doc) — the authoritative methodology. Not in the repo; `docs/reference/sop_pointers.md` is the **editable link hub** for it, the current cycle's Update sheet + kickoff doc, and every other GEM doc (referenced, not copied — the live doc wins on conflict).
 - **SOPs** — `docs/sops/`: `update.md` (bread-and-butter country batch), `discovery.md`, `triage.md`, `qc.md` (memo only; includes the country close-out checklist).
 - **Workflow recipes** — `docs/workflows.md`: step-by-step command sequences for every workflow below.
-- **Reference docs** — `docs/reference/` (`lifecycle_rules.md`, `unit_conventions.md`, `controlled_vocab.md`, `gem_db_schema.md`, `source_roster.md`, `datasource_conventions.md`, `wiki_pages.md`, `staged_json_schema.md`, `workbook_conventions.md`, `confidence_tiers.md`, `sop_pointers.md`) and `docs/country_notes/`.
+- **Reference docs** — `docs/reference/` (`lifecycle_rules.md`, `unit_conventions.md`, `controlled_vocab.md`, `gem_db_schema.md`, `source_roster.md`, `datasource_conventions.md`, `wiki_pages.md`, `staged_json_schema.md`, `workbook_conventions.md`, `confidence_tiers.md`, `sop_pointers.md`) and `docs/country_notes/` (US states under `docs/country_notes/united_states/`; US scopes are per state — see Update SOP §3.1).
 - **Scripts** — `scripts/` (each script's docstring is its manual).
 - **Upstream pipeline** — `upstream/gogpt-tracker/`: verbatim import of the GOGPT leads' own tooling (see "Upstream" section below).
 - **Backlog** — `notes/backlog_captive_power_candidates.md`: the seeded first discovery input, pointing at candidate JSONs in the sibling LNG repo.
+- **NOT a GOGPT workflow** — `emissions/`: CREA scoping of NOx/SOx/PM emissions evidence (EIAs, air permits) for proposed gas plants. Self-contained: its own README, methods and plan; none of the SOPs, lanes, deliverable contract or hard requirements below govern it, and none of its rules belong in `docs/`. Trigger phrases: "CREA", "emissions scoping", "find the EIA / air permit".
 
 ## The batch input (and THE scope gotcha)
 
@@ -42,11 +43,11 @@ The pull engine lives ONLY in the sibling `../gem-db-ops` repo (no engine copies
 - **What the research process adopts from upstream** (wired into the Update SOP §3 and `docs/workflows.md` §2): the cross-cutting scans (`--ownership-scan`, `--in-progress-scan`, `--duplicate-scan`, `--possible-updates`), the unit-counts baseline check against the assignments tab, and full-country coverage by status group (their session order). Scans surface candidates only — they never auto-stage anything (upstream invariant, kept).
 - **The bridge**: `scripts/export_to_dump.py` converts the fresh scoped pull into a `GOGPTall*.xlsx` dump in `upstream/gogpt-tracker/data/`; the upstream scripts auto-detect the newest dump, so after bridging they run on batch-fresh data instead of the bundled cycle dump. Run it right after the §1 pull chain whenever a workflow calls the scans.
 - `upstream/gogpt-tracker/docs/METHODOLOGY.md` is the leads' distilled methodology; the Editing Manual remains authoritative and conflicts escalate per the rule below. Upstream has its own `requirements.txt` (pandas/xlsxwriter — not merged into this repo's).
-- **Public-repo privacy**: the upstream data files stay untracked — the possible-updates CSV contains researcher names, and this repo is public. Never let personal names from upstream content into commits.
+- The upstream data files stay untracked — multi-MB regenerable dumps and a Drive export that is refreshed each run (`.gitignore`). Personal names in committed content are allowed (user ruling 2026-09-15); credentials and third-party confidential material still never are.
 
 ## Read the manual + relevant SOPs first
 
-Before any batch: (1) confirm the Editing Manual's rules are available — the distilled versions in `docs/reference/` carry the working rules, `sop_pointers.md` has the doc IDs if the source is needed; (2) read the SOP for the workflow being run; (3) if an SOP contradicts the manual, flag to the user before proceeding — the manual is what GEM staff review edits against.
+Before any batch: (1) confirm the Editing Manual's rules are available — the distilled versions in `docs/reference/` carry the working rules, `sop_pointers.md` has the links if the source is needed; (2) read the SOP for the workflow being run; (3) if an SOP contradicts the manual, flag to the user before proceeding — the manual is what GEM staff review edits against.
 
 ## Workflow router
 

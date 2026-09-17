@@ -4,6 +4,34 @@ Largest single-country fleet in scope; EIA is the backbone data source, with
 a long tail of supplementary trackers and news sources for keeping pace with
 retirements/additions between EIA release cycles.
 
+**Research is organised per state** — Q4 2026 assignments, priority levels and
+days are per `United States - <State>` row on the assignments tab, and state
+files live in `united_states/` (start with `united_states/texas.md`). This
+file holds what is true of every state.
+
+## US-specific rules (Q4 2026; from the US Data/Research Guide + kickoff doc)
+
+- **IDs are the join keys — filling them is in scope.** Other IDs (location) =
+  EIA plant ID (system name as already used in the export); Other IDs (unit) =
+  EIA-860M Generator ID(s), comma-joined for a CC block; EIP (Oil & Gas Watch)
+  record IDs also live in Other IDs (location). Match every GEM plant to
+  EIA-860M, EIP and the Sierra Club sheet during the state pass.
+- **Sierra Club GEM-IDs-matched sheet is reference only** — use it to find
+  plants and cross-check IDs, never cite it, never share it outside GEM.
+- **IRPs**: a unit that appears in a utility Integrated Resource Plan gets the
+  IRP checkbox and, where the unit is only known from the IRP, the "IRP"
+  suffix in its unit name; log the IRP on the US IRPs tab.
+- **Data-center gas**: search every state for behind-the-meter gas serving
+  data centres; mark captive with industry type Data Centre. Emergency/backup
+  gensets are a unit-level checkbox, not a captive flag.
+- **ISO/RTO context** decides where in-development units are visible (queues,
+  CDR-type reports): ERCOT, SPP, MISO, PJM, NYISO, ISO-NE, CAISO, plus
+  non-RTO Southeast and Northwest (balancing-authority queues instead).
+- **EIA-860M** monthly is the status backbone (operating / planned /
+  retired / cancelled, with planned and actual dates); **EIA-860 annual** for
+  ownership shares and technology; **EPA CAMPD** for unit-level "actually
+  running" evidence.
+
 ## Regulators & official sources
 
 - **U.S. Energy Information Administration (EIA)** — the primary source for
@@ -68,6 +96,11 @@ retirements/additions between EIA release cycles.
   directly).
 
 ## Update notes
+
+- *2026-09-15* — added the per-state structure and the US-specific Q4 2026
+  rules (ID matching, IRP, data-center captive, Sierra Club reference-only)
+  from the GOGPT US Data/Research Guide, the Q4 kickoff doc and the Update
+  sheet's United States research tab. First state file: `united_states/texas.md`.
 
 - *2026-07-27* — seeded from GEM's team-wide "Gas/oil power plant data
   sources - by country" doc. Supplementary tool links (ArcGIS map, GridInfo,

@@ -49,6 +49,21 @@ Every batch starts from a fresh pull — never a cached CSV:
 
 **Work the "GEM trackers – possible updates" backlog DURING country research, not after.** Filter the backlog to the country at batch start and fold its items into the worklist — researching them alongside the country pass prevents duplicate review of the same plants. The upstream loader (`gogpt_csv_query.py --possible-updates`, optionally `--pu-file` with a flattened Drive read of the live sheet) does this filtering, including dropping rows already marked done.
 
+### §3.1 Cycle priorities — Q4 2026
+
+Read the cycle's kickoff doc (link hub: `docs/reference/sop_pointers.md`, "Current cycle") at batch start; the standing ladder above is unchanged, but the cycle adds emphasis and one required deliverable:
+
+1. **Newly announced plants** (discovery lane, folded into the country pass) and the **in-development review**.
+2. **Shelved / cancelled review** — record Latest Activity, Shelved Year, Cancelled Year when a unit is moved.
+3. **Retirements and planned retirements** — enter as timeline milestones / scheduled events (§4.1, §4.2).
+4. **In-development units with no start year** — a start year is expected; leave blank only after a search.
+5. **Turbine make/model for in-development units** — enter "not found" only after actually searching.
+6. **REQUIRED: operating units with unknown start year** — re-research, ≤10 min/unit, decade midpoint + internal note when only the decade is known (`lifecycle_rules.md` "Start year rules").
+
+The assignments tab gives each country / US state a **priority level** (high / medium / low, by in-development capacity). It scales how deep the "country tips" and discovery effort goes — it never reorders the unit ladder. A **Country tips trends** row for this cycle is required output for every country closed out.
+
+**United States scopes are per state.** `worklist.py` filters on `--country "United States"` only; until a `--state` filter lands, subset the scoped CSV on `State/Province` (full state name, e.g. `Texas`) before running the worklist and cross-cutting scans. US-only rules (ID matching, IRP checkbox, captive data-center plants) are in `docs/country_notes/united_states.md`; state source ladders under `docs/country_notes/united_states/`.
+
 ## §4 Update sub-types
 
 ### §4.1 Status updates
@@ -66,7 +81,8 @@ The most rule-bound sub-type. The manual's status vocabulary: `announced`, `pre-
 
 ### §4.2 Year fields
 
-- **Start Year** exists in the past only for `operating`, `mothballed`, `retired` units. For **in-development** units it is a *projected* year and the **Planned checkbox must be checked** (unchecked once operational). **Shelved and cancelled units never have a Start Year** — blank the year and its reference if staging one of those statuses.
+- **Start Year** exists in the past only for `operating`, `mothballed`, `retired` units. For **in-development** units it is a *projected* year — under the 2026 status-timeline model it is entered as a **scheduled `operating` event** (event year + source year + source), not by overwriting a field; a pushed-back year is a new scheduled event, never an edit of the old one (`lifecycle_rules.md` "How status edits are entered"). **Shelved and cancelled units never have a Start Year** — blank the year and its reference if staging one of those statuses.
+- **Operating units with an unknown Start Year** are a required Q4 2026 deliverable: ≤10 min of research per unit; decade known → midpoint year + internal note ("decade estimate"). Stage the note text alongside the year.
 - **Retired Year** — the year the unit went offline; never on mothballed units. **Planned Retire Year** carries the Planned checkbox until the retirement actually happens.
 - **Year-end cycle rule**: during the second annual update (concluding in December), no in-development or retiring unit may keep the current (ending) year as its start/retirement year without a source confirming it happened — push unconfirmed current-year dates to the following year.
 - A **replaced unit** (new turbine, old one scrapped) is a retirement + a new unit (`newunits` lane, name suffixed "R"), not an edit to the old unit's start year. Maintenance/upgrades never change the start year (capacity/technology may change; retirement year may extend).
@@ -182,7 +198,7 @@ When the human has applied the batch, the country isn't done until:
 - Assigned Comments in the database are reviewed and resolved
 - The country's "GEM trackers – possible updates" items are cleared (researched + annotated with initials/date/notes)
 - Country Tips are updated with anything learned (mirror durable findings into `docs/country_notes/`)
-- The GC/Country Checklist is completed
+- The GC/Country Checklist is completed — including the cycle-doc items (Country tips trends row for this cycle; assignments-tab status columns) and, for US states, the USA-only block (`docs/sops/qc.md` §6)
 - The **DB Validation Report** for the country is run (Projects tab → country search → "GOGPT Validation Report") and errors resolved — validation errors on co-located coal/gas project fields or coal-to-gas-conversion unit fields are **low priority / optional**
 - A time estimate for the next cycle is logged in the roster's notes
 - The roster row moves to `done`; the PM reviews and may flag fields — process flags as a small follow-up batch

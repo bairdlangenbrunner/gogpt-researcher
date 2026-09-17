@@ -78,5 +78,5 @@ Memo only; stages no edits. Full rules in the QC SOP — including the GC/Countr
 
 1. New quarter: create `campaigns/<quarter>/` (copy the README from the prior quarter, update the slug).
 2. Fresh pull (§1), then `python build_campaign_roster.py --campaign <quarter>` → `campaigns/<quarter>/roster.csv` (per-country in-development/status counts, sorted by in-dev volume; the manual columns `assignee_role`/`assignment_status`/`packet_file`/`applied`/`notes` survive refreshes).
-3. Mirror the quarter's "Researcher Country Assignments" tab (sheet ID in `sop_pointers.md`) into `assignee_role` — **role names only, never personal names; this repo is public.**
+3. Mirror the quarter's "Researcher Country Assignments" tab (link in `sop_pointers.md`) into `assignee_role` — names are fine (ruling 2026-09-15). For US rows the tab is per state; the roster script keys on country only, so mirror US states by hand until a `Country/State` key lands (`campaigns/q4-2026/README.md`).
 4. Re-run step 2 anytime mid-quarter to refresh counts; roster edits beyond the manual columns belong in the generator, not the CSV.

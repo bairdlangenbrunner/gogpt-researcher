@@ -3,6 +3,12 @@
 One file per country, distilled from research experience on the Global Oil and Gas
 Plant Tracker (GOGPT). Use `_template.md` as the starting point for new countries.
 
+**Subnational scopes** (research assigned per state/province — currently the United
+States) get a subfolder named after the country file: `united_states.md` holds what is
+true nationwide, `united_states/<state>.md` holds the state's source ladder, regulator
+stack and gotchas. Use the same `_template.md`; the state file's scope line names the
+ISO/RTO and the cycle's priority level / days from the assignments tab.
+
 ## Origin
 
 These notes descend from GEM's team-wide crowdsourced Google Doc, **"Gas/oil power
@@ -15,8 +21,9 @@ source lead if you're not sure it belongs in a repo-local file yet.
 This directory is the repo-local **distillation** of that doc: a smaller, curated
 set of country files scoped to what a GOGPT researcher actually needs at the start
 of a batch, kept close to the code/data it supports and versioned with the rest of
-the repo. When pulling material from the Google Doc into a file here, strip
-personal names and internal attributions — this repo is public.
+the repo. Personal names and researcher attributions may be kept when pulling material
+in (ruling 2026-09-15); credentials and third-party confidential material still
+never go in.
 
 ## How to use
 
@@ -39,6 +46,7 @@ personal names and internal attributions — this repo is public.
 
 - `nigeria.md`, `south_africa.md`, `india.md`, `germany.md`, `vietnam.md`,
   `brazil.md`, `united_states.md`, `russia.md`
+- US states: `united_states/texas.md`
 
 Countries not listed should be created from `_template.md` when first researched.
 

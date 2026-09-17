@@ -55,5 +55,5 @@ GOGPT research (e.g. "large, well-documented gas fleet; low priority for oil").
 ## Update notes
 
 - *YYYY-MM-DD (batch <ID if applicable>)* — what changed and why, in one or
-  two lines. Do not use personal names (this repo is public) — refer to
-  "a researcher" or "the batch team" if attribution is needed at all.
+  two lines. Naming the researcher is fine (ruling 2026-09-15); never
+  credentials or third-party confidential material.

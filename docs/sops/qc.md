@@ -64,7 +64,12 @@ Once the human has applied the batch (or at the natural end of the country's res
 - Assigned Comments in the database are reviewed and resolved
 - The "GEM trackers – possible updates" backlog items for the country are cleared — researched and annotated with initials/date/notes (`docs/sops/triage.md` §6)
 - Country Tips are updated with anything learned this cycle; durable findings mirrored into `docs/country_notes/<country>.md`
-- The **GC/Country Checklist** is completed
+- The **GC/Country Checklist** (QC/Country checklist tab of the cycle's Update sheet — link hub `docs/reference/sop_pointers.md`) is completed. Its blocks, mirrored here so a batch can self-check before the human ticks the tab:
+  - *During research*: unit counts reconciled against the assignments tab; every unit has a Record of Full Updates entry; Assigned Comments resolved; possible-updates backlog cleared; Country Tips updated
+  - *Cycle docs*: a **Country tips trends** row for this cycle; the researcher-maintained status columns on the assignments tab filled
+  - *USA only* (each US state): **IRP checkbox** ticked on every unit that appears in an Integrated Resource Plan (and the "IRP" unit-name suffix rule applied); **US IRPs** tab and **United States research** tab rows updated; GEM IDs matched to **EIA-860M** (plant ID → Other IDs location, generator ID → Other IDs unit), **EIP** and the **Sierra Club** sheet (reference only — never cited); **data-center gas** searched and behind-the-meter plants marked captive with the data-centre industry type; US Data/Research Guide consulted
+  - *Optional*: wiki Background text, entity clean-up beyond the batch's own edits
+  - *End of update* (cycle close, 2026-12-18 → 12-24): the validation report and year-end rollover pass below
 - The **GOGPT Validation Report** is run for the country (Projects tab → country search → "GOGPT Validation Report" tab) and errors resolved. **Exception**: validation errors on project-level fields for co-located coal/gas plants (e.g. missing datasource for shared location or owner) or unit-level fields for coal-to-gas-conversion units (e.g. missing datasource for CCS) are **optional / low priority** — the manual explicitly deprioritizes these
 - A time estimate for the next cycle is logged in the roster's notes (`campaigns/<quarter>/roster.csv`)
 - The roster row moves to `done`; the PM reviews and may flag fields needing revisit — process flags as a small follow-up batch
