@@ -5,6 +5,11 @@
 *.colmap.json
 *.csv
 !campaigns/**/roster.csv
+!emissions/coverage/*.csv
+!emissions/findings/*.csv
+!emissions/sources/*.csv
+# emissions source downloads: large third-party files, register is sources/downloads.csv
+emissions/sources/raw/
 
 # Derived sweep / worklist outputs (regenerable by worklist.py / scope_filter.py /
 # qc_checks.py). Scripts default to writing under work/ (ignored except its

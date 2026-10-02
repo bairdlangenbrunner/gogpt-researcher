@@ -1,6 +1,7 @@
 # Brazil — where gas-plant emissions data live
 
-Last updated: 2026-09-17, after two scouting passes (six plants looked at).
+Last updated: 2026-09-18, after two scouting passes (six plants looked at) and
+the Step 0 source survey, then the IBAMA process match.
 Status labels are defined in [`README.md`](README.md). Values read out of the
 documents are in `../findings/brazil_scout_20260917.md` (first pass) and
 `../findings/brazil_construction_scout_20260917.md` (second pass); this file
@@ -8,20 +9,36 @@ only says where things are.
 
 ## At a glance
 
-- **Who licenses:** mostly the **state** environment agency, one per state,
-  each with its own website and habits. IBAMA (federal) takes a minority of
-  plants; none of the six looked at so far was IBAMA-licensed.
+- **Who licenses:** on paper, IBAMA for any thermal plant of **300 MW or
+  more** (Decreto 8.437/2015, art. 3º, VII, b, under LC 140/2011 art. 7º, XIV,
+  h), the state agency below that. In practice the state agency very often
+  licenses large plants too: processes begun before April 2015 stay where they
+  started (art. 4º), and IBAMA can delegate. None of the six plants in the
+  scouting passes was IBAMA-licensed, but that was a small sample: IBAMA's
+  thermal-plant list (98 processes, matched 2026-09-18) holds Litos,
+  TermoLinhares, Norte Fluminense 2, Geramar III, Tupã, Gaslub, Brasil
+  Central, Centro Oeste, Queluzito, Porto Norte Fluminense and Araucária, and
+  has new 2025–26 processes touching Porto de Sergipe, Presidente Kennedy and
+  Jandaia (`../findings/brazil_ibama_20260918.md`). 34 of the 65
+  pipeline plants (16 of the 37 under construction or in pre-construction) are
+  ≥ 300 MW, so the licensor is still confirmed plant by plant.
 - **What decides whether documents can be found:** the state agency, and
   whether a development bank lent. Not the project, and not how far along
   construction is.
 - **Best route:** the agency's EIA/RIMA library → the **full EIA**, not the
   RIMA → its air-quality / dispersion-modelling chapter or annex.
-- **Evidence to expect:** B + C + stack parameters. A (annual tonnes) in São
-  Paulo, because CETESB requires t/ano per source. Operating plants have
-  self-reported annual tonnes in IBAMA's open data — usable for NOx, weak for
-  SOx and PM.
+- **Evidence to expect:** B + C + stack parameters, as full-load rates with no
+  operating assumption (`rate-only`). São Paulo adds annual tonnes because
+  CETESB requires t/ano per source, but the Lins figure is full load × 8,760 h
+  — a **potential** emission, not an estimate. No Brazilian EIA read so far
+  states operating hours. The actual figures are on the operating side:
+  self-reported annual tonnes in IBAMA's open data, flagged measured,
+  calculated or estimated — usable for NOx, weak for SOx and PM.
 - **Pipeline:** 65 plants in 20 states with an announced, pre-construction or
-  construction unit (GOGPT pull 2026-09-17); 83 operating plants.
+  construction unit (GOGPT pull 2026-09-18); 53 gas plants with operating
+  units (the 83 counted on 2026-09-17, and the per-state "Operating" column
+  below, also include oil and blast-furnace-gas plants). Per-plant search
+  state: `../coverage/brazil.csv`.
 - **A licence implies a study.** Registering for an energy auction needs a
   valid environmental licence, so every LRCAP 2026 winner holds at least an LP
   and a study exists somewhere. Two catches: the study may describe an older
@@ -40,7 +57,35 @@ only says where things are.
 | State environment-council decisions (e.g. COPAM) | That a licence exists, its number, the licensed plant names | none | Yes |
 | RAS / simplified study | May have no dispersion modelling at all | — | Suspected for conversions; none seen yet |
 | Lender ESIA package (IFC, IDB Invest) | Full ESIA and dispersion annexes, as of financial close | B, C, stack | Yes |
-| RAPP annual report to IBAMA | Annual tonnes per operating plant, self-reported | A | Yes, as open data |
+| RAPP annual report to IBAMA | Annual tonnes per operating plant, self-reported for the actual year (`measured` or `reported-actual`, by the method flag) | A | Yes, as open data |
+
+## Where to look — by source class
+
+Source survey of 2026-09-18 (Step 0 of `../search_plan.md`): every one of the
+twelve classes has a row, including the empty ones. Candidates were tried on
+pipeline plants (Azulão, Manaus III) and operating ones (GNA I, Porto de
+Sergipe I). Two extra labels: **does not exist** and **exists, not public**.
+
+| # | Class | Source | URL | Status | What it yields |
+|---|---|---|---|---|---|
+| 1 | Environmental assessment | State agency EIA/RIMA libraries — one per state, table below. No national register of studies | below | varies by agency | Full EIA: B + C + stack; A in São Paulo |
+| 1 | | PNLA, the national licensing portal | — | per the partner, a directory of state sites rather than a searchable database; not tested | Nothing of its own |
+| 1 | | IBAMA, for federally licensed plants | `servicos.ibama.gov.br/licenciamento/consulta_empreendimentos.php` | open, with method — an old PHP form, no login or captcha. GET the page for a session cookie, then POST `formDinAcao=Pesquisar&vartipologia=9` (9 = "Usina Termelétrica"): 98 processes on one page, all fuels. Each row is a form carrying `processo` and `cod_empreendimento`; its stage cells (TR, studies, hearing, LP, LI, LO) are colour-coded. POST `modulo=empreendimento&cod_empreendimento=<n>` for the developer and status; add `formDinAcao=Documentos do processo` for the document list. Page encoding is Latin-1 | Process number, plant name, developer and CNPJ, state (often blank), licensing stage, no opening date. The documents tab lists **licences, authorisations and pareceres, not the EIA**, and is empty for 58 of 98; a listed document opens via `formDinAcao=btngdAbrir` → `modulos/documentos.php?cod_documento=<id>`. All 98 and the method: `../findings/brazil_ibama_20260918.md` |
+| 1 | | **IBAMA study library (SharePoint)**, where IBAMA keeps the EIAs | `licenciamento.ibama.gov.br` (Cloudflare challenge; passes with `curl_cffi` Chrome impersonation) redirects to an anonymous share link into `https://ibamagovbr.sharepoint.com/sites/EstudosAmbientais/Documentos Compartilhados/Licenciamento/Termeletricas` | open, with method — take the `FedAuth` cookie from the share-link redirect, then SharePoint REST (`_api/web/GetFolderByServerRelativeUrl(…)/Folders`, `/Files`; `GetFileByServerRelativeUrl(…)/$value`) | 33 project folders: full EIA + RIMA for Litos and NSF (2017–20), a SEI dossier export for TermoLinhares, a RAS for Suape 5 (4,380 h/yr stated; only CONAMA limits). Processes still before their EIA (Porto de Sergipe 2026, NSF 1 e 2, Araucária) have nothing yet. SEI public search (`sei.ibama.gov.br`) is captcha-gated: manual only, for dates |
+| 2 | Licence and conditions | State licence lists and council decisions: IPAAM "licenças concedidas" spreadsheets (https://www.ipaam.am.gov.br/licencas-ambientais-concedidas/), SUDEMA COPAM decisions, SEMAS-PA SIMLAM | — | open | That a licence exists, its number and holder. Licence texts with emission limits: not found for any plant |
+| 3 | Consultation and hearing records | Hearing notices (agency sites, state gazettes); Querido Diário, a search API over municipal gazettes | https://queridodiario.ok.org.br | open; the API query syntax still to be worked out | Notices that sometimes link the proponent's document folder (Jandaia). Not yet run on a plant |
+| 4 | Emissions reporting | **IBAMA RAPP — "Emissões de poluentes atmosféricos"** | https://dadosabertos.ibama.gov.br/dados/RAPP/emissoesPoluentesAtmosfericos/relatorio.csv (59 MB, `;`-separated) | open | Annual tonnes per **CNPJ** (not per plant or stack), 2013–2025, by pollutant (NOx, CO, MP, SOx), with the method (Medição / Cálculo / Estimativa) and activity category. 366 CNPJs under "Produção de energia termoelétrica", 212 of them with NOx for 2023 or 2024. Test: UTE GNA I, NOx 1,294 / 301 / 1,250 / 1,637 t for 2021–24, measured. No plant id — join on CNPJ from ANEEL SIGA. A company with several plants under one CNPJ reports one figure |
+| 4 | | State stack-source inventories: CETESB's annual air-quality report (RQAR); INEA's fixed-source monitoring programme | `cetesb.sp.gov.br/ar/` | CETESB: open, with method (WAF; a fresh token for `/ar/` not yet tried). INEA: blocked | Whether RQAR lists emissions per company is unconfirmed |
+| 5 | CEMS and stack tests | Required by licence conditions and, in Rio de Janeiro, by Conema 84/2018; results go to the agency | — | **exists, not public** | The RAPP "Medição" flag is the only public trace |
+| 6 | Lenders and ECAs | IFC (Sergipe 39652; GNA I 40314), IDB Invest, KfW IPEX (GNA I, press only), BNDES | `disclosures.ifc.org` | open (IFC, IDB Invest); BNDES untested | Full ESIA with dispersion annexes where IFC lent |
+| 7 | Carbon market | CDM registry | `cdm.unfccc.int` | **does not exist** — no gas-fired power PDD found for Brazil | — |
+| 8 | Power regulator and operator | **ANEEL SIGA** | https://dadosabertos.aneel.gov.br/dataset/6d90b77c-c5f5-4d81-bdec-7bc619494bb9/resource/11ec447d-698d-4ab8-977f-b424d5deee6a/download/siga-empreendimentos-geracao.csv (8 MB, `;`-separated) | open | Licensed plant name, CEG code, state, municipality, phase (Operação / Construção / not started), fuel, kW, coordinates, and **owner with CNPJ** — the key to both the naming problem and the RAPP join |
+| 8 | | ONS open data, "Geração por Usina"; CCEE open data | `dados.ons.org.br` | open | Hourly generation per plant → utilisation |
+| 8 | | Auction results and EPE's lists of qualified projects | LRCAP 2026 result PDF on `ppi.gov.br` | **blocked** as of 2026-09-18 — the government WAF serves a block page with HTTP 200; not in Wayback. Try CCEE / EPE / ANEEL copies | Which plants must already hold a licence |
+| 9 | Company disclosure | Eneva, Petrobras, GNA sustainability reports and CVM filings | investor-relations sites | open | Corporate totals and method text only; no per-plant NOx / SOx / MP found. Filings remain the check on what is actually being built |
+| 10 | Secondary compilations | IEMA's thermoelectric inventory (PDF; see "Operating-plant data") and its plant map `usinas.energiaeambiente.org.br`; SEEG | — | open | The inventory's plant tables exist only in the PDF — ask IEMA for them. The map has no emissions fields. SEEG is greenhouse gases only |
+| 11 | Emission standards | CONAMA 382/2006 (new sources), 436/2011 (sources licensed before 2 Jan 2007); air-quality standards CONAMA 491/2018 → 506/2024 | see "National limits" | open | Fallback tier |
+| 12 | Access to information, people | LAI (Lei 12.527/2011): 20 days + 10, through Fala.BR for federal bodies and each state's e-SIC; Lei 10.650/2003 for environmental information | — | open, not yet used | The route for licence texts, CEMS reports and studies an agency does not post |
 
 ## Where to look — state agencies
 
@@ -50,18 +95,18 @@ checked against a live site.
 
 | State | Pipeline (plants, MW) | Operating | Agency | Status | Notes |
 |---|---|---|---|---|---|
-| Rio de Janeiro | 10, 13,575 | 16 | INEA-RJ | untested | Most plants of any state — the next portal to learn |
-| Amazonas | 6, 3,094 | 7 | IPAAM | untested | Two plants under construction (Azulão, Manaus I) |
-| Pernambuco | 5, 1,986 | 8 | CPRH | untested | |
-| São Paulo | 4, 3,253 | 7 | **CETESB** | open, with method | AWS WAF challenge; method below. Posts whole licensing files and requires kg/h **and t/ano** per source, so every São Paulo plant should reach A |
+| Rio de Janeiro | 10, 13,575 | 16 | **INEA-RJ** | blocked | Every host refuses or times out from a US address. The library page (read via Wayback) says studies are consulted in person. Most plants of any state |
+| Amazonas | 6, 3,094 | 7 | **IPAAM** | open | Library with a page per project: Azulão, Manaus I / II (RIMA), Manaus III (full EIA), Itacoatiara, Eneva Silves–Itapiranga, Sparta |
+| Pernambuco | 5, 1,986 | 8 | **CPRH** | open, with method | Bad TLS certificate (`curl -k`); the library is a JavaScript page. Only a simplified study (RAS, Pernambuco III) found so far |
+| São Paulo | 4, 3,253 | 7 | **CETESB** | open, with method | AWS WAF challenge; method below. Posts whole licensing files and requires kg/h **and t/ano** per source, so every São Paulo plant should reach A — but check the hours behind it: at Lins the t/ano is 8,760 h at full load (`potential`) |
 | Espírito Santo | 4, 3,816 | 5 | **IEMA-ES** | open | Whole EIAs, chapter by chapter, listed by year; a state-wide EIA register |
-| Sergipe | 4, 4,035 | 1 | **ADEMA-SE** | blocked | Every host times out. IFC disclosure covers the complex as planned in 2017 |
+| Sergipe | 4, 4,035 | 1 | **ADEMA-SE** | open, unexplored | Answering again on 2026-09-18 (`adema.se.gov.br`, with an "estudos ambientais" page); was timing out on 09-17. IFC disclosure covers the complex as planned in 2017 |
 | Ceará | 4, 3,772 | 3 | **SEMACE** | blocked | 403 on the whole state portal |
-| Bahia | 4, 586 | 8 | INEMA | untested | |
+| Bahia | 4, 586 | 8 | **INEMA** | open | Library with full EIAs in volumes (UTE Global VII, Sulbahia 1, Barra do Rocha I). The process-lookup host times out |
 | Piauí | 4, 973 | 0 | SEMARH-PI | untested | |
-| Alagoas | 4, 742 | 0 | IMA-AL | untested | |
-| Goiás | 3, 2,799 | 3 | SEMAD-GO | untested | |
-| Pará | 2, 2,330 | 0 | **SEMAS-PA** | link rot | Site migration broke every old `/wp-content/uploads/` link |
+| Alagoas | 4, 742 | 0 | **IMA-AL** | open | RIMAs only (UTE Pilar Nova); no full EIA found |
+| Goiás | 3, 2,799 | 3 | SEMAD-GO | untested — no library found; the portal is a JavaScript application that needs a browser | |
+| Pará | 2, 2,330 | 0 | **SEMAS-PA** | link rot for old files; process lookup open | Site migration broke every old `/wp-content/uploads/` link. SIMLAM public lookup answers — not yet queried |
 | Paraíba | 2, 347 | 3 | **SUDEMA-PB** | open | Council (COPAM) decisions only — no studies posted |
 | Maranhão | 2, 2,192 | 3 | SEMA-MA | untested | |
 | Mato Grosso do Sul | 2, 330 | 2 | IMASUL | untested | |
@@ -83,6 +128,26 @@ Name collision: **IEMA-ES** is Espírito Santo's state agency. **IEMA**
 thermoelectric emissions inventory.
 
 ### Agency detail
+
+**IPAAM-AM — open.**
+- Library: https://www.ipaam.am.gov.br/eia-rima-site/ — one page per project,
+  PDFs under `/wp-content/uploads/`.
+- Full EIA confirmed: UTE Manaus III (38 MB),
+  `http://www.ipaam.am.gov.br/wp-content/uploads/2024/03/EIA-MANAUS-III-site.pdf`,
+  with an air-quality chapter; values not yet read.
+- Licences granted, as spreadsheets:
+  https://www.ipaam.am.gov.br/licencas-ambientais-concedidas/
+
+**INEMA-BA — open.**
+- Library: https://www.ba.gov.br/inema/estudos-ambientais/avaliacao-ambiental/eia-rima
+- Full EIA confirmed: UTE Global VII, vol. I (50 MB),
+  `https://www.ba.gov.br/inema/sites/site-inema/files/migracao_2024/arquivos/wp-content/files/EIA.pdf`.
+  None of the four Bahia pipeline plants has been looked for yet.
+
+**INEA-RJ — blocked.** `inea.rj.gov.br`, the licensing portal and the
+air-quality system all refuse or time out, to curl and to the fetch tool
+(2026-09-18, three separate attempts). Wayback shows the site's structure only. Behaves
+like a geography rule; same likely fix as SEMACE.
 
 **IEMA-ES — open.**
 - EIAs by year: `https://iema.es.gov.br/GrupodeArquivos/EIA-<year>` (2013 list:
@@ -117,9 +182,11 @@ licence numbers and the *licensed* plant names, which can differ from the
 tracker's (Termo João Pessoa is licensed as UTE Termoparaíba II and siblings).
 The studies need an access-to-information (LAI) request or a partner.
 
-**SEMAS-PA — link rot.** Old URLs 404 and Wayback is the only route. Not yet
-tried: the SIMLAM public process lookup using process numbers (Novo Tempo
-Barcarena: LP 2017/44570, LI 2019/48189 and 2020/22534); an LAI request.
+**SEMAS-PA — link rot, lookup open.** Old URLs 404 and Wayback is the only
+route to them. The SIMLAM public process lookup answers
+(`https://monitoramento.semas.pa.gov.br/simlam/`); next is to query it with
+the known process numbers (Novo Tempo Barcarena: LP 2017/44570, LI 2019/48189
+and 2020/22534). Then an LAI request.
 
 **SEMACE-CE — blocked.** `semace.ce.gov.br` redirects to `www.ce.gov.br`, which
 sits behind an F5 Distributed Cloud WAF (`server: volt-adc`) and returns 403
@@ -130,14 +197,61 @@ a cookie does not help; it behaves like an IP-reputation or geography rule.
 applicant log-in, with no public process search. `mobile.semace.ce.gov.br`
 returns 503. Likely fix: a Brazilian residential or VPN exit, or a partner.
 
-**ADEMA-SE — blocked.** Every host times out with no TCP answer, on every
-route. Either down or dropping foreign traffic. Same fix as SEMACE.
+**ADEMA-SE — open, unexplored.** Timed out on every route on 2026-09-17;
+answered normally on 09-18, so it was an outage or an intermittent rule.
+`https://adema.se.gov.br/estudos-ambientais-2/` is the studies page; not yet
+walked.
+
+## Route lists and agency order
+
+**Pipeline track**
+1. **Tier 0 first, for all 65:** ANEEL SIGA for the licensed name, SPV and
+   CNPJ; then the licensor — IBAMA's search, by `curl` (34 plants
+   are ≥ 300 MW and could be federal), auction lists for who must hold a
+   licence.
+2. Agency libraries, in the order below.
+3. IFC / IDB Invest / BNDES once across all owners.
+4. Querido Diário and state gazettes for hearing notices, for plants whose
+   agency posts nothing.
+5. LAI requests, started early for the known walls since they take 20–30 days.
+6. CONAMA 382 limit as the fallback.
+
+**Agency order for the document hunt** (re-ranked 2026-09-18 by hunting-set
+plants × what the agency is known to post; to be re-ranked again after Tier 0
+shows IBAMA's share):
+
+| Order | Agency | Hunting-set plants | Why here |
+|---|---|---|---|
+| 1 | IPAAM-AM | 5 | Open library; every one of the five has a page; one full EIA confirmed |
+| 2 | INEMA-BA | 4 | Open library with full EIAs; our four not yet looked for |
+| 3 | CETESB-SP | 1 done + 3 announced | Method known; the only route to evidence A |
+| 4 | IEMA-ES | 2 (1 done) + 2 announced | Open; state register makes it a short sweep |
+| 5, or first | IBAMA | 11 confirmed + several ambiguous (matched 2026-09-18) | Holds more than a handful, so **goes first, largest plants first** (partner's advice); studies are on IBAMA's SharePoint and scriptable. Its 2025–26 processes have no EIA yet; post-June-2025 EIAs will follow the standard terms of reference |
+| 6 | SEMAS-PA | 2 | SIMLAM answers and process numbers are in hand |
+| 7 | ADEMA-SE | 1 + 3 announced | Reachable again; library unexplored |
+| 8 | IMA-AL | 4 | Open but RIMA-only so far; all engines — the non-CCGT case |
+| 9 | CPRH-PE | 3 | Reachable with method; nothing for our plants yet |
+| 10 | INEA-RJ | 5 + 5 announced | Most plants, but blocked and reportedly in-person only: partner / Brazilian exit / LAI rather than scripted attempts |
+| 11 | SEMAD-GO | 3 | No library found |
+| — | SEMACE-CE (1), SUDEMA-PB (2) | | Known walls, not re-tested: LAI or partner |
+| — | IMASUL-MS (2), IAT-PR (1), SEMA-AP (1) | | Sites answer; unexplored; only if time remains |
+
+**Operating track**
+1. IBAMA RAPP CSV, joined to the frame on CNPJ taken from ANEEL SIGA.
+2. IEMA's inventory for the coherence verdict per plant (ask IEMA for the
+   tables).
+3. ONS generation by plant, for utilisation and to turn RAPP tonnes into
+   intensities.
+4. IFC / IDB Invest packages for the DFI-financed plants (GNA I, Porto de
+   Sergipe I).
+5. Nothing else: CEMS and stack tests are not public, company reports have
+   no per-plant figures, there are no CDM documents.
 
 ## Where to look — federal, lenders and other routes
 
 | Source | Covers | URL | Status | What it yields |
 |---|---|---|---|---|
-| IBAMA licensing search | Federally licensed projects | `servicos.ibama.gov.br/licenciamento/consulta_empreendimentos.php` (also `licenciamento.ibama.gov.br`) | open, not yet used — a form-driven search, not scripted. One scout reported it login-gated; it is not | Not known yet |
+| IBAMA licensing search and study library | Federally licensed projects | `servicos.ibama.gov.br/licenciamento/consulta_empreendimentos.php`; studies on IBAMA's SharePoint via `licenciamento.ibama.gov.br` | open, scripted — see the source table, class 1 | Process list and licences; full EIAs where the process has reached the study stage |
 | IFC disclosure | DFI-financed plants | https://disclosures.ifc.org/project-detail/ESRS/39652/celse (CELSE / Porto de Sergipe I, ~60 PDFs) | open | Full ESIA and dispersion annexes: B + C + stack |
 | IDB Invest | same | project 12048-01; https://idbinvest.org/sites/default/files/2018-12/celse_esrs_esap_final_oct_17_0eng.pdf | open | Summaries only |
 | BNDES | domestically financed plants | — | untested | Novo Tempo Barcarena was reported as BNDES plus private funds; no disclosure found |
@@ -181,6 +295,23 @@ Paraíba LPs.
   50 mg/Nm³ and CO 65, the modellers used the CONAMA 382 limit × design flow
   (Kennedy, Sergipe). About 18 mg/Nm³ is the 9 ppm case CETESB recommends.
 - Annual tonnes, where given, are 8,760 h at full load (Lins).
+- **IBAMA's standard terms of reference for thermal-plant EIAs (26 June 2025)**
+  — for new federal processes only. It requires emissions in g/s **and**
+  t/ano, rates per MWh, stack height, temperature, flow, exit velocity and
+  SIRGAS coordinates, the calculation memo and emission factors, and a
+  dispersion study at full load (critical), **average operation (typical)**
+  and start-up. The typical case is the one that gives a reasoned estimate
+  rather than a potential one. The capacity-factor-versus-100 % pair is
+  required explicitly only for greenhouse gases, so check what hours the
+  pollutant t/ano rests on. For gas it lists NOx, CO, CO2, COV and O3 as the
+  minimum; PM and SO2 are on the coal list — expect them only where a liquid
+  backup fuel is licensed (a screening variable). PDF:
+  https://www.gov.br/ibama/pt-br/assuntos/notas/2025/ibama-publica-novo-termo-de-referencia-para-estudo-de-impacto-ambiental-de-usinas-termeletricas/2025-06-26_tr_termeletricas_revisao_pos_consulta_final.pdf
+  (the note page itself is login-gated to scripts; the PDF path is not).
+  EIAs older than mid-2025 do not follow it.
+- Where tonnes are missing, the turbine specification, exhaust flow and stack
+  parameters give a rate (`rate-only`), and ANP's gas-specification sulphur
+  ceiling gives an SO2 upper bound — a bound, to be labelled `potential`.
 - SOx is typically computed from 70 mg/m³ sulphur in the gas, not measured or
   guaranteed. MP, SO2 and COV have no legal limit for gas turbines, so those
   rates are design or factor values.
@@ -204,8 +335,8 @@ practice can be tighter than the federal limit.
 
 - **IBAMA open data — RAPP reports.** Annual NOx, SOx, PM and CO tonnes per
   thermal plant, as reported by operators. Evidence type A, self-reported.
-  Portal: `dadosabertos.ibama.gov.br`; the exact dataset link is still to be
-  recorded here.
+  Dataset and fields: class 4 in the source-class table. It reports per CNPJ,
+  so plants sharing a company need splitting by other means.
 - **IEMA, *5º Inventário de Emissões Atmosféricas em Usinas Termelétricas***
   (Dec 2025, base year 2024) audited that dataset: of 67 fossil plants on the
   grid, 55 had NOx data and 35 were order-of-magnitude consistent with EMEP/EEA
@@ -217,8 +348,12 @@ practice can be tighter than the federal limit.
 
 ## People
 
-- **Instituto Arayara** — tracks and litigates gas projects; ask what they
-  already hold before spending more hours.
+- **Instituto Arayara** — tracks and litigates gas projects. In contact
+  through CREA (2026-09-18): they advise starting with a sample of the large
+  IBAMA-licensed plants, and have offered to help define it and to file the
+  LAI requests for whatever is not published. Their experience: refusals
+  usually cite commercial confidentiality over technical annexes, are
+  appealable and often reversed; federal requests go through Fala.BR.
 - **IEMA (Instituto de Energia e Meio Ambiente)** — authors of the inventory
   above; they know the RAPP data and its faults.
 - **Jandaia plaintiffs' lawyers** (Instituto Verdeluz, Povo Anacé) hold the
@@ -230,13 +365,20 @@ practice can be tighter than the federal limit.
 
 ## Next
 
-1. Learn INEA-RJ's portal (10 pipeline plants, 16 operating).
+1. Work the agencies in the order under "Route lists and agency order";
+   INEA-RJ needs a partner, a Brazilian exit or an LAI request.
 2. Sweep CETESB's libraries for the other São Paulo plants; all should reach A.
 3. Find the Lins licence text, to settle 25 vs 9 ppm.
 4. Test SEMACE and ADEMA from a Brazilian IP.
-5. IPAAM (Amazonas) and CPRH (Pernambuco): the next two states by plant count,
-   and Amazonas has two plants under construction.
-6. Script the IBAMA licensing search and find out which plants are federal.
-7. Record the exact IBAMA RAPP dataset link and try a pull for the 83
-   operating plants.
+5. IPAAM first (five plants, all with library pages), then INEMA-BA.
+6. IBAMA's 98 processes are matched (2026-09-18; `coverage/brazil.csv` and
+   `../findings/brazil_ibama_20260918.md`). Next: read the air chapters of the
+   IBAMA-held EIAs, largest first (Litos, TermoLinhares, Norte Fluminense 2,
+   Geramar III); resolve the flagged ambiguous matches; get opening dates for
+   the 2025 processes from SEI by hand.
+7. RAPP join: 10-plant pilot done (2026-09-18,
+   `../findings/brazil_rapp_pilot_20260918.md`); 5 full NOx series, 2 partial,
+   3 unusable. SIGA's owner CNPJ is rarely the filer; match by operator name,
+   town and the CNPJ registry. Next: the other 40 operating plants, then ONS
+   generation to check the tonnes.
 8. Retrieve the full CELSE EIA from the IFC page.

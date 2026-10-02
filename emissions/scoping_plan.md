@@ -1,6 +1,8 @@
 # Scoping plan — Vietnam and Brazil (drafted 2026-09-17)
 
-Working plan; edit freely. Context and boundaries in `README.md`; what to
+**Superseded as the working plan by `search_plan.md` (2026-09-18)**, which
+replaces sampling with systematic coverage. This file stays as the record of
+the two sampling probes and the open questions for CREA. Context and boundaries in `README.md`; what to
 capture in `methods_and_fields.md`.
 
 ## The question this pass answers

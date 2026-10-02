@@ -35,15 +35,21 @@ flagged as hard: **Vietnam and Brazil**.
 
 | Path | What |
 |---|---|
-| `scoping_plan.md` | The current plan: sample, search ladders per country, time-box, what goes back to CREA |
+| `search_plan.md` | **The current plan** (2026-09-18): systematic coverage — Vietnam as a census, Brazil all plants resolved to a licensor and a subset document-hunted |
+| `build_coverage.py` | Builds / refreshes `coverage/<country>.csv` from the fresh scoped export; hand-kept search columns survive a rebuild |
+| `portal_inventory.py` | Enumerates Vietnam's ministry consultation portal (every ĐTM and GPMT entry) into `coverage/vietnam_portal_all.csv`, with details for power / gas hits in `coverage/vietnam_portal_inventory.csv` |
+| `coverage/` | The frame: one row per fossil-gas plant, GEM facts + search state (licensor, outcome, document, evidence, rungs tried). Vocabulary in `search_plan.md` |
+| `scoping_plan.md` | The first plan and the record of the two 3 + 3 sampling probes of 2026-09-17: search ladders, what goes back to CREA, open questions |
 | `methods_and_fields.md` | Distilled from CREA's methods doc: the evidence ladder (which kind of number is best), the fields to capture, QC rules |
-| `draw_sample.py` | Seeded plant-level random sample from the fresh scoped export |
+| `draw_sample.py` | Seeded plant-level random sample from the fresh scoped export (used for the 2026-09-17 probes) |
 | `countries/` | Living index of **where** emissions data can be found, one file per country (`README.md` is the index; Brazil and Vietnam so far). Locations and access methods only — values stay in `findings/` |
-| `findings/` | One file per sampled plant (`_template.md` is the capture form), plus per-country scout notes |
+| `findings/` | One file per sampled plant (`_template.md` is the capture form), plus per-country scout notes and pilots. A pilot's `.py` rebuilds its `.csv` |
+| `sources/` | What was downloaded and accessed: `downloads.csv` (every saved file, with URL, date, sha256), `access_log.csv` (every web request, by session), `get.py` to download. Files in `sources/raw/`, not in git. See `sources/README.md` |
 
-Downloaded EIAs/permits are large third-party PDFs — keep them out of git
-(scratch or Drive), and record URL + retrieval date + page numbers in the
-findings file instead.
+Downloaded EIAs/permits are large third-party PDFs. Fetch them with
+`sources/get.py`, which saves them to `sources/raw/` (not in git) and adds a
+row to `sources/downloads.csv`. Findings cite the URL plus page numbers, not
+the local copy.
 
 ## Source docs (live docs win over anything distilled here)
 

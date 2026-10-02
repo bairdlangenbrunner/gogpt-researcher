@@ -20,6 +20,29 @@ interchangeable — record the fraction as reported.
 | E | Emissions + generation for a comparable plant | Derives a local intensity (kg/MWh) or a capacity regression, applies to similar plants | Only transfers between same fuel, technology, controls, era |
 | F | Interval / CEMS time series | Sums | Timestamps, operating state, bypass-stack coverage (operating plants only) |
 
+## Basis — actual or reasoned, versus potential
+
+The ladder says what *form* a number takes. It does not say whether the number
+describes what a plant emits. An annual total built on full load for 8,760
+hours is a **potential** emission, not an estimate: it says what the plant
+could emit if it never stopped, and gas plants never run like that. The scoping
+has to show, plant by plant, which kind we can get. Record it for every find,
+next to the ladder letter (`basis` in the coverage sheets).
+
+| `basis` | Meaning | Counts as actual or well-reasoned? |
+|---|---|---|
+| `measured` | Stack tests, CEMS, or an annual total the operator reports as measured | yes |
+| `reported-actual` | An annual total calculated or estimated from that year's real fuel use or generation (operator report, inventory) | yes |
+| `design-hours` | Predicted, and the document itself states a realistic operating assumption — hours, capacity factor, dispatch case | yes |
+| `rate-only` | A full-load rate or concentration with no operating assumption. Dispersion studies model the worst case, so this is the usual EIA result | only once paired with a defensible utilisation — real generation for an operating plant, a stated or comparable-plant figure for a proposed one. Say which |
+| `potential` | An annual figure at 8,760 h and full load, or derived from the permit limit | no. Back out the rate, record it as `rate-only`, and never quote the tonnes as an emission |
+| `limit-only` | A limit with no emission | no |
+
+How to tell: divide the annual figure by the mass rate. 8,760 means potential;
+anything else is the document's operating assumption, and it should be stated
+somewhere in the text — find it and cite the page. An annual figure whose hours
+cannot be recovered is `potential` until shown otherwise.
+
 A permitted **limit** is not an emission, but it is still wanted: the concept
 note's tiering is project-specific limits and controls in priority countries →
 national emission standards elsewhere → default factors where standards are
