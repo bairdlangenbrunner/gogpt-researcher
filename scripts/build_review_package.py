@@ -373,13 +373,21 @@ def backend_format_rows(lanes, export_csv):
         ident = rec.get("plant_name", "?")
         tier = rec.get("tier", "medium")
         base = [""] * len(header)
-        if rec.get("country") and "Country/Area" in col_idx:
-            base[col_idx["Country/Area"]] = rec["country"]
-        if rec.get("gem_plant_id") and "GEM plant ID" in col_idx:
-            base[col_idx["GEM plant ID"]] = rec["gem_plant_id"]
+        # Identity columns come from the record itself, not from `fields`,
+        # so the row is readable on its own (the export calls the plant ID
+        # column "GEM location ID"; older exports said "GEM plant ID").
+        for col, val in (("Country/Area", rec.get("country")),
+                         ("Plant name", rec.get("plant_name")),
+                         ("GEM location ID", rec.get("gem_plant_id")),
+                         ("GEM plant ID", rec.get("gem_plant_id"))):
+            if val and col in col_idx:
+                base[col_idx[col]] = val
         for unit in rec.get("units") or [None]:
             row = list(base)
             r_i = len(rows)
+            unit_name = (unit or rec).get("unit_name")
+            if unit_name and "Unit name" in col_idx:
+                row[col_idx["Unit name"]] = unit_name
             apply_staged(row, r_i, rec.get("fields", {}),
                          rec.get("refs", {}), tier, ident)
             if unit is not None:
