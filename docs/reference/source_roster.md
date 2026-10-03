@@ -36,6 +36,25 @@ it). Representative examples surfaced in the source doc:
 | Côte d'Ivoire | Ministry of Mines, Petroleum and Energy (`energie.gouv.ci`) | Annual activity reports |
 | Algeria | Sonelgaz (`sonelgaz.dz`) | Development plan with plant-level detail |
 | Russia | SO UPS scheme/programme reports | Progress reports on power-system development |
+| United States (PJM: MD, PA, NJ, DE, VA, WV, OH, DC and parts of IL, IN, KY, MI, NC, TN) | PJM Interconnection (`pjm.com`) | See "PJM data files" below |
+
+**PJM data files** (checked 2026-10-02; not bot-walled, plain curl works,
+but the queue web pages render from JavaScript, so go to the files):
+- Full interconnection queue, about 9,200 projects back to the early 2000s, all
+  statuses including withdrawn: `https://www.pjm.com/pub/planning/downloads/xml/PlanningQueues.xml`
+  (22 MB; fields include Name, CommercialName, State, County, Fuel, MWCapacity,
+  MWEnergy, Status, ProjectedInServiceDate, ActualInServiceDate, WithdrawalDate,
+  TransmissionOwner). Verify with `url_verifier.py --timeout 120`; read the
+  record from a downloaded copy and quote it in the note, as with EIA Excel files.
+- Transition-cycle projects: `https://www.pjm.com/pub/planning/downloads/xml/transitionProjects.xml`.
+- Deactivations: the notices page
+  `https://www.pjm.com/planning/service-requests/gen-deactivations/generator-deactivation-notices`
+  links each plant's deactivation letter and PJM's response as PDFs (cite the
+  PDF); currently mothballed units:
+  `https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-mothballed-units.xlsx`.
+- Old addresses that now 404: `pub/planning/downloads/xls/PlanningQueues.xlsx`,
+  `planning/services-requests/interconnection-queues`. The `services.pjm.com`
+  queue export needs a key; don't use it.
 
 For a country not yet seeded in `docs/country_notes/`, search pattern:
 `"<country>" ministry OR authority energy OR electricity statistics

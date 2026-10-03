@@ -11,13 +11,15 @@ the carrier project), generalized for GOGPT plant/unit citations. The
 soft-error title list is a generic set (paywall/SSO/Cloudflare/rate-limit
 signals); nothing here is LNG-tracker-specific.
 
-PDF sources (regulator filings, environmental permits, owner/operator IR
-decks — a large share of Tier 1 citations) are detected by content-type /
-`.pdf` path / `%PDF` magic and run through `pdftotext -layout` before the
-content check, so a cited PDF is verified for its expected strings just like
-an HTML page. This requires the poppler `pdftotext` CLI.
-A scanned/image PDF with no text layer (or a missing pdftotext) fails with a
-clear reason rather than a misleading "missing expected content".
+Fetching goes through the shared escalation ladder in fetch.py (2026-10-02):
+curl with a browser UA, then curl_cffi browser-fingerprint impersonation on
+any 401/403/429 or bot wall, then a real-Chrome clearance cookie for JS
+challenges; sec.gov gets SEC's declared-identity User-Agent instead. PDFs
+(regulator filings, permits, IR decks) are verified on their extracted text
+(pdftotext -> pypdf -> OCR), zip bundles on their members' text. A PDF with
+no recoverable text fails with a clear reason rather than a misleading
+"missing expected content". A passing reason names any escalation used,
+e.g. "OK (via cf_impersonate)".
 
 Two modes:
   - strict=True: raises CitationError on failure (use in build scripts where
@@ -41,9 +43,9 @@ CLI to append one JSONL line per check ({ts, url, expected, ok, reason}). This i
 the durable record of which URLs were verified with which tokens — without it a
 batch's verification evidence lives only in scrollback.
 
-Bot-block ≠ dead (Wayback fallback): a 401/403/429 — or a 200 serving a
-Cloudflare/paywall interstitial — means the page is LIVE but refusing bots, not
-gone. Dropping such a citation is a real-miss class. When the live fetch hits
+Bot-block ≠ dead (Wayback fallback, the LAST rung): when the whole fetch.py
+ladder still ends on a 401/403/429 — or a 200 serving a Cloudflare/paywall
+interstitial — the page is LIVE but refusing bots, not gone. Dropping such a citation is a real-miss class. When the live fetch hits
 one of these, the verifier now falls back to the newest Wayback Machine
 snapshot and runs the same content check against it; a pass returns ok=True
 with a reason string naming the snapshot, so a bot-blocked but value-verified
@@ -54,10 +56,11 @@ import json
 import re
 import os
 import subprocess
-import tempfile
 import sys
 import time
 import urllib.parse
+
+from fetch import fetch_page
 
 
 class CitationError(Exception):
@@ -117,131 +120,20 @@ _SOFT_ERROR_TITLES = (
 )
 
 
-def _run_pdftotext(path):
-    """Extract text from a saved PDF via poppler's pdftotext. '' on any failure
-    (missing binary, encrypted/scanned PDF with no text layer)."""
-    try:
-        r = subprocess.run(
-            ["pdftotext", "-layout", path, "-"],
-            capture_output=True, text=True, timeout=60,
-        )
-        if r.returncode == 0:
-            return r.stdout
-    except (FileNotFoundError, subprocess.SubprocessError):
-        pass
-    return ""
-
-
-def _run_unzip_text(path):
-    """Some regulator portals serve a whole filing as a single ZIP bundle of
-    PDFs at what looks like a single-document URL. Extract every member,
-    pdftotext any PDFs (and decode any plain-text members), and concatenate --
-    so a value buried in one PDF inside the bundle is still verifiable against
-    the bundle's own URL.
-    '' on any failure (not a real zip, unzip missing, nothing extractable)."""
-    try:
-        with tempfile.TemporaryDirectory(prefix="verify_zip_") as tmpdir:
-            r = subprocess.run(
-                ["unzip", "-o", "-qq", path, "-d", tmpdir],
-                capture_output=True, text=True, timeout=60,
-            )
-            if r.returncode not in (0, 1):  # 1 = some warnings, often still fine
-                return ""
-            chunks = []
-            for root, _dirs, files in os.walk(tmpdir):
-                for name in files:
-                    fpath = os.path.join(root, name)
-                    try:
-                        with open(fpath, "rb") as f:
-                            head = f.read(5)
-                    except OSError:
-                        continue
-                    if head == b"%PDF-":
-                        text = _run_pdftotext(fpath)
-                    elif name.lower().endswith((".txt", ".csv", ".xml", ".html", ".htm")):
-                        try:
-                            with open(fpath, "rb") as f:
-                                text = f.read().decode("utf-8", errors="replace")
-                        except OSError:
-                            text = ""
-                    else:
-                        continue
-                    if text.strip():
-                        chunks.append(text)
-            return "\n".join(chunks)
-    except (FileNotFoundError, subprocess.SubprocessError, OSError):
-        return ""
-
-
-def _fetch(url, timeout=30, ua=_DEFAULT_UA):
-    """Fetch URL, return (status_code, body_text, is_pdf). Cached per URL per
-    process. PDF bodies are run through pdftotext so the content check sees text,
-    not raw binary; is_pdf lets verify_url skip the HTML-only title check."""
+def _fetch(url, timeout=30):
+    """Fetch URL through the shared escalation ladder (fetch.py: curl ->
+    curl_cffi browser-fingerprint impersonation -> real-Chrome clearance
+    cookie; sec.gov gets SEC's declared-identity User-Agent). PDFs come back
+    as extracted text (pdftotext -> pypdf -> OCR) and zip bundles as their
+    members' text. Returns (status_code, body_text, is_pdf, notes); cached per
+    URL per process. notes name the route a bot-walled page needed, so the OK
+    reason records it."""
     if url in _CACHE:
         return _CACHE[url]
-
-    # Unique per invocation: a fixed filename lets concurrent verifier runs
-    # (parallel subagents in one batch) overwrite each other's download, which
-    # silently produces false FAILs -- or worse, a PASS against another URL's
-    # content. Never reuse a shared path here.
-    fd, tmp = tempfile.mkstemp(prefix="verify_page_", suffix=".bin")
-    os.close(fd)
-    try:
-        # --compressed: some CDNs return a gzip/br body regardless of the request
-        # headers. Without this, the body decodes to binary garbage and the content
-        # check FAILs on a page that plainly contains the value.
-        # Two attempts: large PDFs on slow hosts truncate often enough that a
-        # single empty extraction is not evidence of missing content.
-        for attempt in (1, 2):
-            result = subprocess.run(
-                ["curl", "-sL", "--compressed", "-A", ua, "-o", tmp,
-                 "-w", "%{http_code} %{content_type}", "--max-time", str(timeout), url],
-                capture_output=True, text=True, timeout=timeout + 5,
-            )
-            parts = result.stdout.strip().split()
-            status = parts[0] if parts else "000"
-            content_type = " ".join(parts[1:]).lower()
-
-            try:
-                with open(tmp, "rb") as f:
-                    raw = f.read()
-            except Exception:
-                raw = b""
-
-            is_zip = (
-                "zip" in content_type
-                or url.split("?")[0].lower().endswith(".zip")
-                or raw[:4] == b"PK\x03\x04"
-            )
-            is_pdf = (
-                not is_zip
-                and (
-                    "pdf" in content_type
-                    or url.split("?")[0].lower().endswith(".pdf")
-                    or raw[:5] == b"%PDF-"
-                )
-            )
-            if is_zip:
-                text = _run_unzip_text(tmp)
-                # Reuse the PDF path downstream: no HTML <title> to soft-error
-                # check, and an empty result means "no extractable text" same
-                # as a scanned/image-only PDF.
-                is_pdf = True
-            elif is_pdf:
-                text = _run_pdftotext(tmp)
-            else:
-                text = raw.decode("utf-8", errors="replace")
-
-            if text.strip() or attempt == 2:
-                break
-    finally:
-        try:
-            os.unlink(tmp)
-        except OSError:
-            pass
-
-    _CACHE[url] = (status, text, is_pdf)
-    return status, text, is_pdf
+    page = fetch_page(url, timeout=timeout)
+    result = (page.status, page.text, page.is_pdf, page.notes)
+    _CACHE[url] = result
+    return result
 
 
 # Live-fetch outcomes that mean "bot-blocked, page presumptively live" — these
@@ -301,7 +193,7 @@ def _check_wayback(url, expected, require_all, live_reason):
     snap_url, ts = _wayback_snapshot(url)
     if not snap_url:
         return False, f"{live_reason}; no Wayback snapshot to verify against"
-    status, text, _is_pdf = _fetch(snap_url)
+    status, text, _is_pdf, _notes = _fetch(snap_url)
     if status != "200":
         return False, f"{live_reason}; Wayback snapshot fetch failed (HTTP {status})"
     text_lower = _norm(text)
@@ -314,7 +206,8 @@ def _check_wayback(url, expected, require_all, live_reason):
                   f"Wayback snapshot {ts}")
 
 
-def verify_url(url, expected, strict=False, require_all=True, wayback_fallback=True):
+def verify_url(url, expected, strict=False, require_all=True, wayback_fallback=True,
+               timeout=30):
     """Verify URL passes three checks:
       1. HTTP 200
       2. Not a soft-error page
@@ -332,19 +225,21 @@ def verify_url(url, expected, strict=False, require_all=True, wayback_fallback=T
       strict: raise CitationError on failure instead of returning False
       require_all: every expected substring must be present (default True)
       wayback_fallback: on bot-block, verify against the newest Wayback snapshot
+      timeout: seconds per fetch; raise it for very large files (the 22 MB PJM
+               queue XML takes ~30 s)
 
     Returns: (ok: bool, reason: str)
     """
-    ok, reason = _check(url, expected, require_all, wayback_fallback)
+    ok, reason = _check(url, expected, require_all, wayback_fallback, timeout)
     _log_check(url, expected, ok, reason)
     if not ok and strict:
         raise CitationError(f"URL failed verification ({reason}): {url}")
     return ok, reason
 
 
-def _check(url, expected, require_all, wayback_fallback=True):
+def _check(url, expected, require_all, wayback_fallback=True, timeout=30):
     """The three checks; returns (ok, reason) with no side effects."""
-    status, text, is_pdf = _fetch(url)
+    status, text, is_pdf, notes = _fetch(url, timeout)
 
     if status != "200":
         if wayback_fallback and status in _BOT_BLOCK_STATUSES:
@@ -380,7 +275,9 @@ def _check(url, expected, require_all, wayback_fallback=True):
     if not require_all and not found:
         return False, f"none of expected content found: {expected}"
 
-    return True, "OK"
+    route = [n for n in notes if n in ("cf_impersonate", "cf_clearance", "sec_declared_ua",
+                                       "pdf_ocr", "insecure_tls")]
+    return True, f"OK (via {', '.join(route)})" if route else "OK"
 
 
 def verify_and_format(url, expected):
@@ -409,17 +306,26 @@ def main():
             print("Usage: python url_verifier.py [--log <path>] [--no-wayback] <url> [<expected1> ...]")
             sys.exit(2)
         del argv[i:i + 2]
+    timeout = 30
+    if "--timeout" in argv:
+        i = argv.index("--timeout")
+        try:
+            timeout = int(argv[i + 1])
+        except (IndexError, ValueError):
+            print("Usage: python url_verifier.py [--log <path>] [--no-wayback] [--timeout <s>] <url> [<expected1> ...]")
+            sys.exit(2)
+        del argv[i:i + 2]
     wayback = True
     if "--no-wayback" in argv:
         wayback = False
         argv.remove("--no-wayback")
     if len(argv) < 1:
-        print("Usage: python url_verifier.py [--log <path>] [--no-wayback] <url> [<expected1> <expected2> ...]")
+        print("Usage: python url_verifier.py [--log <path>] [--no-wayback] [--timeout <s>] <url> [<expected1> <expected2> ...]")
         sys.exit(2)
     url = argv[0]
     expected = argv[1:]
     ok, reason = verify_url(url, expected, strict=False, require_all=True,
-                            wayback_fallback=wayback)
+                            wayback_fallback=wayback, timeout=timeout)
     print(f"  URL: {url}")
     print(f"  Expected: {expected}")
     print(f"  Result: {'PASS' if ok else 'FAIL'}  ({reason})")

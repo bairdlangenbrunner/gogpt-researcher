@@ -170,6 +170,15 @@ Work down this list. Prefer the document that names the plant AND states the val
 5. The state environmental agency's air permits (permits list units, turbine models and MW ratings).
 6. The regional grid operator's interconnection queue and deactivation lists: PJM for Maryland,
    ERCOT for Texas, otherwise MISO, SPP, CAISO, NYISO or ISO-NE as the state requires.
+   PJM's queue web pages are drawn by JavaScript and show nothing to a fetch, so use its files.
+   The whole queue is one file of about 9,200 projects, withdrawn ones included. Download it once:
+     curl -sL -o ${workDir}/${pid}/PlanningQueues.xml https://www.pjm.com/pub/planning/downloads/xml/PlanningQueues.xml
+   Read it with python (xml.etree). Match on Name, CommercialName, State and County. Each project
+   has Fuel, MWCapacity, Status, ProjectedInServiceDate, ActualInServiceDate and WithdrawalDate.
+   Verify the file URL with url_verifier.py --timeout 120 and the plant name as the expected
+   string. Quote the matching record in \`note\`, as for EIA Excel files. For retirements, the
+   notices page https://www.pjm.com/planning/service-requests/gen-deactivations/generator-deactivation-notices
+   links each plant's deactivation letter and PJM's reply as PDFs. Cite the PDF, not the list page.
 7. The owner's own website, press releases and SEC 10-K filings.
 8. FERC filings (eLibrary).
 9. Local news.
@@ -191,12 +200,30 @@ yourself (then say so in \`note\`). A status is often stated in other words ("be
 operation", "retired in May"). If the verifier misses a status word, read the page and explain the
 inference in \`note\`.
 
-Fetch failures are tooling failures, not facts about the page. When a fetch is blocked, empty or
-garbled: retry with curl and a browser user agent
-(curl -sL --compressed -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36" -H "Accept-Language: en-US,en;q=0.9"),
-try the Wayback Machine (http://archive.org/wayback/available?url=<url> gives a snapshot), and for
-PDFs download with curl -o and extract with pdftotext -layout. Never conclude a page lacks the value
-from a blocked or truncated fetch. Cite the live URL, never a web.archive.org address.
+Fetch failures are tooling failures, not facts about the page. WebFetch is blocked by many sites
+that the repo's own fetcher reads fine, so never stop at a WebFetch failure. When any fetch is
+blocked (401, 403, 429, "Access Denied", "Just a moment", "Undeclared Automated Tool"), empty,
+truncated or garbled, work this ladder in order and stop at the first rung that gives you the page:
+  1. python scripts/fetch.py "<url>" --head 3000
+     This runs curl with a browser user agent, then browser-fingerprint impersonation, then a real
+     Chrome window for JavaScript challenges. It handles sec.gov itself with the declared identity
+     SEC requires. Its "notes:" line says which route worked. Use --text for the whole body. PDFs
+     and zip bundles come back as extracted text, with OCR for scanned PDFs.
+  2. Run url_verifier.py on the URL. It uses the same fetcher and falls back to the newest Wayback
+     Machine snapshot when the live page still refuses. A Wayback pass keeps the LIVE URL citable.
+  3. Try other forms of the same page: www. or bare host, http or https, the canonical URL from a
+     search result, a print view, or the publisher's own copy of a wire story.
+  4. Find the same document at another address. Company press releases are usually also on PR
+     Newswire, Business Wire or GlobeNewswire. Investor pages often have a second host, for example
+     investor.conedison.com and conedison.gcs-web.com.
+SEC filings: never fetch sec.gov with curl or WebFetch directly. SEC refuses any client that does
+not declare a contact, so always go through fetch.py or url_verifier.py. To find a filing, use
+EDGAR full-text search, for example
+  python scripts/fetch.py 'https://efts.sec.gov/LATEST/search-index?q=%22North%20Tonawanda%22&forms=10-K' --text
+then cite the filing document URL under https://www.sec.gov/Archives/edgar/data/.
+Only after the whole ladder fails may you record a URL as blocked in \`source_log\`, and the note
+must say what you tried. Never conclude a page lacks the value from a blocked or truncated fetch.
+Cite the live URL, never a web.archive.org address.
 
 ## Rules
 - Values are cell content only, in exact controlled vocabulary. Status is lowercase: announced,
