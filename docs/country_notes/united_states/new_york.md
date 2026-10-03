@@ -41,8 +41,12 @@ state agent in narrowed update mode on 2026-10-02 (`notes/us_state_agent_plan.md
   Power Authority for its own plants; EIA-860 annual and EIA-860M monthly
   tables for everything else. The 2026-10-02 statewide agent could not
   reach the Department of Environmental Conservation notice bulletin or the
-  Public Service Commission document system from this machine; the NYISO
-  queue workbook and EIA-860M covered the new-plant search.
+  Public Service Commission document system. Both load with the fetch
+  script now: the notice bulletin needs browser impersonation, which the
+  script does on its own. Commission documents open by their ViewDoc
+  address and case pages by MatterCaseNo, but a case's filing list loads
+  only in a real browser, so find filings by web search. NYISO file
+  addresses, including the Gold Book, are in the source roster.
 
 ## Backlog rows from the possible-updates sheet, worked 2026-10-02
 
@@ -70,7 +74,10 @@ state agent in narrowed update mode on 2026-10-02 (`notes/us_state_agent_plan.md
   neighboring plant with its own record, so the alias looks wrong.
 - Astoria unit 4: EIA-860M lists it retired in February 2021. GEM says
   mothballed. Only one publisher found, so the change is yellow; a NYISO
-  Gold Book from 2021 or later would make it green.
+  Gold Book from 2021 or later would make it green. The 2026 Gold Book
+  lists Astoria units 2, 3 and 5 but not unit 4. That is a gap, not a
+  statement, so it does not count. The 2021 and 2022 Gold Books are not at
+  the address pattern that works for 2025 and 2026; find them by web search.
 - Astoria NRG: Latest Activity reads January 24, 2024 and cites an NRG legal
   page that now shows unrelated gas rate notices. The newest events found
   are from 2022 and 2023, so the date was left in place.

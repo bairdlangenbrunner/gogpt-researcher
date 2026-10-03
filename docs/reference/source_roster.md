@@ -37,6 +37,7 @@ it). Representative examples surfaced in the source doc:
 | Algeria | Sonelgaz (`sonelgaz.dz`) | Development plan with plant-level detail |
 | Russia | SO UPS scheme/programme reports | Progress reports on power-system development |
 | United States (PJM: MD, PA, NJ, DE, VA, WV, OH, DC and parts of IL, IN, KY, MI, NC, TN) | PJM Interconnection (`pjm.com`) | See "PJM data files" below |
+| United States (New York) | NYISO (`nyiso.com`) | See "NYISO data files" below |
 
 **PJM data files** (checked 2026-10-02; not bot-walled, plain curl works,
 but the queue web pages render from JavaScript, so go to the files):
@@ -55,6 +56,28 @@ but the queue web pages render from JavaScript, so go to the files):
 - Old addresses that now 404: `pub/planning/downloads/xls/PlanningQueues.xlsx`,
   `planning/services-requests/interconnection-queues`. The `services.pjm.com`
   queue export needs a key; don't use it.
+
+**NYISO data files** (checked 2026-10-02; not bot-walled, but every document
+list on nyiso.com is drawn by JavaScript and its folder-listing service needs
+a browser session, so go to the files by address):
+- Gold Book (Load & Capacity Data Report), yearly each spring:
+  `https://www.nyiso.com/documents/20142/2226333/<YEAR>-Gold-Book-Public.pdf`
+  (2025 and 2026 resolve). Table III-2 has every existing generator (owner,
+  zone, in-service date, nameplate, summer and winter capability, fuel);
+  IV-1a proposed additions; IV-3 and IV-4 deactivated units; IV-5 units with
+  a deactivation notice; IV-6 peaker-rule status changes. Tables run to
+  March 15 of the report year. The PDF text extracts cleanly, so the
+  verifier can match plant name and value (`--timeout 90`).
+- Interconnection queue workbook (monthly):
+  `https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx`.
+  Cite like an EIA Excel file.
+- Deactivation news after the Gold Book cutoff: the monthly "NYISO System &
+  Resource Planning Status Report" posted on `nysrc.org` (for example
+  `https://www.nysrc.org/wp-content/uploads/2026/07/7.1-6-30-2026-NYISO-Planning-Status-Attachment-7.1.pdf`).
+  NYISO's own monthly Generator Status Updates folder (on the NY Power System
+  Information & Outlook page) can only be listed in a real browser.
+- Market generator list with PTID, zone and coordinates:
+  `https://mis.nyiso.com/public/htm/generator/generator.htm`.
 
 For a country not yet seeded in `docs/country_notes/`, search pattern:
 `"<country>" ministry OR authority energy OR electricity statistics

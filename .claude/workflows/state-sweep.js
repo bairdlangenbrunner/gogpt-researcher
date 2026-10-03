@@ -179,6 +179,18 @@ Work down this list. Prefer the document that names the plant AND states the val
    string. Quote the matching record in \`note\`, as for EIA Excel files. For retirements, the
    notices page https://www.pjm.com/planning/service-requests/gen-deactivations/generator-deactivation-notices
    links each plant's deactivation letter and PJM's reply as PDFs. Cite the PDF, not the list page.
+   NYISO (New York) works with plain fetches, but its document lists are drawn by JavaScript, so
+   go to the files. The annual Gold Book PDF is the main source:
+     https://www.nyiso.com/documents/20142/2226333/<YEAR>-Gold-Book-Public.pdf
+   (published each spring; 2025 and 2026 both resolve). Table III-2 lists every existing generator
+   with owner, zone, in-service date, nameplate and summer capability, and fuel. Table IV-1a lists
+   proposed additions, Tables IV-3 and IV-4 deactivated units, Table IV-5 units that have given a
+   deactivation notice, and Table IV-6 status changes under the state peaker rule. The PDF text
+   reads cleanly, so verify a Gold Book URL with url_verifier.py --timeout 90 and the plant name
+   plus the value. The queue workbook is https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx
+   (cite like an EIA Excel file). For deactivation news after the Gold Book's March cutoff, use the
+   monthly NYISO planning status report that the New York State Reliability Council posts on
+   nysrc.org (web search "NYISO System & Resource Planning Status Report").
 7. The owner's own website, press releases and SEC 10-K filings.
 8. FERC filings (eLibrary).
 9. Local news.
