@@ -32,6 +32,14 @@ staged_*.json
 # Derived build scratch (assembled staged_*.json regenerated each run).
 batches/*/staging/_build/
 
+# State sweeps (notes/us_state_agent_plan.md): briefs, shards, comparison.json,
+# sweep_args.json and the calibration memo are the audit trail and ARE tracked.
+# Only the per-URL verifier logs and the blind-mode hidden values are scratch.
+batches/*/shards/*.urls.jsonl
+batches/*/briefs/_hidden/
+!batches/*/staging/comparison.json
+!batches/*/staging/sweep_args.json
+
 # Batch deliverable workbooks are large regenerable binaries — never tracked
 # (the committed half of a deliverable pair is the evidence .md; see
 # batches/README.md).

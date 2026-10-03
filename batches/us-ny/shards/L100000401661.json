@@ -1,0 +1,80 @@
+{
+ "meta": {
+  "plant_id": "L100000401661",
+  "plant_name": "Kennedy International Airport cogeneration power station",
+  "state": "New York",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-02T16:21:33-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401744",
+   "unit_name": "CC1",
+   "findings": {},
+   "not_found": [
+    "Owner(s)"
+   ],
+   "notes": "No new owner is reported. No document I found names a different company holding this plant."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000401744",
+   "concern_type": "owner",
+   "recommendation": "Keep Calpine Corp as the owner for now. Check again if a newer filing names a Constellation entity as the plant holder.",
+   "note": "The EIA-860 annual table for 2024 still lists Calpine Corp as owner of the three generators at this plant, with KIAC Partners as the operating utility. A New York air permit renewal names KIAC Partners as the permit holder at the Calpine JFK Energy Center. I found no dated document that renames or merges the company holding the plant. A change of parent from Calpine to Constellation is not an owner change for this field. Also, a search result said Calpine holds a 50 percent general partner interest in KIAC Partners, which may mean the plant is jointly held. I could not confirm the other partner or any share split.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+    "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_263080009600009_r3.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Calpine Corp",
+   "role": "owner",
+   "lookup_result": "Entity 'Calpine Corp' (canonical: 'calpine corp') appears on 12 units (canada, united states). Reuse existing entity ID; do not create a new one."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "EIA-860 annual 2024 owner table lists Calpine Corp for generators GEN1 to GEN3."
+  },
+  {
+   "url": "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_263080009600009_r3.pdf",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "State air permit names KIAC Partners at the Calpine JFK Energy Center. Read the PDF text myself. It has no date I could rely on for an ownership change."
+  },
+  {
+   "url": "https://www.calpine.com/powering-america/",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "not relevant",
+   "note": "Existing source. Page loads and mentions Kennedy but gives no ownership detail."
+  },
+  {
+   "url": "https://www.infrasure.ai/plant/54114-kennedy-international-airport-cogen",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "not relevant",
+   "note": "Plant data site, lead only."
+  }
+ ]
+}

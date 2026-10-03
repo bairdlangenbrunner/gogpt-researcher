@@ -47,6 +47,12 @@ mentioned in media or company documents for a while, record the most recent sour
 and the date it was last referenced there. That record is what a future pass uses to
 decide whether the 2-year or 4-year threshold has been crossed.
 
+**Format:** Latest Activity is a date field in the GEM database. The export renders it as
+`Year: 2024, Month: 6, Day: 17` (month and day optional), and every one of the ~2,100 filled
+values in the 2026-10-02 export has that form. Stage the date of the newest dated report; what
+happened goes in the researcher note and, if it changes the status story, in Status Detail. Never
+move the date backward. `state_gate.py` fails any free-text Latest Activity value (gate `dates`).
+
 ## Tracking window: mothballed / retired / cancelled from 2020 forward
 
 `mothballed`, `retired`, and `cancelled` are tracked **only from 2020 forward** — GOGPT
@@ -88,7 +94,7 @@ Cancellation Year = the year the unit or phase is officially cancelled.
 
 ## Conflict-damage / disruption rules
 
-When a plant or unit has been damaged by war/conflict, check the **"Disrupted due to
+When a plant or unit has been damaged by war/conflict, check the **"Disrupted by
 conflict"** checkbox (between Status and Status Details) and assign status as follows:
 
 - **`mothballed`** + check the box — plant/unit completely destroyed, or rebuilding is

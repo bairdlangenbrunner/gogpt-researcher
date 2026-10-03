@@ -17,7 +17,7 @@ pull to derive the GOGPT-only view; keep the unfiltered CSV for coal-
 conversion/replacement cross-checks.
 
 Why re-derive the column map every batch:
-  - The GOGPT all-fields export is 86 columns (Q2 2026) but the schema can
+  - The GOGPT all-fields export is 91 columns (Oct 2026) but the schema can
     drift between releases (columns added, renamed, reordered)
   - Hard-coding column offsets means batch breakage on any schema change
   - The derived map is saved next to the CSV so other scripts use the same one

@@ -1,0 +1,1027 @@
+{
+ "meta": {
+  "plant_id": "L100000103967",
+  "plant_name": "Morgantown Generating Station",
+  "state": "Maryland",
+  "mode": "blind",
+  "model": "sonnet",
+  "generated": "2026-10-02T15:33:00-04:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 6
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000414155",
+   "unit_name": "3",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists unit 3 as operating. Row: Plant 1573, generator 3, status OP, nameplate 65.0 MW, energy source DFO, prime mover GT, operating year 1973."
+    },
+    "Capacity (MW)": {
+     "value": "65.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives a nameplate of 65.0 MW. Row: Plant 1573, generator 3, status OP, nameplate 65.0 MW, energy source DFO, prime mover GT, operating year 1973."
+    },
+    "Fuel": {
+     "value": "fossil liquids: fuel oil",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "EIA lists energy source code DFO, which is distillate fuel oil. The Maryland Department of the Environment air permit renewal from 2017 says the unit fires No. 2 fuel oil."
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The air permit describes CT-3 as a General Electric Frame 7 combustion turbine used for peaking. EIA lists prime mover GT, which is a simple cycle gas turbine."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "General Electric Frame 7",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Maryland Department of the Environment air permit from 2017 says combustion turbines CT-3, 4, 5 and 6 are General Electric Frame 7 units rated at 65 MW each."
+    },
+    "Number Of Engines": {
+     "value": "1",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The permit lists CT-3 as one combustion turbine. The unit is a single turbine, so the count is one."
+    },
+    "Capacity Per Engine": {
+     "value": "65.0",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The air permit rates each Frame 7 turbine at 65 MW and the EIA-860M table agrees at 65.0 MW. There is one turbine per unit."
+    },
+    "Start year": {
+     "value": "1973",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives the operating date for unit 3 as June 1973. The 2017 air permit also says June 1973."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860 annual survey for 2024 lists the plant sector as IPP Non-CHP, and the generator row says it is not associated with a combined heat and power system. The EIA-860M table for August 2026 also lists the sector as IPP Non-CHP."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Status Detail",
+    "Captive industry type",
+    "Conversion/replacement?"
+   ],
+   "notes": "I could not find a planned retirement for this unit. The EIA table leaves the planned retirement blank. I found no news on activity at the plant, so latest activity and status detail are not sourced. No retired year applies because the unit is operating."
+  },
+  {
+   "gem_unit_id": "G100000414154",
+   "unit_name": "4",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists unit 4 as operating. Row: Plant 1573, generator 4, status OP, nameplate 65.0 MW, energy source DFO, prime mover GT, operating year 1973."
+    },
+    "Capacity (MW)": {
+     "value": "65.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives a nameplate of 65.0 MW. Row: Plant 1573, generator 4, status OP, nameplate 65.0 MW, energy source DFO, prime mover GT, operating year 1973."
+    },
+    "Fuel": {
+     "value": "fossil liquids: fuel oil",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "EIA lists energy source code DFO, which is distillate fuel oil. The Maryland Department of the Environment air permit renewal from 2017 says the unit fires No. 2 fuel oil."
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The air permit describes CT-4 as a General Electric Frame 7 combustion turbine used for peaking. EIA lists prime mover GT, which is a simple cycle gas turbine."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "General Electric Frame 7",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Maryland Department of the Environment air permit from 2017 says combustion turbines CT-3, 4, 5 and 6 are General Electric Frame 7 units rated at 65 MW each."
+    },
+    "Number Of Engines": {
+     "value": "1",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The permit lists CT-4 as one combustion turbine. The unit is a single turbine, so the count is one."
+    },
+    "Capacity Per Engine": {
+     "value": "65.0",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The air permit rates each Frame 7 turbine at 65 MW and the EIA-860M table agrees at 65.0 MW. There is one turbine per unit."
+    },
+    "Start year": {
+     "value": "1973",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives the operating date for unit 4 as June 1973. The 2017 air permit also says June 1973."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860 annual survey for 2024 lists the plant sector as IPP Non-CHP, and the generator row says it is not associated with a combined heat and power system. The EIA-860M table for August 2026 also lists the sector as IPP Non-CHP."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Status Detail",
+    "Captive industry type",
+    "Conversion/replacement?"
+   ],
+   "notes": "I could not find a planned retirement for this unit. The EIA table leaves the planned retirement blank. I found no news on activity at the plant, so latest activity and status detail are not sourced. No retired year applies because the unit is operating."
+  },
+  {
+   "gem_unit_id": "G100000414153",
+   "unit_name": "5",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/january_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/january_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M tables for August 2026 and January 2026 list unit 5 as operating. But the EIA-860 annual survey for 2024 and the EIA-860M table for December 2024 show it retired in June 2024. So it appears to have returned to service. I found no news on why. Row: Plant 1573, generator 5, status OP, nameplate 65.0 MW, energy source DFO, prime mover GT, operating year 1973."
+    },
+    "Capacity (MW)": {
+     "value": "65.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives a nameplate of 65.0 MW. Row: Plant 1573, generator 5, status OP, nameplate 65.0 MW, energy source DFO, prime mover GT, operating year 1973."
+    },
+    "Fuel": {
+     "value": "fossil liquids: fuel oil",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "EIA lists energy source code DFO, which is distillate fuel oil. The Maryland Department of the Environment air permit renewal from 2017 says the unit fires No. 2 fuel oil."
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The air permit describes CT-5 as a General Electric Frame 7 combustion turbine used for peaking. EIA lists prime mover GT, which is a simple cycle gas turbine."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "General Electric Frame 7",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Maryland Department of the Environment air permit from 2017 says combustion turbines CT-3, 4, 5 and 6 are General Electric Frame 7 units rated at 65 MW each."
+    },
+    "Number Of Engines": {
+     "value": "1",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The permit lists CT-5 as one combustion turbine. The unit is a single turbine, so the count is one."
+    },
+    "Capacity Per Engine": {
+     "value": "65.0",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The air permit rates each Frame 7 turbine at 65 MW and the EIA-860M table agrees at 65.0 MW. There is one turbine per unit."
+    },
+    "Start year": {
+     "value": "1973",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives the operating date for unit 5 as May 1973. The 2017 air permit also says June 1973."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860 annual survey for 2024 lists the plant sector as IPP Non-CHP, and the generator row says it is not associated with a combined heat and power system. The EIA-860M table for August 2026 also lists the sector as IPP Non-CHP."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Status Detail",
+    "Captive industry type",
+    "Conversion/replacement?",
+    "Retired year"
+   ],
+   "notes": "I could not find a planned retirement for this unit. The EIA table leaves the planned retirement blank. I found no news on activity at the plant, so latest activity and status detail are not sourced. The retired year is not reported because EIA currently shows the unit as operating again after a June 2024 retirement."
+  },
+  {
+   "gem_unit_id": "G100000414152",
+   "unit_name": "6",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/january_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/january_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M tables for August 2026 and January 2026 list unit 6 as operating. But the EIA-860 annual survey for 2024 and the EIA-860M table for December 2024 show it retired in June 2024. So it appears to have returned to service. I found no news on why. Row: Plant 1573, generator 6, status OP, nameplate 65.0 MW, energy source DFO, prime mover GT, operating year 1973."
+    },
+    "Capacity (MW)": {
+     "value": "65.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives a nameplate of 65.0 MW. Row: Plant 1573, generator 6, status OP, nameplate 65.0 MW, energy source DFO, prime mover GT, operating year 1973."
+    },
+    "Fuel": {
+     "value": "fossil liquids: fuel oil",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "EIA lists energy source code DFO, which is distillate fuel oil. The Maryland Department of the Environment air permit renewal from 2017 says the unit fires No. 2 fuel oil."
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The air permit describes CT-6 as a General Electric Frame 7 combustion turbine used for peaking. EIA lists prime mover GT, which is a simple cycle gas turbine."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "General Electric Frame 7",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Maryland Department of the Environment air permit from 2017 says combustion turbines CT-3, 4, 5 and 6 are General Electric Frame 7 units rated at 65 MW each."
+    },
+    "Number Of Engines": {
+     "value": "1",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The permit lists CT-6 as one combustion turbine. The unit is a single turbine, so the count is one."
+    },
+    "Capacity Per Engine": {
+     "value": "65.0",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The air permit rates each Frame 7 turbine at 65 MW and the EIA-860M table agrees at 65.0 MW. There is one turbine per unit."
+    },
+    "Start year": {
+     "value": "1973",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives the operating date for unit 6 as May 1973. The 2017 air permit also says June 1973."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860 annual survey for 2024 lists the plant sector as IPP Non-CHP, and the generator row says it is not associated with a combined heat and power system. The EIA-860M table for August 2026 also lists the sector as IPP Non-CHP."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Status Detail",
+    "Captive industry type",
+    "Conversion/replacement?",
+    "Retired year"
+   ],
+   "notes": "I could not find a planned retirement for this unit. The EIA table leaves the planned retirement blank. I found no news on activity at the plant, so latest activity and status detail are not sourced. The retired year is not reported because EIA currently shows the unit as operating again after a June 2024 retirement."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Morgantown Power, LLC [100%]",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860 annual survey for 2024, schedule 4 on ownership, lists Morgantown Power, LLC with 100 percent ownership of generators 3 to 6 at plant 1573. The owner address is in Houston, Texas."
+  },
+  "Operator(s)": {
+   "value": "Lanyard Power Holdings, LLC",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860M table for August 2026 and the EIA-860 annual survey for 2024 list Lanyard Power Holdings, LLC as the reporting utility for the plant. That is normally the operator."
+  },
+  "Latitude": {
+   "value": "38.3592",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "EIA gives latitude 38.3592 for the plant in both the EIA-860M table for August 2026 and the EIA-860 annual survey for 2024. I did not check it against a map."
+  },
+  "Longitude": {
+   "value": "-76.9767",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "EIA gives longitude -76.9767 for the plant in both the EIA-860M table for August 2026 and the EIA-860 annual survey for 2024. I did not check it against a map."
+  },
+  "Location accuracy": {
+   "value": "approximate",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "low",
+   "independent": false,
+   "note": "The coordinates come from an EIA table with four decimals, not from a surveyed site point. So I call them approximate."
+  },
+  "Captive industry use": {
+   "value": "no",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860 annual survey for 2024 lists the plant as an independent power producer selling to the grid, sector IPP Non-CHP. It is not an industrial plant."
+  },
+  "Captive non-industry use": {
+   "value": "no",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860 annual survey for 2024 lists the plant as an independent power producer, sector IPP Non-CHP. So I found no captive use."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000414153",
+   "concern_type": "status conflict",
+   "recommendation": "Confirm that units 5 and 6 are back in service, for example with recent EIA-923 generation or PJM data, before recording operating.",
+   "note": "The EIA-860 annual survey for 2024 and the December 2024 monthly table show units 5 and 6 retired in June 2024. The monthly tables from January 2026 onward list them as operating again. I did not find a news source explaining the return.",
+   "refs": []
+  },
+  {
+   "gem_unit_id": "G100000414152",
+   "concern_type": "status conflict",
+   "recommendation": "Confirm that units 5 and 6 are back in service, for example with recent EIA-923 generation or PJM data, before recording operating.",
+   "note": "The EIA-860 annual survey for 2024 and the December 2024 monthly table show units 5 and 6 retired in June 2024. The monthly tables from January 2026 onward list them as operating again. I did not find a news source explaining the return.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Morgantown Power, LLC",
+   "role": "owner",
+   "lookup_result": "not run, blind mode"
+  },
+  {
+   "entity_name": "Lanyard Power Holdings, LLC",
+   "role": "operator",
+   "lookup_result": "not run, blind mode"
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Start year",
+    "Fuel",
+    "Operator(s)",
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "EIA-860M for August 2026. Plant 1573 read directly from the downloaded file."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/january_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "EIA-860M for January 2026. Units 5 and 6 operating."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/december_generator2024.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "EIA-860M for December 2024. Units 5 and 6 on the retired sheet with retirement year 2024."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+   "used_for": [
+    "Owner(s)",
+    "Operator(s)",
+    "CHP",
+    "Captive industry use"
+   ],
+   "outcome": "verified",
+   "note": "EIA-860 annual survey for 2024, ownership, plant and generator files."
+  },
+  {
+   "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Test/GenOn%20Morgantown%20Generating%20Station%20Renewal%202017.pdf",
+   "used_for": [
+    "Fuel",
+    "Equipment Manufacturer/Model",
+    "Turbine/Engine Technology",
+    "Number Of Engines"
+   ],
+   "outcome": "verified",
+   "note": "Maryland air permit renewal from 2017 naming GE Frame 7 turbines."
+  },
+  {
+   "url": "https://gem.wiki/Morgantown_Generating_Plant",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Appeared in a web search result. Not opened and not used."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602025.zip",
+   "used_for": [],
+   "outcome": "failed",
+   "note": "Returned an HTML page, not a file. The 2025 annual survey may not be released."
+  }
+ ]
+}

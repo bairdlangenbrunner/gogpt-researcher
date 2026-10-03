@@ -26,6 +26,8 @@ not decide statuses.
 Usage (from scripts/):
     python worklist.py --country Nigeria              # -> work/worklist_nigeria.csv
     python worklist.py --country Brazil --country Peru
+    python worklist.py --state Maryland               # -> work/worklist_us-maryland.csv
+    python worklist.py --state Texas --state Oklahoma # US states (implies --country "United States")
     python worklist.py                                # all countries, one file
     python worklist.py --all                          # include retired/cancelled
     python worklist.py --year 2027                    # override "this year"
@@ -48,10 +50,10 @@ from schema_constants import (
 
 YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
 
-NEEDED = ["country", "plant_name", "unit_name", "gem_unit_id", "status",
+NEEDED = ["country", "state_province", "plant_name", "unit_name", "gem_unit_id", "status",
           "capacity_mw", "latest_activity", "last_updated", "planned_retire"]
 
-OUT_HEADER = ["priority", "flag", "country", "plant_name", "unit_name",
+OUT_HEADER = ["priority", "flag", "country", "state", "plant_name", "unit_name",
               "gem_unit_id", "status", "capacity_mw", "latest_activity",
               "last_updated", "planned_retire"]
 
@@ -98,6 +100,9 @@ def main():
                    help="GOGPT-scoped export (run scope_filter.py first)")
     p.add_argument("--country", action="append", default=None,
                    help="repeatable; omit for all countries")
+    p.add_argument("--state", action="append", default=None,
+                   help="repeatable; State/Province (full name, e.g. Texas); "
+                        "implies --country 'United States' unless --country given")
     p.add_argument("--all", action="store_true",
                    help="include priority-9 (retired/cancelled) rows")
     p.add_argument("--year", type=int, default=datetime.date.today().year)
@@ -115,6 +120,9 @@ def main():
     idx = {c: col_map[c] for c in NEEDED}
 
     countries = {c.strip().lower() for c in args.country} if args.country else None
+    states = {x.strip().lower() for x in args.state} if args.state else None
+    if states and not countries:
+        countries = {"united states"}
 
     rows_out = []
     counts = {}
@@ -125,6 +133,9 @@ def main():
             country = row[idx["country"]].strip()
             if countries and country.lower() not in countries:
                 continue
+            state = row[idx["state_province"]].strip()
+            if states and state.lower() not in states:
+                continue
             status = row[idx["status"]]
             prio = priority_for(status, row[idx["planned_retire"]], args.year)
             if prio == 9 and not args.all:
@@ -132,7 +143,7 @@ def main():
             ev_year = newest_year(row[idx["latest_activity"]],
                                   row[idx["last_updated"]])
             flag = inferred_flag(prio, status, ev_year, args.year)
-            rows_out.append([prio, flag, country,
+            rows_out.append([prio, flag, country, state,
                              row[idx["plant_name"]], row[idx["unit_name"]],
                              row[idx["gem_unit_id"]], status,
                              row[idx["capacity_mw"]],
@@ -141,13 +152,16 @@ def main():
                              row[idx["planned_retire"]]])
             counts[prio] = counts.get(prio, 0) + 1
 
-    rows_out.sort(key=lambda r: (r[0], r[2], r[3], r[4]))
+    rows_out.sort(key=lambda r: (r[0], r[2], r[3], r[4], r[5]))
 
     if args.out:
         out_path = Path(args.out)
     else:
-        tag = ("_".join(sorted(countries)).replace(" ", "-")
-               if countries else "all")
+        if states:
+            tag = "us-" + "_".join(sorted(x.replace(" ", "-") for x in states))
+        else:
+            tag = ("_".join(sorted(countries)).replace(" ", "-")
+                   if countries else "all")
         out_path = work_dir() / f"worklist_{tag}.csv"
     with open(out_path, "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
@@ -155,6 +169,8 @@ def main():
         w.writerows(rows_out)
 
     scope = ", ".join(sorted(countries)) if countries else "all countries"
+    if states:
+        scope += " / " + ", ".join(sorted(states))
     print(f"worklist for {scope}: {len(rows_out)} rows -> {out_path}")
     for prio in sorted(counts):
         print(f"  priority {prio}: {counts[prio]}")

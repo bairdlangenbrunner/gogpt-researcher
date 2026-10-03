@@ -1,0 +1,547 @@
+{
+ "meta": {
+  "lane": "qa",
+  "scope": {
+   "country": "United States",
+   "state": "New York",
+   "postal": "ny",
+   "quarter": "q4-2026",
+   "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+  },
+  "generated": "2026-10-02T16:23:35-04:00",
+  "mode": "update",
+  "counts": {
+   "records": 29
+  }
+ },
+ "records": [
+  {
+   "gem_unit_id": "G100001054238",
+   "concern_type": "capacity",
+   "recommendation": "Keep 750 MW. The 600 MW figure is from 2018 and the 2025 Department of Energy document is newer.",
+   "refs": {
+    "links": [
+     "https://tbrnewsmedia.com/?p=80439"
+    ]
+   },
+   "gem_plant_id": "L100001047604",
+   "plant_name": "Caithness II power station",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "A TBR News Media article from July 9, 2018 says Caithness asked the Town of Brookhaven on June 26, 2018 to allow a smaller 600 MW plant with one steam turbine and one stack, in place of the 750 MW plant approved in 2014. GEM lists 750 MW from an April 2025 Department of Energy request for information, which is newer and again describes a 750 MW plant. No change was made.",
+   "record_id": "L100001047604:G100001054238:qa-capacity-1"
+  },
+  {
+   "gem_unit_id": "G100001054238",
+   "concern_type": "owner",
+   "recommendation": "Keep Caithness Energy LLC unless a sale of the Caithness II project itself is found.",
+   "refs": {
+    "links": [
+     "https://www.roi-nj.com/2025/09/11/industry/energy-utilities/lotus-infrastructure-agrees-to-buy-caithness-long-island-energy-center/"
+    ]
+   },
+   "gem_plant_id": "L100001047604",
+   "plant_name": "Caithness II power station",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "Lotus Infrastructure Partners agreed to buy the Caithness Long Island Energy Center in September 2025 and closed on January 7, 2026, with plans to rename it Brookhaven Energy Center. Both reports describe the existing 365 MW operating plant. They do not mention the Caithness II project, so the sale does not show a change of owner for this unit.",
+   "record_id": "L100001047604:G100001054238:qa-owner-2"
+  },
+  {
+   "gem_unit_id": "G100001054238",
+   "concern_type": "ids",
+   "recommendation": "Look up the EIA plant code once the project reaches EIA tables.",
+   "gem_plant_id": "L100001047604",
+   "plant_name": "Caithness II power station",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "I did not search the EIA tables because the project is not built and a proposed plant of this kind is unlikely to be listed with a generator code. I give no plant code or generator ID.",
+   "record_id": "L100001047604:G100001054238:qa-ids-3"
+  },
+  {
+   "gem_unit_id": "G100000414299",
+   "concern_type": "status",
+   "recommendation": "Check the interconnection queue entry for Bowline 3, which a search showed as withdrawn.",
+   "refs": {},
+   "gem_plant_id": "L100000401970",
+   "plant_name": "Bowline Point power station",
+   "country": "United States",
+   "unit_name": "CC_set",
+   "fields": {},
+   "researcher_notes": "If a withdrawal date is confirmed, it could give a cancellation year.",
+   "record_id": "L100000401970:G100000414299:qa-status-1"
+  },
+  {
+   "gem_unit_id": "G100000402811",
+   "concern_type": "status",
+   "recommendation": "Look for a second publisher for the February 2021 retirement, such as a New York Independent System Operator Gold Book from 2021 or later, or a notice filed with the New York Public Service Commission.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "gem_plant_id": "L100000401896",
+   "plant_name": "Astoria generating station",
+   "country": "United States",
+   "unit_name": "4",
+   "fields": {},
+   "researcher_notes": "The status change from mothballed to retired rests on the EIA-860M table for August 2026 alone.",
+   "record_id": "L100000401896:G100000402811:qa-status-1"
+  },
+  {
+   "gem_unit_id": "G100000402809",
+   "concern_type": "owner",
+   "recommendation": "Check who holds the plant now.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "gem_plant_id": "L100000401896",
+   "plant_name": "Astoria generating station",
+   "country": "United States",
+   "unit_name": "2",
+   "fields": {},
+   "researcher_notes": "The EIA-860M table for August 2026 names Astoria Generating Company, L.P. as the entity for plant 8906. GEM has Alpha Generation LLC. EIA utility names are not always the owner, so I made no change.",
+   "record_id": "L100000401896:G100000402809:qa-owner-2"
+  },
+  {
+   "gem_unit_id": "",
+   "concern_type": "missing unit",
+   "recommendation": "Consider whether a 15 MW unit belongs in the tracker.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "gem_plant_id": "L100000401896",
+   "plant_name": "Astoria generating station",
+   "country": "United States",
+   "fields": {},
+   "researcher_notes": "The same table lists a 15.0 MW natural gas combustion turbine, generator 1, at plant 8906, out of service since an unstated date. It is under the capacity threshold for the tracker, so I did not add it.",
+   "record_id": "L100000401896:plant:qa-missing-unit-3"
+  },
+  {
+   "gem_unit_id": "G100000414080",
+   "concern_type": "status",
+   "recommendation": "Read the 2020 New York Independent System Operator deactivation notice for West Babylon 4 to learn why the unit was not retired.",
+   "refs": {},
+   "gem_plant_id": "L100000409236",
+   "plant_name": "West Babylon power station",
+   "country": "United States",
+   "unit_name": "4",
+   "fields": {},
+   "researcher_notes": "National Grid planned to retire it on December 12, 2020, according to a search result. It is still listed as standby in August 2026.",
+   "record_id": "L100000409236:G100000414080:qa-status-1"
+  },
+  {
+   "gem_unit_id": "G100001017984",
+   "concern_type": "other_ids",
+   "recommendation": "Add EIA generator ID 4 to Other IDs (unit).",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "gem_plant_id": "L100000104063",
+   "plant_name": "AES Greenidge power station",
+   "country": "United States",
+   "unit_name": "Unit 4, timepoint 2",
+   "fields": {},
+   "researcher_notes": "The EIA-860M table for August 2026 lists plant 2527, generator 4, a natural gas steam turbine of 112.0 MW with status operating and operating year 1953. The 1953 year is the original coal unit, so it should not replace the gas start year.",
+   "record_id": "L100000104063:G100001017984:qa-other-ids-1"
+  },
+  {
+   "gem_unit_id": "G100000401706",
+   "concern_type": "owner",
+   "recommendation": "Keep Calpine Eastern Corp as owner for now.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "gem_plant_id": "L100000401765",
+   "plant_name": "Bethpage power plant",
+   "country": "United States",
+   "unit_name": "G602",
+   "fields": {},
+   "researcher_notes": "The EIA-860M table for August 2026 still lists Calpine Eastern Corp as the owner of plant 50292 for all six generators. Constellation completed its purchase of Calpine on January 7, 2026, and Calpine Corporation became Calpine LLC. That is a parent change, and I found no dated document that renames or merges the Calpine Eastern Corp entity itself.",
+   "record_id": "L100000401765:G100000401706:qa-owner-1"
+  },
+  {
+   "gem_unit_id": "G100001054037",
+   "concern_type": "other",
+   "recommendation": "A researcher may prefer Brentwood, the nearby community, as the city.",
+   "refs": {
+    "links": [
+     "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_147280306700003_r3.pdf"
+    ]
+   },
+   "gem_plant_id": "L100001047469",
+   "plant_name": "Brentwood power station",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "The permit address says Islip, but the plant name and common usage say Brentwood. I used the address the state permit gives.",
+   "record_id": "L100001047469:G100001054037:qa-other-1"
+  },
+  {
+   "gem_unit_id": "G100000402010",
+   "concern_type": "owner",
+   "recommendation": "Leave Owner(s) as Caithness Long Island LLC [100%] for now. Look for the name of the entity that holds the plant after the sale, for example in a New York Public Service Commission filing or a state air permit transfer.",
+   "refs": {
+    "links": [
+     "https://www.miningstockeducation.com/2026/01/lotus-infrastructure-partners-closes-acquisition-of-the-caithness-long-island-energy-center/"
+    ]
+   },
+   "gem_plant_id": "L100000401757",
+   "plant_name": "Caithness Long Island energy center",
+   "country": "United States",
+   "unit_name": "CC01",
+   "fields": {},
+   "researcher_notes": "The sale to Lotus Infrastructure Partners closed on January 7, 2026, according to a closing announcement republished in January 2026. Lotus plans to rename the plant the Brookhaven Energy Center. The announcements say Lotus bought the economic interests and do not name the company that now holds the plant. The EIA-860M table for August 2026 still lists the owner as Caithness Long Island, LLC. So the holding company may be unchanged under new parent ownership. I did not find a second independent publisher.",
+   "record_id": "L100000401757:G100000402010:qa-owner-1"
+  },
+  {
+   "gem_unit_id": "G100000402672",
+   "concern_type": "location",
+   "recommendation": "Review the coordinates on all five unit rows. The EIA table puts the plant about 200 meters from the GEM point. Decide whether to keep the GEM point, adopt the EIA point, or find a document that supports the GEM point.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "gem_plant_id": "L100000104067",
+   "plant_name": "Danskammer Generating Station",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "The EIA monthly generator table for August 2026 gives the plant coordinates as latitude 41.573361 and longitude -73.96457. GEM has latitude 41.572122 and longitude -73.966225. Both fall at the Danskammer site on the Hudson River. I did not change the coordinates because the instructions say not to change a value that is already filled. I found no document that states the GEM numbers.",
+   "record_id": "L100000104067:G100000402672:qa-location-1"
+  },
+  {
+   "gem_unit_id": "G100000402672",
+   "concern_type": "alias",
+   "recommendation": "Remove Roseton Generating Station from Other Name(s) on all five unit rows, after checking it. Roseton has its own plant record.",
+   "refs": {},
+   "gem_plant_id": "L100000104067",
+   "plant_name": "Danskammer Generating Station",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "Roseton is a separate, larger oil and gas plant that sits about half a mile downstream, and the two plants were sold together to Dynegy in 2001. The EIA table for August 2026 lists only Danskammer under plant code 2480, with no Roseton generators. I did not change this value as instructed. I found no document that treats the two as one plant.",
+   "record_id": "L100000104067:G100000402672:qa-alias-2"
+  },
+  {
+   "gem_unit_id": "G100000410566",
+   "concern_type": "identifier",
+   "recommendation": "Leave Other IDs (unit) blank for the combined cycle unit.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "gem_plant_id": "L100000104067",
+   "plant_name": "Danskammer Generating Station",
+   "country": "United States",
+   "unit_name": "CC",
+   "fields": {},
+   "researcher_notes": "The EIA table for August 2026 lists generators 1 to 4 and two small diesel standby engines (generators 5 and 6) at this plant. There is no combined cycle generator, which fits a project that was never built.",
+   "record_id": "L100000104067:G100000410566:qa-identifier-3"
+  },
+  {
+   "gem_unit_id": "G100000402672",
+   "concern_type": "start_year",
+   "recommendation": "Consider whether the start year of 2014 and the replacement flag on units 1 to 4 are right.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "gem_plant_id": "L100000104067",
+   "plant_name": "Danskammer Generating Station",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "The EIA table gives the original operating years as 1951, 1954, 1959 and 1967 for units 1 to 4, and lists them as natural gas steam units. GEM shows 2014 as the start year with a replacement flag. I was not asked to check this, so I made no change.",
+   "record_id": "L100000104067:G100000402672:qa-start-year-4"
+  },
+  {
+   "gem_unit_id": "G100000402672",
+   "concern_type": "unit_missing",
+   "recommendation": "Check whether the two small diesel standby engines at this plant belong in the tracker.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "gem_plant_id": "L100000104067",
+   "plant_name": "Danskammer Generating Station",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "The EIA table for August 2026 lists generators 5 and 6 at plant code 2480, each 2.7 MW, burning diesel, with standby status. They are not in the GEM export and are well under the capacity threshold, so I did not add them.",
+   "record_id": "L100000104067:G100000402672:qa-unit-missing-5"
+  },
+  {
+   "gem_unit_id": "G100000401745",
+   "concern_type": "owner",
+   "recommendation": "Decide whether the owner should be the subsidiary World Generation X and not Digi Power X Inc.",
+   "refs": {
+    "links": [
+     "https://theenergymag.com/news/2026-06-17/north-tonawanda-ai-data-center-moratorium"
+    ]
+   },
+   "gem_plant_id": "L100000401662",
+   "plant_name": "Fortistar North Tonawanda power station",
+   "country": "United States",
+   "unit_name": "CC1",
+   "fields": {},
+   "researcher_notes": "The 2024 EIA table gives the plant name as World Generation X. A 2024 New York court decision vacated the Public Service Commission approval of the plant transfer to Digihost, per the earlier Earthjustice source. I did not find a closed transaction naming the buying entity from two publishers, so I changed nothing.",
+   "record_id": "L100000401662:G100000401745:qa-owner-1"
+  },
+  {
+   "gem_unit_id": "G100000401745",
+   "concern_type": "capacity",
+   "recommendation": "Check capacity.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+    ]
+   },
+   "gem_plant_id": "L100000401662",
+   "plant_name": "Fortistar North Tonawanda power station",
+   "country": "United States",
+   "unit_name": "CC1",
+   "fields": {},
+   "researcher_notes": "EIA lists generator 1 at 48.7 MW and generator 2 at 17 MW, which is 65.7 MW. GEM has 66.0 MW. That is within rounding. The TheEnergyMag article says state records give 55 MW. I did not report this, since capacity was not in the task.",
+   "record_id": "L100000401662:G100000401745:qa-capacity-2"
+  },
+  {
+   "gem_unit_id": "G100000401745",
+   "concern_type": "captive",
+   "recommendation": "Review the captive fields once the AI conversion either proceeds or is dropped.",
+   "refs": {
+    "links": [
+     "https://theenergymag.com/news/2026-06-17/north-tonawanda-ai-data-center-moratorium"
+    ]
+   },
+   "gem_plant_id": "L100000401662",
+   "plant_name": "Fortistar North Tonawanda power station",
+   "country": "United States",
+   "unit_name": "CC1",
+   "fields": {},
+   "researcher_notes": "The plant is described as a behind-the-grid natural gas plant feeding a bitcoin mining operation. This matches the existing captive value of cryptocurrency. No source I read says the plant now mainly serves an AI data center, so I made no change.",
+   "record_id": "L100000401662:G100000401745:qa-captive-3"
+  },
+  {
+   "gem_unit_id": "G100000401744",
+   "concern_type": "owner",
+   "recommendation": "Keep Calpine Corp as the owner for now. Check again if a newer filing names a Constellation entity as the plant holder.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+     "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_263080009600009_r3.pdf"
+    ]
+   },
+   "gem_plant_id": "L100000401661",
+   "plant_name": "Kennedy International Airport cogeneration power station",
+   "country": "United States",
+   "unit_name": "CC1",
+   "fields": {},
+   "researcher_notes": "The EIA-860 annual table for 2024 still lists Calpine Corp as owner of the three generators at this plant, with KIAC Partners as the operating utility. A New York air permit renewal names KIAC Partners as the permit holder at the Calpine JFK Energy Center. I found no dated document that renames or merges the company holding the plant. A change of parent from Calpine to Constellation is not an owner change for this field. Also, a search result said Calpine holds a 50 percent general partner interest in KIAC Partners, which may mean the plant is jointly held. I could not confirm the other partner or any share split.",
+   "record_id": "L100000401661:G100000401744:qa-owner-1"
+  },
+  {
+   "gem_unit_id": "G100001054106",
+   "concern_type": "other",
+   "recommendation": "Decide whether the city should read New York or Bronx.",
+   "refs": {},
+   "gem_plant_id": "L100001047524",
+   "plant_name": "Riverbay power station",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "EIA and GridInfo both give New York as the city. A researcher may prefer Bronx for consistency with other Bronx plants.",
+   "record_id": "L100001047524:G100001054106:qa-other-1"
+  },
+  {
+   "gem_unit_id": "G100000402114",
+   "concern_type": "other",
+   "recommendation": "Consider whether Latest Activity of September 2023 is still the right date.",
+   "refs": {},
+   "gem_plant_id": "L100000402421",
+   "plant_name": "NISA Electric Generation Project",
+   "country": "United States",
+   "unit_name": "CC1",
+   "fields": {},
+   "researcher_notes": "The EIA tables show the gas units canceled by January 2022, and the site was then relisted for 300 MW of batteries planned for 2026. The 2023 date may relate to the battery project rather than the gas units. I could not confirm this.",
+   "record_id": "L100000402421:G100000402114:qa-other-1"
+  },
+  {
+   "gem_plant_id": "L100000401662",
+   "plant_name": "Fortistar North Tonawanda power station",
+   "concern_type": "new_unit_lead",
+   "recommendation": "Keep the plant as it is and add a note that a data center operator runs on site; do not add a new unit unless a source names a new generator.",
+   "refs": {
+    "links": [
+     "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/digi-power-x-announces-arms-200-commissioning-and-timetable-for-g-1142570",
+     "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx",
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.datacenterdynamics.com/en/news/new-york-becomes-first-us-state-to-enact-data-ce/"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/digi-power-x-announces-arms-200-commissioning-and-timetable-for-g-1142570",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    },
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    },
+    {
+     "url": "https://www.datacenterdynamics.com/en/news/new-york-becomes-first-us-state-to-enact-data-ce/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "country": "United States",
+   "fields": {},
+   "researcher_notes": "Digi Power X says it has completed five more modular data center units for North Tonawanda, to be switched on by the end of the second quarter of 2026. It has also reported a load study approval for 60 more megawatts of power at one of its New York sites. That is electric load, meaning power drawn from the grid, not a new generator. The NYISO queue workbook dated August 31, 2026 lists a load request from Digihost Technologies of 50.2 MW in Niagara County, and no gas generation request for the site. The August 2026 EIA planned table has no new generator at the plant. So the 60 MW expansion looks like data center growth, not a distinct new gas unit. I did not find an air permit or a generator filing for a second unit. The state data center moratorium signed July 14, 2026 applies to new large projects of 50 MW or more.",
+   "record_id": "us-ny:plant:qa-new-unit-lead-1"
+  },
+  {
+   "gem_plant_id": "L100000104063",
+   "plant_name": "AES Greenidge power station",
+   "concern_type": "data_center_colocation",
+   "recommendation": "Add a note that the gas plant also hosts a crypto mining and possible AI data center business; watch for any new generating unit tied to the 200 MW request.",
+   "refs": {
+    "links": [
+     "https://www.theenergymag.com/news/market-news/greenidge-generation-reports-2025-preliminary-results-obtains-100-mw-power-approval-for-datacenter-expansion",
+     "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.theenergymag.com/news/market-news/greenidge-generation-reports-2025-preliminary-results-obtains-100-mw-power-approval-for-datacenter-expansion",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    }
+   ],
+   "country": "United States",
+   "fields": {},
+   "researcher_notes": "Greenidge Generation operates the gas plant at Dresden and a crypto mining data center on the same site. Its 2025 results release says it won approval for 60 MW of non-curtailable grid power and started a NYISO system impact study for another 200 MW, while it explores AI data center use. The NYISO queue workbook dated August 31, 2026 lists a Greenidge 200 MW data center load request in Yates County. Both are requests for grid power, not for new gas generators. I did not find a new generating unit or an air permit for one.",
+   "record_id": "us-ny:plant:qa-data-center-colocation-2"
+  },
+  {
+   "gem_plant_id": "L100000402221",
+   "plant_name": "Bethlehem energy center",
+   "concern_type": "uprate_request",
+   "recommendation": "Check whether the uprate adds generating capacity; no change to the unit record is needed until it does.",
+   "refs": {
+    "links": [
+     "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    }
+   ],
+   "country": "United States",
+   "fields": {},
+   "researcher_notes": "The NYISO queue workbook dated August 31, 2026 lists a request from GB II New York LLC, entry CR24-1003, for an uprate at the Bethlehem Energy Center in Albany County. It is a capacity market rights only request with a planned date of June 2026, and no megawatt figure is given. The same workbook lists Arthur Kill Unit 2 and West Babylon Unit 4 with the same request type. These are not new plants.",
+   "record_id": "us-ny:plant:qa-uprate-request-3"
+  },
+  {
+   "gem_plant_id": "L100000401587",
+   "plant_name": "Arthur Kill generating station",
+   "concern_type": "uprate_request",
+   "recommendation": "Check whether the Unit 2 uprate adds generating capacity; no change needed until it does.",
+   "refs": {
+    "links": [
+     "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    }
+   ],
+   "country": "United States",
+   "fields": {},
+   "researcher_notes": "The NYISO queue workbook dated August 31, 2026 lists entry CR24-1004 from Arthur Kill Power LLC for an uprate of Arthur Kill Unit 2 in Richmond County. It is a capacity market rights only request with no megawatt figure. It is not a new plant.",
+   "record_id": "us-ny:plant:qa-uprate-request-4"
+  },
+  {
+   "gem_plant_id": "L100000409236",
+   "plant_name": "West Babylon power station",
+   "concern_type": "uprate_request",
+   "recommendation": "Note that National Grid Generation has asked for market rights for West Babylon Unit 4; check whether the mothballed status is changing.",
+   "refs": {
+    "links": [
+     "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    }
+   ],
+   "country": "United States",
+   "fields": {},
+   "researcher_notes": "The NYISO queue workbook dated August 31, 2026 lists entry CR24-1002 from National Grid Generation for West Babylon Internal Combustion Unit 4 in Suffolk County, at the West Babylon 13.8 kilovolt connection. It is a capacity market rights only request with no megawatt figure. GEM lists the plant as mothballed. The request may mean the unit is meant to return to service, but the workbook does not say so.",
+   "record_id": "us-ny:plant:qa-uprate-request-5"
+  },
+  {
+   "gem_unit_id": "G100000408121",
+   "concern_type": "latest_activity",
+   "recommendation": "Keep the Latest Activity date of January 24, 2024 unless its source cannot be found again; then set it to January 2023 using the links here.",
+   "refs": {
+    "links": [
+     "https://www.nylpi.org/case/in-the-matter-of-astoria-gas-turbine-power-llc/",
+     "https://earthjustice.org/news/press/2022/nrg-files-petition-to-sell-land-under-astoria-queens-peaker-plant-to-beacon-wind",
+     "https://commercialobserver.com/2023/01/nrg-energy-astoria-power-plant-offshore-wind-company-216m/"
+    ]
+   },
+   "gem_plant_id": "L100000406975",
+   "plant_name": "Astoria (NRG) power station",
+   "country": "United States",
+   "unit_name": "CTG01",
+   "fields": {},
+   "researcher_notes": "GEM records Latest Activity as January 24, 2024 and cites an NRG legal web page for it. That page now shows unrelated natural gas rate notices and no longer describes the Astoria project, so the 2024 event could not be checked. The newest dated events found elsewhere are the September 15, 2022 application by NRG to sell the land and withdraw from the state air permit process, reported by Earthjustice and New York Lawyers for the Public Interest, and the January 2023 closing of the land sale to Beacon Wind Land for 215.5 million dollars, reported by Commercial Observer. Since the 2024 date is later than anything found, it was left in place rather than moved backward.",
+   "record_id": "L100000406975:G100000408121:qa-latest-activity-3"
+  }
+ ]
+}

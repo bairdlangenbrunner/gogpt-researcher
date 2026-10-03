@@ -1,0 +1,114 @@
+{
+ "meta": {
+  "plant_id": "L100000402421",
+  "plant_name": "NISA Electric Generation Project",
+  "state": "New York",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-02T15:20:00-04:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402114",
+   "unit_name": "CC1",
+   "findings": {
+    "Cancellation year": {
+     "value": "2022",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/january_generator2022.xlsx",
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/december_generator2021.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/january_generator2022.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 61331, generators GEN1 and STG1 are on the Canceled or Postponed sheet. Nameplate 70.5 and 22.0 MW."
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/december_generator2021.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 61331, generators GEN1 and STG1 are on the Planned sheet, status regulatory approvals received, not under construction."
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA monthly table for December 2021 still lists the two combined cycle generators as planned. The table for January 2022 lists them as canceled or postponed. So EIA dropped the project between those two tables, and 2022 is the first year it shows as canceled. I could not find a news story or permit order that gives the exact date the owner gave up. Articles I found only cover 2016 opposition to the floating plant."
+    }
+   },
+   "not_found": [
+    "Latest Activity"
+   ],
+   "notes": "EIA moved this unit to canceled between its December 2021 and January 2022 tables, so the cancellation year is 2022. I found no document that gives a firmer date or a newer activity date than the one already recorded."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000402114",
+   "concern_type": "other",
+   "recommendation": "Consider whether Latest Activity of September 2023 is still the right date.",
+   "note": "The EIA tables show the gas units canceled by January 2022, and the site was then relisted for 300 MW of batteries planned for 2026. The 2023 date may relate to the battery project rather than the gas units. I could not confirm this.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/january_generator2022.xlsx",
+   "used_for": [
+    "Cancellation year"
+   ],
+   "outcome": "verified",
+   "note": "Units shown as canceled."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/december_generator2021.xlsx",
+   "used_for": [
+    "Cancellation year"
+   ],
+   "outcome": "verified",
+   "note": "Units still shown as planned."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/may_generator2023.xlsx",
+   "used_for": [
+    "Cancellation year"
+   ],
+   "outcome": "verified",
+   "note": "Existing source. Units shown as canceled."
+  },
+  {
+   "url": "https://brooklyneagle.com/articles/2016/05/09/critics-pull-the-plug-on-proposed-wallabout-channel-power-barge/",
+   "used_for": [
+    "Cancellation year"
+   ],
+   "outcome": "blocked",
+   "note": "Returned 403 and a challenge page. A 2016 article, not clearly about the end of the gas project."
+  },
+  {
+   "url": "https://www.brooklynpaper.com/stories/39/18/dtg-wallabout-floating-power-plant-2016-04-29-bk.html",
+   "used_for": [
+    "Cancellation year"
+   ],
+   "outcome": "not relevant",
+   "note": "Loads, but covers 2016 opposition only."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/march_generator2022.xlsx",
+   "used_for": [
+    "Cancellation year"
+   ],
+   "outcome": "verified",
+   "note": "Units shown as canceled."
+  }
+ ]
+}

@@ -10,8 +10,9 @@ of its cross-country material. Country-specific sources belong in
 this file does not duplicate them.
 
 Tiers are operational, mirroring the confidence-labeling rule in
-`docs/sops/update.md` §6: a Tier 1 source can stand alone for green
-confidence; everything else needs a second independent corroborator.
+`docs/sops/update.md` §6: any source that fully validates (names the unit,
+states the value) can stand alone for green; a second independent
+corroborator is preferred, and required only for green on a status change.
 
 ## Tier 1 — Primary (stand-alone for green confidence)
 
@@ -147,10 +148,9 @@ Verbatim from `docs/sops/update.md` §7.2 and `docs/sops/discovery.md`:
   record during dedup, but never as a citation or `[ref]` value.
 - **abarrelfull is banned outright** as a source, in any lane, even
   corroborated. Chase the primary source it footnotes instead.
-- **Every staged value needs ≥2 independent working URLs, each explicitly
-  containing the value.** A primary/regulatory or owner-IR source may
-  stand alone for green under the §6 confidence rules; otherwise two
-  independent sources is the default bar.
+- **One fully validated working URL is sufficient per staged value; a
+  second independent source is preferred, never required** (Baird 2026-10-02, adopting the pipelines-researcher ruling of 2026-09-30).
+  A status change needs 2+ independent publishers for green.
 - **Mirrors/syndications of one document count as ONE source** — a press
   release plus wire re-publications of it is one source, not several.
 - **URLs live only in `[ref]` / "Data Source" columns** — never embedded

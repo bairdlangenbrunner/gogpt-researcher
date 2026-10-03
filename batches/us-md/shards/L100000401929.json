@@ -1,0 +1,955 @@
+{
+ "meta": {
+  "plant_id": "L100000401929",
+  "plant_name": "Essential Power Rock Springs station",
+  "state": "Maryland",
+  "mode": "blind",
+  "model": "sonnet",
+  "generated": "2026-10-02T15:27:42-04:00",
+  "done": true,
+  "urls_attempted": 7,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402859",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists this unit as operating. Plant 7835, generator 1, status OP, nameplate 198.9 MW, natural gas fired combustion turbine, operating June 2003."
+    },
+    "Capacity (MW)": {
+     "value": "198.9",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives a nameplate capacity of 198.9 MW. The state air permit rates each turbine at 190 MW at base load and zero degrees ambient temperature. The EIA nameplate figure is used."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA table gives natural gas as the energy source. The Maryland air permit says each turbine burns only pipeline quality natural gas."
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Maryland Department of the Environment Part 70 air permit calls the plant a simple-cycle natural gas-fired power plant with gas turbines. EIA also lists a combustion turbine."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "General Electric 7FA",
+     "refs": [
+      "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Maryland air permit lists four General Electric 7 FA gas turbines, emission units 1 to 4, installed in October 2001. It does not say which turbine matches which EIA generator number, but all four are the same model."
+    },
+    "Number Of Engines": {
+     "value": "1",
+     "refs": [
+      "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The air permit lists one turbine for each of the four emission units. Each EIA generator is one combustion turbine."
+    },
+    "Capacity Per Engine": {
+     "value": "198.9",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Each unit is a single turbine, so the capacity per engine equals the unit nameplate of 198.9 MW."
+    },
+    "Start year": {
+     "value": "2003",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives June 2003 as the operating date. The air permit says the turbines were installed in October 2001, so commercial operation came later."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table classifies the plant sector as IPP Non-CHP, an independent power producer that is not combined heat and power."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Status Detail",
+    "Conversion/replacement?",
+    "Captive industry type"
+   ],
+   "notes": "Status, capacity, technology and start year come from the EIA-860M table for August 2026. There is no planned retirement in that table. I found no recent news on this unit beyond the plant-level items."
+  },
+  {
+   "gem_unit_id": "G100000402860",
+   "unit_name": "2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists this unit as operating. Plant 7835, generator 2, status OP, nameplate 198.9 MW, natural gas fired combustion turbine, operating June 2003."
+    },
+    "Capacity (MW)": {
+     "value": "198.9",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives a nameplate capacity of 198.9 MW. The state air permit rates each turbine at 190 MW at base load and zero degrees ambient temperature. The EIA nameplate figure is used."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA table gives natural gas as the energy source. The Maryland air permit says each turbine burns only pipeline quality natural gas."
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Maryland Department of the Environment Part 70 air permit calls the plant a simple-cycle natural gas-fired power plant with gas turbines. EIA also lists a combustion turbine."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "General Electric 7FA",
+     "refs": [
+      "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Maryland air permit lists four General Electric 7 FA gas turbines, emission units 1 to 4, installed in October 2001. It does not say which turbine matches which EIA generator number, but all four are the same model."
+    },
+    "Number Of Engines": {
+     "value": "1",
+     "refs": [
+      "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The air permit lists one turbine for each of the four emission units. Each EIA generator is one combustion turbine."
+    },
+    "Capacity Per Engine": {
+     "value": "198.9",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Each unit is a single turbine, so the capacity per engine equals the unit nameplate of 198.9 MW."
+    },
+    "Start year": {
+     "value": "2003",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives June 2003 as the operating date. The air permit says the turbines were installed in October 2001, so commercial operation came later."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table classifies the plant sector as IPP Non-CHP, an independent power producer that is not combined heat and power."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Status Detail",
+    "Conversion/replacement?",
+    "Captive industry type"
+   ],
+   "notes": "Status, capacity, technology and start year come from the EIA-860M table for August 2026. There is no planned retirement in that table. I found no recent news on this unit beyond the plant-level items."
+  },
+  {
+   "gem_unit_id": "G100000402861",
+   "unit_name": "3",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists this unit as operating. Plant 7835, generator 3, status OP, nameplate 198.9 MW, natural gas fired combustion turbine, operating June 2003."
+    },
+    "Capacity (MW)": {
+     "value": "198.9",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives a nameplate capacity of 198.9 MW. The state air permit rates each turbine at 190 MW at base load and zero degrees ambient temperature. The EIA nameplate figure is used."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA table gives natural gas as the energy source. The Maryland air permit says each turbine burns only pipeline quality natural gas."
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Maryland Department of the Environment Part 70 air permit calls the plant a simple-cycle natural gas-fired power plant with gas turbines. EIA also lists a combustion turbine."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "General Electric 7FA",
+     "refs": [
+      "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Maryland air permit lists four General Electric 7 FA gas turbines, emission units 1 to 4, installed in October 2001. It does not say which turbine matches which EIA generator number, but all four are the same model."
+    },
+    "Number Of Engines": {
+     "value": "1",
+     "refs": [
+      "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The air permit lists one turbine for each of the four emission units. Each EIA generator is one combustion turbine."
+    },
+    "Capacity Per Engine": {
+     "value": "198.9",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Each unit is a single turbine, so the capacity per engine equals the unit nameplate of 198.9 MW."
+    },
+    "Start year": {
+     "value": "2003",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives June 2003 as the operating date. The air permit says the turbines were installed in October 2001, so commercial operation came later."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table classifies the plant sector as IPP Non-CHP, an independent power producer that is not combined heat and power."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Status Detail",
+    "Conversion/replacement?",
+    "Captive industry type"
+   ],
+   "notes": "Status, capacity, technology and start year come from the EIA-860M table for August 2026. There is no planned retirement in that table. I found no recent news on this unit beyond the plant-level items."
+  },
+  {
+   "gem_unit_id": "G100000402862",
+   "unit_name": "4",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists this unit as operating. Plant 7835, generator 4, status OP, nameplate 198.9 MW, natural gas fired combustion turbine, operating June 2003."
+    },
+    "Capacity (MW)": {
+     "value": "198.9",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives a nameplate capacity of 198.9 MW. The state air permit rates each turbine at 190 MW at base load and zero degrees ambient temperature. The EIA nameplate figure is used."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA table gives natural gas as the energy source. The Maryland air permit says each turbine burns only pipeline quality natural gas."
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Maryland Department of the Environment Part 70 air permit calls the plant a simple-cycle natural gas-fired power plant with gas turbines. EIA also lists a combustion turbine."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "General Electric 7FA",
+     "refs": [
+      "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Maryland air permit lists four General Electric 7 FA gas turbines, emission units 1 to 4, installed in October 2001. It does not say which turbine matches which EIA generator number, but all four are the same model."
+    },
+    "Number Of Engines": {
+     "value": "1",
+     "refs": [
+      "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The air permit lists one turbine for each of the four emission units. Each EIA generator is one combustion turbine."
+    },
+    "Capacity Per Engine": {
+     "value": "198.9",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Each unit is a single turbine, so the capacity per engine equals the unit nameplate of 198.9 MW."
+    },
+    "Start year": {
+     "value": "2003",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives June 2003 as the operating date. The air permit says the turbines were installed in October 2001, so commercial operation came later."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table classifies the plant sector as IPP Non-CHP, an independent power producer that is not combined heat and power."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Status Detail",
+    "Conversion/replacement?",
+    "Captive industry type"
+   ],
+   "notes": "Status, capacity, technology and start year come from the EIA-860M table for August 2026. There is no planned retirement in that table. I found no recent news on this unit beyond the plant-level items."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Essential Power Rock Springs LLC [50%]; Old Dominion Electric Cooperative [50%]",
+   "refs": [
+    "https://www.cogentrix.com/news/carlyle-acquire-major-northeast-power-portfolio",
+    "https://www.odec.com/our-cooperative/history/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.cogentrix.com/news/carlyle-acquire-major-northeast-power-portfolio",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.odec.com/our-cooperative/history/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "low",
+   "independent": false,
+   "note": "A Cogentrix and Carlyle release lists Rock Springs as a 358 MW peaking plant in the Essential Power portfolio, which is about two of the four units. The Old Dominion Electric Cooperative history page says the cooperative built two of the units at Rock Springs. Together this suggests two owners with two units each. I did not find the exact shares or which unit numbers each owner holds, so the 50 percent split is an estimate. Vistra agreed in December 2025 to buy Cogentrix, and FERC approval came in August 2026, but I found no sign that the sale has closed."
+  },
+  "Operator(s)": {
+   "value": "Essential Power Operating Services LLC",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860M table for August 2026 names Essential Power Operating Services LLC as the entity for all four generators. This is the operating company in the Essential Power group."
+  },
+  "Latitude": {
+   "value": "39.71901",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860M table for August 2026 gives latitude 39.71901 for plant 7835."
+  },
+  "Longitude": {
+   "value": "-76.15976",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860M table for August 2026 gives longitude -76.15976 for plant 7835."
+  },
+  "Location accuracy": {
+   "value": "approximate",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "EIA gives one point for the whole plant. The Maryland air permit puts the plant at 1423 Rock Springs Road, Rising Sun, which fits the area, but I did not match the point to a turbine pad."
+  },
+  "Captive industry use": {
+   "value": "no",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860M table lists the plant as an independent power producer. It serves the PJM grid and not an industrial host."
+  },
+  "Captive non-industry use": {
+   "value": "no",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860M table lists the plant as an independent power producer on the PJM grid, so it is not a captive plant."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000402859",
+   "concern_type": "ownership",
+   "recommendation": "Check which units Old Dominion Electric Cooperative owns and which belong to Essential Power, and set the shares for each unit.",
+   "note": "Sources say two units are owned by each party. EIA lists all four under Essential Power. I could not find the unit split.",
+   "refs": [
+    "https://www.cogentrix.com/news/carlyle-acquire-major-northeast-power-portfolio",
+    "https://www.odec.com/our-cooperative/history/"
+   ]
+  }
+ ],
+ "monitor": [
+  {
+   "note": "Vistra agreed to buy Cogentrix, which owns Essential Power Rock Springs. FERC approved in August 2026 and closing is expected in late 2026. Recheck the owner after closing."
+  }
+ ],
+ "newunits": [
+  {
+   "unit_name": "5 and 6",
+   "note": "The EIA-860M table for August 2026 lists generators 5 and 6 at plant 7835 as canceled or postponed, 195 MW each, natural gas combustion turbines. The air permit says these two turbines were never installed.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+    "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf"
+   ]
+  }
+ ],
+ "entities": [
+  {
+   "entity_name": "Essential Power Rock Springs LLC",
+   "role": "owner",
+   "lookup_result": "not run, blind mode"
+  },
+  {
+   "entity_name": "Old Dominion Electric Cooperative",
+   "role": "owner",
+   "lookup_result": "not run, blind mode"
+  },
+  {
+   "entity_name": "Essential Power Operating Services LLC",
+   "role": "operator",
+   "lookup_result": "not run, blind mode"
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Fuel",
+    "Start year",
+    "CHP",
+    "Operator(s)",
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Downloaded the file and read plant 7835. Four operating generators and two canceled or postponed generators, 5 and 6."
+  },
+  {
+   "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/EP%20Rock%20Springs%20Generation%20Facility%20Title%20V%20Permit.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Turbine/Engine Technology",
+    "Fuel",
+    "Number Of Engines"
+   ],
+   "outcome": "verified",
+   "note": "Maryland air permit PDF. Read the facility description and inventory."
+  },
+  {
+   "url": "https://www.cogentrix.com/news/carlyle-acquire-major-northeast-power-portfolio",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Lists Rock Springs 358 MW in the Essential Power portfolio."
+  },
+  {
+   "url": "https://www.odec.com/our-cooperative/history/",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Old Dominion built two units at Rock Springs."
+  },
+  {
+   "url": "https://investor.vistracorp.com/2026-01-05-Vistra-Adds-to-its-Industry-Leading-Generation-Portfolio-with-Acquisition-of-Cogentrix",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Vistra to buy Cogentrix, including Rock Springs. Closing pending."
+  },
+  {
+   "url": "https://www.spglobal.com/marketintelligence/en/news-insights/trending/rpvrbwligwl8aqnhhu2gxg2",
+   "used_for": [],
+   "outcome": "blocked",
+   "note": "HTTP 403."
+  },
+  {
+   "url": "https://conedison.gcs-web.com/news-releases/news-release-details/old-dominion-welcomes-con-edison-development-rock-springs",
+   "used_for": [],
+   "outcome": "blocked",
+   "note": "HTTP 403."
+  }
+ ]
+}

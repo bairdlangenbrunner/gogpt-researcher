@@ -1,0 +1,98 @@
+{
+ "meta": {
+  "plant_id": "L100000401757",
+  "plant_name": "Caithness Long Island energy center",
+  "state": "New York",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-02T15:10:00-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402010",
+   "unit_name": "CC01",
+   "findings": {
+    "Start year": {
+     "value": "2009",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://caithnessenergy.com/lotus-infrastructure-partners-to-acquire-caithness-long-island-energy-center-from-caithness-energy/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 56234, generators CT01 and ST01, status OP, nameplate 196.2 and 152.7 MW, operating month 8, operating year 2009. I read the plant name in the file."
+      },
+      {
+       "url": "https://caithnessenergy.com/lotus-infrastructure-partners-to-acquire-caithness-long-island-energy-center-from-caithness-energy/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA-860M table for August 2026 lists both generators of this combined cycle block as starting operation in August 2009. A Caithness Energy press release from September 2025 also says the plant began commercial operations in 2009."
+    }
+   },
+   "not_found": [],
+   "notes": "Start year is 2009. Owner is unchanged because no document names a new plant-holding company."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000402010",
+   "concern_type": "owner",
+   "recommendation": "Leave Owner(s) as Caithness Long Island LLC [100%] for now. Look for the name of the entity that holds the plant after the sale, for example in a New York Public Service Commission filing or a state air permit transfer.",
+   "note": "The sale to Lotus Infrastructure Partners closed on January 7, 2026, according to a closing announcement republished in January 2026. Lotus plans to rename the plant the Brookhaven Energy Center. The announcements say Lotus bought the economic interests and do not name the company that now holds the plant. The EIA-860M table for August 2026 still lists the owner as Caithness Long Island, LLC. So the holding company may be unchanged under new parent ownership. I did not find a second independent publisher.",
+   "refs": [
+    "https://www.miningstockeducation.com/2026/01/lotus-infrastructure-partners-closes-acquisition-of-the-caithness-long-island-energy-center/"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Start year",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Downloaded and read. Entity name is still Caithness Long Island, LLC."
+  },
+  {
+   "url": "https://caithnessenergy.com/lotus-infrastructure-partners-to-acquire-caithness-long-island-energy-center-from-caithness-energy/",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Caithness Energy press release from September 2025."
+  },
+  {
+   "url": "https://www.miningstockeducation.com/2026/01/lotus-infrastructure-partners-closes-acquisition-of-the-caithness-long-island-energy-center/",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Republished closing announcement from January 2026. Does not name a new holding entity."
+  },
+  {
+   "url": "https://www.lotusinfrastructure.com/news/lotus-to-acquire-caithness-long-island-energy-center-from-caithness-energy/",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Lotus announcement of the agreement from September 2025. It is an existing source and still loads. It says the deal was only agreed, not closed."
+  }
+ ]
+}

@@ -28,6 +28,16 @@ Hard guarantees enforced here:
 Run scripts/qc_checks.py --staged on each lane first; run scripts/recalc.py
 on the built xlsx after.
 
+Review decisions (--decisions): when the batch was reviewed in the review app
+(review_app/), `<staging-dir>/review_log.jsonl` holds one call per record.
+With --decisions, only ACCEPTED edit records (updates / newplants / newunits)
+go into the workbook; held, rejected, suggested and not-yet-decided records
+are left out and listed at the top of the evidence file with the reviewer's
+note. Item records (qa / entity / monitor) are never cell edits, so they all
+stay in the deliverable, each with the reviewer's call appended. Validation
+runs on every staged record either way. A sidecar that is present but not
+asked for is reported and ignored, so an unreviewed rebuild stays honest.
+
 Usage (from scripts/):
     python build_review_package.py --staging-dir ../batches/nigeria/staging \
         --scope nigeria --mode update
@@ -64,7 +74,7 @@ SHEET_DESCRIPTIONS = {
     "edit_backend_format": ("The updates-lane edits plus new plants/units "
                             "laid out in the export CSV's own table format: "
                             "one row per "
-                            "affected unit, all 86 columns, in FINAL proposed "
+                            "affected unit, all 91 columns, in FINAL proposed "
                             "form. Colored cells are the changes (color = "
                             "confidence tier; blue = re-verified unchanged; "
                             "green+empty = staged deletion); Data Source "
@@ -90,10 +100,95 @@ def load_lanes(staging_dir):
     return lanes
 
 
+EDIT_LANES = ("updates", "newplants", "newunits")   # lanes whose records are cell edits
+
+
+def load_decisions(staging_dir):
+    """record_id -> the reviewer's latest call on it, from the review app's log in this
+    staging dir (review_app/store.py writes it; the log is append-only and the last record
+    per key speaks). None when the batch has no log."""
+    log = staging_dir / "review_log.jsonl"
+    if not log.exists():
+        return None
+    out = {}
+    for line in log.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        rec = json.loads(line)
+        rid = rec.get("record_id") or rec.get("key", "").split("::", 1)[-1]
+        if rid:
+            out[rid] = rec
+    return out
+
+
+def decision_of(rec, decisions):
+    """'accept' | 'hold' | 'reject' | 'suggest' | 'undecided' for an edit record."""
+    d = decisions.get(rec.get("record_id"))
+    if not d or d.get("undecided") or "call" in d:
+        return "undecided"
+    return d.get("decision") or "undecided"
+
+
+def apply_decisions(lanes, decisions):
+    """Split the lanes by the reviewer's calls. Returns (kept_lanes, left_out, counts): kept
+    has only accepted edit records (items untouched, each stamped with `review_call`); left_out
+    is [(lane, record, decision record or None)] for every edit record not accepted."""
+    kept, left_out = {}, []
+    counts = {"accept": 0, "hold": 0, "reject": 0, "suggest": 0, "undecided": 0}
+    for lane, recs in lanes.items():
+        if lane in EDIT_LANES:
+            keep = []
+            for rec in recs:
+                dec = decision_of(rec, decisions)
+                counts[dec] += 1
+                if dec == "accept":
+                    keep.append(rec)
+                else:
+                    left_out.append((lane, rec, decisions.get(rec.get("record_id"))))
+            kept[lane] = keep
+        else:
+            out = []
+            for rec in recs:
+                rec = dict(rec)
+                d = decisions.get(rec.get("record_id"))
+                if d and not d.get("undecided") and d.get("call"):
+                    rec["review_call"] = d
+                out.append(rec)
+            kept[lane] = out
+    return kept, left_out, counts
+
+
+def describe_decision(d):
+    """One plain sentence for the evidence file: who called what, when, and their note."""
+    if not d or d.get("undecided"):
+        return "not decided yet in the review app"
+    who, when = d.get("reviewer") or "?", str(d.get("ts") or "")[:10]
+    if d.get("decision") == "suggest":
+        val = d.get("suggested_value") or ""
+        txt = f"suggested by {who} on {when}" + (f": {val}" if val else " (note only)")
+    else:
+        verb = {"accept": "accepted", "hold": "held", "reject": "rejected"}.get(d.get("decision"), d.get("decision"))
+        txt = f"{verb} by {who} on {when}"
+    if d.get("note"):
+        txt += f". {d['note']}"
+    return txt
+
+
+def describe_call(d):
+    who, when = d.get("reviewer") or "?", str(d.get("ts") or "")[:10]
+    txt = f"{str(d.get('call', '')).replace('_', ' ')} by {who} on {when}"
+    if d.get("note"):
+        txt += f". {d['note']}"
+    return txt
+
+
 def ref_col_for(value_col):
     """Pair a value column with its Data Source column per the export layout."""
     special = {
         "Status": "Status Data Source",
+        "Status Detail": "Status Data Source",
+        "City": "Location Data Source",
         "Capacity (MW)": "Capacity Data Source",
         "Number Of Engines": "Capacity Data Source",
         "Capacity Per Engine": "Capacity Data Source",
@@ -112,7 +207,7 @@ def ref_col_for(value_col):
         "Latitude": "Location Data Source",
         "Longitude": "Location Data Source",
         "Location accuracy": "Location Data Source",
-        "Disrupted due to conflict": "Disrupted due to conflict Data Source",
+        "Disrupted by conflict": "Disrupted by conflict Data Source",
         "Captive industry use": "Captive Data Source",
         "Captive industry type": "Captive Data Source",
         "Captive non-industry use": "Captive Data Source",
@@ -408,8 +503,22 @@ def build_xlsx(lanes, out_path, export_csv=None):
     wb.save(out_path)
 
 
-def build_evidence(lanes, out_path, stamp, scope, mode):
+def build_evidence(lanes, out_path, stamp, scope, mode, left_out=None):
     lines = [f"# Evidence — gogpt batch {stamp} ({scope}, {mode})", ""]
+    if left_out is not None:
+        lines.append("## Left out by the review")
+        lines.append("")
+        lines.append("These staged edits were not accepted in the review app, so they are not in "
+                     "the actions workbook. A suggestion goes back to the researcher; a held or "
+                     "undecided edit waits for a later batch.")
+        lines.append("")
+        if not left_out:
+            lines.append("- none: every staged edit was accepted")
+        for lane, rec, d in sorted(left_out, key=lambda t: (t[1].get("plant_name", ""), t[1].get("unit_name", ""))):
+            ident = " / ".join(x for x in (rec.get("gem_unit_id"), rec.get("plant_name"), rec.get("unit_name")) if x)
+            cols = ", ".join(f"{c}: {v}" for c, v in rec.get("fields", {}).items()) or lane
+            lines.append(f"- {ident or '(unnamed record)'}: {cols}. {describe_decision(d)}")
+        lines.append("")
     for lane in LANES:
         recs = lanes.get(lane, [])
         if not recs:
@@ -439,6 +548,8 @@ def build_evidence(lanes, out_path, stamp, scope, mode):
             lines.append(f"- confidence: {tier} (independent: {ind})")
             if rec.get("researcher_notes"):
                 lines.append(f"- notes: {rec['researcher_notes']}")
+            if rec.get("review_call"):
+                lines.append(f"- reviewer call: {describe_call(rec['review_call'])}")
             lines.append("")
     out_path.write_text("\n".join(lines), encoding="utf-8")
 
@@ -454,6 +565,9 @@ def main():
     p.add_argument("--export-csv", default=str(gem_export_csv()),
                    help="fresh export CSV backing the edit_backend_format "
                         "sheet (default: the standard pull location)")
+    p.add_argument("--decisions", action="store_true",
+                   help="apply the review app's calls (<staging-dir>/review_log.jsonl): "
+                        "only accepted edits go into the workbook")
     p.add_argument("--dry-run", action="store_true")
     args = p.parse_args()
 
@@ -474,6 +588,22 @@ def main():
     n = sum(len(v) for v in lanes.values())
     print(f"validated {n} records across lanes: "
           + ", ".join(f"{k}={len(v)}" for k, v in lanes.items()))
+
+    left_out = None
+    decisions = load_decisions(staging)
+    if args.decisions:
+        if decisions is None:
+            sys.exit(f"ERROR: --decisions but no review_log.jsonl in {staging} "
+                     "(review the batch in the review app first, or drop the flag)")
+        lanes, left_out, counts = apply_decisions(lanes, decisions)
+        print("review decisions: " + ", ".join(f"{k}={v}" for k, v in counts.items())
+              + f"; {counts['accept']} edits go into the workbook, "
+              f"{len(left_out)} left out (listed in the evidence file)")
+        if not any(lanes.values()):
+            sys.exit("ERROR: nothing left to build after the review decisions")
+    elif decisions is not None:
+        print(f"note: {staging / 'review_log.jsonl'} exists but --decisions was not given; "
+              "building every staged record, the reviewer's calls are ignored")
     if args.dry_run:
         print("dry run — nothing written")
         return
@@ -497,7 +627,7 @@ def main():
                  "(run the §1 pull chain, or pass --export-csv)")
     build_xlsx(lanes, xlsx_path,
                export_csv=export_csv if export_csv.exists() else None)
-    build_evidence(lanes, md_path, stamp, args.scope, args.mode)
+    build_evidence(lanes, md_path, stamp, args.scope, args.mode, left_out=left_out)
     print(f"wrote {xlsx_path}\nwrote {md_path}\n"
           f"next: python recalc.py {xlsx_path}")
 

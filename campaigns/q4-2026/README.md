@@ -9,10 +9,11 @@ earlier copy of the sheet; V2 is live). Kickoff/Guide doc linked there too.
 
 - **US assignments are per state**, not per country: the assignments tab has
   one row per `United States - <State>` with its own priority level, days
-  allocated and status. `build_campaign_roster.py` currently keys on
-  Country/Area only — it needs a `Country/State` key (split US rows on
-  `State/Province`) before it can mirror this tab. Until then the roster for
-  the US is the sheet itself.
+  allocated and status. `build_campaign_roster.py` keys on a `scope`
+  column: one roster row per `United States - <State>` (split on
+  `State/Province`), the country name elsewhere, plus an `indev_mw` column
+  for the tab's in-development-MW sort. `worklist.py --state` and
+  `qc_checks.py --state` take the same state names.
 - **Priority level** (high / medium / low, by in-development capacity) sets
   how much effort the "country tips" questions get; it does not change the
   unit-level priority ladder.

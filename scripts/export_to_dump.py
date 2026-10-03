@@ -15,9 +15,11 @@ every run — never from hard-coded offsets:
   * strip the UTF-8 BOM from the first header cell ("Last Updated")
   * "Disrupted due to conflict"              → "Disrupted by conflict"
   * "Disrupted due to conflict Data Source"  → "Disrupted by conflict Data Source"
-  * append the dump-only columns ("Backup Power", "Backup Power Data Source",
-    "IRP") as empty — the live pull doesn't carry them; upstream scans look
-    columns up by name and tolerate blanks.
+  * append any dump-only column ("Backup Power", "Backup Power Data Source",
+    "IRP") the pull lacks, empty. The 91-column pull (Oct 2026) already
+    carries all three and uses the "Disrupted by conflict" names, so on a
+    current pull the renames and the append are no-ops; they stay for older
+    exports. Upstream scans look columns up by name and tolerate blanks.
 
 The output timestamp comes from the input CSV's mtime (i.e. the pull time),
 so the filename's cycle tag reflects when the data was pulled, not when this
@@ -72,8 +74,9 @@ def bridge(input_csv: str, outdir: str, stamp: str | None) -> str:
         reader = csv.reader(f)
         header = next(reader)
         header = [RENAMES.get(h, h) for h in header]
-        ws.append(header + DUMP_ONLY_COLUMNS)
-        pad = [""] * len(DUMP_ONLY_COLUMNS)
+        extra = [c for c in DUMP_ONLY_COLUMNS if c not in header]
+        ws.append(header + extra)
+        pad = [""] * len(extra)
         for row in reader:
             ws.append(row + pad)
             n_rows += 1
@@ -81,8 +84,8 @@ def bridge(input_csv: str, outdir: str, stamp: str | None) -> str:
     os.makedirs(outdir, exist_ok=True)
     wb.save(out_path)
     print(f"wrote {out_path}")
-    print(f"  {n_rows} unit rows, {len(header) + len(DUMP_ONLY_COLUMNS)} columns "
-          f"({len(header)} from pull + {len(DUMP_ONLY_COLUMNS)} dump-only, empty)")
+    print(f"  {n_rows} unit rows, {len(header) + len(extra)} columns "
+          f"({len(header)} from pull + {len(extra)} dump-only, empty)")
     return out_path
 
 

@@ -1,0 +1,56 @@
+{
+ "meta": {
+  "plant_id": "L100001047476",
+  "plant_name": "Hillburn power plant",
+  "state": "New York",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-02T16:21:33-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001054051",
+   "unit_name": "1",
+   "findings": {
+    "City": {
+     "value": "Hillburn",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Read from the plant table in the downloaded file."
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860 annual table for 2024 lists the Hillburn plant, plant code 2628, at Six 4th Street in the city of Hillburn, county Rockland, zip 10931."
+    }
+   },
+   "not_found": [],
+   "notes": "The city is filled from the EIA annual plant table. Nothing else was checked, as the brief asked."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Zip file of the EIA-860 annual tables for 2024. The plant sheet gives the city."
+  }
+ ]
+}

@@ -1,0 +1,165 @@
+{
+ "meta": {
+  "state": "New York",
+  "kind": "statewide",
+  "generated": "2026-10-02T13:21:28-07:00",
+  "done": true,
+  "urls_attempted": 10,
+  "urls_verified": 7,
+  "searched": [
+   "NYISO interconnection queue workbook dated August 31, 2026: checked the main queue, the cluster projects tab, the affected system tab and the load projects tab for gas, oil and dual fuel entries.",
+   "EIA-860M table for August 2026, Planned sheet, New York rows with gas or oil fuel. Only small units found, all under 3 MW.",
+   "Web searches for new gas plants proposed in New York in 2025 and 2026, and for gas generation built for New York data centers.",
+   "Web searches on the 2025 State Energy Plan, the NYISO reliability needs for New York City, and the July 2026 state data center moratorium.",
+   "Web searches on Digi Power X at North Tonawanda, Greenidge at Dresden, Cayuga at Lansing, and the Alpha Generation repowering proposal for Gowanus and Narrows.",
+   "Not reached within the fetch budget: DEC Environmental Notice Bulletin and Public Service Commission document search. No air permit notice for a new large gas plant was found through news searches."
+  ]
+ },
+ "qa": [
+  {
+   "gem_plant_id": "L100000401662",
+   "plant_name": "Fortistar North Tonawanda power station",
+   "concern_type": "new_unit_lead",
+   "recommendation": "Keep the plant as it is and add a note that a data center operator runs on site; do not add a new unit unless a source names a new generator.",
+   "note": "Digi Power X says it has completed five more modular data center units for North Tonawanda, to be switched on by the end of the second quarter of 2026. It has also reported a load study approval for 60 more megawatts of power at one of its New York sites. That is electric load, meaning power drawn from the grid, not a new generator. The NYISO queue workbook dated August 31, 2026 lists a load request from Digihost Technologies of 50.2 MW in Niagara County, and no gas generation request for the site. The August 2026 EIA planned table has no new generator at the plant. So the 60 MW expansion looks like data center growth, not a distinct new gas unit. I did not find an air permit or a generator filing for a second unit. The state data center moratorium signed July 14, 2026 applies to new large projects of 50 MW or more.",
+   "refs": [
+    "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/digi-power-x-announces-arms-200-commissioning-and-timetable-for-g-1142570",
+    "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx",
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+    "https://www.datacenterdynamics.com/en/news/new-york-becomes-first-us-state-to-enact-data-ce/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/digi-power-x-announces-arms-200-commissioning-and-timetable-for-g-1142570",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    },
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    },
+    {
+     "url": "https://www.datacenterdynamics.com/en/news/new-york-becomes-first-us-state-to-enact-data-ce/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ]
+  },
+  {
+   "gem_plant_id": "L100000104063",
+   "plant_name": "AES Greenidge power station",
+   "concern_type": "data_center_colocation",
+   "recommendation": "Add a note that the gas plant also hosts a crypto mining and possible AI data center business; watch for any new generating unit tied to the 200 MW request.",
+   "note": "Greenidge Generation operates the gas plant at Dresden and a crypto mining data center on the same site. Its 2025 results release says it won approval for 60 MW of non-curtailable grid power and started a NYISO system impact study for another 200 MW, while it explores AI data center use. The NYISO queue workbook dated August 31, 2026 lists a Greenidge 200 MW data center load request in Yates County. Both are requests for grid power, not for new gas generators. I did not find a new generating unit or an air permit for one.",
+   "refs": [
+    "https://www.theenergymag.com/news/market-news/greenidge-generation-reports-2025-preliminary-results-obtains-100-mw-power-approval-for-datacenter-expansion",
+    "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.theenergymag.com/news/market-news/greenidge-generation-reports-2025-preliminary-results-obtains-100-mw-power-approval-for-datacenter-expansion",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    }
+   ]
+  },
+  {
+   "gem_plant_id": "L100000402221",
+   "plant_name": "Bethlehem energy center",
+   "concern_type": "uprate_request",
+   "recommendation": "Check whether the uprate adds generating capacity; no change to the unit record is needed until it does.",
+   "note": "The NYISO queue workbook dated August 31, 2026 lists a request from GB II New York LLC, entry CR24-1003, for an uprate at the Bethlehem Energy Center in Albany County. It is a capacity market rights only request with a planned date of June 2026, and no megawatt figure is given. The same workbook lists Arthur Kill Unit 2 and West Babylon Unit 4 with the same request type. These are not new plants.",
+   "refs": [
+    "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    }
+   ]
+  },
+  {
+   "gem_plant_id": "L100000401587",
+   "plant_name": "Arthur Kill generating station",
+   "concern_type": "uprate_request",
+   "recommendation": "Check whether the Unit 2 uprate adds generating capacity; no change needed until it does.",
+   "note": "The NYISO queue workbook dated August 31, 2026 lists entry CR24-1004 from Arthur Kill Power LLC for an uprate of Arthur Kill Unit 2 in Richmond County. It is a capacity market rights only request with no megawatt figure. It is not a new plant.",
+   "refs": [
+    "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    }
+   ]
+  },
+  {
+   "gem_plant_id": "L100000409236",
+   "plant_name": "West Babylon power station",
+   "concern_type": "uprate_request",
+   "recommendation": "Note that National Grid Generation has asked for market rights for West Babylon Unit 4; check whether the mothballed status is changing.",
+   "note": "The NYISO queue workbook dated August 31, 2026 lists entry CR24-1002 from National Grid Generation for West Babylon Internal Combustion Unit 4 in Suffolk County, at the West Babylon 13.8 kilovolt connection. It is a capacity market rights only request with no megawatt figure. GEM lists the plant as mothballed. The request may mean the unit is meant to return to service, but the workbook does not say so.",
+   "refs": [
+    "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    }
+   ]
+  }
+ ],
+ "monitor": [
+  {
+   "plant_name": "Gowanus and Narrows repowering (Alpha Generation)",
+   "gem_plant_id": "",
+   "monitor_reason": "new plant candidate",
+   "recheck_by": "2027-01",
+   "note": "Alpha Generation, owned by an ArcLight affiliate, proposed on March 16, 2026 to replace six peaking units on barges at the Gowanus and Narrows stations in Brooklyn with three new lower-emission gas units. It answered a Con Edison search for ways to meet a New York City reliability need. The press release does not give megawatts or a start date, and a trade press report says state regulators asked for non-emitting options only. The existing barge stations are not in GEM's New York list that I checked. No air permit has been filed that I found. Check whether the old units are in scope, and recheck once Con Edison or the Public Service Commission picks solutions.",
+   "refs": [
+    "https://digital-release.wowktv.com/business/press-releases/cision/20260316NY10814/alphagen-proposes-repowering-and-battery-projects-to-secure-nycs-long-term-grid-reliability",
+    "https://www.eenews.net/articles/plans-to-repower-2-peaker-plants-floated-in-new-york-city"
+   ],
+   "verifications": [
+    {
+     "url": "https://digital-release.wowktv.com/business/press-releases/cision/20260316NY10814/alphagen-proposes-repowering-and-battery-projects-to-secure-nycs-long-term-grid-reliability",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.eenews.net/articles/plans-to-repower-2-peaker-plants-floated-in-new-york-city",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ]
+  }
+ ]
+}

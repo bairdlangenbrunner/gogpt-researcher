@@ -1,0 +1,331 @@
+{
+ "meta": {
+  "plant_id": "L100000402511",
+  "plant_name": "Brandywine power facility",
+  "state": "Maryland",
+  "mode": "blind",
+  "model": "sonnet",
+  "generated": "2026-10-02T15:40:00-04:00",
+  "done": true,
+  "urls_attempted": 10,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401771",
+   "unit_name": "F701",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists all three generators at the Brandywine Power Facility, plant code 54832, with status operating."
+    },
+    "Capacity (MW)": {
+     "value": "288.8",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists nameplate capacity of 98.7 MW, 98.7 MW and 91.4 MW for generators 1, 2 and 3. They share unit code F701 and form one combined-cycle block. The three add up to 288.8 MW. The EIA annual 2025 file gives the same numbers. These are two releases of the same EIA data, so they are not independent."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas, fossil liquids: fuel oil",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860 annual file for 2025 lists natural gas as the first energy source and distillate fuel oil as the second for all three generators. It says they can switch between oil and gas."
+    },
+    "Turbine/Engine Technology": {
+     "value": "combined cycle",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists the technology as Natural Gas Fired Combined Cycle, with two combustion turbines and one steam turbine under unit code F701."
+    },
+    "Capacity Per Engine": {
+     "value": "98.7",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives 98.7 MW for each of the two combustion turbines, generators 1 and 2. The steam turbine is 91.4 MW."
+    },
+    "Start year": {
+     "value": "1996",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives operating dates of August 1996 for generator 2, September 1996 for generator 3 and October 1996 for generator 1. So the block started in 1996."
+    },
+    "CHP": {
+     "value": "yes",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860 annual file for 2025 marks all three generators as associated with a combined heat and power system, topping cycle, and lists the plant sector as independent power producer combined heat and power."
+    },
+    "Latest Activity": {
+     "value": "Acquired by Alpha Generation and ArcLight Capital Partners from Onward Energy Holdings, May 2026",
+     "refs": [
+      "https://www.lw.com/en/news/2026/05/latham-watkins-advises-arclight-capital-partners-alpha-generation-acquisition-of-brandywine-power"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.lw.com/en/news/2026/05/latham-watkins-advises-arclight-capital-partners-alpha-generation-acquisition-of-brandywine-power",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Latham and Watkins release dated May 18, 2026 says Alpha Generation, with ArcLight Capital Partners, completed the purchase of Brandywine Power from Onward Energy Holdings. It describes an approximately 250 MW combined-cycle plant in Prince George's County, Maryland. The release rounds the size to 250 MW, which differs from the 288.8 MW nameplate total."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Number Of Engines",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Status Detail",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use",
+    "Conversion/replacement?"
+   ],
+   "notes": "Status, capacity, fuel, technology, start year and CHP come from the EIA tables. A trade magazine profile says the plant has two GE Frame 7EA gas turbines and one GE steam turbine, but the verifier could not open that page, so the model is raised as a question. No retirement or cancellation was found. The plant sells power to the grid and is not captive."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Alpha Generation [100%]",
+   "refs": [
+    "https://www.lw.com/en/news/2026/05/latham-watkins-advises-arclight-capital-partners-alpha-generation-acquisition-of-brandywine-power"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.lw.com/en/news/2026/05/latham-watkins-advises-arclight-capital-partners-alpha-generation-acquisition-of-brandywine-power",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The Latham and Watkins release dated May 18, 2026 says Alpha Generation, together with ArcLight Capital Partners, completed the acquisition of Brandywine Power from Onward Energy Holdings. The release gives no ownership split. The EIA-860 annual file for 2025 still lists the old owner name. I take Alpha Generation as the single owner. The EIA ownership table has no co-owners listed for this plant."
+  },
+  "Operator(s)": {
+   "value": "Alpha Generation",
+   "refs": [
+    "https://www.lw.com/en/news/2026/05/latham-watkins-advises-arclight-capital-partners-alpha-generation-acquisition-of-brandywine-power"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.lw.com/en/news/2026/05/latham-watkins-advises-arclight-capital-partners-alpha-generation-acquisition-of-brandywine-power",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The release says the buyer is Alpha Generation, which describes itself as an independent power producer. The release does not say who operates the plant day to day, so this is implied."
+  },
+  "Location accuracy": {
+   "value": "exact",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860 plant table for 2025 gives coordinates for the plant at 16400 Mattawoman Drive, Brandywine, of 38.6681 and -76.8678. I did not check the point on a map."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000401771",
+   "concern_type": "unverified_value",
+   "recommendation": "Check the equipment model against a second document before entering it.",
+   "note": "A Power Engineering profile of Panda Brandywine says the plant has two GE Frame 7EA gas turbines, two Nooter Eriksen heat recovery steam generators and a GE condensing steam turbine, with commercial operation on October 31, 1996. I read this on the page myself, but the site blocks the checking tool. So the equipment is a lead and not a confirmed value. The same page implies two gas turbines, so the number of engines may be 2.",
+   "refs": [
+    "https://www.power-eng.com/gas/panda-brandywine/"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000401771",
+   "concern_type": "naming",
+   "recommendation": "No action. Do not confuse this plant with the nearby Keys Energy Center.",
+   "note": "News coverage of the December 2025 Maryland fast-track process calls the Alpha Generation upgrade proposal a Brandywine project. The Public Service Commission order names it as the Keys Energy Center, a separate plant. So I did not attach that proposal to this plant.",
+   "refs": [
+    "https://marylandmatters.org/wp-content/uploads/2025/12/Order_NGEA-Proposals-PC74.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Alpha Generation",
+   "role": "owner",
+   "lookup_result": "not run, blind mode"
+  },
+  {
+   "entity_name": "Alpha Generation",
+   "role": "operator",
+   "lookup_result": "not run, blind mode"
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Capacity Per Engine",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Downloaded the Excel file and read plant 54832 rows."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+   "used_for": [
+    "Fuel",
+    "CHP",
+    "Capacity (MW)",
+    "Location accuracy"
+   ],
+   "outcome": "verified",
+   "note": "Downloaded the zip and read the plant and generator tables."
+  },
+  {
+   "url": "https://www.lw.com/en/news/2026/05/latham-watkins-advises-arclight-capital-partners-alpha-generation-acquisition-of-brandywine-power",
+   "used_for": [
+    "Owner(s)",
+    "Operator(s)",
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Acquisition announcement dated May 18, 2026."
+  },
+  {
+   "url": "https://www.power-eng.com/gas/panda-brandywine/",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "blocked",
+   "note": "The verifier got HTTP 403. I read the page with a browser-like client."
+  },
+  {
+   "url": "https://www.power-eng.com/?p=58567",
+   "used_for": [],
+   "outcome": "blocked",
+   "note": "Same profile, HTTP 403 in the verifier."
+  },
+  {
+   "url": "https://www.power-eng.com/coal/panda-brandywine/",
+   "used_for": [],
+   "outcome": "blocked",
+   "note": "Same profile, HTTP 403 in the verifier."
+  },
+  {
+   "url": "https://stg-mde.maryland.gov/programs/permits/AirManagementPermits/Test/KMCThermo%20Brandywine%202016%20TitleV.pdf",
+   "used_for": [],
+   "outcome": "dead",
+   "note": "HTTP 404."
+  },
+  {
+   "url": "https://gridinfo.com/plant/brandywine-power-facility/54832",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Lead site, value not found by the checker."
+  }
+ ]
+}

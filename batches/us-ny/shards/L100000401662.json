@@ -1,0 +1,168 @@
+{
+ "meta": {
+  "plant_id": "L100000401662",
+  "plant_name": "Fortistar North Tonawanda power station",
+  "state": "New York",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-02T16:21:33-04:00",
+  "done": true,
+  "urls_attempted": 7,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401745",
+   "unit_name": "CC1",
+   "findings": {
+    "Latest Activity": {
+     "value": "In June 2026 the North Tonawanda Common Council extended its moratorium on data centers for another year, which halts the owner's plan to convert the adjacent bitcoin mining site into an AI data center.",
+     "refs": [
+      "https://theenergymag.com/news/2026-06-17/north-tonawanda-ai-data-center-moratorium"
+     ],
+     "verifications": [
+      {
+       "url": "https://theenergymag.com/news/2026-06-17/north-tonawanda-ai-data-center-moratorium",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A TheEnergyMag article from June 18, 2026 reports the council vote. It names the Fortistar North Tonawanda plant at 1070 Erie Avenue and Digi Power X."
+    }
+   },
+   "not_found": [
+    "Captive industry type",
+    "Captive non-industry use"
+   ],
+   "notes": "The captive fields are left as they are. Sources describe crypto mining on site today and an AI conversion that is on hold, but none says whether the plant still sells power to the grid."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Digi Power X Inc [100%]",
+   "refs": [
+    "https://theenergymag.com/news/2026-06-17/north-tonawanda-ai-data-center-moratorium",
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://theenergymag.com/news/2026-06-17/north-tonawanda-ai-data-center-moratorium",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+     "ok": true,
+     "contains_value": false,
+     "name_found": false,
+     "note": "EIA lists the plant as World Generation X with owner Digihost Technology Inc. Digihost was renamed Digi Power X in March 2025, per the company's own notice, which I could not load in the checker."
+    }
+   ],
+   "tier": "medium",
+   "independent": true,
+   "note": "The June 2026 TheEnergyMag article ties the plant to Digi Power X Inc, formerly Digihost Technology, and its local subsidiary World Generation X. The EIA annual table for 2024 lists Digihost Technology Inc as owner. This matches the value GEM already has. It is medium because the plant may be held by the subsidiary and not by the parent."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000401745",
+   "concern_type": "owner",
+   "recommendation": "Decide whether the owner should be the subsidiary World Generation X and not Digi Power X Inc.",
+   "note": "The 2024 EIA table gives the plant name as World Generation X. A 2024 New York court decision vacated the Public Service Commission approval of the plant transfer to Digihost, per the earlier Earthjustice source. I did not find a closed transaction naming the buying entity from two publishers, so I changed nothing.",
+   "refs": [
+    "https://theenergymag.com/news/2026-06-17/north-tonawanda-ai-data-center-moratorium"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000401745",
+   "concern_type": "capacity",
+   "recommendation": "Check capacity.",
+   "note": "EIA lists generator 1 at 48.7 MW and generator 2 at 17 MW, which is 65.7 MW. GEM has 66.0 MW. That is within rounding. The TheEnergyMag article says state records give 55 MW. I did not report this, since capacity was not in the task.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000401745",
+   "concern_type": "captive",
+   "recommendation": "Review the captive fields once the AI conversion either proceeds or is dropped.",
+   "note": "The plant is described as a behind-the-grid natural gas plant feeding a bitcoin mining operation. This matches the existing captive value of cryptocurrency. No source I read says the plant now mainly serves an AI data center, so I made no change.",
+   "refs": [
+    "https://theenergymag.com/news/2026-06-17/north-tonawanda-ai-data-center-moratorium"
+   ]
+  }
+ ],
+ "monitor": [
+  {
+   "item": "60 MW expansion and AI data center conversion at the North Tonawanda site",
+   "recheck_by": "2027-06-30",
+   "note": "Aggregators say the site could add another 60 MW. I found no permit, interconnection filing or company document that gives a status for a new generating unit. The city extended its data center moratorium in June 2026. The company says it targets conversion of its New York sites from the third and fourth quarters of 2027. So this is still only talk. Recheck after the moratorium vote comes up again.",
+   "refs": [
+    "https://theenergymag.com/news/2026-06-17/north-tonawanda-ai-data-center-moratorium"
+   ]
+  }
+ ],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Digi Power X Inc",
+   "role": "owner",
+   "lookup_result": "Local lookup found nothing for 'Digi Power X'. No match in the local export. Not added; the brief says GEM already lists this owner, so check the entity system before any change."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://theenergymag.com/news/2026-06-17/north-tonawanda-ai-data-center-moratorium",
+   "used_for": [
+    "Latest Activity",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Article from June 18, 2026."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "EIA-860 annual 2024. Plant 54131 is named World Generation X, owner Digihost Technology Inc."
+  },
+  {
+   "url": "https://www.datacenterdynamics.com/en/news/citys-data-center-moratorium-in-new-york-impacts-digi-power-xs-hopes-to-convert-cryptomine-to-ai-data-center/",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "blocked",
+   "note": "Blocked for the checker. The archived copy did not contain the 60 MW text. Not cited."
+  },
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/0001854368/000121390026089450/ea030173001ex99-1.htm",
+   "used_for": [
+    "monitor"
+   ],
+   "outcome": "blocked",
+   "note": "Company press release from August 14, 2026. The checker was blocked. I read it with curl. It says the New York sites convert to AI from the third and fourth quarters of 2027. Not cited."
+  },
+  {
+   "url": "https://www.globenewswire.com/news-release/2025/03/04/3036389/0/en/digihost-technology-changes-name-to-digi-power-x-inc.html",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "failed",
+   "note": "Checker could not load it. The name change was read in an SEC copy of the same notice, dated March 4, 2025."
+  },
+  {
+   "url": "https://earthjustice.org/press/2024/victory-new-york-court-rescinds-approval-of-fracked-gas-power-plant-sale-to-cryptocurrency-mining-company-in-north-tonawanda",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "not relevant",
+   "note": "Existing source, not rechecked."
+  }
+ ]
+}

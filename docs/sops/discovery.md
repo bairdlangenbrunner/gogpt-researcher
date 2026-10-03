@@ -116,7 +116,7 @@ Every staged URL passes `url_verifier.py` per update.md §7.1 — no exceptions.
 - **Dedup before staging** — scoped CSV, unfiltered CSV, and a gem.wiki name check, every candidate (§5).
 - **gem.wiki is a dedup check only, never a citation** (§5.3).
 - **Entity lookup bare + `--remote` before staging any new owner** — no duplicate entities (§7).
-- **Every URL passes `url_verifier.py`; ≥2 independent sources per value; never gem.wiki/globalenergymonitor.org/abarrelfull** (§8).
+- **Every URL passes `url_verifier.py`; one fully validated ref per value suffices (2+ independent preferred; 2+ for a status change to be green); never gem.wiki/globalenergymonitor.org/abarrelfull** (§8).
 - **Never write the live GEM database** — output is always the staged lanes feeding the two-workbook deliverable for human application.
 
 ## §11 Pause-and-ask triggers

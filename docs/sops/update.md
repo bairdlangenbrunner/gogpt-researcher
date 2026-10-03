@@ -1,6 +1,6 @@
 # GOGPT Update SOP
 
-Last revised: 2026-08-04 (rev 2 — adopted the upstream pipeline's cross-cutting scans, counts baseline, and status-group coverage sweep; rev 1 2026-07-27 was the initial GOGPT adaptation from lng-terminals-researcher rev 2)
+Last revised: 2026-10-02 (rev 3 — evidence bar: one fully validated ref suffices, 2+ preferred; status changes still need 2+ for green; rev 2 2026-08-04 — adopted the upstream pipeline's cross-cutting scans, counts baseline, and status-group coverage sweep; rev 1 2026-07-27 was the initial GOGPT adaptation from lng-terminals-researcher rev 2)
 
 Operational rules for updating existing plants and units in the GEM Global Oil and Gas Plant Tracker (GOGPT). This is the bread-and-butter workflow of the quarterly cycle: working an assigned country's units in priority order, refreshing statuses and values, filling missing datasources, and processing inferred-shelved/cancelled candidates.
 
@@ -75,7 +75,7 @@ The most rule-bound sub-type. The manual's status vocabulary: `announced`, `pre-
 - **Inferred statuses**: an in-development unit that disappears from company documents with no activity for **2 years** → `shelved - inferred 2 y`; for **4 years** → `cancelled - inferred 4 y`. The date of the most recent source found drives the call. Record the last-seen source and date in the Latest Activity field (staged in the `updates` lane) so the next cycle can re-run the clock.
 - **Mothballed vs retired**: mothballed = deactivated (inactive >1 year) but not retired; retired = permanently decommissioned or converted to another fuel. **Mothballed units never carry a Retired Year.**
 - **From-2020 rule**: mothballed/retired/cancelled units are only tracked from 2020 forward — don't research pre-2020 closures.
-- **Conflict damage**: check "Disrupted due to conflict", then — destroyed or multi-year rebuild with no reconstruction underway → `mothballed`; partially damaged / likely repaired within ~1 year → `operating`; `retired` **only** with explicit confirmation the plant will never be rebuilt. Unclear damage with no sign of stoppage stays `operating`, with a Status Details note.
+- **Conflict damage**: check "Disrupted by conflict", then — destroyed or multi-year rebuild with no reconstruction underway → `mothballed`; partially damaged / likely repaired within ~1 year → `operating`; `retired` **only** with explicit confirmation the plant will never be rebuilt. Unclear damage with no sign of stoppage stays `operating`, with a Status Details note.
 
 **Never punt a confirmed status change to a qa note.** If research establishes a transition happened, stage it in `updates` with its paired year fields and datasource — a qa record is correct only when the question is genuinely unresolved, and a "reviewer should confirm…" hedge in your own note is the signal you haven't finished the research.
 
@@ -110,9 +110,9 @@ For any populated value missing a datasource, source-search and stage the fill. 
 
 Cell-color convention in the actions workbook, per cell not per row:
 
-- **Green** — primary/regulatory source (government dataset, regulator filing, owner IR) OR ≥2 independent corroborating sources agreeing on the value
-- **Yellow** — single non-primary source; value implied or contested
-- **Red** — single weak source. **Prefer leaving the cell blank** and logging a `qa` record instead — red signals work needed, not work done
+- **Green** — one fully validated ref: it clears `url_verifier.py`, names this plant/unit, and states the value (see `docs/reference/confidence_tiers.md`). A second independent source is preferred, never required (Baird 2026-10-02, adopting the pipelines-researcher ruling of 2026-09-30). **Exception: a status change is green only on 2+ independent publishers.**
+- **Yellow** — a single-source status change; or a ref that validates only partially (e.g. names the plant but the value is implied, or the value is contested)
+- **Red** — single weak or unvalidated ref (doesn't name the plant, value not on the page). **Prefer leaving the cell blank** and logging a `qa` record instead — red signals work needed, not work done
 - **Blue** — re-verified this batch, unchanged from the DB value (the "no changes" outcome at cell granularity; pairs with the manual's "no changes" Record entry)
 
 A cell with no color means the agent searched but found no confirming source — a research gap, not a confirmation.
@@ -133,7 +133,7 @@ Checks: HTTP 200, not a soft-error page (Cloudflare "Just a moment", paywall stu
 
 - **Never cite gem.wiki or globalenergymonitor.org**, and never cite republishers whose data is GEM-derived (anti-circularity — GEM data must never source itself).
 - **abarrelfull is banned** as a source in any lane.
-- **Every staged value needs ≥2 independent working URLs, each explicitly containing the value.** One primary/regulatory source may stand alone only under the green rules in §6, but two independent sources is the default bar.
+- **One fully validated working URL is sufficient for a staged value; a second independent source is preferred but never required** (Baird 2026-10-02, adopting the pipelines-researcher ruling of 2026-09-30). Take the second when it is cheap (document already open, one quick search) and set `independent`; never hold a unit open or spend another search for it. **A status change needs 2+ independent publishers for green; single-source = yellow.**
 - **Mirrors/syndications of one document count as ONE source** — a press release and three wire re-publishings of it are one source, not four.
 - **URLs live only in reference/datasource columns** — never embedded in value, name, or notes fields.
 
@@ -208,7 +208,7 @@ When the human has applied the batch, the country isn't done until:
 - **Never modify the live GEM database.** Outputs are always the two-workbook deliverable for human application in the web UI.
 - **Every URL passes the §7.1 verification gate** — no exceptions.
 - **Never cite gem.wiki / globalenergymonitor.org / GEM-derived republishers; abarrelfull is banned** (§7.2).
-- **≥2 independent working URLs, each explicitly containing the value; mirrors of one document = one source** (§7.2).
+- **One fully validated URL suffices (2+ independent preferred; a status change needs 2+ for green); mirrors of one document = one source** (§7.2).
 - **Reference edits merge, never replace; no orphan citations; URLs only in reference columns** (§7.2–§7.3, §4.4).
 - **Fresh pull chain at the start of every batch**, column map re-derived (§3).
 - **Project-level field changes apply to ALL unit rows** — and check the unfiltered CSV at co-located coal/gas plants (§9).
@@ -217,6 +217,7 @@ When the human has applied the batch, the country isn't done until:
 - **Don't create duplicate entities** — `entity_lookup.py` before staging any new owner/operator (§8).
 - **Blank = not researched; "not found/unknown" only after searching** (§5).
 - **`qc_checks.py` passes before every build** (§10).
+- **Notes are written for people, in plain language** (`docs/reference/notes_style.md`, Baird 2026-10-02): `researcher_notes` and `action` must read as a colleague's explanation, with sources named by what they are and no repo jargon.
 
 ## §14 Pause-and-ask triggers
 
@@ -243,8 +244,8 @@ Stop and consult the user when:
 
 | Color | Meaning | When to use |
 |---|---|---|
-| Green | Primary/regulatory or ≥2 independent | Government dataset, regulator filing, owner IR |
-| Yellow | Single non-primary | Single trade-press article |
-| Red | Single weak source | Prefer blank + `qa` record |
+| Green | One fully validated ref (2+ independent for a status change) | Any ref that clears the verifier, names the unit, states the value |
+| Yellow | Single-source status change, or partial validation | Value implied or contested |
+| Red | Single weak/unvalidated ref | Prefer blank + `qa` record |
 | Blue | Re-verified, unchanged | The "no changes" outcome at cell level |
 | (none) | Searched, nothing found | Research gap, not confirmation |

@@ -68,7 +68,7 @@ Snapshot from the scoped export (pull of 2026-08-05; re-derive at batch start):
 - **EPA CAMPD / ECHO** — unit-level CEMS emissions are the strongest
   "actually operating" evidence; ICIS-Air for federal permit status.
 
-**Tier 2 — needs a second source**
+**Tier 2 — validates alone only if it names the plant and states the value; corroborate when cheap**
 
 - Owner/developer IR and press releases; trade press (Power Engineering,
   Utility Dive, Data Center Dynamics); PRNewswire; local news.

@@ -1,0 +1,320 @@
+{
+ "meta": {
+  "plant_id": "L100001047726",
+  "plant_name": "NRG Chalk Point CT power station",
+  "state": "Maryland",
+  "mode": "blind",
+  "model": "sonnet",
+  "generated": "2026-10-02T15:30:25-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001054395",
+   "unit_name": "SGT1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists plant 61890, NRG Chalk Point CT, generator SGT1. Status is operating."
+    },
+    "Capacity (MW)": {
+     "value": "94.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists plant 61890, NRG Chalk Point CT, generator SGT1. Nameplate capacity is 94.0 MW. The EIA-860 annual file for 2025 lists the same plant and generator. It also gives 94.0 MW."
+    },
+    "Fuel": {
+     "value": "fossil liquids: fuel oil, fossil gas: natural gas",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860 annual file for 2025 lists the same plant and generator. Energy source 1 is distillate fuel oil and energy source 2 is natural gas. The unit can switch between them while running. The August 2026 monthly table lists only distillate fuel oil."
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists plant 61890, NRG Chalk Point CT, generator SGT1. The prime mover code is GT, which means combustion gas turbine. So the technology is gas turbine."
+    },
+    "Number Of Engines": {
+     "value": "1",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists plant 61890, NRG Chalk Point CT, generator SGT1. The plant has one generator row for this unit, with prime mover GT. So I counted one turbine."
+    },
+    "Capacity Per Engine": {
+     "value": "94.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists plant 61890, NRG Chalk Point CT, generator SGT1. With one turbine, the per-engine capacity equals the 94.0 MW nameplate."
+    },
+    "Start year": {
+     "value": "1990",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists plant 61890, NRG Chalk Point CT, generator SGT1. Operating year is 1990 and month is June. The 2025 annual file agrees."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860 annual file for 2025 lists the same plant and generator. The generator is marked N for being part of a combined heat and power system. The plant sector is IPP Non-CHP."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Status Detail",
+    "Conversion/replacement?",
+    "Location accuracy",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use"
+   ],
+   "notes": "The EIA tables confirm one operating 94 MW oil and gas turbine that started in 1990. I could not find the turbine maker, because the EIA files do not give it and two web searches turned up no air permit for this unit."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "NRG Chalk Point CT [100%]",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860 annual file for 2025 lists the same plant and generator. Ownership is coded S, meaning single owner. The owner is the entity NRG Chalk Point CT. The parent company is probably NRG Energy, but I did not find a document that says so."
+  },
+  "Operator(s)": {
+   "value": "NRG Chalk Point CT",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860 annual file for 2025 lists the same plant and generator. The reporting utility for the plant is NRG Chalk Point CT. The file has no separate operator field, so this is a reasonable but not explicit match."
+  },
+  "Latitude": {
+   "value": "38.5444",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860 annual file for 2025 lists the same plant and generator. Plant latitude is 38.5444. The August 2026 monthly table agrees."
+  },
+  "Longitude": {
+   "value": "-76.6861",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860 annual file for 2025 lists the same plant and generator. Plant longitude is -76.6861. The August 2026 monthly table agrees."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100001054395",
+   "concern_type": "other",
+   "recommendation": "Check whether the plant is an independent power producer with no captive use. The EIA sector says IPP Non-CHP, which suggests the captive fields should be no.",
+   "note": "I did not report captive fields because no document states them directly.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "NRG Chalk Point CT",
+   "role": "owner",
+   "lookup_result": "not run, blind mode"
+  },
+  {
+   "entity_name": "NRG Chalk Point CT",
+   "role": "operator",
+   "lookup_result": "not run, blind mode"
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Technology",
+    "Start year",
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Excel file read locally. Plant 61890, generator SGT1, status OP, nameplate 94.0 MW, operating 6/1990, prime mover GT, fuel DFO."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+   "used_for": [
+    "Fuel",
+    "CHP",
+    "Owner(s)",
+    "Operator(s)",
+    "Start year",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Zip of Excel files read locally. Generator sheet row for SGT1, ownership S, energy sources DFO and NG, CHP N."
+  }
+ ]
+}

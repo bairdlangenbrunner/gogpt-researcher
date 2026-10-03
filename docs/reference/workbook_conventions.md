@@ -56,12 +56,15 @@ the evidence file.
 
 ## Color conventions (per cell, not per row)
 
-- **Green** — high confidence: a primary/regulatory source OR ≥2 genuinely
-  independent corroborating sources. Mirrors of one document = ONE source
-  (yellow, not green); never list mirror URLs to manufacture a green.
-- **Yellow** — single solid source that verifiably contains the value; or
-  value implied/contested.
-- **Red** — single weak source; prefer blank + a `qa_review` entry instead.
+- **Green** — high confidence: one fully validated ref (clears
+  `url_verifier.py`, names the plant/unit, states the value); a second
+  independent source is preferred, not required (Baird 2026-10-02, adopting the pipelines-researcher ruling of 2026-09-30).
+  A STATUS CHANGE is green only on 2+ genuinely independent publishers.
+  Mirrors of one document = ONE source; never list mirror URLs to
+  manufacture a second source.
+- **Yellow** — a single-source status change; or a ref that validates only
+  partially; or value implied/contested.
+- **Red** — single weak/unvalidated ref; prefer blank + a `qa_review` entry instead.
 - **Blue** — value unchanged from the DB but re-verified this batch (the
   "no changes" outcome at cell granularity).
 - **Green + empty cell** — staged deletion: the existing value is unsupported

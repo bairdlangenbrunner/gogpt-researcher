@@ -3,7 +3,7 @@ Shared GOGPT column-name sets and controlled vocabulary — canonical source for
 the read-only column lists and enum values used by pull_gem_db.py,
 scope_filter.py, worklist.py, qc_checks.py, and build_review_package.py.
 
-Column names are the exact gem_export_gogpt.csv header strings (the 86-column
+Column names are the exact gem_export_gogpt.csv header strings (the 91-column
 layout in gem-db-ops/gem_all_fields.py GOGPT_COLUMNS); enum values follow the
 GOGPT Editing Manual (March 2026) — see docs/reference/controlled_vocab.md and
 docs/reference/lifecycle_rules.md. Enum casing in the live export can drift;
@@ -21,6 +21,7 @@ COMPUTED_COLUMNS = {
     "Operator GEM Entity ID", "Owner(s) GEM Entity ID", "Parent GEM Entity ID",
     "Parent(s)",  # derived from the owner entity graph
     "Linked Projects",
+    "Owner Share Imputed", "Parent Share Imputed",  # Y/blank flags set by the pull
     "Subregion", "Region",  # derived from Country/Area
 }
 
@@ -126,3 +127,16 @@ EU_UK_COUNTRIES = {
 # --- Inferred-status thresholds (years since last evidence of activity) -----
 SHELVED_INFERRED_YEARS = 2    # announced/pre-con/construction -> shelved (inferred)
 CANCELLED_INFERRED_YEARS = 4  # same disappearance test -> cancelled (inferred)
+
+# --- Research fields a state-agent subagent reports on -----------------------
+# Exact CSV headers; imported by build_state_brief.py (brief header) and the
+# sweep/assemble tooling. Plant-level fields apply to every unit of the plant.
+RESEARCH_FIELDS = [
+    "Status", "Capacity (MW)", "Fuel", "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model", "Number Of Engines", "Capacity Per Engine",
+    "Start year", "Retired year", "Planned retire", "Cancellation year",
+    "Latest Activity", "Status Detail", "CHP", "Owner(s)", "Operator(s)",
+    "Latitude", "Longitude", "Location accuracy", "Captive industry use",
+    "Captive industry type", "Captive non-industry use",
+    "Conversion/replacement?",
+]

@@ -1,0 +1,762 @@
+{
+ "meta": {
+  "plant_id": "L100000103964",
+  "plant_name": "Dickerson Generating Station",
+  "state": "Maryland",
+  "mode": "blind",
+  "model": "sonnet",
+  "generated": "2026-10-02T15:29:58-04:00",
+  "done": true,
+  "urls_attempted": 9,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402929",
+   "unit_name": "GT2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA-860M table for July 2026 lists generator GT2 at the Dickerson Power plant, plant code 1572, with status operating. The Maryland Department of the Environment permit fact sheet from late 2025 says the unit ran 1,103 hours in 2025."
+    },
+    "Capacity (MW)": {
+     "value": "163.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+      "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "Plant 1572, generator GT2, nameplate 163.0 MW in the EIA-860M table for July 2026 and in the 2024 annual EIA-860 generator file. The state air permit gives a nominal rating of 167 MW, which is a different measure. I used the EIA nameplate."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas, fossil liquids: fuel oil",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The 2024 EIA-860 generator file lists natural gas as the main fuel and distillate fuel oil as the second fuel for GT2. The state permit fact sheet says the unit fires natural gas and No. 2 fuel oil as a secondary fuel."
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "EIA lists GT2 as a natural gas fired combustion turbine with prime mover GT. The permit calls it a General Electric Frame 7F combustion turbine in simple cycle peaking service, with no steam cycle."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "General Electric Frame 7F",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Maryland Department of the Environment permit fact sheet describes HCT-1 as a General Electric Frame 7F combustion turbine. EIA calls this unit GT2."
+    },
+    "Number Of Engines": {
+     "value": "1",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The permit lists HCT-1 as one combustion turbine with its own stack, which matches EIA generator GT2."
+    },
+    "Capacity Per Engine": {
+     "value": "163.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "One turbine per unit, so this equals the unit nameplate of 163.0 MW in the EIA-860M table for July 2026."
+    },
+    "Start year": {
+     "value": "1992",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA-860M table for July 2026 gives operating year 1992 and month June. The state permit fact sheet gives the installation date as June 1992."
+    },
+    "Latest Activity": {
+     "value": "Operated 1,103 hours in 2025",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The state permit fact sheet for the renewal application received in October 2025 reports that this unit ran 1,103 hours in 2025, at a capacity factor under 9 percent."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The 2024 annual EIA-860 generator file says GT2 is not associated with a combined heat and power system. The plant sector is independent power producer, non-combined heat and power."
+    },
+    "Captive industry use": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "EIA lists the plant as an independent power producer. The permit says the plant generates electricity for sale. So it is not an industrial captive plant."
+    },
+    "Captive non-industry use": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "EIA lists the plant as an independent power producer. The permit says the plant generates electricity for sale. So it is not a captive plant for a non-industrial user."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Status Detail",
+    "Conversion/replacement?",
+    "Captive industry type"
+   ],
+   "notes": "EIA calls this unit GT2 and the state air permit calls it HCT-1. Not found: no retirement, planned retirement or cancellation exists in the sources, and no source speaks to status detail or to a conversion or replacement. Captive industry type does not apply."
+  },
+  {
+   "gem_unit_id": "G100000402930",
+   "unit_name": "GT3",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA-860M table for July 2026 lists generator GT3 at the Dickerson Power plant, plant code 1572, with status operating. The Maryland Department of the Environment permit fact sheet from late 2025 says the unit ran 1,096 hours in 2025."
+    },
+    "Capacity (MW)": {
+     "value": "163.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+      "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "Plant 1572, generator GT3, nameplate 163.0 MW in the EIA-860M table for July 2026 and in the 2024 annual EIA-860 generator file. The state air permit gives a nominal rating of 167 MW, which is a different measure. I used the EIA nameplate."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas, fossil liquids: fuel oil",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The 2024 EIA-860 generator file lists natural gas as the main fuel and distillate fuel oil as the second fuel for GT3. The state permit fact sheet says the unit fires natural gas and No. 2 fuel oil as a secondary fuel."
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "EIA lists GT3 as a natural gas fired combustion turbine with prime mover GT. The permit calls it a General Electric Frame 7F combustion turbine in simple cycle peaking service, with no steam cycle."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "General Electric Frame 7F",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Maryland Department of the Environment permit fact sheet describes HCT-2 as a General Electric Frame 7F combustion turbine. EIA calls this unit GT3."
+    },
+    "Number Of Engines": {
+     "value": "1",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The permit lists HCT-2 as one combustion turbine with its own stack, which matches EIA generator GT3."
+    },
+    "Capacity Per Engine": {
+     "value": "163.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "One turbine per unit, so this equals the unit nameplate of 163.0 MW in the EIA-860M table for July 2026."
+    },
+    "Start year": {
+     "value": "1992",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "low",
+     "independent": false,
+     "note": "The EIA-860M table for July 2026 gives operating year 1992, month June, for GT3. The state permit fact sheet gives the installation date of HCT-2 as June 1993 and says the turbines were installed in 1992 and 1993. The sources conflict. I report the EIA operating year, since the permit gives an installation date rather than an operating date."
+    },
+    "Latest Activity": {
+     "value": "Operated 1,096 hours in 2025",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The state permit fact sheet for the renewal application received in October 2025 reports that this unit ran 1,096 hours in 2025, at a capacity factor under 9 percent."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The 2024 annual EIA-860 generator file says GT3 is not associated with a combined heat and power system. The plant sector is independent power producer, non-combined heat and power."
+    },
+    "Captive industry use": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "EIA lists the plant as an independent power producer. The permit says the plant generates electricity for sale. So it is not an industrial captive plant."
+    },
+    "Captive non-industry use": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "EIA lists the plant as an independent power producer. The permit says the plant generates electricity for sale. So it is not a captive plant for a non-industrial user."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Status Detail",
+    "Conversion/replacement?",
+    "Captive industry type"
+   ],
+   "notes": "EIA calls this unit GT3 and the state air permit calls it HCT-2. Not found: no retirement, planned retirement or cancellation exists in the sources, and no source speaks to status detail or to a conversion or replacement. Captive industry type does not apply."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Dickerson Power, LLC [100%]",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+    "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The 2024 annual EIA-860 plant file lists Dickerson Power, LLC as the owner, and the generator file marks both units as single owner. The permit fact sheet says Dickerson Power, LLC holds the permit. A Bracewell law firm notice says Rockland Capital bought the Dickerson Power facility from an affiliate of Olympus Power, completed on 4 November 2024. So the parent is likely Rockland Capital. I did not find a document that states the parent share, so I give only the operating company."
+  },
+  "Operator(s)": {
+   "value": "Dickerson Power, LLC",
+   "refs": [
+    "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+   ],
+   "verifications": [
+    {
+     "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The state permit fact sheet names Dickerson Power, LLC as the applicant, with its own plant manager on site. EIA does not name a separate operator. A search snippet said an outside contractor called NAES took over operations and maintenance in January 2025, but I could not open that source, so I did not use it."
+  },
+  "Latitude": {
+   "value": "39.2097",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860M table for July 2026 gives latitude 39.2097 for the plant."
+  },
+  "Longitude": {
+   "value": "-77.4644",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860M table for July 2026 gives longitude -77.4644 for the plant."
+  },
+  "Location accuracy": {
+   "value": "approximate",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "low",
+   "independent": false,
+   "note": "EIA gives the plant coordinates to four decimal places and does not say they are surveyed. I could not check them against a map."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000402930",
+   "concern_type": "conflict",
+   "recommendation": "Check whether GT3 began operating in 1992 or 1993.",
+   "note": "EIA gives June 1992 for GT3. The Maryland permit gives June 1993 as the installation date for the second turbine.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+    "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000402929",
+   "concern_type": "ownership",
+   "recommendation": "Check whether the owner entity should show Rockland Capital as parent, and whether NAES is now the operator.",
+   "note": "Rockland Capital bought the facility in November 2024 per a Bracewell notice. I could not confirm shares or the operator change.",
+   "refs": [
+    "https://www.bracewell.com/news-events/bracewell-represents-rockland-capital-in-acquisition-from-affiliate-of-olympus-power/"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Dickerson Power, LLC",
+   "role": "owner",
+   "lookup_result": "not run, blind mode"
+  },
+  {
+   "entity_name": "Dickerson Power, LLC",
+   "role": "operator",
+   "lookup_result": "not run, blind mode"
+  },
+  {
+   "entity_name": "Rockland Capital",
+   "role": "parent of owner (not stated as share)",
+   "lookup_result": "not run, blind mode"
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Start year",
+    "Latitude",
+    "Longitude",
+    "Turbine/Engine Technology"
+   ],
+   "outcome": "verified",
+   "note": "Excel file loaded. Plant 1572, GT2 and GT3, operating, 163.0 MW, June 1992. Retired sheet shows the old plant code 65284 steam units retired in 2020 and GT1 retired 2022."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+   "used_for": [
+    "Fuel",
+    "CHP",
+    "Owner(s)",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Excel files in zip loaded. Energy source NG with second fuel DFO, not CHP, single owner Dickerson Power, LLC."
+  },
+  {
+   "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/Dickerson%20Complete%20Docket.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Number Of Engines",
+    "Latest Activity",
+    "Fuel",
+    "Operator(s)",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Maryland Department of the Environment Part 70 permit docket. Names the plant and General Electric Frame 7F turbines."
+  },
+  {
+   "url": "https://www.bracewell.com/news-events/bracewell-represents-rockland-capital-in-acquisition-from-affiliate-of-olympus-power/",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Law firm notice of the Rockland Capital purchase of Dickerson Power."
+  },
+  {
+   "url": "https://montgomerycountymd.gov/DEP/Resources/Files/trash-recycling/dafig/genon-reports/2024-q4-dafig-report-genon-dickerson-facility.pdf",
+   "used_for": [],
+   "outcome": "dead",
+   "note": "404 to the verifier and a plain download returned HTML."
+  },
+  {
+   "url": "https://montgomerycountymd.gov/DEP/Resources/Files/trash-recycling/dafig/genon-reports/2024-q3-dafig-report-genon-dickerson-facility.pdf",
+   "used_for": [],
+   "outcome": "dead",
+   "note": "404."
+  },
+  {
+   "url": "https://montgomerycountymd.gov/DEP/Resources/Files/trash-recycling/dafig/genon-reports/2024-q1-dafig-report-genon-dickerson-facility.pdf",
+   "used_for": [],
+   "outcome": "dead",
+   "note": "404."
+  },
+  {
+   "url": "http://www.smartsignal.com/UserFiles/file/POWER-Dickerson_Generating_Station_10_01_10.pdf",
+   "used_for": [],
+   "outcome": "dead",
+   "note": "404."
+  },
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/1013871/000101387116000022/a201510-k.htm",
+   "used_for": [],
+   "outcome": "blocked",
+   "note": "403 and no Wayback snapshot."
+  }
+ ]
+}

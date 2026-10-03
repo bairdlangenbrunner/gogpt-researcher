@@ -1,0 +1,56 @@
+{
+ "meta": {
+  "plant_id": "L100001047470",
+  "plant_name": "Harlem River Yard power station",
+  "state": "New York",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-02T16:21:33-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001054038",
+   "unit_name": "1",
+   "findings": {
+    "City": {
+     "value": "Bronx",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Read from the plant table in the downloaded file."
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860 annual table for 2024 lists the Harlem River Yard plant, plant code 7914, at 680-780 East 132nd Street in the city of Bronx, county Bronx, zip 10454."
+    }
+   },
+   "not_found": [],
+   "notes": "The city is filled from the EIA annual plant table. Nothing else was checked, as the brief asked."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Zip file of the EIA-860 annual tables for 2024. The plant sheet gives the city."
+  }
+ ]
+}

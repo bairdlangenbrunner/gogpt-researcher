@@ -1,0 +1,376 @@
+{
+ "meta": {
+  "plant_id": "L100000402170",
+  "plant_name": "Wildcat Point generation facility",
+  "state": "Maryland",
+  "mode": "blind",
+  "model": "sonnet",
+  "generated": "2026-10-02T12:35:09-07:00",
+  "done": true,
+  "urls_attempted": 11,
+  "urls_verified": 9
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402074",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists all three generators of unit CC1 as operating. Row read: Plant 59220, generators CT1, CT2, ST1, status OP, nameplate 310.3, 310.3 and 493.0 MW, Natural Gas Fired Combined Cycle, operating April 2018."
+    },
+    "Capacity (MW)": {
+     "value": "1113.6",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives 310.3 MW for each of the two combustion turbines and 493.0 MW for the steam turbine. The sum is 1113.6 MW."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/ODEC%20Wildcat%20DRAFT%20Initial%20Permit%202025.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA-860M table for August 2026 gives natural gas as the energy source for all three generators. The Maryland Department of the Environment permit says the turbines burn pipeline natural gas only."
+    },
+    "Turbine/Engine Technology": {
+     "value": "combined cycle",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists the technology as natural gas fired combined cycle."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Mitsubishi M501GAC",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/ODEC%20Wildcat%20DRAFT%20Initial%20Permit%202025.pdf",
+      "https://mhi.com/news/1308021702.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/ODEC%20Wildcat%20DRAFT%20Initial%20Permit%202025.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mhi.com/news/1308021702.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Maryland Department of the Environment draft air permit for 2025 describes two Mitsubishi G Series M501GAC combustion turbines. A Mitsubishi Heavy Industries press release from August 2013 also names two M501GAC turbines for this plant. I did not find the steam turbine maker."
+    },
+    "Number Of Engines": {
+     "value": "2",
+     "refs": [
+      "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/ODEC%20Wildcat%20DRAFT%20Initial%20Permit%202025.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/ODEC%20Wildcat%20DRAFT%20Initial%20Permit%202025.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The air permit describes two combustion turbines feeding two heat recovery boilers and one steam turbine."
+    },
+    "Capacity Per Engine": {
+     "value": "310.3",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives 310.3 MW for each combustion turbine. The air permit gives a nominal 270 MW for each, so this value is the EIA nameplate figure."
+    },
+    "Start year": {
+     "value": "2018",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives an operating date of April 2018 for all three generators."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860 survey for 2025 says these generators are not part of a combined heat and power system."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Status Detail",
+    "Conversion/replacement?",
+    "Captive industry type",
+    "Captive non-industry use"
+   ],
+   "notes": "The unit is one combined cycle block of two combustion turbines and one steam turbine. I found no planned retirement and no conversion history. The steam turbine maker was not found."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Old Dominion Electric Cooperative [100%]",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+    "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/ODEC%20Wildcat%20DRAFT%20Initial%20Permit%202025.pdf"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/ODEC%20Wildcat%20DRAFT%20Initial%20Permit%202025.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860 survey for 2025 lists Old Dominion Electric Cooperative as the sole owner of the plant. The air permit says the cooperative owns and operates the facility."
+  },
+  "Operator(s)": {
+   "value": "Old Dominion Electric Cooperative",
+   "refs": [
+    "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/ODEC%20Wildcat%20DRAFT%20Initial%20Permit%202025.pdf"
+   ],
+   "verifications": [
+    {
+     "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/ODEC%20Wildcat%20DRAFT%20Initial%20Permit%202025.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The Maryland Department of the Environment draft air permit for 2025 says Old Dominion Electric Cooperative owns and operates the Wildcat Point facility."
+  },
+  "Latitude": {
+   "value": "39.719364",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860M table for August 2026 gives this latitude."
+  },
+  "Longitude": {
+   "value": "-76.16163",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860M table for August 2026 gives this longitude."
+  },
+  "Location accuracy": {
+   "value": "approximate",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "These are plant-level coordinates from EIA. I did not check them against a map."
+  },
+  "Captive industry use": {
+   "value": "no",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860 survey for 2025 puts the plant in the electric utility sector. It is a cooperative that serves its member utilities."
+  }
+ },
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Old Dominion Electric Cooperative",
+   "role": "owner",
+   "lookup_result": "not run, blind mode"
+  },
+  {
+   "entity_name": "Old Dominion Electric Cooperative",
+   "role": "operator",
+   "lookup_result": "not run, blind mode"
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Fuel",
+    "Turbine/Engine Technology",
+    "Start year",
+    "Capacity Per Engine",
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Excel file read locally."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+   "used_for": [
+    "Owner(s)",
+    "CHP",
+    "Captive industry use"
+   ],
+   "outcome": "verified",
+   "note": "Excel files read locally."
+  },
+  {
+   "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/new%20Title%20V%20public%20review/ODEC%20Wildcat%20DRAFT%20Initial%20Permit%202025.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Number Of Engines",
+    "Operator(s)",
+    "Fuel"
+   ],
+   "outcome": "verified",
+   "note": "PDF read with pdftotext."
+  },
+  {
+   "url": "https://mhi.com/news/1308021702.html",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Press release from August 2013."
+  },
+  {
+   "url": "https://www.nsenergybusiness.com/news/newsodec-secures-final-approval-for-wildcat-point-generation-facility-140414-4213731/",
+   "used_for": [],
+   "outcome": "blocked",
+   "note": "HTTP 403. Not used."
+  }
+ ]
+}

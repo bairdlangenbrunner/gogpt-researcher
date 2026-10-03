@@ -18,7 +18,8 @@ rules an agent needs at batch time, and the live doc always wins on conflict.
 | ↳ United States research | one row per US state: ISO/RTO, data sources, data-center gas, state notes, tips (the US "country tips") | `gid=136658633` |
 | ↳ US IRPs | per-utility Integrated Resource Plan links and notes, grouped by state | `gid=560668233` |
 | ↳ Country tips trends | one row per country per cycle (Q4 2026 row is required output) | `gid=332853261` |
-| ↳ QC/Country checklist | the mandatory per-country close-out checklist (DURING / Q4 docs / USA-only / OPTIONAL / END-OF-UPDATE blocks) | `gid=1911792199` |
+| ↳ QC/Country checklist | the mandatory per-country close-out checklist (DURING / Q4 docs / USA-only / OPTIONAL / END-OF-UPDATE blocks); how it maps onto this repo is planned in `notes/qc_checklist_plan.md` | `gid=1911792199` |
+| ↳ Researcher Country Assignments, columns M and N | M = "Best Estimate for NEXT update (days)", N = "Q4 2026 status" (to do / in progress / done); the two columns the checklist asks researchers to fill | `gid=0` |
 | ↳ Presentation Sign Ups, days_assigned, Researcher Allocations Q4 2026 | meeting + capacity bookkeeping | `gid=629176799`, `gid=741303039`, `gid=1070249029` |
 | **Q4 2026 GOGPT Kickoff/Guide** (Doc) | cycle priorities, reminders, the important-links list, DB changes this cycle | https://docs.google.com/document/d/1WOw82iZp2yjJmckjHRjLXhBrrF7I_oHejwY3fOy869s |
 | Q4 2026 GOGPT Update (Sheet, **superseded by V2**) | the kickoff doc still links this earlier copy; V2 above is the live one | https://docs.google.com/spreadsheets/d/1FPzJlFXKgOZ2uf5BU0CTGGkOGquXm9VrbrzM3Xx1Qms |
@@ -27,7 +28,8 @@ rules an agent needs at batch time, and the live doc always wins on conflict.
 
 | document | type | link |
 |---|---|---|
-| **GOGPT Editing Manual** (March 2026; last modified 2026-06-24) | Doc | https://docs.google.com/document/d/1CCtz2ITRpYkAaupEO7K-FuB3KXMv18mg_W6NpJNV9h8 |
+| **GOGPT Editing Manual — September 2026** (current; last modified 2026-09-23). Has the update procedure: Starting Research, the status priority ladder under General Guidelines, Finishing Research incl. the Validation Report step | Doc | https://docs.google.com/document/d/1qUlWDDGLb0vX-bdsmB3gdFlqg-A-lv6wAIKjOAstSKE |
+| GOGPT Editing Manual — March 2026 (**superseded** by the September 2026 doc above; distillations below were checked against this one) | Doc | https://docs.google.com/document/d/1CCtz2ITRpYkAaupEO7K-FuB3KXMv18mg_W6NpJNV9h8 |
 | **Status Timeline Training** — milestone vs scheduled-event entry model (new in 2026) | Doc | https://docs.google.com/document/d/13lcRwK-gCg0Z5s_Qd-VjRnjvlsaragrRltRlxfXvdOk |
 | ↳ status-timeline test database (practice only, not live) | web app | https://testdata2-gem-project-db-9960d182aa9b.herokuapp.com/units/ |
 | GOGPT Editing Manual folder (a.k.a. GOGPT Training Center) — manual + supporting docs | Drive folder | https://drive.google.com/drive/folders/1JF6qrF8e5-q86v8qrdlVrTSzc29v5XLu |
@@ -62,6 +64,7 @@ rules an agent needs at batch time, and the live doc always wins on conflict.
 | Research Resources | Drive folder | https://drive.google.com/drive/folders/1mLM0yBlrLbhFBiAoImTAWPMAjtZ23jgr |
 | GOGPT project folder | Drive folder | https://drive.google.com/drive/folders/1UebqU-Rw70CvO5Vv81fPqovs5k827TRl |
 | Captive power at LNG terminals — notes | Doc | https://docs.google.com/document/d/16icG8I27tQkttpq_dUseIARfE7-Rbnrk_ew7M1g2EQ8 |
+| **Captive LNG sheet** ("Use this - Captive PPs_All Regions_08.03.2026.xlsx", linked from checklist row 6; xlsx on Drive, read it with `gws drive files get --params '{"alt":"media"}'`; 14 tabs: per region, Qualifying vs Excluded; columns Terminal, Terminal ID, Hardware Type, Individual Unit MW, Aggregate MW, Qualifying Basis, Turbine class, References) | xlsx | https://docs.google.com/spreadsheets/d/19YvVT918PYHq_DkdvKWtoXYJ2Xl7l7R3 |
 | LNG tracker 2026-03-13 download (captive-power-at-LNG input) | xlsx | https://docs.google.com/spreadsheets/d/1iOrpj-498jLR7QSkNRljUsgmfzRYNUfO |
 
 ## Team coordination
@@ -102,7 +105,7 @@ disagree, the live doc wins — update the distillation.
 
 | repo file | source document(s) | last checked |
 |---|---|---|
-| `lifecycle_rules.md`, `unit_conventions.md`, `controlled_vocab.md` | GOGPT Editing Manual; Status Timeline Training | 2026-09-15 (manual unchanged since 2026-06-24) |
+| `lifecycle_rules.md`, `unit_conventions.md`, `controlled_vocab.md` | GOGPT Editing Manual; Status Timeline Training | 2026-09-15 against the March 2026 manual — **re-check against the September 2026 manual pending** |
 | `datasource_conventions.md` | GEM Project Database Manual (+ Editing Manual datasource sections) | 2026-07-27 |
 | `wiki_pages.md` | GOGPT Wiki Pages Manual | 2026-07-27 |
 | `source_roster.md`, `docs/country_notes/*` | Gas/oil power plant data sources — by country; United States research tab; US Data/Research Guide | 2026-09-15 (US) |

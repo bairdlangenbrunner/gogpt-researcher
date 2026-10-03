@@ -1,0 +1,67 @@
+{
+ "meta": {
+  "plant_id": "L100000409236",
+  "plant_name": "West Babylon power station",
+  "state": "New York",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-02T16:25:00-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000414080",
+   "unit_name": "4",
+   "findings": {
+    "Status": {
+     "value": "mothballed",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists West Babylon, plant 2521, generator 4, as standby. Its code reads: available for service but not normally used. It is on the operating sheet with no planned retirement. This matches GEM's mothballed status, so nothing changes."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "notes": "Still mothballed according to the August 2026 federal table. No retirement date is listed. A web search showed National Grid filed a notice in April 2020 to retire this unit in December 2020, but the unit is still listed, and I could not open that notice to learn why."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000414080",
+   "concern_type": "status",
+   "recommendation": "Read the 2020 New York Independent System Operator deactivation notice for West Babylon 4 to learn why the unit was not retired.",
+   "note": "National Grid planned to retire it on December 12, 2020, according to a search result. It is still listed as standby in August 2026.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Excel file read locally."
+  }
+ ]
+}

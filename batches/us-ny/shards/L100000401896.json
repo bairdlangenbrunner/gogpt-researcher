@@ -1,0 +1,148 @@
+{
+ "meta": {
+  "plant_id": "L100000401896",
+  "plant_name": "Astoria generating station",
+  "state": "New York",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-02T16:25:00-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402809",
+   "unit_name": "2",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit. The EIA-860M table for August 2026 still lists it as operating."
+  },
+  {
+   "gem_unit_id": "G100000402810",
+   "unit_name": "3",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit. The EIA-860M table for August 2026 still lists it as operating."
+  },
+  {
+   "gem_unit_id": "G100000402811",
+   "unit_name": "4",
+   "findings": {
+    "Status": {
+     "value": "retired",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists Astoria Generating Station, plant 8906, generator 4, in its retired sheet. It shows a nameplate of 387.0 MW, an operating date of December 1961, and a retirement date of February 2021. GEM has this unit as mothballed. That is a status change, and I found only this one publisher. The New York Independent System Operator and the plant owner did not give a second document that I could open."
+    },
+    "Retired year": {
+     "value": "2021",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists Astoria Generating Station, plant 8906, generator 4, in its retired sheet. It shows a nameplate of 387.0 MW, an operating date of December 1961, and a retirement date of February 2021. So the retired year is 2021, but only if the status change to retired is accepted."
+    },
+    "Latest Activity": {
+     "value": "Listed as retired in February 2021 in the EIA-860M table for August 2026",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 shows a retirement month of February 2021 for this generator."
+    }
+   },
+   "not_found": [
+    "Status Detail"
+   ],
+   "notes": "The federal table says this unit retired in February 2021, not mothballed. I could not find a second publisher, so the change is medium confidence. I found no mothball notice for unit 4."
+  },
+  {
+   "gem_unit_id": "G100000402812",
+   "unit_name": "ST5",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit. The EIA-860M table for August 2026 still lists it as operating."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000402811",
+   "concern_type": "status",
+   "recommendation": "Look for a second publisher for the February 2021 retirement, such as a New York Independent System Operator Gold Book from 2021 or later, or a notice filed with the New York Public Service Commission.",
+   "note": "The status change from mothballed to retired rests on the EIA-860M table for August 2026 alone.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000402809",
+   "concern_type": "owner",
+   "recommendation": "Check who holds the plant now.",
+   "note": "The EIA-860M table for August 2026 names Astoria Generating Company, L.P. as the entity for plant 8906. GEM has Alpha Generation LLC. EIA utility names are not always the owner, so I made no change.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "",
+   "concern_type": "missing unit",
+   "recommendation": "Consider whether a 15 MW unit belongs in the tracker.",
+   "note": "The same table lists a 15.0 MW natural gas combustion turbine, generator 1, at plant 8906, out of service since an unstated date. It is under the capacity threshold for the tracker, so I did not add it.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Retired year",
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Excel file read locally. Existing 2019 and 2021 EIA links were not re-run because the task only asked for the status of unit 4."
+  },
+  {
+   "url": "https://www.nyserda.ny.gov/-/media/Project/Climate/Files/JTWG-Power-Plant-Inventory.pdf",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "A 2020 inventory. It predates the 2021 retirement, so it cannot confirm it."
+  }
+ ]
+}

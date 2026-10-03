@@ -48,7 +48,7 @@ mechanics and `docs/sops/update.md` for editing procedure.
 - The **unfiltered** export is kept on disk deliberately: co-located
   coal+gas plants and coal→gas fuel-conversion timepoint chains need the
   GCPT-side rows visible for cross-checks (see `docs/sops/update.md` §9.3).
-- 86 columns as of the Q2 2026 export layout (`GOGPT_COLUMNS` in
+- 91 columns as of the Oct 2026 export layout (`GOGPT_COLUMNS` in
   `gem_all_fields.py`). Column order and presence can drift between
   releases — `pull_gem_db.py` re-derives the column-index map from the
   header row every pull rather than hard-coding offsets.
@@ -82,7 +82,7 @@ IDs are DB-assigned; never invent or edit them. `GEM location ID` and
 `GEM unit ID` are the join keys for `(Plant name, Unit name)` re-derivation
 batch to batch — export row order is not stable.
 
-## Column groups (86 columns)
+## Column groups (91 columns)
 
 Canonical list: `GOGPT_COLUMNS` in `gem_all_fields.py`; the canonical-name →
 exact-header-string map is `GOGPT_EXPECTED_COLUMNS` in
@@ -99,7 +99,7 @@ column-by-column:
   `Turbine/Engine Technology` + ref, `Equipment Manufacturer/Model` + ref,
   `CHP` + ref.
 - **Status/lifecycle**: `Status`, `Status Detail`, `Status Data Source`,
-  `Disrupted due to conflict` + ref, `Latest Activity` + ref, `Cancellation
+  `Disrupted by conflict` + ref (named `Disrupted due to conflict` before Oct 2026), `Latest Activity` + ref, `Cancellation
   year` + ref, `Start year` + ref, `Retired year` + ref, `Planned retire` +
   ref.
 - **Conversion/replacement** (fuel-conversion timepoint chain — see
@@ -137,6 +137,7 @@ Last Updated, Researcher, Research status,
 Operator GEM Entity ID, Owner(s) GEM Entity ID, Parent GEM Entity ID,
 Parent(s),          # derived from the owner entity graph (company.gemParents)
 Linked Projects,
+Owner Share Imputed, Parent Share Imputed,   # Y/blank flags set by the pull
 Subregion, Region    # derived from Country/Area
 ```
 
@@ -151,7 +152,7 @@ What % of H2 blending currently?, H2 Criteria Data Source
 ```
 
 `READ_ONLY_COLUMNS` in `schema_constants.py` is the union of both sets.
-Everything else in the 86 columns is researcher-editable.
+Everything else in the 91 columns is researcher-editable.
 
 ## Entity links (Owner/Operator/Parent)
 

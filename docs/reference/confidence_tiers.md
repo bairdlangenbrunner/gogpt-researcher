@@ -6,16 +6,35 @@ records (`staged_json_schema.md`).
 
 ## The rubric
 
-For every material data point (status, capacity, technology, fuel, start year,
-ownership, location), **try to find 2+ independent sources that agree** before
-treating it as settled. Record the tier and the corroborating sources in the
-record's `researcher_notes`.
+**One fully validated ref is sufficient; a second independent source is
+preferred but never required** (Baird 2026-10-02, adopting the pipelines-researcher ruling of 2026-09-30). For every material
+data point (status, capacity, technology, fuel, start year, ownership,
+location), a single ref that passes every check below closes it at
+high/green. Take a second independent source when it is cheap (document
+already open, one quick search) and record it via the `independent` flag, but
+never hold a unit open or spend another search for it. Record the tier and
+any corroborating sources in the record's `researcher_notes`.
+
+**Validation checklist** (all four must pass for a ref to count as fully
+validated):
+
+1. It clears `url_verifier.py`: the URL loads, is not gem.wiki /
+   globalenergymonitor.org / a banned domain after redirects, and is not a
+   search, index, or homepage.
+2. It NAMES this plant/unit.
+3. It STATES the value (within rounding; status-by-inference counts, see
+   Nuances).
+4. It is not a GEM-derived republisher.
+
+**Exception: a STATUS CHANGE is green only on 2+ independent publishers; a
+single-source status change is medium/yellow.** Inferred statuses are
+unchanged (no URL by design).
 
 | Tier | Color | Meaning |
 |---|---|---|
-| **High** | green | 2+ **independent** sources agree, or one primary/regulatory source (regulator registry, official filing, grid operator data) |
-| **Medium** | yellow | a single solid source (operator filing, regulator, top-tier trade press), no contradictions |
-| **Low** | red | a single weak/secondary source, or sources partially conflict |
+| **High** | green | one ref that passes every validation check; or, for a status change, 2+ **independent** publishers agree |
+| **Medium** | yellow | a single-source status change; or a ref that validates only partially (names the plant but the value is implied, or sources contested) |
+| **Low** | red | a single ref that does NOT fully validate (weak, doesn't name the plant, value not on the page), or sources partially conflict |
 | **Inferred** | (blank + note) | no verifiable source — e.g. a shelved/cancelled-inferred status from the 2y/4y disappearance test; never fabricate a URL for an inference |
 | **Re-verified** | blue | value unchanged from the existing GEM value but checked again this batch |
 
@@ -29,13 +48,12 @@ conflict, and lower the tier.
 
 ## Nuances that prevent common mistakes
 
-**Single-source-that-confirms is fillable, not blank.** The 2+ target governs
-when a value is *settled* (green); it does not mean a lone source is discarded.
-If exactly one source can be found but its page verifiably contains the precise
-data point (the plant/unit is named and the value or status is stated), fill
-the cell at medium/yellow and keep hunting for the promoting second source.
-"Prefer blank + a note" applies to a single weak source that does NOT actually
-confirm the value.
+**Partial validation is yellow; no confirmation is red/blank.** A fully
+validated single ref is green (see the rubric). A single ref that only
+PARTIALLY validates (the plant is named but the value is merely implied, or
+the page is a weak secondary) is yellow; keep hunting if it is cheap. A ref
+that confirms nothing (doesn't name the plant, value not on the page) is red:
+prefer blank + a note and a `qa` record.
 
 **Status is inferred from context — don't require the literal word.** A source
 confirms a status when its prose *entails* it: a commissioning ceremony, a

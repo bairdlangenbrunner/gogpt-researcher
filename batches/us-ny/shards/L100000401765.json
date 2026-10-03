@@ -1,0 +1,75 @@
+{
+ "meta": {
+  "plant_id": "L100000401765",
+  "plant_name": "Bethpage power plant",
+  "state": "New York",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-02T16:00:00-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401706",
+   "unit_name": "G602",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100000401707",
+   "unit_name": "G603",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100000402545",
+   "unit_name": "GEN5",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000401706",
+   "concern_type": "owner",
+   "recommendation": "Keep Calpine Eastern Corp as owner for now.",
+   "note": "The EIA-860M table for August 2026 still lists Calpine Eastern Corp as the owner of plant 50292 for all six generators. Constellation completed its purchase of Calpine on January 7, 2026, and Calpine Corporation became Calpine LLC. That is a parent change, and I found no dated document that renames or merges the Calpine Eastern Corp entity itself.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Calpine Eastern Corp",
+   "role": "owner",
+   "lookup_result": "Not run. No new owner is proposed, so no lookup was needed."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Downloaded and read. Plant 50292 owner is Calpine Eastern Corp."
+  },
+  {
+   "url": "https://www.powermag.com/constellation-completes-acquisition-of-calpine-groups-have-55-gw-of-generation-capacity-2/",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "not relevant",
+   "note": "Search result about the parent purchase. Not fetched and not cited."
+  }
+ ]
+}

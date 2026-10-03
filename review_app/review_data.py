@@ -1,0 +1,314 @@
+"""
+Build the review app's dataset from one or more staging dirs.
+
+    python review_app/review_data.py --scope us-md --scope us-ny [--out work/review_data.json]
+    python review_app/review_data.py --dirs batches/us-md/staging ... [--export-csv PATH]
+
+Reads ONLY staged_{updates,qa,monitor,entity,newunits,newplants}.json in each staging dir
+(never the shards, briefs, comparison.json or the blind copies). Writes one JSON file:
+
+    {"built", "scope": {"country", "states", "quarter"}, "dirs": [label, ...], "columns": [...],
+     "plants": [{"pid", "name", "country", "state", "dir", "units": [{"gem_unit_id", "unit_name"}],
+                 "lines": [...], "items": [...]}]}
+
+One card per GEM plant ID (a statewide pseudo-card for records whose plant ID is the state
+slug). A LINE is a staged edit the reviewer accepts, holds, rejects or suggests on: one
+per updates/newunits/newplants record. An ITEM is a note that never writes a cell: a qa
+concern, a monitor note, an entity lookup. Keys are `<dir label>::<record_id>`, the dir label
+is repo-relative (`batches/us-md/staging`), and record_id is the stable id written by
+scripts/assemble_state.py, so decisions survive a rebuild.
+
+Line kinds: fill (blank cell gets a value), change (a value is replaced), reverified (the
+current value was checked and stands; only the Data Source link is new), delete (a value is
+cleared), plant (a plant-level change applied to every unit row), new_row (a new unit or
+plant). Severity: `minor` for reverified lines, `major` for everything else (a cell value
+changes). `default` is "accept" for high-confidence lines (one fully validated source, or two
+independent ones on a status change) and "hold" otherwise; the page shows it but nothing is
+decided until a person clicks.
+
+The current Data Source cell of each line comes from the scoped export (the batch's csv from
+meta.scope.csv, else --export-csv, else scripts/gem_export_gogpt_scoped.csv); when the csv is
+missing the lines carry current_ref = null and the page says so.
+"""
+import argparse
+import csv
+import json
+import re
+import sys
+from datetime import datetime
+from pathlib import Path
+from urllib.parse import urlsplit
+from zoneinfo import ZoneInfo
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
+for p in (ROOT / "scripts", HERE):
+    if str(p) not in sys.path:
+        sys.path.insert(0, str(p))
+
+import paths  # noqa: E402
+from build_review_package import ref_col_for  # noqa: E402
+
+ET = ZoneInfo("America/New_York")
+LINE_LANES = ("updates", "newunits", "newplants")
+ITEM_LANES = {"qa": "concern", "monitor": "monitor", "entity": "entity"}
+_STATE_PID = re.compile(r"^us-[a-z]{2}$")
+
+
+def rel(path):
+    """Repo-relative label for a staging dir (absolute when outside the repo)."""
+    path = Path(path).resolve()
+    try:
+        return path.relative_to(ROOT).as_posix()
+    except ValueError:
+        return path.as_posix()
+
+
+def split_urls(cell):
+    return [u.strip() for u in re.split(r",\s*(?=https?://)|\s*\n\s*", str(cell or "")) if u.strip()]
+
+
+def host_of(url):
+    try:
+        h = urlsplit(url).netloc.lower()
+    except ValueError:
+        return ""
+    return h[4:] if h.startswith("www.") else h
+
+
+def load_lane(d, lane):
+    p = Path(d) / f"staged_{lane}.json"
+    if not p.exists():
+        return {}, []
+    data = json.loads(p.read_text(encoding="utf-8"))
+    if isinstance(data, list):
+        return {}, data
+    return data.get("meta", {}), data.get("records", [])
+
+
+def load_export(csv_path, unit_ids):
+    """(header, {unit id: row dict}) for the unit ids named; ([], {}) when the csv is missing."""
+    if not csv_path or not Path(csv_path).exists():
+        return [], {}
+    rows = {}
+    with open(csv_path, encoding="utf-8-sig", newline="") as f:
+        reader = csv.reader(f)
+        header = next(reader)
+        i_uid = header.index("GEM unit ID")
+        for row in reader:
+            if len(row) > i_uid and row[i_uid] in unit_ids:
+                rows[row[i_uid]] = dict(zip(header, row))
+    return header, rows
+
+
+def line_kind(r):
+    if r.get("delete"):
+        return "delete"
+    if r.get("applies_to_all_units"):
+        return "plant"
+    if r.get("reverified") or r.get("verdict") == "match":
+        return "reverified"
+    return "change" if r.get("verdict") == "change" else "fill"
+
+
+def tier_of(r):
+    t = str(r.get("tier") or "").lower()
+    return t if t in ("high", "medium", "low") else ""
+
+
+def verification_map(r):
+    out = {}
+    for v in r.get("verifications") or []:
+        if v.get("url"):
+            out[v["url"]] = {"ok": bool(v.get("ok")), "contains_value": bool(v.get("contains_value")),
+                             "name_found": bool(v.get("name_found")), "note": v.get("note") or ""}
+    return out
+
+
+def update_line(r, label, export_rows):
+    kind = line_kind(r)
+    fields = dict(r.get("fields") or {})
+    cols = list(fields)
+    column = cols[0] if cols else ""
+    ref_col = ref_col_for(column) if column else ""
+    refs = r.get("refs") or {}
+    proposed_refs = []
+    for rc, urls in refs.items():
+        for u in (urls if isinstance(urls, list) else split_urls(urls)):
+            if u not in proposed_refs:
+                proposed_refs.append(u)
+    uid = r.get("gem_unit_id") or ""
+    row = export_rows.get(uid) or {}
+    current_ref = split_urls(row.get(ref_col)) if row and ref_col in row else None
+    current = dict(r.get("current") or {})
+    for c in cols:
+        if c not in current and row:
+            current[c] = row.get(c, "")
+    reverified = bool(r.get("reverified") or r.get("verdict") == "match")
+    line = {
+        "key": f"{label}::{r['record_id']}", "dir": label, "record_id": r["record_id"],
+        "kind": kind, "reverified": reverified, "severity": "minor" if reverified else "major",
+        "column": column, "columns": cols, "ref_col": ref_col,
+        "gem_unit_id": uid, "unit_name": r.get("unit_name") or "",
+        "current": current, "current_ref": current_ref,
+        "proposed_values": fields, "proposed_refs": proposed_refs,
+        "verifications": verification_map(r),
+        "tier": tier_of(r), "independent": bool(r.get("independent")),
+        "source_language": r.get("source_language") or "",
+        "notes": r.get("researcher_notes") or "", "action": r.get("action") or "",
+        "sibling_unit_ids": list(r.get("sibling_unit_ids") or []),
+        "sibling_current": r.get("sibling_current") or {},
+        "publishers": len({host_of(u) for u in proposed_refs if host_of(u)}),
+        "default": "accept" if tier_of(r) == "high" else "hold",
+        "decision": None, "reviewed": False,
+    }
+    return line
+
+
+def new_row_line(r, label, lane):
+    fields = dict(r.get("fields") or {})
+    refs = r.get("refs") or {}
+    proposed_refs = []
+    for rc, urls in refs.items():
+        for u in (urls if isinstance(urls, list) else split_urls(urls)):
+            if u not in proposed_refs:
+                proposed_refs.append(u)
+    return {
+        "key": f"{label}::{r['record_id']}", "dir": label, "record_id": r["record_id"],
+        "kind": "new_row", "reverified": False, "severity": "major", "lane": lane,
+        "column": "", "columns": list(fields), "ref_col": "",
+        "gem_unit_id": r.get("gem_unit_id") or "", "unit_name": r.get("unit_name") or "",
+        "current": {}, "current_ref": None,
+        "proposed_values": fields, "proposed_refs": proposed_refs,
+        "refs_by_col": {k: (v if isinstance(v, list) else split_urls(v)) for k, v in refs.items()},
+        "verifications": verification_map(r),
+        "tier": tier_of(r), "independent": bool(r.get("independent")),
+        "source_language": r.get("source_language") or "",
+        "notes": r.get("researcher_notes") or "", "action": r.get("action") or "",
+        "sibling_unit_ids": [], "sibling_current": {},
+        "publishers": len({host_of(u) for u in proposed_refs if host_of(u)}),
+        "default": "hold", "decision": None, "reviewed": False,
+    }
+
+
+def item(r, label, kind):
+    refs = r.get("refs") or {}
+    links = []
+    for v in refs.values():
+        for u in (v if isinstance(v, list) else split_urls(v)):
+            if u not in links:
+                links.append(u)
+    it = {
+        "key": f"{label}::{r['record_id']}", "dir": label, "record_id": r["record_id"], "kind": kind,
+        "gem_unit_id": r.get("gem_unit_id") or "", "unit_name": r.get("unit_name") or "",
+        "links": links, "verifications": verification_map(r),
+        "notes": r.get("researcher_notes") or "",
+        "call": None, "call_note": None, "reviewed": False,
+    }
+    if kind == "concern":
+        it["concern_type"] = r.get("concern_type") or ""
+        it["recommendation"] = r.get("recommendation") or ""
+    elif kind == "monitor":
+        it["item"] = r.get("item") or ""
+        it["recheck_by"] = r.get("recheck_by") or ""
+        it["reason"] = r.get("monitor_reason") or ""
+    elif kind == "entity":
+        it["entity_name"] = r.get("entity_name") or ""
+        it["role"] = r.get("role") or ""
+        it["lookup_result"] = r.get("lookup_result") or ""
+        it["entity_country"] = r.get("entity_country") or ""
+    return it
+
+
+def build(dirs, export_csv=None):
+    plants = {}
+    labels, states, quarters, country = [], [], [], ""
+    columns = []
+    for d in dirs:
+        d = Path(d)
+        if not d.is_dir():
+            raise SystemExit(f"not a staging dir: {d}")
+        label = rel(d)
+        labels.append(label)
+        lanes = {lane: load_lane(d, lane) for lane in LINE_LANES + tuple(ITEM_LANES)}
+        meta = next((m for m, _ in lanes.values() if m), {})
+        scope = meta.get("scope") or {}
+        state = scope.get("state") or d.parent.name
+        if state not in states:
+            states.append(state)
+        if scope.get("quarter") and scope["quarter"] not in quarters:
+            quarters.append(scope["quarter"])
+        country = country or scope.get("country") or ""
+        csv_path = export_csv or scope.get("csv") or paths.gogpt_scoped_csv()
+        uids = {r.get("gem_unit_id") for _, recs in lanes.values() for r in recs if r.get("gem_unit_id")}
+        header, rows = load_export(csv_path, uids)
+        if header and not columns:
+            columns = header
+        if not rows:
+            print(f"review_data: export csv not read ({csv_path}); current Data Source cells unknown",
+                  file=sys.stderr)
+
+        def card(r):
+            pid = r.get("gem_plant_id") or ""
+            if not pid:
+                # a plant GEM does not track yet (a discovery candidate on the monitor list): one
+                # card per candidate name, with a stable "new:" id so links and decisions hold
+                pid = "new:" + (re.sub(r"[^a-z0-9]+", "-", (r.get("plant_name") or "").lower()).strip("-") or r["record_id"])
+            p = plants.get((label, pid))
+            if p is None:
+                p = plants[(label, pid)] = {
+                    "pid": pid, "name": r.get("plant_name") or pid, "country": r.get("country") or country,
+                    "state": state, "dir": label, "statewide": bool(_STATE_PID.match(pid)),
+                    "units": [], "lines": [], "items": []}
+            uid = r.get("gem_unit_id")
+            if uid and uid not in {u["gem_unit_id"] for u in p["units"]}:
+                p["units"].append({"gem_unit_id": uid, "unit_name": r.get("unit_name") or ""})
+            return p
+
+        for lane in LINE_LANES:
+            for r in lanes[lane][1]:
+                if not r.get("record_id"):
+                    raise SystemExit(f"{d}/staged_{lane}.json: a record has no record_id (rebuild with assemble_state.py)")
+                p = card(r)
+                p["lines"].append(update_line(r, label, rows) if lane == "updates" else new_row_line(r, label, lane))
+        for lane, kind in ITEM_LANES.items():
+            for r in lanes[lane][1]:
+                if not r.get("record_id"):
+                    raise SystemExit(f"{d}/staged_{lane}.json: a record has no record_id (rebuild with assemble_state.py)")
+                card(r)["items"].append(item(r, label, kind))
+
+    out = []
+    for p in plants.values():
+        for u in p["units"]:
+            u["n"] = sum(1 for l in p["lines"] if l["gem_unit_id"] == u["gem_unit_id"])
+        p["units"].sort(key=lambda u: (u["unit_name"], u["gem_unit_id"]))
+        out.append(p)
+    out.sort(key=lambda p: (p["state"], p["statewide"], p["name"].lower(), p["pid"]))
+    return {"built": datetime.now(ET).isoformat(timespec="seconds"),
+            "scope": {"country": country or "United States", "states": states, "quarter": ", ".join(quarters)},
+            "dirs": labels, "columns": columns, "plants": out}
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    ap.add_argument("--scope", action="append", default=[], help="batch scope, e.g. us-md (repeatable)")
+    ap.add_argument("--dirs", nargs="*", default=[], help="explicit staging dirs")
+    ap.add_argument("--export-csv", default=None, help="scoped export csv for current Data Source cells")
+    ap.add_argument("--out", default=None, help="dataset path (default work/review_data.json)")
+    args = ap.parse_args(argv)
+    dirs = [ROOT / "batches" / s / "staging" for s in args.scope] + [Path(d) for d in args.dirs]
+    if not dirs:
+        raise SystemExit("name at least one --scope or --dirs")
+    data = build(dirs, args.export_csv)
+    out = Path(args.out) if args.out else paths.work_dir() / "review_data.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    nl = sum(len(p["lines"]) for p in data["plants"])
+    ni = sum(len(p["items"]) for p in data["plants"])
+    print(f"review_data: {out} ({len(data['plants'])} plants, {nl} lines, {ni} items, "
+          f"{len(data['dirs'])} staging dirs)", file=sys.stderr)
+    return data
+
+
+if __name__ == "__main__":
+    main()

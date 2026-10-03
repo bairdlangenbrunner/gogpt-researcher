@@ -1,0 +1,464 @@
+{
+ "meta": {
+  "plant_id": "L100000401847",
+  "plant_name": "Cove Point LNG Terminal power station",
+  "state": "Maryland",
+  "mode": "blind",
+  "model": "sonnet",
+  "generated": "2026-10-02T15:28:18-04:00",
+  "done": true,
+  "urls_attempted": 8,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000409442",
+   "unit_name": "CC1-5STA",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "65",
+     "refs": [
+      "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf",
+      "https://www.psc.state.md.us/wp-content/uploads/Dominion-Energy-Cove-Point-Hearing_10022017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.psc.state.md.us/wp-content/uploads/Dominion-Energy-Cove-Point-Hearing_10022017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The Maryland Public Service Commission order of February 2018 says the project's primary power units are two 65 MW heat recovery steam turbines. The state hearing notice says the certificate covers a 130 MW station made of two 65 MW steam turbine units. So each unit is 65 MW."
+    },
+    "Turbine/Engine Technology": {
+     "value": "steam turbine",
+     "refs": [
+      "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf",
+      "https://www.psc.state.md.us/wp-content/uploads/Dominion-Energy-Cove-Point-Hearing_10022017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.psc.state.md.us/wp-content/uploads/Dominion-Energy-Cove-Point-Hearing_10022017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The state documents describe two steam turbine generators running in combined cycle on waste heat from gas turbines that drive the liquefaction compressors. The units in question are the two steam turbines. The gas turbines drive compressors and do not generate power."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE Frame 7EA gas turbines (heat source)",
+     "refs": [
+      "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "low",
+     "independent": false,
+     "note": "The state order names GE Frame 7EA combustion turbines as the heat source for the steam turbines. I did not find the make of the steam turbines themselves, so this is only partly answered."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas",
+     "refs": [
+      "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The state order says the Frame 7EA turbines run on natural gas and the steam turbines use their waste heat. The steam units burn no fuel of their own."
+    },
+    "Start year": {
+     "value": "2018",
+     "refs": [
+      "https://www.lngindustry.com/lng-shipping/18112019/cove-point-lng-terminal-loads-100th-commercial-ship"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.lngindustry.com/lng-shipping/18112019/cove-point-lng-terminal-loads-100th-commercial-ship",
+       "ok": true,
+       "contains_value": true,
+       "name_found": false
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A trade article says the Cove Point export terminal began commercial operation in April 2018. It does not name the steam turbines, so I inferred that they began service with the terminal."
+    },
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.lngindustry.com/lng-shipping/18112019/cove-point-lng-terminal-loads-100th-commercial-ship"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.lngindustry.com/lng-shipping/18112019/cove-point-lng-terminal-loads-100th-commercial-ship",
+       "ok": true,
+       "contains_value": true,
+       "name_found": false
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The terminal began commercial operation in April 2018 and the article from November 2019 reports it loading its 100th ship. No page I found states the steam turbine units' status directly, and the EIA tables do not list them."
+    },
+    "Captive industry use": {
+     "value": "power",
+     "refs": [
+      "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The state order says the two steam turbines are the primary power units for the export project, so the power serves the terminal itself."
+    }
+   },
+   "not_found": [
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Status Detail",
+    "CHP",
+    "Conversion/replacement?",
+    "Captive industry type",
+    "Captive non-industry use",
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "notes": "EIA does not list this plant in its August 2026 monthly table, because it is a captive plant. So several fields could not be sourced. Each unit is one of two 65 MW steam turbine generators."
+  },
+  {
+   "gem_unit_id": "G100000409441",
+   "unit_name": "CC1-5STB",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "65",
+     "refs": [
+      "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf",
+      "https://www.psc.state.md.us/wp-content/uploads/Dominion-Energy-Cove-Point-Hearing_10022017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.psc.state.md.us/wp-content/uploads/Dominion-Energy-Cove-Point-Hearing_10022017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The Maryland Public Service Commission order of February 2018 says the project's primary power units are two 65 MW heat recovery steam turbines. The state hearing notice says the certificate covers a 130 MW station made of two 65 MW steam turbine units. So each unit is 65 MW."
+    },
+    "Turbine/Engine Technology": {
+     "value": "steam turbine",
+     "refs": [
+      "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf",
+      "https://www.psc.state.md.us/wp-content/uploads/Dominion-Energy-Cove-Point-Hearing_10022017.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.psc.state.md.us/wp-content/uploads/Dominion-Energy-Cove-Point-Hearing_10022017.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The state documents describe two steam turbine generators running in combined cycle on waste heat from gas turbines that drive the liquefaction compressors. The units in question are the two steam turbines. The gas turbines drive compressors and do not generate power."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE Frame 7EA gas turbines (heat source)",
+     "refs": [
+      "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "low",
+     "independent": false,
+     "note": "The state order names GE Frame 7EA combustion turbines as the heat source for the steam turbines. I did not find the make of the steam turbines themselves, so this is only partly answered."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas",
+     "refs": [
+      "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The state order says the Frame 7EA turbines run on natural gas and the steam turbines use their waste heat. The steam units burn no fuel of their own."
+    },
+    "Start year": {
+     "value": "2018",
+     "refs": [
+      "https://www.lngindustry.com/lng-shipping/18112019/cove-point-lng-terminal-loads-100th-commercial-ship"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.lngindustry.com/lng-shipping/18112019/cove-point-lng-terminal-loads-100th-commercial-ship",
+       "ok": true,
+       "contains_value": true,
+       "name_found": false
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A trade article says the Cove Point export terminal began commercial operation in April 2018. It does not name the steam turbines, so I inferred that they began service with the terminal."
+    },
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.lngindustry.com/lng-shipping/18112019/cove-point-lng-terminal-loads-100th-commercial-ship"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.lngindustry.com/lng-shipping/18112019/cove-point-lng-terminal-loads-100th-commercial-ship",
+       "ok": true,
+       "contains_value": true,
+       "name_found": false
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The terminal began commercial operation in April 2018 and the article from November 2019 reports it loading its 100th ship. No page I found states the steam turbine units' status directly, and the EIA tables do not list them."
+    },
+    "Captive industry use": {
+     "value": "power",
+     "refs": [
+      "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The state order says the two steam turbines are the primary power units for the export project, so the power serves the terminal itself."
+    }
+   },
+   "not_found": [
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Status Detail",
+    "CHP",
+    "Conversion/replacement?",
+    "Captive industry type",
+    "Captive non-industry use",
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "notes": "EIA does not list this plant in its August 2026 monthly table, because it is a captive plant. So several fields could not be sourced. Each unit is one of two 65 MW steam turbine generators."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "BHE GT&S [75%]; Brookfield Infrastructure [25%]",
+   "refs": [
+    "https://ogj.com/pipelines-transportation/lng/article/14298470/berkshire-hathaway-energy-completes-acquisition-of-additional-cove-point-lng-stake"
+   ],
+   "verifications": [
+    {
+     "url": "https://ogj.com/pipelines-transportation/lng/article/14298470/berkshire-hathaway-energy-completes-acquisition-of-additional-cove-point-lng-stake",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "An Oil and Gas Journal article says Berkshire Hathaway Energy completed its purchase of Dominion's 50 percent stake in Cove Point LNG LP, bringing its interest to 75 percent. A Brookfield subsidiary holds the other 25 percent. The article gives the owner as a Berkshire subsidiary, which I wrote as BHE GT&S."
+  },
+  "Operator(s)": {
+   "value": "BHE GT&S",
+   "refs": [
+    "https://ogj.com/pipelines-transportation/lng/article/14298470/berkshire-hathaway-energy-completes-acquisition-of-additional-cove-point-lng-stake"
+   ],
+   "verifications": [
+    {
+     "url": "https://ogj.com/pipelines-transportation/lng/article/14298470/berkshire-hathaway-energy-completes-acquisition-of-additional-cove-point-lng-stake",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The same article says BHE GT&S serves as the general partner and operator of Cove Point."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000409442",
+   "concern_type": "scope",
+   "recommendation": "Confirm these captive steam turbines belong in the tracker and check whether GEM wants a different capacity.",
+   "note": "The two units are 65 MW steam turbines driven by waste heat at an LNG terminal. EIA does not list them.",
+   "refs": [
+    "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "BHE GT&S",
+   "role": "owner",
+   "lookup_result": "not run, blind mode"
+  },
+  {
+   "entity_name": "Brookfield Infrastructure",
+   "role": "owner",
+   "lookup_result": "not run, blind mode"
+  },
+  {
+   "entity_name": "BHE GT&S",
+   "role": "operator",
+   "lookup_result": "not run, blind mode"
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://psc.maryland.gov/wp-content/uploads/Order-No.-88565-Case-No.-9318-DECP-Motion-to-Amend-CPCN.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Fuel",
+    "Captive industry use"
+   ],
+   "outcome": "verified",
+   "note": "Maryland PSC order, February 2018."
+  },
+  {
+   "url": "https://www.psc.state.md.us/wp-content/uploads/Dominion-Energy-Cove-Point-Hearing_10022017.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "Turbine/Engine Technology"
+   ],
+   "outcome": "verified",
+   "note": "State hearing notice, October 2017."
+  },
+  {
+   "url": "https://ogj.com/pipelines-transportation/lng/article/14298470/berkshire-hathaway-energy-completes-acquisition-of-additional-cove-point-lng-stake",
+   "used_for": [
+    "Owner(s)",
+    "Operator(s)"
+   ],
+   "outcome": "verified",
+   "note": "Oil and Gas Journal."
+  },
+  {
+   "url": "https://www.lngindustry.com/lng-shipping/18112019/cove-point-lng-terminal-loads-100th-commercial-ship",
+   "used_for": [
+    "Start year",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Trade article, November 2019."
+  },
+  {
+   "url": "https://www.oilandgas360.com/soon-second-u-s-lng-exporter-expects-10-operating-earnings-boost-cove-point-2018/",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Passed but not used."
+  },
+  {
+   "url": "https://www.offshore-technology.com/projects/dominion-cove-point-liquefaction-project-chesapeake-bay/",
+   "used_for": [],
+   "outcome": "blocked",
+   "note": "HTTP 403."
+  },
+  {
+   "url": "https://www.mechademy.com/lng_plant/cove-point-lng/",
+   "used_for": [],
+   "outcome": "dead",
+   "note": "HTTP 404."
+  },
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/0000715957/000156459018018690/d-10q_20180630.htm",
+   "used_for": [],
+   "outcome": "blocked",
+   "note": "HTTP 403."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Plant 59073 is not in the August 2026 table."
+  }
+ ]
+}

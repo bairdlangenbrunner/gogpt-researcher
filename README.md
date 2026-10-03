@@ -107,7 +107,7 @@ docs/
 scripts/                     Python tools called by the workflows
   paths.py                   Repo-relative path helpers (no hard-coded absolutes)
   pull_gem_db.py             Column-index map + schema-drift detection (both the engine and the
-                             canonical 86-column map live in ../gem-db-ops/gem_colmap.py)
+                             canonical 91-column map live in ../gem-db-ops/gem_colmap.py)
   scope_filter.py            Derive the GOGPT-only view from the all-combustion export
   worklist.py                Priority-ladder triage worklist + inferred-status sweep
   qc_checks.py               Mechanical validation of CSV slices and staged records
@@ -121,8 +121,14 @@ scripts/                     Python tools called by the workflows
   build_campaign_roster.py   Generate/refresh the quarterly campaign roster
   recalc.py                  Sanity-check a built xlsx before it's presented
 
+review_app/                  Local page for deciding on a batch's staged edits (README inside);
+                             writes only review_log.jsonl in the staging dir, consumed by
+                             build_review_package.py --decisions
+tests/                       pytest suite (python -m pytest tests/)
+
 batches/                     Everything a batch produces (see batches/README.md)
-  <scope>/staging/           TRACKED: staged_<lane>.json — the audit trail
+  <scope>/staging/           TRACKED: staged_<lane>.json — the audit trail, plus the review
+                             app's review_log.jsonl / review_decisions.json once reviewed
   <scope>/deliverables/      actions xlsx (gitignored) + evidence md (tracked)
   run_records/               Dated cross-scope run logs
 
@@ -145,7 +151,7 @@ A non-exhaustive list (full list in `CLAUDE.md`):
 - Never edit the live GEM database. All outputs are staged deliverables.
 - Pull a fresh export + re-derive the column map at the start of every batch.
 - Verify every URL before staging it — the claimed value must appear on the page.
-- ≥2 independent sources per staged value; mirrors of one document count once.
+- One fully validated ref per staged value suffices; a second independent source is preferred, and a status change needs 2+ for green. Mirrors of one document count once.
 - Never cite gem.wiki / globalenergymonitor.org / GEM-derived republishers; abarrelfull is banned outright.
 - Data Source cells merge, never replace — existing citations are never deleted.
 - Capacity is generating MW only (MWe, nameplate) — never shaft/mechanical-drive MW.

@@ -1,0 +1,89 @@
+{
+ "meta": {
+  "plant_id": "L100000401970",
+  "plant_name": "Bowline Point power station",
+  "state": "New York",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-02T16:18:20-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402931",
+   "unit_name": "1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100000402932",
+   "unit_name": "2",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100000414299",
+   "unit_name": "CC_set",
+   "findings": {
+    "Latest Activity": {
+     "value": "November 2012: open house held for the proposed Bowline 3 project (Rockland Times)",
+     "refs": [
+      "https://rocklandtimes.com/2012/11/15/bowline-3-proposed-project-open-house-saturday-from-noon-4-pm"
+     ],
+     "verifications": [
+      {
+       "url": "https://rocklandtimes.com/2012/11/15/bowline-3-proposed-project-open-house-saturday-from-noon-4-pm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Rockland Times article from November 15, 2012 announces a public open house for the proposed Bowline 3 plant. It is the newest dated report of activity I found. A search of news and regulator pages found nothing later about Bowline 3."
+    },
+    "Status": {
+     "value": "cancelled - inferred 4 y",
+     "refs": [],
+     "verifications": [],
+     "tier": "medium",
+     "independent": false,
+     "note": "I searched news, the GenOn and Mirant filings and regulator pages for Bowline 3. The newest report of activity is the open house of November 2012. That is almost 14 years ago, so more than four years of silence. I found no sign the project was revived. A search result also showed an interconnection queue entry for Bowline 3 marked withdrawn, but I could not open that page to confirm it."
+    }
+   },
+   "not_found": [
+    "Cancellation year",
+    "Status Detail"
+   ],
+   "notes": "The project is long quiet. I found no cancellation notice, so I left the cancellation year blank."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000414299",
+   "concern_type": "status",
+   "recommendation": "Check the interconnection queue entry for Bowline 3, which a search showed as withdrawn.",
+   "note": "If a withdrawal date is confirmed, it could give a cancellation year.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://rocklandtimes.com/2012/11/15/bowline-3-proposed-project-open-house-saturday-from-noon-4-pm",
+   "used_for": [
+    "Latest Activity",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Open house notice for Bowline 3, November 2012."
+  }
+ ]
+}

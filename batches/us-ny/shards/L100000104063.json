@@ -1,0 +1,123 @@
+{
+ "meta": {
+  "plant_id": "L100000104063",
+  "plant_name": "AES Greenidge power station",
+  "state": "New York",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-02T16:00:00-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001017984",
+   "unit_name": "Unit 4, timepoint 2",
+   "findings": {
+    "Start year": {
+     "value": "2017",
+     "refs": [
+      "https://extapps.dec.ny.gov/docs/permits_ej_operations_pdf/greenidge32522letter.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://extapps.dec.ny.gov/docs/permits_ej_operations_pdf/greenidge32522letter.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A letter from the New York Department of Environmental Conservation in March 2022 says Unit 4 was converted to primarily natural gas firing in 2017. GEM now says 2016. A trade press article says the owner targeted a return to service in February 2017. I could not load that article to check it. So this is a single source that conflicts with the current value."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://extapps.dec.ny.gov/docs/permits_ej_operations_pdf/greenidge32522letter.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://extapps.dec.ny.gov/docs/permits_ej_operations_pdf/greenidge32522letter.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The same state letter says the plant converted from coal firing to natural gas firing and names the conversion of Unit 4. This matches the value GEM already has."
+    }
+   },
+   "not_found": [],
+   "notes": "The current start year of 2016 may be off by one year. The state letter says the gas conversion happened in 2017."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001017984",
+   "concern_type": "other_ids",
+   "recommendation": "Add EIA generator ID 4 to Other IDs (unit).",
+   "note": "The EIA-860M table for August 2026 lists plant 2527, generator 4, a natural gas steam turbine of 112.0 MW with status operating and operating year 1953. The 1953 year is the original coal unit, so it should not replace the gas start year.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://extapps.dec.ny.gov/docs/permits_ej_operations_pdf/greenidge32522letter.pdf",
+   "used_for": [
+    "Start year",
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "State letter of March 2022 about the Title V renewal."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Other IDs (unit)"
+   ],
+   "outcome": "verified",
+   "note": "Downloaded and read. Plant 2527 generator 4."
+  },
+  {
+   "url": "https://www.power-eng.com/renewables/interconnect-filed-for-revived-greenidge-unit-4-in-new-york/",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "blocked",
+   "note": "HTTP 403 from the site. Not cited."
+  },
+  {
+   "url": "https://www.power-eng.com/coal/plant-decommissioning/greenridge-coal-plant-in-ny-to-be-revived-without-coal/",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "blocked",
+   "note": "HTTP 403."
+  },
+  {
+   "url": "https://www.renewableenergyworld.com/power-grid/greenidge-coal-plant-in-new-york-to-be-revived-without-coal/",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "blocked",
+   "note": "HTTP 403."
+  },
+  {
+   "url": "https://www.renewableenergyworld.com/hydro-power/dams-civil-structures/interconnect-filed-for-revived-new-york-power-plant-unit/",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "blocked",
+   "note": "HTTP 403."
+  }
+ ]
+}

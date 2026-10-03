@@ -18,6 +18,12 @@ as the audit trail), one per lane:
 | `staged_newplants.json` | `newplants` | candidate new plants (with their units) |
 | `staged_newunits.json` | `newunits` | new units at an existing plant |
 
+Two more files may sit next to them once a batch has been through the review app
+(`review_app/`): `review_log.jsonl` (append-only, one JSON record per reviewer call or undo,
+keyed on `<staging dir>::<record_id>`) and `review_decisions.json` (derived, latest record per
+key). They are committed with the batch. `build_review_package.py --decisions` reads the log;
+`qc_checks.py` ignores both.
+
 There is deliberately **no wiki lane** — GOGPT wiki pages are auto-generated
 from the DB; only the free-text "Background" section is hand-editable, and
 Background-worthy narrative goes in a record's `researcher_notes` for the human
@@ -50,10 +56,12 @@ to place (see `wiki_pages.md`).
 | `refs` | {header: [url]} | verified URLs per **Data Source column** (e.g. `"Status Data Source"`); every column in `fields` MUST have its paired Data Source entry, and vice versa — no orphan values, no orphan refs |
 | `verifications` | [{url, ok, contains_value}] | `url_verifier.py` results — no URL enters `refs` without a passing entry |
 | `tier` | str | `high` \| `medium` \| `low` (see `confidence_tiers.md`) |
-| `independent` | bool | ≥2 genuinely independent sources reached |
+| `independent` | bool | ≥2 genuinely independent sources reached (preferred, not required; required for green on a status change) |
 | `source_language` | str | e.g. `"en"`, `"pt"` |
-| `researcher_notes` | str | rationale, conflicts, Background-worthy narrative |
-| `action` | str | one-line web-UI instruction ("On G100234, set Status to shelved; paste refs into Status Data Source") |
+| `researcher_notes` | str | rationale, conflicts, Background-worthy narrative — **plain language for a human reader**, per `notes_style.md` (no repo jargon, sources named by what they are) |
+| `action` | str | one instruction a person follows in the web form, in plain words ("Set the status of unit GT5 to retired and the retired year to 2024. Add the two links below to the status and retired-year source boxes. Keep the links already there.") |
+| `record_id` | str | optional, added 2026-10-02: `<plant_id>:<unit_id>:<field slug>`, stable across rebuilds so a review-app decision survives a rebuild; written by `assemble_state.py` |
+| `reverified` | bool | optional, added 2026-10-02: the value is unchanged and a new source confirms it (blue in the workbook); the new URL still merges into the Data Source cell |
 
 Ref semantics are **merge, never replace**: `refs` URLs are ADDED to the
 existing Data Source cell contents; existing datasources are never deleted

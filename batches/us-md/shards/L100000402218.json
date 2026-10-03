@@ -1,0 +1,326 @@
+{
+ "meta": {
+  "plant_id": "L100000402218",
+  "plant_name": "Keys energy center",
+  "state": "Maryland",
+  "mode": "blind",
+  "model": "sonnet",
+  "generated": "2026-10-02T15:25:41-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402089",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for July 2026 lists all three generators of unit CC1 as operating. Plant 60302, generators 10, 11 and 12 (unit code CC1), status OP, nameplate 359.6, 235.5 and 235.5 MW, operating July 2018."
+    },
+    "Capacity (MW)": {
+     "value": "830.6",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for July 2026 lists nameplate capacity of 359.6, 235.5 and 235.5 MW for the three generators of this combined cycle block. They sum to 830.6 MW. The block is one unit, so I report the total."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for July 2026 gives energy source code NG, which is natural gas, for all three generators."
+    },
+    "Turbine/Engine Technology": {
+     "value": "combined cycle",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for July 2026 lists the technology as Natural Gas Fired Combined Cycle, with two combustion turbines and one steam turbine."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Siemens SGT6-5000F",
+     "refs": [
+      "https://www.power-technology.com/projects/pseg-keys-energy-center-maryland/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.power-technology.com/projects/pseg-keys-energy-center-maryland/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A Power Technology project page says Siemens supplies two SGT6-5000F gas turbines and an SST-5000 steam turbine. The live page blocks automated fetches, so the check passed on an archived copy of the same page."
+    },
+    "Start year": {
+     "value": "2018",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for July 2026 gives operating month July and operating year 2018 for all three generators."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table lists the sector as IPP Non-CHP, meaning an independent power producer without combined heat and power."
+    },
+    "Latest Activity": {
+     "value": "operating",
+     "refs": [
+      "https://www.gridinfo.com/parkway-generation-keys-energy-center-llc"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.gridinfo.com/parkway-generation-keys-energy-center-llc",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A GridInfo page says the owning company generated 1.6 TWh between April and July 2026. So the plant is running. The EIA table also lists a planned uprate in November 2027."
+    }
+   },
+   "not_found": [
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Status Detail",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use",
+    "Conversion/replacement?"
+   ],
+   "notes": "One combined cycle block of three generators, running since July 2018. I found no retirement, cancellation or conversion information, and no source for engine counts or captive use."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Parkway Generation Keys Energy Center LLC [100%]",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860M table for July 2026 names Parkway Generation Keys Energy Center LLC as the entity for this plant. I could not confirm a share split or the ArcLight parent in a passing source. Search results say ArcLight Capital Partners bought the Parkway Generation portfolio from PSEG in February 2022, but the page I tried did not pass the check."
+  },
+  "Operator(s)": {
+   "value": "Parkway Generation Keys Energy Center LLC",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "low",
+   "independent": false,
+   "note": "The EIA-860M table lists only one entity for the plant. It does not separate owner from operator, so this is an assumption."
+  },
+  "Latitude": {
+   "value": "38.695519",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860M table for July 2026 lists latitude 38.695519 for the plant."
+  },
+  "Longitude": {
+   "value": "-76.82779",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860M table for July 2026 lists longitude -76.82779 for the plant."
+  },
+  "Location accuracy": {
+   "value": "exact",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "low",
+   "independent": false,
+   "note": "The coordinates come from the EIA table at six decimal places. I did not check them against a map, so accuracy is assumed."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000402089",
+   "concern_type": "other",
+   "recommendation": "Confirm the parent owner (possibly ArcLight Capital Partners via Parkway Generation) before entering owner shares.",
+   "note": "No passing source named the parent company.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Parkway Generation Keys Energy Center LLC",
+   "role": "owner",
+   "lookup_result": "not run, blind mode"
+  },
+  {
+   "entity_name": "Parkway Generation Keys Energy Center LLC",
+   "role": "operator",
+   "lookup_result": "not run, blind mode"
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/july_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Fuel",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "CHP",
+    "Latest Activity",
+    "Owner(s)",
+    "Operator(s)",
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "outcome": "verified",
+   "note": "Excel file read locally."
+  },
+  {
+   "url": "https://www.power-technology.com/projects/pseg-keys-energy-center-maryland/",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Live 403, passed via archive."
+  },
+  {
+   "url": "https://www.gridinfo.com/parkway-generation-keys-energy-center-llc",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Page lacks Siemens, only used for generation."
+  },
+  {
+   "url": "https://www.proximoinfra.com/data/Deals/21669/Arclight-NJ-MD-Thermal-Portfolio-Refinancing",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "failed",
+   "note": "Expected strings missing."
+  }
+ ]
+}

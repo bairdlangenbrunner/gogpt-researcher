@@ -18,7 +18,7 @@ can't). Encoded here:
     "other"), and shares that look complete should sum to ~100%
 
 Two input modes:
-  - CSV slice:   python qc_checks.py --csv gem_export_gogpt_scoped.csv [--country Nigeria]
+  - CSV slice:   python qc_checks.py --csv gem_export_gogpt_scoped.csv [--country Nigeria | --state Maryland]
   - staged JSON: python qc_checks.py --staged ../batches/<scope>/staging/staged_updates.json
     Staged records are checked field-by-field (see docs/reference/
     staged_json_schema.md): each record's "fields" dict maps EXACT CSV header
@@ -172,7 +172,7 @@ def check_record(fields, ident, findings):
                                     "with no 'other' bucket"))
 
 
-def run_csv(path, country_filter):
+def run_csv(path, country_filter, state_filter=None):
     col_map = derive_column_map(path)
     findings = []
     checked = 0
@@ -181,9 +181,12 @@ def run_csv(path, country_filter):
         next(reader)
         for row in reader:
             fields = {short: row[i] for short, i in col_map.items()
-                      if not short.startswith("_") and i is not None}
+                      if not short.startswith("_") and isinstance(i, int)}
             if country_filter and \
                     fields.get("country", "").strip().lower() != country_filter:
+                continue
+            if state_filter and \
+                    fields.get("state_province", "").strip().lower() != state_filter:
                 continue
             ident = (fields.get("gem_unit_id") or
                      f"{fields.get('plant_name')} / {fields.get('unit_name')}")
@@ -221,6 +224,8 @@ def main():
     g.add_argument("--csv", help="check a tracker CSV slice")
     g.add_argument("--staged", help="check a staged_*.json records file")
     p.add_argument("--country", help="CSV mode: restrict to one country")
+    p.add_argument("--state", help="CSV mode: restrict to one State/Province "
+                   "(full name); implies --country 'United States' unless given")
     args = p.parse_args()
 
     if args.staged:
@@ -230,8 +235,11 @@ def main():
         path = args.csv or str(gogpt_scoped_csv())
         if not Path(path).exists():
             sys.exit(f"ERROR: {path} not found — run scope_filter.py first")
-        checked, findings = run_csv(
-            path, args.country.strip().lower() if args.country else None)
+        country = args.country.strip().lower() if args.country else None
+        state = args.state.strip().lower() if args.state else None
+        if state and not country:
+            country = "united states"
+        checked, findings = run_csv(path, country, state)
         what = f"{checked} CSV rows"
 
     for f in findings:

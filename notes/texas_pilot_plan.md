@@ -14,8 +14,7 @@ then to the other assigned US states. Working notes; edit freely.
       training read; links in `docs/reference/sop_pointers.md`; rules that
       changed folded into `lifecycle_rules.md`, `update.md`, `qc.md`.
 - [x] State-level notes — `docs/country_notes/united_states/texas.md`.
-- [ ] `--state` filter for `worklist.py`, `scope_filter.py`/`qc_checks.py
-      --country`, and a `Country/State` key in `build_campaign_roster.py`.
+- [x] `--state` filter for `worklist.py` and `qc_checks.py`, and a per-state `scope` key in `build_campaign_roster.py`.
 - [ ] gem-researcher-core boundary — decide what migrates (url_verifier,
       entity_lookup, normalize, generic staged-JSON checks) and how this repo
       consumes it (editable install of the sibling checkout). Run the pilot

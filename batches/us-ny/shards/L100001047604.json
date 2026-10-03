@@ -1,0 +1,121 @@
+{
+ "meta": {
+  "plant_id": "L100001047604",
+  "plant_name": "Caithness II power station",
+  "state": "New York",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-02T16:18:20-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001054238",
+   "unit_name": "1",
+   "findings": {
+    "Latest Activity": {
+     "value": "Caithness asked the Town of Brookhaven to change its land covenants so it could build a smaller 600 MW Caithness Long Island II plant with newer equipment (Tbr News Media article, date not confirmed)",
+     "refs": [
+      "https://tbrnewsmedia.com/?p=80439"
+     ],
+     "verifications": [
+      {
+       "url": "https://tbrnewsmedia.com/?p=80439",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Tbr News Media article reports that Caithness representatives went before the Brookhaven town board on June 26 to ask for a smaller plant. The article text does not show the year, and the page does not state one I could confirm. The project had been approved by the town in 2014 as a 750 MW plant."
+    },
+    "City": {
+     "value": "Yaphank",
+     "refs": [
+      "https://tbrnewsmedia.com/?p=80439"
+     ],
+     "verifications": [
+      {
+       "url": "https://tbrnewsmedia.com/?p=80439",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Tbr News Media article places the proposed Caithness Long Island II plant on vacant land in Yaphank, next to the existing Caithness plant."
+    }
+   },
+   "not_found": [
+    "Start year",
+    "Equipment Manufacturer/Model",
+    "Status Detail",
+    "Owner(s)"
+   ],
+   "notes": "The status stays announced. I found no start date and no turbine make or model. The project appears to have been on hold since its 2014 town approval."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001054238",
+   "concern_type": "capacity",
+   "recommendation": "Review whether 750 MW should be replaced by 600 MW.",
+   "note": "The Tbr News Media article says Caithness later asked to build a 600 MW plant with one steam turbine and one stack instead of the 750 MW plant approved in 2014. GEM lists 750 MW from a 2025 Department of Energy request for information. I did not change the value because the article date is unclear.",
+   "refs": [
+    "https://tbrnewsmedia.com/?p=80439"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001054238",
+   "concern_type": "owner",
+   "recommendation": "Keep Caithness Energy LLC unless a sale of the Caithness II project itself is found.",
+   "note": "Lotus Infrastructure Partners agreed to buy the Caithness Long Island Energy Center in September 2025 and closed on January 7, 2026, with plans to rename it Brookhaven Energy Center. Both reports describe the existing 365 MW operating plant. They do not mention the Caithness II project, so the sale does not show a change of owner for this unit.",
+   "refs": [
+    "https://www.roi-nj.com/2025/09/11/industry/energy-utilities/lotus-infrastructure-agrees-to-buy-caithness-long-island-energy-center/"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001054238",
+   "concern_type": "ids",
+   "recommendation": "Look up the EIA plant code once the project reaches EIA tables.",
+   "note": "I did not search the EIA tables because the project is not built and a proposed plant of this kind is unlikely to be listed with a generator code. I give no plant code or generator ID."
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://tbrnewsmedia.com/?p=80439",
+   "used_for": [
+    "Latest Activity",
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Names Caithness Long Island II and Yaphank."
+  },
+  {
+   "url": "https://www.roi-nj.com/2025/09/11/industry/energy-utilities/lotus-infrastructure-agrees-to-buy-caithness-long-island-energy-center/",
+   "used_for": [],
+   "outcome": "verified",
+   "note": "Reports the sale of the existing operating plant, not Caithness II."
+  },
+  {
+   "url": "https://riverheadlocal.com/2025/04/08/u-s-energy-department-eyes-brookhaven-lab-for-ai-data-center-in-new-national-infrastructure-push/",
+   "used_for": [],
+   "outcome": "verified",
+   "note": "Existing source. Loads and names Caithness. Keep it."
+  },
+  {
+   "url": "https://www.energy.gov/sites/default/files/2025-04/RFI%20to%20Inform%20Public%20Bids%20to%20Construct%20AI%20Infrastructure%20%28website%20copy%29.pdf",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Existing source. Not rechecked. Keep it."
+  }
+ ]
+}

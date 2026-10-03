@@ -1,0 +1,325 @@
+{
+ "meta": {
+  "plant_id": "L100000409301",
+  "plant_name": "Vienna Operations power station",
+  "state": "Maryland",
+  "mode": "blind",
+  "model": "sonnet",
+  "generated": "2026-10-02T12:35:09-07:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000414447",
+   "unit_name": "8",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.energy.gov/documents/202-26-2-exhibit-31jan-130pm-v9"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.energy.gov/documents/202-26-2-exhibit-31jan-130pm-v9",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA-860M table for August 2026 lists generator 8 as operating. A Department of Energy emergency order from January 2026 also names Vienna Unit 8 as an oil-fired resource available to the grid operator PJM. The two sources are separate."
+    },
+    "Capacity (MW)": {
+     "value": "162.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives a nameplate of 162.0 MW for generator 8. The Department of Energy order rounds it to about 165 MW. Row read: Plant 1564, generator 8, status OP, nameplate 162.0 MW, technology Petroleum Liquids, prime mover ST, energy source RFO, operating year 1972, no planned retirement."
+    },
+    "Fuel": {
+     "value": "fossil liquids: heavy fuel oil, fossil liquids: fuel oil",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860 survey for 2025 lists residual fuel oil as the main fuel and distillate fuel oil as the second fuel for generator 8. Residual fuel oil is heavy fuel oil."
+    },
+    "Turbine/Engine Technology": {
+     "value": "steam turbine",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives prime mover ST, which means steam turbine, for generator 8."
+    },
+    "Start year": {
+     "value": "1972",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives an operating date of January 1972 for generator 8."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860 survey for 2025 says generator 8 is not part of a combined heat and power system. The plant sector is independent power producer, non-combined heat and power."
+    },
+    "Latest Activity": {
+     "value": "Named in a January 2026 Department of Energy emergency order as an available oil-fired unit",
+     "refs": [
+      "https://www.energy.gov/documents/202-26-2-exhibit-31jan-130pm-v9"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.energy.gov/documents/202-26-2-exhibit-31jan-130pm-v9",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The order dated January 31, 2026 lists Vienna Unit 8 with NRG as the owner, oil as the fuel, and a NOx limit."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Status Detail",
+    "Conversion/replacement?",
+    "Captive industry type",
+    "Captive non-industry use"
+   ],
+   "notes": "I could not find a turbine maker or model, an engine count, or a conversion history for unit 8. No retirement date is on file in the EIA tables. Unit 8 burns oil and is operating."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Vienna Power LLC [100%]",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860 ownership table for 2025 lists Vienna Power LLC as owner of generators 8 and 10 with 100 percent. I did not trace the parent company."
+  },
+  "Operator(s)": {
+   "value": "NRG Vienna Operations Inc",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860M table for August 2026 gives NRG Vienna Operations Inc as the entity for this plant. EIA lists this entity as the plant operator. The Department of Energy order also names NRG."
+  },
+  "Latitude": {
+   "value": "38.4878",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860M table for August 2026 gives this latitude for the plant."
+  },
+  "Longitude": {
+   "value": "-75.8208",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860M table for August 2026 gives this longitude for the plant."
+  },
+  "Location accuracy": {
+   "value": "approximate",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "These are plant-level coordinates from EIA. I did not check them against a map, so I am calling them approximate."
+  },
+  "Captive industry use": {
+   "value": "no",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860 survey for 2025 puts this plant in the independent power producer sector with FERC exempt wholesale generator status. It sells power to the grid and is not an industrial site."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000414447",
+   "concern_type": "possible_missing_unit",
+   "recommendation": "Generator 10 at the same plant is a distillate oil combustion turbine of 18.6 MW from 1968. It is under the usual size threshold, so check whether it belongs in the database.",
+   "note": "The EIA-860M table for August 2026 lists generator 10 at plant 1564 as operating.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Vienna Power LLC",
+   "role": "owner",
+   "lookup_result": "not run, blind mode"
+  },
+  {
+   "entity_name": "NRG Vienna Operations Inc",
+   "role": "operator",
+   "lookup_result": "not run, blind mode"
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Technology",
+    "Start year",
+    "Operator(s)",
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Excel file read locally."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+   "used_for": [
+    "Fuel",
+    "CHP",
+    "Owner(s)",
+    "Captive industry use"
+   ],
+   "outcome": "verified",
+   "note": "Excel files read locally."
+  },
+  {
+   "url": "https://www.energy.gov/documents/202-26-2-exhibit-31jan-130pm-v9",
+   "used_for": [
+    "Status",
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "PDF read with pdftotext."
+  }
+ ]
+}

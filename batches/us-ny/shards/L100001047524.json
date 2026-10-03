@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "plant_id": "L100001047524",
+    "plant_name": "Riverbay power station",
+    "state": "New York",
+    "mode": "update",
+    "model": "sonnet",
+    "generated": "2026-10-02T16:21:37-04:00",
+    "done": true,
+    "urls_attempted": 2,
+    "urls_verified": 2
+  },
+  "units": [
+    {
+      "gem_unit_id": "G100001054106",
+      "unit_name": "1",
+      "findings": {
+        "City": {
+          "value": "New York",
+          "refs": [
+            "https://www.gridinfo.com/plant/riverbay/43",
+            "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip"
+          ],
+          "verifications": [
+            {
+              "url": "https://www.gridinfo.com/plant/riverbay/43",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "tier": "high",
+          "independent": true,
+          "note": "A GridInfo plant page gives the address as 98 Co-op City Blvd., New York, NY 10475. The EIA-860 annual plant table for 2025 also lists plant 52168, Riverbay, city New York, county Bronx, street address 98 Co-op City Blvd. Both use New York as the postal city. The plant is in the Bronx borough, which the county field already records."
+        }
+      },
+      "not_found": [],
+      "notes": "The city was filled from the plant address. Both sources use New York as the city name, and the plant sits in the Bronx."
+    }
+  ],
+  "plant_findings": {},
+  "qa": [
+    {
+      "gem_unit_id": "G100001054106",
+      "concern_type": "other",
+      "recommendation": "Decide whether the city should read New York or Bronx.",
+      "note": "EIA and GridInfo both give New York as the city. A researcher may prefer Bronx for consistency with other Bronx plants.",
+      "refs": []
+    }
+  ],
+  "monitor": [],
+  "newunits": [],
+  "entities": [],
+  "source_log": [
+    {
+      "url": "https://www.gridinfo.com/plant/riverbay/43",
+      "used_for": [
+        "City"
+      ],
+      "outcome": "verified",
+      "note": "Page gives the street address and city."
+    },
+    {
+      "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+      "used_for": [
+        "City"
+      ],
+      "outcome": "verified",
+      "note": "Read the plant table inside the zip file on my computer; row for plant code 52168."
+    }
+  ]
+}

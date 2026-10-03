@@ -26,11 +26,11 @@ Fresh GEM export, pulled at the start of every batch (from `scripts/`):
 
 ```
 python ../../gem-db-ops/gogpt/pull.py --output gem_export_gogpt.csv
-python pull_gem_db.py --map-only          # derive the 86-column index map (.colmap.json)
+python pull_gem_db.py --map-only          # derive the 91-column index map (.colmap.json)
 python scope_filter.py                    # derive gem_export_gogpt_scoped.csv
 ```
 
-The pull engine lives ONLY in the sibling `../gem-db-ops` repo (no engine copies here); auth via `GEM_READONLY_DB_URL`. `pull_gem_db.py` only derives the column map — the canonical 86-column expected-header map is `GOGPT_EXPECTED_COLUMNS` in `../gem-db-ops/gem_colmap.py`, so **new GEM columns get added there**, with `schema_constants.py`'s `COMPUTED_COLUMNS`/`OUT_OF_SCOPE_COLUMNS` updated in the same pass.
+The pull engine lives ONLY in the sibling `../gem-db-ops` repo (no engine copies here); auth via `GEM_READONLY_DB_URL`. `pull_gem_db.py` only derives the column map — the canonical 91-column expected-header map is `GOGPT_EXPECTED_COLUMNS` in `../gem-db-ops/gem_colmap.py`, so **new GEM columns get added there**, with `schema_constants.py`'s `COMPUTED_COLUMNS`/`OUT_OF_SCOPE_COLUMNS` updated in the same pass.
 
 **Scope gotcha — the export is NOT GOGPT-only.** It contains ALL combustion units: oil + gas, but also coal (GCPT) and bioenergy (GBPT) units, ~34.5k rows. `scope_filter.py` derives the GOGPT-scoped view (authoritative `trackerSearch='GOGPT'` query when the DB is reachable; fuel heuristic with `--offline`). Research and worklists run on the SCOPED csv; **keep the unfiltered csv** — coal-to-gas conversions, replacements, and shared plants need the GCPT/GBPT side visible.
 
@@ -60,6 +60,7 @@ Full recipes in `docs/workflows.md` — **read the relevant section before start
 | **Triage** (plan the batch) | "what should we work on", "run the worklist for [country]", "what's stale", "inferred-status sweep" | `docs/workflows.md` §4 + Triage SOP; output is a markdown memo, not a deliverable |
 | **QC** (backward-looking checker) | "qc pass", "validation report", "country close-out", "did my edits land", "link-rot sweep" | `docs/workflows.md` §5 + QC SOP; memo only; fixes route to a follow-on Update batch |
 | **Campaign roster** (quarterly cycle bookkeeping) | "refresh the roster", "start the [quarter] campaign", "campaign status" | `docs/workflows.md` §6 + `campaigns/<quarter>/README.md` |
+| **Review** (decide on a batch's staged edits) | "review the [state] batch", "open the review app", "build from the decisions" | `docs/workflows.md` §8 + `review_app/README.md`; decisions land in `review_log.jsonl` in the staging dir; build with `--decisions` |
 
 Routing notes that prevent the most common mistakes:
 
@@ -69,11 +70,12 @@ Routing notes that prevent the most common mistakes:
 - Discovery candidates that fail the capacity threshold or evidence bar go to the `monitor` lane with a `recheck_by` date — not to the trash.
 - **No wiki lane.** GOGPT wiki pages are auto-generated; only the "Background" section is hand-editable and it is out of the staging contract (`docs/reference/wiki_pages.md`). There are exactly six lanes: `updates|qa|entity|monitor|newplants|newunits`.
 - QC never edits: it audits, emits a memo + the close-out validation report, and routes fixes to an Update batch.
+- **The review app never edits either**: it records accept / hold / reject / suggest per staged record in `batches/<scope>/staging/review_log.jsonl` (append-only, committed with the batch). `build_review_package.py --decisions` then builds the workbook from accepted edits only and lists the rest in the evidence file. Keys are the stable `record_id` every staged record carries, so a rebuild keeps the calls.
 - `qc_checks.py --staged` must pass with **zero errors** before any deliverable is built.
 
 ## Output deliverable
 
-Two files per batch in `batches/<scope>/deliverables/`: `gogpt_batch_<YYYYMMDD>_<HHMM>_ET_<scope>_<mode>_actions.xlsx` (per-plant/per-unit web-UI edit checklist: current → proposed → evidence, colored by confidence) + `..._evidence.md` (the reasoning). Stamp via `TZ=America/New_York date "+%Y%m%d_%H%M_ET"`; `<mode>` ∈ `update`/`discovery`; triage and QC produce memos, not deliverables. **Never overwrite an existing deliverable** — every rebuild gets a fresh stamp. Cell colors = per-cell source confidence (green ≥2 independent or primary; yellow single solid; red single weak — prefer blank + qa; blue re-verified unchanged; green+empty = staged deletion): `docs/reference/workbook_conventions.md` + `confidence_tiers.md`.
+Two files per batch in `batches/<scope>/deliverables/`: `gogpt_batch_<YYYYMMDD>_<HHMM>_ET_<scope>_<mode>_actions.xlsx` (per-plant/per-unit web-UI edit checklist: current → proposed → evidence, colored by confidence) + `..._evidence.md` (the reasoning). Stamp via `TZ=America/New_York date "+%Y%m%d_%H%M_ET"`; `<mode>` ∈ `update`/`discovery`; triage and QC produce memos, not deliverables. **Never overwrite an existing deliverable** — every rebuild gets a fresh stamp. Cell colors = per-cell source confidence (green = one fully validated ref, or 2+ independent for a status change; yellow = single validated ref on a status change, or a ref that validates only partially; red = single weak/unvalidated — prefer blank + qa; blue re-verified unchanged; green+empty = staged deletion): `docs/reference/workbook_conventions.md` + `confidence_tiers.md`.
 
 ## Hard requirements (these override anything below)
 
@@ -81,7 +83,7 @@ Two files per batch in `batches/<scope>/deliverables/`: `gogpt_batch_<YYYYMMDD>_
 - **Every URL passes `url_verifier.py` before staging** — verification means the specific claimed value appears on the page/PDF, not just HTTP 200. A bare domain/homepage is never a citation.
 - **NEVER cite gem.wiki or globalenergymonitor.org — anywhere, in any lane.** GEM-derived republishers (Wikipedia/IEEFA/news footnoting GEM) are likewise not independent evidence — chase and cite the primary source. gem.wiki may be used to *detect* gaps, never as the citation.
 - **Banned source: abarrelfull** (`abarrelfull.wikidot.com`, `abarrelfull.co.uk`) — never, even alongside corroboration (user directive 2026-07-17, all GEM researcher projects).
-- **≥2 independent working URLs per staged value, each explicitly containing it.** Mirrors/copies of one document = ONE source. Single-source values are yellow at best; single weak → prefer blank + qa lane.
+- **One fully validated ref is sufficient; a second independent source is preferred, never required** (Baird 2026-10-02, adopting the pipelines-researcher ruling of 2026-09-30). A ref is fully validated when it clears `url_verifier.py`, names this plant/unit, and states the value (within rounding; status-by-inference counts) — that closes the data point at green. Take a second source when cheap and record it via `independent`, but never hold a unit open for one. **Exception: a STATUS CHANGE is green only on 2+ independent publishers; a single-source status change is yellow.** Mirrors/copies of one document = ONE source; GEM-derived republishers never count. A single ref that does not fully validate → red, prefer blank + qa lane.
 - **Fresh pull + `scope_filter.py` at the start of every batch; re-derive the colmap from the header every run** — never hard-code offsets, never research against a stale CSV.
 - **Data Source cells MERGE, never replace** — carry forward every still-valid existing URL; datasources are never deleted (manual rule). No orphan refs (a Data Source edit needs its paired value) and no orphan values (a staged value needs its Data Source, inferred statuses excepted).
 - **A URL belongs ONLY in a Data Source column**; Status/Capacity/Fuel/Owner columns hold values, never links. The build script enforces this.
@@ -91,6 +93,7 @@ Two files per batch in `batches/<scope>/deliverables/`: `gogpt_batch_<YYYYMMDD>_
 - **Hydrogen columns are do-not-research** (the 10 columns in `schema_constants.OUT_OF_SCOPE_COLUMNS`) — read-only, never staged.
 - **Don't create duplicate entities** — `entity_lookup.py` before staging any new owner/operator/parent; entities are shared across all GEM trackers and countries. Ownership: ≥5% shares only, top-4 + "other", never national governments directly.
 - **CC block = one unit** — never split a combined-cycle block into its component turbines (`docs/reference/unit_conventions.md` for all naming rules).
+- **Every note a person will read is written in plain language** (Baird 2026-10-02): `researcher_notes`, `action`, evidence markdown, calibration memos, country notes, QC memos, subagent shard text. Short sentences, sources named by what they are, no repo jargon (lane, shard, tier, ref, staged), no unexplained abbreviations, no em-dashes or arrows. Rules and a before/after example in `docs/reference/notes_style.md`; `state_gate.py` flags offenders.
 
 ## When to escalate to the user
 
