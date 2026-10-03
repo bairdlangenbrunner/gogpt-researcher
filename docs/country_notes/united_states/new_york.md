@@ -94,7 +94,85 @@ state agent in narrowed update mode on 2026-10-02 (`notes/us_state_agent_plan.md
   unit returns to service.
 - Not in GEM: Alpha Generation proposed on March 16, 2026 to replace the
   Gowanus and Narrows barge peakers in Brooklyn with three new gas units.
-  Watch item, recheck 2027-01.
+  The discovery pass below adds the existing barge plants and carries the
+  repowering as its own watch item, recheck 2027-04.
+
+## Discovery pass of 2026-10-02
+
+What was searched: the 2026 NYISO Gold Book (the existing-generator table,
+the proposed-generator tables, the capacity-ineligible list, the
+deactivation notices and the New York Power Authority 2030 list), the NYISO
+interconnection queue, the NYISO first-quarter 2026 reliability report and
+its June 30, 2026 planning status report, the EIA-860M table for August
+2026 against the GEM export by EIA plant code, Public Service Commission
+filings, Department of Environmental Conservation permit review reports,
+the New York Power Authority's May 2025 transition plan for its small gas
+plants, company pages and releases, and the trade press. Not searched: the
+Department of Environmental Conservation permit database plant by plant,
+and the Long Island Power Authority board materials beyond the Far Rockaway
+contract.
+
+Added (deliverable `gogpt_batch_20261002_2153_ET_us-ny_discovery`), all
+operating plants that EIA and NYISO list but GEM lacks:
+
+- Gowanus Gas Turbines generating station, Brooklyn (EIA plant 2494): four
+  barges of eight 20 MW simple-cycle turbines each, 640 MW nameplate, in
+  service 1971. Barges 1 and 4 burned oil only and retired in November
+  2022. Barges 2 and 3 burn gas or distillate; their retirement notice for
+  July 14, 2026 was withdrawn on April 16, 2026 because NYISO needs them
+  through May 1, 2029. Owner entered as Alpha Generation LLC with operator
+  Alpha Generation, following GEM's Astoria and Arthur Kill records for the
+  same company; the legal owner is Astoria Generating Company, L.P.
+- Narrows Gas Turbines generating station, Brooklyn (EIA plant 2499): two
+  barges of eight 22 MW turbines each, 352 MW nameplate, in service 1972,
+  same owner, notice and withdrawal as Gowanus.
+- Vernon Boulevard power station, Long Island City (EIA plant 7909): two
+  47 MW LM6000 turbines of 2001, New York Power Authority, entered as one
+  unit of two engines the way GEM records Hell Gate. State law ends gas
+  generation at the Authority's small plants by December 31, 2030.
+- Pouch Terminal power station, Staten Island (EIA plant 8053): one 47 MW
+  LM6000 turbine of 2001, New York Power Authority. Under the 50 MW bar on
+  its own; added because GEM already records the identical sister plants
+  Brentwood and North 1st at 47 MW. Scope call for the reviewer.
+
+Each barge is entered as one unit with a turbine count and a per-turbine
+capacity. No source names the barge turbine model, so the technology is
+plain gas turbine; each turbine alone is under 50 MW, so the plants are in
+scope only as engine sets. Two more Authority plants, Gowanus 5 and 6 (94
+MW, next to the barges) and Kent (47 MW, Brooklyn), are also missing from
+GEM and were not staged for lack of time; add them in the next pass.
+
+Watch item (recheck by April 2027): AlphaGen's March 16, 2026 proposal to
+replace the six Gowanus and Narrows barges with three new 273 MW dual-fuel
+barges, 819 MW in all, offered in answer to Con Edison's request for
+information. No permit, siting case, queue entry or schedule. The earlier
+549 MW Gowanus repowering queue entry was withdrawn in January 2023 and the
+2019 Siemens barge plan (case 18-F-0758) was withdrawn.
+
+Looked at and set aside: RED-Rochester at Eastman Business Park (owner SDCL
+Energy Efficiency Income Trust, operator Ironclad; the largest gas unit is a
+38 MW recycled Frame 6B turbine of 2025, every unit under 50 MW, a captive
+industrial plant for a human call); Far Rockaway GT1 and GT2, which are
+GEM's Bayswater and Jamaica Bay records; Glenwood, Shoreham, Wading River
+and West Babylon, all in GEM; withdrawn and cancelled queue entries; and the
+diesel backup fleets at data center sites, which are standby generators.
+No new gas or oil project of 50 MW or more was found in development in New
+York.
+
+For the next update batch: Danskammer units 1 to 4 filed to deactivate on
+August 1, 2026, were held to at least January 15, 2027 by NYISO, and the
+owner filed for Chapter 11 on June 10, 2026; Pinelawn Power 1 gave notice
+for November 1, 2025 with no reliability hold; the Far Rockaway, Bayswater
+and Jamaica Bay deactivation notices were withdrawn as of May 1, 2026 under
+a ten-year Long Island Power Authority contract, and Jamaica Bay's parent
+should read Hull Street Energy, not NextEra; Astoria GT 01 retired May 1,
+2025; the Authority's 2030 phase-out belongs on the Brentwood, Harlem River
+Yard, Hell Gate, Joseph J. Seymour and North 1st rows, and Harlem River
+Yard has engine count and per-engine capacity swapped; Shoreham and
+Glenwood lose water injection in May 2027; Ravenswood was sold to NRG on
+January 30, 2026; Caithness II should move from announced to shelved;
+Bethlehem (plus 40 MW) and Arthur Kill (plus 12.2 MW) have capacity-rights
+uprate requests in the queue.
 
 ## Gotchas
 

@@ -1,0 +1,900 @@
+{
+  "meta": {
+    "scope": {
+      "country": "United States",
+      "state": "New York",
+      "postal": "ny",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-02T22:30:00-04:00",
+    "mode": "discovery",
+    "generated_from": "discovery pass 2026-10-02: NYISO 2026 Gold Book (Tables III-2, IV-1 to IV-6), NYISO interconnection queue, NYISO first-quarter 2026 reliability report and June 30, 2026 planning status report, EIA-860M August 2026, Public Service Commission and Department of Environmental Conservation documents, New York Power Authority transition plan, company releases and trade press",
+    "lane": "newplants",
+    "counts": {
+      "records": 4
+    },
+    "curation_note": "Four operating plants that EIA and NYISO list but GEM lacks: the Gowanus and Narrows barge peakers in Brooklyn (AlphaGen; 640 MW and 352 MW nameplate, retirement notices withdrawn April 2026, needed through May 2029) and two New York Power Authority LM6000 plants, Vernon Boulevard (94 MW) and Pouch (47 MW). All four clear the 50 MW bar only as engine sets, which is how GEM already records the Power Authority's Hell Gate plant; Pouch is under the bar on any reading and is a scope call. No new gas or oil project of 50 MW or more was found in development in New York."
+  },
+  "records": [
+    {
+      "gem_plant_id": "",
+      "gem_unit_id": "",
+      "plant_name": "Gowanus Gas Turbines generating station",
+      "unit_name": "",
+      "country": "United States",
+      "fields": {
+        "Owner(s)": "Alpha Generation LLC [100%]",
+        "Operator(s)": "Alpha Generation",
+        "Latitude": "40.6635",
+        "Longitude": "-74.0051",
+        "Location accuracy": "approximate",
+        "City": "Brooklyn"
+      },
+      "current": {},
+      "refs": {
+        "Owners Data Source": [
+          "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B50EEA8CD-58A9-40FC-87B5-3DC6E1CE3D4E%7D",
+          "https://www.prnewswire.com/news-releases/arclight-creates-alphagen-to-manage-one-of-the-largest-power-infrastructure-portfolios-in-the-united-states-302031341.html",
+          "https://www.prnewswire.com/news-releases/alphagen-withdraws-retirement-notices-for-gowanus--narrows-generating-stations-following-nyiso-reliability-determinations-302743905.html"
+        ],
+        "Operators Data Source": [
+          "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BCAC45C80-A88F-425D-9511-1C6525605C3D%7D",
+          "https://alphagen.com/portfolio/gowanus/"
+        ],
+        "Location Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B50EEA8CD-58A9-40FC-87B5-3DC6E1CE3D4E%7D"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B50EEA8CD-58A9-40FC-87B5-3DC6E1CE3D4E%7D",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/arclight-creates-alphagen-to-manage-one-of-the-largest-power-infrastructure-portfolios-in-the-united-states-302031341.html",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/alphagen-withdraws-retirement-notices-for-gowanus--narrows-generating-stations-following-nyiso-reliability-determinations-302743905.html",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BCAC45C80-A88F-425D-9511-1C6525605C3D%7D",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://alphagen.com/portfolio/gowanus/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "units": [
+        {
+          "unit_name": "Barge 2",
+          "fields": {
+            "Status": "operating",
+            "Number Of Engines": "8",
+            "Capacity Per Engine": "20",
+            "Fuel": "fossil gas: natural gas, fossil liquids: fuel oil",
+            "Turbine/Engine Technology": "gas turbine",
+            "Start year": "1971",
+            "Status Detail": "Retirement notice for July 14, 2026 withdrawn on April 16, 2026. The grid operator NYISO needs the unit through May 1, 2029 for New York City reliability.",
+            "Latest Activity": "Year: 2026, Month: 4, Day: 16"
+          },
+          "refs": {
+            "Status Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "https://www.prnewswire.com/news-releases/alphagen-withdraws-retirement-notices-for-gowanus--narrows-generating-stations-following-nyiso-reliability-determinations-302743905.html",
+              "https://www.publicpower.org/periodical/article/company-withdraws-notices-intent-retire-power-plants-brooklyn-ny",
+              "https://www.nyiso.com/documents/20142/16004172/2026-Q1-STAR-Report-Final.pdf/a5fd3388-ea22-ff21-7f95-490356af30f5"
+            ],
+            "Capacity Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+            ],
+            "Fuel Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_261020011600021_r1_2.pdf"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+            ],
+            "Start Year Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+            ],
+            "Latest Activity Data Source": [
+              "https://www.prnewswire.com/news-releases/alphagen-withdraws-retirement-notices-for-gowanus--narrows-generating-stations-following-nyiso-reliability-determinations-302743905.html",
+              "https://www.publicpower.org/periodical/article/company-withdraws-notices-intent-retire-power-plants-brooklyn-ny"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.prnewswire.com/news-releases/alphagen-withdraws-retirement-notices-for-gowanus--narrows-generating-stations-following-nyiso-reliability-determinations-302743905.html",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.publicpower.org/periodical/article/company-withdraws-notices-intent-retire-power-plants-brooklyn-ny",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.nyiso.com/documents/20142/16004172/2026-Q1-STAR-Report-Final.pdf/a5fd3388-ea22-ff21-7f95-490356af30f5",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_261020011600021_r1_2.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "researcher_notes": "Eight 20 MW simple-cycle turbines on the second barge, in service since June 1971 (the EIA monthly table for August 2026 and the 2026 NYISO Gold Book, Table III-2, units Gowanus 2-1 to 2-8). The state air permit review report says the turbines on barges 2 and 3 burn natural gas or distillate oil. The owner filed to retire the barge in July 2026 but withdrew the notice on April 16, 2026 after NYISO found the units are needed through May 1, 2029. The turbine model is not named in any source I could verify, so the technology is entered as gas turbine.",
+          "action": "Add unit Barge 2 with status operating, 8 engines of 20 MW each (160 MW), fuel natural gas and fuel oil, technology gas turbine, start year 1971, latest activity April 16, 2026, and the status detail text. Add the links below to the matching Data Source boxes."
+        },
+        {
+          "unit_name": "Barge 3",
+          "fields": {
+            "Status": "operating",
+            "Number Of Engines": "8",
+            "Capacity Per Engine": "20",
+            "Fuel": "fossil gas: natural gas, fossil liquids: fuel oil",
+            "Turbine/Engine Technology": "gas turbine",
+            "Start year": "1971",
+            "Status Detail": "Retirement notice for July 14, 2026 withdrawn on April 16, 2026. The grid operator NYISO needs the unit through May 1, 2029 for New York City reliability.",
+            "Latest Activity": "Year: 2026, Month: 4, Day: 16"
+          },
+          "refs": {
+            "Status Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "https://www.prnewswire.com/news-releases/alphagen-withdraws-retirement-notices-for-gowanus--narrows-generating-stations-following-nyiso-reliability-determinations-302743905.html",
+              "https://www.publicpower.org/periodical/article/company-withdraws-notices-intent-retire-power-plants-brooklyn-ny",
+              "https://www.nyiso.com/documents/20142/16004172/2026-Q1-STAR-Report-Final.pdf/a5fd3388-ea22-ff21-7f95-490356af30f5"
+            ],
+            "Capacity Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+            ],
+            "Fuel Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_261020011600021_r1_2.pdf"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+            ],
+            "Start Year Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+            ],
+            "Latest Activity Data Source": [
+              "https://www.prnewswire.com/news-releases/alphagen-withdraws-retirement-notices-for-gowanus--narrows-generating-stations-following-nyiso-reliability-determinations-302743905.html",
+              "https://www.publicpower.org/periodical/article/company-withdraws-notices-intent-retire-power-plants-brooklyn-ny"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.prnewswire.com/news-releases/alphagen-withdraws-retirement-notices-for-gowanus--narrows-generating-stations-following-nyiso-reliability-determinations-302743905.html",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.publicpower.org/periodical/article/company-withdraws-notices-intent-retire-power-plants-brooklyn-ny",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.nyiso.com/documents/20142/16004172/2026-Q1-STAR-Report-Final.pdf/a5fd3388-ea22-ff21-7f95-490356af30f5",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_261020011600021_r1_2.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "researcher_notes": "Eight 20 MW simple-cycle turbines on the third barge, in service since July 1971 (EIA monthly table for August 2026; 2026 Gold Book Table III-2, units Gowanus 3-1 to 3-8). Same fuel, retirement notice and withdrawal as Barge 2. One turbine, Gowanus 3-6, has been out of service and ineligible for capacity payments since April 15, 2025 (Gold Book Table IV-4), so the barge runs on seven turbines today; the nameplate still counts all eight.",
+          "action": "Add unit Barge 3 with status operating, 8 engines of 20 MW each (160 MW), fuel natural gas and fuel oil, technology gas turbine, start year 1971, latest activity April 16, 2026, and the status detail text. Add the links below to the matching Data Source boxes."
+        },
+        {
+          "unit_name": "Barge 1",
+          "fields": {
+            "Status": "retired",
+            "Number Of Engines": "8",
+            "Capacity Per Engine": "20",
+            "Fuel": "fossil liquids: fuel oil",
+            "Turbine/Engine Technology": "gas turbine",
+            "Start year": "1971",
+            "Retired year": "2022"
+          },
+          "refs": {
+            "Status Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BCAC45C80-A88F-425D-9511-1C6525605C3D%7D",
+              "https://www.nyiso.com/documents/20142/16004172/2026-Q1-STAR-Report-Final.pdf/a5fd3388-ea22-ff21-7f95-490356af30f5"
+            ],
+            "Capacity Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BCAC45C80-A88F-425D-9511-1C6525605C3D%7D"
+            ],
+            "Fuel Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+            ],
+            "Start Year Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+            ],
+            "Retired Year Data Source": [
+              "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BCAC45C80-A88F-425D-9511-1C6525605C3D%7D",
+              "https://www.nyiso.com/documents/20142/16004172/2026-Q1-STAR-Report-Final.pdf/a5fd3388-ea22-ff21-7f95-490356af30f5"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BCAC45C80-A88F-425D-9511-1C6525605C3D%7D",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.nyiso.com/documents/20142/16004172/2026-Q1-STAR-Report-Final.pdf/a5fd3388-ea22-ff21-7f95-490356af30f5",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "researcher_notes": "Eight 20 MW oil-only turbines on the first barge (EIA units GT11 to GT18). Astoria Generating Company told the Public Service Commission on December 16, 2021 that it would retire barges 1 and 4, sixteen turbines and 320 MW in all, as soon as November 2022. NYISO's first-quarter 2026 reliability report lists both barges as retired on November 1, 2022, and the 2026 Gold Book no longer lists them. The EIA monthly table still carries the turbines as out of service and not expected to return.",
+          "action": "Add unit Barge 1 with status retired, retired year 2022, 8 engines of 20 MW each (160 MW), fuel oil only, technology gas turbine, start year 1971. Add the links below to the matching Data Source boxes."
+        },
+        {
+          "unit_name": "Barge 4",
+          "fields": {
+            "Status": "retired",
+            "Number Of Engines": "8",
+            "Capacity Per Engine": "20",
+            "Fuel": "fossil liquids: fuel oil",
+            "Turbine/Engine Technology": "gas turbine",
+            "Start year": "1971",
+            "Retired year": "2022"
+          },
+          "refs": {
+            "Status Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BCAC45C80-A88F-425D-9511-1C6525605C3D%7D",
+              "https://www.nyiso.com/documents/20142/16004172/2026-Q1-STAR-Report-Final.pdf/a5fd3388-ea22-ff21-7f95-490356af30f5"
+            ],
+            "Capacity Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BCAC45C80-A88F-425D-9511-1C6525605C3D%7D"
+            ],
+            "Fuel Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+            ],
+            "Start Year Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+            ],
+            "Retired Year Data Source": [
+              "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BCAC45C80-A88F-425D-9511-1C6525605C3D%7D",
+              "https://www.nyiso.com/documents/20142/16004172/2026-Q1-STAR-Report-Final.pdf/a5fd3388-ea22-ff21-7f95-490356af30f5"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BCAC45C80-A88F-425D-9511-1C6525605C3D%7D",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.nyiso.com/documents/20142/16004172/2026-Q1-STAR-Report-Final.pdf/a5fd3388-ea22-ff21-7f95-490356af30f5",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "researcher_notes": "Eight 20 MW oil-only turbines on the fourth barge (EIA units GT41 to GT48). Retired with Barge 1: the December 2021 retirement letter to the Public Service Commission and NYISO's first-quarter 2026 reliability report, which gives November 1, 2022.",
+          "action": "Add unit Barge 4 with status retired, retired year 2022, 8 engines of 20 MW each (160 MW), fuel oil only, technology gas turbine, start year 1971. Add the links below to the matching Data Source boxes."
+        }
+      ],
+      "tier": "high",
+      "independent": true,
+      "source_language": "en",
+      "researcher_notes": "Gowanus is a floating peaking plant in Gowanus Bay, Sunset Park, Brooklyn (EIA plant 2494, entrance at 420 2nd Avenue). It has four barges that each carry eight 20 MW simple-cycle turbines, 640 MW nameplate in all, in service since 1971. Barges 1 and 4 burned oil only and were retired in November 2022. Barges 2 and 3 burn gas or distillate oil and still run; the owner's July 2025 notice to retire them in July 2026 was withdrawn on April 16, 2026 after NYISO found the units are needed through May 1, 2029. The plant is not in GEM. Its neighbor, the 94 MW New York Power Authority plant called Gowanus 5 and 6 in the Gold Book, is a separate plant and is not in GEM either (see the Vernon Boulevard and Pouch records for the same fleet). The legal owner is Astoria Generating Company, L.P., a wholly owned subsidiary of Eastern Generation, LLC, which the ArcLight affiliate Alpha Generation (AlphaGen) has managed since January 2024. GEM's existing Astoria and Arthur Kill records for the same company carry Alpha Generation LLC as owner and Alpha Generation as operator, so these records follow that convention. Parents follow the Astoria generating station record: ArcLight Capital Partners LLC 50 percent, ACH GP LLC 25 percent, ACHP II LP 12.5 percent, ACHP LP 12.5 percent. Capacity is entered as engine sets (eight turbines of 20 MW per barge), which is how GEM already records the New York Power Authority's two-turbine Hell Gate plant. Each turbine on its own is under the 50 MW threshold, so the plant is in scope only if the barge counts as one unit; the turbine model (reported elsewhere as the Pratt and Whitney FT4, an aircraft-derived design) is not named in any source I could verify. Coordinates are the EIA plant point; NYISO's generator list puts the barges about 250 meters away, so the location is marked approximate. AlphaGen's March 2026 proposal to replace the six Gowanus and Narrows barges with three new 273 MW barges is a separate watch item in this batch.",
+      "action": "Create a new plant named Gowanus Gas Turbines generating station in New York, United States. Set Owner(s) to Alpha Generation LLC at 100 percent and Operator(s) to Alpha Generation, both existing entities, and set the parents the same way as the Astoria generating station record. Set the location to latitude 40.6635, longitude -74.0051, accuracy approximate, city Brooklyn, and add EIA: 2494 to Other IDs (location). Then add the four barge units listed below. Add the links to the matching Data Source boxes.",
+      "record_id": "us-ny-eia2494:plant:newplant"
+    },
+    {
+      "gem_plant_id": "",
+      "gem_unit_id": "",
+      "plant_name": "Narrows Gas Turbines generating station",
+      "unit_name": "",
+      "country": "United States",
+      "fields": {
+        "Owner(s)": "Alpha Generation LLC [100%]",
+        "Operator(s)": "Alpha Generation",
+        "Latitude": "40.648611",
+        "Longitude": "-74.02083",
+        "Location accuracy": "approximate",
+        "City": "Brooklyn"
+      },
+      "current": {},
+      "refs": {
+        "Owners Data Source": [
+          "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B50EEA8CD-58A9-40FC-87B5-3DC6E1CE3D4E%7D",
+          "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_261020008600011_r3_1.pdf",
+          "https://www.prnewswire.com/news-releases/arclight-creates-alphagen-to-manage-one-of-the-largest-power-infrastructure-portfolios-in-the-united-states-302031341.html",
+          "https://www.prnewswire.com/news-releases/alphagen-withdraws-retirement-notices-for-gowanus--narrows-generating-stations-following-nyiso-reliability-determinations-302743905.html"
+        ],
+        "Operators Data Source": [
+          "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_261020008600011_r3_1.pdf",
+          "https://www.alphagen.com/compliance/plant/narrows/"
+        ],
+        "Location Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_261020008600011_r3_1.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B50EEA8CD-58A9-40FC-87B5-3DC6E1CE3D4E%7D",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_261020008600011_r3_1.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/arclight-creates-alphagen-to-manage-one-of-the-largest-power-infrastructure-portfolios-in-the-united-states-302031341.html",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/alphagen-withdraws-retirement-notices-for-gowanus--narrows-generating-stations-following-nyiso-reliability-determinations-302743905.html",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.alphagen.com/compliance/plant/narrows/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "units": [
+        {
+          "unit_name": "Barge 1",
+          "fields": {
+            "Status": "operating",
+            "Number Of Engines": "8",
+            "Capacity Per Engine": "22",
+            "Fuel": "fossil gas: natural gas, fossil liquids: fuel oil",
+            "Turbine/Engine Technology": "gas turbine",
+            "Start year": "1972",
+            "Status Detail": "Retirement notice for July 14, 2026 withdrawn on April 16, 2026. The grid operator NYISO needs the unit through May 1, 2029 for New York City reliability.",
+            "Latest Activity": "Year: 2026, Month: 4, Day: 16"
+          },
+          "refs": {
+            "Status Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "https://www.prnewswire.com/news-releases/alphagen-withdraws-retirement-notices-for-gowanus--narrows-generating-stations-following-nyiso-reliability-determinations-302743905.html",
+              "https://www.publicpower.org/periodical/article/company-withdraws-notices-intent-retire-power-plants-brooklyn-ny",
+              "https://www.nyiso.com/documents/20142/16004172/2026-Q1-STAR-Report-Final.pdf/a5fd3388-ea22-ff21-7f95-490356af30f5"
+            ],
+            "Capacity Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "https://www.alphagen.com/compliance/plant/narrows/"
+            ],
+            "Fuel Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_261020008600011_r3_1.pdf"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+            ],
+            "Start Year Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+            ],
+            "Latest Activity Data Source": [
+              "https://www.prnewswire.com/news-releases/alphagen-withdraws-retirement-notices-for-gowanus--narrows-generating-stations-following-nyiso-reliability-determinations-302743905.html",
+              "https://www.publicpower.org/periodical/article/company-withdraws-notices-intent-retire-power-plants-brooklyn-ny"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.prnewswire.com/news-releases/alphagen-withdraws-retirement-notices-for-gowanus--narrows-generating-stations-following-nyiso-reliability-determinations-302743905.html",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.publicpower.org/periodical/article/company-withdraws-notices-intent-retire-power-plants-brooklyn-ny",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.nyiso.com/documents/20142/16004172/2026-Q1-STAR-Report-Final.pdf/a5fd3388-ea22-ff21-7f95-490356af30f5",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.alphagen.com/compliance/plant/narrows/",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_261020008600011_r3_1.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "researcher_notes": "Eight 22 MW simple-cycle turbines on the first barge, in service since May 1972 (EIA monthly table for August 2026; 2026 Gold Book Table III-2, units Narrows 1-1 to 1-8). The state air permit review report says the sixteen turbines burn natural gas or distillate oil. The owner's notice to retire the plant in July 2026 was withdrawn on April 16, 2026 after NYISO found the units are needed through May 1, 2029. The turbine model is not named in any source I could verify.",
+          "action": "Add unit Barge 1 with status operating, 8 engines of 22 MW each (176 MW), fuel natural gas and fuel oil, technology gas turbine, start year 1972, latest activity April 16, 2026, and the status detail text. Add the links below to the matching Data Source boxes."
+        },
+        {
+          "unit_name": "Barge 2",
+          "fields": {
+            "Status": "operating",
+            "Number Of Engines": "8",
+            "Capacity Per Engine": "22",
+            "Fuel": "fossil gas: natural gas, fossil liquids: fuel oil",
+            "Turbine/Engine Technology": "gas turbine",
+            "Start year": "1972",
+            "Status Detail": "Retirement notice for July 14, 2026 withdrawn on April 16, 2026. The grid operator NYISO needs the unit through May 1, 2029 for New York City reliability.",
+            "Latest Activity": "Year: 2026, Month: 4, Day: 16"
+          },
+          "refs": {
+            "Status Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "https://www.prnewswire.com/news-releases/alphagen-withdraws-retirement-notices-for-gowanus--narrows-generating-stations-following-nyiso-reliability-determinations-302743905.html",
+              "https://www.publicpower.org/periodical/article/company-withdraws-notices-intent-retire-power-plants-brooklyn-ny",
+              "https://www.nyiso.com/documents/20142/16004172/2026-Q1-STAR-Report-Final.pdf/a5fd3388-ea22-ff21-7f95-490356af30f5"
+            ],
+            "Capacity Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "https://www.alphagen.com/compliance/plant/narrows/"
+            ],
+            "Fuel Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_261020008600011_r3_1.pdf"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+            ],
+            "Start Year Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+            ],
+            "Latest Activity Data Source": [
+              "https://www.prnewswire.com/news-releases/alphagen-withdraws-retirement-notices-for-gowanus--narrows-generating-stations-following-nyiso-reliability-determinations-302743905.html",
+              "https://www.publicpower.org/periodical/article/company-withdraws-notices-intent-retire-power-plants-brooklyn-ny"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.prnewswire.com/news-releases/alphagen-withdraws-retirement-notices-for-gowanus--narrows-generating-stations-following-nyiso-reliability-determinations-302743905.html",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.publicpower.org/periodical/article/company-withdraws-notices-intent-retire-power-plants-brooklyn-ny",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.nyiso.com/documents/20142/16004172/2026-Q1-STAR-Report-Final.pdf/a5fd3388-ea22-ff21-7f95-490356af30f5",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.alphagen.com/compliance/plant/narrows/",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_261020008600011_r3_1.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "researcher_notes": "Eight 22 MW simple-cycle turbines on the second barge, in service since June 1972 (EIA monthly table for August 2026; 2026 Gold Book Table III-2, units Narrows 2-1 to 2-8). Same fuel, retirement notice and withdrawal as Barge 1. Two turbines, Narrows 2-1 and 2-7, have been out of service and ineligible for capacity payments since April 15, 2025 (Gold Book Table IV-4), so the barge runs on six turbines today; the nameplate still counts all eight.",
+          "action": "Add unit Barge 2 with status operating, 8 engines of 22 MW each (176 MW), fuel natural gas and fuel oil, technology gas turbine, start year 1972, latest activity April 16, 2026, and the status detail text. Add the links below to the matching Data Source boxes."
+        }
+      ],
+      "tier": "high",
+      "independent": true,
+      "source_language": "en",
+      "researcher_notes": "Narrows is a floating peaking plant in Bay Ridge Channel, Sunset Park, Brooklyn (EIA plant 2499, entrance at 54th Street off 1st Avenue). Two barges each carry eight 22 MW simple-cycle turbines, 352 MW nameplate in all, in service since 1972 and burning gas or distillate oil. The company's own page gives 322 MW, which looks like a summer rating. The owner's July 2025 notice to retire the plant in July 2026 was withdrawn on April 16, 2026 after NYISO found the units are needed through May 1, 2029. The plant is not in GEM. Owner, operator and parents follow the Gowanus record: the legal owner is Astoria Generating Company, L.P. (the holder of state air permit 2-6102-00086/00011), a subsidiary of Eastern Generation, LLC, managed by Alpha Generation; GEM's existing records for the same company use Alpha Generation LLC. Parents follow the Astoria generating station record: ArcLight Capital Partners LLC 50 percent, ACH GP LLC 25 percent, ACHP II LP 12.5 percent, ACHP LP 12.5 percent. Capacity is entered as engine sets of eight turbines, as for Gowanus, and the same scope caution applies: each turbine on its own is under 50 MW. Coordinates are the EIA plant point; NYISO's generator list gives a point about 3 kilometers inland that cannot be right, so the location is marked approximate. AlphaGen's March 2026 proposal to replace the Gowanus and Narrows barges is a separate watch item in this batch.",
+      "action": "Create a new plant named Narrows Gas Turbines generating station in New York, United States. Set Owner(s) to Alpha Generation LLC at 100 percent and Operator(s) to Alpha Generation, both existing entities, and set the parents the same way as the Astoria generating station record. Set the location to latitude 40.648611, longitude -74.02083, accuracy approximate, city Brooklyn, and add EIA: 2499 to Other IDs (location). Then add the two barge units listed below. Add the links to the matching Data Source boxes.",
+      "record_id": "us-ny-eia2499:plant:newplant"
+    },
+    {
+      "gem_plant_id": "",
+      "gem_unit_id": "",
+      "plant_name": "Vernon Boulevard power station",
+      "unit_name": "",
+      "country": "United States",
+      "fields": {
+        "Owner(s)": "New York Power Authority [100%]",
+        "Operator(s)": "New York Power Authority",
+        "Latitude": "40.7537",
+        "Longitude": "-73.9508",
+        "Location accuracy": "exact",
+        "City": "Long Island City"
+      },
+      "current": {},
+      "refs": {
+        "Owners Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_263040137700003.pdf",
+          "https://edge.sitecorecloud.io/newyorkpowe1810-nypa32f6-prodnewd354-e629/media/Feature/nypa-sites/small-natural-gas-media/SNGPP-Transition-Plan.pdf"
+        ],
+        "Operators Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_263040137700003.pdf"
+        ],
+        "Location Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_263040137700003.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_263040137700003.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://edge.sitecorecloud.io/newyorkpowe1810-nypa32f6-prodnewd354-e629/media/Feature/nypa-sites/small-natural-gas-media/SNGPP-Transition-Plan.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Status": "operating",
+            "Status Detail": "State law passed in 2023 requires the New York Power Authority to stop gas generation at its small plants by December 31, 2030; no deactivation notice has been filed.",
+            "Number Of Engines": "2",
+            "Capacity Per Engine": "47",
+            "Fuel": "fossil gas: natural gas",
+            "Turbine/Engine Technology": "aeroderivative gas turbine",
+            "Start year": "2001"
+          },
+          "refs": {
+            "Status Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "https://edge.sitecorecloud.io/newyorkpowe1810-nypa32f6-prodnewd354-e629/media/Feature/nypa-sites/small-natural-gas-media/SNGPP-Transition-Plan.pdf"
+            ],
+            "Capacity Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "https://edge.sitecorecloud.io/newyorkpowe1810-nypa32f6-prodnewd354-e629/media/Feature/nypa-sites/small-natural-gas-media/SNGPP-Transition-Plan.pdf",
+              "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_263040137700003.pdf"
+            ],
+            "Fuel Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_263040137700003.pdf"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://edge.sitecorecloud.io/newyorkpowe1810-nypa32f6-prodnewd354-e629/media/Feature/nypa-sites/small-natural-gas-media/SNGPP-Transition-Plan.pdf",
+              "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_263040137700003.pdf"
+            ],
+            "Start Year Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://edge.sitecorecloud.io/newyorkpowe1810-nypa32f6-prodnewd354-e629/media/Feature/nypa-sites/small-natural-gas-media/SNGPP-Transition-Plan.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://extapps.dec.ny.gov/data/dar/afs/permits/prr_263040137700003.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "researcher_notes": "Two General Electric LM6000 aircraft-derived turbines of 47 MW each (EIA units VG02 and VG03), simple cycle, natural gas only, in service since August 2001. The state air permit review report of October 2005 names the LM6000 turbines and a plant maximum of 79.9 MW net; the Power Authority's May 2025 transition plan for its small plants gives the same figures. Entered as one unit of two engines, the way GEM records the sister plant Hell Gate.",
+          "action": "Add unit 1 with status operating, 2 engines of 47 MW each (94 MW), fuel natural gas, technology aeroderivative gas turbine, start year 2001, and the status detail text. Add the links below to the matching Data Source boxes."
+        }
+      ],
+      "tier": "high",
+      "independent": true,
+      "source_language": "en",
+      "researcher_notes": "Vernon Boulevard is one of the eleven small gas plants the New York Power Authority built in 2001 (EIA plant 7909, at 42-30 Vernon Boulevard, Long Island City, Queens). It has two 47 MW LM6000 turbines. GEM already holds the sister plants Brentwood, Harlem River Yard, Hell Gate, Joseph J. Seymour and North 1st, but not this one, nor Pouch (staged in this batch), nor the Gowanus 5 and 6 and Kent plants in Brooklyn. The Power Authority owns and operates it; no parent applies. The 2023 state budget law requires the Authority to stop gas generation at these plants by the end of 2030, and its May 2025 transition plan says a plan for the Vernon site is still to come because a 2001 settlement with a neighboring studio complicates the site's future. The 2026 Gold Book, Table IV-6, lists Vernon Blvd 2 and 3 with a December 31, 2030 date and notes that no deactivation notice has been filed. Coordinates are the EIA plant point.",
+      "action": "Create a new plant named Vernon Boulevard power station in New York, United States. Set Owner(s) to New York Power Authority at 100 percent and Operator(s) to New York Power Authority (existing entity), with no parent. Set the location to latitude 40.7537, longitude -73.9508, accuracy exact, city Long Island City, and add EIA: 7909 to Other IDs (location). Then add unit 1 as listed below. Add the links to the matching Data Source boxes.",
+      "record_id": "us-ny-eia7909:plant:newplant"
+    },
+    {
+      "gem_plant_id": "",
+      "gem_unit_id": "",
+      "plant_name": "Pouch Terminal power station",
+      "unit_name": "",
+      "country": "United States",
+      "fields": {
+        "Owner(s)": "New York Power Authority [100%]",
+        "Operator(s)": "New York Power Authority",
+        "Latitude": "40.6182",
+        "Longitude": "-74.06849",
+        "Location accuracy": "exact",
+        "City": "Staten Island"
+      },
+      "current": {},
+      "refs": {
+        "Owners Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "https://19january2017snapshot.epa.gov/sites/production/files/2015-08/documents/nypapouch_decision2005.pdf",
+          "https://edge.sitecorecloud.io/newyorkpowe1810-nypa32f6-prodnewd354-e629/media/Feature/nypa-sites/small-natural-gas-media/SNGPP-Transition-Plan.pdf"
+        ],
+        "Operators Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "https://19january2017snapshot.epa.gov/sites/production/files/2015-08/documents/nypapouch_decision2005.pdf"
+        ],
+        "Location Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "https://19january2017snapshot.epa.gov/sites/production/files/2015-08/documents/nypapouch_decision2005.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://19january2017snapshot.epa.gov/sites/production/files/2015-08/documents/nypapouch_decision2005.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://edge.sitecorecloud.io/newyorkpowe1810-nypa32f6-prodnewd354-e629/media/Feature/nypa-sites/small-natural-gas-media/SNGPP-Transition-Plan.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Status": "operating",
+            "Status Detail": "State law passed in 2023 requires the New York Power Authority to stop gas generation at its small plants by December 31, 2030; no deactivation notice has been filed.",
+            "Number Of Engines": "1",
+            "Capacity Per Engine": "47",
+            "Fuel": "fossil gas: natural gas",
+            "Turbine/Engine Technology": "aeroderivative gas turbine",
+            "Start year": "2001"
+          },
+          "refs": {
+            "Status Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "https://edge.sitecorecloud.io/newyorkpowe1810-nypa32f6-prodnewd354-e629/media/Feature/nypa-sites/small-natural-gas-media/SNGPP-Transition-Plan.pdf"
+            ],
+            "Capacity Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "https://edge.sitecorecloud.io/newyorkpowe1810-nypa32f6-prodnewd354-e629/media/Feature/nypa-sites/small-natural-gas-media/SNGPP-Transition-Plan.pdf",
+              "https://19january2017snapshot.epa.gov/sites/production/files/2015-08/documents/nypapouch_decision2005.pdf"
+            ],
+            "Fuel Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://edge.sitecorecloud.io/newyorkpowe1810-nypa32f6-prodnewd354-e629/media/Feature/nypa-sites/small-natural-gas-media/SNGPP-Transition-Plan.pdf"
+            ],
+            "Start Year Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://edge.sitecorecloud.io/newyorkpowe1810-nypa32f6-prodnewd354-e629/media/Feature/nypa-sites/small-natural-gas-media/SNGPP-Transition-Plan.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://19january2017snapshot.epa.gov/sites/production/files/2015-08/documents/nypapouch_decision2005.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "researcher_notes": "One General Electric LM6000 aircraft-derived turbine of 47 MW (EIA unit N01), simple cycle, natural gas, in service since August 2001. The federal Environmental Protection Agency's 2005 order on the plant's air permit describes one simple-cycle turbine with a maximum of 47 MW; the Power Authority's May 2025 transition plan lists Pouch as one LM6000 of 47 MW net. The unit is under GEM's 50 MW threshold on its own. It is proposed because GEM already records the identical single-turbine sister plants Brentwood and North 1st at 47 MW each, and because the whole fleet faces the same 2030 deadline. This is a scope call for the reviewer.",
+          "action": "Add unit 1 with status operating, 1 engine of 47 MW, fuel natural gas, technology aeroderivative gas turbine, start year 2001, and the status detail text. Add the links below to the matching Data Source boxes."
+        }
+      ],
+      "tier": "high",
+      "independent": true,
+      "source_language": "en",
+      "researcher_notes": "Pouch Terminal is one of the New York Power Authority's eleven small gas plants of 2001 (EIA plant 8053, at 143 Edgewater Street, Rosebank, Staten Island). It has one 47 MW LM6000 turbine, which is below GEM's 50 MW threshold; see the unit note for why it is staged anyway. The Power Authority owns and operates it; no parent applies. The 2023 state budget law requires the Authority to stop gas generation at these plants by the end of 2030. The May 2025 transition plan names Pouch as one of five sites where a battery is planned after the turbine is removed, under a non-binding term sheet signed in April 2025. The 2026 Gold Book, Table IV-6, lists Pouch with a December 31, 2030 date and no deactivation notice. The current state air permit was not found; the 2005 federal order on the original permit is the location source. Coordinates are the EIA plant point.",
+      "action": "Create a new plant named Pouch Terminal power station in New York, United States, if the reviewer agrees a 47 MW single-turbine plant belongs in the tracker (GEM already has Brentwood and North 1st at 47 MW). Set Owner(s) to New York Power Authority at 100 percent and Operator(s) to New York Power Authority (existing entity), with no parent. Set the location to latitude 40.6182, longitude -74.06849, accuracy exact, city Staten Island, and add EIA: 8053 to Other IDs (location). Then add unit 1 as listed below. Add the links to the matching Data Source boxes.",
+      "record_id": "us-ny-eia8053:plant:newplant"
+    }
+  ]
+}
