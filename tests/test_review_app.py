@@ -3,6 +3,7 @@
 Everything runs on a throwaway staging dir under tmp_path: no real batch, no network, and
 nothing that could touch the GEM database (there is no code path for that anyway)."""
 import json
+import os
 import sys
 import threading
 import urllib.request
@@ -59,9 +60,25 @@ def write_staging(d):
     monitor = [{"record_id": "us-md:plant:monitor-1", "gem_plant_id": "", "plant_name": "Chesapeake repowering (Acme)",
                 "country": "United States", "fields": {}, "item": "new plant candidate", "recheck_by": "2027-01",
                 "refs": {"links": [PR]}, "researcher_notes": "Announced, no permit filed."}]
+    newplants = [{"record_id": "us-md-eia999:plant:newplant", "gem_plant_id": "", "plant_name": "Severn barge station",
+                  "country": "United States", "fields": {"Owner(s)": "Acme Power LLC [100%]", "City": "Baltimore"},
+                  "refs": {"Owners Data Source": [PR]},
+                  "verifications": [{"url": PR, "ok": True, "contains_value": True, "name_found": True, "note": ""}],
+                  "tier": "medium", "researcher_notes": "Listed by EIA and the grid operator, missing from GEM.",
+                  "action": "Create the plant, then add the two barge units below.",
+                  "units": [
+                      {"unit_name": "Barge 1", "fields": {"Status": "operating", "Start year": "1971"},
+                       "refs": {"Status Data Source": [EIA]},
+                       "verifications": [{"url": EIA, "ok": True, "contains_value": True, "name_found": True, "note": ""}],
+                       "action": "Add unit Barge 1."},
+                      {"unit_name": "Barge 2", "fields": {"Status": "retired", "Retired year": "2022"},
+                       "refs": {"Status Data Source": [EIA]},
+                       "verifications": [{"url": EIA, "ok": True, "contains_value": True, "name_found": True, "note": ""}]},
+                  ]}]
     (d / "staged_updates.json").write_text(json.dumps(envelope("updates", updates)))
     (d / "staged_qa.json").write_text(json.dumps(envelope("qa", qa)))
     (d / "staged_monitor.json").write_text(json.dumps(envelope("monitor", monitor)))
+    (d / "staged_newplants.json").write_text(json.dumps(envelope("newplants", newplants)))
     return d
 
 
@@ -92,7 +109,7 @@ def test_dataset_shape(data, staging):
     assert data["scope"]["states"] == ["Maryland"] and data["scope"]["quarter"] == "q4-2026"
     assert data["dirs"] == [str(staging)]          # outside the repo: an absolute label
     plants = {p["pid"]: p for p in data["plants"]}
-    assert set(plants) == {"L1", "new:chesapeake-repowering-acme"}
+    assert set(plants) == {"L1", "new:chesapeake-repowering-acme", "new:severn-barge-station"}
     p = plants["L1"]
     assert [u["gem_unit_id"] for u in p["units"]] == ["G1"]
     lines = {l["record_id"]: l for l in p["lines"]}
@@ -112,6 +129,22 @@ def test_dataset_shape(data, staging):
     cand = plants["new:chesapeake-repowering-acme"]
     assert cand["items"][0]["kind"] == "monitor" and cand["items"][0]["links"] == [PR]
     assert all(l["key"] == f"{staging}::{l['record_id']}" for l in p["lines"])
+
+
+def test_new_plant_line_carries_its_units(data):
+    """A newplants record is one decision for the plant and its nested unit rows: the units
+    ride along on the line, and their links count toward the line's publishers and marks."""
+    npl = next(p for p in data["plants"] if p["pid"] == "new:severn-barge-station")
+    assert len(npl["lines"]) == 1 and not npl["items"]
+    l = npl["lines"][0]
+    assert l["kind"] == "new_row" and l["lane"] == "newplants" and l["plant_name"] == "Severn barge station"
+    assert l["proposed_values"] == {"Owner(s)": "Acme Power LLC [100%]", "City": "Baltimore"}
+    assert [u["unit_name"] for u in l["units"]] == ["Barge 1", "Barge 2"]
+    assert l["units"][0]["fields"] == {"Status": "operating", "Start year": "1971"}
+    assert l["units"][0]["refs_by_col"] == {"Status Data Source": [EIA]} and l["units"][0]["action"] == "Add unit Barge 1."
+    assert l["proposed_refs"] == [PR, EIA] and l["publishers"] == 2
+    assert l["verifications"][EIA]["contains_value"] is True and PR in l["verifications"]
+    assert l["default"] == "hold"
 
 
 def test_severity_rule():
@@ -220,15 +253,19 @@ def test_build_apply_decisions(data, staging):
     dirs = store.dir_paths(data)
     k = lambda rid: f"{staging}::{rid}"
     store.decide([{"key": k("L1:G1:start-year"), "decision": "accept"},
-                  {"key": k("L1:G1:status"), "decision": "reject", "note": "one source"}], data, "BL", dirs)
+                  {"key": k("L1:G1:status"), "decision": "reject", "note": "one source"},
+                  {"key": k("us-md-eia999:plant:newplant"), "decision": "accept"}], data, "BL", dirs)
     store.decide([{"key": k("L1:G1:latitude"), "decision": "suggest", "suggested_value": "38.71"}], data, "BL", dirs)
     store.record_items([{"key": k("L1:G1:qa-unverified-value-1"), "call": "confirmed"}], data, "BL", dirs)
     lanes = brp.load_lanes(staging)
     assert brp.validate(lanes) == []
     decisions = brp.load_decisions(staging)
     kept, left_out, counts = brp.apply_decisions(lanes, decisions)
-    assert counts == {"accept": 1, "hold": 0, "reject": 1, "suggest": 1, "undecided": 0}
+    assert counts == {"accept": 2, "hold": 0, "reject": 1, "suggest": 1, "undecided": 0}
     assert [r["record_id"] for r in kept["updates"]] == ["L1:G1:start-year"]
+    # one call on a new plant carries its nested unit rows into the build
+    assert [r["record_id"] for r in kept["newplants"]] == ["us-md-eia999:plant:newplant"]
+    assert [u["unit_name"] for u in kept["newplants"][0]["units"]] == ["Barge 1", "Barge 2"]
     assert sorted(r["record_id"] for _, r, _ in left_out) == ["L1:G1:latitude", "L1:G1:status"]
     assert kept["qa"][0]["review_call"]["call"] == "confirmed"
     assert len(kept["monitor"]) == 1 and "review_call" not in kept["monitor"][0]
@@ -258,9 +295,11 @@ const fs = require("fs"), vm = require("vm");
 const [, , cfgPath, jsPath] = process.argv;
 const mem = {};
 global.window = global;
-global.localStorage = {getItem: k => (k in mem ? mem[k] : null), setItem: (k, v) => { mem[k] = v; }};
+global.localStorage = {getItem: k => (k in mem ? mem[k] : null), setItem: (k, v) => { mem[k] = v; },
+                       key: i => Object.keys(mem)[i], get length() { return Object.keys(mem).length; }};
 global.Intl = Intl;
 window.REVIEW_STATIC = JSON.parse(fs.readFileSync(cfgPath, "utf8"));
+if (process.env.EARLIER_LOG) mem["review-log:earlier-build:" + window.REVIEW_STATIC.data.dirs.join(",")] = process.env.EARLIER_LOG;
 vm.runInThisContext(fs.readFileSync(jsPath, "utf8"));
 const S = window.StaticStore;
 (async () => {
@@ -328,3 +367,21 @@ def test_static_store_round_trip(data, staging, tmp_path):
     bad = dict(log[0], record_id="L1:G1:gone", key=f"{staging}::L1:G1:gone")
     with pytest.raises(SystemExit, match="not in the staged lane files"):
         import_log.plan([bad])
+
+
+@pytest.mark.skipif(not NODE, reason="node not installed")
+def test_static_store_carries_calls_over_a_rebuild(data, staging, tmp_path):
+    """A rebuilt page starts from the calls this browser made on an earlier build, minus dropped records."""
+    cfg = tmp_path / "cfg.json"
+    cfg.write_text(json.dumps({"reviewer": "AL", "data": data}))
+    driver = tmp_path / "drive.js"
+    driver.write_text(NODE_DRIVER)
+    rec = {"dir": str(staging), "decision": "reject", "reviewer": "AL", "ts": "2026-10-03T10:00:00-04:00", "undecided": False}
+    earlier = [dict(rec, key=f"{staging}::L1:G1:start-year", record_id="L1:G1:start-year"),
+               dict(rec, key=f"{staging}::L1:G1:gone", record_id="L1:G1:gone")]
+    r = subprocess.run([NODE, str(driver), str(cfg), str(ROOT / "review_app" / "web" / "static_store.js")],
+                       capture_output=True, text=True, check=True, env=dict(os.environ, EARLIER_LOG=json.dumps(earlier)))
+    out = json.loads(r.stdout)
+    assert out["before"] == "reject"                                   # the earlier call shows on the rebuilt page
+    assert [x["record_id"] for x in out["log"]][0] == "L1:G1:start-year"
+    assert all(x["record_id"] != "L1:G1:gone" for x in out["log"])     # a dropped record's call is left behind

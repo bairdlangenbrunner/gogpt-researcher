@@ -26,8 +26,10 @@ qc_checks.json
 # root or scripts/ are scratch and stay ignored — the organized home is the
 # per-scope staging tree (see batches/README.md):
 #   batches/<scope>/staging/    agent-authored research JSON (TRACKED — diffable audit trail)
+#   batches/<scope>/staging-<mode>/  same, for a second mode run in the same cycle (docs/workflows.md)
 staged_*.json
 !batches/*/staging/**/staged_*.json
+!batches/*/staging-*/**/staged_*.json
 
 # Derived build scratch (assembled staged_*.json regenerated each run).
 batches/*/staging/_build/

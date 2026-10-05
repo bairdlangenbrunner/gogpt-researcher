@@ -80,7 +80,7 @@
   function sevOf(l) { return l.severity || "major"; }
 
   function defaults() {
-    return {decision: "undecided", kind: "", severity: "", tier: "", dir: "", column: "", q: "", state: [], by: "", status: false};
+    return {decision: "undecided", kind: "", severity: "", tier: "", dir: "", column: "", q: "", country: "", state: [], by: "", status: false};
   }
   // the tab a plant opens on: its major changes, or the minor ones when it has no major change
   function defaultTab(p) { return p && p.lines.some(function (l) { return sevOf(l) === "major"; }) ? "major" : "minor"; }
@@ -199,6 +199,7 @@
     if (fs.column && (item || o.column !== fs.column)) return false;
     if (fs.status && (item || o.column !== "Status")) return false;
     if (fs.by && (o.reviewed ? o.decided_by : "") !== fs.by) return false;
+    if (skip !== "country" && fs.country && p.country !== fs.country) return false;
     if (skip !== "state" && fs.state.length && fs.state.indexOf(p.state) < 0) return false;
     if (q && p._hay.indexOf(q) < 0) return false;
     return true;
@@ -259,14 +260,36 @@
     s.innerHTML = h;
     s.value = FS[facet];
   }
-  function states() { return (D.scope && D.scope.states) || []; }
+  function allStates() { return (D.scope && D.scope.states) || []; }
+  // the states of the picked country; none while no country is picked (the state box only shows after a country)
+  function states() {
+    if (!FS.country) return allStates();
+    return allStates().filter(function (k) { return D.plants.some(function (p) { return p.state === k && p.country === FS.country; }); });
+  }
+  function countries() { return uniq(D.plants.map(function (p) { return p.country; })); }
+  // country picker: one choice, with the live line + item count under the other filters
+  function renderCountries() {
+    var sel = $("f-country"), all = countries(), q = FS.q.trim().toLowerCase(), c = {};
+    $("f-country-wrap").hidden = all.length < 2;
+    all.forEach(function (k) { c[k] = 0; });
+    D.plants.forEach(function (p) {
+      var n = 0;
+      p.lines.forEach(function (l) { if (match(l, p, FS, "country", q)) n++; });
+      p.items.forEach(function (it) { if (match(it, p, FS, "country", q)) n++; });
+      if (p.country in c) c[p.country] += n;
+    });
+    sel.innerHTML = '<option value="">all</option>' + all.map(function (k) {
+      return '<option value="' + esc(k) + '">' + esc(k) + " (" + c[k] + ")</option>";
+    }).join("");
+    sel.value = FS.country;
+  }
   var NO_STATE = "(none)";   // FS.state sentinel: every box unticked, so nothing matches (empty = no filter)
   // the batch states as checkboxes (any ticked state matches; none ticked = every state), each
   // with its live line + item count under the other filters
   function renderStates() {
     var box = $("f-state"), all = states();
     renderScope();
-    box.hidden = all.length < 2;
+    box.hidden = !FS.country || all.length < 2;
     if (box.hidden) return;
     var q = FS.q.trim().toLowerCase(), c = {};
     all.forEach(function (k) { c[k] = 0; });
@@ -285,10 +308,10 @@
   }
   // header: each batch state as a box with its plant count
   function renderScope() {
-    var list = states(); if (!list.length && D.scope.country) list = [D.scope.country];
-    if (FS.state.length) list = list.filter(function (k) { return FS.state.indexOf(k) >= 0; });   // only the selected ones
+    var list = countries();
+    if (FS.country) list = list.filter(function (k) { return k === FS.country; });   // only the selected one
     $("scope").innerHTML = list.map(function (k) {
-      var n = D.plants.filter(function (p) { return p.state === k; }).length;
+      var n = D.plants.filter(function (p) { return p.country === k; }).length;
       return '<span class="cbox" data-tip="' + esc(k) + ": " + n + " plant" + (n === 1 ? "" : "s") + ' in this review">' + esc(k) + "</span>";
     }).join("");
   }
@@ -319,6 +342,7 @@
     s.value = FS.by;
   }
   function renderChips() {
+    renderCountries();
     renderStates();
     fillBy();
     facetSelect("f-decision", "decision", DEC, {});
@@ -357,6 +381,7 @@
       $("f-" + f).onchange = function () { FS[f] = this.value; changed(); };
     });
     $("f-status").onchange = function () { FS.status = this.checked; changed(); };
+    $("f-country").onchange = function () { FS.country = this.value; FS.state = []; changed(); };
     $("f-state").onclick = function (e) { if (e.target.classList.contains("ctoggle")) { e.stopPropagation(); toggleStates(); } };
     $("f-state").onchange = function () {
       FS.state = Array.prototype.map.call(this.querySelectorAll("input[type=checkbox]:checked"), function (i) { return i.value; });
@@ -387,6 +412,8 @@
       $("f-" + f).value = FS[f];
       if ($("f-" + f).value !== FS[f]) { FS[f] = ""; $("f-" + f).value = ""; }
     });
+    $("f-country").value = FS.country;
+    if ($("f-country").value !== FS.country) FS.country = "";
     $("f-status").checked = FS.status;
     fillBy();
     $("f-q").value = FS.q;
@@ -585,8 +612,8 @@
     if (l.independent) facts.push(chip("second source", "ok", "a second independent source was recorded for this value"));
     return h + (facts.length ? '<div class="facts">' + facts.join(" ") + "</div>" : "");
   }
-  function newRowBody(l) {
-    var vals = l.proposed_values || {}, refs = l.refs_by_col || {};
+  function newRowTable(vals, refs, l) {
+    vals = vals || {}; refs = refs || {};
     var tr = Object.keys(vals).filter(function (c) { return !blankv(vals[c]); }).map(function (c) {
       return "<tr><td>" + esc(c) + "</td><td>" + esc(vals[c]) + "</td></tr>";
     });
@@ -595,9 +622,21 @@
       if (!us.length) return;
       tr.push("<tr><td>" + esc(c) + "</td><td>" + us.map(function (u) { return urlLink(u) + " " + vmark(u, l); }).join("<br>") + "</td></tr>");
     });
+    return '<table class="rowdata">' + tr.join("") + "</table>";
+  }
+  function newRowBody(l) {
+    var units = l.units || [];
     var h = '<div class="row1">' + chip(l.lane === "newunits" ? "new unit on a tracked plant" : "new plant", "newrow") +
-      ' <span class="faint">' + (l.lane === "newunits" ? "a unit row to add under a plant GEM already tracks" : "a plant GEM does not track yet; every field below is new") + "</span></div>";
-    return h + '<table class="rowdata">' + tr.join("") + "</table>";
+      ' <span class="faint">' + (l.lane === "newunits" ? "a unit row to add under a plant GEM already tracks" :
+        "a plant GEM does not track yet; every field below is new" + (units.length ? ", with " + units.length + " unit row" + (units.length === 1 ? "" : "s") + " to add under it. One call covers the plant and its units" : "")) + "</span></div>";
+    h += newRowTable(l.proposed_values, l.refs_by_col, l);
+    // a new plant's unit rows: each one its own small table under the plant fields
+    units.forEach(function (u) {
+      h += '<div class="row1 newunit"><span class="col">unit ' + esc(u.unit_name || "(unnamed)") + "</span></div>" + newRowTable(u.fields, u.refs_by_col, l);
+      if (u.action) h += '<div class="dtxt"><span class="k">what to do in the GEM form:</span> ' + esc(u.action) + "</div>";
+      if (u.notes) h += '<div class="dtxt"><span class="k">researcher notes:</span> ' + esc(u.notes) + "</div>";
+    });
+    return h;
   }
   function detailsHtml(l) {
     var d = [];
@@ -619,7 +658,7 @@
     if (l.kind === "plant") chips.push(chip("plant-wide", "oo", "a plant-level field: the export repeats it on every unit row, so the edit lands on every unit row of this plant"));
     chips.push(tierChip(l));
     chips.push(sevChip(l));
-    var title = l.kind === "new_row" ? ((l.proposed_values || {})["Plant name"] || (l.proposed_values || {})["Unit name"] || "new row") : (l.column || "");
+    var title = l.kind === "new_row" ? ((l.proposed_values || {})["Plant name"] || (l.proposed_values || {})["Unit name"] || l.unit_name || l.plant_name || "new row") : (l.column || "");
     var h = '<div class="row1"><span class="col">' + esc(title) + "</span> " + chips.join(" ") +
       '<span class="where">' + esc(rowLabel(l)) + "</span></div>";
     h += lineBody(l);
@@ -1212,7 +1251,7 @@
 
   // ---- routing: #/L100000402511 plus an optional ?query with the filters that differ from the defaults ----
   var ROUTING = false;
-  var QK = {decision: "d", kind: "k", severity: "sev", tier: "t", dir: "dir", column: "col", q: "q", state: "st", by: "by", status: "status"};
+  var QK = {decision: "d", kind: "k", severity: "sev", tier: "t", dir: "dir", column: "col", q: "q", country: "c", state: "st", by: "by", status: "status"};
   function routeHash() {
     var p = D.plants[S.pipe], d = defaults(), q = [];
     Object.keys(QK).forEach(function (f) {
@@ -1247,7 +1286,7 @@
           var k = kv.slice(0, i), v = decodeURIComponent(kv.slice(i + 1));
           Object.keys(QK).forEach(function (f) {
             if (QK[f] !== k) return;
-            FS[f] = Array.isArray(FS[f]) ? v.split("|").filter(function (c) { return c === NO_STATE || states().indexOf(c) >= 0; }) :
+            FS[f] = Array.isArray(FS[f]) ? v.split("|").filter(function (c) { return c === NO_STATE || allStates().indexOf(c) >= 0; }) :
               typeof FS[f] === "boolean" ? v === "1" : (f === "decision" && v === "any" ? "" : v);
           });
         });

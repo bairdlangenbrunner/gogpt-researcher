@@ -1,0 +1,189 @@
+{
+ "meta": {
+  "lane": "monitor",
+  "scope": {
+   "country": "United States",
+   "state": "Maryland",
+   "postal": "md",
+   "quarter": "q4-2026",
+   "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+  },
+  "generated": "2026-10-02T21:40:00-04:00",
+  "mode": "discovery",
+  "counts": {
+   "records": 9
+  },
+  "generated_from": "discovery pass 2026-10-02: PJM queue (interconnection.fyi mirror), Maryland Public Service Commission orders, Department of the Environment permits, EIA-860M August 2026, trade press and company filings",
+  "curation_note": "Watch items only. None of these has enough corroboration to add as a plant or unit yet. The PJM queue entries come from a third-party mirror of the queue because PJM's own queue tool could not be read; each one needs a permit filing, a utility filing or a news report naming the project before it can be staged."
+ },
+ "records": [
+  {
+   "gem_plant_id": "L100000103967",
+   "plant_name": "Morgantown Generating Station",
+   "unit_name": "Phase 2",
+   "country": "United States",
+   "fields": {},
+   "refs": {
+    "links": [
+     "https://investors.terawulf.com/sec-filings/all-sec-filings/content/0001083301-26-000026/0001083301-26-000026.pdf",
+     "https://www.utilitydive.com/news/pjm-market-monitor-terawulf-data-center-ferc/813882/"
+    ]
+   },
+   "verifications": [
+    {"url": "https://investors.terawulf.com/sec-filings/all-sec-filings/content/0001083301-26-000026/0001083301-26-000026.pdf", "ok": true, "contains_value": true},
+    {"url": "https://www.utilitydive.com/news/pjm-market-monitor-terawulf-data-center-ferc/813882/", "ok": true, "contains_value": true}
+   ],
+   "tier": "medium",
+   "monitor_reason": "Second 500 MW gas phase at Morgantown is in TeraWulf's investor presentation but has no schedule, no permit filing and no approval.",
+   "recheck_by": "2027-04",
+   "researcher_notes": "TeraWulf's investor presentation filed with the SEC on February 26, 2026 shows a second phase at Morgantown with another 500 MW of gas generation, 250 MW of battery storage and 500 MW of data center load. Utility Dive's March 5, 2026 report on the PJM market monitor's filing describes the same second phase. Nothing gives a date or a development step for it, so it is not added yet. Recheck when the first phase has a certificate application or an air permit, or when the company gives a schedule for the second phase.",
+   "record_id": "L100000103967:new-phase-2:monitor"
+  },
+  {
+   "plant_name": "Old Line Reserve Energy gas project (PJM queue C01-1338)",
+   "country": "United States",
+   "fields": {},
+   "refs": {
+    "links": [
+     "https://www.interconnection.fyi/project/pjm-c01-1338"
+    ]
+   },
+   "verifications": [
+    {"url": "https://www.interconnection.fyi/project/pjm-c01-1338", "ok": true, "contains_value": true}
+   ],
+   "tier": "low",
+   "monitor_reason": "510 MW gas project in the PJM queue with no plant name, no site, no technology and no source beyond the queue mirror.",
+   "recheck_by": "2027-04",
+   "researcher_notes": "A 510 MW natural gas project by Old Line Reserve Energy, LLC entered the PJM queue on April 27, 2026 as C01-1338, with an in-service target of June 30, 2031. It would connect to the Talbert to Hawkins Gate and Talbert to Morgantown 230 kV lines in Charles County, which are the lines serving the Morgantown site. The developer name does not appear in GEM. It may be TeraWulf's vehicle for the Morgantown build or a separate project; no filing or news report names it. The figure comes from the interconnection.fyi copy of the PJM queue, because PJM's own queue tool could not be read. Recheck for a Public Service Commission certificate application or an air permit.",
+   "record_id": "pjm-c01-1338:plant:monitor"
+  },
+  {
+   "plant_name": "Parkway Generation gas project (PJM queue C01-1494)",
+   "country": "United States",
+   "fields": {},
+   "refs": {
+    "links": [
+     "https://www.interconnection.fyi/project/pjm-c01-1494"
+    ]
+   },
+   "verifications": [
+    {"url": "https://www.interconnection.fyi/project/pjm-c01-1494", "ok": true, "contains_value": true}
+   ],
+   "tier": "low",
+   "monitor_reason": "618 MW gas project in the PJM queue with no plant name, no site and no source beyond the queue mirror.",
+   "recheck_by": "2027-04",
+   "researcher_notes": "A 618 MW natural gas project by Parkway Generation Operating, LLC entered the PJM queue on April 27, 2026 as C01-1494, connecting at the Cheltenham 500 kV substation in Prince George's County, with an in-service target of April 15, 2031. Parkway Generation owns the Chalk Point and Brandywine area plants, so this may be new capacity at one of those sites, but the queue page gives no plant name or technology and no other source was found. The figure comes from the interconnection.fyi copy of the PJM queue. Recheck for a certificate application, an air permit or a company announcement.",
+   "record_id": "pjm-c01-1494:plant:monitor"
+  },
+  {
+   "plant_name": "KMC Thermo gas project (PJM queue C01-1505)",
+   "country": "United States",
+   "fields": {},
+   "refs": {
+    "links": [
+     "https://www.interconnection.fyi/project/pjm-c01-1505"
+    ]
+   },
+   "verifications": [
+    {"url": "https://www.interconnection.fyi/project/pjm-c01-1505", "ok": true, "contains_value": true}
+   ],
+   "tier": "low",
+   "monitor_reason": "620 MW gas project in the PJM queue with no plant name, no technology and no source beyond the queue mirror.",
+   "recheck_by": "2027-04",
+   "researcher_notes": "A 620 MW natural gas project by KMC Thermo, LLC entered the PJM queue on April 27, 2026 as C01-1505, connecting at the Brandywine 230 kV substation in Prince George's County, with an in-service target of April 15, 2031. The Brandywine plant is in GEM as L100000402511, so this may be an expansion there, but the queue page gives no plant name and no other source was found. The same developer also filed and withdrew a 35 MW entry at Burches Hill in 2026. The figure comes from the interconnection.fyi copy of the PJM queue. Recheck for a certificate application or an air permit.",
+   "record_id": "pjm-c01-1505:plant:monitor"
+  },
+  {
+   "plant_name": "Perryman Gas LLC project (PJM queue C01-1579)",
+   "country": "United States",
+   "fields": {},
+   "refs": {
+    "links": [
+     "https://www.interconnection.fyi/project/pjm-c01-1579",
+     "https://marylandmatters.org/wp-content/uploads/2025/12/Order_NGEA-Proposals-PC74.pdf"
+    ]
+   },
+   "verifications": [
+    {"url": "https://www.interconnection.fyi/project/pjm-c01-1579", "ok": true, "contains_value": true},
+    {"url": "https://marylandmatters.org/wp-content/uploads/2025/12/Order_NGEA-Proposals-PC74.pdf", "ok": true, "contains_value": true}
+   ],
+   "tier": "medium",
+   "monitor_reason": "555 MW gas queue entry at Perryman that is probably Constellation Project 2, already in GEM, but the queue number is not yet tied to the GEM record.",
+   "recheck_by": "2027-07",
+   "researcher_notes": "A 555 MW natural gas project by Perryman Gas, LLC entered the PJM queue on April 25, 2026 as C01-1579, connecting at the Perryman 115 kV substation in Harford County, with an in-service target of December 15, 2029. GEM already has Constellation Project 2 at Perryman (L100001080791, 564 MW) and Constellation Project 1 (L100001080785, 150 MW); the Public Service Commission's December 30, 2025 order approved both for the expedited permit route and set a filing deadline of July 1, 2027. The 555 MW figure and the 2029 target match Project 2 closely, so this is most likely the same project under a project company name and should not be added as a new plant. Recheck after the certificate application is filed, which will name the project company; then the queue number can be recorded on the existing GEM record.",
+   "record_id": "pjm-c01-1579:plant:monitor"
+  },
+  {
+   "plant_name": "FS CT Project at Brandon Shores (PJM queue C01-1802)",
+   "country": "United States",
+   "fields": {},
+   "refs": {
+    "links": [
+     "https://www.interconnection.fyi/project/pjm-c01-1802"
+    ]
+   },
+   "verifications": [
+    {"url": "https://www.interconnection.fyi/project/pjm-c01-1802", "ok": true, "contains_value": true}
+   ],
+   "tier": "low",
+   "monitor_reason": "300 MW gas combustion turbine queue entry at the Brandon Shores substation with no plant name and no source beyond the queue mirror.",
+   "recheck_by": "2027-04",
+   "researcher_notes": "A gas project by FS CT Project LLC, 269 MW summer and 300 MW winter, entered the PJM queue on April 24, 2026 as C01-1802, connecting at the Brandon Shores 230 kV substation in Anne Arundel County, with an in-service target of August 31, 2030. The Brandon Shores plant is in GEM as L100000103961 and runs under a reliability agreement while its coal units await retirement, so this may be a new combustion turbine unit there, but the queue page gives no plant name and no company announcement or filing was found. The figure comes from the interconnection.fyi copy of the PJM queue. Recheck for a certificate application, an air permit or a Talen announcement.",
+   "record_id": "pjm-c01-1802:plant:monitor"
+  },
+  {
+   "plant_name": "Dickerson Power gas project (PJM queue C01-2160)",
+   "country": "United States",
+   "fields": {},
+   "refs": {
+    "links": [
+     "https://www.interconnection.fyi/project/pjm-c01-2160"
+    ]
+   },
+   "verifications": [
+    {"url": "https://www.interconnection.fyi/project/pjm-c01-2160", "ok": true, "contains_value": true}
+   ],
+   "tier": "low",
+   "monitor_reason": "200 MW gas queue entry at the Dickerson substation with no plant name and no source beyond the queue mirror.",
+   "recheck_by": "2027-04",
+   "researcher_notes": "A 200 MW natural gas project by Terrapin Power Holdings, LLC, listed with Dickerson Power, LLC, entered the PJM queue on April 27, 2026 as C01-2160, connecting at the Dickerson H 230 kV substation in Montgomery County, with an in-service target of July 18, 2029. Dickerson is in GEM as L100000103964 with Dickerson Power LLC as owner, so this is probably new capacity at the existing site, but the queue page gives no plant name or technology and no other source was found. The figure comes from the interconnection.fyi copy of the PJM queue. Recheck for a certificate application or an air permit.",
+   "record_id": "pjm-c01-2160:plant:monitor"
+  },
+  {
+   "plant_name": "Parkway Generation gas addition (PJM queue AH1-744)",
+   "country": "United States",
+   "fields": {},
+   "refs": {
+    "links": [
+     "https://www.interconnection.fyi/project/pjm-ah1-744"
+    ]
+   },
+   "verifications": [
+    {"url": "https://www.interconnection.fyi/project/pjm-ah1-744", "ok": true, "contains_value": true}
+   ],
+   "tier": "low",
+   "monitor_reason": "Queue entry of 53.5 MW winter and 48.3 MW summer sits on the 50 MW line, with no plant name and no source beyond the queue mirror.",
+   "recheck_by": "2027-04",
+   "researcher_notes": "A gas entry by Parkway Generation Operating, LLC, 48.3 MW summer and 53.5 MW winter, entered the PJM queue on April 11, 2025 as AH1-744, connecting at the Cheltenham 500 kV substation in Prince George's County, with an in-service target of June 1, 2028. It is probably an uprate or small addition at one of Parkway's existing plants in the area. It straddles the 50 MW threshold and nothing beyond the queue page describes it. Recheck for a certificate change or an air permit.",
+   "record_id": "pjm-ah1-744:plant:monitor"
+  },
+  {
+   "plant_name": "Aberdeen Proving Ground gas generation (Ameresco)",
+   "country": "United States",
+   "fields": {},
+   "refs": {
+    "links": [
+     "https://www.financialcontent.com/article/bizwire-2026-9-21-ameresco-selected-for-us-army-strategic-capital-initiatives-to-advance-energy-resilience-at-aberdeen-proving-ground-and-picatinny-arsenal"
+    ]
+   },
+   "verifications": [
+    {"url": "https://www.financialcontent.com/article/bizwire-2026-9-21-ameresco-selected-for-us-army-strategic-capital-initiatives-to-advance-energy-resilience-at-aberdeen-proving-ground-and-picatinny-arsenal", "ok": true, "contains_value": true}
+   ],
+   "tier": "low",
+   "monitor_reason": "Army selected Ameresco to build natural gas generation at Aberdeen Proving Ground, but no capacity, site or schedule has been given.",
+   "recheck_by": "2027-04",
+   "researcher_notes": "The US Army announced on September 18, 2026 that it conditionally selected Ameresco for a lease to build commercial power generation at Aberdeen Proving Ground in Harford County. Ameresco's press release of September 21, 2026 says it plans to deploy natural gas generation first and later a Terrestrial Energy molten salt reactor. Neither the Army nor the company gave a megawatt figure, a site within the base or a schedule beyond a goal of operating by 2030, and the lease is still being negotiated. This is separate from the Army's own 9.2 MW gas microgrid at the base, which is under the 50 MW threshold. Recheck for the signed lease, an air permit or a PJM queue entry.",
+   "record_id": "aberdeen-ameresco:plant:monitor"
+  }
+ ]
+}

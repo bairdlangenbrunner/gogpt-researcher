@@ -64,6 +64,10 @@ The reviewer opens it from disk in any browser, works the queue the same way, an
 stay in that browser (localStorage, so the page can be closed and reopened). When done they
 press "download decisions" and send back the `review_log_..._ET.jsonl` it saves.
 
+A rebuilt page (after the batch changes) picks up the calls the same browser made on an earlier
+build of the same folders, for every record the rebuild still has. Calls on records that were
+dropped are left behind.
+
 Back here:
 
 ```
@@ -71,15 +75,60 @@ python review_app/import_log.py ~/Downloads/review_log_us-md+us-ny_AL_20261003_0
 python review_app/import_log.py ~/Downloads/review_log_us-md+us-ny_AL_20261003_0915_ET.jsonl
 ```
 
-The same file can be published as a claude.ai artifact (Claude Code's Artifact tool, with the
-`db`, `downloads` and `user` capabilities). Opened there, the page saves every call to the
-artifact's own database as it is made (one document per reviewer under `logs/`, the whole log
-in `records`), so nothing has to be sent back: read the document with the ArtifactData tool,
-save it as a `.json` file and run `import_log.py` on it (it takes that document as well as a
-`.jsonl`). The "download decisions" button then gives a `.json` backup of the same records.
-A reviewer can only write to the database when they are invited by email as an editor and the
-artifact is not also shared by link; otherwise the page says so in a banner, keeps the calls in
-their browser, and they send the download instead.
+## Sharing as a claude.ai artifact (the current way; decisions save themselves)
+
+The same file is published as a claude.ai artifact with Claude Code's Artifact tool, capabilities
+`{db: {}, user: {scopes: ["profile"]}, downloads: true}`. Opened there, the page saves every call
+to the artifact's own database as it is made (collection `logs`, one document per viewer named by
+their viewer id, the whole log in `records`), so nothing has to be sent back. The "download
+decisions" button is then only a backup (a `.json` of the same records).
+
+Rules that came out of the first round (2026-10-05):
+
+- **Publish from the work profile (`~/.claude-gem`), never the personal one.** The database and
+  the download button only work for members of the publishing account's organization. The first
+  page (2026-10-02) went out from the personal profile; Amalia Llano's accepts could not save
+  ("the page could not save to the artifact (invalid_argument)") and her download was refused,
+  so her two calls were copied into the log from a screenshot.
+- **Share by email, as an editor**, from the page's Share menu. A viewer who can only view, or
+  who opens a link share, is told in the banner that the page cannot save for them; their calls
+  stay in their browser until they download them.
+- The page is a snapshot. Calls already in the batch logs are laid over it at build time; a
+  rebuild gets a fresh stamp and a publish of the new file to the same URL keeps the link.
+- The GEM database is never touched. The artifact holds only the proposed edits and the calls.
+
+A scope that also ran a discovery pass keeps those records in `batches/<scope>/staging-discovery/`
+(docs/workflows.md). `--scope` reads only `staging/`, so name every folder with `--dirs` to put the
+update edits and the discovery candidates on one page:
+
+```
+python review_app/build_static.py --dirs batches/us-md/staging batches/us-ny/staging batches/us-md/staging-discovery batches/us-ny/staging-discovery --reviewer "Amalia Llano" --export-csv scripts/gem_export_gogpt_scoped.csv --out work/gogpt_review_us-md+us-ny_<stamp>_ET.html
+```
+
+A new plant is one call for the plant and every unit row nested under it (the build script keys
+the decision on the plant record), so the page shows the unit rows under the plant fields on one
+line. The import then writes the calls to the `review_log.jsonl` of whichever folder the record
+came from.
+
+Live pages:
+
+- New York + Maryland, for Amalia Llano: https://claude.ai/artifact/7bnX9RMity3Yw5mdaojNaL
+  (update edits plus the discovery candidates since the 2026-10-05 evening rebuild)
+- Germany, for Dan O'Beirne: https://claude.ai/artifact/3YnJ2C36PwrTJ8qYgUxbuW
+
+Bringing the calls back into the repo, from a Claude Code session on the work profile:
+
+1. ArtifactData, action `list`, collection `logs`, with `out_dir` set to a scratch folder: one
+   `.json` file per reviewer lands in `<out_dir>/logs/`.
+2. `python review_app/import_log.py <out_dir>/logs/<id>.json --dry-run`, then without `--dry-run`,
+   for each file (it reads that document shape as well as a `.jsonl`).
+3. `python scripts/build_review_package.py ... --decisions`.
+
+Then rebuild the page and publish it to the same URL so the reviewer sees the calls as recorded.
+
+The Google Apps Script version in `../pipelines-researcher/review_app/gas/` is the longer-term
+home (one deployment, org login, a Sheets-backed ledger); artifacts are the review surface until
+that is ported and deployed here.
 
 The import appends the records to each batch's `review_log.jsonl` and regenerates
 `review_decisions.json`, exactly as the server would have; then build with `--decisions` as
@@ -90,6 +139,8 @@ land in order of import and the latest per record wins, as with the server.
 
 ## On the page
 
+- Top: pick a country first (United States, Germany). The state box appears only after a country with
+  more than one state is picked. Country batches such as Germany have no states.
 - Left: the plants with something to decide. The badge counts open changes.
 - Card: the plant's changes, grouped by unit. "Now" is the cell today, "proposed" is what the
   researcher wants. A proposed Data Source link is added next to the links already in the cell;

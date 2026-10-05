@@ -1,0 +1,66 @@
+{
+ "meta": {
+  "lane": "newunits",
+  "scope": {
+   "country": "United States",
+   "state": "Maryland",
+   "postal": "md",
+   "quarter": "q4-2026",
+   "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+  },
+  "generated": "2026-10-02T21:40:00-04:00",
+  "mode": "discovery",
+  "counts": {
+   "records": 1
+  },
+  "generated_from": "discovery pass 2026-10-02: PJM queue (interconnection.fyi mirror), Maryland Public Service Commission orders, Department of the Environment permits, EIA-860M August 2026, trade press and company filings",
+  "curation_note": "One new unit cleared the add bar: the first phase of TeraWulf's gas build at the Morgantown site. The second phase and every PJM queue entry without a second source are in the watch list."
+ },
+ "records": [
+  {
+   "gem_plant_id": "L100000103967",
+   "plant_name": "Morgantown Generating Station",
+   "unit_name": "Phase 1",
+   "country": "United States",
+   "fields": {
+    "Status": "announced",
+    "Capacity (MW)": "500",
+    "Fuel": "fossil gas: natural gas",
+    "Owner(s)": "TeraWulf Inc [100%]"
+   },
+   "current": {},
+   "refs": {
+    "Status Data Source": [
+     "https://investors.terawulf.com/sec-filings/all-sec-filings/content/0001083301-26-000026/0001083301-26-000026.pdf",
+     "https://www.utilitydive.com/news/pjm-market-monitor-terawulf-data-center-ferc/813882/",
+     "https://southernmarylandchronicle.com/2026/02/03/terawulf-expands-in-southern-maryland/"
+    ],
+    "Capacity Data Source": [
+     "https://investors.terawulf.com/sec-filings/all-sec-filings/content/0001083301-26-000026/0001083301-26-000026.pdf",
+     "https://www.utilitydive.com/news/pjm-market-monitor-terawulf-data-center-ferc/813882/"
+    ],
+    "Fuel Data Source": [
+     "https://www.utilitydive.com/news/pjm-market-monitor-terawulf-data-center-ferc/813882/",
+     "https://southernmarylandchronicle.com/2026/02/03/terawulf-expands-in-southern-maryland/"
+    ],
+    "Owners Data Source": [
+     "https://investors.terawulf.com/sec-filings/all-sec-filings/content/0001083301-26-000026/0001083301-26-000026.pdf",
+     "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000166/wulf-20260630.htm"
+    ]
+   },
+   "verifications": [
+    {"url": "https://investors.terawulf.com/sec-filings/all-sec-filings/content/0001083301-26-000026/0001083301-26-000026.pdf", "ok": true, "contains_value": true},
+    {"url": "https://www.utilitydive.com/news/pjm-market-monitor-terawulf-data-center-ferc/813882/", "ok": true, "contains_value": true},
+    {"url": "https://southernmarylandchronicle.com/2026/02/03/terawulf-expands-in-southern-maryland/", "ok": true, "contains_value": true},
+    {"url": "https://www.sec.gov/Archives/edgar/data/1083301/000108330126000166/wulf-20260630.htm", "ok": true, "contains_value": true},
+    {"url": "https://southernmarylandchronicle.com/2026/08/02/terawulf-wins-federal-approval-fight-far-from-over/", "ok": true, "contains_value": true}
+   ],
+   "tier": "high",
+   "independent": true,
+   "source_language": "en",
+   "researcher_notes": "TeraWulf, through its subsidiary Chesapeake Data LLC, agreed in February 2026 to buy the Morgantown site from a GenOn affiliate and build a gas-fired power campus for a data center there. The company's investor presentation, filed with the SEC on February 26, 2026, lays out two phases at Morgantown, each with 500 MW of on-site gas generation, 250 MW of battery storage and 500 MW of data center load, and says the figures are gross megawatts. Utility Dive reported on March 5, 2026 that the PJM market monitor's filing describes the same two phases and that the first phase could come online in late 2028. The Southern Maryland Chronicle reported on February 3, 2026 that the first phase is about 500 MW with up to 1 GW at the site. The Federal Energy Regulatory Commission approved the sale of the plant on July 29, 2026, as the Chronicle reported on August 2, 2026; that approval covers the ownership change only, not any new generation. No Public Service Commission certificate application, no air permit application, and no turbine order was found, and the Charles County planning commission recommended against the zoning change in June 2026. Start year is left blank because the late 2028 date is a possibility stated by the market monitor, not a company schedule. Turbine type is not stated anywhere. Capacity is recorded as 500 MW because the company gives one gross figure and no net figure. The owner is TeraWulf Inc, which already exists in the GEM entity system as E100002027962 and is already the owner on the four existing Morgantown units; the entity lookup script did not find it in the export even though the export lists it, so the entity ID was taken from the export row itself.",
+   "action": "Add a new unit named Phase 1 to Morgantown Generating Station. Set Status to announced, Capacity (MW) to 500, Fuel to fossil gas: natural gas, and Owner(s) to TeraWulf Inc at 100 percent (existing entity E100002027962). Add the links below to the matching Data Source boxes. Leave Start year and Turbine/Engine Technology blank.",
+   "record_id": "L100000103967:new-phase-1:newunit"
+  }
+ ]
+}

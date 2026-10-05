@@ -167,11 +167,26 @@ def update_line(r, label, export_rows):
     return line
 
 
+def _refs_by_col(refs):
+    return {k: (v if isinstance(v, list) else split_urls(v)) for k, v in (refs or {}).items()}
+
+
 def new_row_line(r, label, lane):
+    """One line per new-row record. A newplants record carries its unit rows nested under
+    `units` (plant-level fields on the record, per-unit fields on each unit); the whole plant is
+    one decision, keyed on the record's id, so the units ride along on the line as `units` and
+    their links count toward the line's publishers and verification marks."""
     fields = dict(r.get("fields") or {})
     refs = r.get("refs") or {}
     proposed_refs = []
-    for rc, urls in refs.items():
+    verifications = verification_map(r)
+    units = []
+    for u in r.get("units") or []:
+        units.append({"unit_name": u.get("unit_name") or "", "fields": dict(u.get("fields") or {}),
+                      "refs_by_col": _refs_by_col(u.get("refs")),
+                      "notes": u.get("researcher_notes") or "", "action": u.get("action") or ""})
+        verifications.update(verification_map(u))
+    for rc, urls in list(refs.items()) + [kv for u in units for kv in u["refs_by_col"].items()]:
         for u in (urls if isinstance(urls, list) else split_urls(urls)):
             if u not in proposed_refs:
                 proposed_refs.append(u)
@@ -180,10 +195,11 @@ def new_row_line(r, label, lane):
         "kind": "new_row", "reverified": False, "severity": "major", "lane": lane,
         "column": "", "columns": list(fields), "ref_col": "",
         "gem_unit_id": r.get("gem_unit_id") or "", "unit_name": r.get("unit_name") or "",
+        "plant_name": r.get("plant_name") or "",
         "current": {}, "current_ref": None,
         "proposed_values": fields, "proposed_refs": proposed_refs,
-        "refs_by_col": {k: (v if isinstance(v, list) else split_urls(v)) for k, v in refs.items()},
-        "verifications": verification_map(r),
+        "refs_by_col": _refs_by_col(refs), "units": units,
+        "verifications": verifications,
         "tier": tier_of(r), "independent": bool(r.get("independent")),
         "source_language": r.get("source_language") or "",
         "notes": r.get("researcher_notes") or "", "action": r.get("action") or "",
@@ -235,7 +251,7 @@ def build(dirs, export_csv=None):
         lanes = {lane: load_lane(d, lane) for lane in LINE_LANES + tuple(ITEM_LANES)}
         meta = next((m for m, _ in lanes.values() if m), {})
         scope = meta.get("scope") or {}
-        state = scope.get("state") or d.parent.name
+        state = scope.get("state") or scope.get("country") or d.parent.name
         if state not in states:
             states.append(state)
         if scope.get("quarter") and scope["quarter"] not in quarters:
