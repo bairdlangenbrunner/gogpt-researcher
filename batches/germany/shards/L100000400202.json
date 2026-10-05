@@ -1,0 +1,124 @@
+{
+ "meta": {
+  "plant_id": "L100000400202",
+  "plant_name": "Leipzig Nord power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:27:31-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400202",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+      "https://www.l.de/stadtwerke/erzeugung/gud/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.l.de/stadtwerke/erzeugung/gud/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The national power plant list dated 26 June 2026 shows the Stadtwerke Leipzig units Heizkraftwerk Leipzig Nord GT81, GT82, DT8B and DT8C as in operation. GT81 started in 1996. The owner's own web page says the combined cycle plant at Heizkraftwerk Nord started in 1995 and was modernized in 2014 and 2022. It also says the plant produces power and district heat around the clock. So the unit is operating, not mothballed. This is a change from the current status, and two independent publishers agree."
+    },
+    "Latest Activity": {
+     "value": "Year: 2026, Month: 6, Day: 26",
+     "refs": [
+      "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The national power plant list, with data dated 26 June 2026, shows the plant units in operation. This is the newest dated report I found. The owner's page also mentions a modernization in 2022."
+    },
+    "Status Detail": {
+     "value": "Gas turbines and steam turbines modernized in 2022. Heat and power produced all year for the Leipzig district heating network.",
+     "refs": [
+      "https://www.l.de/stadtwerke/erzeugung/gud/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.l.de/stadtwerke/erzeugung/gud/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Stadtwerke Leipzig page says the plant was modernized in 2014 and 2022 and runs around the clock."
+    }
+   },
+   "not_found": [
+    "Retired year"
+   ],
+   "notes": "The register and the owner both show the plant running, so the mothballed status looks wrong. The register splits the plant into four units, and the GEM unit of 172 MW is the whole combined cycle block. A 2022 steam turbine upgrade may have changed the capacity, which was not part of this check."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000400202",
+   "concern_type": "wrong_value",
+   "recommendation": "Check whether the capacity of 172 MW is still right after the 2022 modernization.",
+   "note": "The register lists gross capacity of 64.8 MW for GT81, 65.9 MW for GT82, 25.7 MW for DT8B and 26.1 MW for DT8C. That adds up to about 182 MW gross. The brief did not ask for a capacity check.",
+   "refs": [
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "Status",
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Register file read with pandas. Rows: Stadtwerke Leipzig, Heizkraftwerk Leipzig Nord GT81 (1996), GT82, DT8B and DT8C (all 2022), all in operation. DT83 (1996) is listed as closed in 2021."
+  },
+  {
+   "url": "https://www.l.de/stadtwerke/erzeugung/gud/",
+   "used_for": [
+    "Status",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Stadtwerke Leipzig page on the gas and steam turbine plant. Read through the browser-impersonation route."
+  },
+  {
+   "url": "https://leipziger-industriekultur.de/heizkraftwerknord/",
+   "used_for": [],
+   "outcome": "verified",
+   "note": "Catalog of Leipzig industrial heritage. Confirms 172 MW and start in 1995. Dated, so not cited for status."
+  }
+ ]
+}

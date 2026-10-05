@@ -1,0 +1,66 @@
+{
+ "meta": {
+  "plant_id": "L100000407531",
+  "plant_name": "Herrenhausen power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T12:30:00-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000409741",
+   "unit_name": "B",
+   "findings": {
+    "Turbine/Engine Technology": {
+     "value": "steam turbine",
+     "refs": [
+      "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Excel file read directly."
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Register file read: Bundesnetzagentur power plant list, data date 26 June 2026, sheet of retired plants. Row: enercity AG, Kraftwerk Herrenhausen Block B, closed for good under section 13b of the energy law, commissioned 1974, closed 2021, 120 MW gross, 110 MW net, natural gas and refinery gas, combined heat and power yes. The technology column says back-pressure machine with extraction, which is a steam turbine type. The register does not use the words steam turbine, so this is an inference."
+    }
+   },
+   "not_found": [],
+   "notes": "The register row for Block B lists the technology as back-pressure machine with extraction. That is a steam turbine. I did not look for a second source."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000409741",
+   "concern_type": "value",
+   "recommendation": "Check capacity and start year. The register shows 120 MW gross and 110 MW net, and commissioning in 1974. GEM shows 102 MW and 1975.",
+   "note": "Noticed in passing, not changed.",
+   "refs": [
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "Turbine/Engine Technology"
+   ],
+   "outcome": "verified",
+   "note": "Loads. Value read from the downloaded file."
+  }
+ ]
+}

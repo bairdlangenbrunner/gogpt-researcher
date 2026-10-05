@@ -1,0 +1,157 @@
+{
+ "meta": {
+  "plant_id": "L100000101883",
+  "plant_name": "Walheim power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:50:00-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000412832",
+   "unit_name": "GT1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+      "https://www.enbw.com/company/topics/coal-phaseout/walheim-sewage-sludge-combined-heat-and-power-plant/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.enbw.com/company/topics/coal-phaseout/walheim-sewage-sludge-combined-heat-and-power-plant/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The regulator's power plant list dated 26 June 2026 shows the Walheim gas turbine, operator EnBW, built in 1981, 136 MW net, light heating oil, as in operation with no closure year. EnBW's own page says the gas turbine on the site will keep operating when the coal blocks close. So the unit did not retire in 2025. Only the two coal blocks closed, on 31 March 2025."
+    },
+    "City": {
+     "value": "Walheim",
+     "refs": [
+      "https://www.enbw.com/company/topics/coal-phaseout/walheim-sewage-sludge-combined-heat-and-power-plant/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.enbw.com/company/topics/coal-phaseout/walheim-sewage-sludge-combined-heat-and-power-plant/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "EnBW's page is about its Walheim power plant site and the gas turbine there."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year",
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "notes": "The unit is still in operation. The planned retirement year of 2025 belonged to the coal blocks, so I found no new planned retirement year. No document I could cite states the plant's coordinates."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "EnBW Energie Baden-Württemberg AG [100%]",
+   "refs": [
+    "https://www.enbw.com/company/topics/coal-phaseout/walheim-sewage-sludge-combined-heat-and-power-plant/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.enbw.com/company/topics/coal-phaseout/walheim-sewage-sludge-combined-heat-and-power-plant/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "An EnBW page about the Walheim site refers to existing power plants owned by EnBW and says the gas turbine on the site will keep operating. The page says EnBW without the full company name. The register lists the full name, EnBW Energie Baden-Württemberg AG, as the operator of the Walheim gas turbine."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000412832",
+   "concern_type": "stale value",
+   "recommendation": "Clear the planned retirement year of 2025 or replace it when a new year is announced.",
+   "note": "The year 2025 was the end of the grid reserve duty for the coal blocks. The gas turbine was not part of it and EnBW says it keeps operating. I found no new retirement date for the gas turbine.",
+   "refs": [
+    "https://www.enbw.com/company/topics/coal-phaseout/walheim-sewage-sludge-combined-heat-and-power-plant/"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000412832",
+   "concern_type": "location",
+   "recommendation": "Coordinates look right but have no citable document.",
+   "note": "The German Wikipedia page for the Walheim power plant gives 49.0175 north, 9.1574 east. That is within about 20 metres of GEM's 49.01767, 9.157693. Wikipedia is only a lead and is not cited.",
+   "refs": [
+    "https://de.wikipedia.org/wiki/Kraftwerk_Walheim"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read from the downloaded copy dated 26 June 2026. Row: EnBW Energie Baden-Württemberg AG, Kraftwerk Walheim GTD, in Betrieb, 1981, 136 MW net, light heating oil, gas turbine without waste heat boiler."
+  },
+  {
+   "url": "https://www.enbw.com/company/topics/coal-phaseout/walheim-sewage-sludge-combined-heat-and-power-plant/",
+   "used_for": [
+    "Status",
+    "Owner(s)",
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Says the gas turbine will continue to operate when the coal blocks close, and refers to power plants owned by EnBW."
+  },
+  {
+   "url": "https://de.wikipedia.org/wiki/Kraftwerk_Walheim",
+   "used_for": [
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Lead only for coordinates. Not cited."
+  },
+  {
+   "url": "https://www.enbw.com/presse/letzte-kohle-verlaesst-walheim-abtransport-juni-2025.html",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "failed",
+   "note": "Page loads but does not mention the gas turbine."
+  },
+  {
+   "url": "https://www.stimme.de/regional/wirtschaft/enbw-kraftwerke-bleiben-systemrelevant-art-4354066",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "not relevant",
+   "note": "Existing source in the brief. Not rechecked."
+  }
+ ]
+}

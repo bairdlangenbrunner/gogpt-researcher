@@ -1,0 +1,140 @@
+{
+ "meta": {
+  "plant_id": "L100000101889",
+  "plant_name": "Berlin-Reuter-West power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:30:00-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000410780",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "cancelled - inferred 4 y",
+     "refs": [],
+     "verifications": [],
+     "tier": "medium",
+     "independent": false,
+     "note": "The newest report I found that describes a planned gas fired heating plant at Reuter West is the joint state planning decision of 11 May 2022 on the gas pipeline for it. That is more than four years ago. Since then the owner has built something different, a large heat pump and a new steam turbine of about 30 MW electric, which started construction in March 2024. I looked at the owner's press releases, the planning office pages, trade press and the regulator's expansion list. None of them describes the 647 MW gas unit again."
+    },
+    "Latest Activity": {
+     "value": "Year: 2022, Month: 5, Day: 11",
+     "refs": [
+      "https://gl.berlin-brandenburg.de/umsetzung-der-raumordnungsplaene/raumvertraeglichkeitspruefung/raumordnungsverfahren-raumvertraeglichkeitspruefungen/versorgung-heizkraftwerk-reuter-west-sowie-berliner-gasverteilnetz-mit-zusaetzlichen-gaskapazitaeten-zukunftsnetz-nordwest/"
+     ],
+     "verifications": [
+      {
+       "url": "https://gl.berlin-brandenburg.de/umsetzung-der-raumordnungsplaene/raumvertraeglichkeitspruefung/raumordnungsverfahren-raumvertraeglichkeitspruefungen/versorgung-heizkraftwerk-reuter-west-sowie-berliner-gasverteilnetz-mit-zusaetzlichen-gaskapazitaeten-zukunftsnetz-nordwest/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The joint planning office of Berlin and Brandenburg says its review of the gas pipeline for the planned Reuter West heating plant ended on 11 May 2022. This is the newest dated report I found about the gas plant itself."
+    },
+    "Status Detail": {
+     "value": "gas plant no longer described since 2022, owner built a heat pump and steam turbine instead",
+     "refs": [
+      "https://gl.berlin-brandenburg.de/umsetzung-der-raumordnungsplaene/raumvertraeglichkeitspruefung/raumordnungsverfahren-raumvertraeglichkeitspruefungen/versorgung-heizkraftwerk-reuter-west-sowie-berliner-gasverteilnetz-mit-zusaetzlichen-gaskapazitaeten-zukunftsnetz-nordwest/",
+      "https://group.vattenfall.com/de/newsroom/pressemitteilungen/2024/meilenstein-fur-berlins-klimaziele-grundsteinlegung-fur-reuter-sustainable-heat-and-power"
+     ],
+     "verifications": [
+      {
+       "url": "https://gl.berlin-brandenburg.de/umsetzung-der-raumordnungsplaene/raumvertraeglichkeitspruefung/raumordnungsverfahren-raumvertraeglichkeitspruefungen/versorgung-heizkraftwerk-reuter-west-sowie-berliner-gasverteilnetz-mit-zusaetzlichen-gaskapazitaeten-zukunftsnetz-nordwest/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://group.vattenfall.com/de/newsroom/pressemitteilungen/2024/meilenstein-fur-berlins-klimaziele-grundsteinlegung-fur-reuter-sustainable-heat-and-power",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The 2022 planning decision still speaks of a new gas fired heating plant. The owner's press release of March 2024 describes the heat pump and the steam turbine as the new investment and mentions natural gas only as one part of a wider fuel mix."
+    }
+   },
+   "not_found": [
+    "Turbine/Engine Technology",
+    "Cancellation year"
+   ],
+   "notes": "I could not find the turbine type. No document names the technology of the planned gas plant. I left the cancellation year blank because the status is inferred from silence."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000410780",
+   "concern_type": "status",
+   "recommendation": "Consider whether this unit is the 33.7 MW steam turbine project instead of a 647 MW gas plant.",
+   "note": "The regulator's list of expected additions dated June 2026 shows a Reuter West entry of 33.7 MW net, expected in 2027. This matches the new back pressure steam turbine of about 30 MW electric, not a gas plant. The 647 MW in GEM may not match any current plan.",
+   "refs": [
+    "https://www.kraftanlagen.com/en/climate-friendly-district-heating-for-berlin-vattenfall-commissions-kraftanlagen-energies-services-to-build-a-combined-heat-and-power-plant-2/"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000410780",
+   "concern_type": "source",
+   "recommendation": "The Berlin senate page cited for fuel no longer loads.",
+   "note": "The address on berlin.de for the coal exit page returns a not found error. The page for the owner's former name on the Iqony site loads but does not mention Reuter West. Both links are kept.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://gl.berlin-brandenburg.de/umsetzung-der-raumordnungsplaene/raumvertraeglichkeitspruefung/raumordnungsverfahren-raumvertraeglichkeitspruefungen/versorgung-heizkraftwerk-reuter-west-sowie-berliner-gasverteilnetz-mit-zusaetzlichen-gaskapazitaeten-zukunftsnetz-nordwest/",
+   "used_for": [
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Planning office page, review concluded 11 May 2022."
+  },
+  {
+   "url": "https://group.vattenfall.com/de/newsroom/pressemitteilungen/2024/meilenstein-fur-berlins-klimaziele-grundsteinlegung-fur-reuter-sustainable-heat-and-power",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Press release of 12 March 2024 about the heat pump and steam turbine."
+  },
+  {
+   "url": "https://www.kraftanlagen.com/en/climate-friendly-district-heating-for-berlin-vattenfall-commissions-kraftanlagen-energies-services-to-build-a-combined-heat-and-power-plant-2/",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Existing owner source. Describes the steam turbine and heat pump plant, around 30 MW electric, planned for the end of 2026."
+  },
+  {
+   "url": "https://www.berlin.de/sen/uvk/klimaschutz/klimaschutz-in-der-umsetzung/waermewende-im-land-berlin/kohleausstieg-berlin/",
+   "used_for": [
+    "Fuel"
+   ],
+   "outcome": "dead",
+   "note": "Returns not found. Existing link, not dropped."
+  },
+  {
+   "url": "https://www.iqony.energy/en/reuther-west",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "failed",
+   "note": "Loads but the verifier did not find Reuter. Not relevant to this plant."
+  }
+ ]
+}

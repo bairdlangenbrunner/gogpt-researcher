@@ -1,0 +1,167 @@
+{
+ "meta": {
+  "plant_id": "L100001083584",
+  "plant_name": "Hanau joint power plant",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:29:09-04:00",
+  "done": true,
+  "urls_attempted": 8,
+  "urls_verified": 7
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001094609",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.stadt-und-werk.de/k21-meldungen/wechsel-von-kohle-auf-gas/",
+      "https://www.gnz.de/lokales/main-kinzig-kreis/stadt-hanau/neues-kraftwerk-in-hanau-liefert-waerme-fuer-20000-haushalte-6382061"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.stadt-und-werk.de/k21-meldungen/wechsel-von-kohle-auf-gas/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.gnz.de/lokales/main-kinzig-kreis/stadt-hanau/neues-kraftwerk-in-hanau-liefert-waerme-fuer-20000-haushalte-6382061",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A stadt+werk article of 22 September 2026 says the plant has gone into continuous operation. A Hanauer Zeitung article of 21 September 2026 says it has taken over the district heat supply from the Staudinger coal plant. Both likely come from one joint press release, so they count as one source."
+    },
+    "Start year": {
+     "value": "2026",
+     "refs": [
+      "https://www.stadt-und-werk.de/k21-meldungen/wechsel-von-kohle-auf-gas/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.stadt-und-werk.de/k21-meldungen/wechsel-von-kohle-auf-gas/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The plant began continuous operation in September 2026, which matches the existing start year."
+    },
+    "Latest Activity": {
+     "value": "Year: 2026, Month: 9, Day: 22",
+     "refs": [
+      "https://www.stadt-und-werk.de/k21-meldungen/wechsel-von-kohle-auf-gas/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.stadt-und-werk.de/k21-meldungen/wechsel-von-kohle-auf-gas/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The stadt+werk article is dated 22 September 2026."
+    },
+    "City": {
+     "value": "Hanau",
+     "refs": [
+      "https://www.stadt-und-werk.de/k21-meldungen/wechsel-von-kohle-auf-gas/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.stadt-und-werk.de/k21-meldungen/wechsel-von-kohle-auf-gas/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The article places the plant on the former Großauheim barracks site in Hanau."
+    },
+    "Capacity (MW)": {
+     "value": "31.2",
+     "refs": [
+      "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/ZuUndRueckbau.xlsx?__blob=publicationFile"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/ZuUndRueckbau.xlsx?__blob=publicationFile",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Bundesnetzagentur register of plant additions lists Mainova AG, GK Hanau, 31.2 MW net, expected 2026. This confirms the existing value."
+    }
+   },
+   "not_found": [
+    "Owner(s)",
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "Status moves from construction to operating. The three engines of 10.4 MW each are already in GEM. The technology is listed as combined cycle, but the plant is three gas engines."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001094609",
+   "concern_type": "owner",
+   "recommendation": "Check the ownership shares of the plant company.",
+   "note": "A Stadtwerke Hanau press release says the joint company is held 50.1 percent by Mainova and 49.9 percent by Stadtwerke Hanau. GEM shows 50 and 49. The holding company is Gemeinschaftskraftwerk Hanau GmbH & Co. KG. I did not change the owner.",
+   "refs": [
+    "https://stadtwerke-hanau.de/blog/stadtwerke-hanau-und-mainova-gruenden-gemeinsame-gesellschaft-zur-fernwaermeversorgung"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001094609",
+   "concern_type": "technology",
+   "recommendation": "Change technology from combined cycle to internal combustion.",
+   "note": "The plant is three gas engines, not a combined cycle plant. The Mainova 2023 press release that should say this failed the page check, so it is not cited.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.stadt-und-werk.de/k21-meldungen/wechsel-von-kohle-auf-gas/",
+   "used_for": [
+    "Status",
+    "Start year",
+    "Latest Activity",
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Found Dauerbetrieb, Gemeinschaftskraftwerk, Mainova and Hanau."
+  },
+  {
+   "url": "https://www.gnz.de/lokales/main-kinzig-kreis/stadt-hanau/neues-kraftwerk-in-hanau-liefert-waerme-fuer-20000-haushalte-6382061",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Found Wärmelieferung."
+  },
+  {
+   "url": "https://www.mainova.de/de/ihre-mainova/presse/pressemitteilungen/2023/bau-des-gemeinschaftskraftwerks-hanau-fuer-kuenftige-fernwaermeversorgung-der-stadt-startet-124516",
+   "used_for": [],
+   "outcome": "failed",
+   "note": "Existing source. The word Gasmotoren was not found on the page. Kept in the source list."
+  }
+ ]
+}

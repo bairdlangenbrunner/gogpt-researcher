@@ -1,0 +1,176 @@
+{
+ "meta": {
+  "plant_id": "L100000101884",
+  "plant_name": "München Nord power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:32:51-04:00",
+  "done": true,
+  "urls_attempted": 8,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001017978",
+   "unit_name": "Unit 2, timepoint 2",
+   "findings": {
+    "Planned retire": {
+     "value": "2035",
+     "refs": [
+      "https://www.swm.de/unternehmen/kraft-waerme-kopplung",
+      "https://www.gruene-fraktion-muenchen.de/faq-umstellung-von-kohle-auf-gas-im-heizkraftwerk-nord/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.swm.de/unternehmen/kraft-waerme-kopplung",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.gruene-fraktion-muenchen.de/faq-umstellung-von-kohle-auf-gas-im-heizkraftwerk-nord/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Stadtwerke München page on combined heat and power says block 2 runs on natural gas as a bridge technology. Its use will be cut back step by step. It is expected to reach the end of its technical life in 2035. A Munich city council group FAQ repeats the same 2035 end of life, quoting the utility. So the plan still holds as of the current utility page."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Siemens",
+     "refs": [
+      "https://www.power-technology.com/data-insights/power-plant-profile-swm-hkw-nord-2-power-plant-germany/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.power-technology.com/data-insights/power-plant-profile-swm-hkw-nord-2-power-plant-germany/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A power plant profile from Power Technology says Siemens was chosen as turbine supplier for the coal fired block, which began operation in 1991. No turbine model name is given. The profile is for block 2 of the Stadtwerke München Nord plant. The Babcock boiler is not the turbine, so it is not reported."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://www.energie-und-management.de/nachrichten/technik/detail/muenchen-steigt-am-1.-juli-aus-der-kohle-aus-222779",
+      "https://www.swm.de/unternehmen/kraft-waerme-kopplung"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.energie-und-management.de/nachrichten/technik/detail/muenchen-steigt-am-1.-juli-aus-der-kohle-aus-222779",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.swm.de/unternehmen/kraft-waerme-kopplung",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "Energie und Management reported in June 2024 that coal block 2 of the Nord plant would be switched to natural gas on 1 July 2024, with no new construction. The Stadtwerke München page says block 2 now runs on natural gas. This confirms the unit was converted in place, so conversion is right."
+    }
+   },
+   "not_found": [],
+   "notes": "The planned closure year of 2035 is still stated by the utility. Siemens is named as turbine supplier but no model was found. The conversion is confirmed by a trade press article and the utility's own page."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001017978",
+   "concern_type": "capacity",
+   "recommendation": "Check whether 365 MW should stay.",
+   "note": "The Bundesnetzagentur power plant list dated 26 June 2026 shows SWM HKW Nord 2 T20 with 363 MW gross and 333 MW net, started in 1991. GEM shows 365 MW. Trade press says about 360 MW electric. The difference is small and the list says gross is 363, so this is only a question.",
+   "refs": []
+  },
+  {
+   "gem_unit_id": "G100001017978",
+   "concern_type": "owner",
+   "recommendation": "No change.",
+   "note": "The power plant list names SWM Services GmbH as operator. GEM shows Stadtwerke München GmbH as owner. This is a different role, so no change is suggested.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.swm.de/presse/pressemitteilungen/2024/04-2024/swm-hkw-nord",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "dead",
+   "note": "The page now shows a 404 not found message. The link is kept by the researcher team and not dropped."
+  },
+  {
+   "url": "https://www.bayern-innovativ.de/en/page/stadtwerke-muenchen-reconsiders-rapid-phase-out-of-coal-use",
+   "used_for": [
+    "Capacity (MW)",
+    "Status"
+   ],
+   "outcome": "dead",
+   "note": "The page returns HTTP 404."
+  },
+  {
+   "url": "https://www.energie-und-management.de/nachrichten/technik/detail/muenchen-steigt-am-1.-juli-aus-der-kohle-aus-222779",
+   "used_for": [
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "Article from June 2024. It does not state 2035, so it is not used for the planned retirement."
+  },
+  {
+   "url": "https://www.swm.de/unternehmen/kraft-waerme-kopplung",
+   "used_for": [
+    "Planned retire",
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "States end of technical life in 2035."
+  },
+  {
+   "url": "https://www.gruene-fraktion-muenchen.de/faq-umstellung-von-kohle-auf-gas-im-heizkraftwerk-nord/",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Group FAQ that quotes the utility."
+  },
+  {
+   "url": "https://www.power-technology.com/data-insights/power-plant-profile-swm-hkw-nord-2-power-plant-germany/",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Read through browser impersonation."
+  },
+  {
+   "url": "https://www.oeko.de/fileadmin/oekodoc/Hintergrundinformationen_HKW-Muenchen-Nord_Update.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "failed",
+   "note": "The word Siemens was not found in the extracted text."
+  },
+  {
+   "url": "https://www.energiejobs.de/news/ticker/brennstoffwechsel-im-kraftwerk-muenchen-nord-stadtwerke-muenchen-stellen-heizkraftwerk-jetzt-von-kohle-auf-gas-um-artikel6530",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "not relevant",
+   "note": "Does not mention 2035."
+  }
+ ]
+}

@@ -1,0 +1,113 @@
+{
+ "meta": {
+  "plant_id": "L100000101925",
+  "plant_name": "Bergkamen power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:24:30-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001020493",
+   "unit_name": "CC1, timepoint 1",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "880.0",
+     "refs": [
+      "https://www.steag-iqony-group.com/en/ccgt-bergkamen"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.steag-iqony-group.com/en/ccgt-bergkamen",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Steag Iqony Group project page for Bergkamen gives the planned power as approximately 880 MW."
+    },
+    "Status Detail": {
+     "value": "Iqony is planning a hydrogen-capable gas plant of about 880 MW on the Bergkamen site to replace the old coal unit. It has begun planning work and plans to take part in the federal capacity tenders.",
+     "refs": [
+      "https://www.steag-iqony-group.com/en/ccgt-bergkamen",
+      "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/iqony-will-gaskraftwerke-mit-2.500-mw-bauen-212250"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.steag-iqony-group.com/en/ccgt-bergkamen",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/iqony-will-gaskraftwerke-mit-2.500-mw-bauen-212250",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Both pages were read. No permit or construction was found, so pre-construction is not supported by new evidence, but the status was not changed."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Latest Activity",
+    "Turbine/Engine Technology",
+    "Owner(s)"
+   ],
+   "notes": "I found no turbine maker or model. The project page only credits Siemens for the artist images, which does not name the equipment. No dated 2026 report was found, so no Latest Activity is given."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001020493",
+   "concern_type": "status",
+   "recommendation": "Review status",
+   "note": "The owner's pages describe the plant as in planning. A search showed a gas pipeline planning application to the Arnsberg district government in spring 2026. I found no building permit or construction start for the power plant itself. A pre-construction status may be too advanced.",
+   "refs": [
+    "https://www.steag-iqony-group.com/en/ccgt-bergkamen"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.steag-iqony-group.com/en/ccgt-bergkamen",
+   "used_for": [
+    "Capacity (MW)",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Owner project page, 880 MW."
+  },
+  {
+   "url": "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/iqony-will-gaskraftwerke-mit-2.500-mw-bauen-212250",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Trade article from March 2024 on the 2,500 MW tender plan."
+  },
+  {
+   "url": "https://www.iqony.energy/h2-ready-gaskraftwerke",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "failed",
+   "note": "Page loads but the verifier did not find the expected 2.500 text. Not used."
+  }
+ ]
+}

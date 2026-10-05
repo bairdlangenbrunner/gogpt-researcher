@@ -52,7 +52,9 @@ from build_review_package import ref_col_for  # noqa: E402
 ET = ZoneInfo("America/New_York")
 LINE_LANES = ("updates", "newunits", "newplants")
 ITEM_LANES = {"qa": "concern", "monitor": "monitor", "entity": "entity"}
-_STATE_PID = re.compile(r"^us-[a-z]{2}$")
+# scope-wide items carry the batch tag as their plant id: us-md for a state,
+# a country slug such as germany or czech-republic for a country batch
+_STATE_PID = re.compile(r"^(us-[a-z]{2}|[a-z][a-z-]*)$")
 
 
 def rel(path):

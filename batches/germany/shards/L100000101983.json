@@ -1,0 +1,98 @@
+{
+ "meta": {
+  "plant_id": "L100000101983",
+  "plant_name": "Lippendorf power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:26:49-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000412862",
+   "unit_name": "CC1, timepoint 1",
+   "findings": {
+    "Latest Activity": {
+     "value": "Year: 2026, Month: 9, Day: 9",
+     "refs": [
+      "https://www.ad-hoc-news.de/boerse/news/ueberblick/der-energiekonzern-leag-will-bei-der-ausschreibung-fuer-neue-kraftwerke/70076187"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/der-energiekonzern-leag-will-bei-der-ausschreibung-fuer-neue-kraftwerke/70076187",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A news item dated 9 September 2026 says LEAG is looking for a connection solution for each plant site, including Lippendorf, under the new power plant law. The first bidding round had just closed. It does not say LEAG bid for Lippendorf, and no award list exists yet."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Planned retire",
+    "Status Detail",
+    "Owner(s)"
+   ],
+   "notes": "The status stays pre-construction. I found no turbine maker and no start year. The only retirement date I found is 2035 for the coal plant, not for this gas unit, so I cannot confirm 2040."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000412862",
+   "concern_type": "planned retire",
+   "recommendation": "Check the 2040 planned retirement.",
+   "note": "News in September 2026 gives 2035 as the closure date for the Lippendorf coal plant. That is a different unit. I found nothing about when the gas unit would close.",
+   "refs": [
+    "https://www.ad-hoc-news.de/boerse/news/ueberblick/der-energiekonzern-leag-will-bei-der-ausschreibung-fuer-neue-kraftwerke/70076187"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000412862",
+   "concern_type": "permit",
+   "recommendation": "Review the permit record.",
+   "note": "A search result for the Saxony environmental impact register says a first partial permit for a gas and steam turbine plant at Neukieritzsch was decided on 22 August 2024, with operation planned for the second quarter of 2027. I could not read that page because the site blocked the request, so I did not use it.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/der-energiekonzern-leag-will-bei-der-ausschreibung-fuer-neue-kraftwerke/70076187",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Dated 9 September 2026."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=64322a9b-6fd6-48ad-874c-5127ccbe0ad2",
+   "used_for": [
+    "Status",
+    "Start year"
+   ],
+   "outcome": "blocked",
+   "note": "Returned HTTP 429 on the repo fetcher and the Wayback copy lacked the text. Not retried further."
+  },
+  {
+   "url": "https://www.leag.de/de/seitenblickblog/artikel/leag-bereitet-sich-auf-bedarf-nach-neuen-gaskraftwerken-vor/",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "not relevant",
+   "note": "Owner interview from about 2022. It mentions a combined cycle plant of 850 MW at Lippendorf as a concept only."
+  }
+ ]
+}

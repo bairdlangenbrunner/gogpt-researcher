@@ -1,0 +1,173 @@
+{
+ "meta": {
+  "plant_id": "L100001062418",
+  "plant_name": "KMW Gas Engine Power Plant",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:29:09-04:00",
+  "done": true,
+  "urls_attempted": 8,
+  "urls_verified": 8
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001071690",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "pre-construction",
+     "refs": [
+      "https://www.kmw-ag.de/oeffentlichkeitsbeteiligung_motorenkraftwerk/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.kmw-ag.de/oeffentlichkeitsbeteiligung_motorenkraftwerk/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "KMW's page says the permit application was filed in October 2025 and public participation began on 9 February 2026. No change."
+    },
+    "Start year": {
+     "value": "2027",
+     "refs": [
+      "https://www.kmw-ag.de/oeffentlichkeitsbeteiligung_motorenkraftwerk/",
+      "https://www.innio.com/en/news-media/press-releases/innio-and-kmw-secure-grid-stability-and-data-center-supply-with-a-peaking-power-plant/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.kmw-ag.de/oeffentlichkeitsbeteiligung_motorenkraftwerk/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.innio.com/en/news-media/press-releases/innio-and-kmw-secure-grid-stability-and-data-center-supply-with-a-peaking-power-plant/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "KMW and INNIO both say commissioning is planned for the end of 2027."
+    },
+    "Capacity (MW)": {
+     "value": "54",
+     "refs": [
+      "https://www.kmw-ag.de/oeffentlichkeitsbeteiligung_motorenkraftwerk/",
+      "https://www.innio.com/en/news-media/press-releases/innio-and-kmw-secure-grid-stability-and-data-center-supply-with-a-peaking-power-plant/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.kmw-ag.de/oeffentlichkeitsbeteiligung_motorenkraftwerk/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.innio.com/en/news-media/press-releases/innio-and-kmw-secure-grid-stability-and-data-center-supply-with-a-peaking-power-plant/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "KMW and INNIO both give about 54 MW."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "INNIO Jenbacher",
+     "refs": [
+      "https://www.kmw-ag.de/oeffentlichkeitsbeteiligung_motorenkraftwerk/",
+      "https://www.energie-und-management.de/nachrichten/detail/mainz-verfolgt-54-mw-plan-weiter-und-legt-250-mw-auf-eis-351669"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.kmw-ag.de/oeffentlichkeitsbeteiligung_motorenkraftwerk/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.energie-und-management.de/nachrichten/detail/mainz-verfolgt-54-mw-plan-weiter-und-legt-250-mw-auf-eis-351669",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "KMW and a trade article of 13 February 2026 both name Jenbacher engines."
+    },
+    "Latest Activity": {
+     "value": "Year: 2026, Month: 2, Day: 9",
+     "refs": [
+      "https://www.kmw-ag.de/oeffentlichkeitsbeteiligung_motorenkraftwerk/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.kmw-ag.de/oeffentlichkeitsbeteiligung_motorenkraftwerk/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Public participation on the permit began on 9 February 2026."
+    }
+   },
+   "not_found": [
+    "Owner(s)"
+   ],
+   "notes": "Everything checked is unchanged. The construction contract was signed on 15 September 2025. The 250 MW future power plant in Mainz is paused and is a separate project."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [
+  {
+   "gem_unit_id": "G100001071690",
+   "note": "Watch for the permit decision and for the early-start permit applied for on 16 January 2026.",
+   "recheck_by": "2026-12-15"
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.kmw-ag.de/oeffentlichkeitsbeteiligung_motorenkraftwerk/",
+   "used_for": [
+    "Status",
+    "Start year",
+    "Capacity (MW)",
+    "Equipment Manufacturer/Model",
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Found all checked phrases."
+  },
+  {
+   "url": "https://www.innio.com/en/news-media/press-releases/innio-and-kmw-secure-grid-stability-and-data-center-supply-with-a-peaking-power-plant/",
+   "used_for": [
+    "Start year",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Found end of 2027 and 54-MW."
+  },
+  {
+   "url": "https://www.energie-und-management.de/nachrichten/detail/mainz-verfolgt-54-mw-plan-weiter-und-legt-250-mw-auf-eis-351669",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Found Jenbacher."
+  }
+ ]
+}

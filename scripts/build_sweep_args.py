@@ -1,14 +1,17 @@
 """
-Build the Workflow args for a state sweep from a batch's briefs/_index.json.
+Build the Workflow args for a scope sweep (US state or country) from a batch's
+briefs/_index.json.
 
 Usage (from scripts/):
     python build_sweep_args.py --batch ../batches/us-md [--model sonnet]
         [--plants L...,L...] [--group-max 1] [--extra-brief path.md]
+    python build_sweep_args.py --batch ../batches/germany --model sonnet --group-max 5
 
 Reads:  <batch>/briefs/_index.json and every brief it lists (all must exist).
 Writes: <batch>/staging/sweep_args.json, and prints the same JSON to stdout.
 
-Output keys: repo, batch, state, postal, mode, model, csv, plants (plant_id,
+Output keys: repo, batch, where ({kind, name, slug, country, postal}, the
+batch scope), state, postal (US only, blank otherwise), mode, model, csv, plants (plant_id,
 plant_name, brief_path, unit_ids, shard_path; all paths absolute), groups
 (lists of plant IDs; one plant per group by default, --group-max N packs
 plants together while a group's total units stay at or under N, and a plant
@@ -75,8 +78,13 @@ def main():
             sys.exit(f"ERROR: extra brief not found: {ep}")
         extra = ep.read_text(encoding="utf-8")
 
-    args = {"repo": str(REPO_ROOT), "batch": str(batch), "state": idx["state"],
-            "postal": idx["postal"], "mode": idx["mode"], "model": a.model,
+    where = idx.get("where") or {          # an index written before country mode
+        "kind": "state", "name": idx.get("state", ""), "country": "United States",
+        "slug": (idx.get("state") or "").lower().replace(" ", "-"),
+        "postal": idx.get("postal", "")}
+    args = {"repo": str(REPO_ROOT), "batch": str(batch), "where": where,
+            "state": idx.get("state", ""), "postal": idx.get("postal", ""),
+            "mode": idx["mode"], "model": a.model,
             "csv": str(Path(idx["csv"]).resolve()), "plants": out_plants,
             "groups": groups, "extra_brief": extra}
     text = json.dumps(args, indent=2, ensure_ascii=False)

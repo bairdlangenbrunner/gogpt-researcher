@@ -1,0 +1,166 @@
+{
+ "meta": {
+  "plant_id": "L100000400251",
+  "plant_name": "Stade Dow power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:36:55-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400251",
+   "unit_name": "1",
+   "findings": {},
+   "not_found": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "notes": "No document was found that prints coordinates for the plant, so the location fields are left as they are. The existing point is about 1.5 kilometers from the Bützflether Sand road in a works of 550 hectares, so approximate is right."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Dow Deutschland Anlagengesellschaft mbH [100%]",
+   "refs": [
+    "https://de.dow.com/de-de/standorte/stade.html",
+    "https://www.kreiszeitung-wochenblatt.de/stade/c-wirtschaft/startschuss-fuer-das-dow-gaskraftwerk-in-stade_a25257"
+   ],
+   "verifications": [
+    {
+     "url": "https://de.dow.com/de-de/standorte/stade.html",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.kreiszeitung-wochenblatt.de/stade/c-wirtschaft/startschuss-fuer-das-dow-gaskraftwerk-in-stade_a25257",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The Dow site page for Stade names Dow Deutschland Anlagengesellschaft mbH as the company behind the Stade works. A local newspaper report from November 2013 on the opening of the gas power plant names the managing director of that company among the people who started the first gas turbine. Neither source says in so many words that the company owns the power plant, so this is a good fit but not a direct statement."
+  },
+  "Captive industry use": {
+   "value": "both",
+   "refs": [
+    "https://www.kreiszeitung-wochenblatt.de/stade/c-wirtschaft/startschuss-fuer-das-dow-gaskraftwerk-in-stade_a25257"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.kreiszeitung-wochenblatt.de/stade/c-wirtschaft/startschuss-fuer-das-dow-gaskraftwerk-in-stade_a25257",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "A local newspaper report from November 2013 says the new gas power plant is part of an integrated power plant aimed at self supply of the Dow works in Stade. It makes electricity, 163 MW, and also steam for the Dow chlorine plant. So the plant serves one industrial site with both power and heat."
+  },
+  "Captive industry type": {
+   "value": "chemicals",
+   "refs": [
+    "https://www.kreiszeitung-wochenblatt.de/stade/c-wirtschaft/startschuss-fuer-das-dow-gaskraftwerk-in-stade_a25257"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.kreiszeitung-wochenblatt.de/stade/c-wirtschaft/startschuss-fuer-das-dow-gaskraftwerk-in-stade_a25257",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The same local newspaper report says the Dow works at Stade makes epoxy resin and basic chemicals, and the power plant supplies that site. So the industry type is chemicals."
+  },
+  "City": {
+   "value": "Stade",
+   "refs": [
+    "https://de.dow.com/de-de/standorte/stade.html"
+   ],
+   "verifications": [
+    {
+     "url": "https://de.dow.com/de-de/standorte/stade.html",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The Dow site page lists the works under Stade, postcode 21677. The page does not print coordinates or the street address."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000400251",
+   "concern_type": "unit scope",
+   "recommendation": "Check how the register splits this plant.",
+   "note": "The regulator's power plant list dated 26 June 2026 shows three Dow gas turbines of about 45 MW net each, started in 2014, plus an older entry named Dow Stade of 190 MW net, marked finally closed. GEM shows one combined cycle unit of 163 MW started in 2015. The newspaper article from 2013 gives 163 MW electric. The register shows about 135 MW net for the three turbines. This may be a rounding or a steam turbine not listed. Not a task in this batch.",
+   "refs": []
+  },
+  {
+   "gem_unit_id": "G100000400251",
+   "concern_type": "notes",
+   "recommendation": "Review the old researcher note.",
+   "note": "The old note on this unit talks about a new coal unit and shelved status. That does not fit an operating gas unit. It looks like a leftover from the coal tracker.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Dow Deutschland Anlagengesellschaft mbH",
+   "role": "owner",
+   "lookup_result": "The entity lookup says it already appears on 2 units in Germany. Reuse the existing entity."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.kreiszeitung-wochenblatt.de/stade/c-wirtschaft/startschuss-fuer-das-dow-gaskraftwerk-in-stade_a25257",
+   "used_for": [
+    "Owner(s)",
+    "Captive industry use",
+    "Captive industry type"
+   ],
+   "outcome": "verified",
+   "note": "Local newspaper report dated 6 November 2013."
+  },
+  {
+   "url": "https://de.dow.com/de-de/standorte/stade.html",
+   "used_for": [
+    "Owner(s)",
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Read through browser impersonation."
+  },
+  {
+   "url": "https://www.chemcoast.de/unternehmen/dow-deutschland-anlagengesellschaft-mbh",
+   "used_for": [
+    "Location"
+   ],
+   "outcome": "failed",
+   "note": "The street name was not found on the page."
+  },
+  {
+   "url": "https://www.energate-messenger.de/news/137928/dow-nimmt-gaskraftwerk-in-betrieb",
+   "used_for": [
+    "Status",
+    "Start year"
+   ],
+   "outcome": "blocked",
+   "note": "HTTP 403 bot check. The fetch ladder and the archive check found nothing. The existing link is kept."
+  }
+ ]
+}

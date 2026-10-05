@@ -1,0 +1,114 @@
+{
+ "meta": {
+  "plant_id": "L100000400241",
+  "plant_name": "Robert Frank power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:27:31-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400241",
+   "unit_name": "1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100000410310",
+   "unit_name": "2",
+   "findings": {
+    "Status Detail": {
+     "value": "Listed by the regulator as provisionally closed (vorläufig stillgelegt). The provisional closure can be reversed.",
+     "refs": [
+      "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The national power plant list dated 26 June 2026 lists the Landesbergen steam turbine of 450 MW gross, started in 1973, run by Statkraft Markets GmbH, with the status vorläufig stillgelegt. That means provisionally closed."
+    },
+    "Latest Activity": {
+     "value": "Year: 2026, Month: 6, Day: 26",
+     "refs": [
+      "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The national power plant list data date of 26 June 2026 is the newest dated report I found. It lists the unit as provisionally closed."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Retired year"
+   ],
+   "notes": "The register still shows this unit as provisionally closed, which fits the mothballed status. I found no second publisher on whether it may return, so I propose no status change. No retired year applies."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000410310",
+   "concern_type": "status_mapping",
+   "recommendation": "Keep mothballed for now. The country note maps the register's provisionally closed status to operating, but a provisional closure is closer to mothballed. Ask the project leads which one GEM should use.",
+   "note": "The register lists the unit as provisionally closed. A change to operating needs two independent publishers and I found one.",
+   "refs": [
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000400241",
+   "concern_type": "wrong_value",
+   "recommendation": "The register lists the 66 MW gas turbine at Landesbergen in the capacity reserve under section 13e of the energy law. GEM has this as operating with 58 MW. No change proposed.",
+   "note": "Press searches say the capacity reserve covers 56 MW to September 2026 and 65 MW from October 2026. I could not open the sources in full.",
+   "refs": [
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "Status Detail",
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Register file read with pandas. Rows: Statkraft Markets GmbH, Landesbergen steam turbine (450 MW gross, 431 MW net, 1973, provisionally closed) and gas turbine (66 MW gross, 1972, capacity reserve)."
+  },
+  {
+   "url": "https://www.statkraft.de/ueber-statkraft/standorte/Landesbergen-Gaskraftwerk/",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "The Statkraft plant page loads but does not state a current status or mention the capacity reserve. Not cited."
+  },
+  {
+   "url": "https://www.energate-messenger.de/news/131050/statkraft-legt-zweites-kraftwerk-still",
+   "used_for": [],
+   "outcome": "blocked",
+   "note": "A bot check came back on the repo fetch tool and the page was not read. Not cited."
+  }
+ ]
+}

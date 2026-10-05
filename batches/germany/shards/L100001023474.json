@@ -1,0 +1,101 @@
+{
+ "meta": {
+  "plant_id": "L100001023474",
+  "plant_name": "Juelich power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:34:11-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001027838",
+   "unit_name": "ICCC",
+   "findings": {
+    "Owner(s)": {
+     "value": "Pfeifer & Langen GmbH & Co. KG [100%]",
+     "refs": [
+      "https://www.aachener-zeitung.de/lokales/region-dueren/juelich/zuckerfabrik-halbiert-den-co2-aussto%C3%9F/3947686.html",
+      "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.aachener-zeitung.de/lokales/region-dueren/juelich/zuckerfabrik-halbiert-den-co2-aussto%C3%9F/3947686.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": true,
+     "note": "The regulator list dated 26 June 2026 shows Generator Jülich, 25.21 MW gross, started 2004, with Pfeifer & Langen GmbH & Co. KG as operator. A local newspaper article says the sugar factory in Jülich, run by Pfeifer & Langen, has its own power plant and moved it from lignite to natural gas in 2021. No document I found states the ownership split in words, so a single owner is inferred from the operator."
+    }
+   },
+   "not_found": [],
+   "notes": "Owner found as the sugar company that operates the plant. No separate ownership document was found."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001027838",
+   "concern_type": "captive",
+   "recommendation": "This plant mainly serves the Pfeifer & Langen sugar factory, so the captive industrial fields may need filling. This was not part of the task.",
+   "note": "The regulator list shows the unit with district heat extraction and a sugar factory operator.",
+   "refs": []
+  },
+  {
+   "gem_unit_id": "G100001027838",
+   "concern_type": "fuel",
+   "recommendation": "GEM shows natural gas only. The register main fuel is natural gas and refinery gas. The newspaper says the plant ran on lignite until 2021, so a conversion entry may be worth a look.",
+   "note": "Not changed.",
+   "refs": [
+    "https://www.aachener-zeitung.de/lokales/region-dueren/juelich/zuckerfabrik-halbiert-den-co2-aussto%C3%9F/3947686.html"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Pfeifer & Langen GmbH & Co. KG",
+   "role": "owner",
+   "lookup_result": "Local and remote lookups both found nothing, so this would be a new entity."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.aachener-zeitung.de/lokales/region-dueren/juelich/zuckerfabrik-halbiert-den-co2-aussto%C3%9F/3947686.html",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Read through browser impersonation."
+  },
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Excel file read locally. Row: Pfeifer & Langen GmbH & Co. KG, Generator Jülich, in operation, 25.21 MW gross, 22.86 MW net, 2004."
+  },
+  {
+   "url": "https://www.bezreg-koeln.nrw.de/bekanntmachungen/pfeifer-langen-gmbh-co-kg-werk-juelich-duerener-strasse-20-52428-juelich",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "not relevant",
+   "note": "A 2023 permit notice for the sugar factory. It names the company and site but not the power plant."
+  }
+ ]
+}

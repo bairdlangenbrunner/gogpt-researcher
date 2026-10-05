@@ -1,0 +1,133 @@
+{
+ "meta": {
+  "plant_id": "L100000101886",
+  "plant_name": "Berlin-Klingenberg power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:27:31-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001017933",
+   "unit_name": "Unit 4, timepoint 2",
+   "findings": {
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://www.bew.berlin/binaries/content/assets/website/newsroom/faktenblatt_hkw_klingenberg.pdf",
+      "https://group.vattenfall.com/de/newsroom/blog/2017/05/heizkraftwerk-klingenberg-ende-und-beginn-einer-ara"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bew.berlin/binaries/content/assets/website/newsroom/faktenblatt_hkw_klingenberg.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://group.vattenfall.com/de/newsroom/blog/2017/05/heizkraftwerk-klingenberg-ende-und-beginn-einer-ara",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The BEW fact sheet says that in 2017 brown coal use ended at Klingenberg and the plant switched to natural gas. A Vattenfall blog post from May 2017 describes the same switch. So this is a conversion from coal to gas."
+    }
+   },
+   "not_found": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "notes": "Owner, city and conversion are confirmed by the BEW fact sheet. I found no document that states coordinates, so the latitude and longitude still have no source."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "BEW Berliner Energie und Wärme GmbH [100%]",
+   "refs": [
+    "https://www.bew.berlin/binaries/content/assets/website/newsroom/faktenblatt_hkw_klingenberg.pdf"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.bew.berlin/binaries/content/assets/website/newsroom/faktenblatt_hkw_klingenberg.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "A BEW fact sheet for the plant's 100-year celebration on 1 July 2026 calls it the BEW power plant Klingenberg and gives the company name as BEW Berliner Energie und Wärme GmbH. It does not give a share. The value matches GEM."
+  },
+  "City": {
+   "value": "Berlin",
+   "refs": [
+    "https://www.bew.berlin/binaries/content/assets/website/newsroom/faktenblatt_hkw_klingenberg.pdf"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.bew.berlin/binaries/content/assets/website/newsroom/faktenblatt_hkw_klingenberg.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The BEW fact sheet gives the address as Köpenicker Chaussee 42-45, 10317 Berlin. This matches the city in GEM."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100001017933",
+   "concern_type": "wrong_value",
+   "recommendation": "Check whether GEM unit Unit 4, timepoint 2 of 188 MW, started 2017, matches the plant. The fact sheet gives 164 MW electric for the whole plant.",
+   "note": "The register lists three steam turbines at Klingenberg of 52 to 56 MW net each. The 2017 switch to gas was a fuel change of existing boilers, not a new unit. I did not change anything.",
+   "refs": [
+    "https://www.bew.berlin/binaries/content/assets/website/newsroom/faktenblatt_hkw_klingenberg.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "BEW Berliner Energie und Wärme GmbH",
+   "role": "owner",
+   "lookup_result": "The entity lookup says this name appears on 22 units in Germany. Reuse the existing entity."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.bew.berlin/binaries/content/assets/website/newsroom/faktenblatt_hkw_klingenberg.pdf",
+   "used_for": [
+    "Owner(s)",
+    "City",
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "BEW fact sheet dated for 1 July 2026. Gives owner company, address and the 2017 switch to natural gas. No coordinates."
+  },
+  {
+   "url": "https://group.vattenfall.com/de/newsroom/blog/2017/05/heizkraftwerk-klingenberg-ende-und-beginn-einer-ara",
+   "used_for": [
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "Vattenfall blog post from May 2017 about the end of coal and start of gas at Klingenberg."
+  },
+  {
+   "url": "https://www.energie-chronik.de/170515.htm",
+   "used_for": [],
+   "outcome": "verified",
+   "note": "An energy chronicle entry about the gas switch in 2017. Same event, not cited."
+  }
+ ]
+}

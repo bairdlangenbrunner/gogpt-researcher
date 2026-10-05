@@ -1,0 +1,178 @@
+{
+ "meta": {
+  "plant_id": "L100000101968",
+  "plant_name": "Gersteinwerk power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:23:06-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001018094",
+   "unit_name": "CC1, timepoint 1",
+   "findings": {
+    "Latest Activity": {
+     "value": "Year: 2026",
+     "refs": [
+      "https://www.zfk.de/politik/deutschland/kraftwerksgesetz-stromvkg-uniper-rwe-kmw"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.zfk.de/politik/deutschland/kraftwerksgesetz-stromvkg-uniper-rwe-kmw",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Page mentions Werne; I read the paragraph naming the Werne project myself."
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A trade press article on the first capacity tender says RWE has described projects at Werne, Weisweiler and Voerde that could take part, but RWE gave no details. The month and day of the article were not confirmed, so only the year is given."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Start year",
+    "Equipment Manufacturer/Model",
+    "Owner(s)",
+    "Status Detail"
+   ],
+   "notes": "No change found. RWE still plans about 800 MW with at least 50 percent hydrogen in 2030, with Ansaldo Energia and Tecnicas Reunidas chosen in 2024. I found no permit, no construction start and no tender award, so the status stays pre-construction."
+  },
+  {
+   "gem_unit_id": "G100000400168",
+   "unit_name": "F1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit in this batch."
+  },
+  {
+   "gem_unit_id": "G100000405839",
+   "unit_name": "F2",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit in this batch."
+  },
+  {
+   "gem_unit_id": "G100000400169",
+   "unit_name": "G1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit in this batch."
+  },
+  {
+   "gem_unit_id": "G100000400170",
+   "unit_name": "G2",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit in this batch."
+  },
+  {
+   "gem_unit_id": "G100001027840",
+   "unit_name": "H1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit in this batch."
+  },
+  {
+   "gem_unit_id": "G100000400171",
+   "unit_name": "I1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit in this batch."
+  },
+  {
+   "gem_unit_id": "G100000409761",
+   "unit_name": "I2",
+   "findings": {},
+   "not_found": [
+    "Status",
+    "Retired year",
+    "Latest Activity"
+   ],
+   "notes": "The regulator's list dated June 2026 shows this unit as provisionally closed. I did not find a second source, so the status is left as mothballed and a question is raised."
+  },
+  {
+   "gem_unit_id": "G100000400172",
+   "unit_name": "K1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit in this batch."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000409761",
+   "concern_type": "status",
+   "recommendation": "Keep mothballed unless a second source shows the unit is back in service.",
+   "note": "The Bundesnetzagentur power plant list dated 26 June 2026 lists Gersteinwerk I DT (I2), operator RWE Generation SE, 355 MW, started 1973, with status provisionally closed. The regulator's mapping would read this as operating, but a status change needs two independent sources and I found only this one.",
+   "refs": [
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000400172",
+   "concern_type": "value",
+   "recommendation": "Check whether the unit named K1 is the 112 MW gas turbine Gersteinwerk K, started 1984.",
+   "note": "The same list shows Gersteinwerk K as 112 MW net, in the capacity reserve, while GEM's unit K1 was not checked in this batch. Also unit H1 is 46 MW in the list and 48 MW in GEM.",
+   "refs": [
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ]
+  }
+ ],
+ "monitor": [
+  {
+   "note": "Check the first capacity tender award list, due by 3 November 2026, for the Werne project.",
+   "recheck_by": "2026-11-10"
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.rwe.com/en/press/rwe-generation/2024-05-29-rwe-plans-hydrogen-ready-combined-cycle-gas-turbine-at-gersteinwerk-in-werne/",
+   "used_for": [
+    "Status",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "RWE press release from May 2024 confirms the 2030 plan. No newer step found."
+  },
+  {
+   "url": "https://www.tecnicasreunidas.es/rwe-awards-to-tecnicas-reunidas-and-ansaldo-energia-the-project-for-a-hydrogen-ready-combined-cycle-plant-in-germany/",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Existing source. Names Ansaldo Energia, already in GEM."
+  },
+  {
+   "url": "https://www.zfk.de/politik/deutschland/kraftwerksgesetz-stromvkg-uniper-rwe-kmw",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Verifier found Werne but not Gersteinwerk."
+  },
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Register file read with pandas, data date 26 June 2026."
+  },
+  {
+   "url": "https://www.nsenergybusiness.com/company-news/rwe-to-build-hydrogen-ready-ccgt-at-gersteinwerk-power-plant-in-germany/",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Existing source, not rechecked within budget."
+  }
+ ]
+}

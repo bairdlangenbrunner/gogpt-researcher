@@ -1,0 +1,185 @@
+{
+ "meta": {
+  "plant_id": "L100000101895",
+  "plant_name": "Schwarze Pumpe power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:27:25-04:00",
+  "done": true,
+  "urls_attempted": 7,
+  "urls_verified": 7
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000412838",
+   "unit_name": "CC1. timepoint 1",
+   "findings": {
+    "Status": {
+     "value": "pre-construction",
+     "refs": [
+      "https://www.leag.de/de/news/details/auf-dem-weg-zum-klimaneutralen-energierevier-leag-plant-bau-eines-h2-ready-gaskraftwerks-im-industr/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.leag.de/de/news/details/auf-dem-weg-zum-klimaneutralen-energierevier-leag-plant-bau-eines-h2-ready-gaskraftwerks-im-industr/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A LEAG press release says the company had already filed its emissions permit application under the federal immission control law and expected a first partial permit. That is active permitting, so pre-construction still fits. No construction start has been reported."
+    },
+    "Capacity (MW)": {
+     "value": "850.0",
+     "refs": [
+      "https://www.leag.de/de/news/details/schwarze-pumpe-soll-erstes-lausitzer-h2-ready-gaskraftwerk-bekommen/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.leag.de/de/news/details/schwarze-pumpe-soll-erstes-lausitzer-h2-ready-gaskraftwerk-bekommen/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A LEAG press release from 5 August 2025 says the first hydrogen-ready gas plant in the Lausitz region is planned with up to 850 MW at Schwarze Pumpe. This matches the current value."
+    },
+    "Latest Activity": {
+     "value": "Year: 2026, Month: 8, Day: 18",
+     "refs": [
+      "https://www.zfk.de/politik/deutschland/kraftwerksgesetz-stromvkg-uniper-rwe-kmw"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.zfk.de/politik/deutschland/kraftwerksgesetz-stromvkg-uniper-rwe-kmw",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A trade press article from 18 August 2026 says LEAG named Schwarze Pumpe, with Leipheim and Lippendorf, as projects it may offer in the first capacity tender under the new power plant law. LEAG gave no capacity and no bid details. A regional radio report from 9 September 2026 says LEAG has since taken part in the first bid round but has not said which projects it entered. The award is not due before 3 November 2026."
+    },
+    "Status Detail": {
+     "value": "LEAG named Schwarze Pumpe as a candidate for the first capacity tender in August 2026. The award decision is due by 3 November 2026.",
+     "refs": [
+      "https://www.zfk.de/politik/deutschland/kraftwerksgesetz-stromvkg-uniper-rwe-kmw",
+      "https://www.radiocottbus.de/lausitz-news/2026/09/09/neues-gaskraftwerk-in-der-lausitz-leag-hofft-auf-zuschlag-fuer-schwarze-pumpe/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.zfk.de/politik/deutschland/kraftwerksgesetz-stromvkg-uniper-rwe-kmw",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.radiocottbus.de/lausitz-news/2026/09/09/neues-gaskraftwerk-in-der-lausitz-leag-hofft-auf-zuschlag-fuer-schwarze-pumpe/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": true,
+     "note": "Both articles say LEAG plans to or did take part in the first tender round. Neither says that the Schwarze Pumpe project itself was entered. A bid is not an award and not a construction decision."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Turbine/Engine Technology",
+    "Owner(s)"
+   ],
+   "notes": "Still being permitted, with no tender award and no construction. I found no turbine maker for this plant in LEAG releases, in the trade press or in local news. No newer document gives a start date, so the current start year is left alone."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000412838",
+   "concern_type": "start_year",
+   "recommendation": "Consider whether the start year of 2028 is still realistic.",
+   "note": "No construction has been reported and the capacity tender award is not due before 3 November 2026. LEAG itself said in 2023 that a new plant needs seven to eight years from planning to operation. I found no newer official date, so I did not change it.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.leag.de/de/news/details/auf-dem-weg-zum-klimaneutralen-energierevier-leag-plant-bau-eines-h2-ready-gaskraftwerks-im-industr/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "LEAG press release about the permit application and the partial permit."
+  },
+  {
+   "url": "https://www.leag.de/de/news/details/schwarze-pumpe-soll-erstes-lausitzer-h2-ready-gaskraftwerk-bekommen/",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "LEAG press release from 5 August 2025. States up to 850 MW."
+  },
+  {
+   "url": "https://www.zfk.de/politik/deutschland/kraftwerksgesetz-stromvkg-uniper-rwe-kmw",
+   "used_for": [
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Trade press article from 18 August 2026."
+  },
+  {
+   "url": "https://www.radiocottbus.de/lausitz-news/2026/09/09/neues-gaskraftwerk-in-der-lausitz-leag-hofft-auf-zuschlag-fuer-schwarze-pumpe/",
+   "used_for": [
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Regional radio report from 9 September 2026."
+  },
+  {
+   "url": "https://www.klimareporter.de/strom/gruenes-maentelchen-fossile-seele",
+   "used_for": [
+    "Status",
+    "Fuel"
+   ],
+   "outcome": "verified",
+   "note": "Existing source, still loads and names Schwarze Pumpe. Carried forward."
+  },
+  {
+   "url": "https://www.medienservice.sachsen.de/medien/news/1062983",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Existing source, still loads and names Schwarze Pumpe. Carried forward."
+  },
+  {
+   "url": "https://www.leag.de/de/geschaeftsfelder/kraftwerke/kraftwerk-schwarze-pumpe/",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Existing source, still loads and names Schwarze Pumpe. Carried forward."
+  },
+  {
+   "url": "https://www.linkedin.com/posts/j%C3%B6rg-tudyka-35929079_schwarze-pumpe-soll-erstes-lausitzer-h2-ready-gaskraftwerk-activity-7358184219799367680-v8o_/?originalSubdomain=de",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "not relevant",
+   "note": "Existing source, not rechecked. A LinkedIn post that repeats the LEAG press release. Carried forward."
+  }
+ ]
+}

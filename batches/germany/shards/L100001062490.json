@@ -1,0 +1,151 @@
+{
+ "meta": {
+  "plant_id": "L100001062490",
+  "plant_name": "Frank Cube power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:30:10-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001071773",
+   "unit_name": "1",
+   "findings": {
+    "Latest Activity": {
+     "value": "Year: 2026, Month: 8, Day: 27",
+     "refs": [
+      "https://www.hessenschau.de/wirtschaft/mega-projekt-in-schluechtern-neues-kraftwerk-soll-rechenzentrum-versorgen-v2,kraftwerksplaene-schluechtern-100.html",
+      "https://www.gnz.de/lokales/main-kinzig-kreis/birstein/birstein-und-schluechtern-kooperieren-kraftwerk-soll-strom-fuer-rechenzentrum-liefern-X6FTBANV4VGR7ATVISRC4TXNTA.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.hessenschau.de/wirtschaft/mega-projekt-in-schluechtern-neues-kraftwerk-soll-rechenzentrum-versorgen-v2,kraftwerksplaene-schluechtern-100.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.gnz.de/lokales/main-kinzig-kreis/birstein/birstein-und-schluechtern-kooperieren-kraftwerk-soll-strom-fuer-rechenzentrum-liefern-X6FTBANV4VGR7ATVISRC4TXNTA.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "On 27 August 2026 the town of Schlüchtern announced a 750 million euro power plant of 276 MW to supply the Argaman Group data center in Birstein. A hessenschau article and a Gelnhäuser Neue Zeitung article from 28 August 2026 both report it. Both rely on the same town and developer announcement."
+    },
+    "Status Detail": {
+     "value": "Argaman Group moved the planned power plant from Birstein to Schlüchtern in August 2026. The plant is planned at 276 MW, 80 percent fuel cells and 20 percent gas, with construction to start in early 2028.",
+     "refs": [
+      "https://www.hessenschau.de/wirtschaft/mega-projekt-in-schluechtern-neues-kraftwerk-soll-rechenzentrum-versorgen-v2,kraftwerksplaene-schluechtern-100.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.hessenschau.de/wirtschaft/mega-projekt-in-schluechtern-neues-kraftwerk-soll-rechenzentrum-versorgen-v2,kraftwerksplaene-schluechtern-100.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The hessenschau article of 28 August 2026 gives the 276 MW, the 80 and 20 percent split and the construction start in early 2028. The Gelnhäuser Neue Zeitung article confirms that the plant moves to Schlüchtern."
+    }
+   },
+   "not_found": [
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Owner(s)",
+    "Status"
+   ],
+   "notes": "The status stays announced. No permit or construction was found. The plant is now planned in Schlüchtern, not Birstein, and most of its power would come from fuel cells, so the unit needs review."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001071773",
+   "concern_type": "location and scope change",
+   "recommendation": "Review whether this unit should move to Schlüchtern and be renamed, and whether it still counts as a gas plant.",
+   "note": "In August 2026 the developer and the town of Schlüchtern announced that the power plant for the Birstein data center will be built in the Auf dem Reitstück industrial area in Schlüchtern, near the Elm substation, not in Birstein. The plant is planned at 276 MW, with 80 percent from fuel cells and 20 percent from gas burning, and hydrogen from the mid 2030s. About 50 MW of heat would go to a district heating network. GEM's 135 MW estimate was based on gas supplying half of 250 to 270 MW, so it no longer matches. Gas would supply roughly 55 MW if the 20 percent applies to the 276 MW. I did not change the capacity because the source does not give a gas capacity.",
+   "refs": [
+    "https://www.hessenschau.de/wirtschaft/mega-projekt-in-schluechtern-neues-kraftwerk-soll-rechenzentrum-versorgen-v2,kraftwerksplaene-schluechtern-100.html",
+    "https://www.gnz.de/lokales/main-kinzig-kreis/birstein/birstein-und-schluechtern-kooperieren-kraftwerk-soll-strom-fuer-rechenzentrum-liefern-X6FTBANV4VGR7ATVISRC4TXNTA.html"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001071773",
+   "concern_type": "start year and owner",
+   "recommendation": "Consider moving the start year later and wait for the named builder.",
+   "note": "Construction is to start in early 2028 and take two years, so operation would be around 2030. GEM has 2028, which now looks like the data center date from earlier articles. The town says a large German energy company will build and operate the plant, but it has not been named. The owner in GEM, Argaman Group GmbH, may change once that company is named.",
+   "refs": [
+    "https://www.hessenschau.de/wirtschaft/mega-projekt-in-schluechtern-neues-kraftwerk-soll-rechenzentrum-versorgen-v2,kraftwerksplaene-schluechtern-100.html"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001071773",
+   "concern_type": "technology",
+   "recommendation": "Review the combined cycle entry.",
+   "note": "The sources describe fuel cells and gas burning. They do not say combined cycle. The technology and the combined heat and power flag could not be confirmed from the sources I read.",
+   "refs": [
+    "https://www.hessenschau.de/wirtschaft/mega-projekt-in-schluechtern-neues-kraftwerk-soll-rechenzentrum-versorgen-v2,kraftwerksplaene-schluechtern-100.html"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001071773",
+   "concern_type": "other",
+   "recommendation": "Note the local politics.",
+   "note": "The Birstein council refused a citizens' vote on the data center in June 2026, according to hessenschau. A similar gas plant for a data center in Maintal failed in its city council.",
+   "refs": [
+    "https://www.hessenschau.de/wirtschaft/mega-rechenzentrum-in-birstein-gemeinde-bremst-buergerentscheid-aus-v1,rechenzentrum-birstein-100.html"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.hessenschau.de/wirtschaft/mega-projekt-in-schluechtern-neues-kraftwerk-soll-rechenzentrum-versorgen-v2,kraftwerksplaene-schluechtern-100.html",
+   "used_for": [
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "hessenschau article, 28 August 2026."
+  },
+  {
+   "url": "https://www.gnz.de/lokales/main-kinzig-kreis/birstein/birstein-und-schluechtern-kooperieren-kraftwerk-soll-strom-fuer-rechenzentrum-liefern-X6FTBANV4VGR7ATVISRC4TXNTA.html",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Gelnhäuser Neue Zeitung article, 28 August 2026."
+  },
+  {
+   "url": "https://www.hessenschau.de/wirtschaft/mega-rechenzentrum-in-birstein-gemeinde-bremst-buergerentscheid-aus-v1,rechenzentrum-birstein-100.html",
+   "used_for": [],
+   "outcome": "verified",
+   "note": "hessenschau article, 12 June 2026, last updated 14 September 2026. States that a gas plant would back the first phase and the data center is planned by 2028."
+  },
+  {
+   "url": "https://www.gnz.de/lokales/main-kinzig-kreis/birstein/main-kinzig-kreis-plaene-fuer-mega-rechenzentrum-in-birtein-milliarden-projekt-ILDAQMZTLNBBVA2PJAOJ27ZAEM.html",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Existing source. Not rechecked."
+  },
+  {
+   "url": "https://www.iz.de/projekte/news/-argaman-darf-datacenter-am-vogelsberg-bauen-2000045295",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Paywalled after the first paragraph. It says Birstein's council approved the project including a gas plant."
+  }
+ ]
+}

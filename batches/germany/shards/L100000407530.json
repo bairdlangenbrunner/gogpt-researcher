@@ -1,0 +1,83 @@
+{
+ "meta": {
+  "plant_id": "L100000407530",
+  "plant_name": "Ineos Köln power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:32:42-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000409740",
+   "unit_name": "1",
+   "findings": {},
+   "not_found": [
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "I could not find the gas turbine maker or model. Project pages and trade press give only the 25 MW size and the steam turbine size. I did not guess a model."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000409740",
+   "concern_type": "start year",
+   "recommendation": "Review the start year of 2023 and the capacity of 58 MW. Do not change them without more evidence.",
+   "note": "The INEOS Cologne project page says the plant went into operation in February 2025. GEM shows a start year of 2023. The regulator's plant list dated June 2026 shows two INEOS Manufacturing Deutschland units that may belong to this plant. One is a 32 MW natural gas unit from 2022 and one is a 38 MW unit from 2025. A consulting firm that worked on the project gives a 25 MW gas turbine and a 38 MW steam turbine, which adds up to 63 MW, not 58 MW. I could not tell which register rows match this plant, so I made no change.",
+   "refs": [
+    "https://www.ineoskoeln.de/unternehmen/projekte/gud-anlage/",
+    "https://www.filzmaier.org/projekte-ingenieurbuero/gud-anlage-ineos-koeln.html"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.ineoskoeln.de/unternehmen/projekte/gud-anlage/",
+   "used_for": [
+    "Start year",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "States commissioning in February 2025. No turbine maker named."
+  },
+  {
+   "url": "https://www.filzmaier.org/projekte-ingenieurbuero/gud-anlage-ineos-koeln.html",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Gives a 25 MW gas turbine and a 38 MW steam turbine. No maker or model named."
+  },
+  {
+   "url": "https://www.steag-iqony-group.com/projekte/detail/owners-engineer-im-gud-kraftwerk-koeln",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "failed",
+   "note": "Read through the fetch ladder. No turbine maker named."
+  },
+  {
+   "url": "https://binnenschifffahrt-online.de/2019/12/schifffahrt/12059/",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "failed",
+   "note": "Describes delivery of a 100 tonne gas turbine to Dormagen. No maker named."
+  },
+  {
+   "url": "https://baumaschinen.online/artikel/gasturbine-vom-schiff-ins-kraftwerk-verfrachtet-005429",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "failed",
+   "note": "Describes the crane work. No maker named."
+  }
+ ]
+}

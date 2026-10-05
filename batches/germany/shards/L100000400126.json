@@ -1,0 +1,156 @@
+{
+ "meta": {
+  "plant_id": "L100000400126",
+  "plant_name": "Charlottenburg power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:29:37-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400126",
+   "unit_name": "1",
+   "findings": {},
+   "not_found": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "City"
+   ],
+   "notes": "The owner is supported by the sources above, and the value matches GEM. I found no document that states coordinates for the plant. "
+  },
+  {
+   "gem_unit_id": "G100000409766",
+   "unit_name": "2",
+   "findings": {},
+   "not_found": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "City"
+   ],
+   "notes": "The owner is supported by the sources above, and the value matches GEM. I found no document that states coordinates for the plant. "
+  },
+  {
+   "gem_unit_id": "G100000409765",
+   "unit_name": "GT 6",
+   "findings": {},
+   "not_found": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "City"
+   ],
+   "notes": "The owner is supported by the sources above, and the value matches GEM. I found no document that states coordinates for the plant. The regulator's list shows gas turbine 6 as permanently closed in 2018, but it lists the fuel as oil products. GEM shows a retired year of 2021."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "BEW Berliner Energie und Wärme GmbH [100%]",
+   "refs": [
+    "https://www.berlin.de/lagetsi/aktuelles/bekanntmachungen/artikel.1587778.php",
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.berlin.de/lagetsi/aktuelles/bekanntmachungen/artikel.1587778.php",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": true,
+   "note": "A Berlin state permit notice names BEW Berliner Energie und Wärme GmbH as the company behind the permit for the Charlottenburg plant. The regulator's list dated 26 June 2026 shows BEW as operator of Charlottenburg gas turbines 4 and 5. Neither document gives a share, so the 100 percent is not confirmed. The value matches GEM."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000409765",
+   "concern_type": "retired year",
+   "recommendation": "Check the retired year of GT 6. No change now.",
+   "note": "The regulator's list dated 26 June 2026 has a row for HKW Charlottenburg Gasturbine 6 with status permanently closed under section 13b of the energy law and a closure year of 2018. GEM shows 2021. That row gives the fuel as oil products and the operator is blank. It may be a different turbine from the one in GEM. This field was outside the tasks in the brief.",
+   "refs": [
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000400126",
+   "concern_type": "location",
+   "recommendation": "Add a location source. The street address is Am Spreebord 5, 10589 Berlin, but I could not verify it on a page.",
+   "note": "Web search results gave Am Spreebord 5 in Berlin as the plant address, but none of the pages I could check printed that address. So I cannot support the coordinates 52.5219, 13.3111 or the city Berlin with a document. The Berlin permit notice names the plant and the city's environment office as the authority.",
+   "refs": [
+    "https://www.berlin.de/lagetsi/aktuelles/bekanntmachungen/artikel.1587778.php"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "BEW Berliner Energie und Wärme GmbH",
+   "role": "owner",
+   "lookup_result": "Not run. The name is already GEM's current owner value and I changed nothing."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Loads. Read with a spreadsheet tool. Rows for Charlottenburg gas turbines 4, 5 and 6, data date 26 June 2026."
+  },
+  {
+   "url": "https://www.bew.berlin/fernwaermesystem/erzeugungsanlagen/",
+   "used_for": [
+    "Location"
+   ],
+   "outcome": "not relevant",
+   "note": "Loads, but the address Spreebord is not on the page."
+  },
+  {
+   "url": "https://www.berlin.de/lagetsi/aktuelles/bekanntmachungen/artikel.1587778.php",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Permit notice for the Charlottenburg plant by BEW."
+  },
+  {
+   "url": "https://www.berlin.de/lagetsi/aktuelles/bekanntmachungen/artikel.1587918.php",
+   "used_for": [
+    "Location"
+   ],
+   "outcome": "not relevant",
+   "note": "Loads, no street address on the page."
+  },
+  {
+   "url": "https://www.entwicklungsstadt.de/heizkraftwerk-charlottenburg-genehmigung-fuer-neue-gasturbinen-ab-2028/",
+   "used_for": [
+    "Location"
+   ],
+   "outcome": "not relevant",
+   "note": "Loads, address text not found."
+  },
+  {
+   "url": "https://powerplants.vattenfall.com/#/view=map/sort=name",
+   "used_for": [
+    "existing source"
+   ],
+   "outcome": "not relevant",
+   "note": "Existing link, not rechecked. Carry it forward."
+  }
+ ]
+}

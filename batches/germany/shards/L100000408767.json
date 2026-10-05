@@ -1,0 +1,176 @@
+{
+ "meta": {
+  "plant_id": "L100000408767",
+  "plant_name": "Dresden power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:30:10-04:00",
+  "done": true,
+  "urls_attempted": 8,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000412903",
+   "unit_name": "EVC1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing was checked for this unit, as the brief asked. The 1998 engines are still listed as in operation in the regulator's list."
+  },
+  {
+   "gem_unit_id": "G100000412902",
+   "unit_name": "EVC2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+       "ok": true,
+       "contains_value": false,
+       "name_found": false
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Bundesnetzagentur power plant list with data date 26 June 2026 shows nine gas engines of GlobalFoundries Dresden Module One LLC & Co. KG, named Gasmotoren-Blockheizkraftwerk II, generators 1 to 9, as in operation. They were commissioned in 2004. None has a closure year. So the unit did not retire in 2024 and the status stays operating. The file is a spreadsheet, so the verifier could only prove that it loads. I read the rows myself."
+    }
+   },
+   "not_found": [
+    "Retired year"
+   ],
+   "notes": "The planned retirement year of 2024 has passed, but the unit is still in operation. The owner's 2022 environmental report plans to replace its old engines with new ones, not to close the unit. Details are in the questions."
+  },
+  {
+   "gem_unit_id": "G100001024025",
+   "unit_name": "EVC3",
+   "findings": {},
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Latest Activity",
+    "Owner(s)"
+   ],
+   "notes": "No change found. The 2022 environmental report describes a new building with 8 gas engines, so pre-construction is still reasonable. I could not read any newer document that gives a start date, the engine make or a construction start. The permit office and its notice pages were blocked or empty."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000412902",
+   "concern_type": "stale planned retirement",
+   "recommendation": "Clear the planned retirement year of 2024 and consider recording the engine replacement in the status detail.",
+   "note": "The 2022 environmental report for EVC 1, EVC 2 and EVC 3 says the nine existing engines of each of the first two blocks are to be swapped for nine new engines of 5.28 MW electric each. That would raise each block from about 34.9 MW to 47.5 MW electric. The report names Bergen Engines type B36:45 L9AG1 as the expected make. It says nothing about closing either block. The regulator's list of June 2026 still shows the old 3.8 MW engines as in operation. I could not find a date for the swap.",
+   "refs": [
+    "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/1d802955-e253-435f-8bf8-ecde4471591f/UVP-B_EVC_1_3.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000412902",
+   "concern_type": "capacity",
+   "recommendation": "Check whether 39.0 MW is right for EVC2.",
+   "note": "GEM has 10 engines of 3.9 MW, which gives 39.0 MW. The environmental report says nine engines are installed and ten were permitted, at about 34.9 MW electric in total. The regulator's list shows nine engines of 3.83 MW gross, about 34.5 MW. The same list shows nine engines for EVC1 at 3.88 MW gross, about 35.0 MW, while GEM has 8 engines and 31.2 MW. Both blocks may be undercounted or overcounted in GEM. I did not change the values because the brief did not ask for a capacity check on these blocks.",
+   "refs": [
+    "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/1d802955-e253-435f-8bf8-ecde4471591f/UVP-B_EVC_1_3.pdf",
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001024025",
+   "concern_type": "equipment make",
+   "recommendation": "Check the engine make for EVC3.",
+   "note": "GEM lists MTU 4000 series. The environmental report names Bergen Engines for the replacement engines in EVC 1 and EVC 2 as the expected make. It does not clearly name a make for EVC 3. The new engines for EVC 3 may be the same type, but I could not confirm that.",
+   "refs": [
+    "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/1d802955-e253-435f-8bf8-ecde4471591f/UVP-B_EVC_1_3.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001024025",
+   "concern_type": "latest activity",
+   "recommendation": "Add a Latest Activity date once the permit notice can be read.",
+   "note": "A web search result showed that the Saxony state directorate gave the first partial permit for building EVC 3 on 14 April 2025. The permit office website blocked my requests with a too many requests error, so I could not read the notice or check this date. It is not recorded as a finding.",
+   "refs": []
+  },
+  {
+   "gem_unit_id": "G100000412903",
+   "concern_type": "owner",
+   "recommendation": "Check the owner names.",
+   "note": "GEM names Energieversorgungscenter Dresden-Wilschdorf GmbH & Co KG as owner. The regulator's list names GlobalFoundries Dresden Module Two LLC & Co. KG as operator of the 1998 engines and Module One LLC & Co. KG for the 2004 engines. The permit documents name a company called Zweite Energieversorgungscenter Dresden-Wilschdorf GmbH & Co. KG for EVC 2. The register names the operator, not necessarily the owner, so no change is proposed.",
+   "refs": [
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Regulator power plant list, data date 26 June 2026. Read from the downloaded file."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/1d802955-e253-435f-8bf8-ecde4471591f/UVP-B_EVC_1_3.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "Equipment Manufacturer/Model",
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Owner's environmental report dated 19 September 2022. The live site returned too many requests, so the check passed on an archived copy. Cited as the live address."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/1d802955-e253-435f-8bf8-ecde4471591f/2022_11-08_Bekanntmachung%20Auslegung%20E%C3%96T%20GV%20EVC%202.pdf",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "blocked",
+   "note": "Existing source. The site returned too many requests and no archived copy exists. I tried the repo fetcher, the verifier and curl. It is not dead. Keep it."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/a56b4d10-6aa9-41ec-85b9-a7283d8661f9/Bekanntmachung%20Bescheid_1.TG%20EVC%203.docx.pdf",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "blocked",
+   "note": "Permit notice for EVC 3. Too many requests and no archived copy."
+  },
+  {
+   "url": "https://ldc.sachsen.de/bekanntmachung/?ID=22592&art_param=634",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "failed",
+   "note": "Redirected to the state directorate home page."
+  },
+  {
+   "url": "https://www.bhkw-infozentrum.de/innovative/evc_dresden.html",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Existing source for EVC1. Not rechecked because EVC1 needed no check."
+  },
+  {
+   "url": "https://oiger.de/2021/12/16/globalfoundries-dresden-investiert-in-sein-chipfabrik-kraftwerk/181573",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Existing source. Not rechecked, no budget needed for the tasks."
+  },
+  {
+   "url": "https://www.heise.de/news/Chipauftragsfertiger-Globalfoundries-Dresden-baut-neues-eigenes-Kraftwerk-6298353.html",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "A December 2021 article. It gives nine MWM engines and 35 MW for the old plant. Too old to change anything."
+  }
+ ]
+}

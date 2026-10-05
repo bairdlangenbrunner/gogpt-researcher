@@ -1,0 +1,116 @@
+{
+ "meta": {
+  "plant_id": "L100000400140",
+  "plant_name": "Emden power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:29:58-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400140",
+   "unit_name": "GT",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing was asked for this unit. It was left alone. The same register shows the gas turbine in the capacity reserve."
+  },
+  {
+   "gem_unit_id": "G100000412896",
+   "unit_name": "ST",
+   "findings": {
+    "Status": {
+     "value": "mothballed",
+     "refs": [
+      "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The regulator's power plant list dated 26 June 2026 still shows the Emden steam unit as provisionally closed. That matches mothballed. No change from the database. Register row from the Bundesnetzagentur power plant list with data date 26 June 2026: operator Statkraft Markets GmbH, 'Kraftwerk Emden Dampfturbine', status 'vorläufig Stillgelegt', meaning provisionally closed,, 433 MW net, commissioned 1973."
+    },
+    "Status Detail": {
+     "value": "Provisionally closed since 2012 and held as a cold reserve. The regulator's list of June 2026 still shows it as provisionally closed",
+     "refs": [
+      "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The regulator's list is the main source. A Wikipedia article gives the 2012 closure and the cold reserve, but it is only a lead and is not counted as a source here."
+    },
+    "Latest Activity": {
+     "value": "Year: 2026, Month: 6, Day: 26",
+     "refs": [
+      "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The data date of the regulator's list is 26 June 2026. It is the newest dated report I found that shows the unit's state. No press report on this unit was found."
+    }
+   },
+   "not_found": [
+    "Retired year"
+   ],
+   "notes": "Still mothballed. No sign of a return to service or of final closure. No retired year is given because the unit is mothballed."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "Status",
+    "Status Detail",
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Read the downloaded Excel file. Register row from the Bundesnetzagentur power plant list with data date 26 June 2026: operator Statkraft Markets GmbH, 'Kraftwerk Emden Dampfturbine', status 'vorläufig Stillgelegt', meaning provisionally closed,, 433 MW net, commissioned 1973."
+  },
+  {
+   "url": "https://www.statkraft.com/about-statkraft/where-we-operate/germany/emden-gas-fired-power-plant/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "dead",
+   "note": "Existing link in the database. It now returns page not found. I tried the redirected address as well. Kept in the database trail. Not dropped."
+  },
+  {
+   "url": "https://de.wikipedia.org/wiki/Kraftwerk_Emden",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Lead only. Gives the 2012 closure and cold reserve. Not counted as a source."
+  }
+ ]
+}

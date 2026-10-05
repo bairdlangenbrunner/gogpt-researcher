@@ -1,0 +1,134 @@
+{
+ "meta": {
+  "plant_id": "L100000101928",
+  "plant_name": "Chemiepark Marl power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:30:50-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000412905",
+   "unit_name": "310",
+   "findings": {},
+   "not_found": [
+    "Captive non-industry use"
+   ],
+   "notes": "The captive industry fields are supported by an Evonik press release. I found no document that says what the captive non-industry use is."
+  },
+  {
+   "gem_unit_id": "G100000400128",
+   "unit_name": "311",
+   "findings": {},
+   "not_found": [
+    "Captive non-industry use"
+   ],
+   "notes": "The captive industry fields are supported by an Evonik press release. I found no document that says what the captive non-industry use is."
+  },
+  {
+   "gem_unit_id": "G100000400129",
+   "unit_name": "312",
+   "findings": {},
+   "not_found": [
+    "Captive non-industry use"
+   ],
+   "notes": "The captive industry fields are supported by an Evonik press release. I found no document that says what the captive non-industry use is."
+  },
+  {
+   "gem_unit_id": "G100000400127",
+   "unit_name": "4",
+   "findings": {},
+   "not_found": [
+    "Captive non-industry use"
+   ],
+   "notes": "The captive industry fields are supported by an Evonik press release. I found no document that says what the captive non-industry use is."
+  },
+  {
+   "gem_unit_id": "G100000400130",
+   "unit_name": "CC6",
+   "findings": {},
+   "not_found": [
+    "Captive non-industry use"
+   ],
+   "notes": "The captive industry fields are supported by an Evonik press release. I found no document that says what the captive non-industry use is."
+  },
+  {
+   "gem_unit_id": "G100000400131",
+   "unit_name": "CC7",
+   "findings": {},
+   "not_found": [
+    "Captive non-industry use"
+   ],
+   "notes": "The captive industry fields are supported by an Evonik press release. I found no document that says what the captive non-industry use is."
+  }
+ ],
+ "plant_findings": {
+  "Captive industry type": {
+   "value": "chemicals",
+   "refs": [
+    "https://publications.evonik.com/de/presse/pressemitteilungen/corporate/eon-und-evonik-stellen-energieversorgung-im-chemiepark-marl-sicher-105804.html"
+   ],
+   "verifications": [
+    {
+     "url": "https://publications.evonik.com/de/presse/pressemitteilungen/corporate/eon-und-evonik-stellen-energieversorgung-im-chemiepark-marl-sicher-105804.html",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "An Evonik press release from June 2013 calls the Marl chemical park the largest production site of Evonik. It says the power plants there make steam and electricity for the site. So the type is chemicals."
+  },
+  "Captive industry use": {
+   "value": "both",
+   "refs": [
+    "https://publications.evonik.com/de/presse/pressemitteilungen/corporate/eon-und-evonik-stellen-energieversorgung-im-chemiepark-marl-sicher-105804.html"
+   ],
+   "verifications": [
+    {
+     "url": "https://publications.evonik.com/de/presse/pressemitteilungen/corporate/eon-und-evonik-stellen-energieversorgung-im-chemiepark-marl-sicher-105804.html",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The same Evonik press release says the plants at Marl make both steam and electricity. A later Evonik announcement says the plants also supply Evonik sites across Germany with power. The release does not use the words used in the database, so this value is implied."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000412905",
+   "concern_type": "value",
+   "recommendation": "Check whether the value both for captive non-industry use is right.",
+   "note": "The database shows both for captive non-industry use. No document I found says the Marl plants supply anything other than the chemical park and other Evonik sites. This value may be wrong. Also, the press release describes a 60 MW combined cycle plant built with E.ON for Evonik. I could not tell which unit that is.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://publications.evonik.com/de/presse/pressemitteilungen/corporate/eon-und-evonik-stellen-energieversorgung-im-chemiepark-marl-sicher-105804.html",
+   "used_for": [
+    "Captive industry use",
+    "Captive industry type"
+   ],
+   "outcome": "verified",
+   "note": "Evonik press release dated 27 June 2013 about the new gas and steam turbine plant at the Marl chemical park."
+  },
+  {
+   "url": "https://www.chemiepark-marl.de/de/evonik-nimmt-neues-gaskraftwerk-in-marl-in-betrieb-178347.html",
+   "used_for": [],
+   "outcome": "dead",
+   "note": "Page returned HTTP 404 in the verifier."
+  }
+ ]
+}

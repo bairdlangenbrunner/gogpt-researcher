@@ -1,0 +1,113 @@
+{
+ "meta": {
+  "plant_id": "L100000101894",
+  "plant_name": "Janschwalde power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:29:09-04:00",
+  "done": true,
+  "urls_attempted": 7,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000412873",
+   "unit_name": "CC1, timepoint 1",
+   "findings": {
+    "Latest Activity": {
+     "value": "Year: 2026, Month: 9, Day: 9",
+     "refs": [
+      "https://www.leag.de/de/news/details/leag-beteiligt-sich-mit-mehreren-projekten-und-standorten-an-der-ausschreibung-fuer-zukunftskraftwerke/",
+      "https://www.lausitz.tv/2026/09/09/leag-bewirbt-sich-mit-mehreren-kraftwerksprojekten-fuer-zukunftskraftwerke/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.leag.de/de/news/details/leag-beteiligt-sich-mit-mehreren-projekten-und-standorten-an-der-ausschreibung-fuer-zukunftskraftwerke/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.lausitz.tv/2026/09/09/leag-bewirbt-sich-mit-mehreren-kraftwerksprojekten-fuer-zukunftskraftwerke/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": true,
+     "note": "On 9 September 2026 LEAG said it is bidding in the first capacity tender for new power plants, with sites including Jänschwalde. The Bundesnetzagentur will publish awards by 3 November 2026. No project details were given."
+    },
+    "Status Detail": {
+     "value": "LEAG has entered the Jänschwalde site in the first capacity tender. Awards are due by 3 November 2026.",
+     "refs": [
+      "https://www.leag.de/de/news/details/leag-beteiligt-sich-mit-mehreren-projekten-und-standorten-an-der-ausschreibung-fuer-zukunftskraftwerke/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.leag.de/de/news/details/leag-beteiligt-sich-mit-mehreren-projekten-und-standorten-an-der-ausschreibung-fuer-zukunftskraftwerke/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "This is a bid, not a decision. The status stays pre-construction."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Start year",
+    "Capacity (MW)",
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "Status stays pre-construction. An AFRY page of 5 July 2023 says the plant uses an H-class gas turbine of the newest generation, but names no maker."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000412873",
+   "concern_type": "start_year",
+   "recommendation": "Check the start year of 2028.",
+   "note": "A search summary said construction from 2026 and operation in 2029. I could not confirm this on a page. A 2022 LEAG release says operation was expected in 2028.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.leag.de/de/news/details/leag-beteiligt-sich-mit-mehreren-projekten-und-standorten-an-der-ausschreibung-fuer-zukunftskraftwerke/",
+   "used_for": [
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Found Jänschwalde and 03. November 2026."
+  },
+  {
+   "url": "https://www.lausitz.tv/2026/09/09/leag-bewirbt-sich-mit-mehreren-kraftwerksprojekten-fuer-zukunftskraftwerke/",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Found Jänschwalde."
+  },
+  {
+   "url": "https://www.leag.de/de/gigawattfactory/innovationskraftwerk/",
+   "used_for": [],
+   "outcome": "dead",
+   "note": "Existing source. Returns not found. Kept in the source list."
+  },
+  {
+   "url": "https://afry.com/de-de/newsroom/news/leag-reicht-den-mit-afrys-unterstutzung-erarbeiteten-genehmigungsantrag-fur-eine-der",
+   "used_for": [],
+   "outcome": "verified",
+   "note": "Found H-Klasse. No maker named, so not used as a finding."
+  }
+ ]
+}

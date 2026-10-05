@@ -34,10 +34,28 @@ gives two comparisons from one run: the agent against a researcher's fresh
 work, and the agent against stale rows where it should find real updates.
 Statuses present: 30 operating, 4 retired, 2 announced, 1 cancelled.
 
+## Country mode (added 2026-10-05)
+
+The same pipeline runs for a whole country, first used for Dan O'Beirne's
+European countries (`notes/europe_batches_plan.md`). `build_state_brief.py
+--country "<Country>"` replaces `--state`; the batch dir is the country slug
+(`batches/germany/`; record IDs stay `<plant id>:<unit id>:<field>`); the note
+read is `docs/country_notes/<slug>.md`; the two EIA "Other IDs" tasks are not
+generated. The scope travels as a `where` object (`kind`, `name`, `slug`,
+`country`, `postal`) in `_index.json`, `sweep_args.json` and the staged
+records' `meta.scope`; old indexes with only `state`/`postal` still work. The
+workflow prompt swaps the EIA and ISO ladder for a country ladder (regulator
+register, transmission operator and ENTSO-E, capacity-market registers,
+permit registers, owner pages, local-language press) and states the 20 MW
+threshold for EU and UK countries. The scope-wide agent still writes
+`shards/_state.json`. Everything below reads "state" but applies to a
+country the same way.
+
 ## Directory layout per state
 
 ```
 batches/us-<st>/                      <st> = two-letter postal code, lowercase (us-md)
+                                      a country uses its slug instead: batches/germany/
   briefs/<Lxxxxxxxxxxxx>.md           one brief per plant (GEM location ID)
   briefs/_index.json                  list of plants, brief paths, unit IDs, worklist priority
   briefs/_hidden/<L...>.json          blind mode only: the withheld GEM values, for the compare step

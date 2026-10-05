@@ -1,0 +1,143 @@
+{
+ "meta": {
+  "plant_id": "L100000101875",
+  "plant_name": "Heilbronn power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:29:09-04:00",
+  "done": true,
+  "urls_attempted": 9,
+  "urls_verified": 9
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000409758",
+   "unit_name": "Unit A, timepoint 1",
+   "findings": {
+    "Status": {
+     "value": "construction",
+     "refs": [
+      "https://www.enbw.com/unternehmen/themen/kohleausstieg/heizkraftwerk-heilbronn/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.enbw.com/unternehmen/themen/kohleausstieg/heizkraftwerk-heilbronn/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "EnBW's project page still shows the plant in construction and commissioning, with commercial operation expected in the third or fourth quarter of 2027. No change."
+    },
+    "Start year": {
+     "value": "2027",
+     "refs": [
+      "https://www.enbw.com/unternehmen/themen/kohleausstieg/heizkraftwerk-heilbronn/",
+      "https://h2-news.de/wirtschaft-unternehmen/neue-gas-und-dampfturbinenanlage-ist-h2-ready/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.enbw.com/unternehmen/themen/kohleausstieg/heizkraftwerk-heilbronn/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://h2-news.de/wirtschaft-unternehmen/neue-gas-und-dampfturbinenanlage-ist-h2-ready/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "EnBW expects commercial operation in the third or fourth quarter of 2027. A trade news article of 5 March 2026 also gives 2027."
+    },
+    "Latest Activity": {
+     "value": "Year: 2026, Month: 8",
+     "refs": [
+      "https://www.enbw.com/unternehmen/themen/kohleausstieg/heizkraftwerk-heilbronn/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.enbw.com/unternehmen/themen/kohleausstieg/heizkraftwerk-heilbronn/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The newest dated entry on the EnBW page is August 2026, about the temporary village for 800 workers at the HLB 8 site. July 2026 shows the new gas pipeline put into service."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE Vernova: 9HA.01, GE Vernova: STF-D650",
+     "refs": [
+      "https://www.ge.com/news/press-releases/ge-vernova-secures-two-h-class-combined-cycle-equipment-orders-with-hydrogen"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.ge.com/news/press-releases/ge-vernova-secures-two-h-class-combined-cycle-equipment-orders-with-hydrogen",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A GE Vernova press release of 6 November 2023 names the 9HA.01 gas turbine and the STF-D650 steam turbine for Heilbronn."
+    }
+   },
+   "not_found": [
+    "Owner(s)"
+   ],
+   "notes": "Status and start year are re-checked and unchanged."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000409758",
+   "concern_type": "capacity",
+   "recommendation": "Consider whether 675 MW should be 674 MW.",
+   "note": "The Bundesnetzagentur register lists HLB 8 at 674 MW net. GE Vernova gives 680 MW per plant. GEM shows 675. These differ by rounding or by net versus gross, so nothing was changed.",
+   "refs": [
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/ZuUndRueckbau.xlsx?__blob=publicationFile"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.enbw.com/unternehmen/themen/kohleausstieg/heizkraftwerk-heilbronn/",
+   "used_for": [
+    "Status",
+    "Start year",
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Found Q3/Q4 2027, HLB8, July 2026 and August 2026 entries."
+  },
+  {
+   "url": "https://h2-news.de/wirtschaft-unternehmen/neue-gas-und-dampfturbinenanlage-ist-h2-ready/",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Found Quartal 2027."
+  },
+  {
+   "url": "https://www.ge.com/news/press-releases/ge-vernova-secures-two-h-class-combined-cycle-equipment-orders-with-hydrogen",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Found 9HA.01, STF-D650 and Heilbronn."
+  }
+ ]
+}

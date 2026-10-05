@@ -1,0 +1,186 @@
+{
+ "meta": {
+  "plant_id": "L100000101993",
+  "plant_name": "Flensburg power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:40:00-04:00",
+  "done": true,
+  "urls_attempted": 12,
+  "urls_verified": 8
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400154",
+   "unit_name": "Kessel 12, timepoint 1",
+   "findings": {
+    "Owner(s)": {
+     "value": "Stadtwerke Flensburg GmbH [100%]",
+     "refs": [
+      "https://www.stadtwerke-flensburg.de/unternehmen/nachhaltigkeit/erdgasbetriebene-kraft-waerme-kopplungsanlagen"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.stadtwerke-flensburg.de/unternehmen/nachhaltigkeit/erdgasbetriebene-kraft-waerme-kopplungsanlagen",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The utility's own page on its gas-fired heat and power plants names Stadtwerke Flensburg GmbH as the company and describes Kessel 12 and Kessel 13 as its plants. This matches the owner already in the database."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "The owner is confirmed. I could not find the turbine maker for Kessel 12. An article on Kessel 13 calls its turbine the successor of the one in Kessel 12, but does not name the earlier model."
+  },
+  {
+   "gem_unit_id": "G100000410330",
+   "unit_name": "Kessel 13, timepoint 1",
+   "findings": {
+    "Equipment Manufacturer/Model": {
+     "value": "Siemens SGT-800",
+     "refs": [
+      "https://klimapakt-flensburg.de/stadtwerke-geben-gas-vertraege-gasturbine-und-abhitzekessel-kessel-13-unterschrieben/",
+      "https://gwf-gas.de/maerkte-und-unternehmen/gasturbine-fuer-neue-gud-anlage-der-stadtwerke-flensburg-ist-da/"
+     ],
+     "verifications": [
+      {
+       "url": "https://klimapakt-flensburg.de/stadtwerke-geben-gas-vertraege-gasturbine-und-abhitzekessel-kessel-13-unterschrieben/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://gwf-gas.de/maerkte-und-unternehmen/gasturbine-fuer-neue-gud-anlage-der-stadtwerke-flensburg-ist-da/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "A local climate partnership article from December 2019 says the contract for the gas turbine of Kessel 13 went to Siemens, with the type SGT 800 C1. A trade magazine article from March 2022 confirms the turbine came from the Siemens Energy plant in Finspong, Sweden. The report gives the manufacturer and model, and the plant does not name a smaller model number."
+    },
+    "Owner(s)": {
+     "value": "Stadtwerke Flensburg GmbH [100%]",
+     "refs": [
+      "https://www.stadtwerke-flensburg.de/unternehmen/nachhaltigkeit/erdgasbetriebene-kraft-waerme-kopplungsanlagen"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.stadtwerke-flensburg.de/unternehmen/nachhaltigkeit/erdgasbetriebene-kraft-waerme-kopplungsanlagen",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The utility's own page on its gas-fired heat and power plants names Stadtwerke Flensburg GmbH as the company and describes Kessel 12 and Kessel 13 as its plants. This matches the owner already in the database."
+    }
+   },
+   "not_found": [],
+   "notes": "The gas turbine maker and model and the owner are both confirmed."
+  },
+  {
+   "gem_unit_id": "G100000412894",
+   "unit_name": "Kessel 7",
+   "findings": {},
+   "not_found": [
+    "Owner(s)"
+   ],
+   "notes": "I found no document that names the owner of Kessel 7. A local news report from October 2016 says Kessel 7 was retired as a coal boiler, so see the question about this unit."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000412894",
+   "concern_type": "status",
+   "recommendation": "Check whether Kessel 7 should be retired and whether it burns gas at all.",
+   "note": "A local news report from 4 October 2016 says two coal boilers and two turbines were retired when the new gas and steam plant Kessel 12 began commercial operation, with a photo of the name plate on Kessel 7. The database shows Kessel 7 as operating on gas. The national plant list of June 2026 still lists a steam turbine 7 at Stadtwerke Flensburg as in operation, commissioned in 1980, so the two sources disagree.",
+   "refs": [
+    "https://www.foerde-news.de/news/zwei-kohlekessel-und-zwei-turbinen-in-ruhestand-verabschiedet-neue-gas-und-dampfturbinenanlage-der-stadtwerke-flensburg-geht-in-.html"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000400154",
+   "concern_type": "capacity",
+   "recommendation": "Consider checking capacity of Kessel 12 and 13 against the plant list.",
+   "note": "The national plant list of June 2026 shows gas turbine 12 at 50.2 MW gross and steam turbine 12 at 27.9 MW gross, about 78 MW. Gas turbine 13 is 60.6 MW and steam turbine 13 is 38.7 MW, about 99 MW. The database shows 78 MW and 97 MW. The difference for Kessel 13 is small and may be rounding or net versus gross.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Stadtwerke Flensburg GmbH",
+   "role": "owner",
+   "lookup_result": "Entity found, appears on 8 units in Germany. Reuse the existing entity."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.stadtwerke-flensburg.de/unternehmen/nachhaltigkeit/erdgasbetriebene-kraft-waerme-kopplungsanlagen",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Page loads and names Stadtwerke Flensburg GmbH and Kessel 12 and 13."
+  },
+  {
+   "url": "https://klimapakt-flensburg.de/stadtwerke-geben-gas-vertraege-gasturbine-und-abhitzekessel-kessel-13-unterschrieben/",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "States Siemens SGT 800 C1 for Kessel 13."
+  },
+  {
+   "url": "https://gwf-gas.de/maerkte-und-unternehmen/gasturbine-fuer-neue-gud-anlage-der-stadtwerke-flensburg-ist-da/",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Confirms Siemens Energy built the turbine, no model number."
+  },
+  {
+   "url": "https://www.foerde-news.de/news/zwei-kohlekessel-und-zwei-turbinen-in-ruhestand-verabschiedet-neue-gas-und-dampfturbinenanlage-der-stadtwerke-flensburg-geht-in-.html",
+   "used_for": [
+    "qa"
+   ],
+   "outcome": "verified",
+   "note": "Names Kessel 7 as retired in October 2016."
+  },
+  {
+   "url": "https://www.energie.de/euroheatpower/news-detailansicht/nsctrl/detail/News/stadtwerke-flensburg-nehmen-auf-dem-weg-zur-klimaneutralitaet-kessel-13-in-betrieb",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "not relevant",
+   "note": "Does not name the turbine maker."
+  },
+  {
+   "url": "https://www.stadt-und-werk.de/k21-meldungen/kessel-12-rollt-an/",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "not relevant",
+   "note": "Does not name the turbine maker for Kessel 12."
+  },
+  {
+   "url": "https://www.stadtwerke-flensburg.de/unternehmen/ueber-uns/geschichte",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "not relevant",
+   "note": "Existing source, does not mention Kessel 7."
+  }
+ ]
+}

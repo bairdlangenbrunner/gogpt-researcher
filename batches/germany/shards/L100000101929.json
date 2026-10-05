@@ -1,0 +1,95 @@
+{
+ "meta": {
+  "plant_id": "L100000101929",
+  "plant_name": "Chempark Leverkusen power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:35:12-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400890",
+   "unit_name": "CC",
+   "findings": {
+    "Latest Activity": {
+     "value": "Year: 2019, Month: 4, Day: 1",
+     "refs": [
+      "https://www.bdew.de/media/documents/PI_20190401_BDEW-Kraftwerksliste.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bdew.de/media/documents/PI_20190401_BDEW-Kraftwerksliste.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The German energy industry association BDEW published a list of power plants in planning or construction on 1 April 2019. It lists a 570 MW gas plant at the Leverkusen chemical park under STEAG, with the status that it was in the permit procedure. This is the newest dated report of activity I found. The same list is where GEM's note about a 2019 mention most likely comes from."
+    }
+   },
+   "not_found": [
+    "Cancellation year"
+   ],
+   "notes": "I found no document that says the project was dropped or that a permit was refused. The only later evidence is the April 2019 list, and nothing newer mentions the project. A May 2015 trade press article says STEAG bought the project rights from Repower and had not yet decided to build."
+  },
+  {
+   "gem_unit_id": "G100000400289",
+   "unit_name": "ST1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100000410305",
+   "unit_name": "ST2",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000400890",
+   "concern_type": "other",
+   "recommendation": "Correct the local-language plant name.",
+   "note": "The plant name in local language is HKW Braunschweig Mitte. That is a power plant in Braunschweig, not in Leverkusen, so the entry looks wrong. I did not change it.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.bdew.de/media/documents/PI_20190401_BDEW-Kraftwerksliste.pdf",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Lists STEAG, Chemiepark Leverkusen, 570 MW, in the permit procedure, April 2019."
+  },
+  {
+   "url": "https://www.energie-und-management.de/nachrichten/detail/steag-uebernimmt-gud-projekt-von-repower-109637",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Trade press article from 11 May 2015 on STEAG buying the project rights from Repower. Older than the 2019 list."
+  },
+  {
+   "url": "https://pressearchiv.steag.com/3292+M58ae6efec2d.html",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "failed",
+   "note": "The STEAG press archive page did not load through the verifier, and the web search summary only repeated the 2015 purchase. Not used."
+  }
+ ]
+}

@@ -1,0 +1,124 @@
+{
+ "meta": {
+  "plant_id": "L100000101976",
+  "plant_name": "Völklingen-Fenne power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:26:00-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001091094",
+   "unit_name": "IC 7",
+   "findings": {
+    "Latest Activity": {
+     "value": "Year: 2025, Month: 10, Day: 7",
+     "refs": [
+      "https://www.sr.de/sr/home/nachrichten/politik_wirtschaft/steag_voelklingen_energieversorgung_gasmotorenwerk_strom_100.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sr.de/sr/home/nachrichten/politik_wirtschaft/steag_voelklingen_energieversorgung_gasmotorenwerk_strom_100.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A regional broadcaster, Saarländischer Rundfunk, reported on 7 October 2025 that STEAG told it the planning phase for a new gas engine power plant at Fenne is under way. The company is in talks with the grid operator Creos about a gas connection. The plant is planned at 150 MW. The report also says that not all conditions are settled yet."
+    },
+    "Status Detail": {
+     "value": "Planning phase under way as of October 2025. Gas connection talks with the grid operator are in progress. Framework conditions are not yet settled.",
+     "refs": [
+      "https://www.sr.de/sr/home/nachrichten/politik_wirtschaft/steag_voelklingen_energieversorgung_gasmotorenwerk_strom_100.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sr.de/sr/home/nachrichten/politik_wirtschaft/steag_voelklingen_energieversorgung_gasmotorenwerk_strom_100.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "This is taken from the Saarländischer Rundfunk report of 7 October 2025. It does not say a permit has been applied for or that construction has started, so the status stays announced."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Owner(s)"
+   ],
+   "notes": "The newest report I found is from 7 October 2025 and still describes planning only. No turbine or engine make, no start year and no permit application were found. The 150 MW capacity and STEAG ownership in the current record match that report, so I did not list them as changes."
+  },
+  {
+   "gem_unit_id": "G100000412834",
+   "unit_name": "IC1-6",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit, so it was not researched."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001091094",
+   "concern_type": "owner",
+   "recommendation": "Check whether the owner name should be updated.",
+   "note": "The Bundesnetzagentur power plant list dated 26 June 2026 shows the Fenne coal units under the operator STEAG Power GmbH. GEM shows STEAG GmbH for this unit. This may be a different group company. I did not change the owner.",
+   "refs": []
+  },
+  {
+   "gem_unit_id": "G100001091094",
+   "concern_type": "other",
+   "recommendation": "Check the existing researcher note about retirement and mothballing.",
+   "note": "The note on this unit says retirement was slated for October 2022 and that the unit was mothballed in early 2024. That reads like the history of a coal unit, not a planned gas engine plant. The SR report of 7 October 2025 says the two coal units are in repair work until the end of 2027 and then stay in the grid reserve until 2031. This text may belong to a different unit.",
+   "refs": [
+    "https://www.sr.de/sr/home/nachrichten/politik_wirtschaft/steag_voelklingen_energieversorgung_gasmotorenwerk_strom_100.html"
+   ]
+  }
+ ],
+ "monitor": [
+  {
+   "gem_unit_id": "G100001091094",
+   "note": "A bid in the capacity tender with awards due by 3 November 2026 is possible but no announcement was found. Recheck after the awards.",
+   "recheck_by": "2026-11-15"
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.sr.de/sr/home/nachrichten/politik_wirtschaft/steag_voelklingen_energieversorgung_gasmotorenwerk_strom_100.html",
+   "used_for": [
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Existing source. Loads and names Fenne and the 150 MW gas engine plant."
+  },
+  {
+   "url": "https://www.steag-iqony-group.com/gaskraftwerke",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "not relevant",
+   "note": "The page loaded but the text I read does not describe Fenne. It was not used."
+  },
+  {
+   "url": "https://www.stadt-und-werk.de/k21-meldungen/grubengasmotoren-modernisiert/",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "About mine gas engine upgrades at Fenne, a different installation."
+  }
+ ]
+}

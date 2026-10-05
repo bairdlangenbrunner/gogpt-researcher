@@ -1,0 +1,127 @@
+{
+ "meta": {
+  "plant_id": "L100000407942",
+  "plant_name": "Lingen power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:26:49-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000410776",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "construction",
+     "refs": [
+      "https://www.indexbox.io/blog/kawasaki-completes-lingen-hydrogen-turbine-installation/",
+      "https://fuelcellsworks.com/2026/09/09/h2/kawasaki-and-rwe-complete-30mw-hydrogen-gas-turbine-installation-in-germany"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.indexbox.io/blog/kawasaki-completes-lingen-hydrogen-turbine-installation/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://fuelcellsworks.com/2026/09/09/h2/kawasaki-and-rwe-complete-30mw-hydrogen-gas-turbine-installation-in-germany",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Trade press reports from September 2026 say Kawasaki has finished installing its 30 MW class L30A gas turbine at the RWE Emsland power station in Lingen. The next step is commissioning, then tests on pure hydrogen and on mixtures with natural gas. The RWE site page also says the turbine is under construction. That is a change from pre-construction. Both press items repeat one Hydrogen Central story, so they count as one source."
+    },
+    "Latest Activity": {
+     "value": "Year: 2026, Month: 9, Day: 9",
+     "refs": [
+      "https://fuelcellsworks.com/2026/09/09/h2/kawasaki-and-rwe-complete-30mw-hydrogen-gas-turbine-installation-in-germany"
+     ],
+     "verifications": [
+      {
+       "url": "https://fuelcellsworks.com/2026/09/09/h2/kawasaki-and-rwe-complete-30mw-hydrogen-gas-turbine-installation-in-germany",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A trade press article dated 9 September 2026 reports that turbine installation is complete and commissioning is next. GEM's current date is December 2024, so this moves it forward."
+    },
+    "Status Detail": {
+     "value": "Installation complete in September 2026. Commissioning and hydrogen tests to follow.",
+     "refs": [
+      "https://www.indexbox.io/blog/kawasaki-completes-lingen-hydrogen-turbine-installation/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.indexbox.io/blog/kawasaki-completes-lingen-hydrogen-turbine-installation/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A September 2026 report says the installation is finished. Commissioning comes next, then tests on 100 percent hydrogen and on blends. The old comment about no confirmed construction is out of date."
+    }
+   },
+   "not_found": [
+    "Start year",
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Owner(s)"
+   ],
+   "notes": "The turbine is installed and heading into commissioning, so I moved it to construction. I found no start year. The model L30A fits the existing Kawasaki entry. Capacity and owner were not rechecked."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.indexbox.io/blog/kawasaki-completes-lingen-hydrogen-turbine-installation/",
+   "used_for": [
+    "Status",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Dated 17 September 2026. Repeats a Hydrogen Central story."
+  },
+  {
+   "url": "https://fuelcellsworks.com/2026/09/09/h2/kawasaki-and-rwe-complete-30mw-hydrogen-gas-turbine-installation-in-germany",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Dated 9 September 2026. The page loads and names Lingen and Kawasaki. The verifier did not find the model name on it."
+  },
+  {
+   "url": "https://www.rwe.com/en/the-group/countries-and-locations/lingen/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "RWE page says it is constructing a 34 MW hydrogen capable gas turbine at Lingen. Undated."
+  },
+  {
+   "url": "https://hydrogen-central.com/kawasaki-finishes-lingen-hydrogen-turbine-installation/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "This is the original story. I could not read text from it, so I cited the two reprints."
+  }
+ ]
+}

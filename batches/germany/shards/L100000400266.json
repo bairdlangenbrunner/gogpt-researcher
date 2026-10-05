@@ -1,0 +1,159 @@
+{
+ "meta": {
+  "plant_id": "L100000400266",
+  "plant_name": "Trianel Hamm power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:28:04-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400266",
+   "unit_name": "Block 10, timepoint 1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing was asked for this unit. The regulator's plant list dated 26 June 2026 shows it as in operation."
+  },
+  {
+   "gem_unit_id": "G100000400267",
+   "unit_name": "Block 20, timepoint 1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing was asked for this unit. The regulator's plant list dated 26 June 2026 shows it as in operation."
+  },
+  {
+   "gem_unit_id": "G100000414452",
+   "unit_name": "Block 30, timepoint 1",
+   "findings": {
+    "Latest Activity": {
+     "value": "Year: 2026, Month: 1, Day: 26",
+     "refs": [
+      "https://www.zfk.de/unternehmen/trianel-investor-aus-der-schweiz-will-bei-wasserstofffaehigem-gaskraftwerk-einsteigen"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.zfk.de/unternehmen/trianel-investor-aus-der-schweiz-will-bei-wasserstofffaehigem-gaskraftwerk-einsteigen",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A trade press article from 26 January 2026 says the Swiss company BKW wants a 40 percent stake in the planned third block at Hamm. Trianel says it will probably take part in the capacity tenders if the conditions give municipal companies a fair chance. It says an investment decision still needs the final rules."
+    },
+    "Status Detail": {
+     "value": "Planned third block with about 500 MW. In January 2026 Trianel said an investment decision still depends on the final tender rules. A Swiss investor, BKW, seeks a 40 percent stake. No permit application and no award found.",
+     "refs": [
+      "https://www.zfk.de/unternehmen/trianel-investor-aus-der-schweiz-will-bei-wasserstofffaehigem-gaskraftwerk-einsteigen",
+      "https://www.lippewelle.de/artikel/trianel-update-zur-wasserstoffproduktion-in-hamm-uentrop-2413647.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.zfk.de/unternehmen/trianel-investor-aus-der-schweiz-will-bei-wasserstofffaehigem-gaskraftwerk-einsteigen",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.lippewelle.de/artikel/trianel-update-zur-wasserstoffproduktion-in-hamm-uentrop-2413647.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": true,
+     "note": "Both articles say the investment decision waits on federal rules. The older local radio report from August 2025 says the same. I found no permit application and no tender award for this block."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Owner(s)"
+   ],
+   "notes": "The third block is still only planned. I found no permit application, no turbine order and no tender award. No source gives a new start date, so the start year is left alone."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000414452",
+   "concern_type": "start_year",
+   "recommendation": "The start year of 2026 is no longer realistic and the unit may fit announced better than pre-construction.",
+   "note": "As of January 2026 Trianel still waited for final tender rules before an investment decision. I found no permit application, no turbine order and no award. The life cycle rules ask for active permit or financing steps for pre-construction. The partner search with BKW is a financing step, so I left the status as it is.",
+   "refs": [
+    "https://www.zfk.de/unternehmen/trianel-investor-aus-der-schweiz-will-bei-wasserstofffaehigem-gaskraftwerk-einsteigen"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000414452",
+   "concern_type": "owner",
+   "recommendation": "Watch for a closed deal with BKW.",
+   "note": "BKW seeks a 40 percent stake. This is not a closed deal, so the owner is not changed. The project is also described as a joint project with the municipal utility of Hamm.",
+   "refs": [
+    "https://www.zfk.de/unternehmen/trianel-investor-aus-der-schweiz-will-bei-wasserstofffaehigem-gaskraftwerk-einsteigen"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000400266",
+   "concern_type": "capacity",
+   "recommendation": "Check the capacity values for blocks 10 and 20.",
+   "note": "The regulator's plant list dated 26 June 2026 shows both blocks at 453 MW gross and 445 MW net, with 2007 as the commissioning year. GEM shows 417 MW and 421 MW and 2008. These units were not part of the task, so I did not report changes.",
+   "refs": [
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.zfk.de/unternehmen/trianel-investor-aus-der-schweiz-will-bei-wasserstofffaehigem-gaskraftwerk-einsteigen",
+   "used_for": [
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Trade press article from 26 January 2026."
+  },
+  {
+   "url": "https://www.lippewelle.de/artikel/trianel-update-zur-wasserstoffproduktion-in-hamm-uentrop-2413647.html",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Existing source. Local radio report from 18 August 2025."
+  },
+  {
+   "url": "https://www.iwr.de/ticker/dritter-kraftwerksblock-trianel-baut-wasserstofffaehiges-gaskraftwerk-in-hamm-artikel5842",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Existing source, still loads. Carried forward."
+  },
+  {
+   "url": "https://renewablesnow.com/news/trianel-to-build-hydrogen-ready-power-plant-unit-in-germany-834365/",
+   "used_for": [
+    "Capacity (MW)",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Existing source, still loads. Carried forward."
+  },
+  {
+   "url": "https://www.trianel-hamm.de/pressemeldungen/trianel-gaskraftwerk-hamm-soll-um-einen-dritten-wasserstofffaehigen-kraftwerksblock-ergaenzt-werden",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "failed",
+   "note": "Loads, but the exact text 500 Megawatt was not found. Not cited."
+  }
+ ]
+}

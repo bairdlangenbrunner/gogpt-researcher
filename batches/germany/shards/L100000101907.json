@@ -1,0 +1,84 @@
+{
+ "meta": {
+  "plant_id": "L100000101907",
+  "plant_name": "Frankfurt Oder power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:40:00-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000412892",
+   "unit_name": "IC1-5",
+   "findings": {
+    "Owner(s)": {
+     "value": "Stadtwerke Frankfurt (Oder) GmbH [100%]",
+     "refs": [
+      "https://www.zfk.de/energie/waerme/neues-gasheizkraftwerk-in-frankfurt-oder-eingeweiht",
+      "https://www.stadt-und-werk.de/k21-meldungen/heizkraftwerk-modernisiert/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.zfk.de/energie/waerme/neues-gasheizkraftwerk-in-frankfurt-oder-eingeweiht",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.stadt-und-werk.de/k21-meldungen/heizkraftwerk-modernisiert/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "A trade newspaper article on the opening of the new gas engine plant and a second trade magazine article on the plant upgrade both name Stadtwerke Frankfurt (Oder) as the company that built and runs it. This matches the owner already in the database. Neither article gives a share, so the 100 percent comes from the existing record."
+    }
+   },
+   "not_found": [],
+   "notes": "The owner is confirmed by two trade publications."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Stadtwerke Frankfurt (Oder) GmbH",
+   "role": "owner",
+   "lookup_result": "Entity found, appears on 2 units in Germany. Reuse the existing entity."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.zfk.de/energie/waerme/neues-gasheizkraftwerk-in-frankfurt-oder-eingeweiht",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Names Stadtwerke Frankfurt (Oder)."
+  },
+  {
+   "url": "https://www.stadt-und-werk.de/k21-meldungen/heizkraftwerk-modernisiert/",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Names Stadtwerke Frankfurt."
+  },
+  {
+   "url": "https://www.man-es.com/de/unternehmen/pressemitteilungen/press-details/2022/03/17/neues-heizkraftwerk-in-frankfurt-(oder)-spart-50.000-tonnen-co2-j%C3%A4hrlich",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "failed",
+   "note": "Existing source. Page loads but the company name did not match the verifier text check, so it is not used for the owner."
+  }
+ ]
+}

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Assemble a US state batch: turn the per-plant research shards into the staged
-lane files (and, in blind mode, the calibration comparison and memo).
+Assemble a scope batch (one US state or one country): turn the per-plant
+research shards into the staged lane files (and, in blind mode, the
+calibration comparison and memo).
 
 Contract: notes/us_state_agent_plan.md (directory layout, modes, shard
 contract, staged record additions, calibration memo) and
@@ -14,10 +15,14 @@ docs/reference/notes_style.md.
         [--quarter q4-2026]
 
 Inputs
-  briefs/_index.json         plants, unit IDs, mode (blind | update), csv path
+  briefs/_index.json         plants, unit IDs, mode (blind | update), csv path,
+                             `where` (the scope: kind state | country, name,
+                             slug, country, postal; an older index with only
+                             state / postal is read as a US state)
   shards/<L...>.json         one per plant, written by the research subagent
-  shards/_state.json         optional: statewide qa/monitor items (new plants,
-                             gas-fired data centers) from the state-level search
+  shards/_state.json         optional: scope-wide qa/monitor items (new plants,
+                             gas-fired data centers) from the state- or
+                             country-level search
   the fresh export           --csv, else the `csv` named in _index.json, else
                              scripts/gem_export_gogpt_scoped.csv
   briefs/_hidden/<L...>.json blind mode only: the withheld GEM values
@@ -105,7 +110,6 @@ from paths import gogpt_scoped_csv  # noqa: E402
 from schema_constants import RESEARCH_FIELDS  # noqa: E402
 
 ET = ZoneInfo("America/New_York")
-COUNTRY = "United States"
 LANE_FILES = ["updates", "qa", "monitor", "newunits", "entity"]
 
 CAPACITY_FIELDS = {"Capacity (MW)", "Capacity Per Engine"}
@@ -250,6 +254,18 @@ def load_index(batch: Path) -> dict:
     return json.loads(p.read_text(encoding="utf-8"))
 
 
+def scope_of(index: dict) -> dict:
+    """The batch scope from _index.json; an index written before country mode
+    (state / postal only) is a US state."""
+    w = index.get("where")
+    if w:
+        return w
+    state = index.get("state", "")
+    return {"kind": "state", "name": state, "country": "United States",
+            "slug": state.lower().replace(" ", "-"),
+            "postal": index.get("postal", "")}
+
+
 def resolve_csv(arg, index: dict) -> Path:
     if arg:
         return Path(arg)
@@ -298,6 +314,10 @@ def link_phrase(n: int) -> str:
 
 def build_action(kind, field, value, current, target, ref_col, n_urls,
                  each_unit=False):
+    # Status Detail values often end in a period; drop it so the sentence
+    # does not read "...in 2027.. It now says".
+    value = str(value).rstrip(". ") if value is not None else value
+    current = str(current).rstrip(". ") if current else current
     if kind == "reverified":
         s = f"Leave {field} of {target} as {value}. It is still correct."
     elif kind == "fill":
@@ -325,8 +345,13 @@ class Assembler:
         self.batch = batch
         self.index = load_index(batch)
         self.mode = self.index.get("mode", "update")
-        self.state = self.index.get("state", "")
-        self.postal = self.index.get("postal", "")
+        self.where = scope_of(self.index)
+        self.country = self.where.get("country") or "United States"
+        self.state = self.where["name"] if self.where.get("kind") == "state" else ""
+        self.postal = self.where.get("postal", "")
+        # the record_id prefix for scope-wide items: us-md for a state, germany for a country
+        self.tag = (f"us-{self.postal}" if self.postal
+                    else self.where.get("slug") or "scopewide")
         self.quarter = quarter
         self.csv_path = csv_path
         self.warnings: list[str] = []
@@ -428,7 +453,7 @@ class Assembler:
         return {"gem_unit_id": uid, "gem_plant_id": pid,
                 "plant_name": plant_name or row.get("Plant name", ""),
                 "unit_name": row.get("Unit name", ""),
-                "country": row.get("Country/Area", COUNTRY)}
+                "country": row.get("Country/Area", self.country)}
 
     def unit_notes_once(self, uid, notes):
         if uid in self.unit_notes_used or is_blank(notes):
@@ -597,10 +622,11 @@ class Assembler:
                                                          item, i))
 
     def statewide(self):
-        """shards/_state.json: qa and monitor items from the state-level search
+        """shards/_state.json: qa and monitor items from the scope-wide search
         for newly announced plants and gas-fired data centers. Items may name
         an existing plant with gem_plant_id; otherwise gem_plant_id is blank and
-        the record_id starts with us-<postal>:plant."""
+        the record_id starts with us-<postal>:plant (a state) or
+        <country-slug>:plant (a country)."""
         sp = self.batch / "shards" / "_state.json"
         if not sp.exists():
             return
@@ -609,10 +635,10 @@ class Assembler:
         except (json.JSONDecodeError, OSError) as e:
             self.warnings.append(f"_state.json does not parse: {e}; skipped")
             return
-        tag = f"us-{self.postal}" if self.postal else "statewide"
+        wide = f"{self.state} statewide" if self.state else f"{self.country} countrywide"
         for section, lane in (("qa", "qa"), ("monitor", "monitor")):
             for i, item in enumerate(st.get(section) or []):
-                rec = self.passthrough(tag, item.get("plant_name") or f"{self.state} statewide",
+                rec = self.passthrough(self.tag, item.get("plant_name") or wide,
                                        lane, dict(item), i)
                 rec["gem_plant_id"] = item.get("gem_plant_id") or ""
                 self.lanes[lane].append(rec)
@@ -623,7 +649,7 @@ class Assembler:
         row = self.export.get(uid) or {}
         rec.setdefault("gem_plant_id", pid)
         rec.setdefault("plant_name", plant_name)
-        rec.setdefault("country", COUNTRY)
+        rec.setdefault("country", row.get("Country/Area") or self.country)
         if uid and row:
             rec.setdefault("unit_name", row.get("Unit name", ""))
         if lane in ("qa", "monitor"):
@@ -640,7 +666,7 @@ class Assembler:
             rec["record_id"] = (f"{pid}:new:"
                                 f"{field_slug(rec.get('unit_name', '')) or i + 1}")
         else:
-            rec.setdefault("entity_country", COUNTRY)
+            rec.setdefault("entity_country", self.country)
             rec["record_id"] = (f"{pid}:entity:"
                                 f"{field_slug(rec.get('entity_name', '')) or i + 1}")
         return rec
@@ -659,7 +685,8 @@ class Assembler:
 
     # -- writing
     def scope(self):
-        return {"country": COUNTRY, "state": self.state, "postal": self.postal,
+        return {"country": self.country, "state": self.state, "postal": self.postal,
+                "kind": self.where.get("kind", "state"), "slug": self.where.get("slug", ""),
                 "quarter": self.quarter, "csv": str(self.csv_path)}
 
     def write_staging(self, generated):
@@ -697,7 +724,7 @@ class Assembler:
             s = ws(v)
             return s.replace("|", "\\|") if s else "(blank)"
 
-        L = [f"# Calibration memo: {self.state}, blind run", "",
+        L = [f"# Calibration memo: {self.where.get('name') or self.country}, blind run", "",
              f"Stamp {stamp}. Built by assemble_state.py from "
              f"{len(self.shards)} plant reports out of "
              f"{len(self.index['plants'])} plants in the brief index.", "",
@@ -788,7 +815,8 @@ class Assembler:
 def main():
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--batch", required=True, help="batches/us-<st> directory")
+    ap.add_argument("--batch", required=True,
+                    help="batches/us-<st> or batches/<country-slug> directory")
     ap.add_argument("--csv", default=None,
                     help="fresh scoped export (default: _index.json csv, "
                          "else scripts/gem_export_gogpt_scoped.csv)")
@@ -822,7 +850,7 @@ def main():
     for w in a.warnings:
         print(f"  WARNING: {w}")
     print(f"assembled {len(a.shards)} of {len(a.index['plants'])} plants "
-          f"({a.mode} mode, {a.state})")
+          f"({a.mode} mode, {a.where.get('name') or a.country})")
     print("  verdicts (unit x field): " + ", ".join(
         f"{v}={a.verdicts.get(v, 0)}" for v in VERDICTS))
     print(f"  match with no new link (no record): {a.match_no_new_url}")

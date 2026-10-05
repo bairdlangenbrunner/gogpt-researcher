@@ -1,0 +1,92 @@
+{
+ "meta": {
+  "plant_id": "L100000101973",
+  "plant_name": "Bexbach-C power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:24:30-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001030496",
+   "unit_name": "CC1, timepoint 1",
+   "findings": {
+    "Latest Activity": {
+     "value": "Year: 2024, Month: 3, Day: 1",
+     "refs": [
+      "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/iqony-will-gaskraftwerke-mit-2.500-mw-bauen-212250"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/iqony-will-gaskraftwerke-mit-2.500-mw-bauen-212250",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A trade article of 1 March 2024 reports that Iqony will bid for 2,500 MW in the federal capacity tenders. It names Bexbach as a possible site. This is the newest dated report found for the plant."
+    },
+    "Status Detail": {
+     "value": "Iqony names Bexbach as one of three possible sites for hydrogen-capable gas plants within a 2,500 MW tender plan. No permit or construction was found.",
+     "refs": [
+      "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/iqony-will-gaskraftwerke-mit-2.500-mw-bauen-212250"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/iqony-will-gaskraftwerke-mit-2.500-mw-bauen-212250",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The status stays announced."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Owner(s)",
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "City"
+   ],
+   "notes": "I could not find the turbine technology, the equipment maker or a location source. The owner's pages do not give them. No commissioning date has been announced."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/iqony-will-gaskraftwerke-mit-2.500-mw-bauen-212250",
+   "used_for": [
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Trade article, March 2024."
+  },
+  {
+   "url": "https://www.iqony.energy/h2-ready-gaskraftwerke",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "failed",
+   "note": "Page text did not contain Bexbach or 900 when read."
+  }
+ ]
+}

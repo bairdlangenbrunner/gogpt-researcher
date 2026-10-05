@@ -1,0 +1,67 @@
+{
+ "meta": {
+  "plant_id": "L100000400180",
+  "plant_name": "Hillegossen power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:32:42-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400180",
+   "unit_name": "1",
+   "findings": {},
+   "not_found": [
+    "Latitude",
+    "Longitude"
+   ],
+   "notes": "Nothing was asked for this unit. The only task was the whole-plant location check, answered in the questions list."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000400180",
+   "concern_type": "location",
+   "recommendation": "Treat the Hillegossen coordinates as the wrong set and move them to Niedernholz 23, 33699 Bielefeld. The Schildescher Strasse plant at Schildescher Str. 16, 33611 Bielefeld keeps its own location.",
+   "note": "A list of industrial plants published by the Detmold regional government in January 2022 gives the Hillegossen combined cycle plant at Niedernholz 23, 33699 Bielefeld. It gives the Schildescher Strasse heating plant at Schildescher Str. 16, 33611 Bielefeld. These are different streets in different districts. GEM's Hillegossen point of 52.03333, 8.53333 is rounded and looks like a town-level placeholder. I did not look up exact coordinates for either address, so the correct point for Niedernholz 23 still needs to be found.",
+   "refs": [
+    "https://www.bezreg-detmold.nrw.de/system/files/media/document/file/5.53_UI_Ueberwachungsprogramm%20IE-Anlagen%20BR%20Dt_13-01-2022.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.bezreg-detmold.nrw.de/system/files/media/document/file/5.53_UI_Ueberwachungsprogramm%20IE-Anlagen%20BR%20Dt_13-01-2022.pdf",
+   "used_for": [
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Lists both plant addresses."
+  },
+  {
+   "url": "https://www.energate-messenger.de/news/77693/stadtwerke-bielefeld-nehmen-gud-kraftwerk-in-betrieb",
+   "used_for": [
+    "Latitude"
+   ],
+   "outcome": "blocked",
+   "note": "Returned HTTP 403 through the fetch ladder and no archived copy was available."
+  },
+  {
+   "url": "https://www.wirtschaft-regional.net/stadtwerke-bielefeld-und-mitsubishi-hitec-paper-setzen-erfolgreiche-zusammenarbeit-fort/",
+   "used_for": [
+    "Latitude"
+   ],
+   "outcome": "not relevant",
+   "note": "Page does not contain the street name."
+  }
+ ]
+}

@@ -1,0 +1,178 @@
+{
+ "meta": {
+  "country": "Germany",
+  "kind": "countrywide",
+  "generated": "2026-10-05T15:23:27-04:00",
+  "done": true,
+  "urls_attempted": 13,
+  "urls_verified": 13,
+  "searched": [
+   "Compared the eight gas rows of 20 MW or more in the Bundesnetzagentur additions and closures file dated June 26, 2026 with the GEM export. Every row matched a GEM plant, including Dradenau, which GEM lists as Wedel. The full table is in work/sweep_germany/register_gap_check.csv.",
+   "Compared the ten gas units of 20 MW or more commissioned in 2023 or later in the Bundesnetzagentur plant list dated June 26, 2026 with the GEM export. All ten matched existing GEM plants by operator, state and town. The Bonn-Nord match to GEM's Karlstraße plant is by operator and town only, so a reviewer may want to check it. No web checks were needed for this step.",
+   "Mukran: read the German court press release, a trade press report on the March 2026 permit change, German Wikipedia on the ship Neptune and the Rügen citizens' group page. The 39.9 MW is the ship's own engine rating. I could not open the offshore-energy.biz link (page returned only menus) and I did not open the 88energie link.",
+   "First capacity tender round: the Bundesnetzagentur said the round closed on September 8, 2026 oversubscribed. No award list was published as of October 5, 2026. Awards are due by November 3, 2026, so the tender page should be checked again after that date. The bidder list is confidential, so sites come from company statements and trade press only.",
+   "Tender sites checked against GEM and not already covered: Obrigheim (EnBW), Ensdorf (Engie), Boxberg (LEAG) and an Enervie idea. TEAG in Thuringia is looking at up to two new sites of about 100 MW each but names no town, so I did not report it. N-ERGIE in Nuremberg, Hamburger Energiewerke, Trianel and Statkraft have no new site in the press I found. Iqony and EPH were not searched separately.",
+   "Data center gas plants: the Global Energy Monitor press release lists Mainz, Frankfurt, Birstein, Leipheim and Großkrotzenburg. All except Maintal are already in GEM (KMW Mainz, IQ Energy Center, Frank Cube, Leipheim, Staudinger). Maintal is reported as a dropped proposal.",
+   "Municipal and industrial plants: one search each for new municipal combined heat and power plants and for gas engine plants. Found only a 9 MW Nuremberg plant, below the threshold, and the KMW Mainz engine plant that GEM has. Industrial plants were not searched beyond this. The fetch budget was about 25 pages and was not exhausted."
+  ]
+ },
+ "qa": [
+  {
+   "gem_plant_id": "",
+   "plant_name": "Mukran FSRU LNG Terminal power station",
+   "concern_type": "scope_call",
+   "recommendation": "Out of scope. Do not add a plant. The 39.9 MW is the combined engine rating of one LNG ship, and the shore-side power plant that was once planned has been dropped.",
+   "note": "The possible-updates row says 39.9 MW from the generators on board the Neptune, one of two floating LNG import ships at Mukran on Rügen, run by Deutsche ReGas. German Wikipedia lists the Neptune with three Wärtsilä 12V50 DF engines of 11,400 kW each and one 6L50DF engine of 5,700 kW. Together that is about 39.9 MW. This is the ship's own engine rating, not a power plant that sells electricity. The original permit for the terminal included a shore-side combined heat and power plant, which would have supplied heat to Sassnitz. In July 2024 Deutsche ReGas said it would not build it. The Federal Administrative Court ruled in 2025 that dropping it needed a formal permit change. In March 2026 the state environment office in Vorpommern granted that change, so the terminal may run permanently on the ships' own gas generators. A trade press report dated March 20, 2026 confirms this. I found no shore-side generator of any size and no electric export figure. The ship engines run the ship and the regasification. A reviewer should treat this as ship equipment, not a tracked plant. Recheck only if Deutsche ReGas or the town of Sassnitz revives the shore plant.",
+   "refs": [
+    "https://www.bverwg.de/pm/2025/90",
+    "https://www.energie-und-management.de/nachrichten/recht/detail/deutsche-regas-darf-mukran-dauerhaft-ohne-landstrom-betreiben-356711",
+    "https://de.wikipedia.org/wiki/Neptune_(Schiff,_2009)",
+    "https://buergerinitiative-ruegen.de/regas-im-umweltausschuss-zur-kwk-anlage-und-laerm-des-lng-terminals/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.bverwg.de/pm/2025/90",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.energie-und-management.de/nachrichten/recht/detail/deutsche-regas-darf-mukran-dauerhaft-ohne-landstrom-betreiben-356711",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://de.wikipedia.org/wiki/Neptune_(Schiff,_2009)",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://buergerinitiative-ruegen.de/regas-im-umweltausschuss-zur-kwk-anlage-und-laerm-des-lng-terminals/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ]
+  }
+ ],
+ "monitor": [
+  {
+   "plant_name": "Obrigheim gas plant (EnBW)",
+   "gem_plant_id": "",
+   "capacity_mw": 850,
+   "status": "announced",
+   "recheck_by": "2026-11-15",
+   "note": "EnBW plans a combined cycle gas plant of about 850 MW electric on the Obrigheim nuclear site in Baden-Württemberg. Early public consultation began on July 8, 2026. EnBW lists the first round of the capacity tender in its timeline and says a decision to build depends on winning an award. An application for approval is expected in March 2027. A trade press report on the first tender round lists Obrigheim as a possible EnBW bid. GEM has no plant at Obrigheim. Recheck after the award list due by November 3, 2026.",
+   "refs": [
+    "https://www.enbw.com/company/topics/coal-phaseout/obrigheim-combined-cycle-gas-turbine-plant/",
+    "https://www.zfk.de/politik/deutschland/kraftwerksgesetz-stromvkg-uniper-rwe-kmw"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.enbw.com/company/topics/coal-phaseout/obrigheim-combined-cycle-gas-turbine-plant/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.zfk.de/politik/deutschland/kraftwerksgesetz-stromvkg-uniper-rwe-kmw",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    }
+   ]
+  },
+  {
+   "plant_name": "Ensdorf gas plant (Engie)",
+   "gem_plant_id": "",
+   "capacity_mw": "",
+   "status": "announced",
+   "recheck_by": "2026-11-15",
+   "note": "Engie Deutschland plans a hydrogen-ready combined cycle gas plant on about 8 hectares of the former coal plant site at Ensdorf in Saarland. A news report dated June 19, 2026 says it depends on winning a federal capacity tender. A trade press report names Ensdorf as an Engie project for the first round. No capacity figure was found, so the 20 MW threshold is likely met but not confirmed. GEM has no plant at Ensdorf. Recheck after the award list due by November 3, 2026.",
+   "refs": [
+    "https://www.rpr1.de/nachrichten/dpa-rheinland-pfalz/wasserstofffaehiges-gaskraftwerk-in-ensdorf-geplant",
+    "https://www.zfk.de/politik/deutschland/kraftwerksgesetz-stromvkg-uniper-rwe-kmw"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.rpr1.de/nachrichten/dpa-rheinland-pfalz/wasserstofffaehiges-gaskraftwerk-in-ensdorf-geplant",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    },
+    {
+     "url": "https://www.zfk.de/politik/deutschland/kraftwerksgesetz-stromvkg-uniper-rwe-kmw",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ]
+  },
+  {
+   "plant_name": "Boxberg gas plant (LEAG)",
+   "gem_plant_id": "",
+   "capacity_mw": "",
+   "status": "announced",
+   "recheck_by": "2026-11-15",
+   "note": "LEAG names Boxberg in Saxony among the coal sites where it plans new gas plants that can later run on hydrogen. A trade press report on the tender names Boxberg as one of four possible LEAG sites, but the sites with firm project names are Jänschwalde, Schwarze Pumpe, Lippendorf and Leipheim, which GEM already has. No capacity, permit or start date was found for Boxberg. Recheck after the award list due by November 3, 2026.",
+   "refs": [
+    "https://www.it-boltwise.de/leag-plant-standorte-fuer-neue-kraftwerke-umbau-auf-wasserstoff-im-fokus.html"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.it-boltwise.de/leag-plant-standorte-fuer-neue-kraftwerke-umbau-auf-wasserstoff-im-fokus.html",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ]
+  },
+  {
+   "plant_name": "Maintal data center gas plant (EdgeConneX)",
+   "gem_plant_id": "",
+   "capacity_mw": 170,
+   "status": "cancelled",
+   "recheck_by": "2027-03-01",
+   "note": "EdgeConneX planned eight gas engines, about 170 MW, to power its data center in Dörnigheim, Maintal near Frankfurt, because the grid connection would not arrive until 2037. After citizen protests the company dropped the gas plant and the data center is on hold since May 2026. GEM has no plant at Maintal. Record as cancelled only if a reviewer wants dropped proposals tracked. Recheck if the company finds another way to power the site.",
+   "refs": [
+    "https://www.drweb.de/170-megawatt-gas-maintal-hat-den-stecker-gezogen/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.drweb.de/170-megawatt-gas-maintal-hat-den-stecker-gezogen/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ]
+  },
+  {
+   "plant_name": "Enervie new gas plant (site not named)",
+   "gem_plant_id": "",
+   "capacity_mw": 500,
+   "status": "announced",
+   "recheck_by": "2027-03-01",
+   "note": "The utility Enervie in Hagen said in 2024 that it was thinking about a hydrogen-ready gas plant of up to 500 MW, depending on federal support. A trade press report from September 2026 says it has not confirmed a bid. No site, permit or date was named. GEM has the mothballed Hagen-Kabel plant, but I found nothing tying the new idea to that site. Treat as a loose lead.",
+   "refs": [
+    "https://www.mega-monheim.de/unternehmen/aktuelles/enervie-denkt-ueber-grosses-h2-ready-gaskraftwerk-nach",
+    "https://www.zfk.de/politik/deutschland/kraftwerksgesetz-stromvkg-uniper-rwe-kmw"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.mega-monheim.de/unternehmen/aktuelles/enervie-denkt-ueber-grosses-h2-ready-gaskraftwerk-nach",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.zfk.de/politik/deutschland/kraftwerksgesetz-stromvkg-uniper-rwe-kmw",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    }
+   ]
+  }
+ ]
+}

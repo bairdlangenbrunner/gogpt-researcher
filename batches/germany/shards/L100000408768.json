@@ -1,0 +1,82 @@
+{
+ "meta": {
+  "plant_id": "L100000408768",
+  "plant_name": "Dillingen power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:35:12-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000412904",
+   "unit_name": "1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit. The only task was the plant location question, which is in the questions list."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000412904",
+   "concern_type": "other",
+   "recommendation": "Move the Dillingen plant coordinates to the steelworks site, about 49.356, 6.733. Leave the Ford Saarlouis point as it is.",
+   "note": "GEM shows Dillingen at 49.3512, 6.7509, which is about 1.4 kilometers east of the steelworks and close to the Ford plant. The Dillinger steelworks and the blast furnace gas power plant at Werkstrasse 1 in Dillingen are at about 49.356, 6.733 by a map search. A company register page for the plant company gives the same address, Werkstrasse 1, 66763 Dillingen/Saar. The Ford plant address is Henry-Ford-Strasse 1 in Saarlouis Roden, about 49.346, 6.745 by a map search. GEM's Ford point of 49.3467, 6.7651 is acceptable for the large site. So the Dillingen coordinates are the wrong ones. I did not change them.",
+   "refs": [
+    "https://www.northdata.com/Gichtgaskraftwerk%20Dillingen%20GmbH%20&%20Co%C2%B7%20KG,%20Dillingen%2FSaar/Amtsgericht%20Saarbr%C3%BCcken%20HRA%209861"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000412904",
+   "concern_type": "ownership",
+   "recommendation": "Review the owner entry.",
+   "note": "GEM lists the owner as AG der Dillinger Hüttenwerke AG at 100 percent. A list of new power plants from a news chronicle names the plant as Gichtgaskraftwerk Dillingen with STEAG Saar Energie, VSE and Rogesa as the partners, 90 MW, 2009. The plant company is a separate partnership registered at the steelworks address. I did not verify the shares, so I made no change.",
+   "refs": [
+    "https://energie-chronik.de/080407d3.htm",
+    "https://www.northdata.com/Gichtgaskraftwerk%20Dillingen%20GmbH%20&%20Co%C2%B7%20KG,%20Dillingen%2FSaar/Amtsgericht%20Saarbr%C3%BCcken%20HRA%209861"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.northdata.com/Gichtgaskraftwerk%20Dillingen%20GmbH%20&%20Co%C2%B7%20KG,%20Dillingen%2FSaar/Amtsgericht%20Saarbr%C3%BCcken%20HRA%209861",
+   "used_for": [
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Register page: plant company address is Werkstr. 1, 66763 Dillingen/Saar."
+  },
+  {
+   "url": "https://energie-chronik.de/080407d3.htm",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Names the plant partners."
+  },
+  {
+   "url": "https://www.saarland.ihk.de/p/1._Spatenstich_f%C3%BCr_den_Bau_des_neuen_Gichtgaskraftwerks_in_Dillingen-23-4126.html",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "failed",
+   "note": "Verifier got HTTP 400. Not used."
+  },
+  {
+   "url": "https://www.dillinger.de/d/en/news/press-releases/turning-of-the-first-sod-for-blast-furnace-gas-power-plant-in-dillingen-68177.shtml",
+   "used_for": [
+    "Fuel"
+   ],
+   "outcome": "dead",
+   "note": "Existing link now returns 404. It is kept in GEM, not dropped."
+  }
+ ]
+}

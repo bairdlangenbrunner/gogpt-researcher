@@ -1,0 +1,123 @@
+{
+ "meta": {
+  "plant_id": "L100000408780",
+  "plant_name": "Eisenhüttenstadt power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:35:00-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000412900",
+   "unit_name": "4",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit in this batch."
+  },
+  {
+   "gem_unit_id": "G100000412899",
+   "unit_name": "7",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit in this batch."
+  },
+  {
+   "gem_unit_id": "G100000412898",
+   "unit_name": "8",
+   "findings": {
+    "Latest Activity": {
+     "value": "Year: 2023",
+     "refs": [
+      "https://www.veo-eh.de/ueber-uns/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.veo-eh.de/ueber-uns/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": false,
+       "note": "I read the page myself. Its timeline says 2023: Inbetriebnahme Block 8, meaning Block 8 was commissioned. The page names the power plant company VEO."
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The timeline on the website of the power plant company VEO says that Block 8 was put into operation in 2023. This is the newest dated activity I found. The page gives only the year. This conflicts with GEM's cancelled status, so a researcher should review the status."
+    }
+   },
+   "not_found": [
+    "Cancellation year"
+   ],
+   "notes": "I found no cancellation. The VEO website says Block 8 was commissioned in 2023, and the Bundesnetzagentur power plant list of 26 June 2026 shows IKW Block 8 in operation. So no cancellation year can be given."
+  },
+  {
+   "gem_unit_id": "G100000412897",
+   "unit_name": "GuD",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit in this batch."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000412898",
+   "concern_type": "status",
+   "recommendation": "Review whether unit 8 should be operating instead of cancelled.",
+   "note": "GEM shows unit 8 as cancelled with 56 MW. The VEO website timeline says Block 8 was commissioned in 2023. The Bundesnetzagentur list dated 26 June 2026 shows IKW Block 8 of ArcelorMittal Eisenhüttenstadt GmbH in operation, 89.7 MW gross, gas turbine with steam turbine, with a listed start year of 1954 that looks wrong. A May 2019 article in a regional newspaper announced the 45 million euro build with completion planned for 2021. I did not propose a status change because this batch only asked for a cancellation year.",
+   "refs": [
+    "https://www.veo-eh.de/ueber-uns/"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000412897",
+   "concern_type": "duplicate",
+   "recommendation": "Check whether GuD and unit 8 describe the same equipment.",
+   "note": "The register's Block 8 row has a start year of 1954 and a combined cycle type. GEM's GuD unit shows 64 MW and a 1954 start. The two may be mixed up.",
+   "refs": []
+  },
+  {
+   "gem_unit_id": "G100000412898",
+   "concern_type": "owner",
+   "recommendation": "Check the owner of the plant.",
+   "note": "GEM shows ArcelorMittal Eisenhüttenstadt GmbH at 100 percent. The VEO website says the plant is run by Vulkan Energiewirtschaft Oderbrücke GmbH, held 51 percent by ArcelorMittal Berlin Holding GmbH and 49 percent by Stadtwerke Eisenhüttenstadt GmbH. The register lists ArcelorMittal Eisenhüttenstadt GmbH as operator.",
+   "refs": [
+    "https://www.veo-eh.de/ueber-uns/"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.veo-eh.de/ueber-uns/",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Company timeline page. States Block 8 commissioning in 2023."
+  },
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [],
+   "outcome": "verified",
+   "note": "Bundesnetzagentur power plant list, data date 26 June 2026. Row ArcelorMittal Eisenhüttenstadt GmbH, IKW Block 8, in operation. Used only for the status question."
+  },
+  {
+   "url": "https://www.moz.de/lokales/eisenhuettenstadt/ausbau-kraftwerk-von-veo-erhaelt-weiteren-neuen-block-48965968.html",
+   "used_for": [],
+   "outcome": "verified",
+   "note": "Article of 14 May 2019 on the 45 million euro build of Block 8 with completion planned for 2021. Existing link in GEM. Read it myself."
+  },
+  {
+   "url": "https://eisenhuettenstadt.arcelormittal.com/News-Information/Pressemeldungen/2019/broker.jsp",
+   "used_for": [],
+   "outcome": "blocked",
+   "note": "Existing link in GEM. Returns 403 request blocked from the fetch ladder."
+  }
+ ]
+}

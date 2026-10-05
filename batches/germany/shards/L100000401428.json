@@ -1,0 +1,90 @@
+{
+ "meta": {
+  "plant_id": "L100000401428",
+  "plant_name": "EDF Premnitz power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:50:00-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400884",
+   "unit_name": "CC",
+   "findings": {
+    "Latest Activity": {
+     "value": "Year: 2018, Month: 4",
+     "refs": [
+      "https://www.bdew.de/media/documents/20180427_Fakten-Argumente-Kraftwerkspark-Deutschland.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bdew.de/media/documents/20180427_Fakten-Argumente-Kraftwerkspark-Deutschland.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A federal energy industry association report dated 27 April 2018 still lists EDF Deutschland's 400 MW Premnitz gas plant as in the permit procedure. That is the newest dated mention I could verify. A federal environment agency table dated April 2019 was cited in GEM for status, but that link no longer works, so the 2019 date could not be checked. The report names the plant but does not say what happened that month, so this is medium."
+    }
+   },
+   "not_found": [
+    "Cancellation year"
+   ],
+   "notes": "I found no document that says the project was dropped, so there is no cancellation year. The newest verified mention is from April 2018."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000400884",
+   "concern_type": "dead link",
+   "recommendation": "Find the current address of the federal environment agency table dated 4 April 2019, which may hold a later activity date.",
+   "note": "The link in GEM now returns page not found. Earlier history: Brandenburg issued the permit in the mid 2000s to a subsidiary of Alpiq, and Alpiq sold the project to EDF Deutschland at the end of 2012.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.bdew.de/media/documents/20180427_Fakten-Argumente-Kraftwerkspark-Deutschland.pdf",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Lists EDF Deutschland, Premnitz, 400 MW, in the permit procedure."
+  },
+  {
+   "url": "https://www.umweltbundesamt.de/sites/default/files/medien/384/bilder/dateien/4_tab_genehmigte-in_genehmigung-kraftwerksprojekte_2019-04-04.pdf",
+   "used_for": [
+    "Latest Activity",
+    "Cancellation year"
+   ],
+   "outcome": "dead",
+   "note": "Existing source in the brief. It answers with page not found. It is kept in GEM."
+  },
+  {
+   "url": "https://www.energie-und-management.de/nachrichten/suche/detail//vorlaeufige-genehmigung-fuer-alpiq-kraftwerk-bei-berlin-81337",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "not relevant",
+   "note": "Older article on the first permit decision. Not dated in the text I read. Not cited."
+  },
+  {
+   "url": "https://www.brandenburg.de/cms/detail.php?gsid=bb1.c.173161.de",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "not relevant",
+   "note": "Older state government release on the permit. Not cited."
+  }
+ ]
+}

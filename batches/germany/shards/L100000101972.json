@@ -1,0 +1,198 @@
+{
+ "meta": {
+  "plant_id": "L100000101972",
+  "plant_name": "Mainz power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:29:58-04:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000412860",
+   "unit_name": "IC1-10",
+   "findings": {},
+   "not_found": [
+    "Captive industry use",
+    "Captive industry type"
+   ],
+   "notes": "I found no document that says these ten gas engines supply one industrial customer. The owner's page says the engines feed power into the grid and heat into the district heating network. So the captive values in the database look unsupported."
+  },
+  {
+   "gem_unit_id": "G100000400212",
+   "unit_name": "KW2",
+   "findings": {},
+   "not_found": [
+    "Captive industry use",
+    "Captive industry type"
+   ],
+   "notes": "I found no document that says this unit supplies one industrial customer. The owner's page says it now sits in the grid reserve, where it is called up when the grid is short of power. So the captive values look unsupported."
+  },
+  {
+   "gem_unit_id": "G100000400213",
+   "unit_name": "KW3",
+   "findings": {},
+   "not_found": [
+    "Captive industry use",
+    "Captive industry type"
+   ],
+   "notes": "I found no document that says this unit supplies one industrial customer. The owner's page describes it as a gas and steam plant for the regional power market. So the captive values look unsupported."
+  },
+  {
+   "gem_unit_id": "G100001071687",
+   "unit_name": "ZKW",
+   "findings": {
+    "Latest Activity": {
+     "value": "Year: 2026, Month: 2, Day: 13",
+     "refs": [
+      "https://www.energie-und-management.de/nachrichten/detail/mainz-verfolgt-54-mw-plan-weiter-und-legt-250-mw-auf-eis-351669"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.energie-und-management.de/nachrichten/detail/mainz-verfolgt-54-mw-plan-weiter-und-legt-250-mw-auf-eis-351669",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A trade press article from 13 February 2026 reports that the plant owner has put the 250 MW project into a waiting phase. This is the newest dated report I found, and it matches the date already in the database. A company press release from February 2026 says the same, but its page shows no exact day."
+    },
+    "Status Detail": {
+     "value": "Application for approval filed in October 2025. In February 2026 the owner put the project in a waiting phase until the federal power plant strategy is settled. No construction found.",
+     "refs": [
+      "https://www.energie-und-management.de/nachrichten/detail/mainz-verfolgt-54-mw-plan-weiter-und-legt-250-mw-auf-eis-351669",
+      "https://www.kmw-ag.de/oeffentlichkeitsbeteiligung_motorenkraftwerk/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.energie-und-management.de/nachrichten/detail/mainz-verfolgt-54-mw-plan-weiter-und-legt-250-mw-auf-eis-351669",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.kmw-ag.de/oeffentlichkeitsbeteiligung_motorenkraftwerk/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Both pages say the large hydrogen-ready plant is waiting for decisions at federal level. The owner has already cleared the site and done permit planning at its own cost. The trade article is based on the owner's statement, so these two pages count as one origin."
+    }
+   },
+   "not_found": [
+    "Cancellation year"
+   ],
+   "notes": "Still shelved. The owner calls it a waiting phase, not a cancellation, and the newest evidence is from February 2026. So the status stays shelved and no cancellation year applies. The captive fields were not part of the task for this unit."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000412860",
+   "concern_type": "unsupported value",
+   "recommendation": "Consider clearing Captive industry use and Captive industry type on the three operating units, or find the document the earlier researcher used.",
+   "note": "The owner's pages for the engine plant, the combined cycle plant and the older combined plant describe grid, reserve and district heating supply. None names an industrial customer or a machinery maker. The data center on the site is supplied by a new 54 MW engine plant that is not yet built. The earlier researcher's source for the machinery label is not recorded.",
+   "refs": [
+    "https://www.kmw-ag.de/anlagen/blockheizkraftwerk/",
+    "https://www.kmw-ag.de/anlagen/kombikraftwerk/"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000400212",
+   "concern_type": "unsupported value",
+   "recommendation": "Same question as for the engine plant, applied to units KW2 and KW3.",
+   "note": "The owner's page for KW2 says the unit is only in the grid reserve. The register dated 26 June 2026 shows the KW2 steam unit as grid reserve and the KW2 gas turbine as in operation.",
+   "refs": [
+    "https://www.kmw-ag.de/anlagen/kombikraftwerk/"
+   ]
+  },
+  {
+   "concern_type": "duplicate",
+   "recommendation": "Do not add a new unit here. The 54 MW gas engine plant is already in GEM as KMW Gas Engine Power Plant (GEM location ID L100001062418), which was also checked in this batch.",
+   "note": "The research for Mainz power station turned up the owner's 54 MW gas engine plant with 12 Jenbacher engines on the same site. GEM records it as a separate plant, KMW Gas Engine Power Plant. The dates found here may help that record: a permit application in October 2025, a request on 16 January 2026 to start building early, public consultation from 9 February 2026, a construction contract with the engine maker signed on 15 September 2025, and commissioning planned for the end of 2027. It would supply the Green Rocks data center on the site.",
+   "refs": [
+    "https://www.kmw-ag.de/oeffentlichkeitsbeteiligung_motorenkraftwerk/",
+    "https://www.energie-und-management.de/nachrichten/detail/mainz-verfolgt-54-mw-plan-weiter-und-legt-250-mw-auf-eis-351669"
+   ],
+   "verifications": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.energie-und-management.de/nachrichten/detail/mainz-verfolgt-54-mw-plan-weiter-und-legt-250-mw-auf-eis-351669",
+   "used_for": [
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Trade article dated 13 February 2026."
+  },
+  {
+   "url": "https://www.kmw-ag.de/oeffentlichkeitsbeteiligung_motorenkraftwerk/",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "The owner's own press page. States the waiting phase and the permit steps for the new engine plant."
+  },
+  {
+   "url": "https://www.kmw-ag.de/zkw-in-planung/",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "dead",
+   "note": "Existing link in the database. It now returns page not found. Kept in the database trail. Not dropped."
+  },
+  {
+   "url": "https://www.kmw-ag.de/anlagen/kombikraftwerk/",
+   "used_for": [
+    "Captive industry use"
+   ],
+   "outcome": "verified",
+   "note": "Says the older combined plant, 330 MW, is in the grid reserve."
+  },
+  {
+   "url": "https://www.kmw-ag.de/anlagen/blockheizkraftwerk/",
+   "used_for": [
+    "Captive industry use"
+   ],
+   "outcome": "verified",
+   "note": "Ten engines, 100 MW electric, heat into district heating."
+  },
+  {
+   "url": "https://www.kmw-ag.de/anlagen/gas-dampf-kraftwerk/",
+   "used_for": [
+    "Captive industry use"
+   ],
+   "outcome": "verified",
+   "note": "Page read. No customer named. The 406 MW figure is on the page."
+  },
+  {
+   "url": "https://www.kmw-ag.de/anlagen/konsortium-energieversorgung-opel/",
+   "used_for": [
+    "Captive industry use"
+   ],
+   "outcome": "not relevant",
+   "note": "Describes a separate 101 MW plant at the Opel site in Ruesselsheim, which is not this plant."
+  },
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Register dated 26 June 2026. KMW rows show engines and KW3 as in operation, KW2 steam unit in grid reserve."
+  }
+ ]
+}

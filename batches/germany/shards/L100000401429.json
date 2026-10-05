@@ -1,0 +1,73 @@
+{
+ "meta": {
+  "plant_id": "L100000401429",
+  "plant_name": "Griesheim Reserve power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T12:30:00-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400885",
+   "unit_name": "CC",
+   "findings": {
+    "Latest Activity": {
+     "value": "Year: 2019, Month: 1, Day: 12",
+     "refs": [
+      "https://www.fnp.de/frankfurt/genehmigung-notfall-kraftwerk-angelaufen-11139948.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.fnp.de/frankfurt/genehmigung-notfall-kraftwerk-angelaufen-11139948.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Frankfurter Neue Presse article dated 12 January 2019 reports that the regional authority in Darmstadt had just started the emissions permit procedure for the planned reserve power plant. It is the newest dated report I found. The article also says the plant would now be about 335 MW, less than the 500 MW first announced."
+    }
+   },
+   "not_found": [
+    "Cancellation year"
+   ],
+   "notes": "I found no document that says when the project was dropped or its permit refused. Searches in German and English only returned the 2014 announcement and the January 2019 permit article."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000400885",
+   "concern_type": "value",
+   "recommendation": "Consider whether the capacity of 500 MW is still right. The January 2019 article gives about 335 MW electric for the permit application.",
+   "note": "The permit application described one gas turbine with about 335 MW electric output. The 500 MW figure is from the 2014 first announcement.",
+   "refs": [
+    "https://www.fnp.de/frankfurt/genehmigung-notfall-kraftwerk-angelaufen-11139948.html"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.fnp.de/frankfurt/genehmigung-notfall-kraftwerk-angelaufen-11139948.html",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Existing source. Dated 12 January 2019."
+  },
+  {
+   "url": "https://www.chemietechnik.de/markt/pq-energy-will-gasturbinenkraftwerk-in-griesheim-bauen.html",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Read through the fetch tool. Early announcement with no cancellation information. Not run through the URL checker."
+  }
+ ]
+}

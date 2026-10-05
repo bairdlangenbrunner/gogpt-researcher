@@ -1,0 +1,133 @@
+{
+ "meta": {
+  "plant_id": "L100001062421",
+  "plant_name": "Gundremmingen power plant",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:29:09-04:00",
+  "done": true,
+  "urls_attempted": 9,
+  "urls_verified": 8
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001071693",
+   "unit_name": "Peaker 1",
+   "findings": {
+    "Turbine/Engine Technology": {
+     "value": "internal combustion",
+     "refs": [
+      "https://www.regierung-schwaben.bayern.de/mam/aufgaben/b5/sg_55.1/peaker/01/01.04-01__anlage__kurzbeschreibung_vorhaben.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.regierung-schwaben.bayern.de/mam/aufgaben/b5/sg_55.1/peaker/01/01.04-01__anlage__kurzbeschreibung_vorhaben.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The short project description from the Regierung von Schwaben permit file says the plant uses gas engines, with 124 MW of electric output. GEM lists it as a combined cycle plant, which does not fit."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "INNIO Jenbacher: J624, INNIO Jenbacher: J620",
+     "refs": [
+      "https://www.regierung-schwaben.bayern.de/mam/aufgaben/b5/sg_55.1/peaker/03/03.00-00_anlagen_betriebsbeschr.pdf",
+      "https://www.regierung-schwaben.bayern.de/mam/aufgaben/b5/sg_55.1/peaker/08/08.00-00_energieeffizienz_w%C3%A4rmenutzung_knv.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.regierung-schwaben.bayern.de/mam/aufgaben/b5/sg_55.1/peaker/03/03.00-00_anlagen_betriebsbeschr.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.regierung-schwaben.bayern.de/mam/aufgaben/b5/sg_55.1/peaker/08/08.00-00_energieeffizienz_w%C3%A4rmenutzung_knv.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The permit documents list 26 engines of type JMS 624 and 2 of type JMS 620. They do not name the maker. JMS is the engine series of INNIO Jenbacher, so the maker is an inference."
+    },
+    "City": {
+     "value": "Gundremmingen",
+     "refs": [
+      "https://www.regierung-schwaben.bayern.de/mam/aufgaben/b5/sg_55.1/peaker/01/01.04-01__anlage__kurzbeschreibung_vorhaben.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.regierung-schwaben.bayern.de/mam/aufgaben/b5/sg_55.1/peaker/01/01.04-01__anlage__kurzbeschreibung_vorhaben.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The short project description names Gundremmingen as the site."
+    },
+    "Latest Activity": {
+     "value": "Year: 2025, Month: 10, Day: 29",
+     "refs": [
+      "https://www.rwe.com/en/press/rwe-generation/2025-10-29-rwe-is-constructing-germanys-largest-battery-storage-facility-in-gundremmingen/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.rwe.com/en/press/rwe-generation/2025-10-29-rwe-is-constructing-germanys-largest-battery-storage-facility-in-gundremmingen/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "An RWE press release of 29 October 2025 says a gas-fired power station is also planned at the site."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Start year",
+    "Capacity (MW)",
+    "Owner(s)"
+   ],
+   "notes": "Status stays pre-construction. The permit was applied for on 13 December 2024 and publicly noticed on 4 March 2025. The plant is 28 gas engines with up to 124 MW electric output and under 1,500 operating hours a year. No start year was found."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001071693",
+   "concern_type": "status",
+   "recommendation": "Check whether the permit was granted in December 2025.",
+   "note": "A search summary said the permit was announced on 22 December 2025. I could not confirm this on any page, so no change is proposed.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.regierung-schwaben.bayern.de/mam/aufgaben/b5/sg_55.1/peaker/01/01.04-01__anlage__kurzbeschreibung_vorhaben.pdf",
+   "used_for": [
+    "Turbine/Engine Technology",
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "PDF loads. Found 124 MWel, Gasmotor and Gundremmingen."
+  },
+  {
+   "url": "https://www.regierung-schwaben.bayern.de/aufgaben/info_sachgebiete/55-1gasmotor/index.html",
+   "used_for": [],
+   "outcome": "failed",
+   "note": "The permit index page returned an error page to the checker. The PDFs from the same file were used instead."
+  }
+ ]
+}

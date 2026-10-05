@@ -1,0 +1,86 @@
+{
+ "meta": {
+  "plant_id": "L100000401433",
+  "plant_name": "Leipheim power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:26:49-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400889",
+   "unit_name": "GT1, timepoint 1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing was asked for on this unit, so it was not researched."
+  },
+  {
+   "gem_unit_id": "G100001030597",
+   "unit_name": "GT2, timepoint 1",
+   "findings": {
+    "Status Detail": {
+     "value": "Planned second gas plant at Leipheim, hydrogen ready, similar size to the existing plant, for the years up to 2030. No permit or construction reported.",
+     "refs": [
+      "https://www.leag.de/de/standorte-technologien/kraftwerke/gaskraftwerk-leipheim/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.leag.de/de/standorte-technologien/kraftwerke/gaskraftwerk-leipheim/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The owner's Leipheim page says that for the coming years up to 2030 it plans a second, modern gas power plant at the site that should be hydrogen ready. The page is undated. This replaces the old comment that the project was no longer on the company page. The page gives no permit or construction start."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Latest Activity",
+    "Capacity (MW)",
+    "Owner(s)"
+   ],
+   "notes": "The owner still lists this second plant as planned, so the status stays as it is. I found no turbine model, start year, capacity or dated report. I also found no link to the nearby data center."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001030597",
+   "concern_type": "status",
+   "recommendation": "Consider whether announced fits better than pre-construction.",
+   "note": "The owner says only that it plans a second plant by 2030. I found no permit or construction. If that is all there is, the lifecycle rules point to announced. I did not change the status.",
+   "refs": [
+    "https://www.leag.de/de/standorte-technologien/kraftwerke/gaskraftwerk-leipheim/"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.leag.de/de/standorte-technologien/kraftwerke/gaskraftwerk-leipheim/",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Owner page confirms the planned second plant up to 2030."
+  },
+  {
+   "url": "https://www.leag.de/de/seitenblickblog/artikel/leag-bereitet-sich-auf-bedarf-nach-neuen-gaskraftwerken-vor/",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Owner interview from about 2022. It covers Schwarze Pumpe and Lippendorf and is too old to use for Leipheim."
+  }
+ ]
+}

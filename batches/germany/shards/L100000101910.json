@@ -1,0 +1,128 @@
+{
+ "meta": {
+  "plant_id": "L100000101910",
+  "plant_name": "Braunschweig Mitte power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:29:37-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400122",
+   "unit_name": "Block 12",
+   "findings": {},
+   "not_found": [],
+   "notes": "The brief asked for no checks on this unit, so nothing is reported."
+  },
+  {
+   "gem_unit_id": "G100001027813",
+   "unit_name": "GT1, timepoint 1",
+   "findings": {
+    "Equipment Manufacturer/Model": {
+     "value": "Siemens SGT-800 C1",
+     "refs": [
+      "https://www.bs-energy.de/engagement/umwelt/kohleausstieg/",
+      "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/zwei-neue-heizkraftwerke-in-braunschweig-183157"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bs-energy.de/engagement/umwelt/kohleausstieg/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/zwei-neue-heizkraftwerke-in-braunschweig-183157",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The BS Energy page on the coal exit lists the gas turbine at the Mitte site with manufacturer Siemens and type SGT 800 C1. A trade magazine article from May 2023 also says the gas turbine and heat recovery unit come from Siemens. The article does not give the model."
+    }
+   },
+   "not_found": [],
+   "notes": "The manufacturer and model are now found. The gas turbine page of the owner no longer loads, so I used the coal exit page."
+  },
+  {
+   "gem_unit_id": "G100000400123",
+   "unit_name": "GuD",
+   "findings": {},
+   "not_found": [],
+   "notes": "The brief asked for no checks on this unit, so nothing is reported."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000400122",
+   "concern_type": "location",
+   "recommendation": "Check the coordinates of both plants against a map. Do not change them yet.",
+   "note": "GEM puts Braunschweig Mitte and Braunschweig Nord within 100 meters of each other, so at least one coordinate is wrong. A trade magazine article from May 2023 places the Mitte plant on Hamburger Strasse. BS Energy says the Nord plant started in 1963. I did not find a street address for the Nord plant or a document with coordinates for either plant, so I cannot say which coordinate is wrong.",
+   "refs": [
+    "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/zwei-neue-heizkraftwerke-in-braunschweig-183157"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000400123",
+   "concern_type": "capacity and register mismatch",
+   "recommendation": "No change now. Review the unit capacities against the regulator's list.",
+   "note": "The regulator's list dated 26 June 2026 shows two Mitte rows, both started in 2023. One is a gas turbine with heat recovery at 68.4 MW gross. The other is named GuD BMHKW at 104.2 MW gross. This does not match GEM's units of 62 MW, 75 MW and 20 MW. The GuD in GEM started in 2010 according to BS Energy. These units were marked as nothing to check, so I report the mismatch only as a question.",
+   "refs": [
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "qa"
+   ],
+   "outcome": "verified",
+   "note": "Loads. Read the file with a spreadsheet tool. Two HKW Mitte rows for Braunschweiger Versorgungs-AG & Co. KG, data date 26 June 2026."
+  },
+  {
+   "url": "https://www.bs-energy.de/geschaeftskunden/unternehmen-1/erzeugung-der-zukunft/gasturbine-flexibel-mit-brennstoff-erdgas",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "dead",
+   "note": "Returns HTTP 404 on the live site."
+  },
+  {
+   "url": "https://www.bs-energy.de/unternehmen/versorgung/erzeugungsanlagen/",
+   "used_for": [
+    "location"
+   ],
+   "outcome": "not relevant",
+   "note": "Loads and describes both plants, but gives no street address or coordinates."
+  },
+  {
+   "url": "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/zwei-neue-heizkraftwerke-in-braunschweig-183157",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "location"
+   ],
+   "outcome": "verified",
+   "note": "Names Siemens and Hamburger Strasse."
+  },
+  {
+   "url": "https://www.bs-energy.de/engagement/umwelt/kohleausstieg/",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Lists Siemens, SGT 800 C1. This is an existing source link for the unit."
+  }
+ ]
+}

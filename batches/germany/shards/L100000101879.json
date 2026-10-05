@@ -1,0 +1,173 @@
+{
+ "meta": {
+  "plant_id": "L100000101879",
+  "plant_name": "Pforzheim power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:34:16-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000412847",
+   "unit_name": "IC1-5",
+   "findings": {},
+   "not_found": [],
+   "notes": "Owner and location sources were found at plant level and apply to this unit. The owner source points to a different company than GEM lists."
+  },
+  {
+   "gem_unit_id": "G100000400235",
+   "unit_name": "II",
+   "findings": {},
+   "not_found": [],
+   "notes": "Owner and location sources were found at plant level and apply to this unit. This unit is retired, so the current owner of the site may differ from the owner at retirement."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "SWP Stadtwerke Pforzheim GmbH & Co. KG [100%]",
+   "refs": [
+    "https://www.stadtwerke-pforzheim.de/waerme/heizkraftwerk-hkw/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.stadtwerke-pforzheim.de/waerme/heizkraftwerk-hkw/",
+     "ok": true,
+     "contains_value": false,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The Stadtwerke Pforzheim page on the combined heat and power plant says the five new gas engines opened in June 2021. Its emission measurement reports for the gas engine plant are issued by SWP Stadtwerke Pforzheim GmbH und Co. KG. A Wikipedia article on the utility says the utility took over Heizkraftwerk Pforzheim GmbH in 2020 after holding 90 percent before. So the plant now appears to be held by the utility itself, not by the old company that GEM lists. The share is not stated on the page, so this needs a second source before GEM changes the owner."
+  },
+  "Latitude": {
+   "value": "48.8972660",
+   "refs": [
+    "https://www.stadtwerke-pforzheim.de/impressum/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.stadtwerke-pforzheim.de/impressum/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The Stadtwerke Pforzheim legal notice lists the power plant at Hohwiesenweg 15, 75175 Pforzheim. A map lookup of that address gives about 48.8971 north and 8.7255 east, roughly 70 meters from the coordinates GEM already holds. So the existing point is consistent with the plant site. The page itself does not print coordinates."
+  },
+  "Longitude": {
+   "value": "8.7245300",
+   "refs": [
+    "https://www.stadtwerke-pforzheim.de/impressum/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.stadtwerke-pforzheim.de/impressum/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The Stadtwerke Pforzheim legal notice lists the power plant at Hohwiesenweg 15, 75175 Pforzheim. A map lookup of that address gives about 48.8971 north and 8.7255 east, roughly 70 meters from the coordinates GEM already holds. So the existing point is consistent with the plant site. The page itself does not print coordinates."
+  },
+  "Location accuracy": {
+   "value": "exact",
+   "refs": [
+    "https://www.stadtwerke-pforzheim.de/impressum/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.stadtwerke-pforzheim.de/impressum/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The Stadtwerke Pforzheim legal notice lists the power plant at Hohwiesenweg 15, 75175 Pforzheim. A map lookup of that address gives about 48.8971 north and 8.7255 east, roughly 70 meters from the coordinates GEM already holds. So the existing point is consistent with the plant site. The page itself does not print coordinates. The address matches a building, so exact is reasonable."
+  },
+  "City": {
+   "value": "Pforzheim",
+   "refs": [
+    "https://www.stadtwerke-pforzheim.de/impressum/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.stadtwerke-pforzheim.de/impressum/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The Stadtwerke Pforzheim legal notice lists the power plant at Hohwiesenweg 15, 75175 Pforzheim. A map lookup of that address gives about 48.8971 north and 8.7255 east, roughly 70 meters from the coordinates GEM already holds. So the existing point is consistent with the plant site. The page itself does not print coordinates."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000412847",
+   "concern_type": "owner",
+   "recommendation": "Check whether the owner should now be SWP Stadtwerke Pforzheim GmbH & Co. KG instead of Heizkraftwerk Pforzheim GmbH.",
+   "note": "The utility took over the plant company in 2020 according to Wikipedia, and the regulator's power plant list dated 26 June 2026 names SWP Stadtwerke Pforzheim as operator of the five engines. I did not find a second independent source for a closed transaction. The existing owner entity Heizkraftwerk Pforzheim GmbH is in GEM on 3 units. The name SWP Stadtwerke Pforzheim was not found in the local entity list.",
+   "refs": [
+    "https://www.stadtwerke-pforzheim.de/waerme/heizkraftwerk-hkw/"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "SWP Stadtwerke Pforzheim GmbH & Co. KG",
+   "role": "owner",
+   "lookup_result": "Local lookup found nothing. Not changed because the owner change is not confirmed. The remote check was not run."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.stadtwerke-pforzheim.de/waerme/heizkraftwerk-hkw/",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Page loads and names the utility and the gas engine plant. The verifier text match failed on a hidden character in the company name, so I read the page myself."
+  },
+  {
+   "url": "https://www.stadtwerke-pforzheim.de/impressum/",
+   "used_for": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Lists the plant address."
+  },
+  {
+   "url": "https://de.wikipedia.org/wiki/Stadtwerke_Pforzheim",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "not relevant",
+   "note": "Used only as a lead for the 2020 takeover. It is not cited."
+  },
+  {
+   "url": "https://web2.cylex.de/firma-home/heizkraftwerk-pforzheim---swp-stadtwerke-pforzheim-gmbh-_-co--kg-15642936.html",
+   "used_for": [
+    "Location"
+   ],
+   "outcome": "blocked",
+   "note": "HTTP 403 and no archived copy. A business directory, so not needed."
+  }
+ ]
+}

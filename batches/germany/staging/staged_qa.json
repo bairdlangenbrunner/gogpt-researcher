@@ -1,0 +1,1981 @@
+{
+  "meta": {
+    "lane": "qa",
+    "scope": {
+      "country": "Germany",
+      "state": "",
+      "postal": "",
+      "kind": "country",
+      "slug": "germany",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-05T15:43:21-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 122
+    }
+  },
+  "records": [
+    {
+      "gem_unit_id": "G100000410325",
+      "concern_type": "capacity",
+      "recommendation": "Check capacity",
+      "refs": {
+        "links": [
+          "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/enbw-baut-zwei-grosse-gaskraftwerke-200074"
+        ]
+      },
+      "gem_plant_id": "L100000101873",
+      "plant_name": "Altbach power station",
+      "country": "Germany",
+      "unit_name": "HKW3, timepoint 1",
+      "fields": {},
+      "researcher_notes": "EnBW press material gives 680 MW in one place and up to 750 MW in another. GEM shows 665 MW from the regulator register. The research note in GEM already records this conflict.",
+      "record_id": "L100000101873:G100000410325:qa-capacity-1"
+    },
+    {
+      "gem_unit_id": "G100001020493",
+      "concern_type": "status",
+      "recommendation": "Review status",
+      "refs": {
+        "links": [
+          "https://www.steag-iqony-group.com/en/ccgt-bergkamen"
+        ]
+      },
+      "gem_plant_id": "L100000101925",
+      "plant_name": "Bergkamen power station",
+      "country": "Germany",
+      "unit_name": "CC1, timepoint 1",
+      "fields": {},
+      "researcher_notes": "The owner's pages describe the plant as in planning. A search showed a gas pipeline planning application to the Arnsberg district government in spring 2026. I found no building permit or construction start for the power plant itself. A pre-construction status may be too advanced.",
+      "record_id": "L100000101925:G100001020493:qa-status-1"
+    },
+    {
+      "gem_unit_id": "G100000412902",
+      "concern_type": "stale planned retirement",
+      "recommendation": "Clear the planned retirement year of 2024 and consider recording the engine replacement in the status detail.",
+      "refs": {
+        "links": [
+          "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/1d802955-e253-435f-8bf8-ecde4471591f/UVP-B_EVC_1_3.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000408767",
+      "plant_name": "Dresden power station",
+      "country": "Germany",
+      "unit_name": "EVC2",
+      "fields": {},
+      "researcher_notes": "The 2022 environmental report for EVC 1, EVC 2 and EVC 3 says the nine existing engines of each of the first two blocks are to be swapped for nine new engines of 5.28 MW electric each. That would raise each block from about 34.9 MW to 47.5 MW electric. The report names Bergen Engines type B36:45 L9AG1 as the expected make. It says nothing about closing either block. The regulator's list of June 2026 still shows the old 3.8 MW engines as in operation. I could not find a date for the swap.",
+      "record_id": "L100000408767:G100000412902:qa-stale-planned-retirement-1"
+    },
+    {
+      "gem_unit_id": "G100000412902",
+      "concern_type": "capacity",
+      "recommendation": "Check whether 39.0 MW is right for EVC2.",
+      "refs": {
+        "links": [
+          "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/1d802955-e253-435f-8bf8-ecde4471591f/UVP-B_EVC_1_3.pdf",
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000408767",
+      "plant_name": "Dresden power station",
+      "country": "Germany",
+      "unit_name": "EVC2",
+      "fields": {},
+      "researcher_notes": "GEM has 10 engines of 3.9 MW, which gives 39.0 MW. The environmental report says nine engines are installed and ten were permitted, at about 34.9 MW electric in total. The regulator's list shows nine engines of 3.83 MW gross, about 34.5 MW. The same list shows nine engines for EVC1 at 3.88 MW gross, about 35.0 MW, while GEM has 8 engines and 31.2 MW. Both blocks may be undercounted or overcounted in GEM. I did not change the values because the brief did not ask for a capacity check on these blocks.",
+      "record_id": "L100000408767:G100000412902:qa-capacity-2"
+    },
+    {
+      "gem_unit_id": "G100001024025",
+      "concern_type": "equipment make",
+      "recommendation": "Check the engine make for EVC3.",
+      "refs": {
+        "links": [
+          "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/1d802955-e253-435f-8bf8-ecde4471591f/UVP-B_EVC_1_3.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000408767",
+      "plant_name": "Dresden power station",
+      "country": "Germany",
+      "unit_name": "EVC3",
+      "fields": {},
+      "researcher_notes": "GEM lists MTU 4000 series. The environmental report names Bergen Engines for the replacement engines in EVC 1 and EVC 2 as the expected make. It does not clearly name a make for EVC 3. The new engines for EVC 3 may be the same type, but I could not confirm that.",
+      "record_id": "L100000408767:G100001024025:qa-equipment-make-3"
+    },
+    {
+      "gem_unit_id": "G100001024025",
+      "concern_type": "latest activity",
+      "recommendation": "Add a Latest Activity date once the permit notice can be read.",
+      "refs": {},
+      "gem_plant_id": "L100000408767",
+      "plant_name": "Dresden power station",
+      "country": "Germany",
+      "unit_name": "EVC3",
+      "fields": {},
+      "researcher_notes": "A web search result showed that the Saxony state directorate gave the first partial permit for building EVC 3 on 14 April 2025. The permit office website blocked my requests with a too many requests error, so I could not read the notice or check this date. It is not recorded as a finding.",
+      "record_id": "L100000408767:G100001024025:qa-latest-activity-4"
+    },
+    {
+      "gem_unit_id": "G100000412903",
+      "concern_type": "owner",
+      "recommendation": "Check the owner names.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000408767",
+      "plant_name": "Dresden power station",
+      "country": "Germany",
+      "unit_name": "EVC1",
+      "fields": {},
+      "researcher_notes": "GEM names Energieversorgungscenter Dresden-Wilschdorf GmbH & Co KG as owner. The regulator's list names GlobalFoundries Dresden Module Two LLC & Co. KG as operator of the 1998 engines and Module One LLC & Co. KG for the 2004 engines. The permit documents name a company called Zweite Energieversorgungscenter Dresden-Wilschdorf GmbH & Co. KG for EVC 2. The register names the operator, not necessarily the owner, so no change is proposed.",
+      "record_id": "L100000408767:G100000412903:qa-owner-5"
+    },
+    {
+      "gem_unit_id": "G100001071773",
+      "concern_type": "location and scope change",
+      "recommendation": "Review whether this unit should move to Schlüchtern and be renamed, and whether it still counts as a gas plant.",
+      "refs": {
+        "links": [
+          "https://www.hessenschau.de/wirtschaft/mega-projekt-in-schluechtern-neues-kraftwerk-soll-rechenzentrum-versorgen-v2,kraftwerksplaene-schluechtern-100.html",
+          "https://www.gnz.de/lokales/main-kinzig-kreis/birstein/birstein-und-schluechtern-kooperieren-kraftwerk-soll-strom-fuer-rechenzentrum-liefern-X6FTBANV4VGR7ATVISRC4TXNTA.html"
+        ]
+      },
+      "gem_plant_id": "L100001062490",
+      "plant_name": "Frank Cube power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "In August 2026 the developer and the town of Schlüchtern announced that the power plant for the Birstein data center will be built in the Auf dem Reitstück industrial area in Schlüchtern, near the Elm substation, not in Birstein. The plant is planned at 276 MW, with 80 percent from fuel cells and 20 percent from gas burning, and hydrogen from the mid 2030s. About 50 MW of heat would go to a district heating network. GEM's 135 MW estimate was based on gas supplying half of 250 to 270 MW, so it no longer matches. Gas would supply roughly 55 MW if the 20 percent applies to the 276 MW. I did not change the capacity because the source does not give a gas capacity.",
+      "record_id": "L100001062490:G100001071773:qa-location-and-scope-change-1"
+    },
+    {
+      "gem_unit_id": "G100001071773",
+      "concern_type": "start year and owner",
+      "recommendation": "Consider moving the start year later and wait for the named builder.",
+      "refs": {
+        "links": [
+          "https://www.hessenschau.de/wirtschaft/mega-projekt-in-schluechtern-neues-kraftwerk-soll-rechenzentrum-versorgen-v2,kraftwerksplaene-schluechtern-100.html"
+        ]
+      },
+      "gem_plant_id": "L100001062490",
+      "plant_name": "Frank Cube power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Construction is to start in early 2028 and take two years, so operation would be around 2030. GEM has 2028, which now looks like the data center date from earlier articles. The town says a large German energy company will build and operate the plant, but it has not been named. The owner in GEM, Argaman Group GmbH, may change once that company is named.",
+      "record_id": "L100001062490:G100001071773:qa-start-year-and-owner-2"
+    },
+    {
+      "gem_unit_id": "G100001071773",
+      "concern_type": "technology",
+      "recommendation": "Review the combined cycle entry.",
+      "refs": {
+        "links": [
+          "https://www.hessenschau.de/wirtschaft/mega-projekt-in-schluechtern-neues-kraftwerk-soll-rechenzentrum-versorgen-v2,kraftwerksplaene-schluechtern-100.html"
+        ]
+      },
+      "gem_plant_id": "L100001062490",
+      "plant_name": "Frank Cube power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The sources describe fuel cells and gas burning. They do not say combined cycle. The technology and the combined heat and power flag could not be confirmed from the sources I read.",
+      "record_id": "L100001062490:G100001071773:qa-technology-3"
+    },
+    {
+      "gem_unit_id": "G100001071773",
+      "concern_type": "other",
+      "recommendation": "Note the local politics.",
+      "refs": {
+        "links": [
+          "https://www.hessenschau.de/wirtschaft/mega-rechenzentrum-in-birstein-gemeinde-bremst-buergerentscheid-aus-v1,rechenzentrum-birstein-100.html"
+        ]
+      },
+      "gem_plant_id": "L100001062490",
+      "plant_name": "Frank Cube power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The Birstein council refused a citizens' vote on the data center in June 2026, according to hessenschau. A similar gas plant for a data center in Maintal failed in its city council.",
+      "record_id": "L100001062490:G100001071773:qa-other-4"
+    },
+    {
+      "gem_unit_id": "G100000409761",
+      "concern_type": "status",
+      "recommendation": "Keep mothballed unless a second source shows the unit is back in service.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000101968",
+      "plant_name": "Gersteinwerk power station",
+      "country": "Germany",
+      "unit_name": "I2",
+      "fields": {},
+      "researcher_notes": "The Bundesnetzagentur power plant list dated 26 June 2026 lists Gersteinwerk I DT (I2), operator RWE Generation SE, 355 MW, started 1973, with status provisionally closed. The regulator's mapping would read this as operating, but a status change needs two independent sources and I found only this one.",
+      "record_id": "L100000101968:G100000409761:qa-status-1"
+    },
+    {
+      "gem_unit_id": "G100000400172",
+      "concern_type": "value",
+      "recommendation": "Check whether the unit named K1 is the 112 MW gas turbine Gersteinwerk K, started 1984.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000101968",
+      "plant_name": "Gersteinwerk power station",
+      "country": "Germany",
+      "unit_name": "K1",
+      "fields": {},
+      "researcher_notes": "The same list shows Gersteinwerk K as 112 MW net, in the capacity reserve, while GEM's unit K1 was not checked in this batch. Also unit H1 is 46 MW in the list and 48 MW in GEM.",
+      "record_id": "L100000101968:G100000400172:qa-value-2"
+    },
+    {
+      "gem_unit_id": "G100001071693",
+      "concern_type": "status",
+      "recommendation": "Check whether the permit was granted in December 2025.",
+      "refs": {},
+      "gem_plant_id": "L100001062421",
+      "plant_name": "Gundremmingen power plant",
+      "country": "Germany",
+      "unit_name": "Peaker 1",
+      "fields": {},
+      "researcher_notes": "A search summary said the permit was announced on 22 December 2025. I could not confirm this on any page, so no change is proposed.",
+      "record_id": "L100001062421:G100001071693:qa-status-1"
+    },
+    {
+      "gem_unit_id": "G100001094609",
+      "concern_type": "owner",
+      "recommendation": "Check the ownership shares of the plant company.",
+      "refs": {
+        "links": [
+          "https://stadtwerke-hanau.de/blog/stadtwerke-hanau-und-mainova-gruenden-gemeinsame-gesellschaft-zur-fernwaermeversorgung"
+        ]
+      },
+      "gem_plant_id": "L100001083584",
+      "plant_name": "Hanau joint power plant",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "A Stadtwerke Hanau press release says the joint company is held 50.1 percent by Mainova and 49.9 percent by Stadtwerke Hanau. GEM shows 50 and 49. The holding company is Gemeinschaftskraftwerk Hanau GmbH & Co. KG. I did not change the owner.",
+      "record_id": "L100001083584:G100001094609:qa-owner-1"
+    },
+    {
+      "gem_unit_id": "G100001094609",
+      "concern_type": "technology",
+      "recommendation": "Change technology from combined cycle to internal combustion.",
+      "refs": {},
+      "gem_plant_id": "L100001083584",
+      "plant_name": "Hanau joint power plant",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The plant is three gas engines, not a combined cycle plant. The Mainova 2023 press release that should say this failed the page check, so it is not cited.",
+      "record_id": "L100001083584:G100001094609:qa-technology-2"
+    },
+    {
+      "gem_unit_id": "G100000409758",
+      "concern_type": "capacity",
+      "recommendation": "Consider whether 675 MW should be 674 MW.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/ZuUndRueckbau.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000101875",
+      "plant_name": "Heilbronn power station",
+      "country": "Germany",
+      "unit_name": "Unit A, timepoint 1",
+      "fields": {},
+      "researcher_notes": "The Bundesnetzagentur register lists HLB 8 at 674 MW net. GE Vernova gives 680 MW per plant. GEM shows 675. These differ by rounding or by net versus gross, so nothing was changed.",
+      "record_id": "L100000101875:G100000409758:qa-capacity-1"
+    },
+    {
+      "gem_unit_id": "G100000412873",
+      "concern_type": "start_year",
+      "recommendation": "Check the start year of 2028.",
+      "refs": {},
+      "gem_plant_id": "L100000101894",
+      "plant_name": "Janschwalde power station",
+      "country": "Germany",
+      "unit_name": "CC1, timepoint 1",
+      "fields": {},
+      "researcher_notes": "A search summary said construction from 2026 and operation in 2029. I could not confirm this on a page. A 2022 LEAG release says operation was expected in 2028.",
+      "record_id": "L100000101894:G100000412873:qa-start-year-1"
+    },
+    {
+      "gem_unit_id": "G100001055254",
+      "concern_type": "stale",
+      "recommendation": "Check whether unit III is still a live project.",
+      "refs": {},
+      "gem_plant_id": "L100000400196",
+      "plant_name": "Knapsack Gas power station",
+      "country": "Germany",
+      "unit_name": "III",
+      "fields": {},
+      "researcher_notes": "The owner's Knapsack site page, last edited in August 2024, mentions only the two existing plants. I found no permit, press release or news item about a 120 MW peaker unit. A researcher may want to ask the owner or look at the state permit notices for Hürth.",
+      "record_id": "L100000400196:G100001055254:qa-stale-1"
+    },
+    {
+      "gem_unit_id": "G100001030597",
+      "concern_type": "status",
+      "recommendation": "Consider whether announced fits better than pre-construction.",
+      "refs": {
+        "links": [
+          "https://www.leag.de/de/standorte-technologien/kraftwerke/gaskraftwerk-leipheim/"
+        ]
+      },
+      "gem_plant_id": "L100000401433",
+      "plant_name": "Leipheim power station",
+      "country": "Germany",
+      "unit_name": "GT2, timepoint 1",
+      "fields": {},
+      "researcher_notes": "The owner says only that it plans a second plant by 2030. I found no permit or construction. If that is all there is, the lifecycle rules point to announced. I did not change the status.",
+      "record_id": "L100000401433:G100001030597:qa-status-1"
+    },
+    {
+      "gem_unit_id": "G100000412862",
+      "concern_type": "planned retire",
+      "recommendation": "Check the 2040 planned retirement.",
+      "refs": {
+        "links": [
+          "https://www.ad-hoc-news.de/boerse/news/ueberblick/der-energiekonzern-leag-will-bei-der-ausschreibung-fuer-neue-kraftwerke/70076187"
+        ]
+      },
+      "gem_plant_id": "L100000101983",
+      "plant_name": "Lippendorf power station",
+      "country": "Germany",
+      "unit_name": "CC1, timepoint 1",
+      "fields": {},
+      "researcher_notes": "News in September 2026 gives 2035 as the closure date for the Lippendorf coal plant. That is a different unit. I found nothing about when the gas unit would close.",
+      "record_id": "L100000101983:G100000412862:qa-planned-retire-1"
+    },
+    {
+      "gem_unit_id": "G100000412862",
+      "concern_type": "permit",
+      "recommendation": "Review the permit record.",
+      "refs": {},
+      "gem_plant_id": "L100000101983",
+      "plant_name": "Lippendorf power station",
+      "country": "Germany",
+      "unit_name": "CC1, timepoint 1",
+      "fields": {},
+      "researcher_notes": "A search result for the Saxony environmental impact register says a first partial permit for a gas and steam turbine plant at Neukieritzsch was decided on 22 August 2024, with operation planned for the second quarter of 2027. I could not read that page because the site blocked the request, so I did not use it.",
+      "record_id": "L100000101983:G100000412862:qa-permit-2"
+    },
+    {
+      "gem_unit_id": "G100000410775",
+      "concern_type": "technology",
+      "recommendation": "Check whether the technology should stay combined cycle.",
+      "refs": {
+        "links": [
+          "https://www.mainova.de/de/ihre-mainova/ueber-uns/waerme-stromversorgung/kohleersatzprojekt-hkw-west"
+        ]
+      },
+      "gem_plant_id": "L100000400278",
+      "plant_name": "Mainova West power station",
+      "country": "Germany",
+      "unit_name": "Block 2, timepoint 1",
+      "fields": {},
+      "researcher_notes": "The owner describes two gas turbines with heat recovery steam generators for combined heat and power. It does not mention a steam turbine for power. GEM lists the technology as combined cycle. A reviewer should confirm whether a steam turbine is part of the new blocks.",
+      "record_id": "L100000400278:G100000410775:qa-technology-1"
+    },
+    {
+      "gem_unit_id": "G100000410774",
+      "concern_type": "identity",
+      "recommendation": "Check unit naming against the regulator's list.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/ZuUndRueckbau.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000400278",
+      "plant_name": "Mainova West power station",
+      "country": "Germany",
+      "unit_name": "Block 3, timepoint 1",
+      "fields": {},
+      "researcher_notes": "The regulator's expected additions list dated 26 June 2026 shows Mainova AG with two new gas blocks named Block 11 and Block 12 at the West plant, 60 MW net each, expected in 2026. GEM calls them Block 2 and Block 3, timepoint 1, at 62 MW. They look like the same two new units. The same list shows the old coal Block 2 and Block 3 as further planned closures with 61.5 MW net each.",
+      "record_id": "L100000400278:G100000410774:qa-identity-2"
+    },
+    {
+      "gem_unit_id": "G100000400278",
+      "concern_type": "status",
+      "recommendation": "No change. Noted for the reviewer.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000400278",
+      "plant_name": "Mainova West power station",
+      "country": "Germany",
+      "unit_name": "Block 4",
+      "fields": {},
+      "researcher_notes": "In the regulator's power plant list dated 26 June 2026, the old coal Block 2 and Block 3 at the West plant are still listed as in operation. GEM links the new blocks as replacements of those coal units. The reviewer may want to check the coal units' retirement dates once the new blocks start.",
+      "record_id": "L100000400278:G100000400278:qa-status-3"
+    },
+    {
+      "gem_unit_id": "G100001071682",
+      "concern_type": "source",
+      "recommendation": "Open the official notice by hand and confirm the owner and capacity options.",
+      "refs": {
+        "links": [
+          "https://www.uvp-verbund.de/trefferanzeige?docuuid=8aa50135-8a84-4107-8510-4ef885430b90&rstart=380&currentSelectorPage=1&f="
+        ]
+      },
+      "gem_plant_id": "L100000101913",
+      "plant_name": "Mehrum power station",
+      "country": "Germany",
+      "unit_name": "Block 1",
+      "fields": {},
+      "researcher_notes": "A search result for the Lower Saxony environmental impact notice says Kraftwerk Mehrum GmbH plans either one combined cycle plant up to 1200 MW or two gas turbines of up to 550 MW each. That matches GEM. The notice page returned a too many requests error on every try, so I could not verify it.",
+      "record_id": "L100000101913:G100001071682:qa-source-1"
+    },
+    {
+      "gem_unit_id": "G100001030494",
+      "concern_type": "source",
+      "recommendation": "Check the public freedom of information request for an answer later.",
+      "refs": {
+        "links": [
+          "https://fragdenstaat.de/anfrage/technische-daten-des-quierschied-weiher-gaskraftwerks/"
+        ]
+      },
+      "gem_plant_id": "L100000101977",
+      "plant_name": "Quierschied-Weiher power station",
+      "country": "Germany",
+      "unit_name": "CC1, timepoint 1",
+      "fields": {},
+      "researcher_notes": "A public request on FragDenStaat, filed 28 May 2026, asks the Saarland ministry for technical data on the planned Quierschied-Weiher gas plant. It was passed to the state mining authority and had no reply when I looked.",
+      "record_id": "L100000101977:G100001030494:qa-source-1"
+    },
+    {
+      "gem_unit_id": "G100001096229",
+      "concern_type": "misgrouped unit",
+      "recommendation": "Review whether unit CC1-12 belongs under the Stadtwerke Karlsruhe West power station (L100000400280).",
+      "refs": {
+        "links": [
+          "https://muellundumwelt-bi-ka.de/wp-content/uploads/2025/08/Scoping-Papier_SW-KA_KWK-Fernwaerme-25-06-2025.pdf",
+          "https://www.uvp-verbund.de/trefferanzeige?docuuid=bc5c24de-953d-440e-9689-a876f5b07f03"
+        ]
+      },
+      "gem_plant_id": "L100000101880",
+      "plant_name": "RDK (Karlsruhe) power station",
+      "country": "Germany",
+      "unit_name": "CC1-12",
+      "fields": {},
+      "researcher_notes": "The 12 gas engine modules are planned by Stadtwerke Karlsruhe GmbH at Honsellstrasse 35 (Heizkraftwerk West). The RDK units are run by EnBW at the Rheinhafen steam power plant. The two sites have different operators and addresses, so they are separate plants. The coordinates of CC1-12 point at Heizkraftwerk West, not at RDK. No coordinate was changed.",
+      "record_id": "L100000101880:G100001096229:qa-misgrouped-unit-1"
+    },
+    {
+      "gem_unit_id": "G100001071684",
+      "concern_type": "status",
+      "recommendation": "Consider pre-construction for RDK 9 if the researcher agrees.",
+      "refs": {
+        "links": [
+          "https://web4.karlsruhe.de/Gemeinderat/Gruene/2026/08/faq-zum-rdk-9/"
+        ]
+      },
+      "gem_plant_id": "L100000101880",
+      "plant_name": "RDK (Karlsruhe) power station",
+      "country": "Germany",
+      "unit_name": "RDK 9",
+      "fields": {},
+      "researcher_notes": "The emissions-law permit is applied for and the zoning plan has passed, but no binding start of construction exists and EnBW has no investment decision. Announced still fits better for now.",
+      "record_id": "L100000101880:G100001071684:qa-status-2"
+    },
+    {
+      "gem_unit_id": "G100001071684",
+      "concern_type": "start year",
+      "recommendation": "Check the 2030 start year.",
+      "refs": {
+        "links": [
+          "https://web4.karlsruhe.de/Gemeinderat/Gruene/2026/08/faq-zum-rdk-9/"
+        ]
+      },
+      "gem_plant_id": "L100000101880",
+      "plant_name": "RDK (Karlsruhe) power station",
+      "country": "Germany",
+      "unit_name": "RDK 9",
+      "fields": {},
+      "researcher_notes": "The contract allows completion as late as 31 December 2031. The database has 2030.",
+      "record_id": "L100000101880:G100001071684:qa-start-year-3"
+    },
+    {
+      "gem_unit_id": "G100001091093",
+      "concern_type": "capacity conflict",
+      "recommendation": "Confirm the peaker size with RWE or the council papers.",
+      "refs": {
+        "links": [
+          "https://www.burghausen.com/de/news.html?path=1466/energiekonzern-rwe-will-in-burghausen-zwei-h2-ready-gaskraftwerke-errichten",
+          "https://www.burghausen.de/aktuelles-allgemein/meilenstein-fuer-die-burghauser-industrieentwicklung-vorstellung-des-rwe-projekts-im-stadtrat-2/"
+        ]
+      },
+      "gem_plant_id": "L100001081027",
+      "plant_name": "RWE Burghausen power station",
+      "country": "Germany",
+      "unit_name": "Peaker 1",
+      "fields": {},
+      "researcher_notes": "An earlier city page says about 150 MW. A later city page says about 200 MW electric.",
+      "record_id": "L100001081027:G100001091093:qa-capacity-conflict-1"
+    },
+    {
+      "gem_unit_id": "G100001091092",
+      "concern_type": "owner name",
+      "recommendation": "Check whether the applicant is RWE Generation SE.",
+      "refs": {},
+      "gem_plant_id": "L100001081027",
+      "plant_name": "RWE Burghausen power station",
+      "country": "Germany",
+      "unit_name": "CC 1",
+      "fields": {},
+      "researcher_notes": "Search results name RWE Generation SE as the applicant. It was not confirmed on a page, so the owner is unchanged.",
+      "record_id": "L100001081027:G100001091092:qa-owner-name-2"
+    },
+    {
+      "gem_unit_id": "G100000401328",
+      "concern_type": "planned retire",
+      "recommendation": "Remove or review the 2030 planned retire value.",
+      "refs": {
+        "links": [
+          "https://www.uniper.energy/news/scholven-c-power-plant-awarded-closure-by-federal-network-agency-and-will-be-taken-off-the-grid-ahead-of-schedule"
+        ]
+      },
+      "gem_plant_id": "L100000101959",
+      "plant_name": "Scholven power station",
+      "country": "Germany",
+      "unit_name": "CC1, timepoint 1",
+      "fields": {},
+      "researcher_notes": "The only source is a 2022 Uniper release about a hydrogen conversion by 2030. It is not a closure.",
+      "record_id": "L100000101959:G100000401328:qa-planned-retire-1"
+    },
+    {
+      "gem_unit_id": "G100000401328",
+      "concern_type": "status detail",
+      "recommendation": "Update the old delay note.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000101959",
+      "plant_name": "Scholven power station",
+      "country": "Germany",
+      "unit_name": "CC1, timepoint 1",
+      "fields": {},
+      "researcher_notes": "The power plant list shows the unit in operation since 2023.",
+      "record_id": "L100000101959:G100000401328:qa-status-detail-2"
+    },
+    {
+      "gem_unit_id": "G100000412838",
+      "concern_type": "start_year",
+      "recommendation": "Consider whether the start year of 2028 is still realistic.",
+      "refs": {},
+      "gem_plant_id": "L100000101895",
+      "plant_name": "Schwarze Pumpe power station",
+      "country": "Germany",
+      "unit_name": "CC1. timepoint 1",
+      "fields": {},
+      "researcher_notes": "No construction has been reported and the capacity tender award is not due before 3 November 2026. LEAG itself said in 2023 that a new plant needs seven to eight years from planning to operation. I found no newer official date, so I did not change it.",
+      "record_id": "L100000101895:G100000412838:qa-start-year-1"
+    },
+    {
+      "gem_unit_id": "G100001071656",
+      "concern_type": "owner",
+      "recommendation": "Check which Uniper company holds the project.",
+      "refs": {},
+      "gem_plant_id": "L100000101908",
+      "plant_name": "Staudinger power station",
+      "country": "Germany",
+      "unit_name": "8",
+      "fields": {},
+      "researcher_notes": "GEM lists Uniper SE for block 8 and Uniper Kraftwerke GmbH for block 4. The articles only say Uniper. I could not tell which company filed the permit application, so I did not change the owner.",
+      "record_id": "L100000101908:G100001071656:qa-owner-1"
+    },
+    {
+      "gem_unit_id": "G100000400255",
+      "concern_type": "capacity",
+      "recommendation": "Check whether 622 MW is the right nameplate value for block 4.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000101908",
+      "plant_name": "Staudinger power station",
+      "country": "Germany",
+      "unit_name": "4",
+      "fields": {},
+      "researcher_notes": "The regulator's plant list dated 26 June 2026 shows 660 MW gross and 580 MW net for Staudinger 4. GEM shows 622 MW. This unit was not part of the task, so I did not report a change.",
+      "record_id": "L100000101908:G100000400255:qa-capacity-2"
+    },
+    {
+      "gem_unit_id": "G100000414452",
+      "concern_type": "start_year",
+      "recommendation": "The start year of 2026 is no longer realistic and the unit may fit announced better than pre-construction.",
+      "refs": {
+        "links": [
+          "https://www.zfk.de/unternehmen/trianel-investor-aus-der-schweiz-will-bei-wasserstofffaehigem-gaskraftwerk-einsteigen"
+        ]
+      },
+      "gem_plant_id": "L100000400266",
+      "plant_name": "Trianel Hamm power station",
+      "country": "Germany",
+      "unit_name": "Block 30, timepoint 1",
+      "fields": {},
+      "researcher_notes": "As of January 2026 Trianel still waited for final tender rules before an investment decision. I found no permit application, no turbine order and no award. The life cycle rules ask for active permit or financing steps for pre-construction. The partner search with BKW is a financing step, so I left the status as it is.",
+      "record_id": "L100000400266:G100000414452:qa-start-year-1"
+    },
+    {
+      "gem_unit_id": "G100000414452",
+      "concern_type": "owner",
+      "recommendation": "Watch for a closed deal with BKW.",
+      "refs": {
+        "links": [
+          "https://www.zfk.de/unternehmen/trianel-investor-aus-der-schweiz-will-bei-wasserstofffaehigem-gaskraftwerk-einsteigen"
+        ]
+      },
+      "gem_plant_id": "L100000400266",
+      "plant_name": "Trianel Hamm power station",
+      "country": "Germany",
+      "unit_name": "Block 30, timepoint 1",
+      "fields": {},
+      "researcher_notes": "BKW seeks a 40 percent stake. This is not a closed deal, so the owner is not changed. The project is also described as a joint project with the municipal utility of Hamm.",
+      "record_id": "L100000400266:G100000414452:qa-owner-2"
+    },
+    {
+      "gem_unit_id": "G100000400266",
+      "concern_type": "capacity",
+      "recommendation": "Check the capacity values for blocks 10 and 20.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000400266",
+      "plant_name": "Trianel Hamm power station",
+      "country": "Germany",
+      "unit_name": "Block 10, timepoint 1",
+      "fields": {},
+      "researcher_notes": "The regulator's plant list dated 26 June 2026 shows both blocks at 453 MW gross and 445 MW net, with 2007 as the commissioning year. GEM shows 417 MW and 421 MW and 2008. These units were not part of the task, so I did not report changes.",
+      "record_id": "L100000400266:G100000400266:qa-capacity-3"
+    },
+    {
+      "gem_unit_id": "G100001071724",
+      "concern_type": "equipment",
+      "recommendation": "Do not record GE Vernova as turbine maker without a further source.",
+      "refs": {
+        "links": [
+          "https://www.ingenieur.de/technik/fachbereiche/energie/50-wasserstoff-100-stillstand-warum-rwe-in-voerde-nicht-bauen-kann/"
+        ]
+      },
+      "gem_plant_id": "L100000101962",
+      "plant_name": "Voerde power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "An engineering news article says RWE hired a group of GE Vernova and Tecnicas Reunidas in 2024 to plan the permit application. That is engineering work and not a turbine order, so I did not report it as the equipment maker.",
+      "record_id": "L100000101962:G100001071724:qa-equipment-1"
+    },
+    {
+      "gem_unit_id": "G100001071724",
+      "concern_type": "start_year",
+      "recommendation": "Keep 2030 for now and recheck after the tender award, due by 3 November 2026.",
+      "refs": {
+        "links": [
+          "https://www.rwe.com/en/press/rwe-generation/2025-10-27-rwe-plans-hydrogen-compatible-gas-fired-power-station-in-voerde/"
+        ]
+      },
+      "gem_plant_id": "L100000101962",
+      "plant_name": "Voerde power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "RWE says 2030 is possible only with a tender award and a quick permit. No award list exists yet.",
+      "record_id": "L100000101962:G100001071724:qa-start-year-2"
+    },
+    {
+      "gem_unit_id": "G100001091094",
+      "concern_type": "owner",
+      "recommendation": "Check whether the owner name should be updated.",
+      "refs": {},
+      "gem_plant_id": "L100000101976",
+      "plant_name": "Völklingen-Fenne power station",
+      "country": "Germany",
+      "unit_name": "IC 7",
+      "fields": {},
+      "researcher_notes": "The Bundesnetzagentur power plant list dated 26 June 2026 shows the Fenne coal units under the operator STEAG Power GmbH. GEM shows STEAG GmbH for this unit. This may be a different group company. I did not change the owner.",
+      "record_id": "L100000101976:G100001091094:qa-owner-1"
+    },
+    {
+      "gem_unit_id": "G100001091094",
+      "concern_type": "other",
+      "recommendation": "Check the existing researcher note about retirement and mothballing.",
+      "refs": {
+        "links": [
+          "https://www.sr.de/sr/home/nachrichten/politik_wirtschaft/steag_voelklingen_energieversorgung_gasmotorenwerk_strom_100.html"
+        ]
+      },
+      "gem_plant_id": "L100000101976",
+      "plant_name": "Völklingen-Fenne power station",
+      "country": "Germany",
+      "unit_name": "IC 7",
+      "fields": {},
+      "researcher_notes": "The note on this unit says retirement was slated for October 2022 and that the unit was mothballed in early 2024. That reads like the history of a coal unit, not a planned gas engine plant. The SR report of 7 October 2025 says the two coal units are in repair work until the end of 2027 and then stay in the grid reserve until 2031. This text may belong to a different unit.",
+      "record_id": "L100000101976:G100001091094:qa-other-2"
+    },
+    {
+      "gem_unit_id": "G100000409747",
+      "concern_type": "owner",
+      "recommendation": "Update the owner after confirming a second source.",
+      "refs": {
+        "links": [
+          "https://www.t-online.de/finanzen/aktuelles/wirtschaft/id_101221074/kohlekraftwerk-wedel-soll-mitte-2027-stillgelegt-werden.html"
+        ]
+      },
+      "gem_plant_id": "L100000101996",
+      "plant_name": "Wedel power station",
+      "country": "Germany",
+      "unit_name": "CC1",
+      "fields": {},
+      "researcher_notes": "The article says the city of Hamburg bought the Wedel plant back from Vattenfall in 2019 and that Hamburger Energiewerke now runs it. The Bundesnetzagentur list dated 26 June 2026 shows Hamburger Energiewerke GmbH as operator of the Wedel coal blocks. GEM still shows Vattenfall Europe Power Management GmbH at 100 percent for all three units. I did not change the owner because the rules need two sources on a closed sale and I did not find the sale document.",
+      "record_id": "L100000101996:G100000409747:qa-owner-1"
+    },
+    {
+      "gem_unit_id": "G100000412831",
+      "concern_type": "status",
+      "recommendation": "Check whether both gas turbine units have been retired.",
+      "refs": {},
+      "gem_plant_id": "L100000101996",
+      "plant_name": "Wedel power station",
+      "country": "Germany",
+      "unit_name": "GT1",
+      "fields": {},
+      "researcher_notes": "The Bundesnetzagentur power plant list dated 26 June 2026 has a record named GTKW Wedel, 51 MW net, light heating oil, commissioned 1972, marked permanently shut down with closure year 2025. GEM shows two operating gas turbines of 50.5 MW each from 1972. The register has one record, so it may cover one or both units. Please review.",
+      "record_id": "L100000101996:G100000412831:qa-status-2"
+    },
+    {
+      "gem_unit_id": "G100000412830",
+      "concern_type": "status",
+      "recommendation": "Same question as for GT1.",
+      "refs": {},
+      "gem_plant_id": "L100000101996",
+      "plant_name": "Wedel power station",
+      "country": "Germany",
+      "unit_name": "GT2",
+      "fields": {},
+      "researcher_notes": "See the note for GT1 about the GTKW Wedel closure in 2025.",
+      "record_id": "L100000101996:G100000412830:qa-status-3"
+    },
+    {
+      "gem_unit_id": "G100000413128",
+      "concern_type": "owner",
+      "recommendation": "Consider changing the owner to RWE Generation SE once the plant is built or the lease is confirmed.",
+      "refs": {
+        "links": [
+          "https://www.bezreg-koeln.nrw.de/system/files/media/document/file/bekanntmachung_laufende_immissionsschutzrechtliche_genehmigungsverfahren_rwe_generation_se_bekanntmachungstext.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000101966",
+      "plant_name": "Weisweiler power station",
+      "country": "Germany",
+      "unit_name": "CC, timepoint 1",
+      "fields": {},
+      "researcher_notes": "The 18 August 2025 notice names RWE Generation SE as the applicant. The land will be leased from RWE Power AG to RWE Generation SE and the plant will be a separate power station. GEM shows RWE Power AG at 100 percent. I did not change the owner because the rules need two sources.",
+      "record_id": "L100000101966:G100000413128:qa-owner-1"
+    },
+    {
+      "gem_unit_id": "G100000400275",
+      "concern_type": "other",
+      "recommendation": "Check the unit mapping against the register.",
+      "refs": {},
+      "gem_plant_id": "L100000101966",
+      "plant_name": "Weisweiler power station",
+      "country": "Germany",
+      "unit_name": "H_VGT",
+      "fields": {},
+      "researcher_notes": "The Bundesnetzagentur list dated 26 June 2026 shows two gas units at Weisweiler, named G VGT and H VGT, both operating, 200 MW net, commissioned in 2006. This matches GEM. The register shows the H VGT as a steam condensation machine with heat extraction. This is a technology label only.",
+      "record_id": "L100000101966:G100000400275:qa-other-2"
+    },
+    {
+      "gem_unit_id": "G100001071694",
+      "concern_type": "owner",
+      "recommendation": "Check whether the owner should be Onyx Wärmekraftwerk Zolling GmbH.",
+      "refs": {
+        "links": [
+          "https://www.regierung.oberbayern.bayern.de/mam/dokumente/bereich5/pfb/immissionsschutz/gmk8-zolling/2023-09-26_genehmigungsbescheid_gmk8_zolling.pdf"
+        ]
+      },
+      "gem_plant_id": "L100001062423",
+      "plant_name": "Zolling power plant",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The permit for the gas engine plant was issued to Onyx Wärmekraftwerk Zolling GmbH. The regulator's power plant list names Onyx Kraftwerk Zolling GmbH und Co. KGaA as operator of the existing units. GEM shows Onyx Germany GmbH. I did not change the owner because I found no dated ownership document.",
+      "record_id": "L100001062423:G100001071694:qa-owner-1"
+    },
+    {
+      "gem_unit_id": "G100001071694",
+      "concern_type": "capacity",
+      "recommendation": "Confirm that the 42 MW in GEM is out of date and that 62.6 MW is right.",
+      "refs": {
+        "links": [
+          "https://www.regierung.oberbayern.bayern.de/mam/dokumente/bereich5/pfb/immissionsschutz/gmk8-zolling/2023-09-26_genehmigungsbescheid_gmk8_zolling.pdf"
+        ]
+      },
+      "gem_plant_id": "L100001062423",
+      "plant_name": "Zolling power plant",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The permit lists five engines of 12.52 MW electric each. Another permit line speaks of up to 70 MW in total. The 42 MW in GEM has no source I could find.",
+      "record_id": "L100001062423:G100001071694:qa-capacity-2"
+    },
+    {
+      "gem_unit_id": "G100000410780",
+      "concern_type": "status",
+      "recommendation": "Consider whether this unit is the 33.7 MW steam turbine project instead of a 647 MW gas plant.",
+      "refs": {
+        "links": [
+          "https://www.kraftanlagen.com/en/climate-friendly-district-heating-for-berlin-vattenfall-commissions-kraftanlagen-energies-services-to-build-a-combined-heat-and-power-plant-2/"
+        ]
+      },
+      "gem_plant_id": "L100000101889",
+      "plant_name": "Berlin-Reuter-West power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The regulator's list of expected additions dated June 2026 shows a Reuter West entry of 33.7 MW net, expected in 2027. This matches the new back pressure steam turbine of about 30 MW electric, not a gas plant. The 647 MW in GEM may not match any current plan.",
+      "record_id": "L100000101889:G100000410780:qa-status-1"
+    },
+    {
+      "gem_unit_id": "G100000410780",
+      "concern_type": "source",
+      "recommendation": "The Berlin senate page cited for fuel no longer loads.",
+      "refs": {},
+      "gem_plant_id": "L100000101889",
+      "plant_name": "Berlin-Reuter-West power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The address on berlin.de for the coal exit page returns a not found error. The page for the owner's former name on the Iqony site loads but does not mention Reuter West. Both links are kept.",
+      "record_id": "L100000101889:G100000410780:qa-source-2"
+    },
+    {
+      "gem_unit_id": "G100000400886",
+      "concern_type": "source",
+      "recommendation": "Existing links are dead or blocked.",
+      "refs": {},
+      "gem_plant_id": "L100000401430",
+      "plant_name": "Gundelfingen Reserve power station",
+      "country": "Germany",
+      "unit_name": "CC",
+      "fields": {},
+      "researcher_notes": "The regulator's 2020 consultation document returns not found. The developer's project page does not load live, but an archived copy from July 2022 exists. The energate article on the developer's three plants returns access denied. All three links are kept.",
+      "record_id": "L100000401430:G100000400886:qa-source-1"
+    },
+    {
+      "gem_unit_id": "G100000412867",
+      "concern_type": "technology",
+      "recommendation": "Check the technology for NST4.",
+      "refs": {},
+      "gem_plant_id": "L100000101949",
+      "plant_name": "Krefeld-Uerdingen power station",
+      "country": "Germany",
+      "unit_name": "NST4",
+      "fields": {},
+      "researcher_notes": "GEM shows combined cycle for this 45 MW unit. The regulator's power plant list dated June 2026 shows a steam turbine with extraction and 29.0 MW net for unit NST4. GEM shows 45 MW. The list gives 29.7 MW gross.",
+      "record_id": "L100000101949:G100000412867:qa-technology-1"
+    },
+    {
+      "gem_unit_id": "G100000400888",
+      "concern_type": "captive",
+      "recommendation": "The plant level captive value may not fit the cancelled unit.",
+      "refs": {
+        "links": [
+          "https://www.zfk.de/unternehmen/nachrichten/trianel-gaskraftwerk-projekt"
+        ]
+      },
+      "gem_plant_id": "L100000101949",
+      "plant_name": "Krefeld-Uerdingen power station",
+      "country": "Germany",
+      "unit_name": "CC",
+      "fields": {},
+      "researcher_notes": "The trade paper said the cancelled plant was meant to supply the public grid beyond the chemical park. It was not a captive plant. The captive value applies to the two Currenta units.",
+      "record_id": "L100000101949:G100000400888:qa-captive-2"
+    },
+    {
+      "gem_unit_id": "G100000412860",
+      "concern_type": "unsupported value",
+      "recommendation": "Consider clearing Captive industry use and Captive industry type on the three operating units, or find the document the earlier researcher used.",
+      "refs": {
+        "links": [
+          "https://www.kmw-ag.de/anlagen/blockheizkraftwerk/",
+          "https://www.kmw-ag.de/anlagen/kombikraftwerk/"
+        ]
+      },
+      "gem_plant_id": "L100000101972",
+      "plant_name": "Mainz power station",
+      "country": "Germany",
+      "unit_name": "IC1-10",
+      "fields": {},
+      "researcher_notes": "The owner's pages for the engine plant, the combined cycle plant and the older combined plant describe grid, reserve and district heating supply. None names an industrial customer or a machinery maker. The data center on the site is supplied by a new 54 MW engine plant that is not yet built. The earlier researcher's source for the machinery label is not recorded.",
+      "record_id": "L100000101972:G100000412860:qa-unsupported-value-1"
+    },
+    {
+      "gem_unit_id": "G100000400212",
+      "concern_type": "unsupported value",
+      "recommendation": "Same question as for the engine plant, applied to units KW2 and KW3.",
+      "refs": {
+        "links": [
+          "https://www.kmw-ag.de/anlagen/kombikraftwerk/"
+        ]
+      },
+      "gem_plant_id": "L100000101972",
+      "plant_name": "Mainz power station",
+      "country": "Germany",
+      "unit_name": "KW2",
+      "fields": {},
+      "researcher_notes": "The owner's page for KW2 says the unit is only in the grid reserve. The register dated 26 June 2026 shows the KW2 steam unit as grid reserve and the KW2 gas turbine as in operation.",
+      "record_id": "L100000101972:G100000400212:qa-unsupported-value-2"
+    },
+    {
+      "concern_type": "duplicate",
+      "recommendation": "Do not add a new unit here. The 54 MW gas engine plant is already in GEM as KMW Gas Engine Power Plant (GEM location ID L100001062418), which was also checked in this batch.",
+      "refs": {
+        "links": [
+          "https://www.kmw-ag.de/oeffentlichkeitsbeteiligung_motorenkraftwerk/",
+          "https://www.energie-und-management.de/nachrichten/detail/mainz-verfolgt-54-mw-plan-weiter-und-legt-250-mw-auf-eis-351669"
+        ]
+      },
+      "verifications": [],
+      "gem_plant_id": "L100000101972",
+      "plant_name": "Mainz power station",
+      "country": "Germany",
+      "fields": {},
+      "researcher_notes": "The research for Mainz power station turned up the owner's 54 MW gas engine plant with 12 Jenbacher engines on the same site. GEM records it as a separate plant, KMW Gas Engine Power Plant. The dates found here may help that record: a permit application in October 2025, a request on 16 January 2026 to start building early, public consultation from 9 February 2026, a construction contract with the engine maker signed on 15 September 2025, and commissioning planned for the end of 2027. It would supply the Green Rocks data center on the site.",
+      "record_id": "L100000101972:plant:qa-duplicate-3"
+    },
+    {
+      "gem_unit_id": "G100000409957",
+      "concern_type": "status change needs second source",
+      "recommendation": "Look for a Mark-E, Bundesnetzagentur or transmission operator document that confirms final closure and its date before applying retired.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+          "https://www.enervie-gruppe.de/Home/medien/mark-e-erwirbt-grundstuecksflaechen-von-der-insolventen-kabel-premium-pulp-paper-gmbh.aspx"
+        ]
+      },
+      "gem_plant_id": "L100000407629",
+      "plant_name": "Hagen-Kabel power station",
+      "country": "Germany",
+      "unit_name": "H4/5",
+      "fields": {},
+      "researcher_notes": "The regulator's list changed the units to finally closed under section 13b of the energy law, with year 2025. The Mark-E press release of January 2026 only says the plant is no longer in operation. The wetterchen.de page still shows temporarily closed, but it is a copy of the national unit register and may be out of date.",
+      "record_id": "L100000407629:G100000409957:qa-status-change-needs-second-source-1"
+    },
+    {
+      "gem_unit_id": "G100000409755",
+      "concern_type": "conflict",
+      "recommendation": "Decide between 2023 and 2024 for the retired year of Irsching 3, and look for a Uniper or TenneT statement confirming the closure date.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+          "https://www.uniper.energy/germany/power-plants-germany/irsching"
+        ]
+      },
+      "gem_plant_id": "L100000400188",
+      "plant_name": "Irsching power station",
+      "country": "Germany",
+      "unit_name": "3",
+      "fields": {},
+      "researcher_notes": "The Bundesnetzagentur power plant list dated 26 June 2026 says 2024. Uniper's plant page and a December 2022 trade news item planned 31 December 2023. The regulator extended the unit's system relevance to 31 March 2024, according to press searches that I could not open in full.",
+      "record_id": "L100000400188:G100000409755:qa-conflict-1"
+    },
+    {
+      "gem_unit_id": "G100000409755",
+      "concern_type": "wrong_value",
+      "recommendation": "The national power plant list gives fuel oil as the only fuel for Irsching 3. GEM lists natural gas and fuel oil. Leave the fuel as it is.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000400188",
+      "plant_name": "Irsching power station",
+      "country": "Germany",
+      "unit_name": "3",
+      "fields": {},
+      "researcher_notes": "The register row says Mineraloelprodukte and light heating oil. The brief did not ask for a fuel check.",
+      "record_id": "L100000400188:G100000409755:qa-wrong-value-2"
+    },
+    {
+      "gem_unit_id": "G100000400202",
+      "concern_type": "wrong_value",
+      "recommendation": "Check whether the capacity of 172 MW is still right after the 2022 modernization.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000400202",
+      "plant_name": "Leipzig Nord power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The register lists gross capacity of 64.8 MW for GT81, 65.9 MW for GT82, 25.7 MW for DT8B and 26.1 MW for DT8C. That adds up to about 182 MW gross. The brief did not ask for a capacity check.",
+      "record_id": "L100000400202:G100000400202:qa-wrong-value-1"
+    },
+    {
+      "gem_unit_id": "G100000410310",
+      "concern_type": "status_mapping",
+      "recommendation": "Keep mothballed for now. The country note maps the register's provisionally closed status to operating, but a provisional closure is closer to mothballed. Ask the project leads which one GEM should use.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000400241",
+      "plant_name": "Robert Frank power station",
+      "country": "Germany",
+      "unit_name": "2",
+      "fields": {},
+      "researcher_notes": "The register lists the unit as provisionally closed. A change to operating needs two independent publishers and I found one.",
+      "record_id": "L100000400241:G100000410310:qa-status-mapping-1"
+    },
+    {
+      "gem_unit_id": "G100000400241",
+      "concern_type": "wrong_value",
+      "recommendation": "The register lists the 66 MW gas turbine at Landesbergen in the capacity reserve under section 13e of the energy law. GEM has this as operating with 58 MW. No change proposed.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000400241",
+      "plant_name": "Robert Frank power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Press searches say the capacity reserve covers 56 MW to September 2026 and 65 MW from October 2026. I could not open the sources in full.",
+      "record_id": "L100000400241:G100000400241:qa-wrong-value-2"
+    },
+    {
+      "gem_unit_id": "G100001017933",
+      "concern_type": "wrong_value",
+      "recommendation": "Check whether GEM unit Unit 4, timepoint 2 of 188 MW, started 2017, matches the plant. The fact sheet gives 164 MW electric for the whole plant.",
+      "refs": {
+        "links": [
+          "https://www.bew.berlin/binaries/content/assets/website/newsroom/faktenblatt_hkw_klingenberg.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000101886",
+      "plant_name": "Berlin-Klingenberg power station",
+      "country": "Germany",
+      "unit_name": "Unit 4, timepoint 2",
+      "fields": {},
+      "researcher_notes": "The register lists three steam turbines at Klingenberg of 52 to 56 MW net each. The 2017 switch to gas was a fuel change of existing boilers, not a new unit. I did not change anything.",
+      "record_id": "L100000101886:G100001017933:qa-wrong-value-1"
+    },
+    {
+      "gem_unit_id": "G100000400120",
+      "concern_type": "distinct plants, not a duplicate",
+      "recommendation": "Keep Bitterfeld power station and Wolfen Envia power station as two separate plants.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+          "https://www.enviam-gruppe.de/media/unternehmensnachrichten/pressemitteilung/envia-therm-investiert-26-millionen-euro-in-die-modernisierung-des-kraftwerks-im-chemiepark-bitterfeld-wolfen"
+        ]
+      },
+      "gem_plant_id": "L100000400120",
+      "plant_name": "Bitterfeld power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The national regulator's power plant list dated 26 June 2026 has two separate rows for the operator envia THERM GmbH. One is Bitterfeld GuD, a gas and steam turbine plant commissioned in 2000 with 110 MW gross and 108 MW net. The other is Wolfen GT, a single gas turbine without heat recovery commissioned in 1996 with 50 MW. They have different register numbers, years and technology, so they are not the same plant recorded twice. An envia THERM press release describes the Bitterfeld plant as a 108 MW gas and steam turbine plant that started in 2000. Both sit in the same chemical park, which explains why the coordinates are close.",
+      "record_id": "L100000400120:G100000400120:qa-distinct-plants-not-a-duplicate-1"
+    },
+    {
+      "gem_unit_id": "G100000400120",
+      "concern_type": "capacity value",
+      "recommendation": "No change now. GEM shows 112.0 MW. Check where that figure came from.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000400120",
+      "plant_name": "Bitterfeld power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The regulator's list dated 26 June 2026 shows 110 MW gross and 108 MW net for Bitterfeld GuD. The envia THERM press release says 108 MW. GEM's 112.0 MW matches neither. This unit was marked as nothing to check, so I did not report it as a change.",
+      "record_id": "L100000400120:G100000400120:qa-capacity-value-2"
+    },
+    {
+      "gem_unit_id": "G100000400122",
+      "concern_type": "location",
+      "recommendation": "Check the coordinates of both plants against a map. Do not change them yet.",
+      "refs": {
+        "links": [
+          "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/zwei-neue-heizkraftwerke-in-braunschweig-183157"
+        ]
+      },
+      "gem_plant_id": "L100000101910",
+      "plant_name": "Braunschweig Mitte power station",
+      "country": "Germany",
+      "unit_name": "Block 12",
+      "fields": {},
+      "researcher_notes": "GEM puts Braunschweig Mitte and Braunschweig Nord within 100 meters of each other, so at least one coordinate is wrong. A trade magazine article from May 2023 places the Mitte plant on Hamburger Strasse. BS Energy says the Nord plant started in 1963. I did not find a street address for the Nord plant or a document with coordinates for either plant, so I cannot say which coordinate is wrong.",
+      "record_id": "L100000101910:G100000400122:qa-location-1"
+    },
+    {
+      "gem_unit_id": "G100000400123",
+      "concern_type": "capacity and register mismatch",
+      "recommendation": "No change now. Review the unit capacities against the regulator's list.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000101910",
+      "plant_name": "Braunschweig Mitte power station",
+      "country": "Germany",
+      "unit_name": "GuD",
+      "fields": {},
+      "researcher_notes": "The regulator's list dated 26 June 2026 shows two Mitte rows, both started in 2023. One is a gas turbine with heat recovery at 68.4 MW gross. The other is named GuD BMHKW at 104.2 MW gross. This does not match GEM's units of 62 MW, 75 MW and 20 MW. The GuD in GEM started in 2010 according to BS Energy. These units were marked as nothing to check, so I report the mismatch only as a question.",
+      "record_id": "L100000101910:G100000400123:qa-capacity-and-register-mismatch-2"
+    },
+    {
+      "gem_unit_id": "G100000409765",
+      "concern_type": "retired year",
+      "recommendation": "Check the retired year of GT 6. No change now.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000400126",
+      "plant_name": "Charlottenburg power station",
+      "country": "Germany",
+      "unit_name": "GT 6",
+      "fields": {},
+      "researcher_notes": "The regulator's list dated 26 June 2026 has a row for HKW Charlottenburg Gasturbine 6 with status permanently closed under section 13b of the energy law and a closure year of 2018. GEM shows 2021. That row gives the fuel as oil products and the operator is blank. It may be a different turbine from the one in GEM. This field was outside the tasks in the brief.",
+      "record_id": "L100000400126:G100000409765:qa-retired-year-1"
+    },
+    {
+      "gem_unit_id": "G100000400126",
+      "concern_type": "location",
+      "recommendation": "Add a location source. The street address is Am Spreebord 5, 10589 Berlin, but I could not verify it on a page.",
+      "refs": {
+        "links": [
+          "https://www.berlin.de/lagetsi/aktuelles/bekanntmachungen/artikel.1587778.php"
+        ]
+      },
+      "gem_plant_id": "L100000400126",
+      "plant_name": "Charlottenburg power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Web search results gave Am Spreebord 5 in Berlin as the plant address, but none of the pages I could check printed that address. So I cannot support the coordinates 52.5219, 13.3111 or the city Berlin with a document. The Berlin permit notice names the plant and the city's environment office as the authority.",
+      "record_id": "L100000400126:G100000400126:qa-location-2"
+    },
+    {
+      "gem_unit_id": "G100000412905",
+      "concern_type": "value",
+      "recommendation": "Check whether the value both for captive non-industry use is right.",
+      "refs": {},
+      "gem_plant_id": "L100000101928",
+      "plant_name": "Chemiepark Marl power station",
+      "country": "Germany",
+      "unit_name": "310",
+      "fields": {},
+      "researcher_notes": "The database shows both for captive non-industry use. No document I found says the Marl plants supply anything other than the chemical park and other Evonik sites. This value may be wrong. Also, the press release describes a 60 MW combined cycle plant built with E.ON for Evonik. I could not tell which unit that is.",
+      "record_id": "L100000101928:G100000412905:qa-value-1"
+    },
+    {
+      "gem_unit_id": "G100000410324",
+      "concern_type": "unit structure",
+      "recommendation": "Check whether this unit should be seven engine units.",
+      "refs": {},
+      "gem_plant_id": "L100000101980",
+      "plant_name": "Chemnitz Nord power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The Bundesnetzagentur power plant list dated 26 June 2026 shows seven separate gas engines at Chemnitz Nord, each about 12.5 MW net, commissioned in 2023. Their operator is eins energie in sachsen. GEM lists one unit of 88.2 MW. Status detail also still says operation was expected in 2022 and is not confirmed. The register and trade press now confirm operation from September 2023.",
+      "record_id": "L100000101980:G100000410324:qa-unit-structure-1"
+    },
+    {
+      "gem_unit_id": "G100000400890",
+      "concern_type": "other",
+      "recommendation": "Correct the local-language plant name.",
+      "refs": {},
+      "gem_plant_id": "L100000101929",
+      "plant_name": "Chempark Leverkusen power station",
+      "country": "Germany",
+      "unit_name": "CC",
+      "fields": {},
+      "researcher_notes": "The plant name in local language is HKW Braunschweig Mitte. That is a power plant in Braunschweig, not in Leverkusen, so the entry looks wrong. I did not change it.",
+      "record_id": "L100000101929:G100000400890:qa-other-1"
+    },
+    {
+      "gem_unit_id": "G100000410323",
+      "concern_type": "other",
+      "recommendation": "Check the plant coordinates on a map and move them if confirmed.",
+      "refs": {
+        "links": [
+          "https://www.stadtwerke-cottbus.de/de/privatkunden/themen/unternehmen/standort/artikel-anfahrt-heizkraftwerk-cottbus.html"
+        ]
+      },
+      "gem_plant_id": "L100000101891",
+      "plant_name": "Cottbus CHP power station",
+      "country": "Germany",
+      "unit_name": "ICCC",
+      "fields": {},
+      "researcher_notes": "GEM shows 51.7627400, 14.3453979 as approximate. The plant address is Werner-von-Siemens-Strasse 16 in Cottbus, in the Sandow district. A map search of that street puts it near longitude 14.37 to 14.39, and the German Wikipedia article on the plant gives 51.7603, 14.3699. Both are about 2 kilometers east of GEM's point. Wikipedia is a lead only. No official document I found states coordinates. I did not change the location.",
+      "record_id": "L100000101891:G100000410323:qa-other-1"
+    },
+    {
+      "gem_unit_id": "G100000400132",
+      "concern_type": "other",
+      "recommendation": "No change needed. Optional map check of the coordinates.",
+      "refs": {},
+      "gem_plant_id": "L100000104721",
+      "plant_name": "Cuno herdecke power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "GEM shows 51.4031, 7.4155 as exact. A plant map site that republishes data from the German Environment Agency uses the same point. The German Wikipedia article gives 51.4003, 7.4078, about 500 meters west. No official document states coordinates, so I left the location as it is.",
+      "record_id": "L100000104721:G100000400132:qa-other-1"
+    },
+    {
+      "gem_unit_id": "G100001017966",
+      "concern_type": "other",
+      "recommendation": "Check the owner name spelling against the entity system.",
+      "refs": {
+        "links": [
+          "https://verwaltung.dessau-rosslau.de/fileadmin/Verwaltungsportal_Dessau-Rosslau/Stadt_Buerger/Presse_und_Publikationen/Beteiligungsberichte/17ter_Beteiligungsbericht.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000101981",
+      "plant_name": "Dessau power station",
+      "country": "Germany",
+      "unit_name": "Unit 1, timepoint 2",
+      "fields": {},
+      "researcher_notes": "GEM writes the owner as Fernwärmeversorgung Dessau GmbH. The official company name is Fernwärmeversorgungs-GmbH Dessau. The entity system has the GEM spelling on two units. The official spelling was not found in the entity system.",
+      "record_id": "L100000101981:G100001017966:qa-other-1"
+    },
+    {
+      "gem_unit_id": "G100000412904",
+      "concern_type": "other",
+      "recommendation": "Move the Dillingen plant coordinates to the steelworks site, about 49.356, 6.733. Leave the Ford Saarlouis point as it is.",
+      "refs": {
+        "links": [
+          "https://www.northdata.com/Gichtgaskraftwerk%20Dillingen%20GmbH%20&%20Co%C2%B7%20KG,%20Dillingen%2FSaar/Amtsgericht%20Saarbr%C3%BCcken%20HRA%209861"
+        ]
+      },
+      "gem_plant_id": "L100000408768",
+      "plant_name": "Dillingen power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "GEM shows Dillingen at 49.3512, 6.7509, which is about 1.4 kilometers east of the steelworks and close to the Ford plant. The Dillinger steelworks and the blast furnace gas power plant at Werkstrasse 1 in Dillingen are at about 49.356, 6.733 by a map search. A company register page for the plant company gives the same address, Werkstrasse 1, 66763 Dillingen/Saar. The Ford plant address is Henry-Ford-Strasse 1 in Saarlouis Roden, about 49.346, 6.745 by a map search. GEM's Ford point of 49.3467, 6.7651 is acceptable for the large site. So the Dillingen coordinates are the wrong ones. I did not change them.",
+      "record_id": "L100000408768:G100000412904:qa-other-1"
+    },
+    {
+      "gem_unit_id": "G100000412904",
+      "concern_type": "ownership",
+      "recommendation": "Review the owner entry.",
+      "refs": {
+        "links": [
+          "https://energie-chronik.de/080407d3.htm",
+          "https://www.northdata.com/Gichtgaskraftwerk%20Dillingen%20GmbH%20&%20Co%C2%B7%20KG,%20Dillingen%2FSaar/Amtsgericht%20Saarbr%C3%BCcken%20HRA%209861"
+        ]
+      },
+      "gem_plant_id": "L100000408768",
+      "plant_name": "Dillingen power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "GEM lists the owner as AG der Dillinger Hüttenwerke AG at 100 percent. A list of new power plants from a news chronicle names the plant as Gichtgaskraftwerk Dillingen with STEAG Saar Energie, VSE and Rogesa as the partners, 90 MW, 2009. The plant company is a separate partnership registered at the steelworks address. I did not verify the shares, so I made no change.",
+      "record_id": "L100000408768:G100000412904:qa-ownership-2"
+    },
+    {
+      "gem_unit_id": "G100000400136",
+      "concern_type": "location",
+      "recommendation": "Keep the current coordinates. They need a source that states them.",
+      "refs": {},
+      "gem_plant_id": "L100000400136",
+      "plant_name": "Duisburg power station",
+      "country": "Germany",
+      "unit_name": "A",
+      "fields": {},
+      "researcher_notes": "GEM shows 51.39066 and 6.74778. A German Wikipedia article on the Duisburg-Wanheim heating plant gives 51 degrees 23 minutes 24 seconds north and 6 degrees 44 minutes 52.8 seconds east, which is the same spot. Wikipedia is a lead and not a citation, and I found no official document with coordinates. The official inspection report only gives the street address, Wanheimer Strasse 445.",
+      "record_id": "L100000400136:G100000400136:qa-location-1"
+    },
+    {
+      "gem_unit_id": "G100000400137",
+      "concern_type": "capacity",
+      "recommendation": "Check unit B capacity against the register.",
+      "refs": {},
+      "gem_plant_id": "L100000400136",
+      "plant_name": "Duisburg power station",
+      "country": "Germany",
+      "unit_name": "B",
+      "fields": {},
+      "researcher_notes": "GEM shows 234 MW for unit B. The power plant list shows block B of HKW III as a gas turbine with heat recovery boiler at 75.3 MW gross and a steam turbine at 88.3 MW gross, so about 164 MW in total. German Wikipedia gives 245 MW gross. The sources disagree. This was outside the tasks for this batch.",
+      "record_id": "L100000400136:G100000400137:qa-capacity-2"
+    },
+    {
+      "gem_unit_id": "G100000410322",
+      "concern_type": "unit_definition",
+      "recommendation": "Check the BHKW unit against the register.",
+      "refs": {},
+      "gem_plant_id": "L100000400136",
+      "plant_name": "Duisburg power station",
+      "country": "Germany",
+      "unit_name": "BHKW",
+      "fields": {},
+      "researcher_notes": "The power plant list shows nine engine modules of 4.5 MW each at Mitte BHKW 2 and 3, commissioned in 2023 and 2025. GEM shows 31 MW with a 2023 start. The two later modules from 2025 may be missing. This was outside the tasks for this batch.",
+      "record_id": "L100000400136:G100000410322:qa-unit-definition-3"
+    },
+    {
+      "gem_unit_id": "G100000412898",
+      "concern_type": "status",
+      "recommendation": "Review whether unit 8 should be operating instead of cancelled.",
+      "refs": {
+        "links": [
+          "https://www.veo-eh.de/ueber-uns/"
+        ]
+      },
+      "gem_plant_id": "L100000408780",
+      "plant_name": "Eisenhüttenstadt power station",
+      "country": "Germany",
+      "unit_name": "8",
+      "fields": {},
+      "researcher_notes": "GEM shows unit 8 as cancelled with 56 MW. The VEO website timeline says Block 8 was commissioned in 2023. The Bundesnetzagentur list dated 26 June 2026 shows IKW Block 8 of ArcelorMittal Eisenhüttenstadt GmbH in operation, 89.7 MW gross, gas turbine with steam turbine, with a listed start year of 1954 that looks wrong. A May 2019 article in a regional newspaper announced the 45 million euro build with completion planned for 2021. I did not propose a status change because this batch only asked for a cancellation year.",
+      "record_id": "L100000408780:G100000412898:qa-status-1"
+    },
+    {
+      "gem_unit_id": "G100000412897",
+      "concern_type": "duplicate",
+      "recommendation": "Check whether GuD and unit 8 describe the same equipment.",
+      "refs": {},
+      "gem_plant_id": "L100000408780",
+      "plant_name": "Eisenhüttenstadt power station",
+      "country": "Germany",
+      "unit_name": "GuD",
+      "fields": {},
+      "researcher_notes": "The register's Block 8 row has a start year of 1954 and a combined cycle type. GEM's GuD unit shows 64 MW and a 1954 start. The two may be mixed up.",
+      "record_id": "L100000408780:G100000412897:qa-duplicate-2"
+    },
+    {
+      "gem_unit_id": "G100000412898",
+      "concern_type": "owner",
+      "recommendation": "Check the owner of the plant.",
+      "refs": {
+        "links": [
+          "https://www.veo-eh.de/ueber-uns/"
+        ]
+      },
+      "gem_plant_id": "L100000408780",
+      "plant_name": "Eisenhüttenstadt power station",
+      "country": "Germany",
+      "unit_name": "8",
+      "fields": {},
+      "researcher_notes": "GEM shows ArcelorMittal Eisenhüttenstadt GmbH at 100 percent. The VEO website says the plant is run by Vulkan Energiewirtschaft Oderbrücke GmbH, held 51 percent by ArcelorMittal Berlin Holding GmbH and 49 percent by Stadtwerke Eisenhüttenstadt GmbH. The register lists ArcelorMittal Eisenhüttenstadt GmbH as operator.",
+      "record_id": "L100000408780:G100000412898:qa-owner-3"
+    },
+    {
+      "gem_unit_id": "G100000412894",
+      "concern_type": "status",
+      "recommendation": "Check whether Kessel 7 should be retired and whether it burns gas at all.",
+      "refs": {
+        "links": [
+          "https://www.foerde-news.de/news/zwei-kohlekessel-und-zwei-turbinen-in-ruhestand-verabschiedet-neue-gas-und-dampfturbinenanlage-der-stadtwerke-flensburg-geht-in-.html"
+        ]
+      },
+      "gem_plant_id": "L100000101993",
+      "plant_name": "Flensburg power station",
+      "country": "Germany",
+      "unit_name": "Kessel 7",
+      "fields": {},
+      "researcher_notes": "A local news report from 4 October 2016 says two coal boilers and two turbines were retired when the new gas and steam plant Kessel 12 began commercial operation, with a photo of the name plate on Kessel 7. The database shows Kessel 7 as operating on gas. The national plant list of June 2026 still lists a steam turbine 7 at Stadtwerke Flensburg as in operation, commissioned in 1980, so the two sources disagree.",
+      "record_id": "L100000101993:G100000412894:qa-status-1"
+    },
+    {
+      "gem_unit_id": "G100000400154",
+      "concern_type": "capacity",
+      "recommendation": "Consider checking capacity of Kessel 12 and 13 against the plant list.",
+      "refs": {},
+      "gem_plant_id": "L100000101993",
+      "plant_name": "Flensburg power station",
+      "country": "Germany",
+      "unit_name": "Kessel 12, timepoint 1",
+      "fields": {},
+      "researcher_notes": "The national plant list of June 2026 shows gas turbine 12 at 50.2 MW gross and steam turbine 12 at 27.9 MW gross, about 78 MW. Gas turbine 13 is 60.6 MW and steam turbine 13 is 38.7 MW, about 99 MW. The database shows 78 MW and 97 MW. The difference for Kessel 13 is small and may be rounding or net versus gross.",
+      "record_id": "L100000101993:G100000400154:qa-capacity-2"
+    },
+    {
+      "gem_unit_id": "G100000400176",
+      "concern_type": "location",
+      "recommendation": "Check whether this plant record describes the Dieselstraße energy park or the Trotha energy park, and fix the name or the coordinates.",
+      "refs": {
+        "links": [
+          "https://evh.de/sixcms/media.php/86/Umwelterkl%C3%A4rung%20der%20EVH%20GmbH%20und%20Heizkraftwerk%20Halle-Trotha%20GbmH%202024.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000400176",
+      "plant_name": "Halle Trotha power station",
+      "country": "Germany",
+      "unit_name": "A & B",
+      "fields": {},
+      "researcher_notes": "The stored coordinates 51.4591, 11.9929 lie next to Dieselstraße 141 in Halle. A map lookup puts that address at about 51.4576, 11.9915. The Trotha energy park is at Brachwitzer Straße 23, about 51.5232, 11.9433, roughly 7 kilometers north. The national plant list of June 2026 lists blocks A, B and C of EVH GmbH under the name Heizkraftwerk Dieselstraße, each about 57 MW and commissioned in 2020. The record name says Trotha. The 2024 environmental statement gives both addresses.",
+      "record_id": "L100000400176:G100000400176:qa-location-1"
+    },
+    {
+      "gem_unit_id": "G100000412886",
+      "concern_type": "technology",
+      "recommendation": "Check the unit name and technology.",
+      "refs": {
+        "links": [
+          "https://www.energie.de/euroheatpower/news-detailansicht/nsctrl/detail/News/swb-weiht-blockheizkraftwerk-am-standort-bremen-hastedt-ein",
+          "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/gas-statt-kohle-in-bremen-215259"
+        ]
+      },
+      "gem_plant_id": "L100000101898",
+      "plant_name": "Hastedt power station",
+      "country": "Germany",
+      "unit_name": "CC1",
+      "fields": {},
+      "researcher_notes": "Reports from 2023 describe nine gas engines from Wärtsilä with 104 MW in total, and the national plant list shows nine engines of about 11.7 MW net, each commissioned in 2022. The unit name CC1 suggests a combined cycle block, which does not match nine engines. The existing record has 3 engines, which also does not match.",
+      "record_id": "L100000101898:G100000412886:qa-technology-1"
+    },
+    {
+      "gem_unit_id": "G100000400179",
+      "concern_type": "location",
+      "recommendation": "Move the Hattorf coordinates to the Hattorf works in Philippsthal, Hesse. Keep the current coordinates for Unterbreizbach only.",
+      "refs": {
+        "links": [
+          "https://www.kpluss.com/de-de/ueber-ks/standorte/europa/werra/",
+          "https://osthessen-news.de/n1216480/philippsthal-e-on-und-k-s-kali-gmbh-nehmen-neuen-gasturbinenblock-in-betrieb.html",
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000400179",
+      "plant_name": "Hattorf power station",
+      "country": "Germany",
+      "unit_name": "CC",
+      "fields": {},
+      "researcher_notes": "The K+S Werra site page gives the Hattorf works address as Hattorfer Strasse 78, 36269 Philippsthal, which is in Hesse. GEM shows Hattorf in Thuringia at 50.8126, 9.9780, which is where the Unterbreizbach works is, at Suennaer Strasse 10, 36414 Unterbreizbach. A news report on the new gas turbine block also places the Hattorf power plant in Philippsthal. The regulator's plant list dated June 2026 lists the Hattorf gas turbines as Kraftwerk HA in Hesse and the Unterbreizbach ones as Kraftwerk UB in Thuringia. So the coordinates for Hattorf are the wrong set. I did not look up exact coordinates for the Philippsthal works.",
+      "record_id": "L100000400179:G100000400179:qa-location-1"
+    },
+    {
+      "gem_unit_id": "G100000400180",
+      "concern_type": "location",
+      "recommendation": "Treat the Hillegossen coordinates as the wrong set and move them to Niedernholz 23, 33699 Bielefeld. The Schildescher Strasse plant at Schildescher Str. 16, 33611 Bielefeld keeps its own location.",
+      "refs": {
+        "links": [
+          "https://www.bezreg-detmold.nrw.de/system/files/media/document/file/5.53_UI_Ueberwachungsprogramm%20IE-Anlagen%20BR%20Dt_13-01-2022.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000400180",
+      "plant_name": "Hillegossen power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "A list of industrial plants published by the Detmold regional government in January 2022 gives the Hillegossen combined cycle plant at Niedernholz 23, 33699 Bielefeld. It gives the Schildescher Strasse heating plant at Schildescher Str. 16, 33611 Bielefeld. These are different streets in different districts. GEM's Hillegossen point of 52.03333, 8.53333 is rounded and looks like a town-level placeholder. I did not look up exact coordinates for either address, so the correct point for Niedernholz 23 still needs to be found.",
+      "record_id": "L100000400180:G100000400180:qa-location-1"
+    },
+    {
+      "gem_unit_id": "G100000409740",
+      "concern_type": "start year",
+      "recommendation": "Review the start year of 2023 and the capacity of 58 MW. Do not change them without more evidence.",
+      "refs": {
+        "links": [
+          "https://www.ineoskoeln.de/unternehmen/projekte/gud-anlage/",
+          "https://www.filzmaier.org/projekte-ingenieurbuero/gud-anlage-ineos-koeln.html"
+        ]
+      },
+      "gem_plant_id": "L100000407530",
+      "plant_name": "Ineos Köln power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The INEOS Cologne project page says the plant went into operation in February 2025. GEM shows a start year of 2023. The regulator's plant list dated June 2026 shows two INEOS Manufacturing Deutschland units that may belong to this plant. One is a 32 MW natural gas unit from 2022 and one is a 38 MW unit from 2025. A consulting firm that worked on the project gives a 25 MW gas turbine and a 38 MW steam turbine, which adds up to 63 MW, not 58 MW. I could not tell which register rows match this plant, so I made no change.",
+      "record_id": "L100000407530:G100000409740:qa-start-year-1"
+    },
+    {
+      "gem_unit_id": "G100001027842",
+      "concern_type": "owner",
+      "recommendation": "Keep the current owner, Infraserv GmbH & Co. Höchst KG at 100 percent, but it still has no source. A company annual report or the Infraserv press release on the 2022 gas turbines would be a good place to look.",
+      "refs": {},
+      "gem_plant_id": "L100000400186",
+      "plant_name": "Infraserv Hoechst power station",
+      "country": "Germany",
+      "unit_name": "GTX1",
+      "fields": {},
+      "researcher_notes": "The Bundesnetzagentur power plant list dated 26 June 2026 shows the row IPH Strom GTX1, 54 MW, started 2003, with Infraserv GmbH & Co. Höchst KG as the plant operator. A register operator is not proof of ownership, so I did not report it as an owner source. Infraserv's own pages that I could load call it the operator of Industriepark Höchst but do not state ownership of this unit. The press release pages returned a server error. I saw no sign that the owner differs from GEM's value.",
+      "record_id": "L100000400186:G100001027842:qa-owner-1"
+    },
+    {
+      "gem_unit_id": "G100001094633",
+      "concern_type": "owner",
+      "recommendation": "Check the owner of both units. GEM lists Zweckverband Müllverwertungsanlage Ingolstadt, a waste incineration association, as 100 percent owner.",
+      "refs": {
+        "links": [
+          "https://www.uniper.energy/sites/default/files/2023-02/KW%20Ingolstadt%20Ver%C3%B6ffentlichung%20gem%C3%A4%C3%9F%20Anhang%20V%20der%2012.%20BImSchV.pdf",
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100001083017",
+      "plant_name": "Ingolstadt power station",
+      "country": "Germany",
+      "unit_name": "Unit 3",
+      "fields": {},
+      "researcher_notes": "The regulator list names Uniper Kraftwerke GmbH as the operator of Ingolstadt 3 and 4, and the Uniper notice describes them as Uniper blocks. The waste incineration association appears in the same list only for two small waste turbines. I did not change the owner because no ownership document was in the task.",
+      "record_id": "L100001083017:G100001094633:qa-owner-1"
+    },
+    {
+      "gem_unit_id": "G100001094634",
+      "concern_type": "owner",
+      "recommendation": "Same owner question as for Unit 3.",
+      "refs": {},
+      "gem_plant_id": "L100001083017",
+      "plant_name": "Ingolstadt power station",
+      "country": "Germany",
+      "unit_name": "Unit 4",
+      "fields": {},
+      "researcher_notes": "See the note for Unit 3.",
+      "record_id": "L100001083017:G100001094634:qa-owner-2"
+    },
+    {
+      "gem_unit_id": "G100001094633",
+      "concern_type": "capacity source",
+      "recommendation": "The 2026 Uniper List of Assets could not be read, so the nameplate was checked against the 2022 Uniper notice and the regulator list instead.",
+      "refs": {},
+      "gem_plant_id": "L100001083017",
+      "plant_name": "Ingolstadt power station",
+      "country": "Germany",
+      "unit_name": "Unit 3",
+      "fields": {},
+      "researcher_notes": "The Uniper website blocked the repo's fetcher and no Wayback copy exists.",
+      "record_id": "L100001083017:G100001094633:qa-capacity-source-3"
+    },
+    {
+      "gem_unit_id": "G100001027838",
+      "concern_type": "captive",
+      "recommendation": "This plant mainly serves the Pfeifer & Langen sugar factory, so the captive industrial fields may need filling. This was not part of the task.",
+      "refs": {},
+      "gem_plant_id": "L100001023474",
+      "plant_name": "Juelich power station",
+      "country": "Germany",
+      "unit_name": "ICCC",
+      "fields": {},
+      "researcher_notes": "The regulator list shows the unit with district heat extraction and a sugar factory operator.",
+      "record_id": "L100001023474:G100001027838:qa-captive-1"
+    },
+    {
+      "gem_unit_id": "G100001027838",
+      "concern_type": "fuel",
+      "recommendation": "GEM shows natural gas only. The register main fuel is natural gas and refinery gas. The newspaper says the plant ran on lignite until 2021, so a conversion entry may be worth a look.",
+      "refs": {
+        "links": [
+          "https://www.aachener-zeitung.de/lokales/region-dueren/juelich/zuckerfabrik-halbiert-den-co2-aussto%C3%9F/3947686.html"
+        ]
+      },
+      "gem_plant_id": "L100001023474",
+      "plant_name": "Juelich power station",
+      "country": "Germany",
+      "unit_name": "ICCC",
+      "fields": {},
+      "researcher_notes": "Not changed.",
+      "record_id": "L100001023474:G100001027838:qa-fuel-2"
+    },
+    {
+      "gem_unit_id": "G100000400198",
+      "concern_type": "owner",
+      "recommendation": "Stadtwerke Düsseldorf AG is itself majority owned by EnBW at 54.95 percent. GEM correctly names the plant holder, not its shareholders.",
+      "refs": {},
+      "gem_plant_id": "L100000101950",
+      "plant_name": "Lausward power station",
+      "country": "Germany",
+      "unit_name": "Block A",
+      "fields": {},
+      "researcher_notes": "Shareholding comes from search results only and was not checked on a page I cite.",
+      "record_id": "L100000101950:G100000400198:qa-owner-1"
+    },
+    {
+      "gem_unit_id": "G100000400216",
+      "concern_type": "duplicate",
+      "recommendation": "Treat the two GEM plants as separate. This GEM plant is the combined cycle plant of Gemeinschaftskraftwerk Bremen. The swb plant is the older swb site on the same grounds.",
+      "refs": {
+        "links": [
+          "https://www.swb.de/ueber-swb/presse/presseinformationen/arcelormittal-bremen-und-swb-weihen-neue-leitwarte-ein",
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000400216",
+      "plant_name": "Mittelsbüren power station",
+      "country": "Germany",
+      "unit_name": "GuD MiBÜ",
+      "fields": {},
+      "researcher_notes": "The regulator list dated 26 June 2026 has a row GUD Mibü, operated by Gemeinschaftskraftwerk Bremen GmbH & Co. KG, 444.5 MW net, commissioned 2014. It also has separate rows for swb Erzeugung AG & Co. KG at Mittelsbüren, such as gas turbine GT3 on light fuel oil from 1975, and a steelworks blast furnace gas block run by ArcelorMittal Bremen GmbH. A swb press release from September 2019 describes the swb Mittelsbüren site as Bremen's largest power site, with three power blocks and about 750 MW. I did not read the unit list of the second GEM plant, so this rests on the owner and unit differences.",
+      "record_id": "L100000400216:G100000400216:qa-duplicate-1"
+    },
+    {
+      "gem_unit_id": "G100000400216",
+      "concern_type": "start year",
+      "recommendation": "The register gives 2014 as the commissioning year for GUD Mibü. GEM shows 2016. Check which is right.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000400216",
+      "plant_name": "Mittelsbüren power station",
+      "country": "Germany",
+      "unit_name": "GuD MiBÜ",
+      "fields": {},
+      "researcher_notes": "Noticed in passing. Not changed.",
+      "record_id": "L100000400216:G100000400216:qa-start-year-2"
+    },
+    {
+      "gem_unit_id": "G100001017978",
+      "concern_type": "capacity",
+      "recommendation": "Check whether 365 MW should stay.",
+      "refs": {},
+      "gem_plant_id": "L100000101884",
+      "plant_name": "München Nord power station",
+      "country": "Germany",
+      "unit_name": "Unit 2, timepoint 2",
+      "fields": {},
+      "researcher_notes": "The Bundesnetzagentur power plant list dated 26 June 2026 shows SWM HKW Nord 2 T20 with 363 MW gross and 333 MW net, started in 1991. GEM shows 365 MW. Trade press says about 360 MW electric. The difference is small and the list says gross is 363, so this is only a question.",
+      "record_id": "L100000101884:G100001017978:qa-capacity-1"
+    },
+    {
+      "gem_unit_id": "G100001017978",
+      "concern_type": "owner",
+      "recommendation": "No change.",
+      "refs": {},
+      "gem_plant_id": "L100000101884",
+      "plant_name": "München Nord power station",
+      "country": "Germany",
+      "unit_name": "Unit 2, timepoint 2",
+      "fields": {},
+      "researcher_notes": "The power plant list names SWM Services GmbH as operator. GEM shows Stadtwerke München GmbH as owner. This is a different role, so no change is suggested.",
+      "record_id": "L100000101884:G100001017978:qa-owner-2"
+    },
+    {
+      "gem_unit_id": "G100000412847",
+      "concern_type": "owner",
+      "recommendation": "Check whether the owner should now be SWP Stadtwerke Pforzheim GmbH & Co. KG instead of Heizkraftwerk Pforzheim GmbH.",
+      "refs": {
+        "links": [
+          "https://www.stadtwerke-pforzheim.de/waerme/heizkraftwerk-hkw/"
+        ]
+      },
+      "gem_plant_id": "L100000101879",
+      "plant_name": "Pforzheim power station",
+      "country": "Germany",
+      "unit_name": "IC1-5",
+      "fields": {},
+      "researcher_notes": "The utility took over the plant company in 2020 according to Wikipedia, and the regulator's power plant list dated 26 June 2026 names SWP Stadtwerke Pforzheim as operator of the five engines. I did not find a second independent source for a closed transaction. The existing owner entity Heizkraftwerk Pforzheim GmbH is in GEM on 3 units. The name SWP Stadtwerke Pforzheim was not found in the local entity list.",
+      "record_id": "L100000101879:G100000412847:qa-owner-1"
+    },
+    {
+      "gem_unit_id": "G100000412845",
+      "concern_type": "capacity",
+      "recommendation": "Check the capacity of the engine plant unit IC.",
+      "refs": {},
+      "gem_plant_id": "L100000101975",
+      "plant_name": "Romerbrucke power station",
+      "country": "Germany",
+      "unit_name": "IC",
+      "fields": {},
+      "researcher_notes": "The regulator's power plant list dated 26 June 2026 shows the gas engine plant at 53.1 MW gross and 52.5 MW net. GEM shows 50 MW. Not a task in this batch, so only a question.",
+      "record_id": "L100000101975:G100000412845:qa-capacity-1"
+    },
+    {
+      "gem_unit_id": "G100000400242",
+      "concern_type": "unit match",
+      "recommendation": "Check the unit capacities against the register.",
+      "refs": {},
+      "gem_plant_id": "L100000101975",
+      "plant_name": "Romerbrucke power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The same list shows the combined cycle gas turbine at 41 MW gross and 40 MW net from 2005, and the steam turbine DT2 at 56 MW gross and 53 MW net from 1988. GEM shows 74 MW and 53 MW. The list also shows a newer steam turbine DT3 at 34.6 MW gross from 2011 and a combined cycle plant ZF-SBR at 39 MW from 2012 under the same operator. These may be separate sites. Not checked further.",
+      "record_id": "L100000101975:G100000400242:qa-unit-match-2"
+    },
+    {
+      "gem_unit_id": "G100000400251",
+      "concern_type": "unit scope",
+      "recommendation": "Check how the register splits this plant.",
+      "refs": {},
+      "gem_plant_id": "L100000400251",
+      "plant_name": "Stade Dow power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The regulator's power plant list dated 26 June 2026 shows three Dow gas turbines of about 45 MW net each, started in 2014, plus an older entry named Dow Stade of 190 MW net, marked finally closed. GEM shows one combined cycle unit of 163 MW started in 2015. The newspaper article from 2013 gives 163 MW electric. The register shows about 135 MW net for the three turbines. This may be a rounding or a steam turbine not listed. Not a task in this batch.",
+      "record_id": "L100000400251:G100000400251:qa-unit-scope-1"
+    },
+    {
+      "gem_unit_id": "G100000400251",
+      "concern_type": "notes",
+      "recommendation": "Review the old researcher note.",
+      "refs": {},
+      "gem_plant_id": "L100000400251",
+      "plant_name": "Stade Dow power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The old note on this unit talks about a new coal unit and shelved status. That does not fit an operating gas unit. It looks like a leftover from the coal tracker.",
+      "record_id": "L100000400251:G100000400251:qa-notes-2"
+    },
+    {
+      "gem_unit_id": "G100000400264",
+      "concern_type": "unit scope",
+      "recommendation": "Check the unit against the register.",
+      "refs": {},
+      "gem_plant_id": "L100000101900",
+      "plant_name": "Tiefstack power station",
+      "country": "Germany",
+      "unit_name": "CC",
+      "fields": {},
+      "researcher_notes": "The regulator's power plant list dated 26 June 2026 shows two Hamburger Energiewerke gas turbines, GT41 and GT42, of 50 MW net each, started in 2009. GEM shows one combined cycle unit of 127 MW. The old note on the unit also talks about a coal to biomass plan that was dropped. Not a task in this batch.",
+      "record_id": "L100000101900:G100000400264:qa-unit-scope-1"
+    },
+    {
+      "gem_unit_id": "G100001027808",
+      "concern_type": "identity",
+      "recommendation": "Consider renaming the unit or adding a note that it is a gas engine plant.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100001023454",
+      "plant_name": "Ulm power station",
+      "country": "Germany",
+      "unit_name": "ST1",
+      "fields": {},
+      "researcher_notes": "The regulator's power plant list dated 26 June 2026 shows this unit, named BHKW1, as a combustion engine with 20.543 MW net, in operation since 2022. GEM lists it as a steam turbine named ST1 with 20.5 MW. The capacity matches but the technology does not. I did not change it because the brief only asked for the city.",
+      "record_id": "L100001023454:G100001027808:qa-identity-1"
+    },
+    {
+      "gem_unit_id": "G100000400268",
+      "concern_type": "location",
+      "recommendation": "Consider moving the point to the clinic campus and marking it exact after checking a map.",
+      "refs": {
+        "links": [
+          "https://de.wikipedia.org/wiki/Universit%C3%A4tsklinikum_Freiburg"
+        ]
+      },
+      "gem_plant_id": "L100000101882",
+      "plant_name": "Universitat Freiburg power station",
+      "country": "Germany",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "GEM shows 47.9833, 7.8500, marked approximate, which is the center of Freiburg. The German Wikipedia page for the University Medical Center Freiburg gives the clinic as 48.0064 north, 7.8378 east. That is the clinic campus where the heat and power plant stands. Wikipedia is only a lead and is not cited as a source for the value.",
+      "record_id": "L100000101882:G100000400268:qa-location-1"
+    },
+    {
+      "gem_unit_id": "G100001027807",
+      "concern_type": "capacity",
+      "recommendation": "Check the capacity of the gas turbine.",
+      "refs": {
+        "links": [
+          "https://kreisbote.de/lokales/kempten/feiert-heuer-sein-100jaehriges-bestehen-kann-eine-bewegte-geschichte-blicken-letzter-teil-13815990.html"
+        ]
+      },
+      "gem_plant_id": "L100001023453",
+      "plant_name": "Veits peaker plant",
+      "country": "Germany",
+      "unit_name": "GT",
+      "fields": {},
+      "researcher_notes": "The newspaper gives 21 megawatts and GEM shows 20 megawatts. The regulator's list dated 26 June 2026 does not list the gas turbine at all. It lists two diesel units of 5 MW each at Veits. I did not change the capacity.",
+      "record_id": "L100001023453:G100001027807:qa-capacity-1"
+    },
+    {
+      "gem_unit_id": "G100000412832",
+      "concern_type": "stale value",
+      "recommendation": "Clear the planned retirement year of 2025 or replace it when a new year is announced.",
+      "refs": {
+        "links": [
+          "https://www.enbw.com/company/topics/coal-phaseout/walheim-sewage-sludge-combined-heat-and-power-plant/"
+        ]
+      },
+      "gem_plant_id": "L100000101883",
+      "plant_name": "Walheim power station",
+      "country": "Germany",
+      "unit_name": "GT1",
+      "fields": {},
+      "researcher_notes": "The year 2025 was the end of the grid reserve duty for the coal blocks. The gas turbine was not part of it and EnBW says it keeps operating. I found no new retirement date for the gas turbine.",
+      "record_id": "L100000101883:G100000412832:qa-stale-value-1"
+    },
+    {
+      "gem_unit_id": "G100000412832",
+      "concern_type": "location",
+      "recommendation": "Coordinates look right but have no citable document.",
+      "refs": {
+        "links": [
+          "https://de.wikipedia.org/wiki/Kraftwerk_Walheim"
+        ]
+      },
+      "gem_plant_id": "L100000101883",
+      "plant_name": "Walheim power station",
+      "country": "Germany",
+      "unit_name": "GT1",
+      "fields": {},
+      "researcher_notes": "The German Wikipedia page for the Walheim power plant gives 49.0175 north, 9.1574 east. That is within about 20 metres of GEM's 49.01767, 9.157693. Wikipedia is only a lead and is not cited.",
+      "record_id": "L100000101883:G100000412832:qa-location-2"
+    },
+    {
+      "gem_unit_id": "G100000401331",
+      "concern_type": "identity",
+      "recommendation": "Check how the register units map to GEM's units.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000101923",
+      "plant_name": "Wolfsburg West power station",
+      "country": "Germany",
+      "unit_name": "GuD-West1",
+      "fields": {},
+      "researcher_notes": "The regulator's list dated 26 June 2026 shows two combined cycle units named GT 31 and GT32 GuD Süd Wolfsburg at 49.4 MW net each, built in 2021 and fed fully into the grid. GEM's West units are 144 MW each. They look like different plants. I did not find a register row for the West units under VW Kraftwerk GmbH.",
+      "record_id": "L100000101923:G100000401331:qa-identity-1"
+    },
+    {
+      "gem_unit_id": "G100000409959",
+      "concern_type": "identity",
+      "recommendation": "Confirm that the register row is the same unit as GEM's unit 3.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000407631",
+      "plant_name": "Augsburg Mill power station",
+      "country": "Germany",
+      "unit_name": "3",
+      "fields": {},
+      "researcher_notes": "The register shows 29.5 MW and a start year of 1992. GEM shows 32 MW and 1967. A 2018 regulator scenario list that I found in a search called this unit steam turbine 3, built in 1966 with 29 MW, and provisionally shut down. The differences may be a rebuild or a data entry difference.",
+      "record_id": "L100000407631:G100000409959:qa-identity-1"
+    },
+    {
+      "gem_unit_id": "G100000400884",
+      "concern_type": "dead link",
+      "recommendation": "Find the current address of the federal environment agency table dated 4 April 2019, which may hold a later activity date.",
+      "refs": {},
+      "gem_plant_id": "L100000401428",
+      "plant_name": "EDF Premnitz power station",
+      "country": "Germany",
+      "unit_name": "CC",
+      "fields": {},
+      "researcher_notes": "The link in GEM now returns page not found. Earlier history: Brandenburg issued the permit in the mid 2000s to a subsidiary of Alpiq, and Alpiq sold the project to EDF Deutschland at the end of 2012.",
+      "record_id": "L100000401428:G100000400884:qa-dead-link-1"
+    },
+    {
+      "gem_unit_id": "G100000400885",
+      "concern_type": "value",
+      "recommendation": "Consider whether the capacity of 500 MW is still right. The January 2019 article gives about 335 MW electric for the permit application.",
+      "refs": {
+        "links": [
+          "https://www.fnp.de/frankfurt/genehmigung-notfall-kraftwerk-angelaufen-11139948.html"
+        ]
+      },
+      "gem_plant_id": "L100000401429",
+      "plant_name": "Griesheim Reserve power station",
+      "country": "Germany",
+      "unit_name": "CC",
+      "fields": {},
+      "researcher_notes": "The permit application described one gas turbine with about 335 MW electric output. The 500 MW figure is from the 2014 first announcement.",
+      "record_id": "L100000401429:G100000400885:qa-value-1"
+    },
+    {
+      "gem_unit_id": "G100000409741",
+      "concern_type": "value",
+      "recommendation": "Check capacity and start year. The register shows 120 MW gross and 110 MW net, and commissioning in 1974. GEM shows 102 MW and 1975.",
+      "refs": {
+        "links": [
+          "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+        ]
+      },
+      "gem_plant_id": "L100000407531",
+      "plant_name": "Herrenhausen power station",
+      "country": "Germany",
+      "unit_name": "B",
+      "fields": {},
+      "researcher_notes": "Noticed in passing, not changed.",
+      "record_id": "L100000407531:G100000409741:qa-value-1"
+    },
+    {
+      "gem_unit_id": "G100000412852",
+      "concern_type": "status",
+      "recommendation": "Check whether this unit is really retired. The June 2026 register lists Turbine 7 as in operation, 20 MW gross, 18 MW net, commissioned 1968.",
+      "refs": {},
+      "gem_plant_id": "L100000408818",
+      "plant_name": "Maxau Mill power station",
+      "country": "Germany",
+      "unit_name": "7, timepoint 1",
+      "fields": {},
+      "researcher_notes": "The unit appears to have been converted to biomass rather than closed. The previous researcher also noted they could not find when the conversion happened.",
+      "record_id": "L100000408818:G100000412852:qa-status-1"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "Mukran FSRU LNG Terminal power station",
+      "concern_type": "scope_call",
+      "recommendation": "Out of scope. Do not add a plant. The 39.9 MW is the combined engine rating of one LNG ship, and the shore-side power plant that was once planned has been dropped.",
+      "refs": {
+        "links": [
+          "https://www.bverwg.de/pm/2025/90",
+          "https://www.energie-und-management.de/nachrichten/recht/detail/deutsche-regas-darf-mukran-dauerhaft-ohne-landstrom-betreiben-356711",
+          "https://de.wikipedia.org/wiki/Neptune_(Schiff,_2009)",
+          "https://buergerinitiative-ruegen.de/regas-im-umweltausschuss-zur-kwk-anlage-und-laerm-des-lng-terminals/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.bverwg.de/pm/2025/90",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.energie-und-management.de/nachrichten/recht/detail/deutsche-regas-darf-mukran-dauerhaft-ohne-landstrom-betreiben-356711",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://de.wikipedia.org/wiki/Neptune_(Schiff,_2009)",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://buergerinitiative-ruegen.de/regas-im-umweltausschuss-zur-kwk-anlage-und-laerm-des-lng-terminals/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "country": "Germany",
+      "fields": {},
+      "researcher_notes": "The possible-updates row says 39.9 MW from the generators on board the Neptune, one of two floating LNG import ships at Mukran on Rügen, run by Deutsche ReGas. German Wikipedia lists the Neptune with three Wärtsilä 12V50 DF engines of 11,400 kW each and one 6L50DF engine of 5,700 kW. Together that is about 39.9 MW. This is the ship's own engine rating, not a power plant that sells electricity. The original permit for the terminal included a shore-side combined heat and power plant, which would have supplied heat to Sassnitz. In July 2024 Deutsche ReGas said it would not build it. The Federal Administrative Court ruled in 2025 that dropping it needed a formal permit change. In March 2026 the state environment office in Vorpommern granted that change, so the terminal may run permanently on the ships' own gas generators. A trade press report dated March 20, 2026 confirms this. I found no shore-side generator of any size and no electric export figure. The ship engines run the ship and the regasification. A reviewer should treat this as ship equipment, not a tracked plant. Recheck only if Deutsche ReGas or the town of Sassnitz revives the shore plant.",
+      "record_id": "germany:plant:qa-scope-call-1"
+    }
+  ]
+}

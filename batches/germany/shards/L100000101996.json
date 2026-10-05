@@ -1,0 +1,163 @@
+{
+ "meta": {
+  "plant_id": "L100000101996",
+  "plant_name": "Wedel power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:26:00-04:00",
+  "done": true,
+  "urls_attempted": 8,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000409747",
+   "unit_name": "CC1",
+   "findings": {
+    "Latest Activity": {
+     "value": "Year: 2026, Month: 4, Day: 20",
+     "refs": [
+      "https://www.t-online.de/finanzen/aktuelles/wirtschaft/id_101221074/kohlekraftwerk-wedel-soll-mitte-2027-stillgelegt-werden.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.t-online.de/finanzen/aktuelles/wirtschaft/id_101221074/kohlekraftwerk-wedel-soll-mitte-2027-stillgelegt-werden.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A t-online news article from 20 April 2026 reports that Hamburger Energiewerke expects the Energiepark Hafen, built around the new gas plant on the Dradenau peninsula, to be in operation at the end of 2026. The coal plant at Wedel is now planned to close from 1 July 2027."
+    },
+    "Status Detail": {
+     "value": "Delayed. Hamburger Energiewerke expected the Energiepark Hafen gas plant to be in operation at the end of 2026, as reported in April 2026. The Wedel coal plant is planned to close from 1 July 2027.",
+     "refs": [
+      "https://www.t-online.de/finanzen/aktuelles/wirtschaft/id_101221074/kohlekraftwerk-wedel-soll-mitte-2027-stillgelegt-werden.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.t-online.de/finanzen/aktuelles/wirtschaft/id_101221074/kohlekraftwerk-wedel-soll-mitte-2027-stillgelegt-werden.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "This replaces the older text that expected 2025 or 2026. It comes from the 20 April 2026 article."
+    },
+    "Start year": {
+     "value": "2026",
+     "refs": [
+      "https://www.t-online.de/finanzen/aktuelles/wirtschaft/id_101221074/kohlekraftwerk-wedel-soll-mitte-2027-stillgelegt-werden.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.t-online.de/finanzen/aktuelles/wirtschaft/id_101221074/kohlekraftwerk-wedel-soll-mitte-2027-stillgelegt-werden.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The article says the plant should be in operation at the end of 2026. That supports 2026 as the start year but is a plan and not a confirmed start."
+    }
+   },
+   "not_found": [
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "Status stays construction. The operator reported delays and gave end of 2026 as the target. I could not read a page that states 180 MW, so capacity is not reported."
+  },
+  {
+   "gem_unit_id": "G100000412831",
+   "unit_name": "GT1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit, so it was not researched."
+  },
+  {
+   "gem_unit_id": "G100000412830",
+   "unit_name": "GT2",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit, so it was not researched."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000409747",
+   "concern_type": "owner",
+   "recommendation": "Update the owner after confirming a second source.",
+   "note": "The article says the city of Hamburg bought the Wedel plant back from Vattenfall in 2019 and that Hamburger Energiewerke now runs it. The Bundesnetzagentur list dated 26 June 2026 shows Hamburger Energiewerke GmbH as operator of the Wedel coal blocks. GEM still shows Vattenfall Europe Power Management GmbH at 100 percent for all three units. I did not change the owner because the rules need two sources on a closed sale and I did not find the sale document.",
+   "refs": [
+    "https://www.t-online.de/finanzen/aktuelles/wirtschaft/id_101221074/kohlekraftwerk-wedel-soll-mitte-2027-stillgelegt-werden.html"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000412831",
+   "concern_type": "status",
+   "recommendation": "Check whether both gas turbine units have been retired.",
+   "note": "The Bundesnetzagentur power plant list dated 26 June 2026 has a record named GTKW Wedel, 51 MW net, light heating oil, commissioned 1972, marked permanently shut down with closure year 2025. GEM shows two operating gas turbines of 50.5 MW each from 1972. The register has one record, so it may cover one or both units. Please review.",
+   "refs": []
+  },
+  {
+   "gem_unit_id": "G100000412830",
+   "concern_type": "status",
+   "recommendation": "Same question as for GT1.",
+   "note": "See the note for GT1 about the GTKW Wedel closure in 2025.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Hamburger Energiewerke GmbH",
+   "role": "owner",
+   "lookup_result": "Not run. No owner change was reported, only a question for review."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.t-online.de/finanzen/aktuelles/wirtschaft/id_101221074/kohlekraftwerk-wedel-soll-mitte-2027-stillgelegt-werden.html",
+   "used_for": [
+    "Latest Activity",
+    "Status Detail",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Loads and states end of 2026 for the Energiepark Hafen and 1 July 2027 for the Wedel closure."
+  },
+  {
+   "url": "https://www.zfk.de/energie/waerme/hamburger-energiewerke-gas-und-dampfturbinen-wurden-angeliefert",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "failed",
+   "note": "The page loads but the text 180 MW was not found."
+  },
+  {
+   "url": "https://www.hamburger-energiewerke.de/ueber-uns/presse/mehrarbeiten-bei-gas-und-dampfturbinen-anlage-dradenau-notwendig",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "failed",
+   "note": "The site returned an HTTP 500 error to the verifier and the fetcher."
+  },
+  {
+   "url": "https://waerme.hamburg/fernwaermesystem/energiepark-hafen",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "failed",
+   "note": "HTTP 500 error."
+  }
+ ]
+}

@@ -1,0 +1,150 @@
+{
+ "meta": {
+  "plant_id": "L100000101966",
+  "plant_name": "Weisweiler power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:26:00-04:00",
+  "done": true,
+  "urls_attempted": 7,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000413128",
+   "unit_name": "CC, timepoint 1",
+   "findings": {
+    "Start year": {
+     "value": "2029",
+     "refs": [
+      "https://www.bezreg-koeln.nrw.de/system/files/media/document/file/bekanntmachung_laufende_immissionsschutzrechtliche_genehmigungsverfahren_rwe_generation_se_bekanntmachungstext.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bezreg-koeln.nrw.de/system/files/media/document/file/bekanntmachung_laufende_immissionsschutzrechtliche_genehmigungsverfahren_rwe_generation_se_bekanntmachungstext.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A public notice from the Cologne district government dated 18 August 2025 says commissioning of the planned gas and steam plant is foreseen in 2029. GEM shows 2030."
+    },
+    "Latest Activity": {
+     "value": "Year: 2025, Month: 12, Day: 9",
+     "refs": [
+      "https://www.bezreg-koeln.nrw.de/system/files/media/document/file/bekanntmachung_laufende_immissionsschutzrechtliche_genehmigungsverfahren_rwe_generation_se_bekanntmachungstext.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bezreg-koeln.nrw.de/system/files/media/document/file/bekanntmachung_laufende_immissionsschutzrechtliche_genehmigungsverfahren_rwe_generation_se_bekanntmachungstext.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The same notice sets the public hearing on objections for 9 December 2025. I did not find a report that the hearing took place or of a permit decision. So this date is the newest dated step I found."
+    },
+    "Status Detail": {
+     "value": "Permit application under review by the Cologne district government. Documents were on public display from 25 August to 24 September 2025. A public hearing was set for 9 December 2025. No permit decision found yet.",
+     "refs": [
+      "https://www.bezreg-koeln.nrw.de/system/files/media/document/file/bekanntmachung_laufende_immissionsschutzrechtliche_genehmigungsverfahren_rwe_generation_se_bekanntmachungstext.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bezreg-koeln.nrw.de/system/files/media/document/file/bekanntmachung_laufende_immissionsschutzrechtliche_genehmigungsverfahren_rwe_generation_se_bekanntmachungstext.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "This is taken from the 18 August 2025 notice. There is no construction start, so the status stays pre-construction."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Owner(s)"
+   ],
+   "notes": "Status stays pre-construction because no permit decision or construction start was found. The 800 MW capacity in the record matches an Energie und Management article that reports a contract for an 800 MW plant, so it is not a change. The notice gives a maximum fuel heat input of 1,500 MW, which is not electric capacity."
+  },
+  {
+   "gem_unit_id": "G100000400274",
+   "unit_name": "G_VGT",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit, so it was not researched."
+  },
+  {
+   "gem_unit_id": "G100000400275",
+   "unit_name": "H_VGT",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit, so it was not researched."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000413128",
+   "concern_type": "owner",
+   "recommendation": "Consider changing the owner to RWE Generation SE once the plant is built or the lease is confirmed.",
+   "note": "The 18 August 2025 notice names RWE Generation SE as the applicant. The land will be leased from RWE Power AG to RWE Generation SE and the plant will be a separate power station. GEM shows RWE Power AG at 100 percent. I did not change the owner because the rules need two sources.",
+   "refs": [
+    "https://www.bezreg-koeln.nrw.de/system/files/media/document/file/bekanntmachung_laufende_immissionsschutzrechtliche_genehmigungsverfahren_rwe_generation_se_bekanntmachungstext.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000400275",
+   "concern_type": "other",
+   "recommendation": "Check the unit mapping against the register.",
+   "note": "The Bundesnetzagentur list dated 26 June 2026 shows two gas units at Weisweiler, named G VGT and H VGT, both operating, 200 MW net, commissioned in 2006. This matches GEM. The register shows the H VGT as a steam condensation machine with heat extraction. This is a technology label only.",
+   "refs": []
+  }
+ ],
+ "monitor": [
+  {
+   "gem_unit_id": "G100000413128",
+   "note": "Watch for the permit decision and for the capacity tender awards due by 3 November 2026.",
+   "recheck_by": "2026-11-15"
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.bezreg-koeln.nrw.de/system/files/media/document/file/bekanntmachung_laufende_immissionsschutzrechtliche_genehmigungsverfahren_rwe_generation_se_bekanntmachungstext.pdf",
+   "used_for": [
+    "Start year",
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Loads. The year 2029, the plant name and RWE Generation SE were each found by separate runs. A combined phrase failed because of line breaks."
+  },
+  {
+   "url": "https://www.energie-und-management.de/nachrichten/technik/detail/rwe-vergibt-auftrag-fuer-800-mw-gaskraftwerk-190461",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Loads and contains Weisweiler and 800. Used only to confirm the existing capacity."
+  },
+  {
+   "url": "https://www.bund-nrw.de/meldungen/detail/news/rwe-startet-planung-fuer-gaskraftwerk-am-standort-wesiweiler/",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "An environmental group page. It loads. Not cited."
+  }
+ ]
+}

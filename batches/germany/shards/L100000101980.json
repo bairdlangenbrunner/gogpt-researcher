@@ -1,0 +1,131 @@
+{
+ "meta": {
+  "plant_id": "L100000101980",
+  "plant_name": "Chemnitz Nord power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:30:50-04:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000410324",
+   "unit_name": "1",
+   "findings": {},
+   "not_found": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "notes": "Owner and city are supported by trade press. No document I found gives coordinates for the plant."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Eins Energie in Sachsen GmbH & Co KG [100%]",
+   "refs": [
+    "https://www.zfk.de/energie/waerme/eins-energie-nimmt-motorenheizkraftwerke-in-betrieb",
+    "https://www.industr.com/de/zwei-neue-kraftwerke-fuer-chemnitz-2384901"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.zfk.de/energie/waerme/eins-energie-nimmt-motorenheizkraftwerke-in-betrieb",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.industr.com/de/zwei-neue-kraftwerke-fuer-chemnitz-2384901",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": true,
+   "note": "A trade article from September 2023 and a trade press report from August 2019 both say the utility Eins Energie in Sachsen built and put into operation the Chemnitz Nord gas engine plant. Neither says in words that Eins owns it, and neither gives a share. The owner is implied, not stated."
+  },
+  "City": {
+   "value": "Chemnitz",
+   "refs": [
+    "https://www.freiepresse.de/chemnitz/versorger-eins-nimmt-in-chemnitz-gasmotoren-kraftwerke-in-betrieb-artikel12631371"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.freiepresse.de/chemnitz/versorger-eins-nimmt-in-chemnitz-gasmotoren-kraftwerke-in-betrieb-artikel12631371",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "A Freie Presse article says the Chemnitz Nord engine plant stands in Chemnitz. Other trade reports place it in the Furth district of Chemnitz. No page gives coordinates."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000410324",
+   "concern_type": "unit structure",
+   "recommendation": "Check whether this unit should be seven engine units.",
+   "note": "The Bundesnetzagentur power plant list dated 26 June 2026 shows seven separate gas engines at Chemnitz Nord, each about 12.5 MW net, commissioned in 2023. Their operator is eins energie in sachsen. GEM lists one unit of 88.2 MW. Status detail also still says operation was expected in 2022 and is not confirmed. The register and trade press now confirm operation from September 2023.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Eins Energie in Sachsen GmbH & Co KG",
+   "role": "owner",
+   "lookup_result": "Existing owner in GEM record; no change proposed, so no lookup was needed."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.zfk.de/energie/waerme/eins-energie-nimmt-motorenheizkraftwerke-in-betrieb",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Trade article from 25 September 2023 on the opening of the engine plants."
+  },
+  {
+   "url": "https://www.industr.com/de/zwei-neue-kraftwerke-fuer-chemnitz-2384901",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Trade report from 26 August 2019 on the MAN contract for the Nord plant."
+  },
+  {
+   "url": "https://www.freiepresse.de/chemnitz/versorger-eins-nimmt-in-chemnitz-gasmotoren-kraftwerke-in-betrieb-artikel12631371",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Newspaper article on the opening. Names the Furth district."
+  },
+  {
+   "url": "https://www.man-es.com/de/unternehmen/pressemitteilungen/press-details/2019/08/21/man-energy-solutions-baut-zwei-heizkraftwerke-in-chemnitz",
+   "used_for": [],
+   "outcome": "failed",
+   "note": "The page redirects to a press list. The text I wanted was not there."
+  },
+  {
+   "url": "https://www.jaeger-ingenieure.de/news/motorenheizkraftwerke-eins-energie-chemnitz.html",
+   "used_for": [],
+   "outcome": "failed",
+   "note": "The verifier did not find the district name on it."
+  },
+  {
+   "url": "https://www.energy-saxony.net/aktuelles/eins-nimmt-motorenheizkraftwerke-in-betrieb.html",
+   "used_for": [],
+   "outcome": "dead",
+   "note": "HTTP 404."
+  }
+ ]
+}

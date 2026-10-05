@@ -1,0 +1,106 @@
+{
+ "meta": {
+  "plant_id": "L100000101891",
+  "plant_name": "Cottbus CHP power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:35:12-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000410323",
+   "unit_name": "ICCC",
+   "findings": {
+    "City": {
+     "value": "Cottbus",
+     "refs": [
+      "https://www.stadtwerke-cottbus.de/de/privatkunden/themen/unternehmen/standort/artikel-anfahrt-heizkraftwerk-cottbus.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.stadtwerke-cottbus.de/de/privatkunden/themen/unternehmen/standort/artikel-anfahrt-heizkraftwerk-cottbus.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Stadtwerke Cottbus page on how to reach the power plant gives the address Werner-von-Siemens-Strasse 16, 03052 Cottbus. So the city is Cottbus."
+    }
+   },
+   "not_found": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "notes": "I found an address but no document that states coordinates. The address points to a spot about 2 kilometers east of GEM's coordinates, so I raised a question."
+  },
+  {
+   "gem_unit_id": "G100001027841",
+   "unit_name": "ST1",
+   "findings": {
+    "City": {
+     "value": "Cottbus",
+     "refs": [
+      "https://www.stadtwerke-cottbus.de/de/privatkunden/themen/unternehmen/standort/artikel-anfahrt-heizkraftwerk-cottbus.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.stadtwerke-cottbus.de/de/privatkunden/themen/unternehmen/standort/artikel-anfahrt-heizkraftwerk-cottbus.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Stadtwerke Cottbus page on how to reach the power plant gives the address Werner-von-Siemens-Strasse 16, 03052 Cottbus. So the city is Cottbus."
+    }
+   },
+   "not_found": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "notes": "Same as the other unit at this plant."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000410323",
+   "concern_type": "other",
+   "recommendation": "Check the plant coordinates on a map and move them if confirmed.",
+   "note": "GEM shows 51.7627400, 14.3453979 as approximate. The plant address is Werner-von-Siemens-Strasse 16 in Cottbus, in the Sandow district. A map search of that street puts it near longitude 14.37 to 14.39, and the German Wikipedia article on the plant gives 51.7603, 14.3699. Both are about 2 kilometers east of GEM's point. Wikipedia is a lead only. No official document I found states coordinates. I did not change the location.",
+   "refs": [
+    "https://www.stadtwerke-cottbus.de/de/privatkunden/themen/unternehmen/standort/artikel-anfahrt-heizkraftwerk-cottbus.html"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.stadtwerke-cottbus.de/de/privatkunden/themen/unternehmen/standort/artikel-anfahrt-heizkraftwerk-cottbus.html",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Official Stadtwerke Cottbus page with the plant address."
+  },
+  {
+   "url": "https://de.wikipedia.org/wiki/Heizkraftwerk_Cottbus",
+   "used_for": [
+    "Latitude"
+   ],
+   "outcome": "not relevant",
+   "note": "Lead only. Gives coordinates of 51.7603, 14.3699. The verifier did not match the GEM longitude, which is the point of the question."
+  }
+ ]
+}

@@ -1,0 +1,123 @@
+{
+ "meta": {
+  "plant_id": "L100000401430",
+  "plant_name": "Gundelfingen Reserve power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:30:00-04:00",
+  "done": true,
+  "urls_attempted": 8,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400886",
+   "unit_name": "CC",
+   "findings": {
+    "Status": {
+     "value": "cancelled - inferred 4 y",
+     "refs": [],
+     "verifications": [],
+     "tier": "medium",
+     "independent": false,
+     "note": "The newest report I found is a local newspaper article from 2019 saying that the town still hoped for the gas plant and that a decision had been postponed. GEM's own note mentions a regulator document from 2020. That link no longer loads. A 2022 archived copy of the developer's project page repeats text from 2018 and says nothing new. I also searched for the developer's name, the town name and the national power plant strategy. I found no report after 2020, so there has been no activity for more than four years."
+    },
+    "Latest Activity": {
+     "value": "Year: 2019",
+     "refs": [
+      "https://www.augsburger-allgemeine.de/dillingen/Energie-Gundelfingen-hofft-weiter-auf-das-Gaskraftwerk-id54318741.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.augsburger-allgemeine.de/dillingen/Energie-Gundelfingen-hofft-weiter-auf-das-Gaskraftwerk-id54318741.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A local newspaper article from the Augsburger Allgemeine dated 2019 says the town hopes for the plant and that an announced decision was moved. GEM's note points to a 2020 regulator document that I could not open, so the true newest date may be 2020."
+    },
+    "Status Detail": {
+     "value": "no news since 2019 or 2020, developer page unchanged since 2018",
+     "refs": [
+      "https://www.augsburger-allgemeine.de/dillingen/Energie-Gundelfingen-hofft-weiter-auf-das-Gaskraftwerk-id54318741.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.augsburger-allgemeine.de/dillingen/Energie-Gundelfingen-hofft-weiter-auf-das-Gaskraftwerk-id54318741.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The newest readable report is from 2019. The developer's project page is no longer live. An archived copy from July 2022 still carries 2018 text."
+    }
+   },
+   "not_found": [
+    "Cancellation year"
+   ],
+   "notes": "The cancellation year is left blank because the status is inferred from silence, not from an announcement."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000400886",
+   "concern_type": "source",
+   "recommendation": "Existing links are dead or blocked.",
+   "note": "The regulator's 2020 consultation document returns not found. The developer's project page does not load live, but an archived copy from July 2022 exists. The energate article on the developer's three plants returns access denied. All three links are kept.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.augsburger-allgemeine.de/dillingen/Energie-Gundelfingen-hofft-weiter-auf-das-Gaskraftwerk-id54318741.html",
+   "used_for": [
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Local newspaper article from 2019."
+  },
+  {
+   "url": "http://www.pq-energy.com/en/projects.html",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "dead",
+   "note": "No live page. The repo fetcher, https and the German page all failed. An archived copy from 9 July 2022 loaded by curl and states up to 1,200 MW with 2018 copyright."
+  },
+  {
+   "url": "https://www.bundesnetzagentur.de/SharedDocs/Downloads/EN/Areas/ElectricityGas/Gas_grid/ConsultationScenario2020.pdf?__blob=publicationFile&v=2",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "dead",
+   "note": "Returns not found. A second version of the address also failed and no archive copy exists."
+  },
+  {
+   "url": "https://www.energate-messenger.de/news/148004/pq-energy-plant-drei-gaskraftwerke-in-deutschland",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "blocked",
+   "note": "Access denied on the repo fetcher and no archive copy. This is a subscription site."
+  },
+  {
+   "url": "https://www.sweco-gmbh.de/showroom/gas-oel-reservekraftwerk-gundelfingen/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "Engineering firm project page. It gives no dates after 2020 that the verifier could confirm."
+  }
+ ]
+}

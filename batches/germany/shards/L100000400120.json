@@ -1,0 +1,73 @@
+{
+ "meta": {
+  "plant_id": "L100000400120",
+  "plant_name": "Bitterfeld power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:29:37-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400120",
+   "unit_name": "1",
+   "findings": {},
+   "not_found": [],
+   "notes": "The brief asked for no checks on this unit, so nothing is reported for it. The only task was the whole-plant question about the nearby Wolfen plant."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000400120",
+   "concern_type": "distinct plants, not a duplicate",
+   "recommendation": "Keep Bitterfeld power station and Wolfen Envia power station as two separate plants.",
+   "note": "The national regulator's power plant list dated 26 June 2026 has two separate rows for the operator envia THERM GmbH. One is Bitterfeld GuD, a gas and steam turbine plant commissioned in 2000 with 110 MW gross and 108 MW net. The other is Wolfen GT, a single gas turbine without heat recovery commissioned in 1996 with 50 MW. They have different register numbers, years and technology, so they are not the same plant recorded twice. An envia THERM press release describes the Bitterfeld plant as a 108 MW gas and steam turbine plant that started in 2000. Both sit in the same chemical park, which explains why the coordinates are close.",
+   "refs": [
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+    "https://www.enviam-gruppe.de/media/unternehmensnachrichten/pressemitteilung/envia-therm-investiert-26-millionen-euro-in-die-modernisierung-des-kraftwerks-im-chemiepark-bitterfeld-wolfen"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000400120",
+   "concern_type": "capacity value",
+   "recommendation": "No change now. GEM shows 112.0 MW. Check where that figure came from.",
+   "note": "The regulator's list dated 26 June 2026 shows 110 MW gross and 108 MW net for Bitterfeld GuD. The envia THERM press release says 108 MW. GEM's 112.0 MW matches neither. This unit was marked as nothing to check, so I did not report it as a change.",
+   "refs": [
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "duplicate check"
+   ],
+   "outcome": "verified",
+   "note": "Loads. I read the file with a spreadsheet tool. Rows for envia THERM GmbH: Bitterfeld GuD (2000, 110 MW gross) and Wolfen GT (1996, 50 MW). Data date 26 June 2026."
+  },
+  {
+   "url": "https://www.enviam-gruppe.de/media/unternehmensnachrichten/pressemitteilung/envia-therm-investiert-26-millionen-euro-in-die-modernisierung-des-kraftwerks-im-chemiepark-bitterfeld-wolfen",
+   "used_for": [
+    "duplicate check"
+   ],
+   "outcome": "verified",
+   "note": "Press release names the Bitterfeld plant and 108 MW."
+  },
+  {
+   "url": "https://www.enviam-gruppe.de/unternehmen/enviam-gruppe/unternehmen-der-gruppe",
+   "used_for": [
+    "existing owner source"
+   ],
+   "outcome": "verified",
+   "note": "Existing owner link still loads and names envia THERM. Carry it forward."
+  }
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "meta": {
+  "plant_id": "L100000400216",
+  "plant_name": "Mittelsbüren power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:34:11-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400216",
+   "unit_name": "GuD MiBÜ",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit. The task was the duplicate question for the whole plant."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000400216",
+   "concern_type": "duplicate",
+   "recommendation": "Treat the two GEM plants as separate. This GEM plant is the combined cycle plant of Gemeinschaftskraftwerk Bremen. The swb plant is the older swb site on the same grounds.",
+   "note": "The regulator list dated 26 June 2026 has a row GUD Mibü, operated by Gemeinschaftskraftwerk Bremen GmbH & Co. KG, 444.5 MW net, commissioned 2014. It also has separate rows for swb Erzeugung AG & Co. KG at Mittelsbüren, such as gas turbine GT3 on light fuel oil from 1975, and a steelworks blast furnace gas block run by ArcelorMittal Bremen GmbH. A swb press release from September 2019 describes the swb Mittelsbüren site as Bremen's largest power site, with three power blocks and about 750 MW. I did not read the unit list of the second GEM plant, so this rests on the owner and unit differences.",
+   "refs": [
+    "https://www.swb.de/ueber-swb/presse/presseinformationen/arcelormittal-bremen-und-swb-weihen-neue-leitwarte-ein",
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000400216",
+   "concern_type": "start year",
+   "recommendation": "The register gives 2014 as the commissioning year for GUD Mibü. GEM shows 2016. Check which is right.",
+   "note": "Noticed in passing. Not changed.",
+   "refs": [
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.swb.de/ueber-swb/presse/presseinformationen/arcelormittal-bremen-und-swb-weihen-neue-leitwarte-ein",
+   "used_for": [
+    "duplicate check"
+   ],
+   "outcome": "verified",
+   "note": "swb press release of 6 September 2019 on the Mittelsbüren site."
+  },
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "duplicate check"
+   ],
+   "outcome": "verified",
+   "note": "Excel file read locally."
+  }
+ ]
+}

@@ -1,0 +1,157 @@
+{
+ "meta": {
+  "plant_id": "L100000101962",
+  "plant_name": "Voerde power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:28:04-04:00",
+  "done": true,
+  "urls_attempted": 7,
+  "urls_verified": 7
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001071724",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "pre-construction",
+     "refs": [
+      "https://www.brd.nrw.de/system/files/media/document/2026-07/20260728_bekanntmachungstext_rwe.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.brd.nrw.de/system/files/media/document/2026-07/20260728_bekanntmachungstext_rwe.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Bezirksregierung Düsseldorf, the state permit authority, published a public notice on 28 July 2026. It says RWE Generation SE has applied under the federal immission control law to build and operate a hydrogen-ready gas and steam turbine plant at Frankfurter Straße 424 in Voerde. An environmental impact assessment is part of the procedure. The documents were open to the public from 14 August to 14 September 2026. RWE is now actively seeking its permit, so the status moves from announced to pre-construction. I found only the authority as a source for this step, so the confidence is medium. RWE has said it will not start building without a tender award."
+    },
+    "Latest Activity": {
+     "value": "Year: 2026, Month: 7, Day: 28",
+     "refs": [
+      "https://www.brd.nrw.de/system/files/media/document/2026-07/20260728_bekanntmachungstext_rwe.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.brd.nrw.de/system/files/media/document/2026-07/20260728_bekanntmachungstext_rwe.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The public notice of the permit application is dated 28 July 2026. The regional authority also posted four related notices for water permits on the same day."
+    },
+    "Turbine/Engine Technology": {
+     "value": "combined cycle",
+     "refs": [
+      "https://www.brd.nrw.de/system/files/media/document/2026-07/20260728_bekanntmachungstext_rwe.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.brd.nrw.de/system/files/media/document/2026-07/20260728_bekanntmachungstext_rwe.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The notice describes one gas turbine, one condensing steam turbine and a heat recovery steam generator. That is a combined cycle plant."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Owner(s)",
+    "Capacity (MW)"
+   ],
+   "notes": "RWE filed its permit application and the public notice is dated 28 July 2026. I found no turbine maker, no tender award and no new start date. The notice gives the heat input as 1,600 MW thermal, not electric output, so the 850 MW electric figure from RWE stays."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001071724",
+   "concern_type": "equipment",
+   "recommendation": "Do not record GE Vernova as turbine maker without a further source.",
+   "note": "An engineering news article says RWE hired a group of GE Vernova and Tecnicas Reunidas in 2024 to plan the permit application. That is engineering work and not a turbine order, so I did not report it as the equipment maker.",
+   "refs": [
+    "https://www.ingenieur.de/technik/fachbereiche/energie/50-wasserstoff-100-stillstand-warum-rwe-in-voerde-nicht-bauen-kann/"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001071724",
+   "concern_type": "start_year",
+   "recommendation": "Keep 2030 for now and recheck after the tender award, due by 3 November 2026.",
+   "note": "RWE says 2030 is possible only with a tender award and a quick permit. No award list exists yet.",
+   "refs": [
+    "https://www.rwe.com/en/press/rwe-generation/2025-10-27-rwe-plans-hydrogen-compatible-gas-fired-power-station-in-voerde/"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.brd.nrw.de/system/files/media/document/2026-07/20260728_bekanntmachungstext_rwe.pdf",
+   "used_for": [
+    "Status",
+    "Latest Activity",
+    "Turbine/Engine Technology"
+   ],
+   "outcome": "verified",
+   "note": "Public notice dated 28 July 2026 by the Bezirksregierung Düsseldorf. Saved as a local copy and read in full."
+  },
+  {
+   "url": "https://www.brd.nrw.de/services/bekanntmachungen",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Notice list of the Bezirksregierung Düsseldorf. Shows the notice of the permit procedure."
+  },
+  {
+   "url": "https://www.rwe.com/en/press/rwe-generation/2025-10-27-rwe-plans-hydrogen-compatible-gas-fired-power-station-in-voerde/",
+   "used_for": [
+    "Capacity (MW)",
+    "Start year",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Existing source, still loads and states 850 MW and 2030. Carried forward."
+  },
+  {
+   "url": "https://www.ingenieur.de/technik/fachbereiche/energie/50-wasserstoff-100-stillstand-warum-rwe-in-voerde-nicht-bauen-kann/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Engineering news article of 28 October 2025. Names GE Vernova as permit planner only."
+  },
+  {
+   "url": "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/neues-rwe-gaskraftwerk-in-voerde-soll-2030-loslegen-338696",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Trade magazine article. Says electricity production could start in 2030."
+  },
+  {
+   "url": "https://www.zfk.de/politik/deutschland/kraftwerksgesetz-stromvkg-uniper-rwe-kmw",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Trade press article of 18 August 2026. Loads and mentions Voerde only loosely, so it is not cited."
+  }
+ ]
+}

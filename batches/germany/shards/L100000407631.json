@@ -1,0 +1,73 @@
+{
+ "meta": {
+  "plant_id": "L100000407631",
+  "plant_name": "Augsburg Mill power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:50:00-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000409959",
+   "unit_name": "3",
+   "findings": {
+    "Retired year": {
+     "value": "2023",
+     "refs": [
+      "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The regulator's power plant list dated 26 June 2026 has one row for this plant. It reads UPM Augsburg Gaskraftwerk, Bayern, built in 1992, final closure in 2023, 29.5 MW net, back-pressure steam turbine with extraction. No other gas unit is listed for UPM in Augsburg. The row does not match GEM's start year of 1967 and 32 MW, so I treat the match as likely and not certain."
+    }
+   },
+   "not_found": [],
+   "notes": "The only matching register row shows final closure in 2023. Its start year and capacity differ from GEM's, so a researcher should confirm the match."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000409959",
+   "concern_type": "identity",
+   "recommendation": "Confirm that the register row is the same unit as GEM's unit 3.",
+   "note": "The register shows 29.5 MW and a start year of 1992. GEM shows 32 MW and 1967. A 2018 regulator scenario list that I found in a search called this unit steam turbine 3, built in 1966 with 29 MW, and provisionally shut down. The differences may be a rebuild or a data entry difference.",
+   "refs": [
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "Retired year"
+   ],
+   "outcome": "verified",
+   "note": "Read from the downloaded copy dated 26 June 2026. Row: UPM Augsburg Gaskraftwerk, Bayern, 1992, closed 2023, final closure without grid reserve or coal exit law, 29.5 MW net. The file itself cannot be text checked, so the row is reported by reading it."
+  },
+  {
+   "url": "https://www.euwid-papier.de/news/unternehmen/upm-elektrifiziert-waerme-und-dampferzeugung-in-deutschen-papierfabriken-150324/",
+   "used_for": [
+    "Retired year"
+   ],
+   "outcome": "not relevant",
+   "note": "Search result about electric steam boilers at UPM mills. Not fetched."
+  }
+ ]
+}

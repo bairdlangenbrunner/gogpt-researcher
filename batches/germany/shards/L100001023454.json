@@ -1,0 +1,81 @@
+{
+ "meta": {
+  "plant_id": "L100001023454",
+  "plant_name": "Ulm power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:50:00-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001027808",
+   "unit_name": "ST1",
+   "findings": {
+    "City": {
+     "value": "Ulm",
+     "refs": [
+      "https://www.fernwaerme-ulm.de/energie/erzeugungsanlagen/hkw-magirusstrasse/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.fernwaerme-ulm.de/energie/erzeugungsanlagen/hkw-magirusstrasse/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The district heating company Fernwärme Ulm GmbH describes its heat and power station on Magirusstraße in Ulm. The page names the city and the company that owns this unit. It does not describe the new gas engine plant itself, so this places the company site and not the unit by name."
+    }
+   },
+   "not_found": [],
+   "notes": "City is Ulm. The register entry for this unit is already in the brief, so nothing else was checked."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001027808",
+   "concern_type": "identity",
+   "recommendation": "Consider renaming the unit or adding a note that it is a gas engine plant.",
+   "note": "The regulator's power plant list dated 26 June 2026 shows this unit, named BHKW1, as a combustion engine with 20.543 MW net, in operation since 2022. GEM lists it as a steam turbine named ST1 with 20.5 MW. The capacity matches but the technology does not. I did not change it because the brief only asked for the city.",
+   "refs": [
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.fernwaerme-ulm.de/energie/erzeugungsanlagen/hkw-magirusstrasse/",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Page names Ulm and Magirusstraße."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=E6D6C369-C231-4076-88ED-268BF5B86F4D",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "blocked",
+   "note": "Environmental impact register entry for the gas engine plant. The site answered with too many requests, HTTP 429, and no archived copy exists."
+  },
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "not used"
+   ],
+   "outcome": "not relevant",
+   "note": "Read from the downloaded copy dated 26 June 2026 for the technology question raised in the quality note. Not cited for the city."
+  }
+ ]
+}

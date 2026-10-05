@@ -1,0 +1,203 @@
+{
+ "meta": {
+  "plant_id": "L100000400136",
+  "plant_name": "Duisburg power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:35:00-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400136",
+   "unit_name": "A",
+   "findings": {
+    "City": {
+     "value": "Duisburg",
+     "refs": [
+      "https://www.brd.nrw.de/umweltinspektionsberichte/Stadt-Duisburg/DU-032-Heizkraftwerk-III"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.brd.nrw.de/umweltinspektionsberichte/Stadt-Duisburg/DU-032-Heizkraftwerk-III",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The 2024 environmental inspection report gives the site as Wanheimer Strasse 445, 47249 Duisburg."
+    }
+   },
+   "not_found": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "notes": "Owner and city are covered under the plant level findings. I found no document that states coordinates for the plant, so the location fields stay without a new source."
+  },
+  {
+   "gem_unit_id": "G100000400137",
+   "unit_name": "B",
+   "findings": {
+    "City": {
+     "value": "Duisburg",
+     "refs": [
+      "https://www.brd.nrw.de/umweltinspektionsberichte/Stadt-Duisburg/DU-032-Heizkraftwerk-III"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.brd.nrw.de/umweltinspektionsberichte/Stadt-Duisburg/DU-032-Heizkraftwerk-III",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The 2024 environmental inspection report gives the site as Wanheimer Strasse 445, 47249 Duisburg."
+    }
+   },
+   "not_found": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "notes": "Owner and city are covered under the plant level findings. I found no document that states coordinates for the plant, so the location fields stay without a new source."
+  },
+  {
+   "gem_unit_id": "G100000410322",
+   "unit_name": "BHKW",
+   "findings": {
+    "City": {
+     "value": "Duisburg",
+     "refs": [
+      "https://www.brd.nrw.de/umweltinspektionsberichte/Stadt-Duisburg/DU-032-Heizkraftwerk-III"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.brd.nrw.de/umweltinspektionsberichte/Stadt-Duisburg/DU-032-Heizkraftwerk-III",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The 2024 environmental inspection report gives the site as Wanheimer Strasse 445, 47249 Duisburg."
+    }
+   },
+   "not_found": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "notes": "Owner and city are covered under the plant level findings. I found no document that states coordinates for the plant, so the location fields stay without a new source."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Stadtwerke Duisburg AG [100%]",
+   "refs": [
+    "https://www.brd.nrw.de/umweltinspektionsberichte/Stadt-Duisburg/DU-032-Heizkraftwerk-III",
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.brd.nrw.de/umweltinspektionsberichte/Stadt-Duisburg/DU-032-Heizkraftwerk-III",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+     "ok": true,
+     "contains_value": false,
+     "name_found": false,
+     "note": "Excel file loads. I read the rows in the file myself."
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "A 2024 environmental inspection report from the Düsseldorf regional government lists Stadtwerke Duisburg AG as the operator of Heizkraftwerk III at Wanheimer Strasse 445 in Duisburg. The Bundesnetzagentur power plant list dated 26 June 2026 also names Stadtwerke Duisburg AG as operator of HKW III blocks A and B. Both documents name the operator and do not say who owns the shares in the plant. So the value is only implied. The company's own page shows that Stadtwerke Duisburg AG is owned 80 percent by Duisburger Versorgungs- und Verkehrsgesellschaft and 20 percent by RheinEnergie. That is the owner of the company and not of the plant, so GEM's entry looks right."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000400136",
+   "concern_type": "location",
+   "recommendation": "Keep the current coordinates. They need a source that states them.",
+   "note": "GEM shows 51.39066 and 6.74778. A German Wikipedia article on the Duisburg-Wanheim heating plant gives 51 degrees 23 minutes 24 seconds north and 6 degrees 44 minutes 52.8 seconds east, which is the same spot. Wikipedia is a lead and not a citation, and I found no official document with coordinates. The official inspection report only gives the street address, Wanheimer Strasse 445.",
+   "refs": []
+  },
+  {
+   "gem_unit_id": "G100000400137",
+   "concern_type": "capacity",
+   "recommendation": "Check unit B capacity against the register.",
+   "note": "GEM shows 234 MW for unit B. The power plant list shows block B of HKW III as a gas turbine with heat recovery boiler at 75.3 MW gross and a steam turbine at 88.3 MW gross, so about 164 MW in total. German Wikipedia gives 245 MW gross. The sources disagree. This was outside the tasks for this batch.",
+   "refs": []
+  },
+  {
+   "gem_unit_id": "G100000410322",
+   "concern_type": "unit_definition",
+   "recommendation": "Check the BHKW unit against the register.",
+   "note": "The power plant list shows nine engine modules of 4.5 MW each at Mitte BHKW 2 and 3, commissioned in 2023 and 2025. GEM shows 31 MW with a 2023 start. The two later modules from 2025 may be missing. This was outside the tasks for this batch.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Stadtwerke Duisburg AG",
+   "role": "owner",
+   "lookup_result": "Not looked up. The name is already GEM's current owner value and no new owner is proposed."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Bundesnetzagentur power plant list, data date 26 June 2026. Rows for Stadtwerke Duisburg AG, HKW III block A and B, status in operation."
+  },
+  {
+   "url": "https://www.brd.nrw.de/umweltinspektionsberichte/Stadt-Duisburg/DU-032-Heizkraftwerk-III",
+   "used_for": [
+    "Owner(s)",
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Environmental inspection report for Heizkraftwerk III, dated November 2024."
+  },
+  {
+   "url": "https://www.stadtwerke-duisburg.de/privatkunden/unternehmen",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Company page. States its shareholders. Does not mention the plant by name, so not cited."
+  },
+  {
+   "url": "https://www.stadtwerke-duisburg.de/unternehmen/daten-fakten/",
+   "used_for": [],
+   "outcome": "dead",
+   "note": "Existing link in GEM now returns not found. Kept in GEM. Tried fetch ladder and the verifier."
+  },
+  {
+   "url": "https://de.wikipedia.org/wiki/Heizkraftwerk_Duisburg-Wanheim",
+   "used_for": [
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "not relevant",
+   "note": "Used only as a lead. Not cited."
+  }
+ ]
+}

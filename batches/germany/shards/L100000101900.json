@@ -1,0 +1,133 @@
+{
+ "meta": {
+  "plant_id": "L100000101900",
+  "plant_name": "Tiefstack power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:37:31-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400264",
+   "unit_name": "CC",
+   "findings": {
+    "Latitude": {
+     "value": "53.5260460",
+     "refs": [
+      "https://www.entwicklungsstadt.de/energiepark-tiefstack-waechst-hamburgs-waermezukunft-nimmt-gestalt-an/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.entwicklungsstadt.de/energiepark-tiefstack-waechst-hamburgs-waermezukunft-nimmt-gestalt-an/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A trade article dated 30 March 2026 puts the Tiefstack power plant site in Hamburg-Billbrook, where a heat storage tank is now being built on the plant grounds. A map lookup of the Tiefstack power plant gives about 53.5269 north and 10.0649 east, roughly 110 meters from the point GEM holds. So the existing coordinates match the plant site. The article does not print coordinates itself."
+    },
+    "Longitude": {
+     "value": "10.0642580",
+     "refs": [
+      "https://www.entwicklungsstadt.de/energiepark-tiefstack-waechst-hamburgs-waermezukunft-nimmt-gestalt-an/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.entwicklungsstadt.de/energiepark-tiefstack-waechst-hamburgs-waermezukunft-nimmt-gestalt-an/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A trade article dated 30 March 2026 puts the Tiefstack power plant site in Hamburg-Billbrook, where a heat storage tank is now being built on the plant grounds. A map lookup of the Tiefstack power plant gives about 53.5269 north and 10.0649 east, roughly 110 meters from the point GEM holds. So the existing coordinates match the plant site. The article does not print coordinates itself."
+    },
+    "Location accuracy": {
+     "value": "exact",
+     "refs": [
+      "https://www.entwicklungsstadt.de/energiepark-tiefstack-waechst-hamburgs-waermezukunft-nimmt-gestalt-an/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.entwicklungsstadt.de/energiepark-tiefstack-waechst-hamburgs-waermezukunft-nimmt-gestalt-an/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A trade article dated 30 March 2026 puts the Tiefstack power plant site in Hamburg-Billbrook, where a heat storage tank is now being built on the plant grounds. A map lookup of the Tiefstack power plant gives about 53.5269 north and 10.0649 east, roughly 110 meters from the point GEM holds. So the existing coordinates match the plant site. The article does not print coordinates itself. The point sits on the plant grounds, so exact is reasonable."
+    },
+    "City": {
+     "value": "Hamburg",
+     "refs": [
+      "https://www.entwicklungsstadt.de/energiepark-tiefstack-waechst-hamburgs-waermezukunft-nimmt-gestalt-an/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.entwicklungsstadt.de/energiepark-tiefstack-waechst-hamburgs-waermezukunft-nimmt-gestalt-an/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A trade article dated 30 March 2026 puts the Tiefstack power plant site in Hamburg-Billbrook, where a heat storage tank is now being built on the plant grounds. A map lookup of the Tiefstack power plant gives about 53.5269 north and 10.0649 east, roughly 110 meters from the point GEM holds. So the existing coordinates match the plant site. The article does not print coordinates itself. The article names the city of Hamburg."
+    }
+   },
+   "not_found": [],
+   "notes": "The location is confirmed as the Tiefstack plant site in Billbrook. The source gives the district, not coordinates, so it is a medium strength source."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000400264",
+   "concern_type": "unit scope",
+   "recommendation": "Check the unit against the register.",
+   "note": "The regulator's power plant list dated 26 June 2026 shows two Hamburger Energiewerke gas turbines, GT41 and GT42, of 50 MW net each, started in 2009. GEM shows one combined cycle unit of 127 MW. The old note on the unit also talks about a coal to biomass plan that was dropped. Not a task in this batch.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.entwicklungsstadt.de/energiepark-tiefstack-waechst-hamburgs-waermezukunft-nimmt-gestalt-an/",
+   "used_for": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Article from 30 March 2026 on the heat storage construction at the plant."
+  },
+  {
+   "url": "https://www.hamburg.de/beteiligungsprozess-tiefstack/14959252/heizkraftwerk-tiefstack/",
+   "used_for": [
+    "Location"
+   ],
+   "outcome": "not relevant",
+   "note": "The page loads and names the plant, but the text I could extract is mostly site menus and gives no address. The existing link is kept."
+  },
+  {
+   "url": "https://www.ihk.de/hamburg/produktmarken/beratung-service/innovation/umweltberatung/stoerfallbetriebe-hamburg/betriebe-a-z/vattenfall-waerme-hamburg-3698744",
+   "used_for": [
+    "Location"
+   ],
+   "outcome": "failed",
+   "note": "The word Billbrook was not found on the page."
+  }
+ ]
+}

@@ -1,0 +1,146 @@
+{
+ "meta": {
+  "plant_id": "L100000101913",
+  "plant_name": "Mehrum power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:30:00-04:00",
+  "done": true,
+  "urls_attempted": 9,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001071682",
+   "unit_name": "Block 1",
+   "findings": {
+    "Latest Activity": {
+     "value": "Year: 2024, Month: 6, Day: 13",
+     "refs": [
+      "https://www.hildesheimer-allgemeine.de/meldung/plaene-fuer-riesen-gaskraftwerk-noerdlich-von-hildesheim-nehmen-erste-wichtige-huerde.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.hildesheimer-allgemeine.de/meldung/plaene-fuer-riesen-gaskraftwerk-noerdlich-von-hildesheim-nehmen-erste-wichtige-huerde.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Page shows the date 13 June 2024 and the words Mehrum and Vorbescheid."
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A local newspaper article of 13 June 2024 reports that the state trade supervision office issued its preliminary decision on the gas plant plans. I found no newer report on the new plant. The page is partly behind a subscription, so I could not read the full article."
+    },
+    "Status Detail": {
+     "value": "A preliminary decision under the emissions law was issued in May 2024. No full permit, construction start or bid announcement found.",
+     "refs": [
+      "https://www.hildesheimer-allgemeine.de/meldung/plaene-fuer-riesen-gaskraftwerk-noerdlich-von-hildesheim-nehmen-erste-wichtige-huerde.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.hildesheimer-allgemeine.de/meldung/plaene-fuer-riesen-gaskraftwerk-noerdlich-von-hildesheim-nehmen-erste-wichtige-huerde.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Based on the local newspaper article of 13 June 2024. The owner's own news page now only covers the demolition of the old coal plant."
+    },
+    "City": {
+     "value": "Hohenhameln",
+     "refs": [
+      "https://kraftwerk-mehrum.de/aktuelles/"
+     ],
+     "verifications": [
+      {
+       "url": "https://kraftwerk-mehrum.de/aktuelles/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "The page footer gives the address Triftstrasse 25, 31249 Hohenhameln for Kraftwerk Mehrum."
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The plant's own website gives its address as Triftstrasse 25 in 31249 Hohenhameln. This matches the current city."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Owner(s)",
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "notes": "The status stays announced. I found no permit, construction start or tender bid for the new plant. The official notice that names the owner and the two capacity options could not be loaded because the site refused requests. Coordinates were not found in any readable document."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001071682",
+   "concern_type": "source",
+   "recommendation": "Open the official notice by hand and confirm the owner and capacity options.",
+   "note": "A search result for the Lower Saxony environmental impact notice says Kraftwerk Mehrum GmbH plans either one combined cycle plant up to 1200 MW or two gas turbines of up to 550 MW each. That matches GEM. The notice page returned a too many requests error on every try, so I could not verify it.",
+   "refs": [
+    "https://www.uvp-verbund.de/trefferanzeige?docuuid=8aa50135-8a84-4107-8510-4ef885430b90&rstart=380&currentSelectorPage=1&f="
+   ]
+  }
+ ],
+ "monitor": [
+  {
+   "note": "Watch for a full permit application, a bid in the capacity tender, or a construction decision. The old coal plant is being demolished, with the boiler house blast planned for 7 November 2026.",
+   "recheck_by": "2027-04-01",
+   "refs": [
+    "https://kraftwerk-mehrum.de/aktuelles/"
+   ]
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.hildesheimer-allgemeine.de/meldung/plaene-fuer-riesen-gaskraftwerk-noerdlich-von-hildesheim-nehmen-erste-wichtige-huerde.html",
+   "used_for": [
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Local newspaper article of 13 June 2024."
+  },
+  {
+   "url": "https://kraftwerk-mehrum.de/aktuelles/",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Plant website. Address confirmed. News is about demolition only."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=8aa50135-8a84-4107-8510-4ef885430b90&rstart=380&currentSelectorPage=1&f=",
+   "used_for": [
+    "Owner(s)",
+    "Capacity (MW)",
+    "Location"
+   ],
+   "outcome": "blocked",
+   "note": "Returned HTTP 429 on several tries with waits, also through the repo fetch tool and the PDF form of the notice. No archive copy. Not concluded to lack the values."
+  },
+  {
+   "url": "https://bund-region-hannover.de/service/meldungen/detail/news/neubau-eines-mega-gaskraftwerks-in-mehrum-droht-warum-fragt-niemand-nach-dem-sinn/",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "failed",
+   "note": "Loaded, but the capacity figure and the town name were not found in the text I could read."
+  }
+ ]
+}

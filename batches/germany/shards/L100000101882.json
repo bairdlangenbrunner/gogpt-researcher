@@ -1,0 +1,86 @@
+{
+ "meta": {
+  "plant_id": "L100000101882",
+  "plant_name": "Universitat Freiburg power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:50:00-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400268",
+   "unit_name": "1",
+   "findings": {
+    "City": {
+     "value": "Freiburg",
+     "refs": [
+      "https://www.badische-zeitung.de/die-uniklinik-freiburg-hat-ihr-heizkraftwerk-ausgebaut--163851409.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.badische-zeitung.de/die-uniklinik-freiburg-hat-ihr-heizkraftwerk-ausgebaut--163851409.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Badische Zeitung article reports that the Freiburg University Medical Center expanded its heat and power plant on the clinic grounds in Freiburg."
+    }
+   },
+   "not_found": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "notes": "City is confirmed. I found no document that states the plant's own coordinates, so latitude, longitude and accuracy stay as they are and the better coordinate is raised as a question."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000400268",
+   "concern_type": "location",
+   "recommendation": "Consider moving the point to the clinic campus and marking it exact after checking a map.",
+   "note": "GEM shows 47.9833, 7.8500, marked approximate, which is the center of Freiburg. The German Wikipedia page for the University Medical Center Freiburg gives the clinic as 48.0064 north, 7.8378 east. That is the clinic campus where the heat and power plant stands. Wikipedia is only a lead and is not cited as a source for the value.",
+   "refs": [
+    "https://de.wikipedia.org/wiki/Universit%C3%A4tsklinikum_Freiburg"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.badische-zeitung.de/die-uniklinik-freiburg-hat-ihr-heizkraftwerk-ausgebaut--163851409.html",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Article names Freiburg and the clinic heat and power plant."
+  },
+  {
+   "url": "https://de.wikipedia.org/wiki/Universit%C3%A4tsklinikum_Freiburg",
+   "used_for": [
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Used only to find a lead for the campus coordinate. Not cited."
+  },
+  {
+   "url": "https://www.suedkurier.de/region/nachbarschaft/freiburg/Warum-das-Heizkraftwerk-der-Uniklinik-Freiburg-aufruestet",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "dead",
+   "note": "Existing source in the brief. It now answers with page not found, HTTP 404,. It is kept in GEM and not dropped."
+  }
+ ]
+}

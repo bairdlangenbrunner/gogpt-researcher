@@ -1,0 +1,139 @@
+{
+ "meta": {
+  "plant_id": "L100001023453",
+  "plant_name": "Veits peaker plant",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:50:00-04:00",
+  "done": true,
+  "urls_attempted": 12,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001027807",
+   "unit_name": "GT",
+   "findings": {
+    "Start year": {
+     "value": "1988",
+     "refs": [
+      "https://kreisbote.de/lokales/kempten/feiert-heuer-sein-100jaehriges-bestehen-kann-eine-bewegte-geschichte-blicken-letzter-teil-13815990.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://kreisbote.de/lokales/kempten/feiert-heuer-sein-100jaehriges-bestehen-kann-eine-bewegte-geschichte-blicken-letzter-teil-13815990.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Kempten local newspaper history of the Allgäuer Überlandwerk says that in Veits a 21 megawatt gas turbine was installed in 1988. The plant's peak power station in Veits is the Veits peaker plant."
+    },
+    "City": {
+     "value": "Waltenhofen",
+     "refs": [
+      "https://kreisbote.de/lokales/kempten/feiert-heuer-sein-100jaehriges-bestehen-kann-eine-bewegte-geschichte-blicken-letzter-teil-13815990.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://kreisbote.de/lokales/kempten/feiert-heuer-sein-100jaehriges-bestehen-kann-eine-bewegte-geschichte-blicken-letzter-teil-13815990.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The same newspaper history places the Veits peak power station in the municipality of Waltenhofen. Veits is a district of Waltenhofen. The page names Veits and Waltenhofen but does not say in one sentence that Veits belongs to Waltenhofen."
+    }
+   },
+   "not_found": [],
+   "notes": "The gas turbine was installed in 1988 according to a local newspaper. The regulator's list dated 26 June 2026 shows only two small diesel units for this site, not the gas turbine."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001027807",
+   "concern_type": "capacity",
+   "recommendation": "Check the capacity of the gas turbine.",
+   "note": "The newspaper gives 21 megawatts and GEM shows 20 megawatts. The regulator's list dated 26 June 2026 does not list the gas turbine at all. It lists two diesel units of 5 MW each at Veits. I did not change the capacity.",
+   "refs": [
+    "https://kreisbote.de/lokales/kempten/feiert-heuer-sein-100jaehriges-bestehen-kann-eine-bewegte-geschichte-blicken-letzter-teil-13815990.html"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://kreisbote.de/lokales/kempten/feiert-heuer-sein-100jaehriges-bestehen-kann-eine-bewegte-geschichte-blicken-letzter-teil-13815990.html",
+   "used_for": [
+    "Start year",
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Names Veits, Waltenhofen and 1988."
+  },
+  {
+   "url": "https://www.energate-messenger.de/news/192466/auew-kombiniert-batterie-mit-gasturbine",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "blocked",
+   "note": "Returned access denied, HTTP 403, on the verifier and no archived copy exists."
+  },
+  {
+   "url": "https://www.pv-magazine.de/2019/06/17/zulassung-fuer-regelenergiemarkt-fuer-hybridkraftwerk-aus-grossspeicher-und-gasturbine/",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "failed",
+   "note": "Page loads but does not mention Veits or 1988."
+  },
+  {
+   "url": "https://www.ingenieur.de/technik/fachbereiche/energie/allgaeuer-hybridkraftwerk-mit-der-lizenz-zu-regeln/",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "failed",
+   "note": "Page loads but does not mention Veits or 1988."
+  },
+  {
+   "url": "https://100jahre.auew.de/",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "failed",
+   "note": "The page did not load for the verifier."
+  },
+  {
+   "url": "https://auew.de/presse/auew-installiert-grossspeicher-im-stromnetz/",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "dead",
+   "note": "Page not found, HTTP 404,."
+  },
+  {
+   "url": "https://de.wikipedia.org/wiki/Allg%C3%A4uer_%C3%9Cberlandwerk",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "not relevant",
+   "note": "Lead only. Led to the local newspaper history that is cited."
+  },
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "not used"
+   ],
+   "outcome": "not relevant",
+   "note": "Read the downloaded register for Veits rows only."
+  }
+ ]
+}

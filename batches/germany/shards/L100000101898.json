@@ -1,0 +1,118 @@
+{
+ "meta": {
+  "plant_id": "L100000101898",
+  "plant_name": "Hastedt power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:40:00-04:00",
+  "done": true,
+  "urls_attempted": 7,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000412886",
+   "unit_name": "CC1",
+   "findings": {
+    "Owner(s)": {
+     "value": "SWB Erzeugung AG & Co KG [100%]",
+     "refs": [
+      "https://www.energie.de/euroheatpower/news-detailansicht/nsctrl/detail/News/swb-weiht-blockheizkraftwerk-am-standort-bremen-hastedt-ein",
+      "https://www.swb.de/ueber-swb/unternehmen/ag/swb-erzeugung"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.energie.de/euroheatpower/news-detailansicht/nsctrl/detail/News/swb-weiht-blockheizkraftwerk-am-standort-bremen-hastedt-ein",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.swb.de/ueber-swb/unternehmen/ag/swb-erzeugung",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A trade magazine report from September 2023 on the opening of the Hastedt engine plant names swb Erzeugung as the plant operator and swb as the investor. The swb company page describes swb Erzeugung as the group's generation company. Neither page states the legal form AG and Co KG or the share, so the legal form and the 100 percent come from the existing record and the national plant list, which names the operator swb Erzeugung AG & Co. KG."
+    }
+   },
+   "not_found": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "City"
+   ],
+   "notes": "Owner is supported at medium confidence. I found no document that gives coordinates. The opening report places the plant in Bremen-Hastedt, which fits the stored city."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000412886",
+   "concern_type": "technology",
+   "recommendation": "Check the unit name and technology.",
+   "note": "Reports from 2023 describe nine gas engines from Wärtsilä with 104 MW in total, and the national plant list shows nine engines of about 11.7 MW net, each commissioned in 2022. The unit name CC1 suggests a combined cycle block, which does not match nine engines. The existing record has 3 engines, which also does not match.",
+   "refs": [
+    "https://www.energie.de/euroheatpower/news-detailansicht/nsctrl/detail/News/swb-weiht-blockheizkraftwerk-am-standort-bremen-hastedt-ein",
+    "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/gas-statt-kohle-in-bremen-215259"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "SWB Erzeugung AG & Co KG",
+   "role": "owner",
+   "lookup_result": "Entity found under that name, appears on 7 units in Germany. Reuse the existing entity."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.energie.de/euroheatpower/news-detailansicht/nsctrl/detail/News/swb-weiht-blockheizkraftwerk-am-standort-bremen-hastedt-ein",
+   "used_for": [
+    "Owner(s)",
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Names swb Erzeugung and the Bremen-Hastedt site."
+  },
+  {
+   "url": "https://www.swb.de/ueber-swb/unternehmen/ag/swb-erzeugung",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Company page for swb Erzeugung."
+  },
+  {
+   "url": "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/gas-statt-kohle-in-bremen-215259",
+   "used_for": [
+    "qa"
+   ],
+   "outcome": "verified",
+   "note": "Describes the engine plant."
+  },
+  {
+   "url": "https://www.swb.de/ueber-swb/unternehmen/nachhaltigkeit/bhkw-hastedt",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "failed",
+   "note": "Existing source loads but does not contain the owner name."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=43E46C3F-F2A3-493A-9520-6DD9474EE0F1&plugid=%2Fingrid-group%3Aige-iplug-hb",
+   "used_for": [
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "blocked",
+   "note": "Permit record returned HTTP 429 on the repo fetcher. Not retried further."
+  }
+ ]
+}

@@ -1,0 +1,207 @@
+{
+ "meta": {
+  "plant_id": "L100000101981",
+  "plant_name": "Dessau power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:35:12-04:00",
+  "done": true,
+  "urls_attempted": 8,
+  "urls_verified": 7
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001017966",
+   "unit_name": "Unit 1, timepoint 2",
+   "findings": {
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://www.zfk.de/energie/waerme/fernwaermeerzeugung-dessau-stellt-von-kohle-auf-gas-um",
+      "https://www.zfk.de/energie/waerme/dessau-mit-vollgas-aus-der-kohle-aussteigen"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.zfk.de/energie/waerme/fernwaermeerzeugung-dessau-stellt-von-kohle-auf-gas-um",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.zfk.de/energie/waerme/dessau-mit-vollgas-aus-der-kohle-aussteigen",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A trade press article from July 2018 says Dessau is switching its district heating plant from coal to gas and is investing 15 million euros in a new gas turbine. A second article from November 2018 says the new turbine started regular operation and ends coal use. So this is a conversion from coal to gas. Both articles come from one publisher, so they count as one source."
+    },
+    "City": {
+     "value": "Dessau",
+     "refs": [
+      "https://www.dvv-dessau.de/stadt-dessau-rosslau-und-stadtwerke-dessau-treiben-waermewende-gemeinsam-voran/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.dvv-dessau.de/stadt-dessau-rosslau-und-stadtwerke-dessau-treiben-waermewende-gemeinsam-voran/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A page of the Dessau municipal utility, DVV Stadtwerke Dessau, gives the heating power plant address as An der Fine 4, 06842 Dessau."
+    }
+   },
+   "not_found": [],
+   "notes": "All three tasks were answered. The location source gives an address, not coordinates."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Fernwärmeversorgung Dessau GmbH [100%]",
+   "refs": [
+    "https://verwaltung.dessau-rosslau.de/fileadmin/Verwaltungsportal_Dessau-Rosslau/Stadt_Buerger/Presse_und_Publikationen/Beteiligungsberichte/17ter_Beteiligungsbericht.pdf"
+   ],
+   "verifications": [
+    {
+     "url": "https://verwaltung.dessau-rosslau.de/fileadmin/Verwaltungsportal_Dessau-Rosslau/Stadt_Buerger/Presse_und_Publikationen/Beteiligungsberichte/17ter_Beteiligungsbericht.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The 2022 city shareholdings report for Dessau-Rosslau describes Fernwärmeversorgungs-GmbH Dessau as the company that runs the heating power plant. It says the sole shareholder of that company is the municipal utility group DVV, with 100 percent. So the plant company is confirmed. The report spells the name Fernwärmeversorgungs-GmbH Dessau, with an s after Fernwärmeversorgung. The report does not say outright that the company holds the plant assets, so this is medium."
+  },
+  "Latitude": {
+   "value": "51.8276380",
+   "refs": [
+    "https://www.dvv-dessau.de/stadt-dessau-rosslau-und-stadtwerke-dessau-treiben-waermewende-gemeinsam-voran/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.dvv-dessau.de/stadt-dessau-rosslau-und-stadtwerke-dessau-treiben-waermewende-gemeinsam-voran/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The address An der Fine 4 in Dessau, when searched on a map, lands about 200 meters from GEM's point. So GEM's value fits. The page gives an address, not coordinates."
+  },
+  "Longitude": {
+   "value": "12.2305510",
+   "refs": [
+    "https://www.dvv-dessau.de/stadt-dessau-rosslau-und-stadtwerke-dessau-treiben-waermewende-gemeinsam-voran/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.dvv-dessau.de/stadt-dessau-rosslau-und-stadtwerke-dessau-treiben-waermewende-gemeinsam-voran/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "Same as for latitude. A map search of the address gives about 12.2314."
+  },
+  "Location accuracy": {
+   "value": "exact",
+   "refs": [
+    "https://www.dvv-dessau.de/stadt-dessau-rosslau-und-stadtwerke-dessau-treiben-waermewende-gemeinsam-voran/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.dvv-dessau.de/stadt-dessau-rosslau-und-stadtwerke-dessau-treiben-waermewende-gemeinsam-voran/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The plant address is within about 200 meters of GEM's point, which fits exact."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100001017966",
+   "concern_type": "other",
+   "recommendation": "Check the owner name spelling against the entity system.",
+   "note": "GEM writes the owner as Fernwärmeversorgung Dessau GmbH. The official company name is Fernwärmeversorgungs-GmbH Dessau. The entity system has the GEM spelling on two units. The official spelling was not found in the entity system.",
+   "refs": [
+    "https://verwaltung.dessau-rosslau.de/fileadmin/Verwaltungsportal_Dessau-Rosslau/Stadt_Buerger/Presse_und_Publikationen/Beteiligungsberichte/17ter_Beteiligungsbericht.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Fernwärmeversorgungs-GmbH Dessau",
+   "role": "owner",
+   "lookup_result": "Bare lookup and remote lookup found nothing under the official spelling. The GEM spelling Fernwärmeversorgung Dessau GmbH exists on 2 units in Germany, so reuse that entity."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.zfk.de/energie/waerme/fernwaermeerzeugung-dessau-stellt-von-kohle-auf-gas-um",
+   "used_for": [
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "July 2018."
+  },
+  {
+   "url": "https://www.zfk.de/energie/waerme/dessau-mit-vollgas-aus-der-kohle-aussteigen",
+   "used_for": [
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "November 2018."
+  },
+  {
+   "url": "https://verwaltung.dessau-rosslau.de/fileadmin/Verwaltungsportal_Dessau-Rosslau/Stadt_Buerger/Presse_und_Publikationen/Beteiligungsberichte/17ter_Beteiligungsbericht.pdf",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "2022 shareholdings report."
+  },
+  {
+   "url": "https://www.dvv-dessau.de/stadt-dessau-rosslau-und-stadtwerke-dessau-treiben-waermewende-gemeinsam-voran/",
+   "used_for": [
+    "City",
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "outcome": "verified",
+   "note": "Plant address."
+  },
+  {
+   "url": "https://www.energate-messenger.de/news/184324/dessau-stellt-fernwaermesystem-auf-erdgas-um",
+   "used_for": [
+    "Conversion/replacement?"
+   ],
+   "outcome": "blocked",
+   "note": "Returned 403 through the fetch ladder with no archive copy. Not used."
+  },
+  {
+   "url": "https://www.luftbildsuche.de/info/luftbilder/kraftwerk-dvv-stadtwerke-dessau-gmbh-dessau-86394.html",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "not relevant",
+   "note": "Aerial photo site with no address."
+  }
+ ]
+}

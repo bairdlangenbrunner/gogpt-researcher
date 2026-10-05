@@ -1,0 +1,71 @@
+{
+ "meta": {
+  "plant_id": "L100000400179",
+  "plant_name": "Hattorf power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:32:42-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400179",
+   "unit_name": "CC",
+   "findings": {},
+   "not_found": [
+    "Latitude",
+    "Longitude"
+   ],
+   "notes": "Nothing was asked for this unit. The only task was the whole-plant location check, answered in the questions list."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000400179",
+   "concern_type": "location",
+   "recommendation": "Move the Hattorf coordinates to the Hattorf works in Philippsthal, Hesse. Keep the current coordinates for Unterbreizbach only.",
+   "note": "The K+S Werra site page gives the Hattorf works address as Hattorfer Strasse 78, 36269 Philippsthal, which is in Hesse. GEM shows Hattorf in Thuringia at 50.8126, 9.9780, which is where the Unterbreizbach works is, at Suennaer Strasse 10, 36414 Unterbreizbach. A news report on the new gas turbine block also places the Hattorf power plant in Philippsthal. The regulator's plant list dated June 2026 lists the Hattorf gas turbines as Kraftwerk HA in Hesse and the Unterbreizbach ones as Kraftwerk UB in Thuringia. So the coordinates for Hattorf are the wrong set. I did not look up exact coordinates for the Philippsthal works.",
+   "refs": [
+    "https://www.kpluss.com/de-de/ueber-ks/standorte/europa/werra/",
+    "https://osthessen-news.de/n1216480/philippsthal-e-on-und-k-s-kali-gmbh-nehmen-neuen-gasturbinenblock-in-betrieb.html",
+    "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.kpluss.com/de-de/ueber-ks/standorte/europa/werra/",
+   "used_for": [
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Page lists the Hattorf works at Hattorfer Strasse 78, Philippsthal."
+  },
+  {
+   "url": "https://osthessen-news.de/n1216480/philippsthal-e-on-und-k-s-kali-gmbh-nehmen-neuen-gasturbinenblock-in-betrieb.html",
+   "used_for": [
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "News report places the Hattorf gas turbine block in Philippsthal."
+  },
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Regulator plant list loads. Read from the downloaded file: K+S gas turbines named Kraftwerk HA are in Hesse, Kraftwerk UB are in Thuringia."
+  }
+ ]
+}

@@ -1,0 +1,109 @@
+{
+ "meta": {
+  "plant_id": "L100000101977",
+  "plant_name": "Quierschied-Weiher power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:30:00-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001030494",
+   "unit_name": "CC1, timepoint 1",
+   "findings": {
+    "Latest Activity": {
+     "value": "Year: 2024, Month: 2, Day: 21",
+     "refs": [
+      "https://www.quierschied.de/rathaus-service/aktuelles/news/steag-iqony-bekennt-sich-zu-nachnutzung-des-standorts-kraftwerk-weiher"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.quierschied.de/rathaus-service/aktuelles/news/steag-iqony-bekennt-sich-zu-nachnutzung-des-standorts-kraftwerk-weiher",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Page dated 21.02.2024 names Kraftwerk Weiher in Quierschied and Iqony."
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A municipal news item of 21 February 2024 reports that Iqony still plans a modern hydrogen-ready gas plant at the Weiher site, but is waiting for the federal tender rules. I found no newer dated report specific to this site."
+    },
+    "Status Detail": {
+     "value": "Iqony plans a hydrogen-ready gas plant at the site but has not announced a design, permit or tender bid.",
+     "refs": [
+      "https://www.quierschied.de/rathaus-service/aktuelles/news/steag-iqony-bekennt-sich-zu-nachnutzung-des-standorts-kraftwerk-weiher"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.quierschied.de/rathaus-service/aktuelles/news/steag-iqony-bekennt-sich-zu-nachnutzung-des-standorts-kraftwerk-weiher",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Based on the municipal news item of 21 February 2024."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Owner(s)",
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "City"
+   ],
+   "notes": "Status stays announced. I found no technology, turbine maker, capacity or start year in any readable document. The municipal item names the site and Iqony but gives no technical data. A freedom of information request to the Saarland government about technical data was passed to the mining authority in May 2026 and has no answer yet."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001030494",
+   "concern_type": "source",
+   "recommendation": "Check the public freedom of information request for an answer later.",
+   "note": "A public request on FragDenStaat, filed 28 May 2026, asks the Saarland ministry for technical data on the planned Quierschied-Weiher gas plant. It was passed to the state mining authority and had no reply when I looked.",
+   "refs": [
+    "https://fragdenstaat.de/anfrage/technische-daten-des-quierschied-weiher-gaskraftwerks/"
+   ]
+  }
+ ],
+ "monitor": [
+  {
+   "note": "Watch the capacity tender results due by 3 November 2026 and any Iqony announcement for Quierschied. A trade press survey of 18 August 2026 says Iqony declined to comment on joining the first round.",
+   "recheck_by": "2026-12-01",
+   "refs": []
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.quierschied.de/rathaus-service/aktuelles/news/steag-iqony-bekennt-sich-zu-nachnutzung-des-standorts-kraftwerk-weiher",
+   "used_for": [
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Municipal news item of 21 February 2024."
+  },
+  {
+   "url": "https://www.iqony.energy/h2-ready-gaskraftwerke",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "not relevant",
+   "note": "Owner page lists Bergkamen and Fenne projects. It gives no Quierschied figures."
+  }
+ ]
+}

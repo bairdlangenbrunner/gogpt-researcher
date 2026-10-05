@@ -1,19 +1,20 @@
 export const meta = {
   name: 'state-sweep',
-  description: 'US state sweep for the GOGPT tracker: one research subagent per plant (or plant group) reads its brief, researches the plant in blind or update mode, verifies every URL, and writes one JSON shard per plant. Read-and-write-shards only; nothing touches the live GEM database.',
-  whenToUse: 'After build_state_brief.py and build_sweep_args.py have produced briefs and sweep_args.json for one US state batch (batches/us-<st>/).',
+  description: 'Scope sweep (one US state or one country) for the GOGPT tracker: one research subagent per plant (or plant group) reads its brief, researches the plant in blind or update mode, verifies every URL, and writes one JSON shard per plant. Read-and-write-shards only; nothing touches the live GEM database.',
+  whenToUse: 'After build_state_brief.py and build_sweep_args.py have produced briefs and sweep_args.json for one batch (batches/us-<st>/ for a US state, batches/<country-slug>/ for a country).',
   phases: [
     { title: 'Research', detail: 'one subagent per plant (or per plant group), each writing shards/<plant_id>.json' },
   ],
 }
 
-// state-sweep.js: the fan-out step of the US state research agent.
+// state-sweep.js: the fan-out step of the scope research agent (US state or country).
 // Contract: notes/us_state_agent_plan.md (Modes, Shard contract, the rules list).
 // Free text in shards follows docs/reference/notes_style.md.
 //
 // Args (from `python scripts/build_sweep_args.py --batch batches/us-md --model sonnet`,
-// which also writes batches/us-<st>/staging/sweep_args.json):
-//   { repo, batch, state, postal, mode: "blind"|"update", model, csv,
+// which also writes <batch>/staging/sweep_args.json):
+//   { repo, batch, where: {kind: "state"|"country", name, slug, country, postal},
+//     state, postal (US only), mode: "blind"|"update", model, csv,
 //     plants: [{plant_id, plant_name, brief_path (absolute), unit_ids:[...], shard_path (absolute)}],
 //     groups: [[plant_id,...], ...],     // every plant_id exactly once
 //     extra_brief?: string }             // inlined into every prompt (file CONTENTS, not a path)
@@ -43,8 +44,22 @@ for (const p of A.plants) {
 const MODEL = A.model || 'sonnet'
 const REPO = A.repo
 const BATCH = A.batch
-const STATE = A.state || ''
-const POSTAL = (A.postal || '').toUpperCase()
+// The batch scope. Older sweep_args files have only state/postal; rebuild one from them.
+const WHERE = A.where || {
+  kind: 'state', name: A.state || '', country: 'United States',
+  slug: (A.state || '').toLowerCase().replace(/\s+/g, '-'), postal: (A.postal || '').toLowerCase(),
+}
+const STATE = WHERE.kind === 'state' ? (WHERE.name || A.state || '') : ''
+const POSTAL = (WHERE.postal || A.postal || '').toUpperCase()
+const COUNTRY = WHERE.country || 'United States'
+const IS_US = COUNTRY.toLowerCase() === 'united states'
+const PLACE = STATE ? `${STATE}, United States` : COUNTRY     // "Maryland, United States" or "Germany"
+const TAG = STATE ? POSTAL : (WHERE.slug || COUNTRY.toLowerCase().replace(/\s+/g, '-'))
+const EU_UK = new Set(['austria', 'belgium', 'bulgaria', 'croatia', 'cyprus', 'czechia', 'czech republic',
+  'denmark', 'estonia', 'finland', 'france', 'germany', 'greece', 'hungary', 'ireland', 'italy', 'latvia',
+  'lithuania', 'luxembourg', 'malta', 'netherlands', 'poland', 'portugal', 'romania', 'slovakia',
+  'slovenia', 'spain', 'sweden', 'united kingdom'])
+const THRESHOLD_MW = EU_UK.has(COUNTRY.toLowerCase()) ? 20 : 50
 const MODE = A.mode
 const PLANTS = Object.fromEntries(A.plants.map(p => [p.plant_id, p]))
 const IDS = A.plants.map(p => p.plant_id)
@@ -108,52 +123,9 @@ const statusRule = MODE === 'blind'
   ? `blind mode has no current value to change, so a status gets \`high\` on one fully validated ref`
   : `a status change, meaning your status differs from the brief's current status, is \`high\` only\n  with two independent publishers, else \`medium\``
 
-const contractFor = (group) => {
-  const plants = group.map(id => PLANTS[id])
-  const multi = plants.length > 1
-  const catLines = plants.map(p => `  cat "${p.brief_path}"`).join('\n')
-  const plantList = plants.map(p =>
-    `- ${p.plant_id} ${p.plant_name || ''}: units ${p.unit_ids.join(', ')}; write the shard to \`${p.shard_path}\``).join('\n')
-  const logLines = plants.map(p => `  ${p.plant_id}: ${BATCH}/shards/${p.plant_id}.urls.jsonl`).join('\n')
-  const workDir = `${REPO}/work/sweep_${(A.postal || 'us').toLowerCase()}`
-  const pid = multi ? '<plant_id>' : plants[0].plant_id
-
-  return `You are a careful researcher for Global Energy Monitor (GEM), a nonprofit that tracks
-fossil fuel infrastructure worldwide. You are updating its Global Oil and Gas Plant Tracker (GOGPT),
-a unit-by-unit database of oil and gas fired power plants; your job is one ${multi ? 'group of plants' : 'plant'}
-in ${STATE}, United States. You write a JSON file; you never edit the GEM database.
-
-${modeText}
-
-## Your ${multi ? 'plants' : 'plant'}
-${plantList}
-${multi ? `These plants share documents, so research shared documents once, but each plant gets its own
-shard file, its own verifier log and its own unit entries. A page that states a value for one plant
-is not a source for another plant unless it states that plant's value too.\n` : ''}
-RESEARCH_FIELDS (exact CSV headers; the brief's "Fields to report on" list wins if it differs):
-${RESEARCH_FIELDS.join(' | ')}
-Plant-level fields (report once in \`plant_findings\`; they apply to every unit):
-${PLANT_LEVEL.join(' | ')}
-Every other field is unit-level and goes under that unit in \`units[].findings\`.
-
-## Step 0, before any research
-Run these from the repo root, in this order:
-  cd ${REPO}
-${catLines}
-  python scripts/url_verifier.py
-The last command has no --help flag; with no arguments it prints its usage line and exits 2.
-That is expected. Each plant's verifier log (append-only JSONL, one line per check):
-${logLines}
-Environment variables do not survive between your shell calls, so pass the log on every call:
-  python scripts/url_verifier.py --log ${BATCH}/shards/${pid}.urls.jsonl "<url>" "<value>" ["<more>"]
-Save any downloaded file (curl -o, PDFs, pdftotext output, Excel files) under \`${workDir}/${pid}/\`,
-never anywhere else in the repo.
-
-Then write a first version of each shard right away, with every unit present, empty findings and
-\`meta.done: false\`, and rewrite it as findings come in. If you run out of room, the file on disk is
-what survives.
-
-## Research ladder for a US gas plant
+// The research ladder, by scope. Both end with the Excel-file rule, since registers in
+// every country come as spreadsheets the verifier's text match cannot read.
+const usLadder = (workDir, pid) => `## Research ladder for a US gas plant
 Work down this list. Prefer the document that names the plant AND states the value.
 1. EIA-860M, the monthly generator inventory, by plant and generator. The plant's EIA plant code is
    often in "Other IDs (location)" (for example "EIA: 54832") and generator IDs in "Other IDs (unit)".
@@ -200,7 +172,91 @@ Excel files cannot be checked by the verifier's text match. For an EIA Excel fil
 the specific file you read (not the index page), run the verifier on it with no expected strings to
 prove it loads, read the value from the downloaded file, set \`contains_value\` and \`name_found\` to
 true only if you saw them in the file, and put the matching row in \`note\`, for example "Plant
-54832, generator 1, status OP, nameplate 289.0 MW, operating year 1996".
+54832, generator 1, status OP, nameplate 289.0 MW, operating year 1996".`
+
+const countryLadder = (workDir, pid) => `## Research ladder for a gas plant in ${COUNTRY}
+Work down this list. Prefer the document that names the plant AND states the value. The country
+notes at the end of the brief name the registers and the local search words for ${COUNTRY}; read
+them before you search.
+1. The plant's existing Data Source links in the brief. They are the previous researcher's trail:
+   re-run them through the verifier, and if a link is a register or a company page, look there
+   first for the newer edition.
+2. The national regulator's power plant register or license register (the country notes name it).
+   A register row that lists the plant with its status, capacity, fuel and commissioning year is
+   the best single source for an operating unit.
+3. The transmission system operator: its connection queue, generation adequacy or capacity
+   statement, and planned-closure lists. The ENTSO-E Transparency Platform
+   (https://transparency.entsoe.eu/) lists production and generation units above 100 MW with
+   installed capacity and commissioning dates; use it as a cross-check, and cite the ENTSO-E page
+   only when the verifier can read it.
+4. Capacity market and reserve registers where the country has them (capacity auction results,
+   strategic reserve contracts, grid reserve lists). An award names the project, its capacity and
+   its delivery year.
+5. Planning and permit registers: environmental impact decisions, industrial emissions permits,
+   construction permits. A permit lists units, turbine models and MW ratings.
+6. The owner's investor pages, annual and half-year reports, press releases and asset lists.
+7. Trade press and local news, searched in the local language with the local words for power
+   plant, combined heat and power plant, gas turbine and the plant's town. Search in English too.
+Search with your WebSearch and WebFetch tools (load them with ToolSearch if they are deferred) and
+with curl. Register files are often Excel or CSV downloads: download the newest edition with curl
+into \`${workDir}/${pid}/\`, read it with python (pandas or openpyxl), and filter on the plant name,
+the town or the register's own plant identifier.
+
+GEM tracks units of ${THRESHOLD_MW} MW or more in ${COUNTRY}. A unit below that is reported only
+when the plant as a whole is already in GEM.
+
+Excel and CSV files cannot be checked by the verifier's text match. For a register file, cite the
+URL of the specific file you read (not the index page), run the verifier on it with no expected
+strings to prove it loads, read the value from the downloaded file, set \`contains_value\` and
+\`name_found\` to true only if you saw them in the file, and put the matching row in \`note\`, for
+example "Register row: Heizkraftwerk Nord, block 2, in Betrieb, 450 MW net, commissioned 1998".`
+
+const contractFor = (group) => {
+  const plants = group.map(id => PLANTS[id])
+  const multi = plants.length > 1
+  const catLines = plants.map(p => `  cat "${p.brief_path}"`).join('\n')
+  const plantList = plants.map(p =>
+    `- ${p.plant_id} ${p.plant_name || ''}: units ${p.unit_ids.join(', ')}; write the shard to \`${p.shard_path}\``).join('\n')
+  const logLines = plants.map(p => `  ${p.plant_id}: ${BATCH}/shards/${p.plant_id}.urls.jsonl`).join('\n')
+  const workDir = `${REPO}/work/sweep_${TAG.toLowerCase()}`
+  const pid = multi ? '<plant_id>' : plants[0].plant_id
+
+  return `You are a careful researcher for Global Energy Monitor (GEM), a nonprofit that tracks
+fossil fuel infrastructure worldwide. You are updating its Global Oil and Gas Plant Tracker (GOGPT),
+a unit-by-unit database of oil and gas fired power plants; your job is one ${multi ? 'group of plants' : 'plant'}
+in ${PLACE}. You write a JSON file; you never edit the GEM database.
+
+${modeText}
+
+## Your ${multi ? 'plants' : 'plant'}
+${plantList}
+${multi ? `These plants share documents, so research shared documents once, but each plant gets its own
+shard file, its own verifier log and its own unit entries. A page that states a value for one plant
+is not a source for another plant unless it states that plant's value too.\n` : ''}
+RESEARCH_FIELDS (exact CSV headers; the brief's "Fields to report on" list wins if it differs):
+${RESEARCH_FIELDS.join(' | ')}
+Plant-level fields (report once in \`plant_findings\`; they apply to every unit):
+${PLANT_LEVEL.join(' | ')}
+Every other field is unit-level and goes under that unit in \`units[].findings\`.
+
+## Step 0, before any research
+Run these from the repo root, in this order:
+  cd ${REPO}
+${catLines}
+  python scripts/url_verifier.py
+The last command has no --help flag; with no arguments it prints its usage line and exits 2.
+That is expected. Each plant's verifier log (append-only JSONL, one line per check):
+${logLines}
+Environment variables do not survive between your shell calls, so pass the log on every call:
+  python scripts/url_verifier.py --log ${BATCH}/shards/${pid}.urls.jsonl "<url>" "<value>" ["<more>"]
+Save any downloaded file (curl -o, PDFs, pdftotext output, Excel files) under \`${workDir}/${pid}/\`,
+never anywhere else in the repo.
+
+Then write a first version of each shard right away, with every unit present, empty findings and
+\`meta.done: false\`, and rewrite it as findings come in. If you run out of room, the file on disk is
+what survives.
+
+${IS_US ? usLadder(workDir, pid) : countryLadder(workDir, pid)}
 
 Every other URL you cite must be run through url_verifier.py with the value as the expected string
 (a distinctive form of it: "289", "1996", the turbine model). Its last line reads
@@ -274,12 +330,16 @@ Cite the live URL, never a web.archive.org address.
 - Location: never change \`Latitude\`, \`Longitude\` or \`Location accuracy\` when the brief shows a value.
   Only fill blanks. A better coordinate you found is a \`qa\` note.
 - Owners: GEM's \`Owner(s)\` is the company that holds the plant; the corporate parent is a separate,
-  computed field you never report. The utility or operator name in an EIA table is not the owner.
+  computed field you never report. The utility or operator name in ${IS_US ? 'an EIA table' : 'a regulator register'} is not the owner.
   If it differs from GEM's owner, raise a \`qa\` question. Change an owner only on a dated, closed
   transaction (sale completed, not announced) from two independent publishers, and name the buying
   entity that holds the plant, not its parent.
-- Fuel: never remove a fuel that the EIA-860 energy source columns (1 to 6) list for the unit. The
-  EIA-923 monthly fuel table shows what was burned recently, not what the unit can burn.
+${IS_US
+  ? `- Fuel: never remove a fuel that the EIA-860 energy source columns (1 to 6) list for the unit. The
+  EIA-923 monthly fuel table shows what was burned recently, not what the unit can burn.`
+  : `- Fuel: never remove a fuel GEM lists. A register's main-fuel column shows what the unit mainly
+  burns, not every fuel it can burn; a second fuel (fuel oil backup, hydrogen readiness) is added,
+  never swapped in.`}
 - Conversion units (a unit name with "timepoint 2" or a \`Conversion/replacement?\` value): the
   start year is the year the converted unit began operating on the new fuel, and
   \`Conversion/replacement?\` takes only the values conversion or replacement.
@@ -302,8 +362,9 @@ Every \`note\`, \`notes\` and \`recommendation\` is read by a GEM researcher who
 repository. Write the way a careful colleague explains something across a desk.
 - Plain words, short sentences, one idea per sentence.
 - Say what the source says, then what it means.
-- Name sources by what they are: "a Constellation press release from March 2026", "the EIA-860M
-  table for July 2026", "a Baltimore Sun article".
+- Name sources by what they are: ${IS_US
+    ? '"a Constellation press release from March 2026", "the EIA-860M\n  table for July 2026", "a Baltimore Sun article"'
+    : `"a Uniper press release from March 2026", "the national regulator's power\n  plant list dated April 2026", "a local newspaper article"`}.
 - No repo jargon: never write tier, lane, shard, ref, staged, qa, verifier, orphan.
 - No abbreviations without expansion on first use: commercial operation date, combustion turbine,
   power purchase agreement, integrated resource plan.
@@ -311,13 +372,18 @@ repository. Write the way a careful colleague explains something across a desk.
 - Dates and numbers in full: "February 2026", "289 MW".
 - Say what was not found, and why.
 Examples:
-  "The Maryland Public Service Commission order from March 2026 says the plant began commercial
+${IS_US
+  ? `  "The Maryland Public Service Commission order from March 2026 says the plant began commercial
   operation in February 2026. So the start year is 2026."
   "I could not find a start year for unit 2. The EIA table lists the plant but not this unit, and
-  the owner's website only gives the total capacity."
+  the owner's website only gives the total capacity."`
+  : `  "The regulator's power plant list dated April 2026 shows block 2 as in operation with 450 MW
+  net capacity, commissioned in 1998. So the status is operating and the start year is 1998."
+  "I could not find a start year for unit 2. The register lists the plant but not this unit, and
+  the owner's website only gives the total capacity."`}
 
 ## Budget
-Up to about ${BUDGET} fetches per plant${MODE === 'blind' ? ' (blind mode researches every field)' : ' (update mode does only the tasks in the brief)'}. The EIA files cover many
+Up to about ${BUDGET} fetches per plant${MODE === 'blind' ? ' (blind mode researches every field)' : ' (update mode does only the tasks in the brief)'}. ${IS_US ? 'The EIA files' : 'The register files'} cover many
 fields at once, so start there. When the budget is spent, stop and write the shard with what you
 have. A shard with honest \`not_found\` lists is useful; returning nothing is not.${EXTRA}
 
@@ -328,7 +394,7 @@ python json.dump or your Write tool, then check it parses with
 {
   "meta": {
     "plant_id": "L100000402511", "plant_name": "Brandywine power facility",
-    "state": "${STATE}", "mode": "${MODE}", "model": "${MODEL}",
+    ${STATE ? `"state": "${STATE}"` : `"country": "${COUNTRY}"`}, "mode": "${MODE}", "model": "${MODEL}",
     "generated": "2026-10-02T15:10:00-04:00", "done": true,
     "urls_attempted": 14, "urls_verified": 9
   },
@@ -342,7 +408,7 @@ python json.dump or your Write tool, then check it parses with
           "verifications": [{"url": "https://...", "ok": true,
                              "contains_value": true, "name_found": true}],
           "tier": "high", "independent": false,
-          "note": "The EIA-860M table for July 2026 lists this unit as operating."
+          "note": "${IS_US ? 'The EIA-860M table for July 2026 lists this unit as operating.' : "The regulator's power plant list dated April 2026 shows this unit as in operation."}"
         },
         "Capacity (MW)": { "...": "same shape" }
       },
@@ -397,10 +463,10 @@ const GROUP_SCHEMA = {
 }
 
 phase('Research')
-log(`State sweep: ${STATE} (${POSTAL}), ${MODE} mode, ${IDS.length} plants in ${GROUPS.length} agent(s), model ${MODEL}.`)
+log(`Scope sweep: ${PLACE} (${TAG}), ${MODE} mode, ${IDS.length} plants in ${GROUPS.length} agent(s), model ${MODEL}.`)
 const results = await parallel(GROUPS.map(group => () =>
   agent(contractFor(group), {
-    label: `research:${POSTAL}:${group.join('+')}`,
+    label: `research:${TAG}:${group.join('+')}`,
     phase: 'Research',
     agentType: 'general-purpose',
     model: MODEL,
@@ -421,4 +487,4 @@ results.forEach((r, i) => {
 const missing = IDS.filter(id => !summaries.some(s => s && s.plant_id === id && s.shard_written))
 const written = IDS.length - missing.length
 log(`Research done: ${written}/${IDS.length} shards reported written in ${BATCH}/shards/.${missing.length ? ' Not written: ' + missing.join(', ') + '.' : ''} Next: assemble_state.py, then state_gate.py.`)
-return { state: STATE, mode: MODE, plants: IDS.length, shards_written: written, summaries }
+return { where: WHERE, place: PLACE, mode: MODE, plants: IDS.length, shards_written: written, summaries }

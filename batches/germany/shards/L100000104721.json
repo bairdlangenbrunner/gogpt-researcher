@@ -1,0 +1,91 @@
+{
+ "meta": {
+  "plant_id": "L100000104721",
+  "plant_name": "Cuno herdecke power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:35:12-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400132",
+   "unit_name": "1",
+   "findings": {
+    "City": {
+     "value": "Herdecke",
+     "refs": [
+      "https://www.enervie-gruppe.de/Home/medien/Aktuelles/mark-e-rueckbau-der-nebenanlagen-des-ehemaligen-kohlekraftwerkes-cuno-in-herdecke.aspx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.enervie-gruppe.de/Home/medien/Aktuelles/mark-e-rueckbau-der-nebenanlagen-des-ehemaligen-kohlekraftwerkes-cuno-in-herdecke.aspx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Mark-E press release on the demolition of the old coal plant buildings says the Cuno site is in Herdecke, above the Wetterstrasse. Mark-E is one of the two owners. So the city is Herdecke."
+    }
+   },
+   "not_found": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "notes": "No document I found states coordinates. The Mark-E release names the street only, and that is consistent with GEM's point."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000400132",
+   "concern_type": "other",
+   "recommendation": "No change needed. Optional map check of the coordinates.",
+   "note": "GEM shows 51.4031, 7.4155 as exact. A plant map site that republishes data from the German Environment Agency uses the same point. The German Wikipedia article gives 51.4003, 7.4078, about 500 meters west. No official document states coordinates, so I left the location as it is.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.enervie-gruppe.de/Home/medien/Aktuelles/mark-e-rueckbau-der-nebenanlagen-des-ehemaligen-kohlekraftwerkes-cuno-in-herdecke.aspx",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Mark-E press release naming Herdecke and the Wetterstrasse."
+  },
+  {
+   "url": "https://www.proplanta.de/maps/cuno-kraftwerk_poi1323785342.html",
+   "used_for": [
+    "Latitude"
+   ],
+   "outcome": "not relevant",
+   "note": "Plant map site, lead only."
+  },
+  {
+   "url": "https://www.enervie-gruppe.de/Portaldata/1/Resources/_02_downloads/broschueren_berichte/2015_Mark-E_CunoForum_Infoflyer.pdf",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Mark-E flyer. Names Herdecke but gives no coordinates."
+  },
+  {
+   "url": "http://www.cdu-herdecke.de/utool/news/0/archiv/155.htm",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "dead",
+   "note": "Returned 404."
+  }
+ ]
+}

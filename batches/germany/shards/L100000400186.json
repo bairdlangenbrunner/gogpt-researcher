@@ -1,0 +1,150 @@
+{
+ "meta": {
+  "plant_id": "L100000400186",
+  "plant_name": "Infraserv Hoechst power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:31:59-04:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001027842",
+   "unit_name": "GTX1",
+   "findings": {},
+   "not_found": [
+    "Owner(s)"
+   ],
+   "notes": "I could not find a document that states who owns this unit. The national power plant list names Infraserv GmbH & Co. Höchst KG only as the operator of the unit."
+  },
+  {
+   "gem_unit_id": "G100000400186",
+   "unit_name": "GTX2",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100000400187",
+   "unit_name": "GTX3",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100000410319",
+   "unit_name": "GTX7",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100000410318",
+   "unit_name": "GTX8",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100001027849",
+   "unit_name": "VT1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100001027850",
+   "unit_name": "VT2",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100001027851",
+   "unit_name": "VT3",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100001027852",
+   "unit_name": "VT4",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100000412874",
+   "unit_name": "VT5",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001027842",
+   "concern_type": "owner",
+   "recommendation": "Keep the current owner, Infraserv GmbH & Co. Höchst KG at 100 percent, but it still has no source. A company annual report or the Infraserv press release on the 2022 gas turbines would be a good place to look.",
+   "note": "The Bundesnetzagentur power plant list dated 26 June 2026 shows the row IPH Strom GTX1, 54 MW, started 2003, with Infraserv GmbH & Co. Höchst KG as the plant operator. A register operator is not proof of ownership, so I did not report it as an owner source. Infraserv's own pages that I could load call it the operator of Industriepark Höchst but do not state ownership of this unit. The press release pages returned a server error. I saw no sign that the owner differs from GEM's value.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/_DL/Kraftwerksliste.xlsx?__blob=publicationFile",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Loads. Row read from the downloaded file: Infraserv GmbH & Co. Höchst KG, IPH Strom GTX1, Erdgas, 54 MW gross, 2003, in operation. Shows operator only."
+  },
+  {
+   "url": "https://www.industriepark-hoechst.com/en/stp/site/site-services/energy/products-and-solutions-for-utilities/heat/",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "failed",
+   "note": "Existing source. Page loads but does not state owner or gas turbine."
+  },
+  {
+   "url": "https://www.infraserv.com/de/unternehmen/nachhaltigkeit/gasturbinen/",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "failed",
+   "note": "Loads but the owner name was not found on the page text."
+  },
+  {
+   "url": "https://www.chemietechnik.de/anlagenbau/infraserv-legt-grundstein-fuer-neue-gasturbine.html",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "not relevant",
+   "note": "Trade article about the GTX7 and GTX8 groundbreaking. Does not state ownership of GTX1."
+  },
+  {
+   "url": "https://www.chemieindustrie-online.de/branchennews/infraserv-hoechst-investiert-dreistelligen-millionenbetrag-in-neue-gasturbinen-anlage",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "blocked",
+   "note": "HTTP 406 from the verifier."
+  },
+  {
+   "url": "https://www.infraserv.com/de_1/aktuelles/pressemeldungen/pressemeldung.html?lang=de&nach_id=19221",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "failed",
+   "note": "HTTP 500 on two tries."
+  }
+ ]
+}

@@ -1,0 +1,119 @@
+{
+ "meta": {
+  "plant_id": "L100001047916",
+  "plant_name": "IQ Energy Center power plant",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:29:09-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001054735",
+   "unit_name": "1",
+   "findings": {
+    "Turbine/Engine Technology": {
+     "value": "internal combustion",
+     "refs": [
+      "https://www.datacenterdynamics.com/en/news/cyrusone-eon-partner-on-61mw-onsite-power-system-for-frankfurt-data-center/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.datacenterdynamics.com/en/news/cyrusone-eon-partner-on-61mw-onsite-power-system-for-frankfurt-data-center/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The DCD article of 2 June 2025 says the plant is made of 4.5 MW gas engine modules. GEM lists combined cycle, which does not fit."
+    },
+    "Start year": {
+     "value": "2029",
+     "refs": [
+      "https://www.datacenterdynamics.com/en/news/cyrusone-eon-partner-on-61mw-onsite-power-system-for-frankfurt-data-center/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.datacenterdynamics.com/en/news/cyrusone-eon-partner-on-61mw-onsite-power-system-for-frankfurt-data-center/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The same article says the plant is to be online by 2029, which matches the existing value."
+    },
+    "Capacity (MW)": {
+     "value": "61",
+     "refs": [
+      "https://www.datacenterdynamics.com/en/news/cyrusone-eon-partner-on-61mw-onsite-power-system-for-frankfurt-data-center/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.datacenterdynamics.com/en/news/cyrusone-eon-partner-on-61mw-onsite-power-system-for-frankfurt-data-center/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The article gives 61 MW of electric output at full build-out. This confirms the existing value."
+    },
+    "Latest Activity": {
+     "value": "Year: 2025, Month: 6, Day: 2",
+     "refs": [
+      "https://www.datacenterdynamics.com/en/news/cyrusone-eon-partner-on-61mw-onsite-power-system-for-frankfurt-data-center/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.datacenterdynamics.com/en/news/cyrusone-eon-partner-on-61mw-onsite-power-system-for-frankfurt-data-center/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The partnership between E.ON and CyrusOne was announced on 2 June 2025. No newer news was found."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Owner(s)",
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "Status stays pre-construction. No permit or construction news was found."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [
+  {
+   "gem_unit_id": "G100001054735",
+   "note": "Watch for a permit application or construction start.",
+   "recheck_by": "2027-01-15"
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.datacenterdynamics.com/en/news/cyrusone-eon-partner-on-61mw-onsite-power-system-for-frankfurt-data-center/",
+   "used_for": [
+    "Turbine/Engine Technology",
+    "Start year",
+    "Capacity (MW)",
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Found 4.5MW gas engine, 2029, 61MW and E.ON."
+  }
+ ]
+}

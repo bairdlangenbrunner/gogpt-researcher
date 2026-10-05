@@ -1,0 +1,182 @@
+{
+ "meta": {
+  "plant_id": "L100000101873",
+  "plant_name": "Altbach power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-05T15:24:30-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401324",
+   "unit_name": "GT A",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this operating unit in this update."
+  },
+  {
+   "gem_unit_id": "G100000401325",
+   "unit_name": "GT B",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this operating unit in this update."
+  },
+  {
+   "gem_unit_id": "G100000401326",
+   "unit_name": "GT C",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this operating unit in this update."
+  },
+  {
+   "gem_unit_id": "G100000401323",
+   "unit_name": "GT E",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this operating unit in this update."
+  },
+  {
+   "gem_unit_id": "G100000410325",
+   "unit_name": "HKW3, timepoint 1",
+   "findings": {
+    "Start year": {
+     "value": "2027",
+     "refs": [
+      "https://www.stuttgarter-zeitung.de/lokales/esslingen/energiewende-im-kreis-esslingen-first-fire-mit-diesem-signal-beginnt-die-zukunft-im-kraftwerk-altbach-79040380.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.stuttgarter-zeitung.de/lokales/esslingen/energiewende-im-kreis-esslingen-first-fire-mit-diesem-signal-beginnt-die-zukunft-im-kraftwerk-altbach-79040380.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A Stuttgarter Zeitung article says the gas turbine is to be fired for the first time in summer 2026. After test operation, commercial operation is to start in 2027. EnBW's own page only says the plant is expected to be commissioned in 2026. The two sources differ, so the 2027 start year is a single newspaper source and the current value of 2027 is kept."
+    },
+    "Latest Activity": {
+     "value": "Year: 2026",
+     "refs": [
+      "https://www.stuttgarter-zeitung.de/lokales/esslingen/energiewende-im-kreis-esslingen-first-fire-mit-diesem-signal-beginnt-die-zukunft-im-kraftwerk-altbach-79040380.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.stuttgarter-zeitung.de/lokales/esslingen/energiewende-im-kreis-esslingen-first-fire-mit-diesem-signal-beginnt-die-zukunft-im-kraftwerk-altbach-79040380.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Stuttgarter Zeitung article reports that construction is well advanced and first fire is planned for summer 2026. The article page does not show its exact date, so only the year is given."
+    },
+    "Status Detail": {
+     "value": "EnBW states main construction is expected to finish in 2026, followed by start-up and commercial commissioning. A local newspaper expects first firing of the gas turbine in summer 2026 and commercial operation in 2027.",
+     "refs": [
+      "https://www.enbw.com/company/topics/coal-phaseout/altbach-deizisau-combined-heat-and-power-plant/",
+      "https://www.stuttgarter-zeitung.de/lokales/esslingen/energiewende-im-kreis-esslingen-first-fire-mit-diesem-signal-beginnt-die-zukunft-im-kraftwerk-altbach-79040380.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.enbw.com/company/topics/coal-phaseout/altbach-deizisau-combined-heat-and-power-plant/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.stuttgarter-zeitung.de/lokales/esslingen/energiewende-im-kreis-esslingen-first-fire-mit-diesem-signal-beginnt-die-zukunft-im-kraftwerk-altbach-79040380.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Both pages were read. The status stays construction."
+    },
+    "Turbine/Engine Technology": {
+     "value": "combined cycle",
+     "refs": [
+      "https://www.enbw.com/company/topics/coal-phaseout/altbach-deizisau-combined-heat-and-power-plant/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.enbw.com/company/topics/coal-phaseout/altbach-deizisau-combined-heat-and-power-plant/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "EnBW's English page calls the new plant a combined cycle gas turbine plant."
+    }
+   },
+   "not_found": [
+    "Capacity (MW)",
+    "Owner(s)",
+    "Status",
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "Status stays construction. EnBW reports 680 MW in one article and up to 750 MW in another, so the existing 665 MW was left alone. The existing turbine model was not newly confirmed. Commissioning has not been reported yet."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000410325",
+   "concern_type": "capacity",
+   "recommendation": "Check capacity",
+   "note": "EnBW press material gives 680 MW in one place and up to 750 MW in another. GEM shows 665 MW from the regulator register. The research note in GEM already records this conflict.",
+   "refs": [
+    "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/enbw-baut-zwei-grosse-gaskraftwerke-200074"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.enbw.com/company/topics/coal-phaseout/altbach-deizisau-combined-heat-and-power-plant/",
+   "used_for": [
+    "Turbine/Engine Technology",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "EnBW project page. Says commissioning expected in 2026."
+  },
+  {
+   "url": "https://www.stuttgarter-zeitung.de/lokales/esslingen/energiewende-im-kreis-esslingen-first-fire-mit-diesem-signal-beginnt-die-zukunft-im-kraftwerk-altbach-79040380.html",
+   "used_for": [
+    "Start year",
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Local newspaper. First fire summer 2026, commercial operation 2027."
+  },
+  {
+   "url": "https://www.energie-und-management.de/nachrichten/energieerzeugung/detail/enbw-baut-zwei-grosse-gaskraftwerke-200074",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Trade article. Order went to GE, no model named. Commissioning planned end of 2026."
+  },
+  {
+   "url": "https://h2-news.de/wirtschaft-unternehmen/enbw-vergibt-auftrag-fuer-wasserstofffaehige-gas-und-dampfturbinenanlagen/",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Loaded and names Altbach and GE. Not used."
+  }
+ ]
+}
