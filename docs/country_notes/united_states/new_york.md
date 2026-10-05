@@ -80,7 +80,8 @@ state agent in narrowed update mode on 2026-10-02 (`notes/us_state_agent_plan.md
   the address pattern that works for 2025 and 2026; find them by web search.
 - Astoria NRG: Latest Activity reads January 24, 2024 and cites an NRG legal
   page that now shows unrelated gas rate notices. The newest events found
-  are from 2022 and 2023, so the date was left in place.
+  are from 2022 and 2023, so the date was left in place. The unit is
+  cancelled, so Latest Activity no longer matters for it.
 - AES Greenidge "Unit 4, timepoint 2": add EIA generator ID 4 to Other IDs
   (unit). A March 2022 state letter says the gas conversion was in 2017;
   GEM has 2016. Single source, so yellow.
@@ -184,8 +185,11 @@ uprate requests in the queue.
 ## Gotchas
 
 - Latest Activity is a date field. Every filled value in the export reads
-  `Year: 2024, Month: 6, Day: 17`. Stage the date of the newest report and
-  put what happened in the note, and never move the date backward.
+  `Year: 2024, Month: 6, Day: 17`. Put what happened in the note, and
+  never move the date backward. It is only for stalled projects: units in
+  development, shelved, or with an inferred status, and only when the
+  newest report is more than a year old. Caithness II is the one New York
+  unit that qualified in October 2026.
 - GEM's Owner column holds the plant-holding company; the parent is a
   separate computed column. Utility names in EIA tables are not owner
   changes. The Constellation and Lotus purchases were parent-level changes

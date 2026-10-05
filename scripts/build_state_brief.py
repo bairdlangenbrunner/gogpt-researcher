@@ -212,6 +212,10 @@ CAPTIVE_FIELDS = ("Captive industry use", "Captive industry type",
 
 def unit_tasks(r, year=None, us=True):
     """The manual's per-unit checks plus the gap list, as (text, fields).
+    Latest Activity is offered only where the manual uses it: in-development
+    units that have gone quiet, shelved units, cancelled-inferred units, and
+    inferred statuses with the field blank, and never with a date less than a
+    year old (docs/reference/lifecycle_rules.md; state_gate.py latest-activity).
     `us` adds the EIA identifier tasks, which only make sense in the United States."""
     year = year or datetime.date.today().year
     status = ws(r.get("Status")).lower()
@@ -224,14 +228,16 @@ def unit_tasks(r, year=None, us=True):
     if group == "in development":
         add("This unit is in development. Has the status moved? Look for a start "
             "year or a scheduled operating date, the turbine make and model, the "
-            "owner and the capacity. If nothing has been reported for a long time, "
-            "add a Latest Activity entry with the date and the source of the newest "
-            "report.",
+            "owner and the capacity. Add a Latest Activity entry only if the project "
+            "has gone quiet, meaning the newest report you can find is more than a "
+            "year old. Then give the date and the source of that report. If the "
+            "project is visibly moving, leave Latest Activity alone.",
             "Status", "Status Detail", "Start year", "Equipment Manufacturer/Model",
             "Turbine/Engine Technology", "Owner(s)", "Capacity (MW)", "Latest Activity")
     elif group == "shelved":
         add("This project is shelved. Was it revived, cancelled, or is it still quiet? "
-            "Record the newest dated report in Latest Activity. If the newest evidence "
+            "If the newest dated report is more than a year old, record it in Latest "
+            "Activity. A newer report goes in the note only. If the newest evidence "
             "of activity is more than four years old, the status becomes "
             "cancelled - inferred 4 y, with no source and the search described in the "
             "note.",
@@ -240,12 +246,22 @@ def unit_tasks(r, year=None, us=True):
         add("This unit is mothballed. Is it still mothballed, back in operation, or "
             "retired? A status change needs two independent publishers. Never fill a "
             "retired year while the status stays mothballed.",
-            "Status", "Status Detail", "Retired year", "Latest Activity")
+            "Status", "Status Detail", "Retired year")
+    if group == "cancelled" and "inferred" in status:
+        add("This project was presumed cancelled after four years with no reports. "
+            "Has anything been reported since? If so, say in the note whether the "
+            "project looks revived, and record the report in Latest Activity only if "
+            "it is more than a year old. If the search finds nothing newer, leave the "
+            "status as it is."
+            + ("" if ws(r.get("Latest Activity")) else
+               " Latest Activity is blank, so record the date and source of the "
+               "newest report of activity you can find, however old."),
+            "Status", "Status Detail", "Latest Activity")
     if group == "cancelled" and not ws(r.get("Cancellation year")):
         add("This unit is cancelled but has no cancellation year. Find the year the "
             "project was dropped or its permit was finally denied, and the document "
             "that says so.",
-            "Cancellation year", "Latest Activity")
+            "Cancellation year")
     if group == "retired" and not ws(r.get("Retired year")):
         add("This unit is retired but has no retired year. Find it.", "Retired year")
 
@@ -259,16 +275,16 @@ def unit_tasks(r, year=None, us=True):
             add(f"The planned retirement year {pry} is in the past. Did the unit "
                 "retire? If so the status is retired with a retired year. If the plan "
                 "moved, give the new year and its source.",
-                "Status", "Retired year", "Planned retire", "Latest Activity")
+                "Status", "Retired year", "Planned retire")
         elif pry == year:
             add(f"Retirement is planned for {year}. Has it retired yet? If nothing "
                 "confirms it by December, the manual says to move the planned year "
                 "forward.",
-                "Status", "Retired year", "Planned retire", "Latest Activity")
+                "Status", "Retired year", "Planned retire")
         elif pry is not None:
             add(f"Retirement is planned for {pry}. Does the plan still hold?",
-                "Planned retire", "Latest Activity")
-    if "inferred" in status and not ws(r.get("Latest Activity")):
+                "Planned retire")
+    if "inferred" in status and group != "cancelled" and not ws(r.get("Latest Activity")):
         add("The status was inferred from silence but Latest Activity is blank. "
             "Record the date and source of the newest evidence of activity.",
             "Latest Activity")

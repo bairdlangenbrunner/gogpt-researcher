@@ -38,6 +38,7 @@ it). Representative examples surfaced in the source doc:
 | Russia | SO UPS scheme/programme reports | Progress reports on power-system development |
 | United States (PJM: MD, PA, NJ, DE, VA, WV, OH, DC and parts of IL, IN, KY, MI, NC, TN) | PJM Interconnection (`pjm.com`) | See "PJM data files" below |
 | United States (New York) | NYISO (`nyiso.com`) | See "NYISO data files" below |
+| Germany | Environmental impact assessment register (`uvp-verbund.de` and the state `uvp.<state>.de` front ends) | Permit procedures for planned plants: applicant, capacity, dated steps, decision PDFs. Throttled with HTTP 429; `fetch.py` waits it out and caches. Harvest first with `harvest_permits.py`. Recipe in `docs/country_notes/germany.md`, "Permit register" |
 
 **PJM data files** (checked 2026-10-02; not bot-walled, plain curl works,
 but the queue web pages render from JavaScript, so go to the files):

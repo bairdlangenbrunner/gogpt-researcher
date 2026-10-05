@@ -1,0 +1,396 @@
+{
+  "meta": {
+    "lane": "newplants",
+    "scope": {
+      "country": "Senegal",
+      "quarter": "q3-2026",
+      "csv": "gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-08-05T12:40:33-04:00",
+    "counts": {
+      "records": 4
+    }
+  },
+  "records": [
+    {
+      "gem_unit_id": "",
+      "gem_plant_id": "",
+      "plant_name": "Gandon power station",
+      "unit_name": "",
+      "country": "Senegal",
+      "fields": {
+        "Plant name": "Gandon power station",
+        "Other Name(s)": "Ndar Energies power station; Centrale électrique Ndar Energies",
+        "Owner(s)": "Ndar Energies SA [100%]",
+        "City": "Gandon",
+        "State/Province": "Saint-Louis"
+      },
+      "current": {},
+      "refs": {
+        "Owners Data Source": [
+          "https://www.kap.org.tr/en/Bildirim/1233784",
+          "https://www.power-technology.com/data-insights/power-plant-profile-ndar-energies-gas-power-plant-senegal/"
+        ],
+        "Location Data Source": [
+          "https://www.kap.org.tr/en/Bildirim/1233784",
+          "https://johncockerill.com/en/press-and-news/news/making-senegal-cooler-and-more-autonomous-with-the-supply-of-a-new-air-cooled-condenser/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://johncockerill.com/en/press-and-news/news/making-senegal-cooler-and-more-autonomous-with-the-supply-of-a-new-air-cooled-condenser/",
+          "ok": true,
+          "contains_value": true
+        },
+        {
+          "url": "https://www.kap.org.tr/en/Bildirim/1233784",
+          "ok": true,
+          "contains_value": true
+        },
+        {
+          "url": "https://www.power-technology.com/data-insights/power-plant-profile-ndar-energies-gas-power-plant-senegal/",
+          "ok": true,
+          "contains_value": true
+        }
+      ],
+      "tier": "high",
+      "independent": true,
+      "source_language": "en/fr/tr",
+      "researcher_notes": "255 MW CCGT under construction in Gandon commune, Saint-Louis region — the physical terminus of RGS's Segment Nord pipeline from the GTA gas hub (offshore 45 km to Léona landing + 40 km onshore, per rgs.sn). Owner is the SPV Ndar Energies SA. Parent chain per Aksa Enerji's KAP filings: Aksa-NDAR Holding SA holds 85% of Ndar Energies SA, and Aksa Enerji Uretim AŞ holds 60% of the holding (KAP subsidiary table 2025-11-10, Bildirim/1514788); Senegalese press reports the economic split as Aksa 51% / consortium ICONS-CSE-ELTON 34% / Senelec 15% (dakaractu 2025-10-28, ndarinfo) — the two accounts reconcile arithmetically (60%×85%=51%, 40%×85%=34%, Senelec 15% direct) but no single document states all figures together. A Fasken deal page describes the 85% sale (closed Dec 2023) but is 403 with no Wayback snapshot — not citable as verified. Siting per the SERV-linked ESIA (Feb 2026): ~10 ha site ~1.5 km from Ndiakhère village; no public lat/long found — ESIA PDF URL not captured, coordinates left blank. power-technology profile verified via Wayback snapshot 20241214133945 (live URL 403s).",
+      "action": "Create plant 'Gandon power station' (Saint-Louis region) with owner Ndar Energies SA [100%] and the unit below; create the Ndar Energies SA entity first (see entity lane).",
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Unit name": "1",
+            "Capacity (MW)": "255",
+            "Status": "construction",
+            "Status Detail": "Under construction since April 2024; GE gas turbines received at Port of Dakar Oct 2025; first commissioning tests expected Oct 2026 (Le Soleil 2026-07-18), simple cycle targeted 2026 and full combined cycle early 2027; €430M Afreximbank facility (2023) plus €57M additional financing signed Jul 2026.",
+            "Fuel": "fossil gas: natural gas",
+            "Turbine/Engine Technology": "combined cycle",
+            "Start year": "2026"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.kap.org.tr/en/Bildirim/1233784",
+              "https://www.aksaenerji.com.tr/en/media-center/press-releases/aksa-energy-secures-57-million-in-international-financing-for-its-senegal-power-plant-investment",
+              "https://johncockerill.com/en/press-and-news/news/making-senegal-cooler-and-more-autonomous-with-the-supply-of-a-new-air-cooled-condenser/",
+              "https://www.enerdata.net/publications/daily-energy-news/aksa-energy-starts-construction-255-mw-ccgt-power-plant-senegal.html"
+            ],
+            "Status Data Source": [
+              "https://www.aksaenerji.com.tr/en/media-center/press-releases/aksa-energy-secures-57-million-in-international-financing-for-its-senegal-power-plant-investment",
+              "https://lesoleil.sn/actualites/economie/projet-ndar-energy-les-turbines-de-la-centrale-de-saint-louis-receptionnees/"
+            ],
+            "Fuel Data Source": [
+              "https://www.kap.org.tr/en/Bildirim/1233784",
+              "https://www.enerdata.net/publications/daily-energy-news/aksa-energy-starts-construction-255-mw-ccgt-power-plant-senegal.html"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.kap.org.tr/en/Bildirim/1233784",
+              "https://www.power-technology.com/data-insights/power-plant-profile-ndar-energies-gas-power-plant-senegal/"
+            ],
+            "Start Year Data Source": [
+              "https://www.kap.org.tr/en/Bildirim/1233784",
+              "https://www.power-technology.com/data-insights/power-plant-profile-ndar-energies-gas-power-plant-senegal/"
+            ]
+          },
+          "researcher_notes": "Capacity conflict resolved to 255 MW: Aksa Enerji's own KAP material-event disclosure (2024-01-08) and its Jul 2026 press release both say 255 MW, as do John Cockerill, Le Soleil and Enerdata; the SERV-linked ESIA (Feb 2026) says 250 MW (likely rounding); dakaractu/ministry reporting of 160→220 MW phased is contradicted by Le Soleil's own next-day 255 MW piece. Staged the developer's disclosed figure. CC block staged as one unit per unit conventions (GT count not publicly broken out). Start year 2026 is the developer's targeted first commercial operations (simple cycle); full CC early 2027.",
+          "verifications": [
+            {
+              "url": "https://johncockerill.com/en/press-and-news/news/making-senegal-cooler-and-more-autonomous-with-the-supply-of-a-new-air-cooled-condenser/",
+              "ok": true,
+              "contains_value": true
+            },
+            {
+              "url": "https://lesoleil.sn/actualites/economie/projet-ndar-energy-les-turbines-de-la-centrale-de-saint-louis-receptionnees/",
+              "ok": true,
+              "contains_value": true
+            },
+            {
+              "url": "https://www.aksaenerji.com.tr/en/media-center/press-releases/aksa-energy-secures-57-million-in-international-financing-for-its-senegal-power-plant-investment",
+              "ok": true,
+              "contains_value": true
+            },
+            {
+              "url": "https://www.enerdata.net/publications/daily-energy-news/aksa-energy-starts-construction-255-mw-ccgt-power-plant-senegal.html",
+              "ok": true,
+              "contains_value": true
+            },
+            {
+              "url": "https://www.kap.org.tr/en/Bildirim/1233784",
+              "ok": true,
+              "contains_value": true
+            },
+            {
+              "url": "https://www.power-technology.com/data-insights/power-plant-profile-ndar-energies-gas-power-plant-senegal/",
+              "ok": true,
+              "contains_value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gem_unit_id": "",
+      "gem_plant_id": "",
+      "plant_name": "Cap des Biches EPCF power station",
+      "unit_name": "",
+      "country": "Senegal",
+      "fields": {
+        "Plant name": "Cap des Biches EPCF power station",
+        "Other Name(s)": "Centrale électrique EPCF 250 MW Cap des Biches",
+        "Owner(s)": "National Electricity Company of Senegal [100%]",
+        "City": "Rufisque",
+        "State/Province": "Dakar"
+      },
+      "current": {},
+      "refs": {
+        "Owners Data Source": [
+          "https://dgmarket.fr/Notice/93810338",
+          "https://fr.allafrica.com/stories/202607190110.html"
+        ],
+        "Location Data Source": [
+          "https://dgmarket.fr/Notice/93810338",
+          "https://fr.allafrica.com/stories/202607190110.html"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://dgmarket.fr/Notice/93810338",
+          "ok": true,
+          "contains_value": true
+        },
+        {
+          "url": "https://fr.allafrica.com/stories/202607190110.html",
+          "ok": true,
+          "contains_value": true
+        }
+      ],
+      "tier": "high",
+      "independent": true,
+      "source_language": "fr",
+      "researcher_notes": "Senelec's own EPCF (engineering-procurement-construction-financing) tender AOI N°16/2025 for a THIRD plant at the Cap des Biches site — distinct from both the 86 MW ContourGlobal engine plant and the 366 MW West Africa Energy CC (fr.allafrica/Le Soleil 2026-07-19 treats it as an additional 250 MW plant Senelec is building; high conflation risk in sources given similar capacity figures — see qa lane). Tender published 2025-05-14, 54 firms bought documents, 5 bids. Plant name 'Cap des Biches EPCF' follows the sources' own label; reviewer may prefer a different disambiguator. globaltenders.com is a mirror of the dgmarket notice (counted as one origin).",
+      "action": "Create plant 'Cap des Biches EPCF power station' (Rufisque) owned by National Electricity Company of Senegal (existing entity E100000000894) with the unit below.",
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Unit name": "1",
+            "Capacity (MW)": "250",
+            "Status": "announced",
+            "Status Detail": "EPCF tender AOI N°16/2025 (published 2025-05-14): provisional award to Sinohydro Corporation Limited at 287,876,216,633 FCFA, 30-month build (award notice created 2026-03-26); contested — Construction Management Services (Morocco) obtained a bid re-evaluation from the procurement authority per Jun 2026 reporting; no final award, contract signature, or construction start found as of Aug 2026.",
+            "Fuel": "fossil gas: natural gas",
+            "Turbine/Engine Technology": "combined cycle"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://dgmarket.fr/Notice/93810338",
+              "https://fr.allafrica.com/stories/202607190110.html"
+            ],
+            "Status Data Source": [
+              "https://dgmarket.fr/Notice/93810338",
+              "https://inamaenergy.com/senegal-cms-conteste-lappel-doffres-de-la-centrale-du-cap-des-biches/"
+            ],
+            "Fuel Data Source": [
+              "https://dgmarket.fr/Notice/93810338",
+              "https://www.globaltenders.com/tender-detail/construction-dune-centrale-%C3%A9lectrique-ep-93810338"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://dgmarket.fr/Notice/93810338",
+              "https://www.globaltenders.com/tender-detail/construction-dune-centrale-%C3%A9lectrique-ep-93810338"
+            ]
+          },
+          "researcher_notes": "Status 'announced' (tender stage, award unresolved). The tender text specifies a 250 MW CCGT running on gas ('centrale électrique EPCF de 250 MW en cycle combiné CCGT fonctionnant au gaz'). Award dispute is single-source beyond the paywalled africabusinessplus headline (URL now 404s); inamaenergy (2026-06-20) verified. No start year staged — no credible commissioning date exists pre-award. CC block = one unit.",
+          "verifications": [
+            {
+              "url": "https://dgmarket.fr/Notice/93810338",
+              "ok": true,
+              "contains_value": true
+            },
+            {
+              "url": "https://fr.allafrica.com/stories/202607190110.html",
+              "ok": true,
+              "contains_value": true
+            },
+            {
+              "url": "https://inamaenergy.com/senegal-cms-conteste-lappel-doffres-de-la-centrale-du-cap-des-biches/",
+              "ok": true,
+              "contains_value": true
+            },
+            {
+              "url": "https://www.globaltenders.com/tender-detail/construction-dune-centrale-%C3%A9lectrique-ep-93810338",
+              "ok": true,
+              "contains_value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gem_unit_id": "",
+      "gem_plant_id": "",
+      "plant_name": "Sandiara power station",
+      "unit_name": "",
+      "country": "Senegal",
+      "fields": {
+        "Plant name": "Sandiara power station",
+        "Other Name(s)": "Centrale électrique de Sandiara; Sandiara SEZ gas-to-power project",
+        "Owner(s)": "TSK Electronica y Electricidad SA [50%]; LFR Energy",
+        "City": "Sandiara",
+        "State/Province": "Thiès"
+      },
+      "current": {},
+      "refs": {
+        "Owners Data Source": [
+          "https://africaoilgasreport.com/2023/07/power-deficit/tsk-to-start-construction-of-360mw-gas-fired-plant-in-senegal-from-2024/",
+          "https://www.power-technology.com/marketdata/power-plant-profile-sandiara-power-plant-senegal/"
+        ],
+        "Location Data Source": [
+          "https://africaoilgasreport.com/2023/07/power-deficit/tsk-to-start-construction-of-360mw-gas-fired-plant-in-senegal-from-2024/",
+          "https://www.power-technology.com/marketdata/power-plant-profile-sandiara-power-plant-senegal/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://africaoilgasreport.com/2023/07/power-deficit/tsk-to-start-construction-of-360mw-gas-fired-plant-in-senegal-from-2024/",
+          "ok": true,
+          "contains_value": true
+        },
+        {
+          "url": "https://www.power-technology.com/marketdata/power-plant-profile-sandiara-power-plant-senegal/",
+          "ok": true,
+          "contains_value": true
+        }
+      ],
+      "tier": "medium",
+      "independent": true,
+      "source_language": "en",
+      "researcher_notes": "360 MW CCGT announced Jul 2023 for the Sandiara Special Economic Zone (TSK of Spain 50% + LFR Energy; Siemens SGT-800 turbines; 25-year Senelec PPA reported at announcement). Evidence trail goes cold after late 2024: GlobalData profile says 'permitting stage'; TSK's own live project portfolio does NOT list Sandiara; APIX SEZ-tenant coverage (Aug 2024) does not mention the plant; no financial close, groundbreaking, cancellation, or updated timeline found through Aug 2026. Both citations verified via Wayback snapshots (live URLs 403; snapshots 20250721052125 and 20240715185730) — live URLs kept as citations. If no new evidence by late 2026 the shelved-inference clock (2y from last evidence) starts to bite — flag for the next Senegal batch.",
+      "action": "Create plant 'Sandiara power station' (Sandiara, Thiès) with owners TSK Electronica y Electricidad SA [50%] + LFR Energy (both new entities — see entity lane) and the unit below.",
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Unit name": "1",
+            "Capacity (MW)": "360",
+            "Status": "pre-construction",
+            "Status Detail": "Announced Jul 2023 with construction 'planned Q1 2024'; last concrete evidence is the GlobalData profile's 'permitting stage' (snapshot Jul 2024); no construction start, financial close, or cancellation found through Aug 2026 — treat as stalled pending re-verification.",
+            "Fuel": "fossil gas: natural gas",
+            "Turbine/Engine Technology": "combined cycle"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://africaoilgasreport.com/2023/07/power-deficit/tsk-to-start-construction-of-360mw-gas-fired-plant-in-senegal-from-2024/",
+              "https://www.power-technology.com/marketdata/power-plant-profile-sandiara-power-plant-senegal/"
+            ],
+            "Status Data Source": [
+              "https://www.power-technology.com/marketdata/power-plant-profile-sandiara-power-plant-senegal/",
+              "https://africaoilgasreport.com/2023/07/power-deficit/tsk-to-start-construction-of-360mw-gas-fired-plant-in-senegal-from-2024/"
+            ],
+            "Fuel Data Source": [
+              "https://africaoilgasreport.com/2023/07/power-deficit/tsk-to-start-construction-of-360mw-gas-fired-plant-in-senegal-from-2024/",
+              "https://www.power-technology.com/marketdata/power-plant-profile-sandiara-power-plant-senegal/"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.power-technology.com/marketdata/power-plant-profile-sandiara-power-plant-senegal/",
+              "https://africaoilgasreport.com/2023/07/power-deficit/tsk-to-start-construction-of-360mw-gas-fired-plant-in-senegal-from-2024/"
+            ]
+          },
+          "researcher_notes": "'Pre-construction' reflects the latest available status evidence (permitting, per GlobalData); the original 'operational by 2026' target is clearly dead, so no start year staged. CC block = one unit (SGT-800 count not specified).",
+          "verifications": [
+            {
+              "url": "https://africaoilgasreport.com/2023/07/power-deficit/tsk-to-start-construction-of-360mw-gas-fired-plant-in-senegal-from-2024/",
+              "ok": true,
+              "contains_value": true
+            },
+            {
+              "url": "https://www.power-technology.com/marketdata/power-plant-profile-sandiara-power-plant-senegal/",
+              "ok": true,
+              "contains_value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gem_unit_id": "",
+      "gem_plant_id": "",
+      "plant_name": "Karpowership (Senegal) Gökhan Bey power station",
+      "unit_name": "",
+      "country": "Senegal",
+      "fields": {
+        "Plant name": "Karpowership (Senegal) Gökhan Bey power station",
+        "Other Name(s)": "KPS 10; Karadeniz Powership Gökhan Bey",
+        "Owner(s)": "Karpowership [100%]",
+        "City": "Dakar",
+        "State/Province": "Dakar"
+      },
+      "current": {},
+      "refs": {
+        "Owners Data Source": [
+          "https://karpowership.com/senegal",
+          "https://www.offshore-energy.biz/four-years-in-the-making-africas-first-lng-to-power-project-up-and-running-off-senegal/"
+        ],
+        "Location Data Source": [
+          "https://karpowership.com/senegal",
+          "https://www.offshore-energy.biz/four-years-in-the-making-africas-first-lng-to-power-project-up-and-running-off-senegal/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://karpowership.com/senegal",
+          "ok": true,
+          "contains_value": true
+        },
+        {
+          "url": "https://www.offshore-energy.biz/four-years-in-the-making-africas-first-lng-to-power-project-up-and-running-off-senegal/",
+          "ok": true,
+          "contains_value": true
+        }
+      ],
+      "tier": "medium",
+      "independent": true,
+      "source_language": "en",
+      "researcher_notes": "PROMOTED from the update batch's monitor lane. Karpowership's own Senegal page (primary): 'In December 2021, an additional contract of 100 MW was signed' and total 'installed capacity of 335 MW' — vs the 235 MW Ayşegül Sultan already in GEM, confirming a second vessel at Dakar. Vessel identity is the medium-confidence piece: offshore-energy calls the second unit 'KPS 10', AIS places Karadeniz Powership Gökhan Bey (IMO 9214563, nameplate ~125 MW) at Dakar, and an africa-energy database title pairs 'Aysegul Sultan and Gokhan Bey' — consistent but partly indirect. If the reviewer prefers not to commit to the vessel name, create as 'Karpowership (Senegal) second powership' instead. Plant-per-vessel naming mirrors the existing Ayşegül Sultan record. Gas supply from the Karmol FSRU since 2025 covers the whole Dakar operation. Coordinates left blank (AIS positions not a durable citation); anchorage adjacent to the existing L100000407151.",
+      "action": "Create plant 'Karpowership (Senegal) Gökhan Bey power station' (Dakar) owned by Karpowership (existing entity E100000003399) with the unit below.",
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Unit name": "1",
+            "Capacity (MW)": "100",
+            "Status": "operating",
+            "Status Detail": "Contracted under the December 2021 additional 100 MW contract; part of Karpowership's 335 MW installed Dakar operation, supplied with regasified LNG from the Karmol FSRU (gas supply from 2025).",
+            "Fuel": "fossil gas: LNG"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://karpowership.com/senegal"
+            ],
+            "Status Data Source": [
+              "https://karpowership.com/senegal",
+              "https://www.offshore-energy.biz/four-years-in-the-making-africas-first-lng-to-power-project-up-and-running-off-senegal/"
+            ],
+            "Fuel Data Source": [
+              "https://karpowership.com/senegal",
+              "https://www.offshore-energy.biz/four-years-in-the-making-africas-first-lng-to-power-project-up-and-running-off-senegal/"
+            ]
+          },
+          "researcher_notes": "Capacity 100 MW is the CONTRACTED figure — single primary source (karpowership.com: 'an additional contract of 100 MW was signed'; arithmetic 335−235 vs the sibling Ayşegül Sultan corroborates, and the offshore-energy article's 335 MW total is consistent but does not state 100 directly). The likely vessel's nameplate is ~125 MW — if identity is confirmed the reviewer may prefer nameplate per capacity rules; staging the directly-sourced contracted value avoids committing to the unconfirmed identity. Start year left blank: contract Dec 2021, but no verifiable in-service date for the second vessel specifically. Fuel staged as LNG only — both citations explicitly say LNG, but neither states the fuel-oil backup, so the sibling record's 'fossil gas: LNG, fossil liquids: fuel oil' dual-fuel detail is left to the reviewer to mirror if desired. Turbine/Engine Technology left BLANK for the same reason: no verified source states the engine configuration; the sibling Ayşegül Sultan row uses ICCC and the vessel class implies the same — reviewer's call to mirror. A lequotidien interview ('100% gas since Aug 2025') is 403 with no Wayback snapshot — not citable.",
+          "verifications": [
+            {
+              "url": "https://karpowership.com/senegal",
+              "ok": true,
+              "contains_value": true
+            },
+            {
+              "url": "https://www.offshore-energy.biz/four-years-in-the-making-africas-first-lng-to-power-project-up-and-running-off-senegal/",
+              "ok": true,
+              "contains_value": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

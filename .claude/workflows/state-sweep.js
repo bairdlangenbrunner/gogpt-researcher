@@ -352,6 +352,10 @@ ${IS_US
   activity you found, written exactly as \`Year: 2024, Month: 6, Day: 17\` (leave off day, or month
   and day, when the source does not give them). What happened goes in the finding's note, never
   in the value. Never move the date backward: if GEM already shows a later date, raise a \`qa\` note.
+  Fill it only for a unit in development, a shelved unit, or a unit with an inferred status, and
+  only when the newest report is more than a year old. A report from the last twelve months means
+  the project is moving: describe it in the note and leave Latest Activity alone. Never fill it
+  for an operating, mothballed, retired or plainly cancelled unit.
   Year fields (\`Start year\`, \`Retired year\`, \`Cancellation year\`, \`Planned retire\`) hold a
   four-digit year only.
 - Possible duplicates, units that look split or merged wrongly, and values you think are wrong but

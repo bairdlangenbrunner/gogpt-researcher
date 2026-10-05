@@ -39,6 +39,12 @@ Hard gates (any failure exits 1)
               sentence break (a lowercase word, a period, a space, a capital).
               Exempt columns: Status Detail, Latest Activity, Notes, Captive*,
               Equipment Manufacturer/Model.
+  latest-activity
+              a Latest Activity edit is only for a unit that is in development,
+              shelved, or carries an inferred status (the export's Status, or
+              the Status in the same batch), and its date is at least a year
+              before today. A newer date means the project is moving and the
+              field is not needed (docs/reference/lifecycle_rules.md).
   build       build_review_package.validate() on the lane files: the errors
               that would stop the build anyway (qa records with fields, etc.)
   qc_checks   qc_checks.py --staged on each lane file present must exit 0
@@ -67,6 +73,7 @@ unchanged).
 from __future__ import annotations
 
 import argparse
+import datetime
 import json
 import re
 import subprocess
@@ -77,6 +84,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from assemble_state import (  # noqa: E402
     host_of, is_blank, load_export, load_index, norm_entities, norm_status,
     resolve_csv, ws)
+from schema_constants import STATUSES_IN_DEVELOPMENT  # noqa: E402
 from build_review_package import load_lanes, ref_col_for, validate  # noqa: E402
 from schema_constants import READ_ONLY_COLUMNS  # noqa: E402
 
@@ -282,6 +290,48 @@ def gate_dates(lanes):
     return out
 
 
+def la_status_ok(status):
+    s = ws(status).lower()
+    return s in STATUSES_IN_DEVELOPMENT or s.startswith("shelved") or "inferred" in s
+
+
+def gate_latest_activity(lanes, export, today=None):
+    """Latest Activity tracks stalled projects only: units in development,
+    shelved, or with an inferred status, and only once the newest report is
+    more than a year old (docs/reference/lifecycle_rules.md)."""
+    today = today or datetime.date.today()
+    cutoff = today - datetime.timedelta(days=365)
+    proposed = {}
+    for lane, rid, rec in iter_records(lanes, VALUE_LANES):
+        st = (rec.get("fields") or {}).get("Status")
+        if st and rec.get("gem_unit_id"):
+            proposed.setdefault(rec["gem_unit_id"], []).append(st)
+    out = []
+    for lane, rid, rec in iter_records(lanes, VALUE_LANES):
+        fields = rec.get("fields") or {}
+        v = ws(fields.get("Latest Activity"))
+        m = DATE_RE.match(v) and re.findall(r"\d+", v)
+        if not m:
+            continue
+        uid = rec.get("gem_unit_id")
+        statuses = [fields.get("Status"), (export.get(uid) or {}).get("Status")]
+        statuses += proposed.get(uid, [])
+        statuses = [s for s in statuses if ws(s)]
+        if not any(la_status_ok(s) for s in statuses):
+            out.append((rid, "Latest Activity is only for units in development, shelved or "
+                             f"with an inferred status; this unit is {ws(statuses[0]) if statuses else 'of unknown status'}"))
+            continue
+        nums = [int(x) for x in m] + [1, 1]
+        try:
+            day = datetime.date(nums[0], nums[1], nums[2])
+        except ValueError:
+            continue
+        if day > cutoff:
+            out.append((rid, f"Latest Activity {v!r} is less than a year old; the project "
+                             "is still moving, so leave the field alone"))
+    return out
+
+
 def gate_build(lanes):
     return [("build", e) for e in validate(lanes)]
 
@@ -414,6 +464,7 @@ def run(args):
     add("headers", True, gate_headers(lanes, header))
     add("cell-prose", True, gate_cell_prose(lanes))
     add("dates", True, gate_dates(lanes))
+    add("latest-activity", True, gate_latest_activity(lanes, export))
     add("build", True, gate_build(lanes))
     add("false-high", False, gate_false_high(lanes))
     add("independence", False, gate_independence(lanes))

@@ -64,9 +64,25 @@ the terminals/pipelines verifiers' fetch layers):
     sec.gov requests therefore send `SEC_USER_AGENT` (env `GEM_SEC_UA`
     overrides it), skip impersonation, and are throttled per process. Note
     `sec_declared_ua`.
+  - Rate limits (2026-10-05): a bare HTTP 429 with no bot-wall markers is a
+    queue, not a wall. Firing disguised requests at it only adds load, so it
+    is waited out instead: up to `RATE_LIMIT_ATTEMPTS` plain retries with
+    growing pauses (note `rate_limit_wait`), then one impersonation try as a
+    last resort. Retries hold a per-host file lock so parallel processes
+    (research subagents verifying at once) take turns instead of piling on.
+  - Paced hosts (2026-10-05): the German environmental impact assessment
+    portals (uvp-verbund.de and the state front ends, one shared server that
+    answers 429 to most requests whatever the pace) are always fetched through
+    the lock with a minimum gap, and every 200 body is kept on disk
+    (`work/fetch_cache/`, 30 days) so a permit page or PDF is fetched once
+    and later reads cost the server nothing (note `disk_cache`).
 """
 import codecs
+import contextlib
+import hashlib
+import json
 import os
+import random
 import re
 import shutil
 import subprocess
@@ -93,6 +109,21 @@ SEC_USER_AGENT = os.environ.get(
 _SEC_HOSTS = ("sec.gov",)
 _SEC_MIN_INTERVAL = 0.15      # seconds between sec.gov requests in one process
 _sec_last = 0.0
+
+# Rate limits and paced hosts. See the module docstring.
+RATE_LIMIT_ATTEMPTS = int(os.environ.get("GEM_FETCH_429_ATTEMPTS", "12"))
+_RATE_LIMIT_PAUSE_START = 5.0     # seconds before the first retry
+_RATE_LIMIT_PAUSE_STEP = 5.0      # added per retry
+_RATE_LIMIT_PAUSE_MAX = 15.0
+CACHE_DIR = Path(os.environ.get(
+    "GEM_FETCH_CACHE_DIR",
+    Path(__file__).resolve().parent.parent / "work" / "fetch_cache"))
+_CACHE_MAX_AGE = 30 * 86400       # seconds
+# (pattern, lock key, minimum seconds between requests). All InGrid impact
+# assessment portals resolve to one server, so they share one lock key.
+_PACED_HOSTS = (
+    (re.compile(r"(^|\.)uvp-verbund\.de$|^(www\.)?uvp\.[a-z-]+\.de$"), "ingrid-uvp", 3.0),
+)
 
 _CURL_INSTALL_HINT = (
     "curl not found on PATH. Install it and re-run:\n"
@@ -450,6 +481,108 @@ def _sec_throttle() -> None:
     _sec_last = time.monotonic()
 
 
+def _paced(host: str) -> tuple[str | None, float]:
+    """(lock key, minimum gap in seconds) for a paced host, else (None, 0)."""
+    for pattern, key, gap in _PACED_HOSTS:
+        if pattern.search(host):
+            return key, gap
+    return None, 0.0
+
+
+@contextlib.contextmanager
+def _host_turn(key: str, min_gap: float = 0.0):
+    """Hold the cross-process lock for `key`; inside it, wait until `min_gap`
+    seconds have passed since the last holder finished. Without fcntl (Windows)
+    this degrades to no locking."""
+    try:
+        import fcntl
+    except ImportError:
+        yield
+        return
+    lock_dir = CACHE_DIR / "locks"
+    lock_dir.mkdir(parents=True, exist_ok=True)
+    safe = re.sub(r"[^A-Za-z0-9_.-]", "_", key) or "host"
+    with open(lock_dir / f"{safe}.lock", "a+") as fh:
+        fcntl.flock(fh, fcntl.LOCK_EX)
+        try:
+            fh.seek(0)
+            try:
+                last = float(fh.read().strip() or 0)
+            except ValueError:
+                last = 0.0
+            wait = min_gap - (time.time() - last)
+            if 0 < wait <= min_gap:
+                time.sleep(wait)
+            yield
+        finally:
+            fh.seek(0)
+            fh.truncate()
+            fh.write(str(time.time()))
+            fh.flush()
+            fcntl.flock(fh, fcntl.LOCK_UN)
+
+
+def _cache_paths(url: str) -> tuple[Path, Path]:
+    h = hashlib.sha1(url.encode("utf-8")).hexdigest()
+    return CACHE_DIR / f"{h}.bin", CACHE_DIR / f"{h}.json"
+
+
+def _cache_get(url: str):
+    """(content_type, final_url, raw) for a fresh cached 200 body, else None."""
+    if os.environ.get("GEM_FETCH_NO_CACHE"):
+        return None
+    body, meta = _cache_paths(url)
+    try:
+        m = json.loads(meta.read_text())
+        if time.time() - float(m["fetched"]) > _CACHE_MAX_AGE:
+            return None
+        return m.get("content_type", ""), m.get("final_url", ""), body.read_bytes()
+    except (OSError, ValueError, KeyError):
+        return None
+
+
+def _cache_put(url: str, content_type: str, final_url: str, raw: bytes) -> None:
+    body, meta = _cache_paths(url)
+    try:
+        CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        tmp = body.with_suffix(f".{os.getpid()}.tmp")
+        tmp.write_bytes(raw)
+        os.replace(tmp, body)
+        meta.write_text(json.dumps({"url": url, "content_type": content_type,
+                                    "final_url": final_url, "fetched": time.time(),
+                                    "bytes": len(raw)}))
+    except OSError as e:
+        print(f"  [fetch] cache write failed for {url}: {e}", file=sys.stderr)
+
+
+def _rate_limited(status: str, raw: bytes) -> bool:
+    """A 429 that is a plain rate limit, not a bot wall wearing a 429."""
+    return status == "429" and not _is_cf_wall(status, raw)
+
+
+def _wait_out_rate_limit(url: str, tmp: str, timeout: int, ua: str | None,
+                         headers: dict | None, cookie: str | None, notes: list[str],
+                         attempts: int) -> tuple[str, str, str, bytes]:
+    """Plain retries with growing pauses until the 429 clears or `attempts`
+    run out. The caller holds the host lock, so only one process retries a
+    given server at a time. Returns the last (status, content_type, final_url, raw)."""
+    status, content_type, final_url, raw = "429", "", "", b""
+    pause = _RATE_LIMIT_PAUSE_START
+    for n in range(1, attempts + 1):
+        time.sleep(pause + random.uniform(0, 2))
+        status, content_type, final_url, raw = _curl_attempts(
+            url, tmp, timeout, ua, headers, cookie, notes)
+        if not _rate_limited(status, raw):
+            notes.append("rate_limit_wait")
+            print(f"  [fetch] {_host(url)}: rate limit cleared after {n} "
+                  f"retr{'y' if n == 1 else 'ies'}", file=sys.stderr)
+            return status, content_type, final_url, raw
+        pause = min(pause + _RATE_LIMIT_PAUSE_STEP, _RATE_LIMIT_PAUSE_MAX)
+    print(f"  [fetch] {_host(url)}: still rate-limited after {attempts} retries",
+          file=sys.stderr)
+    return status, content_type, final_url, raw
+
+
 def _impersonate(url: str, timeout: int, ua: str | None, headers: dict | None,
                  cookie: str | None):
     """First curl_cffi fingerprint that gets past the wall, or None."""
@@ -530,7 +663,8 @@ def _earn_clearance(url: str) -> tuple[str | None, str | None]:
 
 
 def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
-               headers: dict | None = None) -> Page:
+               headers: dict | None = None,
+               rate_limit_attempts: int | None = None) -> Page:
     """
     Fetch `url` and return a Page. HTTP errors are reported in `status`
     ("404", "000" when curl couldn't connect), never raised — callers like the
@@ -538,6 +672,9 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
 
     `headers` are extra request headers (a host's JSON API may need them).
     Cloudflare walls are escalated automatically — see the block above _curl.
+    A plain 429 is waited out with up to `rate_limit_attempts` paced retries
+    (default `RATE_LIMIT_ATTEMPTS`); paced hosts also go through the shared
+    host lock and the disk cache. See the module docstring.
 
     The body lands in a private temp file that is always cleaned up. A fixed
     filename would let concurrent verifier runs (parallel subagents in one
@@ -550,6 +687,10 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
     status, content_type, final_url, raw = "000", "", "", b""
     host = _host(url)
     sec = _is_sec(host)
+    if rate_limit_attempts is None:
+        rate_limit_attempts = RATE_LIMIT_ATTEMPTS
+    pace_key, pace_gap = _paced(host)
+    cached = _cache_get(url) if pace_key and not headers else None
     cookie, cookie_ua = (None, None) if sec else _clearance_cookie(url)
     if cookie:
         ua = cookie_ua or ua          # the cookie is only honoured with its own UA
@@ -558,16 +699,30 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
         notes.append("sec_declared_ua")
         _sec_throttle()
     try:
-        if host in _IMPERSONATE_HOSTS:
+        if cached:
+            content_type, final_url, raw = cached
+            status = "200"
+            notes.append("disk_cache")
+        elif host in _IMPERSONATE_HOSTS:
             got = _impersonate(url, timeout, ua, headers, cookie)
             if got:
                 status, content_type, final_url, raw = got
                 notes.append("cf_impersonate")
             else:
                 _IMPERSONATE_HOSTS.discard(host)     # the wall changed; run the full ladder
-        if "cf_impersonate" not in notes:
-            status, content_type, final_url, raw = _curl_attempts(
-                url, tmp, timeout, ua, headers, cookie, notes)
+        if not cached and "cf_impersonate" not in notes:
+            if pace_key:
+                with _host_turn(pace_key, pace_gap):
+                    status, content_type, final_url, raw = _curl_attempts(
+                        url, tmp, timeout, ua, headers, cookie, notes)
+            else:
+                status, content_type, final_url, raw = _curl_attempts(
+                    url, tmp, timeout, ua, headers, cookie, notes)
+            if not sec and _rate_limited(status, raw) and rate_limit_attempts > 0:
+                # A queue, not a wall: wait it out, one process per server at a time.
+                with _host_turn(pace_key or host, pace_gap):
+                    status, content_type, final_url, raw = _wait_out_rate_limit(
+                        url, tmp, timeout, ua, headers, cookie, notes, rate_limit_attempts)
             if not sec and (_is_cf_wall(status, raw) or status in _BLOCK_STATUSES):
                 # 1. TLS-fingerprint impersonation (no window, no cookie).
                 got = _impersonate(url, timeout, ua, headers, cookie)
@@ -592,6 +747,9 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
             status, content_type, final_url, raw = _curl_attempts(
                 url, tmp, timeout, ua, headers, cookie, notes)
             text, is_pdf = _extract(url, tmp, content_type, raw, notes)
+        if (pace_key and not cached and not headers and status == "200" and raw
+                and (text.strip() or not is_pdf)):
+            _cache_put(url, content_type, final_url, raw)
         return Page(status=status, text=text, content_type=content_type,
                     final_url=final_url, is_pdf=is_pdf, raw_len=len(raw), notes=notes)
     finally:
@@ -665,8 +823,11 @@ def main():
     p.add_argument("--text", action="store_true", help="print the body (HTML or PDF text)")
     p.add_argument("--head", type=int, default=0, help="print only the first N body characters")
     p.add_argument("--timeout", type=int, default=30)
+    p.add_argument("--rate-limit-attempts", type=int, default=None,
+                   help=f"paced retries on a plain HTTP 429 (default {RATE_LIMIT_ATTEMPTS})")
     args = p.parse_args()
-    page = fetch_page(args.url, timeout=args.timeout)
+    page = fetch_page(args.url, timeout=args.timeout,
+                      rate_limit_attempts=args.rate_limit_attempts)
     print(f"status: {page.status}  content-type: {page.content_type or '-'}  "
           f"bytes: {page.raw_len}  pdf: {page.is_pdf}")
     if page.final_url and page.final_url != args.url:

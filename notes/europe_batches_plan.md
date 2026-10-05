@@ -132,8 +132,11 @@ assignments tab row.
 ## Step 4: hand-off to Dan
 
 - Output is the normal pair in `batches/<slug>/deliverables/` plus the review page
-  (`review_app/build_static.py`), so Dan can accept or reject each change in a
-  browser and we rebuild from his calls.
+  (`review_app/build_static.py`, published as a claude.ai artifact from the work
+  profile and shared with Dan by email as an editor), so Dan can accept or reject
+  each change in a browser, his calls save on the page, and we rebuild from them.
+  Germany's page: https://claude.ai/artifact/3YnJ2C36PwrTJ8qYgUxbuW (published
+  2026-10-05, not yet shared).
 - Before any run, tell Dan which countries we are taking and when the packet lands,
   so he does not research the same units. Ask: packet format he prefers, whether he
   wants to make the review calls himself, where on Drive to put the files, and the

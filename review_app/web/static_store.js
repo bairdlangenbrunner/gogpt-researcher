@@ -6,9 +6,11 @@
    never touched.
 
    Opened as a claude.ai artifact, the page also keeps the log in the artifact's own database
-   (one document per reviewer under logs/, the whole log in `records`), so the sender reads it
-   back directly and the download is only a backup. Opened from disk there is no window.claude
-   and the page runs on the browser log alone.
+   (one document per viewer under logs/, named by the viewer's id, the whole log in `records`),
+   so the sender reads it back directly and the download is only a backup. A viewer the
+   artifact does not let write (not shared with them as an editor, or outside the owner's
+   organization) is told so in the banner and keeps the log in the browser. Opened from disk
+   there is no window.claude and the page runs on the browser log alone.
 
    The page sets window.REVIEW_STATIC = {reviewer, data} before this file runs; app.js picks the
    adapter up as window.StaticStore. */
@@ -32,6 +34,24 @@
       var raw = localStorage.getItem(LOG_KEY);
       if (raw) LOG = JSON.parse(raw);
     } catch (e) { STORAGE_OK = false; }
+    if (!LOG.length) carryOver();
+  }
+  // A rebuilt page has a new build stamp and so a new, empty log. Bring across the calls this
+  // browser made on earlier builds of the same folders, for the records the rebuild still has
+  // (record ids are stable across rebuilds). The earlier logs stay where they are.
+  function carryOver() {
+    var tail = ":" + (DATA.dirs || []).join(","), old = [];
+    try {
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (!k || k === LOG_KEY || k.indexOf("review-log:") !== 0 || k.slice(-tail.length) !== tail) continue;
+        var recs = JSON.parse(localStorage.getItem(k) || "[]");
+        if (Array.isArray(recs)) old = old.concat(recs.filter(function (r) { return r && IDX[r.key]; }));
+      }
+    } catch (e) { return; }
+    if (!old.length) return;
+    LOG = merge(old);
+    saveLog();
   }
   function saveLog() {
     try { localStorage.setItem(LOG_KEY, JSON.stringify(LOG)); STORAGE_OK = true; }
@@ -142,6 +162,15 @@
   }
 
   // ---- the artifact database ----
+  var NO_WRITE = "this page is not allowed to save your calls to the artifact (it has to be shared with you by " +
+    "email, as an editor, by the person who published it): your calls are kept in this browser; use download " +
+    "decisions before closing";
+  function saveError(e) {
+    var code = (e && e.code) || "";
+    if (code === "invalid_argument" || code === "not_granted" || code === "revoked") return NO_WRITE;
+    return "the page could not save to the artifact (" + (code || (e && e.message) || "unknown") +
+      "): your calls are kept in this browser; use download decisions before closing";
+  }
   function fingerprint(r) {
     return [r.key, r.ts, r.reviewer, r.decision || "", r.call || "", !!r.undecided, r.suggested_value || "", r.note || ""].join("\u0001");
   }
@@ -165,8 +194,7 @@
     SYNC.chain = SYNC.chain.then(function () {
       return SYNC.doc.set({reviewer: REVIEWER, built: DATA.built || "", dirs: DATA.dirs || [], updated: now(), records: snapshot});
     }).then(function () { SYNC.state = "synced"; SYNC.message = ""; }, function (e) {
-      SYNC.state = "error"; SYNC.message = "the page could not save to the artifact (" + ((e && e.code) || (e && e.message) || "unknown") +
-        "): your calls are kept in this browser; use download decisions before closing";
+      SYNC.state = "error"; SYNC.message = saveError(e);
       if (window.ReviewApp && window.ReviewApp.banner) window.ReviewApp.banner(SYNC.message);
     });
     return SYNC.chain;
@@ -179,12 +207,19 @@
       if (!SYNC.db) return;
       var uid = user && user.id ? user.id() : Promise.resolve(null);
       var me = user && user.me ? user.me() : Promise.resolve(null);
-      return Promise.all([uid, me]).then(function (u) {
+      var can = user && user.can ? user.can("data.write") : Promise.resolve(null);
+      return Promise.all([uid, me, can]).then(function (u) {
         var who = u[1] && u[1].name ? initials(u[1].name) : "";
         if (who) REVIEWER = who;                       // the viewer's own initials, not the build's
-        SYNC.doc = SYNC.db.doc("logs/" + segment(REVIEWER + (u[0] ? "~" + u[0] : "")));
+        if (u[2] === false) {                           // the artifact has said this viewer cannot write
+          SYNC.state = "error"; SYNC.message = NO_WRITE; return null;
+        }
+        // one document per viewer, named by their id (their initials when the viewer has no id),
+        // so every device they use merges into the same log
+        SYNC.doc = SYNC.db.doc("logs/" + segment(u[0] || REVIEWER));
         return SYNC.doc.get();
       }).then(function (snap) {
+        if (snap === null) return;
         var body = snap && snap.exists ? snap.data() : null;
         var remote = body && Array.isArray(body.records) ? body.records : [];
         var merged = merge(remote), had = LOG.length;
@@ -194,8 +229,7 @@
       });
     }).catch(function (e) {
       SYNC.state = "error";
-      SYNC.message = "the page could not open the artifact's database (" + ((e && e.code) || (e && e.message) || "unknown") +
-        "): your calls are kept in this browser only; use download decisions before closing";
+      SYNC.message = saveError(e);
     });
   }
   function download() {

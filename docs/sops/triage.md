@@ -50,7 +50,7 @@ Run this against the **GOGPT-scoped CSV** (`scope_filter.py` output, per update.
 A flag is a **candidate**, not a decision. For each one:
 
 1. Search specifically for recent evidence — company disclosures, permit renewals, news, regulator filings — dated more recently than the unit's current last-seen date.
-2. **Evidence found** → the clock resets. Do not change status. Update the Latest Activity field / last-seen date and its datasource so the next cycle's date arithmetic starts from the new date.
+2. **Evidence found** → the clock resets. Do not change status. If the evidence is more than a year old, update the Latest Activity date and its datasource so the next cycle's date arithmetic starts from the new date. If it is from the last twelve months the project is moving: describe it in the note and leave Latest Activity alone (`docs/reference/lifecycle_rules.md`).
 3. **No evidence found** after a genuine search → confirm the inferred status. Stage it in the `updates` lane with the paired year-field blanking (Start Year blanks for both `shelved` and `cancelled`, per update.md §4.2) and record the last-seen source/date in the Latest Activity field so a future cycle can re-run the clock from a documented baseline.
 4. **Never leave a flagged candidate un-staged with a hedge.** Per update.md §4.1: if the search genuinely turns up nothing, that itself is the confirmation — stage the inferred status rather than punting it to a `qa` note. A `qa` record is for genuine ambiguity (conflicting evidence), not for "didn't get to it."
 
@@ -108,4 +108,4 @@ Stop and consult the user when:
 |---|---|---|
 | Shelved – inferred 2 y | ≥2 y no activity evidence | Stage `shelved – inferred 2 y`, blank Start Year, log last-seen source |
 | Cancelled – inferred 4 y | ≥4 y no activity evidence | Stage `cancelled – inferred 4 y`, blank Start Year, log last-seen source |
-| Either, evidence found | Recent evidence located | No status change — update Latest Activity date, reset the clock |
+| Either, evidence found | Recent evidence located | No status change — reset the clock; update the Latest Activity date only if the evidence is more than a year old |

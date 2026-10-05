@@ -40,8 +40,9 @@ That is a one-time accuracy test, not the production shape. Production
 - **Per unit, the task depends on its status group.** In-development: has the
   status moved, is there a start year or scheduled operating event, turbine
   make and model, owner, capacity, and a Latest Activity entry if nothing
-  has been reported for a long time. Shelved and shelved-inferred: revived,
-  cancelled, or still quiet; Latest Activity. Planned retirement this year:
+  has been reported for more than a year. Shelved and shelved-inferred: revived,
+  cancelled, or still quiet; Latest Activity if the newest report is more
+  than a year old. Cancelled-inferred: anything reported since. Planned retirement this year:
   did it retire; if nothing confirms it by December, the manual says add a
   scheduled retired event for next year. Other planned retirement: does the
   plan still hold.

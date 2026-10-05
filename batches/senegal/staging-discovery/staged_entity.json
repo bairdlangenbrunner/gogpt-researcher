@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "lane": "entity",
+    "scope": {"country": "Senegal", "quarter": "q3-2026", "csv": "gem_export_gogpt_scoped.csv"},
+    "generated": "2026-08-05T12:40:33-04:00",
+    "counts": {"records": 3}
+  },
+  "records": [
+    {
+      "gem_unit_id": "",
+      "gem_plant_id": "",
+      "plant_name": "Gandon power station",
+      "unit_name": "",
+      "country": "Senegal",
+      "fields": {},
+      "current": {},
+      "refs": {},
+      "verifications": [
+        {"url": "https://www.kap.org.tr/en/Bildirim/1233784", "ok": true, "contains_value": true},
+        {"url": "https://www.kap.org.tr/en/Bildirim/1514788", "ok": true, "contains_value": true}
+      ],
+      "entity_name": "Ndar Energies SA",
+      "role": "owner",
+      "entity_country": "Senegal",
+      "lookup_result": "not_found_in_local_data (entity_lookup.py against the full combustion export; remote lookup skipped — GEM_PROJECT_DB_BASE_URL unset, so check the live entity system before creating)",
+      "tier": "high",
+      "independent": true,
+      "source_language": "en/tr",
+      "researcher_notes": "SPV owning the Gandon 255 MW CCGT. Parent chain for the entity record: Aksa-NDAR Holding SA 85% (itself 60% Aksa Enerji Uretim AŞ — EXISTING entity E100000002411 — per Aksa's KAP subsidiary table, Bildirim/1514788, 2025-11-10); National Electricity Company of Senegal (existing E100000000894) reported as 15% direct holder per Senegalese press (dakaractu 2025-10-28: Aksa 51% / ICONS-CSE-ELTON consortium 34% / Senelec 15% — reconciles with the KAP structure arithmetically). Whether to create the intermediate Aksa-NDAR Holding SA entity or attach Aksa Enerji directly is the ownership-team's call; SPV-as-owner is acceptable per the ownership rules.",
+      "action": "Before creating, re-run the lookup against the live entity system; then create entity 'Ndar Energies SA' (Senegal, owner) with the parent chain above."
+    },
+    {
+      "gem_unit_id": "",
+      "gem_plant_id": "",
+      "plant_name": "Sandiara power station",
+      "unit_name": "",
+      "country": "Senegal",
+      "fields": {},
+      "current": {},
+      "refs": {},
+      "verifications": [
+        {"url": "https://africaoilgasreport.com/2023/07/power-deficit/tsk-to-start-construction-of-360mw-gas-fired-plant-in-senegal-from-2024/", "ok": true, "contains_value": true},
+        {"url": "https://www.power-technology.com/marketdata/power-plant-profile-sandiara-power-plant-senegal/", "ok": true, "contains_value": true}
+      ],
+      "entity_name": "TSK Electronica y Electricidad SA",
+      "role": "owner",
+      "entity_country": "Spain",
+      "lookup_result": "not_found_in_local_data (only irrelevant substring hits; remote lookup skipped — GEM_PROJECT_DB_BASE_URL unset). Note TSK appears in GEM datasource URLs as EPC contractor (grupotsk.com cited on the existing Kyrene Cement row) but has no entity record in the combustion export.",
+      "tier": "medium",
+      "independent": true,
+      "source_language": "en",
+      "researcher_notes": "Spanish engineering group (Grupo TSK, Gijón), 50% developer stake in the Sandiara 360 MW CCGT per the GlobalData profile. Cross-country entity (Spain) — flag for the entity team per the cross-country warning convention.",
+      "action": "Before creating, re-run the lookup against the live entity system; only create if the Sandiara plant record is accepted."
+    },
+    {
+      "gem_unit_id": "",
+      "gem_plant_id": "",
+      "plant_name": "Sandiara power station",
+      "unit_name": "",
+      "country": "Senegal",
+      "fields": {},
+      "current": {},
+      "refs": {},
+      "verifications": [
+        {"url": "https://africaoilgasreport.com/2023/07/power-deficit/tsk-to-start-construction-of-360mw-gas-fired-plant-in-senegal-from-2024/", "ok": true, "contains_value": true}
+      ],
+      "entity_name": "LFR Energy",
+      "role": "owner",
+      "entity_country": "Senegal",
+      "lookup_result": "not_found_in_local_data (remote lookup skipped — GEM_PROJECT_DB_BASE_URL unset)",
+      "tier": "low",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "TSK's local partner in the Sandiara project (africaoilgasreport 2023-07-18). No corporate website or registry entry found in the 2026 follow-up hunt — legal form and jurisdiction unconfirmed, share percentage unstated. Weakest entity of the batch; create only if the Sandiara plant record is accepted, and consider recording ownership as 'TSK [50%]; LFR Energy' with LFR's share blank per the ownership rules.",
+      "action": "Before creating, re-run the lookup against the live entity system; only create if the Sandiara plant record is accepted."
+    }
+  ]
+}

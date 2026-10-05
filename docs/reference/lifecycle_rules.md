@@ -47,6 +47,17 @@ mentioned in media or company documents for a while, record the most recent sour
 and the date it was last referenced there. That record is what a future pass uses to
 decide whether the 2-year or 4-year threshold has been crossed.
 
+**Which units get one** (Baird 2026-10-05, after Amalia Llano's New York review): the briefs
+offer Latest Activity only for (1) in-development units that have gone quiet, (2) shelved and
+shelved-inferred units, which are still counting toward the 4-year mark, (3) cancelled-inferred
+units, which are checked each pass for any newer report or a revival, and (4) any inferred
+status where the field is blank. In every case the date must be at least a year old: a report
+from the last twelve months means the project is moving, so it goes in the note and Latest
+Activity is left alone. It is never filled for operating, mothballed, retired or plainly
+cancelled units, or for planned-retirement checks. `build_state_brief.py` `unit_tasks` and the
+`state-sweep.js` prompt carry this, and `state_gate.py` fails an edit that breaks it (gate
+`latest-activity`).
+
 **Format:** Latest Activity is a date field in the GEM database. The export renders it as
 `Year: 2024, Month: 6, Day: 17` (month and day optional), and every one of the ~2,100 filled
 values in the 2026-10-02 export has that form. Stage the date of the newest dated report; what

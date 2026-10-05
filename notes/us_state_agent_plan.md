@@ -115,7 +115,8 @@ gap list in `notes/qc_checklist_plan.md`): in-development, shelved,
 mothballed and planned-retirement checks by status group; cancelled or
 retired units missing their year; blank fuel, status, technology, owner,
 coordinates or city; zero capacity; unknown technology; blank start year on
-an operating unit; inferred status with no Latest Activity; missing EIA IDs;
+an operating unit; cancelled-inferred units (anything reported since);
+inferred status with no Latest Activity; missing EIA IDs;
 any value whose Data Source cell is empty. `--extra-tasks` adds the
 possible-updates backlog rows and scan hits per plant. The "Fields to report
 on" list shrinks to the fields those tasks touch, and with the default
@@ -205,6 +206,7 @@ Read-only. Hard failures exit non-zero; advisory lines are informational.
 | headers | hard | every `fields` key is an export header and not a read-only column |
 | cell prose | hard | a value cell holds a value, not a sentence or a URL |
 | dates | hard | `Latest Activity` reads `Year: YYYY, Month: M, Day: D` (month and day optional); the year columns hold a four-digit year |
+| latest activity | hard | a `Latest Activity` edit is only for a unit in development, shelved or with an inferred status, and its date is at least a year old |
 | false high | advisory | a `high` status change with fewer than two independent hosts |
 | independence | advisory | `independent: true` with fewer than two verified refs |
 | entities | advisory | every new owner or operator name passes `entity_lookup.py` (skipped offline) |
@@ -246,6 +248,11 @@ that Latest Activity is a date field in GEM (every filled value in the export
 reads `Year: 2026, Month: 6, Day: 29`); the 8 Maryland values were free text.
 The gate now fails free text there (`dates`), the sweep prompt says so, and
 `docs/reference/lifecycle_rules.md` records the format.
+Narrowed again on 2026-10-05 after Amalia Llano's New York review: Latest
+Activity is only for stalled projects (in development, shelved or inferred
+status) and only with a date at least a year old. All 8 Maryland values and 4
+of the 5 New York values were dropped and the gate `latest-activity` now
+fails such edits.
 
 ### New York result (2026-10-02)
 
