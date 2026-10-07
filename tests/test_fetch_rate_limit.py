@@ -34,6 +34,9 @@ def net(monkeypatch, tmp_path):
     monkeypatch.setattr(fetch, "_clearance_cookie", lambda url: (None, None))
     monkeypatch.setattr(fetch.time, "sleep", lambda s: state["sleeps"].append(s))
     monkeypatch.setattr(fetch, "CACHE_DIR", tmp_path / "cache")
+    monkeypatch.setattr(fetch, "ROUTES_PATH", tmp_path / "routes.json")
+    monkeypatch.setattr(fetch, "FAIL_LOG", tmp_path / "failures.jsonl")
+    monkeypatch.setattr(fetch, "_render", lambda *a, **k: None)
     monkeypatch.setattr(fetch, "_IMPERSONATE_HOSTS", set())
     monkeypatch.delenv("GEM_FETCH_NO_CACHE", raising=False)
     return state
@@ -108,3 +111,12 @@ def test_host_turn_enforces_the_minimum_gap(net):
     with fetch._host_turn("gap-test", 3.0):
         pass
     assert net["sleeps"] and 0 < net["sleeps"][0] <= 3.0
+
+
+@pytest.mark.parametrize("variant", [
+    "https://www.uvp-verbund.de/trefferanzeige?docuuid=abc&rstart=380&currentSelectorPage=1",
+    "https://uvp.niedersachsen.de/trefferanzeige?docuuid=abc&plugid=%2Fingrid-group%3Aige-iplug-ni",
+])
+def test_register_page_variants_share_one_cache_entry(variant):
+    assert fetch._cache_key(variant) == "https://www.uvp-verbund.de/trefferanzeige?docuuid=abc"
+    assert fetch._cache_key(OTHER_URL) == OTHER_URL

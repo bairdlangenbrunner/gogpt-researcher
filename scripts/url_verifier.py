@@ -60,7 +60,7 @@ import sys
 import time
 import urllib.parse
 
-from fetch import fetch_page
+from fetch import _host_turn, fetch_page
 
 
 class CitationError(Exception):
@@ -139,72 +139,96 @@ def _fetch(url, timeout=30):
 # Live-fetch outcomes that mean "bot-blocked, page presumptively live" — these
 # route to the Wayback fallback instead of a hard fail.
 _BOT_BLOCK_STATUSES = ("401", "403", "429")
+# Outcomes that mean the live page is gone, moved, or the server is broken
+# ("000" = no connection at all, e.g. a domain that no longer resolves). A
+# person would open the archived copy, so these also try the Wayback copies,
+# but a pass only names the archived address; the live url still fails.
+_DEAD_STATUSES = ("000", "400", "404", "410", "500", "502", "503", "504", "520",
+                  "521", "522", "523", "525", "526")
 _BOT_BLOCK_TITLES = (
     "just a moment", "attention required", "access denied", "forbidden",
     "too many requests",
 )
 
 
-def _wayback_snapshot(url):
-    """Newest Wayback snapshot for `url` via the availability API.
-    Returns (snapshot_url, timestamp) or (None, None). Cached per process."""
-    key = ("__wayback__", url)
+def _archive_get(api):
+    """GET an archive.org lookup through the shared archive.org lock (parallel
+    verifiers take turns, one second apart). Returns the body text, or None
+    when the service refused or answered with its "Temporarily Offline" page."""
+    try:
+        with _host_turn("archive.org", 1.0):
+            r = subprocess.run(["curl", "-sL", "-A", _DEFAULT_UA, "--max-time", "30", api],
+                               capture_output=True, text=True, timeout=35)
+    except subprocess.SubprocessError:
+        return None
+    out = r.stdout or ""
+    if r.returncode != 0 or "Temporarily Offline" in out[:600] or out.lstrip().startswith("<"):
+        return None
+    return out
+
+
+def _wayback_snapshots(url, limit=3):
+    """Up to `limit` Wayback snapshots of `url` that differ in content, newest
+    first, as [(snapshot_url, timestamp)]. "lookup-failed" when neither lookup
+    service answered (not cached: an archived copy may exist). Cached per process.
+
+    Two services, because each fails differently (October 2026): the
+    availability API throttles (429) fully percent-encoded addresses and often
+    reports nothing for addresses with a query string; the CDX index is more
+    complete but goes "Temporarily Offline" for minutes at a time. Older
+    captures matter because a page's numbers change: the value a source was
+    cited for may only be on an earlier copy.
+    """
+    key = ("__wayback__", url, limit)
     if key in _CACHE:
         return _CACHE[key]
-    # The lookup service rate-limits (HTTP 429) and in October 2026 refused some
-    # forms of the request, so try several and pause between rounds. A refused lookup is not "no snapshot": it is not cached, and the
-    # caller reports it as a failed lookup.
-    # the service answered 429 every time the target address was fully
-    # percent-encoded and 200 when it was sent nearly as is, so send it lightly
-    # encoded first.
     light = urllib.parse.quote(url, safe=":/?=%~,+@;!$'()*")
     full = urllib.parse.quote(url, safe="")
-    apis = ("https://archive.org/wayback/available?url=" + light,
-            "http://archive.org/wayback/available?url=" + light,
-            "https://archive.org/wayback/available?url=" + full)
-    snap = (None, None)
-    answered = False
-    for round_no in range(3):
-        for api in apis:
+    # The index is the authority on "no copy". An empty answer from the
+    # availability service is not: it misses addresses the index has. So a
+    # run ends with "none" only when the index itself answered.
+    snaps, index_answered = [], False
+    for round_no in range(4):
+        out = _archive_get("http://web.archive.org/cdx/search/cdx?url=" + light
+                           + "&filter=statuscode:200&collapse=digest"
+                           + "&fl=timestamp,original&limit=-" + str(limit))
+        if out is not None:
+            index_answered = True
+            for line in reversed(out.strip().splitlines()):
+                ts, _, orig = line.partition(" ")
+                if ts.isdigit() and orig:
+                    snaps.append((f"https://web.archive.org/web/{ts}/{orig}", ts))
+            break
+        for api in ("https://archive.org/wayback/available?url=" + light,
+                    "https://archive.org/wayback/available?url=" + full):
+            out = _archive_get(api)
             try:
-                r = subprocess.run(
-                    ["curl", "-sL", "-A", _DEFAULT_UA, "--max-time", "30", api],
-                    capture_output=True, text=True, timeout=35,
-                )
-                data = json.loads(r.stdout or "")
-            except (subprocess.SubprocessError, ValueError):
+                data = json.loads(out) if out else None
+            except ValueError:
+                data = None
+            if data is None:
                 continue
-            answered = True
             closest = (data.get("archived_snapshots") or {}).get("closest") or {}
             if closest.get("available") and closest.get("url"):
-                # Force https; the API often returns http:// snapshot URLs.
-                u = closest["url"].replace("http://web.archive.org",
-                                           "https://web.archive.org", 1)
-                snap = (u, closest.get("timestamp", ""))
+                u = closest["url"].replace("http://web.archive.org", "https://web.archive.org", 1)
+                snaps.append((u, closest.get("timestamp", "")))
             break
-        if answered:
+        if snaps:
             break
-        time.sleep(5 * (round_no + 1))
-    if not answered:
-        # The CDX index is a separate service that usually still answers when
-        # the availability lookup is throttled; ask it for the newest 200.
-        cdx = ("http://web.archive.org/cdx/search/cdx?url=" + light
-               + "&limit=-1&filter=statuscode:200&fl=timestamp,original")
-        try:
-            r = subprocess.run(["curl", "-s", "-A", _DEFAULT_UA, "--max-time", "30", cdx],
-                               capture_output=True, text=True, timeout=35)
-            line = (r.stdout or "").strip().splitlines()
-            if r.returncode == 0 and (not line or line[-1].split(" ")[0].isdigit()):
-                answered = True
-                if line:
-                    ts, orig = line[-1].split(" ", 1)
-                    snap = (f"https://web.archive.org/web/{ts}/{orig}", ts)
-        except subprocess.SubprocessError:
-            pass
-    if not answered:
+        time.sleep(10 * 2 ** round_no)        # 10, 20, 40, 80 seconds
+    if not snaps and not index_answered:
+        return "lookup-failed"                 # not cached: a copy may exist
+    _CACHE[key] = snaps
+    return snaps
+
+
+def _wayback_snapshot(url):
+    """Newest snapshot as (snapshot_url, timestamp), (None, None) if there is
+    none, or ("lookup-failed", None). Kept for callers of the old form."""
+    snaps = _wayback_snapshots(url, limit=1)
+    if snaps == "lookup-failed":
         return ("lookup-failed", None)
-    _CACHE[key] = snap
-    return snap
+    return snaps[0] if snaps else (None, None)
 
 
 _WS_RE = re.compile(r"\s+")
@@ -222,26 +246,44 @@ def _norm(s):
     return _WS_RE.sub(" ", s).lower()
 
 
-def _check_wayback(url, expected, require_all, live_reason):
-    """Bot-block fallback: run the content check against the newest Wayback
-    snapshot. Returns (ok, reason); ok=True means the LIVE url stays citable."""
-    snap_url, ts = _wayback_snapshot(url)
-    if snap_url == "lookup-failed":
+def _check_wayback(url, expected, require_all, live_reason, dead=False):
+    """Archive fallback: run the content check against up to three Wayback
+    snapshots, newest first. For a blocked live page (dead=False) a pass means
+    the LIVE url stays citable. For a dead or moved page (dead=True) the live
+    url is never citable, so the result is a FAIL that names the archived
+    address carrying the value as a lead (the Update SOP never cites
+    web.archive.org addresses)."""
+    snaps = _wayback_snapshots(url)
+    if snaps == "lookup-failed":
         return False, (f"{live_reason}; the Wayback lookup itself was refused, "
                        "so an archived copy may exist. Try again later")
-    if not snap_url:
+    if not snaps:
         return False, f"{live_reason}; no Wayback snapshot to verify against"
-    status, text, _is_pdf, _notes = _fetch(snap_url)
-    if status != "200":
-        return False, f"{live_reason}; Wayback snapshot fetch failed (HTTP {status})"
-    text_lower = _norm(text)
-    missing = [s for s in expected if _norm(s) not in text_lower]
-    found = [s for s in expected if _norm(s) in text_lower]
-    if (require_all and missing) or (not require_all and not found):
-        return False, (f"{live_reason}; Wayback snapshot {ts} missing expected "
-                       f"content: {missing if require_all else expected}")
-    return True, (f"bot-blocked live ({live_reason}); value verified via "
-                  f"Wayback snapshot {ts}")
+    unavailable, checked = 0, []
+    for snap_url, ts in snaps:
+        status, text, _is_pdf, _notes = _fetch(snap_url)
+        if status != "200" or "Temporarily Offline" in (text or "")[:3000]:
+            unavailable += 1
+            continue
+        text_lower = _norm(text)
+        missing = [s for s in expected if _norm(s) not in text_lower]
+        found = [s for s in expected if _norm(s) in text_lower]
+        if (require_all and missing) or (not require_all and not found):
+            checked.append((ts, missing if require_all else expected))
+            continue
+        if dead:
+            return False, (f"{live_reason}; the live page is gone, but the archived copy "
+                           f"{snap_url} still shows the value. Use it as a lead to a live "
+                           f"source; citing an archived address is not an approved route")
+        return True, (f"bot-blocked live ({live_reason}); value verified via "
+                      f"Wayback snapshot {ts}")
+    if not checked:
+        return False, (f"{live_reason}; the Wayback snapshots could not be read "
+                       f"(archive unavailable). Try again later")
+    ts, miss = checked[0]
+    more = f" and {len(checked) - 1} older snapshot(s)" if len(checked) > 1 else ""
+    return False, (f"{live_reason}; Wayback snapshot {ts}{more} missing expected "
+                   f"content: {miss}")
 
 
 def verify_url(url, expected, strict=False, require_all=True, wayback_fallback=True,
@@ -290,7 +332,19 @@ def _check(url, expected, require_all, wayback_fallback=True, timeout=30):
                 text or "", re.I):
             return _check_wayback(url, expected, require_all,
                                   f"HTTP {status} firewall block page")
+        if wayback_fallback and status in _DEAD_STATUSES:
+            # Gone, moved, or the server is broken: a person would open the
+            # archived copy, so look for one that carries the value.
+            return _check_wayback(url, expected, require_all, f"HTTP {status}", dead=True)
         return False, f"HTTP {status}"
+
+    if "empty_answer" in (notes or []) and not all(_norm(s) in _norm(text) for s in expected):
+        # The server's "no record" template: either the record was taken down
+        # or a loaded register sent it for a real record. Not evidence either way.
+        return False, ('empty record page: the server showed its "no details" '
+                       "template. The record may have been taken down, or the server "
+                       "was under load. Try again later, and look for the documents "
+                       "by their own addresses")
 
     if is_pdf:
         # No HTML <title> to soft-error-check; require a usable text layer instead.
@@ -303,7 +357,11 @@ def _check(url, expected, require_all, wayback_fallback=True, timeout=30):
         if title_match:
             title = title_match.group(1).lower()
             for bad in _SOFT_ERROR_TITLES:
-                if bad in title:
+                # status codes only as whole numbers: a parcel "Flur-Nr. 2404"
+                # or a postcode in a permit notice's title is not a 404
+                hit = (re.search(rf"(?<![\d.,]){bad}(?![\d.,])", title) if bad.isdigit()
+                       else bad in title)
+                if hit:
                     reason = f"soft-error page (title: {title_match.group(1).strip()!r})"
                     if wayback_fallback and any(b in title for b in _BOT_BLOCK_TITLES):
                         # Bot-wall/paywall interstitial served as 200 — same
@@ -321,9 +379,9 @@ def _check(url, expected, require_all, wayback_fallback=True, timeout=30):
     if not require_all and not found:
         return False, f"none of expected content found: {expected}"
 
-    route = [n for n in notes if n in ("cf_impersonate", "cf_clearance", "sec_declared_ua",
-                                       "pdf_ocr", "insecure_tls", "rate_limit_wait",
-                                       "disk_cache")]
+    route = [n for n in notes if n in ("cf_impersonate", "cf_clearance", "browser_render",
+                                       "sec_declared_ua", "pdf_ocr", "insecure_tls",
+                                       "rate_limit_wait", "disk_cache")]
     return True, f"OK (via {', '.join(route)})" if route else "OK"
 
 
@@ -345,6 +403,9 @@ def clear_cache():
 
 def main():
     argv = sys.argv[1:]
+    if not argv or argv[0] in ("-h", "--help"):
+        print(__doc__)
+        sys.exit(0)
     if "--log" in argv:
         i = argv.index("--log")
         try:

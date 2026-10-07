@@ -76,6 +76,34 @@ the terminals/pipelines verifiers' fetch layers):
     the lock with a minimum gap, and every 200 body is kept on disk
     (`work/fetch_cache/`, 30 days) so a permit page or PDF is fetched once
     and later reads cost the server nothing (note `disk_cache`).
+  - Real-Chrome render (2026-10-06), the last rung before the verifier's
+    archive fallback: when a 401/403/406/429 or a wall page survives
+    impersonation and the clearance cookie, the page is loaded in a real
+    Chrome (`cf_clearance.render`; it stays behind other windows by default,
+    see LNGCT_BROWSER_MODE there) and the HTTP status Chrome actually
+    received is reported. This passes walls that need a browser to solve a
+    puzzle (energate-messenger.de proof-of-work, DataDome on waz.de). The
+    cookies Chrome earns are stored, so later pages on that host go through
+    plain curl again. A PDF behind such a wall is re-downloaded with those
+    cookies (Chrome's PDF viewer is not the file). Note `browser_render`;
+    `--render` forces this rung. 406 joined the block statuses the same day
+    (chemieindustrie.de answers 406 to curl and 200 to an impersonated client).
+  - Learned routes (2026-10-06): every host that needed more than plain curl
+    is written to `work/fetch_routes.json` (env `GEM_FETCH_ROUTES`) with the
+    route that worked. The next fetch to that host starts on that route
+    (impersonation first, or straight to Chrome) instead of climbing the
+    ladder again. The file doubles as a per-host access record; see
+    `docs/reference/site_access.md`.
+  - The disk cache also keeps any 200 that cost a Chrome render or a rate-limit
+    wait, not only paced hosts.
+  - Sign-in walls: a free registration (energate's full article text) is not a
+    bot wall. `python scripts/cf_clearance.py --login <url>` opens a visible
+    Chrome for a person to sign in; the session cookies are stored and reused
+    by every later fetch to that site. Nothing here fills in credentials.
+  - Geographic or IP firewalls (waerme.hamburg answers "The URL you requested
+    has been blocked" even to real Chrome) cannot be passed from here. curl
+    honors `https_proxy`, so an in-country connection works; otherwise the
+    verifier's archive fallback is the route.
 """
 import codecs
 import contextlib
@@ -89,6 +117,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import urllib.parse
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -433,7 +462,7 @@ def _curl(url: str, tmp: str, timeout: int, ua: str | None, insecure: bool,
 _CF_WALL_STATUSES = {"403", "503", "429"}
 # Refusals that earn a TLS-impersonation retry even without wall markers
 # (Akamai "Access Denied", bare nginx 403). One retry per fingerprint is cheap.
-_BLOCK_STATUSES = {"401", "403", "429"}
+_BLOCK_STATUSES = {"401", "403", "406", "429"}
 _IMPERSONATE_AS = ("chrome", "firefox")
 _CF_WALL_MARKERS = (b"just a moment", b"attention required", b"cf-mitigated",
                     b"challenge-platform", b"cf_chl_", b"cf-chl", b"cloudflare",
@@ -522,8 +551,29 @@ def _host_turn(key: str, min_gap: float = 0.0):
             fcntl.flock(fh, fcntl.LOCK_UN)
 
 
+_UVP_PAGE_RE = re.compile(r"^https?://(?:www\.)?uvp(?:-verbund|\.[a-z-]+)\.de"
+                          r"(/(?:trefferanzeige|documents-ige-ng/).*)$", re.I)
+
+
+def _cache_key(url: str) -> str:
+    """The address a page is stored under. Permit register pages are one
+    server behind several host names, and links into it carry search-position
+    parameters (rstart, currentSelectorPage, plugid) that do not change the
+    page, so they share one key: the procedure id on www.uvp-verbund.de."""
+    m = _UVP_PAGE_RE.match(url)
+    if not m:
+        return url
+    path = m.group(1)
+    if path.lower().startswith("/trefferanzeige"):
+        q = dict(urllib.parse.parse_qsl(urllib.parse.urlsplit(url).query))
+        uuid = next((v for k, v in q.items() if k.lower() == "docuuid"), "")
+        if uuid:
+            path = "/trefferanzeige?docuuid=" + uuid
+    return "https://www.uvp-verbund.de" + path
+
+
 def _cache_paths(url: str) -> tuple[Path, Path]:
-    h = hashlib.sha1(url.encode("utf-8")).hexdigest()
+    h = hashlib.sha1(_cache_key(url).encode("utf-8")).hexdigest()
     return CACHE_DIR / f"{h}.bin", CACHE_DIR / f"{h}.json"
 
 
@@ -553,6 +603,109 @@ def _cache_put(url: str, content_type: str, final_url: str, raw: bytes) -> None:
                                     "bytes": len(raw)}))
     except OSError as e:
         print(f"  [fetch] cache write failed for {url}: {e}", file=sys.stderr)
+
+
+# ---------------------------------------------------------------------------
+# Learned routes and the browser render (2026-10-06)
+# ---------------------------------------------------------------------------
+#
+# Every host that needed more than plain curl is remembered in
+# work/fetch_routes.json with the route that finally worked, so the next fetch
+# (another subagent, tomorrow's batch) starts there instead of re-climbing the
+# ladder. `access_audit.py` prints the file as a table for the playbook.
+
+ROUTES_PATH = Path(os.environ.get(
+    "GEM_FETCH_ROUTES", Path(__file__).resolve().parent.parent / "work" / "fetch_routes.json"))
+_ROUTE_NOTES = ("browser_render", "cf_clearance", "cf_impersonate", "rate_limit_wait")
+_EXPENSIVE_NOTES = ("browser_render", "rate_limit_wait")   # worth keeping on disk
+# A 200 that says "nothing here" is never kept: the record may only be hidden
+# for a while (a loaded register, a notice between display periods), and a
+# cached copy would hide it for the cache's whole life. Lower-case phrases, matched in the first 60 kB.
+_EMPTY_ANSWER_MARKERS = (
+    "keine detailinformationen verf",      # uvp-verbund.de detail page with no record
+)
+_RENDER_TRIED: set[str] = set()
+# Every read the whole ladder could not finish, from any caller (the verifier,
+# research agents running fetch.py by hand, the permit harvester), so
+# access_audit.py can list what a batch failed to read, not only what it cited.
+FAIL_LOG = Path(os.environ.get(
+    "GEM_FETCH_FAIL_LOG", Path(__file__).resolve().parent.parent / "work" / "fetch_failures.jsonl"))
+
+
+def _log_failure(url: str, status: str, notes: list[str]) -> None:
+    try:
+        FAIL_LOG.parent.mkdir(parents=True, exist_ok=True)
+        with FAIL_LOG.open("a", encoding="utf-8") as f:
+            f.write(json.dumps({"ts": time.strftime("%Y-%m-%dT%H:%M:%S"), "url": url,
+                                "status": status, "notes": notes}) + "\n")
+    except OSError:
+        pass
+
+
+def _load_routes() -> dict:
+    try:
+        return json.loads(ROUTES_PATH.read_text())
+    except (OSError, ValueError):
+        return {}
+
+
+def _route_for(host: str) -> str:
+    return (_load_routes().get(host) or {}).get("route", "")
+
+
+def _remember_route(host: str, route: str, url: str) -> None:
+    """Record the route that got a page from `host` (last success wins)."""
+    if not host:
+        return
+    try:
+        with _host_turn("fetch-routes"):
+            routes = _load_routes()
+            e = routes.get(host) or {"first_seen": time.strftime("%Y-%m-%d")}
+            e.update(route=route, last_ok=time.strftime("%Y-%m-%d"), example=url,
+                     successes=int(e.get("successes", 0)) + 1)
+            routes[host] = e
+            ROUTES_PATH.parent.mkdir(parents=True, exist_ok=True)
+            ROUTES_PATH.write_text(json.dumps(routes, indent=1, sort_keys=True))
+    except OSError as e:
+        print(f"  [fetch] could not record the route for {host}: {e}", file=sys.stderr)
+
+
+def _render(url: str, timeout: int, tmp: str, notes: list[str]):
+    """Last rung: load the page in a real Chrome (cf_clearance.render) and
+    return (status, content_type, final_url, raw), or None if no browser.
+    A file Chrome would not hand over (its PDF viewer keeps the bytes) is
+    re-requested with every cookie the browser earned for the host."""
+    host = _host(url)
+    if host in _RENDER_TRIED:
+        return None
+    _RENDER_TRIED.add(host)
+    try:
+        from cf_clearance import ClearanceError, browser_allowed, render
+    except ImportError:
+        return None
+    if not browser_allowed():
+        print(f"  [fetch] {host}: needs a real browser; disabled by LNGCT_NO_BROWSER",
+              file=sys.stderr)
+        return None
+    print(f"  [fetch] {host}: opening the page in Chrome", file=sys.stderr)
+    try:
+        r = render(url, wait=max(timeout, 45))
+    except ClearanceError as e:
+        print(f"  [fetch] {host}: browser render failed: {e}", file=sys.stderr)
+        return None
+    if r["challenge"]:
+        print(f"  [fetch] {host}: the bot check did not clear in Chrome either", file=sys.stderr)
+        return None
+    notes.append("browser_render")
+    if r["mime"].startswith("text/html") or r["status"] != "200":
+        return r["status"], "text/html; charset=utf-8", r["final_url"], r["html"].encode("utf-8")
+    if r["body"]:
+        return r["status"], r["mime"], r["final_url"], r["body"]
+    got = _curl_attempts(r["final_url"], tmp, timeout, r["ua"] or None, None,
+                         r["cookie"] or None, notes)
+    if got[0] == "200":
+        return got
+    return r["status"], "text/html; charset=utf-8", r["final_url"], r["html"].encode("utf-8")
 
 
 def _rate_limited(status: str, raw: bytes) -> bool:
@@ -664,7 +817,8 @@ def _earn_clearance(url: str) -> tuple[str | None, str | None]:
 
 def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
                headers: dict | None = None,
-               rate_limit_attempts: int | None = None) -> Page:
+               rate_limit_attempts: int | None = None,
+               force_render: bool = False) -> Page:
     """
     Fetch `url` and return a Page. HTTP errors are reported in `status`
     ("404", "000" when curl couldn't connect), never raised — callers like the
@@ -690,7 +844,10 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
     if rate_limit_attempts is None:
         rate_limit_attempts = RATE_LIMIT_ATTEMPTS
     pace_key, pace_gap = _paced(host)
-    cached = _cache_get(url) if pace_key and not headers else None
+    cached = _cache_get(url) if not headers else None
+    learned = "" if sec else _route_for(host)
+    if learned == "cf_impersonate":
+        _IMPERSONATE_HOSTS.add(host)
     cookie, cookie_ua = (None, None) if sec else _clearance_cookie(url)
     if cookie:
         ua = cookie_ua or ua          # the cookie is only honoured with its own UA
@@ -723,7 +880,10 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
                 with _host_turn(pace_key or host, pace_gap):
                     status, content_type, final_url, raw = _wait_out_rate_limit(
                         url, tmp, timeout, ua, headers, cookie, notes, rate_limit_attempts)
-            if not sec and (_is_cf_wall(status, raw) or status in _BLOCK_STATUSES):
+            walled = not sec and (_is_cf_wall(status, raw) or status in _BLOCK_STATUSES)
+            if walled and learned == "browser_render":
+                pass        # this host only ever opened in a real browser: go straight there
+            elif walled:
                 # 1. TLS-fingerprint impersonation (no window, no cookie).
                 got = _impersonate(url, timeout, ua, headers, cookie)
                 if got:
@@ -738,6 +898,12 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
                             url, tmp, timeout, cookie_ua or ua, headers, cookie, notes)
             if cookie and status != "000" and not _is_cf_wall(status, raw):
                 notes.append("cf_clearance")     # the page behind the wall, whatever its status
+            if not sec and (force_render or (
+                    status in _BLOCK_STATUSES or _is_cf_wall(status, raw))):
+                # 3. A real Chrome loads the page the way a person's browser does.
+                got = _render(url, timeout, tmp, notes)
+                if got and (force_render or got[0] not in _BLOCK_STATUSES):
+                    status, content_type, final_url, raw = got
 
         text, is_pdf = _extract(url, tmp, content_type, raw, notes)
         if is_pdf and not text.strip() and status == "200":
@@ -747,9 +913,20 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
             status, content_type, final_url, raw = _curl_attempts(
                 url, tmp, timeout, ua, headers, cookie, notes)
             text, is_pdf = _extract(url, tmp, content_type, raw, notes)
-        if (pace_key and not cached and not headers and status == "200" and raw
-                and (text.strip() or not is_pdf)):
+        ok = status == "200" and raw and (text.strip() or not is_pdf)
+        if ok and not is_pdf and any(m in raw[:60000].decode("utf-8", "replace").lower()
+                                     for m in _EMPTY_ANSWER_MARKERS):
+            notes.append("empty_answer")
+            if cached:
+                _cache_paths(url)[1].unlink(missing_ok=True)   # drop an older empty copy
+        if ok and "empty_answer" not in notes and not cached and not headers and (
+                pace_key or any(n in notes for n in _EXPENSIVE_NOTES)):
             _cache_put(url, content_type, final_url, raw)
+        route = next((n for n in _ROUTE_NOTES if n in notes), "")
+        if ok and route and not cached and route != learned:
+            _remember_route(host, route, url)
+        if (not ok or "empty_answer" in notes) and "archive.org" not in host:
+            _log_failure(url, status, notes)
         return Page(status=status, text=text, content_type=content_type,
                     final_url=final_url, is_pdf=is_pdf, raw_len=len(raw), notes=notes)
     finally:
@@ -825,9 +1002,12 @@ def main():
     p.add_argument("--timeout", type=int, default=30)
     p.add_argument("--rate-limit-attempts", type=int, default=None,
                    help=f"paced retries on a plain HTTP 429 (default {RATE_LIMIT_ATTEMPTS})")
+    p.add_argument("--render", action="store_true",
+                   help="load the page in a real Chrome even if curl got an answer "
+                        "(pages whose text is built by scripts)")
     args = p.parse_args()
     page = fetch_page(args.url, timeout=args.timeout,
-                      rate_limit_attempts=args.rate_limit_attempts)
+                      rate_limit_attempts=args.rate_limit_attempts, force_render=args.render)
     print(f"status: {page.status}  content-type: {page.content_type or '-'}  "
           f"bytes: {page.raw_len}  pdf: {page.is_pdf}")
     if page.final_url and page.final_url != args.url:

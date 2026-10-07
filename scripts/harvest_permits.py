@@ -30,8 +30,10 @@ Usage (from scripts/):
     python harvest_permits.py --scope germany --search-only    # list matches, fetch nothing else
 
 Reruns are cheap: cached pages are not fetched again, and a plant whose index
-exists is skipped unless --redo is given. Progress goes to stderr and to
-work/permits/<scope>/harvest_log.jsonl.
+exists is skipped unless --redo is given. When a --redo search is cut short
+by the register, the procedures found by the plant's last run are carried
+forward, so a throttled rerun never shrinks an index. Progress goes to stderr
+and to work/permits/<scope>/harvest_log.jsonl.
 """
 import argparse
 import html
@@ -72,7 +74,8 @@ DOC_SKIP = re.compile(r"lageplan|karte|kartier|schall|l[äa]rm|fledermaus|brutv|
                       r"baugrund|altlast|benthos|fisch|\.zip$|\.(jpg|png|tif)$", re.I)
 NAME_NOISE = re.compile(
     r"\b(power station|power plant|chp plant|chp|cogeneration plant|gas engine|"
-    r"combined cycle|heat and power|plant|station)\b", re.I)
+    r"combined cycle|heat and power|plant|station|joint|project|peaker|peaking|"
+    r"gas turbine|energy cent(?:er|re))\b", re.I)
 
 
 def log(msg):
@@ -102,6 +105,12 @@ def search_terms(plant):
         t = re.sub(r"\s+", " ", t).strip(" -,")
         if len(t) >= 4 and t.lower() not in [x.lower() for x in terms]:
             terms.append(t)
+    # GEM names are English and the register matches every word, so an
+    # unknown filler word ("Hanau joint") finds nothing; keep one plain word
+    if terms and all(" " in t for t in terms):
+        word = max(terms[0].split(), key=len)
+        if len(word) >= 4:
+            terms.insert(0, word)
     return terms[:2]
 
 
@@ -162,6 +171,35 @@ def pick(hits, plant, radius_km):
             continue
         out.append({**h, "km": None if d is None else round(d, 1)})
     return out
+
+
+def names_plant(proc, plant):
+    """True when the procedure's title or description names the plant's town
+    or a distinctive word of its name. Seeded procedures skip the search
+    filters, and a seed copied from a web search can belong to a look-alike
+    project (the 2026-10-05 Germany seeds put an RWE peaker at Huerth under
+    Gundremmingen, and Herne and Herdecke plants under Staudinger and Voerde)."""
+    words = {w.lower() for t in search_terms(plant) for w in re.split(r"[\s,/-]+", t)
+             if len(w) >= 4 and w.lower() not in ("power", "station", "plant", "unit")}
+    text = f"{proc.get('title', '')} {proc.get('description', '')}".lower()
+    return not words or any(w in text for w in words)
+
+
+def last_run_procedures(out_dir, plant_id):
+    """Procedure ids from the plant's latest entry in harvest_log.jsonl that
+    found any (a throttled run logs none, and must not erase the memory)."""
+    path = out_dir / "harvest_log.jsonl"
+    last = []
+    if path.exists():
+        for line in path.read_text(encoding="utf-8").splitlines():
+            try:
+                row = json.loads(line)
+            except ValueError:
+                continue
+            found = [p["uuid"] for p in row.get("procedures", []) if p.get("uuid")]
+            if row.get("plant") == plant_id and found:
+                last = found
+    return last
 
 
 def parse_procedure(text):
@@ -236,10 +274,24 @@ def write_index(path, plant, procedures, searched, complete):
         L += [f"## {p['title'] or p.get('search_title') or p['uuid']}", "",
               f"Procedure page: {p['url']}"]
         if p.get("status") != "200":
-            L += [f"The procedure page could not be read (HTTP {p.get('status')}). Try again later.", ""]
+            L += [f"The procedure page could not be read (HTTP {p.get('status')}). Try again later, "
+                  "or look for the permit notice on the town's website and the permit "
+                  "authority's notice page, which re-post it.", ""]
+            continue
+        if p.get("empty"):
+            L += ["The register showed its empty \"no details\" page. The record may have "
+                  "been taken down, or the register was under load. Try again later, and "
+                  "read any documents listed for it by their own addresses.", ""]
             continue
         if p.get("km") is not None:
             L.append(f"Distance from the GEM coordinates: {p['km']} km")
+        if p.get("carried"):
+            L.append("This procedure comes from the last run. This run's search was cut "
+                     "short by the register.")
+        if (p.get("seeded") or p.get("carried")) and not names_plant(p, plant):
+            L.append("Check before use: this procedure was not found by this run's search "
+                     "and does not name the plant's town or the plant. It may be a "
+                     "different project.")
         L.append("")
         if p["description"]:
             L += ["Project description (German, as published):", "", "> " + p["description"], ""]
@@ -253,6 +305,10 @@ def write_index(path, plant, procedures, searched, complete):
                 L.append(f"- {d['file']} ({tag}): {d['url']}")
                 for c in d.get("capacity_lines", []):
                     L.append(f"    - states: {c}")
+            if any(d.get("state") == "failed" for d in p["documents"]):
+                L.append("For a file that was not saved, search the web for its exact file "
+                         "name. Towns and permit authorities often post the same file, and "
+                         "their sites do not throttle.")
             L.append("")
     path.write_text("\n".join(L), encoding="utf-8")
 
@@ -314,7 +370,7 @@ def main():
             log(f"({n}/{len(plants)}) {plant['name']}: index exists, skipped")
             continue
         log(f"({n}/{len(plants)}) {plant['name']}")
-        found = [{"uuid": u, "title": "", "km": None} for u in plant["seeds"]]
+        found = [{"uuid": u, "title": "", "km": None, "seeded": True} for u in plant["seeds"]]
         searched, complete = [], True
         if not args.seeds_only:
             for term in search_terms(plant):
@@ -326,6 +382,10 @@ def main():
                 for k in kept:
                     if k["uuid"] not in [f["uuid"] for f in found]:
                         found.append(k)
+        if not complete:
+            for u in last_run_procedures(out_dir, plant["id"]):
+                if u not in [f["uuid"] for f in found]:
+                    found.append({"uuid": u, "title": "", "km": None, "carried": True})
         if args.search_only:
             for f in found:
                 print(f"{plant['id']}\t{plant['name']}\t{f['uuid']}\t{f.get('km')}\t{f['title']}")
@@ -336,8 +396,10 @@ def main():
             page = get(url, args.attempts)
             proc = {"uuid": f["uuid"], "url": url, "status": page.status, "km": f.get("km"),
                     "search_title": f.get("title"), "title": "", "description": "",
-                    "steps": [], "documents": []}
-            if page.status == "200":
+                    "steps": [], "documents": [], "seeded": f.get("seeded", False),
+                    "carried": f.get("carried", False),
+                    "empty": "empty_answer" in page.notes}
+            if page.status == "200" and not proc["empty"]:
                 proc.update(parse_procedure(page.text))
                 for d in choose_documents(proc["documents"], args.docs_per_procedure):
                     doc = get(d["url"], args.attempts, timeout=300)
