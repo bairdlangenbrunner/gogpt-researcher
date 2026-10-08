@@ -261,6 +261,9 @@ def test_qa_by_concern_type():
     assert t({"concern_type": "duplicate"}, "qa")["group"] == 8
     assert t({"concern_type": "identity"}, "qa") == {"group": 2, "checks": [11],
                                                      "group_label": "Blanks and unknowns"}
+    # an identity question about whether two records are one thing is a record question, not a blank name
+    assert t({"concern_type": "identity", "recommendation": "Confirm the two projects are meant to be separate records."}, "qa")["group"] == 8
+    assert t({"concern_type": "identity", "recommendation": "Check unit naming against the regulator's list."}, "qa")["group"] == 2
     assert t({"concern_type": "conversion-link"}, "qa")["checks"] == [12, 13]
     assert t({"concern_type": "attribution"}, "qa")["group"] == 6
     assert t({"concern_type": "validation"}, "qa")["group"] == 1

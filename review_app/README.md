@@ -95,6 +95,7 @@ Rules that came out of the first round (2026-10-05):
   stay in their browser until they download them.
 - The page is a snapshot. Calls already in the batch logs are laid over it at build time; a
   rebuild gets a fresh stamp and a publish of the new file to the same URL keeps the link.
+- A "push to ledger" button (shown once the page is synced) writes a request document to the `requests` collection (`requests/<viewer>~push`). A Claude Code session then imports the viewer's `logs` document into the batch `review_log.jsonl`. The tab counts show "n shown" when a filter hides some of them.
 - The GEM database is never touched. The artifact holds only the proposed edits and the calls.
 
 A scope that also ran a discovery pass keeps those records in `batches/<scope>/staging-discovery/`

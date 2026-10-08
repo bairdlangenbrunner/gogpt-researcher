@@ -266,7 +266,8 @@
         }
         // one document per viewer, named by their id (their initials when the viewer has no id),
         // so every device they use merges into the same log
-        SYNC.doc = SYNC.db.doc("logs/" + segment(u[0] || REVIEWER));
+        SYNC.seg = segment(u[0] || REVIEWER);
+        SYNC.doc = SYNC.db.doc("logs/" + SYNC.seg);
         return SYNC.doc.get();
       }).then(function (snap) {
         if (snap === null) return;
@@ -280,6 +281,19 @@
     }).catch(function (e) {
       SYNC.state = "error";
       SYNC.message = saveError(e);
+    });
+  }
+  // "push to ledger": make sure the shared log is current, then leave a request document in the
+  // `requests` collection for a Claude Code session watching this artifact (review_app/README.md).
+  function requestPush() {
+    if (!SYNC.db || !SYNC.doc) return Promise.reject(new Error("the shared log is not available here, so a push cannot be requested. Use download decisions."));
+    if (!LOG.length) return Promise.reject(new Error("no calls yet; nothing to push"));
+    var n = LOG.length;
+    return Promise.resolve(SYNC.chain).then(function () {
+      return SYNC.db.doc("requests/" + SYNC.seg + "~push").set({reviewer: REVIEWER, requested: now(), records: n,
+        built: DATA.built || "", dirs: DATA.dirs || [], seq: Date.now(), status: "requested"});
+    }).then(function () { return {count: n}; }, function (e) {
+      throw new Error("the request did not go through (" + ((e && (e.code || e.message)) || "unknown") + ")");
     });
   }
   function download() {
@@ -320,6 +334,7 @@
     item: function (records) { try { return write(validateItems(records)); } catch (e) { return fail(e.message); } },
     flag: function (records) { try { return write(validateFlags(records)); } catch (e) { return fail(e.message); } },
     download: download,
+    requestPush: requestPush,
     // for tests and for a reviewer who wants to look: the raw log
     log: function () { return LOG.slice(); }
   };

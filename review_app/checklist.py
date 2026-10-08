@@ -232,6 +232,9 @@ NAME_COLUMNS = ("Plant name", "Other Name(s)", "Plant Name in Local Language / S
 
 # concern_type values that are not a column (docs/reference/staged_json_schema.md
 # after the 2026-10-07 normalization) -> (group, rows)
+# an identity concern that asks whether two records are one thing, not whether a name is filled in
+_SAME_RECORD = re.compile(r"separate records?|same (unit|plant|project|facility)|map to|own plant record|duplicate|"
+                          r"register (row|unit)s?", re.I)
 CONCERN_KINDS = {
     "duplicate": (8, []),
     "existence": (8, [51]),
@@ -570,6 +573,9 @@ def tag(rec, lane, unit_row=None, us=True, today=None):
             ct = normalize_concern_type(ct, rec)
         if ct in CONCERN_KINDS:
             g, rows = CONCERN_KINDS[ct]
+            if ct == "identity" and _SAME_RECORD.search(" ".join(
+                    _ws(rec.get(k)) for k in ("concern", "recommendation", "question", "summary", "text", "researcher_notes"))):
+                g, rows = 8, []      # is this the same unit / a separate record: a record question, not a blank name
             checks.update(rows)
             group = group or g
         else:

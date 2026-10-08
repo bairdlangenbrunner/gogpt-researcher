@@ -561,6 +561,11 @@
     });
     $("pipes").innerHTML = h.join("");
   }
+  // "2 items", or "2 of 7 items" when a filter is hiding some of the plant's items
+  function itemCount(p) {
+    var t = p.items.length;
+    return p._ni < t ? p._ni + " of " + t + " items" : t + " item" + (t === 1 ? "" : "s");
+  }
   function renderQueue() {
     if (S.view === "checklist") return renderChecklist();
     var h = [];
@@ -572,8 +577,8 @@
         .map(function (t) { return '<span class="dot ' + t + '" data-tip="' + t + ' confidence" role="img" aria-label="' + t + ' confidence"></span>'; }).join("");
       var ts = p._tsev || {}, parts = SEV.filter(function (s) { return ts[s]; }).map(function (s) { return ts[s] + " " + s; });
       var badge = p._todo ? '<span class="n todo">' + (parts.length ? parts.join(" &middot; ") : p._todo) + " to decide</span>"
-        : (p._n ? '<span class="n">' + p._n + " &middot; done</span>" : (p._ni ? '<span class="n">' + p._ni + " item" + (p._ni === 1 ? "" : "s") + "</span>" : '<span class="n"></span>'));
-      if (p._ni && p._todo) badge = '<span class="n">' + p._ni + " item" + (p._ni === 1 ? "" : "s") + " &middot; </span>" + badge;
+        : (p._n ? '<span class="n">' + p._n + " &middot; done</span>" : (p._ni ? '<span class="n">' + itemCount(p) + "</span>" : '<span class="n"></span>'));
+      if (p._ni && p._todo) badge = '<span class="n">' + itemCount(p) + " &middot; </span>" + badge;
       var pm = p._pm ? ' <span class="pm"' + tipAttrs(p._pm + " question" + (p._pm === 1 ? "" : "s") + " for the PM on this plant") + ">PM " + p._pm + "</span>" : "";
       var un = unitNames(p);
       var where = p.statewide ? "statewide" : (p.units.length + " unit" + (p.units.length === 1 ? "" : "s"));
@@ -1134,9 +1139,12 @@
     var bySev = {major: p.lines.filter(function (l) { return sevOf(l) === "major"; }), minor: p.lines.filter(function (l) { return sevOf(l) === "minor"; })};
     h += '<div class="tabs" role="tablist">' + SEV.map(function (s) {
       var openS = bySev[s].filter(function (l) { return !cur(l); }).length;
-      return '<button type="button" role="tab" data-tab="' + s + '" aria-selected="' + (S.tab === s) + '"' + tipAttrs(SEV_TIP[s]) + ">" + SEV_LABEL[s] + " " + todo(openS, bySev[s].length) + "</button>";
+      var inView = bySev[s].filter(function (l) { return match(l, p, FS, null, FS.q.trim().toLowerCase()); }).length;
+      var hid = bySev[s].length - inView;
+      return '<button type="button" role="tab" data-tab="' + s + '" aria-selected="' + (S.tab === s) + '"' + tipAttrs(hid ? SEV_TIP[s] + ". The filters show " + inView + " of " + bySev[s].length + " here; the count below ignores them" : SEV_TIP[s]) + ">" +
+        SEV_LABEL[s] + " " + todo(openS, bySev[s].length) + (hid ? ' <span class="n">&middot; ' + inView + " shown</span>" : "") + "</button>";
     }).join("") +
-      '<button type="button" role="tab" data-tab="items" aria-selected="' + (S.tab === "items") + '">items ' + todo(nOpenItems, p.items.length) + "</button>" +
+      '<button type="button" role="tab" data-tab="items" aria-selected="' + (S.tab === "items") + '"' + (p._ni < p.items.length && itemsInView(FS) ? tipAttrs("the filters show " + p._ni + " of this plant's " + p.items.length + " items here; this tab lists all of them, and the count ignores the filters") : "") + ">items " + todo(nOpenItems, p.items.length) + (p._ni < p.items.length && itemsInView(FS) ? ' <span class="n">&middot; ' + p._ni + " shown</span>" : "") + "</button>" +
       '<button type="button" role="tab" data-tab="all" aria-selected="' + (S.tab === "all") + '"' + tipAttrs("every change (filters ignored) and every item on this plant; also: click the name") + '>everything</button></div></div>';
     if (S.tab === "items") {
       S.shown = []; S.line = -1;
@@ -1392,7 +1400,7 @@
     f.innerHTML = '<label>suggested value <input type="text" class="sv" autocomplete="off"></label>' +
       '<label>note <input type="text" class="sn" autocomplete="off" placeholder="why"></label>' +
       '<label>source link <input type="url" class="sr" autocomplete="off" placeholder="https://… (where the value is stated)"></label>' +
-      '<button type="submit" class="sv-save">save suggestion</button><button type="button" class="ghost sv-cancel">cancel (esc)</button>' +
+      '<button type="submit" class="sv-save">save suggestion</button><button type="button" class="sv-cancel">cancel (esc)</button>' +
       '<span class="faint sv-err" role="alert"></span>';
     var sv = f.querySelector(".sv"), sn = f.querySelector(".sn"), sr = f.querySelector(".sr"), err = f.querySelector(".sv-err");
     sv.value = prior ? (l.suggested_value || "") : suggestPrefill(l);
@@ -1743,6 +1751,17 @@
           toast("saved " + r.count + " call" + (r.count === 1 ? "" : "s") + " to " + r.name);
         }, function (e) { toast(e && e.message ? e.message : "download failed"); });
       };
+      if (synced && Store.requestPush && !$("ledger-btn")) {
+        var pb = document.createElement("button");
+        pb.id = "ledger-btn"; pb.type = "button"; pb.className = "ghost"; pb.textContent = "push to ledger";
+        pb.dataset.tip = "save your calls to the shared log and ask Claude to import them into the batch logs; nothing is written to the tracker";
+        pb.onclick = function () {
+          Promise.resolve(Store.requestPush()).then(function (r) {
+            toast("push to ledger requested: " + r.count + " call" + (r.count === 1 ? "" : "s") + " in the shared log");
+          }, function (e) { toast(e && e.message ? e.message : "the request did not go through"); });
+        };
+        ex.parentNode.insertBefore(pb, ex.nextSibling);
+      }
       var st = Store.status ? Store.status() : {state: "local"};
       if (st.state === "error") { STICKY = st.message; banner(); }
       else if (!synced && !Store.storageOk()) { STICKY = "this browser is not keeping the log between visits (private window or storage blocked): download your decisions before closing the tab"; banner(); }
@@ -1806,6 +1825,11 @@
     window.addEventListener("blur", hide);
     document.addEventListener("scroll", function (e) { if (owner && !tip.contains(e.target)) hide(); }, true);
   })();
+  // A press anywhere outside the open suggest form closes it, same as cancel.
+  document.addEventListener("mousedown", function (e) {
+    var f = document.querySelector("#card .sform");
+    if (f && !f.contains(e.target)) closeSuggest();
+  });
   $("card").addEventListener("click", onCardClick);
   $("pipes").addEventListener("click", function (e) {
     var li = e.target.closest("li[data-i]");
