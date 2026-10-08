@@ -31,7 +31,7 @@ import review_data  # noqa: E402
 import store  # noqa: E402
 
 
-def render(data, reviewer):
+def render(data, reviewer, title=None):
     """The page as one html string: css inlined, the dataset and reviewer embedded, then the
     static store and the app. `</script>` inside the JSON is escaped so it cannot end the tag."""
     html = (WEB / "index.html").read_text(encoding="utf-8")
@@ -39,6 +39,9 @@ def render(data, reviewer):
     static_js = (WEB / "static_store.js").read_text(encoding="utf-8")
     app_js = (WEB / "app.js").read_text(encoding="utf-8")
     cfg = json.dumps({"reviewer": reviewer, "data": data}, ensure_ascii=False).replace("</", "<\\/")
+    if title:
+        html = html.replace("<title>GOGPT reviewer</title>", f"<title>{title}</title>")
+        html = html.replace("<h1>GOGPT reviewer</h1>", f"<h1>{title}</h1>")
     html = html.replace('<link rel="stylesheet" href="style.css">', "<style>\n" + css + "\n</style>")
     html = html.replace('<script src="app.js"></script>',
                         "<script>window.REVIEW_STATIC = " + cfg + ";</script>\n"
@@ -49,10 +52,10 @@ def render(data, reviewer):
     return html
 
 
-def build(dirs, reviewer, export_csv=None):
+def build(dirs, reviewer, export_csv=None, title=None):
     data = review_data.build(dirs, export_csv)
     store.overlay(data, {label: Path(d) for label, d in zip(data["dirs"], dirs)})
-    return render(data, store.initials(reviewer)), data
+    return render(data, store.initials(reviewer), title), data
 
 
 def main(argv=None):

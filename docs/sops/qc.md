@@ -70,7 +70,7 @@ Once the human has applied the batch (or at the natural end of the country's res
   - *USA only* (each US state): **IRP checkbox** ticked on every unit that appears in an Integrated Resource Plan (and the "IRP" unit-name suffix rule applied); **US IRPs** tab and **United States research** tab rows updated; GEM IDs matched to **EIA-860M** (plant ID → Other IDs location, generator ID → Other IDs unit), **EIP** and the **Sierra Club** sheet (reference only — never cited); **data-center gas** searched and behind-the-meter plants marked captive with the data-centre industry type; US Data/Research Guide consulted
   - *Optional*: wiki Background text, entity clean-up beyond the batch's own edits
   - *End of update* (cycle close, 2026-12-18 → 12-24): the validation report and year-end rollover pass below
-- The **GOGPT Validation Report** is run for the country (Projects tab → country search → "GOGPT Validation Report" tab) and errors resolved. **Exception**: validation errors on project-level fields for co-located coal/gas plants (e.g. missing datasource for shared location or owner) or unit-level fields for coal-to-gas-conversion units (e.g. missing datasource for CCS) are **optional / low priority** — the manual explicitly deprioritizes these
+- The **GOGPT Validation Report** is clean for the country (checklist rows 7 and 54). `python validation_report.py --country <name> --closeout` (or `--state <State>`) reads the same stored errors the web UI's "GOGPT Validation Report" tab lists (`plant.validation`, live from the read-only DB), writes `work/validation_<tag>.md`, and exits 1 while any *fix* or *person* item remains; attach the memo to the close-out. Errors found at close-out route to a follow-on Update batch through `build_state_brief.py --validation`. **Exception**: validation errors on project-level fields for co-located coal/gas plants (e.g. missing datasource for shared location or owner) or unit-level fields for coal-to-gas-conversion units (e.g. missing datasource for CCS) are **optional / low priority** — the manual explicitly deprioritizes these
 - A time estimate for the next cycle is logged in the roster's notes (`campaigns/<quarter>/roster.csv`)
 - The roster row moves to `done`; the PM reviews and may flag fields needing revisit — process flags as a small follow-up batch
 
@@ -89,7 +89,7 @@ Once the human has applied the batch (or at the natural end of the country's res
 3. Confirm the possible-updates backlog is cleared for the country
 4. Update Country Tips / `docs/country_notes/<country>.md`
 5. Complete the GC/Country Checklist
-6. Run the GOGPT Validation Report for the country; resolve errors (co-located/coal-conversion exceptions per §6)
+6. `python validation_report.py --country <name> --closeout` → CLOSE-OUT CLEAN (co-located/coal-conversion exceptions per §6 may remain)
 7. Log the next-cycle time estimate in the roster
 8. Move the roster row to `done`; hand off for PM review
 
@@ -126,5 +126,5 @@ Stop and consult the user when:
 | Record of Full Updates | Per-unit, in the actions workbook / DB |
 | Possible-updates backlog | Filtered sheet, initials/date/notes |
 | GC/Country Checklist | GEM roster spreadsheet |
-| GOGPT Validation Report | DB Projects tab, per country |
+| GOGPT Validation Report | `validation_report.py --closeout` (same errors as the DB Projects tab) |
 | Next-cycle time estimate | `campaigns/<quarter>/roster.csv` |

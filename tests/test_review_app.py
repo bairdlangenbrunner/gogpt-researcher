@@ -109,7 +109,14 @@ def test_dataset_shape(data, staging):
     assert data["scope"]["states"] == ["Maryland"] and data["scope"]["quarter"] == "q4-2026"
     assert data["dirs"] == [str(staging)]          # outside the repo: an absolute label
     plants = {p["pid"]: p for p in data["plants"]}
-    assert set(plants) == {"L1", "new:chesapeake-repowering-acme", "new:severn-barge-station"}
+    # the candidate card drops the "(Acme)" parenthetical so the same candidate staged twice shares a card
+    assert set(plants) == {"L1", "new:chesapeake-repowering", "new:severn-barge-station"}
+    assert data["us"] is True
+    # the nine checklist groups, plus "other" because the fixture's concern names no column or kind
+    assert [g["id"] for g in data["groups"]] == [1, 2, 3, 4, 5, 6, 7, 8, 9, "other"]
+    for p in data["plants"]:
+        for o in p["lines"] + p["items"]:
+            assert o["group"] and o["group_label"] and isinstance(o["checks"], list)
     p = plants["L1"]
     assert [u["gem_unit_id"] for u in p["units"]] == ["G1"]
     lines = {l["record_id"]: l for l in p["lines"]}
@@ -126,8 +133,10 @@ def test_dataset_shape(data, staging):
     items = {it["record_id"]: it for it in p["items"]}
     assert items["L1:G1:qa-unverified-value-1"]["kind"] == "concern"
     assert items["L1:G1:qa-unverified-value-1"]["concern_type"] == "unverified_value"
-    cand = plants["new:chesapeake-repowering-acme"]
+    cand = plants["new:chesapeake-repowering"]
     assert cand["items"][0]["kind"] == "monitor" and cand["items"][0]["links"] == [PR]
+    # a watch item with no GEM id is new to the tracker and lands in the new-plants group
+    assert cand["items"][0]["monitor_kind"] == "new_to_tracker" and cand["items"][0]["group"] == 8
     assert all(l["key"] == f"{staging}::{l['record_id']}" for l in p["lines"])
 
 
@@ -201,6 +210,56 @@ def test_store_items(data, staging):
     assert it["call"] == "confirmed" and it["call_note"] == "stands" and it["decided_by"] == "BL"
 
 
+def test_store_watch_calls(data, staging):
+    """A watch item takes the four watchlist calls, never accept/reject; removing needs a note."""
+    key = f"{staging}::us-md:plant:monitor-1"
+    dirs = store.dir_paths(data)
+    assert store.ITEM_CALLS["monitor"] == ("add_to_database", "hold", "possible_updates", "remove")
+    with pytest.raises(store.Invalid):
+        store.record_items([{"key": key, "call": "confirmed"}], data, "BL", dirs)
+    with pytest.raises(store.Invalid, match="needs a note"):
+        store.record_items([{"key": key, "call": "remove"}], data, "BL", dirs)
+    with pytest.raises(store.Invalid, match="web address"):
+        store.record_items([{"key": key, "call": "hold", "reference": "not a url"}], data, "BL", dirs)
+    saved = store.record_items([{"key": key, "call": "add_to_database", "note": "permit is final",
+                                 "reference": "https://example.com/permit"}], data, "BL", dirs)
+    assert saved[0]["call"] == "add_to_database" and saved[0]["reference"] == "https://example.com/permit"
+    store.overlay(data, dirs)
+    it = next(i for p in data["plants"] for i in p["items"] if i["key"] == key)
+    assert it["call"] == "add_to_database" and it["call_reference"] == "https://example.com/permit"
+
+
+def test_store_flags(data, staging):
+    """Ask-the-PM flags sit beside decisions: their own key space, on/off, latest wins."""
+    dirs = store.dir_paths(data)
+    key = f"{staging}::L1:G1:start-year"
+    store.decide([{"key": key, "decision": "accept"}], data, "BL", dirs)
+    saved = store.record_flags([{"key": key, "on": True, "note": "is 1996 right?"}], data, "BL", dirs)
+    assert saved[0]["key"] == "pm::" + key and saved[0]["flag"] == "pm" and saved[0]["on"] is True
+    assert saved[0]["record_id"] == "L1:G1:start-year" and saved[0]["kind"] == "fill"   # the line's own kind
+    # a flag on the whole plant names the plant, not a staged record
+    pf = store.record_flags([{"pid": "L1", "dir": str(staging), "on": True, "note": "whole plant looks odd"}], data, "BL", dirs)
+    assert pf[0]["key"] == store.plant_flag_key(str(staging), "L1") and pf[0]["record_id"] is None and pf[0]["kind"] == "plant"
+    with pytest.raises(store.Invalid):
+        store.record_flags([{"key": "nope", "on": True}], data, "BL", dirs)
+    store.overlay(data, dirs)
+    p = next(p for p in data["plants"] if p["pid"] == "L1")
+    line = next(l for l in p["lines"] if l["key"] == key)
+    assert line["decision"] == "accept" and line["pm_flag"] is True and line["pm_note"] == "is 1996 right?" and line["pm_by"] == "BL"
+    assert p["pm_flag"] is True and p["pm_note"] == "whole plant looks odd"
+    other = next(l for l in p["lines"] if l["key"] != key)
+    assert other["pm_flag"] is False
+    # off again: the log grows, the overlay clears, the decision stays
+    store.record_flags([{"key": key, "on": False}], data, "BL", dirs)
+    store.overlay(data, dirs)
+    assert line["pm_flag"] is False and line["pm_note"] == "" and line["decision"] == "accept"
+    # the build script keeps decisions and flags apart
+    decisions = brp.load_decisions(staging)
+    assert set(decisions) == {"L1:G1:start-year"} and decisions["L1:G1:start-year"]["decision"] == "accept"
+    flags = brp.load_flags(staging)
+    assert set(flags) == {"L1"} and flags["L1"]["note"] == "whole plant looks odd"
+
+
 # ---- server ----------------------------------------------------------------------------
 
 def test_server_round_trip(data, staging, tmp_path):
@@ -231,9 +290,12 @@ def test_server_round_trip(data, staging, tmp_path):
         assert st == 400 and "unknown key" in body["error"]
         st, body = call("/api/item", [{"key": f"{staging}::L1:G1:qa-unverified-value-1", "call": "needs_research"}])
         assert st == 200 and body["saved"][0]["call"] == "needs_research"
+        st, body = call("/api/flag", [{"key": key, "on": True, "note": "ask about the source"}])
+        assert st == 200 and body["saved"][0]["flag"] == "pm" and body["saved"][0]["on"] is True
         st, d = call("/api/data")
         line = next(l for p in d["plants"] for l in p["lines"] if l["key"] == key)
         assert line["decision"] == "hold" and line["decided_by"] == "BL"
+        assert line["pm_flag"] is True and line["pm_note"] == "ask about the source"
         with urllib.request.urlopen(base + "/") as r:
             assert r.status == 200 and b"GOGPT reviewer" in r.read()
     finally:
@@ -282,6 +344,117 @@ def test_build_no_log(staging):
     assert brp.load_decisions(staging) is None
 
 
+def test_build_watch_calls_and_pm_questions(tmp_path):
+    """Watch items split by kind; the four watchlist calls feed their own sheets; ask-the-PM
+    flags make a questions sheet; removed items leave the workbook; the evidence file is
+    organized by checklist group."""
+    import openpyxl
+    staging = write_staging(tmp_path / "us-md" / "staging")
+    mon = json.loads((staging / "staged_monitor.json").read_text())
+    mon["records"] += [
+        {"record_id": "L1:plant:monitor-2", "gem_plant_id": "L1", "plant_name": "Brandywine power facility",
+         "country": "United States", "fields": {}, "monitor_reason": "The owner says a fourth unit is under study.",
+         "recheck_by": "2027-03", "refs": {"links": [PR]}, "researcher_notes": "No filing yet."},
+        {"record_id": "L1:plant:monitor-3", "gem_plant_id": "L1", "plant_name": "Brandywine power facility",
+         "country": "United States", "fields": {}, "monitor_reason": "A battery project shares the site.",
+         "recheck_by": "2027-03", "refs": {"links": [PR]}},
+        {"record_id": "us-md:plant:monitor-4", "gem_plant_id": "", "plant_name": "Patapsco peaker (Beta)",
+         "country": "United States", "fields": {}, "monitor_reason": "Named in a county board agenda only.",
+         "recheck_by": "2027-06", "refs": {"links": [PR]}},
+    ]
+    mon["meta"]["counts"]["records"] = len(mon["records"])
+    (staging / "staged_monitor.json").write_text(json.dumps(mon))
+    csv = tmp_path / "export.csv"
+    csv.write_text("GEM unit ID,GEM location ID,Start year,Start Year Data Source,Status,Status Data Source,Latitude,Location Data Source\n"
+                   "G1,L1,,https://old.example.com/a,operating,,38.70,\n")
+    (tmp_path / "export.colmap.json").write_text("{}")   # the header is re-derived from the csv
+    data = review_data.build([staging], export_csv=csv)
+    dirs = store.dir_paths(data)
+    k = lambda rid: f"{staging}::{rid}"
+    store.decide([{"key": k("L1:G1:start-year"), "decision": "accept"}], data, "BL", dirs)
+    store.record_items([
+        {"key": k("us-md:plant:monitor-1"), "call": "add_to_database", "note": "the permit is final",
+         "reference": "https://example.com/permit"},
+        {"key": k("L1:plant:monitor-2"), "call": "possible_updates", "note": "for the next cycle"},
+        {"key": k("L1:plant:monitor-3"), "call": "remove", "note": "a battery, not a gas unit"},
+        {"key": k("L1:G1:qa-unverified-value-1"), "call": "confirmed"},
+    ], data, "BL", dirs)
+    store.record_flags([{"key": k("L1:G1:start-year"), "on": True, "note": "is 1996 the first unit or the plant?"},
+                        {"pid": "new:" + review_data.candidate_key("Chesapeake repowering (Acme)"), "dir": str(staging),
+                         "on": True, "note": "do we track repowerings as new plants?"}], data, "BL", dirs)
+
+    lanes = brp.load_lanes(staging)
+    decisions = brp.load_decisions(staging)
+    kept, left_out, counts = brp.apply_decisions(lanes, decisions)
+    # the removed watch item leaves the kept lanes and is listed as left out
+    assert {r["record_id"] for r in kept["monitor"]} == {"us-md:plant:monitor-1", "L1:plant:monitor-2", "us-md:plant:monitor-4"}
+    assert any(r["record_id"] == "L1:plant:monitor-3" for _, r, _ in left_out)
+    gone = next(d for _, r, d in left_out if r["record_id"] == "L1:plant:monitor-3")
+    assert brp.describe_decision(gone).startswith("remove from watchlist by BL on 20") and "a battery" in brp.describe_decision(gone)
+    assert brp.describe_call({"call": "add_to_database", "reviewer": "BL", "at": "2026-10-07T10:00:00-04:00",
+                              "reference": "https://example.com/permit"}).startswith("incorporate into database by BL")
+    assert brp.describe_call({"call": "add_to_database", "reviewer": "BL", "at": "2026-10-07T10:00:00-04:00",
+                              "reference": "https://example.com/permit"}).endswith("Source given: https://example.com/permit")
+    # the checklist carries the group and sheet rows beside each edit (groups are tagged at build time)
+    assert brp.tag_lanes(kept, csv) is True
+    rows = brp.checklist_rows(kept)
+    assert len(brp.CHECKLIST_HEADER) == 14 and brp.CHECKLIST_HEADER[-3:] == ["checklist_group", "checklist_rows", "done"]
+    assert len(rows) == 1 and rows[0][5] == "Start year" and rows[0][11].startswith("2.")
+    flags = brp.load_flags(staging)
+    assert len(flags) == 2
+    qrows = brp.pm_question_rows(lanes, flags)
+    assert len(qrows) == 2
+    assert {q[8] for q in qrows} == {"is 1996 the first unit or the plant?", "do we track repowerings as new plants?"}
+    assert "Chesapeake" in next(q[1] for q in qrows if "repowerings" in q[8])
+
+    out = tmp_path / "out.xlsx"
+    brp.build_xlsx(kept, out, export_csv=csv, flags=flags, all_lanes=lanes)
+    wb = openpyxl.load_workbook(out)
+    names = wb.sheetnames
+    for want in ("checklist_summary", "edit_checklist", "watch_new_to_tracker", "watch_existing_plants",
+                 "promote_to_database", "possible_updates_rows", "questions_for_pm"):
+        assert want in names, want
+    assert "monitor_list" not in names
+
+    def col(ws, name):
+        hdr = [c.value for c in ws[1]]
+        return [r[hdr.index(name)] for r in ws.iter_rows(min_row=2, values_only=True)]
+    assert sorted(col(wb["watch_new_to_tracker"], "plant")) == ["Chesapeake repowering (Acme)", "Patapsco peaker (Beta)"]
+    assert col(wb["watch_existing_plants"], "plant") == ["Brandywine power facility"]
+    assert col(wb["watch_existing_plants"], "reviewer_call")[0].startswith("send to possible updates by BL")
+    assert col(wb["watch_new_to_tracker"], "reviewer_call") and any(
+        (c or "").startswith("incorporate into database by BL") for c in col(wb["watch_new_to_tracker"], "reviewer_call"))
+    assert col(wb["promote_to_database"], "plant") == ["Chesapeake repowering (Acme)"]
+    assert col(wb["possible_updates_rows"], "plant") == ["Brandywine power facility"]
+    assert col(wb["possible_updates_rows"], "reviewer_note") == ["for the next cycle"]
+    assert len(list(wb["questions_for_pm"].iter_rows(min_row=2))) == 2
+    summary = wb["checklist_summary"]
+    assert [c.value for c in summary[1]][:3] == ["checklist_group", "row", "checkbox"]
+    assert summary.max_row > 40
+
+    ev = tmp_path / "out.md"
+    brp.build_evidence(kept, ev, "20261007_1000_ET", "us-md", "update", left_out=left_out, flags=flags,
+                       all_lanes=lanes, export_csv=csv)
+    text = ev.read_text()
+    assert "## Questions for the PM" in text and "## Checklist group" in text
+    assert text.index("## Questions for the PM") < text.index("## Checklist group")
+    assert "a battery, not a gas unit" in text   # the removed item and its reason
+    assert "Left out by the review" in text
+
+    # build_state_brief.py --promote: the "incorporate into database" calls become sweep work
+    import build_state_brief as bsb
+    existing, new = bsb.load_promotions(staging)
+    assert existing == {} and len(new) == 1   # the promoted item has no GEM plant yet
+    assert new[0]["plant_name"] == "Chesapeake repowering (Acme)" and new[0]["checks"] == [51]
+    assert "https://example.com/permit" in new[0]["links"] and new[0]["note"] == "the permit is final"
+    store.record_items([{"key": k("L1:plant:monitor-2"), "call": "add_to_database", "note": "study is funded"}], data, "BL", dirs)
+    existing, new = bsb.load_promotions(staging)
+    assert set(existing) == {"L1"} and len(existing["L1"]) == 1
+    text, fields, checks = existing["L1"][0]
+    assert text.startswith("The review on 20") and "fourth unit is under study" in text and "study is funded" in text
+    assert checks == [51] and fields == list(bsb.RESEARCH_FIELDS)
+
+
 # ---- single-file page: build_static.py, static_store.js, import_log.py ---------------------
 
 from review_app import build_static, import_log  # noqa: E402
@@ -314,11 +487,21 @@ const S = window.StaticStore;
   await S.item([{key: item.key, call: "confirmed"}]);
   try { await S.decide([{key: item.key, decision: "accept"}]); out.itemAsLine = "allowed"; } catch (e) { out.itemAsLine = e.message; }
   try { await S.decide([{key: line.key, decision: "maybe"}]); out.badDecision = "allowed"; } catch (e) { out.badDecision = e.message; }
+  // watch items: the four watchlist calls, a note needed to remove; flags beside decisions
+  const watch = d0.plants.flatMap(p => p.items).find(i => i.record_id === "us-md:plant:monitor-1");
+  try { await S.item([{key: watch.key, call: "confirmed"}]); out.watchBad = "allowed"; } catch (e) { out.watchBad = e.message; }
+  try { await S.item([{key: watch.key, call: "remove"}]); out.watchNoNote = "allowed"; } catch (e) { out.watchNoNote = e.message; }
+  await S.item([{key: watch.key, call: "add_to_database", note: "permit final", reference: "https://example.com/permit"}]);
+  await S.flag([{key: line.key, on: true, note: "is 1996 right?"}]);
+  await S.flag([{pid: "L1", dir: line.dir, on: true, note: "whole plant"}]);
+  try { await S.flag([{key: "nope", on: true}]); out.flagBad = "allowed"; } catch (e) { out.flagBad = e.message; }
   const d1 = await S.load();   // a reload lays the browser log back over the data
   const l1 = d1.plants[0].lines.find(l => l.record_id === "L1:G1:start-year");
   const s1 = d1.plants[0].lines.find(l => l.record_id === "L1:G1:status");
   const i1 = d1.plants[0].items.find(i => i.record_id === "L1:G1:qa-unverified-value-1");
-  out.after = {line: [l1.decision, l1.reviewed, l1.decided_by], status: [s1.decision, s1.reviewed], item: [i1.call, i1.reviewed]};
+  const w1 = d1.plants.flatMap(p => p.items).find(i => i.record_id === "us-md:plant:monitor-1");
+  out.after = {line: [l1.decision, l1.reviewed, l1.decided_by], status: [s1.decision, s1.reviewed], item: [i1.call, i1.reviewed],
+               watch: [w1.call, w1.call_reference], flag: [l1.pm_flag, l1.pm_note, d1.plants[0].pm_flag, d1.plants[0].pm_note, s1.pm_flag]};
   out.log = S.log();
   out.stored = Object.keys(mem).length;
   process.stdout.write(JSON.stringify(out));
@@ -347,22 +530,34 @@ def test_static_store_round_trip(data, staging, tmp_path):
     assert out["who"] == "AL" and out["caps"] == {"decide": True} and out["before"] is None
     assert out["itemAsLine"].endswith("is an item, not a line")
     assert "not one of accept, hold, reject, suggest" in out["badDecision"]
-    assert out["after"] == {"line": ["accept", True, "AL"], "status": [None, False], "item": ["confirmed", True]}
+    assert out["after"] == {"line": ["accept", True, "AL"], "status": [None, False], "item": ["confirmed", True],
+                            "watch": ["add_to_database", "https://example.com/permit"],
+                            "flag": [True, "is 1996 right?", True, "whole plant", False]}
+    assert "not one of add to database".replace("add to database", "add_to_database") in out["watchBad"]
+    assert "needs a note" in out["watchNoNote"] and "unknown key" in out["flagBad"]
     assert out["stored"] == 1
     log = out["log"]
-    assert [r.get("decision") or r.get("call") for r in log] == ["accept", "suggest", "hold", "confirmed"]
+    assert [r.get("decision") or r.get("call") or r.get("flag") for r in log] == ["accept", "suggest", "hold", "confirmed", "add_to_database", "pm", "pm"]
     assert log[2]["undecided"] is True and log[2]["decision"] == "hold"      # an undo keeps the line's default
+    assert log[5]["key"] == "pm::" + log[0]["key"] and log[6]["key"].endswith("::plant:L1") and log[6]["record_id"] is None
     assert all(r["reviewer"] == "AL" and r["ts"][:4] == "2026" and r["dir"] == str(staging) for r in log)
     # the download goes through import_log.py into the staging dir's log, exactly like the server
     f = tmp_path / "review_log_us-md_AL.jsonl"
     f.write_text("".join(json.dumps(r) + "\n" for r in log))
     import_log.main([str(f)])
-    assert len(store.read_log(staging)) == 4 and (staging / store.DERIVED_NAME).exists()
+    assert len(store.read_log(staging)) == 7 and (staging / store.DERIVED_NAME).exists()
     decisions = brp.load_decisions(staging)
     assert decisions["L1:G1:start-year"]["decision"] == "accept" and decisions["L1:G1:status"]["undecided"] is True
+    assert decisions["us-md:plant:monitor-1"]["call"] == "add_to_database"
+    assert set(brp.load_flags(staging)) == {"L1:G1:start-year", "L1"}
     # importing the same download again appends nothing
     planned = import_log.plan(log)
-    assert [len(v[1]) for v in planned.values()] == [0] and [len(v[2]) for v in planned.values()] == [4]
+    assert [len(v[1]) for v in planned.values()] == [0] and [len(v[2]) for v in planned.values()] == [7]
+    # a bad watch call or a malformed flag stops the import
+    with pytest.raises(SystemExit, match="not one of"):
+        import_log.plan([dict(log[4], call="confirmed", ts="2026-10-07T10:00:00-04:00")])
+    with pytest.raises(SystemExit, match="flag"):
+        import_log.plan([dict(log[5], key=log[0]["key"])])
     # a record the batch no longer has stops the import before anything is written
     bad = dict(log[0], record_id="L1:G1:gone", key=f"{staging}::L1:G1:gone")
     with pytest.raises(SystemExit, match="not in the staged lane files"):

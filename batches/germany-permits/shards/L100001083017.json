@@ -1,0 +1,109 @@
+{
+ "meta": {
+  "plant_id": "L100001083017",
+  "plant_name": "Ingolstadt power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:30:00-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001094633",
+   "unit_name": "Unit 3",
+   "findings": {
+    "City": {
+     "value": "Großmehring",
+     "refs": [
+      "https://www.uniper.energy/sites/default/files/2023-02/KW%20Ingolstadt%20Ver%C3%B6ffentlichung%20gem%C3%A4%C3%9F%20Anhang%20V%20der%2012.%20BImSchV.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.uniper.energy/sites/default/files/2023-02/KW%20Ingolstadt%20Ver%C3%B6ffentlichung%20gem%C3%A4%C3%9F%20Anhang%20V%20der%2012.%20BImSchV.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Uniper notice gives the plant address as Kraftwerk Ingolstadt, Bayernwerkstraße 30, 85098 Großmehring. So the plant is in the municipality of Großmehring, next to the city of Ingolstadt."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Start year",
+    "Latest Activity"
+   ],
+   "notes": "City is Großmehring. The Uniper List of Assets for the year 2025 shows Ingolstadt 3 with 355 MW net capacity, a 100 percent consolidated share and a start year of 1973. The earlier batch already reported the 420 MW gross figure, so capacity is not proposed again. Status is unchanged and no start year differs."
+  },
+  {
+   "gem_unit_id": "G100001094634",
+   "unit_name": "Unit 4",
+   "findings": {
+    "City": {
+     "value": "Großmehring",
+     "refs": [
+      "https://www.uniper.energy/sites/default/files/2023-02/KW%20Ingolstadt%20Ver%C3%B6ffentlichung%20gem%C3%A4%C3%9F%20Anhang%20V%20der%2012.%20BImSchV.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.uniper.energy/sites/default/files/2023-02/KW%20Ingolstadt%20Ver%C3%B6ffentlichung%20gem%C3%A4%C3%9F%20Anhang%20V%20der%2012.%20BImSchV.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Uniper notice gives the plant address as Kraftwerk Ingolstadt, Bayernwerkstraße 30, 85098 Großmehring. So the plant is in the municipality of Großmehring, next to the city of Ingolstadt."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Start year",
+    "Latest Activity"
+   ],
+   "notes": "City is Großmehring. The Uniper List of Assets for the year 2025 shows Ingolstadt 4 with 365 MW net capacity, a 100 percent consolidated share and a start year of 1974. The earlier batch already reported the 420 MW gross figure, so capacity is not proposed again. Status is unchanged and no start year differs."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001094633",
+   "concern_type": "owner",
+   "recommendation": "Check the owner of both units. GEM lists Zweckverband Müllverwertungsanlage Ingolstadt.",
+   "note": "The Uniper List of Assets for the year 2025 lists Ingolstadt 3 and 4 as fully consolidated Uniper assets at 100 percent. The earlier batch raised the same question. The start year in the list is 1973 for Unit 3 and GEM has 1974. The year is a small gap and I did not change it.",
+   "refs": [
+    "https://www.uniper.energy/system/files/2026-09/2026_11_03_FY_2025_Uniper_List_of_Assets_Edition_2025.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.uniper.energy/system/files/2026-09/2026_11_03_FY_2025_Uniper_List_of_Assets_Edition_2025.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Uniper List of Assets, edition 2025. Rows for Ingolstadt 3 and 4 show 355 and 365 MW net."
+  },
+  {
+   "url": "https://www.uniper.energy/sites/default/files/2023-02/KW%20Ingolstadt%20Ver%C3%B6ffentlichung%20gem%C3%A4%C3%9F%20Anhang%20V%20der%2012.%20BImSchV.pdf",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Uniper safety notice naming Großmehring as the plant address."
+  }
+ ]
+}

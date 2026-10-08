@@ -1,0 +1,110 @@
+{
+ "meta": {
+  "plant_id": "L100000101895",
+  "plant_name": "Schwarze Pumpe power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:26:34-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000412838",
+   "unit_name": "CC1. timepoint 1",
+   "findings": {
+    "Status Detail": {
+     "value": "First partial permit granted on 14 October 2024 to Lausitz Energie Kraftwerke AG for the gas turbine foundation, gatehouse, construction roads and site office only. A second partial permit for the plant itself is still to come. A tender bid was reported in 2026 and the award is due by 3 November 2026.",
+     "refs": [
+      "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/2008dbff-5f94-4b59-8c11-65cc8a42bbf9/Abdruck_EntscheidungTG_GuD_Geschw%C3%A4rzt.pdf",
+      "https://spremberg.de/api/datei/202401151405bqz.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/2008dbff-5f94-4b59-8c11-65cc8a42bbf9/Abdruck_EntscheidungTG_GuD_Geschw%C3%A4rzt.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://spremberg.de/api/datei/202401151405bqz.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The decision of the Saxony state administration dated 14 October 2024 grants only the first partial permit. It covers the foundation, a gatehouse, roads and a site office. The plant itself needs a second partial permit after detailed planning. A permit alone does not make the unit under construction, so the status stays pre-construction. The tender part comes from the earlier research for this plant."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Owner(s)"
+   ],
+   "notes": "The decision is vendor neutral and names no turbine maker, because LEAG had not yet awarded the detailed planning. The applicant is Lausitz Energie Kraftwerke AG, which matches the owner in the database. The project is moving, with a tender bid reported in 2026, so Latest Activity is left alone."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000412838",
+   "concern_type": "capacity",
+   "recommendation": "Keep 850 MW from LEAG's 2025 release unless a later permit shows otherwise.",
+   "note": "The decision of 14 October 2024 states a gross electric output of 875 MW and a net output of 855 MW. Thermal fuel input is 1,417 MW and is not capacity. GEM has 850 MW from a LEAG release of August 2025. The permit figure is from the older design, so the two differ.",
+   "refs": [
+    "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/2008dbff-5f94-4b59-8c11-65cc8a42bbf9/Abdruck_EntscheidungTG_GuD_Geschw%C3%A4rzt.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000412838",
+   "concern_type": "start_year",
+   "recommendation": "Leave the start year at 2028 for now.",
+   "note": "The 2022 application and the October 2024 decision both say commissioning was planned for the second quarter of 2027. That date is old and no second partial permit has been published. The earlier research found no newer official date.",
+   "refs": [
+    "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/2008dbff-5f94-4b59-8c11-65cc8a42bbf9/Abdruck_EntscheidungTG_GuD_Geschw%C3%A4rzt.pdf",
+    "https://spremberg.de/api/datei/202401151405bqz.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Lausitz Energie Kraftwerke AG",
+   "role": "owner",
+   "lookup_result": "Already the owner in the database; not looked up again."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=2008dbff-5f94-4b59-8c11-65cc8a42bbf9",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Permit portal page, read from the local cache. The verifier passed on the company name but not on the decision date, which the page gives in another form."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/2008dbff-5f94-4b59-8c11-65cc8a42bbf9/Abdruck_EntscheidungTG_GuD_Geschw%C3%A4rzt.pdf",
+   "used_for": [
+    "Status Detail",
+    "Capacity (MW)",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Decision of 14 October 2024, read from the local cache."
+  },
+  {
+   "url": "https://spremberg.de/api/datei/202401151405bqz.pdf",
+   "used_for": [
+    "Status Detail",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Notice of 20 December 2023 on the application of 21 December 2022. Read through the fetcher."
+  }
+ ]
+}

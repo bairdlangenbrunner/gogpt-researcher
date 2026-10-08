@@ -140,3 +140,12 @@ RESEARCH_FIELDS = [
     "Captive industry type", "Captive non-industry use",
     "Conversion/replacement?",
 ]
+
+# --- Free-text boxes that are only ever added to ------------------------------
+# Status Detail and Notes are running logs in the GEM web form, newest entry at
+# the top. A staged value for either is the new text placed ABOVE the text
+# already there, which stays word for word; never a rewrite, never a deletion
+# (Baird 2026-10-07). build_review_package.additive_value composes the cell,
+# assemble_state.py uses it, and state_gate.py (gate `additive`) plus
+# build_review_package.validate reject anything else.
+ADDITIVE_TEXT_COLUMNS = ("Status Detail", "Notes")

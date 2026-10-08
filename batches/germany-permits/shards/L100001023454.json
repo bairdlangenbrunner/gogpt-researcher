@@ -1,0 +1,79 @@
+{
+ "meta": {
+  "plant_id": "L100001023454",
+  "plant_name": "Ulm power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:30:00-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001027808",
+   "unit_name": "ST1",
+   "findings": {
+    "City": {
+     "value": "Ulm",
+     "refs": [
+      "https://www.uvp-verbund.de/documents-ige-ng/igc_bw/E6D6C369-C231-4076-88ED-268BF5B86F4D/200515_FUG_BHKW1_Bekanntmachungstext_Vorhaben.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_bw/E6D6C369-C231-4076-88ED-268BF5B86F4D/200515_FUG_BHKW1_Bekanntmachungstext_Vorhaben.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The public notice for the permit application by Fernwärme Ulm GmbH gives the site as Magirusstraße 21, 89077 Ulm. It describes the new gas engine plant that replaces the old coal boiler. So the plant is in the city of Ulm."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Start year",
+    "Latest Activity"
+   ],
+   "notes": "City is Ulm. The notice from May 2020 says the gas engine plant was planned to start in early 2022, which fits the stored start year of 2022. It gives only thermal input, 44.7 MW for two engines, which is not electric capacity, so the capacity of 20.5 MW is neither confirmed nor changed. The unit is already operating in GEM, so no status change is proposed."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001027808",
+   "concern_type": "identity",
+   "recommendation": "Consider renaming the unit and correcting the technology to internal combustion with two engines.",
+   "note": "The permit notice describes two gas engines with 22.35 MW thermal input each, and the earlier batch found the regulator list shows an engine plant. GEM lists a steam turbine called ST1. This repeats the earlier question.",
+   "refs": [
+    "https://www.uvp-verbund.de/documents-ige-ng/igc_bw/E6D6C369-C231-4076-88ED-268BF5B86F4D/200515_FUG_BHKW1_Bekanntmachungstext_Vorhaben.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_bw/E6D6C369-C231-4076-88ED-268BF5B86F4D/200515_FUG_BHKW1_Bekanntmachungstext_Vorhaben.pdf",
+   "used_for": [
+    "City",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Public notice of May 2020 from the Regierungspräsidium for the first partial permit application. Read from the local cache."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=E6D6C369-C231-4076-88ED-268BF5B86F4D",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "Procedure page. Summary shows display period 2 June to 1 July 2020 and hearing 27 to 28 August 2020. No decision date is given."
+  }
+ ]
+}

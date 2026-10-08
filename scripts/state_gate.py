@@ -45,6 +45,12 @@ Hard gates (any failure exits 1)
               the Status in the same batch), and its date is at least a year
               before today. A newer date means the project is moving and the
               field is not needed (docs/reference/lifecycle_rules.md).
+  additive    Status Detail and Notes are running logs, newest entry first
+              (Baird 2026-10-07): a staged value must end with the text the
+              box already holds (whitespace-normalized), on this unit and on
+              every sibling unit of a plant-wide edit, and a delete record may
+              never name either column. assemble_state.py composes the value
+              with build_review_package.additive_value.
   build       build_review_package.validate() on the lane files: the errors
               that would stop the build anyway (qa records with fields, etc.)
   qc_checks   qc_checks.py --staged on each lane file present must exit 0
@@ -64,6 +70,14 @@ Advisory gates (reported, never fail the run)
                 shard, tier, staged, ref, orphan, url_verifier, blue, green,
                 yellow and the like) or an em dash, en dash or arrow;
                 rewrite per docs/reference/notes_style.md
+  concern-types a qa record whose concern_type is outside the vocabulary
+                (a staged column name or one of review_app/checklist.py
+                CONCERN_KINDS); assemble_state.py maps shard text onto it, so
+                an offender here is text the mapping did not recognize
+  monitor-fields
+                a monitor record with no monitor_reason, no recheck_by, a
+                recheck_by not of the form YYYY-MM, or a monitor_kind outside
+                new_to_tracker / existing_plant
 
 Output: one line per gate, `GATE <name> HARD|ADVISORY PASS|FAIL (n)`, then
 up to 25 offenders (record_id and reason). Last line: `GATE CLEAN` or
@@ -81,12 +95,15 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from review_app.checklist import CONCERN_VOCAB, MONITOR_KINDS  # noqa: E402
 from assemble_state import (  # noqa: E402
     host_of, is_blank, load_export, load_index, norm_entities, norm_status,
     resolve_csv, ws)
 from schema_constants import STATUSES_IN_DEVELOPMENT  # noqa: E402
-from build_review_package import load_lanes, ref_col_for, validate  # noqa: E402
-from schema_constants import READ_ONLY_COLUMNS  # noqa: E402
+from build_review_package import (  # noqa: E402
+    additive_errors, load_lanes, ref_col_for, validate)
+from schema_constants import ADDITIVE_TEXT_COLUMNS, READ_ONLY_COLUMNS  # noqa: E402
 
 SCRIPTS = Path(__file__).resolve().parent
 BANNED = ("gem.wiki", "globalenergymonitor.org", "abarrelfull")
@@ -332,8 +349,24 @@ def gate_latest_activity(lanes, export, today=None):
     return out
 
 
+def gate_additive(lanes):
+    """Status Detail and Notes are running logs, newest entry first: a staged
+    value is the new text placed above the text already in the box, which
+    stays word for word on this unit and on every sibling unit of a plant-wide
+    edit. Neither box is ever rewritten or cleared (Baird 2026-10-07)."""
+    out = []
+    for lane, rid, rec in iter_records(lanes, VALUE_LANES):
+        if not any(c in (rec.get("fields") or {}) for c in ADDITIVE_TEXT_COLUMNS):
+            continue
+        for e in additive_errors(rec, rec, rid):
+            out.append((rid, e.split(": ", 1)[1]))
+    return out
+
+
 def gate_build(lanes):
-    return [("build", e) for e in validate(lanes)]
+    return [("build", e) for e in validate(lanes)
+            if " drops or rewrites the text already in the box" not in e
+            and " is never cleared; new text is added above " not in e]
 
 
 def gate_false_high(lanes):
@@ -406,13 +439,44 @@ def gate_notes(lanes):
     for lane, rid, rec in iter_records(lanes):
         for key in ("researcher_notes", "action"):
             text = str(rec.get(key) or "")
-            words = sorted({m.group(0).lower() for m in JARGON_RE.finditer(text)})
+            # a capitalized word followed by another one is a name
+            # ("Green Rocks data center", "Blue Ridge"), not repo jargon
+            words = sorted({m.group(0).lower() for m in JARGON_RE.finditer(text)
+                            if not (m.group(0)[0].isupper()
+                                    and re.match(r" [A-Z]", text[m.end():m.end() + 2]))})
             dashes = sorted(set(DASH_RE.findall(text)))
             if words:
                 out.append((rid, f"{key} uses repo words: {', '.join(words)}"))
             if dashes:
                 out.append((rid, f"{key} uses dashes or arrows: "
                                  f"{' '.join(repr(d) for d in dashes)}"))
+    return out
+
+
+def gate_concern_types(lanes):
+    out = []
+    for lane, rid, rec in iter_records(lanes, ("qa",)):
+        ct = ws(rec.get("concern_type"))
+        if ct not in CONCERN_VOCAB:
+            out.append((rid, f"concern_type {ct!r} is outside the vocabulary"
+                             + (f" (shard wrote {rec['concern_type_raw']!r})"
+                                if rec.get("concern_type_raw") else "")))
+    return out
+
+
+def gate_monitor_fields(lanes):
+    out = []
+    for lane, rid, rec in iter_records(lanes, ("monitor",)):
+        if not ws(rec.get("monitor_reason")):
+            out.append((rid, "monitor_reason is empty"))
+        rb = ws(rec.get("recheck_by"))
+        if not rb:
+            out.append((rid, "recheck_by is empty"))
+        elif not re.fullmatch(r"\d{4}-(0[1-9]|1[0-2])", rb):
+            out.append((rid, f"recheck_by {rb!r} is not YYYY-MM"))
+        if rec.get("monitor_kind") not in MONITOR_KINDS:
+            out.append((rid, f"monitor_kind {rec.get('monitor_kind')!r} is not one of "
+                             f"{' / '.join(MONITOR_KINDS)}"))
     return out
 
 
@@ -465,6 +529,7 @@ def run(args):
     add("cell-prose", True, gate_cell_prose(lanes))
     add("dates", True, gate_dates(lanes))
     add("latest-activity", True, gate_latest_activity(lanes, export))
+    add("additive", True, gate_additive(lanes))
     add("build", True, gate_build(lanes))
     add("false-high", False, gate_false_high(lanes))
     add("independence", False, gate_independence(lanes))
@@ -478,6 +543,8 @@ def run(args):
         add("entities", False, [], status="SKIPPED",
             info=["skipped: pass --entity-check to run the lookup"])
     add("notes", False, gate_notes(lanes))
+    add("concern-types", False, gate_concern_types(lanes))
+    add("monitor-fields", False, gate_monitor_fields(lanes))
     qc_ran = []
     if args.no_qc:
         add("qc_checks", True, [], status="SKIPPED", info=["skipped: --no-qc"])

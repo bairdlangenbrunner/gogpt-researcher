@@ -80,20 +80,32 @@ python export_to_dump.py                       # only if the upstream scans are 
 # 2. worklist and briefs
 python worklist.py --state Maryland --all
 python build_state_brief.py --state Maryland --mode blind      # calibration only
-python build_state_brief.py --state "New York" --mode update \
-    --extra-tasks ../batches/us-ny/extra_tasks.json             # production; --scope ladder is the default
-python build_sweep_args.py --batch ../batches/us-ny --model sonnet --group-max 5   # writes staging/sweep_args.json
+python validation_report.py --state Georgia                     # checklist row 7
+python match_ids.py --state Georgia                             # row 38
+python irp_sheet.py --state Georgia --save-json ../work/irp_tab.json   # rows 34 and 37 (US IRPs tab)
+python build_state_brief.py --state Georgia --mode update \
+    --extra-tasks ../batches/us-ga/extra_tasks.json \
+    --validation ../work/validation_us-ga.json --ids ../work/ids_us-ga.json \
+    --irp ../work/irp_us-georgia.json \
+    --promote ../batches/us-ny/staging                          # watch items a reviewer promoted; --scope ladder is the default
+python build_sweep_args.py --batch ../batches/us-ga --model sonnet --group-max 5   # writes staging/sweep_args.json
 
 # 3. fan out (Workflow tool, script .claude/workflows/state-sweep.js, args = that JSON);
 #    in parallel, one Sonnet agent does the statewide search for newly announced
-#    gas plants and gas-fired data centers and writes shards/_state.json
+#    gas plants and gas-fired data centers, reads briefs/_irp.md and the promoted
+#    candidates, and writes shards/_state.json (qa, monitor, newplants, newunits,
+#    meta.irp_summary)
 
 # 4. assemble, gate, QC, build
-python assemble_state.py --batch ../batches/us-md
-python state_gate.py --batch ../batches/us-md                   # must print GATE CLEAN
-python qc_checks.py --staged ../batches/us-md/staging/staged_updates.json   # and the other lanes
-python build_review_package.py --staging ../batches/us-md/staging --scope us-md --mode update
+python assemble_state.py --batch ../batches/us-ga
+python state_gate.py --batch ../batches/us-ga                   # must print GATE CLEAN
+python qc_checks.py --staged ../batches/us-ga/staging/staged_updates.json   # and the other lanes
+python build_review_package.py --staging ../batches/us-ga/staging --scope us-ga --mode update --irp ../work/irp_us-georgia.json
 ```
+
+A staging folder curated by hand after assembly (Maryland, New York) is never
+rebuilt from its shards; `add_checklist_fields.py --staging <dir>` adds the
+checklist fields in place.
 
 ## Modes
 
@@ -192,6 +204,15 @@ core, for the review app and the assemble step:
 - `reverified` (bool): the value is unchanged and a new source confirms it
   (the blue color in the workbook).
 
+Added 2026-10-07 for the checklist work (`notes/review_app_checklist_plan.md`):
+`checks` (checklist rows, copied from the brief task), normalized qa
+`concern_type` (shard text kept in `concern_type_raw`), monitor
+`monitor_reason` / `recheck_by` / `monitor_kind`, and `irp` (the value comes
+from a utility resource plan: the shard finding carried `irp: true` or a ref
+is one of the plan links in the brief index). A shard finding may carry
+`"irp": true` next to `tier`; the statewide file may carry `newplants`,
+`newunits` and `meta.irp_summary`.
+
 ## Gate (`state_gate.py`)
 
 Read-only. Hard failures exit non-zero; advisory lines are informational.
@@ -207,6 +228,7 @@ Read-only. Hard failures exit non-zero; advisory lines are informational.
 | cell prose | hard | a value cell holds a value, not a sentence or a URL |
 | dates | hard | `Latest Activity` reads `Year: YYYY, Month: M, Day: D` (month and day optional); the year columns hold a four-digit year |
 | latest activity | hard | a `Latest Activity` edit is only for a unit in development, shelved or with an inferred status, and its date is at least a year old |
+| additive | hard | a `Status Detail` or `Notes` value is the new text placed above the text already in the box, which stays word for word, on the unit and on every sibling of a plant-wide edit; neither box is ever cleared (Baird 2026-10-07) |
 | false high | advisory | a `high` status change with fewer than two independent hosts |
 | independence | advisory | `independent: true` with fewer than two verified refs |
 | entities | advisory | every new owner or operator name passes `entity_lookup.py` (skipped offline) |

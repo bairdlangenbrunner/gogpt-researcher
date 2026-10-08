@@ -1,0 +1,65 @@
+{
+ "meta": {
+  "plant_id": "L100001083584",
+  "plant_name": "Hanau joint power plant",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:19:14-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001094609",
+   "unit_name": "1",
+   "findings": {
+    "Turbine/Engine Technology": {
+     "value": "internal combustion",
+     "refs": [
+      "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2025-07/25-06-24_2-tg_gmhkw_hanau_.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2025-07/25-06-24_2-tg_gmhkw_hanau_.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Regierungspraesidium Darmstadt permit of 24 June 2025 describes the plant as a gas engine heating plant with three gas engines and two hot water boilers. So it is an engine plant and not a combined cycle plant. GEM now shows ICCC, which should change."
+    }
+   },
+   "not_found": [
+    "Capacity (MW)",
+    "Equipment Manufacturer/Model",
+    "Owner(s)"
+   ],
+   "notes": "The second and final partial permit of 24 June 2025 confirms the earlier finding that the plant is built and allowed to run. It was issued to Gemeinschaftskraftwerk Hanau GmbH & Co. KG after a first partial permit of 28 March 2023. The permit gives thermal input of 22.8 MW per engine and about 47.4 MW of heat for the engines in total. It does not give electric output or the engine maker, so capacity stays as in the earlier findings. The earlier findings on status, start year and city are not repeated."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Gemeinschaftskraftwerk Hanau",
+   "role": "operator",
+   "lookup_result": "Entity lookup says the name appears on 1 unit in Germany. Reuse the existing entity. Do not create a new one."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2025-07/25-06-24_2-tg_gmhkw_hanau_.pdf",
+   "used_for": [
+    "Turbine/Engine Technology"
+   ],
+   "outcome": "verified",
+   "note": "Permit read in full. Found Gasmotoren and the applicant name."
+  }
+ ]
+}

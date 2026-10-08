@@ -7,10 +7,14 @@ with the batch:
     review_log.jsonl        append-only truth: every decision and every undo, one record per line
     review_decisions.json   derived: {"generated": ts, "decisions": {key: latest record}}
 
-Record shape: {key, dir, pid, record_id, column, kind, decision, suggested_value, note, reviewer,
-ts, undecided}; `reviewer` is a person's initials (initials()). An undo appends a record with
-`undecided: true`; nothing is ever deleted from the log. Item calls (qa concerns, monitor and
-entity notes) go to the same log with {key, dir, pid, record_id, kind, call, note, ...}.
+Record shape: {key, dir, pid, record_id, column, kind, decision, suggested_value, reference, note,
+reviewer, ts, undecided}; `reviewer` is a person's initials (initials()). An undo appends a
+record with `undecided: true`; nothing is ever deleted from the log. Item calls (qa concerns,
+watch items, entity notes) go to the same log with {key, dir, pid, record_id, kind, call,
+reference, note, ...}; a watch item's calls are add_to_database / hold / possible_updates /
+remove (review_app/checklist.py WATCH_CALLS). An ask-the-PM flag is a third record type,
+{key: "pm::" + <line/item key> or "pm::" + dir + "::plant:" + pid, flag: "pm", on, note, ...}: a
+flag sits beside a decision and never replaces it, so one line can be accepted AND flagged.
 
 Nothing here touches the GEM database, the staged_*.json files or the deliverables: the
 decisions are consumed by scripts/build_review_package.py --decisions when the actions
@@ -19,12 +23,17 @@ workbook is built.
 import json
 import os
 import re
+import sys
 import threading
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from review_app.checklist import WATCH_CALLS  # noqa: E402
+
 ET = ZoneInfo("America/New_York")
 DECISIONS = {"accept", "hold", "reject", "suggest"}
 LOG_NAME = "review_log.jsonl"
@@ -40,11 +49,17 @@ _EMAIL_RE = re.compile(r"^([^@\s]+)@[^@\s]+\.[^@\s]+$")
 LINE_KINDS = ("fill", "change", "reverified", "delete", "plant", "new_row")
 ITEM_KINDS = ("concern", "monitor", "entity", "other")
 # The call vocabulary per item kind. A concern (qa lane) is confirmed (it stands and goes to
-# the QA sheet), dismissed, or sent back for more research. Everything else is noted / todo /
-# dismissed. Items never write a cell.
+# the QA sheet), dismissed, or sent back for more research. A watch item (monitor lane) is
+# added to the database now, held, sent to the possible-updates sheet, or removed from the
+# watchlist (remove needs a note saying why). Everything else is noted / todo / dismissed.
+# Items never write a cell.
 CONCERN_CALLS = ("confirmed", "dismissed", "needs_research")
 OTHER_CALLS = ("noted", "todo", "dismissed")
-ITEM_CALLS = {k: (CONCERN_CALLS if k == "concern" else OTHER_CALLS) for k in ITEM_KINDS}
+ITEM_CALLS = {k: (CONCERN_CALLS if k == "concern" else WATCH_CALLS if k == "monitor" else OTHER_CALLS)
+              for k in ITEM_KINDS}
+NOTE_REQUIRED = {("monitor", "remove")}       # (kind, call) pairs that need a note
+FLAG_PREFIX = "pm::"
+FLAGS = ("pm",)
 
 _LOCK = threading.Lock()     # one process-wide lock around every read-modify-write of a sidecar
 
@@ -117,12 +132,17 @@ def dir_paths(data, root=None):
     return {d: base / d for d in data.get("dirs", [])}
 
 
+def plant_flag_key(label, pid):
+    return f"{FLAG_PREFIX}{label}::plant:{pid}"
+
+
 def overlay(data, dirs=None, root=None):
     """Fill `decision`, `reviewed`, `decided_by`, `decided_at` (+ `suggested_value`,
-    `decision_note` on a suggest) on every line, and `call`, `call_note`, `reviewed`,
-    `decided_by`, `decided_at` on every item of `data` (in place; returns it) from each dir's
-    review_log.jsonl. The latest record per key speaks: `decision` / `call` is None after an
-    undo or with no record."""
+    `reference`, `decision_note` on a suggest) on every line, and `call`, `call_note`,
+    `call_reference`, `reviewed`, `decided_by`, `decided_at` on every item of `data` (in place;
+    returns it) from each dir's review_log.jsonl. The latest record per key speaks: `decision` /
+    `call` is None after an undo or with no record. Ask-the-PM flags land as `pm_flag` /
+    `pm_note` on lines, items and plants (a plant flag is kept in the plant's own dir)."""
     dirs = dirs if dirs is not None else dir_paths(data, root)
     logs = {}
 
@@ -130,6 +150,13 @@ def overlay(data, dirs=None, root=None):
         if d not in logs:
             logs[d] = read_decisions(dirs[d]) if d in dirs else {}
         return logs[d].get(key)
+
+    def flag(d, key, o):
+        rec = last(d, FLAG_PREFIX + key)
+        live = rec if reviewed(rec) and rec.get("on") else None
+        o["pm_flag"] = bool(live)
+        o["pm_note"] = live.get("note", "") if live else ""
+        o["pm_by"] = live.get("reviewer") if live else None
 
     for p in data.get("plants", []):
         for grp in ("lines", "items"):
@@ -139,13 +166,20 @@ def overlay(data, dirs=None, root=None):
                 if grp == "lines":
                     o["decision"] = live["decision"] if live else None
                     o["suggested_value"] = live.get("suggested_value", "") if live and live.get("decision") == "suggest" else ""
+                    o["reference"] = live.get("reference", "") if live and live.get("decision") == "suggest" else ""
                     o["decision_note"] = live.get("note", "") if live and live.get("decision") == "suggest" else ""
                 else:
                     o["call"] = live.get("call") if live else None
                     o["call_note"] = live.get("note", "") if live else None
+                    o["call_reference"] = live.get("reference", "") if live else ""
                 o["reviewed"] = bool(live)
                 o["decided_by"] = live.get("reviewer") if live else None
                 o["decided_at"] = live.get("ts") if live else None
+                flag(o.get("dir"), o["key"], o)
+        rec = last(p.get("dir"), plant_flag_key(p.get("dir"), p["pid"]))
+        live = rec if reviewed(rec) and rec.get("on") else None
+        p["pm_flag"] = bool(live)
+        p["pm_note"] = live.get("note", "") if live else ""
     return data
 
 
@@ -192,12 +226,52 @@ def validate(records, data, reviewer=None):
             raise Invalid(f"record {i}: decision {decision!r} is not one of {', '.join(sorted(DECISIONS))}")
         note = str(r.get("note") or "")
         sv = str(r.get("suggested_value") or "")
+        ref = str(r.get("reference") or "").strip()
         if decision == "suggest" and not undo and not (sv.strip() or note.strip()):
             raise Invalid(f"record {i}: a suggestion needs a suggested_value or a note")
+        if ref and not _URL_RE.match(ref):
+            raise Invalid(f"record {i}: reference {ref!r} is not a web address (http or https)")
         out.append({"key": key, "dir": obj["dir"], "pid": plant["pid"], "record_id": obj.get("record_id"),
                     "column": obj.get("column") or "", "kind": obj["kind"],
-                    "decision": decision, "suggested_value": sv, "note": note,
+                    "decision": decision, "suggested_value": sv, "reference": ref, "note": note,
                     "reviewer": reviewer, "ts": None, "undecided": undo})
+    return out
+
+
+_URL_RE = re.compile(r"^https?://\S+$")
+
+
+def validate_flags(records, data, reviewer=None):
+    """Normalized ask-the-PM flag records, or Invalid. A record is {key, on: bool, note?} where
+    key is a line or item key, or {pid, dir, on, note?} for a whole plant. The stored key is
+    "pm::" + the line/item key, or "pm::" + dir + "::plant:" + pid, so a flag never collides
+    with the decision on the same record."""
+    if not isinstance(records, list) or not records:
+        raise Invalid("expected a non-empty list of flag records")
+    idx = index(data)
+    plants = {(p.get("dir"), p["pid"]): p for p in data.get("plants", [])}
+    out = []
+    for i, r in enumerate(records):
+        if not isinstance(r, dict):
+            raise Invalid(f"record {i}: not an object")
+        on = bool(r.get("on", True))
+        note = str(r.get("note") or "")
+        key = r.get("key")
+        if key:
+            if key not in idx:
+                raise Invalid(f"record {i}: unknown key {key!r}")
+            plant, obj, grp = idx[key]
+            out.append({"key": FLAG_PREFIX + key, "dir": obj["dir"], "pid": plant["pid"],
+                        "record_id": obj.get("record_id"), "kind": obj.get("kind"), "flag": "pm", "on": on,
+                        "note": note, "reviewer": reviewer, "ts": None, "undecided": False})
+            continue
+        pid, label = r.get("pid"), r.get("dir")
+        plant = plants.get((label, pid)) or next((p for p in plants.values() if p["pid"] == pid), None)
+        if plant is None:
+            raise Invalid(f"record {i}: unknown plant {pid!r}")
+        out.append({"key": plant_flag_key(plant["dir"], plant["pid"]), "dir": plant["dir"], "pid": plant["pid"],
+                    "record_id": None, "kind": "plant", "flag": "pm", "on": on,
+                    "note": note, "reviewer": reviewer, "ts": None, "undecided": False})
     return out
 
 
@@ -304,8 +378,14 @@ def validate_items(records, data, reviewer=None):
         vocab = ITEM_CALLS.get(obj.get("kind"), OTHER_CALLS)
         if not undo and call not in vocab:
             raise Invalid(f"record {i}: call {call!r} is not one of {', '.join(vocab)} for a {obj.get('kind')} item")
+        note = str(r.get("note") or "")
+        if not undo and (obj.get("kind"), call) in NOTE_REQUIRED and not note.strip():
+            raise Invalid(f"record {i}: {call.replace('_', ' ')} needs a note saying why")
+        ref = str(r.get("reference") or "").strip()
+        if ref and not _URL_RE.match(ref):
+            raise Invalid(f"record {i}: reference {ref!r} is not a web address (http or https)")
         out.append({"key": key, "dir": obj["dir"], "pid": plant["pid"], "record_id": obj.get("record_id"),
-                    "kind": obj["kind"], "call": call, "note": str(r.get("note") or ""),
+                    "kind": obj["kind"], "call": call, "reference": ref, "note": note,
                     "reviewer": reviewer, "ts": None, "undecided": undo})
     return out
 
@@ -317,3 +397,11 @@ def record_items(records, data, reviewer, dirs=None, root=None):
     dirs = dirs if dirs is not None else dir_paths(data, root)
     with _LOCK:
         return _write(validate_items(records, data, reviewer), dirs)
+
+
+def record_flags(records, data, reviewer, dirs=None, root=None):
+    """Ask-the-PM flags into the same log. Returns the records written."""
+    reviewer = initials(reviewer)
+    dirs = dirs if dirs is not None else dir_paths(data, root)
+    with _LOCK:
+        return _write(validate_flags(records, data, reviewer), dirs)

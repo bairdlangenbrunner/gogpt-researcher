@@ -1,0 +1,122 @@
+{
+ "meta": {
+  "plant_id": "L100000101894",
+  "plant_name": "Janschwalde power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:19:14-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000412873",
+   "unit_name": "CC1, timepoint 1",
+   "findings": {
+    "Start year": {
+     "value": "2029",
+     "refs": [
+      "https://www.uvp-verbund.de/trefferanzeige?docuuid=b4869244-3748-4ded-b0ed-0150faa7985a"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=b4869244-3748-4ded-b0ed-0150faa7985a",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The permit register entry for the innovative storage power plant says commissioning is planned for June 2029. This is later than the 2028 in GEM and in an older LEAG news item. The register entry is from 2026 and is the newer statement."
+    },
+    "Capacity (MW)": {
+     "value": "870.0",
+     "refs": [
+      "https://www.leag.de/de/news/details/leag-bereitet-genehmigungsantrag-fuer-innovatives-speicherkraftwerk-vor/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.leag.de/de/news/details/leag-bereitet-genehmigungsantrag-fuer-innovatives-speicherkraftwerk-vor/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A LEAG news item says the plant will have a gross electric output of 560 MW or 870 MW, depending on module size. The high end is 870 MW. GEM shows 900 MW. The item is undated, and the permit entry gives only thermal input of 1,445 MW, which is not capacity."
+    },
+    "Status Detail": {
+     "value": "LEAG applied to the Brandenburg state environment office for a first partial permit for the gas and steam turbine plant. The documents were on public display from 22 April to 6 May 2026. Commissioning is planned for June 2029.",
+     "refs": [
+      "https://www.uvp-verbund.de/trefferanzeige?docuuid=b4869244-3748-4ded-b0ed-0150faa7985a"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=b4869244-3748-4ded-b0ed-0150faa7985a",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "This replaces the current text about a politician calling the project dead. The register entry is the official record of the application. The status stays pre-construction."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "Status stays pre-construction. The application is for a first partial permit that covers only the turbine foundation, a gatehouse and the environmental impact assessment, so no construction of the plant itself is allowed yet. Latest Activity should stay as it is, because there was a public display in April 2026 and a capacity tender bid in September 2026, so the project is moving. The earlier findings suggested a Latest Activity entry of 9 September 2026, which does not fit the rule for moving projects. I did not find a document naming the gas turbine maker. LEAG's news item and the register entry both leave it out."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000412873",
+   "concern_type": "location",
+   "recommendation": "Check that the permitted site matches this GEM plant.",
+   "note": "The register entry places the storage power plant at Neuendorf in the municipality of Teichland, while GEM places the unit at Peitz. The project name matches the LEAG storage power plant at Jänschwalde, but I did not find a document that names both places together.",
+   "refs": [
+    "https://www.uvp-verbund.de/trefferanzeige?docuuid=b4869244-3748-4ded-b0ed-0150faa7985a"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Lausitz Energie Kraftwerke AG",
+   "role": "owner",
+   "lookup_result": "Already the owner in GEM. No change proposed, so no lookup needed."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=b4869244-3748-4ded-b0ed-0150faa7985a",
+   "used_for": [
+    "Start year",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Procedure page read from the cache. No documents are attached to the entry."
+  },
+  {
+   "url": "https://www.leag.de/de/news/details/leag-bereitet-genehmigungsantrag-fuer-innovatives-speicherkraftwerk-vor/",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Found 870 and 2028. The text 560 MW fails as written because the page writes MW with a space and a different layout."
+  },
+  {
+   "url": "https://www.leag.de/de/news/details/leag-beteiligt-sich-mit-mehreren-projekten-und-standorten-an-der-ausschreibung-fuer-zukunftskraftwerke/",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Already used in the earlier findings."
+  }
+ ]
+}

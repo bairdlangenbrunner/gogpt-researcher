@@ -74,7 +74,7 @@ Columns: checklist item (row number on the tab), where it lands, status.
 | Row | Item | Where it lands | Status |
 |---|---|---|---|
 | 6 | Captive LNG sheet checked for new plants | Discovery step: read the Americas Qualifying tab of the captive LNG workbook, match Terminal IDs to the state, compare against GEM plants named "... LNG terminal power station" | New step, sheet is readable (see sop_pointers) |
-| 7, 54 | Validation report errors fixed | Country close-out. The report is produced inside the GEM database web UI, which this repo cannot reach | **Open question 1** |
+| 7, 54 | Validation report errors fixed | `validation_report.py` reads the stored errors (`plant.validation`) from the read-only DB at batch start; `build_state_brief.py --validation` turns the research fixes into unit tasks; `--closeout` is the row 54 gate | Covered (2026-10-06) |
 | 8 | No blanks for fuel, status, technology, country, coordinates, accuracy, owner | Mechanical: a per-state checker run on the fresh export, output feeds the gap list | Partly in `qc_checks.py --csv`; extend |
 | 9, 18 | Unknown start year rechecked (operating units especially) | Gap list research task | Research task |
 | 11 | Every unit has a unit name (not blank, not "--") | Mechanical checker | New check |
@@ -106,10 +106,10 @@ pastes it, or approves a `gws-gem-write` call.
 | 31, 55 | Possible-updates sheet reviewed; rows marked done or "Q2 2027" | Already a batch-start step (Update SOP §3). The "gas/oil plants" tab is readable; Maryland has 2 rows, the US 88 | Covered; add the done / Q2 2027 wording to the close-out |
 | 32 | "Gas power plant data sources - by country" doc updated | Close-out draft from source_roster and state notes | Draft step to add |
 | 33 | Europe workflow doc | Not applicable to US states | Skip |
-| 34 | US IRPs tab updated for the state | Close-out draft | Draft step to add |
+| 34 | US IRPs tab updated for the state | The IRP step drafts a dated Notes entry per utility row for pasting: the `irp_notes_draft` sheet of `build_review_package.py --irp` (`notes/review_app_checklist_plan.md`, "New research step: utility IRPs") | Built 2026-10-07 |
 | 36 | US Data/Research Guide updated for the state | Close-out draft | Draft step to add |
-| 37 | IRP box checked on all IRP projects | The export has no IRP column, so the repo cannot see or check this box | **Open question 2** |
-| 38 | GEM IDs matched to EIA-860M, EIP, Sierra Club | 860M: Other IDs (location) = Plant ID, Other IDs (unit) = Generator ID; both columns are in the export, so missing IDs are a mechanical gap and the fill is a research task. EIP and Sierra Club: see open question 3 | Partly coverable |
+| 37 | IRP box checked on all IRP projects | Resolved 2026-10-07: the box IS in the export (the `IRP` column, yes or no) but is never staged. The US IRPs tab of the Update V2 sheet lists each state's utility IRPs. `irp_sheet.py` reads the tab and the column, the scope-wide agent researches the plans for planned gas resources and stages what GEM lacks (a draft plan is enough), the assembler flags those records `irp: true`, and the `irp_box` sheet and the review page's IRP chip tell the human which boxes to tick in the web UI | Built 2026-10-07 |
+| 38 | GEM IDs matched to EIA-860M, EIP, Sierra Club | Covered 2026-10-06 by `match_ids.py --state`: joins the export to the EIA-860M file, the EIP sheet and the Sierra Club list; missing IDs are listed for the human to type, disagreements become brief tasks (`build_state_brief.py --ids`), blank sheet rows are listed with GEM IDs for Baird to paste | Covered |
 | 39 | Gas-powered data centers searched, captive data entered | Discovery search per state; captive fields are in the export | Research task to add to the state prompt |
 
 ### [OPTIONAL] block
@@ -129,7 +129,7 @@ pastes it, or approves a `gws-gem-write` call.
 | 51 | Newly announced projects | Discovery search | Covered |
 | 52 | Used AI to search for changes | This repo is that | Covered |
 | 53 | All "in progress" units moved to "updated" or "no changes" | The export has a Research status column. The checker lists units still "in progress"; the actions workbook already ends each unit with its Record of Full Updates entry | Covered, add the listing |
-| 56 | "No tracker found" units reviewed | Units with several fuels need a primary fuel to be assigned a tracker. Where this list lives is unknown | **Open question 4** |
+| 56 | "No tracker found" units reviewed | `scripts/no_tracker.py --state <State>` (or `--country`) lists the combustion units whose tracker marker is null, via `gem-db-ops/gogpt/no_tracker.py`; each live one is a web-UI fuel fix | Covered (2026-10-07) |
 
 ## Proposed new script: `state_checker.py`
 
@@ -148,27 +148,32 @@ or a line in the close-out memo.
 
 ## Open questions (do not guess)
 
-1. **Validation Report.** The manual says: Projects tab in the database,
-   select the country, run the search, open the "GOGPT Validation Report"
-   tab, download. There is also a per-project "Validation" field with
-   "Validation Errors". This repo only has the read-only export, so it cannot
-   produce or read either. Could you download the Maryland report once and
-   share it? Then the checker can mirror its rules locally so the agent
-   clears them before close-out, and the memo can say which errors the
-   co-located-coal exception covers.
-2. **IRP checkbox.** Not in the 86-column export. Is it a database field the
-   pull could add (gem-db-ops expected columns), or is it only visible in
-   the web UI?
-3. **EIP and Sierra Club matching.** The US guide names the Sierra Club
-   GEM-IDs-matched sheet (reference only, never cited) and lists the
-   Environmental Integrity Project as a source, but does not say what
-   "matching GEM IDs to EIP" means in practice: which EIP dataset, which ID,
-   and where the match is recorded in the database. Where does an EIP match
-   go?
-4. **"No tracker found".** Is this a saved filter or view in the database
-   listing units with no tracker assigned? It is not derivable from the
-   GOGPT-scoped export. If it is a view, could the pull include unassigned
-   units, or is this a manual check?
+1. **Validation Report.** Resolved 2026-10-06. The per-project "Validation"
+   field is the `plant.validation` column, readable through the read-only
+   database connection, so no download is needed. `validation_report.py`
+   reads it per country or state and sorts each error by the manual's
+   co-located-coal exception. One check is still worth doing once: compare
+   its New York or Maryland memo against the web UI tab, in case the tab
+   recomputes errors the stored field does not hold yet.
+2. ~~IRP checkbox~~ Resolved 2026-10-07 (Baird): it is a web UI box, and the
+   research input is the US IRPs tab. See row 37 above and the IRP step in
+   `notes/review_app_checklist_plan.md`. Baird confirmed 2026-10-07 that a
+   draft IRP is enough to add a project. Still to confirm with Amalia or
+   Dan: whether unsited IRP capacity is added as announced (the Georgia row
+   did that).
+3. **EIP and Sierra Club matching.** Resolved 2026-10-06 (Baird pointed at
+   the sheets). The EIP dataset is the GEM-held "EIP_GEM IDs matched" sheet,
+   newest "data filtered" tab; the ID is EIP's `facility__id`, recorded in
+   Other IDs (location) as `EIP: <id>`, and the sheet's own GEM ID columns
+   record the match from the other side. Sierra Club matches are recorded
+   only in that sheet's GEM Location ID and GEM Unit ID columns, never in
+   the database. `match_ids.py` does both; links in `sop_pointers.md`.
+4. ~~"No tracker found"~~ Resolved 2026-10-07 (Baird): it is a choice in the
+   web UI's combustion tracker search, and in the database it is a
+   combustion unit with `trackerSearch` null (no fuel, or several fuels and
+   no primary one). `gem-db-ops/gogpt/no_tracker.py` queries it and
+   `scripts/no_tracker.py` scopes it per state or country. Six live units
+   worldwide on 2026-10-07, none in the United States.
 5. **Conversion unit naming.** The checklist says conversions include
    "timepoint XYZ" in the unit name. The manual's Conversion of Unit section
    needs a close read to confirm the exact pattern before the checker

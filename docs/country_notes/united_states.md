@@ -15,12 +15,37 @@ file holds what is true of every state.
   EIA plant ID (system name as already used in the export); Other IDs (unit) =
   EIA-860M Generator ID(s), comma-joined for a CC block; EIP (Oil & Gas Watch)
   record IDs also live in Other IDs (location). Match every GEM plant to
-  EIA-860M, EIP and the Sierra Club sheet during the state pass.
+  EIA-860M, EIP and the Sierra Club sheet during the state pass:
+  `scripts/match_ids.py --state <State>` does the join and writes
+  `work/ids_us-<st>.md` (Update SOP §3 step 7, `docs/workflows.md` §7).
+  - EIA-860M: `scripts/eia860m.py --check` keeps the newest monthly file in
+    `work/eia/` (release dates are on the EIA-860M page; a new file comes
+    out about monthly, so check at the start of a US batch). EIA sometimes
+    splits one site into two plant codes when part of it changes hands or
+    retires (Chalk Point 65285 coal and 1571 gas); a GEM plant can hold both.
+  - EIP: the GEM-held "EIP_GEM IDs matched" sheet (link in
+    `docs/reference/sop_pointers.md`), newest "EIP <date> data filtered" tab.
+    EIP's `facility__id` goes in Other IDs (location) as `EIP: <id>`; the
+    public page is `oilandgaswatch.org/facility/<id>`. The sheet's own GEM
+    ID columns record the match, so a blank one is a row for Baird to fill.
+  - Sierra Club: the "MATCHED IDs" tab of the GEM-IDs-matched sheet, joined by
+    its GEM Location ID and GEM Unit ID columns, else by ORIS code (the EIA
+    plant id). It carries terminated proposals at existing GEM sites with a
+    location id but no unit; those come back as a whole-plant question.
 - **Sierra Club GEM-IDs-matched sheet is reference only** — use it to find
   plants and cross-check IDs, never cite it, never share it outside GEM.
 - **IRPs**: a unit that appears in a utility Integrated Resource Plan gets the
   IRP checkbox and, where the unit is only known from the IRP, the "IRP"
-  suffix in its unit name; log the IRP on the US IRPs tab.
+  suffix in its unit name; log the IRP on the US IRPs tab. The step is
+  scripted: `irp_sheet.py --state <State>` reads the tab (one row per
+  utility: plan year, plan links, a running Notes log) and the export's
+  `IRP` column (the checkbox, yes or no), `build_state_brief.py --irp`
+  briefs the matched plants and the scope-wide agent, and the build's
+  `--irp` lists the boxes to tick and a draft Notes line per utility to
+  paste by hand (Update SOP §3 step 8). A gas project in a draft plan is
+  enough to add it (Baird 2026-10-07). Placeholder plants named
+  "<Utility> IRP CC power station 3" and the like are how earlier cycles
+  recorded unsited plan capacity; whether that continues is still open.
 - **Data-center gas**: search every state for behind-the-meter gas serving
   data centres; mark captive with industry type Data Centre. Emergency/backup
   gensets are a unit-level checkbox, not a captive flag.
@@ -96,6 +121,18 @@ file holds what is true of every state.
   directly).
 
 ## Update notes
+
+- *2026-10-07* — the IRP step is wired in (`irp_sheet.py`, `--irp` on the
+  brief builder and the build, the `irp` record flag). First live read for
+  Georgia (1 utility row, 34 plants matched, 28 units already ticked),
+  Indiana (8 rows, 42 plants, 34 ticked) and Kentucky (7 rows, 19 plants,
+  15 ticked); files under `work/`, no batch run yet.
+
+- *2026-10-06* — ID matching is now a script step (`match_ids.py`, EIA-860M
+  file kept by `eia860m.py`); EIP and Sierra Club sheet links recorded in
+  `sop_pointers.md`. The US IRPs tab of the Update sheet holds Natalia's
+  per-utility IRP notes; Amalia pairs it with a web search for new IRPs per
+  state.
 
 - *2026-09-15* — added the per-state structure and the US-specific Q4 2026
   rules (ID matching, IRP, data-center captive, Sierra Club reference-only)

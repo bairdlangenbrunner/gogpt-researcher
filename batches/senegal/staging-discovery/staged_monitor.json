@@ -1,9 +1,16 @@
 {
   "meta": {
     "lane": "monitor",
-    "scope": {"country": "Senegal", "quarter": "q3-2026", "csv": "gem_export_gogpt_scoped.csv"},
+    "scope": {
+      "country": "Senegal",
+      "quarter": "q3-2026",
+      "csv": "gem_export_gogpt_scoped.csv"
+    },
     "generated": "2026-08-05T12:40:33-04:00",
-    "counts": {"records": 5}
+    "counts": {
+      "records": 5
+    },
+    "checklist_fields": "2026-10-07"
   },
   "records": [
     {
@@ -16,9 +23,21 @@
       "current": {},
       "refs": {},
       "verifications": [
-        {"url": "https://www.man-es.com/docs/default-source/press-releases-new/20210520_man_es_pr_west_africa_en.pdf", "ok": true, "contains_value": true},
-        {"url": "https://www.powermag.com/press-releases/man-energy-solutions-installs-over-225-mw-of-generation-capacity-in-west-africa/", "ok": true, "contains_value": true},
-        {"url": "https://www.power-eng.com/onsite-power/man-supplying-225-mw-of-on-site-power-to-four-power-plants-in-africa/", "ok": true, "contains_value": true}
+        {
+          "url": "https://www.man-es.com/docs/default-source/press-releases-new/20210520_man_es_pr_west_africa_en.pdf",
+          "ok": true,
+          "contains_value": true
+        },
+        {
+          "url": "https://www.powermag.com/press-releases/man-energy-solutions-installs-over-225-mw-of-generation-capacity-in-west-africa/",
+          "ok": true,
+          "contains_value": true
+        },
+        {
+          "url": "https://www.power-eng.com/onsite-power/man-supplying-225-mw-of-on-site-power-to-four-power-plants-in-africa/",
+          "ok": true,
+          "contains_value": true
+        }
       ],
       "monitor_reason": "Status unknown: the 54 MW plant (6×MAN 9L51/60, explicitly 'a second power plant' distinct from the 2009 4×18V32/40 35 MW plant already in GEM as Kyrene Cement) was ordered/under construction per MAN's 2021-05-20 release ('en construction' per Agence Ecofin's mirror), but a targeted 2026 hunt found NO commissioning, completion, or operating evidence anywhere since — and the capacity/existence evidence is single-origin (MAN release; powermag/power-eng are mirrors of it).",
       "recheck_by": "2026-11",
@@ -26,7 +45,8 @@
       "independent": false,
       "source_language": "en/fr",
       "researcher_notes": "Rolls forward (enriched) from the update batch's monitor lane. MAN's own PDF is now verified live (man-es.com press-release PDF; the HTML page is dead). africa-energy.com has a database record 'ciments-du-sahel-kirene-hfo-lfo' whose Status/capacity/commissioning fields are paywalled — worth checking if GEM has subscription access; visible fuel field says 'HFO, Other fuel oils'. Cement-line context: the expansion line the plant serves was commissioned Feb 2023 (Global Cement), so the power plant plausibly operates by now — but that is inference, not evidence. 54 MW clears the threshold, so this promotes to newplants the moment one independent status source appears.",
-      "action": "Monitor — recheck by 2026-11 (try africa-energy DB via subscription, Senelec annual report IPP/autoproducteur tables, and fresh French-press sweep)."
+      "action": "Monitor — recheck by 2026-11 (try africa-energy DB via subscription, Senelec annual report IPP/autoproducteur tables, and fresh French-press sweep).",
+      "monitor_kind": "new_to_tracker"
     },
     {
       "gem_unit_id": "",
@@ -38,8 +58,16 @@
       "current": {},
       "refs": {},
       "verifications": [
-        {"url": "https://www.wartsila.com/media/news/19-09-2025-wartsila-signs-5-year-agreement-to-operate-power-plant-for-boto-gold-mine-in-senegal-3657928", "ok": true, "contains_value": true},
-        {"url": "https://www.wartsila.com/media/news/27-09-2024-wartsila-engines-to-ensure-production-reliability-for-senegal-gold-mine-3498478", "ok": true, "contains_value": true}
+        {
+          "url": "https://www.wartsila.com/media/news/19-09-2025-wartsila-signs-5-year-agreement-to-operate-power-plant-for-boto-gold-mine-in-senegal-3657928",
+          "ok": true,
+          "contains_value": true
+        },
+        {
+          "url": "https://www.wartsila.com/media/news/27-09-2024-wartsila-engines-to-ensure-production-reliability-for-senegal-gold-mine-3498478",
+          "ok": true,
+          "contains_value": true
+        }
       ],
       "monitor_reason": "Below the 50 MW threshold: ~23 MW captive plant (Wärtsilä 32 engines + gensets) at the Boto gold mine (Boto SA / Managem group), operating ~Q1 2025 per Wärtsilä's own releases.",
       "recheck_by": "2027-08",
@@ -47,7 +75,8 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "Well-evidenced (two Wärtsilä primary releases, 2024-09-27 and 2025-09-19) but permanently under threshold unless the mine expands generation ≥50 MW. Recheck is a low-priority existence check for expansion only.",
-      "action": "Monitor — recheck by 2027-08 for capacity expansion only."
+      "action": "Monitor — recheck by 2027-08 for capacity expansion only.",
+      "monitor_kind": "new_to_tracker"
     },
     {
       "gem_unit_id": "",
@@ -59,8 +88,16 @@
       "current": {},
       "refs": {},
       "verifications": [
-        {"url": "https://www.wartsila.com/energy/learn-more/references/mining-cement/grande-cote-senegal", "ok": true, "contains_value": true},
-        {"url": "https://www.eramet.com/en/news/hybrid-solar-power-for-grande-cote-operationss-mineral-sands-production/", "ok": true, "contains_value": true}
+        {
+          "url": "https://www.wartsila.com/energy/learn-more/references/mining-cement/grande-cote-senegal",
+          "ok": true,
+          "contains_value": true
+        },
+        {
+          "url": "https://www.eramet.com/en/news/hybrid-solar-power-for-grande-cote-operationss-mineral-sands-production/",
+          "ok": true,
+          "contains_value": true
+        }
       ],
       "monitor_reason": "Below the 50 MW threshold: 36 MW captive dual-fuel plant (4×Wärtsilä 20V34DF + 1×9L34DF, 2013) powering the GCO mineral-sands dredge operation at Diogo (Eramet).",
       "recheck_by": "2027-08",
@@ -68,7 +105,8 @@
       "independent": true,
       "source_language": "en",
       "researcher_notes": "Wärtsilä reference page + Eramet's own news page (hybridization with solar) — solid evidence, permanently under threshold. Eramet URL verified with accented token 'Grande Côte' (unaccented 'Grande Cote' fails).",
-      "action": "Monitor — recheck by 2027-08 for capacity expansion only."
+      "action": "Monitor — recheck by 2027-08 for capacity expansion only.",
+      "monitor_kind": "new_to_tracker"
     },
     {
       "gem_unit_id": "",
@@ -80,8 +118,16 @@
       "current": {},
       "refs": {},
       "verifications": [
-        {"url": "https://www.pressafrik.com/Macky-Sall-inaugure-la-nouvelle-centrale-electrique-des-Industries-chimiques-du-Senegal-ICS-d-une-capacite-de-20_a158372.html", "ok": true, "contains_value": true},
-        {"url": "https://www.lejecos.com/Energie-Macky-Sall-inaugure-la-centrale-electrique-des-ICS_a9534.html", "ok": true, "contains_value": true}
+        {
+          "url": "https://www.pressafrik.com/Macky-Sall-inaugure-la-nouvelle-centrale-electrique-des-Industries-chimiques-du-Senegal-ICS-d-une-capacite-de-20_a158372.html",
+          "ok": true,
+          "contains_value": true
+        },
+        {
+          "url": "https://www.lejecos.com/Energie-Macky-Sall-inaugure-la-centrale-electrique-des-ICS_a9534.html",
+          "ok": true,
+          "contains_value": true
+        }
       ],
       "monitor_reason": "Below the 50 MW threshold (20 MW) AND fuel type unconfirmed: a targeted sweep of all accessible 2016 French press (Jeune Afrique, Setal, Sud Quotidien/allafrica, dakarmidi, lejecos, EnQuête+) found consistent facts — 20 MW, ~22bn CFA, Indorama-financed, in service Jun 2016, inaugurated 2016-12-16, surplus sold to Senelec — but NOT ONE names the fuel or technology, so GOGPT scope (gas/oil vs coal) cannot even be established.",
       "recheck_by": "2027-08",
@@ -89,7 +135,8 @@
       "independent": true,
       "source_language": "fr",
       "researcher_notes": "Permanently under threshold regardless of fuel; recorded so future Senegal batches don't re-research it from scratch. Pre-dates the 2020 retrospective window for status tracking anyway.",
-      "action": "Monitor — low priority; drop candidate unless threshold policy changes."
+      "action": "Monitor — low priority; drop candidate unless threshold policy changes.",
+      "monitor_kind": "new_to_tracker"
     },
     {
       "gem_unit_id": "",
@@ -101,7 +148,11 @@
       "current": {},
       "refs": {},
       "verifications": [
-        {"url": "https://fr.allafrica.com/stories/202602140158.html", "ok": true, "contains_value": true}
+        {
+          "url": "https://fr.allafrica.com/stories/202602140158.html",
+          "ok": true,
+          "contains_value": true
+        }
       ],
       "monitor_reason": "No specific site: FONSIS (Senegal's sovereign wealth fund) launched a tender/process for a 500 MW gas-fired IPP in Feb 2026, but no location, sponsor consortium, or concrete development step beyond the announcement — fails the named-site leg of the add threshold.",
       "recheck_by": "2026-12",
@@ -109,7 +160,8 @@
       "independent": false,
       "source_language": "fr",
       "researcher_notes": "agenceecofin also covered the FONSIS-led 500 MW tender (2026-02-16) but that page 403s to automated fetches — single verified source for now. Distinct from the Senelec Cap des Biches EPCF tender (see newplants) and from the Sandiara project. At 500 MW this is a major newplants candidate as soon as a site and awardee exist.",
-      "action": "Monitor — recheck by 2026-12 (tender outcome, site selection)."
+      "action": "Monitor — recheck by 2026-12 (tender outcome, site selection).",
+      "monitor_kind": "new_to_tracker"
     }
   ]
 }

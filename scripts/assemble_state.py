@@ -20,9 +20,13 @@ Inputs
                              slug, country, postal; an older index with only
                              state / postal is read as a US state)
   shards/<L...>.json         one per plant, written by the research subagent
-  shards/_state.json         optional: scope-wide qa/monitor items (new plants,
-                             gas-fired data centers) from the state- or
-                             country-level search
+  shards/_state.json         optional: scope-wide items from the state- or
+                             country-level search and the IRP step: qa and
+                             monitor (new plants, gas-fired data centers),
+                             newplants (full new-plant records, record_id
+                             us-<postal>:new:<plant slug>), newunits (each
+                             names its plant with gem_plant_id), and
+                             meta.irp_summary (one sentence per utility)
   the fresh export           --csv, else the `csv` named in _index.json, else
                              scripts/gem_export_gogpt_scoped.csv
   briefs/_hidden/<L...>.json blind mode only: the withheld GEM values
@@ -32,6 +36,12 @@ and `record_id` is stable so review decisions survive a rebuild)
   staging/staged_updates.json   staging/staged_qa.json
   staging/staged_monitor.json   staging/staged_newunits.json
   staging/staged_entity.json    (all five always written, empty if nothing)
+  staging/staged_newplants.json only when _state.json staged a new plant
+  staging/irp_summary.json      when the brief index has an "irp" entry: the
+                                per-utility sentences for the Notes draft
+  A record whose finding carried irp true, or whose source is one of the plan
+  links the IRP step listed, is written with "irp": true (the review page and
+  the workbook use it for checklist row 37, the IRP box).
   staging/comparison.json            blind mode only
   calibration_<stamp>_ET.md          blind mode only, in the batch dir; never
                                      overwritten (rerun for a fresh stamp)
@@ -88,6 +98,24 @@ lane files with identity and a record_id added. A shard's list-shaped `refs`
 on qa / monitor items is stored as {"links": [...]}, since those items have no
 value column to key on.
 
+Checklist bookkeeping (review_app/checklist.py; the QC/Country checklist tab)
+  checks         every updates / qa record produced by a brief task carries
+                 that task's checklist row numbers, looked up in _index.json by
+                 unit (or sibling) and field; the review page files the edit
+                 under those boxes.
+  concern_type   a qa item's free text is mapped onto the vocabulary (a staged
+                 column name, or duplicate / existence / scope /
+                 capacity-threshold / identity / attribution / conversion-link
+                 / location / source / validation / other). The record_id slug
+                 still comes from the raw text, so ids do not move; the raw
+                 text is kept in `concern_type_raw` when it differed.
+  monitor        `monitor_reason` is filled from the older `item` key or the
+                 first sentence of the note; `monitor_kind` is the shard's
+                 value, else existing_plant when a GEM plant id is set, else
+                 new_to_tracker. A candidate a reviewer removed from the watch
+                 list (call `remove` in staging/review_log.jsonl, matched by
+                 record_id or by plant name) is dropped and listed.
+
 Nothing here verifies URLs or judges sources: run state_gate.py next; it
 must print GATE CLEAN before build_review_package.py.
 """
@@ -105,12 +133,18 @@ from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_review_package import _split_urls, ref_col_for  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from build_review_package import _split_urls, additive_value, ref_col_for  # noqa: E402
 from paths import gogpt_scoped_csv  # noqa: E402
-from schema_constants import RESEARCH_FIELDS  # noqa: E402
+from schema_constants import ADDITIVE_TEXT_COLUMNS, RESEARCH_FIELDS  # noqa: E402
+from review_app.checklist import (  # noqa: E402
+    CONCERN_VOCAB, MONITOR_KINDS, name_key, normalize_concern_type)
 
 ET = ZoneInfo("America/New_York")
-LANE_FILES = ["updates", "qa", "monitor", "newunits", "entity"]
+LANE_FILES = ["updates", "qa", "monitor", "newunits", "entity", "newplants"]
+# newplants is written only when the scope-wide search staged one (an IRP plan's
+# new plant); the other five are always written
+ALWAYS_WRITTEN = LANE_FILES[:5]
 
 CAPACITY_FIELDS = {"Capacity (MW)", "Capacity Per Engine"}
 INT_FIELDS = {"Number Of Engines", "Start year", "Retired year",
@@ -313,7 +347,7 @@ def link_phrase(n: int) -> str:
 
 
 def build_action(kind, field, value, current, target, ref_col, n_urls,
-                 each_unit=False):
+                 each_unit=False, additive=False):
     # Status Detail values often end in a period; drop it so the sentence
     # does not read "...in 2027.. It now says".
     value = str(value).rstrip(". ") if value is not None else value
@@ -322,6 +356,12 @@ def build_action(kind, field, value, current, target, ref_col, n_urls,
         s = f"Leave {field} of {target} as {value}. It is still correct."
     elif kind == "fill":
         s = f"Set {field} of {target} to {value}. The box is empty now."
+    elif additive:
+        # Status Detail and Notes are running logs: `value` here is only the
+        # new text, which goes above what the box already says.
+        s = (f"Add this at the top of the {field} box of {target}, above the "
+             f"text already there: {value}. Keep the existing text below it, "
+             "word for word.")
     else:
         s = f"Set {field} of {target} to {value}. It now says {current}."
     if n_urls:
@@ -363,6 +403,47 @@ class Assembler:
         self.unit_notes_used: set[str] = set()
         self.shards: dict = {}
         self.hidden: dict = {}
+        # (plant_id, unit_id or None, field) -> checklist rows from the brief tasks
+        self.task_checks: dict = defaultdict(set)
+        self.tasks_derived = False
+        for p in self.index["plants"]:
+            for uid, tasks in (p.get("tasks") or {}).items():
+                for t in tasks:
+                    for f in t.get("fields") or []:
+                        self.task_checks[(p["plant_id"], uid, f)] |= set(t.get("checks") or [])
+            for t in p.get("plant_tasks") or []:
+                for f in t.get("fields") or []:
+                    self.task_checks[(p["plant_id"], None, f)] |= set(t.get("checks") or [])
+        self.removed_ids, self.removed_names = self.load_removed()
+        self.dropped: list[str] = []
+        # the IRP step (build_state_brief.py --irp): plan links, so a record whose
+        # source is a plan file is marked irp even when the shard forgot the flag
+        irp = self.index.get("irp") or {}
+        self.irp_links = {u.rstrip("/") for u in irp.get("links") or []}
+        self.irp_summary: dict = {}
+
+    def load_removed(self):
+        """Watch-list candidates a reviewer removed (review_log.jsonl)."""
+        ids, names = set(), set()
+        log = self.batch / "staging" / "review_log.jsonl"
+        if not log.exists():
+            return ids, names
+        for line in log.read_text(encoding="utf-8").splitlines():
+            try:
+                r = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if r.get("kind") == "monitor" and r.get("call") == "remove":
+                ids.add(r.get("record_id"))
+                if r.get("plant_name"):
+                    names.add(name_key(r["plant_name"]))
+        return ids, names
+
+    def checks_for(self, pid, uid, field, siblings=None):
+        out = set(self.task_checks.get((pid, None, field), ()))
+        for u in [uid] + list(siblings or []):
+            out |= self.task_checks.get((pid, u, field), set())
+        return sorted(out)
 
     # -- loading
     def load(self):
@@ -378,6 +459,8 @@ class Assembler:
             self.shards[p["plant_id"]] = shard
             unit_ids |= {u.get("gem_unit_id") for u in shard.get("units") or []}
         self.header, self.export = load_export(self.csv_path, unit_ids)
+        if self.mode == "update" and not any("tasks" in p for p in self.index["plants"]):
+            self.derive_task_checks()
         if self.mode == "blind":
             for pid in self.shards:
                 hp = self.batch / "briefs" / "_hidden" / f"{pid}.json"
@@ -387,6 +470,28 @@ class Assembler:
                     continue
                 self.hidden[pid] = json.loads(hp.read_text(encoding="utf-8"))
                 self._check_hidden(pid)
+
+    def derive_task_checks(self):
+        """An index written before tasks were stored in it: rebuild the
+        per-unit tasks from the export rows the way build_state_brief.py
+        does, so the records still get their checklist rows. Tasks that came
+        from the validation report, the ID match or --extra-tasks cannot be
+        recovered this way."""
+        from build_state_brief import unit_tasks
+        year = int((self.index.get("generated") or "2026")[:4])
+        us = self.country.lower() == "united states"
+        for p in self.index["plants"]:
+            for uid in p["unit_ids"]:
+                row = self.export.get(uid)
+                if row is None:
+                    continue
+                for _, fields, checks in unit_tasks(row, year=year, us=us):
+                    for f in fields:
+                        self.task_checks[(p["plant_id"], uid, f)] |= set(checks)
+        self.tasks_derived = True
+        self.warnings.append("briefs/_index.json has no tasks (written before "
+                             "2026-10-07); checklist rows were derived from the "
+                             "export rows instead")
 
     def _check_hidden(self, pid):
         """The withheld values should equal the export; warn where not."""
@@ -469,6 +574,14 @@ class Assembler:
         rid = f"{pid}:{'plant' if plant_level else anchor_uid}:{field_slug(field)}"
         row = self.export.get(anchor_uid) or {}
         current = row.get(field, "")
+        # Status Detail and Notes are running logs (Baird 2026-10-07): a change
+        # is the new text placed above the old text, never a rewrite. When the
+        # box already says it, there is nothing to add and the finding only
+        # re-verifies the box.
+        additive = field in ADDITIVE_TEXT_COLUMNS and verdict == "change"
+        if additive and ws(additive_value(ev["value"], current)) == ws(current):
+            verdict, additive = "match", False
+        checks = self.checks_for(pid, anchor_uid, field, siblings)
         if plant_level:
             n = len(siblings) + 1
             target = (f"all {n} units of {plant_name}" if n > 1
@@ -508,13 +621,19 @@ class Assembler:
                         f"The research suggests {field} should be {value}, "
                         "but it gave no source for that, so no edit is "
                         "proposed.", fd.get("note"))})
+                if checks:
+                    rec["checks"] = checks
+                if fd.get("irp"):
+                    rec["irp"] = True
                 self.lanes["qa"].append(rec)
                 return
             tier, extra = self.tier_for(field, verdict, fd, refs)
             rec = self.base_record(pid, plant_name, anchor_uid)
             rec.update({
                 "record_id": rid, "cluster": anchor_uid, "verdict": verdict,
-                "fields": {field: value}, "current": {field: current},
+                "fields": {field: additive_value(value, current) if additive
+                           else value},
+                "current": {field: current},
                 "refs": {ev["ds_col"]: refs} if refs else {},
                 "verifications": fd.get("verifications") or [],
                 "tier": tier, "independent": bool(fd.get("independent")),
@@ -522,9 +641,15 @@ class Assembler:
                 "researcher_notes": join_notes(fd.get("note"), extra, unit_notes),
                 "action": build_action(verdict, field, value, current, target,
                                        ev["ds_col"], len(refs),
-                                       plant_level and n > 1)})
+                                       plant_level and n > 1, additive=additive)})
+            if additive:
+                rec["additive"] = True
         else:
             return
+        if checks:
+            rec["checks"] = checks
+        if fd.get("irp"):
+            rec["irp"] = True       # the value comes from a utility's resource plan
         if plant_level:
             rec["applies_to_all_units"] = True
             rec["sibling_unit_ids"] = list(siblings)
@@ -608,25 +733,35 @@ class Assembler:
         for section, lane in (("qa", "qa"), ("monitor", "monitor"),
                               ("newunits", "newunits"), ("entities", "entity")):
             for i, item in enumerate(shard.get(section) or []):
-                # A new-unit lead without proposed values and verified refs
-                # is a candidate, not an edit: it goes to monitor.
-                if lane == "newunits" and not (
-                        isinstance(item.get("fields"), dict) and item["fields"]
-                        and isinstance(item.get("refs"), dict)
-                        and item.get("verifications")):
-                    item = dict(item)
-                    item["note"] = ("New unit lead, not yet confirmed: "
-                                    + (item.get("note") or "")).strip()
-                    lane = "monitor"
+                lane, item = self.confirmed_or_lead(lane, item)
                 self.lanes[lane].append(self.passthrough(pid, plant_name, lane,
                                                          item, i))
 
+    @staticmethod
+    def confirmed_or_lead(lane, item):
+        """A new-row lead (new unit or new plant) without proposed values and
+        verified refs is a candidate, not an edit: it goes to monitor."""
+        if lane in ("newunits", "newplants") and not (
+                isinstance(item.get("fields"), dict) and item["fields"]
+                and isinstance(item.get("refs"), dict)
+                and item.get("verifications")):
+            item = dict(item)
+            what = "New unit lead" if lane == "newunits" else "New plant lead"
+            item["note"] = (f"{what}, not yet confirmed: "
+                            + (item.get("note") or "")).strip()
+            return "monitor", item
+        return lane, item
+
     def statewide(self):
-        """shards/_state.json: qa and monitor items from the scope-wide search
-        for newly announced plants and gas-fired data centers. Items may name
-        an existing plant with gem_plant_id; otherwise gem_plant_id is blank and
-        the record_id starts with us-<postal>:plant (a state) or
-        <country-slug>:plant (a country)."""
+        """shards/_state.json: items from the scope-wide search for newly
+        announced plants and gas-fired data centers, and from the IRP step.
+        qa and monitor items may name an existing plant with gem_plant_id;
+        otherwise gem_plant_id is blank and the record_id starts with
+        us-<postal>:plant (a state) or <country-slug>:plant (a country).
+        newplants items are full new-plant records (record_id us-<postal>:new:
+        <plant slug>); newunits items name their plant with gem_plant_id. A new
+        row without values and verified refs becomes a watch item. meta.
+        irp_summary (one sentence per utility) is kept for the Notes draft."""
         sp = self.batch / "shards" / "_state.json"
         if not sp.exists():
             return
@@ -642,6 +777,51 @@ class Assembler:
                                        lane, dict(item), i)
                 rec["gem_plant_id"] = item.get("gem_plant_id") or ""
                 self.lanes[lane].append(rec)
+        for i, item in enumerate(st.get("newplants") or []):
+            lane, item = self.confirmed_or_lead("newplants", dict(item))
+            rec = self.passthrough(self.tag, item.get("plant_name") or wide, lane, item, i)
+            rec["gem_plant_id"] = ""
+            self.lanes[lane].append(rec)
+        for i, item in enumerate(st.get("newunits") or []):
+            pid = ws(item.get("gem_plant_id"))
+            if not pid:
+                self.warnings.append(f"_state.json newunits[{i}] names no gem_plant_id; "
+                                     "kept as a watch item new to the tracker")
+                lane, item = "monitor", dict(item)
+                item["note"] = ("New unit lead without a GEM plant: "
+                                + (item.get("note") or "")).strip()
+                rec = self.passthrough(self.tag, item.get("plant_name") or wide, lane, item, i)
+                rec["gem_plant_id"] = ""
+            else:
+                lane, item = self.confirmed_or_lead("newunits", dict(item))
+                name = item.get("plant_name") or next(
+                    (p.get("plant_name") for p in self.index["plants"] if p["plant_id"] == pid), pid)
+                rec = self.passthrough(pid, name, lane, item, i)
+            self.lanes[lane].append(rec)
+        summary = (st.get("meta") or {}).get("irp_summary")
+        if isinstance(summary, dict):
+            self.irp_summary = {ws(k): ws(v) for k, v in summary.items() if ws(v)}
+        elif isinstance(summary, list):
+            self.irp_summary = {ws(x.get("utility")): ws(x.get("summary") or x.get("text"))
+                                for x in summary if isinstance(x, dict) and ws(x.get("utility"))}
+
+    def mark_irp(self):
+        """Records sourced from a plan carry irp true: the flag the shard set, or a
+        ref that is one of the plan links the IRP step listed."""
+        if not self.irp_links:
+            return
+        for lane, recs in self.lanes.items():
+            for r in recs:
+                if r.get("irp"):
+                    continue
+                urls = []
+                for v in (r.get("refs") or {}).values():
+                    urls += v if isinstance(v, list) else [v]
+                for u in r.get("units") or []:
+                    for v in (u.get("refs") or {}).values():
+                        urls += v if isinstance(v, list) else [v]
+                if any(str(u).rstrip("/") in self.irp_links for u in urls):
+                    r["irp"] = True
 
     def passthrough(self, pid, plant_name, lane, item, i):
         rec = dict(item)
@@ -658,13 +838,36 @@ class Assembler:
             rec.setdefault("fields", {})
             rec.setdefault("researcher_notes", rec.pop("note", ""))
         if lane == "qa":
-            slug = f"qa-{field_slug(rec.get('concern_type', 'other'))}-{i + 1}"
+            raw = ws(rec.get("concern_type")) or "other"
+            slug = f"qa-{field_slug(raw)}-{i + 1}"       # ids stay on the raw text
             rec["record_id"] = f"{pid}:{uid or 'plant'}:{slug}"
+            ct = raw if raw in CONCERN_VOCAB else normalize_concern_type(raw, rec)
+            if ct != raw:
+                rec["concern_type_raw"] = raw
+            rec["concern_type"] = ct
+            if uid and ct in CONCERN_VOCAB and not rec.get("checks"):
+                checks = self.checks_for(pid, uid, ct)
+                if checks:
+                    rec["checks"] = checks
         elif lane == "monitor":
             rec["record_id"] = f"{pid}:{uid or 'plant'}:monitor-{i + 1}"
+            reason = ws(rec.get("monitor_reason")) or ws(rec.pop("item", ""))
+            if not reason:
+                first = re.split(r"(?<=[.!?])\s+", ws(rec.get("researcher_notes")), 1)[0]
+                reason = first[:200]
+            rec.pop("item", None)
+            rec["monitor_reason"] = reason
+            rec.setdefault("recheck_by", "")
+            if rec.get("monitor_kind") not in MONITOR_KINDS:
+                rec.pop("monitor_kind", None)   # set in run(), once gem_plant_id is final
         elif lane == "newunits":
             rec["record_id"] = (f"{pid}:new:"
                                 f"{field_slug(rec.get('unit_name', '')) or i + 1}")
+        elif lane == "newplants":
+            rec["record_id"] = (f"{pid}:new:"
+                                f"{field_slug(rec.get('plant_name', '')) or i + 1}")
+            rec.setdefault("researcher_notes", rec.pop("note", ""))
+            rec.setdefault("units", [])
         else:
             rec.setdefault("entity_country", self.country)
             rec["record_id"] = (f"{pid}:entity:"
@@ -676,12 +879,24 @@ class Assembler:
         for p in self.index["plants"]:
             self.plant(p)
         self.statewide()
+        self.mark_irp()
         for lane, recs in self.lanes.items():   # record_id unique per lane
             seen = Counter()
             for r in recs:
                 seen[r["record_id"]] += 1
                 if seen[r["record_id"]] > 1:
                     r["record_id"] += f"-{seen[r['record_id']]}"
+        kept = []
+        for r in self.lanes["monitor"]:
+            r.setdefault("monitor_kind", "existing_plant" if ws(r.get("gem_plant_id"))
+                         else "new_to_tracker")
+            if r["record_id"] in self.removed_ids or (
+                    r["monitor_kind"] == "new_to_tracker"
+                    and name_key(r.get("plant_name")) in self.removed_names):
+                self.dropped.append(f"{r['record_id']} ({r.get('plant_name', '')})")
+                continue
+            kept.append(r)
+        self.lanes["monitor"] = kept
 
     # -- writing
     def scope(self):
@@ -694,6 +909,8 @@ class Assembler:
         staging.mkdir(parents=True, exist_ok=True)
         for lane in LANE_FILES:
             recs = self.lanes[lane]
+            if lane not in ALWAYS_WRITTEN and not recs:
+                continue
             counts = {"records": len(recs)}
             if lane == "updates":
                 counts.update({
@@ -708,6 +925,15 @@ class Assembler:
                    "records": recs}
             (staging / f"staged_{lane}.json").write_text(
                 json.dumps(env, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8")
+        # the IRP step's one sentence per utility, for the Notes draft the build writes
+        irp = self.index.get("irp") or {}
+        if self.irp_summary or irp:
+            (staging / "irp_summary.json").write_text(json.dumps({
+                "scope": self.scope(), "generated": generated,
+                "irp_file": irp.get("file"), "read": irp.get("read"),
+                "skipped": bool(irp.get("skipped")),
+                "utilities": self.irp_summary}, indent=2, ensure_ascii=False) + "\n",
                 encoding="utf-8")
 
     def write_comparison(self, generated):
@@ -857,6 +1083,15 @@ def main():
     print(f"  status changes lowered from high to medium: {a.downgraded}")
     print("  records: " + ", ".join(f"{lane}={len(r)}"
                                     for lane, r in a.lanes.items()))
+    n_checks = sum(1 for lane in ("updates", "qa") for r in a.lanes[lane] if r.get("checks"))
+    renamed = sum(1 for r in a.lanes["qa"] if r.get("concern_type_raw"))
+    print(f"  records carrying checklist rows: {n_checks}; "
+          f"question types mapped onto the vocabulary: {renamed}")
+    kinds = Counter(r.get("monitor_kind") for r in a.lanes["monitor"])
+    print("  watch list: " + ", ".join(f"{k}={v}" for k, v in sorted(kinds.items()))
+          + (f"; dropped as removed by a reviewer: {len(a.dropped)}" if a.dropped else ""))
+    for d in a.dropped:
+        print(f"    dropped {d}")
     print(f"  wrote {batch / 'staging'}/staged_<lane>.json")
     if a.mode == "blind":
         print(f"  wrote {batch / 'staging' / 'comparison.json'}")

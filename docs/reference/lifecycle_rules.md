@@ -61,8 +61,9 @@ cancelled units, or for planned-retirement checks. `build_state_brief.py` `unit_
 **Format:** Latest Activity is a date field in the GEM database. The export renders it as
 `Year: 2024, Month: 6, Day: 17` (month and day optional), and every one of the ~2,100 filled
 values in the 2026-10-02 export has that form. Stage the date of the newest dated report; what
-happened goes in the researcher note and, if it changes the status story, in Status Detail. Never
-move the date backward. `state_gate.py` fails any free-text Latest Activity value (gate `dates`).
+happened goes in the researcher note and, if it changes the status story, in Status Detail, added
+above the text already in that box (Status Detail is a running log, newest entry first; it is never
+rewritten). Never move the date backward. `state_gate.py` fails any free-text Latest Activity value (gate `dates`).
 
 ## Tracking window: mothballed / retired / cancelled from 2020 forward
 

@@ -1,0 +1,131 @@
+{
+ "meta": {
+  "plant_id": "L100000101966",
+  "plant_name": "Weisweiler power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:12:28-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000413128",
+   "unit_name": "CC, timepoint 1",
+   "findings": {
+    "Status Detail": {
+     "value": "Full permit under the federal emissions control law granted by the Cologne district government in September 2026. No construction start reported.",
+     "refs": [
+      "https://www.bezreg-koeln.nrw.de/system/files/media/document/file/amtsblatt_2026_37.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.bezreg-koeln.nrw.de/system/files/media/document/file/amtsblatt_2026_37.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The official gazette of the Cologne district for September 2026 publishes the decision. It grants RWE Generation SE the permit applied for on 7 August 2025 to build and run a hydrogen-ready gas and steam turbine plant at Weisweiler. The plant's fuel heat input is at most 1500 MW thermal, which is not electric capacity. The permit includes a 127 metre chimney and approval to clear forest. The permit lapses if building does not start within two years of becoming final. A permit alone does not make a unit under construction, so the status stays pre-construction."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Latest Activity",
+    "Owner(s)"
+   ],
+   "notes": "The permit notices confirm the earlier findings and add the permit decision. None of them states electric capacity, a turbine maker or a start year. Latest Activity is left alone because the newest report is from September 2026."
+  },
+  {
+   "gem_unit_id": "G100000400274",
+   "unit_name": "G_VGT",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit, so it was not researched."
+  },
+  {
+   "gem_unit_id": "G100000400275",
+   "unit_name": "H_VGT",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit, so it was not researched."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000413128",
+   "concern_type": "owner",
+   "recommendation": "Consider changing the owner to RWE Generation SE when a second independent source confirms who holds the plant.",
+   "note": "The permit of September 2026, the public notice of August 2025 and the official gazette of 2025 all name RWE Generation SE as the applicant. GEM shows RWE Power AG at 100 percent. The entity lookup finds RWE Generation SE as an existing owner on 144 units. I did not change the owner because the rules need a closed transaction or two independent publishers, and all these notices come from one authority.",
+   "refs": [
+    "https://www.bezreg-koeln.nrw.de/system/files/media/document/file/amtsblatt_2026_37.pdf",
+    "https://www.bezreg-koeln.nrw.de/system/files/media/document/file/bekanntmachung_laufende_immissionsschutzrechtliche_genehmigungsverfahren_rwe_generation_se_bekanntmachungstext.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000413128",
+   "concern_type": "other",
+   "recommendation": "Check the procedure page of the permit register once it loads.",
+   "note": "The environmental register page for this plant lists a decision date of 7 September 2026. Its two documents did not load in time, so I read the official gazette notice of the same decision instead.",
+   "refs": [
+    "https://www.uvp-verbund.de/trefferanzeige?docuuid=517d7250-56d8-4989-b364-4c1f64c8e319"
+   ]
+  }
+ ],
+ "monitor": [
+  {
+   "gem_unit_id": "G100000413128",
+   "note": "Watch for the start of construction, a turbine maker, and the capacity tender awards due by 3 November 2026.",
+   "recheck_by": "2026-11-15"
+  }
+ ],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "RWE Generation SE",
+   "role": "owner",
+   "lookup_result": "Entity 'RWE Generation SE' appears on 144 units (belgium, bulgaria, germany, netherlands, poland, turkiye, united kingdom). Reuse existing entity ID."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.bezreg-koeln.nrw.de/system/files/media/document/file/amtsblatt_2026_37.pdf",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Official gazette 2026 issue 37, notice 505, permit decision. Read in full."
+  },
+  {
+   "url": "https://www.bezreg-koeln.nrw.de/system/files/media/document/file/amtsblatt_2025_33_0.pdf",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Official gazette 2025 issue 33. Confirms the applicant and the early start request. Same facts as the earlier batch."
+  },
+  {
+   "url": "https://www.bezreg-koeln.nrw.de/system/files/media/document/file/bekanntmachung_laufende_immissionsschutzrechtliche_genehmigungsverfahren_rwe_generation_se_bekanntmachungstext.pdf",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Public notice of August 2025. Same as the earlier batch."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=517d7250-56d8-4989-b364-4c1f64c8e319",
+   "used_for": [],
+   "outcome": "blocked",
+   "note": "The procedure page and its two documents were requested through the fetch tool and had not loaded after about 40 minutes because the register throttles requests. The summary file shows a decision date of 7 September 2026."
+  }
+ ]
+}

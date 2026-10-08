@@ -1,0 +1,99 @@
+{
+ "meta": {
+  "plant_id": "L100000101996",
+  "plant_name": "Wedel power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T12:00:00-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000409747",
+   "unit_name": "CC1",
+   "findings": {},
+   "not_found": [
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Latest Activity"
+   ],
+   "notes": "The Hamburg environment authority published a notice that it granted the full permit for the gas and steam turbine heating plant at Dradenau on 24 August 2022. The applicant was Hamburger Energiewerke GmbH, formerly Wärme Hamburg GmbH. The notice does not state electric capacity, turbine make or a start date. The earlier batch already set the status to construction and the start year to 2026, and a full permit is consistent with that, so nothing is changed. The project is moving, so Latest Activity stays blank."
+  },
+  {
+   "gem_unit_id": "G100000412831",
+   "unit_name": "GT1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit, so it was not researched."
+  },
+  {
+   "gem_unit_id": "G100000412830",
+   "unit_name": "GT2",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit, so it was not researched."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000409747",
+   "concern_type": "owner",
+   "recommendation": "Review the owner of the new gas unit. The permit applicant was Hamburger Energiewerke GmbH, not Vattenfall.",
+   "note": "The Hamburg environment authority notice says the full permit of 24 August 2022 for the Dradenau gas and steam turbine plant went to Hamburger Energiewerke GmbH, formerly Wärme Hamburg GmbH. GEM shows Vattenfall Europe Power Management GmbH at 100 percent. I did not change the owner because the rules ask for a closed transaction from two publishers, and a permit applicant is not the same as a recorded owner. The earlier batch raised the same question for the coal blocks.",
+   "refs": [
+    "https://www.hamburg.de/politik-und-verwaltung/behoerden/bukea/veroeffentlichungen/bekanntmachungen/bue-bekanntmachungen-154244"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Hamburger Energiewerke GmbH",
+   "role": "owner",
+   "lookup_result": "Appears on 4 units in Germany. Reuse the existing entity; do not create a new one."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.hamburg.de/politik-und-verwaltung/behoerden/bukea/veroeffentlichungen/bekanntmachungen/bue-bekanntmachungen-154244",
+   "used_for": [
+    "Status",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Public notice from the Hamburg environment authority. It names the applicant and the permit date of 24 August 2022. It gives no capacity or turbine model."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=B9CFC7FE-09DF-4F29-B6BF-8087F73D4291&plugid=/ingrid-group:ige-iplug-hh",
+   "used_for": [
+    "Capacity (MW)",
+    "Turbine/Engine Technology"
+   ],
+   "outcome": "blocked",
+   "note": "The register answered 429 Too Many Requests on every try. The fetcher retried 12 times and then tried a real Chrome window. The cached summary also records an HTTP 429. A final verifier run was still waiting when this file was written."
+  },
+  {
+   "url": "https://www.hamburger-energiewerke.de/ueber-uns/presse/mehrarbeiten-bei-gas-und-dampfturbinen-anlage-dradenau-notwendig",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "blocked",
+   "note": "The fetcher received a block page with HTTP 500. The site blocks requests from outside Germany."
+  },
+  {
+   "url": "https://waerme.hamburg/fernwaermesystem/energiepark-hafen",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "blocked",
+   "note": "Same block page with HTTP 500."
+  }
+ ]
+}

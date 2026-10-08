@@ -129,10 +129,11 @@ const usLadder = (workDir, pid) => `## Research ladder for a US gas plant
 Work down this list. Prefer the document that names the plant AND states the value.
 1. EIA-860M, the monthly generator inventory, by plant and generator. The plant's EIA plant code is
    often in "Other IDs (location)" (for example "EIA: 54832") and generator IDs in "Other IDs (unit)".
-   The files are Excel downloads listed at https://www.eia.gov/electricity/data/eia860m/ . Download
-   the newest monthly file with curl, read it with python (pandas or openpyxl), and filter on the
-   plant code. It gives status, nameplate MW, technology, operating month and year, planned and
-   actual retirement dates.
+   The newest monthly file is already on disk: \`python scripts/eia860m.py --path\` prints it (do not
+   download it again; the file is 14 MB and changes once a month). Read it with python (pandas,
+   sheets Operating, Planned, Retired, Canceled or Postponed, header row 3) and filter on the plant
+   code. It gives status, nameplate MW, technology, operating month and year, planned and actual
+   retirement dates. Cite the file's URL from work/eia/latest.json, which the verifier can read.
 2. EIA-860 annual (https://www.eia.gov/electricity/data/eia860/): ownership shares (schedule 4),
    technology, prime mover, CHP flags, coordinates (schedule 2).
 3. EIA-923 (https://www.eia.gov/electricity/data/eia923/): monthly generation and fuel use by plant.
@@ -301,6 +302,12 @@ Cite the live URL, never a web.archive.org address.
   the newest evidence you found and its date. It applies only to an announced, pre-construction or
   construction unit with no activity in documents for 2 years (shelved) or 4 years (cancelled).
 - Never a URL or a sentence in a value.
+- \`Status Detail\` is the one free-text box, and it is a running log with the newest entry first.
+  Report only the new sentence or two you would add: what happened, when, and which document says
+  so. Never rewrite, shorten or restate the text the brief already shows for it; the assembly step
+  places your text above that text and keeps the old text word for word. If the box already says
+  what you found, report the box's text unchanged with your source, so the link is added and the
+  text is left alone.
 - Every URL in \`refs\` needs a passing verification. \`refs\` may be empty only for an inferred status.
 - Hydrogen and computed columns are never reported.
 - A combined-cycle block is one unit, never split into turbines.
@@ -422,8 +429,12 @@ python json.dump or your Write tool, then check it parses with
   ],
   "plant_findings": { "Owner(s)": { "...": "same shape; applies to every unit" } },
   "qa": [ {"gem_unit_id": "G...", "concern_type": "duplicate",
-           "recommendation": "...", "note": "...", "refs": []} ],
-  "monitor": [], "newunits": [],
+           "recommendation": "...", "note": "...", "refs": [],
+           "proposed_value": {"Capacity (MW)": "412"}} ],
+  "monitor": [ {"gem_unit_id": "G...", "monitor_kind": "existing_plant",
+                "monitor_reason": "...", "recheck_by": "2027-03",
+                "note": "...", "refs": []} ],
+  "newunits": [],
   "entities": [ {"entity_name": "...", "role": "owner", "lookup_result": "..."} ],
   "source_log": [ {"url": "https://...", "used_for": ["Status", "Capacity (MW)"],
                    "outcome": "verified", "note": "..."} ]
@@ -436,6 +447,16 @@ python json.dump or your Write tool, then check it parses with
   \`not_found\` listing the fields. A plant-level field you could not find goes in every unit's
   \`not_found\`.
 - Field keys in \`findings\` and \`plant_findings\` are exact CSV headers from RESEARCH_FIELDS.
+- \`qa.concern_type\` is the exact header of the column the question is about (\`Status\`,
+  \`Capacity (MW)\`, \`Owner(s)\`, \`Start year\`, ...) or one of: duplicate, existence (a unit or
+  plant may be missing or may not exist), scope (how units are grouped), capacity-threshold,
+  identity (which unit a source means), attribution (who the owner is), conversion-link, location,
+  source (a dead or wrong link), other. When the question is about a specific value, put it in
+  \`proposed_value\` as {column: value}; never in \`findings\`.
+- \`monitor\` is the watch list. \`monitor_kind\` is existing_plant (a possible change or expansion at
+  a plant in the brief; set \`gem_unit_id\` or \`gem_plant_id\`) or new_to_tracker (a plant GEM does
+  not have). \`monitor_reason\` says in one sentence why it is not an edit yet; \`recheck_by\` is
+  YYYY-MM.
 - \`source_log\` lists every URL you tried, including failures, with outcome verified, failed,
   blocked, dead or not relevant.
 

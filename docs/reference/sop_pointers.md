@@ -16,7 +16,7 @@ rules an agent needs at batch time, and the live doc always wins on conflict.
 | ↳ Researcher Country Assignments | per-country / per-US-state rows: assignee, in-dev MW + unit counts, priority level, days allocated, status (cols M–N are researcher-maintained) | `gid=0` |
 | ↳ Weekly schedule | one column pair per researcher, one row per working day, the states/countries scheduled that day | `gid=752345112` |
 | ↳ United States research | one row per US state: ISO/RTO, data sources, data-center gas, state notes, tips (the US "country tips") | `gid=136658633` |
-| ↳ US IRPs | per-utility Integrated Resource Plan links and notes, grouped by state | `gid=560668233` |
+| ↳ US IRPs | per-utility Integrated Resource Plan links and notes, grouped by state (Natalia's notes; Amalia pairs the tab with a web search for new IRPs and the plants they name, per state) | `gid=560668239` |
 | ↳ Country tips trends | one row per country per cycle (Q4 2026 row is required output) | `gid=332853261` |
 | ↳ QC/Country checklist | the mandatory per-country close-out checklist (DURING / Q4 docs / USA-only / OPTIONAL / END-OF-UPDATE blocks); how it maps onto this repo is planned in `notes/qc_checklist_plan.md` | `gid=1911792199` |
 | ↳ Researcher Country Assignments, columns M and N | M = "Best Estimate for NEXT update (days)", N = "Q4 2026 status" (to do / in progress / done); the two columns the checklist asks researchers to fill | `gid=0` |
@@ -48,8 +48,9 @@ rules an agent needs at batch time, and the live doc always wins on conflict.
 |---|---|---|
 | **GOGPT United States Data/Research Guide** — EIA-860/860M field mapping, Sierra Club matching, RTO primer, Texas TCEQ pointer | Doc | https://docs.google.com/document/d/1MINDE8Y3rC2q4YCSQHYv2Tvv_M-icVPmOQ0n81sXsN0 |
 | United States research tab / US IRPs tab | Sheet tabs | see Current cycle above |
-| EIA-860 annual + EIA-860M monthly files | Drive folders | linked from the US Guide (folder links live there) |
-| Sierra Club GEM-IDs-matched sheet | Sheet | linked from the US Guide — **reference only, never cite or share outside GEM** |
+| EIA-860 annual + EIA-860M monthly files | Drive folders | linked from the US Guide (folder links live there); the repo keeps the newest 860M file itself in `work/eia/` via `scripts/eia860m.py` from https://www.eia.gov/electricity/data/eia860m/ |
+| **EIP_GEM IDs matched** — EIP (Oil and Gas Watch) gas plant projects with GEM location and unit ids; newest "EIP <date> data filtered" tab is the one to use | Sheet | https://docs.google.com/spreadsheets/d/14L3HqKEiP3GhHaWaotuf_pQiXvUT_xQtusokohch4Gg (`gid=72386477`) |
+| **Sierra Club GEM-IDs-matched sheet** — "MATCHED IDs" tab | Sheet | https://docs.google.com/spreadsheets/d/11K84v5CPX38qb80ri8EFvPl2k2t7TR2MtWlZFXChAfc — **reference only, never cite or share outside GEM** |
 
 ## Source-finding and backlogs
 

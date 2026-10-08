@@ -1,0 +1,115 @@
+{
+ "meta": {
+  "plant_id": "L100000101873",
+  "plant_name": "Altbach power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:07:45-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401324",
+   "unit_name": "GT A",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing was asked for this unit in this follow-up."
+  },
+  {
+   "gem_unit_id": "G100000401325",
+   "unit_name": "GT B",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing was asked for this unit in this follow-up."
+  },
+  {
+   "gem_unit_id": "G100000401326",
+   "unit_name": "GT C",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing was asked for this unit in this follow-up."
+  },
+  {
+   "gem_unit_id": "G100000401323",
+   "unit_name": "GT E",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing was asked for this unit in this follow-up."
+  },
+  {
+   "gem_unit_id": "G100000410325",
+   "unit_name": "HKW3, timepoint 1",
+   "findings": {},
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Latest Activity",
+    "Owner(s)"
+   ],
+   "notes": "The permit documents add no new value for this unit. The Regierungspraesidium Stuttgart granted a preliminary decision and a first partial permit on 17 January 2024 and a second partial permit on 7 March 2025. The applicant is EnBW Energie Baden-Wuerttemberg AG, which matches the owner already in GEM. The documents give only thermal input of up to 1,140 MW for the gas plant, which is not electric capacity, so the 665 MW already in GEM is neither confirmed nor changed. The turbine make and model are withheld in the published decision as a trade secret. The application text planned commercial operation for 2026, while the earlier research found a newspaper report of commercial operation in 2027, so the start year of 2027 is left as it is. Status stays construction on the earlier sources. Latest Activity is not filled because the project is moving."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000401324",
+   "concern_type": "planned retirement",
+   "recommendation": "Consider a planned retirement entry for GT A and a note for GT E and GT B and C",
+   "note": "The 2025 decision text says gas turbine A is to be shut down at the latest when the new gas plant is reliably in operation. Gas turbine E is to move into the grid reserve. Gas turbines B and C are to stay in service. The text gives no year, so no planned retirement year can be set. This was outside the checks for this follow-up.",
+   "refs": [
+    "https://rp.baden-wuerttemberg.de/fileadmin/RP-Internet/Stuttgart/Service/Bekanntmachungen/_DocumentLibraries/Immissionsschutz_5/s_EnBW_Fuel_Switch_Altbach_Deizisau_Bek.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000410325",
+   "concern_type": "capacity",
+   "recommendation": "Keep the capacity question open",
+   "note": "The permits state only thermal input of up to 1,140 MW. No electric figure appears in the published decisions.",
+   "refs": [
+    "https://rps.baden-wuerttemberg.de/fileadmin/RP-Internet/Stuttgart/Service/Bekanntmachungen/_DocumentLibraries/Immissionsschutz_5/s_EnBW_Altbach_GDTK_FuelSwitch_Ent.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "EnBW Energie Baden-Württemberg AG",
+   "role": "owner",
+   "lookup_result": "Not looked up. The company is already the owner in GEM and no change is proposed."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=8ea610cb-12f5-4bc6-8dc7-439498b5e991",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "Procedure page was read through the saved summary only. It lists the same decisions as the two notices."
+  },
+  {
+   "url": "https://rps.baden-wuerttemberg.de/fileadmin/RP-Internet/Stuttgart/Service/Bekanntmachungen/_DocumentLibraries/Immissionsschutz_5/s_EnBW_Altbach_GDTK_FuelSwitch_Ent.pdf",
+   "used_for": [
+    "Status",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Notice and second partial permit dated 7 March 2025, published 16 April 2025. Applicant is EnBW. Thermal input 1,140 MW only."
+  },
+  {
+   "url": "https://rp.baden-wuerttemberg.de/fileadmin/RP-Internet/Stuttgart/Service/Bekanntmachungen/_DocumentLibraries/Immissionsschutz_5/s_EnBW_Fuel_Switch_Altbach_Deizisau_Bek.pdf",
+   "used_for": [
+    "Status",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Notice and preliminary decision with first partial permit dated 17 January 2024. Planned commercial operation 2026. Thermal input only, no electric capacity."
+  }
+ ]
+}

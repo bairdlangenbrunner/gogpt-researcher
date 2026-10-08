@@ -1,0 +1,113 @@
+{
+ "meta": {
+  "plant_id": "L100000101908",
+  "plant_name": "Staudinger power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:10:00-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400255",
+   "unit_name": "4",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing was asked for this unit, so I left it alone."
+  },
+  {
+   "gem_unit_id": "G100001071656",
+   "unit_name": "8",
+   "findings": {
+    "Equipment Manufacturer/Model": {
+     "value": "Siemens SGT5-9000HL",
+     "refs": [
+      "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2026-02/vorbescheid-9bimschg_block8-kws-ukw.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2026-02/vorbescheid-9bimschg_block8-kws-ukw.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The preliminary decision from the Regierungspraesidium Darmstadt, dated 18 February 2026, describes one Siemens SGT5-9000HL gas turbine with a heat recovery boiler and a steam turbine. This is a named turbine model. The earlier batch only had Siemens Energy as a likely maker from a news article, so this replaces it with the exact model."
+    }
+   },
+   "not_found": [
+    "Start year (the permit gives no start date)"
+   ],
+   "notes": "The preliminary decision dated 18 February 2026 confirms 890 MW electric, a combined cycle design and a first application date of 16 April 2025. These match the earlier batch, so I do not propose them again. The 1,470 MW figure in the document is thermal input and is not capacity. The decision does not give a start of operation."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001071656",
+   "concern_type": "status",
+   "recommendation": "Reconsider the earlier batch's move from announced to pre-construction for block 8.",
+   "note": "The permit file is only a preliminary decision. Under the lifecycle rules a preliminary decision supports pre-construction only together with the operator's final investment decision. I found no Uniper investment decision, and the project still depends on the capacity tender award due by 3 November 2026. So announced is the safer status for now.",
+   "refs": [
+    "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2026-02/vorbescheid-9bimschg_block8-kws-ukw.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001071656",
+   "concern_type": "latest_activity",
+   "recommendation": "Do not fill Latest Activity for block 8.",
+   "note": "The earlier batch proposed 18 August 2026 from a trade press article. That report is within the last twelve months and the project is moving, so the rule says to leave this field blank. The preliminary decision itself is dated 18 February 2026, not April 2026. The April 2026 date was the date of the news reports.",
+   "refs": [
+    "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2026-02/vorbescheid-9bimschg_block8-kws-ukw.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001071656",
+   "concern_type": "owner",
+   "recommendation": "Check whether the owner for block 8 should be Uniper Kraftwerke GmbH instead of Uniper SE.",
+   "note": "The permit applicant and holder is Uniper Kraftwerke GmbH, which is also the owner GEM lists for block 4. GEM lists Uniper SE for block 8. A permit applicant is not proof of ownership and an owner change needs a closed transaction, so I did not report a change. The existing entity for Uniper covers this company name.",
+   "refs": [
+    "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2026-02/vorbescheid-9bimschg_block8-kws-ukw.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001071656",
+   "concern_type": "register_mismatch",
+   "recommendation": "No action. The saved permit register summary for this plant is for a different project.",
+   "note": "The summary file for this plant lists a heating plant application in Herne. It does not concern Staudinger block 8, so I did not use it.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Uniper Kraftwerke GmbH",
+   "role": "owner",
+   "lookup_result": "The entity lookup matched Uniper Kraftwerke GmbH to the existing entity uniper, which appears on 86 units. Reuse the existing entity and do not create a new one."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2026-02/vorbescheid-9bimschg_block8-kws-ukw.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Capacity (MW)",
+    "Turbine/Engine Technology"
+   ],
+   "outcome": "verified",
+   "note": "Preliminary decision dated 18 February 2026, 160 pages, read in full from the saved copy. Names SGT5-9000HL, 890 MW electric and Uniper Kraftwerke GmbH."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=06e6d31d-611c-4dfb-bfd5-109616cb448e",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "The register summary lists a Herne heating plant application, not Staudinger."
+  }
+ ]
+}

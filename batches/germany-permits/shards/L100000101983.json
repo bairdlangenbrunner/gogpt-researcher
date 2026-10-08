@@ -1,0 +1,121 @@
+{
+ "meta": {
+  "plant_id": "L100000101983",
+  "plant_name": "Lippendorf power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:15:00-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000412862",
+   "unit_name": "CC1, timepoint 1",
+   "findings": {
+    "Status Detail": {
+     "value": "First partial permit granted on 22 August 2024 by the Saxony state directorate for a gas and steam turbine plant at Lippendorf. The permit covers only the gatehouse, construction roads, gas turbine foundation and site office. No construction of the plant itself is reported.",
+     "refs": [
+      "https://www.lds.sachsen.de/bekanntmachung/?ID=10296&art_param=664",
+      "https://www.recht-sachsen.de/saechsisches-amtsblatt-2024-39.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.lds.sachsen.de/bekanntmachung/?ID=10296&art_param=664",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.recht-sachsen.de/saechsisches-amtsblatt-2024-39.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The Saxony state directorate lists the first partial permit dated 22 August 2024 for the gas and steam turbine plant at Neukieritzsch, Am Kraftwerk 1, Lausitz Energie Kraftwerke AG as applicant. The Saxony official gazette issue 39 of 2024 lists the public notice of 5 September 2024. A first partial permit alone does not make a unit under construction, so the status stays pre-construction. The earlier note about the 2025 ownership change is still valid."
+    }
+   },
+   "not_found": [
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Planned retire",
+    "Latest Activity"
+   ],
+   "notes": "The status stays pre-construction. A draft change to the local land use plan dated April 2026 still describes the gas and steam plant as planned, which means the project is moving, so Latest Activity is left alone. It calls the plant a single H-class combined cycle unit but gives no electric capacity, maker or start date. I could not confirm the 2040 retirement. The only closure date found is 31 December 2035 for the coal plant."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000412862",
+   "concern_type": "planned retire",
+   "recommendation": "Check where the 2040 planned retirement comes from.",
+   "note": "A local land use plan document dated April 2026 says the Lippendorf coal plant will close for good on 31 December 2035. That is a different unit. Nothing in these documents gives a closure date for the gas plant.",
+   "refs": [
+    "https://www.richterundkaup.de/uploads/2026_Beteiligung/661_BPL_KraftwerkLippendf/Begruendung_1._AEnderung_BPlan_Nr._5.1_Vorentwurf_02.04.2026_.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000412862",
+   "concern_type": "permit",
+   "recommendation": "Read the permit PDF itself for the thermal input, planned start of operation and any electric capacity.",
+   "note": "The state directorate page links the permit document dated 22 August 2024, but the register page for this procedure shows no details and the permit file could not be opened here. A search summary mentioned a start in the second quarter of 2027, but that wording matches the Schwarze Pumpe notice, so I did not use it.",
+   "refs": [
+    "https://www.lds.sachsen.de/bekanntmachung/?ID=10296&art_param=664"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.lds.sachsen.de/bekanntmachung/?ID=10296&art_param=664",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "State directorate announcement list. Shows the first partial permit dated 22 August 2024."
+  },
+  {
+   "url": "https://www.recht-sachsen.de/saechsisches-amtsblatt-2024-39.html",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Official gazette issue 39 of 2024. Lists the notice of 5 September 2024."
+  },
+  {
+   "url": "https://www.richterundkaup.de/uploads/2026_Beteiligung/661_BPL_KraftwerkLippendf/Begruendung_1._AEnderung_BPlan_Nr._5.1_Vorentwurf_02.04.2026_.pdf",
+   "used_for": [
+    "Planned retire",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Draft land use plan change dated April 2026. Coal plant closes 31 December 2035. Gas plant described as an H-class single combined cycle unit."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=64322a9b-6fd6-48ad-874c-5127ccbe0ad2",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "failed",
+   "note": "The cached register page says no detail information is available, and the verifier did not find the plant name."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/64322a9b-6fd6-48ad-874c-5127ccbe0ad2/GuD%20Lippendorf%20Bekanntmachung%20Entscheidung%20Amtsblatt.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "dead",
+   "note": "Address from a search result returned 404 through the fetcher."
+  }
+ ]
+}

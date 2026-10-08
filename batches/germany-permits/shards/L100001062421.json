@@ -1,0 +1,160 @@
+{
+ "meta": {
+  "plant_id": "L100001062421",
+  "plant_name": "Gundremmingen power plant",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:20:34-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001071693",
+   "unit_name": "Peaker 1",
+   "findings": {
+    "Start year": {
+     "value": "2027",
+     "refs": [
+      "https://www.regierung.schwaben.bayern.de/mam/service/veroeff/rabl2025/amtsblatt_rvs_2025_4_-_bf.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.regierung.schwaben.bayern.de/mam/service/veroeff/rabl2025/amtsblatt_rvs_2025_4_-_bf.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Swabia district government's official gazette of 4 March 2025 says the plant is to start operating from September 2027. The earlier Germany batch found no start year."
+    },
+    "City": {
+     "value": "Gundremmingen",
+     "refs": [
+      "https://www.regierung.schwaben.bayern.de/mam/service/veroeff/rabl2025/amtsblatt_rvs_2025_4_-_bf.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.regierung.schwaben.bayern.de/mam/service/veroeff/rabl2025/amtsblatt_rvs_2025_4_-_bf.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The same gazette notice places the plant at Dr.-August-Weckesser-Straße 4 in 89355 Gundremmingen, south of the former nuclear plant."
+    },
+    "Turbine/Engine Technology": {
+     "value": "internal combustion",
+     "refs": [
+      "https://www.regierung.schwaben.bayern.de/mam/service/veroeff/rabl2025/amtsblatt_rvs_2025_4_-_bf.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.regierung.schwaben.bayern.de/mam/service/veroeff/rabl2025/amtsblatt_rvs_2025_4_-_bf.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The notice describes 28 gas engines of up to 124 MW electric in total, not a turbine plant. GEM lists combined cycle, which does not fit."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "INNIO Jenbacher: J624, INNIO Jenbacher: J620",
+     "refs": [
+      "https://www.regierung-schwaben.bayern.de/mam/aufgaben/b5/sg_55.1/peaker/03/03.00-00_anlagen_betriebsbeschr.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.regierung-schwaben.bayern.de/mam/aufgaben/b5/sg_55.1/peaker/03/03.00-00_anlagen_betriebsbeschr.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The operating description in the permit file lists engines of type JMS 624 and JMS 620 but does not name the maker. JMS is the engine series name used by INNIO Jenbacher, so the maker is an inference."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Owner(s)"
+   ],
+   "notes": "The notice confirms 124 MW electric from 28 gas engines and RWE Generation SE as applicant, which match GEM, so capacity and owner are not entered again. I found no permit decision, so the status stays pre-construction. The newest dated report is the RWE press release of 29 October 2025, less than a year old, so Latest Activity is left alone."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001071693",
+   "concern_type": "other",
+   "recommendation": "No action. The register file collected for this plant is for a different RWE project.",
+   "note": "The saved register summary describes an RWE gas engine plant at Knapsacker Hügel in Hürth, with 278 MW and a decision dated 2 September 2026. That is not Gundremmingen, so it was not used. The Swabia district government notice and permit file were used instead.",
+   "refs": [
+    "https://www.uvp-verbund.de/trefferanzeige?docuuid=501f0413-fe68-4315-a2b0-9c50c5b23f9f"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001071693",
+   "concern_type": "status",
+   "recommendation": "Keep pre-construction. Look for the permit decision in the Swabia district government pages later.",
+   "note": "The application was filed in December 2024 and publicly noticed on 4 March 2025. No decision or start of construction was found.",
+   "refs": [
+    "https://www.regierung.schwaben.bayern.de/mam/service/veroeff/rabl2025/amtsblatt_rvs_2025_4_-_bf.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "RWE Generation SE",
+   "role": "owner",
+   "lookup_result": "found, parent entity E100000000433"
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.regierung.schwaben.bayern.de/mam/service/veroeff/rabl2025/amtsblatt_rvs_2025_4_-_bf.pdf",
+   "used_for": [
+    "Start year",
+    "City",
+    "Turbine/Engine Technology",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Gazette of 4 March 2025. September 2027 start, 28 gas engines, 124 MW electric."
+  },
+  {
+   "url": "https://www.regierung-schwaben.bayern.de/mam/aufgaben/b5/sg_55.1/peaker/03/03.00-00_anlagen_betriebsbeschr.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Operating description lists JMS 624 and JMS 620 engines."
+  },
+  {
+   "url": "https://www.regierung.schwaben.bayern.de/aufgaben/info_sachgebiete/55-1gasmotor/index.html",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Page was read and states 124 MW electric and RWE Generation SE, but the verifier flagged its title as a soft error page. Not cited."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=501f0413-fe68-4315-a2b0-9c50c5b23f9f",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Register page for the Hürth project, a different plant."
+  }
+ ]
+}

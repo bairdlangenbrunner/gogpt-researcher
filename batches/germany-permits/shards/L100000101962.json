@@ -1,0 +1,91 @@
+{
+ "meta": {
+  "plant_id": "L100000101962",
+  "plant_name": "Voerde power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:10:00-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001071724",
+   "unit_name": "1",
+   "findings": {},
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Capacity (MW) electric (permit gives thermal only)"
+   ],
+   "notes": "The permit notice of 28 July 2026 from the Bezirksregierung Duesseldorf names RWE Generation SE as applicant, gives 1,600 MW thermal input and plans start of operation in the fourth quarter of 2030. That matches the 2030 start year in GEM, so I do not stage it again. The notice gives no electric output and no turbine maker. The RWE press release of 27 October 2025 says about 850 MW, which matches GEM."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001071724",
+   "concern_type": "owner",
+   "recommendation": "Check whether the owner should be RWE Generation SE instead of RWE AG.",
+   "note": "The permit applicant is RWE Generation SE. GEM lists RWE AG. An applicant is not proof of ownership and an owner change needs a closed transaction, so I did not report a change.",
+   "refs": [
+    "https://www.brd.nrw.de/system/files/media/document/2026-07/20260728_bekanntmachungstext_rwe.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001071724",
+   "concern_type": "status",
+   "recommendation": "Reconsider the earlier batch's move to pre-construction.",
+   "note": "A permit application supports announced at least. Pre-construction also needs a final investment decision. RWE says it will not build without a tender award, which is due by 3 November 2026. So announced may be the safer status for now.",
+   "refs": [
+    "https://www.brd.nrw.de/system/files/media/document/2026-07/20260728_bekanntmachungstext_rwe.pdf",
+    "https://www.rwe.com/-/media/RWE/documents/07-presse/rwe-generation-se/2025/2025-10-24-rwe-plant-wasserstofffaehiges-gaskraftwerk-in-voerde.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001071724",
+   "concern_type": "latest_activity",
+   "recommendation": "Do not fill Latest Activity for Voerde.",
+   "note": "The earlier batch proposed 28 July 2026. That is within the last twelve months and the project is moving, so the rule says to leave it blank.",
+   "refs": [
+    "https://www.brd.nrw.de/system/files/media/document/2026-07/20260728_bekanntmachungstext_rwe.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001071724",
+   "concern_type": "register_mismatch",
+   "recommendation": "No action. The saved permit register summary for this plant is for a different project.",
+   "note": "The summary file lists a Herdecke engine plant application, not Voerde, so I did not use it.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.brd.nrw.de/system/files/media/document/2026-07/20260728_bekanntmachungstext_rwe.pdf",
+   "used_for": [
+    "Start year",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Public notice dated 28 July 2026. Names RWE Generation SE, 1,600 MW thermal and commissioning in the fourth quarter of 2030."
+  },
+  {
+   "url": "https://www.rwe.com/-/media/RWE/documents/07-presse/rwe-generation-se/2025/2025-10-24-rwe-plant-wasserstofffaehiges-gaskraftwerk-in-voerde.pdf",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "RWE press release of 27 October 2025. States about 850 MW and a possible 2030 start."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=A37B7E7A-25B6-4426-82E8-6994D3E36F00",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "The register summary lists a Herdecke project, not Voerde."
+  }
+ ]
+}

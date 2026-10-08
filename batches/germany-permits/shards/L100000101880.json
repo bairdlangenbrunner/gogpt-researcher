@@ -1,0 +1,109 @@
+{
+ "meta": {
+  "plant_id": "L100000101880",
+  "plant_name": "RDK (Karlsruhe) power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:26:34-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001096229",
+   "unit_name": "CC1-12",
+   "findings": {
+    "Status Detail": {
+     "value": "Application for a partial permit under the emissions law, public display 16 March to 17 April 2026, public hearing period 15 to 30 June 2026. No permit granted yet.",
+     "refs": [
+      "https://www.uvp-verbund.de/documents-ige-ng/igc_bw/bc5c24de-953d-440e-9689-a876f5b07f03/%C3%B6B%20Vorhaben%20mit%20UVP.pdf",
+      "https://www.uvp-verbund.de/trefferanzeige?docuuid=bc5c24de-953d-440e-9689-a876f5b07f03"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_bw/bc5c24de-953d-440e-9689-a876f5b07f03/%C3%B6B%20Vorhaben%20mit%20UVP.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=bc5c24de-953d-440e-9689-a876f5b07f03",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The regional council's public notice names Stadtwerke Karlsruhe GmbH as the applicant for 12 new gas engine heat and power units at Honsellstrasse 35. The notice says the plant is expected to start in September 2029. The permit portal lists the hearing period of 15 to 30 June 2026. No decision has been published. The status stays pre-construction."
+    }
+   },
+   "not_found": [
+    "Capacity (MW)",
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "The permit notice confirms the earlier finding that Stadtwerke Karlsruhe GmbH is the applicant, and it gives September 2029 as the expected start, which matches the 2029 already in the database, so neither is proposed again. The saved notice gives no electric output in MW and no engine maker. The project is moving, so Latest Activity is left alone."
+  },
+  {
+   "gem_unit_id": "G100000400240",
+   "unit_name": "RDK 4S",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit, as instructed."
+  },
+  {
+   "gem_unit_id": "G100001071684",
+   "unit_name": "RDK 9",
+   "findings": {},
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Turbine/Engine Technology"
+   ],
+   "notes": "A City of Karlsruhe news item from 22 July 2025 says EnBW plans a hydrogen-ready gas and steam turbine plant with 850 MW electric and 220 MW thermal output, which matches the 850 MW in the earlier finding, so it is not proposed again. The page names no turbine maker and no start date. The zoning procedure began in July 2025 and the earlier finding already records the July 2026 council vote, so the project is moving and Latest Activity is left alone."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001096229",
+   "concern_type": "capacity",
+   "recommendation": "Keep 50 MW as a placeholder and look for the electric output in the engine supplier documents.",
+   "note": "The permit notice states no electric output. The earlier research found the 12 modules have about 125 MW of fuel input in total, which is thermal input, not capacity. The 50 MW in the database is not confirmed by any document read.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=bc5c24de-953d-440e-9689-a876f5b07f03",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Permit portal page for the Stadtwerke Karlsruhe procedure, read from the local cache. It lists 127 documents, only the public notice was saved locally."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_bw/bc5c24de-953d-440e-9689-a876f5b07f03/%C3%B6B%20Vorhaben%20mit%20UVP.pdf",
+   "used_for": [
+    "Status Detail",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Public notice of the Regierungspraesidium Karlsruhe, read from the local cache. States September 2029 for commissioning."
+  },
+  {
+   "url": "https://www.karlsruhe.de/stadt-rathaus/aktuelles/meldungen/bauleitplanverfahren-um-das-rheinhafen-dampfkraftwerk-block-9-gestartet",
+   "used_for": [
+    "Capacity (MW)",
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "City of Karlsruhe news item of 22 July 2025 on the zoning procedure for RDK 9. States 850 MW electric. Matches the earlier finding."
+  }
+ ]
+}

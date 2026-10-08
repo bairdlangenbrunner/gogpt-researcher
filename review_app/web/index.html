@@ -33,11 +33,10 @@
       <span id="f-state" class="countries" role="group" aria-label="state"></span>
       <label>decision <select id="f-decision"></select></label>
       <label>kind <select id="f-kind"></select></label>
-      <label data-tip="major: a cell value changes (fill, change, delete, plant-wide, new row); minor: the value was checked and stands, only a Data Source link is added">severity <select id="f-severity"></select></label>
+      <label data-tip="the group of the GOGPT QC/Country checklist every change and item is sorted into; pick one to see everything in it, decided or not">checklist <select id="f-group"></select></label>
       <label>confidence <select id="f-tier"></select></label>
+      <label class="check" data-tip="everything flagged with the ask-the-PM box, whatever its decision"><input type="checkbox" id="f-pm"> ask the PM</label>
       <label class="grow">search <input type="search" id="f-q" placeholder="plant name / GEM id / unit"></label>
-    </div>
-    <div class="row2">
       <button type="button" id="f-more" class="ghost" aria-expanded="false" aria-controls="more-filters">more filters</button>
       <button type="button" id="f-reset" class="ghost">reset</button>
     </div>
@@ -50,7 +49,13 @@
     <div id="active-filters" class="active-filters" hidden></div>
   </form>
   <div class="queue">
-    <ol id="pipes" class="pipes" aria-label="plants"></ol>
+    <div class="pane">
+      <div id="pane-mode" class="tabs pane-mode" role="tablist">
+        <button type="button" data-view="plants" role="tab" aria-selected="true" data-tip="one row per plant, with how much is still to decide">plants</button>
+        <button type="button" data-view="checklist" role="tab" aria-selected="false" data-tip="the groups of the GOGPT QC/Country checklist, with how much of each is still open; click one to filter the plants to it">checklist</button>
+      </div>
+      <ol id="pipes" class="pipes" aria-label="plants"></ol>
+    </div>
     <article id="card" class="card" aria-live="polite"></article>
   </div>
 </section>

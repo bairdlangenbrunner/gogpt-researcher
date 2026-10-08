@@ -1,0 +1,79 @@
+{
+ "meta": {
+  "plant_id": "L100000101875",
+  "plant_name": "Heilbronn power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:19:14-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000409758",
+   "unit_name": "Unit A, timepoint 1",
+   "findings": {
+    "Status Detail": {
+     "value": "EnBW Energie Baden-Württemberg AG received a preliminary decision and a first partial permit for the new gas and steam turbine plant HLB 8 from the Regierungspraesidium Stuttgart on 12 July 2024. The first partial permit covers buildings and structures only.",
+     "refs": [
+      "https://rp.baden-wuerttemberg.de/fileadmin/RP-Internet/Stuttgart/Service/Bekanntmachungen/_DocumentLibraries/Immissionsschutz_5/s_EnBw_Fuel_Switch_HN_Entsch.pdf",
+      "https://www.heilbronn.de/fileadmin/daten/stadtheilbronn/formulare/rathaus/aktuelles/bekanntmachungen/2024-07-17_Bekanntmachungstext-RP.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://rp.baden-wuerttemberg.de/fileadmin/RP-Internet/Stuttgart/Service/Bekanntmachungen/_DocumentLibraries/Immissionsschutz_5/s_EnBw_Fuel_Switch_HN_Entsch.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.heilbronn.de/fileadmin/daten/stadtheilbronn/formulare/rathaus/aktuelles/bekanntmachungen/2024-07-17_Bekanntmachungstext-RP.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Regierungspraesidium Stuttgart decision notice and the City of Heilbronn public notice of 17 July 2024 give the same decision of 12 July 2024. They are two copies of one official notice. This adds permit history to the current detail text, which only cites a news story. It does not change the status."
+    }
+   },
+   "not_found": [
+    "Capacity (MW)",
+    "Owner(s)"
+   ],
+   "notes": "The permit notice confirms EnBW as the applicant, which matches the owner in GEM. The plant is a single shaft unit where the gas turbine and steam turbine share one generator. The notice gives thermal input of 1,140 MW for the gas turbine plant, which is not electric capacity, and the notice states no electric output. Status, start year, equipment and Latest Activity were covered in the earlier findings and are not repeated. The register procedure page returned too many requests errors after repeated retries, so the register summary was not available."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://rp.baden-wuerttemberg.de/fileadmin/RP-Internet/Stuttgart/Service/Bekanntmachungen/_DocumentLibraries/Immissionsschutz_5/s_EnBw_Fuel_Switch_HN_Entsch.pdf",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Decision text read in full. Found Vorbescheid, 12.07.2024 and HLB 8."
+  },
+  {
+   "url": "https://www.heilbronn.de/fileadmin/daten/stadtheilbronn/formulare/rathaus/aktuelles/bekanntmachungen/2024-07-17_Bekanntmachungstext-RP.pdf",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Public notice of 17 July 2024. Same decision."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=59b969fd-2031-40ce-8d88-cbc3846e7a08",
+   "used_for": [],
+   "outcome": "blocked",
+   "note": "The procedure page still answers 429 after twelve retries and a Chrome attempt. The two official notices above carry the same decision."
+  }
+ ]
+}

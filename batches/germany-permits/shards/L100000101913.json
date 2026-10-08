@@ -1,0 +1,120 @@
+{
+ "meta": {
+  "plant_id": "L100000101913",
+  "plant_name": "Mehrum power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:10:00-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001071682",
+   "unit_name": "Block 1",
+   "findings": {
+    "Owner(s)": {
+     "value": "Kraftwerk Mehrum GmbH [100%]",
+     "refs": [
+      "https://www.uvp-verbund.de/documents-ige-ng/igc_ni/8aa50135-8a84-4107-8510-4ef885430b90/BS%2023-066%20Vorbescheid.pdf",
+      "https://www.uvp-verbund.de/trefferanzeige?docuuid=8aa50135-8a84-4107-8510-4ef885430b90"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_ni/8aa50135-8a84-4107-8510-4ef885430b90/BS%2023-066%20Vorbescheid.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=8aa50135-8a84-4107-8510-4ef885430b90",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The preliminary decision of the Braunschweig trade supervision office dated 29 May 2024 is addressed to Kraftwerk Mehrum GmbH of Triftstrasse 25 in Hohenhameln as the applicant. The register page names the same company. This matches the current owner. Neither document states an ownership share, so the 100 percent is not confirmed."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "notes": "The register page and the preliminary decision dated 29 May 2024 give the same two options as GEM already holds. One is a combined cycle plant of up to 1,200 MW electric. The other is two gas turbines of up to 550 MW electric each. This confirms the current 1,200 MW and the status note, so I do not repeat them. A preliminary decision alone does not move the plant past announced. The documents name no turbine maker. The site is given as Triftstrasse 25 in Hohenhameln, parcels in the Mehrum district, with no coordinates. The newest report is still the newspaper article of 13 June 2024 from the earlier batch, which is more than a year old, so that Latest Activity stays as already reported."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Kraftwerk Mehrum GmbH [100%]",
+   "refs": [
+    "https://www.uvp-verbund.de/documents-ige-ng/igc_ni/8aa50135-8a84-4107-8510-4ef885430b90/BS%2023-066%20Vorbescheid.pdf",
+    "https://www.uvp-verbund.de/trefferanzeige?docuuid=8aa50135-8a84-4107-8510-4ef885430b90"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_ni/8aa50135-8a84-4107-8510-4ef885430b90/BS%2023-066%20Vorbescheid.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=8aa50135-8a84-4107-8510-4ef885430b90",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The preliminary decision of the Braunschweig trade supervision office dated 29 May 2024 is addressed to Kraftwerk Mehrum GmbH of Triftstrasse 25 in Hohenhameln as the applicant. The register page names the same company. This matches the current owner. Neither document states an ownership share, so the 100 percent is not confirmed."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100001071682",
+   "concern_type": "source",
+   "recommendation": "Check whether the preliminary decision is still valid.",
+   "note": "The decision says it lapses unless the company applies for a first partial permit or full permit within 2 years after the decision becomes final. That period can be extended to 4 years on request. The decision is dated 29 May 2024, so the first deadline may already be near or past. I found no application for a permit and no sign the company has asked for an extension.",
+   "refs": [
+    "https://www.uvp-verbund.de/documents-ige-ng/igc_ni/8aa50135-8a84-4107-8510-4ef885430b90/BS%2023-066%20Vorbescheid.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Kraftwerk Mehrum GmbH",
+   "role": "owner",
+   "lookup_result": "Name already in GEM as the current owner. No new entity needed. Not looked up again."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_ni/8aa50135-8a84-4107-8510-4ef885430b90/BS%2023-066%20Vorbescheid.pdf",
+   "used_for": [
+    "Owner(s)",
+    "Capacity (MW)",
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Preliminary decision read from the local copy and the text saved. Names the applicant and both capacity options."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=8aa50135-8a84-4107-8510-4ef885430b90",
+   "used_for": [
+    "Owner(s)",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Register page read from the local copy."
+  }
+ ]
+}

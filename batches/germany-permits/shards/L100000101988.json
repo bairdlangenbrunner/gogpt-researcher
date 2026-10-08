@@ -1,0 +1,140 @@
+{
+ "meta": {
+  "plant_id": "L100000101988",
+  "plant_name": "Schkopau power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:26:34-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001094612",
+   "unit_name": "CC1",
+   "findings": {
+    "Start year": {
+     "value": "2029",
+     "refs": [
+      "https://www.uvp-verbund.de/documents-ige-ng/igc_st/f530c838-ed0a-4df4-8f86-b24ab6b0c123/%C3%96ffentliche%20Bekanntmachung_SEG_ZESA.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_st/f530c838-ed0a-4df4-8f86-b24ab6b0c123/%C3%96ffentliche%20Bekanntmachung_SEG_ZESA.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The public notice of the Saxony-Anhalt state administration from August 2025 says that, according to the application of Saale Energie GmbH, the new plant is to be put into operation in 2029. No start year was in the earlier findings."
+    },
+    "Status Detail": {
+     "value": "Change permit application by Saale Energie GmbH under the emissions law, public display 25 August to 24 September 2025, public hearing 20 November 2025. A first partial permit for the gatehouse was granted on 19 March 2026 and the final investment decision is pending.",
+     "refs": [
+      "https://www.uvp-verbund.de/documents-ige-ng/igc_st/f530c838-ed0a-4df4-8f86-b24ab6b0c123/%C3%96ffentliche%20Bekanntmachung_SEG_ZESA.pdf",
+      "https://www.uvp-verbund.de/documents-ige-ng/igc_st/f530c838-ed0a-4df4-8f86-b24ab6b0c123/Bekanntmachung_E%C3%96T_20.11.2025.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_st/f530c838-ed0a-4df4-8f86-b24ab6b0c123/%C3%96ffentliche%20Bekanntmachung_SEG_ZESA.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_st/f530c838-ed0a-4df4-8f86-b24ab6b0c123/Bekanntmachung_E%C3%96T_20.11.2025.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The August 2025 notice and the November 2025 hearing notice are official publications. They add the application and hearing dates to the first partial permit and the early start already found in the earlier batch. No permit for the turbines has been published, so the status stays pre-construction."
+    }
+   },
+   "not_found": [
+    "Capacity (MW)",
+    "Equipment Manufacturer/Model",
+    "Turbine/Engine Technology",
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "City"
+   ],
+   "notes": "The two saved notices give the applicant, the dates and the 2029 start, but no electric output of the new plant and no turbine maker. They mention only the existing coal blocks at about 915 MW gross. The environmental impact report that would hold output and site data could not be read because the register refused every request with error 429 after many retries. The project is moving, with a partial permit in March 2026, so Latest Activity is left alone. The applicant Saale Energie GmbH matches the owner already found."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001094612",
+   "concern_type": "scope",
+   "recommendation": "Check whether the industrial gas turbine plant should be a separate unit or added to the capacity.",
+   "note": "The application covers a combined cycle plant, a standby power plant and an industrial gas turbine plant, called IGT, at the same site. GEM has one unit of 900 MW. The saved notices do not split the capacity between the parts.",
+   "refs": [
+    "https://www.uvp-verbund.de/documents-ige-ng/igc_st/f530c838-ed0a-4df4-8f86-b24ab6b0c123/%C3%96ffentliche%20Bekanntmachung_SEG_ZESA.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001094612",
+   "concern_type": "location",
+   "recommendation": "Leave the coordinates as they are. The environmental impact report should be read when the register allows it.",
+   "note": "The notices name the parcels in the district Korbetha, not coordinates. No document read states a latitude or longitude, so the coordinates stay unconfirmed.",
+   "refs": [
+    "https://www.uvp-verbund.de/documents-ige-ng/igc_st/f530c838-ed0a-4df4-8f86-b24ab6b0c123/%C3%96ffentliche%20Bekanntmachung_SEG_ZESA.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Saale Energie GmbH",
+   "role": "owner",
+   "lookup_result": "Already named as owner in the earlier Germany batch; no new entity needed."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=f530c838-ed0a-4df4-8f86-b24ab6b0c123",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Permit portal page, read from the local cache."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_st/f530c838-ed0a-4df4-8f86-b24ab6b0c123/%C3%96ffentliche%20Bekanntmachung_SEG_ZESA.pdf",
+   "used_for": [
+    "Start year",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Public notice of August 2025, read from the local cache."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_st/f530c838-ed0a-4df4-8f86-b24ab6b0c123/Bekanntmachung_E%C3%96T_20.11.2025.pdf",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Hearing notice for 20 November 2025, read from the local cache."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_st/f530c838-ed0a-4df4-8f86-b24ab6b0c123/ZESA_1TG_13_b_UVP_Bericht_Saale_Energie_Schkopau_Rev01_250702.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "Latitude",
+    "Longitude",
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "blocked",
+   "note": "Not in the local cache. Fetcher retried 12 times, then a real Chrome window, and the register still answered 429 Too Many Requests. Tried the fetcher twice. The document was not read, so this is not a finding about its contents."
+  }
+ ]
+}

@@ -1,0 +1,101 @@
+{
+ "meta": {
+  "plant_id": "L100001062423",
+  "plant_name": "Zolling power plant",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:12:28-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001071694",
+   "unit_name": "1",
+   "findings": {},
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Latest Activity",
+    "Status Detail",
+    "Owner(s)"
+   ],
+   "notes": "The public notice of January 2023 confirms five identical gas engines with a total fuel heat input of 139.3 MW thermal. That matches the earlier batch, which found 62.6 MW electric from the permit itself, so nothing is staged again. No engine maker or start date appears in the notice."
+  },
+  {
+   "gem_unit_id": "G100001096227",
+   "unit_name": "CC",
+   "findings": {},
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Latest Activity",
+    "Status Detail",
+    "Owner(s)"
+   ],
+   "notes": "The permit register holds only the engine plant procedure. I found no permit procedure for the 800 MW combined cycle plant, so the earlier batch's findings from the Bavarian ministry press release of May 2026 stand."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001071694",
+   "concern_type": "owner",
+   "recommendation": "Check whether the owner should be Onyx Waermekraftwerk Zolling GmbH instead of Onyx Germany GmbH.",
+   "note": "The public notice of January 2023 names Onyx Waermekraftwerk Zolling GmbH as the company that applied for the engine plant. GEM shows Onyx Germany GmbH at 100 percent. The entity lookup finds Onyx Germany but not the Zolling company. I did not change the owner because an applicant is not proof of who holds the plant.",
+   "refs": [
+    "https://www.uvp-verbund.de/documents-ige-ng/igc_by/33fa0692-a59a-4846-ade5-47101d836eda/Bekanntmachung%20vom%2005.01.2023.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Onyx Waermekraftwerk Zolling GmbH",
+   "role": "owner",
+   "lookup_result": "Not found in local data and not found when re-run with the remote option. Onyx Germany is an existing entity on 3 units."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_by/33fa0692-a59a-4846-ade5-47101d836eda/Bekanntmachung%20vom%2005.01.2023.pdf",
+   "used_for": [
+    "Owner(s)",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Read from the local cache. Names the applicant, five identical engines and 139.3 MW thermal input."
+  },
+  {
+   "url": "https://www.stmwi.bayern.de/presse/pressemeldungen/196-2026/",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Ministry press release of May 2026. Same facts as the earlier batch."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=33fa0692-a59a-4846-ade5-47101d836eda",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Procedure page lists the engine plant only."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_by/33fa0692-a59a-4846-ade5-47101d836eda/2023-09-26%20Genehmigungsbescheid_Zolling.pdf",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "blocked",
+   "note": "Not cached and had not loaded after about 40 minutes of waiting on the throttled register. The earlier batch read the same permit from the district government's own site."
+  }
+ ]
+}

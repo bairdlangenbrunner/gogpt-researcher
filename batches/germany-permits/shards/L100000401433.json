@@ -1,0 +1,98 @@
+{
+ "meta": {
+  "plant_id": "L100000401433",
+  "plant_name": "Leipheim power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:15:00-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000400889",
+   "unit_name": "GT1, timepoint 1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing was asked for on this unit, so it was not researched."
+  },
+  {
+   "gem_unit_id": "G100001030597",
+   "unit_name": "GT2, timepoint 1",
+   "findings": {},
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Latest Activity",
+    "Status Detail",
+    "Owner(s)"
+   ],
+   "notes": "The permit decision of 4 December 2018 covers two gas turbine blocks, not one. Each block is stated at about 319 MW net at 15 degrees Celsius, and up to about 337 MW. So GEM's 550 MW for this unit does not match the permit, but I cannot tell whether the permit block or a newer plan is meant, so I raised a question and changed nothing. The permit names no turbine maker and gives no start date."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001030597",
+   "concern_type": "capacity",
+   "recommendation": "Check what the 550 MW for the second unit is based on. Consider whether the second unit is the second block of the 2018 permit, which is 319 MW net.",
+   "note": "The Regierung von Schwaben decision of 4 December 2018 approves two gas turbine blocks. It states the plant as about 638 MW net, which is 2 x 319 MW at 15 degrees Celsius, and up to about 674 MW, which is 2 x 337 MW. Only one block is listed in GEM as built, at 319 MW. The 550 MW for the second unit may come from a later and different plan. The owner's page mentions a new second plant by 2030. I did not change the value.",
+   "refs": [
+    "https://www.regierung.schwaben.bayern.de/mam/aufgaben/b5/sg50/anl/bescheid-leipheim.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001030597",
+   "concern_type": "owner",
+   "recommendation": "Confirm how the permit holder relates to the owner in GEM.",
+   "note": "The permit was issued to Gaskraftwerk Leipheim GmbH & Co. KG in Ulm. GEM lists Lausitz Energie Kraftwerke AG at 100 percent. The permit does not say who owns the company. I did not change the owner.",
+   "refs": [
+    "https://www.regierung.schwaben.bayern.de/mam/aufgaben/b5/sg50/anl/bescheid-leipheim.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001030597",
+   "concern_type": "status",
+   "recommendation": "The 2018 permit alone does not support construction. The earlier question about announced versus pre-construction still stands.",
+   "note": "The state planning decision for the gas pipeline dated 28 June 2019 and the 2018 plant permit are both old. I found no newer official notice for a second block.",
+   "refs": [
+    "https://www.uvp-verbund.de/trefferanzeige?docuuid=810E8E2E-8E72-4E49-AA4A-AD353F0B2FB9"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.regierung.schwaben.bayern.de/mam/aufgaben/b5/sg50/anl/bescheid-leipheim.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Permit decision of 4 December 2018. Two blocks, 2 x 319 MW net. Applicant Gaskraftwerk Leipheim GmbH & Co. KG."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=810E8E2E-8E72-4E49-AA4A-AD353F0B2FB9",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Planning decision of 28 June 2019 for the gas pipeline to the plant. It covers the pipeline, not a new unit."
+  },
+  {
+   "url": "https://www.leag.de/de/standorte-technologien/kraftwerke/gaskraftwerk-leipheim/",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Earlier batch source, read in the earlier batch. Not re-run here."
+  }
+ ]
+}

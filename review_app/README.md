@@ -110,11 +110,20 @@ the decision on the plant record), so the page shows the unit rows under the pla
 line. The import then writes the calls to the `review_log.jsonl` of whichever folder the record
 came from.
 
-Live pages:
+Live pages (the index is `artifacts.json`; one interface in `web/`, one page per reviewer, titled
+`GOGPT reviewer - <first name>`):
 
-- New York + Maryland, for Amalia Llano: https://claude.ai/artifact/7bnX9RMity3Yw5mdaojNaL
-  (update edits plus the discovery candidates since the 2026-10-05 evening rebuild)
-- Germany, for Dan O'Beirne: https://claude.ai/artifact/3YnJ2C36PwrTJ8qYgUxbuW
+| page | reviewer | url | folders |
+|---|---|---|---|
+| GOGPT reviewer - Amalia | Amalia Llano | https://claude.ai/artifact/7bnX9RMity3Yw5mdaojNaL | us-md and us-ny, update and discovery |
+| GOGPT reviewer - Dan | Dan O'Beirne | https://claude.ai/artifact/3YnJ2C36PwrTJ8qYgUxbuW | germany and germany-permits |
+
+**Keeping every page identical in interface.** The interface lives only in `web/` and
+`build_static.py`; a page differs from the others only in its data, reviewer and title. After ANY
+change there: `python review_app/build_all.py`, then publish each printed file to its url (work
+profile, capabilities carried forward). Never edit a published page by hand; an edit made there
+is lost at the next publish. To add a page (Nagwa, Warda), add an entry to `artifacts.json`
+(name, title, reviewer, dirs, and the url once published) and run `build_all.py --only <name>`.
 
 Bringing the calls back into the repo, from a Claude Code session on the work profile:
 
@@ -154,6 +163,15 @@ land in order of import and the latest per record wins, as with the server.
 - Keys: `j` / `k` next and previous change, `J` / `K` next and previous plant, `a` / `h` / `r`
   accept, hold, reject, `s` suggest, `u` undo, `o` open the first source link, `i` items,
   `/` search, `?` help. The "how to" button explains the page in plain language.
+- Checklist view (left pane): the nine QC/Country checklist groups, each a filter; every change
+  and item carries a "checklist N" chip. Group 9 opens the close-out panel: a draft close-out
+  note to copy, the sheets and docs to update with links, and on a United States page the IRP
+  boxes to tick (row 37). "Ask the PM" is a checkbox beside any call, with its own filter.
+- Watch items take one of four calls: incorporate into database, hold, send to possible updates,
+  remove from watchlist. Remove needs a note.
+- IRP chip (United States only): the finding comes from a utility integrated resource plan. The
+  chip says whether the unit's IRP box in the database is already ticked; "IRP: tick the box"
+  means it is not.
 
 ## Files
 
@@ -166,4 +184,8 @@ land in order of import and the latest per record wins, as with the server.
   is the browser-side store the single-file page uses instead of the server.
 - `build_static.py`: writes the single-file page for a colleague; `import_log.py` appends the
   file they send back to the batch logs.
-- Tests: `python -m pytest tests/test_review_app.py`.
+- `checklist.py`: the nine checklist groups, the row mapping and the tagging function shared by
+  the page, the assembler and the workbook build.
+- `build_all.py` and `artifacts.json`: the index of published pages and the one command that
+  rebuilds every one of them after an interface change.
+- Tests: `python -m pytest tests/test_review_app.py tests/test_checklist.py tests/test_irp_sheet.py`.

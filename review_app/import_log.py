@@ -50,7 +50,8 @@ def staged_ids(d):
 
 def fingerprint(r):
     return (r.get("key"), r.get("ts"), r.get("reviewer"), r.get("decision"), r.get("call"),
-            bool(r.get("undecided")), r.get("suggested_value", ""), r.get("note", ""))
+            bool(r.get("undecided")), r.get("suggested_value", ""), r.get("reference", ""), r.get("note", ""),
+            r.get("flag"), r.get("on"))
 
 
 def plan(records, root=ROOT):
@@ -62,6 +63,12 @@ def plan(records, root=ROOT):
             raise SystemExit(f"line {i + 1}: not a review record (needs dir, key, ts, reviewer)")
         if "decision" in r and r["decision"] not in store.DECISIONS:
             raise SystemExit(f"line {i + 1}: decision {r['decision']!r} is not one of {sorted(store.DECISIONS)}")
+        if "call" in r and "flag" not in r and r.get("kind") in store.ITEM_CALLS and not r.get("undecided"):
+            vocab = store.ITEM_CALLS[r["kind"]]
+            if r["call"] not in vocab:
+                raise SystemExit(f"line {i + 1}: call {r['call']!r} is not one of {list(vocab)} for a {r['kind']} item")
+        if "flag" in r and (r["flag"] not in store.FLAGS or not str(r["key"]).startswith(store.FLAG_PREFIX)):
+            raise SystemExit(f"line {i + 1}: not an ask-the-PM flag record")
         by_dir.setdefault(label, []).append(r)
     out = {}
     for label, recs in by_dir.items():
@@ -72,6 +79,8 @@ def plan(records, root=ROOT):
         if not ids:
             raise SystemExit(f"{label}: no staged lane files there")
         for r in recs:
+            if r.get("flag") and not r.get("record_id"):
+                continue          # a flag on a whole plant names the plant, not a staged record
             if r.get("record_id") not in ids:
                 raise SystemExit(f"{label}: record_id {r.get('record_id')!r} is not in the staged lane files "
                                  f"(the batch was rebuilt since the page was made?)")

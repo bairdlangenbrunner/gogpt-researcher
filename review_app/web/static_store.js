@@ -1,7 +1,7 @@
 /* Store adapter for the single-file review page (review_app/build_static.py). Same interface as
    the loopback adapter at the top of app.js (caps, load, whoami, decide, item), but there is no
-   server: the dataset is embedded in the page and every call is appended to a log kept in this
-   browser (localStorage, falling back to memory). "download decisions" hands the reviewer the
+   server: the dataset is embedded in the page and every call (decision, item call, ask-the-PM
+   flag) is appended to a log kept in this browser (localStorage, falling back to memory). "download decisions" hands the reviewer the
    log to send back; review_app/import_log.py appends it to the staging dirs. The GEM database is
    never touched.
 
@@ -21,8 +21,12 @@
   var REVIEWER = cfg.reviewer || "reviewer";
   var DECISIONS = {accept: 1, hold: 1, reject: 1, suggest: 1};
   var LINE_KINDS = {fill: 1, change: 1, reverified: 1, "delete": 1, plant: 1, new_row: 1};
-  var ITEM_CALLS = {concern: ["confirmed", "dismissed", "needs_research"]};
+  // must match review_app/store.py ITEM_CALLS / NOTE_REQUIRED / FLAG_PREFIX
+  var ITEM_CALLS = {concern: ["confirmed", "dismissed", "needs_research"], monitor: ["add_to_database", "hold", "possible_updates", "remove"]};
   var OTHER_CALLS = ["noted", "todo", "dismissed"];
+  var NOTE_REQUIRED = {"monitor:remove": 1};
+  var FLAG_PREFIX = "pm::";
+  var URL_RE = /^https?:\/\/\S+$/;
   var LOG_KEY = "review-log:" + (DATA.built || "") + ":" + (DATA.dirs || []).join(",");
   var LOG = [];              // every record this browser has written for this build, in order
   var STORAGE_OK = true;
@@ -46,7 +50,7 @@
         var k = localStorage.key(i);
         if (!k || k === LOG_KEY || k.indexOf("review-log:") !== 0 || k.slice(-tail.length) !== tail) continue;
         var recs = JSON.parse(localStorage.getItem(k) || "[]");
-        if (Array.isArray(recs)) old = old.concat(recs.filter(function (r) { return r && IDX[r.key]; }));
+        if (Array.isArray(recs)) old = old.concat(recs.filter(function (r) { return r && (IDX[r.key] || (r.flag && known(r))); }));
       }
     } catch (e) { return; }
     if (!old.length) return;
@@ -68,6 +72,18 @@
     return out;
   }
   var IDX = index();
+  function plantFlagKey(dir, pid) { return FLAG_PREFIX + str(dir) + "::plant:" + str(pid); }
+  function plantByKey(key) {
+    var hit = null;
+    DATA.plants.forEach(function (p) { if (plantFlagKey(p.dir, p.pid) === key) hit = p; });
+    return hit;
+  }
+  // a flag record names a line or item (pm::<key>) or a plant (pm::<dir>::plant:<pid>) this build has
+  function known(r) {
+    var key = str(r && r.key);
+    if (key.indexOf(FLAG_PREFIX) !== 0) return false;
+    return !!(IDX[key.slice(FLAG_PREFIX.length)] || plantByKey(key));
+  }
   function pad(n) { return (n < 10 ? "0" : "") + n; }
   // ISO seconds in Eastern time with its offset, like store.now(): 2026-10-02T17:41:03-04:00
   function now() {
@@ -106,24 +122,46 @@
       if (undo && !decision) decision = e.obj["default"] || "hold";
       if (!undo && !decision) throw new Error("record " + i + ": no decision given");
       if (!DECISIONS[decision]) throw new Error("record " + i + ": decision " + decision + " is not one of accept, hold, reject, suggest");
-      var note = str(r.note), sv = str(r.suggested_value);
+      var note = str(r.note), sv = str(r.suggested_value), ref = str(r.reference).trim();
       if (decision === "suggest" && !undo && !sv.trim() && !note.trim()) throw new Error("record " + i + ": a suggestion needs a suggested_value or a note");
+      if (ref && !URL_RE.test(ref)) throw new Error("record " + i + ": the reference must be a URL starting with http:// or https://");
       return {key: r.key, dir: e.obj.dir, pid: e.plant.pid, record_id: e.obj.record_id || null, column: e.obj.column || "",
-              kind: e.obj.kind, decision: decision, suggested_value: sv, note: note, reviewer: REVIEWER, ts: null, undecided: undo};
+              kind: e.obj.kind, decision: decision, suggested_value: sv, reference: undo ? "" : ref, note: note, reviewer: REVIEWER, ts: null, undecided: undo};
     });
   }
-  // mirror of store.validate_items: {key, call, note?} or {key, undo: true}
+  // mirror of store.validate_items: {key, call, reference?, note?} or {key, undo: true}
   function validateItems(records) {
     if (!Array.isArray(records) || !records.length) throw new Error("expected a non-empty list of item records");
     return records.map(function (r, i) {
       var e = IDX[r && r.key];
       if (!e) throw new Error("record " + i + ": unknown key " + str(r && r.key));
       if (e.grp !== "items") throw new Error("record " + i + ": " + r.key + " is a line, not an item");
-      var undo = !!(r.undo || r.undecided), call = undo ? "" : str(r.call);
+      var undo = !!(r.undo || r.undecided), call = undo ? "" : str(r.call), note = str(r.note), ref = str(r.reference).trim();
       var vocab = ITEM_CALLS[e.obj.kind] || OTHER_CALLS;
       if (!undo && vocab.indexOf(call) < 0) throw new Error("record " + i + ": call " + call + " is not one of " + vocab.join(", ") + " for a " + e.obj.kind + " item");
+      if (!undo && NOTE_REQUIRED[e.obj.kind + ":" + call] && !note.trim()) throw new Error("record " + i + ": " + call.replace(/_/g, " ") + " needs a note saying why");
+      if (ref && !URL_RE.test(ref)) throw new Error("record " + i + ": the reference must be a URL starting with http:// or https://");
       return {key: r.key, dir: e.obj.dir, pid: e.plant.pid, record_id: e.obj.record_id || null, kind: e.obj.kind,
-              call: call, note: str(r.note), reviewer: REVIEWER, ts: null, undecided: undo};
+              call: call, note: note, reference: undo ? "" : ref, reviewer: REVIEWER, ts: null, undecided: undo};
+    });
+  }
+  // mirror of store.validate_flags: {key, on, note?} for a line or item, {pid, dir, on, note?} for a plant
+  function validateFlags(records) {
+    if (!Array.isArray(records) || !records.length) throw new Error("expected a non-empty list of flag records");
+    return records.map(function (r, i) {
+      if (!r) throw new Error("record " + i + ": empty");
+      var on = !!r.on, note = str(r.note);
+      if (r.key) {
+        var e = IDX[r.key];
+        if (!e) throw new Error("record " + i + ": unknown key " + str(r.key));
+        return {key: FLAG_PREFIX + r.key, dir: e.obj.dir, pid: e.plant.pid, record_id: e.obj.record_id || null,
+                kind: e.obj.kind, flag: "pm", on: on, note: note, reviewer: REVIEWER, ts: null, undecided: false};
+      }
+      var p = null;
+      DATA.plants.forEach(function (x) { if (x.pid === r.pid && (!r.dir || x.dir === r.dir)) p = p || x; });
+      if (!p) throw new Error("record " + i + ": unknown plant " + str(r.pid));
+      return {key: plantFlagKey(p.dir, p.pid), dir: p.dir, pid: p.pid, record_id: null, kind: "plant", flag: "pm", on: on,
+              note: note, reviewer: REVIEWER, ts: null, undecided: false};
     });
   }
   function write(recs) {
@@ -138,9 +176,18 @@
   function overlay(data) {
     var last = {};
     LOG.forEach(function (r) { if (r.key) last[r.key] = r; });
+    function flag(o, key) {
+      var f = last[FLAG_PREFIX + key];
+      if (!f) { if (o.pm_flag == null) { o.pm_flag = false; o.pm_note = ""; o.pm_by = null; } return; }
+      o.pm_flag = !!f.on && !f.undecided;
+      o.pm_note = o.pm_flag ? f.note || "" : "";
+      o.pm_by = o.pm_flag ? f.reviewer : null;
+    }
     data.plants.forEach(function (p) {
+      flag(p, str(p.dir) + "::plant:" + str(p.pid));
       ["lines", "items"].forEach(function (grp) {
         (p[grp] || []).forEach(function (o) {
+          flag(o, o.key);
           var rec = last[o.key];
           if (!rec) return;
           var live = rec.undecided ? null : rec;
@@ -148,9 +195,11 @@
             o.decision = live ? live.decision : null;
             o.suggested_value = live && live.decision === "suggest" ? live.suggested_value || "" : "";
             o.decision_note = live && live.decision === "suggest" ? live.note || "" : "";
+            o.reference = live && live.decision === "suggest" ? live.reference || "" : "";
           } else {
             o.call = live ? live.call : null;
             o.call_note = live ? live.note || "" : null;
+            o.call_reference = live ? live.reference || "" : "";
           }
           o.reviewed = !!live;
           o.decided_by = live ? live.reviewer : null;
@@ -172,7 +221,8 @@
       "): your calls are kept in this browser; use download decisions before closing";
   }
   function fingerprint(r) {
-    return [r.key, r.ts, r.reviewer, r.decision || "", r.call || "", !!r.undecided, r.suggested_value || "", r.note || ""].join("\u0001");
+    return [r.key, r.ts, r.reviewer, r.decision || "", r.call || "", !!r.undecided, r.suggested_value || "", r.reference || "", r.note || "",
+            r.flag || "", r.flag ? String(!!r.on) : ""].join("\u0001");
   }
   // union of the browser log and the database copy, in time order; the browser's own order wins
   // on equal stamps
@@ -268,6 +318,7 @@
     whoami: function () { return READY.then(function () { return REVIEWER; }); },
     decide: function (records) { try { return write(validateLines(records)); } catch (e) { return fail(e.message); } },
     item: function (records) { try { return write(validateItems(records)); } catch (e) { return fail(e.message); } },
+    flag: function (records) { try { return write(validateFlags(records)); } catch (e) { return fail(e.message); } },
     download: download,
     // for tests and for a reviewer who wants to look: the raw log
     log: function () { return LOG.slice(); }

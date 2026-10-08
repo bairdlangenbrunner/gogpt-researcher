@@ -30,7 +30,8 @@
                          body: JSON.stringify(records)}).then(Store._json).then(function (b) { return b.saved; });
     },
     decide: function (records) { return Store._post("/api/decide", records); },
-    item: function (records) { return Store._post("/api/item", records); }
+    item: function (records) { return Store._post("/api/item", records); },
+    flag: function (records) { return Store._post("/api/flag", records); }
   };
   // the single-file page (build_static.py) embeds the dataset and keeps the log in the browser:
   // static_store.js provides the same interface and runs before this file
@@ -53,22 +54,52 @@
     stay: {},                // line keys decided this session: kept in view even if the filter would drop them
     saving: {},              // line / item keys with a save in flight
     tab: "major",            // the card's tab: "major" | "minor" | "items" | "all"
-    igOpen: {}               // item kind -> details open state (survives a re-render; reset per plant)
+    view: "plants",          // the left pane: "plants" (the queue) | "checklist" (the QC/Country checklist groups)
+    closeout: false,         // the card shows the close-out panel (checklist group 9) instead of a plant
+    igOpen: {}               // checklist group id -> item details open state (survives a re-render; reset per plant)
   };
   var ITEM_BY_KEY = {};
   var LINE_BY_KEY = {};
-  // the call vocabulary per item kind: must match review_app/store.py ITEM_CALLS
-  var ITEM_CALLS = {concern: ["confirmed", "dismissed", "needs_research"]};
+  var ROW_LABEL = {};        // checklist row number -> its label (from the dataset's groups)
+  // the call vocabulary per item kind: must match review_app/store.py ITEM_CALLS. A watch item
+  // (monitor lane) is not accepted or rejected: it is added to the database now, held, sent to
+  // the possible-updates sheet, or taken off the watchlist (review_app/checklist.py WATCH_CALLS).
+  var ITEM_CALLS = {concern: ["confirmed", "dismissed", "needs_research"], monitor: ["add_to_database", "hold", "possible_updates", "remove"]};
   var OTHER_CALLS = ["noted", "todo", "dismissed"];
+  var NOTE_REQUIRED = {"monitor:remove": 1};     // calls that need a note saying why
+  var CALL_LABEL = {add_to_database: "incorporate into database", hold: "hold", possible_updates: "send to possible updates", remove: "remove from watchlist",
+                    needs_research: "needs research"};
   var CALL_HELP = {confirmed: "the concern stands", dismissed: "the concern is closed", needs_research: "goes back to the researcher",
-                   noted: "seen, nothing to do", todo: "to do later"};
+                   noted: "seen, nothing to do", todo: "to do later",
+                   add_to_database: "this belongs in GEM now: the researcher turns it into a full edit (a new row or a change) for the next batch",
+                   hold: "not sure yet, leave it on the watchlist", possible_updates: "goes on the possible-updates sheet for a later cycle",
+                   remove: "take it off the watchlist for good; say why in the note"};
   var VERB = {accept: "accepted", hold: "held", reject: "rejected", suggest: "suggested"};
   var $ = function (id) { return document.getElementById(id); };
   var LINE_KINDS = ["fill", "change", "delete", "plant", "reverified", "new_row"];
   var ITEM_KINDS = ["concern", "monitor", "entity", "other"];
   var KIND_LABEL = {fill: "fill a blank", change: "change a value", "delete": "clear a value", plant: "plant-wide",
                     reverified: "re-verified", new_row: "new row",
-                    concern: "concern", monitor: "monitor", entity: "entity check", other: "other"};
+                    concern: "question about existing data", monitor: "watch item", entity: "new owner or operator to create", other: "other"};
+  var MONITOR_LABEL = {new_to_tracker: "watch item: new to the tracker", existing_plant: "watch item: existing plant"};
+  var KIND_TIP = {concern: "a question the researcher raised about data already in GEM: a value that could not be checked, two sources that disagree, a possible duplicate. It never changes a cell by itself",
+                  entity: "an owner, operator or parent that is not in GEM's entity list yet. Someone has to create it in the GEM web form before the ownership edit can land",
+                  new_to_tracker: "a plant or project GEM does not track at all yet. The researcher found it but it did not clear the bar for a new row (too early, too small, or too thin on evidence). Decide whether it goes into the database now, stays on the watchlist, goes to the possible-updates sheet, or comes off the list",
+                  existing_plant: "something to watch on a plant GEM already tracks: a permit in progress, an expansion, a retirement date to confirm. The plant's row is not changed by this item"};
+  function kindLabel(o) { return o.kind === "monitor" ? (MONITOR_LABEL[o.monitor_kind] || KIND_LABEL.monitor) : (KIND_LABEL[o.kind] || o.kind); }
+  function kindTip(o) { return o.kind === "monitor" ? KIND_TIP[o.monitor_kind] || "" : KIND_TIP[o.kind] || ""; }
+  // the checklist group of a line or item as a string ("1".."9" or "other"); review_data.py sets it
+  function groupOf(o) { return o.group == null ? "other" : String(o.group); }
+  function groupLabel(gid) {
+    var g = (D.groups || []).filter(function (x) { return String(x.id) === gid; })[0];
+    return g ? g.label : (gid === "other" ? "other" : "group " + gid);
+  }
+  function groupTip(o) {
+    var rows = (o.checks || []).map(function (n) { return "row " + n + (ROW_LABEL[n] ? ": " + ROW_LABEL[n] : ""); });
+    return "QC/Country checklist group " + groupOf(o) + ": " + groupLabel(groupOf(o)) + (rows.length ? "\nticks " + rows.join("\n") : "\n(no checklist row: a gap the checklist does not cover)");
+  }
+  function isOpen(o) { return o._item ? !(o.call && o.reviewed) : !cur(o); }
+  function flagged(o, p) { return !!(o.pm_flag || (p && p.pm_flag)); }
   var DEC = ["undecided", "accept", "hold", "reject", "suggest"];
   // severity (review_data.py): a MAJOR change moves a cell value (fills a blank, changes or clears
   // a value, sets a plant-wide field, adds a row); a MINOR change leaves the value as it is and
@@ -80,8 +111,11 @@
   function sevOf(l) { return l.severity || "major"; }
 
   function defaults() {
-    return {decision: "undecided", kind: "", severity: "", tier: "", dir: "", column: "", q: "", country: "", state: [], by: "", status: false};
+    return {decision: "undecided", kind: "", group: "", tier: "", dir: "", column: "", q: "", country: "", state: [], by: "", status: false, pm: false};
   }
+  // items (questions, watch items, entity checks) sit beside the edits whenever a checklist group
+  // or the ask-the-PM filter is on; otherwise they show only when their kind is picked
+  function itemsInView(fs) { return !!(fs.group || fs.pm || isItemKind(fs.kind)); }
   // the tab a plant opens on: its major changes, or the minor ones when it has no major change
   function defaultTab(p) { return p && p.lines.some(function (l) { return sevOf(l) === "major"; }) ? "major" : "minor"; }
   function esc(s) {
@@ -118,7 +152,7 @@
   function decisionText(l) {
     if (l.reviewed && l.decision === "suggest") {
       return "suggested: " + (blankv(l.suggested_value) ? "(note only)" : l.suggested_value) + " by " + (l.decided_by || "?") + " " + timeOf(l.decided_at) +
-        (blankv(l.decision_note) ? "" : ". " + l.decision_note);
+        (blankv(l.decision_note) ? "" : ". " + l.decision_note) + (blankv(l.reference) ? "" : ". source: " + l.reference);
     }
     if (l.reviewed && l.decision) return (VERB[l.decision] || l.decision) + " by " + (l.decided_by || "?") + " " + timeOf(l.decided_at);
     return "";
@@ -166,7 +200,8 @@
 
   // ---- derived data, once per load ----
   function prepare() {
-    LINES = []; ITEMS = []; LINE_BY_KEY = {}; ITEM_BY_KEY = {};
+    LINES = []; ITEMS = []; LINE_BY_KEY = {}; ITEM_BY_KEY = {}; ROW_LABEL = {};
+    (D.groups || []).forEach(function (g) { (g.rows || []).forEach(function (r) { ROW_LABEL[r.row] = r.label; }); });
     D.plants.forEach(function (p, pi) {
       p.units = p.units || [];
       p.items = (p.items || []).filter(function (it) { return isItemKind(it.kind); });
@@ -190,11 +225,13 @@
     var item = !!o._item;
     if (skip !== "kind") {
       if (fs.kind) { if (o.kind !== fs.kind) return false; }
-      else if (item) return false;
+      // picking a checklist group puts items in view, so the group dropdown counts them too
+      else if (item && !itemsInView(fs) && skip !== "group") return false;
     }
     if (skip !== "decision" && fs.decision && dstate(o) !== fs.decision && !(!item && S.stay[o.key])) return false;
-    if (skip !== "severity" && fs.severity && (item || sevOf(o) !== fs.severity)) return false;
+    if (skip !== "group" && fs.group && groupOf(o) !== fs.group) return false;
     if (skip !== "tier" && fs.tier && (item || tierOf(o) !== fs.tier)) return false;
+    if (fs.pm && !flagged(o, p)) return false;
     if (fs.dir && o.dir !== fs.dir) return false;
     if (fs.column && (item || o.column !== fs.column)) return false;
     if (fs.status && (item || o.column !== "Status")) return false;
@@ -205,14 +242,15 @@
     return true;
   }
   function pipeMatches(p) {
-    var q = FS.q.trim().toLowerCase(), n = 0, todo = 0, ni = 0, tsev = {major: 0, minor: 0};
+    var q = FS.q.trim().toLowerCase(), n = 0, todo = 0, ni = 0, tsev = {major: 0, minor: 0}, pm = p.pm_flag ? 1 : 0;
     p.lines.forEach(function (l) {
+      if (l.pm_flag) pm++;
       if (!match(l, p, FS, null, q)) return;
       n++;
       if (!cur(l)) { todo++; tsev[sevOf(l)]++; }
     });
-    p.items.forEach(function (it) { if (match(it, p, FS, null, q)) ni++; });
-    p._n = n; p._todo = todo; p._ni = ni; p._tsev = tsev;
+    p.items.forEach(function (it) { if (it.pm_flag) pm++; if (match(it, p, FS, null, q)) ni++; });
+    p._n = n; p._todo = todo; p._ni = ni; p._tsev = tsev; p._pm = pm;
     return n + ni;
   }
   function refilter(keep) {
@@ -235,17 +273,18 @@
     renderCard();
     if (keep !== true) writeRoute(false);
   }
+  function facetVal(o, facet) {
+    return facet === "decision" ? dstate(o) : facet === "kind" ? o.kind : facet === "group" ? groupOf(o) : tierOf(o);
+  }
   function facetCounts(facet, values) {
     var q = FS.q.trim().toLowerCase(), c = {};
     values.forEach(function (v) { c[v] = 0; });
     function tally(o, p, v) { if (match(o, p, FS, facet, q) && v in c) c[v]++; }
+    // items count under kind and group always, and under decision when the filters let items through
+    var items = facet === "kind" || facet === "group" || (facet === "decision" && itemsInView(FS));
     D.plants.forEach(function (p) {
-      p.lines.forEach(function (l) {
-        tally(l, p, facet === "decision" ? dstate(l) : facet === "kind" ? l.kind : facet === "severity" ? sevOf(l) : tierOf(l));
-      });
-      if (facet === "kind" || (facet === "decision" && isItemKind(FS.kind))) {
-        p.items.forEach(function (it) { tally(it, p, facet === "kind" ? it.kind : dstate(it)); });
-      }
+      p.lines.forEach(function (l) { tally(l, p, facetVal(l, facet)); });
+      if (items) p.items.forEach(function (it) { tally(it, p, facetVal(it, facet)); });
     });
     return c;
   }
@@ -261,7 +300,7 @@
     s.value = FS[facet];
   }
   function allStates() { return (D.scope && D.scope.states) || []; }
-  // the states of the picked country; none while no country is picked (the state box only shows after a country)
+  // the states of the picked country; every batch state while no country is picked
   function states() {
     if (!FS.country) return allStates();
     return allStates().filter(function (k) { return D.plants.some(function (p) { return p.state === k && p.country === FS.country; }); });
@@ -289,7 +328,8 @@
   function renderStates() {
     var box = $("f-state"), all = states();
     renderScope();
-    box.hidden = !FS.country || all.length < 2;
+    // with several countries the box waits for a pick; a one-country review (the US states) shows it straight away
+    box.hidden = (!FS.country && countries().length > 1) || all.length < 2;
     if (box.hidden) return;
     var q = FS.q.trim().toLowerCase(), c = {};
     all.forEach(function (k) { c[k] = 0; });
@@ -350,7 +390,10 @@
     LINES.forEach(function (l) { tot[l.kind] = 1; });
     ITEMS.forEach(function (i) { tot[i.kind] = 1; });
     facetSelect("f-kind", "kind", LINE_KINDS.concat(ITEM_KINDS), KIND_LABEL, tot);
-    facetSelect("f-severity", "severity", SEV, SEV_LABEL);
+    var gids = (D.groups || []).map(function (g) { return String(g.id); }), gl = {};
+    (D.groups || []).forEach(function (g) { gl[String(g.id)] = (g.id === "other" ? "" : g.id + " · ") + g.label; });
+    if (gids.indexOf("other") < 0 && LINES.concat(ITEMS).some(function (o) { return groupOf(o) === "other"; })) { gids.push("other"); gl.other = "other"; }
+    facetSelect("f-group", "group", gids, gl);
     var tt = {};
     LINES.forEach(function (l) { tt[tierOf(l)] = 1; });
     facetSelect("f-tier", "tier", ["high", "medium", "low", "untiered"], {untiered: "unrated"}, tt);
@@ -377,10 +420,16 @@
       var c = e.target.closest("button[data-clear]");
       if (c) { clearOne(c.getAttribute("data-clear")); changed(); }
     });
-    ["decision", "kind", "severity", "tier", "column", "dir"].forEach(function (f) {
+    ["decision", "kind", "group", "tier", "column", "dir"].forEach(function (f) {
       $("f-" + f).onchange = function () { FS[f] = this.value; changed(); };
     });
     $("f-status").onchange = function () { FS.status = this.checked; changed(); };
+    // "ask the PM" matches flagged lines and items whatever their decision: drop the undecided-only default
+    $("f-pm").onchange = function () { FS.pm = this.checked; if (FS.pm && FS.decision === "undecided") FS.decision = ""; changed(); };
+    $("pane-mode").onclick = function (e) {
+      var b = e.target.closest("button[data-view]");
+      if (b) setView(b.getAttribute("data-view"));
+    };
     $("f-country").onchange = function () { FS.country = this.value; FS.state = []; changed(); };
     $("f-state").onclick = function (e) { if (e.target.classList.contains("ctoggle")) { e.stopPropagation(); toggleStates(); } };
     $("f-state").onchange = function () {
@@ -395,7 +444,7 @@
     $("f-more").onclick = function () { toggleMore(); };
     $("f-reset").onclick = function () { FS = defaults(); syncControls(); changed(); };
   }
-  function changed(replace) { S.pin = -1; S.stay = {}; refilter(true); writeRoute(replace === true); }
+  function changed(replace) { S.pin = -1; S.stay = {}; S.closeout = false; refilter(true); writeRoute(replace === true); }
   function clearOne(id) {
     var d = defaults();
     FS[id] = d[id];
@@ -415,6 +464,7 @@
     $("f-country").value = FS.country;
     if ($("f-country").value !== FS.country) FS.country = "";
     $("f-status").checked = FS.status;
+    $("f-pm").checked = FS.pm;
     fillBy();
     $("f-q").value = FS.q;
   }
@@ -427,6 +477,8 @@
         '" aria-label="clear ' + esc(text) + '">&times;</button></span>');
       if (hidden) n++;
     }
+    if (FS.group) chip("group", "checklist: " + groupLabel(FS.group), false);
+    if (FS.pm) chip("pm", "ask the PM", false);
     if (FS.column) chip("column", "column: " + FS.column, true);
     if (FS.dir) chip("dir", "batch: " + dirLabel(FS.dir), true);
     if (FS.by) chip("by", "decided by: " + FS.by, true);
@@ -442,15 +494,34 @@
     });
     S.progress = {done: done, total: total, sev: sev};
   }
+  // per checklist group: everything in it (edits and items), how much is still open, how much is flagged for the PM
+  function groupStats() {
+    var out = {};
+    (D.groups || []).forEach(function (g) { out[String(g.id)] = {total: 0, open: 0, pm: 0, rows: {}}; });
+    LINES.concat(ITEMS).forEach(function (o) {
+      var gid = groupOf(o), s = out[gid] || (out[gid] = {total: 0, open: 0, pm: 0, rows: {}});
+      s.total++;
+      if (isOpen(o)) s.open++;
+      if (o.pm_flag) s.pm++;
+      (o.checks || []).forEach(function (n) { s.rows[n] = s.rows[n] || {total: 0, open: 0}; s.rows[n].total++; if (isOpen(o)) s.rows[n].open++; });
+    });
+    return out;
+  }
   function showProgress() {
     var dlg = $("dialog"), g = S.progress || {done: 0, total: 0, sev: {major: {done: 0, total: 0}, minor: {done: 0, total: 0}}};
-    var items = ITEMS.length, calls = ITEMS.filter(function (it) { return it.call && it.reviewed; }).length;
+    var items = ITEMS.length, calls = ITEMS.filter(function (it) { return it.call && it.reviewed; }).length, gs = groupStats();
+    var pm = LINES.concat(ITEMS).filter(function (o) { return o.pm_flag; }).length + D.plants.filter(function (p) { return p.pm_flag; }).length;
     dlg.setAttribute("data-kind", "progress");
     dlg.innerHTML = "<h3>progress</h3><p>" + esc(S.countText || "") + " in view</p>" +
       '<div class="progress" aria-hidden="true"><div id="progress-bar" style="width:' + (g.total ? 100 * g.done / g.total : 0) + '%"></div></div>' +
       "<p>" + g.done + " of " + g.total + " changes decided &middot; major " + g.sev.major.done + " of " + g.sev.major.total +
       " &middot; minor " + g.sev.minor.done + " of " + g.sev.minor.total + "</p>" +
-      "<p>" + calls + " of " + items + " items have a call</p>" +
+      "<p>" + calls + " of " + items + " items have a call" + (pm ? " &middot; " + pm + " flagged for the PM" : "") + "</p>" +
+      '<h4>by checklist group</h4><table class="sumtab"><tr><th>group</th><th>open</th><th>total</th></tr>' +
+      (D.groups || []).filter(function (x) { return !x.panel; }).map(function (x) {
+        var s = gs[String(x.id)] || {open: 0, total: 0};
+        return "<tr><td>" + esc((x.id === "other" ? "" : x.id + " · ") + x.label) + '</td><td class="num">' + (s.total && !s.open ? "✓" : s.open) + '</td><td class="num">' + s.total + "</td></tr>";
+      }).join("") + "</table>" +
       '<div class="actions"><button type="button" id="dlg-close">close</button></div>';
     $("dlg-close").onclick = function () { dlg.close(); };
     dlg.showModal();
@@ -460,7 +531,38 @@
   function unitNames(p) {
     return p.units.map(function (u) { return String(u.unit_name || u.gem_unit_id || "").trim(); }).filter(Boolean);
   }
+  function setView(v) {
+    if (v !== "plants" && v !== "checklist") return;
+    S.view = v;
+    try { localStorage.setItem("review-view", v); } catch (e) { /* ignore */ }
+    Array.prototype.forEach.call($("pane-mode").querySelectorAll("button[data-view]"), function (b) {
+      b.setAttribute("aria-selected", String(b.getAttribute("data-view") === v));
+    });
+    renderQueue();
+  }
+  // the left pane in checklist mode: one row per QC/Country checklist group with how much of it is
+  // still open; a click filters the plants to that group. A group with nothing open gets a check mark.
+  function renderChecklist() {
+    var gs = groupStats(), h = [];
+    (D.groups || []).forEach(function (g) {
+      var gid = String(g.id), s = gs[gid] || {total: 0, open: 0, pm: 0, rows: {}};
+      var rows = (g.rows || []).filter(function (r) { return s.rows[r.row]; }).map(function (r) {
+        var rs = s.rows[r.row];
+        return '<span class="grow-row' + (rs.open ? "" : " done") + '"' + tipAttrs("checklist row " + r.row + ": " + r.label + (r.optional ? " (optional)" : "")) + ">" +
+          (rs.open ? "" : "✓ ") + "row " + r.row + " <span class=\"n\">" + (rs.open ? rs.open + " open" : rs.total) + "</span></span>";
+      });
+      var badge = g.panel ? '<span class="n">' + (S.closeout ? "open" : "click to open the panel") + "</span>" :
+        !s.total ? '<span class="n">nothing staged</span>' :
+        s.open ? '<span class="n todo">' + s.open + " open of " + s.total + "</span>" : '<span class="n">' + s.total + " &middot; done</span>";
+      h.push('<li data-g="' + esc(gid) + '" class="grp' + (FS.group === gid || (g.panel && S.closeout) ? " sel" : "") + (s.total && !s.open ? " done" : "") + '">' +
+        '<div class="pname">' + (s.total && !s.open ? "✓ " : "") + esc((g.id === "other" ? "" : g.id + ". ") + g.label) + (s.pm ? ' <span class="pm" data-tip="' + s.pm + " flagged for the PM in this group\">PM " + s.pm + "</span>" : "") + "</div>" +
+        '<div class="pmeta"><span class="grow">' + esc(g.blurb || "") + '</span>' + badge + "</div>" +
+        (rows.length ? '<div class="grows">' + rows.join(" ") + "</div>" : "") + "</li>");
+    });
+    $("pipes").innerHTML = h.join("");
+  }
   function renderQueue() {
+    if (S.view === "checklist") return renderChecklist();
     var h = [];
     S.visible.forEach(function (i) {
       var p = D.plants[i];
@@ -471,17 +573,36 @@
       var ts = p._tsev || {}, parts = SEV.filter(function (s) { return ts[s]; }).map(function (s) { return ts[s] + " " + s; });
       var badge = p._todo ? '<span class="n todo">' + (parts.length ? parts.join(" &middot; ") : p._todo) + " to decide</span>"
         : (p._n ? '<span class="n">' + p._n + " &middot; done</span>" : (p._ni ? '<span class="n">' + p._ni + " item" + (p._ni === 1 ? "" : "s") + "</span>" : '<span class="n"></span>'));
+      if (p._ni && p._todo) badge = '<span class="n">' + p._ni + " item" + (p._ni === 1 ? "" : "s") + " &middot; </span>" + badge;
+      var pm = p._pm ? ' <span class="pm"' + tipAttrs(p._pm + " question" + (p._pm === 1 ? "" : "s") + " for the PM on this plant") + ">PM " + p._pm + "</span>" : "";
       var un = unitNames(p);
       var where = p.statewide ? "statewide" : (p.units.length + " unit" + (p.units.length === 1 ? "" : "s"));
       h.push('<li data-i="' + i + '"' + (i === S.pipe ? ' class="sel"' : "") + '><div class="pname">' + esc(p.name || "(no name)") +
-        (un.length ? ' <span class="pseg">' + esc(un[0]) + (un.length > 1 ? " +" + (un.length - 1) : "") + "</span>" : "") +
+        (un.length ? ' <span class="pseg">' + esc(un[0]) + (un.length > 1 ? " +" + (un.length - 1) : "") + "</span>" : "") + pm +
         '</div><div class="pmeta"><span>' + esc(p.statewide ? p.state : (untracked(p) ? "not in GEM yet" : p.pid)) + " &middot; " + esc(where) +
         '</span><span class="grow"></span>' + badge + '</div>' + (dd ? '<div class="dots">' + dd + "</div>" : "") + "</li>");
     });
     $("pipes").innerHTML = h.join("");
   }
+  // a click on a checklist group: filter the plants to it and show them
+  function selectGroup(gid) {
+    var g = (D.groups || []).filter(function (x) { return String(x.id) === gid; })[0];
+    if (g && g.panel) {
+      // the close-out group is not a filter: it opens a panel in the card pane that gathers what
+      // the end-of-state checklist rows need (units to mark, a summary draft, the sheets to update)
+      S.closeout = !S.closeout;
+      S.line = -1;
+      renderQueue(); renderCard();
+      return;
+    }
+    FS.group = FS.group === gid ? "" : gid;
+    FS.decision = "";                 // a group lists everything in it, decided or not
+    changed();
+    setView("plants");
+  }
   function selectPipe(i, lineIdx) {
     if (S.pipe !== i) S.igOpen = {};          // item groups collapse again on a new plant
+    S.closeout = false;
     S.pipe = i;
     S.tab = defaultTab(D.plants[i]);
     S.line = lineIdx == null ? -1 : lineIdx;
@@ -652,12 +773,42 @@
     d.push('<div class="dtxt"><span class="k">record:</span> ' + esc(misc.join(" · ")) + "</div>");
     return '<details data-more><summary>notes &amp; record</summary>' + d.join("") + "</details>";
   }
+  // the checklist group chip every line and item carries: "checklist 3" with the rows it ticks on hover
+  // the IRP box state of the unit a line or item sits on: "yes" / "no" / "" (unknown or no unit)
+  function irpBoxOf(o) {
+    var p = D.plants[o._p], u = p && o.gem_unit_id ? unitOf(p, o.gem_unit_id) : null;
+    return u ? (u.irp_box || "") : "";
+  }
+  // a finding that comes from a utility integrated resource plan (US only; checklist row 37)
+  function irpChip(o) {
+    var box = irpBoxOf(o);
+    var tip = "this comes from a utility integrated resource plan (IRP). " +
+      (o.kind === "new_row" ? "Tick the IRP box on the new row when it is created." :
+       box === "yes" ? "The unit's IRP box is already ticked in the database." :
+       box === "no" ? "The unit's IRP box is not ticked yet: tick it in the web form when the change goes in." :
+       "The export does not show this unit's IRP box; check it in the web form.") + " QC/Country checklist row 37.";
+    return chip("IRP" + (box === "no" ? ": tick the box" : ""), box === "no" ? "irp todo" : "irp", tip);
+  }
+  function groupChip(o) {
+    var gid = groupOf(o);
+    return chip("checklist " + (gid === "other" ? "gap" : gid), "grp", groupTip(o));
+  }
+  // the ask-the-PM box: a flag beside the decision, with a short note. Works on a line, an item or the whole plant.
+  function pmBox(o, attr, id) {
+    var dis = !Store.caps.decide, on = !!o.pm_flag;
+    return '<label class="pmbox' + (on ? " on" : "") + '"' + tipAttrs(dis ? NOT_YET : "flag this for the GOGPT project manager. The flag sits beside your decision: you can accept something and still ask about it. Flagged items are listed together in the evidence file and can be filtered with \"ask the PM\"") +
+      '><input type="checkbox" ' + attr + '="' + esc(id) + '"' + (on ? " checked" : "") + (dis ? " disabled" : "") + "> ask the PM</label>" +
+      (on ? '<input type="text" class="pmnote" ' + attr + '-note="' + esc(id) + '" placeholder="question for the PM" value="' + esc(o.pm_note || "") + '"' + (dis ? " disabled" : "") + ">" : "");
+  }
   function lineHtml(l) {
     var chips = [];
     if (l.kind === "new_row") chips.push(chip(KIND_LABEL.new_row, "newrow"));
     if (l.kind === "plant") chips.push(chip("plant-wide", "oo", "a plant-level field: the export repeats it on every unit row, so the edit lands on every unit row of this plant"));
     chips.push(tierChip(l));
     chips.push(sevChip(l));
+    chips.push(groupChip(l));
+    if (l.irp) chips.push(irpChip(l));
+    if (l.pm_flag) chips.push(chip("PM", "pm", "flagged for the project manager" + (l.pm_note ? ": " + l.pm_note : "")));
     var title = l.kind === "new_row" ? ((l.proposed_values || {})["Plant name"] || (l.proposed_values || {})["Unit name"] || l.unit_name || l.plant_name || "new row") : (l.column || "");
     var h = '<div class="row1"><span class="col">' + esc(title) + "</span> " + chips.join(" ") +
       '<span class="where">' + esc(rowLabel(l)) + "</span></div>";
@@ -669,27 +820,37 @@
         ' aria-pressed="' + (cur(l) === b[0]) + '">' + b[0] + "</button>";
     }).join("") + '<button type="button" class="b-suggest" data-suggest="1"' + (dis ? ' aria-disabled="true"' + tipAttrs(NOT_YET) : "") +
       ' aria-pressed="' + (cur(l) === "suggest") + '">suggest</button>' + (cur(l) ? '<button type="button" class="ghost" data-undo="1">undo</button>' : "") +
+      pmBox(l, "data-pm", l.key) +
       '<span class="dstat" id="dstat-' + l._i + '" role="status">' + esc(decisionText(l)) + "</span></div>";
     h += detailsHtml(l);
     return h;
   }
 
   // ---- items ----
-  var HIDE = {call_note: 1, decided_by: 1, decided_at: 1, key: 1, dir: 1, record_id: 1, call: 1, reviewed: 1, kind: 1,
-              gem_unit_id: 1, unit_name: 1, links: 1, verifications: 1, _item: 1, _p: 1, _i: 1};
+  var HIDE = {call_note: 1, call_reference: 1, decided_by: 1, decided_at: 1, key: 1, dir: 1, record_id: 1, call: 1, reviewed: 1, kind: 1,
+              gem_unit_id: 1, unit_name: 1, links: 1, verifications: 1, _item: 1, _p: 1, _i: 1,
+              group: 1, group_label: 1, checks: 1, monitor_kind: 1, pm_flag: 1, pm_note: 1, pm_by: 1, duplicate_of: 1, concern_type_raw: 1, plant_name: 1};
   var BODY = ["notes", "recommendation", "reason", "lookup_result"];
   var CONCERN_ISSUE = {unverified_value: "a value could not be checked against its source", conflict: "two sources disagree",
                        duplicate: "this may duplicate another row", missing_source: "a value has no source link",
                        capacity: "the capacity figure needs a closer look", status: "the status needs a closer look",
-                       ownership: "the owner or operator needs a closer look"};
+                       ownership: "the owner or operator needs a closer look",
+                       // the normalized kinds (review_app/checklist.py CONCERN_KINDS)
+                       existence: "does this plant or unit exist as GEM records it?", scope: "is this in the tracker's scope?",
+                       "capacity-threshold": "is this above the capacity threshold?", identity: "which plant or unit is this?",
+                       attribution: "who owns or operates this?", "conversion-link": "how does this link to a coal or other unit?",
+                       location: "where exactly is this?", source: "the source needs a closer look", validation: "a GEM validation error",
+                       other: "a question about this plant's data"};
   function concernHead(it) {
     var t = String(it.concern_type || "concern");
-    return CONCERN_ISSUE[t] || t.replace(/_/g, " ");
+    if (CONCERN_ISSUE[t]) return CONCERN_ISSUE[t];
+    // a column name: "Capacity (MW): a question about this value"
+    return /^[A-Z]/.test(t) ? t + ": a question about this value" : t.replace(/_/g, " ");
   }
   function itemHead(it) {
     switch (it.kind) {
       case "concern": return concernHead(it);
-      case "monitor": return (it.item || "watch this plant") + (it.recheck_by ? " (check again by " + it.recheck_by + ")" : "");
+      case "monitor": return (it.reason || it.item || "watch this plant") + (it.recheck_by ? " (check again by " + it.recheck_by + ")" : "");
       case "entity": return (it.entity_name || "entity") + (it.role ? " as " + it.role : "");
       default: return it.title || it.kind;
     }
@@ -729,39 +890,66 @@
   function itemHtml(it) {
     var b = itemBody(it), rows = fieldRows(it, b.used), p = D.plants[it._p];
     var where = it.gem_unit_id ? unitText(unitOf(p, it.gem_unit_id), it.gem_unit_id) : "plant";
-    var h = '<div class="item' + (it.call && it.reviewed ? " done" : "") + '"><div class="row1">' + chip(KIND_LABEL[it.kind] || it.kind, "") +
-      " <b>" + esc(itemHead(it)) + "</b>" + '<span class="where">' + esc(where) + "</span></div>";
+    var cls = it.kind === "monitor" ? " watch-" + (it.monitor_kind || "existing_plant") : "";
+    var h = '<div class="item' + (it.call && it.reviewed ? " done" : "") + cls + '"><div class="row1">' + chip(kindLabel(it), it.kind === "monitor" ? "watch" : "", kindTip(it)) +
+      " <b>" + esc(itemHead(it)) + "</b> " + groupChip(it) + (it.irp ? " " + irpChip(it) : "") + (it.pm_flag ? " " + chip("PM", "pm", "flagged for the project manager" + (it.pm_note ? ": " + it.pm_note : "")) : "") +
+      '<span class="where">' + esc(where) + "</span></div>";
+    if (it.kind === "monitor") {
+      var facts = [];
+      if (it.capacity_mw) facts.push(chip(it.capacity_mw + " MW"));
+      if (it.status) facts.push(chip(it.status));
+      if (it.tier && it.tier !== "untiered") facts.push(chip(it.tier + " confidence", it.tier, TIER_TIP[it.tier]));
+      if (it.duplicate_of) {
+        var first = ITEM_BY_KEY[it.duplicate_of];
+        facts.push(chip("also staged in " + dirLabel(first ? first.dir : it.duplicate_of.split("::")[0]), "oo", "the same candidate was staged twice (an update batch and a discovery batch): decide it once, on the first copy, and give this one the same call"));
+      }
+      if (facts.length) h += '<div class="facts">' + facts.join(" ") + "</div>";
+    }
     h += b.html;
     if (rows.length) h += "<details><summary>all fields</summary><table class=\"rowdata\">" + rows.join("") + "</table></details>";
     return h + itemControls(it) + "</div>";
   }
   function itemVocab(it) { return ITEM_CALLS[it.kind] || OTHER_CALLS; }
+  function callText(c) { return CALL_LABEL[c] || String(c || "").replace(/_/g, " "); }
   function itemStat(it) {
-    return it.call && it.reviewed ? (it.call.replace("_", " ") + " by " + (it.decided_by || "?") + " " + timeOf(it.decided_at)) : "";
+    return it.call && it.reviewed ? (callText(it.call) + " by " + (it.decided_by || "?") + " " + timeOf(it.decided_at)) : "";
   }
+  var CALL_HINT = {concern: "confirmed: the concern stands and goes into the evidence file. dismissed: closed, nothing to do. needs research: back to the researcher for another pass",
+                   monitor: "incorporate into database: this belongs in GEM now, the researcher writes it up as a full edit. hold: keep watching. send to possible updates: park it on the possible-updates sheet for a later cycle. remove from watchlist: drop it, with a note saying why",
+                   other: "noted: seen. todo: to do later. dismissed: closed"};
   function itemControls(it) {
     var dis = !Store.caps.decide, v = itemVocab(it);
     var opts = '<option value="">no call</option>' + v.map(function (c) {
-      return '<option value="' + c + '"' + (it.call === c ? " selected" : "") + ' title="' + esc(CALL_HELP[c] || "") + '">' + c.replace("_", " ") + "</option>";
+      return '<option value="' + c + '"' + (it.call === c ? " selected" : "") + ' title="' + esc(CALL_HELP[c] || "") + '">' + esc(callText(c)) + "</option>";
     }).join("");
-    var hint = it.kind === "concern" ? "confirmed: the concern stands and goes into the evidence file. dismissed: closed, nothing to do. needs research: back to the researcher for another pass" : "noted: seen. todo: to do later. dismissed: closed";
+    var hint = CALL_HINT[it.kind] || CALL_HINT.other;
     return '<div class="icall"><label' + (dis ? tipAttrs(NOT_YET) : tipAttrs(hint)) + '>call <select data-icall="' + it._i + '"' + (dis ? " disabled" : "") + ">" + opts + "</select></label>" +
-      '<input type="text" data-inote="' + it._i + '" placeholder="note" value="' + esc(it.call_note || "") + '"' + (dis ? " disabled" : "") + ">" +
+      '<input type="text" data-inote="' + it._i + '" placeholder="note' + (it.kind === "monitor" ? " (needed to remove from the watchlist)" : "") + '" value="' + esc(it.call_note || "") + '"' + (dis ? " disabled" : "") + ">" +
+      '<input type="url" data-iref="' + it._i + '" placeholder="source link, if you have one" value="' + esc(it.call_reference || "") + '"' + (dis ? " disabled" : "") + ">" +
+      pmBox(it, "data-pm", it.key) +
       '<span class="dstat" id="istat-' + it._i + '" role="status">' + esc(itemStat(it)) + "</span></div>";
   }
-  function itemsHtml(p) {
-    if (!p.items.length) return '<div class="hiddennote">nothing to decide on this plant.</div>';
-    var by = {};
-    p.items.forEach(function (it) { (by[it.kind] = by[it.kind] || []).push(it); });
+  // items grouped by checklist group (the dataset's order), each with its kind chip; `only`
+  // restricts to the items the filters let through
+  function itemsHtml(p, only) {
+    var q = FS.q.trim().toLowerCase(), list = p.items;
+    if (only) list = list.filter(function (it) { return match(it, p, FS, null, q); });
+    var hidden = p.items.length - list.length;
+    if (!list.length) return '<div class="hiddennote">' + (hidden ? hidden + " item" + (hidden === 1 ? " is" : "s are") + ' hidden by the filter. <a href="#" class="only" data-showall="1">show all</a>' : "nothing to decide on this plant.") + "</div>";
+    var by = {}, order = (D.groups || []).map(function (g) { return String(g.id); });
+    list.forEach(function (it) { var g = groupOf(it); (by[g] = by[g] || []).push(it); if (order.indexOf(g) < 0) order.push(g); });
     var h = '<section class="items">';
-    ITEM_KINDS.forEach(function (k) {
-      if (!by[k]) return;
-      // every kind group starts collapsed on a freshly opened plant; a group the reviewer opens
-      // stays open across re-renders of the SAME card (igOpen resets in selectPipe)
-      var open = k in S.igOpen ? S.igOpen[k] : false;
-      h += '<details class="igroup" data-kind="' + k + '"' + (open ? " open" : "") + "><summary>" + esc(KIND_LABEL[k]) + ' <span class="n">(' + by[k].length + ")</span></summary>" +
-        by[k].map(itemHtml).join("") + "</details>";
+    order.forEach(function (g) {
+      if (!by[g]) return;
+      // every group starts collapsed on a freshly opened plant unless it is the only one; a group the
+      // reviewer opens stays open across re-renders of the SAME card (igOpen resets in selectPipe)
+      var open = g in S.igOpen ? S.igOpen[g] : order.filter(function (x) { return by[x]; }).length === 1;
+      var nOpen = by[g].filter(isOpen).length;
+      h += '<details class="igroup" data-g="' + esc(g) + '"' + (open ? " open" : "") + "><summary>" + esc((g === "other" ? "" : "checklist " + g + ": ") + groupLabel(g)) +
+        ' <span class="n">(' + (nOpen ? nOpen + " open of " + by[g].length : by[g].length + ", all called") + ")</span></summary>" +
+        by[g].map(itemHtml).join("") + "</details>";
     });
+    if (hidden) h += '<div class="hiddennote">' + hidden + " more item" + (hidden === 1 ? " is" : "s are") + ' hidden by the filter. <a href="#" class="only" data-showall="1">show all</a></div>';
     return h + "</section>";
   }
 
@@ -774,14 +962,149 @@
   }
   // the unit a line sits under for grouping: "" = plant-wide
   function lineUnit(l) { return l.kind === "plant" || l.kind === "new_row" ? "" : (l.gem_unit_id || ""); }
+  // ---- close-out panel (checklist group 9) ----
+  // Not one plant: what the end-of-state rows of the QC/Country checklist need, computed from the
+  // decisions made so far. Nothing here is saved; it is read off the page and typed into the sheets.
+  function closeoutHtml() {
+    var links = D.links || {}, us = !!D.us, where = (D.scope.states || []).join(", ") || D.scope.country || "";
+    var quarter = D.scope.quarter || "";
+    function link(key, fallback) {
+      var l = links[key];
+      return l && l.url ? '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + " ↗</a>" : esc(fallback || (l && l.label) || key);
+    }
+    function row(n) { return '<span class="rown"' + tipAttrs("QC/Country checklist row " + n + (ROW_LABEL[n] ? ": " + ROW_LABEL[n] : "")) + ">row " + n + "</span>"; }
+    function plantOf(o) { return D.plants[o._p]; }
+    // units: every unit a staged change touches, by what its decisions add up to
+    var units = {updated: [], open: [], none: []}, itemsOnly = [];
+    D.plants.forEach(function (p) {
+      if (p.statewide || untracked(p)) return;
+      if (!p.lines.length && p.items.length) { itemsOnly.push(p); return; }
+      p.units.forEach(function (u) {
+        var ls = p.lines.filter(function (l) { return lineUnit(l) === u.gem_unit_id || (lineUnit(l) === "" && l.kind === "plant"); });
+        if (!ls.length) return;
+        var acc = ls.some(function (l) { return cur(l) === "accept"; });
+        var open = ls.some(function (l) { var d = cur(l); return !d || d === "hold" || d === "suggest"; });
+        var entry = {p: p, u: u, n: ls.length, nAcc: ls.filter(function (l) { return cur(l) === "accept"; }).length};
+        (acc ? units.updated : open ? units.open : units.none).push(entry);
+      });
+    });
+    function unitLine(e) { return esc(e.p.name) + " · " + esc(unitText(e.u)) + ' <span class="n">(' + e.nAcc + " of " + e.n + " accepted)</span>"; }
+    function unitText2(e) { return e.p.name + "\t" + (e.u.unit_name || "") + "\t" + e.u.gem_unit_id; }
+    function unitList(title, list, say) {
+      if (!list.length) return "";
+      return '<details class="colist"' + (list.length <= 12 ? " open" : "") + "><summary>" + esc(title) + ' <span class="n">(' + list.length + ")</span></summary><p class=\"muted\">" + esc(say) + "</p><ul>" +
+        list.map(function (e) { return "<li>" + unitLine(e) + "</li>"; }).join("") + "</ul></details>";
+    }
+    // the numbers behind the summary draft
+    var c = {accept: 0, hold: 0, reject: 0, suggest: 0, undecided: 0};
+    LINES.forEach(function (l) { c[dstate(l)]++; });
+    var statusAcc = LINES.filter(function (l) { return l.column === "Status" && cur(l) === "accept" && l.kind !== "reverified"; });
+    var newRows = LINES.filter(function (l) { return l.kind === "new_row" && cur(l) === "accept"; });
+    var watchNew = ITEMS.filter(function (it) { return it.kind === "monitor" && it.monitor_kind === "new_to_tracker"; });
+    var watchOld = ITEMS.filter(function (it) { return it.kind === "monitor" && it.monitor_kind !== "new_to_tracker"; });
+    var promote = ITEMS.filter(function (it) { return it.kind === "monitor" && it.call === "add_to_database"; });
+    var toSheet = ITEMS.filter(function (it) { return it.kind === "monitor" && it.call === "possible_updates"; });
+    var held = ITEMS.filter(function (it) { return it.kind === "monitor" && it.call === "hold"; });
+    var entities = ITEMS.filter(function (it) { return it.kind === "entity"; });
+    var concerns = ITEMS.filter(function (it) { return it.kind === "concern" && it.call === "confirmed"; });
+    var pm = LINES.concat(ITEMS).filter(function (o) { return o.pm_flag; }).length + D.plants.filter(function (p) { return p.pm_flag; }).length;
+    // records from a utility resource plan, by what the unit's IRP box needs (row 37)
+    var irpRecs = LINES.concat(ITEMS).filter(function (o) { return o.irp; });
+    var irpNew = irpRecs.filter(function (o) { return o.kind === "new_row"; });
+    var irpTick = irpRecs.filter(function (o) { return o.kind !== "new_row" && irpBoxOf(o) === "no"; });
+    var irpDone = irpRecs.filter(function (o) { return o.kind !== "new_row" && irpBoxOf(o) === "yes"; });
+    var irpUnknown = irpRecs.filter(function (o) { return o.kind !== "new_row" && !irpBoxOf(o); });
+    var nPlants = D.plants.filter(function (p) { return !p.statewide && !untracked(p); }).length;
+    function plural(n, w) { return n + " " + w + (n === 1 ? "" : "s"); }
+    var sentences = [];
+    sentences.push((quarter ? quarter.toUpperCase() + " " : "") + "GOGPT review of " + (where || "this scope") + ": " + plural(nPlants, "tracked plant") + " looked at.");
+    sentences.push(plural(c.accept, "change") + " accepted, " + c.reject + " rejected, " + c.hold + " held, " + c.suggest + " sent back with a suggestion" + (c.undecided ? ", " + c.undecided + " not decided yet" : "") + ".");
+    if (statusAcc.length) sentences.push("Status changes: " + statusAcc.map(function (l) {
+      var p = plantOf(l), v = l.proposed_values && l.proposed_values.Status, from = l.current && l.current.Status;
+      return p.name + (l.unit_name ? " " + l.unit_name : "") + (from ? " from " + from : "") + " to " + (v || "?");
+    }).join("; ") + ".");
+    if (newRows.length) sentences.push(plural(newRows.length, "new row") + " accepted for the database.");
+    if (us && irpRecs.length) sentences.push(plural(irpRecs.length, "finding") + " from utility resource plans" + (irpTick.length ? "; IRP box to tick on " + plural(irpTick.length, "unit") : "") + ".");
+    if (watchNew.length || watchOld.length) sentences.push("Watch list: " + watchNew.length + " new to the tracker and " + watchOld.length + " on existing plants" +
+      (promote.length ? "; " + promote.length + " to be added to the database" : "") + (toSheet.length ? "; " + toSheet.length + " sent to the possible-updates sheet" : "") + ".");
+    if (entities.length) sentences.push(entities.length + " new owner" + (entities.length === 1 ? "" : "s") + " or operator" + (entities.length === 1 ? "" : "s") + " to create in the database.");
+    if (concerns.length) sentences.push(plural(concerns.length, "open question") + " about existing data confirmed for follow-up.");
+    if (pm) sentences.push(plural(pm, "question") + " for the project manager.");
+    sentences.push("Researched with an AI agent (Claude); every change was checked by a person on the review page before it went into the actions workbook.");
+    var draft = sentences.join(" ");
+    var unitText3 = ["mark updated"].concat(units.updated.map(unitText2)).concat(["", "mark no changes"]).concat(units.none.map(unitText2)).join("\n");
+
+    var h = '<div class="closeout">';
+    h += '<div class="cohead"><h2>Close-out' + (where ? ": " + esc(where) : "") + "</h2>" +
+      '<p class="muted">The end-of-state rows of the QC/Country checklist. Not one plant: this panel adds up the calls made so far so the sheet and doc updates can be typed from it. ' +
+      "Nothing on it is saved; make the calls on the plants, then come back here. " + link("checklist", "QC/Country checklist tab") + "</p></div>";
+
+    h += "<section><h3>Research status per unit " + row(53) + "</h3>" +
+      '<p>In the database, every unit the state sweep touched is set to "updated" or "no changes". The lists below come from the decisions on this page. Units the sweep did not touch are not listed; their status is yours to set.</p>' +
+      unitList("mark updated", units.updated, "at least one change on the unit was accepted") +
+      unitList("still open: decide before marking", units.open, "the unit has changes that are undecided, held, or sent back with a suggestion") +
+      unitList("mark no changes", units.none, "every change on the unit was rejected: the current values stand") +
+      (itemsOnly.length ? '<details class="colist"><summary>plants with items only <span class="n">(' + itemsOnly.length + ")</span></summary><p class=\"muted\">no cell changes were staged, only questions or watch items; the research status is your call</p><ul>" +
+        itemsOnly.map(function (p) { return "<li>" + esc(p.name) + ' <span class="n">(' + plural(p.items.length, "item") + ")</span></li>"; }).join("") + "</ul></details>" : "") +
+      (units.updated.length || units.none.length ? '<p><button type="button" class="ghost" data-copy="units">copy the unit lists</button> <span class="muted">(plant, unit, GEM unit id; one per line)</span></p>' : "") +
+      "</section>";
+
+    h += "<section><h3>" + (us ? "United States research row for the state " + row(35) + " " + row(29) : "Country tips and trends row " + row(29)) + "</h3>" +
+      "<p>A draft for the state's row, from the counts on this page. Edit it before pasting. " + link(us ? "us_research" : "country_tips", us ? "United States research tab" : "Country tips trends tab") + "</p>" +
+      '<blockquote class="draft">' + esc(draft) + "</blockquote>" +
+      '<p><button type="button" class="ghost" data-copy="draft">copy the draft</button></p></section>';
+
+    h += "<section><h3>Assignments tab, columns M and N " + row(30) + "</h3>" +
+      '<p>On the ' + link("assignments", "Researcher Country Assignments tab") + ' the state\'s row has two columns the researcher fills: M is the best estimate in days for the next update, N is the status for this cycle (to do, in progress, done). ' +
+      'Set N to done only after the units above are marked and the validation report comes back clean.</p></section>';
+
+    h += "<section><h3>Sheets and docs to review and update " + row(31) + " " + row(32) + " " + (us ? row(34) + " " + row(36) : row(33)) + "</h3><ul>" +
+      "<li>" + link("possible_updates", "GEM trackers possible updates sheet") + ": " + (toSheet.length ? plural(toSheet.length, "watch item") + " on this page " + (toSheet.length === 1 ? "was" : "were") + " sent there; the actions workbook has them on a sheet in the possible-updates column order, ready to paste." : "no watch item on this page was sent there.") +
+      " Rows for this state already on the sheet are marked done or moved to the next cycle.</li>" +
+      "<li>" + link("data_sources", "Gas and oil power plant data sources by country doc") + ": add any source the sweep used that the doc does not list yet (the evidence file names every source).</li>" +
+      (us ? "<li>" + link("us_irps", "US IRPs tab") + ": the state's utility resource plans. " + (irpRecs.length ? plural(irpRecs.length, "record") + " on this page " + (irpRecs.length === 1 ? "comes" : "come") + " from a plan (the IRP chip); the actions workbook's irp_notes_draft sheet has a draft line per utility for the tab's Notes column." : "No record on this page comes from a plan. If the IRP step did not run for this state, read the state's rows by hand.") + "</li>" +
+            "<li>" + link("us_guide", "GOGPT United States Data/Research Guide") + ": the state's section, if the sweep found a better source or a way in.</li>"
+          : "<li>" + link("europe_doc", "Europe Workflow Map doc") + " (Europe only): the country's section.</li>") +
+      "</ul></section>";
+
+    if (us) {
+      h += "<section><h3>IRP box " + row(37) + "</h3>" +
+        "<p>The database has an IRP checkbox on every unit (the export's IRP column). A unit whose data comes from a utility integrated resource plan gets the box ticked. " +
+        "The lists below pair the records on this page that come from a plan (the IRP chip) with the box as the export shows it.</p>" +
+        (irpTick.length ? '<details class="colist" open><summary>tick the IRP box <span class="n">(' + irpTick.length + ")</span></summary><p class=\"muted\">a change from a plan sits on a unit whose box is not ticked yet; tick it in the web form when the change goes in</p><ul>" +
+          irpTick.map(function (o) { return "<li>" + esc(plantOf(o).name) + " · " + esc(unitText(unitOf(plantOf(o), o.gem_unit_id), o.gem_unit_id)) + "</li>"; }).join("") + "</ul></details>" : "") +
+        (irpNew.length ? '<details class="colist" open><summary>new rows from a plan <span class="n">(' + irpNew.length + ")</span></summary><p class=\"muted\">tick the IRP box on the new row when it is created</p><ul>" +
+          irpNew.map(function (o) { return "<li>" + esc(plantOf(o).name) + (o.unit_name ? " · " + esc(o.unit_name) : "") + "</li>"; }).join("") + "</ul></details>" : "") +
+        (irpDone.length ? '<details class="colist"><summary>already ticked <span class="n">(' + irpDone.length + ")</span></summary><p class=\"muted\">the box is ticked in the export; nothing to do</p><ul>" +
+          irpDone.map(function (o) { return "<li>" + esc(plantOf(o).name) + " · " + esc(unitText(unitOf(plantOf(o), o.gem_unit_id), o.gem_unit_id)) + "</li>"; }).join("") + "</ul></details>" : "") +
+        (irpUnknown.length ? '<details class="colist"><summary>check the box by hand <span class="n">(' + irpUnknown.length + ")</span></summary><p class=\"muted\">the record comes from a plan but names no unit the export shows; open the plant in the web form</p><ul>" +
+          irpUnknown.map(function (o) { return "<li>" + esc(plantOf(o).name) + (o.unit_name ? " · " + esc(o.unit_name) : "") + "</li>"; }).join("") + "</ul></details>" : "") +
+        (!irpRecs.length ? '<p class="muted">No record on this page comes from a plan. Units already ticked keep their box; the actions workbook\'s irp_box sheet lists them when the IRP step ran.</p>' : "") +
+        "</section>";
+    }
+
+    h += "<section><h3>What this page cannot see " + row(52) + " " + row(54) + " " + row(56) + "</h3><ul>" +
+      "<li><b>AI used</b> (row 52): yes. This batch was researched with Claude and reviewed here.</li>" +
+      "<li><b>Validation report</b> (row 54): Baird runs the database's validation report for the state at close-out; it has to come back clean before the row is marked done.</li>" +
+      '<li><b>No tracker found</b> (row 56): the combustion tracker search in the GEM database has a "no tracker found" filter. Baird runs that check from the database side; the page cannot.</li>' +
+      "</ul></section>";
+
+    if (held.length) h += "<section><h3>Watch items held, with notes</h3><p>Still on the watch list after this review. They come back on the next rebuild.</p><ul>" +
+      held.map(function (it) { return "<li>" + esc(plantOf(it).name) + ": " + esc(itemHead(it)) + (it.call_note ? ' <span class="muted">' + esc(it.call_note) + "</span>" : "") + "</li>"; }).join("") + "</ul></section>";
+    if (pm) h += "<section><h3>Questions for the project manager</h3><p>" + plural(pm, "question") + ' flagged on this page. <a href="#/?pm=1">show them</a>. The evidence file gathers them in one place.</p></section>';
+    h += "</div>";
+    S.closeoutCopy = {units: unitText3, draft: draft};
+    return h;
+  }
   function renderCard() {
     var card = $("card");
+    if (S.closeout) { card.innerHTML = closeoutHtml(); S.shown = []; return; }
     if (S.pipe < 0) { card.innerHTML = '<div class="empty">nothing matches the filters.</div>'; S.shown = []; return; }
     var p = D.plants[S.pipe], q = FS.q.trim().toLowerCase();
     var un = unitNames(p);
     var ctx = [p.statewide && "<b>statewide notes, not one plant</b>", untracked(p) && !p.statewide && "<b>not in GEM yet: a candidate plant</b>",
                p.state && esc(p.state), p.units.length && p.units.length + " unit" + (p.units.length === 1 ? "" : "s") + " in the export",
-               tierSummary(p)]
+               tierSummary(p), '<span class="pmplant">' + pmBox(p, "data-pmplant", p.pid) + "</span>"]
       .filter(Boolean).map(function (x) { return "<span>" + x + "</span>"; }).join("");
     var h = '<div class="cardhead"><div class="headrow">' + "<h2>" + (p.statewide || untracked(p) ? "" : '<span class="pid"' + tipAttrs("click to copy the GEM plant id") + '>' + esc(p.pid) + "</span>") +
       '<a href="#" class="only" data-tab="all"' + tipAttrs("review everything on this plant: every change (filters ignored) and every item") + '>' + esc(p.name || "(no name)") + "</a>" +
@@ -817,7 +1140,8 @@
       '<button type="button" role="tab" data-tab="all" aria-selected="' + (S.tab === "all") + '"' + tipAttrs("every change (filters ignored) and every item on this plant; also: click the name") + '>everything</button></div></div>';
     if (S.tab === "items") {
       S.shown = []; S.line = -1;
-      card.innerHTML = h + itemsHtml(p);
+      // with a checklist group or the PM filter on, the items tab shows the matching items only
+      card.innerHTML = h + itemsHtml(p, S.pin !== S.pipe && (FS.group || FS.pm || isItemKind(FS.kind)));
       return;
     }
     // lines the filter lets through, grouped by unit when the plant has several units
@@ -922,6 +1246,7 @@
     l.decided_by = r.undecided ? null : r.reviewer;
     l.decided_at = r.undecided ? null : r.ts;
     l.suggested_value = r.undecided ? "" : (r.suggested_value || "");
+    l.reference = r.undecided ? "" : (r.reference || "");
     l.decision_note = r.undecided ? "" : (r.note || "");
   }
   function applyItemRecord(r) {
@@ -929,12 +1254,63 @@
     if (!it) return;
     it.call = r.undecided ? null : r.call;
     it.call_note = r.undecided ? null : r.note;
+    it.call_reference = r.undecided ? "" : (r.reference || "");
     it.reviewed = !r.undecided;
     it.decided_by = r.undecided ? null : r.reviewer;
     it.decided_at = r.undecided ? null : r.ts;
   }
+  // an ask-the-PM flag: key "pm::<line or item key>", or "pm::<dir>::plant:<pid>" for a whole plant
+  function applyFlagRecord(r) {
+    var key = String(r.key || "").replace(/^pm::/, ""), o = LINE_BY_KEY[key] || ITEM_BY_KEY[key];
+    if (!o && r.kind === "plant") D.plants.forEach(function (p) { if (p.pid === r.pid && (!r.dir || p.dir === r.dir)) o = p; });
+    if (!o) return;
+    o.pm_flag = !!r.on && !r.undecided;
+    o.pm_note = o.pm_flag ? (r.note || "") : "";
+    o.pm_by = o.pm_flag ? r.reviewer : null;
+  }
   function applySaved(saved) {
-    saved.forEach(function (r) { if ("call" in r) applyItemRecord(r); else applyRecord(r); });
+    saved.forEach(function (r) { if ("flag" in r) applyFlagRecord(r); else if ("call" in r) applyItemRecord(r); else applyRecord(r); });
+  }
+  // Save an ask-the-PM flag (line, item or plant). The box re-renders when the server confirms.
+  function saveFlag(target, rec) {
+    if (!Store.caps.decide) return notYet();
+    var k = "pm:" + (rec.key || rec.pid);
+    if (S.saving[k]) return;
+    S.saving[k] = true;
+    Store.flag([rec]).then(function (saved) {
+      applySaved(saved);
+      if (target && target.key) S.stay[target.key] = true;
+      banner("");
+      var keepLine = S.line;
+      refilter(true);
+      if (keepLine >= 0 && $("line-" + keepLine)) setLine(keepLine, true);
+      toast(rec.on ? "flagged for the PM" : "flag removed");
+    }).catch(function (e) {
+      renderCard();
+      toast("not saved: " + e.message);
+    }).then(function () { delete S.saving[k]; });
+  }
+  function onPmChange(e) {
+    var box = e.target.closest("input[data-pm], input[data-pm-note]"), pb = e.target.closest("input[data-pmplant], input[data-pmplant-note]");
+    var t = box || pb;
+    if (!t) return false;
+    var isNote = t.hasAttribute("data-pm-note") || t.hasAttribute("data-pmplant-note");
+    if (box) {
+      var key = t.getAttribute(isNote ? "data-pm-note" : "data-pm"), o = LINE_BY_KEY[key] || ITEM_BY_KEY[key];
+      if (!o) return true;
+      var wrap = t.closest(".controls, .icall"), cb = wrap.querySelector("input[data-pm]"), nt = wrap.querySelector("input[data-pm-note]");
+      var on = cb.checked, note = nt ? nt.value : (o.pm_note || "");
+      if (isNote && on && note === (o.pm_note || "")) return true;
+      saveFlag(o, {key: key, on: on, note: on ? note : ""});
+      return true;
+    }
+    var p = D.plants[S.pipe];
+    if (!p) return true;
+    var pw = t.closest(".pmplant"), pcb = pw.querySelector("input[data-pmplant]"), pnt = pw.querySelector("input[data-pmplant-note]");
+    var pon = pcb.checked, pnote = pnt ? pnt.value : (p.pm_note || "");
+    if (isNote && pon && pnote === (p.pm_note || "")) return true;
+    saveFlag(null, {pid: p.pid, dir: p.dir, on: pon, note: pon ? pnote : ""});
+    return true;
   }
   // Save one item's call. Same in-place feedback as a line; the card re-renders in place.
   function saveItem(it, rec) {
@@ -955,15 +1331,23 @@
     }).then(function () { delete S.saving[it.key]; });
   }
   function onItemChange(e) {
-    var sel = e.target.closest("select[data-icall]"), inp = e.target.closest("input[data-inote]");
-    var t = sel || inp;
+    if (onPmChange(e)) return;
+    var sel = e.target.closest("select[data-icall]"), inp = e.target.closest("input[data-inote]"), ref = e.target.closest("input[data-iref]");
+    var t = sel || inp || ref;
     if (!t) return;
-    var it = ITEMS[+t.getAttribute(sel ? "data-icall" : "data-inote")];
+    var it = ITEMS[+t.getAttribute(sel ? "data-icall" : inp ? "data-inote" : "data-iref")];
     if (!it) return;
-    var box = t.closest(".icall"), call = box.querySelector("select").value, note = box.querySelector("input").value;
+    var box = t.closest(".icall"), call = box.querySelector("select").value, note = box.querySelector("input[data-inote]").value,
+        reference = (box.querySelector("input[data-iref]") || {}).value || "";
     if (!call) { if (sel && it.call) saveItem(it, {key: it.key, undo: true}); return; }
-    if (inp && call === it.call && note === (it.call_note || "")) return;
-    saveItem(it, {key: it.key, call: call, note: note});
+    if (!sel && call === it.call && note === (it.call_note || "") && reference === (it.call_reference || "")) return;
+    if (NOTE_REQUIRED[it.kind + ":" + call] && !note.trim()) {
+      var st = $("istat-" + it._i);
+      if (st) { st.textContent = "say why in the note, then it saves"; st.className = "dstat err"; }
+      if (sel) box.querySelector("input[data-inote]").focus();
+      return;
+    }
+    saveItem(it, {key: it.key, call: call, note: note, reference: reference});
   }
   function decideCurrent(decision, advance) {
     var l = LINES[S.line];
@@ -1007,11 +1391,13 @@
     f.className = "sform";
     f.innerHTML = '<label>suggested value <input type="text" class="sv" autocomplete="off"></label>' +
       '<label>note <input type="text" class="sn" autocomplete="off" placeholder="why"></label>' +
+      '<label>source link <input type="url" class="sr" autocomplete="off" placeholder="https://… (where the value is stated)"></label>' +
       '<button type="submit" class="sv-save">save suggestion</button><button type="button" class="ghost sv-cancel">cancel (esc)</button>' +
       '<span class="faint sv-err" role="alert"></span>';
-    var sv = f.querySelector(".sv"), sn = f.querySelector(".sn"), err = f.querySelector(".sv-err");
+    var sv = f.querySelector(".sv"), sn = f.querySelector(".sn"), sr = f.querySelector(".sr"), err = f.querySelector(".sv-err");
     sv.value = prior ? (l.suggested_value || "") : suggestPrefill(l);
     sn.value = prior ? (l.decision_note || "") : "";
+    sr.value = prior ? (l.reference || "") : "";
     f.addEventListener("keydown", function (e) {
       if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); closeSuggest(); }
     });
@@ -1019,10 +1405,11 @@
     f.onsubmit = function (e) {
       e.preventDefault();
       if (blankv(sv.value) && blankv(sn.value)) { err.textContent = "give a suggested value or a note"; return; }
+      if (!blankv(sr.value) && !/^https?:\/\/\S+$/.test(sr.value.trim())) { err.textContent = "the source link must start with http:// or https://"; return; }
       var b = f.querySelector(".sv-save"); b.disabled = true;
       if (S.saving[l.key]) return;
       S.saving[l.key] = true;
-      Store.decide([{key: l.key, decision: "suggest", suggested_value: sv.value, note: sn.value}]).then(function (saved) {
+      Store.decide([{key: l.key, decision: "suggest", suggested_value: sv.value, note: sn.value, reference: sr.value.trim()}]).then(function (saved) {
         applySaved(saved);
         S.stay[l.key] = true;
         banner("");
@@ -1093,15 +1480,32 @@
     "<li><b>Color:</b> green means one fully checked source (a status change needs two independent publishers), yellow means one source or a partial match, and red means weak. " +
     "Green changes default to accept; the rest default to hold.</li>" +
     "<li><b>Plant-wide:</b> a plant-level field such as the location or the owner is repeated on every unit row, so one accept covers all of them.</li>" +
-    "<li><b>Items</b> tab: concerns the researcher raised, plants to watch, and owner or operator checks. They take a call and a note, but they never change a cell.</li>" +
+    "<li><b>Items</b> tab: questions the researcher raised, plants and projects to watch, and owners or operators to create. They take a call and a note, but they never change a cell.</li>" +
+    "<li><b>Checklist:</b> every change and item is sorted into one of the groups of the GOGPT QC/Country checklist (the \"checklist N\" chip; hover it for the rows it ticks). " +
+    "The <b>checklist</b> button over the left list shows the groups with how much of each is still open, and a click on a group filters the plants to it. A group with nothing open gets a check mark. " +
+    "The last group, <b>close-out</b>, is not a filter: it opens a panel with the end-of-state rows (units to mark updated or no changes, a draft for the state's summary row, the sheets and docs to update), all added up from the calls made so far.</li>" +
     "</ul>" +
     "<h4>your four calls</h4>" +
     "<ul>" +
     "<li><b>accept:</b> yes, this edit goes into the actions workbook.</li>" +
     "<li><b>hold:</b> not sure yet, leave it open.</li>" +
     "<li><b>reject:</b> no, do not apply this.</li>" +
-    "<li><b>suggest:</b> something else is right, so type the value or a note. The researcher looks at it again; it does not go into the workbook as is.</li>" +
+    "<li><b>suggest:</b> something else is right, so type the value or a note, and the source link if you have one. The researcher looks at it again; it does not go into the workbook as is.</li>" +
     "</ul>" +
+    "<p><b>Ask the PM:</b> a checkbox beside every change, every item and at the top of every plant. It sits beside your decision, so you can accept something and still flag it. " +
+    "Write the question in the box that appears. The <b>ask the PM</b> filter lists everything flagged; the evidence file gathers the questions in one place.</p>" +
+    "<h4>the four kinds of item</h4>" +
+    "<ul>" +
+    "<li><b>Question about existing data:</b> the researcher doubts something already in GEM: a value that could not be checked, two sources that disagree, a possible duplicate. " +
+    "Calls: <b>confirmed</b> (the question stands and goes into the evidence file), <b>dismissed</b> (closed), <b>needs research</b> (back to the researcher).</li>" +
+    "<li><b>Watch item, new to the tracker:</b> a plant or project GEM does not track at all yet. It did not clear the bar for a new row (too early, too small, or thin on evidence), so it is on a watchlist instead.</li>" +
+    "<li><b>Watch item, existing plant:</b> something to keep an eye on at a plant GEM already tracks: a permit in progress, an expansion, a retirement date to confirm. The plant's row is not changed by the item.</li>" +
+    "<li><b>New owner or operator to create:</b> a company that is not in GEM's entity list. Someone creates it in the GEM web form before the ownership edit can land.</li>" +
+    "</ul>" +
+    "<p><b>IRP chip</b> (United States only): the finding comes from a utility integrated resource plan. The chip says whether the unit's IRP box in the database is already ticked; \"IRP: tick the box\" means it is not. The close-out panel lists them under row 37.</p>" +
+    "<p><b>Watch items take four calls</b> instead of accept and reject: <b>incorporate into database</b> (it belongs in GEM now; the researcher writes it up as a full edit for the next batch), " +
+    "<b>hold</b> (keep watching), <b>send to possible updates</b> (park it on the possible-updates sheet for a later cycle), and <b>remove from watchlist</b> (drop it, with a note saying why). " +
+    "A candidate staged in two batches shows an \"also staged in\" chip: decide it once and give the copy the same call.</p>" +
     "<h4>what happens when you accept</h4>" +
     "<ol>" +
     "<li>Your click is saved at once in the decision log" + (STATIC ? (Store.status && Store.status().state === "synced" ?
@@ -1113,7 +1517,7 @@
     "</ol>" +
     "<h4>good to know</h4>" +
     "<ul>" +
-    "<li><b>Undo:</b> click the pressed button again, or press <kbd>u</kbd>. Nothing is deleted; the log just records the undo.</li>" +
+    "<li><b>Undo:</b> click the pressed button again, or press <kbd>u</kbd>. Nothing is deleted; the log just records the undo. Unticking <b>ask the PM</b> works the same way.</li>" +
     "<li>A grayed change is already decided. A bright change still needs you.</li>" +
     "<li>Press <kbd>?</kbd> for the keyboard shortcuts.</li>" +
     "</ul>";
@@ -1147,6 +1551,9 @@
   function onCardClick(e) {
     var pidEl = e.target.closest(".pid");
     if (pidEl) { copyText(pidEl.textContent, pidEl.textContent + " copied"); return; }
+    var cp = e.target.closest("button[data-copy]");
+    if (cp) { var what = cp.getAttribute("data-copy"); copyText((S.closeoutCopy || {})[what] || "", what === "draft" ? "draft copied" : "unit lists copied"); return; }
+    if (e.target.closest(".pmbox, .pmnote")) return;       // the ask-the-PM box saves on change, not on click
     if (e.target.closest("[data-showall]")) {
       e.preventDefault();
       var keepPipe = S.pipe;
@@ -1251,7 +1658,7 @@
 
   // ---- routing: #/L100000402511 plus an optional ?query with the filters that differ from the defaults ----
   var ROUTING = false;
-  var QK = {decision: "d", kind: "k", severity: "sev", tier: "t", dir: "dir", column: "col", q: "q", country: "c", state: "st", by: "by", status: "status"};
+  var QK = {decision: "d", kind: "k", group: "g", tier: "t", dir: "dir", column: "col", q: "q", country: "c", state: "st", by: "by", status: "status", pm: "pm"};
   function routeHash() {
     var p = D.plants[S.pipe], d = defaults(), q = [];
     Object.keys(QK).forEach(function (f) {
@@ -1292,7 +1699,7 @@
         });
       }
       syncControls();
-      S.pin = -1;
+      S.pin = -1; S.closeout = false;
       var pi = -1;
       if (pid) D.plants.forEach(function (p, i) { if (p.pid === pid) pi = i; });
       S.pipe = pi;
@@ -1344,6 +1751,10 @@
     document.querySelector(".top h1").dataset.tip = "built " + et(D.built) + " · " + D.dirs.length + " staging folder" + (D.dirs.length === 1 ? "" : "s") + ": " +
       D.dirs.map(dirLabel).join(", ") + (D.scope.quarter ? " · " + D.scope.quarter : "");
     initFilters();
+    var view = "plants";
+    try { view = localStorage.getItem("review-view") || "plants"; } catch (e) { /* ignore */ }
+    if (view === "checklist" && !(D.groups || []).length) view = "plants";
+    setView(view);
     applyRoute();
     var tDone = performance.now();
     window.ReviewApp.timing = {loadMs: Math.round(tLoaded - T0), renderMs: Math.round(tDone - tLoaded), totalMs: Math.round(tDone - T0),
@@ -1398,7 +1809,9 @@
   $("card").addEventListener("click", onCardClick);
   $("pipes").addEventListener("click", function (e) {
     var li = e.target.closest("li[data-i]");
-    if (li) selectPipe(+li.getAttribute("data-i"));
+    if (li) return selectPipe(+li.getAttribute("data-i"));
+    var g = e.target.closest("li[data-g]");
+    if (g) selectGroup(g.getAttribute("data-g"));
   });
   $("help-btn").onclick = showHelp;
   $("info-btn").onclick = showInfo;
@@ -1418,7 +1831,7 @@
   $("card").addEventListener("change", onItemChange);
   $("card").addEventListener("toggle", function (e) {
     var d = e.target;
-    if (d && d.classList && d.classList.contains("igroup")) S.igOpen[d.getAttribute("data-kind")] = d.open;
+    if (d && d.classList && d.classList.contains("igroup")) S.igOpen[d.getAttribute("data-g")] = d.open;
   }, true);
   Promise.all([Store.whoami(), Store.load()]).then(function (r) { boot(r[0], r[1]); })
     .catch(function (e) { banner("could not load the dataset: " + e.message); });

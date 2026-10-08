@@ -1,0 +1,177 @@
+{
+ "meta": {
+  "plant_id": "L100000408767",
+  "plant_name": "Dresden power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:30:51-04:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 6
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000412903",
+   "unit_name": "EVC1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing was checked for this unit, as the brief asked. The permit file says its nine engines are also to be replaced, which is covered in the questions."
+  },
+  {
+   "gem_unit_id": "G100000412902",
+   "unit_name": "EVC2",
+   "findings": {},
+   "not_found": [
+    "Retired year"
+   ],
+   "notes": "The permit file does not show a closure. The state directorate's first partial permit of 20 December 2023 allows the nine old engines of this block to be replaced by nine new ones in 2024 to 2026. So the 2024 date in GEM is a modernization, not a retirement, and the unit stays operating. The earlier Germany batch already found it still operating in the June 2026 regulator list."
+  },
+  {
+   "gem_unit_id": "G100001024025",
+   "unit_name": "EVC3",
+   "findings": {},
+   "not_found": [
+    "Capacity (MW)",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Latest Activity"
+   ],
+   "notes": "The register page for the EVC 3 permit shows the state directorate granted the first partial permit for building the plant on 14 April 2025. The official gazette of Saxony lists the notice of 21 May 2025. A first partial permit alone does not make a unit under construction, and I found no decision to build or a start date, so the status stays pre-construction. The permit file says 8 gas engines of the same type as in EVC 1 and EVC 2. That gives about 42 MW, which fits the 42.4 MW GEM holds, so capacity is not entered again. The project had a permit in April 2025, less than 18 months ago, and the 2027 start year in GEM is unchanged, so Latest Activity is left alone."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001024025",
+   "concern_type": "status",
+   "recommendation": "Keep pre-construction. Note the first partial building permit of 14 April 2025 in the status detail if wanted.",
+   "note": "The register page for the EVC 3 procedure gives 14 April 2025 as the decision date for the first partial permit. The Saxony official gazette issue 25 of 2025 lists the public notice dated 21 May 2025. The notice itself could not be opened because the register refused requests, so no capacity or start date was read from it.",
+   "refs": [
+    "https://www.uvp-verbund.de/trefferanzeige?docuuid=a56b4d10-6aa9-41ec-85b9-a7283d8661f9",
+    "https://www.recht-sachsen.de/samaa/saechsisches-amtsblatt-2025-25.html"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000412902",
+   "concern_type": "capacity",
+   "recommendation": "Keep 39.0 MW until the engine replacement is confirmed. After it, the permit documents give 47.5 MW electric for this block.",
+   "note": "The first partial permit of 20 December 2023 and the 2022 environmental report say the nine existing engines of 3.88 MW each, about 34.9 MW in total, are replaced by nine engines of 5.28 MW each, 47.5 MW in total, between 2024 and 2026. The 2023 notice gave January 2024 as the planned start. I found no report that the work is finished.",
+   "refs": [
+    "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/1d802955-e253-435f-8bf8-ecde4471591f/2023-12-20_Bescheid_TG_EVC2_geschw.pdf",
+    "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/1d802955-e253-435f-8bf8-ecde4471591f/UVP-B_EVC_1_3.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000412903",
+   "concern_type": "capacity",
+   "recommendation": "Keep as is. The permit file says EVC 1 gets the same engine replacement, from about 34.9 MW to 47.5 MW.",
+   "note": "The 2022 environmental report describes the EVC 1 work in the same way as EVC 2. The permit for EVC 1 is a separate procedure that was not in the collected files.",
+   "refs": [
+    "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/1d802955-e253-435f-8bf8-ecde4471591f/UVP-B_EVC_1_3.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001024025",
+   "concern_type": "equipment",
+   "recommendation": "Keep MTU 4000 Series for now. The environmental report names a different make as expected.",
+   "note": "The report names Bergen Engines type B36:45 L9AG1 as the expected maker for the replacement engines of EVC 1 and says the same engines are used in all three blocks. It says expected, not ordered. GEM lists MTU 4000 Series. The saved Wayback copy was used to check the report text.",
+   "refs": [
+    "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/1d802955-e253-435f-8bf8-ecde4471591f/UVP-B_EVC_1_3.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001024025",
+   "concern_type": "owner",
+   "recommendation": "Check the company name. GEM lists Energieversorgungscenter Dresden-Wilschdorf GmbH & Co KG.",
+   "note": "The permit files name Zweite Energieversorgungscenter Dresden-Wilschdorf GmbH & Co. KG as applicant. The register title for the EVC 3 permit names GlobalFoundries Dresden Module One LLC & Co. KG. Neither name was found in the entity records, so I did not change the owner.",
+   "refs": [
+    "https://www.uvp-verbund.de/trefferanzeige?docuuid=a56b4d10-6aa9-41ec-85b9-a7283d8661f9",
+    "https://www.uvp-verbund.de/trefferanzeige?docuuid=1d802955-e253-435f-8bf8-ecde4471591f"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Zweite Energieversorgungscenter Dresden-Wilschdorf GmbH & Co. KG",
+   "role": "owner",
+   "lookup_result": "not_found_in_local_data"
+  },
+  {
+   "entity_name": "GlobalFoundries Dresden Module One LLC & Co. KG",
+   "role": "owner",
+   "lookup_result": "not_found_in_local_data"
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=1d802955-e253-435f-8bf8-ecde4471591f",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Register page for the EVC 2 modernization, decision 20 December 2023."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/1d802955-e253-435f-8bf8-ecde4471591f/2023-12-20_Bescheid_TG_EVC2_geschw.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "First partial permit text. Engine replacement 2024 to 2026, 47.5 MW electric after."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/1d802955-e253-435f-8bf8-ecde4471591f/UVP-B_EVC_1_3.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Environmental report of 19 September 2022. Live address answered 429, value confirmed from a saved Internet Archive copy."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/1d802955-e253-435f-8bf8-ecde4471591f/Bekanntmachung%20Bescheid_1.TG%20EVC%202.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Notice of 4 January 2024 of the permit dated 20 December 2023."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=a56b4d10-6aa9-41ec-85b9-a7283d8661f9",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Register page for the EVC 3 first partial permit, decision 14 April 2025."
+  },
+  {
+   "url": "https://www.recht-sachsen.de/samaa/saechsisches-amtsblatt-2025-25.html",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Contents page of Saxony official gazette 25 of 2025 lists the EVC 3 permit notice dated 21 May 2025."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_sn/a56b4d10-6aa9-41ec-85b9-a7283d8661f9/Bekanntmachung%20Bescheid_1.TG%20EVC%203.docx.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "blocked",
+   "note": "Answered 429 Too Many Requests after 12 retries and a Chrome attempt. Not read."
+  },
+  {
+   "url": "https://www.lds.sachsen.de/bekanntmachung/?ID=19769&art_param=634",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "failed",
+   "note": "Page returned no content."
+  }
+ ]
+}

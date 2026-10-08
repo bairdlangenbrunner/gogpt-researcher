@@ -1,0 +1,96 @@
+{
+ "meta": {
+  "plant_id": "L100000101925",
+  "plant_name": "Bergkamen power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:20:10-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001020493",
+   "unit_name": "CC1, timepoint 1",
+   "findings": {},
+   "not_found": [
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "The Arnsberg district government notice of 4 October 2025 confirms a planned combined cycle plant that is ready for hydrogen, with operation expected by 31 December 2030. That matches the start year GEM already holds, so it is not entered again. The notice names a gas turbine and a steam turbine but no maker or model, and it gives only thermal input, so capacity stays as it is. The application is for a preliminary decision, which is not a construction permit, so the status stays pre-construction. The project is moving, so Latest Activity is left alone."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001020493",
+   "concern_type": "owner",
+   "recommendation": "Check whether Iqony GmbH is the same company as STEAG GmbH, the owner GEM lists, before changing the owner.",
+   "note": "The application of 17 July 2025 for a preliminary decision was filed by Iqony GmbH, Rüttenscheider Straße 1-3, Essen. GEM lists STEAG GmbH as owner. My search of the entity records found no entry named Iqony GmbH. I did not change the owner because an application is not a completed ownership change.",
+   "refs": [
+    "https://www.bra.nrw.de/system/files/media/document/file/2025_40_amtsblatt_bezirksregierung_arnsberg_abo.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001020493",
+   "concern_type": "capacity",
+   "recommendation": "Keep 880 MW. The notice gives a thermal input of 1,392 MW under standard conditions, which is not electric capacity.",
+   "note": "The notice describes the plant as ready for hydrogen, with up to 4,000 operating hours a year. It gives no electric output in MW.",
+   "refs": [
+    "https://www.bra.nrw.de/system/files/media/document/file/2025_40_amtsblatt_bezirksregierung_arnsberg_abo.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001020493",
+   "concern_type": "status",
+   "recommendation": "No change. The register page lists the application with public display from 13 October to 12 November 2025 and no decision date.",
+   "note": "No preliminary decision or permit was found in the register page. A separate water discharge application to the Lippe river was filed on the same date. The page of the Arnsberg district government itself refused the fetcher, so its text was confirmed from a saved copy.",
+   "refs": [
+    "https://www.uvp-verbund.de/trefferanzeige?docuuid=833afc7b-b23b-4338-9df3-cbf0592c3434"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Iqony GmbH",
+   "role": "owner",
+   "lookup_result": "not_found_in_local_data"
+  },
+  {
+   "entity_name": "STEAG GmbH",
+   "role": "owner",
+   "lookup_result": "found, parent entity E100001010765"
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.bra.nrw.de/system/files/media/document/file/2025_40_amtsblatt_bezirksregierung_arnsberg_abo.pdf",
+   "used_for": [
+    "Start year",
+    "Owner(s)",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Official gazette 40 of 2025, notice 564. Operation by 31 December 2030, applicant Iqony GmbH."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=833afc7b-b23b-4338-9df3-cbf0592c3434",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Register page for the application. Public display 13 October to 12 November 2025. No decision date."
+  },
+  {
+   "url": "https://www.bra.nrw.de/bekanntmachungen/antrag-der-firma-iqony-gmbh-essen",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Live page refused the fetcher with HTTP 403 after a browser attempt. The verifier read a saved copy in the Internet Archive from 11 November 2025. The live address stays the citation."
+  }
+ ]
+}

@@ -1,0 +1,105 @@
+{
+ "meta": {
+  "plant_id": "L100000101898",
+  "plant_name": "Hastedt power station",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:30:00-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000412886",
+   "unit_name": "CC1",
+   "findings": {
+    "Owner(s)": {
+     "value": "SWB Erzeugung AG & Co KG [100%]",
+     "refs": [
+      "https://www.uvp-verbund.de/documents-ige-ng/igc_hb/43E46C3F-F2A3-493A-9520-6DD9474EE0F1/Genehmigung%20Erdgas-Blockheizkraftwerk.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_hb/43E46C3F-F2A3-493A-9520-6DD9474EE0F1/Genehmigung%20Erdgas-Blockheizkraftwerk.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Bremen state inspectorate granted the permit on 1 July 2020. It is addressed to swb Erzeugung AG & Co. KG, Theodor-Heuss-Allee 20, Bremen, as the applicant for the gas engine heat and power plant. This supports the owner name. It does not state the ownership share, so the 100 percent stays as recorded."
+    },
+    "City": {
+     "value": "Bremen",
+     "refs": [
+      "https://www.uvp-verbund.de/documents-ige-ng/igc_hb/43E46C3F-F2A3-493A-9520-6DD9474EE0F1/Genehmigung%20Erdgas-Blockheizkraftwerk.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_hb/43E46C3F-F2A3-493A-9520-6DD9474EE0F1/Genehmigung%20Erdgas-Blockheizkraftwerk.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The permit places the plant at Hastedter Osterdeich 255, 28207 Bremen, on the site of the Hastedt heat and power plant. This matches the stored city."
+    }
+   },
+   "not_found": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "Status",
+    "Capacity (MW)",
+    "Start year",
+    "Latest Activity"
+   ],
+   "notes": "The permit gives the street address but no coordinates, so the stored coordinates could not be checked. The permit is from July 2020 and describes up to 10 gas engines with about 100 MW net electric output. The unit is already operating in GEM and the earlier batch covers the commissioning, so no status or start year is proposed. Latest Activity is not filled for an operating unit."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000412886",
+   "concern_type": "capacity",
+   "recommendation": "Check the capacity of 105 MW against the permit and the plant owner's figures.",
+   "note": "The 2020 permit states a net electric output of about 100 MW. The earlier batch found reports of 104 MW in total. GEM records 105 MW from 3 engines of 35 MW each. The permit describes up to 10 gas engines, and the earlier batch found nine engines. The engine count and the per-engine figure in GEM look wrong. I did not change them because the permit gives a plan and not the built plant.",
+   "refs": [
+    "https://www.uvp-verbund.de/documents-ige-ng/igc_hb/43E46C3F-F2A3-493A-9520-6DD9474EE0F1/Genehmigung%20Erdgas-Blockheizkraftwerk.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "SWB Erzeugung AG & Co KG",
+   "role": "owner",
+   "lookup_result": "Entity found under that name in the earlier batch, appears on 7 units in Germany. Reuse the existing entity."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.uvp-verbund.de/documents-ige-ng/igc_hb/43E46C3F-F2A3-493A-9520-6DD9474EE0F1/Genehmigung%20Erdgas-Blockheizkraftwerk.pdf",
+   "used_for": [
+    "Owner(s)",
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Permit of 1 July 2020 from the Bremen inspectorate. Read from the local cache by scanned-text recognition. Names swb Erzeugung as applicant and gives the street address."
+  },
+  {
+   "url": "https://www.uvp-verbund.de/trefferanzeige?docuuid=43E46C3F-F2A3-493A-9520-6DD9474EE0F1",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "Procedure page; dates read from the saved summary: public display 10 January to 10 February 2020, hearing 24 March 2020, decision 1 July 2020."
+  }
+ ]
+}

@@ -8,7 +8,7 @@ Reads ONLY staged_{updates,qa,monitor,entity,newunits,newplants}.json in each st
 (never the shards, briefs, comparison.json or the blind copies). Writes one JSON file:
 
     {"built", "scope": {"country", "states", "quarter"}, "dirs": [label, ...], "columns": [...],
-     "plants": [{"pid", "name", "country", "state", "dir", "units": [{"gem_unit_id", "unit_name"}],
+     "plants": [{"pid", "name", "country", "state", "dir", "units": [{"gem_unit_id", "unit_name", "irp_box"}],
                  "lines": [...], "items": [...]}]}
 
 One card per GEM plant ID (a statewide pseudo-card for records whose plant ID is the state
@@ -17,6 +17,14 @@ per updates/newunits/newplants record. An ITEM is a note that never writes a cel
 concern, a monitor note, an entity lookup. Keys are `<dir label>::<record_id>`, the dir label
 is repo-relative (`batches/us-md/staging`), and record_id is the stable id written by
 scripts/assemble_state.py, so decisions survive a rebuild.
+
+Every line and item carries `group` (a QC/Country checklist group id, review_app/checklist.py
+GROUPS, or "other"), `group_label` and `checks` (the checklist rows it ticks), and the dataset
+carries `groups` (the groups for this scope with counts and rows) and `us`. Watch items
+(monitor lane) carry `monitor_kind`: `existing_plant` items sit on their plant's card,
+`new_to_tracker` items get a candidate card keyed by the plant name with any parenthetical
+stripped, so the same candidate staged in two folders shares one card (the later item is
+marked `duplicate_of` the first).
 
 Line kinds: fill (blank cell gets a value), change (a value is replaced), reverified (the
 current value was checked and stands; only the Data Source link is new), delete (a value is
@@ -42,12 +50,13 @@ from zoneinfo import ZoneInfo
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-for p in (ROOT / "scripts", HERE):
+for p in (ROOT / "scripts", HERE, ROOT):
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
 
 import paths  # noqa: E402
 from build_review_package import ref_col_for  # noqa: E402
+from review_app.checklist import MONITOR_KINDS, summarize, tag  # noqa: E402
 
 ET = ZoneInfo("America/New_York")
 LINE_LANES = ("updates", "newunits", "newplants")
@@ -55,6 +64,64 @@ ITEM_LANES = {"qa": "concern", "monitor": "monitor", "entity": "entity"}
 # scope-wide items carry the batch tag as their plant id: us-md for a state,
 # a country slug such as germany or czech-republic for a country batch
 _STATE_PID = re.compile(r"^(us-[a-z]{2}|[a-z][a-z-]*)$")
+
+
+def closeout_links(pointers=None):
+    """The GEM sheets and docs the close-out panel points at, read from the link hub
+    docs/reference/sop_pointers.md so the URLs live in one place. Each entry is
+    {label, url}; a document the hub does not list is left out (the panel then names
+    it without a link). Tab rows ("↳ name | ... | `gid=N`") become tab links on the
+    Update sheet."""
+    path = Path(pointers) if pointers else ROOT / "docs" / "reference" / "sop_pointers.md"
+    if not path.exists():
+        return {}
+    url_re = re.compile(r"https?://[^\s|`)]+")
+    gid_re = re.compile(r"`gid=(\d+)`")
+    sheet, tabs, docs = "", {}, {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line.startswith("|"):
+            continue
+        cells = [c.strip() for c in line.strip("|").split("|")]
+        if len(cells) < 3:
+            continue
+        name = cells[0]
+        if "Update V2" in name and not sheet:
+            m = url_re.search(cells[2])
+            sheet = m.group(0) if m else ""
+        elif name.startswith("↳"):
+            m = gid_re.search(cells[2])
+            if m:
+                tabs[name.lstrip("↳ ").strip()] = m.group(1)
+        else:
+            m = url_re.search(cells[2])
+            if m:
+                docs[name] = m.group(0)
+
+    def tab(key, label, *needles):
+        for t, gid in tabs.items():
+            if all(n.lower() in t.lower() for n in needles) and sheet:
+                out[key] = {"label": label, "url": f"{sheet}/edit?gid={gid}#gid={gid}"}
+                return
+
+    def doc(key, label, *needles):
+        for t, url in docs.items():
+            if all(n.lower() in t.lower() for n in needles):
+                out[key] = {"label": label, "url": url}
+                return
+
+    out = {}
+    if sheet:
+        out["update_sheet"] = {"label": "Q4 2026 GOGPT Update V2 sheet", "url": sheet}
+    tab("assignments", "Researcher Country Assignments tab", "Researcher Country Assignments")
+    tab("checklist", "QC/Country checklist tab", "QC/Country checklist")
+    tab("us_research", "United States research tab", "United States research")
+    tab("us_irps", "US IRPs tab", "US IRPs")
+    tab("country_tips", "Country tips trends tab", "Country tips")
+    doc("possible_updates", "GEM trackers possible updates sheet", "possible updates")
+    doc("data_sources", "Gas and oil power plant data sources by country doc", "data sources", "by country")
+    doc("europe_doc", "Europe Workflow Map doc", "Europe Workflow")
+    doc("us_guide", "GOGPT United States Data/Research Guide", "Data/Research Guide")
+    return out
 
 
 def rel(path):
@@ -127,7 +194,23 @@ def verification_map(r):
     return out
 
 
-def update_line(r, label, export_rows):
+def candidate_key(name):
+    """Slug for a plant GEM does not track yet, from its name with any parenthetical dropped:
+    "Gowanus and Narrows repowering (AlphaGen)" and "... (Alpha Generation)" are one candidate."""
+    base = re.sub(r"\s*\([^)]*\)", "", str(name or "")).lower()
+    return re.sub(r"[^a-z0-9]+", "-", base).strip("-")
+
+
+def tagged(obj, r, lane, unit_row=None, us=True):
+    """Set group / group_label / checks on a line or item from the staged record."""
+    t = tag(r, lane, unit_row=unit_row, us=us)
+    obj["group"] = t["group"]
+    obj["group_label"] = t["group_label"]
+    obj["checks"] = t["checks"]
+    return obj
+
+
+def update_line(r, label, export_rows, us=True):
     kind = line_kind(r)
     fields = dict(r.get("fields") or {})
     cols = list(fields)
@@ -163,15 +246,18 @@ def update_line(r, label, export_rows):
         "publishers": len({host_of(u) for u in proposed_refs if host_of(u)}),
         "default": "accept" if tier_of(r) == "high" else "hold",
         "decision": None, "reviewed": False,
+        "irp": bool(r.get("irp")),
     }
-    return line
+    # a plant-level record may have no unit row of its own: any sibling's row tells the status
+    unit_row = row or next((export_rows[s] for s in r.get("sibling_unit_ids") or [] if s in export_rows), {})
+    return tagged(line, r, "updates", unit_row, us)
 
 
 def _refs_by_col(refs):
     return {k: (v if isinstance(v, list) else split_urls(v)) for k, v in (refs or {}).items()}
 
 
-def new_row_line(r, label, lane):
+def new_row_line(r, label, lane, us=True):
     """One line per new-row record. A newplants record carries its unit rows nested under
     `units` (plant-level fields on the record, per-unit fields on each unit); the whole plant is
     one decision, keyed on the record's id, so the units ride along on the line as `units` and
@@ -190,7 +276,7 @@ def new_row_line(r, label, lane):
         for u in (urls if isinstance(urls, list) else split_urls(urls)):
             if u not in proposed_refs:
                 proposed_refs.append(u)
-    return {
+    return tagged({
         "key": f"{label}::{r['record_id']}", "dir": label, "record_id": r["record_id"],
         "kind": "new_row", "reverified": False, "severity": "major", "lane": lane,
         "column": "", "columns": list(fields), "ref_col": "",
@@ -206,10 +292,19 @@ def new_row_line(r, label, lane):
         "sibling_unit_ids": [], "sibling_current": {},
         "publishers": len({host_of(u) for u in proposed_refs if host_of(u)}),
         "default": "hold", "decision": None, "reviewed": False,
-    }
+        "irp": bool(r.get("irp")),
+    }, r, lane, None, us)
 
 
-def item(r, label, kind):
+def monitor_kind(r):
+    """new_to_tracker | existing_plant, from the record's own field or its GEM plant id."""
+    k = r.get("monitor_kind")
+    if k in MONITOR_KINDS:
+        return k
+    return "existing_plant" if str(r.get("gem_plant_id") or "").strip() else "new_to_tracker"
+
+
+def item(r, label, kind, unit_row=None, us=True):
     refs = r.get("refs") or {}
     links = []
     for v in refs.values():
@@ -222,26 +317,39 @@ def item(r, label, kind):
         "links": links, "verifications": verification_map(r),
         "notes": r.get("researcher_notes") or "",
         "call": None, "call_note": None, "reviewed": False,
+        "irp": bool(r.get("irp")),
     }
     if kind == "concern":
         it["concern_type"] = r.get("concern_type") or ""
+        it["concern_type_raw"] = r.get("concern_type_raw") or ""
         it["recommendation"] = r.get("recommendation") or ""
     elif kind == "monitor":
-        it["item"] = r.get("item") or ""
+        # older records kept the one-line reason under `item`; the page reads `reason`
+        it["monitor_kind"] = monitor_kind(r)
+        it["plant_name"] = r.get("plant_name") or ""
+        it["reason"] = r.get("monitor_reason") or r.get("item") or ""
         it["recheck_by"] = r.get("recheck_by") or ""
-        it["reason"] = r.get("monitor_reason") or ""
+        fields = r.get("fields") or {}
+        it["capacity_mw"] = str(fields.get("Capacity (MW)") or r.get("capacity_mw") or "")
+        it["status"] = str(fields.get("Status") or r.get("status") or "")
+        it["tier"] = tier_of(r)
     elif kind == "entity":
         it["entity_name"] = r.get("entity_name") or ""
         it["role"] = r.get("role") or ""
         it["lookup_result"] = r.get("lookup_result") or ""
         it["entity_country"] = r.get("entity_country") or ""
-    return it
+    return tagged(it, r, {"concern": "qa", "monitor": "monitor", "entity": "entity"}[kind], unit_row, us)
 
 
 def build(dirs, export_csv=None):
     plants = {}
     labels, states, quarters, country = [], [], [], ""
     columns = []
+    candidates = {}      # candidate slug -> the first watch item staged for it (for duplicate marks)
+    # the scope's country decides whether the US-only checklist group exists
+    metas = [m for d in dirs for lane in LINE_LANES + tuple(ITEM_LANES) for m in [load_lane(d, lane)[0]] if m]
+    first_country = next((m.get("scope", {}).get("country") for m in metas if m.get("scope", {}).get("country")), "")
+    us = (first_country or "United States") == "United States"
     for d in dirs:
         d = Path(d)
         if not d.is_dir():
@@ -262,38 +370,64 @@ def build(dirs, export_csv=None):
         header, rows = load_export(csv_path, uids)
         if header and not columns:
             columns = header
-        if not rows:
+        if uids and not rows:
+            # a discovery folder holds only plants GEM does not track yet, so
+            # it has no unit ids to look up and no warning to give
             print(f"review_data: export csv not read ({csv_path}); current Data Source cells unknown",
                   file=sys.stderr)
 
         def card(r):
             pid = r.get("gem_plant_id") or ""
+            key = (label, pid)
             if not pid:
-                # a plant GEM does not track yet (a discovery candidate on the monitor list): one
-                # card per candidate name, with a stable "new:" id so links and decisions hold
-                pid = "new:" + (re.sub(r"[^a-z0-9]+", "-", (r.get("plant_name") or "").lower()).strip("-") or r["record_id"])
-            p = plants.get((label, pid))
+                # a plant GEM does not track yet (a discovery candidate, a new plant row): one card
+                # per candidate name across every folder, with a stable "new:" id so links and
+                # decisions hold and the same candidate staged twice lands on one card
+                pid = "new:" + (candidate_key(r.get("plant_name")) or r["record_id"])
+                key = ("*", pid)
+            p = plants.get(key)
             if p is None:
-                p = plants[(label, pid)] = {
+                p = plants[key] = {
                     "pid": pid, "name": r.get("plant_name") or pid, "country": r.get("country") or country,
                     "state": state, "dir": label, "statewide": bool(_STATE_PID.match(pid)),
                     "units": [], "lines": [], "items": []}
             uid = r.get("gem_unit_id")
             if uid and uid not in {u["gem_unit_id"] for u in p["units"]}:
-                p["units"].append({"gem_unit_id": uid, "unit_name": r.get("unit_name") or ""})
+                # irp_box: the database's IRP checkbox as the export shows it (yes / no / "")
+                box = str((rows.get(uid) or {}).get("IRP") or "").strip().lower()
+                p["units"].append({"gem_unit_id": uid, "unit_name": r.get("unit_name") or "", "irp_box": box})
             return p
+
+        def unit_row_for(r):
+            row = rows.get(r.get("gem_unit_id") or "")
+            if row:
+                return row
+            for s in r.get("sibling_unit_ids") or []:
+                if s in rows:
+                    return rows[s]
+            if r.get("gem_plant_id"):
+                return next((x for x in rows.values() if x.get("GEM location ID") == r["gem_plant_id"]), {})
+            return {}
 
         for lane in LINE_LANES:
             for r in lanes[lane][1]:
                 if not r.get("record_id"):
                     raise SystemExit(f"{d}/staged_{lane}.json: a record has no record_id (rebuild with assemble_state.py)")
                 p = card(r)
-                p["lines"].append(update_line(r, label, rows) if lane == "updates" else new_row_line(r, label, lane))
+                p["lines"].append(update_line(r, label, rows, us) if lane == "updates" else new_row_line(r, label, lane, us))
         for lane, kind in ITEM_LANES.items():
             for r in lanes[lane][1]:
                 if not r.get("record_id"):
                     raise SystemExit(f"{d}/staged_{lane}.json: a record has no record_id (rebuild with assemble_state.py)")
-                card(r)["items"].append(item(r, label, kind))
+                it = item(r, label, kind, unit_row_for(r), us)
+                p = card(r)
+                if kind == "monitor" and it["monitor_kind"] == "new_to_tracker":
+                    first = candidates.get(p["pid"])
+                    if first is None:
+                        candidates[p["pid"]] = it
+                    else:
+                        it["duplicate_of"] = first["key"]
+                p["items"].append(it)
 
     out = []
     for p in plants.values():
@@ -302,8 +436,10 @@ def build(dirs, export_csv=None):
         p["units"].sort(key=lambda u: (u["unit_name"], u["gem_unit_id"]))
         out.append(p)
     out.sort(key=lambda p: (p["state"], p["statewide"], p["name"].lower(), p["pid"]))
+    tags = [o for p in out for o in p["lines"] + p["items"]]
     return {"built": datetime.now(ET).isoformat(timespec="seconds"),
             "scope": {"country": country or "United States", "states": states, "quarter": ", ".join(quarters)},
+            "us": us, "groups": summarize(tags, us), "links": closeout_links(),
             "dirs": labels, "columns": columns, "plants": out}
 
 

@@ -1,0 +1,94 @@
+{
+ "meta": {
+  "plant_id": "L100001062418",
+  "plant_name": "KMW Gas Engine Power Plant",
+  "country": "Germany",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-06T11:19:14-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001071690",
+   "unit_name": "1",
+   "findings": {
+    "Status Detail": {
+     "value": "The Struktur- und Genehmigungsdirektion Sued issued the emissions permit for the twelve gas engines on 20 July 2026. KMW plans completion in December 2027. The plant supplies emergency power to the Green Rocks data center and feeds the grid about 2,000 hours a year.",
+     "refs": [
+      "https://www.kmw-ag.de/genehmigung-motorenkraftwerk/",
+      "https://merkurist.de/mainz/energieversorgung-gruenes-licht-fuer-neues-kraftwerk-auf-der-ingelheimer-aue-in-mainz_v46I"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.kmw-ag.de/genehmigung-motorenkraftwerk/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://merkurist.de/mainz/energieversorgung-gruenes-licht-fuer-neues-kraftwerk-auf-der-ingelheimer-aue-in-mainz_v46I",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "A KMW press release and a Merkurist news article both report the permit. The permit is a full emissions permit. A permit alone does not make the unit under construction, and I found no report that building has started, so the status stays pre-construction."
+    }
+   },
+   "not_found": [
+    "Owner(s)"
+   ],
+   "notes": "The earlier findings stopped at the permit application and public participation of February 2026. The permit has since been granted on 20 July 2026. Capacity of 54 MW, engine maker, and start of operation in 2027 are confirmed by the earlier findings, and KMW now says completion is planned for December 2027. The register summary for this plant pointed to an unrelated hydrogen project of another company, so it was not used. Latest Activity stays blank because the project is moving."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001071690",
+   "concern_type": "captive",
+   "recommendation": "Decide whether the data center use makes this a captive plant.",
+   "note": "KMW says the main job of the plant is emergency power for the Green Rocks data center, and that it also feeds the grid about 2,000 hours a year. I left the captive fields alone.",
+   "refs": [
+    "https://www.kmw-ag.de/genehmigung-motorenkraftwerk/"
+   ]
+  }
+ ],
+ "monitor": [
+  {
+   "gem_unit_id": "G100001071690",
+   "note": "Watch for the start of construction and for a firm commissioning date.",
+   "recheck_by": "2027-01-15"
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.kmw-ag.de/genehmigung-motorenkraftwerk/",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Found 20.07.2026, Motorenkraftwerk and Dezember 2027."
+  },
+  {
+   "url": "https://merkurist.de/mainz/energieversorgung-gruenes-licht-fuer-neues-kraftwerk-auf-der-ingelheimer-aue-in-mainz_v46I",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Found Genehmigung, 54 Megawatt and Dezember 2027."
+  },
+  {
+   "url": "https://www.kmw-ag.de/zukunftsplaene/motorenkraftwerk/",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Confirms 54 MW and 12 engines. Nothing new."
+  }
+ ]
+}

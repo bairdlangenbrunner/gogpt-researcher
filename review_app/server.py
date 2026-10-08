@@ -16,8 +16,10 @@ unreleased). Without --no-build it first runs review_data.main for the scopes gi
                            -> {"saved": [record, ...]}; reviewer and ts are stamped here, never
                            taken from the client. Appends to <dir>/review_log.jsonl and
                            regenerates <dir>/review_decisions.json. 400 = refused, nothing written.
-    POST /api/item         [{key, call, note?} | {key, undo: true}, ...] -> {"saved": [...]};
+    POST /api/item         [{key, call, reference?, note?} | {key, undo: true}, ...] -> {"saved": [...]};
                            the call must be in store.ITEM_CALLS[kind]; same sidecars.
+    POST /api/flag         [{key, on, note?} | {pid, dir, on, note?}, ...] -> {"saved": [...]};
+                           ask-the-PM flags on a line, item or whole plant; same sidecars.
 
 The only things this server ever writes are the two decision sidecars inside the staging dirs
 named by the dataset. It never touches the GEM database, the staged_*.json files or the
@@ -95,6 +97,10 @@ class App:
     def item(self, records):
         with self.lock:
             return store.record_items(records, self.data, self.reviewer, self.dirs())
+
+    def flag(self, records):
+        with self.lock:
+            return store.record_flags(records, self.data, self.reviewer, self.dirs())
 
     def decisions(self, label):
         d = self.dirs().get(label)
@@ -175,14 +181,15 @@ def make_handler(app):
             if not self._host_ok():
                 return self._json({"error": "bad host"}, HTTPStatus.FORBIDDEN)
             path = unquote(self.path.split("?", 1)[0])
-            if path in ("/api/decide", "/api/item"):
+            routes = {"/api/decide": app.decide, "/api/item": app.item, "/api/flag": app.flag}
+            if path in routes:
                 try:
                     n = int(self.headers.get("Content-Length") or 0)
                     body = json.loads(self.rfile.read(n).decode("utf-8") or "null")
                 except (ValueError, UnicodeDecodeError):
                     return self._json({"error": "body is not JSON"}, HTTPStatus.BAD_REQUEST)
                 try:
-                    return self._json({"saved": (app.decide if path == "/api/decide" else app.item)(body)})
+                    return self._json({"saved": routes[path](body)})
                 except store.Invalid as e:
                     return self._json({"error": str(e)}, HTTPStatus.BAD_REQUEST)
                 except Exception as e:     # a failed write (the log was rolled back): say so loudly
