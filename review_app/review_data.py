@@ -55,7 +55,7 @@ for p in (ROOT / "scripts", HERE, ROOT):
         sys.path.insert(0, str(p))
 
 import paths  # noqa: E402
-from build_review_package import ref_col_for  # noqa: E402
+from build_review_package import URL_RE, ref_col_for  # noqa: E402
 from review_app.checklist import MONITOR_KINDS, summarize, tag  # noqa: E402
 
 ET = ZoneInfo("America/New_York")
@@ -224,7 +224,11 @@ def update_line(r, label, export_rows, us=True):
                 proposed_refs.append(u)
     uid = r.get("gem_unit_id") or ""
     row = export_rows.get(uid) or {}
-    current_ref = split_urls(row.get(ref_col)) if row and ref_col in row else None
+    if ref_col and ref_col == column:
+        # Status Detail carries its links in its own text
+        current_ref = URL_RE.findall(row.get(column) or "") if row else None
+    else:
+        current_ref = split_urls(row.get(ref_col)) if row and ref_col in row else None
     current = dict(r.get("current") or {})
     for c in cols:
         if c not in current and row:

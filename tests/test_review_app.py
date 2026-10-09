@@ -282,7 +282,7 @@ def test_server_round_trip(data, staging, tmp_path):
             return e.code, json.loads(e.read().decode())
     try:
         st, who = call("/api/whoami")
-        assert st == 200 and who == {"reviewer": "BL", "caps": {"decide": True}}
+        assert st == 200 and who == {"reviewer": "BL", "caps": {"decide": True}, "store": False}
         key = f"{staging}::L1:G1:status"
         st, body = call("/api/decide", [{"key": key, "decision": "hold"}])
         assert st == 200 and body["saved"][0]["decision"] == "hold" and body["saved"][0]["reviewer"] == "BL"
@@ -514,17 +514,20 @@ def test_static_page_renders(data):
     assert "<style>" in html and 'href="style.css"' not in html and 'src="app.js"' not in html
     assert "window.REVIEW_STATIC = " in html and "window.StaticStore" in html
     cfg = json.loads(html.split("window.REVIEW_STATIC = ", 1)[1].split(";</script>", 1)[0].replace("<\\/", "</"))
-    assert cfg["reviewer"] == "AL" and len(cfg["data"]["plants"]) == len(data["plants"])
+    assert cfg["reviewer"] == "AL" and cfg["tracker"]["name"] == "gogpt" and cfg["tracker"]["cards_key"] == "plants"
+    # the dataset rides in a gzip blob with the packed key index (the pipelines form, shared by every tracker)
+    blob = build_static.core.read_blob(html)
+    assert len(blob["data"]["plants"]) == len(data["plants"]) and blob["index"]["v"] == 2
     assert 'id="export-btn"' in html
 
 
 @pytest.mark.skipif(not NODE, reason="node not installed")
 def test_static_store_round_trip(data, staging, tmp_path):
     cfg = tmp_path / "cfg.json"
-    cfg.write_text(json.dumps({"reviewer": "AL", "data": data}))
+    cfg.write_text(json.dumps({"reviewer": "AL", "data": data, "tracker": store.CONFIG.page_block()}))
     driver = tmp_path / "drive.js"
     driver.write_text(NODE_DRIVER)
-    r = subprocess.run([NODE, str(driver), str(cfg), str(ROOT / "review_app" / "web" / "static_store.js")],
+    r = subprocess.run([NODE, str(driver), str(cfg), str(ROOT.parent / "gem-review-app" / "review_core" / "web" / "static_store.js")],
                        capture_output=True, text=True, check=True)
     out = json.loads(r.stdout)
     assert out["who"] == "AL" and out["caps"] == {"decide": True} and out["before"] is None
@@ -541,40 +544,41 @@ def test_static_store_round_trip(data, staging, tmp_path):
     assert log[2]["undecided"] is True and log[2]["decision"] == "hold"      # an undo keeps the line's default
     assert log[5]["key"] == "pm::" + log[0]["key"] and log[6]["key"].endswith("::plant:L1") and log[6]["record_id"] is None
     assert all(r["reviewer"] == "AL" and r["ts"][:4] == "2026" and r["dir"] == str(staging) for r in log)
-    # the download goes through import_log.py into the staging dir's log, exactly like the server
+    assert len({r["id"] for r in log}) == 7 and all(len(r["id"]) == 36 for r in log)     # a uuid on every record
+    # the download goes through import_log.py: the decision store first, then the staging dir's log
+    from test_review_ledger import FakeStore, AL  # noqa: E402
     f = tmp_path / "review_log_us-md_AL.jsonl"
     f.write_text("".join(json.dumps(r) + "\n" for r in log))
-    import_log.main([str(f)])
+    docs = import_log.read_docs(f)
+    csv = tmp_path / "export.csv"
+    ds, dirs = import_log.dataset([staging], csv)
+    pl = import_log.plan(docs, ds, dirs, emails={"AL": AL})
+    assert len(pl["new"]) == 7 and pl["dup"] == 0
+    fake = FakeStore()
+    saved = import_log.write(pl, ds, dirs, cfg={"store_sheet_id": "x"}, gws=fake)
+    assert len(saved) == 7 and len(fake.records()) == 7 and all(r["reviewer"] == AL for r in fake.records())
     assert len(store.read_log(staging)) == 7 and (staging / store.DERIVED_NAME).exists()
     decisions = brp.load_decisions(staging)
     assert decisions["L1:G1:start-year"]["decision"] == "accept" and decisions["L1:G1:status"]["undecided"] is True
     assert decisions["us-md:plant:monitor-1"]["call"] == "add_to_database"
     assert set(brp.load_flags(staging)) == {"L1:G1:start-year", "L1"}
     # importing the same download again appends nothing
-    planned = import_log.plan(log)
-    assert [len(v[1]) for v in planned.values()] == [0] and [len(v[2]) for v in planned.values()] == [7]
-    # a bad watch call or a malformed flag stops the import
-    with pytest.raises(SystemExit, match="not one of"):
-        import_log.plan([dict(log[4], call="confirmed", ts="2026-10-07T10:00:00-04:00")])
-    with pytest.raises(SystemExit, match="flag"):
-        import_log.plan([dict(log[5], key=log[0]["key"])])
-    # a record the batch no longer has stops the import before anything is written
-    bad = dict(log[0], record_id="L1:G1:gone", key=f"{staging}::L1:G1:gone")
-    with pytest.raises(SystemExit, match="not in the staged lane files"):
-        import_log.plan([bad])
+    ds2, dirs2 = import_log.dataset([staging], csv)
+    pl2 = import_log.plan(docs, ds2, dirs2, emails={"AL": AL})
+    assert pl2["new"] == [] and pl2["dup"] == 7
 
 
 @pytest.mark.skipif(not NODE, reason="node not installed")
 def test_static_store_carries_calls_over_a_rebuild(data, staging, tmp_path):
     """A rebuilt page starts from the calls this browser made on an earlier build, minus dropped records."""
     cfg = tmp_path / "cfg.json"
-    cfg.write_text(json.dumps({"reviewer": "AL", "data": data}))
+    cfg.write_text(json.dumps({"reviewer": "AL", "data": data, "tracker": store.CONFIG.page_block()}))
     driver = tmp_path / "drive.js"
     driver.write_text(NODE_DRIVER)
     rec = {"dir": str(staging), "decision": "reject", "reviewer": "AL", "ts": "2026-10-03T10:00:00-04:00", "undecided": False}
     earlier = [dict(rec, key=f"{staging}::L1:G1:start-year", record_id="L1:G1:start-year"),
                dict(rec, key=f"{staging}::L1:G1:gone", record_id="L1:G1:gone")]
-    r = subprocess.run([NODE, str(driver), str(cfg), str(ROOT / "review_app" / "web" / "static_store.js")],
+    r = subprocess.run([NODE, str(driver), str(cfg), str(ROOT.parent / "gem-review-app" / "review_core" / "web" / "static_store.js")],
                        capture_output=True, text=True, check=True, env=dict(os.environ, EARLIER_LOG=json.dumps(earlier)))
     out = json.loads(r.stdout)
     assert out["before"] == "reject"                                   # the earlier call shows on the rebuilt page

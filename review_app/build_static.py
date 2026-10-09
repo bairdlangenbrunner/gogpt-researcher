@@ -4,58 +4,44 @@ Build the review app as ONE html file to send to a colleague who does not run th
     python review_app/build_static.py --scope us-md --scope us-ny --reviewer "Amalia Llano"
         [--export-csv PATH] [--out PATH]
 
-The file holds the page (index.html, style.css, app.js), the dataset review_data.py builds
-from the staging dirs (with the calls already in each review_log.jsonl laid over it) and the
-browser-side store (web/static_store.js). The reviewer opens it from disk; nothing is fetched.
-Their calls go to a log in their browser, and "download decisions" gives them a
-review_log.jsonl to send back; review_app/import_log.py appends it to the staging dirs.
+The page is built by the shared builder in ../gem-review-app (review_core/build_static.py): the shared page and the GOGPT extension, with the dataset review_data.py builds from the staging dirs (the calls already in each review_log.jsonl laid over it) gzipped into one block, and the browser-side store (review_core/web/static_store.js). Published as a claude.ai artifact (the normal way) the page saves every call to the artifact's database; opened from disk the calls stay in the browser and "download decisions" hands them over as a file. Either way review_app/import_log.py brings them into the decision ledger (the store spreadsheet first, then the staging dirs).
 
-Default output: work/gogpt_review_<scopes>_<YYYYMMDD>_<HHMM>_ET.html (work/ is not tracked).
-Every build gets a fresh stamp; an existing file is never overwritten.
+Default output: work/gogpt_review_<scopes>_<YYYYMMDD>_<HHMM>_ET.html (work/ is not tracked). Every build gets a fresh stamp; an existing file is never overwritten.
 """
 import argparse
-import json
 import sys
 from datetime import datetime
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-WEB = HERE / "web"
 for p in (ROOT / "scripts", HERE):
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
 
 import paths  # noqa: E402
+import pull  # noqa: E402
 import review_data  # noqa: E402
 import store  # noqa: E402
+from review_core import build_static as core  # noqa: E402
 
 
-def render(data, reviewer, title=None):
-    """The page as one html string: css inlined, the dataset and reviewer embedded, then the
-    static store and the app. `</script>` inside the JSON is escaped so it cannot end the tag."""
-    html = (WEB / "index.html").read_text(encoding="utf-8")
-    css = (WEB / "style.css").read_text(encoding="utf-8")
-    static_js = (WEB / "static_store.js").read_text(encoding="utf-8")
-    app_js = (WEB / "app.js").read_text(encoding="utf-8")
-    cfg = json.dumps({"reviewer": reviewer, "data": data}, ensure_ascii=False).replace("</", "<\\/")
-    if title:
-        html = html.replace("<title>GOGPT reviewer</title>", f"<title>{title}</title>")
-        html = html.replace("<h1>GOGPT reviewer</h1>", f"<h1>{title}</h1>")
-    html = html.replace('<link rel="stylesheet" href="style.css">', "<style>\n" + css + "\n</style>")
-    html = html.replace('<script src="app.js"></script>',
-                        "<script>window.REVIEW_STATIC = " + cfg + ";</script>\n"
-                        "<script>\n" + static_js + "\n</script>\n"
-                        "<script>\n" + app_js + "\n</script>")
-    if "app.js" in html.split("<script>")[0]:
-        raise SystemExit("index.html changed shape: the script tag was not replaced")
-    return html
+def ledger_url(cfg=None):
+    """The decision store spreadsheet's link, for the page's "push to log" tip ('' when none is configured)."""
+    cfg = pull.config() if cfg is None else cfg
+    sid = (cfg or {}).get("store_sheet_id") or ""
+    return f"https://docs.google.com/spreadsheets/d/{sid}/edit" if sid else ""
 
 
-def build(dirs, reviewer, export_csv=None, title=None):
+def render(data, reviewer, title=None, cfg=None):
+    """The page as one html string, from the shared builder with the GOGPT config."""
+    return core.render(data, reviewer, store.CONFIG, title=title, ledger_url=ledger_url(cfg))
+
+
+def build(dirs, reviewer, export_csv=None, title=None, cfg=None):
     data = review_data.build(dirs, export_csv)
     store.overlay(data, {label: Path(d) for label, d in zip(data["dirs"], dirs)})
-    return render(data, store.initials(reviewer), title), data
+    return render(data, store.initials(reviewer), title, cfg), data
 
 
 def main(argv=None):
@@ -65,11 +51,12 @@ def main(argv=None):
     ap.add_argument("--reviewer", required=True, help="who will review; recorded by initials")
     ap.add_argument("--export-csv", default=None, help="scoped export csv for current Data Source cells")
     ap.add_argument("--out", default=None, help="output html (default work/gogpt_review_<scopes>_<stamp>_ET.html)")
+    ap.add_argument("--config", default=None, help="store config (default review_app/google.json): the log link on the page")
     args = ap.parse_args(argv)
     dirs = [ROOT / "batches" / s / "staging" for s in args.scope] + [Path(d) for d in args.dirs]
     if not dirs:
         raise SystemExit("name at least one --scope or --dirs")
-    html, data = build(dirs, args.reviewer, args.export_csv)
+    html, data = build(dirs, args.reviewer, args.export_csv, cfg=pull.config(args.config))
     if args.out:
         out = Path(args.out)
     else:
@@ -84,8 +71,8 @@ def main(argv=None):
     ni = sum(len(p["items"]) for p in data["plants"])
     print(f"wrote {out} ({out.stat().st_size // 1024} KB: {len(data['plants'])} plants, {nl} changes, "
           f"{ni} items, reviewer {store.initials(args.reviewer)})")
-    print("send that one file; the reviewer opens it in a browser and sends back the downloaded "
-          "review_log .jsonl, then: python review_app/import_log.py <file>")
+    print("publish it as a claude.ai artifact from the work profile (review_app/README.md), or send the file; "
+          "the calls come back through: python review_app/import_log.py <file> --reviewer EMAIL")
     return out
 
 

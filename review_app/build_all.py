@@ -1,12 +1,13 @@
 """
-Rebuild every review page listed in artifacts.json from the one interface in web/.
+Rebuild every review page listed in artifacts.json from the shared interface in the sibling
+gem-review-app repo (review_core/web plus trackers/gogpt/web).
 
     python review_app/build_all.py [--only NAME]
 
 Writes one stamped html per page into work/ and prints a table of name, reviewer, url and file,
 so each file can be published to its url (Artifact tool, work profile, capabilities carried
-forward). Run it after ANY change under review_app/web/ or to build_static.py, so every page
-keeps the same interface. Add a page by adding an entry to artifacts.json.
+forward). Run it after ANY change in gem-review-app (core page, tracker extension or builder),
+so every page keeps the same interface. Add a page by adding an entry to artifacts.json.
 """
 import argparse
 import json
