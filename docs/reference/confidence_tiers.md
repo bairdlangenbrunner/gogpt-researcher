@@ -26,9 +26,9 @@ validated):
    Nuances).
 4. It is not a GEM-derived republisher.
 
-**Exception: a STATUS CHANGE is green only on 2+ independent publishers; a
-single-source status change is medium/yellow.** Inferred statuses are
-unchanged (no URL by design).
+**Exception: a STATUS CHANGE is green only on 2+ independent publishers; a single-source status change is medium/yellow.** Inferred statuses are unchanged (no URL by design). Only the Status value itself counts as a status change: a Status Detail entry, a Latest Activity date or any other field closes at green on one fully validated ref (Baird 2026-10-08).
+
+**The machine half (same as pipelines-researcher).** `assemble_state.py` raises a `medium` finding to `high` when one of its links has a verification that loaded (`ok`), names the plant (`name_found`) and states the value (`contains_value`), via `build_review_package.validated_tier`. Never raised: a Status change, a `low`, or a record whose note says the sources disagree or the value is only implied. `scripts/repair_staged.py` applies the same rule to staging assembled before 2026-10-08.
 
 | Tier | Color | Meaning |
 |---|---|---|

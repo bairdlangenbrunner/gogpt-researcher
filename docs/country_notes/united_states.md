@@ -46,9 +46,7 @@ file holds what is true of every state.
   enough to add it (Baird 2026-10-07). Placeholder plants named
   "<Utility> IRP CC power station 3" and the like are how earlier cycles
   recorded unsited plan capacity; whether that continues is still open.
-- **Data-center gas**: search every state for behind-the-meter gas serving
-  data centres; mark captive with industry type Data Centre. Emergency/backup
-  gensets are a unit-level checkbox, not a captive flag.
+- **Data-center gas**: search every state for behind-the-meter gas serving data centers (the data-center block at the end of `briefs/_captive.md`, checklist row 39). For now every find stages into the watch list only (`monitor`, `checks: [39]`), never a new plant or unit; a reviewer promotes it (Baird 2026-10-08). When added, mark captive with industry type Data Center. Emergency/backup gensets are a unit-level checkbox, not a captive flag, and not watch items.
 - **ISO/RTO context** decides where in-development units are visible (queues,
   CDR-type reports): ERCOT, SPP, MISO, PJM, NYISO, ISO-NE, CAISO, plus
   non-RTO Southeast and Northwest (balancing-authority queues instead).

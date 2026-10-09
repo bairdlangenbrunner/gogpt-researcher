@@ -51,7 +51,7 @@ Read-only columns (`schema_constants.COMPUTED_COLUMNS` and the hydrogen
 `OUT_OF_SCOPE_COLUMNS`) never appear as edit targets; underscore-prefixed meta
 columns are reference-only and say so in the README tab.
 
-Status Detail and Notes rows are additive (Baird 2026-10-07): the **proposed** cell holds the whole box to paste, new text on top and the existing text below it word for word, and the `action` says to add at the top of the box. Neither box is ever rewritten or cleared.
+Status Detail and Notes rows are additive (Baird 2026-10-07): the **proposed** cell holds the whole box to paste, new text on top and the existing text below it word for word, and the `action` says to add at the top of the box. Neither box is ever rewritten or cleared. A Status Detail entry ends with its source link (Baird 2026-10-08), so nothing is pasted into Status Data Source for it.
 
 ## The evidence file (md)
 

@@ -19,7 +19,9 @@ Hard guarantees enforced here:
   - no orphan values/refs: every `fields` column needs its paired Data Source
     entry in `refs`, and vice versa (exception: a `delete: true` record, and a
     status proposal whose value contains "inferred" — inferences carry no ref
-    by design, see confidence_tiers.md)
+    by design, see confidence_tiers.md). A Status Detail link is keyed under
+    "Status Detail" itself and written into the text, never merged into
+    Status Data Source (schema_constants.INLINE_SOURCE_COLUMNS)
   - blocklist: gem.wiki / globalenergymonitor / abarrelfull / wikidot /
     theodora URLs anywhere in refs are a build ERROR
   - zero-verified-ref updates/newplants/newunits records (same exceptions)
@@ -65,7 +67,8 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from schema_constants import ADDITIVE_TEXT_COLUMNS, READ_ONLY_COLUMNS
+from schema_constants import (ADDITIVE_TEXT_COLUMNS, INLINE_SOURCE_COLUMNS,
+                              READ_ONLY_COLUMNS)
 from colmap import load_colmap
 from paths import gem_export_csv
 from review_app.checklist import (OTHER, OPTIONAL_ROWS, WATCH_CALLS, group_label,
@@ -554,10 +557,13 @@ IRP_NOTES_HEADER = ["utility", "irp_year", "is_draft", "plan_links", "next_irp_d
 
 
 def ref_col_for(value_col):
-    """Pair a value column with its Data Source column per the export layout."""
+    """Pair a value column with its Data Source column per the export layout.
+    A column in INLINE_SOURCE_COLUMNS (Status Detail) is its own source: the
+    link is written into its text."""
+    if value_col in INLINE_SOURCE_COLUMNS:
+        return value_col
     special = {
         "Status": "Status Data Source",
-        "Status Detail": "Status Data Source",
         "City": "Location Data Source",
         "Capacity (MW)": "Capacity Data Source",
         "Number Of Engines": "Capacity Data Source",
@@ -585,6 +591,48 @@ def ref_col_for(value_col):
         "Conversion/replacement?": "Conversion/replacement Data Source",
     }
     return special.get(value_col, f"{value_col} Data Source")
+
+
+URL_RE = re.compile(r"https?://\S+")
+
+
+def inline_value(text, urls):
+    """A Status Detail entry with its source links written in, GEM style:
+    "Permit application not yet filed: https://...". Links the text already
+    holds are not repeated."""
+    text = str(text or "").strip()
+    new = [u for u in urls if u and u not in text]
+    if not new:
+        return text
+    return f"{text.rstrip(' .:;')}: {', '.join(new)}" if text else ", ".join(new)
+
+
+# words in a researcher note that mean the source does not settle the value
+CAVEAT_RE = re.compile(r"\b(conflict\w*|contest\w*|differ\w*|disagree\w*|impl(?:y|ies|ied)|"
+                       r"unclear|uncertain|not sure|may be|might be)\b", re.I)
+
+
+def validated_tier(field, verdict, tier, urls, verifications, notes=""):
+    """One fully validated source is green (confidence_tiers.md, the
+    pipelines-researcher rule of 2026-09-30, Baird 2026-10-02 and 2026-10-08).
+    A `medium` record is promoted to `high` when one of its links has a
+    verification that loaded (`ok`), names the plant (`name_found`) and states
+    the value (`contains_value`). A Status change is never promoted: it needs
+    two independent publishers. Status Detail is not a Status change, so it
+    follows the one-source rule. `low` is the researcher's call that the
+    source is weak and is never promoted, and neither is a record whose note
+    says the sources disagree or the value is only implied (CAVEAT_RE): that
+    is what medium is for. Returns the tier."""
+    tier = str(tier or "medium").lower()
+    if tier != "medium" or (field == "Status" and verdict == "change") \
+            or CAVEAT_RE.search(str(notes or "")):
+        return tier
+    urls = set(urls or [])
+    for v in verifications or []:
+        if v.get("url") in urls and v.get("ok") and v.get("name_found") is True \
+                and v.get("contains_value") is True:
+            return "high"
+    return tier
 
 
 def is_inferred_only(rec):
@@ -762,7 +810,7 @@ def backend_format_rows(lanes, export_csv):
             fills[(r_i, c_i)] = tier
             ref_col = ref_col_for(col)
             new_urls = rec.get("refs", {}).get(ref_col, [])
-            if new_urls and ref_col in col_idx:
+            if new_urls and ref_col in col_idx and ref_col != col:
                 ds_i = col_idx[ref_col]
                 merged = _split_urls(row[ds_i])
                 merged += [u for u in new_urls if u not in merged]
@@ -779,6 +827,8 @@ def backend_format_rows(lanes, export_csv):
             row[col_idx[col]] = val
             fills[(r_i, col_idx[col])] = tier
         for ref_col, urls in refs.items():
+            if ref_col in INLINE_SOURCE_COLUMNS:
+                continue        # the link is already in the text of the box
             if ref_col not in col_idx:
                 print(f"  WARNING: {ident}: column {ref_col!r} not in export "
                       "header — skipped in edit_backend_format")

@@ -64,20 +64,22 @@ def tool_uses(session):
 
 
 def gws_targets(cmd):
-    """Google Workspace reads, named by id only."""
+    """Google Workspace reads, counted by kind only. File IDs, thread IDs, and search
+    queries are not recorded: they name colleagues and internal files, and this log
+    is published in a public repo."""
     out = []
     for m in re.finditer(r'"(?:fileId|spreadsheetId)"\s*:\s*\\?"([\w-]{20,})', cmd):
-        out.append(('gws-drive', 'drive file ' + m.group(1)))
+        out.append(('gws-drive', 'drive file (id withheld)'))
     for m in re.finditer(r'\bfor (?:id|t) in ([\w\s-]+?);', cmd):
         for tok in m.group(1).split():
             if len(tok) >= 25:
-                out.append(('gws-drive', 'drive file ' + tok))
+                out.append(('gws-drive', 'drive file (id withheld)'))
             elif re.fullmatch(r'[0-9a-f]{16}', tok):
-                out.append(('gws-gmail', 'gmail thread ' + tok))
+                out.append(('gws-gmail', 'gmail thread (id withheld)'))
     if 'gmail users threads list' in cmd:
         for m in re.finditer(r"for q in ((?:'[^']*'\s*)+);", cmd):
             for q in re.findall(r"'([^']*)'", m.group(1)):
-                out.append(('gws-gmail', 'gmail search: ' + q))
+                out.append(('gws-gmail', 'gmail search (query withheld)'))
     return out
 
 

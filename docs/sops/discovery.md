@@ -88,7 +88,7 @@ A **new unit at an existing plant** (a capacity expansion, a new turbine at a pl
 
 ## §7 Entity discipline
 
-Per update.md §8: before staging any new Owner/Operator, run `python entity_lookup.py "<entity name>" --remote` **bare, no country filter** — entities are shared across GEM trackers and countries. A match anywhere means use the existing entity ID; no match routes to the `entity` lane with the lookup attempts logged, for the human to create via the web UI before applying dependent edits.
+Per update.md §8: before staging any new Owner/Operator, run `python entity_lookup.py "<entity name>" --pg` **bare, no country filter** — entities are shared across GEM trackers and countries. A match anywhere means use the existing entity ID; no match routes to the `entity` lane with the lookup attempts logged, for the human to create via the web UI before applying dependent edits.
 
 ## §8 URL verification gate
 
@@ -115,7 +115,7 @@ Every staged URL passes `url_verifier.py` per update.md §7.1 — no exceptions.
 - **Captive plants ARE in scope** — don't skip a site because it's industrial rather than utility-owned (§4.4).
 - **Dedup before staging** — scoped CSV, unfiltered CSV, and a gem.wiki name check, every candidate (§5).
 - **gem.wiki is a dedup check only, never a citation** (§5.3).
-- **Entity lookup bare + `--remote` before staging any new owner** — no duplicate entities (§7).
+- **Entity lookup bare + `--pg` before staging any new owner** — no duplicate entities (§7).
 - **Every URL passes `url_verifier.py`; one fully validated ref per value suffices (2+ independent preferred; 2+ for a status change to be green); never gem.wiki/globalenergymonitor.org/abarrelfull** (§8).
 - **Never write the live GEM database** — output is always the staged lanes feeding the two-workbook deliverable for human application.
 

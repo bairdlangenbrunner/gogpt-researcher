@@ -55,7 +55,7 @@ to place (see `wiki_pages.md`).
 | `plant_name`, `unit_name`, `country` | str | identity, from the scoped export |
 | `fields` | {header: value} | proposed values, keyed by EXACT CSV header strings (e.g. `"Status"`, `"Capacity (MW)"`) — `qc_checks.py --staged` validates headers and vocab |
 | `current` | {header: value} | the same columns' values before this batch (diff context for the reviewer) |
-| `refs` | {header: [url]} | verified URLs per **Data Source column** (e.g. `"Status Data Source"`); every column in `fields` MUST have its paired Data Source entry, and vice versa — no orphan values, no orphan refs |
+| `refs` | {header: [url]} | verified URLs per **Data Source column** (e.g. `"Status Data Source"`); every column in `fields` MUST have its paired Data Source entry, and vice versa — no orphan values, no orphan refs. Status Detail is its own source column: its links are keyed `"Status Detail"` and written into the text of the value (Baird 2026-10-08) |
 | `verifications` | [{url, ok, contains_value}] | `url_verifier.py` results — no URL enters `refs` without a passing entry |
 | `tier` | str | `high` \| `medium` \| `low` (see `confidence_tiers.md`) |
 | `independent` | bool | ≥2 genuinely independent sources reached (preferred, not required; required for green on a status change) |
@@ -66,6 +66,7 @@ to place (see `wiki_pages.md`).
 | `reverified` | bool | optional, added 2026-10-02: the value is unchanged and a new source confirms it (blue in the workbook); the new URL still merges into the Data Source cell |
 | `additive` | bool | optional, added 2026-10-07: the `fields` value for `Status Detail` or `Notes` is the new text placed above the existing text (see below); written by `assemble_state.py` |
 | `irp` | bool | optional, added 2026-10-07, US only: the value comes from a utility integrated resource plan (the shard's finding carried `irp: true`, or one of its refs is a plan link the IRP step listed). The export's `IRP` column is never staged; this flag plus the export's box state tell the review page and the `irp_box` sheet which units need the IRP box ticked in the web form (checklist row 37). Written by `assemble_state.py` |
+| `captive_lng` | bool | optional, added 2026-10-08, `monitor` / `newplants` / `newunits`: the record comes from the captive LNG sheet step (`captive_lng.py`, `briefs/_captive.md`); the scope-wide agent sets it with `checks: [6, 44]` and `assemble_state.py` passes it through. The review page files the record under checklist rows 6 and 44 |
 
 Ref semantics are **merge, never replace**: `refs` URLs are ADDED to the
 existing Data Source cell contents; existing datasources are never deleted
@@ -133,11 +134,7 @@ named sponsor + specific site + a concrete development step, each corroborated.
 **`newunits`** — like a `newplants` unit record but anchored to
 `gem_plant_id`; used for expansions/uprates at existing plants.
 
-Both come from the scope-wide agent's `shards/_state.json` (`newplants` and
-`newunits` sections) as well as from a discovery batch. A gas project in a
-utility integrated resource plan clears the add threshold on the plan alone,
-draft plans included (Baird 2026-10-07); a thinner lead stays a `monitor`
-record.
+Both come from the scope-wide agent's `shards/_state.json` (`newplants` and `newunits` sections) as well as from a discovery batch. A gas project in a utility integrated resource plan clears the add threshold on the plan alone, draft plans included (Baird 2026-10-07); a thinner lead stays a `monitor` record. A captive plant at an LNG terminal clears it only when the captive LNG sheet lists the terminal as qualifying (50 MW, or 20 MW in the EU and UK) and the sources support generating capacity at that level, not compressor-drive turbines (Baird 2026-10-08). **A gas-fired data center never enters `newplants` or `newunits` from the scope-wide search**: it is a `monitor` record with `checks: [39]` until a reviewer promotes it.
 
 ## QC gates (mechanical, enforced before deliverables)
 

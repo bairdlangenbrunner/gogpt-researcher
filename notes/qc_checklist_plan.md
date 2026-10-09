@@ -73,7 +73,7 @@ Columns: checklist item (row number on the tab), where it lands, status.
 
 | Row | Item | Where it lands | Status |
 |---|---|---|---|
-| 6 | Captive LNG sheet checked for new plants | Discovery step: read the Americas Qualifying tab of the captive LNG workbook, match Terminal IDs to the state, compare against GEM plants named "... LNG terminal power station" | New step, sheet is readable (see sop_pointers) |
+| 6 | Captive LNG sheet checked for new plants | Covered 2026-10-08 by `captive_lng.py --state` / `--country`: reads every regional Qualifying and Excluded tab of the captive LNG workbook and the LNG tracker download, joins by Terminal ID (the tracker's Project ID), matches the scope's rows to GEM plants (tracker captive plant ID, LNG plant name, location); `build_state_brief.py --captive` puts a task on each matched plant and writes `briefs/_captive.md` with the qualifying terminals GEM lacks (new-plant candidates; the sheet's Qualifying rows are the only LNG captive plants at the add threshold, 50 MW or 20 MW EU and UK) and the excluded ones. Mechanical-drive-only rows are flagged: generating capacity only | Covered |
 | 7, 54 | Validation report errors fixed | `validation_report.py` reads the stored errors (`plant.validation`) from the read-only DB at batch start; `build_state_brief.py --validation` turns the research fixes into unit tasks; `--closeout` is the row 54 gate | Covered (2026-10-06) |
 | 8 | No blanks for fuel, status, technology, country, coordinates, accuracy, owner | Mechanical: a per-state checker run on the fresh export, output feeds the gap list | Partly in `qc_checks.py --csv`; extend |
 | 9, 18 | Unknown start year rechecked (operating units especially) | Gap list research task | Research task |
@@ -110,7 +110,7 @@ pastes it, or approves a `gws-gem-write` call.
 | 36 | US Data/Research Guide updated for the state | Close-out draft | Draft step to add |
 | 37 | IRP box checked on all IRP projects | Resolved 2026-10-07: the box IS in the export (the `IRP` column, yes or no) but is never staged. The US IRPs tab of the Update V2 sheet lists each state's utility IRPs. `irp_sheet.py` reads the tab and the column, the scope-wide agent researches the plans for planned gas resources and stages what GEM lacks (a draft plan is enough), the assembler flags those records `irp: true`, and the `irp_box` sheet and the review page's IRP chip tell the human which boxes to tick in the web UI | Built 2026-10-07 |
 | 38 | GEM IDs matched to EIA-860M, EIP, Sierra Club | Covered 2026-10-06 by `match_ids.py --state`: joins the export to the EIA-860M file, the EIP sheet and the Sierra Club list; missing IDs are listed for the human to type, disagreements become brief tasks (`build_state_brief.py --ids`), blank sheet rows are listed with GEM IDs for Baird to paste | Covered |
-| 39 | Gas-powered data centers searched, captive data entered | Discovery search per state; captive fields are in the export | Research task to add to the state prompt |
+| 39 | Gas-powered data centers searched, captive data entered | Covered 2026-10-08: the data-center block at the end of `briefs/_captive.md` (written by `build_state_brief.py --captive` for a US state) sends the scope-wide agent through the state's permits, EIA-860M, the ISO queue and press; every find stages into the watch list only (`monitor`, `checks: [39]`, Baird 2026-10-08), never a new plant, until a reviewer promotes it; GEM plants already marked data-center captive are listed on the block | Covered (watch list only) |
 
 ### [OPTIONAL] block
 
@@ -118,7 +118,7 @@ pastes it, or approves a `gws-gem-write` call.
 |---|---|---|
 | 42 | Exact location for approximate operating units | Optional research task, off by default |
 | 43 | Ownership changes for operating units | Upstream `--ownership-scan` already surfaces candidates |
-| 44 | LNG terminals with captive plants | Same as row 6 |
+| 44 | LNG terminals with captive plants | Same as row 6: `captive_lng.py` tasks and records carry checks [6, 44] | Covered |
 | 45, 46 | Country files folder, GEM data sources sheet | Read at batch start if useful; no write |
 
 ### [END OF UPDATE] block

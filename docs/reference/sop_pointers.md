@@ -65,8 +65,8 @@ rules an agent needs at batch time, and the live doc always wins on conflict.
 | Research Resources | Drive folder | https://drive.google.com/drive/folders/1mLM0yBlrLbhFBiAoImTAWPMAjtZ23jgr |
 | GOGPT project folder | Drive folder | https://drive.google.com/drive/folders/1UebqU-Rw70CvO5Vv81fPqovs5k827TRl |
 | Captive power at LNG terminals — notes | Doc | https://docs.google.com/document/d/16icG8I27tQkttpq_dUseIARfE7-Rbnrk_ew7M1g2EQ8 |
-| **Captive LNG sheet** ("Use this - Captive PPs_All Regions_08.03.2026.xlsx", linked from checklist row 6; xlsx on Drive, read it with `gws drive files get --params '{"alt":"media"}'`; 14 tabs: per region, Qualifying vs Excluded; columns Terminal, Terminal ID, Hardware Type, Individual Unit MW, Aggregate MW, Qualifying Basis, Turbine class, References) | xlsx | https://docs.google.com/spreadsheets/d/19YvVT918PYHq_DkdvKWtoXYJ2Xl7l7R3 |
-| LNG tracker 2026-03-13 download (captive-power-at-LNG input) | xlsx | https://docs.google.com/spreadsheets/d/1iOrpj-498jLR7QSkNRljUsgmfzRYNUfO |
+| **Captive LNG sheet** ("Use this - Captive PPs_All Regions_08.03.2026.xlsx", linked from checklist row 6; xlsx on Drive; `scripts/captive_lng.py` downloads it through the work profile into `work/captive/` and reads it; 14 tabs: per region, Qualifying (>=50MW, or >=20MW for the EU) vs Excluded; columns Terminal, Terminal ID, Country and State on most regions, Hardware Type, Individual Unit MW, Aggregate MW, Qualifying Basis, Turbine class, References) | xlsx | https://docs.google.com/spreadsheets/d/19YvVT918PYHq_DkdvKWtoXYJ2Xl7l7R3 |
+| LNG tracker 2026-03-13 download (captive-power-at-LNG input; the sheet's Terminal ID is this file's Project ID, so it supplies each row's country, state, status, owner, coordinates and the "Captive gas power plant GEM ID" the LNG team linked; `captive_lng.py` reads it alongside the sheet) | xlsx | https://docs.google.com/spreadsheets/d/1iOrpj-498jLR7QSkNRljUsgmfzRYNUfO |
 
 ## Team coordination
 

@@ -61,9 +61,10 @@ the terminals/pipelines verifiers' fetch layers):
     automated clients that declare who they are in the User-Agent ("Name
     email") and caps them at 10 requests/second. A browser UA or fingerprint
     gets "Your Request Originates from an Undeclared Automated Tool" (403).
-    sec.gov requests therefore send `SEC_USER_AGENT` (env `GEM_SEC_UA`
-    overrides it), skip impersonation, and are throttled per process. Note
-    `sec_declared_ua`.
+    sec.gov requests therefore send `SEC_USER_AGENT` (read from env
+    `GEM_SEC_UA`, which each user sets to their own name and email), skip
+    impersonation, and are throttled per process. Note `sec_declared_ua`;
+    `sec_ua_unset` means the variable was missing and nothing was fetched.
   - Rate limits (2026-10-05): a bare HTTP 429 with no bot-wall markers is a
     queue, not a wall. Firing disguised requests at it only adds load, so it
     is waited out instead: up to `RATE_LIMIT_ATTEMPTS` plain retries with
@@ -132,9 +133,10 @@ CHROME_UA = (
 
 # SEC EDGAR fair-access policy: automated clients must declare a name and contact
 # email in the User-Agent, at most 10 requests/second. See the module docstring.
-SEC_USER_AGENT = os.environ.get(
-    "GEM_SEC_UA",
-    "Global Energy Monitor research baird.langenbrunner@globalenergymonitor.org")
+# The identity is per user and is never committed: set GEM_SEC_UA in your shell to
+# "Your Name you@globalenergymonitor.org". When it is unset, sec.gov fetches return
+# status "000" with note `sec_ua_unset` instead of going out under someone else's name.
+SEC_USER_AGENT = os.environ.get("GEM_SEC_UA", "").strip()
 _SEC_HOSTS = ("sec.gov",)
 _SEC_MIN_INTERVAL = 0.15      # seconds between sec.gov requests in one process
 _sec_last = 0.0
@@ -852,6 +854,16 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
     if cookie:
         ua = cookie_ua or ua          # the cookie is only honoured with its own UA
     if sec:
+        if not SEC_USER_AGENT:
+            notes.append("sec_ua_unset")
+            print("  [fetch] sec.gov needs GEM_SEC_UA set to your own name and email "
+                  "(SEC fair-access policy); not fetched", file=sys.stderr)
+            try:
+                os.unlink(tmp)
+            except OSError:
+                pass
+            return Page(status="000", text="", content_type="", final_url="",
+                        is_pdf=False, raw_len=0, notes=notes)
         ua = SEC_USER_AGENT           # declared identity, never a browser disguise
         notes.append("sec_declared_ua")
         _sec_throttle()

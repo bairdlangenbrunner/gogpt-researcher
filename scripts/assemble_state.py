@@ -84,9 +84,16 @@ unit ID so the build can group a unit's edits)
                    export's current string (so the workbook colors it blue),
                    refs = only the URLs not already in the Data Source cell.
   match, no new URL  no record, counted.
+  Status Detail carries its source link in its own text (Baird 2026-10-08):
+  a fill/change appends the links to the new entry ("...: https://...") and
+  keys them under "Status Detail", never Status Data Source; a match makes no
+  record even with a new link, since the existing text is never rewritten.
   Status change at tier high with fewer than two distinct hosts among the
   verified URLs is lowered to medium here, with a plain sentence appended to
   the note (a status change needs two independent publishers for green).
+  Any other medium finding with a link whose verification loaded, names the
+  plant and states the value is raised to high (one fully validated source is
+  green; build_review_package.validated_tier).
 
 Plant-level findings become ONE record: `applies_to_all_units: true`,
 `sibling_unit_ids`, `sibling_current` {unit_id: current cell} (so the gate can
@@ -134,9 +141,11 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from build_review_package import _split_urls, additive_value, ref_col_for  # noqa: E402
+from build_review_package import (_split_urls, additive_value, inline_value,  # noqa: E402
+                                  ref_col_for, validated_tier)
 from paths import gogpt_scoped_csv  # noqa: E402
-from schema_constants import ADDITIVE_TEXT_COLUMNS, RESEARCH_FIELDS  # noqa: E402
+from schema_constants import (ADDITIVE_TEXT_COLUMNS, INLINE_SOURCE_COLUMNS,  # noqa: E402
+                              RESEARCH_FIELDS)
 from review_app.checklist import (  # noqa: E402
     CONCERN_VOCAB, MONITOR_KINDS, name_key, normalize_concern_type)
 
@@ -347,7 +356,7 @@ def link_phrase(n: int) -> str:
 
 
 def build_action(kind, field, value, current, target, ref_col, n_urls,
-                 each_unit=False, additive=False):
+                 each_unit=False, additive=False, inline=False):
     # Status Detail values often end in a period; drop it so the sentence
     # does not read "...in 2027.. It now says".
     value = str(value).rstrip(". ") if value is not None else value
@@ -364,7 +373,11 @@ def build_action(kind, field, value, current, target, ref_col, n_urls,
              "word for word.")
     else:
         s = f"Set {field} of {target} to {value}. It now says {current}."
-    if n_urls:
+    if inline:
+        # Status Detail carries its own link (Baird 2026-10-08)
+        s += (" The source link is part of this text. Do not add it to the "
+              "Status Data Source box.")
+    elif n_urls:
         s += (f" Add {link_phrase(n_urls)} to the {ref_col} box"
               f"{' on each unit' if each_unit else ''}. "
               "Keep the links already there.")
@@ -399,6 +412,7 @@ class Assembler:
         self.verdicts = Counter()
         self.match_no_new_url = 0
         self.downgraded = 0
+        self.promoted = 0
         self.comparison: dict = {}
         self.unit_notes_used: set[str] = set()
         self.shards: dict = {}
@@ -551,7 +565,11 @@ class Assembler:
             if len(hosts - {""}) < 2:
                 tier, note = "medium", DOWNGRADE_NOTE
                 self.downgraded += 1
-        return tier, note
+        promoted = validated_tier(field, verdict, tier, refs, fd.get("verifications"),
+                                  fd.get("note"))
+        if promoted != tier:
+            self.promoted += 1
+        return promoted, note
 
     def base_record(self, pid, plant_name, uid):
         row = self.export.get(uid) or {}
@@ -589,8 +607,11 @@ class Assembler:
         else:
             target = unit_label(row.get("Unit name", ""), anchor_uid)
 
+        inline = field in INLINE_SOURCE_COLUMNS
         if verdict == "match":
-            if not ev["new_urls"]:
+            # a Status Detail that already says it has nowhere to put a new
+            # link: its links live in its own text, which is never rewritten
+            if not ev["new_urls"] or inline:
                 self.match_no_new_url += 1
                 return
             rec = self.base_record(pid, plant_name, anchor_uid)
@@ -628,6 +649,8 @@ class Assembler:
                 self.lanes["qa"].append(rec)
                 return
             tier, extra = self.tier_for(field, verdict, fd, refs)
+            if inline:
+                value = inline_value(value, refs)
             rec = self.base_record(pid, plant_name, anchor_uid)
             rec.update({
                 "record_id": rid, "cluster": anchor_uid, "verdict": verdict,
@@ -641,7 +664,8 @@ class Assembler:
                 "researcher_notes": join_notes(fd.get("note"), extra, unit_notes),
                 "action": build_action(verdict, field, value, current, target,
                                        ev["ds_col"], len(refs),
-                                       plant_level and n > 1, additive=additive)})
+                                       plant_level and n > 1, additive=additive,
+                                       inline=inline)})
             if additive:
                 rec["additive"] = True
         else:
@@ -918,7 +942,8 @@ class Assembler:
                     "change": sum(r.get("verdict") == "change" for r in recs),
                     "reverified": sum(bool(r.get("reverified")) for r in recs),
                     "match_no_new_url": self.match_no_new_url,
-                    "status_downgraded": self.downgraded})
+                    "status_downgraded": self.downgraded,
+                    "tier_promoted": self.promoted})
             env = {"meta": {"lane": lane, "scope": self.scope(),
                             "generated": generated, "mode": self.mode,
                             "counts": counts},
@@ -1081,6 +1106,7 @@ def main():
         f"{v}={a.verdicts.get(v, 0)}" for v in VERDICTS))
     print(f"  match with no new link (no record): {a.match_no_new_url}")
     print(f"  status changes lowered from high to medium: {a.downgraded}")
+    print(f"  one fully validated source raised from medium to high: {a.promoted}")
     print("  records: " + ", ".join(f"{lane}={len(r)}"
                                     for lane, r in a.lanes.items()))
     n_checks = sum(1 for lane in ("updates", "qa") for r in a.lanes[lane] if r.get("checks"))

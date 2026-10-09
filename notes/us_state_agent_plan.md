@@ -83,18 +83,21 @@ python build_state_brief.py --state Maryland --mode blind      # calibration onl
 python validation_report.py --state Georgia                     # checklist row 7
 python match_ids.py --state Georgia                             # row 38
 python irp_sheet.py --state Georgia --save-json ../work/irp_tab.json   # rows 34 and 37 (US IRPs tab)
+python captive_lng.py --state Georgia                           # rows 6 and 44 (captive LNG sheet) and 39 (data centers)
 python build_state_brief.py --state Georgia --mode update \
     --extra-tasks ../batches/us-ga/extra_tasks.json \
     --validation ../work/validation_us-ga.json --ids ../work/ids_us-ga.json \
-    --irp ../work/irp_us-georgia.json \
+    --irp ../work/irp_us-georgia.json --captive ../work/captive_us-georgia.json \
     --promote ../batches/us-ny/staging                          # watch items a reviewer promoted; --scope ladder is the default
 python build_sweep_args.py --batch ../batches/us-ga --model sonnet --group-max 5   # writes staging/sweep_args.json
 
 # 3. fan out (Workflow tool, script .claude/workflows/state-sweep.js, args = that JSON);
 #    in parallel, one Sonnet agent does the statewide search for newly announced
-#    gas plants and gas-fired data centers, reads briefs/_irp.md and the promoted
-#    candidates, and writes shards/_state.json (qa, monitor, newplants, newunits,
-#    meta.irp_summary)
+#    gas plants, reads briefs/_irp.md, briefs/_captive.md (captive LNG terminals,
+#    then the data-center block) and the promoted candidates, and writes
+#    shards/_state.json (qa, monitor, newplants, newunits, meta.irp_summary);
+#    data centers go to monitor only, checks [39]; captive LNG items carry
+#    captive_lng: true and checks [6, 44]
 
 # 4. assemble, gate, QC, build
 python assemble_state.py --batch ../batches/us-ga
@@ -138,10 +141,7 @@ else; anything it notices in passing goes to `qa`. The prompt also carries
 the Maryland lessons as rules: never change a present coordinate, the EIA
 utility name is not the owner, never drop an EIA-860 fuel, conversion-unit
 start year, engine fields only for reciprocating engines, captive fields
-blank for grid plants. A statewide agent writes `shards/_state.json` (qa and
-monitor items only) for newly announced plants and gas-fired data centers;
-`assemble_state.py` passes it through with record IDs starting
-`us-<postal>:plant`.
+blank for grid plants. A statewide agent writes `shards/_state.json` (qa, monitor, newplants and newunits) for newly announced plants, the captive LNG sheet's terminals (`briefs/_captive.md`; qualifying rows are the only LNG captive plants at the add threshold) and gas-fired data centers (watch list only, Baird 2026-10-08); `assemble_state.py` passes it through with record IDs starting `us-<postal>:plant`.
 
 ## Shard contract (`shards/<L...>.json`)
 

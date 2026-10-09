@@ -27,6 +27,9 @@ Writes (batch dir default ../batches/us-<postal> or ../batches/<country-slug>):
                                      and each plant's tasks (text, fields, and
                                      the QC/Country checklist rows they serve)
     briefs/_irp.md                   with --irp: the IRP block for the statewide agent
+    briefs/_captive.md               with --captive: the captive LNG sheet block (rows 6
+                                     and 44) and, for a US state, the data-center search
+                                     block (row 39) for the scope-wide agent
     briefs/_hidden/<L...>.json       blind mode only: the withheld GEM values
     shards/, staging/, deliverables/ created (with .gitkeep where empty)
 
@@ -452,11 +455,13 @@ def plant_fields(unit_tasks_by_uid, plant_tasks):
 
 
 def load_validation(path, scope, producer="validation_report.py"):
-    """Fix items from validation_report.py (under "errors") or match_ids.py
-    (under "tasks") as {plant_id: [(unit_id or None, item)]}. Each item gets
-    the checklist row it serves unless it names its own: row 7 (the
-    validation report) or row 38 (the ID match)."""
-    default_checks = [38] if producer.startswith("match_ids") else [7]
+    """Fix items from validation_report.py (under "errors") or match_ids.py,
+    irp_sheet.py, captive_lng.py (under "tasks") as {plant_id: [(unit_id or
+    None, item)]}. Each item gets the checklist row it serves unless it names
+    its own: row 7 (the validation report), 38 (the ID match), 37 (the IRP
+    step) or 6 and 44 (the captive LNG sheet)."""
+    default_checks = {"match_ids": [38], "irp_sheet": [37], "captive_lng": [6, 44]}.get(
+        producer.split(".")[0], [7])
     p = Path(path)
     if not p.exists():
         sys.exit(f"ERROR: {p} not found; run {producer} first")
@@ -686,6 +691,10 @@ def main():
     ap.add_argument("--irp", default=None,
                     help="work/irp_us-<state-slug>.json from irp_sheet.py: the IRP research "
                          "step (update mode, US states)")
+    ap.add_argument("--captive", default=None,
+                    help="work/captive_<tag>.json from captive_lng.py: the captive LNG sheet "
+                         "step, checklist rows 6 and 44, plus the data-center search block "
+                         "(row 39) for a US state (update mode, any scope)")
     a = ap.parse_args()
     extra = {}
     if a.extra_tasks:
@@ -749,8 +758,8 @@ def main():
     if unknown_extra:
         sys.exit(f"ERROR: --extra-tasks plants not in {name}: {sorted(unknown_extra)}")
 
-    if (a.validation or a.ids or a.irp) and a.mode != "update":
-        sys.exit("ERROR: --validation, --ids and --irp are for update mode only")
+    if (a.validation or a.ids or a.irp or a.captive) and a.mode != "update":
+        sys.exit("ERROR: --validation, --ids, --irp and --captive are for update mode only")
     validation = load_validation(a.validation, scope) if a.validation else {}
     ids = load_validation(a.ids, scope, producer="match_ids.py") if a.ids else {}
     irp, irp_data = {}, None
@@ -759,14 +768,21 @@ def main():
             sys.exit("ERROR: --irp is for US states (the US IRPs tab)")
         irp = load_validation(a.irp, scope, producer="irp_sheet.py")
         irp_data = json.loads(Path(a.irp).read_text(encoding="utf-8"))
+    captive, captive_data = {}, None
+    if a.captive:
+        captive = load_validation(a.captive, scope, producer="captive_lng.py")
+        captive_data = json.loads(Path(a.captive).read_text(encoding="utf-8"))
     missing_val = sorted(set(validation) - set(plants))
     if missing_val and not a.plants:
         print(f"WARNING: validation fixes on plants not in {csv_path.name}: {missing_val}. "
               "Check their tracker assignment; they are not briefed.")
-    n_val = n_ids = n_irp = 0
+    n_val = n_ids = n_irp = n_captive = 0
     missing_irp = sorted(set(irp) - set(plants))
     if missing_irp and not a.plants:
         print(f"WARNING: IRP tasks on plants not in {csv_path.name}: {missing_irp}; not briefed.")
+    missing_cap = sorted(set(captive) - set(plants))
+    if missing_cap and not a.plants:
+        print(f"WARNING: captive LNG tasks on plants not in {csv_path.name}: {missing_cap}; not briefed.")
 
     # Tasks per unit and per plant; ladder scope keeps only tasked plants.
     tasks, plant_tasks, not_tasked = {}, {}, []
@@ -786,7 +802,12 @@ def main():
         for uid, it in irp_unit.items():
             tasks[pid][uid] = tasks[pid].get(uid, []) + it
         n_irp += sum(len(v) for v in irp_unit.values()) + len(irp_plant)
-        own = extra.get(pid, []) + val_plant + id_plant + irp_plant
+        # captive LNG sheet tasks are whole-plant too (unit_id null in the file)
+        cap_unit, cap_plant = validation_tasks(captive.get(pid, []), rows)
+        for uid, it in cap_unit.items():
+            tasks[pid][uid] = tasks[pid].get(uid, []) + it
+        n_captive += sum(len(v) for v in cap_unit.values()) + len(cap_plant)
+        own = extra.get(pid, []) + val_plant + id_plant + irp_plant + cap_plant
         plant_tasks[pid] = own + extra.get("*", [])
         has_task = any(tasks[pid].values()) or bool(own)
         if a.mode == "update" and a.scope == "ladder" and not has_task:
@@ -863,6 +884,28 @@ def main():
                                    for u in irp_data.get("utilities") or []],
                      "links": links,
                      "irp_box_units": [u["unit_id"] for u in irp_data.get("irp_units") or []]}
+    captive_index = None
+    if captive_data is not None:
+        cap_brief = batch / "briefs" / "_captive.md"
+        cap_brief.write_text(captive_data.get("brief") or "", encoding="utf-8")
+        try:
+            cap_rel = str(cap_brief.relative_to(REPO_ROOT))
+        except ValueError:
+            cap_rel = str(cap_brief)
+        terms = captive_data.get("terminals") or []
+        captive_index = {
+            "file": str(Path(a.captive).resolve()), "brief_path": cap_rel,
+            "read": captive_data.get("read"), "threshold_mw": captive_data.get("threshold_mw"),
+            "terminals": [{"terminal": t.get("terminal"), "terminal_id": t.get("terminal_id"),
+                           "qualifying": bool(t.get("qualifying")),
+                           "mechanical_only": bool(t.get("mechanical_only")),
+                           "plant_ids": [m["plant_id"] for m in t.get("matches") or []]}
+                          for t in terms],
+            "new_candidates": [t.get("terminal_id") for t in terms
+                               if t.get("qualifying") and not t.get("matches")],
+            "gem_only": [p.get("plant_id") for p in captive_data.get("gem_only") or []],
+            # the row 39 block (US states): the search stages into the watch list only
+            "data_center": captive_data.get("data_center") is not None}
     idx_path = batch / "briefs" / "_index.json"
     # `state` / `postal` stay for US batches (older readers key on them); `where`
     # is the generic scope every reader should prefer.
@@ -878,7 +921,10 @@ def main():
         "promoted_new": promoted_new,
         # the IRP step (irp_sheet.py): the statewide agent reads briefs/_irp.md; the
         # assembler marks records whose source is one of these plan links
-        "irp": irp_index}, indent=2, ensure_ascii=False),
+        "irp": irp_index,
+        # the captive LNG sheet step (captive_lng.py): the scope-wide agent reads
+        # briefs/_captive.md; matched plants carry their task on their own brief
+        "captive": captive_index}, indent=2, ensure_ascii=False),
         encoding="utf-8")
 
     tag = f" ({scope['postal'].upper()})" if scope["postal"] else ""
@@ -897,6 +943,13 @@ def main():
             print(f"IRP step: {len(irp_index['utilities'])} utility plan(s), {n_irp} plant task(s), "
                   f"{len(irp_index['irp_box_units'])} unit(s) already carry the IRP box; "
                   f"statewide block: {irp_index['brief_path']}")
+    if captive_index is not None:
+        nq = sum(1 for t in captive_index["terminals"] if t["qualifying"])
+        print(f"captive LNG step: {len(captive_index['terminals'])} sheet row(s) in scope ({nq} qualifying), "
+              f"{n_captive} plant task(s), {len(captive_index['new_candidates'])} qualifying terminal(s) GEM "
+              f"lacks, {len(captive_index['gem_only'])} GEM LNG plant(s) with no sheet row"
+              f"{'; data-center block (row 39) included' if captive_index['data_center'] else ''}; "
+              f"scope-wide block: {captive_index['brief_path']}")
     if a.promote:
         print(f"promoted watch items: {n_promoted} task(s) on tracked plants; "
               f"{len(promoted_new)} new to the tracker (listed under promoted_new in the index)")

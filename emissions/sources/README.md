@@ -7,7 +7,7 @@ back to the file it came from.
 | Path | What | In git |
 |---|---|---|
 | `downloads.csv` | One row per file saved: date, publisher, title, URL, route, HTTP status, bytes, sha256, where the copy is in `raw/` | yes |
-| `access_log.csv` | Every web request by session: fetches, searches, URLs in shell commands, Google Workspace reads. Built by `build_access_log.py` from the session transcripts | yes |
+| `access_log.csv` | Every web request by session: fetches, searches, URLs in shell commands, Google Workspace reads (counted by kind only; no file IDs, thread IDs, or queries, which would name colleagues and internal files). Built by `build_access_log.py` from the session transcripts | yes |
 | `sessions.txt` | The Claude Code sessions that worked on this workstream | yes |
 | `get.py` | Download helper: fetches into `raw/`, hashes, appends to `downloads.csv`. Refuses banned sources and overwrites | yes |
 | `build_access_log.py` | Rebuilds `access_log.csv` | yes |

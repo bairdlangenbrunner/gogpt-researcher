@@ -29,7 +29,9 @@ Hard gates (any failure exits 1)
   orphans     every fields column has >=1 URL under its Data Source column
               (build_review_package.ref_col_for), and every refs key pairs with
               a fields column. Exempt: a value containing "inferred", and a
-              delete record.
+              delete record. Status Detail is its own source column: its
+              links sit under "Status Detail" and each must appear in the
+              text of the value (Baird 2026-10-08).
   fresh       every current[header] (and sibling_current[unit]) equals the
               export's cell for that unit, whitespace-normalized; a mismatch
               means the export changed after the shards were built
@@ -102,7 +104,7 @@ from assemble_state import (  # noqa: E402
     resolve_csv, ws)
 from schema_constants import STATUSES_IN_DEVELOPMENT  # noqa: E402
 from build_review_package import (  # noqa: E402
-    additive_errors, load_lanes, ref_col_for, validate)
+    URL_RE, additive_errors, load_lanes, ref_col_for, validate)
 from schema_constants import ADDITIVE_TEXT_COLUMNS, READ_ONLY_COLUMNS  # noqa: E402
 
 SCRIPTS = Path(__file__).resolve().parent
@@ -225,6 +227,11 @@ def gate_orphans(lanes):
             rc = ref_col_for(col)
             if not [u for u in refs.get(rc) or [] if ws(u)]:
                 out.append((rid, f"{col} has a value but no link under {rc}"))
+            elif rc == col:
+                for u in refs.get(rc) or []:
+                    if ws(u) and ws(u) not in str(val):
+                        out.append((rid, f"{col} link is not written into the "
+                                         f"text: {u}"))
         paired = {ref_col_for(c) for c in fields}
         for rc, urls in refs.items():
             if rc not in paired and urls:
@@ -438,7 +445,8 @@ def gate_notes(lanes):
     out = []
     for lane, rid, rec in iter_records(lanes):
         for key in ("researcher_notes", "action"):
-            text = str(rec.get(key) or "")
+            # an action can quote a Status Detail entry with its link in it
+            text = URL_RE.sub("", str(rec.get(key) or ""))
             # a capitalized word followed by another one is a name
             # ("Green Rocks data center", "Blue Ridge"), not repo jargon
             words = sorted({m.group(0).lower() for m in JARGON_RE.finditer(text)

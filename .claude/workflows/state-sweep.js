@@ -329,6 +329,9 @@ Cite the live URL, never a web.archive.org address.
 - Tier \`high\` = one fully validated ref: it names the plant, states the value, and passes the
   verifier. BUT ${statusRule}.
 - \`medium\` = a single-source status change, or a ref that names the plant but only implies the value.
+  Status Detail, Latest Activity and every other field are not a status change: one fully
+  validated ref makes them \`high\`. Give a Status Detail finding its link in \`refs\` as usual;
+  the assembler writes the link into the Status Detail text, not into Status Data Source.
 - \`low\` = partial validation: the page does not name the plant, or the value is not on it, or
   sources conflict. Prefer leaving the field out and raising a \`qa\` item.
 - \`independent\` = true only with 2 or more genuinely separate origins among the refs.

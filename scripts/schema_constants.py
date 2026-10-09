@@ -149,3 +149,12 @@ RESEARCH_FIELDS = [
 # assemble_state.py uses it, and state_gate.py (gate `additive`) plus
 # build_review_package.validate reject anything else.
 ADDITIVE_TEXT_COLUMNS = ("Status Detail", "Notes")
+
+# --- Boxes that carry their own source link -----------------------------------
+# A Status Detail entry carries its source link in the text itself ("... target
+# operation June 2029: https://..."), the way GEM researchers already write it.
+# Its link never goes to Status Data Source, which feeds the unit's milestone
+# and scheduled-event timeline (Baird 2026-10-08). ref_col_for maps such a
+# column to itself, so a staged record keys the link under the column's own
+# name and the build never merges it into a Data Source cell.
+INLINE_SOURCE_COLUMNS = ("Status Detail",)
