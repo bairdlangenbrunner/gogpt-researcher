@@ -1,0 +1,122 @@
+{
+ "meta": {
+  "plant_id": "L100000402389",
+  "plant_name": "Zion energy center",
+  "state": "Illinois",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-09T16:49:50-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403786",
+   "unit_name": "CTG1",
+   "findings": {},
+   "not_found": [
+    "Planned retire",
+    "Owner(s)",
+    "Operator(s)"
+   ],
+   "notes": "The brief asked for no unit checks. Nothing was changed. The EIA table for August 2026 still lists this unit as operating."
+  },
+  {
+   "gem_unit_id": "G100000403787",
+   "unit_name": "CTG2",
+   "findings": {},
+   "not_found": [
+    "Planned retire",
+    "Owner(s)",
+    "Operator(s)"
+   ],
+   "notes": "The brief asked for no unit checks. Nothing was changed. The EIA table for August 2026 still lists this unit as operating."
+  },
+  {
+   "gem_unit_id": "G100000403788",
+   "unit_name": "CTG3",
+   "findings": {},
+   "not_found": [
+    "Planned retire",
+    "Owner(s)",
+    "Operator(s)"
+   ],
+   "notes": "The brief asked for no unit checks. Nothing was changed. The EIA table for August 2026 still lists this unit as operating."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000403786",
+   "concern_type": "Planned retire",
+   "recommendation": "Do not enter a planned retirement year for units 1, 2 and 3 at this time.",
+   "note": "Constellation sent PJM a deactivation notice on June 22, 2026 for Zion units 1, 2 and 3, effective December 31, 2029, to meet the Illinois Climate and Equitable Jobs Act. PJM replied that the plant is needed and asked for operation through May 2031. On July 2, 2026 Constellation wrote that it intends to withdraw the notice and take part in the capacity auctions for those years. The letter says a formal withdrawal will follow, and I did not find it. So the 2029 date is no longer the owner's plan. Please recheck the PJM page for the formal withdrawal.",
+   "refs": [
+    "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/zion-ct1-ct2-ct3-deactivation-notice.pdf",
+    "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/zion-ct1-ct2-ct3-withdrawal.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000403786",
+   "concern_type": "Owner(s)",
+   "recommendation": "Keep Zion Energy LLC as owner at 100 percent. Consider adding Constellation Energy Generation LLC as the parent.",
+   "note": "Constellation's June 2026 letter to PJM says Constellation Energy Generation, LLC is the upstream owner of Zion Energy LLC, which owns and operates the plant. The EIA table for August 2026 still lists Zion Energy LLC as the owner. So the owning entity did not change. Only the parent changed after the Calpine purchase closed on January 7, 2026. The parent is a computed field, so I did not report it as a value. The entity lookup found no entity named Constellation Energy or Constellation Energy Generation in the local export, so the parent entity may need to be checked in the entity system.",
+   "refs": [
+    "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/zion-ct1-ct2-ct3-deactivation-notice.pdf"
+   ]
+  }
+ ],
+ "monitor": [
+  {
+   "gem_unit_id": "G100000403786",
+   "monitor_kind": "existing_plant",
+   "monitor_reason": "The owner said it intends to withdraw its 2029 retirement notice but the formal withdrawal is not yet seen.",
+   "recheck_by": "2026-12",
+   "note": "Check the PJM deactivation notices page for a formal withdrawal letter for Zion units 1 to 3.",
+   "refs": [
+    "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/zion-ct1-ct2-ct3-withdrawal.pdf"
+   ]
+  }
+ ],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Zion Energy LLC",
+   "role": "owner",
+   "lookup_result": "Entity zion energy llc appears on 3 units in the United States. Reuse the existing entity."
+  },
+  {
+   "entity_name": "Constellation Energy Generation LLC",
+   "role": "parent",
+   "lookup_result": "Local lookup found nothing for Constellation Energy or Constellation Energy Generation. Not checked against the entity system with the database option."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/zion-ct1-ct2-ct3-deactivation-notice.pdf",
+   "used_for": [
+    "Planned retire",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Constellation notice to PJM dated June 22, 2026."
+  },
+  {
+   "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/zion-ct1-ct2-ct3-withdrawal.pdf",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Constellation letter dated July 2, 2026 stating intent to withdraw the notice."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Loads. Plant 55392 lists Zion Energy LLC, CTG1 to CTG3, operating, 198.9 MW each."
+  }
+ ]
+}

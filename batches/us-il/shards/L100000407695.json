@@ -1,0 +1,90 @@
+{
+ "meta": {
+  "plant_id": "L100000407695",
+  "plant_name": "Broadwing Energy Center",
+  "state": "Illinois",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-09T16:48:48-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000410074",
+   "unit_name": "1",
+   "findings": {
+    "Status Detail": {
+     "value": "A Power magazine article from October 23, 2025 reports that Google signed a power purchase agreement for the plant. Kiewit Power Constructors leads engineering, procurement and construction. The owner expects a financing decision in the second quarter of 2026 and commercial operation in 2030.",
+     "refs": [
+      "https://www.powermag.com/google-backs-first-u-s-gas-fired-power-plant-with-integrated-ccs-for-data-centers/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.powermag.com/google-backs-first-u-s-gas-fired-power-plant-with-integrated-ccs-for-data-centers/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The article names the plant, the Mitsubishi turbine, Kiewit and the financing and operating targets. I did not find a report that the financing decision has closed or that construction has started."
+    }
+   },
+   "not_found": [
+    "Start year",
+    "Cancellation year",
+    "Planned retire",
+    "Operator(s)",
+    "Latest Activity"
+   ],
+   "notes": "Status stays pre-construction. I found no report after the October 2025 article that financing closed or construction began. Latest Activity is left alone because the newest report is under a year old."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000410074",
+   "concern_type": "Start year",
+   "recommendation": "Please check whether the start year should move from 2029 to 2030.",
+   "note": "The Power magazine article from October 23, 2025 says commercial operation is targeted for 2030. Earlier company statements said steam and power by the end of 2029 and carbon capture by early 2030. GEM shows 2029.",
+   "refs": [
+    "https://www.powermag.com/google-backs-first-u-s-gas-fired-power-plant-with-integrated-ccs-for-data-centers/"
+   ],
+   "proposed_value": {
+    "Start year": "2030"
+   }
+  },
+  {
+   "gem_unit_id": "G100000410074",
+   "concern_type": "other",
+   "recommendation": "The date the unit reached pre-construction is not established.",
+   "note": "I found no document that dates the step. The Illinois permit hearing and the April 2026 draft air permit are the closest dated events, and neither says the project entered pre-construction. Please check the Illinois Environmental Protection Agency permit record.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.powermag.com/google-backs-first-u-s-gas-fired-power-plant-with-integrated-ccs-for-data-centers/",
+   "used_for": [
+    "Status Detail",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Page names Broadwing, Mitsubishi and 2029 or 2030 dates."
+  },
+  {
+   "url": "https://oilandgaswatch.org/alert/dd7b8d37-3702-4a25-868e-be0f06045a1f",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "blocked",
+   "note": "The page is drawn by JavaScript and the checker did not find the plant name. Already cited in the existing text. Not re-cited."
+  }
+ ]
+}

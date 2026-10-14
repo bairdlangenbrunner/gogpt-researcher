@@ -1,0 +1,44 @@
+{
+  "*": [
+    {"text": "Illinois gas and oil units face closure deadlines under the 2021 Climate and Equitable Jobs Act (2030, 2035, 2040 or 2045 depending on each unit's emission rate and location). A statutory deadline is not a retirement date. Stage Planned retire only from the owner's own deactivation notice on PJM's generator deactivation page or an equivalent owner statement, and check the same page for a later withdrawal letter before you record anything.", "fields": []}
+  ],
+  "L100000401554": [
+    {"text": "Elwood Energy was sold in two pieces. Hull Street Energy bought units 1 to 4, 8 and 9 in 2025 (units 8 and 9 retired June 1, 2025 and are already retired in GEM). Utility Dive reported in April 2026 that Hull Street would retire units 1 to 4 (600 MW) by June 1, 2026, and the August 2026 EIA-860M table lists plant 69979 'MPH Elwood' with GT1 to GT4 retired in 2026. Confirm with PJM's deactivation page (pjm.com/planning/service-requests/gen-deactivations/generator-deactivation-notices, letters named elwood-deactivation-extension.pdf and elwood-revision-8-9.pdf) whether GT1 to GT4 actually retired on June 1, 2026. If confirmed by the PJM letter and a second publisher, stage Status retired and Retired year 2026 for GT1 to GT4. If only one source, stage it as a single-source status change and say so.", "fields": ["Status", "Retired year"]},
+    {"text": "Dairyland Power Cooperative bought Elwood units 5 to 7 on March 6, 2026 and withdrew their retirement notice on May 6, 2026 (PJM letter elwood-deactivation-withdraw-letter.pdf). Stage Owner(s) for GT5 to GT7 as Dairyland Power Cooperative [100%] if the closing is documented, and Owner(s) for GT1 to GT4 as Hull Street Energy's entity if that closing is documented. Run entity_lookup.py for both names before staging. Do not change the owner of GT8 and GT9 unless a source gives it.", "fields": ["Owner(s)"]},
+    {"text": "Add a Status Detail line at the top for each unit group describing the 2024 to 2026 retirement notices and the withdrawal for units 5 to 7, with the PJM letter link in the text.", "fields": ["Status Detail"]},
+    {"text": "EIA-860M now lists the Hull Street units under a new plant code 69979 (MPH Elwood) while the original code 55199 stays with units 5 to 7. Say in a question which units carry which code; do not stage the ID columns.", "fields": []}
+  ],
+  "L100000401569": [
+    {"text": "Hull Street Energy announced on March 23, 2026 that it would buy the Lee energy facility from Rockland Capital, with closing expected later in 2026, and PJM's market monitor objected in April 2026. Stage Owner(s) only if a source after the announcement says the sale closed. If it is still pending, leave Owner(s) alone and put what you found in a question.", "fields": ["Owner(s)"]}
+  ],
+  "L100000401731": [
+    {"text": "On July 2, 2026 PJM wrote to NRG that Aurora must deactivate by December 31, 2029 under the Climate and Equitable Jobs Act and asked NRG to keep it running through May 31, 2031 (letters on PJM's deactivation page, file names containing ceja-reliability-extension). Read NRG's notice and PJM's reply. If NRG's own letter states a deactivation date, stage Planned retire for all ten units with that year and add a Status Detail line at the top with the PJM request and its link. Say in a question whether NRG accepted the extension.", "fields": ["Planned retire", "Status Detail"]}
+  ],
+  "L100000402061": [
+    {"text": "On July 2, 2026 PJM wrote to NRG that University Park North must deactivate by December 31, 2029 under the Climate and Equitable Jobs Act and asked NRG to keep it running through May 31, 2031 (letters on PJM's deactivation page, file names containing ceja-reliability-extension). Read NRG's notice and PJM's reply. If NRG's own letter states a deactivation date, stage Planned retire for all twelve units with that year and add a Status Detail line at the top with the PJM request and its link. Say in a question whether NRG accepted the extension.", "fields": ["Planned retire", "Status Detail"]}
+  ],
+  "L100000402343": [
+    {"text": "On July 2, 2026 PJM wrote to NRG that University Park South must deactivate by December 31, 2029 under the Climate and Equitable Jobs Act and asked NRG to keep it running through May 31, 2031 (letters on PJM's deactivation page, file names containing ceja-reliability-extension). Read NRG's notice and PJM's reply. If NRG's own letter states a deactivation date, stage Planned retire for all six units with that year and add a Status Detail line at the top with the PJM request and its link. Say in a question whether NRG accepted the extension.", "fields": ["Planned retire", "Status Detail"]}
+  ],
+  "L100000402251": [
+    {"text": "On July 2, 2026 PJM wrote to NRG that Rockford I must deactivate by December 31, 2029 under the Climate and Equitable Jobs Act and asked NRG to keep it running through May 31, 2031 (letters on PJM's deactivation page, file names containing ceja-reliability-extension). Read NRG's notice and PJM's reply. If NRG's own letter states a deactivation date, stage Planned retire with that year and add a Status Detail line at the top with the PJM request and its link. Say in a question whether NRG accepted the extension.", "fields": ["Planned retire", "Status Detail"]}
+  ],
+  "L100000402252": [
+    {"text": "On July 2, 2026 PJM wrote to NRG that Rockford II must deactivate by December 31, 2029 under the Climate and Equitable Jobs Act and asked NRG to keep it running through May 31, 2031 (letters on PJM's deactivation page, file names containing ceja-reliability-extension). Read NRG's notice and PJM's reply. If NRG's own letter states a deactivation date, stage Planned retire with that year and add a Status Detail line at the top with the PJM request and its link. Say in a question whether NRG accepted the extension.", "fields": ["Planned retire", "Status Detail"]}
+  ],
+  "L100000402389": [
+    {"text": "Zion Energy Center was a Calpine plant and Constellation's purchase of Calpine closed January 7, 2026. Check whether Owner(s) and Parent(s) should change. Keep Zion Energy LLC as owner unless a source says the owning entity changed; stage Parent(s) as Constellation Energy only if a source names Zion in the deal. Run entity_lookup.py before staging.", "fields": ["Owner(s)", "Parent(s)"]}
+  ],
+  "L100000402416": [
+    {"text": "Lincoln Land Energy Center (two 638 MW units near Pawnee) got its state construction permit in July 2022 and no 2025 or 2026 progress has been found. Look for a construction start, a financing close, an air permit extension or a cancellation. If nothing newer than 2024 exists, add a Status Detail line saying so, with the newest dated source, and set Latest Activity to the date of that source. Do not change Status without two independent publishers.", "fields": ["Status", "Status Detail", "Latest Activity"]}
+  ],
+  "L100000402075": [
+    {"text": "GEM has Grand Tower CC01 and CC02 as mothballed. The August 2026 EIA-860M retired table lists the plant as retired in 2024. Confirm with a second publisher (a MISO notice, an Illinois EPA permit action, or an owner statement). If both agree, stage Status retired and Retired year 2024. If only EIA says so, stage it as a single-source status change and say so in a question.", "fields": ["Status", "Retired year"]}
+  ],
+  "L100000103868": [
+    {"text": "GEM has Marion units 5 and 6 (75 MW gas turbines, Southern Illinois Power Cooperative) as mothballed, while the August 2026 EIA-860M operating table lists them as operating. Find out which is right. If the units are running, stage Status operating with two independent publishers; if only EIA says so, stage a single-source status change and say so.", "fields": ["Status"]}
+  ],
+  "L100000402024": [
+    {"text": "The possible-updates sheet says a 38 MW uprate at Nelson energy center for 2028 was approved by PJM in May 2026 (RRI addendum at pjm.com). An uprate on an existing unit stays on the watch list unless it is a new or replacement unit. Do not change Capacity (MW). Write what you found as a watch item with the source.", "fields": [], "checks": [39]}
+  ]
+}

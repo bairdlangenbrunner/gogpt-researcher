@@ -1,0 +1,207 @@
+{
+ "meta": {
+  "plant_id": "L100000103868",
+  "plant_name": "Marion Plant",
+  "state": "Illinois",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-09T16:55:00-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403513",
+   "unit_name": "5",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists generator 5 at the Marion plant, plant code 976, as operating, 75.0 MW, natural gas fired combustion turbine, operating since May 2003. The EIA-923 annual file for 2024 also shows gas turbines at Marion generating about 113,000 megawatt-hours on natural gas, so at least one gas unit ran that year. That file could not be run through the checker, so it is not cited. Both are from the same publisher, the Energy Information Administration, so this is a single-source status change. I found no owner statement about a mothball or a restart."
+    },
+    "Capacity (MW)": {
+     "value": "75.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists generator 5 at 75.0 MW nameplate."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year",
+    "Latest Activity",
+    "Status Detail",
+    "Operator(s)",
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "The August 2026 EIA table says this unit is operating, which conflicts with GEM's mothballed status. I found no owner or news document that dates the mothballing, so the missing date is not found."
+  },
+  {
+   "gem_unit_id": "G100000403514",
+   "unit_name": "6",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists generator 6 at the Marion plant, plant code 976, as operating, 75.0 MW, natural gas fired combustion turbine, operating since May 2003. The EIA-923 annual file for 2024 also shows gas turbines at Marion generating about 113,000 megawatt-hours on natural gas, so at least one gas unit ran that year. That file could not be run through the checker, so it is not cited. Both are from the same publisher, the Energy Information Administration, so this is a single-source status change. I found no owner statement about a mothball or a restart."
+    },
+    "Capacity (MW)": {
+     "value": "75.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists generator 6 at 75.0 MW nameplate."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year",
+    "Latest Activity",
+    "Status Detail",
+    "Operator(s)",
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "The August 2026 EIA table says this unit is operating, which conflicts with GEM's mothballed status. I found no owner or news document that dates the mothballing, so the missing date is not found."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Southern Illinois Power Cooperative Inc [100%]",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860M table for August 2026 names Southern Illinois Power Coop as the entity for plant 976. This matches GEM's owner. The table does not give a share, so the share is not independently shown."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000403513",
+   "concern_type": "location",
+   "recommendation": "The EIA table gives slightly different coordinates from GEM. Keep GEM's values unless a reviewer prefers the EIA point.",
+   "note": "The August 2026 EIA-860M table places plant 976 at 37.619747, -88.95311. GEM has 37.6196810, -88.9529190. The two are about 15 meters apart, so the location is the same.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "proposed_value": {}
+  },
+  {
+   "gem_unit_id": "G100000403514",
+   "concern_type": "Status",
+   "recommendation": "Ask the owner or check a second public source before accepting operating. Also ask when the mothballed step happened.",
+   "note": "A mothballed status needs a dated source. None was found for units 5 and 6. The 2020 retirement of coal unit 4 is documented, but that is a different unit. A search found no 2021 or later article on mothballing the gas units.",
+   "refs": [],
+   "proposed_value": {
+    "Status": "operating"
+   }
+  },
+  {
+   "gem_unit_id": "G100000403513",
+   "concern_type": "Planned retire",
+   "recommendation": "No deactivation notice found.",
+   "note": "I did not find a PJM deactivation notice, and Marion is in the grid operator MISO, not PJM. No planned retirement is proposed. The 2021 Illinois law deadline is not a retirement date.",
+   "refs": [],
+   "proposed_value": {}
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Southern Illinois Power Cooperative",
+   "role": "owner",
+   "lookup_result": "Existing owner already in GEM; no new entity needed."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Plant 976 rows read in python."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia923/archive/xls/f923_2024.zip",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "failed",
+   "note": "Zip file; the checker could not read it. I read it by hand: Marion gas turbines 113,471 MWh on natural gas in 2024."
+  },
+  {
+   "url": "https://icl.coop/sipc-approves-plan-to-retire-unit-4-operation/",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "not relevant",
+   "note": "About coal unit 4 in 2020. Says nothing on units 5 and 6."
+  },
+  {
+   "url": "https://www.industrialinfo.com/news/article/southern-illinois-power-cooperative-completes-additions-to-marion-power-station--26769",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "not relevant",
+   "note": "2003 turbine addition, 166 MW total; start year already sourced."
+  }
+ ]
+}

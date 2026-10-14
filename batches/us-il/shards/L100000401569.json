@@ -1,0 +1,130 @@
+{
+ "meta": {
+  "plant_id": "L100000401569",
+  "plant_name": "Lee energy facility",
+  "state": "Illinois",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-09T12:00:00-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402277",
+   "unit_name": "CT1",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100000402278",
+   "unit_name": "CT2",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100000402279",
+   "unit_name": "CT3",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100000402280",
+   "unit_name": "CT4",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100000402281",
+   "unit_name": "CT5",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100000402282",
+   "unit_name": "CT6",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100000402283",
+   "unit_name": "CT7",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  },
+  {
+   "gem_unit_id": "G100000402284",
+   "unit_name": "CT8",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check for this unit."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000402277",
+   "concern_type": "Owner(s)",
+   "recommendation": "The sale appears to have closed, so the owner likely needs to change from Rockland Capital to Hull Street Energy. Please confirm the exact company that holds the plant before changing it.",
+   "note": "A POWER magazine article says Hull Street Energy announced on August 26, 2026 that it had completed the purchase of the Lee County Generating Station from Rockland Capital. An Energy Monitor article from August 27, 2026 says the same. Both appear to rest on one Hull Street press release, so I count them as one source. Neither names the specific company that holds the plant, only Hull Street Energy and its managed funds. The PJM deactivation notices page was checked and has no notice for this plant. The one Lee entry there is Lee DeKalb, a different plant.",
+   "refs": [
+    "https://www.powermag.com/hull-street-acquires-two-pjm-based-power-stations-from-rockland-capital/",
+    "https://www.energymonitor.ai/news/hull-street-energy-acquires-plants-pjm/"
+   ],
+   "proposed_value": {
+    "Owner(s)": "Hull Street Energy [100%]"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Hull Street Energy",
+   "role": "owner",
+   "lookup_result": "Local lookup found nothing. The query against the entity system found that Hull Street Energy exists with 2 matches. Reuse the existing entity."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.powermag.com/hull-street-acquires-two-pjm-based-power-stations-from-rockland-capital/",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Page loaded and mentions Lee County and completed acquisition on August 26, 2026."
+  },
+  {
+   "url": "https://www.energymonitor.ai/news/hull-street-energy-acquires-plants-pjm/",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Same news, dated August 27, 2026."
+  },
+  {
+   "url": "https://wcfcourier.com/online_features/press_releases/article_bd8d0c58-6e81-55eb-b13a-04bcd39f0ac9.html",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "dead",
+   "note": "Returned 404 and no archived copy."
+  },
+  {
+   "url": "https://www.pjm.com/planning/service-requests/gen-deactivations/generator-deactivation-notices",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "not relevant",
+   "note": "Read through the repo fetcher. No notice for the Lee energy facility. Only Lee DeKalb, a different plant."
+  }
+ ]
+}

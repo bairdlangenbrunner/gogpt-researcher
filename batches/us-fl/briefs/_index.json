@@ -1,0 +1,4153 @@
+{
+  "state": "Florida",
+  "postal": "fl",
+  "where": {
+    "kind": "state",
+    "name": "Florida",
+    "slug": "florida",
+    "country": "United States",
+    "postal": "fl"
+  },
+  "mode": "update",
+  "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv",
+  "scope": "ladder",
+  "generated": "2026-10-09T16:47:11-04:00",
+  "plants": [
+    {
+      "plant_id": "L100001064466",
+      "plant_name": "Duke Energy IRP Power station 1",
+      "brief_path": "batches/us-fl/briefs/L100001064466.md",
+      "unit_ids": [
+        "G100001074203",
+        "G100001074204"
+      ],
+      "n_units": 2,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Duke_Energy_IRP_Power_station_1",
+      "n_tasks": 8,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100001074203": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "City is blank. Fill it from a source that places the plant; the source goes in Location Data Source.",
+            "fields": [
+              "City"
+            ],
+            "checks": [
+              26
+            ]
+          },
+          {
+            "text": "The unit's status history has an \"announced\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ],
+        "G100001074204": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "City is blank. Fill it from a source that places the plant; the source goes in Location Data Source.",
+            "fields": [
+              "City"
+            ],
+            "checks": [
+              26
+            ]
+          },
+          {
+            "text": "The unit's status history has an \"announced\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Duke Energy IRP Power station 1 holds two announced 254.5 MW placeholder units from Duke's plan. Check Duke's 2026 Ten-Year Site Plan for the current combustion turbine additions (the 2025 plan had four turbines in 2033 and 2034). Stage Start year and a Status Detail line from the newest plan, set Latest Activity to the plan date, and flag the record as plan-sourced. The coordinates are placeholders shared with the Seminole IRP records; say so in a question.",
+          "fields": [
+            "Start year",
+            "Status Detail",
+            "Latest Activity"
+          ],
+          "checks": [
+            34,
+            37
+          ]
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001048250",
+      "plant_name": "JEA Power Island power station",
+      "brief_path": "batches/us-fl/briefs/L100001048250.md",
+      "unit_ids": [
+        "G100001055373"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/JEA_Power_Island_power_station",
+      "n_tasks": 4,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "Other Name(s)"
+      ],
+      "tasks": {
+        "G100001055373": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "The unit's status history has a \"pre-construction\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "JEA Power Island power station unit 1 is pre-construction at 700 MW with EIP identifiers only. The Public Service Commission found need in August 2026 (Docket 20260087-EM) for a 675 MW combined cycle unit on the former St. Johns River Power Park site, $1.57 billion, planned for 2031 (News4Jax and Hoodline, August 2026; the commission's order in the docket). Stage Capacity (MW) 675 and Start year 2031 if the order or JEA states them, add a Status Detail line at the top with the need finding and its link, and add 'St. Johns River Power Park Unit 3' to Other Name(s) if JEA uses that name. The possible-updates sheet says the record should be combined into St. Johns River Power Park; put that in a question, do not merge.",
+          "fields": [
+            "Capacity (MW)",
+            "Start year",
+            "Status Detail",
+            "Other Name(s)"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401950",
+      "plant_name": "Manatee power station",
+      "brief_path": "batches/us-fl/briefs/L100000401950.md",
+      "unit_ids": [
+        "G100000409498",
+        "G100000409497",
+        "G100001074195",
+        "G100001074196",
+        "G100000402093"
+      ],
+      "n_units": 5,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Manatee_power_station",
+      "n_tasks": 7,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000409498": [
+          {
+            "text": "The EIP Oil & Gas Watch data of 2026-07-28 lists \"Manatee Power Station\" as proposed (https://oilandgaswatch.org/facility/2b8ce733-7c3d-41ec-bf52-9d9b401cf11b), while GEM says operating. Check which is right and report the status with a public source; EIP's own source documents are a good start.",
+            "fields": [
+              "Status",
+              "Status Detail"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100001074195": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "The unit's status history has an \"announced\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ],
+        "G100001074196": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "The unit's status history has an \"announced\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Manatee CT1 and CT2 (237.5 MW each) are announced in GEM. Check whether Florida Power and Light's 2026 Ten-Year Site Plan still lists them. If the 2026 plan drops them, do not cancel on your own: add a Status Detail line and put it in a question. The plan's Manatee unit 3 upgrade for the second quarter of 2027 is a watch item, not a capacity change.",
+          "fields": [
+            "Status Detail"
+          ],
+          "checks": [
+            39
+          ]
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001064460",
+      "plant_name": "Seminole 2025 IRP power station 1",
+      "brief_path": "batches/us-fl/briefs/L100001064460.md",
+      "unit_ids": [
+        "G100001074197"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Seminole_2025_IRP_power_station_1",
+      "n_tasks": 5,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100001074197": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "City is blank. Fill it from a source that places the plant; the source goes in Location Data Source.",
+            "fields": [
+              "City"
+            ],
+            "checks": [
+              26
+            ]
+          },
+          {
+            "text": "The unit's status history has an \"announced\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Seminole 2025 IRP power station 1 (610 MW announced) comes from Seminole Electric Cooperative's 2025 plan (a 620 MW combined cycle in 2032). Check Seminole's 2026 plan for the current capacity and year, stage Start year and a Status Detail line from the newest plan, set Latest Activity to the plan date, and flag the record as plan-sourced. The coordinates are placeholders; say so in a question.",
+          "fields": [
+            "Start year",
+            "Capacity (MW)",
+            "Status Detail",
+            "Latest Activity"
+          ],
+          "checks": [
+            34,
+            37
+          ]
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001064461",
+      "plant_name": "Seminole 2025 IRP power station 2",
+      "brief_path": "batches/us-fl/briefs/L100001064461.md",
+      "unit_ids": [
+        "G100001074198"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Seminole_2025_IRP_power_station_2",
+      "n_tasks": 5,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100001074198": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "City is blank. Fill it from a source that places the plant; the source goes in Location Data Source.",
+            "fields": [
+              "City"
+            ],
+            "checks": [
+              26
+            ]
+          },
+          {
+            "text": "The unit's status history has an \"announced\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Seminole 2025 IRP power station 2 (445 MW announced) comes from Seminole's 2025 plan (453 MW turbines in 2028). Check Seminole's 2026 plan for the current capacity and year, stage Start year and a Status Detail line from the newest plan, set Latest Activity to the plan date, and flag the record as plan-sourced.",
+          "fields": [
+            "Start year",
+            "Capacity (MW)",
+            "Status Detail",
+            "Latest Activity"
+          ],
+          "checks": [
+            34,
+            37
+          ]
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001064462",
+      "plant_name": "Seminole 2025 IRP power station 3",
+      "brief_path": "batches/us-fl/briefs/L100001064462.md",
+      "unit_ids": [
+        "G100001074199"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Seminole_2025_IRP_power_station_3",
+      "n_tasks": 5,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100001074199": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "City is blank. Fill it from a source that places the plant; the source goes in Location Data Source.",
+            "fields": [
+              "City"
+            ],
+            "checks": [
+              26
+            ]
+          },
+          {
+            "text": "The unit's status history has an \"announced\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Seminole 2025 IRP power station 3 (445 MW announced) comes from Seminole's 2025 plan (453 MW turbines in 2030). Check Seminole's 2026 plan for the current capacity and year, stage Start year and a Status Detail line from the newest plan, set Latest Activity to the plan date, and flag the record as plan-sourced.",
+          "fields": [
+            "Start year",
+            "Capacity (MW)",
+            "Status Detail",
+            "Latest Activity"
+          ],
+          "checks": [
+            34,
+            37
+          ]
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000407393",
+      "plant_name": "Shady Hills combined cycle facility",
+      "brief_path": "batches/us-fl/briefs/L100000407393.md",
+      "unit_ids": [
+        "G100000409476"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Shady_Hills_combined_cycle_facility",
+      "n_tasks": 4,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000409476": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "The unit's status history has a \"construction\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Shady Hills combined cycle G001 (573 MW, EIA 63802) is under construction in GEM. Find whether it reached commercial operation. Stage Status operating and Start year with two independent publishers; EIA-860M alone makes it a single-source status change.",
+          "fields": [
+            "Status",
+            "Start year"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000103835",
+      "plant_name": "Stanton Energy Center",
+      "brief_path": "batches/us-fl/briefs/L100000103835.md",
+      "unit_ids": [
+        "G100000401980",
+        "G100000402026",
+        "G100001017961",
+        "G100001018025"
+      ],
+      "n_units": 4,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Stanton_Energy_Center",
+      "n_tasks": 12,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100000401980": [
+          {
+            "text": "City is blank. Fill it from a source that places the plant; the source goes in Location Data Source.",
+            "fields": [
+              "City"
+            ],
+            "checks": [
+              26
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 55821) gives 614.9 MW nameplate for A + B + C, while GEM says 688 MW. Check the nameplate electric capacity and report it with a source.",
+            "fields": [
+              "Capacity (MW)"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100001017961": [
+          {
+            "text": "This unit is cancelled but has no cancellation year. Find the year the project was dropped or its permit was finally denied, and the document that says so.",
+            "fields": [
+              "Cancellation year"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Owner(s) is blank. Find it.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": [
+              8,
+              19
+            ]
+          },
+          {
+            "text": "Latitude, Longitude: blank. Fill from a source that gives the plant's location. Never change a coordinate that is already present.",
+            "fields": [
+              "Latitude",
+              "Longitude"
+            ],
+            "checks": [
+              8,
+              25
+            ]
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          }
+        ],
+        "G100001018025": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "Owner(s) is blank. Find it.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": [
+              8,
+              19
+            ]
+          },
+          {
+            "text": "Latitude, Longitude: blank. Fill from a source that gives the plant's location. Never change a coordinate that is already present.",
+            "fields": [
+              "Latitude",
+              "Longitude"
+            ],
+            "checks": [
+              8,
+              25
+            ]
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Stanton unit 1 gas row ('tp2', 464.5 MW) is cancelled in GEM: the Orlando Utilities Commission chose extended cold shutdown by the end of May 2026 instead of converting to gas. Confirm the cancellation year from the 2025 or 2026 plan and stage a Status Detail line. Stanton unit 2 gas row is announced: find whether the gas-only conversion has a date or has started, and stage Status or Start year only with sources. Do not change the owner shares without the plan's ownership table.",
+          "fields": [
+            "Status",
+            "Status Detail",
+            "Start year"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001080280",
+      "plant_name": "Tampa Electric IRP power station",
+      "brief_path": "batches/us-fl/briefs/L100001080280.md",
+      "unit_ids": [
+        "G100001090179"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Tampa_Electric_IRP_power_station",
+      "n_tasks": 5,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100001090179": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "City is blank. Fill it from a source that places the plant; the source goes in Location Data Source.",
+            "fields": [
+              "City"
+            ],
+            "checks": [
+              26
+            ]
+          },
+          {
+            "text": "The unit's status history has an \"announced\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Tampa Electric IRP power station (247 MW announced) comes from Tampa Electric's plan. Check the 2026 Ten-Year Site Plan for the current combustion turbine addition, stage Start year and a Status Detail line, set Latest Activity to the plan date, and flag the record as plan-sourced.",
+          "fields": [
+            "Start year",
+            "Status Detail",
+            "Latest Activity"
+          ],
+          "checks": [
+            34,
+            37
+          ]
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000409200",
+      "plant_name": "Bayboro power station",
+      "brief_path": "batches/us-fl/briefs/L100000409200.md",
+      "unit_ids": [
+        "G100000414308",
+        "G100000414307",
+        "G100000414306",
+        "G100000414305"
+      ],
+      "n_units": 4,
+      "max_priority": 3,
+      "wiki_url": "https://www.gem.wiki/Bayboro_power_station",
+      "n_tasks": 7,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000414308": [
+          {
+            "text": "Retirement is planned for 2026. Has it retired yet? If nothing confirms it by December, the manual says to move the planned year forward.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire"
+            ],
+            "checks": [
+              21,
+              23
+            ]
+          }
+        ],
+        "G100000414307": [
+          {
+            "text": "Retirement is planned for 2026. Has it retired yet? If nothing confirms it by December, the manual says to move the planned year forward.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire"
+            ],
+            "checks": [
+              21,
+              23
+            ]
+          }
+        ],
+        "G100000414306": [
+          {
+            "text": "Retirement is planned for 2026. Has it retired yet? If nothing confirms it by December, the manual says to move the planned year forward.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire"
+            ],
+            "checks": [
+              21,
+              23
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 627) shows generator P3, 56.7 MW, petroleum liquids, retired 2025, operating since 1973, which reads as retired, while GEM says operating. Check which is right and report the status with a public source. A status change needs two independent publishers for high confidence.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Retired year"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100000414305": [
+          {
+            "text": "Retirement is planned for 2026. Has it retired yet? If nothing confirms it by December, the manual says to move the planned year forward.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire"
+            ],
+            "checks": [
+              21,
+              23
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Duke Energy Florida's 2025 Ten-Year Site Plan retires Bayboro P1 to P4 in September 2026. The August 2026 EIA-860M table lists P3 as retired in 2025. Check Duke's 2026 plan for the current date. If the units have retired, stage Status retired and Retired year with two independent publishers; if the date is still in the future, stage Planned retire 2026.",
+          "fields": [
+            "Status",
+            "Retired year",
+            "Planned retire"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000402179",
+      "plant_name": "Indian River (FL) power station",
+      "brief_path": "batches/us-fl/briefs/L100000402179.md",
+      "unit_ids": [
+        "G100000403349",
+        "G100000403350",
+        "G100000403351",
+        "G100001054775",
+        "G100001054776",
+        "G100000402320",
+        "G100000402321"
+      ],
+      "n_units": 7,
+      "max_priority": 4,
+      "wiki_url": "https://www.gem.wiki/Indian_River_(FL)_power_station",
+      "n_tasks": 8,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000403349": [
+          {
+            "text": "This unit is mothballed. Is it still mothballed, back in operation, or retired? A status change needs two independent publishers. Never fill a retired year while the status stays mothballed.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Retired year"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The unit's status history has a \"mothballed\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ],
+        "G100000403350": [
+          {
+            "text": "This unit is mothballed. Is it still mothballed, back in operation, or retired? A status change needs two independent publishers. Never fill a retired year while the status stays mothballed.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Retired year"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The unit's status history has a \"mothballed\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ],
+        "G100000403351": [
+          {
+            "text": "This unit is mothballed. Is it still mothballed, back in operation, or retired? A status change needs two independent publishers. Never fill a retired year while the status stays mothballed.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Retired year"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The unit's status history has a \"mothballed\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Indian River units 1 to 3 are mothballed in GEM. Check the Orlando Utilities Commission plan and EIA for whether they have been retired; stage Status retired and Retired year only with two independent publishers.",
+          "fields": [
+            "Status",
+            "Retired year"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401968",
+      "plant_name": "Osceola (FL) power station",
+      "brief_path": "batches/us-fl/briefs/L100000401968.md",
+      "unit_ids": [
+        "G100000402926",
+        "G100000402927",
+        "G100000402928"
+      ],
+      "n_units": 3,
+      "max_priority": 4,
+      "wiki_url": "https://www.gem.wiki/Osceola_(FL)_power_station",
+      "n_tasks": 6,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402926": [
+          {
+            "text": "This unit is mothballed. Is it still mothballed, back in operation, or retired? A status change needs two independent publishers. Never fill a retired year while the status stays mothballed.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Retired year"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The planned retirement year 2021 is in the past. Did the unit retire? If so the status is retired with a retired year. If the plan moved, give the new year and its source.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire"
+            ],
+            "checks": [
+              21,
+              23
+            ]
+          },
+          {
+            "text": "The unit's status history has a \"mothballed\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 55192) shows generator CTG1, 197.2 MW, natural gas fired combustion turbine, operating, operating since 2001, which reads as operating, while GEM says mothballed. Check which is right and report the status with a public source. A status change needs two independent publishers for high confidence.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Osceola CTG1 is mothballed in GEM. The Orlando Utilities Commission bought the Osceola peakers in 2021. Check the 2025 or 2026 plan and EIA for whether CTG1 is back in service or retired; stage Status only with two independent publishers.",
+          "fields": [
+            "Status"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000103820",
+      "plant_name": "Big Bend Station",
+      "brief_path": "batches/us-fl/briefs/L100000103820.md",
+      "unit_ids": [
+        "G100000409454",
+        "G100000403577"
+      ],
+      "n_units": 2,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Big_Bend_Station",
+      "n_tasks": 9,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100000409454": [
+          {
+            "text": "Owner(s) (currently Tampa Electric Co [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 27.7943440); Longitude (currently -82.4032060); Location accuracy (currently exact); City (currently Ruskin): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 645) gives operating year 1970, 2021, while GEM's start year is 2023. Check which is right.",
+            "fields": [
+              "Start year"
+            ],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "The Sierra Club list (April '26, reference only, never cited) flags capacity change for this unit, with status operating and 398 MW. Look for a public source that shows what changed and report it; never cite the Sierra Club data.",
+            "fields": [
+              "Status",
+              "Capacity (MW)",
+              "Turbine/Engine Technology",
+              "Owner(s)"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100000403577": [
+          {
+            "text": "Owner(s) (currently Tampa Electric Co [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 27.7943440); Longitude (currently -82.4032060); Location accuracy (currently exact); City (currently Ruskin): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Big Bend CC1 (1,241 MW) has no Start year. Stage it if Tampa Electric or EIA dates commercial operation. Tampa Electric's board approved a unit 4 modernization to combined cycle after its April 2026 plan was filed (filing 04359-2026 at floridapsc.com); the coal unit 4 is still operating. Write the modernization up as a question with the source; a new unit record is for the state-wide search, not this brief.",
+          "fields": [
+            "Start year"
+          ],
+          "checks": []
+        },
+        {
+          "text": "The Sierra Club list (April '26, reference only, never cited) has a row \"Big Bend\" unit ST3 (terminated, 446 MW) matched to this plant, but no GEM unit here has that status (GEM units: CC1 (operating); GT4 (operating)). It may be a project GEM holds under another plant or not at all. Say in a question what it is and whether GEM should hold it; never cite the Sierra Club data.",
+          "fields": [],
+          "checks": [
+            38
+          ]
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000103825",
+      "plant_name": "Crystal River Energy Complex",
+      "brief_path": "batches/us-fl/briefs/L100000103825.md",
+      "unit_ids": [
+        "G100000402124",
+        "G100000402125"
+      ],
+      "n_units": 2,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Crystal_River_Energy_Complex",
+      "n_tasks": 5,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100000402124": [
+          {
+            "text": "Owner(s) (currently Duke Energy Florida LLC [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 28.9570310); Longitude (currently -82.7005830); Location accuracy (currently exact); City (currently Crystal River): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ],
+        "G100000402125": [
+          {
+            "text": "Owner(s) (currently Duke Energy Florida LLC [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 28.9570310); Longitude (currently -82.7005830); Location accuracy (currently exact); City (currently Crystal River): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401867",
+      "plant_name": "DeBary power station",
+      "brief_path": "batches/us-fl/briefs/L100000401867.md",
+      "unit_ids": [
+        "G100000414282",
+        "G100000414281",
+        "G100000414280",
+        "G100000414279",
+        "G100000414278",
+        "G100000414277",
+        "G100000402737",
+        "G100000402738",
+        "G100000402739"
+      ],
+      "n_units": 9,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/DeBary_power_station",
+      "n_tasks": 7,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000414281": [
+          {
+            "text": "The EIA-860M file for August 2026 (plant 6046) gives a planned retirement year of 2034, and GEM has none. Check the plan and report it with a source.",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100000414280": [
+          {
+            "text": "The EIA-860M file for August 2026 (plant 6046) gives a planned retirement year of 2034, and GEM has none. Check the plan and report it with a source.",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100000414279": [
+          {
+            "text": "The EIA-860M file for August 2026 (plant 6046) gives a planned retirement year of 2034, and GEM has none. Check the plan and report it with a source.",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100000414278": [
+          {
+            "text": "The EIA-860M file for August 2026 (plant 6046) gives a planned retirement year of 2034, and GEM has none. Check the plan and report it with a source.",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100000414277": [
+          {
+            "text": "The EIA-860M file for August 2026 (plant 6046) gives a planned retirement year of 2034, and GEM has none. Check the plan and report it with a source.",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Duke's 2025 plan retires DeBary peakers 2 to 6 in June 2027, while EIA-860M shows 2034 for some of them. Resolve with Duke's 2026 plan and stage Planned retire per unit from the newest plan only.",
+          "fields": [
+            "Planned retire"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000103826",
+      "plant_name": "Deerhaven Generating Station",
+      "brief_path": "batches/us-fl/briefs/L100000103826.md",
+      "unit_ids": [
+        "G100000402915",
+        "G100000402916",
+        "G100001018030"
+      ],
+      "n_units": 3,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Deerhaven_Generating_Station",
+      "n_tasks": 15,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City",
+        "CCS attachment?"
+      ],
+      "tasks": {
+        "G100000402915": [
+          {
+            "text": "Retirement is planned for 2027. Does the plan still hold?",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              21
+            ]
+          },
+          {
+            "text": "Owner(s) (currently Gainesville Regional Utilities [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 29.7591470); Longitude (currently -82.3880530); Location accuracy (currently exact); City (currently Hague): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 663) gives a planned retirement year of 2032, while GEM says 2027. Check the plan and report it with a source.",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100000402916": [
+          {
+            "text": "Owner(s) (currently Gainesville Regional Utilities [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 29.7591470); Longitude (currently -82.3880530); Location accuracy (currently exact); City (currently Hague): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ],
+        "G100001018030": [
+          {
+            "text": "Retirement is planned for 2031. Does the plan still hold?",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              21
+            ]
+          },
+          {
+            "text": "Owner(s) (currently Gainesville Regional Utilities [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 29.7591470); Longitude (currently -82.3880530); Location accuracy (currently exact); City (currently Hague): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The database's validation report says Carbon capture (CCS) has no data source. Find a document that states the current value for this unit and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "CCS attachment?"
+            ],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 663) gives operating year 1981, while GEM's start year is 2021. Check which is right.",
+            "fields": [
+              "Start year"
+            ],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 663) gives a planned retirement year of 2036, while GEM says 2031. Check the plan and report it with a source.",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Gainesville Regional Utilities' 2026 plan tentatively retires Deerhaven turbines 1 and 2 and the steam units in 2031, 2032 and 2036, with dates that may slip. Stage Planned retire only where the plan gives a firm year per unit; otherwise add a Status Detail line. Check the converted unit 2 gas row for a missing Start year.",
+          "fields": [
+            "Planned retire",
+            "Status Detail",
+            "Start year"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000103824",
+      "plant_name": "Gulf Clean Energy Center",
+      "brief_path": "batches/us-fl/briefs/L100000103824.md",
+      "unit_ids": [
+        "G100000410533",
+        "G100000410532",
+        "G100000410531",
+        "G100000410530",
+        "G100001017852",
+        "G100001017853",
+        "G100001017940",
+        "G100001017971"
+      ],
+      "n_units": 8,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Gulf_Clean_Energy_Center",
+      "n_tasks": 30,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City",
+        "CCS attachment?"
+      ],
+      "tasks": {
+        "G100000410533": [
+          {
+            "text": "Owner(s) (currently Florida Power & Light Co [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 30.5659860); Longitude (currently -87.2245110); Location accuracy (currently exact); City (currently Pensacola): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ],
+        "G100000410532": [
+          {
+            "text": "Owner(s) (currently Florida Power & Light Co [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 30.5659860); Longitude (currently -87.2245110); Location accuracy (currently exact); City (currently Pensacola): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ],
+        "G100000410531": [
+          {
+            "text": "Owner(s) (currently Florida Power & Light Co [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 30.5659860); Longitude (currently -87.2245110); Location accuracy (currently exact); City (currently Pensacola): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ],
+        "G100000410530": [
+          {
+            "text": "Owner(s) (currently Florida Power & Light Co [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 30.5659860); Longitude (currently -87.2245110); Location accuracy (currently exact); City (currently Pensacola): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ],
+        "G100001017852": [
+          {
+            "text": "Owner(s) (currently Florida Power & Light Co [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 30.5659860); Longitude (currently -87.2245110); Location accuracy (currently exact); City (currently Pensacola): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The database's validation report says Carbon capture (CCS) has no data source. Find a document that states the current value for this unit and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "CCS attachment?"
+            ],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "This unit has no EIA generator id. The EIA-860M file for August 2026 lists at plant 641: generator 4, 93.7 MW, natural gas steam turbine, operating, operating since 1959 (other possible matches: 5). Say in a question which generator id or ids belong to this unit; do not report them as values.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100001017853": [
+          {
+            "text": "Owner(s) (currently Florida Power & Light Co [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 30.5659860); Longitude (currently -87.2245110); Location accuracy (currently exact); City (currently Pensacola): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The database's validation report says Carbon capture (CCS) has no data source. Find a document that states the current value for this unit and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "CCS attachment?"
+            ],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "This unit has no EIA generator id. The EIA-860M file for August 2026 lists at plant 641: generator 4, 93.7 MW, natural gas steam turbine, operating, operating since 1959 (other possible matches: 5). Say in a question which generator id or ids belong to this unit; do not report them as values.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100001017940": [
+          {
+            "text": "Owner(s) (currently Florida Power & Light Co [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 30.5659860); Longitude (currently -87.2245110); Location accuracy (currently exact); City (currently Pensacola): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The database's validation report says Carbon capture (CCS) has no data source. Find a document that states the current value for this unit and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "CCS attachment?"
+            ],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 641) gives operating year 1970, while GEM's start year is 2021. Check which is right.",
+            "fields": [
+              "Start year"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100001017971": [
+          {
+            "text": "Owner(s) (currently Florida Power & Light Co [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 30.5659860); Longitude (currently -87.2245110); Location accuracy (currently exact); City (currently Pensacola): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The database's validation report says Carbon capture (CCS) has no data source. Find a document that states the current value for this unit and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "CCS attachment?"
+            ],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 641) gives operating year 1973, while GEM's start year is 2021. Check which is right.",
+            "fields": [
+              "Start year"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Florida Power and Light's 2026 Ten-Year Site Plan (investor.nexteraenergy.com, FPL 2026-2035 TYSP PDF) says Gulf Clean Energy Center units 4 and 5 (the converted 93.7 MW gas rows 'tp2') retire at the end of 2029. Stage Planned retire 2029 on the gas rows if the plan gives the date, and add a Status Detail line at the top.",
+          "fields": [
+            "Planned retire",
+            "Status Detail"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401869",
+      "plant_name": "Intercession City power station",
+      "brief_path": "batches/us-fl/briefs/L100000401869.md",
+      "unit_ids": [
+        "G100000414258",
+        "G100000402740",
+        "G100000414252",
+        "G100000402741",
+        "G100000402742",
+        "G100000402743",
+        "G100000414257",
+        "G100000414256",
+        "G100000414255",
+        "G100000414254",
+        "G100000414253",
+        "G100000402744",
+        "G100000402745",
+        "G100000402746"
+      ],
+      "n_units": 14,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Intercession_City_power_station",
+      "n_tasks": 5,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000414255": [
+          {
+            "text": "The EIA-860M file for August 2026 (plant 8049) gives a planned retirement year of 2034, and GEM has none. Check the plan and report it with a source.",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100000414254": [
+          {
+            "text": "The EIA-860M file for August 2026 (plant 8049) gives a planned retirement year of 2034, and GEM has none. Check the plan and report it with a source.",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100000414253": [
+          {
+            "text": "The EIA-860M file for August 2026 (plant 8049) gives a planned retirement year of 2034, and GEM has none. Check the plan and report it with a source.",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Duke's 2025 plan retires Intercession City units 1 to 6 in June 2034. Confirm with the 2026 plan and stage Planned retire 2034 on those six units only; leave the other units alone.",
+          "fields": [
+            "Planned retire"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000103829",
+      "plant_name": "Lansing Smith Generating Plant",
+      "brief_path": "batches/us-fl/briefs/L100000103829.md",
+      "unit_ids": [
+        "G100001054841",
+        "G100000402129"
+      ],
+      "n_units": 2,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Lansing_Smith_Generating_Plant",
+      "n_tasks": 4,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100001054841": [
+          {
+            "text": "Latitude (currently 30.2685280); Longitude (currently -85.7000250); Location accuracy (currently exact); City (currently Lynn Haven): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ],
+        "G100000402129": [
+          {
+            "text": "Latitude (currently 30.2685280); Longitude (currently -85.7000250); Location accuracy (currently exact); City (currently Lynn Haven): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "The 2026 Ten-Year Site Plan says Lansing Smith CT 3A (about 40 MW, oil) retires in the fourth quarter of 2027. GEM has CT1 at 41.8 MW oil. Confirm the GEM unit is the same turbine and stage Planned retire 2027 on it if the plan gives the date.",
+          "fields": [
+            "Planned retire"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401951",
+      "plant_name": "Martin Point power station",
+      "brief_path": "batches/us-fl/briefs/L100000401951.md",
+      "unit_ids": [
+        "G100000402094",
+        "G100000402095",
+        "G100000402096"
+      ],
+      "n_units": 3,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Martin_Point_power_station",
+      "n_tasks": 2,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {},
+      "plant_tasks": [
+        {
+          "text": "Florida Power and Light's 2026 plan lists 3,276 MW of new combustion turbines at Martin from 2032 to 2035 ('2032 4x0 Martin CTs' 932 MW, the same in 2033 and 2034, '2035 2x0 Martin CTs' 596 MW). These are not in GEM. A gas project in a plan is enough to add it: write the plan lines up as candidate new units for Martin Point with the plan's page, capacity and year, and flag them as plan-sourced. The Martin unit 3 upgrade for 2028 is a watch item.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": [
+            34,
+            37,
+            39
+          ]
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000103830",
+      "plant_name": "Northside Generating Station",
+      "brief_path": "batches/us-fl/briefs/L100000103830.md",
+      "unit_ids": [
+        "G100000414223",
+        "G100000414222",
+        "G100000414221",
+        "G100000414220",
+        "G100000403033"
+      ],
+      "n_units": 5,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Northside_Generating_Station",
+      "n_tasks": 11,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100000414223": [
+          {
+            "text": "Owner(s) (currently JEA [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 30.4190720); Longitude (currently -81.5549470); Location accuracy (currently exact); City (currently Jacksonville): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ],
+        "G100000414222": [
+          {
+            "text": "Owner(s) (currently JEA [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 30.4190720); Longitude (currently -81.5549470); Location accuracy (currently exact); City (currently Jacksonville): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ],
+        "G100000414221": [
+          {
+            "text": "Owner(s) (currently JEA [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 30.4190720); Longitude (currently -81.5549470); Location accuracy (currently exact); City (currently Jacksonville): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ],
+        "G100000414220": [
+          {
+            "text": "Owner(s) (currently JEA [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 30.4190720); Longitude (currently -81.5549470); Location accuracy (currently exact); City (currently Jacksonville): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ],
+        "G100000403033": [
+          {
+            "text": "Owner(s) (currently JEA [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 30.4190720); Longitude (currently -81.5549470); Location accuracy (currently exact); City (currently Jacksonville): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401871",
+      "plant_name": "P L Bartow power station",
+      "brief_path": "batches/us-fl/briefs/L100000401871.md",
+      "unit_ids": [
+        "G100000402127",
+        "G100000414219",
+        "G100000402747",
+        "G100000414218",
+        "G100000402748"
+      ],
+      "n_units": 5,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/P_L_Bartow_power_station",
+      "n_tasks": 12,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000414219": [
+          {
+            "text": "Retirement is planned for 2027. Does the plan still hold?",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              21
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 634) gives 55.4 MW nameplate for P1, while GEM says 75.4 MW. Check the nameplate electric capacity and report it with a source.",
+            "fields": [
+              "Capacity (MW)"
+            ],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 634) gives a planned retirement year of 2034, while GEM says 2027. Check the plan and report it with a source.",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100000402747": [
+          {
+            "text": "Retirement is planned for 2034. Does the plan still hold?",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              21
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 634) gives 55.4 MW nameplate for P2, while GEM says 75 MW. Check the nameplate electric capacity and report it with a source.",
+            "fields": [
+              "Capacity (MW)"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100000414218": [
+          {
+            "text": "Retirement is planned for 2027. Does the plan still hold?",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              21
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 634) gives 55.4 MW nameplate for P3, while GEM says 75.4 MW. Check the nameplate electric capacity and report it with a source.",
+            "fields": [
+              "Capacity (MW)"
+            ],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 634) gives a planned retirement year of 2034, while GEM says 2027. Check the plan and report it with a source.",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100000402748": [
+          {
+            "text": "Retirement is planned for 2034. Does the plan still hold?",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              21
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 634) gives 55.4 MW nameplate for P4, while GEM says 75 MW. Check the nameplate electric capacity and report it with a source.",
+            "fields": [
+              "Capacity (MW)"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Duke's 2025 plan retires P L Bartow peakers P1 and P3 in June 2027 and P2 and P4 in June 2034. Confirm with Duke's 2026 plan and stage Planned retire per unit. GEM lists the peakers at about 75 MW while EIA gives 55.4 MW; put the capacity disagreement in a question, do not change Capacity (MW) without two agreeing sources.",
+          "fields": [
+            "Planned retire"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000103831",
+      "plant_name": "Polk Power Station",
+      "brief_path": "batches/us-fl/briefs/L100000103831.md",
+      "unit_ids": [
+        "G100000402145",
+        "G100000108072"
+      ],
+      "n_units": 2,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Polk_Power_Station",
+      "n_tasks": 9,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City",
+        "CCS attachment?"
+      ],
+      "tasks": {
+        "G100000402145": [
+          {
+            "text": "Latitude (currently 27.7286110); Longitude (currently -81.9897200); Location accuracy (currently exact); City (currently Mulberry): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ],
+        "G100000108072": [
+          {
+            "text": "Latitude (currently 27.7286110); Longitude (currently -81.9897200); Location accuracy (currently exact); City (currently Mulberry): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The database's validation report says Carbon capture (CCS) has no data source. Find a document that states the current value for this unit and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "CCS attachment?"
+            ],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "This unit has no EIA generator id. The EIA-860M file for August 2026 lists at plant 7242: generator 7, 195.8 MW, natural gas fired combustion turbine, canceled or postponed. Say in a question which generator id or ids belong to this unit; do not report them as values.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "The Sierra Club list (April '26, reference only, never cited) shows this unit as planned, while GEM says operating. Find a public source that settles the status; never cite the Sierra Club data.",
+            "fields": [
+              "Status",
+              "Status Detail"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Polk unit 1 gasification retired at the end of 2024 and the combustion turbine is being upgraded to run on gas. Check the GEM unit 1 gas row ('tp2', 192.9 MW) status and stage Status Detail with the 2025 plan's wording. Polk unit 2 gets two 59.5 MW enhancements (November 2026 and June 2027): an uprate on an existing unit stays on the watch list, do not change Capacity (MW).",
+          "fields": [
+            "Status",
+            "Status Detail"
+          ],
+          "checks": [
+            39
+          ]
+        },
+        {
+          "text": "Unit Unit 1, timepoint 1 (G100001048286): The database's validation report says Carbon capture (CCS) has no data source. Find a document that states the current value for this unit and report the value with that document. If the document gives a different value, say so.",
+          "fields": [
+            "CCS attachment?"
+          ],
+          "checks": [
+            7
+          ]
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000103833",
+      "plant_name": "Seminole Generating Station",
+      "brief_path": "batches/us-fl/briefs/L100000103833.md",
+      "unit_ids": [
+        "G100000401619"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Seminole_Generating_Station",
+      "n_tasks": 2,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000401619": [
+          {
+            "text": "This unit is recorded as replacing another unit, but the link points at a unit that does not exist (ID 0). Find which unit it replaced, often an older unit at the same plant, which may be a coal unit. Give that unit's GEM unit ID as a question, not a value. If it replaced nothing, say so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000402272",
+      "plant_name": "Shady Hills generating station",
+      "brief_path": "batches/us-fl/briefs/L100000402272.md",
+      "unit_ids": [
+        "G100000403492",
+        "G100000403493",
+        "G100000403494"
+      ],
+      "n_units": 3,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Shady_Hills_generating_station",
+      "n_tasks": 2,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {},
+      "plant_tasks": [
+        {
+          "text": "The Sierra Club list (April '26, reference only, never cited) has a row \"Shady Hills\" unit G501 (terminated, 223 MW) matched to this plant, but no GEM unit here has that status (GEM units: G101 (operating); G201 (operating); G301 (operating)). It may be a project GEM holds under another plant or not at all. Say in a question what it is and whether GEM should hold it; never cite the Sierra Club data.",
+          "fields": [],
+          "checks": [
+            38
+          ]
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001023567",
+      "plant_name": "South Tampa Resilience Project power station",
+      "brief_path": "batches/us-fl/briefs/L100001023567.md",
+      "unit_ids": [
+        "G100001028150",
+        "G100001028152"
+      ],
+      "n_units": 2,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/South_Tampa_Resilience_Project_power_station",
+      "n_tasks": 2,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100001028152": [
+          {
+            "text": "The Sierra Club list (April '26, reference only, never cited) flags status change for this unit, with status operating and 19 MW. Look for a public source that shows what changed and report it; never cite the Sierra Club data.",
+            "fields": [
+              "Status",
+              "Capacity (MW)",
+              "Turbine/Engine Technology",
+              "Owner(s)"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401872",
+      "plant_name": "Suwannee River power station",
+      "brief_path": "batches/us-fl/briefs/L100000401872.md",
+      "unit_ids": [
+        "G100000402749",
+        "G100000414184",
+        "G100000402750"
+      ],
+      "n_units": 3,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Suwannee_River_power_station",
+      "n_tasks": 2,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {},
+      "plant_tasks": [
+        {
+          "text": "Duke's 2025 plan retires Suwannee River units 1 to 3 in June 2034. Confirm with the 2026 plan and stage Planned retire 2034 if it still says so.",
+          "fields": [
+            "Planned retire"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401632",
+      "plant_name": "Vandolah power station",
+      "brief_path": "batches/us-fl/briefs/L100000401632.md",
+      "unit_ids": [
+        "G100000402361",
+        "G100000402362",
+        "G100000402363",
+        "G100000402364"
+      ],
+      "n_units": 4,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Vandolah_power_station",
+      "n_tasks": 2,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {},
+      "plant_tasks": [
+        {
+          "text": "Florida Power and Light agreed on August 20, 2025 to buy the Vandolah plant from Northern Star, FERC approved in December 2025, and the plant is to serve the company from June 1, 2027. Stage Owner(s) only if a source says the sale closed. If it is still pending, leave Owner(s) alone and put what you found in a question.",
+          "fields": [
+            "Owner(s)"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000409252",
+      "plant_name": "Winston power station",
+      "brief_path": "batches/us-fl/briefs/L100000409252.md",
+      "unit_ids": [
+        "G100000414177"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Winston_power_station",
+      "n_tasks": 2,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100000414177": [
+          {
+            "text": "City is blank. Fill it from a source that places the plant; the source goes in Location Data Source.",
+            "fields": [
+              "City"
+            ],
+            "checks": [
+              26
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Florida has no grid operator. Each utility files a Ten-Year Site Plan every April with the Public Service Commission (PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/<year>/<Utility>.pdf, open with curl). A plan's retirement year is a target, not a decision, and is marked approximate: stage Planned retire from a plan only when the plan gives a month and year and the plan is the current one. Projects of 75 MW and above need a need determination from the commission (filings at floridapsc.com/library/filings/<year>/<number>/<number>.pdf).",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    }
+  ],
+  "not_tasked": [
+    {
+      "plant_id": "L100000401865",
+      "plant_name": "Anclote power station",
+      "unit_ids": [
+        "G100000402735",
+        "G100000402736"
+      ]
+    },
+    {
+      "plant_id": "L100000401811",
+      "plant_name": "Arvah B Hopkins power station",
+      "unit_ids": [
+        "G100000402134",
+        "G100000402609",
+        "G100000402610",
+        "G100000414310"
+      ]
+    },
+    {
+      "plant_id": "L100000402026",
+      "plant_name": "Brandy Branch power station",
+      "unit_ids": [
+        "G100000403028",
+        "G100000402177"
+      ]
+    },
+    {
+      "plant_id": "L100000103821",
+      "plant_name": "C.D. McIntosh power station",
+      "unit_ids": [
+        "G100000402133",
+        "G100000403792",
+        "G100000414296",
+        "G100000402585"
+      ]
+    },
+    {
+      "plant_id": "L100000401567",
+      "plant_name": "Cane Island power station",
+      "unit_ids": [
+        "G100000402142",
+        "G100000402143",
+        "G100000402144"
+      ]
+    },
+    {
+      "plant_id": "L100000401947",
+      "plant_name": "Cape Canaveral power station",
+      "unit_ids": [
+        "G100000402107"
+      ]
+    },
+    {
+      "plant_id": "L100000402248",
+      "plant_name": "Central Energy Plant",
+      "unit_ids": [
+        "G100000402147"
+      ]
+    },
+    {
+      "plant_id": "L100000401948",
+      "plant_name": "Fort Myers power station",
+      "unit_ids": [
+        "G100000414271",
+        "G100000402902",
+        "G100000402903",
+        "G100000402113",
+        "G100000414270",
+        "G100000402904",
+        "G100000402905"
+      ]
+    },
+    {
+      "plant_id": "L100000402027",
+      "plant_name": "Greenland energy center",
+      "unit_ids": [
+        "G100000403029",
+        "G100000403030"
+      ]
+    },
+    {
+      "plant_id": "L100000402311",
+      "plant_name": "H L Culbreath Bayside power station",
+      "unit_ids": [
+        "G100000403578",
+        "G100000403579",
+        "G100000403580",
+        "G100000403581",
+        "G100000402179",
+        "G100000402180"
+      ]
+    },
+    {
+      "plant_id": "L100000401564",
+      "plant_name": "Hardee power station",
+      "unit_ids": [
+        "G100000401724",
+        "G100000402270",
+        "G100000402271"
+      ]
+    },
+    {
+      "plant_id": "L100000401868",
+      "plant_name": "Hines energy complex",
+      "unit_ids": [
+        "G100000402149",
+        "G100000402150",
+        "G100000402151",
+        "G100000402152"
+      ]
+    },
+    {
+      "plant_id": "L100000402028",
+      "plant_name": "J D Kennedy power station",
+      "unit_ids": [
+        "G100000403031",
+        "G100000403032"
+      ]
+    },
+    {
+      "plant_id": "L100000401963",
+      "plant_name": "John R Kelly power station",
+      "unit_ids": [
+        "G100000402131",
+        "G100000409434"
+      ]
+    },
+    {
+      "plant_id": "L100000401796",
+      "plant_name": "Larsen Memorial power station",
+      "unit_ids": [
+        "G100000402132"
+      ]
+    },
+    {
+      "plant_id": "L100000401949",
+      "plant_name": "Lauderdale power station",
+      "unit_ids": [
+        "G100000402906",
+        "G100000402907",
+        "G100000402908",
+        "G100000402909",
+        "G100000402910",
+        "G100000402115"
+      ]
+    },
+    {
+      "plant_id": "L100000402271",
+      "plant_name": "Midulla generating station",
+      "unit_ids": [
+        "G100000402156",
+        "G100000403487",
+        "G100000403488",
+        "G100000403489",
+        "G100000403490",
+        "G100000403491"
+      ]
+    },
+    {
+      "plant_id": "L100000401668",
+      "plant_name": "Mulberry cogeneration Facility",
+      "unit_ids": [
+        "G100000401751"
+      ]
+    },
+    {
+      "plant_id": "L100000401952",
+      "plant_name": "Okeechobee Clean energy center",
+      "unit_ids": [
+        "G100000402090"
+      ]
+    },
+    {
+      "plant_id": "L100000402171",
+      "plant_name": "Oleander power project",
+      "unit_ids": [
+        "G100000403332",
+        "G100000403333",
+        "G100000403334",
+        "G100000403335",
+        "G100000403336"
+      ]
+    },
+    {
+      "plant_id": "L100000401667",
+      "plant_name": "Orange cogeneration facility",
+      "unit_ids": [
+        "G100000401750"
+      ]
+    },
+    {
+      "plant_id": "L100000401644",
+      "plant_name": "Orlando cogeneration power station",
+      "unit_ids": [
+        "G100000402376"
+      ]
+    },
+    {
+      "plant_id": "L100000401870",
+      "plant_name": "Osprey energy center power plant",
+      "unit_ids": [
+        "G100000401919"
+      ]
+    },
+    {
+      "plant_id": "L100000402438",
+      "plant_name": "Pensacola Florida power plant",
+      "unit_ids": [
+        "G100000403863"
+      ]
+    },
+    {
+      "plant_id": "L100000401953",
+      "plant_name": "Port Everglades power station",
+      "unit_ids": [
+        "G100000402116"
+      ]
+    },
+    {
+      "plant_id": "L100000401954",
+      "plant_name": "Riviera power station",
+      "unit_ids": [
+        "G100000402117"
+      ]
+    },
+    {
+      "plant_id": "L100000401812",
+      "plant_name": "S O Purdom power station",
+      "unit_ids": [
+        "G100000402135"
+      ]
+    },
+    {
+      "plant_id": "L100000401955",
+      "plant_name": "Sanford power station",
+      "unit_ids": [
+        "G100000402118",
+        "G100000402119"
+      ]
+    },
+    {
+      "plant_id": "L100000402269",
+      "plant_name": "Santa Rosa energy center",
+      "unit_ids": [
+        "G100000401860"
+      ]
+    },
+    {
+      "plant_id": "L100000401873",
+      "plant_name": "Tiger Bay power station",
+      "unit_ids": [
+        "G100000402164"
+      ]
+    },
+    {
+      "plant_id": "L100000401558",
+      "plant_name": "Treasure Coast energy center",
+      "unit_ids": [
+        "G100000402019"
+      ]
+    },
+    {
+      "plant_id": "L100000401956",
+      "plant_name": "Turkey Point power station",
+      "unit_ids": [
+        "G100000402123"
+      ]
+    },
+    {
+      "plant_id": "L100000401874",
+      "plant_name": "University of Florida power station",
+      "unit_ids": [
+        "G100000402751"
+      ]
+    },
+    {
+      "plant_id": "L100000401957",
+      "plant_name": "West County energy center",
+      "unit_ids": [
+        "G100000402020",
+        "G100000402021",
+        "G100000402022"
+      ]
+    }
+  ],
+  "promoted_new": [],
+  "irp": {
+    "file": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/work/irp_us-florida.json",
+    "brief_path": "batches/us-fl/briefs/_irp.md",
+    "read": "2026-10-09",
+    "skipped": false,
+    "utilities": [
+      {
+        "utility": "Florida Public Service Commission",
+        "irp_year": "List of Site Plans (2025)",
+        "is_draft": false,
+        "links": [
+          "https://www.psc.state.fl.us/ten-year-site-plans"
+        ],
+        "next_irp_due": "",
+        "plant_ids": []
+      }
+    ],
+    "links": [
+      "https://www.psc.state.fl.us/ten-year-site-plans"
+    ],
+    "irp_box_units": [
+      "G100001074203",
+      "G100001074204",
+      "G100001074197",
+      "G100001074198",
+      "G100001074199",
+      "G100001090179"
+    ]
+  },
+  "captive": {
+    "file": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/work/captive_us-florida.json",
+    "brief_path": "batches/us-fl/briefs/_captive.md",
+    "read": "2026-10-08",
+    "threshold_mw": 50,
+    "terminals": [],
+    "new_candidates": [],
+    "gem_only": [],
+    "data_center": true
+  }
+}

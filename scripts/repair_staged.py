@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-"""Bring staging made before 2026-10-08 up to two rules (Baird 2026-10-08).
+"""Bring older staging up to two rules (Baird 2026-10-08, 2026-10-09).
 
-1. Status Detail carries its own link. A Status Detail record whose links sit
-   under Status Data Source (which feeds the milestone and scheduled-event
-   timeline in the web form) gets them written into the new entry's text
-   instead ("...: https://...") and keyed under "Status Detail"; the action
-   is rewritten to match. The text already in the box is untouched.
+1. Status Detail carries its own links. A Status Detail record whose links
+   sit under Status Data Source (which feeds the milestone and scheduled-event
+   timeline in the web form) gets them keyed under "Status Detail" instead,
+   and every new Status Detail entry is laid out as its text, a blank line,
+   then one link per line (build_review_package.inline_value; the older
+   "text: https://..." form is reflowed). The action is rewritten to match.
+   The text already in the box is untouched.
 2. One fully validated source is green. A `medium` record with a link whose
    verification loaded, names the plant and states the value is raised to
    `high` (build_review_package.validated_tier). A Status change is never
@@ -30,23 +32,24 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from assemble_state import build_action  # noqa: E402
 from build_review_package import (_ws, additive_value, inline_value,  # noqa: E402
                                   validated_tier)
 
 ROOT = Path(__file__).resolve().parent.parent
 VALUE_LANES = ("updates", "newplants", "newunits")
-LINK_SENTENCE = re.compile(r" Add (?:the link below|the \d+ links below) to the "
-                           r"Status Data Source box(?: on each unit)?\. Keep the "
-                           r"links already there\.")
-INLINE_SENTENCE = (" The source link is part of this text. Do not add it to the "
-                   "Status Data Source box.")
+
+
+ACTION_TARGET = re.compile(r"^(?:Set Status Detail of (?P<a>.+?) to |Add (?:this|the entry "
+                           r"below) at the top of the Status Detail box of (?P<b>.+?), above)")
 
 
 def inline_status_detail(r, problems, rid):
     fields, refs = r.get("fields") or {}, r.get("refs") or {}
     if "Status Detail" not in fields or "Status" in fields:
         return False
-    urls = [u for u in refs.get("Status Data Source") or [] if u]
+    key = "Status Detail" if refs.get("Status Detail") else "Status Data Source"
+    urls = [u for u in refs.get(key) or [] if u]
     if not urls:
         return False
     value = str(fields["Status Detail"])
@@ -59,16 +62,20 @@ def inline_status_detail(r, problems, rid):
     else:
         new_part = value.strip()
     new_inline = inline_value(new_part, urls)
-    fields["Status Detail"] = additive_value(new_inline, current)
-    refs.pop("Status Data Source")
-    refs["Status Detail"] = urls
-    action = str(r.get("action") or "")
-    old_q, new_q = new_part.rstrip(". "), new_inline.rstrip(". ")
-    if old_q in action and LINK_SENTENCE.search(action):
-        action = action.replace(old_q, new_q, 1)
-        r["action"] = LINK_SENTENCE.sub(INLINE_SENTENCE, action, count=1)
-    else:
+    new_value = additive_value(new_inline, current)
+    if key == "Status Detail" and new_value == value:
+        return False
+    m = ACTION_TARGET.match(str(r.get("action") or ""))
+    if not m:
         problems.append(f"{rid}: action text not in the expected form; rewrite it by hand")
+        return False
+    fields["Status Detail"] = new_value
+    refs.pop("Status Data Source", None)
+    refs["Status Detail"] = urls
+    r["action"] = build_action("change" if current else "fill", "Status Detail",
+                               new_inline, current, m.group("a") or m.group("b"),
+                               "Status Detail", len(urls), additive=bool(current),
+                               inline=True)
     return True
 
 
@@ -120,7 +127,7 @@ def main(argv=None):
             inlined, promoted, problems = repair_file(p, args.apply)
             if not (inlined or promoted or problems):
                 continue
-            print(f"{p}: Status Detail links written into the text {len(inlined)}, "
+            print(f"{p}: Status Detail entries laid out with their links {len(inlined)}, "
                   f"raised medium to high {len(promoted)}"
                   f"{'' if args.apply else ' (dry run)'}")
             for rid in promoted:

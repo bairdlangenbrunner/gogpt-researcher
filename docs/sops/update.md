@@ -220,7 +220,7 @@ When the human has applied the batch, the country isn't done until:
 - **One fully validated URL suffices (2+ independent preferred; a status change needs 2+ for green); mirrors of one document = one source** (§7.2).
 - **Reference edits merge, never replace; no orphan citations; URLs only in reference columns** (§7.2–§7.3, §4.4).
 - **Status Detail and Notes are additive, newest on top** (Baird 2026-10-07): new text goes above the existing text, which stays word for word; never a rewrite or a deletion. `state_gate.py` gate `additive` enforces it.
-- **A Status Detail entry carries its own source link** in its text, "...: https://..." (Baird 2026-10-08). The link never goes in Status Data Source, which feeds the milestone and scheduled-event timeline. One fully validated source makes it green: it is not a status change.
+- **A Status Detail entry carries its own source links** in its text: the entry, a blank line, then one link per line (Baird 2026-10-08, layout 2026-10-09; `build_review_package.inline_value` writes it, and a blank line separates the new entry from the older text below). The link never goes in Status Data Source, which feeds the milestone and scheduled-event timeline. One fully validated source makes it green: it is not a status change.
 - **Fresh pull chain at the start of every batch**, column map re-derived (§3).
 - **Project-level field changes apply to ALL unit rows** — and check the unfiltered CSV at co-located coal/gas plants (§9).
 - **Start Year never on shelved/cancelled; Retired Year never on mothballed; Planned-checkbox logic enforced** (§4.2, `qc_checks.py`).

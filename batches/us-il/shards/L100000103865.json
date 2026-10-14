@@ -1,0 +1,132 @@
+{
+ "meta": {
+  "plant_id": "L100000103865",
+  "plant_name": "Joliet 9 Generating Station",
+  "state": "Illinois",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-09T16:48:46-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001017847",
+   "unit_name": "Unit 6, timepoint 2",
+   "findings": {
+    "Owner(s)": {
+     "value": "Midwest Generation EME LLC [100%]",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists the owner of Joliet 9, generator 6, as Midwest Generations EME LLC. The spelling has an extra s, but it is clearly the same company. The table names one owner and gives no share, so the 100 percent is implied. I read the name in the downloaded file."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Power Engineering article from October 2015 says the Illinois EPA issued a final air construction permit for NRG Energy to convert the three coal-fired units 6 to 8 at the Joliet plant to burn natural gas. So unit 6 is a conversion."
+    }
+   },
+   "not_found": [
+    "CCS attachment?",
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "City",
+    "Status Detail",
+    "Operator(s)",
+    "CHP",
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "The EIA-860M table for August 2026 lists generator 6 as retired in June 2023, 360.4 MW, natural gas steam turbine, operating since June 1959. That matches GEM's status, capacity and retired year. I found no document that states a carbon capture value for this unit."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001017847",
+   "concern_type": "location",
+   "recommendation": "Keep GEM's coordinates unless a reviewer prefers the EIA point.",
+   "note": "The EIA-860M table for August 2026 puts the plant at 41.4931, -88.1153. GEM has 41.4949190, -88.1243420, about 0.8 km away. I did not find a document that states GEM's exact point, so Location Data Source stays empty.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001017847",
+   "concern_type": "Start year",
+   "recommendation": "Check that 2018 is the intended start year.",
+   "note": "The EIA-860M table gives an operating year of 1959 for this generator. GEM's 2018 is the year of the gas conversion, which fits the conversion naming. No change proposed.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001017847",
+   "concern_type": "existence",
+   "recommendation": "Check whether the old Joliet 9 gas combustion turbines are in GEM.",
+   "note": "EIA also lists eight small gas combustion turbines of 18.4 MW each at this plant, generators 311 to 314 and 321 to 324, retired in December 2004. That is before the 2020 cutoff, so no new unit is proposed.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Midwest Generation EME LLC",
+   "role": "owner",
+   "lookup_result": "Not run. The owner is unchanged from GEM's current value."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Owner(s)",
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Loads. Plant 874 generator 6 row read from the Retired sheet."
+  },
+  {
+   "url": "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/",
+   "used_for": [
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "Passes on Joliet, natural gas and Unit 6. Loaded through browser impersonation."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/",
+   "used_for": [],
+   "outcome": "verified",
+   "note": "Existing source. Page loads. Not run through the verifier log."
+  }
+ ]
+}

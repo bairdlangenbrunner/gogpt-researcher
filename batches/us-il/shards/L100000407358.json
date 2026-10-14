@@ -1,0 +1,91 @@
+{
+ "meta": {
+  "plant_id": "L100000407358",
+  "plant_name": "CPV Three Rivers energy center",
+  "state": "Illinois",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-09T16:47:13-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000409402",
+   "unit_name": "GEN1",
+   "findings": {},
+   "not_found": [
+    "Planned retire"
+   ],
+   "notes": "Nothing was checked for this unit beyond the plant-wide tasks. I found no deactivation notice for this plant on the PJM deactivation notices page, so no planned retirement is reported."
+  },
+  {
+   "gem_unit_id": "G100000409401",
+   "unit_name": "GEN2",
+   "findings": {},
+   "not_found": [
+    "Planned retire"
+   ],
+   "notes": "Nothing was checked for this unit beyond the plant-wide tasks. I found no deactivation notice for this plant on the PJM deactivation notices page, so no planned retirement is reported."
+  }
+ ],
+ "plant_findings": {
+  "Employment Notes": {
+   "value": "Operational workforce size: 25 full-time employees",
+   "refs": [
+    "https://cpv.com/wp-content/uploads/2025/06/CPV-Three-Rivers-Energy-Center-Project-Fact-Sheet-June2025-1.pdf"
+   ],
+   "verifications": [
+    {
+     "url": "https://cpv.com/wp-content/uploads/2025/06/CPV-Three-Rivers-Energy-Center-Project-Fact-Sheet-June2025-1.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "A CPV project fact sheet from June 2025 says the plant has 25 full-time employees. GEM currently shows an operational workforce of 100 and a construction workforce of 300 for each unit. The fact sheet gives a different operating figure, 25 rather than 100. News coverage of the October 2023 dedication also mentions full-time staff, and a web search summary reported up to 900 workers at the construction peak, but I did not verify that figure on a page."
+  }
+ },
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://cpv.com/wp-content/uploads/2025/06/CPV-Three-Rivers-Energy-Center-Project-Fact-Sheet-June2025-1.pdf",
+   "used_for": [
+    "Employment Notes"
+   ],
+   "outcome": "verified",
+   "note": "Fact sheet states 25 full-time employees."
+  },
+  {
+   "url": "https://www.shawlocal.com/morris-herald-news/news/local/2023/10/26/three-rivers-energy-dedicates-new-13-billion-power-plant-near-morris/",
+   "used_for": [
+    "Employment Notes"
+   ],
+   "outcome": "verified",
+   "note": "Local news article on the October 2023 dedication; page loads and mentions full-time staff."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Plant 63931 units GEN1 and GEN2 are operating, 650 MW each, operating June 2023, no planned retirement. This matches GEM so nothing is reported."
+  },
+  {
+   "url": "https://www.pjm.com/planning/service-requests/gen-deactivations/generator-deactivation-notices",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "not relevant",
+   "note": "Page text fetched; no mention of Three Rivers or CPV."
+  }
+ ]
+}

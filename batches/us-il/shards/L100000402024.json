@@ -1,0 +1,84 @@
+{
+ "meta": {
+  "plant_id": "L100000402024",
+  "plant_name": "Nelson energy center",
+  "state": "Illinois",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-09T16:47:39-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401832",
+   "unit_name": "BLK1",
+   "findings": {},
+   "not_found": [
+    "Planned retire"
+   ],
+   "notes": "Nothing was assigned to check for this unit. The plant-wide checks found no owner deactivation notice, so no planned retirement was proposed."
+  },
+  {
+   "gem_unit_id": "G100000401833",
+   "unit_name": "BLK2",
+   "findings": {},
+   "not_found": [
+    "Planned retire"
+   ],
+   "notes": "Nothing was assigned to check for this unit. The plant-wide checks found no owner deactivation notice, so no planned retirement was proposed."
+  },
+  {
+   "gem_unit_id": "G100000409500",
+   "unit_name": "GEN3",
+   "findings": {},
+   "not_found": [
+    "Planned retire"
+   ],
+   "notes": "Nothing was assigned to check for this unit. The plant-wide checks found no owner deactivation notice, so no planned retirement was proposed."
+  },
+  {
+   "gem_unit_id": "G100000409499",
+   "unit_name": "GEN4",
+   "findings": {},
+   "not_found": [
+    "Planned retire"
+   ],
+   "notes": "Nothing was assigned to check for this unit. The plant-wide checks found no owner deactivation notice, so no planned retirement was proposed."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [
+  {
+   "gem_plant_id": "L100000402024",
+   "gem_unit_id": "G100000401832",
+   "monitor_kind": "existing_plant",
+   "monitor_reason": "A 38 MW uprate for 2028 is reported on an existing plant, which is not a new or replacement unit, so it is not an edit.",
+   "recheck_by": "2027-03",
+   "note": "I could not find the 2026 PJM addendum that the possible-updates sheet describes. The PJM queue file lists Nelson projects only as in service: a 600 MW project in service since May 2015, two 157 MW projects in service since May 2023, and a 24.4 MW project in service since May 2023. A web search also found nothing on a 38 MW uprate. Capacity is left unchanged.",
+   "refs": []
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.pjm.com/pub/planning/downloads/xml/PlanningQueues.xml",
+   "used_for": [
+    "watch item"
+   ],
+   "outcome": "verified",
+   "note": "Downloaded and read. Nelson energy center entries R33, AA1-146, AA2-030 and AE1-134 are all in service. No active uprate entry found."
+  },
+  {
+   "url": "https://www.pjm.com/planning/service-requests/gen-deactivations/generator-deactivation-notices",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "The page loaded and was searched. It has no mention of Nelson or Invenergy, so there is no deactivation notice or withdrawal letter."
+  }
+ ]
+}

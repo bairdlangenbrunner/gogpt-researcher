@@ -596,15 +596,36 @@ def ref_col_for(value_col):
 URL_RE = re.compile(r"https?://\S+")
 
 
+TRAILING_URLS_RE = re.compile(r"(?:[\s:;,]*https?://\S+?)+[\s:;,.]*$")
+
+
 def inline_value(text, urls):
-    """A Status Detail entry with its source links written in, GEM style:
-    "Permit application not yet filed: https://...". Links the text already
-    holds are not repeated."""
+    """A Status Detail entry with its source links written in (Baird
+    2026-10-09): the text, a blank line, then one link per line.
+
+        Permit application not yet filed.
+
+        https://...
+        https://...
+
+    Links already trailing the text move down into the list, so an entry in
+    the older "text: https://..." form comes out the same; none repeats."""
     text = str(text or "").strip()
-    new = [u for u in urls if u and u not in text]
-    if not new:
+    m = TRAILING_URLS_RE.search(text)
+    tail = URL_RE.findall(m.group(0)) if m else []
+    if m:
+        text = text[:m.start()]
+    links = []
+    for u in tail + [u for u in urls if u]:
+        u = u.rstrip(".,;:")
+        if u not in links and u not in text:
+            links.append(u)
+    text = text.rstrip(" :;,")
+    if text and not text.endswith((".", "!", "?", ")")):
+        text += "."
+    if not links:
         return text
-    return f"{text.rstrip(' .:;')}: {', '.join(new)}" if text else ", ".join(new)
+    return f"{text}\n\n" + "\n".join(links) if text else "\n".join(links)
 
 
 # words in a researcher note that mean the source does not settle the value
@@ -649,16 +670,18 @@ def additive_value(new, current):
     """The cell to paste for Status Detail or Notes (schema_constants
     ADDITIVE_TEXT_COLUMNS). Both boxes are running logs in the GEM web form,
     newest entry first (Baird 2026-10-07): the new text goes on its own line
-    above the existing text, and the existing text stays word for word. When
-    the box already says what the new text says, the box comes back unchanged
-    so the caller can treat it as a match."""
+    above the existing text, and the existing text stays word for word. A new
+    entry that ends in a list of links (inline_value) gets a blank line under
+    it, so the links do not run into the older text. When the box already
+    says what the new text says, the box comes back unchanged so the caller
+    can treat it as a match."""
     new = str(new or "").strip()
     current = str(current or "").strip()
     if not current:
         return new
     if not new or _ws(new).lower() in _ws(current).lower():
         return current
-    return f"{new}\n{current}"
+    return f"{new}\n\n{current}" if "\n" in new else f"{new}\n{current}"
 
 
 def additive_errors(rec, r, ident):

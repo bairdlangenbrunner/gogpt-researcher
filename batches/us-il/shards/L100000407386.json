@@ -1,0 +1,88 @@
+{
+ "meta": {
+  "plant_id": "L100000407386",
+  "plant_name": "Tate & Lyle Decatur cogeneration power station",
+  "state": "Illinois",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-09T12:40:00-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000409601",
+   "unit_name": "GEN1",
+   "findings": {},
+   "not_found": [
+    "Conversion/replacement? (replaced unit ID)"
+   ],
+   "notes": "The August 2026 EIA-860M table lists this unit as operating at 64.8 MW with natural gas, a steam turbine, and operating year 1989. I found no matching older unit to link to."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000409601",
+   "concern_type": "Conversion/replacement?",
+   "recommendation": "GEM has no coal unit for this Decatur corn mill. I found no unit to link. The Archer Daniels Midland Decatur coal units in GEM belong to a different plant. Either clear the link or mark this as a conversion of the same unit.",
+   "note": "A Tate and Lyle press release from November 2021 says the final coal system at the Decatur plant was decommissioned in October 2021 and that coal systems were replaced with natural gas combined heat and power. The only generator at this EIA plant is the 1989 steam turbine, so the coal boilers may have been replaced while the turbine stayed.",
+   "refs": [
+    "https://www.tateandlyle.com/news/tate-lyle-delivers-its-commitment-eliminate-use-coal-all-its-operations"
+   ],
+   "proposed_value": {}
+  },
+  {
+   "gem_unit_id": "G100000409601",
+   "concern_type": "Start year",
+   "recommendation": "Decide whether 2021 is kept as the year the unit began running on gas, or changed to 1989 to match the EIA table.",
+   "note": "The August 2026 EIA-860M table gives operating year 1989 for generator GEN1. The Tate and Lyle press release from November 2021 gives October 2021 as the end of coal at the plant. GEM's 2021 matches the fuel change, not the turbine's first operation.",
+   "refs": [
+    "https://www.tateandlyle.com/news/tate-lyle-delivers-its-commitment-eliminate-use-coal-all-its-operations",
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "proposed_value": {
+    "Start year": "1989"
+   }
+  },
+  {
+   "gem_unit_id": "G100000409601",
+   "concern_type": "Fuel",
+   "recommendation": "Consider removing coal from the fuel list.",
+   "note": "The EIA table lists only natural gas for this generator, and the 2021 press release says the last coal system at Decatur was decommissioned. The EIA table is the source here, so I left Fuel unchanged.",
+   "refs": [
+    "https://www.tateandlyle.com/news/tate-lyle-delivers-its-commitment-eliminate-use-coal-all-its-operations",
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "proposed_value": {
+    "Fuel": "fossil gas: natural gas"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.tateandlyle.com/news/tate-lyle-delivers-its-commitment-eliminate-use-coal-all-its-operations",
+   "used_for": [
+    "Conversion/replacement?",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Page names Decatur. It says last month for the coal end, so the date October 2021 is inferred from the 2 November 2021 release date."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Start year",
+    "Fuel"
+   ],
+   "outcome": "verified",
+   "note": "Plant 10867, generator GEN1, status OP, 64.8 MW, operating year 1989, natural gas steam turbine, owner Primary Products Ingredients Americas."
+  }
+ ]
+}

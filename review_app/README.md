@@ -119,13 +119,21 @@ Live pages (the index is `artifacts.json`; one interface in `web/`, one page per
 |---|---|---|---|
 | GOGPT reviewer - Amalia | Amalia Llano | https://claude.ai/artifact/7bnX9RMity3Yw5mdaojNaL | us-md and us-ny, update and discovery |
 | GOGPT reviewer - Dan | Dan O'Beirne | https://claude.ai/artifact/3YnJ2C36PwrTJ8qYgUxbuW | germany and germany-permits |
+| GOGPT reviewer - Baird | Baird Langenbrunner | https://claude.ai/artifact/8C7yTha7YC2eYUdWxJ5Eik | us-il update |
 
 **Keeping every page identical in interface.** The interface lives only in `web/` and
-`build_static.py`; a page differs from the others only in its data, reviewer and title. After ANY
-change there: `python review_app/build_all.py`, then publish each printed file to its url (work
-profile, capabilities carried forward). Never edit a published page by hand; an edit made there
-is lost at the next publish. To add a page (Nagwa, Warda), add an entry to `artifacts.json`
-(name, title, reviewer, dirs, and the url once published) and run `build_all.py --only <name>`.
+`build_static.py`; a page differs from the others only in its data, reviewer and title. A page is a
+snapshot, so `artifacts.json` records what each live page was built from (its `published` block) and
+`python review_app/build_all.py --check` says which pages are stale and why (interface, builder, export
+csv, staged work, new or gone staging dir, decisions); it exits 1 if any page is not fresh. After ANY change
+in `web/`, `build_static.py` or a batch: `python review_app/build_all.py` (builds the stale or unmarked pages;
+`--all` for every page), publish each printed file to its url (Artifact tool, work profile, capabilities carried
+forward), then `python review_app/build_all.py --mark-published <name>`. Marking is refused if the inputs changed
+since the build. Never edit a published page by hand; an edit made there is lost at the next publish. Hooks in
+`.claude/settings.json` (`--hook`) run the check at session start and on each changed prompt, and block a stop once
+when this session changed a page's inputs without republishing. To add a page (Nagwa, Warda), add an entry to
+`artifacts.json` (name, title, reviewer, kind `artifact`, dirs, and the url once published) and run
+`build_all.py --only <name>`. Logic: `../gem-review-app/review_core/pages.py`, plan `../gem-review-app/docs/refresh.md`.
 
 Bringing the calls back into the repo, from a Claude Code session on the work profile:
 
@@ -140,8 +148,7 @@ The import appends the records to each batch's `review_log.jsonl` and regenerate
 
 ## On the page
 
-- Top: pick a country first (United States, Germany). The state box appears only after a country with
-  more than one state is picked. Country batches such as Germany have no states.
+- Top: the header says what the page covers ("Maryland and New York, United States · 27 plants"). The "where" picker in the filter row narrows to one state, or shows "all"; it is there even when the page covers one place. Country batches such as Germany have no states.
 - Left: the plants with something to decide. The badge counts open changes.
 - Card: the plant's changes, grouped by unit. "Now" is the cell today, "proposed" is what the
   researcher wants. A proposed Data Source link is added next to the links already in the cell;

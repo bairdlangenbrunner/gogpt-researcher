@@ -359,6 +359,19 @@ def build_action(kind, field, value, current, target, ref_col, n_urls,
                  each_unit=False, additive=False, inline=False):
     # Status Detail values often end in a period; drop it so the sentence
     # does not read "...in 2027.. It now says".
+    if inline and kind != "reverified":
+        # Status Detail carries its own links, one per line under the text
+        # (Baird 2026-10-08, 2026-10-09), so the entry is quoted as a block
+        if additive:
+            s = (f"Add the entry below at the top of the {field} box of {target}, "
+                 "above the text already there. Keep the existing text below it, "
+                 "word for word.")
+        elif kind == "fill":
+            s = f"Set {field} of {target} to the entry below. The box is empty now."
+        else:
+            s = f"Set {field} of {target} to the entry below. It now says {current}."
+        return (s + " The source links are part of the entry, one per line. Do "
+                "not add them to the Status Data Source box.\n\n" + str(value).strip())
     value = str(value).rstrip(". ") if value is not None else value
     current = str(current).rstrip(". ") if current else current
     if kind == "reverified":

@@ -92,10 +92,8 @@ state agent in narrowed update mode on 2026-10-02 (`notes/us_state_agent_plan.md
 - Bowline Point unit 3: newest dated report is a November 2012 open house.
   Proposed cancelled-inferred. A search result showed the interconnection
   queue entry as withdrawn but the page could not be opened.
-- City naming: Riverbay filled as New York, the postal city in EIA and
-  GridInfo, though the plant is in the Bronx like Harlem River Yard and
-  Hell Gate; Brentwood filled as Islip from the state permit address,
-  though the neighboring Edgewood plant says Brentwood. Amalia's call.
+- City naming in the five boroughs: the City box says New York City for every plant in Brooklyn, Queens, Staten Island, the Bronx and Manhattan (Baird, October 9, 2026). The boroughs are not cities, and the county box already records which one the plant is in. EIA and the postal address give the borough or neighborhood (Brooklyn, Staten Island, Long Island City, Bronx), so a source that names the borough still supports the New York City value. Staged this way for Harlem River Yard, Hell Gate and Riverbay in the update batch and for the four new plants in the discovery batch. GEM's existing rows are mixed (Brooklyn, Staten Island, Astoria, Long Island, Far Rockaway, Jamaica, New York, blank); the 18 plants to bring in line, with their GEM IDs, are listed in the sheet "GOGPT New York City plants - City field to New York City" in the Q4 2026 GOGPT research Drive folder, for Amalia to change in the web UI.
+- City naming elsewhere: Brentwood filled as Islip from the state permit address, though the neighboring Edgewood plant says Brentwood. Amalia's call.
 - NYISO queue, August 31, 2026 workbook: capacity-rights-only uprate
   requests for Bethlehem Energy Center, Arthur Kill unit 2 and West Babylon
   unit 4, no megawatt figures. The West Babylon one may mean the mothballed

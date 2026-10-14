@@ -14,9 +14,21 @@ def test_status_detail_is_its_own_source_column():
     assert ref_col_for("Status") == "Status Data Source"
 
 
-def test_inline_value_appends_links_once():
-    assert inline_value("Permit not yet filed.", [URL]) == f"Permit not yet filed: {URL}"
-    assert inline_value(f"Permit not yet filed: {URL}", [URL]) == f"Permit not yet filed: {URL}"
+def test_inline_value_lists_links_under_the_text_once():
+    # the text, a blank line, then one link per line (Baird 2026-10-09)
+    URL2 = "https://psc.maryland.gov/order2.pdf"
+    block = f"Permit not yet filed.\n\n{URL}\n{URL2}"
+    assert inline_value("Permit not yet filed.", [URL, URL2]) == block
+    # the older "text: link" form, and a link the agent already wrote in
+    assert inline_value(f"Permit not yet filed: {URL}: {URL2}", [URL, URL2]) == block
+    assert inline_value(f"Permit not yet filed: {URL}", [URL2]) == block
+    assert inline_value(block, [URL, URL2]) == block
+
+
+def test_additive_value_leaves_a_blank_line_under_the_links():
+    from build_review_package import additive_value
+    new = inline_value("Permit filed.", [URL])
+    assert additive_value(new, "NF 6/7/24: old note") == f"{new}\n\nNF 6/7/24: old note"
 
 
 def test_one_validated_source_is_high():

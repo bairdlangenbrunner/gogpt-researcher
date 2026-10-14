@@ -584,3 +584,23 @@ def test_static_store_carries_calls_over_a_rebuild(data, staging, tmp_path):
     assert out["before"] == "reject"                                   # the earlier call shows on the rebuilt page
     assert [x["record_id"] for x in out["log"]][0] == "L1:G1:start-year"
     assert all(x["record_id"] != "L1:G1:gone" for x in out["log"])     # a dropped record's call is left behind
+
+
+def test_build_all_check_reports_unmarked_and_exits_1(capsys, monkeypatch, tmp_path):
+    import build_all
+    reg = json.loads(build_all.REGISTRY.read_text(encoding="utf-8"))
+    for e in reg["pages"]:
+        e.pop("published", None)
+    (tmp_path / "artifacts.json").write_text(json.dumps(reg), encoding="utf-8")
+    monkeypatch.setattr(build_all, "REGISTRY", tmp_path / "artifacts.json")
+    with pytest.raises(SystemExit) as e:
+        build_all.main(["--check"])
+    assert e.value.code == 1
+    out = capsys.readouterr().out
+    assert "unmarked" in out and "germany" in out
+
+
+def test_build_all_adapter_resolves_explicit_dirs():
+    import build_all
+    pg = {"dirs": ["batches/germany/staging"]}
+    assert build_all.adapter().resolve_dirs(pg) == [build_all.ROOT / "batches/germany/staging"]

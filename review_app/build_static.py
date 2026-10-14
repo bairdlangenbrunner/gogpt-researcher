@@ -35,7 +35,7 @@ def ledger_url(cfg=None):
 
 def render(data, reviewer, title=None, cfg=None):
     """The page as one html string, from the shared builder with the GOGPT config."""
-    return core.render(data, reviewer, store.CONFIG, title=title, ledger_url=ledger_url(cfg))
+    return core.render(data, reviewer, store.CONFIG, title=title, ledger_url=ledger_url(cfg), root=store.ROOT)
 
 
 def build(dirs, reviewer, export_csv=None, title=None, cfg=None):

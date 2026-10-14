@@ -1,0 +1,114 @@
+{
+ "meta": {
+  "plant_id": "L100000402252",
+  "plant_name": "NRG Rockford II energy center",
+  "state": "Illinois",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-09T12:30:00-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403459",
+   "unit_name": "GT3",
+   "findings": {
+    "Status Detail": {
+     "value": "July 2026: PJM asked NRG to keep Rockford running until May 31, 2031 instead of closing by December 31, 2029 under the Illinois Climate and Equitable Jobs Act. NRG agreed on July 2, 2026 and withdrew its deactivation notice.",
+     "refs": [
+      "https://www.pjm.com/-/media/DotCom/markets-ops/rpm/rpm-auction-info/generation-resources/ceja-reliability-extension-agreements/nrg-energy-inc-illinois.pdf",
+      "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/rockford-withdrawal.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pjm.com/-/media/DotCom/markets-ops/rpm/rpm-auction-info/generation-resources/ceja-reliability-extension-agreements/nrg-energy-inc-illinois.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/rockford-withdrawal.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "PJM's letter of July 2, 2026 asks for continued operation of the Rockford units until May 31, 2031. The Rockford Generation letter of the same date says it agreed to the plan and withdraws its earlier deactivation notice. No Planned retire year is recorded because the notice was withdrawn."
+    }
+   },
+   "not_found": [
+    "Operator(s)"
+   ],
+   "notes": "The August 2026 EIA-860M table lists this unit as operating with the same capacity and start year as GEM, so no change is needed. The operator is not named in that table."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000403459",
+   "concern_type": "Planned retire",
+   "recommendation": "Do not record a planned retirement year for now.",
+   "note": "NRG's earlier notice set deactivation for December 31, 2029 (revised notice of March 2, 2026). On July 2, 2026 NRG agreed to PJM's request to keep the plant running until May 31, 2031 and withdrew the notice. So NRG's own letters no longer give a retirement date. The 2029 deadline comes from state law, not from an owner plan.",
+   "refs": [
+    "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/rockford-withdrawal.pdf",
+    "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/rockford-revised-notice.pdf"
+   ],
+   "proposed_value": {}
+  }
+ ],
+ "monitor": [
+  {
+   "gem_unit_id": "G100000403459",
+   "monitor_kind": "existing_plant",
+   "monitor_reason": "The state law deadline of December 31, 2029 is paused by the reliability agreement through May 31, 2031, so the planned retirement may return.",
+   "recheck_by": "2027-06",
+   "note": "Check the PJM deactivation page for a new notice before the 2030 to 2031 capacity auction.",
+   "refs": [
+    "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/rockford-withdrawal.pdf"
+   ]
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.pjm.com/-/media/DotCom/markets-ops/rpm/rpm-auction-info/generation-resources/ceja-reliability-extension-agreements/nrg-energy-inc-illinois.pdf",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "PJM letter to NRG, July 2, 2026."
+  },
+  {
+   "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/rockford-withdrawal.pdf",
+   "used_for": [
+    "Status Detail",
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Withdrawal letter from Rockford Generation, July 2, 2026."
+  },
+  {
+   "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/rockford-revised-notice.pdf",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Revised notice of March 2, 2026, superseded by the withdrawal."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Checked; no change from GEM."
+  }
+ ]
+}

@@ -1,0 +1,889 @@
+{
+ "meta": {
+  "state": "Illinois",
+  "kind": "statewide",
+  "generated": "2026-10-09T16:51:03-04:00",
+  "done": true,
+  "urls_attempted": 20,
+  "urls_verified": 19,
+  "searched": [
+   "Downloaded the EIA-860M table for August 2026 and read the Operating, Planned and Canceled or Postponed sheets for Illinois. Fisk Street (plant 886, 8 oil gas turbines of 32.5 MW) and Waukegan (plant 883, 4 oil gas turbines of 28 MW) are operating. The Planned sheet has no new gas or oil project of 50 MW or more except Lincoln Land, which GEM already has.",
+   "Read PJM's generator deactivation page and the Fisk, Waukegan and Midwest Generation letters. Retirement notices from July 2024 and June 2026 were both withdrawn, and Midwest Generation agreed on July 2, 2026 to run the units until May 31, 2031.",
+   "Checked the Illinois EPA Bureau of Air public notices page. It listed no gas turbine or engine plant at the time I read it.",
+   "Web searches for new Illinois gas plants, PJM queue entries and data center gas power found no new plant of 50 MW or more with an owner, a site and a dated source. The MISO queue was not searched in detail, and PJM's queue file was not downloaded.",
+   "A search summary mentioned a 328 MW gas request at University Park 138 kV in the PJM queue. The only page I could open showed 5 MW, so it is unconfirmed and not proposed. Nelson 345 kV at 391 MW is a watch item.",
+   "Searched for gas-fired data centers in Illinois. The Monarch, Hut 8 and Joliet items are watch items. T5 Data Centers' 480 MW Grayslake campus appeared in one summary with no gas power. I did not look further.",
+   "The captive LNG block lists no Illinois rows, so there is nothing to do there. No LNG terminal in Illinois came up.",
+   "The integrated resource plan tab has no Illinois rows. I found no utility plan to report.",
+   "I did not reach the Monarch website text, the Illinois Commerce Commission e-Docket or the MISO queue tool."
+  ],
+  "irp_summary": {}
+ },
+ "qa": [],
+ "monitor": [
+  {
+   "gem_plant_id": "",
+   "plant_name": "Monarch Rock Air data center campus (Rockford)",
+   "monitor_kind": "new_to_tracker",
+   "monitor_reason": "A gas generation plan for this data center is not confirmed by any source I could read, and no capacity, equipment or permit is public.",
+   "recheck_by": "2027-03",
+   "checks": [
+    39
+   ],
+   "capacity_mw": "",
+   "note": "Monarch Rock Air, a company tied to Monarch Energy, plans a data center campus on Friday Road in Rockford, Illinois. A Rock River Current article from June 2026, based on state incentive records, says the campus has associated power generation and is a 1,400 megawatt phased data center. That is the size of the data center, not of any power plant. The task list mentions 250 MW of gas engines planned for 2027 from Monarch's own website. I could not confirm that: the Monarch page is built with scripts and showed no text about Illinois or engines, and other articles describe ComEd grid supply. Still unknown: fuel, number of engines, generating capacity and air permit. Check for an Illinois air permit application. If added later, the captive fields are captive industry use power and captive industry type data center.",
+   "refs": [
+    "https://www.rockrivercurrent.com/2026/06/monarch-has-entered-tax-incentive-deal-with-state-for-rockford-data-center-records-request-shows/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.rockrivercurrent.com/2026/06/monarch-has-entered-tax-incentive-deal-with-state-for-rockford-data-center-records-request-shows/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ]
+  },
+  {
+   "gem_plant_id": "",
+   "plant_name": "Hut 8 Illinois Project 4 data center",
+   "monitor_kind": "new_to_tracker",
+   "monitor_reason": "The source gives a data center size of 50 MW and names no gas generation.",
+   "recheck_by": "2027-03",
+   "checks": [
+    39
+   ],
+   "capacity_mw": "",
+   "note": "Hut 8 announced four data center sites in Louisiana, Texas and Illinois. A Data Center Dynamics article says the Illinois site, called Project 4, totals 50 MW. The source does not say where in Illinois, and does not say the site will make its own power from gas. The possible-updates sheet row mentions 1.5 GW across Texas and Illinois, but the Illinois share is only 50 MW. Still unknown: town, power source, any gas turbines or engines and their capacity. It stays on the list only to see whether on-site gas is announced. If added later, the captive fields are captive industry use power and captive industry type data center.",
+   "refs": [
+    "https://www.datacenterdynamics.com/en/news/hut-8-announces-four-data-center-projects-totaling-15gw-across-us/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.datacenterdynamics.com/en/news/hut-8-announces-four-data-center-projects-totaling-15gw-across-us/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ]
+  },
+  {
+   "gem_plant_id": "",
+   "plant_name": "Joliet Technology Center data center campus",
+   "monitor_kind": "new_to_tracker",
+   "monitor_reason": "The campus is approved at 1.8 GW of data center capacity, but no gas power plant is named.",
+   "recheck_by": "2027-03",
+   "checks": [
+    39
+   ],
+   "capacity_mw": "",
+   "note": "The Joliet city council approved the PowerHouse Data Centers and Hillwood campus in March 2026. A Data Center Dynamics article says it will offer up to 1.8 GW at full buildout, built in four phases, each with its own six-acre substation. The article describes grid substations and names no on-site gas turbines or engines. Still unknown: whether any on-site gas generation will be built, and its capacity. Only a gas plant tied to this campus would be added. If added later, the captive fields are captive industry use power and captive industry type data center.",
+   "refs": [
+    "https://www.datacenterdynamics.com/en/news/approval-given-to-20bn-data-center-near-chicago-illinois/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.datacenterdynamics.com/en/news/approval-given-to-20bn-data-center-near-chicago-illinois/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ]
+  },
+  {
+   "gem_plant_id": "L100000402024",
+   "plant_name": "Nelson energy center",
+   "monitor_kind": "existing_plant",
+   "monitor_reason": "Only a queue listing on a data aggregator shows a possible 391 MW gas addition. No owner, permit or construction step is found.",
+   "recheck_by": "2027-03",
+   "checks": [],
+   "capacity_mw": "391",
+   "note": "A listing on the Infrasure project site shows an active PJM queue request, entered in April 2025, for 391 MW of gas generation at the Nelson 345 kV point in Lee County, Illinois. The Nelson energy center near Rock Falls is already in GEM as operating. I do not know if this is a new unit, an uprate or a different site at the same connection point. I could not find an owner statement or an air permit. This is not a data center item. Check the PJM queue and the Illinois air permit list again.",
+   "refs": [
+    "https://www.infrasure.ai/project/pjm-ah1-718-moved-to-tc2-nelson-345-kv"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.infrasure.ai/project/pjm-ah1-718-moved-to-tc2-nelson-345-kv",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ]
+  }
+ ],
+ "newplants": [],
+ "newunits": [
+  {
+   "gem_plant_id": "L100000103859",
+   "plant_name": "Fisk Generating Station",
+   "unit_name": "CT31-1",
+   "fields": {
+    "Unit name": "CT31-1",
+    "Capacity (MW)": "32.5",
+    "Fuel": "fossil liquids: fuel oil",
+    "Status": "operating",
+    "Start year": "1968",
+    "Owner(s)": "Midwest Generation EME LLC [100%]",
+    "Turbine/Engine Technology": "gas turbine"
+   },
+   "refs": {
+    "Capacity Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Fuel Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf"
+    ],
+    "Start Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Unit name Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "note": "The EIA-860M table for August 2026, Operating sheet, lists generator 311 at the Fisk Street plant (plant code 886) in Cook County, Illinois. It is a 32.5 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT31, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 49.1 MW for Fisk CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 65 MW.",
+   "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator 311 at the Fisk Street plant (plant code 886) in Cook County, Illinois. It is a 32.5 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT31, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 49.1 MW for Fisk CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 65 MW."
+  },
+  {
+   "gem_plant_id": "L100000103859",
+   "plant_name": "Fisk Generating Station",
+   "unit_name": "CT31-2",
+   "fields": {
+    "Unit name": "CT31-2",
+    "Capacity (MW)": "32.5",
+    "Fuel": "fossil liquids: fuel oil",
+    "Status": "operating",
+    "Start year": "1968",
+    "Owner(s)": "Midwest Generation EME LLC [100%]",
+    "Turbine/Engine Technology": "gas turbine"
+   },
+   "refs": {
+    "Capacity Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Fuel Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf"
+    ],
+    "Start Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Unit name Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "note": "The EIA-860M table for August 2026, Operating sheet, lists generator 312 at the Fisk Street plant (plant code 886) in Cook County, Illinois. It is a 32.5 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT31, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 49.1 MW for Fisk CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 65 MW.",
+   "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator 312 at the Fisk Street plant (plant code 886) in Cook County, Illinois. It is a 32.5 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT31, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 49.1 MW for Fisk CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 65 MW."
+  },
+  {
+   "gem_plant_id": "L100000103859",
+   "plant_name": "Fisk Generating Station",
+   "unit_name": "CT32-1",
+   "fields": {
+    "Unit name": "CT32-1",
+    "Capacity (MW)": "32.5",
+    "Fuel": "fossil liquids: fuel oil",
+    "Status": "operating",
+    "Start year": "1968",
+    "Owner(s)": "Midwest Generation EME LLC [100%]",
+    "Turbine/Engine Technology": "gas turbine"
+   },
+   "refs": {
+    "Capacity Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Fuel Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf"
+    ],
+    "Start Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Unit name Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "note": "The EIA-860M table for August 2026, Operating sheet, lists generator 321 at the Fisk Street plant (plant code 886) in Cook County, Illinois. It is a 32.5 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT32, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 49.1 MW for Fisk CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 65 MW.",
+   "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator 321 at the Fisk Street plant (plant code 886) in Cook County, Illinois. It is a 32.5 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT32, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 49.1 MW for Fisk CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 65 MW."
+  },
+  {
+   "gem_plant_id": "L100000103859",
+   "plant_name": "Fisk Generating Station",
+   "unit_name": "CT32-2",
+   "fields": {
+    "Unit name": "CT32-2",
+    "Capacity (MW)": "32.5",
+    "Fuel": "fossil liquids: fuel oil",
+    "Status": "operating",
+    "Start year": "1968",
+    "Owner(s)": "Midwest Generation EME LLC [100%]",
+    "Turbine/Engine Technology": "gas turbine"
+   },
+   "refs": {
+    "Capacity Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Fuel Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf"
+    ],
+    "Start Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Unit name Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "note": "The EIA-860M table for August 2026, Operating sheet, lists generator 322 at the Fisk Street plant (plant code 886) in Cook County, Illinois. It is a 32.5 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT32, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 49.1 MW for Fisk CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 65 MW.",
+   "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator 322 at the Fisk Street plant (plant code 886) in Cook County, Illinois. It is a 32.5 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT32, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 49.1 MW for Fisk CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 65 MW."
+  },
+  {
+   "gem_plant_id": "L100000103859",
+   "plant_name": "Fisk Generating Station",
+   "unit_name": "CT33-1",
+   "fields": {
+    "Unit name": "CT33-1",
+    "Capacity (MW)": "32.5",
+    "Fuel": "fossil liquids: fuel oil",
+    "Status": "operating",
+    "Start year": "1968",
+    "Owner(s)": "Midwest Generation EME LLC [100%]",
+    "Turbine/Engine Technology": "gas turbine"
+   },
+   "refs": {
+    "Capacity Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Fuel Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf"
+    ],
+    "Start Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Unit name Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "note": "The EIA-860M table for August 2026, Operating sheet, lists generator 331 at the Fisk Street plant (plant code 886) in Cook County, Illinois. It is a 32.5 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT33, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 49.1 MW for Fisk CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 65 MW.",
+   "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator 331 at the Fisk Street plant (plant code 886) in Cook County, Illinois. It is a 32.5 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT33, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 49.1 MW for Fisk CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 65 MW."
+  },
+  {
+   "gem_plant_id": "L100000103859",
+   "plant_name": "Fisk Generating Station",
+   "unit_name": "CT33-2",
+   "fields": {
+    "Unit name": "CT33-2",
+    "Capacity (MW)": "32.5",
+    "Fuel": "fossil liquids: fuel oil",
+    "Status": "operating",
+    "Start year": "1968",
+    "Owner(s)": "Midwest Generation EME LLC [100%]",
+    "Turbine/Engine Technology": "gas turbine"
+   },
+   "refs": {
+    "Capacity Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Fuel Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf"
+    ],
+    "Start Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Unit name Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "note": "The EIA-860M table for August 2026, Operating sheet, lists generator 332 at the Fisk Street plant (plant code 886) in Cook County, Illinois. It is a 32.5 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT33, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 49.1 MW for Fisk CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 65 MW.",
+   "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator 332 at the Fisk Street plant (plant code 886) in Cook County, Illinois. It is a 32.5 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT33, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 49.1 MW for Fisk CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 65 MW."
+  },
+  {
+   "gem_plant_id": "L100000103859",
+   "plant_name": "Fisk Generating Station",
+   "unit_name": "CT34-1",
+   "fields": {
+    "Unit name": "CT34-1",
+    "Capacity (MW)": "32.5",
+    "Fuel": "fossil liquids: fuel oil",
+    "Status": "mothballed",
+    "Start year": "1968",
+    "Owner(s)": "Midwest Generation EME LLC [100%]",
+    "Turbine/Engine Technology": "gas turbine"
+   },
+   "refs": {
+    "Capacity Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Fuel Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf"
+    ],
+    "Start Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Unit name Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "note": "The EIA-860M table for August 2026, Operating sheet, lists generator 341 at the Fisk Street plant (plant code 886) in Cook County, Illinois. It is a 32.5 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT34, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. EIA lists this generator as out of service and not expected to return next year, which is why the status is mothballed. PJM's capacity figure for CT34 is 22.9 MW, close to the other half only, so this half looks idle. A reviewer should confirm before setting mothballed. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 49.1 MW for Fisk CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 65 MW.",
+   "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator 341 at the Fisk Street plant (plant code 886) in Cook County, Illinois. It is a 32.5 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT34, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. EIA lists this generator as out of service and not expected to return next year, which is why the status is mothballed. PJM's capacity figure for CT34 is 22.9 MW, close to the other half only, so this half looks idle. A reviewer should confirm before setting mothballed. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 49.1 MW for Fisk CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 65 MW."
+  },
+  {
+   "gem_plant_id": "L100000103859",
+   "plant_name": "Fisk Generating Station",
+   "unit_name": "CT34-2",
+   "fields": {
+    "Unit name": "CT34-2",
+    "Capacity (MW)": "32.5",
+    "Fuel": "fossil liquids: fuel oil",
+    "Status": "operating",
+    "Start year": "1968",
+    "Owner(s)": "Midwest Generation EME LLC [100%]",
+    "Turbine/Engine Technology": "gas turbine"
+   },
+   "refs": {
+    "Capacity Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Fuel Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf"
+    ],
+    "Start Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Unit name Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "note": "The EIA-860M table for August 2026, Operating sheet, lists generator 342 at the Fisk Street plant (plant code 886) in Cook County, Illinois. It is a 32.5 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT34, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 49.1 MW for Fisk CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 65 MW.",
+   "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator 342 at the Fisk Street plant (plant code 886) in Cook County, Illinois. It is a 32.5 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT34, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 49.1 MW for Fisk CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 65 MW."
+  },
+  {
+   "gem_plant_id": "L100000103875",
+   "plant_name": "Waukegan Generating Station",
+   "unit_name": "CT31-1",
+   "fields": {
+    "Unit name": "CT31-1",
+    "Capacity (MW)": "28",
+    "Fuel": "fossil liquids: fuel oil",
+    "Status": "operating",
+    "Start year": "1968",
+    "Owner(s)": "Midwest Generation EME LLC [100%]",
+    "Turbine/Engine Technology": "gas turbine"
+   },
+   "refs": {
+    "Capacity Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Fuel Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf"
+    ],
+    "Start Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Unit name Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "note": "The EIA-860M table for August 2026, Operating sheet, lists generator 311 at the Waukegan plant (plant code 883) in Lake County, Illinois. It is a 28 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT31, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. EIA lists the Waukegan units as standby, available for service but not normally used. They are kept as operating. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 52.5 MW for Waukegan CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 56 MW.",
+   "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator 311 at the Waukegan plant (plant code 883) in Lake County, Illinois. It is a 28 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT31, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. EIA lists the Waukegan units as standby, available for service but not normally used. They are kept as operating. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 52.5 MW for Waukegan CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 56 MW."
+  },
+  {
+   "gem_plant_id": "L100000103875",
+   "plant_name": "Waukegan Generating Station",
+   "unit_name": "CT31-2",
+   "fields": {
+    "Unit name": "CT31-2",
+    "Capacity (MW)": "28",
+    "Fuel": "fossil liquids: fuel oil",
+    "Status": "operating",
+    "Start year": "1968",
+    "Owner(s)": "Midwest Generation EME LLC [100%]",
+    "Turbine/Engine Technology": "gas turbine"
+   },
+   "refs": {
+    "Capacity Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Fuel Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf"
+    ],
+    "Start Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Unit name Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "note": "The EIA-860M table for August 2026, Operating sheet, lists generator 312 at the Waukegan plant (plant code 883) in Lake County, Illinois. It is a 28 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT31, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. EIA lists the Waukegan units as standby, available for service but not normally used. They are kept as operating. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 52.5 MW for Waukegan CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 56 MW.",
+   "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator 312 at the Waukegan plant (plant code 883) in Lake County, Illinois. It is a 28 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT31, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. EIA lists the Waukegan units as standby, available for service but not normally used. They are kept as operating. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 52.5 MW for Waukegan CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 56 MW."
+  },
+  {
+   "gem_plant_id": "L100000103875",
+   "plant_name": "Waukegan Generating Station",
+   "unit_name": "CT32-1",
+   "fields": {
+    "Unit name": "CT32-1",
+    "Capacity (MW)": "28",
+    "Fuel": "fossil liquids: fuel oil",
+    "Status": "operating",
+    "Start year": "1968",
+    "Owner(s)": "Midwest Generation EME LLC [100%]",
+    "Turbine/Engine Technology": "gas turbine"
+   },
+   "refs": {
+    "Capacity Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Fuel Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf"
+    ],
+    "Start Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Unit name Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "note": "The EIA-860M table for August 2026, Operating sheet, lists generator 321 at the Waukegan plant (plant code 883) in Lake County, Illinois. It is a 28 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT32, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. EIA lists the Waukegan units as standby, available for service but not normally used. They are kept as operating. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 52.5 MW for Waukegan CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 56 MW.",
+   "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator 321 at the Waukegan plant (plant code 883) in Lake County, Illinois. It is a 28 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT32, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. EIA lists the Waukegan units as standby, available for service but not normally used. They are kept as operating. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 52.5 MW for Waukegan CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 56 MW."
+  },
+  {
+   "gem_plant_id": "L100000103875",
+   "plant_name": "Waukegan Generating Station",
+   "unit_name": "CT32-2",
+   "fields": {
+    "Unit name": "CT32-2",
+    "Capacity (MW)": "28",
+    "Fuel": "fossil liquids: fuel oil",
+    "Status": "operating",
+    "Start year": "1968",
+    "Owner(s)": "Midwest Generation EME LLC [100%]",
+    "Turbine/Engine Technology": "gas turbine"
+   },
+   "refs": {
+    "Capacity Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Fuel Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf"
+    ],
+    "Start Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Unit name Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "note": "The EIA-860M table for August 2026, Operating sheet, lists generator 322 at the Waukegan plant (plant code 883) in Lake County, Illinois. It is a 28 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT32, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. EIA lists the Waukegan units as standby, available for service but not normally used. They are kept as operating. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 52.5 MW for Waukegan CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 56 MW.",
+   "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator 322 at the Waukegan plant (plant code 883) in Lake County, Illinois. It is a 28 MW nameplate gas turbine burning distillate fuel oil, in service since 1968, owned by Midwest Generation. PJM's letters call the unit it belongs to CT32, which is made of two generators. GEM has only the retired coal units at this site, so this oil peaker is missing. EIA lists the Waukegan units as standby, available for service but not normally used. They are kept as operating. Midwest Generation told PJM on February 3, 2025 that it withdrew its earlier retirement notice, and again on July 2, 2026 that it agreed to PJM's request to keep the units running until May 31, 2031. No planned retirement year is proposed, because that date is a reliability extension and not a retirement notice. The owner's figures to PJM, such as 52.5 MW for Waukegan CT31, cover both generators of the unit together and look like net capacity, so they are lower than the EIA nameplate total of 56 MW."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Fisk and Waukegan generators",
+    "Illinois planned gas and oil projects"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating, Planned and Canceled sheets. Planned sheet has no new gas or oil project of 50 MW or more in Illinois except Lincoln Land, already in GEM."
+  },
+  {
+   "url": "https://www.pjm.com/planning/service-requests/gen-deactivations/generator-deactivation-notices",
+   "used_for": [
+    "finding the Fisk, Waukegan and Midwest Generation letters"
+   ],
+   "outcome": "verified",
+   "note": "Page lists deactivation letters, PJM replies and withdrawal letters for Fisk, Waukegan and Midwest Generation."
+  },
+  {
+   "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-withdrawal-letter.pdf",
+   "used_for": [
+    "Fisk and Waukegan status"
+   ],
+   "outcome": "verified",
+   "note": "July 2, 2026 withdrawal letter says Midwest Generation agreed to run units until May 31, 2031."
+  },
+  {
+   "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/mwg-deactivation-letter.pdf",
+   "used_for": [
+    "Fisk and Waukegan history"
+   ],
+   "outcome": "verified",
+   "note": "June 30, 2026 letter, retire January 1, 2030 under state law, later withdrawn."
+  },
+  {
+   "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/fisk-ct31-ct32-ct33-ct34-deactivation-letter.pdf",
+   "used_for": [
+    "Fisk unit capacity"
+   ],
+   "outcome": "verified",
+   "note": "July 22, 2024 notice, CT31 49.1, CT32 50.8, CT33 47.9, CT34 22.9 MW."
+  },
+  {
+   "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/fisk-deactivation-withdrawal.pdf",
+   "used_for": [
+    "Fisk status"
+   ],
+   "outcome": "verified",
+   "note": "February 3, 2025 withdrawal."
+  },
+  {
+   "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/waukegan-ct31-ct32-deactivation-letter.pdf",
+   "used_for": [
+    "Waukegan unit capacity"
+   ],
+   "outcome": "verified",
+   "note": "July 22, 2024 notice, CT31 52.5 and CT32 48.3 MW."
+  },
+  {
+   "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/waukegan-deactivation-withdrawal.pdf",
+   "used_for": [
+    "Waukegan status"
+   ],
+   "outcome": "verified",
+   "note": "February 3, 2025 withdrawal."
+  },
+  {
+   "url": "https://epa.illinois.gov/public-notices/boa-notices.html",
+   "used_for": [
+    "new air permits"
+   ],
+   "outcome": "verified",
+   "note": "Current notices list no gas turbine or engine plant. Only an ethanol plant was visible."
+  },
+  {
+   "url": "https://monarch.energy/datacenters",
+   "used_for": [
+    "Monarch 250 MW engines claim"
+   ],
+   "outcome": "failed",
+   "note": "Page loads but is script-built and shows no Illinois or engine text through the fetch ladder. Not cited."
+  },
+  {
+   "url": "https://www.rockrivercurrent.com/2026/06/monarch-has-entered-tax-incentive-deal-with-state-for-rockford-data-center-records-request-shows/",
+   "used_for": [
+    "Monarch watch item"
+   ],
+   "outcome": "verified",
+   "note": ""
+  },
+  {
+   "url": "https://www.datacenterdynamics.com/en/news/hut-8-announces-four-data-center-projects-totaling-15gw-across-us/",
+   "used_for": [
+    "Hut 8 watch item"
+   ],
+   "outcome": "verified",
+   "note": ""
+  },
+  {
+   "url": "https://www.datacenterdynamics.com/en/news/approval-given-to-20bn-data-center-near-chicago-illinois/",
+   "used_for": [
+    "Joliet watch item"
+   ],
+   "outcome": "verified",
+   "note": ""
+  },
+  {
+   "url": "https://www.infrasure.ai/project/pjm-ah1-718-moved-to-tc2-nelson-345-kv",
+   "used_for": [
+    "Nelson queue lead"
+   ],
+   "outcome": "verified",
+   "note": "Aggregator listing of a PJM queue entry."
+  },
+  {
+   "url": "https://www.infrasure.ai/project/pjm-ah1-567",
+   "used_for": [
+    "University Park 328 MW queue lead"
+   ],
+   "outcome": "not relevant",
+   "note": "Shows 5 MW, not 328 MW. The 328 MW figure from a search summary is unconfirmed."
+  }
+ ]
+}

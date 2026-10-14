@@ -1,0 +1,38 @@
+{
+  "*": [
+    {"text": "Alabama has no grid operator. Alabama Power plans its own supply through an integrated resource plan every three years (2022 and 2025 plans at alabamapower.com) reviewed with the Alabama Public Service Commission, and the Tennessee Valley Authority plans separately for north Alabama. A capacity entitlement or a power purchase agreement is not ownership. Fetch sec.gov documents only through the repo's fetch script.", "fields": []}
+  ],
+  "L100000103780": [
+    {"text": "Gaston units 1 to 4 in GEM have a second set of rows ('tp2', gas, 272 MW and 244.8 MW) with no Owner(s). The coal rows list Alabama Power Co [50%] and Georgia Power Co [50%], which is Southern Electric Generating Company. Stage the same Owner(s) on the gas rows if the ownership source for the coal rows (Alabama Power's 2025 plan or a Southern Company filing) names the units. Run entity_lookup.py first.", "fields": ["Owner(s)"]},
+    {"text": "Alabama Power filed on September 17, 2025 to keep Gaston units 1 to 4 running past 2028, and Southern Company's third quarter 2025 report says they are extended through December 31, 2034 (sec.gov/Archives/edgar/data/3153/000009212225000084/R50.htm, fetch through fetch.py). Stage Planned retire 2034 on units 1 to 4 if the filing states the date, and add a Status Detail line at the top with the extension and its link. Gaston unit 5 is to run on gas only by the end of 2028: check the 2025 plan and stage a Status Detail line on the unit 5 gas row.", "fields": ["Planned retire", "Status Detail"]}
+  ],
+  "L100000103776": [
+    {"text": "Barry unit 5 gas row is pre-construction at 785 MW. Alabama Power applied on November 14, 2025 to convert the coal unit to gas, the state issued a draft air permit on May 18, 2026 (adem.alabama.gov/sites/default/files/2026-05/06-26barrysteam-pd.pdf) and construction was planned to start October 2026. Find whether the final permit was issued and whether construction has started. Stage Status construction only with two independent publishers that say work began; otherwise add a Status Detail line at the top with the permit milestone and its link.", "fields": ["Status", "Status Detail"]},
+    {"text": "Barry unit 8 (the 2023 combined cycle block) has no Start year in GEM and is listed at 774 MW. Alabama Power's 2025 plan gives 636 MW nameplate and EIA gives a different figure. Stage Start year 2023 if a source dates commercial operation, and put the capacity disagreement in a question rather than changing Capacity (MW) unless two sources agree on nameplate.", "fields": ["Start year", "Capacity (MW)"]}
+  ],
+  "L100000401621": [
+    {"text": "GEM still lists Tenaska Lindsay Hill as owned by Tenaska Alabama Partners LP [100%] and Alabama Power Co [0%]. Alabama Power bought the plant for $622 million, closing September 30, 2025 (Southern Company third quarter 2025 report R50.htm on sec.gov, fetch through fetch.py; Inside Climate News, August 2025; the Alabama Public Service Commission order of August 2025). Stage Owner(s) as Alabama Power Co [100%] with the SEC filing and one more publisher, and add 'Lindsay Hill Generating Station' to Other Name(s) if a source uses that name. The Tenaska prefix in the plant name stays unless the owner renamed the plant.", "fields": ["Owner(s)", "Other Name(s)"]},
+    {"text": "Sources give the plant's capacity as 855 MW or 895 MW. Do not change Capacity (MW) unless two sources agree on nameplate; put the disagreement in a question.", "fields": []}
+  ],
+  "L100000401620": [
+    {"text": "Tenaska Central Alabama has been owned by Alabama Power since 2020 and GEM already shows that. Check whether Alabama Power renamed it (for example 'Central Alabama Generating Station') and stage Other Name(s) if a source uses the new name. It sits 1,000 feet from Lindsay Hill with its own EIA code 55440; the two are not duplicates.", "fields": ["Other Name(s)"]}
+  ],
+  "L100000103777": [
+    {"text": "Charles R. Lowman CC_set 2 is pre-construction at 454 MW with no Start year. PowerSouth announced a second Mitsubishi M501JAC turbine on June 3, 2026 with no date; EIA-860M lists LEC3 planned for 2029 and the EIP sheet says 2028. Find the current status (permit, construction start, financing) and target year. Stage Start year only when a dated owner or regulator source gives it, and add a Status Detail line at the top with the June 2026 announcement and its link.", "fields": ["Status", "Start year", "Status Detail"]}
+  ],
+  "L100001064035": [
+    {"text": "This plant holds 12 announced placeholder units from Alabama Power's 2022 plan (780 MW of combustion turbines to replace Gaston units 1 to 4 by 2028). The 2025 plan names no new gas plant, and Gaston units 1 to 4 were extended to 2034. Find whether the 2025 plan or any 2026 request for proposals still carries these units. Do not change Status on your own; put the finding in a question for the project manager and set Latest Activity to the date of the newest plan that mentions them. Flag the record as plan-sourced.", "fields": ["Latest Activity", "Status Detail"], "checks": [34, 37]}
+  ],
+  "L100000103778": [
+    {"text": "Colbert units 9, 10 and 11 (three 250 MW turbines) have no Start year. TVA's three new turbines entered commercial operation July 25, 2023 (publicpower.org). Stage Start year 2023 if TVA or a second publisher dates it.", "fields": ["Start year"]}
+  ],
+  "L100000103782": [
+    {"text": "Greene County units 1 and 2 (the converted steam units, gas rows 'tp2') have no Owner(s). Stage Alabama Power Co [100%] if the 2025 plan or EIA lists it as the owner (entity_lookup.py first). The 2025 plan lists 'unit 2' in both the coal and the turbine tables, so match by unit type, not by number.", "fields": ["Owner(s)"]}
+  ],
+  "L100000401530": [
+    {"text": "Calhoun burns gas in summer and oil in winter. Confirm Fuel reads both if a source states it, and check that Owner(s) is Alabama Power Co since the 2022 purchase from Harbert Power.", "fields": ["Owner(s)"]}
+  ],
+  "L100000103779": [
+    {"text": "Gadsden units 1 and 2 are retired in GEM (2023). Confirm the retirement year with one more source if cheap; otherwise leave it.", "fields": []}
+  ]
+}
