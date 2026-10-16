@@ -1,0 +1,175 @@
+{
+ "meta": {
+  "plant_id": "L100001062089",
+  "plant_name": "Cedar River Generating Station",
+  "state": "Iowa",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-16T16:29:27-04:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 6
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001071242",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "construction",
+     "refs": [
+      "https://alberici.com/projects/cedar-river-generating-station/"
+     ],
+     "verifications": [
+      {
+       "url": "https://alberici.com/projects/cedar-river-generating-station/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The contractor Alberici says on its project page that it is the general contractor and is constructing the 94 MW Cedar River Generating Station. KCRG reported in February 2026 that construction was expected to begin in early 2026. This is one source, and it gives no start date."
+    },
+    "Status Detail": {
+     "value": "The contractor Alberici describes itself as building the plant, with five Wärtsilä 18V50 engines. KCRG reported in February 2026 that construction would begin in early 2026. Alliant still expects the plant to run by June 2027.",
+     "refs": [
+      "https://alberici.com/projects/cedar-river-generating-station/",
+      "https://www.kcrg.com/2026/02/09/alliant-energy-plans-new-natural-gas-generating-station-cedar-rapids-coal-era-ends"
+     ],
+     "verifications": [
+      {
+       "url": "https://alberici.com/projects/cedar-river-generating-station/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.kcrg.com/2026/02/09/alliant-energy-plans-new-natural-gas-generating-station-cedar-rapids-coal-era-ends",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Both pages name the plant and give these facts."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Wärtsilä 18V50",
+     "refs": [
+      "https://alberici.com/projects/cedar-river-generating-station/"
+     ],
+     "verifications": [
+      {
+       "url": "https://alberici.com/projects/cedar-river-generating-station/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Alberici says the plant has five Wärtsilä 18V50 reciprocating engines with selective catalytic reduction emissions controls."
+    }
+   },
+   "not_found": [
+    "Latitude",
+    "Longitude"
+   ],
+   "notes": "No document gives exact coordinates for the new engines. They are on the former coal pile area of the Prairie Creek site at 3300 C Street Southwest in Cedar Rapids. Latest Activity is left alone because the project is moving."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Interstate Power and Light Co [100%]",
+   "refs": [
+    "https://www.sec.gov/Archives/edgar/data/352541/000035254125000081/lnt-20250930.htm"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254125000081/lnt-20250930.htm",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "Alliant's quarterly report to the Securities and Exchange Commission for September 2025 says the Iowa Utilities Commission in June 2025 authorized Interstate Power and Light Company to construct, own and operate the 94 MW Cedar River Generating Station at the Prairie Creek site. So the immediate owner is the Iowa utility and not Alliant Energy Corp, its parent."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100001071242",
+   "concern_type": "location",
+   "recommendation": "Coordinates are copied from Prairie Creek, which is the right site. A Corridor Business article says the plant goes on the vacant coal pile area of the Prairie Creek site at 3300 C Street Southwest, Cedar Rapids. I found no document with exact coordinates, so the approximate flag stays.",
+   "note": "No change to the coordinates.",
+   "refs": [
+    "https://corridorbusiness.com/alliant-plans-for-natural-gas-fired-power-plant-at-prairie-creek-moving-forward/"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Interstate Power and Light Co",
+   "role": "owner",
+   "lookup_result": "Entity 'Interstate Power and Light Co' appears on 28 units (united states). Reuse existing entity ID; do NOT create a new one."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://alberici.com/projects/cedar-river-generating-station/",
+   "used_for": [
+    "Status",
+    "Status Detail",
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Contractor project page."
+  },
+  {
+   "url": "https://www.kcrg.com/2026/02/09/alliant-energy-plans-new-natural-gas-generating-station-cedar-rapids-coal-era-ends",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "KCRG, February 9, 2026."
+  },
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254125000081/lnt-20250930.htm",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Alliant quarterly report, September 2025."
+  },
+  {
+   "url": "https://corridorbusiness.com/alliant-plans-for-natural-gas-fired-power-plant-at-prairie-creek-moving-forward/",
+   "used_for": [
+    "Location"
+   ],
+   "outcome": "verified",
+   "note": "Existing source. Gives the site address."
+  },
+  {
+   "url": "https://www.thegazette.com/energy/alliants-new-cedar-rapids-generating-station-to-be-operational-by-mid-2027/",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Existing source, still loads."
+  },
+  {
+   "url": "https://www.alliantenergy.com/our-energy/natural-gas/cedar-river",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Existing source, still loads."
+  }
+ ]
+}

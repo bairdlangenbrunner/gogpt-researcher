@@ -1,0 +1,859 @@
+{
+  "meta": {
+    "lane": "qa",
+    "scope": {
+      "country": "United States",
+      "state": "Iowa",
+      "postal": "ia",
+      "kind": "state",
+      "slug": "iowa",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-16T16:31:47-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 44
+    }
+  },
+  "records": [
+    {
+      "gem_unit_id": "G100001071243",
+      "concern_type": "identity",
+      "recommendation": "The EIA-860M table for August 2026 has plant code 1077, Sutherland, in Marshall County, 0.3 km from GEM's coordinates. Its generator 1 (37.5 MW) and generator 3 (81.6 MW) are retired natural gas steam turbines from 1955 and 1961, both retired in 2017. Bobcat is a new 720 MW combustion turbine plant built next to the Marshalltown Generating Station, which is EIA plant 1068 and plant 58236. So Sutherland is the nearby retired plant and not this project. I would not link Bobcat to plant 1077 or to its generators. Please check whether a retired Sutherland record exists in GEM.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100001062090",
+      "plant_name": "Bobcat Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "I found no document that says Bobcat is on the former Sutherland site. Alliant says only that it is next to Marshalltown Generating Station.",
+      "record_id": "L100001062090:G100001071243:qa-identity-1"
+    },
+    {
+      "gem_unit_id": "G100001071243",
+      "concern_type": "Capacity (MW)",
+      "recommendation": "A KCRG story from August 11, 2026 calls the plant 650 MW. That figure is the existing Marshalltown station. Alliant's own releases say 720 MW. Keep 720.",
+      "refs": {},
+      "gem_plant_id": "L100001062090",
+      "plant_name": "Bobcat Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The KCRG figure looks like an error.",
+      "record_id": "L100001062090:G100001071243:qa-capacity-mw-2",
+      "checks": [
+        10,
+        37
+      ]
+    },
+    {
+      "gem_unit_id": "G100001071243",
+      "concern_type": "other",
+      "recommendation": "The Interstate Power and Light resource evaluation study comments from Synapse (April 2025) do not name Bobcat, so there is no plan value to report. The IRP box can stay unticked on this evidence.",
+      "refs": {},
+      "gem_plant_id": "L100001062090",
+      "plant_name": "Bobcat Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "I searched the document text for Bobcat and Marshalltown and found no match.",
+      "record_id": "L100001062090:G100001071243:qa-other-3"
+    },
+    {
+      "gem_unit_id": "G100001017907",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "recommendation": "Not found. I looked for a document that says whether Burlington Unit 1 has carbon capture. The Environmental Protection Agency letter from March 2022, the Alliant coal ash pages, the EIA-860M table for August 2026 and the Alliant Iowa clean energy page say nothing about carbon capture. The unit burns natural gas in a steam boiler. GEM's current value of no looks right, but I have no source for it.",
+      "refs": {},
+      "gem_plant_id": "L100000103905",
+      "plant_name": "Burlington Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 1, timepoint 2",
+      "fields": {},
+      "researcher_notes": "A no needs a document that states it. None found.",
+      "record_id": "L100000103905:G100001017907:qa-validation-1"
+    },
+    {
+      "gem_unit_id": "G100001017907",
+      "concern_type": "Start year",
+      "recommendation": "GEM's start year is 2021. The EIA-860M table for August 2026 gives 1968, which is when the original coal unit started. For a conversion, GEM wants the year the unit began burning gas. The Environmental Protection Agency letter from March 2022 says the conversion would be done by January 1, 2022. A 2022 news report in GEM's sources said it was nearly done in May 2022, and EIA still showed coal in October 2022. So 2021 looks too early and 2022 or later looks likelier. I could not find a document that gives the exact date. Please keep 2021 only if you have a source for it.",
+      "refs": {
+        "links": [
+          "https://www.epa.gov/system/files/documents/2023-10/burlington-petition-november-2021-final-response-march-2022_0.pdf",
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000103905",
+      "plant_name": "Burlington Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 1, timepoint 2",
+      "fields": {},
+      "researcher_notes": "1968 is the right year for the original boiler, not for the gas conversion.",
+      "record_id": "L100000103905:G100001017907:qa-start-year-2",
+      "checks": [
+        37,
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100001017907",
+      "concern_type": "source",
+      "recommendation": "The Gazette link in GEM's Status and Start year sources, thegazette.com/energy/why-power-plants-are-using-natural-gas-instead-of-coal, now returns not found. The same article is live at thegazette.com/environment-nature/why-power-plants-are-using-natural-gas-instead-of-coal. It says Burlington should resume operations after a coal to gas transition.",
+      "refs": {
+        "links": [
+          "https://www.thegazette.com/environment-nature/why-power-plants-are-using-natural-gas-instead-of-coal/"
+        ]
+      },
+      "gem_plant_id": "L100000103905",
+      "plant_name": "Burlington Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 1, timepoint 2",
+      "fields": {},
+      "researcher_notes": "Do not drop the old link. The newer address works.",
+      "record_id": "L100000103905:G100001017907:qa-source-3"
+    },
+    {
+      "gem_unit_id": "G100001094030",
+      "concern_type": "conversion-link",
+      "recommendation": "GEM does not have the plant's four combustion turbines, GT1 to GT4 at 19.7 MW each. The EIA-860M table for August 2026 lists them as operating with a planned retirement in 2030. They are listed as new units for this plant. Once they exist, link them to Unit 2 as the units it replaces.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "https://www.alliantenergy.com/news/news-center/2026/02/021626-regulators-ok-updates-at-burlington"
+        ]
+      },
+      "gem_plant_id": "L100000103905",
+      "plant_name": "Burlington Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 2",
+      "fields": {},
+      "researcher_notes": "Alliant says the engines replace combustion turbines that are more than 30 years old.",
+      "record_id": "L100000103905:G100001094030:qa-conversion-link-4"
+    },
+    {
+      "gem_unit_id": "G100001017907",
+      "concern_type": "other",
+      "recommendation": "The Interstate Power and Light resource evaluation study comments from Synapse (April 2025) mention that the earlier Clean Energy Blueprint concluded Burlington would convert to natural gas. They give no new capacity, date or retirement for the plant. So there is no plan value to report.",
+      "refs": {
+        "links": [
+          "https://www.synapse-energy.com/sites/default/files/IPL%20RES%20EI%20Final%20Comments%20on%20RES%204.7.25-%20Public%2024-008.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000103905",
+      "plant_name": "Burlington Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 1, timepoint 2",
+      "fields": {},
+      "researcher_notes": "Background only.",
+      "record_id": "L100000103905:G100001017907:qa-other-5",
+      "irp": true
+    },
+    {
+      "gem_unit_id": "G100001071242",
+      "concern_type": "location",
+      "recommendation": "Coordinates are copied from Prairie Creek, which is the right site. A Corridor Business article says the plant goes on the vacant coal pile area of the Prairie Creek site at 3300 C Street Southwest, Cedar Rapids. I found no document with exact coordinates, so the approximate flag stays.",
+      "refs": {
+        "links": [
+          "https://corridorbusiness.com/alliant-plans-for-natural-gas-fired-power-plant-at-prairie-creek-moving-forward/"
+        ]
+      },
+      "gem_plant_id": "L100001062089",
+      "plant_name": "Cedar River Generating Station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "No change to the coordinates.",
+      "record_id": "L100001062089:G100001071242:qa-location-1"
+    },
+    {
+      "gem_unit_id": "G100001096185",
+      "concern_type": "other",
+      "recommendation": "The Interstate Power and Light resource evaluation study comments from Synapse (April 2025) do not name Emery Station or Riverhawk, so there is no plan value to report.",
+      "refs": {},
+      "gem_plant_id": "L100000402016",
+      "plant_name": "Emery Station power plant",
+      "country": "United States",
+      "unit_name": "RH",
+      "fields": {},
+      "researcher_notes": "I searched the document text for Emery and Riverhawk and found no match.",
+      "record_id": "L100000402016:G100001096185:qa-other-1"
+    },
+    {
+      "gem_unit_id": "G100001071244",
+      "concern_type": "Status",
+      "recommendation": "Keep announced. The Scott County Board of Supervisors voted against the zoning change on February 12, 2026. The Central Iowa Power Cooperative did not appeal or move the site. It went to the Iowa Utilities Commission for a certificate for the same plan and held the commission's public information meeting on April 6, 2026. No reporter has called the project cancelled or shelved.",
+      "refs": {
+        "links": [
+          "https://www.wvik.org/wvik-top-stories/2026-02-12/controversial-new-power-plant-rejected-for-rural-scott-county",
+          "https://www.ourquadcities.com/news/local-news/cipco-begins-alternative-route-to-bring-natural-gas-power-plant-to-scott-county/amp/"
+        ]
+      },
+      "gem_plant_id": "L100001062091",
+      "plant_name": "Hickory Grove Generating Station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "A rejection by the county is not a cancellation.",
+      "record_id": "L100001062091:G100001071244:qa-status-1",
+      "checks": [
+        10
+      ]
+    },
+    {
+      "gem_unit_id": "G100001071244",
+      "concern_type": "source",
+      "recommendation": "A Scott County meeting minutes file from July 14, 2026 is said in search results to name docket GCU-2026-0001 for this plant. The link returns not found, so I could not confirm the docket number. Please check the commission's filing system for the docket.",
+      "refs": {},
+      "gem_plant_id": "L100001062091",
+      "plant_name": "Hickory Grove Generating Station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Not verified.",
+      "record_id": "L100001062091:G100001071244:qa-source-2"
+    },
+    {
+      "gem_unit_id": "G100001092270",
+      "concern_type": "existence",
+      "recommendation": "I could not tie the 430 MW combined cycle placeholder to Morgan Valley or Fairfax. Morgan Valley is three simple-cycle turbines of about 240 MW each, 720 MW in total, filed in April 2026. Its application says the site could later be converted to combined cycle, but only if approved in a future filing. Keep the placeholder separate for now. The reviewer should decide whether it still belongs once a combined cycle plan is filed.",
+      "refs": {
+        "links": [
+          "https://www.synapse-energy.com/sites/default/files/IPL%20RES%20EI%20Final%20Comments%20on%20RES%204.7.25-%20Public%2024-008.pdf",
+          "https://cbs2iowa.com/resources/pdf/2fdc7cdb-e6ce-44c5-a3fe-c2d56823edb0-23fc9a8c72f84f73a302ef34d5f5f7f3MorganValleyEnergyCenterCT_Application1.pdf"
+        ]
+      },
+      "gem_plant_id": "L100001081945",
+      "plant_name": "Interstate Power and Light 2024 IRP power station 1",
+      "country": "United States",
+      "unit_name": "1 IRP",
+      "fields": {},
+      "researcher_notes": "The intervenors' study comments from April 2025 say the model adds a 430 MW combined cycle, and the Morgan Valley application cites the study filed on February 13, 2025. The application does not drop or rename the combined cycle unit. It only mentions a possible future conversion.",
+      "record_id": "L100001081945:G100001092270:qa-existence-1",
+      "irp": true
+    },
+    {
+      "gem_unit_id": "G100001074296",
+      "concern_type": "Capacity (MW)",
+      "recommendation": "The study rounds each turbine to 233 MW. GEM shows 232.5 MW, which may come from a different filing. Keep 232.5 MW unless the reviewer prefers the study's figure.",
+      "refs": {
+        "links": [
+          "https://www.midamericanenergy.com/media/pdf/mec_resource_evaluation_study_11-1.pdf"
+        ]
+      },
+      "proposed_value": {
+        "Capacity (MW)": "233"
+      },
+      "gem_plant_id": "L100001064541",
+      "plant_name": "MidAmerican 2024 IRP power station 1",
+      "country": "United States",
+      "unit_name": "1 IRP",
+      "fields": {},
+      "researcher_notes": "The preferred portfolio table in the 2024 study says 233 MW for the 2031 turbine. I did not find a source that says 232.5 MW.",
+      "record_id": "L100001064541:G100001074296:qa-capacity-mw-1",
+      "checks": [
+        10,
+        37
+      ]
+    },
+    {
+      "gem_unit_id": "G100001074296",
+      "concern_type": "existence",
+      "recommendation": "The two turbines the study dates to 2028 and 2029 appear to be the Orient Energy Center in Adair County, which GEM should hold as its own plant. This placeholder is the 2031 turbine and is a different unit.",
+      "refs": {},
+      "gem_plant_id": "L100001064541",
+      "plant_name": "MidAmerican 2024 IRP power station 1",
+      "country": "United States",
+      "unit_name": "1 IRP",
+      "fields": {},
+      "researcher_notes": "A 2025 news report and MidAmerican's fact sheet describe Orient as about 465 MW in two turbines for 2028. I did not find a named site for the 2031 turbine.",
+      "record_id": "L100001064541:G100001074296:qa-existence-2"
+    },
+    {
+      "gem_unit_id": "G100001092275",
+      "concern_type": "identity",
+      "recommendation": "The August 2026 EIA-860M table has plant code 1048, Milton L Kapp, in Clinton County, about 2.9 km from GEM's coordinates. Generator 2 is 218.5 MW and generator 1 is 18.8 MW, both retired gas steam units. This placeholder is a future 466 MW turbine set for 2043, not a Kapp unit, so the codes should not be added here. The coordinates may simply sit on the old Kapp site. The reviewer should decide whether to keep them.",
+      "refs": {},
+      "gem_plant_id": "L100001081950",
+      "plant_name": "MidAmerican 2024 IRP power station 6",
+      "country": "United States",
+      "unit_name": "1 IRP",
+      "fields": {},
+      "researcher_notes": "The 2024 study names no site for this turbine. The Kapp retired units are a different kind of unit and capacity. I took the Kapp figures from the brief and did not re-read the EIA file.",
+      "record_id": "L100001081950:G100001092275:qa-identity-1"
+    },
+    {
+      "gem_unit_id": "G100001092276",
+      "concern_type": "location",
+      "recommendation": "Leave City blank. The study does not say where this 2044 addition would be built, so no source places it.",
+      "refs": {
+        "links": [
+          "https://www.midamericanenergy.com/media/pdf/mec_resource_evaluation_study_11-1.pdf"
+        ]
+      },
+      "gem_plant_id": "L100001081951",
+      "plant_name": "MidAmerican 2024 IRP power station 7",
+      "country": "United States",
+      "unit_name": "1 IRP",
+      "fields": {},
+      "researcher_notes": "The plan only lists capacity by year. No site is named.",
+      "record_id": "L100001081951:G100001092276:qa-location-1"
+    },
+    {
+      "gem_unit_id": "G100001094049",
+      "concern_type": "other",
+      "recommendation": "The Interstate Power and Light plan comments file on the checklist does not name Morgan Valley or Fairfax. It lists unsited additions, including a combined cycle unit in 2029 that GEM holds as IRP power station 1. A reviewer should decide whether Morgan Valley's 720 MW replaces that placeholder.",
+      "refs": {},
+      "gem_plant_id": "L100001083294",
+      "plant_name": "Morgan Valley Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The plan file is a consultant's comments on the study, not the study itself. No finding here comes from the plan, so the IRP box was not flagged.",
+      "record_id": "L100001083294:G100001094049:qa-other-1"
+    },
+    {
+      "gem_unit_id": "G100001094049",
+      "concern_type": "Status",
+      "recommendation": "Keep pre-construction. A commission decision on the certificate is requested by December 2026 and the Linn County rezoning is pending, so construction approval is not yet given.",
+      "refs": {
+        "links": [
+          "https://corridorbusiness.com/?p=132984"
+        ]
+      },
+      "gem_plant_id": "L100001083294",
+      "plant_name": "Morgan Valley Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Corridor Business Journal reports opposition from Fairfax and Benton County residents who petitioned to intervene.",
+      "record_id": "L100001083294:G100001094049:qa-status-2",
+      "checks": [
+        10,
+        37
+      ]
+    },
+    {
+      "gem_unit_id": "G100001054496",
+      "concern_type": "Capacity (MW)",
+      "recommendation": "The MidAmerican fact sheet says the project has three turbines, 700 MW and a unit 3 in service in spring 2029. The company's news release, a business news article and local press say two turbines and 465 MW. GEM has two units of 232.5 MW. Keep two units unless a commission filing shows a third.",
+      "refs": {
+        "links": [
+          "https://www.midamericanenergy.com/media/pdf/orient_energy_center_fact_sheet.pdf",
+          "https://www.midamericanenergy.com/newsroom/2025-generation-projects"
+        ]
+      },
+      "gem_plant_id": "L100001047779",
+      "plant_name": "Orient Energy Center power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The fact sheet appears to carry text from an earlier larger design. Local press also cited up to 520 MW.",
+      "record_id": "L100001047779:G100001054496:qa-capacity-mw-1",
+      "checks": [
+        10,
+        37
+      ]
+    },
+    {
+      "gem_unit_id": "G100001054496",
+      "concern_type": "existence",
+      "recommendation": "The IRP study lists 233 MW peaking plants in 2028 and 2029. The first two turbines here already add up to about 465 MW. No separate placeholder looks needed for them.",
+      "refs": {
+        "links": [
+          "https://www.midamericanenergy.com/media/pdf/mec_resource_evaluation_study_11-1.pdf"
+        ]
+      },
+      "gem_plant_id": "L100001047779",
+      "plant_name": "Orient Energy Center power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The study table shows 233 MW in each of 2028 and 2029. These match the two Orient turbines.",
+      "record_id": "L100001047779:G100001054496:qa-existence-2"
+    },
+    {
+      "gem_unit_id": "G100001054408",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "recommendation": "Not found. I looked at the Sargent and Lundy project page, the City of Ames electric department page and the EIA-860M table for August 2026. None of them mention carbon capture for Unit 7. Nothing suggests the unit has carbon capture, so the value no stays, but no document states it.",
+      "refs": {},
+      "gem_plant_id": "L100000103902",
+      "plant_name": "Ames Municipal Power Plant",
+      "country": "United States",
+      "unit_name": "Unit 7, timepoint 2",
+      "fields": {},
+      "researcher_notes": "No document found that states whether Unit 7 has carbon capture.",
+      "record_id": "L100000103902:G100001054408:qa-validation-1"
+    },
+    {
+      "gem_unit_id": "G100001054408",
+      "concern_type": "Fuel",
+      "recommendation": "The City of Ames page says Unit 7 burns refuse derived fuel from municipal solid waste along with natural gas. GEM lists only natural gas. Consider adding a bioenergy fuel for waste. The page also says the city has started to phase this fuel out.",
+      "refs": {
+        "links": [
+          "https://www.cityofames.org/My-Government/Departments/Electric-Department"
+        ]
+      },
+      "proposed_value": {
+        "Fuel": "fossil gas: natural gas, bioenergy: unknown"
+      },
+      "gem_plant_id": "L100000103902",
+      "plant_name": "Ames Municipal Power Plant",
+      "country": "United States",
+      "unit_name": "Unit 7, timepoint 2",
+      "fields": {},
+      "researcher_notes": "A fuel question only. Not changed here.",
+      "record_id": "L100000103902:G100001054408:qa-fuel-2"
+    },
+    {
+      "gem_unit_id": "G100001054408",
+      "concern_type": "Planned retire",
+      "recommendation": "The City of Ames plans to retire Units 7 and 8 when the new Ames Energy Center opens. A city podcast episode from November 2025 describes this. Local news says the new plant, built from reciprocating engines, will open in 2029. I found no firm retirement year from the city, so I did not report one.",
+      "refs": {
+        "links": [
+          "https://amesinfocus.podbean.com/e/ames-in-focus-powering-forward-with-curtis-spence"
+        ]
+      },
+      "gem_plant_id": "L100000103902",
+      "plant_name": "Ames Municipal Power Plant",
+      "country": "United States",
+      "unit_name": "Unit 7, timepoint 2",
+      "fields": {},
+      "researcher_notes": "Retirement is planned but no firm year was found. Both units are still operating.",
+      "record_id": "L100000103902:G100001054408:qa-planned-retire-3",
+      "checks": [
+        43,
+        50
+      ]
+    },
+    {
+      "gem_unit_id": "G100001054413",
+      "concern_type": "conversion-link",
+      "recommendation": "The earlier coal unit is Unit 1, timepoint 1 at Wisdom (GEM unit G100000102545, coal, 1960, retired). Its conversion link fields are blank. The conversion year was not found in a citable document, so the start year was left as it is.",
+      "refs": {
+        "links": [
+          "https://www.cbpower.coop/filesimages/474346_cbp_2019_annual_report_lowres_final(2).pdf"
+        ]
+      },
+      "proposed_value": {
+        "Conversion from/replacement of (GEM unit ID)": "G100000102545"
+      },
+      "gem_plant_id": "L100000103908",
+      "plant_name": "Earl F. Wisdom Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 1, timepoint 2",
+      "fields": {},
+      "researcher_notes": "The 2019 annual report confirms the conversion but gives no year.",
+      "record_id": "L100000103908:G100001054413:qa-conversion-link-1"
+    },
+    {
+      "gem_unit_id": "G100001054413",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "recommendation": "Not found. I looked at the Corn Belt Power Cooperative generation page, its 2019 annual report and the EIA-860M table for August 2026. None mention carbon capture. Nothing suggests Unit 1 has it.",
+      "refs": {},
+      "gem_plant_id": "L100000103908",
+      "plant_name": "Earl F. Wisdom Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 1, timepoint 2",
+      "fields": {},
+      "researcher_notes": "No document states the carbon capture value.",
+      "record_id": "L100000103908:G100001054413:qa-validation-2"
+    },
+    {
+      "gem_unit_id": "G100000402232",
+      "concern_type": "Owner(s)",
+      "recommendation": "The Corn Belt Power Cooperative generation page lists Wisdom Unit 2, 40 MW, as owned by Corn Belt Power. GEM shows Basin Electric Power Cooperative at 50 percent and Corn Belt at 50 percent. The cooperative's own page does not mention Basin. Not changed.",
+      "refs": {
+        "links": [
+          "https://www.cbpower.coop/power-supply/corn-belt-power-generation"
+        ]
+      },
+      "gem_plant_id": "L100000103908",
+      "plant_name": "Earl F. Wisdom Generating Station",
+      "country": "United States",
+      "unit_name": "2",
+      "fields": {},
+      "researcher_notes": "Ownership of Unit 2 may need a second look.",
+      "record_id": "L100000103908:G100000402232:qa-owner-s-3",
+      "checks": [
+        43,
+        50
+      ]
+    },
+    {
+      "gem_unit_id": "G100000403754",
+      "concern_type": "Capacity (MW)",
+      "recommendation": "The EIA table gives 60.5 MW per unit and GEM shows 61.0 MW. The operator's website calls the plant a nominal 140 MW with units of about 47 MW each. No change is proposed, since the difference is small, but the reviewer may want to check which basis GEM uses.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000402371",
+      "plant_name": "Exira power station",
+      "country": "United States",
+      "unit_name": "U1",
+      "fields": {},
+      "researcher_notes": "Capacity figures differ across sources.",
+      "record_id": "L100000402371:G100000403754:qa-capacity-mw-1"
+    },
+    {
+      "gem_unit_id": "G100001054470",
+      "concern_type": "other",
+      "recommendation": "The City field is blank. Web listings place the plant near Mason City at 24510 Orchid Avenue in Cerro Gordo County, but I did not find a document that states the city, so no value is proposed.",
+      "refs": {},
+      "gem_plant_id": "L100001047759",
+      "plant_name": "Lime Creek power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "City not filled.",
+      "record_id": "L100001047759:G100001054470:qa-other-1"
+    },
+    {
+      "gem_unit_id": "G100001054416",
+      "concern_type": "identity",
+      "recommendation": "Units 1 and 2 have no EIA generator number. The EIA table lists generators 1 and 2 as two identical 41.4 MW gas combustion turbines from 1990. Unit 1 matches generator 1 and unit 2 matches generator 2. Please add those as the unit identifiers by hand.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000402082",
+      "plant_name": "Pleasant Hill power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "EIA lists generator 3 at 97.0 MW from 1994, which matches GEM unit 3 that already carries the identifier EIA 3.",
+      "record_id": "L100000402082:G100001054416:qa-identity-1"
+    },
+    {
+      "gem_unit_id": "G100001054415",
+      "concern_type": "identity",
+      "recommendation": "This unit matches EIA generator 2, a 41.4 MW gas combustion turbine from 1990. Generator 1 is the identical twin and belongs to unit 1.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000402082",
+      "plant_name": "Pleasant Hill power station",
+      "country": "United States",
+      "unit_name": "2",
+      "fields": {},
+      "researcher_notes": "Both 1990 turbines have the same size and start year, so the pairing of unit to generator number cannot be proven from EIA alone.",
+      "record_id": "L100000402082:G100001054415:qa-identity-2"
+    },
+    {
+      "gem_unit_id": "G100000403018",
+      "concern_type": "other",
+      "recommendation": "The unit name should be 'Unit 4, timepoint 2', with a comma and a space before the word timepoint.",
+      "refs": {},
+      "gem_plant_id": "L100000103917",
+      "plant_name": "Prairie Creek Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 4- timepoint 2",
+      "fields": {},
+      "researcher_notes": "The current name 'Unit 4- timepoint 2' uses a dash. Another unit name rule in this tracker uses 'name, timepoint N'.",
+      "record_id": "L100000103917:G100000403018:qa-other-1"
+    },
+    {
+      "gem_unit_id": "G100000403018",
+      "concern_type": "other",
+      "recommendation": "No change. GEM shows 149.0 MW and EIA shows 148.8 MW, which rounds the same.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000103917",
+      "plant_name": "Prairie Creek Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 4- timepoint 2",
+      "fields": {},
+      "researcher_notes": "Alliant's 2025 annual report shows 126 MW, but that is a summer figure, not nameplate.",
+      "record_id": "L100000103917:G100000403018:qa-other-2"
+    },
+    {
+      "gem_unit_id": "G100000414185",
+      "concern_type": "existence",
+      "recommendation": "The two older gas turbines are listed as new units for this plant. Please confirm they are not already tracked under another plant name.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000409255",
+      "plant_name": "Summit Lake power station",
+      "country": "United States",
+      "unit_name": "IC",
+      "fields": {},
+      "researcher_notes": "The EIA-860M table for August 2026 lists two operating natural gas combustion turbines at Summit Lake, GT1 of 27.0 MW from 1973 and GT2 of 35.3 MW from 1975. The brief shows only the three-engine unit. A 2022 cooperative brochure gives a site total of 110 MW, which fits the engines plus the turbines. I did not find them as units in the brief, so they may be missing or may sit under another plant.",
+      "record_id": "L100000409255:G100000414185:qa-existence-1"
+    },
+    {
+      "gem_unit_id": "G100001072768",
+      "concern_type": "Status",
+      "recommendation": "Keep cancelled. The Fairfax site was dropped, and Morgan Valley is a different site about 2.5 miles away with a different size.",
+      "proposed_value": {
+        "Status": "cancelled"
+      },
+      "refs": {
+        "links": [
+          "https://corridorbusiness.com/alliant-energy-proposes-new-site-near-fairfax-for-natural-gas-power-plant/"
+        ]
+      },
+      "gem_plant_id": "L100001063341",
+      "plant_name": "Alliant Fairfax power station",
+      "country": "United States",
+      "unit_name": "Unit 1",
+      "fields": {},
+      "researcher_notes": "The Energy Information Project's Oil and Gas Watch lists Morgan Valley under the same facility record that GEM uses for Fairfax, which is why it shows proposed. The Corridor Business Journal article of March 5, 2026 says the Fairfax proposal was dropped and Morgan Valley is a new proposal at another site. The same reporting gives Morgan Valley as three combustion turbines of about 720 MW, against two 425 MW units at Fairfax. The month or year of the drop is not stated in that article. The existing source dated October 2025 says deprioritized, and that page now returns a 404 error.",
+      "record_id": "L100001063341:G100001072768:qa-status-1",
+      "checks": [
+        24,
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100001074208",
+      "concern_type": "identity",
+      "recommendation": "Treat Fairfax and Morgan Valley as separate entries. Fairfax is the dropped first proposal. Morgan Valley is the replacement, so a reviewer may want to link them in the notes.",
+      "refs": {
+        "links": [
+          "https://corridorbusiness.com/alliant-energy-proposes-new-site-near-fairfax-for-natural-gas-power-plant/"
+        ]
+      },
+      "gem_plant_id": "L100001063341",
+      "plant_name": "Alliant Fairfax power station",
+      "country": "United States",
+      "unit_name": "Unit 2",
+      "fields": {},
+      "researcher_notes": "Both are Alliant projects near Fairfax in Linn County. The sites differ and the sizes differ. I did not find a document that calls Morgan Valley the same project as Fairfax. The Sierra Club list showing Unit 2 as planned most likely reflects Morgan Valley.",
+      "record_id": "L100001063341:G100001074208:qa-identity-2"
+    },
+    {
+      "gem_unit_id": "G100001017855",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "recommendation": "Not found. No document I read mentions carbon capture at Riverside Unit 5. The 2015 MidAmerican Energy filing describes it as burning natural gas only. The current value of no is consistent with that, but I have no document that states it.",
+      "refs": {
+        "links": [
+          "https://www.sec.gov/Archives/edgar/data/0000928576/000092857615000020/eei2015.htm"
+        ]
+      },
+      "gem_plant_id": "L100000103918",
+      "plant_name": "Riverside (IA) power station",
+      "country": "United States",
+      "unit_name": "Unit 5, timepoint 2",
+      "fields": {},
+      "researcher_notes": "I looked at the 2015 MidAmerican Energy filing, a WVIK report and the EIA-860M table for August 2026. None mentions carbon capture.",
+      "record_id": "L100000103918:G100001017855:qa-validation-1"
+    },
+    {
+      "gem_unit_id": "G100001017855",
+      "concern_type": "Latitude",
+      "recommendation": "Not found. I did not find a document that states the plant coordinates, so the location source is still empty. The city is supported by the WVIK report.",
+      "refs": {
+        "links": [
+          "https://www.wvik.org/post/utility-closes-its-last-qc-coal-plant"
+        ]
+      },
+      "gem_plant_id": "L100000103918",
+      "plant_name": "Riverside (IA) power station",
+      "country": "United States",
+      "unit_name": "Unit 5, timepoint 2",
+      "fields": {},
+      "researcher_notes": "The EIA-860M table does not carry coordinates for retired units.",
+      "record_id": "L100000103918:G100001017855:qa-latitude-2"
+    },
+    {
+      "gem_plant_id": "L100001081945",
+      "plant_name": "Interstate Power and Light 2024 IRP power station 1",
+      "concern_type": "existence",
+      "recommendation": "Keep the placeholder for now and ask the reviewer whether the 430 MW combined cycle unit is still planned. If not, the placeholder could be cancelled.",
+      "refs": {
+        "links": [
+          "https://www.synapse-energy.com/sites/default/files/IPL%20RES%20EI%20Final%20Comments%20on%20RES%204.7.25-%20Public%2024-008.pdf",
+          "https://www.sec.gov/Archives/edgar/data/0000352541/000035254126000043/lnt-20260630.htm"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.synapse-energy.com/sites/default/files/IPL%20RES%20EI%20Final%20Comments%20on%20RES%204.7.25-%20Public%2024-008.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/0000352541/000035254126000043/lnt-20260630.htm",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "proposed_value": {},
+      "irp": true,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "This placeholder holds the 430 MW combined cycle unit for 2029 that Interstate Power and Light modeled in its Resource Evaluation Study. I could not read the study itself, because it is filed with the Iowa Utilities Commission in docket RPU-2021-0003 and I did not reach that filing system. Comments filed by Synapse Energy Economics on April 7, 2025 describe the study, which is dated February 13, 2025. They say the main flat load portfolio adds over 1,500 MW of new gas, made up of a 430 MW combined cycle unit and the rest peaking units. They also say the company expected combined cycle units to be available no earlier than 2029. Alliant Energy's quarterly report for June 30, 2026 lists only simple-cycle gas projects: about 720 MW in Linn County (Morgan Valley) and about 1,200 MW near Emery Station (Riverhawk). It does not mention a combined cycle unit at all. Bobcat (720 MW) is already tracked as its own plant. I found no source that says the 430 MW combined cycle unit was dropped or replaced, and none that says it is still planned. So the placeholder cannot be confirmed or removed on the evidence found. A reviewer should check the docket or ask Alliant.",
+      "record_id": "us-ia:plant:qa-existence-1"
+    },
+    {
+      "gem_plant_id": "L100001064541",
+      "plant_name": "MidAmerican 2024 IRP power station 1",
+      "concern_type": "Capacity (MW)",
+      "recommendation": "No change needed. All seven MidAmerican placeholders match the plan. Optionally set this one to 233 MW to match the plan's rounded size.",
+      "refs": {
+        "links": [
+          "https://www.midamericanenergy.com/media/pdf/mec_resource_evaluation_study_11-1.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.midamericanenergy.com/media/pdf/mec_resource_evaluation_study_11-1.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "proposed_value": {
+        "Capacity (MW)": "233"
+      },
+      "irp": true,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "MidAmerican's Resource Evaluation Study of November 1, 2024 has a Preferred Portfolio table of gas combustion turbine additions. It lists 233 MW in 2028, 233 MW in 2029, 233 MW in 2031, 233 MW in 2033, 233 MW in 2035, 699 MW in 2041, 466 MW in 2042, 466 MW in 2043 and 699 MW in 2044, for a total of 3,495 MW. The 2028 and 2029 entries are the Orient Energy Center. The other seven are the placeholders: 233 MW in 2031 (this plant, which GEM holds at 232.5 MW), 233 MW in 2033, 233 MW in 2035, 699 MW in 2041, 466 MW in 2042, 466 MW in 2043 and 699 MW in 2044. Every year and size matches GEM, except that this plant is 232.5 MW in GEM and 233 MW in the plan. The plan models turbines in 233 MW blocks, and Orient's two turbines are each 232.5 MW, so the 0.5 MW gap is rounding. I read the table in the downloaded plan text.",
+      "record_id": "us-ia:plant:qa-capacity-mw-2"
+    },
+    {
+      "gem_plant_id": "L100001047779",
+      "plant_name": "Orient Energy Center power station",
+      "concern_type": "Start year",
+      "recommendation": "Leave both units at 2028. The plan's 2029 entry for the second turbine is older than the company's own later statements.",
+      "refs": {
+        "links": [
+          "https://www.midamericanenergy.com/media/pdf/mec_resource_evaluation_study_11-1.pdf",
+          "https://www.midamericanenergy.com/newsroom/2025-generation-projects",
+          "https://www.misoenergy.org/api/giqueue/getprojects"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.midamericanenergy.com/media/pdf/mec_resource_evaluation_study_11-1.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.midamericanenergy.com/newsroom/2025-generation-projects",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "proposed_value": {},
+      "irp": true,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "The tab note says MidAmerican plans two 233 MW peaking plants in 2028 and 2029, and GEM has both Orient units in 2028. MidAmerican's Resource Evaluation Study of November 1, 2024 does list one 233 MW turbine in 2028 and another in 2029. Its Action Plan table says the same, with a feasible timeline of 233 MW in each of those two years. A later MidAmerican news release says the Orient Energy Center, two gas-fired combustion turbines at one site in Adair County, will generate 465 MW beginning in 2028. The company gives no 2029 date for the second turbine in that release. A queue entry at the Midcontinent Independent System Operator for 263 MW at the Orient Energy Center substation, with service in November 2028, was withdrawn on December 23, 2025. A second entry for 263 MW at the Orient to Northboro line, with service in September 2027, is still active. I did not find which entry covers which turbine. I suggest keeping 2028 for both units unless the plant's own research finds a 2029 date.",
+      "record_id": "us-ia:plant:qa-start-year-3"
+    },
+    {
+      "gem_plant_id": "L100000103919",
+      "plant_name": "Streeter Station",
+      "concern_type": "conversion-link",
+      "recommendation": "Ask the reviewer to check whether Streeter Station was converted from coal to gas. If it was, add gas timepoint 2 units (16.5 MW and 35 MW) with Cedar Falls Utilities as owner.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "proposed_value": {},
+      "irp": false,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "GEM has Streeter Station only in the coal tracker, as unit 7 (35 MW, 1973), retired. The EIA-860M table for August 2026 lists Streeter Station, plant 1131, owned by Cedar Falls Utilities in Black Hawk County. Both of its units are listed as natural gas steam turbines and as operating. Unit 6 is 16.5 MW from 1963. Unit 7 is 35 MW from 1973. That is 51.5 MW of gas capacity in total, which is over the 50 MW threshold. The EIA table does not say when the plants switched from coal to gas, and I did not search for the conversion date. The owner name already exists in GEM as Cedar Falls Utilities.",
+      "record_id": "us-ia:plant:qa-conversion-link-4"
+    },
+    {
+      "gem_plant_id": "L100001047759",
+      "plant_name": "Lime Creek power station",
+      "concern_type": "identity",
+      "recommendation": "Check whether the single 90.2 MW unit should be two units of 45.1 MW each.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "proposed_value": {},
+      "irp": false,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "GEM has one unit at Lime Creek, 90.2 MW, fuel oil, 1991. The EIA-860M table for August 2026 lists plant 7155, Lime Creek, owned by Interstate Power and Light in Cerro Gordo County, as two operating petroleum liquids combustion turbines. Generators 1 and 2 are each 45.1 MW and both date from 1991. The total matches GEM. Only the unit split differs.",
+      "record_id": "us-ia:plant:qa-identity-5"
+    },
+    {
+      "gem_plant_id": "L100000103915",
+      "plant_name": "Muscatine Generating Station",
+      "concern_type": "capacity-threshold",
+      "recommendation": "Watch only. A 35 MW gas turbine is below the 50 MW threshold. Ask the reviewer whether a unit this size should be added next to the coal units.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "proposed_value": {},
+      "irp": false,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "The plant is in GEM's coal tracker only. The EIA-860M table for August 2026 lists a planned natural gas combustion turbine, generator 10, at Muscatine Plant #1 (plant 1167, owned by the Board of Water Electric and Communications in Muscatine County). It is 35 MW, planned for 2027, with regulatory approvals received and construction not started. A 2024 public notice on the owner's website for generating certificate case GCU-2024-0003 described a combined heat and power facility of up to 45 MW, but that page now returns an error, so I could not confirm that it is the same project. I did not find a start of construction.",
+      "record_id": "us-ia:plant:qa-capacity-threshold-6"
+    }
+  ]
+}

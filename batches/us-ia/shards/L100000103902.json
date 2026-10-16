@@ -1,0 +1,240 @@
+{
+ "meta": {
+  "plant_id": "L100000103902",
+  "plant_name": "Ames Municipal Power Plant",
+  "state": "Iowa",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-16T12:30:00-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001054408",
+   "unit_name": "Unit 7, timepoint 2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.cityofames.org/My-Government/Departments/Electric-Department"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.cityofames.org/My-Government/Departments/Electric-Department",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists Plant 1122, generator 7, as operating with 37.5 MW. The City of Ames electric department page says Unit 7 is in service."
+    },
+    "Start year": {
+     "value": "2016",
+     "refs": [
+      "https://www.sargentlundy.com/projects/steam-electric-plant-coal-to-gas-boiler-conversion/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sargentlundy.com/projects/steam-electric-plant-coal-to-gas-boiler-conversion/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Sargent and Lundy project page says the City of Ames converted its Unit 7 and Unit 8 boilers from coal to natural gas. The project started in May 2014 and was completed in July 2016. So the unit first ran on gas in 2016, not 1968. The 1968 year is when the coal unit began operating."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://www.sargentlundy.com/projects/steam-electric-plant-coal-to-gas-boiler-conversion/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sargentlundy.com/projects/steam-electric-plant-coal-to-gas-boiler-conversion/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Sargent and Lundy project page says the City of Ames converted its Unit 7 and Unit 8 boilers from coal to natural gas. The project started in May 2014 and was completed in July 2016. This matches the value GEM already shows."
+    }
+   },
+   "not_found": [
+    "CCS attachment? document"
+   ],
+   "notes": "Still operating. Gas start year should be 2016 per the conversion project. No retirement year published yet."
+  },
+  {
+   "gem_unit_id": "G100001017969",
+   "unit_name": "Unit 8, timepoint 2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.cityofames.org/My-Government/Departments/Electric-Department"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.cityofames.org/My-Government/Departments/Electric-Department",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists Plant 1122, generator 8, as operating with 71.3 MW. The City of Ames electric department page says Unit 8 burns only natural gas and is in service."
+    },
+    "Start year": {
+     "value": "2016",
+     "refs": [
+      "https://www.sargentlundy.com/projects/steam-electric-plant-coal-to-gas-boiler-conversion/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sargentlundy.com/projects/steam-electric-plant-coal-to-gas-boiler-conversion/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Sargent and Lundy project page says the City of Ames converted its Unit 7 and Unit 8 boilers from coal to natural gas. The project started in May 2014 and was completed in July 2016. The EIA table gives 1982 because that is the year the original coal unit began operating. GEM tracks the converted unit, so 2016 is right and should stay."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://www.sargentlundy.com/projects/steam-electric-plant-coal-to-gas-boiler-conversion/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sargentlundy.com/projects/steam-electric-plant-coal-to-gas-boiler-conversion/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Sargent and Lundy project page says the City of Ames converted its Unit 7 and Unit 8 boilers from coal to natural gas. The project started in May 2014 and was completed in July 2016. This matches the value GEM already shows."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating. The 1982 year in the EIA table is the original coal unit, so the 2016 start year stays."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001054408",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "recommendation": "Not found. I looked at the Sargent and Lundy project page, the City of Ames electric department page and the EIA-860M table for August 2026. None of them mention carbon capture for Unit 7. Nothing suggests the unit has carbon capture, so the value no stays, but no document states it.",
+   "note": "No document found that states whether Unit 7 has carbon capture.",
+   "refs": []
+  },
+  {
+   "gem_unit_id": "G100001054408",
+   "concern_type": "Fuel",
+   "recommendation": "The City of Ames page says Unit 7 burns refuse derived fuel from municipal solid waste along with natural gas. GEM lists only natural gas. Consider adding a bioenergy fuel for waste. The page also says the city has started to phase this fuel out.",
+   "note": "A fuel question only. Not changed here.",
+   "refs": [
+    "https://www.cityofames.org/My-Government/Departments/Electric-Department"
+   ],
+   "proposed_value": {
+    "Fuel": "fossil gas: natural gas, bioenergy: unknown"
+   }
+  },
+  {
+   "gem_unit_id": "G100001054408",
+   "concern_type": "Planned retire",
+   "recommendation": "The City of Ames plans to retire Units 7 and 8 when the new Ames Energy Center opens. A city podcast episode from November 2025 describes this. Local news says the new plant, built from reciprocating engines, will open in 2029. I found no firm retirement year from the city, so I did not report one.",
+   "note": "Retirement is planned but no firm year was found. Both units are still operating.",
+   "refs": [
+    "https://amesinfocus.podbean.com/e/ames-in-focus-powering-forward-with-curtis-spence"
+   ]
+  }
+ ],
+ "monitor": [
+  {
+   "gem_unit_id": "G100001054408",
+   "monitor_kind": "existing_plant",
+   "monitor_reason": "The city plans to retire Units 7 and 8 when the new Ames Energy Center opens, but no retirement year has been published.",
+   "recheck_by": "2027-04",
+   "note": "A city podcast from November 2025 describes the planned retirement. Local news says the replacement engines arrive in October 2029.",
+   "refs": [
+    "https://amesinfocus.podbean.com/e/ames-in-focus-powering-forward-with-curtis-spence"
+   ]
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read plant 1122 rows for generators 7 and 8."
+  },
+  {
+   "url": "https://www.sargentlundy.com/projects/steam-electric-plant-coal-to-gas-boiler-conversion/",
+   "used_for": [
+    "Start year",
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "Page loads and states 2016 completion."
+  },
+  {
+   "url": "https://www.cityofames.org/My-Government/Departments/Electric-Department",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Says both units are in service."
+  },
+  {
+   "url": "https://amesinfocus.podbean.com/e/ames-in-focus-powering-forward-with-curtis-spence",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Describes planned retirement of Units 7 and 8."
+  },
+  {
+   "url": "https://bluewaterhealthyliving.com/news/national-news/iowa/ames-approves-76m-generator-purchase-for-new-power-plant/",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "blocked",
+   "note": "Returned HTTP 403 through the repo fetcher and no archive copy exists. Not cited."
+  }
+ ]
+}

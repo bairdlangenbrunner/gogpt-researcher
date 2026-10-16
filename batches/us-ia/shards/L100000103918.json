@@ -1,0 +1,133 @@
+{
+ "meta": {
+  "plant_id": "L100000103918",
+  "plant_name": "Riverside (IA) power station",
+  "state": "Iowa",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-16T16:25:00-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001017855",
+   "unit_name": "Unit 5, timepoint 2",
+   "findings": {
+    "Owner(s)": {
+     "value": "MidAmerican Energy Co [100%]",
+     "refs": [
+      "https://www.sec.gov/Archives/edgar/data/0000928576/000092857615000020/eei2015.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/0000928576/000092857615000020/eei2015.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A MidAmerican Energy presentation filed with the Securities and Exchange Commission in 2015 lists Riverside Unit 5 among MidAmerican Energy's own coal-fueled generation. So it supports MidAmerican Energy as owner. It does not give a percentage share."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://www.sec.gov/Archives/edgar/data/0000928576/000092857615000020/eei2015.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/0000928576/000092857615000020/eei2015.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The same filing says Riverside Unit 5 of 124 MW ceased burning coal in 2015 and operates solely on natural gas. That is a conversion."
+    },
+    "City": {
+     "value": "Davenport",
+     "refs": [
+      "https://www.wvik.org/post/utility-closes-its-last-qc-coal-plant"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.wvik.org/post/utility-closes-its-last-qc-coal-plant",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A WVIK public radio report on the closing of the last Quad Cities coal plant describes the MidAmerican Energy Riverside plant in Davenport."
+    }
+   },
+   "not_found": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "CCS attachment?"
+   ],
+   "notes": "I found no document that states the coordinates, so they have no source yet. I found nothing that mentions carbon capture at this unit."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001017855",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "recommendation": "Not found. No document I read mentions carbon capture at Riverside Unit 5. The 2015 MidAmerican Energy filing describes it as burning natural gas only. The current value of no is consistent with that, but I have no document that states it.",
+   "note": "I looked at the 2015 MidAmerican Energy filing, a WVIK report and the EIA-860M table for August 2026. None mentions carbon capture.",
+   "refs": [
+    "https://www.sec.gov/Archives/edgar/data/0000928576/000092857615000020/eei2015.htm"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001017855",
+   "concern_type": "Latitude",
+   "recommendation": "Not found. I did not find a document that states the plant coordinates, so the location source is still empty. The city is supported by the WVIK report.",
+   "note": "The EIA-860M table does not carry coordinates for retired units.",
+   "refs": [
+    "https://www.wvik.org/post/utility-closes-its-last-qc-coal-plant"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/0000928576/000092857615000020/eei2015.htm",
+   "used_for": [
+    "Owner(s)",
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "Environmental position slide names Riverside Unit 5."
+  },
+  {
+   "url": "https://www.wvik.org/post/utility-closes-its-last-qc-coal-plant",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Names Riverside and Davenport."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Retired sheet lists Riverside plant 1081 generator 5 as retired. Existing status already retired."
+  }
+ ]
+}

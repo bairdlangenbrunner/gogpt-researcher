@@ -1,0 +1,156 @@
+{
+ "meta": {
+  "plant_id": "L100000402017",
+  "plant_name": "Marshalltown power station",
+  "state": "Iowa",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-16T16:24:14-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403015",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 1068, generator 1, status OP, nameplate 63.0 MW, operating year 1978, owner Interstate Power and Light Co"
+      },
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA-860M table for August 2026 lists this unit as operating. Alliant Energy's annual report for 2025, filed in 2026, lists the Marshalltown combustion turbines, units 1 to 3, in service in 1978 among Interstate Power and Light's gas plants. I found no retirement, mothballing or sale notice."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating. No retirement, planned retirement, mothballing or owner change was found."
+  },
+  {
+   "gem_unit_id": "G100000403016",
+   "unit_name": "2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 1068, generator 2, status OP, nameplate 63.0 MW, operating year 1978, owner Interstate Power and Light Co"
+      },
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA-860M table for August 2026 lists this unit as operating. Alliant Energy's annual report for 2025, filed in 2026, lists the Marshalltown combustion turbines, units 1 to 3, in service in 1978 among Interstate Power and Light's gas plants. I found no retirement, mothballing or sale notice."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating. No retirement, planned retirement, mothballing or owner change was found."
+  },
+  {
+   "gem_unit_id": "G100000403017",
+   "unit_name": "3",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 1068, generator 3, status OP, nameplate 63.0 MW, operating year 1978, owner Interstate Power and Light Co"
+      },
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA-860M table for August 2026 lists this unit as operating. Alliant Energy's annual report for 2025, filed in 2026, lists the Marshalltown combustion turbines, units 1 to 3, in service in 1978 among Interstate Power and Light's gas plants. I found no retirement, mothballing or sale notice."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating. No retirement, planned retirement, mothballing or owner change was found."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [
+  {
+   "gem_plant_id": "L100000402017",
+   "monitor_kind": "existing_plant",
+   "monitor_reason": "Alliant is building the 720 MW Bobcat Energy Center next to this site, so the old turbines could be affected later.",
+   "recheck_by": "2027-06",
+   "note": "The Iowa Utilities Commission approved Bobcat in December 2025. Alliant says service is planned for 2029. No retirement of the 1978 turbines has been announced.",
+   "refs": [
+    "https://www.alliantenergy.com/news/news-center/2025/12/121625-bobcat-energy-center-approved"
+   ]
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet for plant 1068."
+  },
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Generating station table for Interstate Power and Light."
+  },
+  {
+   "url": "https://www.alliantenergy.com/news/news-center/2025/12/121625-bobcat-energy-center-approved",
+   "used_for": [
+    "monitor"
+   ],
+   "outcome": "verified",
+   "note": "Alliant news release on the Bobcat approval."
+  }
+ ]
+}

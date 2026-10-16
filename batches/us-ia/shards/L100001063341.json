@@ -1,0 +1,136 @@
+{
+ "meta": {
+  "plant_id": "L100001063341",
+  "plant_name": "Alliant Fairfax power station",
+  "state": "Iowa",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-16T16:25:00-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001072768",
+   "unit_name": "Unit 1",
+   "findings": {
+    "Status": {
+     "value": "cancelled",
+     "refs": [
+      "https://corridorbusiness.com/alliant-energy-proposes-new-site-near-fairfax-for-natural-gas-power-plant/"
+     ],
+     "verifications": [
+      {
+       "url": "https://corridorbusiness.com/alliant-energy-proposes-new-site-near-fairfax-for-natural-gas-power-plant/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Corridor Business Journal article from March 5, 2026 says the Morgan Valley Energy Center proposal emerged after the earlier Fairfax site was dropped amid community objections and safety concerns from the Eastern Iowa Airport. So the Fairfax site is dropped. The status is unchanged."
+    }
+   },
+   "not_found": [
+    "Owner(s)"
+   ],
+   "notes": "The status stays cancelled. I could not find a document that names the owner of the dropped Fairfax project. The articles I read say Alliant but do not name the Alliant company that would hold the plant."
+  },
+  {
+   "gem_unit_id": "G100001074208",
+   "unit_name": "Unit 2",
+   "findings": {
+    "Status": {
+     "value": "cancelled",
+     "refs": [
+      "https://corridorbusiness.com/alliant-energy-proposes-new-site-near-fairfax-for-natural-gas-power-plant/"
+     ],
+     "verifications": [
+      {
+       "url": "https://corridorbusiness.com/alliant-energy-proposes-new-site-near-fairfax-for-natural-gas-power-plant/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Corridor Business Journal article from March 5, 2026 says the Morgan Valley Energy Center proposal emerged after the earlier Fairfax site was dropped amid community objections and safety concerns from the Eastern Iowa Airport. So the Fairfax site is dropped. The status is unchanged."
+    }
+   },
+   "not_found": [
+    "Owner(s)"
+   ],
+   "notes": "The status stays cancelled. I could not find a document that names the owner of the dropped Fairfax project. The articles I read say Alliant but do not name the Alliant company that would hold the plant."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001072768",
+   "concern_type": "Status",
+   "recommendation": "Keep cancelled. The Fairfax site was dropped, and Morgan Valley is a different site about 2.5 miles away with a different size.",
+   "note": "The Energy Information Project's Oil and Gas Watch lists Morgan Valley under the same facility record that GEM uses for Fairfax, which is why it shows proposed. The Corridor Business Journal article of March 5, 2026 says the Fairfax proposal was dropped and Morgan Valley is a new proposal at another site. The same reporting gives Morgan Valley as three combustion turbines of about 720 MW, against two 425 MW units at Fairfax. The month or year of the drop is not stated in that article. The existing source dated October 2025 says deprioritized, and that page now returns a 404 error.",
+   "proposed_value": {
+    "Status": "cancelled"
+   },
+   "refs": [
+    "https://corridorbusiness.com/alliant-energy-proposes-new-site-near-fairfax-for-natural-gas-power-plant/"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001074208",
+   "concern_type": "identity",
+   "recommendation": "Treat Fairfax and Morgan Valley as separate entries. Fairfax is the dropped first proposal. Morgan Valley is the replacement, so a reviewer may want to link them in the notes.",
+   "note": "Both are Alliant projects near Fairfax in Linn County. The sites differ and the sizes differ. I did not find a document that calls Morgan Valley the same project as Fairfax. The Sierra Club list showing Unit 2 as planned most likely reflects Morgan Valley.",
+   "refs": [
+    "https://corridorbusiness.com/alliant-energy-proposes-new-site-near-fairfax-for-natural-gas-power-plant/"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Interstate Power and Light Co",
+   "role": "owner",
+   "lookup_result": "Bare lookup of Interstate Power and Light found nothing locally and asked for a database check; not reported as an owner because no source names the owner of the Fairfax project."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://corridorbusiness.com/alliant-energy-proposes-new-site-near-fairfax-for-natural-gas-power-plant/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Says the Fairfax site was dropped."
+  },
+  {
+   "url": "https://corridorbusiness.com/fairfax-officials-hear-details-of-proposed-alliant-gas-fired-power-plant/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Existing source, names Fairfax. Does not name an owner."
+  },
+  {
+   "url": "https://www.thegazette.com/energy/alliant-says-it-is-deprioritizing-fairfax-location-for-proposed-natural-gas-power-plant/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "dead",
+   "note": "Existing source returned 404 live and in archive snapshots did not show the owner name. Keep it listed, it is not dropped."
+  },
+  {
+   "url": "https://corridorbusiness.com/proposed-alliant-power-plant-near-airport-raises-concerns/",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "not relevant",
+   "note": "Existing source. Loads, but the text I checked did not name Interstate Power and Light."
+  }
+ ]
+}

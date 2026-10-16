@@ -1,0 +1,156 @@
+{
+ "meta": {
+  "plant_id": "L100000402082",
+  "plant_name": "Pleasant Hill power station",
+  "state": "Iowa",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-16T16:24:14-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001054416",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.sec.gov/Archives/edgar/data/1081316/000108131626000003/bhe-20251231.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 7145, generator 1, status OP, nameplate 41.4 MW, operating year 1990, owner MidAmerican Energy Co"
+      },
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/1081316/000108131626000003/bhe-20251231.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA-860M table for August 2026 lists this generator as operating. MidAmerican Energy's table of generating plants in the Berkshire Hathaway Energy annual report for 2025 lists Pleasant Hill, 1990 to 1994, as a gas or oil plant in service. I found no retirement, mothballing or sale notice."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating. No retirement, planned retirement, mothballing or owner change was found."
+  },
+  {
+   "gem_unit_id": "G100001054415",
+   "unit_name": "2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.sec.gov/Archives/edgar/data/1081316/000108131626000003/bhe-20251231.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 7145, generator 2, status OP, nameplate 41.4 MW, operating year 1990, owner MidAmerican Energy Co"
+      },
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/1081316/000108131626000003/bhe-20251231.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA-860M table for August 2026 lists this generator as operating. MidAmerican Energy's table of generating plants in the Berkshire Hathaway Energy annual report for 2025 lists Pleasant Hill, 1990 to 1994, as a gas or oil plant in service. I found no retirement, mothballing or sale notice."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating. No retirement, planned retirement, mothballing or owner change was found."
+  },
+  {
+   "gem_unit_id": "G100000403159",
+   "unit_name": "3",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.sec.gov/Archives/edgar/data/1081316/000108131626000003/bhe-20251231.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 7145, generator 3, status OP, nameplate 97.0 MW, operating year 1994, owner MidAmerican Energy Co"
+      },
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/1081316/000108131626000003/bhe-20251231.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA-860M table for August 2026 lists this generator as operating. MidAmerican Energy's table of generating plants in the Berkshire Hathaway Energy annual report for 2025 lists Pleasant Hill, 1990 to 1994, as a gas or oil plant in service. I found no retirement, mothballing or sale notice."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating. No retirement, planned retirement, mothballing or owner change was found."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001054416",
+   "concern_type": "identity",
+   "recommendation": "Units 1 and 2 have no EIA generator number. The EIA table lists generators 1 and 2 as two identical 41.4 MW gas combustion turbines from 1990. Unit 1 matches generator 1 and unit 2 matches generator 2. Please add those as the unit identifiers by hand.",
+   "note": "EIA lists generator 3 at 97.0 MW from 1994, which matches GEM unit 3 that already carries the identifier EIA 3.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001054415",
+   "concern_type": "identity",
+   "recommendation": "This unit matches EIA generator 2, a 41.4 MW gas combustion turbine from 1990. Generator 1 is the identical twin and belongs to unit 1.",
+   "note": "Both 1990 turbines have the same size and start year, so the pairing of unit to generator number cannot be proven from EIA alone.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet for plant 7145."
+  },
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/1081316/000108131626000003/bhe-20251231.htm",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "MidAmerican Energy generating plant table lists Pleasant Hill, 1990 to 1994, 151 MW."
+  }
+ ]
+}

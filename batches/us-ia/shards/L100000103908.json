@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "plant_id": "L100000103908",
+    "plant_name": "Earl F. Wisdom Generating Station",
+    "state": "Iowa",
+    "mode": "update",
+    "model": "sonnet",
+    "generated": "2026-10-16T12:30:00-04:00",
+    "done": true,
+    "urls_attempted": 3,
+    "urls_verified": 3
+  },
+  "units": [
+    {
+      "gem_unit_id": "G100000402232",
+      "unit_name": "Unit 2",
+      "findings": {
+        "Status": {
+          "value": "operating",
+          "refs": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "tier": "high",
+          "independent": false,
+          "note": "The EIA-860M table for August 2026 lists Plant 1217, generator 2, as operating with 81.6 MW. It shows no planned retirement. The only planned change is an uprate of 0 MW in December 2027."
+        }
+      },
+      "not_found": [],
+      "notes": "Still operating. No retirement or sale found."
+    },
+    {
+      "gem_unit_id": "G100001054413",
+      "unit_name": "Unit 1, timepoint 2",
+      "findings": {
+        "Status": {
+          "value": "operating",
+          "refs": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "tier": "high",
+          "independent": false,
+          "note": "The EIA-860M table for August 2026 lists Plant 1217, generator 1, as operating with 37.5 MW and an operating year of 1960. It shows no planned retirement."
+        },
+        "Conversion/replacement?": {
+          "value": "conversion",
+          "refs": [
+            "https://www.cbpower.coop/filesimages/474346_cbp_2019_annual_report_lowres_final(2).pdf"
+          ],
+          "verifications": [
+            {
+              "url": "https://www.cbpower.coop/filesimages/474346_cbp_2019_annual_report_lowres_final(2).pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "tier": "high",
+          "independent": false,
+          "note": "The Corn Belt Power Cooperative 2019 annual report says the coal pile was no longer needed because Wisdom Unit 1 was converted from coal to natural gas. So this unit is a conversion. The report gives no year for the conversion."
+        },
+        "Owner(s)": {
+          "value": "Corn Belt Power Cooperative [100%]",
+          "refs": [
+            "https://www.cbpower.coop/power-supply/corn-belt-power-generation"
+          ],
+          "verifications": [
+            {
+              "url": "https://www.cbpower.coop/power-supply/corn-belt-power-generation",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "tier": "high",
+          "independent": false,
+          "note": "The Corn Belt Power Cooperative generation page lists Wisdom Unit 1, 38 MW, under generating sources owned by Corn Belt Power. This matches GEM's value."
+        }
+      },
+      "not_found": [
+        "CCS attachment? document",
+        "Conversion from GEM unit ID"
+      ],
+      "notes": "Still operating. The conversion is confirmed but the year and the earlier unit's ID were not found."
+    }
+  ],
+  "plant_findings": {},
+  "qa": [
+    {
+      "gem_unit_id": "G100001054413",
+      "concern_type": "conversion-link",
+      "recommendation": "The earlier coal unit is Unit 1, timepoint 1 at Wisdom (GEM unit G100000102545, coal, 1960, retired). Its conversion link fields are blank. The conversion year was not found in a citable document, so the start year was left as it is.",
+      "note": "The 2019 annual report confirms the conversion but gives no year.",
+      "refs": [
+        "https://www.cbpower.coop/filesimages/474346_cbp_2019_annual_report_lowres_final(2).pdf"
+      ],
+      "proposed_value": {
+        "Conversion from/replacement of (GEM unit ID)": "G100000102545"
+      }
+    },
+    {
+      "gem_unit_id": "G100001054413",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "recommendation": "Not found. I looked at the Corn Belt Power Cooperative generation page, its 2019 annual report and the EIA-860M table for August 2026. None mention carbon capture. Nothing suggests Unit 1 has it.",
+      "note": "No document states the carbon capture value.",
+      "refs": []
+    },
+    {
+      "gem_unit_id": "G100000402232",
+      "concern_type": "Owner(s)",
+      "recommendation": "The Corn Belt Power Cooperative generation page lists Wisdom Unit 2, 40 MW, as owned by Corn Belt Power. GEM shows Basin Electric Power Cooperative at 50 percent and Corn Belt at 50 percent. The cooperative's own page does not mention Basin. Not changed.",
+      "note": "Ownership of Unit 2 may need a second look.",
+      "refs": [
+        "https://www.cbpower.coop/power-supply/corn-belt-power-generation"
+      ]
+    }
+  ],
+  "monitor": [],
+  "newunits": [],
+  "entities": [],
+  "source_log": [
+    {
+      "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "used_for": [
+        "Status"
+      ],
+      "outcome": "verified",
+      "note": "Plant 1217 rows."
+    },
+    {
+      "url": "https://www.cbpower.coop/power-supply/corn-belt-power-generation",
+      "used_for": [
+        "Owner(s)"
+      ],
+      "outcome": "verified",
+      "note": "Lists Wisdom units as owned by Corn Belt."
+    },
+    {
+      "url": "https://www.cbpower.coop/filesimages/474346_cbp_2019_annual_report_lowres_final(2).pdf",
+      "used_for": [
+        "Conversion/replacement?"
+      ],
+      "outcome": "verified",
+      "note": "Says Unit 1 was converted from coal to gas."
+    }
+  ]
+}

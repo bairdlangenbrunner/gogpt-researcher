@@ -130,6 +130,7 @@ pastes it, or approves a `gws-gem-write` call.
 | 52 | Used AI to search for changes | This repo is that | Covered |
 | 53 | All "in progress" units moved to "updated" or "no changes" | The export has a Research status column. The checker lists units still "in progress"; the actions workbook already ends each unit with its Record of Full Updates entry | Covered, add the listing |
 | 56 | "No tracker found" units reviewed | `scripts/no_tracker.py --state <State>` (or `--country`) lists the combustion units whose tracker marker is null, via `gem-db-ops/gogpt/no_tracker.py`; each live one is a web-UI fuel fix | Covered (2026-10-07) |
+| — | Assigned Comments reviewed (manual step 5) | `scripts/assigned_comments.py --state <State>` (or `--country`) lists the scope's comment threads from the read-only database into `work/comments_<tag>.md` at batch start; `--closeout` must print COMMENTS CLEAN | Covered (2026-10-16) |
 
 ## Proposed new script: `state_checker.py`
 

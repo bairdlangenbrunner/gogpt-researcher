@@ -1,0 +1,271 @@
+{
+ "meta": {
+  "plant_id": "L100000103917",
+  "plant_name": "Prairie Creek Generating Station",
+  "state": "Iowa",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-16T16:24:14-04:00",
+  "done": true,
+  "urls_attempted": 9,
+  "urls_verified": 9
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403018",
+   "unit_name": "Unit 4- timepoint 2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 1073, generator 4, status OP, nameplate 148.8 MW, natural gas steam turbine, operating year 1967"
+      },
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA-860M table for August 2026 lists unit 4 as operating on natural gas. Alliant Energy's annual report for 2025 lists Prairie Creek unit 4 among Interstate Power and Light's gas plants. It says units 3 and 4 face a federal rule, but no retirement of unit 4 is announced."
+    },
+    "Start year": {
+     "value": "2017",
+     "refs": [
+      "https://www.thegazette.com/business/alliant-shifting-largest-cedar-rapids-coal-unit-to-burn-natural-gas/",
+      "https://www.power-eng.com/coal/alliant-finishes-up-coal-to-gas-conversion/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.thegazette.com/business/alliant-shifting-largest-cedar-rapids-coal-unit-to-burn-natural-gas/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.power-eng.com/coal/alliant-finishes-up-coal-to-gas-conversion/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "GEM's 2017 is the year the unit began burning gas. A Gazette article from November 2017 says crews were converting Prairie Creek unit 4 from coal to natural gas, with the work to finish that week. An Associated Press story from November 2, 2017 says the same. So this is a conversion and the unit began burning gas in 2017. The EIA table shows 1967 because that is when the original coal unit started. Under GEM's conversion rule 2017 is correct, so no change is needed."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://www.thegazette.com/business/alliant-shifting-largest-cedar-rapids-coal-unit-to-burn-natural-gas/",
+      "https://www.power-eng.com/coal/alliant-finishes-up-coal-to-gas-conversion/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.thegazette.com/business/alliant-shifting-largest-cedar-rapids-coal-unit-to-burn-natural-gas/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.power-eng.com/coal/alliant-finishes-up-coal-to-gas-conversion/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "A Gazette article from November 2017 says crews were converting Prairie Creek unit 4 from coal to natural gas, with the work to finish that week. An Associated Press story from November 2, 2017 says the same. So this is a conversion and the unit began burning gas in 2017."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating on natural gas. The 1967 date in the EIA table is the original coal start, not the conversion."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Interstate Power and Light Co [100%]",
+   "refs": [
+    "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm",
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Plant 1073, generator 4, entity name Interstate Power and Light Co"
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "Alliant Energy's annual report for 2025 lists Prairie Creek Generating Station unit 4 in a table of Interstate Power and Light's own generating plants. The EIA table names the same company as the plant's utility. The brief's Alliant Energy Corp is the parent, so it is not the owner."
+  },
+  "Latitude": {
+   "value": "41.9436670",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": false,
+     "name_found": true,
+     "note": "Plant 1073 listed at latitude 41.944039 and longitude -91.63917"
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860M table for August 2026 puts the plant at 41.944039, -91.63917. GEM's value is about 40 meters away, which is the same spot. The value is left as it is and only the source is added."
+  },
+  "Longitude": {
+   "value": "-91.6386920",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": false,
+     "name_found": true,
+     "note": "Plant 1073 listed at longitude -91.63917"
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA-860M table for August 2026 puts the plant at -91.63917. GEM's value is about 40 meters away, which is the same spot."
+  },
+  "Location accuracy": {
+   "value": "exact",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": false,
+     "name_found": true,
+     "note": "Plant coordinates agree within about 40 meters"
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The EIA coordinates fall on the plant site, within about 40 meters of GEM's point."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000403018",
+   "concern_type": "other",
+   "recommendation": "The unit name should be 'Unit 4, timepoint 2', with a comma and a space before the word timepoint.",
+   "note": "The current name 'Unit 4- timepoint 2' uses a dash. Another unit name rule in this tracker uses 'name, timepoint N'.",
+   "refs": []
+  },
+  {
+   "gem_unit_id": "G100000403018",
+   "concern_type": "other",
+   "recommendation": "No change. GEM shows 149.0 MW and EIA shows 148.8 MW, which rounds the same.",
+   "note": "Alliant's 2025 annual report shows 126 MW, but that is a summer figure, not nameplate.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "proposed_value": {}
+  }
+ ],
+ "monitor": [
+  {
+   "gem_unit_id": "G100000403018",
+   "monitor_kind": "existing_plant",
+   "monitor_reason": "Alliant plans a new 94 MW gas engine plant, Cedar River Generating Station, on this site, and units 1 and 3 ended coal use at the end of 2025.",
+   "recheck_by": "2027-06",
+   "note": "Units 1 and 3 are separate rows in GEM and still show as operating in the EIA table.",
+   "refs": [
+    "https://corridorbusiness.com/alliant-plans-for-natural-gas-fired-power-plant-at-prairie-creek-moving-forward/"
+   ]
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet for plant 1073."
+  },
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm",
+   "used_for": [
+    "Status",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Interstate Power and Light generating station table."
+  },
+  {
+   "url": "https://www.thegazette.com/business/alliant-shifting-largest-cedar-rapids-coal-unit-to-burn-natural-gas/",
+   "used_for": [
+    "Start year",
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "Existing source, still live. Article dated November 1, 2017."
+  },
+  {
+   "url": "https://www.power-eng.com/coal/alliant-finishes-up-coal-to-gas-conversion/",
+   "used_for": [
+    "Start year",
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "Associated Press story reprinted November 2, 2017."
+  },
+  {
+   "url": "https://corridorbusiness.com/alliant-plans-for-natural-gas-fired-power-plant-at-prairie-creek-moving-forward/",
+   "used_for": [
+    "monitor"
+   ],
+   "outcome": "verified",
+   "note": "Page loaded and names Interstate Power and Light."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/november_generator2019.xlsx",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Existing source carried forward, not rechecked."
+  },
+  {
+   "url": "https://www.gridinfo.com/plant/prairie-creek/1073",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Existing lead site, not cited."
+  }
+ ]
+}

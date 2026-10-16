@@ -1,0 +1,127 @@
+{
+ "meta": {
+  "plant_id": "L100001081951",
+  "plant_name": "MidAmerican 2024 IRP power station 7",
+  "state": "Iowa",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-16T16:25:18-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001092276",
+   "unit_name": "1 IRP",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "699.0",
+     "refs": [
+      "https://www.midamericanenergy.com/media/pdf/mec_resource_evaluation_study_11-1.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.midamericanenergy.com/media/pdf/mec_resource_evaluation_study_11-1.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "MidAmerican's Resource Evaluation Study dated November 1, 2024 lists a preferred portfolio. Its table on printed page 10 shows a 699 MW simple-cycle combustion turbine addition in 2044. This plant is an unsited placeholder for that addition, so the page does not name the plant. The 699 MW matches GEM.",
+     "irp": true
+    },
+    "Start year": {
+     "value": "2044",
+     "refs": [
+      "https://www.midamericanenergy.com/media/pdf/mec_resource_evaluation_study_11-1.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.midamericanenergy.com/media/pdf/mec_resource_evaluation_study_11-1.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The same table shows the 699 MW addition in 2044. This matches GEM. The page does not name the plant by its placeholder name.",
+     "irp": true
+    },
+    "Status": {
+     "value": "announced",
+     "refs": [
+      "https://www.midamericanenergy.com/media/pdf/mec_resource_evaluation_study_11-1.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.midamericanenergy.com/media/pdf/mec_resource_evaluation_study_11-1.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The addition is in the plan's preferred portfolio and nothing shows it has been built or permitted, so announced is unchanged.",
+     "irp": true
+    },
+    "Latest Activity": {
+     "value": "Year: 2024, Month: 11, Day: 1",
+     "refs": [
+      "https://www.midamericanenergy.com/media/pdf/mec_resource_evaluation_study_11-1.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.midamericanenergy.com/media/pdf/mec_resource_evaluation_study_11-1.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The newest report found for this placeholder is the Resource Evaluation Study filed November 1, 2024. That is more than a year old. No later document names a 2044 addition.",
+     "irp": true
+    }
+   },
+   "not_found": [
+    "City",
+    "Equipment Manufacturer/Model",
+    "Operator(s)"
+   ],
+   "notes": "The plan's preferred portfolio supports the 699 MW and 2044 values. The plant has no site yet, so City, turbine model and operator cannot be filled."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001092276",
+   "concern_type": "location",
+   "recommendation": "Leave City blank. The study does not say where this 2044 addition would be built, so no source places it.",
+   "note": "The plan only lists capacity by year. No site is named.",
+   "refs": [
+    "https://www.midamericanenergy.com/media/pdf/mec_resource_evaluation_study_11-1.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.midamericanenergy.com/media/pdf/mec_resource_evaluation_study_11-1.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "Start year",
+    "Status",
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Read the whole study. The preferred portfolio table is on printed page 10. The plan link on the brief is a Wayback copy of the same file, so the live address is cited."
+  }
+ ]
+}

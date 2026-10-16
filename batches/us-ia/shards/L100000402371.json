@@ -1,0 +1,156 @@
+{
+ "meta": {
+  "plant_id": "L100000402371",
+  "plant_name": "Exira power station",
+  "state": "Iowa",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-16T12:00:00-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403754",
+   "unit_name": "U1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA monthly generator table for August 2026 lists plant 56013, generator U1, as operating with no planned retirement. The owner is the Western Minnesota Municipal Power Agency."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating. No retirement, mothballing or owner change was found."
+  },
+  {
+   "gem_unit_id": "G100000403755",
+   "unit_name": "U2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA monthly generator table for August 2026 lists plant 56013, generator U2, as operating with no planned retirement. The owner is the Western Minnesota Municipal Power Agency."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating. No retirement, mothballing or owner change was found."
+  },
+  {
+   "gem_unit_id": "G100000403756",
+   "unit_name": "U3",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA monthly generator table for August 2026 lists plant 56013, generator U3, as operating with no planned retirement. The owner is the Western Minnesota Municipal Power Agency."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating. No retirement, mothballing or owner change was found."
+  }
+ ],
+ "plant_findings": {
+  "Operator(s)": {
+   "value": "Missouri River Energy Services [100%]",
+   "refs": [
+    "https://www.publicpower.org/periodical/article/missouri-river-energy-services-details-plans-significant-maintenance-work-power-plant"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.publicpower.org/periodical/article/missouri-river-energy-services-details-plans-significant-maintenance-work-power-plant",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "An American Public Power Association article from August 2026 says Exira Station is owned by the Western Minnesota Municipal Power Agency and operated by Missouri River Energy Services. The article also describes a fall 2026 maintenance outage, so the plant is running."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000403754",
+   "concern_type": "Capacity (MW)",
+   "recommendation": "The EIA table gives 60.5 MW per unit and GEM shows 61.0 MW. The operator's website calls the plant a nominal 140 MW with units of about 47 MW each. No change is proposed, since the difference is small, but the reviewer may want to check which basis GEM uses.",
+   "note": "Capacity figures differ across sources.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Missouri River Energy Services",
+   "role": "operator",
+   "lookup_result": "Entity exists in the tracker, canonical name missouri river energy services, on 3 units in the United States. Reuse the existing entity."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "EIA August 2026 workbook read for the plant."
+  },
+  {
+   "url": "https://www.publicpower.org/periodical/article/missouri-river-energy-services-details-plans-significant-maintenance-work-power-plant",
+   "used_for": [
+    "Operator(s)",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Names the plant, owner and operator, and describes a planned fall 2026 outage."
+  },
+  {
+   "url": "https://www.mrenergy.com/energy-resources/generation/fossil-fuels",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Operator page: three LM6000 turbines, nominal 140 MW."
+  }
+ ]
+}

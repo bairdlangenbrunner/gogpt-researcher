@@ -1,0 +1,91 @@
+{
+ "meta": {
+  "plant_id": "L100001081945",
+  "plant_name": "Interstate Power and Light 2024 IRP power station 1",
+  "state": "Iowa",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-16T16:23:03-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001092270",
+   "unit_name": "1 IRP",
+   "findings": {},
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Fuel",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Start year",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Status Detail",
+    "CHP",
+    "Owner(s)",
+    "Operator(s)",
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use",
+    "Conversion/replacement?",
+    "City"
+   ],
+   "notes": "I found no public source that places this 430 MW combined cycle unit at a named site or that explains the 186 MW figure on the Sierra Club list. Nothing newer changes its status, start year or capacity."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001092270",
+   "concern_type": "existence",
+   "recommendation": "I could not tie the 430 MW combined cycle placeholder to Morgan Valley or Fairfax. Morgan Valley is three simple-cycle turbines of about 240 MW each, 720 MW in total, filed in April 2026. Its application says the site could later be converted to combined cycle, but only if approved in a future filing. Keep the placeholder separate for now. The reviewer should decide whether it still belongs once a combined cycle plan is filed.",
+   "note": "The intervenors' study comments from April 2025 say the model adds a 430 MW combined cycle, and the Morgan Valley application cites the study filed on February 13, 2025. The application does not drop or rename the combined cycle unit. It only mentions a possible future conversion.",
+   "refs": [
+    "https://www.synapse-energy.com/sites/default/files/IPL%20RES%20EI%20Final%20Comments%20on%20RES%204.7.25-%20Public%2024-008.pdf",
+    "https://cbs2iowa.com/resources/pdf/2fdc7cdb-e6ce-44c5-a3fe-c2d56823edb0-23fc9a8c72f84f73a302ef34d5f5f7f3MorganValleyEnergyCenterCT_Application1.pdf"
+   ]
+  }
+ ],
+ "monitor": [
+  {
+   "gem_unit_id": "G100001092270",
+   "monitor_kind": "existing_plant",
+   "monitor_reason": "The combined cycle unit may be the future conversion of Morgan Valley, but no filing says so yet.",
+   "recheck_by": "2027-03",
+   "note": "The commission decision on Morgan Valley is expected in the first quarter of 2027.",
+   "refs": []
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.synapse-energy.com/sites/default/files/IPL%20RES%20EI%20Final%20Comments%20on%20RES%204.7.25-%20Public%2024-008.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Intervenor comments from April 2025 on Interstate Power and Light's study. They mention 430 MW of combined cycle in the main scenario. The plan itself is not on this page, only the comments about it."
+  },
+  {
+   "url": "https://cbs2iowa.com/resources/pdf/2fdc7cdb-e6ce-44c5-a3fe-c2d56823edb0-23fc9a8c72f84f73a302ef34d5f5f7f3MorganValleyEnergyCenterCT_Application1.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Generating certificate application for Morgan Valley, April 2026. Simple-cycle, 720 MW, with a possible later conversion to combined cycle."
+  }
+ ]
+}

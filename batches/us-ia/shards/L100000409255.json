@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "plant_id": "L100000409255",
+    "plant_name": "Summit Lake power station",
+    "state": "Iowa",
+    "mode": "update",
+    "model": "sonnet",
+    "generated": "2026-10-16T16:25:00-04:00",
+    "done": true,
+    "urls_attempted": 4,
+    "urls_verified": 3
+  },
+  "units": [
+    {
+      "gem_unit_id": "G100000414185",
+      "unit_name": "IC",
+      "findings": {
+        "Status": {
+          "value": "operating",
+          "refs": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "tier": "high",
+          "independent": false,
+          "note": "The EIA-860M table for August 2026 lists generators R1, R2 and R3 at Summit Lake, plant 1206, as operating natural gas engines of 18.8 MW each, in service since April 2021. The sheet shows no retirement, mothballing or planned retirement for them, and the owner is still Central Iowa Power Cooperative."
+        },
+        "City": {
+          "value": "Creston",
+          "refs": [
+            "https://www.businessrecord.com/?p=11068"
+          ],
+          "verifications": [
+            {
+              "url": "https://www.businessrecord.com/?p=11068",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "tier": "high",
+          "independent": false,
+          "note": "A Business Record article on the Central Iowa Power Cooperative plan to rebuild its Creston generating station describes the Summit Lake plant in Creston, Iowa, with new natural gas reciprocating engines. So the city is Creston."
+        }
+      },
+      "not_found": [],
+      "notes": "Still operating. No retirement or sale found. The city was filled from a news article on the cooperative's rebuild."
+    }
+  ],
+  "plant_findings": {},
+  "qa": [
+    {
+      "gem_unit_id": "G100000414185",
+      "concern_type": "existence",
+      "recommendation": "The two older gas turbines are listed as new units for this plant. Please confirm they are not already tracked under another plant name.",
+      "note": "The EIA-860M table for August 2026 lists two operating natural gas combustion turbines at Summit Lake, GT1 of 27.0 MW from 1973 and GT2 of 35.3 MW from 1975. The brief shows only the three-engine unit. A 2022 cooperative brochure gives a site total of 110 MW, which fits the engines plus the turbines. I did not find them as units in the brief, so they may be missing or may sit under another plant.",
+      "refs": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+      ]
+    }
+  ],
+  "monitor": [],
+  "newunits": [
+    {
+      "gem_plant_id": "L100000409255",
+      "plant_name": "Summit Lake power station",
+      "unit_name": "GT1",
+      "fields": {
+        "Unit name": "GT1",
+        "Capacity (MW)": "27.0",
+        "Fuel": "fossil gas: natural gas",
+        "Status": "operating",
+        "Start year": "1973",
+        "Turbine/Engine Technology": "gas turbine",
+        "Owner(s)": "Central Iowa Power Cooperative [100%]"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Fuel Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Status Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Start Year Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Turbine/Engine Technology Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Owners Data Source": [
+          "https://swiarec.coop/sites/default/files/documents/cipco_legis_brochure_2022.pdf"
+        ],
+        "Unit name Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://swiarec.coop/sites/default/files/documents/cipco_legis_brochure_2022.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "note": "The EIA-860M table for August 2026, Operating sheet, lists generator GT1 at Summit Lake, EIA plant 1206, as an operating natural gas combustion turbine of 27.0 MW that started in 1973. GEM has only the three-engine unit at this plant. The owner is the same cooperative that owns the engines, as its 2022 brochure shows. Its Other IDs (unit) entry is EIA: GT1.",
+      "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator GT1 at Summit Lake, EIA plant 1206, as an operating natural gas combustion turbine of 27.0 MW that started in 1973. GEM has only the three-engine unit at this plant. The owner is the same cooperative that owns the engines, as its 2022 brochure shows. Its Other IDs (unit) entry is EIA: GT1."
+    },
+    {
+      "gem_plant_id": "L100000409255",
+      "plant_name": "Summit Lake power station",
+      "unit_name": "GT2",
+      "fields": {
+        "Unit name": "GT2",
+        "Capacity (MW)": "35.3",
+        "Fuel": "fossil gas: natural gas",
+        "Status": "operating",
+        "Start year": "1975",
+        "Turbine/Engine Technology": "gas turbine",
+        "Owner(s)": "Central Iowa Power Cooperative [100%]"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Fuel Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Status Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Start Year Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Turbine/Engine Technology Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Owners Data Source": [
+          "https://swiarec.coop/sites/default/files/documents/cipco_legis_brochure_2022.pdf"
+        ],
+        "Unit name Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://swiarec.coop/sites/default/files/documents/cipco_legis_brochure_2022.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "note": "The EIA-860M table for August 2026, Operating sheet, lists generator GT2 at Summit Lake, EIA plant 1206, as an operating natural gas combustion turbine of 35.3 MW that started in 1975. GEM has only the three-engine unit at this plant. The owner is the same cooperative that owns the engines, as its 2022 brochure shows. Its Other IDs (unit) entry is EIA: GT2.",
+      "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator GT2 at Summit Lake, EIA plant 1206, as an operating natural gas combustion turbine of 35.3 MW that started in 1975. GEM has only the three-engine unit at this plant. The owner is the same cooperative that owns the engines, as its 2022 brochure shows. Its Other IDs (unit) entry is EIA: GT2."
+    }
+  ],
+  "entities": [],
+  "source_log": [
+    {
+      "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "used_for": [
+        "Status"
+      ],
+      "outcome": "verified",
+      "note": "Read plant 1206 in the Operating sheet."
+    },
+    {
+      "url": "https://www.businessrecord.com/?p=11068",
+      "used_for": [
+        "City"
+      ],
+      "outcome": "verified",
+      "note": "Names Creston and Summit Lake."
+    },
+    {
+      "url": "https://swiarec.coop/sites/default/files/documents/cipco_legis_brochure_2022.pdf",
+      "used_for": [
+        "qa"
+      ],
+      "outcome": "verified",
+      "note": "Cooperative brochure, site total 110 MW."
+    },
+    {
+      "url": "https://crestonnews.com/2018/11/06/cipco-announces-85-million-infrastructure-investment-in-rural-southwest-iowa/akqjfpw",
+      "used_for": [
+        "City"
+      ],
+      "outcome": "dead",
+      "note": "Returned 404, so not cited."
+    }
+  ]
+}

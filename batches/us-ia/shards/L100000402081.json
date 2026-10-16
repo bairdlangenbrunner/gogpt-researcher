@@ -1,0 +1,55 @@
+{
+ "meta": {
+  "plant_id": "L100000402081",
+  "plant_name": "Greater Des Moines power station",
+  "state": "Iowa",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-16T12:00:00-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402188",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA monthly generator table for August 2026 lists plant 7985 units GT1, GT2 and ST1 as operating with no planned retirement. Owner is MidAmerican Energy Co."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating. No retirement, mothballing or owner change was found."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "EIA August 2026 workbook read for the plant."
+  }
+ ]
+}

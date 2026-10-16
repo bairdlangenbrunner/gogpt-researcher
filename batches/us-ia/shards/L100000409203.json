@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "plant_id": "L100000409203",
+    "plant_name": "Ames GT power station",
+    "state": "Iowa",
+    "mode": "update",
+    "model": "sonnet",
+    "generated": "2026-10-16T16:25:18-04:00",
+    "done": true,
+    "urls_attempted": 1,
+    "urls_verified": 1
+  },
+  "units": [
+    {
+      "gem_unit_id": "G100000414312",
+      "unit_name": "GT2",
+      "findings": {
+        "Status": {
+          "value": "operating",
+          "refs": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Plant 6463, generator GT2, status OP, nameplate 57.4 MW, operating year 2005"
+            }
+          ],
+          "tier": "high",
+          "independent": false,
+          "note": "The EIA-860M table for August 2026 lists plant 6463, generator GT2, as operating, 57.4 MW nameplate, operating year 2005, with no planned retirement date."
+        }
+      },
+      "not_found": [
+        "Retired year",
+        "Planned retire"
+      ],
+      "notes": "No retirement, mothballing or owner change was found. A web search found no announcement about these turbines."
+    }
+  ],
+  "plant_findings": {},
+  "qa": [],
+  "monitor": [],
+  "newunits": [
+    {
+      "gem_plant_id": "L100000409203",
+      "plant_name": "Ames GT power station",
+      "unit_name": "GT1",
+      "fields": {
+        "Unit name": "GT1",
+        "Capacity (MW)": "21.3",
+        "Fuel": "fossil liquids: fuel oil",
+        "Status": "operating",
+        "Start year": "1972",
+        "Turbine/Engine Technology": "gas turbine"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Fuel Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Status Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Start Year Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Turbine/Engine Technology Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Unit name Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "note": "The EIA-860M table for August 2026, Operating sheet, lists generator GT1 at Ames GT, EIA plant 6463, as an operating combustion turbine of 21.3 MW that started in 1972. GEM does not have this unit. The table gives the fuel as distillate fuel oil, the same as unit GT2. The owner is City of Ames (Iowa), the same as the other units at this plant; please copy it from them. Its Other IDs (unit) entry is EIA: GT1.",
+      "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator GT1 at Ames GT, EIA plant 6463, as an operating combustion turbine of 21.3 MW that started in 1972. GEM does not have this unit. The table gives the fuel as distillate fuel oil, the same as unit GT2. The owner is City of Ames (Iowa), the same as the other units at this plant; please copy it from them. Its Other IDs (unit) entry is EIA: GT1."
+    }
+  ],
+  "entities": [],
+  "source_log": [
+    {
+      "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "used_for": [
+        "Status"
+      ],
+      "outcome": "verified",
+      "note": "Excel file read directly."
+    }
+  ]
+}

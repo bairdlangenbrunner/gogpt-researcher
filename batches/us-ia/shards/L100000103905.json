@@ -1,0 +1,426 @@
+{
+  "meta": {
+    "plant_id": "L100000103905",
+    "plant_name": "Burlington Generating Station",
+    "state": "Iowa",
+    "mode": "update",
+    "model": "sonnet",
+    "generated": "2026-10-16T16:29:27-04:00",
+    "done": true,
+    "urls_attempted": 10,
+    "urls_verified": 9
+  },
+  "units": [
+    {
+      "gem_unit_id": "G100001017907",
+      "unit_name": "Unit 1, timepoint 2",
+      "findings": {
+        "Status": {
+          "value": "operating",
+          "refs": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "tier": "high",
+          "independent": false,
+          "note": "The EIA-860M table for August 2026 lists plant 1104, generator 1, as operating, 212.0 MW, natural gas steam turbine, with no planned retirement date. I found no retirement, mothballing or sale announcement. This confirms the current status."
+        },
+        "Conversion/replacement?": {
+          "value": "conversion",
+          "refs": [
+            "https://www.epa.gov/system/files/documents/2023-10/burlington-petition-november-2021-final-response-march-2022_0.pdf"
+          ],
+          "verifications": [
+            {
+              "url": "https://www.epa.gov/system/files/documents/2023-10/burlington-petition-november-2021-final-response-march-2022_0.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "tier": "high",
+          "independent": false,
+          "note": "A United States Environmental Protection Agency letter from March 2022 says Burlington Unit 1 has historically been a coal boiler of 212 MW and is being converted to burn only natural gas from January 1, 2022."
+        }
+      },
+      "not_found": [
+        "CCS attachment?",
+        "Start year"
+      ],
+      "notes": "I could not find any document that states whether the unit has carbon capture. I found no sign of it. The start year is unresolved. See the questions."
+    },
+    {
+      "gem_unit_id": "G100001094030",
+      "unit_name": "Unit 2",
+      "findings": {
+        "Equipment Manufacturer/Model": {
+          "value": "Wärtsilä 18V50",
+          "refs": [
+            "https://alberici.com/projects/burlington-generating-station/"
+          ],
+          "verifications": [
+            {
+              "url": "https://alberici.com/projects/burlington-generating-station/",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "tier": "high",
+          "independent": false,
+          "note": "The contractor Alberici describes the 94 MW Burlington Generating Station as five Wärtsilä 18V50 reciprocating engines with selective catalytic reduction emissions controls."
+        }
+      },
+      "not_found": [],
+      "notes": "Regulators approved this unit on February 16, 2026, which is within the last year, so Latest Activity is left alone. No construction start or in-service date was found beyond the 2029 target already in GEM."
+    }
+  ],
+  "plant_findings": {
+    "Owner(s)": {
+      "value": "Interstate Power and Light Co [100%]",
+      "refs": [
+        "https://www.epa.gov/system/files/documents/2023-10/burlington-petition-november-2021-final-response-march-2022_0.pdf",
+        "https://www.sec.gov/Archives/edgar/data/352541/000035254125000081/lnt-20250930.htm"
+      ],
+      "verifications": [
+        {
+          "url": "https://www.epa.gov/system/files/documents/2023-10/burlington-petition-november-2021-final-response-march-2022_0.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254125000081/lnt-20250930.htm",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": true,
+      "note": "The 2022 Environmental Protection Agency letter says Interstate Power and Light owns and operates the Burlington Generating Station. Alliant's September 2025 quarterly report says Interstate Power and Light applied to the Iowa Utilities Commission to construct, own and operate the 94 MW engines at Burlington."
+    }
+  },
+  "qa": [
+    {
+      "gem_unit_id": "G100001017907",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "recommendation": "Not found. I looked for a document that says whether Burlington Unit 1 has carbon capture. The Environmental Protection Agency letter from March 2022, the Alliant coal ash pages, the EIA-860M table for August 2026 and the Alliant Iowa clean energy page say nothing about carbon capture. The unit burns natural gas in a steam boiler. GEM's current value of no looks right, but I have no source for it.",
+      "note": "A no needs a document that states it. None found.",
+      "refs": []
+    },
+    {
+      "gem_unit_id": "G100001017907",
+      "concern_type": "Start year",
+      "recommendation": "GEM's start year is 2021. The EIA-860M table for August 2026 gives 1968, which is when the original coal unit started. For a conversion, GEM wants the year the unit began burning gas. The Environmental Protection Agency letter from March 2022 says the conversion would be done by January 1, 2022. A 2022 news report in GEM's sources said it was nearly done in May 2022, and EIA still showed coal in October 2022. So 2021 looks too early and 2022 or later looks likelier. I could not find a document that gives the exact date. Please keep 2021 only if you have a source for it.",
+      "note": "1968 is the right year for the original boiler, not for the gas conversion.",
+      "refs": [
+        "https://www.epa.gov/system/files/documents/2023-10/burlington-petition-november-2021-final-response-march-2022_0.pdf",
+        "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+      ]
+    },
+    {
+      "gem_unit_id": "G100001017907",
+      "concern_type": "source",
+      "recommendation": "The Gazette link in GEM's Status and Start year sources, thegazette.com/energy/why-power-plants-are-using-natural-gas-instead-of-coal, now returns not found. The same article is live at thegazette.com/environment-nature/why-power-plants-are-using-natural-gas-instead-of-coal. It says Burlington should resume operations after a coal to gas transition.",
+      "note": "Do not drop the old link. The newer address works.",
+      "refs": [
+        "https://www.thegazette.com/environment-nature/why-power-plants-are-using-natural-gas-instead-of-coal/"
+      ]
+    },
+    {
+      "gem_unit_id": "G100001094030",
+      "concern_type": "conversion-link",
+      "recommendation": "GEM does not have the plant's four combustion turbines, GT1 to GT4 at 19.7 MW each. The EIA-860M table for August 2026 lists them as operating with a planned retirement in 2030. They are listed as new units for this plant. Once they exist, link them to Unit 2 as the units it replaces.",
+      "note": "Alliant says the engines replace combustion turbines that are more than 30 years old.",
+      "refs": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+        "https://www.alliantenergy.com/news/news-center/2026/02/021626-regulators-ok-updates-at-burlington"
+      ]
+    },
+    {
+      "gem_unit_id": "G100001017907",
+      "concern_type": "other",
+      "recommendation": "The Interstate Power and Light resource evaluation study comments from Synapse (April 2025) mention that the earlier Clean Energy Blueprint concluded Burlington would convert to natural gas. They give no new capacity, date or retirement for the plant. So there is no plan value to report.",
+      "note": "Background only.",
+      "refs": [
+        "https://www.synapse-energy.com/sites/default/files/IPL%20RES%20EI%20Final%20Comments%20on%20RES%204.7.25-%20Public%2024-008.pdf"
+      ]
+    }
+  ],
+  "monitor": [],
+  "newunits": [
+    {
+      "gem_plant_id": "L100000103905",
+      "plant_name": "Burlington Generating Station",
+      "unit_name": "GT1",
+      "fields": {
+        "Unit name": "GT1",
+        "Capacity (MW)": "19.7",
+        "Fuel": "fossil gas: natural gas",
+        "Status": "operating",
+        "Start year": "1994",
+        "Turbine/Engine Technology": "gas turbine"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Fuel Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Status Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Start Year Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Turbine/Engine Technology Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Unit name Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "note": "The EIA-860M table for August 2026, Operating sheet, lists generator GT1 at Burlington, EIA plant 1104, as an operating combustion turbine of 19.7 MW that started in 1994. GEM does not have this unit. The table gives a planned retirement year of 2030. The new gas engines (Unit 2) are meant to replace these turbines, so Unit 2 can be linked to them as a replacement. The owner is Interstate Power and Light Co, the same as the other units at this plant; please copy it from them. Its Other IDs (unit) entry is EIA: GT1.",
+      "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator GT1 at Burlington, EIA plant 1104, as an operating combustion turbine of 19.7 MW that started in 1994. GEM does not have this unit. The table gives a planned retirement year of 2030. The new gas engines (Unit 2) are meant to replace these turbines, so Unit 2 can be linked to them as a replacement. The owner is Interstate Power and Light Co, the same as the other units at this plant; please copy it from them. Its Other IDs (unit) entry is EIA: GT1."
+    },
+    {
+      "gem_plant_id": "L100000103905",
+      "plant_name": "Burlington Generating Station",
+      "unit_name": "GT2",
+      "fields": {
+        "Unit name": "GT2",
+        "Capacity (MW)": "19.7",
+        "Fuel": "fossil gas: natural gas",
+        "Status": "operating",
+        "Start year": "1995",
+        "Turbine/Engine Technology": "gas turbine"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Fuel Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Status Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Start Year Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Turbine/Engine Technology Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Unit name Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "note": "The EIA-860M table for August 2026, Operating sheet, lists generator GT2 at Burlington, EIA plant 1104, as an operating combustion turbine of 19.7 MW that started in 1995. GEM does not have this unit. The table gives a planned retirement year of 2030. The new gas engines (Unit 2) are meant to replace these turbines, so Unit 2 can be linked to them as a replacement. The owner is Interstate Power and Light Co, the same as the other units at this plant; please copy it from them. Its Other IDs (unit) entry is EIA: GT2.",
+      "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator GT2 at Burlington, EIA plant 1104, as an operating combustion turbine of 19.7 MW that started in 1995. GEM does not have this unit. The table gives a planned retirement year of 2030. The new gas engines (Unit 2) are meant to replace these turbines, so Unit 2 can be linked to them as a replacement. The owner is Interstate Power and Light Co, the same as the other units at this plant; please copy it from them. Its Other IDs (unit) entry is EIA: GT2."
+    },
+    {
+      "gem_plant_id": "L100000103905",
+      "plant_name": "Burlington Generating Station",
+      "unit_name": "GT3",
+      "fields": {
+        "Unit name": "GT3",
+        "Capacity (MW)": "19.7",
+        "Fuel": "fossil gas: natural gas",
+        "Status": "operating",
+        "Start year": "1996",
+        "Turbine/Engine Technology": "gas turbine"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Fuel Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Status Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Start Year Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Turbine/Engine Technology Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Unit name Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "note": "The EIA-860M table for August 2026, Operating sheet, lists generator GT3 at Burlington, EIA plant 1104, as an operating combustion turbine of 19.7 MW that started in 1996. GEM does not have this unit. The table gives a planned retirement year of 2030. The new gas engines (Unit 2) are meant to replace these turbines, so Unit 2 can be linked to them as a replacement. The owner is Interstate Power and Light Co, the same as the other units at this plant; please copy it from them. Its Other IDs (unit) entry is EIA: GT3.",
+      "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator GT3 at Burlington, EIA plant 1104, as an operating combustion turbine of 19.7 MW that started in 1996. GEM does not have this unit. The table gives a planned retirement year of 2030. The new gas engines (Unit 2) are meant to replace these turbines, so Unit 2 can be linked to them as a replacement. The owner is Interstate Power and Light Co, the same as the other units at this plant; please copy it from them. Its Other IDs (unit) entry is EIA: GT3."
+    },
+    {
+      "gem_plant_id": "L100000103905",
+      "plant_name": "Burlington Generating Station",
+      "unit_name": "GT4",
+      "fields": {
+        "Unit name": "GT4",
+        "Capacity (MW)": "19.7",
+        "Fuel": "fossil gas: natural gas",
+        "Status": "operating",
+        "Start year": "1994",
+        "Turbine/Engine Technology": "gas turbine"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Fuel Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Status Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Start Year Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Turbine/Engine Technology Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ],
+        "Unit name Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "note": "The EIA-860M table for August 2026, Operating sheet, lists generator GT4 at Burlington, EIA plant 1104, as an operating combustion turbine of 19.7 MW that started in 1994. GEM does not have this unit. The table gives a planned retirement year of 2030. The new gas engines (Unit 2) are meant to replace these turbines, so Unit 2 can be linked to them as a replacement. The owner is Interstate Power and Light Co, the same as the other units at this plant; please copy it from them. Its Other IDs (unit) entry is EIA: GT4.",
+      "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator GT4 at Burlington, EIA plant 1104, as an operating combustion turbine of 19.7 MW that started in 1994. GEM does not have this unit. The table gives a planned retirement year of 2030. The new gas engines (Unit 2) are meant to replace these turbines, so Unit 2 can be linked to them as a replacement. The owner is Interstate Power and Light Co, the same as the other units at this plant; please copy it from them. Its Other IDs (unit) entry is EIA: GT4."
+    }
+  ],
+  "entities": [
+    {
+      "entity_name": "Interstate Power and Light Co",
+      "role": "owner",
+      "lookup_result": "Entity 'Interstate Power and Light Co' appears on 28 units (united states). Reuse existing entity ID; do NOT create a new one."
+    }
+  ],
+  "source_log": [
+    {
+      "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "used_for": [
+        "Status"
+      ],
+      "outcome": "verified",
+      "note": "EIA-860M August 2026, plant 1104."
+    },
+    {
+      "url": "https://www.epa.gov/system/files/documents/2023-10/burlington-petition-november-2021-final-response-march-2022_0.pdf",
+      "used_for": [
+        "Owner(s)",
+        "Conversion/replacement?"
+      ],
+      "outcome": "verified",
+      "note": "Environmental Protection Agency letter, March 2022."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254125000081/lnt-20250930.htm",
+      "used_for": [
+        "Owner(s)"
+      ],
+      "outcome": "verified",
+      "note": "Alliant quarterly report, September 2025."
+    },
+    {
+      "url": "https://alberici.com/projects/burlington-generating-station/",
+      "used_for": [
+        "Equipment Manufacturer/Model"
+      ],
+      "outcome": "verified",
+      "note": "Contractor project page."
+    },
+    {
+      "url": "https://www.alliantenergy.com/news/news-center/2026/02/021626-regulators-ok-updates-at-burlington",
+      "used_for": [
+        "Status"
+      ],
+      "outcome": "verified",
+      "note": "Existing source, still loads."
+    },
+    {
+      "url": "https://www.thegazette.com/energy/why-power-plants-are-using-natural-gas-instead-of-coal/",
+      "used_for": [
+        "Status"
+      ],
+      "outcome": "dead",
+      "note": "Returns 404. Live at the environment-nature address."
+    },
+    {
+      "url": "https://www.thegazette.com/environment-nature/why-power-plants-are-using-natural-gas-instead-of-coal/",
+      "used_for": [
+        "Start year"
+      ],
+      "outcome": "verified",
+      "note": "Live copy of the Gazette article."
+    },
+    {
+      "url": "https://web.archive.org/web/20220823235251/https://www.thehawkeye.com/story/news/2022/05/11/alliant-energy-burlington-generating-station-ready-natural-gas/9569529002/",
+      "used_for": [
+        "Start year"
+      ],
+      "outcome": "verified",
+      "note": "Existing source, loads."
+    },
+    {
+      "url": "https://ccr.alliantenergy.com/burlington/surfaceimpoundment/operatingcriteria",
+      "used_for": [
+        "CCS attachment?"
+      ],
+      "outcome": "verified",
+      "note": "Existing source. No mention of carbon capture."
+    },
+    {
+      "url": "https://www.synapse-energy.com/sites/default/files/IPL%20RES%20EI%20Final%20Comments%20on%20RES%204.7.25-%20Public%2024-008.pdf",
+      "used_for": [
+        "IRP"
+      ],
+      "outcome": "verified",
+      "note": "Background mention only."
+    }
+  ]
+}

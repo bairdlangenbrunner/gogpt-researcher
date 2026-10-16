@@ -1,0 +1,122 @@
+{
+ "meta": {
+  "plant_id": "L100000402016",
+  "plant_name": "Emery Station power plant",
+  "state": "Iowa",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-16T16:29:27-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402192",
+   "unit_name": "G821",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists plant 8031, Emery Station, generators 11, 12 and ST1 as operating, 173.4 MW, 173.4 MW and 256.0 MW, natural gas combined cycle, started in May 2004, with no planned retirement. I found no retirement, mothballing or sale notice."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating with no change found."
+  },
+  {
+   "gem_unit_id": "G100001096185",
+   "unit_name": "RH",
+   "findings": {
+    "Status Detail": {
+     "value": "In July 2026 Interstate Power and Light filed its certificate application with the Iowa Utilities Commission for the 1,200 MW Riverhawk Energy Center near Emery Station. A decision is expected in the second quarter of 2027, and Alliant expects service in 2031.",
+     "refs": [
+      "https://www.sec.gov/Archives/edgar/data/352541/000035254126000043/lnt-20260630.htm",
+      "https://www.alliantenergy.com/our-energy/natural-gas/riverhawk"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254126000043/lnt-20260630.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.alliantenergy.com/our-energy/natural-gas/riverhawk",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Alliant's quarterly report for June 2026 gives the filing and decision timing. The Alliant project page gives the 2031 target."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "The project is moving through approval, so Latest Activity is left alone. Status stays announced until the commission decides. No turbine model found."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001096185",
+   "concern_type": "other",
+   "recommendation": "The Interstate Power and Light resource evaluation study comments from Synapse (April 2025) do not name Emery Station or Riverhawk, so there is no plan value to report.",
+   "note": "I searched the document text for Emery and Riverhawk and found no match.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "EIA-860M August 2026, plant 8031."
+  },
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254126000043/lnt-20260630.htm",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Alliant quarterly report, June 2026."
+  },
+  {
+   "url": "https://www.alliantenergy.com/our-energy/natural-gas/riverhawk",
+   "used_for": [
+    "Status Detail",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Existing source, still loads."
+  },
+  {
+   "url": "https://www.synapse-energy.com/sites/default/files/IPL%20RES%20EI%20Final%20Comments%20on%20RES%204.7.25-%20Public%2024-008.pdf",
+   "used_for": [
+    "IRP"
+   ],
+   "outcome": "not relevant",
+   "note": "Does not name these units."
+  }
+ ]
+}

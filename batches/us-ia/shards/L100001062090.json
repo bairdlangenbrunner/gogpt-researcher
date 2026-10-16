@@ -1,0 +1,240 @@
+{
+ "meta": {
+  "plant_id": "L100001062090",
+  "plant_name": "Bobcat Energy Center",
+  "state": "Iowa",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-16T16:29:27-04:00",
+  "done": true,
+  "urls_attempted": 7,
+  "urls_verified": 7
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001071243",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "construction",
+     "refs": [
+      "https://www.alliantenergy.com/news/news-center/2026/081126-bobcat-construction-started",
+      "https://www.timesrepublican.com/news/todays-news/2026/08/alliants-bobcat-energy-center-receives-air-permit/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.alliantenergy.com/news/news-center/2026/081126-bobcat-construction-started",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.timesrepublican.com/news/todays-news/2026/08/alliants-bobcat-energy-center-receives-air-permit/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "An Alliant Energy press release from August 11, 2026 says the Iowa Department of Natural Resources issued the air permit in early August and that construction is underway. The Times-Republican article from August 12, 2026 repeats the release, so this counts as one source. The unit is pre-construction in GEM today."
+    },
+    "Status Detail": {
+     "value": "Alliant Energy announced on August 11, 2026 that the Iowa Department of Natural Resources had issued the air permit the week before and that construction was underway. Major construction and equipment installation are expected to run for about three years.",
+     "refs": [
+      "https://www.alliantenergy.com/news/news-center/2026/081126-bobcat-construction-started"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.alliantenergy.com/news/news-center/2026/081126-bobcat-construction-started",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Alliant Energy press release from August 11, 2026 gives these facts."
+    },
+    "Start year": {
+     "value": "2029",
+     "refs": [
+      "https://www.alliantenergy.com/news/news-center/2026/081126-bobcat-construction-started"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.alliantenergy.com/news/news-center/2026/081126-bobcat-construction-started",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Alliant Energy press release from August 11, 2026 says the company expects commercial operation in 2029."
+    },
+    "Capacity (MW)": {
+     "value": "720.0",
+     "refs": [
+      "https://www.alliantenergy.com/news/news-center/2026/081126-bobcat-construction-started"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.alliantenergy.com/news/news-center/2026/081126-bobcat-construction-started",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Alliant Energy press release from August 11, 2026 says the plant will have about 720 megawatts of capacity."
+    },
+    "City": {
+     "value": "Marshalltown",
+     "refs": [
+      "https://www.alliantenergy.com/news/news-center/2026/081126-bobcat-construction-started"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.alliantenergy.com/news/news-center/2026/081126-bobcat-construction-started",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Alliant Energy press release from August 11, 2026 places the plant in Marshalltown, next to the existing Marshalltown Generating Station."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "The turbine maker and model are not in any public document I found. The air permit application at the Iowa Department of Natural Resources would likely list them. Latest Activity is left alone because the project is moving."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Interstate Power and Light Co [100%]",
+   "refs": [
+    "https://www.sec.gov/Archives/edgar/data/352541/000035254125000081/lnt-20250930.htm"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254125000081/lnt-20250930.htm",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The Alliant Energy quarterly report to the Securities and Exchange Commission for September 2025 says Interstate Power and Light Company applied to the Iowa Utilities Commission to construct, own and operate the 720 MW Bobcat Energy Center."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100001071243",
+   "concern_type": "identity",
+   "recommendation": "The EIA-860M table for August 2026 has plant code 1077, Sutherland, in Marshall County, 0.3 km from GEM's coordinates. Its generator 1 (37.5 MW) and generator 3 (81.6 MW) are retired natural gas steam turbines from 1955 and 1961, both retired in 2017. Bobcat is a new 720 MW combustion turbine plant built next to the Marshalltown Generating Station, which is EIA plant 1068 and plant 58236. So Sutherland is the nearby retired plant and not this project. I would not link Bobcat to plant 1077 or to its generators. Please check whether a retired Sutherland record exists in GEM.",
+   "note": "I found no document that says Bobcat is on the former Sutherland site. Alliant says only that it is next to Marshalltown Generating Station.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001071243",
+   "concern_type": "Capacity (MW)",
+   "recommendation": "A KCRG story from August 11, 2026 calls the plant 650 MW. That figure is the existing Marshalltown station. Alliant's own releases say 720 MW. Keep 720.",
+   "note": "The KCRG figure looks like an error.",
+   "refs": []
+  },
+  {
+   "gem_unit_id": "G100001071243",
+   "concern_type": "other",
+   "recommendation": "The Interstate Power and Light resource evaluation study comments from Synapse (April 2025) do not name Bobcat, so there is no plan value to report. The IRP box can stay unticked on this evidence.",
+   "note": "I searched the document text for Bobcat and Marshalltown and found no match.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Interstate Power and Light Co",
+   "role": "owner",
+   "lookup_result": "Entity 'Interstate Power and Light Co' appears on 28 units (united states). Reuse existing entity ID; do NOT create a new one."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.alliantenergy.com/news/news-center/2026/081126-bobcat-construction-started",
+   "used_for": [
+    "Status",
+    "Status Detail",
+    "Start year",
+    "Capacity (MW)",
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "Alliant press release, August 11, 2026."
+  },
+  {
+   "url": "https://www.timesrepublican.com/news/todays-news/2026/08/alliants-bobcat-energy-center-receives-air-permit/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Local reprint of the Alliant release."
+  },
+  {
+   "url": "https://www.kcrg.com/2026/08/11/alliant-energy-receives-final-permits-bobcat-energy-center/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Also covers the permit but gives 650 MW."
+  },
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254125000081/lnt-20250930.htm",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Alliant quarterly report, September 2025."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "identity"
+   ],
+   "outcome": "verified",
+   "note": "EIA-860M August 2026, plant 1077 Sutherland retired units."
+  },
+  {
+   "url": "https://www.alliantenergy.com/news/news-center/2025/12/121625-bobcat-energy-center-approved",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Existing source, still loads."
+  },
+  {
+   "url": "https://www.constructionowners.com/news/bobcat-energy-center-set-to-begin-construction",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Existing source, still loads."
+  },
+  {
+   "url": "https://www.synapse-energy.com/sites/default/files/IPL%20RES%20EI%20Final%20Comments%20on%20RES%204.7.25-%20Public%2024-008.pdf",
+   "used_for": [
+    "IRP"
+   ],
+   "outcome": "not relevant",
+   "note": "Does not name Bobcat."
+  }
+ ]
+}
