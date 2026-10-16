@@ -42,9 +42,12 @@ Modes:
             coordinates, city; zero capacity; unknown technology; blank start
             year on an operating unit; inferred status without Latest
             Activity; missing EIA IDs, US only; a value whose Data Source is
-            empty).
+            empty; conversion naming, fuel, technology and start year; waste
+            heat that is not a steam turbine; a start year on a shelved or
+            cancelled unit).
             The "Fields to report on" list is narrowed to the fields those
-            tasks touch. Operating units with no task are not researched.
+            tasks touch. With --scope ladder, operating units with no task
+            are not researched.
     blind   identity only (plant, location, IDs, unit IDs and names). Every
             GEM value, source, note, edit history, wiki URL and worklist
             priority is withheld and written to briefs/_hidden/ for the
@@ -56,8 +59,11 @@ Scope (update mode only; blind always takes every plant):
     --scope ladder   (default) only plants where at least one unit has a task
                      or that have an entry in --extra-tasks. Plants left out
                      are listed under "not_tasked" in _index.json.
-    --scope all      every plant; a plant with no task gets the full field
-                     list and a note saying nothing specific was flagged.
+    --scope all      every plant, and every operating unit gets the narrow
+                     last-minute check (still operating, retirement or owner
+                     change; checklist rows 50 and 43). A plant still with no
+                     task (all units retired or cancelled) is asked only whether
+                     each status holds.
     --extra-tasks F  JSON {"<GEM location ID>": [task, ...], "*": [task, ...]}
                      for backlog rows and scan hits. A task is a string
                      (grants the full field list) or {"text": ..., "fields":
@@ -107,7 +113,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from paths import REPO_ROOT, gogpt_scoped_csv, require_fresh_export, work_dir
+from paths import REPO_ROOT, gem_export_csv, gogpt_scoped_csv, require_fresh_export, work_dir
 from schema_constants import (OUT_OF_SCOPE_COLUMNS, READ_ONLY_COLUMNS, RESEARCH_FIELDS,
                               STATUSES_IN_DEVELOPMENT)
 from build_review_package import ref_col_for
@@ -266,7 +272,65 @@ def empty_source_values(r):
     return out
 
 
-def unit_tasks(r, year=None, us=True):
+TIMEPOINT_RE = re.compile(r", timepoint \d+$")
+COAL_TECH = ("subcritical", "supercritical", "ultra-supercritical", "igcc", "cfb",
+             "circulating fluidized bed")
+
+
+def conversion_tasks(r, peers=None):
+    """Checklist rows 12 and 13 for one unit, as (text, fields, checks).
+    A conversion is a unit whose Conversion/replacement? says so, whose
+    converted-from fuel is filled, or whose name carries "timepoint". The name
+    must end "<name>, timepoint N" (docs/reference/unit_conventions.md), a coal
+    conversion must carry gas fuel and a gas technology, and the gas start
+    year must not precede the coal unit's retired year. `peers` maps GEM unit
+    ID to the unfiltered export's row, so the coal unit can be looked up."""
+    out = []
+    uname = ws(r.get(H_UNAME))
+    conv = ws(r.get("Conversion/replacement?")).lower()
+    from_fuel = ws(r.get("Conversion from/replacement of (fuel)")).lower()
+    from_uid = ws(r.get("Conversion from/replacement of (GEM unit ID)"))
+    is_conv = conv == "conversion" or (from_fuel and conv != "replacement")
+    has_tp = "timepoint" in uname.lower()
+    if not (is_conv or has_tp):
+        return out
+    if is_conv and not has_tp:
+        out.append((f'This unit is a conversion but its name "{uname}" has no timepoint. '
+                    'The gas unit is named "<name>, timepoint 2" and the coal unit '
+                    '"<name>, timepoint 1". Say in a question what both names should be.',
+                    [], [12]))
+    elif has_tp and not TIMEPOINT_RE.search(uname):
+        out.append((f'The unit name "{uname}" does not follow the timepoint form '
+                    '"<name>, timepoint N" (a comma, a space, then the word). Say in a '
+                    "question what the name should be.", [], [12]))
+    if has_tp and not conv:
+        out.append(("The unit name says timepoint but the conversion fields are blank. "
+                    "Find out whether this unit was converted from another fuel, which "
+                    "unit it replaced, and the document that says so. Report "
+                    "Conversion/replacement? with that document, and name the earlier "
+                    "unit in a question.", ["Conversion/replacement?"], [12, 13]))
+    if from_fuel.startswith("coal"):
+        fuel = ws(r.get("Fuel")).lower()
+        tech = ws(r.get("Turbine/Engine Technology")).lower()
+        if "gas" not in fuel:
+            out.append((f"This is a coal-to-gas conversion but the fuel is {fuel or 'blank'}. "
+                        "Find the fuel the converted unit burns.", ["Fuel"], [13]))
+        if tech in COAL_TECH:
+            out.append((f"This is a coal-to-gas conversion but the technology is {tech}, "
+                        "a coal technology. A converted boiler is usually a steam turbine. "
+                        "Find the technology.", ["Turbine/Engine Technology"], [13]))
+        coal = (peers or {}).get(from_uid) if from_uid else None
+        sy = ws(r.get("Start year"))[:4]
+        ry = ws((coal or {}).get("Retired year"))[:4]
+        if sy.isdigit() and ry.isdigit() and int(sy) < int(ry):
+            out.append((f"The gas start year {sy} is earlier than the coal unit's retired "
+                        f"year {ry} ({from_uid}). The gas unit cannot start before the coal "
+                        "unit stopped. Find the year the unit first ran on gas.",
+                        ["Start year"], [13]))
+    return out
+
+
+def unit_tasks(r, year=None, us=True, peers=None, status_pass=False):
     """The manual's per-unit checks plus the gap list, as (text, fields, checks).
     `checks` are the row numbers of the QC/Country checklist tab each task
     serves (review_app/checklist.py ROWS); they ride through the shard into
@@ -276,7 +340,10 @@ def unit_tasks(r, year=None, us=True):
     inferred statuses with the field blank, and never with a date less than a
     year old (docs/reference/lifecycle_rules.md; state_gate.py latest-activity).
     `us` adds the EIA identifier tasks, which only make sense in the United
-    States and are dropped when match_ids.py has already done the lookup (--ids)."""
+    States and are dropped when match_ids.py has already done the lookup (--ids).
+    `peers` (GEM unit ID to unfiltered-export row) lets the conversion checks
+    see the coal unit. `status_pass` (--scope all) gives every operating unit
+    the narrow last-minute status and owner check, rows 50 and 43."""
     year = year or datetime.date.today().year
     status = ws(r.get("Status")).lower()
     group = status_group(status)
@@ -294,7 +361,7 @@ def unit_tasks(r, year=None, us=True):
             "project is visibly moving, leave Latest Activity alone.",
             "Status", "Status Detail", "Start year", "Equipment Manufacturer/Model",
             "Turbine/Engine Technology", "Owner(s)", "Capacity (MW)", "Latest Activity",
-            checks=[10])
+            checks=[10] + ([49] if status == "construction" else []))
     elif group == "shelved":
         add("This project is shelved. Was it revived, cancelled, or is it still quiet? "
             "If the newest dated report is more than a year old, record it in Latest "
@@ -390,6 +457,33 @@ def unit_tasks(r, year=None, us=True):
     if us and not ws(r.get("Other IDs (unit)")):
         add("Other IDs (unit) is blank. If the unit appears in EIA data, give the "
             "generator ID as a question, not a value.", checks=[38])
+
+    # Conversions and waste heat (checklist rows 12, 13, 14) and the start-year
+    # rule for shelved and cancelled units (row 20).
+    for text, fields, checks in conversion_tasks(r, peers):
+        add(text, *fields, checks=checks)
+    fuel = ws(r.get("Fuel")).lower()
+    tech = ws(r.get("Turbine/Engine Technology")).lower()
+    if "waste heat" in fuel and tech and tech != "steam turbine":
+        add(f"The fuel is waste heat but Turbine/Engine Technology is {tech}. A unit "
+            "running on waste heat is a steam turbine. Find a document that describes "
+            "the unit and report the technology with it.",
+            "Turbine/Engine Technology", checks=[14])
+    if group in ("shelved", "cancelled") and ws(r.get("Start year")):
+        add(f"This unit is {status} but has a start year ({ws(r.get('Start year'))}). "
+            "The manual says shelved and cancelled units never carry a start year. "
+            "First confirm the status still holds. If it does, ask in a question for "
+            "the start year to be cleared.", "Status", checks=[20])
+
+    # Last-minute status pass (rows 49 and 50, with row 43): every operating unit
+    # when the whole scope is briefed. Construction units already have the
+    # in-development task above.
+    if status_pass and group == "operating":
+        add("Last check on an operating unit. Is it still operating? Look for a "
+            "retirement, a planned retirement date, a mothballing, or a change of "
+            "owner announced since the last update. Do not research anything else "
+            "on this unit.",
+            "Status", "Retired year", "Planned retire", "Owner(s)", checks=[50, 43])
 
     # A value with no data source (Baird's fill-missing-references ask).
     by_src = {}
@@ -602,8 +696,11 @@ def render_brief(plant_id, rows, header, mode, wl, notes_text, notes_path, scope
         if n_tasks:
             fields = plant_fields(tasks, plant_tasks)
         else:
-            L += ["Nothing specific was flagged for this plant. Report only a value "
-                  "you can show has changed, with its source.", ""]
+            # every unit retired or cancelled with nothing flagged (--scope all)
+            fields = ["Status", "Status Detail"]
+            L += ["Nothing was flagged for this plant. Check only that each unit's "
+                  "status still holds, for example a cancelled project revived. Report "
+                  "a status change only with its source.", ""]
     L += ["## Fields to report on", "",
           "Report on these fields only, using the exact CSV headers as keys:", ""]
     # Blind briefs must hand over the coordinates to identify the plant, so
@@ -684,6 +781,9 @@ def main():
                      help="a whole country (Country/Area value), e.g. Germany")
     ap.add_argument("--mode", required=True, choices=["blind", "update"])
     ap.add_argument("--csv", default=str(gogpt_scoped_csv()))
+    ap.add_argument("--all-csv", default=str(gem_export_csv()),
+                    help="the unfiltered export, for the coal side of conversions "
+                         "(skipped with a warning when absent)")
     ap.add_argument("--worklist", default=None)
     ap.add_argument("--plants", default=None, help="comma-separated GEM location IDs")
     ap.add_argument("--batch", default=None)
@@ -800,10 +900,21 @@ def main():
     if missing_cap and not a.plants:
         print(f"WARNING: captive LNG tasks on plants not in {csv_path.name}: {missing_cap}; not briefed.")
 
+    peers = {}
+    all_path = Path(a.all_csv)
+    if a.mode == "update" and all_path.exists():
+        with open(all_path, encoding="utf-8-sig", newline="") as f:
+            peers = {r[H_UNIT].strip(): r for r in csv.DictReader(f) if r.get(H_UNIT)}
+    elif a.mode == "update":
+        print(f"WARNING: {all_path} not found; conversion start years are not checked "
+              "against the coal unit's retired year.")
+
     # Tasks per unit and per plant; ladder scope keeps only tasked plants.
     tasks, plant_tasks, not_tasked = {}, {}, []
     for pid, rows in plants.items():
-        tasks[pid] = ({r[H_UNIT]: unit_tasks(r, us=is_us and not a.ids) for r in rows}
+        tasks[pid] = ({r[H_UNIT]: unit_tasks(r, us=is_us and not a.ids, peers=peers,
+                                             status_pass=a.scope == "all")
+                       for r in rows}
                       if a.mode == "update" else {})
         val_unit, val_plant = validation_tasks(validation.get(pid, []), rows)
         for uid, vt in val_unit.items():
