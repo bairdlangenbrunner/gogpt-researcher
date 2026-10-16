@@ -436,10 +436,13 @@ class Assembler:
         for p in self.index["plants"]:
             for uid, tasks in (p.get("tasks") or {}).items():
                 for t in tasks:
-                    for f in t.get("fields") or []:
+                    # a task with no export column (an undated status step, a
+                    # broken replacement link) is keyed on "validation", so the
+                    # qa item that answers it keeps the task's rows
+                    for f in t.get("fields") or ["validation"]:
                         self.task_checks[(p["plant_id"], uid, f)] |= set(t.get("checks") or [])
             for t in p.get("plant_tasks") or []:
-                for f in t.get("fields") or []:
+                for f in t.get("fields") or ["validation"]:
                     self.task_checks[(p["plant_id"], None, f)] |= set(t.get("checks") or [])
         self.removed_ids, self.removed_names = self.load_removed()
         self.dropped: list[str] = []
@@ -882,8 +885,8 @@ class Assembler:
             if ct != raw:
                 rec["concern_type_raw"] = raw
             rec["concern_type"] = ct
-            if uid and ct in CONCERN_VOCAB and not rec.get("checks"):
-                checks = self.checks_for(pid, uid, ct)
+            if ct in CONCERN_VOCAB and not rec.get("checks"):
+                checks = self.checks_for(pid, uid or None, ct)
                 if checks:
                     rec["checks"] = checks
         elif lane == "monitor":

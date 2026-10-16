@@ -24,12 +24,14 @@ Every error is sorted into one of three kinds:
              value that is blank, a status step with no date, a replacement
              link to a unit that does not exist, a fuel or owner share problem,
              a unit named "--" on a plant with several units.
-  exception  the manual's optional, low-priority cases: an error on a unit with
-             no oil or gas fuel (the coal side of a shared plant, or a coal
+  exception  the manual's optional, low-priority cases: an error on a coal unit
+             with no oil or gas fuel (the coal side of a shared plant, or a coal
              phase before a conversion), or a plant-level data source on a
              plant that also has coal units.
-  person     needs a click in the web UI, not research: plant-name rules, and
-             hydrogen data sources (hydrogen columns are never researched here).
+  person     needs a click in the web UI, not research: plant-name rules,
+             hydrogen data sources (hydrogen columns are never researched here),
+             and any error on a unit with no fuel at all (usually a blank unit
+             left on the plant, to delete or fill in).
 Only exceptions may be left at close-out (QC SOP §6); `--closeout` exits 1
 when any fix or person item remains.
 
@@ -151,7 +153,9 @@ def classify(sec, key, warning, unit, plant_fuels, undated, replaced, current):
     label = label_of(key)
     base = re.sub(r"\s+\d+$", "", label)            # 'Owner 2' -> 'Owner'
     gas_or_oil = {FOSSIL_GAS, FOSSIL_LIQUIDS}
-    if unit is not None and not (set(unit[3] or []) & gas_or_oil):
+    if unit is not None and not unit[3]:
+        return "person", None, []
+    if unit is not None and COAL in unit[3] and not (set(unit[3]) & gas_or_oil):
         return "exception", None, []
     if unit is None and sec == "Data Sources" and COAL in (plant_fuels or []):
         return "exception", None, []
@@ -240,6 +244,7 @@ def build(scope):
                     "unit_name": unit[1] if unit else unit_name_of(key) or None,
                     "unit_has_gas_or_oil": (bool(set(unit[3] or []) & {3, 4})
                                             if unit else None),
+                    "unit_fuel_blank": (not unit[3]) if unit else None,
                     "section": sec, "item": key, "message": warning,
                     "kind": kind, "task": task, "fields": cols,
                 })
@@ -299,6 +304,9 @@ def memo(scope, plants, errors, stamp):
                 line = f"- {who}: {describe(e)}"
                 if kind == "exception":
                     line += f" {why_exception(e)}"
+                elif kind == "person" and e.get("unit_fuel_blank"):
+                    line += (" The unit has no fuel in the database. It is probably "
+                             "a blank unit to delete or fill in.")
                 L.append(line)
             L.append("")
     if not errors:

@@ -117,7 +117,14 @@ candidates, still run them through the verifier). A dead existing link is never 
 in \`source_log\` that it is dead. Before naming a new owner or operator, run
 \`python scripts/entity_lookup.py "<name>"\` (bare, no --country) and copy what it says into
 \`entities[].lookup_result\`. In \`not_found\` list the fields a task asked for that you could not
-fill. A value you notice in passing that looks wrong goes in \`qa\`, not in \`findings\`.`
+fill. A value you notice in passing that looks wrong goes in \`qa\`, not in \`findings\`.
+Tasks marked **[Validation report]** come from the database's own validation report, and every one
+needs an answer, even when nothing is found. When the task names a field, a finding on that field
+answers it. Otherwise (an undated status step, a broken replacement link, a source nobody can find)
+write a \`qa\` item for that unit with \`concern_type\` "validation", \`checks: [7]\`, the answer
+(the year and month with the document that says so, the unit ID, or "not found" and where you
+looked) in \`recommendation\`, and the documents in \`refs\`. Never leave one unanswered: the
+gate after assembly fails on any validation item with no answer.`
 
 const statusRule = MODE === 'blind'
   ? `blind mode has no current value to change, so a status gets \`high\` on one fully validated ref`
@@ -454,7 +461,8 @@ python json.dump or your Write tool, then check it parses with
   \`Capacity (MW)\`, \`Owner(s)\`, \`Start year\`, ...) or one of: duplicate, existence (a unit or
   plant may be missing or may not exist), scope (how units are grouped), capacity-threshold,
   identity (which unit a source means), attribution (who the owner is), conversion-link, location,
-  source (a dead or wrong link), other. When the question is about a specific value, put it in
+  source (a dead or wrong link), validation (the answer to a **[Validation report]** task that names
+  no field; add \`"checks": [7]\`), other. When the question is about a specific value, put it in
   \`proposed_value\` as {column: value}; never in \`findings\`.
 - \`monitor\` is the watch list. \`monitor_kind\` is existing_plant (a possible change or expansion at
   a plant in the brief; set \`gem_unit_id\` or \`gem_plant_id\`) or new_to_tracker (a plant GEM does

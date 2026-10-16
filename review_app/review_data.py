@@ -8,7 +8,7 @@ Reads ONLY staged_{updates,qa,monitor,entity,newunits,newplants}.json in each st
 (never the shards, briefs, comparison.json or the blind copies). Writes one JSON file:
 
     {"built", "scope": {"country", "states", "quarter"}, "dirs": [label, ...], "columns": [...],
-     "plants": [{"pid", "name", "country", "state", "dir", "units": [{"gem_unit_id", "unit_name", "irp_box"}],
+     "plants": [{"pid", "name", "country", "state", "dir", "wiki", "units": [{"gem_unit_id", "unit_name", "irp_box"}],
                  "lines": [...], "items": [...]}]}
 
 One card per GEM plant ID (a statewide pseudo-card for records whose plant ID is the state
@@ -394,8 +394,11 @@ def build(dirs, export_csv=None):
                 p = plants[key] = {
                     "pid": pid, "name": r.get("plant_name") or pid, "country": r.get("country") or country,
                     "state": state, "dir": label, "statewide": bool(_STATE_PID.match(pid)),
-                    "units": [], "lines": [], "items": []}
+                    "wiki": "", "units": [], "lines": [], "items": []}
             uid = r.get("gem_unit_id")
+            if not p.get("wiki"):
+                # the plant's GEM wiki page, from the export's Wiki URL cell on any of its unit rows
+                p["wiki"] = str((rows.get(uid or "") or unit_row_for(r) or {}).get("Wiki URL") or "").strip()
             if uid and uid not in {u["gem_unit_id"] for u in p["units"]}:
                 # irp_box: the database's IRP checkbox as the export shows it (yes / no / "")
                 box = str((rows.get(uid) or {}).get("IRP") or "").strip().lower()

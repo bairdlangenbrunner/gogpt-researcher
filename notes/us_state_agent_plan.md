@@ -229,6 +229,7 @@ Read-only. Hard failures exit non-zero; advisory lines are informational.
 | dates | hard | `Latest Activity` reads `Year: YYYY, Month: M, Day: D` (month and day optional); the year columns hold a four-digit year |
 | latest activity | hard | a `Latest Activity` edit is only for a unit in development, shelved or with an inferred status, and its date is at least a year old |
 | additive | hard | a `Status Detail` or `Notes` value is the new text placed above the text already in the box, which stays word for word, on the unit and on every sibling of a plant-wide edit; neither box is ever cleared (Baird 2026-10-07) |
+| validation | hard | update mode: every brief task marked **[Validation report]** (check 7) and every fix or person item in `work/validation_<tag>.json` has a record in some lane carrying check 7 on that unit, a sibling or the plant; a task that names no field is answered by a qa record with `concern_type` `validation`. The file must exist and be under a day old (`--allow-stale-validation` to warn instead) (Baird 2026-10-16) |
 | false high | advisory | a `high` status change with fewer than two independent hosts |
 | independence | advisory | `independent: true` with fewer than two verified refs |
 | entities | advisory | every new owner or operator name passes `entity_lookup.py` (skipped offline) |

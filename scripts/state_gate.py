@@ -53,6 +53,17 @@ Hard gates (any failure exits 1)
               every sibling unit of a plant-wide edit, and a delete record may
               never name either column. assemble_state.py composes the value
               with build_review_package.additive_value.
+  validation  every item of the database's validation report has an answer
+              (checklist row 7; the user's standing rule, 2026-10-16): each
+              brief task carrying check 7, and each fix or person item in the
+              current work/validation_<tag>.json, needs a record in any lane
+              for that unit (or a sibling) carrying check 7, or for a
+              whole-plant item a record on that plant. A finding that nothing
+              was found is a qa record with concern_type validation. The
+              validation file must exist and be under a day old (rerun
+              validation_report.py; --allow-stale-validation downgrades the age
+              check), so an item that appeared after the briefs were built is
+              still caught. Update mode only.
   build       build_review_package.validate() on the lane files: the errors
               that would stop the build anyway (qa records with fields, etc.)
   qc_checks   qc_checks.py --staged on each lane file present must exit 0
@@ -106,6 +117,7 @@ from schema_constants import STATUSES_IN_DEVELOPMENT  # noqa: E402
 from build_review_package import (  # noqa: E402
     URL_RE, additive_errors, load_lanes, ref_col_for, validate)
 from schema_constants import ADDITIVE_TEXT_COLUMNS, READ_ONLY_COLUMNS  # noqa: E402
+from paths import EXPORT_MAX_AGE_HOURS, work_dir  # noqa: E402
 
 SCRIPTS = Path(__file__).resolve().parent
 BANNED = ("gem.wiki", "globalenergymonitor.org", "abarrelfull")
@@ -488,6 +500,68 @@ def gate_monitor_fields(lanes):
     return out
 
 
+def validation_file(index):
+    w = index.get("where") or {}
+    slug = w.get("slug") or (index.get("state") or "").lower().replace(" ", "-")
+    tag = f"us-{slug}" if (w.get("kind") or "state") == "state" else slug
+    return work_dir() / f"validation_{tag}.json"
+
+
+def gate_validation(index, lanes, vpath=None, allow_stale=False, now=None):
+    """Every validation report item (brief tasks with check 7, plus the fix and
+    person items in the current validation file) needs a record carrying check 7
+    on that unit, a sibling, or for a whole-plant item the plant. Returns
+    (offenders, info)."""
+    out, info = [], []
+    if (index.get("mode") or "update") != "update":
+        return out, ["skipped: not an update batch"]
+    wanted = {}                                   # (pid, uid or None) -> text
+    for p in index["plants"]:
+        pid = p["plant_id"]
+        for uid, tasks in (p.get("tasks") or {}).items():
+            for t in tasks:
+                if 7 in (t.get("checks") or []):
+                    wanted.setdefault((pid, uid), t.get("text", "")[:90])
+        for t in p.get("plant_tasks") or []:
+            if 7 in (t.get("checks") or []):
+                wanted.setdefault((pid, None), t.get("text", "")[:90])
+    vpath = Path(vpath) if vpath else validation_file(index)
+    if not vpath.exists():
+        out.append((vpath.name, "no validation report file; run validation_report.py "
+                    "for this scope (checklist row 7)"))
+    else:
+        data = json.loads(vpath.read_text(encoding="utf-8"))
+        info.append(f"validation report {vpath.name} read {data.get('read', '?')}")
+        try:
+            read = datetime.datetime.fromisoformat(data.get("read", ""))
+            age = ((now or datetime.datetime.now(read.tzinfo)) - read).total_seconds() / 3600
+        except (TypeError, ValueError):
+            age = None
+        if age is None or age > EXPORT_MAX_AGE_HOURS:
+            msg = (f"{vpath.name} is {'of unknown age' if age is None else f'{age / 24:.1f} days old'}; "
+                   "rerun validation_report.py so items added since are answered")
+            if allow_stale:
+                info.append("warning: " + msg)
+            else:
+                out.append((vpath.name, msg))
+        for e in data.get("errors", []):
+            if e.get("kind") in ("fix", "person"):
+                wanted.setdefault((e["plant_id"], e.get("unit_id")),
+                                  f"{e.get('kind')}: {e.get('item', '')} {e.get('message', '')}"[:90])
+    answered_units, answered_plants = set(), set()
+    for _, _, rec in iter_records(lanes):
+        if 7 not in (rec.get("checks") or []):
+            continue
+        answered_plants.add(rec.get("gem_plant_id"))
+        answered_units.add(rec.get("gem_unit_id"))
+        answered_units |= set(rec.get("sibling_unit_ids") or [])
+    for (pid, uid), text in sorted(wanted.items(), key=lambda kv: (kv[0][0], kv[0][1] or "")):
+        if (uid and uid not in answered_units) or (not uid and pid not in answered_plants):
+            out.append((f"{pid}:{uid or 'plant'}", f"no record with check 7 answers: {text}"))
+    info.append(f"validation items to answer: {len(wanted)}")
+    return out, info
+
+
 def gate_qc(staging):
     out, ran = [], []
     for p in sorted(staging.glob("staged_*.json")):
@@ -538,6 +612,8 @@ def run(args):
     add("dates", True, gate_dates(lanes))
     add("latest-activity", True, gate_latest_activity(lanes, export))
     add("additive", True, gate_additive(lanes))
+    val, val_info = gate_validation(index, lanes, args.validation, args.allow_stale_validation)
+    add("validation", True, val, info=val_info)
     add("build", True, gate_build(lanes))
     add("false-high", False, gate_false_high(lanes))
     add("independence", False, gate_independence(lanes))
@@ -601,6 +677,11 @@ def main():
                     help="export the entity lookup scans (default: the "
                          "unfiltered all-combustion export; entities are "
                          "shared across trackers)")
+    ap.add_argument("--validation", default=None,
+                    help="validation_report.py JSON (default: work/validation_<tag>.json "
+                         "for the batch scope)")
+    ap.add_argument("--allow-stale-validation", action="store_true",
+                    help="warn instead of failing when the validation file is over a day old")
     ap.add_argument("--no-qc", action="store_true",
                     help="skip qc_checks.py --staged on the lane files")
     ap.add_argument("--json", action="store_true")

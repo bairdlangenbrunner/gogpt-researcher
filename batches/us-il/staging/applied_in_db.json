@@ -1,0 +1,706 @@
+{
+ "meta": {
+  "about": "staged edits found already applied in the GEM database by hand; kept out of the review page and the actions workbook"
+ },
+ "records": [
+  {
+   "gem_unit_id": "G100000402476",
+   "gem_plant_id": "L100000401731",
+   "plant_name": "Aurora power station",
+   "unit_name": "CTG1",
+   "country": "United States",
+   "record_id": "L100000401731:G100000402476:status-detail",
+   "cluster": "G100000402476",
+   "verdict": "fill",
+   "fields": {
+    "Status Detail": "On June 30, 2026 Aurora Generation told PJM it would retire all ten units on January 1, 2030 because of the Illinois Climate and Equitable Jobs Act. On July 2, 2026 PJM asked for the units to keep running until May 31, 2031, Aurora agreed, and Aurora withdrew its retirement notice.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/il-assets-withdrawal-letters.pdf\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/il-assets-deactivation-letter.pdf"
+   },
+   "current": {
+    "Status Detail": ""
+   },
+   "refs": {
+    "Status Detail": [
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/il-assets-withdrawal-letters.pdf",
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/il-assets-deactivation-letter.pdf"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/il-assets-withdrawal-letters.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/il-assets-deactivation-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "source_language": "en",
+   "researcher_notes": "Aurora's own letter of June 30, 2026 gave a retirement date of January 1, 2030. A second letter from Aurora dated July 2, 2026 says PJM asked for continued operation until May 31, 2031, that Aurora agreed, and that the retirement notice is withdrawn. Both letters are on PJM's generator deactivation page. Because the notice was withdrawn, no planned retirement year is reported. Nothing else was checked for this unit. No planned retirement year is reported because Aurora withdrew its retirement notice on July 2, 2026.",
+   "action": "Set Status Detail of unit CTG1 (G100000402476) to the entry below. The box is empty now. The source links are part of the entry, one per line. Do not add them to the Status Data Source box.\n\nOn June 30, 2026 Aurora Generation told PJM it would retire all ten units on January 1, 2030 because of the Illinois Climate and Equitable Jobs Act. On July 2, 2026 PJM asked for the units to keep running until May 31, 2031, Aurora agreed, and Aurora withdrew its retirement notice.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/il-assets-withdrawal-letters.pdf\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/il-assets-deactivation-letter.pdf",
+   "applied": {
+    "found": "2026-10-16",
+    "export": {
+     "Status Detail": "BL: On June 30, 2026 Aurora Generation told PJM it would retire all ten units on January 1, 2030 because of the Illinois Climate and Equitable Jobs Act. On July 2, 2026 PJM asked for the units to keep running until May 31, 2031, Aurora agreed, and Aurora withdrew its retirement notice\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/il-assets-withdrawal-letters.pdf\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/il-assets-deactivation-letter.pdf"
+    }
+   }
+  },
+  {
+   "gem_unit_id": "G100000402256",
+   "gem_plant_id": "L100000401554",
+   "plant_name": "Elwood Energy power station",
+   "unit_name": "GT1",
+   "country": "United States",
+   "record_id": "L100000401554:G100000402256:status",
+   "cluster": "G100000402256",
+   "verdict": "change",
+   "fields": {
+    "Status": "retired"
+   },
+   "current": {
+    "Status": "operating"
+   },
+   "refs": {
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/",
+     "ok": true,
+     "contains_value": false,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "source_language": "en",
+   "researcher_notes": "The EIA-860M table for August 2026 lists plant 69979, MPH Elwood, generator GT1, 192 MW, natural gas combustion turbine, operating since 1999, on its retired sheet with a retirement date of June 2026. A Utility Dive article from April 2026 says the owner planned to retire the plant by June 1, 2026. That article gives a plan, not a confirmation. I did not find a PJM letter or news story that confirms the retirement itself, so this is a single confirming source. The unit shows as retired in federal data. No PJM or owner letter confirming the retirement date was found.",
+   "action": "Set Status of unit GT1 (G100000402256) to retired. It now says operating. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+   "checks": [
+    21,
+    23,
+    38
+   ],
+   "applied": {
+    "found": "2026-10-16",
+    "export": {
+     "Status": "retired"
+    }
+   }
+  },
+  {
+   "gem_unit_id": "G100000402256",
+   "gem_plant_id": "L100000401554",
+   "plant_name": "Elwood Energy power station",
+   "unit_name": "GT1",
+   "country": "United States",
+   "record_id": "L100000401554:G100000402256:retired-year",
+   "cluster": "G100000402256",
+   "verdict": "fill",
+   "fields": {
+    "Retired year": "2026"
+   },
+   "current": {
+    "Retired year": ""
+   },
+   "refs": {
+    "Retired Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "source_language": "en",
+   "researcher_notes": "The EIA-860M table for August 2026 gives a retirement date of June 2026 for generator GT1. It is the only source that confirms the date.",
+   "action": "Set Retired year of unit GT1 (G100000402256) to 2026. The box is empty now. Add the link below to the Retired Year Data Source box. Keep the links already there.",
+   "checks": [
+    21,
+    23,
+    38
+   ],
+   "applied": {
+    "found": "2026-10-16",
+    "export": {
+     "Retired year": "2026"
+    }
+   }
+  },
+  {
+   "gem_unit_id": "G100000402257",
+   "gem_plant_id": "L100000401554",
+   "plant_name": "Elwood Energy power station",
+   "unit_name": "GT2",
+   "country": "United States",
+   "record_id": "L100000401554:G100000402257:status",
+   "cluster": "G100000402257",
+   "verdict": "change",
+   "fields": {
+    "Status": "retired"
+   },
+   "current": {
+    "Status": "operating"
+   },
+   "refs": {
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/",
+     "ok": true,
+     "contains_value": false,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "source_language": "en",
+   "researcher_notes": "The EIA-860M table for August 2026 lists plant 69979, MPH Elwood, generator GT2, 192 MW, natural gas combustion turbine, operating since 1999, on its retired sheet with a retirement date of June 2026. A Utility Dive article from April 2026 says the owner planned to retire the plant by June 1, 2026. That article gives a plan, not a confirmation. I did not find a PJM letter or news story that confirms the retirement itself, so this is a single confirming source. The unit shows as retired in federal data. No PJM or owner letter confirming the retirement date was found.",
+   "action": "Set Status of unit GT2 (G100000402257) to retired. It now says operating. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+   "checks": [
+    21,
+    23,
+    38
+   ],
+   "applied": {
+    "found": "2026-10-16",
+    "export": {
+     "Status": "retired"
+    }
+   }
+  },
+  {
+   "gem_unit_id": "G100000402257",
+   "gem_plant_id": "L100000401554",
+   "plant_name": "Elwood Energy power station",
+   "unit_name": "GT2",
+   "country": "United States",
+   "record_id": "L100000401554:G100000402257:retired-year",
+   "cluster": "G100000402257",
+   "verdict": "fill",
+   "fields": {
+    "Retired year": "2026"
+   },
+   "current": {
+    "Retired year": ""
+   },
+   "refs": {
+    "Retired Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "source_language": "en",
+   "researcher_notes": "The EIA-860M table for August 2026 gives a retirement date of June 2026 for generator GT2. It is the only source that confirms the date.",
+   "action": "Set Retired year of unit GT2 (G100000402257) to 2026. The box is empty now. Add the link below to the Retired Year Data Source box. Keep the links already there.",
+   "checks": [
+    21,
+    23,
+    38
+   ],
+   "applied": {
+    "found": "2026-10-16",
+    "export": {
+     "Retired year": "2026"
+    }
+   }
+  },
+  {
+   "gem_unit_id": "G100000402258",
+   "gem_plant_id": "L100000401554",
+   "plant_name": "Elwood Energy power station",
+   "unit_name": "GT3",
+   "country": "United States",
+   "record_id": "L100000401554:G100000402258:status",
+   "cluster": "G100000402258",
+   "verdict": "change",
+   "fields": {
+    "Status": "retired"
+   },
+   "current": {
+    "Status": "operating"
+   },
+   "refs": {
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/",
+     "ok": true,
+     "contains_value": false,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "source_language": "en",
+   "researcher_notes": "The EIA-860M table for August 2026 lists plant 69979, MPH Elwood, generator GT3, 192 MW, natural gas combustion turbine, operating since 1999, on its retired sheet with a retirement date of May 2026. A Utility Dive article from April 2026 says the owner planned to retire the plant by June 1, 2026. That article gives a plan, not a confirmation. I did not find a PJM letter or news story that confirms the retirement itself, so this is a single confirming source. The unit shows as retired in federal data. No PJM or owner letter confirming the retirement date was found.",
+   "action": "Set Status of unit GT3 (G100000402258) to retired. It now says operating. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+   "checks": [
+    21,
+    23,
+    38
+   ],
+   "applied": {
+    "found": "2026-10-16",
+    "export": {
+     "Status": "retired"
+    }
+   }
+  },
+  {
+   "gem_unit_id": "G100000402258",
+   "gem_plant_id": "L100000401554",
+   "plant_name": "Elwood Energy power station",
+   "unit_name": "GT3",
+   "country": "United States",
+   "record_id": "L100000401554:G100000402258:retired-year",
+   "cluster": "G100000402258",
+   "verdict": "fill",
+   "fields": {
+    "Retired year": "2026"
+   },
+   "current": {
+    "Retired year": ""
+   },
+   "refs": {
+    "Retired Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "source_language": "en",
+   "researcher_notes": "The EIA-860M table for August 2026 gives a retirement date of May 2026 for generator GT3. It is the only source that confirms the date.",
+   "action": "Set Retired year of unit GT3 (G100000402258) to 2026. The box is empty now. Add the link below to the Retired Year Data Source box. Keep the links already there.",
+   "checks": [
+    21,
+    23,
+    38
+   ],
+   "applied": {
+    "found": "2026-10-16",
+    "export": {
+     "Retired year": "2026"
+    }
+   }
+  },
+  {
+   "gem_unit_id": "G100000402259",
+   "gem_plant_id": "L100000401554",
+   "plant_name": "Elwood Energy power station",
+   "unit_name": "GT4",
+   "country": "United States",
+   "record_id": "L100000401554:G100000402259:status",
+   "cluster": "G100000402259",
+   "verdict": "change",
+   "fields": {
+    "Status": "retired"
+   },
+   "current": {
+    "Status": "operating"
+   },
+   "refs": {
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/",
+     "ok": true,
+     "contains_value": false,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "source_language": "en",
+   "researcher_notes": "The EIA-860M table for August 2026 lists plant 69979, MPH Elwood, generator GT4, 192 MW, natural gas combustion turbine, operating since 1999, on its retired sheet with a retirement date of May 2026. A Utility Dive article from April 2026 says the owner planned to retire the plant by June 1, 2026. That article gives a plan, not a confirmation. I did not find a PJM letter or news story that confirms the retirement itself, so this is a single confirming source. The unit shows as retired in federal data. No PJM or owner letter confirming the retirement date was found.",
+   "action": "Set Status of unit GT4 (G100000402259) to retired. It now says operating. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+   "checks": [
+    21,
+    23,
+    38
+   ],
+   "applied": {
+    "found": "2026-10-16",
+    "export": {
+     "Status": "retired"
+    }
+   }
+  },
+  {
+   "gem_unit_id": "G100000402259",
+   "gem_plant_id": "L100000401554",
+   "plant_name": "Elwood Energy power station",
+   "unit_name": "GT4",
+   "country": "United States",
+   "record_id": "L100000401554:G100000402259:retired-year",
+   "cluster": "G100000402259",
+   "verdict": "fill",
+   "fields": {
+    "Retired year": "2026"
+   },
+   "current": {
+    "Retired year": ""
+   },
+   "refs": {
+    "Retired Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "source_language": "en",
+   "researcher_notes": "The EIA-860M table for August 2026 gives a retirement date of May 2026 for generator GT4. It is the only source that confirms the date.",
+   "action": "Set Retired year of unit GT4 (G100000402259) to 2026. The box is empty now. Add the link below to the Retired Year Data Source box. Keep the links already there.",
+   "checks": [
+    21,
+    23,
+    38
+   ],
+   "applied": {
+    "found": "2026-10-16",
+    "export": {
+     "Retired year": "2026"
+    }
+   }
+  },
+  {
+   "gem_unit_id": "G100000402260",
+   "gem_plant_id": "L100000401554",
+   "plant_name": "Elwood Energy power station",
+   "unit_name": "GT5",
+   "country": "United States",
+   "record_id": "L100000401554:G100000402260:owner-s",
+   "cluster": "G100000402260",
+   "verdict": "change",
+   "fields": {
+    "Owner(s)": "Dairyland Power Cooperative [100%]"
+   },
+   "current": {
+    "Owner(s)": "J-POWER USA Development Co Ltd [100%]"
+   },
+   "refs": {
+    "Owners Data Source": [
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf",
+     "https://dairylandpower.com/dairyland-announces-acquisition-assets-illinois"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://dairylandpower.com/dairyland-announces-acquisition-assets-illinois",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "source_language": "en",
+   "researcher_notes": "A Dairyland press release from March 6, 2026 says Dairyland bought three combustion turbines of 450 MW at Elwood from J-POWER USA. Dairyland's withdrawal letter to PJM from May 6, 2026 says it acquired units 5, 6 and 7 on March 6, 2026. Both documents come from Dairyland, so they are not independent. I did not find a second publisher for the closing. The unit stays operating. The retirement notice was withdrawn, so the old planned retirement year of 2025 no longer holds.",
+   "action": "Set Owner(s) of unit GT5 (G100000402260) to Dairyland Power Cooperative [100%]. It now says J-POWER USA Development Co Ltd [100%]. Add the 2 links below to the Owners Data Source box. Keep the links already there.",
+   "applied": {
+    "found": "2026-10-16",
+    "export": {
+     "Owner(s)": "Dairyland Power Cooperative [100%]"
+    }
+   }
+  },
+  {
+   "gem_unit_id": "G100000402261",
+   "gem_plant_id": "L100000401554",
+   "plant_name": "Elwood Energy power station",
+   "unit_name": "GT6",
+   "country": "United States",
+   "record_id": "L100000401554:G100000402261:owner-s",
+   "cluster": "G100000402261",
+   "verdict": "change",
+   "fields": {
+    "Owner(s)": "Dairyland Power Cooperative [100%]"
+   },
+   "current": {
+    "Owner(s)": "J-POWER USA Development Co Ltd [100%]"
+   },
+   "refs": {
+    "Owners Data Source": [
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf",
+     "https://dairylandpower.com/dairyland-announces-acquisition-assets-illinois"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://dairylandpower.com/dairyland-announces-acquisition-assets-illinois",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "source_language": "en",
+   "researcher_notes": "A Dairyland press release from March 6, 2026 says Dairyland bought three combustion turbines of 450 MW at Elwood from J-POWER USA. Dairyland's withdrawal letter to PJM from May 6, 2026 says it acquired units 5, 6 and 7 on March 6, 2026. Both documents come from Dairyland, so they are not independent. I did not find a second publisher for the closing. The unit stays operating. The retirement notice was withdrawn, so the old planned retirement year of 2025 no longer holds.",
+   "action": "Set Owner(s) of unit GT6 (G100000402261) to Dairyland Power Cooperative [100%]. It now says J-POWER USA Development Co Ltd [100%]. Add the 2 links below to the Owners Data Source box. Keep the links already there.",
+   "applied": {
+    "found": "2026-10-16",
+    "export": {
+     "Owner(s)": "Dairyland Power Cooperative [100%]"
+    }
+   }
+  },
+  {
+   "gem_unit_id": "G100000402262",
+   "gem_plant_id": "L100000401554",
+   "plant_name": "Elwood Energy power station",
+   "unit_name": "GT7",
+   "country": "United States",
+   "record_id": "L100000401554:G100000402262:owner-s",
+   "cluster": "G100000402262",
+   "verdict": "change",
+   "fields": {
+    "Owner(s)": "Dairyland Power Cooperative [100%]"
+   },
+   "current": {
+    "Owner(s)": "J-POWER USA Development Co Ltd [100%]"
+   },
+   "refs": {
+    "Owners Data Source": [
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf",
+     "https://dairylandpower.com/dairyland-announces-acquisition-assets-illinois"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://dairylandpower.com/dairyland-announces-acquisition-assets-illinois",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "source_language": "en",
+   "researcher_notes": "A Dairyland press release from March 6, 2026 says Dairyland bought three combustion turbines of 450 MW at Elwood from J-POWER USA. Dairyland's withdrawal letter to PJM from May 6, 2026 says it acquired units 5, 6 and 7 on March 6, 2026. Both documents come from Dairyland, so they are not independent. I did not find a second publisher for the closing. The unit stays operating. The retirement notice was withdrawn, so the old planned retirement year of 2025 no longer holds.",
+   "action": "Set Owner(s) of unit GT7 (G100000402262) to Dairyland Power Cooperative [100%]. It now says J-POWER USA Development Co Ltd [100%]. Add the 2 links below to the Owners Data Source box. Keep the links already there.",
+   "applied": {
+    "found": "2026-10-16",
+    "export": {
+     "Owner(s)": "Dairyland Power Cooperative [100%]"
+    }
+   }
+  },
+  {
+   "gem_unit_id": "G100000402260",
+   "gem_plant_id": "L100000401554",
+   "plant_name": "Elwood Energy power station",
+   "unit_name": "GT5",
+   "country": "United States",
+   "record_id": "L100000401554:G100000402260:status-detail",
+   "cluster": "G100000402260",
+   "verdict": "fill",
+   "fields": {
+    "Status Detail": "Elwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. Dairyland Power Cooperative bought units 5 to 7 on March 6, 2026, and withdrew the retirement notice on May 6, 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf"
+   },
+   "current": {
+    "Status Detail": ""
+   },
+   "refs": {
+    "Status Detail": [
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "source_language": "en",
+   "researcher_notes": "The Dairyland letter to PJM dated May 6, 2026 states the purchase date and withdraws the retirement notice.",
+   "action": "Set Status Detail of unit GT5 (G100000402260) to the entry below. The box is empty now. The source links are part of the entry, one per line. Do not add them to the Status Data Source box.\n\nElwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. Dairyland Power Cooperative bought units 5 to 7 on March 6, 2026, and withdrew the retirement notice on May 6, 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf",
+   "applied": {
+    "found": "2026-10-16",
+    "export": {
+     "Status Detail": "BL: Elwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. Dairyland Power Cooperative bought units 5, 6, and 7 on March 6, 2026, and withdrew the retirement notice on May 6, 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf"
+    },
+    "note": "applied with a small wording change (units 5, 6, and 7)"
+   }
+  },
+  {
+   "gem_unit_id": "G100000402261",
+   "gem_plant_id": "L100000401554",
+   "plant_name": "Elwood Energy power station",
+   "unit_name": "GT6",
+   "country": "United States",
+   "record_id": "L100000401554:G100000402261:status-detail",
+   "cluster": "G100000402261",
+   "verdict": "fill",
+   "fields": {
+    "Status Detail": "Elwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. Dairyland Power Cooperative bought units 5 to 7 on March 6, 2026, and withdrew the retirement notice on May 6, 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf"
+   },
+   "current": {
+    "Status Detail": ""
+   },
+   "refs": {
+    "Status Detail": [
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "source_language": "en",
+   "researcher_notes": "The Dairyland letter to PJM dated May 6, 2026 states the purchase date and withdraws the retirement notice.",
+   "action": "Set Status Detail of unit GT6 (G100000402261) to the entry below. The box is empty now. The source links are part of the entry, one per line. Do not add them to the Status Data Source box.\n\nElwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. Dairyland Power Cooperative bought units 5 to 7 on March 6, 2026, and withdrew the retirement notice on May 6, 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf",
+   "applied": {
+    "found": "2026-10-16",
+    "export": {
+     "Status Detail": "BL: Elwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. Dairyland Power Cooperative bought units 5, 6, and 7 on March 6, 2026, and withdrew the retirement notice on May 6, 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf"
+    },
+    "note": "applied with a small wording change (units 5, 6, and 7)"
+   }
+  },
+  {
+   "gem_unit_id": "G100000402262",
+   "gem_plant_id": "L100000401554",
+   "plant_name": "Elwood Energy power station",
+   "unit_name": "GT7",
+   "country": "United States",
+   "record_id": "L100000401554:G100000402262:status-detail",
+   "cluster": "G100000402262",
+   "verdict": "fill",
+   "fields": {
+    "Status Detail": "Elwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. Dairyland Power Cooperative bought units 5 to 7 on March 6, 2026, and withdrew the retirement notice on May 6, 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf"
+   },
+   "current": {
+    "Status Detail": ""
+   },
+   "refs": {
+    "Status Detail": [
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "source_language": "en",
+   "researcher_notes": "The Dairyland letter to PJM dated May 6, 2026 states the purchase date and withdraws the retirement notice.",
+   "action": "Set Status Detail of unit GT7 (G100000402262) to the entry below. The box is empty now. The source links are part of the entry, one per line. Do not add them to the Status Data Source box.\n\nElwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. Dairyland Power Cooperative bought units 5 to 7 on March 6, 2026, and withdrew the retirement notice on May 6, 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf",
+   "applied": {
+    "found": "2026-10-16",
+    "export": {
+     "Status Detail": "BL: Elwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. Dairyland Power Cooperative bought units 5, 6, and 7 on March 6, 2026, and withdrew the retirement notice on May 6, 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf"
+    },
+    "note": "applied with a small wording change (units 5, 6, and 7)"
+   }
+  }
+ ]
+}

@@ -107,7 +107,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from paths import REPO_ROOT, gogpt_scoped_csv, work_dir
+from paths import REPO_ROOT, gogpt_scoped_csv, require_fresh_export, work_dir
 from schema_constants import (OUT_OF_SCOPE_COLUMNS, READ_ONLY_COLUMNS, RESEARCH_FIELDS,
                               STATUSES_IN_DEVELOPMENT)
 from build_review_package import ref_col_for
@@ -553,6 +553,15 @@ def validation_tasks(items, rows):
     return per_unit, plant
 
 
+VALIDATION_MARK = "**[Validation report]**"
+
+
+def task_line(text, checks):
+    """A brief task bullet; a validation report task (row 7) is marked so the
+    research agent answers it even when nothing is found."""
+    return f"{VALIDATION_MARK} {text}" if 7 in (checks or []) else text
+
+
 def render_brief(plant_id, rows, header, mode, wl, notes_text, notes_path, scope,
                  tasks=None, plant_tasks=None):
     first = rows[0]
@@ -571,9 +580,13 @@ def render_brief(plant_id, rows, header, mode, wl, notes_text, notes_path, scope
               "This is an update, not a full review. Do the tasks below and nothing "
               "else. A value you notice in passing that looks wrong goes in a "
               "question, not a change.", ""]
+        if any(7 in c for ts in list(tasks.values()) + [plant_tasks] for _, _, c in ts):
+            L += [f"{VALIDATION_MARK} tasks come from the database's validation report. "
+                  "Every one needs an answer: a finding with its source, or a question "
+                  "saying what you found or that nothing was found and where you looked.", ""]
         if plant_tasks:
             L += ["### Whole plant", ""]
-            L += [f"- {t}" for t, _, _ in plant_tasks]
+            L += [f"- {task_line(t, c)}" for t, _, c in plant_tasks]
             L.append("")
         for r in rows:
             uid = r.get(H_UNIT)
@@ -581,7 +594,7 @@ def render_brief(plant_id, rows, header, mode, wl, notes_text, notes_path, scope
             L += [f"### Unit {blank(r.get(H_UNAME))} ({uid}), status "
                   f"{blank(r.get('Status'))}", ""]
             if ut:
-                L += [f"- {t}" for t, _, _ in ut]
+                L += [f"- {task_line(t, c)}" for t, _, c in ut]
             else:
                 L.append("- Nothing to check. Leave this unit alone unless a whole-plant "
                          "task above touches it.")
@@ -695,6 +708,8 @@ def main():
                     help="work/captive_<tag>.json from captive_lng.py: the captive LNG sheet "
                          "step, checklist rows 6 and 44, plus the data-center search block "
                          "(row 39) for a US state (update mode, any scope)")
+    ap.add_argument("--allow-stale-export", action="store_true",
+                    help="warn instead of stopping when the export is over a day old")
     a = ap.parse_args()
     extra = {}
     if a.extra_tasks:
@@ -719,6 +734,7 @@ def main():
     csv_path = Path(a.csv).resolve()
     if not csv_path.exists():
         sys.exit(f"ERROR: {csv_path} not found; run scope_filter.py first")
+    require_fresh_export(csv_path, a.allow_stale_export)
     wl_tag = f"us-{slug}" if scope["kind"] == "state" else slug
     wl_path = Path(a.worklist) if a.worklist else work_dir() / f"worklist_{wl_tag}.csv"
     wl = load_worklist(wl_path)

@@ -31,6 +31,9 @@ Usage (from scripts/):
     python worklist.py                                # all countries, one file
     python worklist.py --all                          # include retired/cancelled
     python worklist.py --year 2027                    # override "this year"
+
+Stops if the export is over a day old (fresh pull every batch);
+--allow-stale-export downgrades that to a warning.
 """
 import argparse
 import csv
@@ -40,7 +43,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from paths import gogpt_scoped_csv, work_dir
+from paths import gogpt_scoped_csv, require_fresh_export, work_dir
 from pull_gem_db import derive_column_map
 from schema_constants import (
     CANCELLED_INFERRED_YEARS,
@@ -107,11 +110,14 @@ def main():
                    help="include priority-9 (retired/cancelled) rows")
     p.add_argument("--year", type=int, default=datetime.date.today().year)
     p.add_argument("--out", default=None)
+    p.add_argument("--allow-stale-export", action="store_true",
+                   help="warn instead of stopping when the export is over a day old")
     args = p.parse_args()
 
     if not Path(args.csv).exists():
         sys.exit(f"ERROR: {args.csv} not found — run scope_filter.py first\n"
                  "  (worklists must come from the SCOPED view, not the raw export)")
+    require_fresh_export(args.csv, args.allow_stale_export)
 
     col_map = derive_column_map(args.csv)
     missing = [c for c in NEEDED if col_map.get(c) is None]
