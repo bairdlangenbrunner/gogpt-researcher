@@ -24,7 +24,7 @@ staging dir's review_log.jsonl. Each record keeps the id and the time the page g
     import before anything is written (the batch was rebuilt since the page was made: rebuild the
     page and publish it again)
   - the page is not given reviewers' addresses, only their names, so name each one:
-    --reviewer amalia.llano@globalenergymonitor.org (matched to the initials AL), or --reviewer AL=ADDRESS
+    --reviewer analyst.lead@globalenergymonitor.org (matched to the initials AL), or --reviewer AL=ADDRESS
 
 This appends to the store `log` tab and to the sidecars. The GEM database, the staged_*.json
 files and the deliverables are not touched; accepted edits reach GEM only through the actions

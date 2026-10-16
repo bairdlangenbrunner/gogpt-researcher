@@ -16,7 +16,7 @@ import review_data  # noqa: E402
 import store  # noqa: E402
 from test_review_app import write_staging  # noqa: E402
 
-AL = "amalia.llano@globalenergymonitor.org"
+AL = "analyst.lead@globalenergymonitor.org"
 
 
 @pytest.fixture
@@ -101,10 +101,10 @@ def test_a_record_is_only_ever_written_under_batches(scope):
 
 def test_two_reviewers_behind_one_set_of_initials_are_reported(scope):
     l = a_line(scope["dataset"])
-    cells = ["json", json.dumps(rec(l, 1)), json.dumps(rec(l, 2, reviewer="andrea.lopez@globalenergymonitor.org")),
+    cells = ["json", json.dumps(rec(l, 1)), json.dumps(rec(l, 2, reviewer="analyst.liaison@globalenergymonitor.org")),
              json.dumps(rec(l, 3, reviewer="push"))]
     res = pull.pull({"store_sheet_id": "x"}, root=scope["root"], reader=lambda s: cells)
-    assert res["shared"] == {"AL": [AL, "andrea.lopez@globalenergymonitor.org"]}
+    assert res["shared"] == {"AL": [AL, "analyst.liaison@globalenergymonitor.org"]}
     assert "SHARED INITIALS AL stand for 2 reviewers" in pull.report(res)
     assert [r["reviewer"] for r in store.read_log(scope["dirs"][l["dir"]])] == ["AL", "AL", "push"]
     assert set(res["emails"]) == {"id1", "id2"}

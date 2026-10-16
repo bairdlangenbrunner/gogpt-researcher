@@ -26,7 +26,7 @@ import store  # noqa: E402
 from test_review_app import write_staging  # noqa: E402
 
 ME = "baird.langenbrunner@globalenergymonitor.org"
-AL = "amalia.llano@globalenergymonitor.org"
+AL = "analyst.lead@globalenergymonitor.org"
 SHEET = "store-sheet"
 
 

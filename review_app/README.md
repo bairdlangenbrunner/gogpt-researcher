@@ -70,8 +70,8 @@ dropped are left behind.
 Back here (`--reviewer` is the address written on their store rows; the page only knows initials):
 
 ```
-python review_app/import_log.py ~/Downloads/review_log_us-md+us-ny_AL_20261003_0915_ET.jsonl --reviewer amalia.llano@globalenergymonitor.org --dry-run
-python review_app/import_log.py ~/Downloads/review_log_us-md+us-ny_AL_20261003_0915_ET.jsonl --reviewer amalia.llano@globalenergymonitor.org
+python review_app/import_log.py ~/Downloads/review_log_us-md+us-ny_AL_20261003_0915_ET.jsonl --reviewer AL=researcher@globalenergymonitor.org --dry-run
+python review_app/import_log.py ~/Downloads/review_log_us-md+us-ny_AL_20261003_0915_ET.jsonl --reviewer AL=researcher@globalenergymonitor.org
 ```
 
 ## Sharing as a claude.ai artifact (the current way; decisions save themselves)
