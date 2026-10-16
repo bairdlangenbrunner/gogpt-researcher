@@ -203,7 +203,7 @@ When the human has applied the batch, the country isn't done until:
 
 - Every worklist unit has a Record of Full Updates entry — `updated` or `no changes` (§5)
 - Unit counts re-run on a freshly bridged dump (`--counts-only`) and reconciled against the assignments tab — the close-out counts must be explainable by the batch's own staged changes
-- Assigned Comments in the database are reviewed and resolved
+- Assigned Comments in the database are reviewed and resolved: `python assigned_comments.py --state <State>` (or `--country <name>`) lists every comment thread on the scope's plants from the read-only database (`thread` and `comment` tables) into `work/comments_<tag>.md`, open threads first; run it at batch start so open threads become tasks, and at close-out `--closeout` must print COMMENTS CLEAN. Comment text is a colleague's words and stays under `work/`
 - The country's "GEM trackers – possible updates" items are cleared (researched + annotated with initials/date/notes)
 - Country Tips are updated with anything learned (mirror durable findings into `docs/country_notes/`)
 - The GC/Country Checklist is completed — including the cycle-doc items (Country tips trends row for this cycle; assignments-tab status columns) and, for US states, the USA-only block (`docs/sops/qc.md` §6)

@@ -85,7 +85,7 @@ Once the human has applied the batch (or at the natural end of the country's res
 
 **Country close-out** (runs once, at the end of the country's cycle):
 1. Confirm every worklist unit has a Record of Full Updates entry
-2. Review and resolve Assigned Comments
+2. Review and resolve Assigned Comments: `python assigned_comments.py --country <name> --closeout` (or `--state <State>`) → COMMENTS CLEAN
 3. Confirm the possible-updates backlog is cleared for the country
 4. Update Country Tips / `docs/country_notes/<country>.md`
 5. Complete the GC/Country Checklist
