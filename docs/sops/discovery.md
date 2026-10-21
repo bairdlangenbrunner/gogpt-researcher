@@ -76,7 +76,7 @@ For a genuinely new plant, minimum fields to stage in `newplants` (plus one row 
 
 - **Plant Name** — per the manual's naming convention (ends in "power station" unless a non-conforming name supersedes it; disambiguate same-name/same-area plants by owner or state in parentheses)
 - **Country**
-- **Location** — coordinates with `Accuracy` (`exact` ≥3 decimals, else `approximate`); plant-level only, never per-unit
+- **Location** — coordinates with `Accuracy` (`exact` ≥3 decimals, else `approximate`); plant-level only, never per-unit. Found through the location ladder in `docs/reference/location.md`: an address or site sentence in a document, geocoded and checked in satellite imagery, earns `exact`; a town alone is `approximate`. The coordinate is written as a Google Maps link wherever a person reads it
 - **Capacity** — generating MWe, whole MW, high end of any range (§3)
 - **Technology** and **Fuel** — from the manual's controlled vocabularies (CC, GT, AGT, ST, IC, ICCC, ISCC, AFC; fossil gas / fossil liquids / industrial by-product / hydrogen)
 - **Status** — almost always `announced`, `pre-construction`, or `construction` for a genuinely new find; `operating` only when the plant has clearly been running undetected

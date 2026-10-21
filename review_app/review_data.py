@@ -57,6 +57,7 @@ for p in (ROOT / "scripts", HERE, ROOT):
 import paths  # noqa: E402
 from build_review_package import URL_RE, ref_col_for  # noqa: E402
 from review_app.checklist import MONITOR_KINDS, summarize, tag  # noqa: E402
+import geo  # noqa: E402
 
 ET = ZoneInfo("America/New_York")
 LINE_LANES = ("updates", "newunits", "newplants")
@@ -210,6 +211,31 @@ def tagged(obj, r, lane, unit_row=None, us=True):
     return obj
 
 
+def location_block(r, label, current):
+    """The `location` dict of a staged location record (fields hold Latitude): the current and
+    proposed points with their Google Maps links, how the point was found, and the saved map
+    render (repo-relative, from the batch folder above the staging dir `label`)."""
+    fields = r.get("fields") or {}
+
+    def point(src):
+        lat, lon = geo.parse_coord(src.get("Latitude")), geo.parse_coord(src.get("Longitude"))
+        ok = geo.valid_point(lat, lon)
+        links = geo.links_for(lat, lon) if ok else {}
+        return {"lat": lat if ok else None, "lon": lon if ok else None,
+                "accuracy": str(src.get("Location accuracy") or ""),
+                "satellite": links.get("satellite"), "pin": links.get("pin")}
+
+    image = r.get("location_image") or ""
+    if image:
+        image = (Path(label).parent / image).as_posix()
+    fit = r.get("location_fit_m")
+    return {"current": point(current), "proposed": point(fields),
+            "moved_m": r.get("location_moved_m"), "method": r.get("location_method") or "",
+            "needs_review": bool(r.get("location_needs_review")),
+            "control_points": list(r.get("location_control_points") or []),
+            "fit_m": fit, "image": image}
+
+
 def update_line(r, label, export_rows, us=True):
     kind = line_kind(r)
     fields = dict(r.get("fields") or {})
@@ -252,6 +278,8 @@ def update_line(r, label, export_rows, us=True):
         "decision": None, "reviewed": False,
         "irp": bool(r.get("irp")),
     }
+    if "Latitude" in fields:
+        line["location"] = location_block(r, label, current)
     # a plant-level record may have no unit row of its own: any sibling's row tells the status
     unit_row = row or next((export_rows[s] for s in r.get("sibling_unit_ids") or [] if s in export_rows), {})
     return tagged(line, r, "updates", unit_row, us)

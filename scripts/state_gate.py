@@ -53,6 +53,21 @@ Hard gates (any failure exits 1)
               every sibling unit of a plant-wide edit, and a delete record may
               never name either column. assemble_state.py composes the value
               with build_review_package.additive_value.
+  location    the location step (docs/reference/location.md): a record that
+              stages Latitude, Longitude or Location accuracy with a
+              location_method stages all three together, applies to every
+              unit of the plant, holds a valid point, names a method from the
+              list (address, site_reference, dataset, map, imagery), sits
+              inside its US state's bounding box (geo.US_STATE_BBOX; a
+              country scope has no offline box, so the review card's
+              satellite panel is the check), writes an exact point with at
+              least three decimals and a note that says it was seen in
+              satellite imagery or placed on a named parcel, explains a move
+              of more than 2 km in the note, and for a map method carries at
+              least two control points, a fit error under 150 m and an
+              existing render file. Older per-field coordinate records (one
+              column each, no method) only need to cover all three columns
+              between them for the plant.
   validation  every item of the database's validation report has an answer
               (checklist row 7; the user's standing rule, 2026-10-16): each
               brief task carrying check 7, and each fix or person item in the
@@ -64,6 +79,14 @@ Hard gates (any failure exits 1)
               validation_report.py; --allow-stale-validation downgrades the age
               check), so an item that appeared after the briefs were built is
               still caught. Update mode only.
+  access      every source_log entry an agent gave up on (outcome blocked or
+              dead) was retried by `access_audit.py <batch> --retry`, which
+              writes <batch>/access_retry.json, and still fails; one that
+              loads now must be read and used. No source_log note, whatever
+              its outcome, may give a search form, a script, a session or
+              paging as the reason a page was not read: those never stop a
+              person (Baird 2026-10-19, after the Iowa air permit pages were
+              skipped as "a search form that needs a script").
   build       build_review_package.validate() on the lane files: the errors
               that would stop the build anyway (qa records with fields, etc.)
   qc_checks   qc_checks.py --staged on each lane file present must exit 0
@@ -118,6 +141,8 @@ from build_review_package import (  # noqa: E402
     URL_RE, additive_errors, load_lanes, ref_col_for, validate)
 from schema_constants import ADDITIVE_TEXT_COLUMNS, READ_ONLY_COLUMNS  # noqa: E402
 from paths import EXPORT_MAX_AGE_HOURS, work_dir  # noqa: E402
+from geo import decimals, in_state_box, valid_point  # noqa: E402
+from access_audit import EXCUSE, GAVE_UP, RETRY_FILE  # noqa: E402
 
 SCRIPTS = Path(__file__).resolve().parent
 BANNED = ("gem.wiki", "globalenergymonitor.org", "abarrelfull")
@@ -190,6 +215,46 @@ def gate_coverage(batch, index):
     return out
 
 
+def gate_access(batch):
+    """Pages the research agents gave up on: each must be retried with the
+    current fetch ladder and still fail, and none may have been given up on
+    because of a form, a script or paging."""
+    out, info = [], []
+    try:
+        retried = json.loads((batch / RETRY_FILE).read_text(encoding="utf-8"))
+    except (ValueError, OSError):
+        retried = {}
+    gave_up = still = 0
+    for sp in sorted((batch / "shards").glob("*.json")):
+        try:
+            shard = json.loads(sp.read_text(encoding="utf-8"))
+        except (ValueError, OSError):
+            continue
+        for e in shard.get("source_log") or []:
+            if not isinstance(e, dict) or not e.get("url"):
+                continue
+            url, note = e["url"], e.get("note") or ""
+            where = f"{sp.stem}: {url[:90]}"
+            if e.get("outcome") != "verified" and EXCUSE.search(note):
+                out.append((where, "the note gives a form, a script or paging as the reason. "
+                                   "Read the page source, find the address the form calls or "
+                                   "the per-record links, or use fetch.py's real-Chrome load"))
+                continue
+            if e.get("outcome") not in GAVE_UP:
+                continue
+            gave_up += 1
+            r = retried.get(url)
+            if r is None:
+                out.append((where, f"{e['outcome']} but never retried: run "
+                                   f"access_audit.py {batch} --retry"))
+            elif r.get("ok"):
+                out.append((where, f"{e['outcome']} in the shard but loads now; read it and use it"))
+            else:
+                still += 1
+    info.append(f"pages given up on: {gave_up}; retried and still failing: {still}")
+    return out, info
+
+
 def gate_banned(lanes):
     out = []
     for lane, rid, rec in iter_records(lanes):
@@ -258,7 +323,8 @@ def gate_fresh(lanes, export):
         cur = rec.get("current") or {}
         checks = [(uid, cur)]
         for sib, val in (rec.get("sibling_current") or {}).items():
-            checks += [(sib, {h: val for h in cur})]
+            # a location record keeps a dict of its three columns per sibling
+            checks += [(sib, dict(val) if isinstance(val, dict) else {h: val for h in cur})]
         for u, values in checks:
             row = export.get(u)
             if row is None:
@@ -379,6 +445,88 @@ def gate_additive(lanes):
             continue
         for e in additive_errors(rec, rec, rid):
             out.append((rid, e.split(": ", 1)[1]))
+    return out
+
+
+LOCATION_FIELDS = ("Latitude", "Longitude", "Location accuracy")
+LOCATION_METHODS = ("address", "site_reference", "dataset", "map", "imagery")
+SEEN_WORDS = ("imagery", "satellite", "aerial", "parcel", "footprint")
+LOCATION_MOVE_EXPLAIN_M = 2000
+LOCATION_FIT_MAX_M = 150
+
+
+def gate_location(lanes, index, batch):
+    """The location step's own checks (docs/reference/location.md)."""
+    out = []
+    where = index.get("where") or {}
+    state = where.get("name", "") if where.get("kind", "state") == "state" else ""
+    state = state or index.get("state", "")
+    units_of = {p.get("plant_id"): set(p.get("unit_ids") or [])
+                for p in index.get("plants") or []}
+    legacy = {}
+    for lane, rid, rec in iter_records(lanes, ("updates",)):
+        fields = rec.get("fields") or {}
+        have = [f for f in LOCATION_FIELDS if f in fields]
+        if not have or rec.get("verdict") == "match" or rec.get("reverified"):
+            continue
+        pid = rec.get("gem_plant_id")
+        if len(have) < 3 and not rec.get("location_method"):
+            legacy.setdefault(pid, set()).update(have)
+            continue
+        if len(have) < 3:
+            out.append((rid, "Latitude, Longitude and Location accuracy are staged "
+                             f"together; this record has only {', '.join(have)}"))
+            continue
+        lat, lon = fields["Latitude"], fields["Longitude"]
+        acc = ws(fields["Location accuracy"]).lower()
+        note = ws(rec.get("researcher_notes"))
+        if not valid_point(lat, lon):
+            out.append((rid, f"{lat!r}, {lon!r} is not a valid point"))
+            continue
+        if acc not in ("exact", "approximate"):
+            out.append((rid, f"Location accuracy must be exact or approximate, not {acc!r}"))
+        elif acc == "exact":
+            if min(decimals(lat), decimals(lon)) < 3:
+                out.append((rid, "an exact point needs at least three decimals"))
+            if not any(w in note.lower() for w in SEEN_WORDS):
+                out.append((rid, "an exact point needs a note that says it was seen in "
+                                 "satellite imagery or placed on a named parcel"))
+        method = rec.get("location_method")
+        if method not in LOCATION_METHODS:
+            out.append((rid, f"location_method {method!r} is not one of "
+                             f"{', '.join(LOCATION_METHODS)}"))
+        if state and in_state_box(lat, lon, state) is False:
+            out.append((rid, f"point {lat}, {lon} lies outside {state}"))
+        moved = rec.get("location_moved_m")
+        if isinstance(moved, (int, float)) and moved > LOCATION_MOVE_EXPLAIN_M and len(note) < 40:
+            out.append((rid, f"a move of {moved / 1000:.1f} km needs a note that says why "
+                             "GEM's point was wrong"))
+        if method == "map":
+            cps = rec.get("location_control_points") or []
+            fit = rec.get("location_fit_m")
+            img = rec.get("location_image") or ""
+            if len(cps) < 2:
+                out.append((rid, "a map method needs at least two control points"))
+            if not isinstance(fit, (int, float)) or fit >= LOCATION_FIT_MAX_M:
+                out.append((rid, f"a map method needs a fit error under {LOCATION_FIT_MAX_M} m, "
+                                 f"got {fit!r}"))
+            if not img or not (Path(batch) / img).exists():
+                out.append((rid, f"the map render {img!r} is missing"))
+        if not rec.get("applies_to_all_units"):
+            out.append((rid, "a location edit applies to every unit of the plant"))
+        covered = {rec.get("gem_unit_id")} | set(rec.get("sibling_unit_ids") or [])
+        want = units_of.get(pid) or set()
+        if want - covered:
+            out.append((rid, "units not covered: " + ", ".join(sorted(want - covered))))
+        for u, v in (rec.get("sibling_current") or {}).items():
+            if not isinstance(v, dict):
+                out.append((rid, f"sibling_current[{u}] must hold the three columns"))
+                break
+    for pid, have in legacy.items():
+        if len(have) < 3:
+            missing = [f for f in LOCATION_FIELDS if f not in have]
+            out.append((f"{pid}:plant", f"{', '.join(sorted(have))} staged without "
+                                        f"{', '.join(missing)}; the three go together"))
     return out
 
 
@@ -612,6 +760,9 @@ def run(args):
     add("dates", True, gate_dates(lanes))
     add("latest-activity", True, gate_latest_activity(lanes, export))
     add("additive", True, gate_additive(lanes))
+    add("location", True, gate_location(lanes, index, batch))
+    acc, acc_info = gate_access(batch)
+    add("access", True, acc, info=acc_info)
     val, val_info = gate_validation(index, lanes, args.validation, args.allow_stale_validation)
     add("validation", True, val, info=val_info)
     add("build", True, gate_build(lanes))

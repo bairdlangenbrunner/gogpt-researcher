@@ -282,7 +282,7 @@ def test_server_round_trip(data, staging, tmp_path):
             return e.code, json.loads(e.read().decode())
     try:
         st, who = call("/api/whoami")
-        assert st == 200 and who == {"reviewer": "BL", "caps": {"decide": True}, "store": False}
+        assert st == 200 and who == {"reviewer": "BL", "caps": {"decide": True, "flag": True}, "store": False}
         key = f"{staging}::L1:G1:status"
         st, body = call("/api/decide", [{"key": key, "decision": "hold"}])
         assert st == 200 and body["saved"][0]["decision"] == "hold" and body["saved"][0]["reviewer"] == "BL"
@@ -530,7 +530,7 @@ def test_static_store_round_trip(data, staging, tmp_path):
     r = subprocess.run([NODE, str(driver), str(cfg), str(ROOT.parent / "gem-review-app" / "review_core" / "web" / "static_store.js")],
                        capture_output=True, text=True, check=True)
     out = json.loads(r.stdout)
-    assert out["who"] == "AL" and out["caps"] == {"decide": True} and out["before"] is None
+    assert out["who"] == "AL" and out["caps"] == {"decide": True, "flag": True} and out["before"] is None
     assert out["itemAsLine"].endswith("is an item, not a line")
     assert "not one of accept, hold, reject, suggest" in out["badDecision"]
     assert out["after"] == {"line": ["accept", True, "AL"], "status": [None, False], "item": ["confirmed", True],

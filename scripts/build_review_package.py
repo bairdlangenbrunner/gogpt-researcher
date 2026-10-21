@@ -70,6 +70,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from schema_constants import (ADDITIVE_TEXT_COLUMNS, INLINE_SOURCE_COLUMNS,
                               READ_ONLY_COLUMNS)
 from colmap import load_colmap
+import geo
 from paths import gem_export_csv
 from review_app.checklist import (OTHER, OPTIONAL_ROWS, WATCH_CALLS, group_label,
                                   groups_for, row_label, summarize, tag)
@@ -670,9 +671,9 @@ def additive_value(new, current):
     """The cell to paste for Status Detail or Notes (schema_constants
     ADDITIVE_TEXT_COLUMNS). Both boxes are running logs in the GEM web form,
     newest entry first (Baird 2026-10-07): the new text goes on its own line
-    above the existing text, and the existing text stays word for word. A new
-    entry that ends in a list of links (inline_value) gets a blank line under
-    it, so the links do not run into the older text. When the box already
+    above the existing text, and the existing text stays word for word. A
+    blank line always separates the new entry from the older text, so the two
+    read as separate entries (Baird 2026-10-20). When the box already
     says what the new text says, the box comes back unchanged so the caller
     can treat it as a match."""
     new = str(new or "").strip()
@@ -681,7 +682,7 @@ def additive_value(new, current):
         return new
     if not new or _ws(new).lower() in _ws(current).lower():
         return current
-    return f"{new}\n\n{current}" if "\n" in new else f"{new}\n{current}"
+    return f"{new}\n\n{current}"
 
 
 def additive_errors(rec, r, ident):
@@ -701,7 +702,7 @@ def additive_errors(rec, r, ident):
         new = _ws(fields[col])
         olds = {"": _ws(r.get("current", {}).get(col, ""))}
         for uid, v in (r.get("sibling_current") or {}).items():
-            olds[uid] = _ws(v)
+            olds[uid] = _ws(v.get(col, "") if isinstance(v, dict) else v)
         for uid, old in olds.items():
             if old and not new.endswith(old):
                 out.append(f"{ident}: {col}{' of ' + uid if uid else ''} drops or "
@@ -710,8 +711,45 @@ def additive_errors(rec, r, ident):
     return out
 
 
+LOCATION_FIELDS = ("Latitude", "Longitude", "Location accuracy")
+
+
+def location_errors(r, ident):
+    """A location edit written by the location step (it carries a
+    location_method) stages latitude, longitude and the accuracy together.
+    Older per-column coordinate records are checked per plant in validate()."""
+    if not r.get("location_method") or r.get("verdict") == "match" or r.get("reverified"):
+        return []
+    fields = r.get("fields", {})
+    have = [c for c in LOCATION_FIELDS if c in fields]
+    if not have or len(have) == len(LOCATION_FIELDS):
+        return []
+    missing = [c for c in LOCATION_FIELDS if c not in fields]
+    return [f"{ident}: a location edit needs Latitude, Longitude and Location accuracy "
+            f"together; this record has {', '.join(have)} but not {', '.join(missing)}"]
+
+
+def plant_location_errors(lanes):
+    """Across a plant's fill and change records, the three coordinate columns
+    are staged all together or not at all."""
+    have = {}
+    for rec in lanes.get("updates", []):
+        if rec.get("verdict") not in ("fill", "change") or rec.get("reverified"):
+            continue
+        cols = [c for c in LOCATION_FIELDS if c in (rec.get("fields") or {})]
+        if cols:
+            have.setdefault(rec.get("gem_plant_id") or rec.get("gem_unit_id"), set()).update(cols)
+    out = []
+    for pid, cols in have.items():
+        if len(cols) < len(LOCATION_FIELDS):
+            missing = [c for c in LOCATION_FIELDS if c not in cols]
+            out.append(f"{pid}: {', '.join(sorted(cols))} staged without "
+                       f"{', '.join(missing)}; the three go together")
+    return out
+
+
 def validate(lanes):
-    errors = []
+    errors = plant_location_errors(lanes)
     for lane in ("updates", "newplants", "newunits"):
         for i, rec in enumerate(lanes.get(lane, [])):
             ident = rec.get("gem_unit_id") or rec.get("plant_name") or f"{lane}[{i}]"
@@ -721,6 +759,7 @@ def validate(lanes):
                     if col in READ_ONLY_COLUMNS:
                         errors.append(f"{ident}: staged edit to READ-ONLY column {col!r}")
                 errors += additive_errors(rec, r, ident)
+                errors += location_errors(r, ident)
                 urls = [u for us in r.get("refs", {}).values() for u in us]
                 for u in urls:
                     if any(b in u.lower() for b in BLOCKLIST):
@@ -741,12 +780,23 @@ def validate(lanes):
     return errors
 
 
-def checklist_rows(lanes):
-    rows = []
+def _point_link(values, lat_col="Latitude", lon_col="Longitude"):
+    """Satellite link for a {col: value} dict holding both coordinates, or None."""
+    lat, lon = (values or {}).get(lat_col), (values or {}).get(lon_col)
+    return geo.satellite_link(lat, lon) if geo.valid_point(lat, lon) else None
+
+
+def checklist_rows_and_links(lanes):
+    """(rows, links): the edit_checklist rows, and {(row_index, col_index): url} for the
+    current (6) and proposed (7) cells of Latitude and Longitude rows, built from the
+    record's own coordinates (satellite view of the point)."""
+    items = []
     for rec in lanes.get("updates", []):
         base = [rec.get("country", ""), rec.get("plant_name", ""),
                 rec.get("unit_name", ""), rec.get("gem_plant_id", ""),
                 rec.get("gem_unit_id", "")]
+        cur_link = _point_link(rec.get("current"))
+        new_link = _point_link(rec.get("fields"))
         for col, proposed in rec.get("fields", {}).items():
             refs = rec.get("refs", {}).get(ref_col_for(col), [])
             tier = ("reverified" if str(proposed) ==
@@ -755,11 +805,20 @@ def checklist_rows(lanes):
             if rec.get("delete"):
                 proposed = "(DELETE — value unsupported)"
                 tier = "high"
-            rows.append(base + [col, rec.get("current", {}).get(col, ""),
-                                proposed, tier, "; ".join(refs),
-                                rec.get("action", ""), group_cell(rec), rows_cell(rec), ""])
-    rows.sort(key=lambda r: (r[0], r[1], r[2], r[5]))
-    return rows
+            row = base + [col, rec.get("current", {}).get(col, ""),
+                          proposed, tier, "; ".join(refs),
+                          rec.get("action", ""), group_cell(rec), rows_cell(rec), ""]
+            link = ({6: cur_link, 7: new_link}
+                    if col in ("Latitude", "Longitude") and not rec.get("delete") else {})
+            items.append((row, link))
+    items.sort(key=lambda t: (t[0][0], t[0][1], t[0][2], t[0][5]))
+    rows = [t[0] for t in items]
+    links = {(i, c): u for i, t in enumerate(items) for c, u in t[1].items() if u}
+    return rows, links
+
+
+def checklist_rows(lanes):
+    return checklist_rows_and_links(lanes)[0]
 
 
 CHECKLIST_HEADER = ["country", "plant", "unit", "gem_plant_id", "gem_unit_id",
@@ -907,15 +966,25 @@ def build_xlsx(lanes, out_path, export_csv=None, flags=None, all_lanes=None, irp
     wb = Workbook()
     bold = Font(bold=True)
 
-    def add_sheet(name, header, rows, tier_col=None):
+    link_font = Font(color="0563C1", underline="single")
+
+    def set_link(cell, url):
+        cell.hyperlink = url
+        cell.style = "Hyperlink"
+        cell.font = link_font
+
+    def add_sheet(name, header, rows, tier_col=None, links=None):
         if not rows:
             return
         ws = wb.create_sheet(name)
         ws.append(header)
         for c in ws[1]:
             c.font = bold
-        for row in rows:
+        for r_i, row in enumerate(rows):
             ws.append(row)
+            for (ri, ci), url in (links or {}).items():
+                if ri == r_i:
+                    set_link(ws.cell(row=ws.max_row, column=ci + 1), url)
             if tier_col is not None:
                 tier = row[tier_col]
                 fill = TIER_FILLS.get(str(tier).lower())
@@ -954,7 +1023,8 @@ def build_xlsx(lanes, out_path, export_csv=None, flags=None, all_lanes=None, irp
               ["checklist_group", "row", "checkbox", "edits", "items", "about"],
               checklist_summary_rows(lanes, us))
 
-    add_sheet("edit_checklist", CHECKLIST_HEADER, checklist_rows(lanes), tier_col=7)
+    cl_rows, cl_links = checklist_rows_and_links(lanes)
+    add_sheet("edit_checklist", CHECKLIST_HEADER, cl_rows, tier_col=7, links=cl_links)
 
     # edit_backend_format: updates lane in the export CSV's own table layout,
     # per-cell tier coloring (workbook_conventions.md).
@@ -965,8 +1035,16 @@ def build_xlsx(lanes, out_path, export_csv=None, flags=None, all_lanes=None, irp
             ws.append(bf_header)
             for c in ws[1]:
                 c.font = bold
+            ll_cols = [i for i, h in enumerate(bf_header) if h in ("Latitude", "Longitude")]
+            lat_i = bf_header.index("Latitude") if "Latitude" in bf_header else None
+            lon_i = bf_header.index("Longitude") if "Longitude" in bf_header else None
             for r_i, row in enumerate(bf_rows):
                 ws.append(row)
+                if lat_i is not None and lon_i is not None \
+                        and geo.valid_point(row[lat_i], row[lon_i]):
+                    url = geo.satellite_link(row[lat_i], row[lon_i])
+                    for c_i in ll_cols:
+                        set_link(ws.cell(row=r_i + 2, column=c_i + 1), url)
                 for c_i in range(len(row)):
                     tier = bf_fills.get((r_i, c_i))
                     if tier:
@@ -1067,6 +1145,62 @@ def record_word(lane, rec):
         return ("watch item, new to the tracker" if monitor_kind(rec) == "new_to_tracker"
                 else "watch item at an existing plant")
     return LANE_WORDS.get(lane, lane)
+
+
+METHOD_WORDS = {
+    "address": "placed from an address",
+    "site_reference": "placed from a site reference in a document",
+    "dataset": "taken from a dataset point",
+    "map": "georeferenced from a map in a document",
+    "imagery": "placed from the satellite picture of the plant",
+}
+
+
+def _moved_words(m):
+    m = float(m)
+    return f"{m / 1000:.1f} km" if m >= 1000 else f"{round(m)} m"
+
+
+def location_lines(rec):
+    """Evidence lines for a record that moves or fills a plant's coordinates."""
+    fields = rec.get("fields", {})
+    if "Latitude" not in fields or "Longitude" not in fields:
+        return []
+    cur = rec.get("current", {}) or {}
+
+    def show(vals):
+        lat, lon = vals.get("Latitude"), vals.get("Longitude")
+        acc = vals.get("Location accuracy")
+        text = f"{lat}, {lon}" + (f" ({acc})" if acc else "")
+        ln = geo.links_for(lat, lon)
+        if ln:
+            text += f" [satellite]({ln['satellite']}) [pin]({ln['pin']})"
+        return text
+
+    out = []
+    if geo.parse_coord(cur.get("Latitude")) is not None and geo.parse_coord(cur.get("Longitude")) is not None:
+        out.append(f"- location now: {show(cur)}")
+    else:
+        out.append("- location now: none in GEM")
+    out.append(f"- location proposed: {show(fields)}")
+    if rec.get("location_moved_m") is not None:
+        out.append(f"- moved: {_moved_words(rec['location_moved_m'])}")
+    method = rec.get("location_method")
+    if method:
+        out.append(f"- method: {METHOD_WORDS.get(method, method)}")
+    if method == "map":
+        if rec.get("location_image"):
+            img = rec["location_image"]
+            out.append(f"- map render: [{img}]({img})")
+        for cp in rec.get("location_control_points") or []:
+            px = cp.get("px") or ["?", "?"]
+            out.append(f"  - control point: {cp.get('feature', '')} at pixel {px[0]},{px[1]} "
+                       f"is {cp.get('lat')}, {cp.get('lon')}")
+        if rec.get("location_fit_m") is not None:
+            out.append(f"- fit error: {rec['location_fit_m']} m")
+    if rec.get("location_needs_review"):
+        out.append("- needs a second look: yes")
+    return out
 
 
 def build_evidence(lanes, out_path, stamp, scope, mode, left_out=None, flags=None,
@@ -1170,6 +1304,7 @@ def build_evidence(lanes, out_path, stamp, scope, mode, left_out=None, flags=Non
         for u in rec.get("units", []) or []:
             for col, val in u.get("fields", {}).items():
                 lines.append(f"- unit {u.get('unit_name', '?')} `{col}`: `{val!s}`")
+        lines.extend(location_lines(rec))
         for ref_col, urls in rec.get("refs", {}).items():
             for u in (urls if isinstance(urls, list) else [urls]):
                 v = next((v for v in rec.get("verifications", [])

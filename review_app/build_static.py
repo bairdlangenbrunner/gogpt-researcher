@@ -1,8 +1,10 @@
 """
 Build the review app as ONE html file to send to a colleague who does not run the repo.
 
-    python review_app/build_static.py --scope us-md --scope us-ny --reviewer "Amalia Llano"
-        [--export-csv PATH] [--out PATH]
+    python review_app/build_static.py --scope us-md --scope us-ny [--discovery] --reviewer "Amalia Llano"
+        [--no-pull] [--export-csv PATH] [--out PATH]
+
+It first pulls the decision store into the local logs (--no-pull skips that; a failed pull warns and the build goes on).
 
 The page is built by the shared builder in ../gem-review-app (review_core/build_static.py): the shared page and the GOGPT extension, with the dataset review_data.py builds from the staging dirs (the calls already in each review_log.jsonl laid over it) gzipped into one block, and the browser-side store (review_core/web/static_store.js). Published as a claude.ai artifact (the normal way) the page saves every call to the artifact's database; opened from disk the calls stay in the browser and "download decisions" hands them over as a file. Either way review_app/import_log.py brings them into the decision ledger (the store spreadsheet first, then the staging dirs).
 
@@ -33,6 +35,20 @@ def ledger_url(cfg=None):
     return f"https://docs.google.com/spreadsheets/d/{sid}/edit" if sid else ""
 
 
+def pull_first(cfg, skip=False, puller=None):
+    """Bring the decision store's calls into the local logs before a build, so the page is not built behind the store.
+    A failed pull (no network, expired login) warns and the build goes on from the logs as they are. -> True when it pulled."""
+    if skip:
+        return False
+    try:
+        res = (puller or pull.pull)(cfg)
+    except pull.GwsError as e:
+        print(f"warning: pull failed, building from the local logs as they are: {e}", file=sys.stderr)
+        return False
+    print(pull.report(res), file=sys.stderr)
+    return True
+
+
 def render(data, reviewer, title=None, cfg=None):
     """The page as one html string, from the shared builder with the GOGPT config."""
     return core.render(data, reviewer, store.CONFIG, title=title, ledger_url=ledger_url(cfg), root=store.ROOT)
@@ -47,16 +63,23 @@ def build(dirs, reviewer, export_csv=None, title=None, cfg=None):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--scope", action="append", default=[], help="batch scope, e.g. us-md (repeatable)")
+    ap.add_argument("--discovery", action="store_true", help="with --scope, also include batches/<scope>/staging-discovery")
+    ap.add_argument("--no-pull", action="store_true", help="skip the pull from the decision store; build from the local logs as they are")
     ap.add_argument("--dirs", nargs="*", default=[], help="explicit staging dirs")
     ap.add_argument("--reviewer", required=True, help="who will review; recorded by initials")
     ap.add_argument("--export-csv", default=None, help="scoped export csv for current Data Source cells")
     ap.add_argument("--out", default=None, help="output html (default work/gogpt_review_<scopes>_<stamp>_ET.html)")
     ap.add_argument("--config", default=None, help="store config (default review_app/google.json): the log link on the page")
     args = ap.parse_args(argv)
-    dirs = [ROOT / "batches" / s / "staging" for s in args.scope] + [Path(d) for d in args.dirs]
+    dirs = [ROOT / "batches" / s / "staging" for s in args.scope]
+    if args.discovery:
+        dirs += [ROOT / "batches" / s / "staging-discovery" for s in args.scope]
+    dirs += [Path(d) for d in args.dirs]
     if not dirs:
         raise SystemExit("name at least one --scope or --dirs")
-    html, data = build(dirs, args.reviewer, args.export_csv, cfg=pull.config(args.config))
+    cfg = pull.config(args.config)
+    pull_first(cfg, args.no_pull)
+    html, data = build(dirs, args.reviewer, args.export_csv, cfg=cfg)
     if args.out:
         out = Path(args.out)
     else:

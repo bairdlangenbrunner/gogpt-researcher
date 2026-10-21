@@ -33,6 +33,10 @@ def main():
     ap.add_argument("--plants", default=None)
     ap.add_argument("--group-max", type=int, default=1)
     ap.add_argument("--extra-brief", default=None)
+    ap.add_argument("--location-review", action="store_true",
+                    help="a second-look pass on the location only: select the plants whose "
+                         "shard says location.needs_review, brief the second agent with the "
+                         "first one's review note, and mark the args review: location")
     a = ap.parse_args()
 
     batch = Path(a.batch).resolve()
@@ -48,6 +52,23 @@ def main():
         if unknown:
             sys.exit(f"ERROR: plants not in index: {unknown}")
         plants = [p for p in plants if p["plant_id"] in set(want)]
+
+    review_notes = {}
+    if a.location_review:
+        for p in plants:
+            sp = batch / "shards" / f"{p['plant_id']}.json"
+            if not sp.exists():
+                continue
+            shard = json.loads(sp.read_text(encoding="utf-8"))
+            loc = shard.get("location") or {}
+            if loc.get("needs_review"):
+                note = (loc.get("review_note") or "").strip()
+                units = shard.get("units") or []
+                first = (units[0].get("notes") or "").strip() if units else ""
+                review_notes[p["plant_id"]] = (p["plant_name"], note, first)
+        if not review_notes:
+            sys.exit("no shard asks for a second look at its location; nothing to do")
+        plants = [p for p in plants if p["plant_id"] in review_notes]
 
     out_plants = []
     for p in plants:
@@ -78,6 +99,18 @@ def main():
             sys.exit(f"ERROR: extra brief not found: {ep}")
         extra = ep.read_text(encoding="utf-8")
 
+    if a.location_review:
+        lines = ["This pass is a second look at the location only. The first agent asked for it. "
+                 "Research nothing but the three location fields, and write the shard to a new "
+                 "path so the first shard is kept.", ""]
+        for pid, (name, note, first) in review_notes.items():
+            lines.append(f"- {name} ({pid}): {note or 'no reason given'}")
+            if first:
+                lines.append(f"  The first agent wrote: {first}")
+        extra = (extra + "\n\n" if extra else "") + "\n".join(lines)
+        for p in out_plants:
+            p["shard_path"] = str(batch / "shards" / f"{p['plant_id']}.review.json")
+
     where = idx.get("where") or {          # an index written before country mode
         "kind": "state", "name": idx.get("state", ""), "country": "United States",
         "slug": (idx.get("state") or "").lower().replace(" ", "-"),
@@ -86,7 +119,8 @@ def main():
             "state": idx.get("state", ""), "postal": idx.get("postal", ""),
             "mode": idx["mode"], "model": a.model,
             "csv": str(Path(idx["csv"]).resolve()), "plants": out_plants,
-            "groups": groups, "extra_brief": extra}
+            "groups": groups, "extra_brief": extra,
+            "review": "location" if a.location_review else ""}
     text = json.dumps(args, indent=2, ensure_ascii=False)
     (batch / "staging").mkdir(exist_ok=True)
     (batch / "staging" / "sweep_args.json").write_text(text + "\n", encoding="utf-8")

@@ -27,7 +27,7 @@ def rec(col, value, current, **extra):
 
 
 def test_additive_value_prepends_and_keeps_old_text():
-    assert additive_value(NEW, OLD) == f"{NEW}\n{OLD}"
+    assert additive_value(NEW, OLD) == f"{NEW}\n\n{OLD}"
     assert additive_value(NEW, "") == NEW
     assert additive_value("", OLD) == OLD
 

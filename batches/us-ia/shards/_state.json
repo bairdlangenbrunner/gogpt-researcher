@@ -114,9 +114,10 @@
       "plant_name": "Streeter Station",
       "concern_type": "conversion-link",
       "recommendation": "Ask the reviewer to check whether Streeter Station was converted from coal to gas. If it was, add gas timepoint 2 units (16.5 MW and 35 MW) with Cedar Falls Utilities as owner.",
-      "note": "GEM has Streeter Station only in the coal tracker, as unit 7 (35 MW, 1973), retired. The EIA-860M table for August 2026 lists Streeter Station, plant 1131, owned by Cedar Falls Utilities in Black Hawk County. Both of its units are listed as natural gas steam turbines and as operating. Unit 6 is 16.5 MW from 1963. Unit 7 is 35 MW from 1973. That is 51.5 MW of gas capacity in total, which is over the 50 MW threshold. The EIA table does not say when the plants switched from coal to gas, and I did not search for the conversion date. The owner name already exists in GEM as Cedar Falls Utilities.",
+      "note": "GEM has Streeter Station only in the coal tracker, as unit 7 (35 MW, 1973), retired. The EIA-860M table for August 2026 lists Streeter Station, plant 1131, owned by Cedar Falls Utilities in Black Hawk County. Both of its units are listed as natural gas steam turbines and as operating. Unit 6 is 16.5 MW from 1963. Unit 7 is 35 MW from 1973. That is 51.5 MW of gas capacity in total, which is over the 50 MW threshold. The EIA table does not say when the units switched from coal to gas. A September 2026 air permit application from Cedar Falls Utilities to the Iowa Department of Natural Resources says unit 6 now burns coal or natural gas, and asks to drop coal so that unit 6 becomes a gas-only boiler. It does not say whether unit 7 still runs. The owner name already exists in GEM as Cedar Falls Utilities.",
       "refs": [
-        "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+        "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Application&SUBMISSION_RID=69773"
       ],
       "verifications": [
         {
@@ -529,8 +530,16 @@
       "used_for": [
         "air permit notices"
       ],
-      "outcome": "blocked",
-      "note": "Page loads but is a search form that needs a script to run. I did not run a search."
+      "outcome": "verified",
+      "note": "Read by the Iowa permit harvester on October 19, 2026. It lists three open notices: John Deere, Koch Fertilizer and Southwest Iowa Renewable Energy. None is a gas power plant."
+    },
+    {
+      "url": "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Application&SUBMISSION_RID=69773",
+      "used_for": [
+        "qa"
+      ],
+      "outcome": "verified",
+      "note": "Cedar Falls Utilities air permit application for Streeter Station, September 2026."
     }
   ]
 }

@@ -10,10 +10,10 @@
       "quarter": "q4-2026",
       "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
     },
-    "generated": "2026-10-16T16:31:47-04:00",
+    "generated": "2026-10-19T18:40:50-04:00",
     "mode": "update",
     "counts": {
-      "records": 44
+      "records": 48
     }
   },
   "records": [
@@ -36,23 +36,6 @@
     },
     {
       "gem_unit_id": "G100001071243",
-      "concern_type": "Capacity (MW)",
-      "recommendation": "A KCRG story from August 11, 2026 calls the plant 650 MW. That figure is the existing Marshalltown station. Alliant's own releases say 720 MW. Keep 720.",
-      "refs": {},
-      "gem_plant_id": "L100001062090",
-      "plant_name": "Bobcat Energy Center",
-      "country": "United States",
-      "unit_name": "1",
-      "fields": {},
-      "researcher_notes": "The KCRG figure looks like an error.",
-      "record_id": "L100001062090:G100001071243:qa-capacity-mw-2",
-      "checks": [
-        10,
-        37
-      ]
-    },
-    {
-      "gem_unit_id": "G100001071243",
       "concern_type": "other",
       "recommendation": "The Interstate Power and Light resource evaluation study comments from Synapse (April 2025) do not name Bobcat, so there is no plan value to report. The IRP box can stay unticked on this evidence.",
       "refs": {},
@@ -62,7 +45,7 @@
       "unit_name": "1",
       "fields": {},
       "researcher_notes": "I searched the document text for Bobcat and Marshalltown and found no match.",
-      "record_id": "L100001062090:G100001071243:qa-other-3"
+      "record_id": "L100001062090:G100001071243:qa-other-2"
     },
     {
       "gem_unit_id": "G100001017907",
@@ -70,14 +53,14 @@
       "checks": [
         7
       ],
-      "recommendation": "Not found. I looked for a document that says whether Burlington Unit 1 has carbon capture. The Environmental Protection Agency letter from March 2022, the Alliant coal ash pages, the EIA-860M table for August 2026 and the Alliant Iowa clean energy page say nothing about carbon capture. The unit burns natural gas in a steam boiler. GEM's current value of no looks right, but I have no source for it.",
+      "recommendation": "Not found. I looked for a document that says whether Burlington Unit 1 has carbon capture. The Environmental Protection Agency letter from March 2022, the Alliant coal ash pages, the EIA-860M table for August 2026 and the Alliant Iowa clean energy page say nothing about carbon capture. The unit burns natural gas in a steam boiler. GEM says the unit has no carbon capture. That looks right, but I found no document that says so.",
       "refs": {},
       "gem_plant_id": "L100000103905",
       "plant_name": "Burlington Generating Station",
       "country": "United States",
       "unit_name": "Unit 1, timepoint 2",
       "fields": {},
-      "researcher_notes": "A no needs a document that states it. None found.",
+      "researcher_notes": "The database flags this unit because its carbon capture answer has no source. I found no document that says whether the unit has carbon capture, so there is no source to add.",
       "record_id": "L100000103905:G100001017907:qa-validation-1"
     },
     {
@@ -116,7 +99,7 @@
       "country": "United States",
       "unit_name": "Unit 1, timepoint 2",
       "fields": {},
-      "researcher_notes": "Do not drop the old link. The newer address works.",
+      "researcher_notes": "Keep the old Gazette link in the sources and add the new address beside it. Both point to the same article.",
       "record_id": "L100000103905:G100001017907:qa-source-3"
     },
     {
@@ -151,7 +134,7 @@
       "country": "United States",
       "unit_name": "Unit 1, timepoint 2",
       "fields": {},
-      "researcher_notes": "Background only.",
+      "researcher_notes": "This is background only. It changes no field.",
       "record_id": "L100000103905:G100001017907:qa-other-5",
       "irp": true
     },
@@ -187,27 +170,6 @@
     },
     {
       "gem_unit_id": "G100001071244",
-      "concern_type": "Status",
-      "recommendation": "Keep announced. The Scott County Board of Supervisors voted against the zoning change on February 12, 2026. The Central Iowa Power Cooperative did not appeal or move the site. It went to the Iowa Utilities Commission for a certificate for the same plan and held the commission's public information meeting on April 6, 2026. No reporter has called the project cancelled or shelved.",
-      "refs": {
-        "links": [
-          "https://www.wvik.org/wvik-top-stories/2026-02-12/controversial-new-power-plant-rejected-for-rural-scott-county",
-          "https://www.ourquadcities.com/news/local-news/cipco-begins-alternative-route-to-bring-natural-gas-power-plant-to-scott-county/amp/"
-        ]
-      },
-      "gem_plant_id": "L100001062091",
-      "plant_name": "Hickory Grove Generating Station",
-      "country": "United States",
-      "unit_name": "1",
-      "fields": {},
-      "researcher_notes": "A rejection by the county is not a cancellation.",
-      "record_id": "L100001062091:G100001071244:qa-status-1",
-      "checks": [
-        10
-      ]
-    },
-    {
-      "gem_unit_id": "G100001071244",
       "concern_type": "source",
       "recommendation": "A Scott County meeting minutes file from July 14, 2026 is said in search results to name docket GCU-2026-0001 for this plant. The link returns not found, so I could not confirm the docket number. Please check the commission's filing system for the docket.",
       "refs": {},
@@ -216,8 +178,25 @@
       "country": "United States",
       "unit_name": "1",
       "fields": {},
-      "researcher_notes": "Not verified.",
-      "record_id": "L100001062091:G100001071244:qa-source-2"
+      "researcher_notes": "I could not check the docket number, because the minutes file did not load.",
+      "record_id": "L100001062091:G100001071244:qa-source-1"
+    },
+    {
+      "gem_unit_id": "G100001071244",
+      "concern_type": "Fuel",
+      "recommendation": "Consider adding fuel oil as a second fuel. The air permit application says the turbine will also burn fuel oil, for up to 500 hours a year.",
+      "refs": {
+        "links": [
+          "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Application&SUBMISSION_RID=66788"
+        ]
+      },
+      "gem_plant_id": "L100001062091",
+      "plant_name": "Hickory Grove Generating Station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Natural gas stays the main fuel.",
+      "record_id": "L100001062091:G100001071244:qa-fuel-2"
     },
     {
       "gem_unit_id": "G100001092270",
@@ -342,11 +321,11 @@
     {
       "gem_unit_id": "G100001054496",
       "concern_type": "Capacity (MW)",
-      "recommendation": "The MidAmerican fact sheet says the project has three turbines, 700 MW and a unit 3 in service in spring 2029. The company's news release, a business news article and local press say two turbines and 465 MW. GEM has two units of 232.5 MW. Keep two units unless a commission filing shows a third.",
+      "recommendation": "Add unit 3. The state issued air permit 26-A-246 on June 11, 2026 for a third turbine, under a project called Add Unit 3. MidAmerican's fact sheet says the plant has three turbines and up to 700 MW, with unit 3 in service in spring 2029.",
       "refs": {
         "links": [
           "https://www.midamericanenergy.com/media/pdf/orient_energy_center_fact_sheet.pdf",
-          "https://www.midamericanenergy.com/newsroom/2025-generation-projects"
+          "https://idnraqrr.iowadnr.gov/ConPermitSearch/ConstructionPermit?id=11491"
         ]
       },
       "gem_plant_id": "L100001047779",
@@ -354,7 +333,7 @@
       "country": "United States",
       "unit_name": "1",
       "fields": {},
-      "researcher_notes": "The fact sheet appears to carry text from an earlier larger design. Local press also cited up to 520 MW.",
+      "researcher_notes": "The two-unit figure of 465 MW in the 2025 news release came before the third turbine was permitted.",
       "record_id": "L100001047779:G100001054496:qa-capacity-mw-1",
       "checks": [
         10,
@@ -379,19 +358,53 @@
       "record_id": "L100001047779:G100001054496:qa-existence-2"
     },
     {
+      "gem_unit_id": "G100001054496",
+      "concern_type": "identity",
+      "recommendation": "Check whether the new unit 3 is the same plant as MidAmerican 2024 IRP power station 1 (L100001064541), a 232.5 MW placeholder for 2031. If so, retire the placeholder instead of keeping both.",
+      "refs": {
+        "links": [
+          "https://www.midamericanenergy.com/media/pdf/orient_energy_center_fact_sheet.pdf"
+        ]
+      },
+      "gem_plant_id": "L100001047779",
+      "plant_name": "Orient Energy Center power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The plan placeholder has the same size as each Orient turbine.",
+      "record_id": "L100001047779:G100001054496:qa-identity-3"
+    },
+    {
+      "gem_unit_id": "G100001054496",
+      "concern_type": "Fuel",
+      "recommendation": "Consider adding fuel oil as a second fuel. The state air permits allow start-ups and shutdowns on fuel oil.",
+      "refs": {
+        "links": [
+          "https://idnraqrr.iowadnr.gov/ConPermitSearch/ConstructionPermit?id=11491"
+        ]
+      },
+      "gem_plant_id": "L100001047779",
+      "plant_name": "Orient Energy Center power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The permits name no turbine maker or model, so Equipment stays blank.",
+      "record_id": "L100001047779:G100001054496:qa-fuel-4"
+    },
+    {
       "gem_unit_id": "G100001054408",
       "concern_type": "validation",
       "checks": [
         7
       ],
-      "recommendation": "Not found. I looked at the Sargent and Lundy project page, the City of Ames electric department page and the EIA-860M table for August 2026. None of them mention carbon capture for Unit 7. Nothing suggests the unit has carbon capture, so the value no stays, but no document states it.",
+      "recommendation": "Not found. I looked at the Sargent and Lundy project page, the City of Ames electric department page and the EIA-860M table for August 2026. None of them mention carbon capture for Unit 7. Nothing suggests the unit has carbon capture, so GEM's answer of no stays. No document says so, though.",
       "refs": {},
       "gem_plant_id": "L100000103902",
       "plant_name": "Ames Municipal Power Plant",
       "country": "United States",
       "unit_name": "Unit 7, timepoint 2",
       "fields": {},
-      "researcher_notes": "No document found that states whether Unit 7 has carbon capture.",
+      "researcher_notes": "The database flags this unit because its carbon capture answer has no source. I found no document that says whether Unit 7 has carbon capture, so there is no source to add.",
       "record_id": "L100000103902:G100001054408:qa-validation-1"
     },
     {
@@ -411,15 +424,18 @@
       "country": "United States",
       "unit_name": "Unit 7, timepoint 2",
       "fields": {},
-      "researcher_notes": "A fuel question only. Not changed here.",
+      "researcher_notes": "This is a question about the fuel only. I did not change the fuel here.",
       "record_id": "L100000103902:G100001054408:qa-fuel-2"
     },
     {
       "gem_unit_id": "G100001054408",
       "concern_type": "Planned retire",
-      "recommendation": "The City of Ames plans to retire Units 7 and 8 when the new Ames Energy Center opens. A city podcast episode from November 2025 describes this. Local news says the new plant, built from reciprocating engines, will open in 2029. I found no firm retirement year from the city, so I did not report one.",
+      "recommendation": "The city does not plan a firm retirement year for either unit. The Iowa State Daily reports that Unit 7 moves to standby once the three new engines run, about 2030. Ames Voice reports the electric director hopes Unit 8 can run until 2040. Neither is a firm plan, so I did not fill Planned retire. The city will stop burning garbage-derived fuel in July 2027, according to its project page.",
       "refs": {
         "links": [
+          "https://iowastatedaily.com/340719/city-of-ames/ames-is-building-a-new-power-plant/",
+          "https://amesvoice.com/2026/06/02/a-deep-dive-into-the-future-of-the-ames-municipal-power-plant/",
+          "https://www.cityofames.org/Resident-Services/Whats-Happening-in-Ames/Major-Projects/Ames-Municipal-Energy-Center",
           "https://amesinfocus.podbean.com/e/ames-in-focus-powering-forward-with-curtis-spence"
         ]
       },
@@ -428,7 +444,7 @@
       "country": "United States",
       "unit_name": "Unit 7, timepoint 2",
       "fields": {},
-      "researcher_notes": "Retirement is planned but no firm year was found. Both units are still operating.",
+      "researcher_notes": "Retirement is planned in stages but no firm year was found. Both units are still operating.",
       "record_id": "L100000103902:G100001054408:qa-planned-retire-3",
       "checks": [
         43,
@@ -468,7 +484,7 @@
       "country": "United States",
       "unit_name": "Unit 1, timepoint 2",
       "fields": {},
-      "researcher_notes": "No document states the carbon capture value.",
+      "researcher_notes": "The database flags this unit because its carbon capture answer has no source. I found no document that says whether Unit 1 has carbon capture, so there is no source to add.",
       "record_id": "L100000103908:G100001054413:qa-validation-2"
     },
     {
@@ -519,7 +535,7 @@
       "country": "United States",
       "unit_name": "1",
       "fields": {},
-      "researcher_notes": "City not filled.",
+      "researcher_notes": "The City field stays blank, because no document I found names the city.",
       "record_id": "L100001047759:G100001054470:qa-other-1"
     },
     {
@@ -555,6 +571,57 @@
       "fields": {},
       "researcher_notes": "Both 1990 turbines have the same size and start year, so the pairing of unit to generator number cannot be proven from EIA alone.",
       "record_id": "L100000402082:G100001054415:qa-identity-2"
+    },
+    {
+      "gem_unit_id": "G100001054416",
+      "concern_type": "other",
+      "recommendation": "No change. Polk County has a draft permit out for public comment that amends the limits for this 45 MW turbine. The application came in on October 2, 2026.",
+      "refs": {
+        "links": [
+          "https://airquality.polkcountyiowa.gov/Pages/ConstructionDetails.aspx?Permitid=4849"
+        ]
+      },
+      "gem_plant_id": "L100000402082",
+      "plant_name": "Pleasant Hill power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The county figure of 45 MW is a permit rating. GEM's 41.4 MW is the EIA nameplate figure and stays.",
+      "record_id": "L100000402082:G100001054416:qa-other-3"
+    },
+    {
+      "gem_unit_id": "G100001054415",
+      "concern_type": "other",
+      "recommendation": "No change. Polk County has a draft permit out for public comment that amends the limits for this 45 MW turbine. The application came in on October 2, 2026.",
+      "refs": {
+        "links": [
+          "https://airquality.polkcountyiowa.gov/Pages/ConstructionDetails.aspx?Permitid=4850"
+        ]
+      },
+      "gem_plant_id": "L100000402082",
+      "plant_name": "Pleasant Hill power station",
+      "country": "United States",
+      "unit_name": "2",
+      "fields": {},
+      "researcher_notes": "The county figure of 45 MW is a permit rating. GEM's 41.4 MW is the EIA nameplate figure and stays.",
+      "record_id": "L100000402082:G100001054415:qa-other-4"
+    },
+    {
+      "gem_unit_id": "G100000403159",
+      "concern_type": "other",
+      "recommendation": "No change. Polk County has a draft permit out for public comment that amends the limits for this 90.1 MW turbine. The application came in on October 2, 2026.",
+      "refs": {
+        "links": [
+          "https://airquality.polkcountyiowa.gov/Pages/ConstructionDetails.aspx?Permitid=4851"
+        ]
+      },
+      "gem_plant_id": "L100000402082",
+      "plant_name": "Pleasant Hill power station",
+      "country": "United States",
+      "unit_name": "3",
+      "fields": {},
+      "researcher_notes": "The county figure of 90.1 MW is a permit rating. GEM's 97.0 MW is the EIA nameplate figure and stays.",
+      "record_id": "L100000402082:G100000403159:qa-other-5"
     },
     {
       "gem_unit_id": "G100000403018",
@@ -787,7 +854,8 @@
       "recommendation": "Ask the reviewer to check whether Streeter Station was converted from coal to gas. If it was, add gas timepoint 2 units (16.5 MW and 35 MW) with Cedar Falls Utilities as owner.",
       "refs": {
         "links": [
-          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Application&SUBMISSION_RID=69773"
         ]
       },
       "verifications": [
@@ -802,7 +870,7 @@
       "irp": false,
       "country": "United States",
       "fields": {},
-      "researcher_notes": "GEM has Streeter Station only in the coal tracker, as unit 7 (35 MW, 1973), retired. The EIA-860M table for August 2026 lists Streeter Station, plant 1131, owned by Cedar Falls Utilities in Black Hawk County. Both of its units are listed as natural gas steam turbines and as operating. Unit 6 is 16.5 MW from 1963. Unit 7 is 35 MW from 1973. That is 51.5 MW of gas capacity in total, which is over the 50 MW threshold. The EIA table does not say when the plants switched from coal to gas, and I did not search for the conversion date. The owner name already exists in GEM as Cedar Falls Utilities.",
+      "researcher_notes": "GEM has Streeter Station only in the coal tracker, as unit 7 (35 MW, 1973), retired. The EIA-860M table for August 2026 lists Streeter Station, plant 1131, owned by Cedar Falls Utilities in Black Hawk County. Both of its units are listed as natural gas steam turbines and as operating. Unit 6 is 16.5 MW from 1963. Unit 7 is 35 MW from 1973. That is 51.5 MW of gas capacity in total, which is over the 50 MW threshold. The EIA table does not say when the units switched from coal to gas. A September 2026 air permit application from Cedar Falls Utilities to the Iowa Department of Natural Resources says unit 6 now burns coal or natural gas, and asks to drop coal so that unit 6 becomes a gas-only boiler. It does not say whether unit 7 still runs. The owner name already exists in GEM as Cedar Falls Utilities.",
       "record_id": "us-ia:plant:qa-conversion-link-4"
     },
     {

@@ -84,10 +84,12 @@ python validation_report.py --state Georgia                     # checklist row 
 python match_ids.py --state Georgia                             # row 38
 python irp_sheet.py --state Georgia --save-json ../work/irp_tab.json   # rows 34 and 37 (US IRPs tab)
 python captive_lng.py --state Georgia                           # rows 6 and 44 (captive LNG sheet) and 39 (data centers)
+python location_candidates.py --state Georgia                   # rows 25 and 42: approximate or blank coordinates (planned, docs/reference/location.md)
 python build_state_brief.py --state Georgia --mode update \
     --extra-tasks ../batches/us-ga/extra_tasks.json \
     --validation ../work/validation_us-ga.json --ids ../work/ids_us-ga.json \
     --irp ../work/irp_us-georgia.json --captive ../work/captive_us-georgia.json \
+    --location ../work/location_us-ga.json \
     --promote ../batches/us-ny/staging                          # watch items a reviewer promoted; --scope ladder is the default
 python build_sweep_args.py --batch ../batches/us-ga --model sonnet --group-max 5   # writes staging/sweep_args.json
 
@@ -98,6 +100,10 @@ python build_sweep_args.py --batch ../batches/us-ga --model sonnet --group-max 5
 #    shards/_state.json (qa, monitor, newplants, newunits, meta.irp_summary);
 #    data centers go to monitor only, checks [39]; captive LNG items carry
 #    captive_lng: true and checks [6, 44]
+#    Location: the sweep agent climbs the ladder in docs/reference/location.md
+#    (address or site sentence, geocode.py, site_image.py satellite look); a plant it
+#    cannot place writes location_needs_review: true and goes to a short top-tier pass:
+python build_sweep_args.py --batch ../batches/us-ga --location-review --model opus   # only the handed-back plants; georef.py for site maps
 
 # 4. assemble, gate, QC, build
 python assemble_state.py --batch ../batches/us-ga
@@ -230,6 +236,7 @@ Read-only. Hard failures exit non-zero; advisory lines are informational.
 | latest activity | hard | a `Latest Activity` edit is only for a unit in development, shelved or with an inferred status, and its date is at least a year old |
 | additive | hard | a `Status Detail` or `Notes` value is the new text placed above the text already in the box, which stays word for word, on the unit and on every sibling of a plant-wide edit; neither box is ever cleared (Baird 2026-10-07) |
 | validation | hard | update mode: every brief task marked **[Validation report]** (check 7) and every fix or person item in `work/validation_<tag>.json` has a record in some lane carrying check 7 on that unit, a sibling or the plant; a task that names no field is answered by a qa record with `concern_type` `validation`. The file must exist and be under a day old (`--allow-stale-validation` to warn instead) (Baird 2026-10-16) |
+| location | hard (2026-10-20) | an `exact` coordinate has at least three decimals and a note that says the point was seen in imagery or placed on a named parcel; a staged point in a US state sits inside the state's bounding box (offline; a country scope is checked on the review card); a move over 2 km from an existing point has a reason in the note; a `map` record carries control points with a fit under 150 m and its saved render exists; `Latitude`, `Longitude` and `Location accuracy` are staged together on every unit row of the plant (`docs/reference/location.md`) |
 | false high | advisory | a `high` status change with fewer than two independent hosts |
 | independence | advisory | `independent: true` with fewer than two verified refs |
 | entities | advisory | every new owner or operator name passes `entity_lookup.py` (skipped offline) |

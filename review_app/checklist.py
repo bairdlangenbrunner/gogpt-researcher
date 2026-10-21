@@ -32,6 +32,9 @@ from __future__ import annotations
 import datetime
 import re
 
+import review_app  # noqa: F401  (puts the sibling gem-review-app checkout on sys.path)
+from trackers.gogpt.config import WATCH_CALLS as _CONFIG_WATCH_CALLS  # noqa: E402
+
 OTHER = "other"
 
 GROUPS = [
@@ -252,7 +255,8 @@ CONCERN_KINDS = {
 # Watch-list items (monitor lane) take these calls on the review page instead
 # of accept / hold / reject / suggest. `remove` makes assemble_state.py drop
 # the candidate if a later sweep proposes it again.
-WATCH_CALLS = ("add_to_database", "hold", "possible_updates", "remove")
+# The calls are defined once, in the tracker config (gem-review-app trackers/gogpt/config.py).
+WATCH_CALLS = _CONFIG_WATCH_CALLS
 MONITOR_KINDS = ("new_to_tracker", "existing_plant")
 
 

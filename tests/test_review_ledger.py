@@ -125,21 +125,21 @@ def test_cols_match_the_sheet_header_and_the_record_shape():
     assert {"record_id", "column", "reference", "flag", "on", "call", "decision"} <= set(ledger.COLS)
 
 
-def test_row_for_mirrors_append_and_cell():
+def test_row_of_mirrors_append_and_cell():
     rec = {"key": "batches/x::L1:G1:status", "dir": "batches/x", "pid": "L1", "record_id": "L1:G1:status", "column": "Status",
            "kind": "change", "decision": "accept", "suggested_value": "", "reference": "", "note": "=SUM(1)", "reviewer": ME,
            "ts": "t", "undecided": True, "batch": "b", "snapshot": "s", "id": "i", "scope": "us-md"}
-    row = ledger.row_for(rec)
+    row = ledger.row_of(rec)
     assert len(row) == len(ledger.COLS)
     got = dict(zip(ledger.COLS, row))
     assert got["rec"] == "line" and got["undecided"] == "undone" and got["note"] == "'=SUM(1)" and got["on"] == ""
     assert got["record_id"] == "L1:G1:status" and got["column"] == "Status" and got["call"] == "" and json.loads(got["json"]) == rec
-    it = dict(zip(ledger.COLS, ledger.row_for({"key": "k", "call": "confirmed", "kind": "concern", "record_id": None, "note": "x" * 2500})))
+    it = dict(zip(ledger.COLS, ledger.row_of({"key": "k", "call": "confirmed", "kind": "concern", "record_id": None, "note": "x" * 2500})))
     assert it["rec"] == "item" and it["record_id"] == "" and it["decision"] == "" and len(it["note"]) == 2001
-    fl = dict(zip(ledger.COLS, ledger.row_for({"key": "pm::k", "flag": "pm", "on": False, "kind": "plant"})))
+    fl = dict(zip(ledger.COLS, ledger.row_of({"key": "pm::k", "flag": "pm", "on": False, "kind": "plant"})))
     assert fl["rec"] == "flag" and fl["on"] == "off" and fl["flag"] == "pm"
     with pytest.raises(ledger.StoreError):
-        ledger.row_for({"key": "k", "note": "x" * 50000})
+        ledger.row_of({"key": "k", "note": "x" * 50000})
 
 
 def test_stamp_fields_fills_what_is_missing_and_keeps_an_id():
@@ -244,7 +244,6 @@ def test_to_store_restores_the_original_decider_for_a_copy():
     led = ledger.Ledger(SHEET, "s", "", "chat", reviewer_email=ME, gws=FakeStore(), emails={"id-1": AL})
     assert led.to_store({"id": "id-1", "reviewer": "AL"})["reviewer"] == AL
     assert led.to_store({"id": "fresh", "reviewer": "BL"})["reviewer"] == ME
-    assert led.to_store({"id": "fresh", "reviewer": "push"})["reviewer"] == "push"
 
 
 def test_backfill_brings_pre_ledger_sidecar_records_into_the_store_and_restamps_them(scope):
@@ -473,3 +472,12 @@ def test_import_log_main_dry_run(scope, tmp_path, capsys):
     out = capsys.readouterr().out
     assert "5 new, 0 already in the log" in out and "dry run: nothing written" in out
     assert not (scope["staging"] / store.LOG_NAME).exists()
+
+
+def test_append_goes_in_chunks_and_reports_the_whole_range(monkeypatch):
+    monkeypatch.setattr(ledger, "APPEND_CHUNK", 2)
+    fake = FakeStore()
+    recs = [{"key": f"k{i}", "id": f"i{i}", "ts": "t"} for i in range(5)]
+    assert ledger.append(recs, SHEET, gws=fake) == (2, 6)
+    assert len([c for c in fake.calls if c[1][3] == "append"]) == 3
+    assert [r[ledger.COLS.index("id")] for r in fake.rows[1:]] == [f"i{i}" for i in range(5)]

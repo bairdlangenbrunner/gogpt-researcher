@@ -39,6 +39,7 @@ it). Representative examples surfaced in the source doc:
 | United States (PJM: MD, PA, NJ, DE, VA, WV, OH, DC and parts of IL, IN, KY, MI, NC, TN) | PJM Interconnection (`pjm.com`) | See "PJM data files" below |
 | United States (New York) | NYISO (`nyiso.com`) | See "NYISO data files" below |
 | Germany | Environmental impact assessment register (`uvp-verbund.de` and the state `uvp.<state>.de` front ends) | Permit procedures for planned plants: applicant, capacity, dated steps, decision PDFs. Throttled with HTTP 429; `fetch.py` waits it out and caches. Harvest first with `harvest_permits.py`. Recipe in `docs/country_notes/germany.md`, "Permit register" |
+| United States (Iowa) | Iowa DNR construction permit search (`idnraqrr.iowadnr.gov/ConPermitSearch`), its PSD and public comment pages, and the EasyAir list of applications under review (`programs.iowadnr.gov/easyair`) | Every construction permit by facility with the permit PDF: engine and turbine counts, kW ratings, project numbers, dates. Plain GETs; EasyAir pages by form post, and each application's submitted forms (equipment, manufacturer, model, nameplate MW, installation date) as report PDFs by a plain GET. Linn County and Polk County run their own air programs. Harvest first with `harvest_permits_iowa.py`. Recipe in `docs/country_notes/united_states/iowa.md` |
 
 **PJM data files** (checked 2026-10-02; not bot-walled, plain curl works,
 but the queue web pages render from JavaScript, so go to the files):

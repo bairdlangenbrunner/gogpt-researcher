@@ -99,34 +99,27 @@ Rules that came out of the first round (2026-10-05):
 - Every call the page records carries a uuid `id` (`static_store.js`), the same `id` the store row and the sidecar record keep, so a page rebuilt from the logs recognizes its own calls and an import never appends one twice. Calls made on pages built before 2026-10-08 have no `id`; `import_log.py` derives one from the record's contents, the same every time, so those files import and re-import safely too.
 - The GEM database is never touched. The artifact holds only the proposed edits and the calls.
 
-A scope that also ran a discovery pass keeps those records in `batches/<scope>/staging-discovery/`
-(docs/workflows.md). `--scope` reads only `staging/`, so name every folder with `--dirs` to put the
-update edits and the discovery candidates on one page:
+A scope that also ran a discovery pass keeps those records in `batches/<scope>/staging-discovery/` (docs/workflows.md). `--scope` reads only `staging/`; add `--discovery` to read the scope's `staging-discovery/` too, so the update edits and the discovery candidates land on one page (`--dirs` names folders one by one):
 
 ```
-python review_app/build_static.py --dirs batches/us-md/staging batches/us-ny/staging batches/us-md/staging-discovery batches/us-ny/staging-discovery --reviewer "Amalia Llano" --export-csv scripts/gem_export_gogpt_scoped.csv --out work/gogpt_review_us-md+us-ny_<stamp>_ET.html
+python review_app/build_static.py --scope us-md --scope us-ny --discovery --reviewer "Amalia Llano" --export-csv scripts/gem_export_gogpt_scoped.csv
 ```
+
+By default the build first pulls the decision store into the local logs, so the page is not built behind the store. `--no-pull` skips that. If the pull fails (no network, expired login), the build warns and goes on from the logs as they are.
 
 A new plant is one call for the plant and every unit row nested under it (the build script keys
 the decision on the plant record), so the page shows the unit rows under the plant fields on one
 line. The import then writes the calls to the `review_log.jsonl` of whichever folder the record
 came from.
 
-Live pages (the index is `artifacts.json`; one interface in `web/`, one page per reviewer, titled
-`GOGPT reviewer - <first name>`):
+Live pages: the index is `artifacts.json`, with one interface (the shared app in `../gem-review-app`) and one page per reviewer, titled `GOGPT reviewer - <first name>`. `python review_app/build_all.py --list` prints the table of name, reviewer, url and when each was last published, straight from the index, so there is no copy of it to keep up to date here.
 
-| page | reviewer | url | folders |
-|---|---|---|---|
-| GOGPT reviewer - Amalia | Amalia Llano | https://claude.ai/artifact/7bnX9RMity3Yw5mdaojNaL | us-md and us-ny, update and discovery |
-| GOGPT reviewer - Dan | Dan O'Beirne | https://claude.ai/artifact/3YnJ2C36PwrTJ8qYgUxbuW | germany and germany-permits |
-| GOGPT reviewer - Baird | Baird Langenbrunner | https://claude.ai/artifact/8C7yTha7YC2eYUdWxJ5Eik | us-il update |
-
-**Keeping every page identical in interface.** The interface lives only in `web/` and
+**Keeping every page identical in interface.** The interface lives only in `../gem-review-app` and
 `build_static.py`; a page differs from the others only in its data, reviewer and title. A page is a
 snapshot, so `artifacts.json` records what each live page was built from (its `published` block) and
 `python review_app/build_all.py --check` says which pages are stale and why (interface, builder, export
 csv, staged work, new or gone staging dir, decisions); it exits 1 if any page is not fresh. After ANY change
-in `web/`, `build_static.py` or a batch: `python review_app/build_all.py` (builds the stale or unmarked pages;
+in `../gem-review-app`, `build_static.py` or a batch: `python review_app/build_all.py` (builds the stale or unmarked pages;
 `--all` for every page), publish each printed file to its url (Artifact tool, work profile, capabilities carried
 forward), then `python review_app/build_all.py --mark-published <name>`. Marking is refused if the inputs changed
 since the build. Never edit a published page by hand; an edit made there is lost at the next publish. Hooks in
@@ -148,11 +141,12 @@ The import appends the records to each batch's `review_log.jsonl` and regenerate
 
 ## On the page
 
-- Top: the header says what the page covers ("Maryland and New York, United States · 27 plants"). The "where" picker in the filter row narrows to one state, or shows "all"; it is there even when the page covers one place. Country batches such as Germany have no states.
+- Top: the header says what the page covers ("Maryland and New York, United States · 27 plants"). The country and state menus in the filter row are checkbox lists: tick the countries or states to show, and the select-all button ticks or clears every box. The state menu appears only when the page covers more than one state. Country batches such as Germany have no states.
 - Left: the plants with something to decide. The badge counts open changes.
 - Card: the plant's changes, grouped by unit. "Now" is the cell today, "proposed" is what the
   researcher wants. A proposed Data Source link is added next to the links already in the cell;
   the manual's merge rule, so nothing is ever replaced.
+- Location: a plant with a staged coordinate gets a location block on its card: the current and proposed points as Google Maps links, the distance moved, how the point was found, and two satellite patches side by side (Esri World Imagery tiles assembled in the page from the coordinate, with a crosshair and the Esri attribution; no image files are stored). A plant placed from a georeferenced map also shows the saved render with its control points from the batch's `staging/maps/` folder (`docs/reference/location.md`). The interface lives in `../gem-review-app` (`trackers/gogpt/web/ext.js`), so it never gets a shim here.
 - Major changes move a value (fill a blank, change or clear a value, a plant-wide field, a new
   row). Minor changes leave the value as it is and only add a source link because the value
   was checked again and stands. Minor changes have their own tab and an accept-all button.
@@ -178,7 +172,7 @@ The import appends the records to each batch's `review_log.jsonl` and regenerate
   item per concern, watch-list entry or entity check).
 - **The app itself lives in the sibling repo `../gem-review-app`** (shared with pipelines-researcher since 2026-10-08; `GEM_REVIEW_APP` in the environment overrides the location). Its `review_core/` holds the page (`web/index.html`, `app.js`, `style.css`), the browser-side stores (`web/static_store.js` for the single-file and artifact page, `web/gas.js`), the generic decision log, the loopback server and the single-file builder; `trackers/gogpt/` holds the GOGPT config (kinds, calls, note rules, the ask-the-PM flag) and the page extension (`web/ext.js`, `web/ext.css`: checklist tabs, watch items, IRP chips). Any interface change is made there, never here, and reaches every tracker's pages. The files below are what is GOGPT's own.
 - `store.py`: the shared store bound to the GOGPT config; validates decisions and writes the staging dir sidecars (`review_log.jsonl`, the derived `review_decisions.json`), through a ledger sink when one is given.
-- `ledger.py`: the store spreadsheet door (row shape, verified append, the `Ledger` sink every decision path uses, `status`); `pull.py`: the `gws` wrapper, `google.json` config, and the store-to-sidecar mirror; `google.json`: the shared-drive folder and store sheet ids.
+- `ledger.py`: the store spreadsheet door (row shape, verified append, the `Ledger` sink every decision path uses, `status`); `pull.py`: the `gws` wrapper, `google.json` config, and the store-to-sidecar mirror; `google.json`: the store sheet id.
 - `server.py`: the shared loopback HTTP server (standard library only) bound to the GOGPT store; it serves the shared page under `/`, the core files under `/core/` and the GOGPT extension under `/tracker/`.
 - `build_static.py`: writes the single-file page for a colleague through the shared builder (the dataset rides in one gzip block with a packed key index; the store link goes into the page as `ledger_url`); `import_log.py` brings their calls into the store and the batch logs.
 - `checklist.py`: the nine checklist groups, the row mapping and the tagging function shared by

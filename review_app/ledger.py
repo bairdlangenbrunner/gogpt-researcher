@@ -5,45 +5,21 @@ The decision ledger: ONE place every review decision lands, whoever makes it and
     python review_app/ledger.py backfill batches/us-ny/staging --reviewer AL=EMAIL [--dry-run]
                                                              # sidecar records older than the ledger -> store
 
-The ledger IS the `log` tab of the store spreadsheet (review_app/google.json: store_sheet_id), one
-row per record, in the COLS columns below (the same model as pipelines-researcher's ledger, with
-the GOGPT record shape: record_id, column, reference, flag/on). Everything that writes a staging
-dir's review_log.jsonl writes HERE FIRST and the sidecars second:
+The ledger IS the `log` tab of the store spreadsheet (review_app/google.json: store_sheet_id), one row per record, in the COLS columns below (the same model as pipelines-researcher's ledger, with the GOGPT record shape: record_id, column, reference, flag/on). Everything that writes a staging dir's review_log.jsonl writes HERE FIRST and the sidecars second:
 
     artifact page       -> import_log.py (the viewer's shared log; origin 'artifact')
     loopback server     -> store.decide(..., sink=Ledger.sink)   (origin 'local')
     pull.py             -> mirrors store rows into the sidecars (never writes the store)
 
-so the store holds every decision, the sidecars are its committed mirror, and the actions workbook
-(build_review_package.py --decisions) reads one history. Appending to the `log` tab is the ONLY
-Google write this module makes, through gws-gem-write; nothing else in Drive is touched and the
-GEM database never is.
+so the store holds every decision, the sidecars are its committed mirror, and the actions workbook (build_review_package.py --decisions) reads one history. Appending to the `log` tab is the ONLY Google write this module makes, through gws-gem-write; nothing else in Drive is touched and the GEM database never is.
 
-Rules
-  * the store comes first. A record is appended to the sheet, read back by `id`, and only then
-    written to the sidecar. If the store cannot be reached the decision is REFUSED (StoreError ->
-    HTTP 502 on the server, exit 2 on the CLI) and nothing is written anywhere: there is no
-    offline mode, because an offline decision is exactly the divergence this module exists to end.
-    `--no-store` on server.py is for tests and dev only and says so on every start.
-  * the store keeps the reviewer's EMAIL; the sidecars keep initials (store.initials). Machine
-    reviewers are kept as is.
-  * a record's `id` is a uuid4 stamped here (an id already present, as the artifact page gives
-    every record, is kept), so pull.py's mirror, which dedupes by id, never writes the same record
-    twice.
-  * the sheet append is verified: the rows the API says it wrote are re-read and their `id` column
-    must be these records' ids. A mismatch (another writer landing on the same rows in the same
-    instant) is retried once, then refused.
-  * `backfill` is the one case where a sidecar is rewritten rather than appended to: a record
-    written before the ledger existed (no `id`) is stamped (id, scope, batch, origin 'chat'; its
-    own time is kept), appended to the store under the reviewer's address (--reviewer XX=EMAIL),
-    and then the sidecar line is replaced by the stamped record, so the sidecar once again mirrors
-    the store. Records that already carry an id are left alone, so a second run writes nothing.
+The rules (store first, verified appends in chunks of APPEND_CHUNK, ids, emails in the store and initials in the sidecars) and the code that keeps them are shared with pipelines-researcher in ../gem-review-app/review_core/ledger.py. This file holds the gogpt side: COLS, ORIGINS, row_of, scope_of, rec_type, dir_label, backfill and the CLI.
+
+`backfill` is the one case where a sidecar is rewritten rather than appended to: a record written before the ledger existed (no `id`) is stamped (id, scope, batch, origin 'chat'; its own time is kept), appended to the store under the reviewer's address (--reviewer XX=EMAIL), and then the sidecar line is replaced by the stamped record, so the sidecar once again mirrors the store. Records that already carry an id are left alone, so a second run writes nothing.
 """
 import argparse
 import json
-import re
 import sys
-import uuid
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -54,24 +30,16 @@ for p in (ROOT / "scripts", HERE):
 
 import pull  # noqa: E402
 import store  # noqa: E402
+from review_core import ledger as core  # noqa: E402
 
 # the store's `log` tab header, verbatim (tests assert the sheet set-up and this list agree)
 COLS = ["ts", "reviewer", "rec", "pid", "record_id", "column", "kind", "decision", "call", "suggested_value",
         "reference", "note", "undecided", "flag", "on", "batch", "snapshot", "key", "id", "scope", "json"]
-LOG_TAB = pull.LOG_TAB
 ORIGINS = ("local", "artifact", "chat")
-MAX_JSON = 49000          # a cell holds 50k chars
-_FORMULA = re.compile(r"^[=+\-@]")
-_RANGE = re.compile(r"^'?(?P<tab>[^'!]+)'?!(?P<c1>[A-Z]+)(?P<r1>\d+)(?::(?P<c2>[A-Z]+)(?P<r2>\d+))?$")
-
-
-class StoreError(RuntimeError):
-    """The store could not be written (or read back as written): nothing was recorded anywhere."""
 
 
 def scope_of(data):
-    """(scope id, snapshot) of a built dataset: the staging dir labels joined with "+" (batches/us-md/staging
-    -> us-md; a staging-discovery dir keeps its suffix), and the dataset's build stamp."""
+    """(scope id, snapshot) of a built dataset: the staging dir labels joined with "+" (batches/us-md/staging gives us-md; a staging-discovery dir keeps its suffix), and the dataset's build stamp."""
     labels = []
     for d in data.get("dirs") or []:
         parts = [x for x in str(d).split("/") if x]
@@ -83,23 +51,14 @@ def scope_of(data):
     return "+".join(labels), str(data.get("built") or "")
 
 
-def cell(v):
-    """A display column is never a formula and never longer than a cell."""
-    s = "" if v is None else str(v)
-    if _FORMULA.match(s):
-        s = "'" + s
-    return s[:2000] + "…" if len(s) > 2000 else s
-
-
 def rec_type(rec):
     return "flag" if rec.get("flag") else "item" if "call" in rec else "line"
 
 
-def row_for(rec):
+def row_of(rec):
     """One sheet row (len(COLS) strings) for a record; the `json` column is the record."""
-    j = json.dumps(rec, ensure_ascii=False, separators=(",", ":"))
-    if len(j) > MAX_JSON:
-        raise StoreError("a record is too long to store: shorten the note")
+    j = core.record_json(rec)
+    cell = core.cell
     on = "" if rec.get("on") is None else ("on" if rec.get("on") else "off")
     return [str(rec.get("ts") or ""), str(rec.get("reviewer") or ""), rec_type(rec), cell(rec.get("pid")),
             cell(rec.get("record_id")), cell(rec.get("column")), str(rec.get("kind") or ""),
@@ -109,145 +68,7 @@ def row_for(rec):
             cell(rec.get("snapshot")), cell(rec.get("key")), str(rec.get("id") or ""), str(rec.get("scope") or ""), j]
 
 
-def stamp_fields(recs, scope, snapshot, origin, batch=None, ts=None):
-    """Stamping for records written here: every record gets this `origin` and one `batch` uuid per
-    call; `id`, `scope`, `snapshot` and `ts` are filled only where missing (a record from the
-    artifact page keeps the id and time the page gave it). Returns recs."""
-    if origin not in ORIGINS:
-        raise ValueError(f"origin {origin!r} is not one of {ORIGINS}")
-    batch = batch or str(uuid.uuid4())
-    ts = ts or store.now()
-    for r in recs:
-        r["id"] = r.get("id") or str(uuid.uuid4())
-        r["scope"] = r.get("scope") or scope
-        r["batch"] = batch
-        r["snapshot"] = r.get("snapshot") if r.get("snapshot") not in (None, "") else snapshot
-        r["origin"] = origin
-        if not r.get("ts"):
-            r["ts"] = ts
-    return recs
-
-
-def _range_rows(rng):
-    m = _RANGE.match(rng or "")
-    if not m:
-        raise StoreError(f"cannot read the range the store reports: {rng!r}")
-    r1 = int(m.group("r1"))
-    return r1, int(m.group("r2") or r1)
-
-
-def append(recs, sheet_id, gws=pull.gws, profile=pull.WRITE_PROFILE, read_profile=pull.READ_PROFILE, retries=1):
-    """Append the records to the store's `log` tab (one RAW row each, after the last row) and
-    verify by re-reading the `id` column of the rows the API reports. -> (first row, last row).
-    Raises StoreError (nothing to clean up: a failed append wrote nothing we can rely on, and a
-    verified mismatch means our rows were overwritten, so the retry appends again)."""
-    if not recs:
-        return None
-    rows = [row_for(r) for r in recs]
-    ids = [r["id"] for r in recs]
-    idc = pull._col_letter(COLS.index("id"))
-    last_err = None
-    for attempt in range(retries + 1):
-        try:
-            resp = gws(profile, "sheets", "spreadsheets", "values", "append",
-                       "--params", json.dumps({"spreadsheetId": sheet_id, "range": f"{LOG_TAB}!A:{pull._col_letter(len(COLS) - 1)}",
-                                               "valueInputOption": "RAW", "insertDataOption": "INSERT_ROWS",
-                                               "includeValuesInResponse": False}),
-                       "--json", json.dumps({"majorDimension": "ROWS", "values": rows}, ensure_ascii=False))
-        except pull.GwsError as e:
-            raise StoreError(f"the decision store could not be written: {e}") from e
-        upd = (resp or {}).get("updates") or {}
-        first, last = _range_rows(upd.get("updatedRange"))
-        if last - first + 1 != len(rows):
-            raise StoreError(f"the store reports {last - first + 1} rows written for {len(rows)} records ({upd.get('updatedRange')})")
-        try:
-            got = gws(read_profile, "sheets", "spreadsheets", "values", "get", "--params",
-                      json.dumps({"spreadsheetId": sheet_id, "range": f"{LOG_TAB}!{idc}{first}:{idc}{last}",
-                                  "majorDimension": "ROWS", "valueRenderOption": "UNFORMATTED_VALUE"}))
-        except pull.GwsError as e:
-            raise StoreError(f"written to the store (rows {first}-{last}) but the read-back failed: {e}") from e
-        back = [(r[0] if r else "") for r in (got.get("values") or [])]
-        back += [""] * (len(ids) - len(back))
-        if back == ids:
-            for r, i in zip(recs, range(first, last + 1)):
-                r["row"] = i
-            return first, last
-        last_err = StoreError(f"the store's rows {first}-{last} do not hold these records after the append "
-                              f"(another writer landed on them); " + ("retried once" if attempt else "retrying"))
-    raise last_err
-
-
-class Ledger:
-    """A configured sink: `sink(recs, dirs, stamp=True)` has store._write's signature and is passed
-    to store.decide / record_items / record_flags / append_records. `reviewer_email` is the
-    address written on a person's store rows (the account that writes the store, by default)."""
-
-    def __init__(self, sheet_id, scope, snapshot, origin, reviewer_email=None, gws=pull.gws, emails=None):
-        if not sheet_id:
-            raise ValueError("no store configured (review_app/google.json: store_sheet_id)")
-        self.sheet_id, self.scope, self.snapshot, self.origin = sheet_id, scope, snapshot, origin
-        self.reviewer_email = reviewer_email or ""
-        self.emails = dict(emails or {})      # store record id -> address (pull.mirror's), for copies of others' records
-        self.gws = gws
-        self.written = 0
-        self.last_row = 0                     # the last store row this ledger wrote
-
-    @classmethod
-    def for_data(cls, data, origin, cfg=None, reviewer_email=None, gws=pull.gws):
-        """A ledger for a built dataset, or None when no store is configured."""
-        cfg = pull.config() if cfg is None else cfg
-        sheet = (cfg or {}).get("store_sheet_id") or ""
-        if not sheet:
-            return None
-        sid, snap = scope_of(data)
-        return cls(sheet, sid, snap, origin, reviewer_email=reviewer_email, gws=gws)
-
-    def to_store(self, rec):
-        """The store's copy of a record: a person's initials become an address, the original
-        decider's when this is a copy of a store record (`emails`, by the id before `~`), else the
-        writer's. A machine reviewer is kept as is."""
-        r = dict(rec)
-        who = r.get("reviewer")
-        if who and who not in store.MACHINE_REVIEWERS:
-            orig = self.emails.get(str(r.get("id") or "").split("~")[0])
-            if orig or self.reviewer_email:
-                r["reviewer"] = orig or self.reviewer_email
-        return r
-
-    def sink(self, recs, dirs, stamp=True):
-        """Store first, sidecars second (caller holds store._LOCK). Stamps id/scope/batch/snapshot/
-        origin (and ts unless the records bring their own). The local copy keeps the initials and
-        every stamped field, exactly what pull.mirror would write for the same store row, so a later
-        pull dedupes it by id. Raises StoreError before anything local is written."""
-        recs = list(recs)
-        if not recs:
-            return []
-        ts = store.now() if stamp else None
-        for r in recs:
-            if stamp:
-                r["ts"] = ts
-            r["reviewer"] = store.initials(r.get("reviewer"))
-            if r["dir"] not in dirs:          # refuse an unknown dir BEFORE the store write, as _write would
-                raise store.Invalid(f"staging dir not known to the server: {r['dir']}")
-        stamp_fields(recs, self.scope, self.snapshot, self.origin, ts=ts)
-        rows = [self.to_store(r) for r in recs]
-        first, last = append(rows, self.sheet_id, gws=self.gws)
-        store._write([dict(r) for r in recs], dirs, stamp=False)
-        for r, s in zip(recs, rows):
-            r["row"] = s.get("row")
-        self.written += len(recs)
-        self.last_row = max(self.last_row, last)
-        return recs
-
-
-def whoami(gws=pull.gws, profile=pull.WRITE_PROFILE):
-    """The address of the account that writes the store (Drive `about.user`), or '' when it cannot
-    be read. The store row's reviewer must be the account that wrote it, so this is the default."""
-    try:
-        body = gws(profile, "drive", "about", "get", "--params", json.dumps({"fields": "user"}))
-    except pull.GwsError:
-        return ""
-    return str(((body or {}).get("user") or {}).get("emailAddress") or "")
+core.bind(sys.modules[__name__], pull=pull, store=store)
 
 
 def dir_label(d, root=ROOT):
@@ -261,7 +82,7 @@ def dir_label(d, root=ROOT):
         return d.as_posix()
 
 
-def backfill(d, emails, sheet_id, gws=pull.gws, dry_run=False, root=ROOT):
+def backfill(d, emails, sheet_id, gws=None, dry_run=False, root=ROOT):
     """Bring the records of <d>/review_log.jsonl that predate the ledger (no `id`) into the store,
     then rewrite the sidecar with the stamped records. `emails` maps initials to addresses; a
     person whose address is not given stops the run before anything is written. -> the records

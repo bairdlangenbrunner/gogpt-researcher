@@ -2,13 +2,18 @@
 Access audit: which sources a batch could not read, why, and whether the
 current fetch ladder gets them now.
 
-Every research batch logs each URL check to `shards/*.urls.jsonl`, and fetch.py
-logs every read it could not finish to `work/fetch_failures.jsonl`. This script
-reads both (latest result per URL; fetch failures from the batch's run window
-that no citation check saw), sorts each failure into an access
-class, and prints a per-host table with the route `fetch.py` has learned for
-that host. With `--retry` it re-runs the failures through the verifier as it is
-today (the full ladder plus the archive fallback) and reports what changed.
+Every research batch logs each URL check to `shards/*.urls.jsonl`, fetch.py
+logs every read it could not finish to `work/fetch_failures.jsonl`, and each
+research agent lists the pages it gave up on in its shard's `source_log`
+(outcome `blocked` or `dead`). This script reads all three (latest result per
+URL; fetch failures from the batch's run window that no citation check saw),
+sorts each failure into an access class, and prints a per-host table with the
+route `fetch.py` has learned for that host. With `--retry` it re-runs the
+failures through the verifier as it is today (the full ladder plus the archive
+fallback), reports what changed, and writes `<batch>/access_retry.json`.
+state_gate.py's `access` gate reads that file: every `blocked` or `dead`
+source_log entry must have been retried, and one that loads now fails the gate
+until it is read and used.
 With `--render-missing` it also reopens pages that loaded but lacked the
 expected value in a real Chrome, which catches pages that fill in their text
 with JavaScript.
@@ -42,6 +47,11 @@ Access classes (what a person would do differs for each):
   value_missing     the page loaded but the claimed value is not on it. Usually a
                     research question, sometimes a page that loads text with
                     JavaScript (see --render-missing).
+  not_tried         the agent's own note says a search form, a script or a paged
+                    table stopped it. That is never a reason: read the page
+                    source, find the address the form calls or the per-record
+                    link pattern, or use the real-Chrome load (Baird 2026-10-19,
+                    after the Iowa air permit pages were skipped this way).
 """
 import argparse
 import json
@@ -56,11 +66,27 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fetch  # noqa: E402
 
 CLASSES = ("rate_limited", "bot_wall", "firewall", "gone", "dead_host", "server_error",
-           "empty_record", "pdf_no_text", "archive_refused", "value_missing", "other")
+           "empty_record", "pdf_no_text", "archive_refused", "value_missing", "not_tried",
+           "other")
+RETRY_FILE = "access_retry.json"
+GAVE_UP = ("blocked", "dead")
+# A source_log note that names a page's mechanics as the obstacle: a form, a
+# script, a session, paging. None of these stops a person, so none is a reason.
+EXCUSE = re.compile(
+    r"search form|(?:web|query|input|online) form|form (?:that|needs|requires)|"
+    r"needs? (?:a |to run )?script|script[- ]driven|javascript|java script|"
+    r"did not (?:run a search|search|try|submit)|search (?:was )?not run|not searched|"
+    r"no search|could not search|paged table|pagination|session|cookie|interactive|"
+    r"dynamic(?:ally)? (?:loaded|rendered)|drawn by", re.I)
 
 
 def classify(reason: str) -> str:
     r = reason or ""
+    if r.startswith("agent gave up:"):
+        if EXCUSE.search(r):
+            return "not_tried"
+        m = re.search(r"\b(?:HTTP )?(4\d\d|5\d\d)\b", r)
+        r = f"HTTP {m.group(1)}" if m else r
     if "Wayback lookup itself was refused" in r or "archive unavailable" in r:
         return "archive_refused"
     if r.startswith("empty record page"):
@@ -96,7 +122,49 @@ def load_failures(batch_dirs: list[Path]) -> dict[str, dict]:
     for url, rec in _fetch_failures(batch_dirs).items():
         if url not in latest:
             failed[url] = rec
+    for url, rec in source_log_gave_up(batch_dirs).items():
+        failed[url] = {**failed.get(url, {}), **rec}
     return failed
+
+
+def source_log_gave_up(batch_dirs: list[Path]) -> dict[str, dict]:
+    """Every `blocked` or `dead` entry in the batches' shard source logs. These
+    are pages an agent decided it could not read; each one is retried, whatever
+    the verifier logs say, because the agent's call is what goes unchecked."""
+    out: dict[str, dict] = {}
+    for d in batch_dirs:
+        for f in sorted((d / "shards").glob("*.json")):
+            try:
+                shard = json.loads(f.read_text(encoding="utf-8"))
+            except (ValueError, OSError):
+                continue
+            for e in shard.get("source_log") or []:
+                if not isinstance(e, dict) or e.get("outcome") not in GAVE_UP or not e.get("url"):
+                    continue
+                out[e["url"]] = {"url": e["url"], "ok": False, "source": "fetch",
+                                 "reason": f"agent gave up: {e.get('outcome')}: {e.get('note', '')}",
+                                 "expected": [], "batch": str(d), "shard": f.stem}
+    return out
+
+
+def write_retry(batch_dirs: list[Path], failures: dict[str, dict],
+                retried: dict[str, tuple[bool, str]]) -> None:
+    """<batch>/access_retry.json: the retry result for each URL the batch's
+    shards gave up on (read by state_gate.py's access gate). Earlier results
+    for other URLs are kept."""
+    ts = time.strftime("%Y-%m-%dT%H:%M:%S")
+    for d in batch_dirs:
+        path = d / RETRY_FILE
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (ValueError, OSError):
+            data = {}
+        mine = source_log_gave_up([d])
+        for url in mine:
+            if url in retried:
+                ok, reason = retried[url]
+                data[url] = {"ok": ok, "reason": reason, "ts": ts}
+        path.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 def _fetch_failures(batch_dirs: list[Path]) -> dict[str, dict]:
@@ -227,6 +295,8 @@ def main(argv=None) -> int:
     if a.host:
         failures = {u: r for u, r in failures.items() if a.host in host_of(u)}
     retried = retry(failures, a.render_missing) if a.retry else None
+    if retried is not None and not a.host:
+        write_retry(a.batches, failures, retried)
     text = report(failures, retried)
     print(text)
     if a.out:

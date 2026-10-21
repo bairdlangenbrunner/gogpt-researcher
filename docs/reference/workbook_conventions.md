@@ -51,6 +51,8 @@ Read-only columns (`schema_constants.COMPUTED_COLUMNS` and the hydrogen
 `OUT_OF_SCOPE_COLUMNS`) never appear as edit targets; underscore-prefixed meta
 columns are reference-only and say so in the README tab.
 
+Coordinate cells are links (2026-10-20, `location.md`): on `edit_checklist` and `edit_backend_format` every `Latitude` and `Longitude` cell, current and proposed, is a hyperlink that opens Google Maps in satellite view on that point, so the human can judge a location change in one click. The evidence markdown writes the same links on each location line, plus the pin link that goes into the Location Data Source box, and links the saved map render for a georeferenced plant.
+
 Status Detail and Notes rows are additive (Baird 2026-10-07): the **proposed** cell holds the whole box to paste, new text on top and the existing text below it word for word, and the `action` says to add at the top of the box. Neither box is ever rewritten or cleared. A Status Detail entry ends with its source link (Baird 2026-10-08), so nothing is pasted into Status Data Source for it.
 
 ## The evidence file (md)

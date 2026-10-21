@@ -55,6 +55,8 @@ const COUNTRY = WHERE.country || 'United States'
 const IS_US = COUNTRY.toLowerCase() === 'united states'
 const PLACE = STATE ? `${STATE}, United States` : COUNTRY     // "Maryland, United States" or "Germany"
 const TAG = STATE ? POSTAL : (WHERE.slug || COUNTRY.toLowerCase().replace(/\s+/g, '-'))
+// The batch folder name (us-ia, germany), which the permit harvesters also use under work/permits/.
+const SCOPE_TAG = STATE ? `us-${POSTAL.toLowerCase()}` : TAG
 const EU_UK = new Set(['austria', 'belgium', 'bulgaria', 'croatia', 'cyprus', 'czechia', 'czech republic',
   'denmark', 'estonia', 'finland', 'france', 'germany', 'greece', 'hungary', 'ireland', 'italy', 'latvia',
   'lithuania', 'luxembourg', 'malta', 'netherlands', 'poland', 'portugal', 'romania', 'slovakia',
@@ -82,6 +84,8 @@ const GROUPS = Array.isArray(A.groups) && A.groups.length ? A.groups : IDS.map(i
 const EXTRA = A.extra_brief
   ? `\n\n## Scope-specific guidance from the orchestrator\n${A.extra_brief}`
   : ''
+// A second-look pass (build_sweep_args.py --location-review): only the location is researched.
+const REVIEW = A.review || ''
 
 // Exact CSV headers (schema_constants.RESEARCH_FIELDS); the brief's "Fields to report on" list wins if it differs.
 const RESEARCH_FIELDS = [
@@ -148,6 +152,12 @@ Work down this list. Prefer the document that names the plant AND states the val
    and operating hours, which also prove a unit is running.
 4. The state public utility commission docket search (certificates, siting orders, retirement filings).
 5. The state environmental agency's air permits (permits list units, turbine models and MW ratings).
+   If \`${REPO}/work/permits/${SCOPE_TAG}/${pid}.md\` exists, read it first: it is the
+   harvested permit index for this plant (permit numbers, dates, unit and size lines, PDF links).
+   Read the permits it lists, then search the agency's portal yourself for anything newer.
+   Every state has a permit search or a document portal. Use it: fill the search by its URL
+   parameters, or post the form with curl, and read each permit PDF with pdftotext. A permit
+   portal is never skipped because it is a search form.
 6. The regional grid operator's interconnection queue and deactivation lists: PJM for Maryland,
    ERCOT for Texas, otherwise MISO, SPP, CAISO, NYISO or ISO-NE as the state requires.
    PJM's queue web pages are drawn by JavaScript and show nothing to a fetch, so use its files.
@@ -202,6 +212,8 @@ them before you search.
    its delivery year.
 5. Planning and permit registers: environmental impact decisions, industrial emissions permits,
    construction permits. A permit lists units, turbine models and MW ratings.
+   If \`${REPO}/work/permits/${SCOPE_TAG}/${pid}.md\` exists, read it first: it is the
+   harvested permit index for this plant. Then search the register yourself for anything newer.
 6. The owner's investor pages, annual and half-year reports, press releases and asset lists.
 7. Trade press and local news, searched in the local language with the local words for power
    plant, combined heat and power plant, gas turbine and the plant's town. Search in English too.
@@ -297,6 +309,11 @@ not declare a contact, so always go through fetch.py or url_verifier.py. To find
 EDGAR full-text search, for example
   python scripts/fetch.py 'https://efts.sec.gov/LATEST/search-index?q=%22North%20Tonawanda%22&forms=10-K' --text
 then cite the filing document URL under https://www.sec.gov/Archives/edgar/data/.
+A search form, a page that needs a script, a session cookie or a paged table is never a reason to
+record a page as blocked. Assume the site is reachable and holds this plant's documents, above all
+a permit portal or an official document register. Fetch the page anyway, read its source and the
+scripts it loads, find the address the form calls or the per-record URL pattern (for example
+?id= links), and use fetch.py's real-Chrome page load. "Did not run a search" is never an outcome.
 Only after the whole ladder fails may you record a URL as blocked in \`source_log\`, and the note
 must say what you tried. Never conclude a page lacks the value from a blocked or truncated fetch.
 Cite the live URL, never a web.archive.org address.
@@ -344,8 +361,11 @@ Cite the live URL, never a web.archive.org address.
 - \`independent\` = true only with 2 or more genuinely separate origins among the refs.
 - Take a second source when it is cheap, but never spend searches chasing one, except for a status
   change in update mode, where one extra search for a second publisher is worth it.
-- Location: never change \`Latitude\`, \`Longitude\` or \`Location accuracy\` when the brief shows a value.
-  Only fill blanks. A better coordinate you found is a \`qa\` note.
+- Location: when the brief carries a location task (checklist row 25), follow the location ladder
+  below and report \`Latitude\`, \`Longitude\` and \`Location accuracy\` together in \`plant_findings\`,
+  with the top-level \`location\` object filled in. Otherwise never change \`Latitude\`, \`Longitude\` or
+  \`Location accuracy\` when the brief shows a value; only fill blanks, and a better coordinate you
+  found is a \`qa\` note with \`concern_type\` location.
 - Owners: GEM's \`Owner(s)\` is the company that holds the plant; the corporate parent is a separate,
   computed field you never report. The utility or operator name in ${IS_US ? 'an EIA table' : 'a regulator register'} is not the owner.
   If it differs from GEM's owner, raise a \`qa\` question. Change an owner only on a dated, closed
@@ -378,6 +398,40 @@ ${IS_US
 - Possible duplicates, units that look split or merged wrongly, and values you think are wrong but
   cannot source go in \`qa\`. Units at the plant missing from the brief go in \`newunits\`, with refs.
 
+## Location ladder
+Only for a plant whose brief has a location task${REVIEW === 'location' ? ' (this pass is a second look at the location only: research nothing else, and report only the three location fields and the `location` object)' : ''}. Work the rungs in order and stop at the first that settles the point.
+1. Address or site reference. Find a street address, a parcel number, or a sentence that places the
+   plant in a primary document: the air permit application, the utility's filing or resource plan, a
+   county planning agenda, the developer's project page${IS_US ? ', the EIA-860 Plant table (the brief gives its address when there is one)' : ''}. Quote the sentence and name the document.
+2. Turn it into a point: \`python ${REPO}/scripts/geocode.py "<address or place>" --near <lat>,<lon>${IS_US ? '' : ` --country "${COUNTRY}"`}\`
+   prints candidates with a match quality and a Google Maps link each. A site reference resolves by
+   geocoding the named neighbor. Pick the candidate that fits the document and say why.
+3. Look at it: \`python ${REPO}/scripts/site_image.py <lat> <lon> --tag ${TAG} --plant-id <plant_id>\` saves a
+   satellite picture with a crosshair at the point under work/sweep_${TAG}/maps/. Open the picture with
+   your Read tool. An operating or under-construction plant must show its footprint: stacks, the
+   turbine hall, cooling towers or an air-cooled condenser, the switchyard. A proposal shows the stated
+   parcel, cleared ground, or the named neighbor. Say in the note what you saw and that the imagery
+   date is unknown.
+4. Only if 1 and 2 fail: an official map in a document (the permit's site map, an environmental
+   review figure, an interconnection drawing). \`python ${REPO}/scripts/georef.py render <pdf> --page N --tag ${TAG} --plant-id <plant_id>\`
+   renders the page; name two or three labeled features you can see (a road intersection, a named
+   substation or plant, a river crossing, a coordinate grid tick), resolve each one's coordinate, read
+   their pixel positions and the site's, then
+   \`python ${REPO}/scripts/georef.py solve --image <png> --site X,Y --point "<feature>" X,Y LAT,LON --point ... --out ${BATCH}/staging/maps/<plant_id>.jpg --json\`
+   gives the point, the fit error in meters and the drawn render. Copy its control points into the
+   \`location\` object. A fit error over 150 m is not good enough.
+5. Nothing worked: leave the coordinate alone and raise a \`qa\` item with \`concern_type\` location
+   that names what was searched.
+Report the point only when it fills a blank, moves GEM's point more than 500 m, or makes the plant
+exact; a nearby better point on a plant that stays approximate goes in the note only. Accuracy is
+\`exact\` only when you saw the plant's footprint, or the named parcel of a proposal, in the picture
+and say so in the note; everything else is \`approximate\`. Write coordinates with five decimals.
+\`refs\` for the three fields hold the document that placed the plant plus the pin link
+\`https://www.google.com/maps/search/?api=1&query=<lat>,<lon>\`; the pin link alone is accepted when
+no document gave the address. Set \`location.needs_review\` true, with \`review_note\` saying why, when
+the picture was unclear, the candidates disagreed, or the move is over 2 km; a second agent then takes
+another look.
+
 ## How to write notes
 Every \`note\`, \`notes\` and \`recommendation\` is read by a GEM researcher who has never seen this
 repository. Write the way a careful colleague explains something across a desk.
@@ -392,6 +446,8 @@ repository. Write the way a careful colleague explains something across a desk.
 - No em-dashes, no arrows, no slashes between alternatives, no parentheses. Start a new sentence.
 - Dates and numbers in full: "February 2026", "289 MW".
 - Say what was not found, and why.
+- Every note must make sense read alone, as whole sentences. Never squeeze it into a fragment
+  such as "A no needs a document that states it." or "Not verified." Say what it is about.
 Examples:
 ${IS_US
   ? `  "The Maryland Public Service Commission order from March 2026 says the plant began commercial
@@ -437,7 +493,10 @@ python json.dump or your Write tool, then check it parses with
       "notes": "One or two plain sentences about this unit, including what was not found and why."
     }
   ],
-  "plant_findings": { "Owner(s)": { "...": "same shape; applies to every unit" } },
+  "plant_findings": { "Owner(s)": { "...": "same shape; applies to every unit" },
+                      "Latitude": { "...": "location fields go here together, see the ladder" } },
+  "location": { "method": "address", "moved_m": 1240, "control_points": [], "fit_m": null,
+                "image": "", "needs_review": false, "review_note": "" },
   "qa": [ {"gem_unit_id": "G...", "concern_type": "duplicate",
            "recommendation": "...", "note": "...", "refs": [],
            "proposed_value": {"Capacity (MW)": "412"}} ],
@@ -457,6 +516,10 @@ python json.dump or your Write tool, then check it parses with
   \`not_found\` listing the fields. A plant-level field you could not find goes in every unit's
   \`not_found\`.
 - Field keys in \`findings\` and \`plant_findings\` are exact CSV headers from RESEARCH_FIELDS.
+- \`location\` is present only when the ladder was followed: \`method\` is address, site_reference,
+  dataset, map or imagery; \`moved_m\` the distance from GEM's point in meters (null when GEM had none);
+  \`control_points\` (each {"feature", "px": [x, y], "lat", "lon"}), \`fit_m\` and \`image\` (the saved
+  render path) for a map; \`needs_review\` and \`review_note\` as the ladder says.
 - \`qa.concern_type\` is the exact header of the column the question is about (\`Status\`,
   \`Capacity (MW)\`, \`Owner(s)\`, \`Start year\`, ...) or one of: duplicate, existence (a unit or
   plant may be missing or may not exist), scope (how units are grouped), capacity-threshold,

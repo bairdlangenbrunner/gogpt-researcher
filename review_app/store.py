@@ -5,7 +5,7 @@ Every decision is a call on one staged record, by its stable `record_id`. The tw
 
 The sidecars are a mirror: every decision lands first in the `log` tab of the Google decision store (review_app/ledger.py), and pull.py copies store rows back. Nothing here touches the GEM database, the staged_*.json files or the deliverables; scripts/build_review_package.py --decisions reads the decisions when the actions workbook is built.
 
-Every name this module has always exported is still here (decide, record_items, record_flags, overlay, index, initials, dir_paths, read_log, _write, _LOCK, Invalid, ITEM_CALLS, FLAG_PREFIX and the rest), whether it is imported as `store` or as `review_app.store`.
+Every name this module has always exported is still here (decide, record_items, record_flags, overlay, index, initials, dir_paths, read_log, _write, _LOCK, Invalid, ITEM_CALLS, FLAG_PREFIX and the rest), whether it is imported as `store` or as `review_app.store`. The writes look their helpers up on this module, so a test can replace `store.atomic_write`.
 """
 import sys
 from pathlib import Path
@@ -17,4 +17,4 @@ import review_app  # noqa: E402,F401  (puts ../gem-review-app on sys.path)
 from review_core.store import bind  # noqa: E402
 from trackers.gogpt.config import CONFIG  # noqa: E402
 
-globals().update(bind(CONFIG, ROOT))
+bind(CONFIG, ROOT, into=sys.modules[__name__])

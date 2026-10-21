@@ -60,14 +60,14 @@
       "gem_unit_id": "G100001094030",
       "unit_name": "Unit 2",
       "findings": {
-        "Equipment Manufacturer/Model": {
-          "value": "Wärtsilä 18V50",
+        "Status Detail": {
+          "value": "March 2026: The Iowa Department of Natural Resources issued air construction permits 25-A-241-P to 25-A-245-P on March 12, 2026, under project 25-332, for the five new gas engines.",
           "refs": [
-            "https://alberici.com/projects/burlington-generating-station/"
+            "https://idnraqrr.iowadnr.gov/ConPermitSearch/ConstructionPermit?id=1499"
           ],
           "verifications": [
             {
-              "url": "https://alberici.com/projects/burlington-generating-station/",
+              "url": "https://idnraqrr.iowadnr.gov/ConPermitSearch/ConstructionPermit?id=1499",
               "ok": true,
               "contains_value": true,
               "name_found": true
@@ -75,7 +75,7 @@
           ],
           "tier": "high",
           "independent": false,
-          "note": "The contractor Alberici describes the 94 MW Burlington Generating Station as five Wärtsilä 18V50 reciprocating engines with selective catalytic reduction emissions controls."
+          "note": "The state air permit page for Burlington Generating Station lists these five permits, one per engine, issued March 12, 2026 under project 25-332."
         }
       },
       "not_found": [],
@@ -115,8 +115,8 @@
       "checks": [
         7
       ],
-      "recommendation": "Not found. I looked for a document that says whether Burlington Unit 1 has carbon capture. The Environmental Protection Agency letter from March 2022, the Alliant coal ash pages, the EIA-860M table for August 2026 and the Alliant Iowa clean energy page say nothing about carbon capture. The unit burns natural gas in a steam boiler. GEM's current value of no looks right, but I have no source for it.",
-      "note": "A no needs a document that states it. None found.",
+      "recommendation": "Not found. I looked for a document that says whether Burlington Unit 1 has carbon capture. The Environmental Protection Agency letter from March 2022, the Alliant coal ash pages, the EIA-860M table for August 2026 and the Alliant Iowa clean energy page say nothing about carbon capture. The unit burns natural gas in a steam boiler. GEM says the unit has no carbon capture. That looks right, but I found no document that says so.",
+      "note": "The database flags this unit because its carbon capture answer has no source. I found no document that says whether the unit has carbon capture, so there is no source to add.",
       "refs": []
     },
     {
@@ -133,7 +133,7 @@
       "gem_unit_id": "G100001017907",
       "concern_type": "source",
       "recommendation": "The Gazette link in GEM's Status and Start year sources, thegazette.com/energy/why-power-plants-are-using-natural-gas-instead-of-coal, now returns not found. The same article is live at thegazette.com/environment-nature/why-power-plants-are-using-natural-gas-instead-of-coal. It says Burlington should resume operations after a coal to gas transition.",
-      "note": "Do not drop the old link. The newer address works.",
+      "note": "Keep the old Gazette link in the sources and add the new address beside it. Both point to the same article.",
       "refs": [
         "https://www.thegazette.com/environment-nature/why-power-plants-are-using-natural-gas-instead-of-coal/"
       ]
@@ -152,7 +152,7 @@
       "gem_unit_id": "G100001017907",
       "concern_type": "other",
       "recommendation": "The Interstate Power and Light resource evaluation study comments from Synapse (April 2025) mention that the earlier Clean Energy Blueprint concluded Burlington would convert to natural gas. They give no new capacity, date or retirement for the plant. So there is no plan value to report.",
-      "note": "Background only.",
+      "note": "This is background only. It changes no field.",
       "refs": [
         "https://www.synapse-energy.com/sites/default/files/IPL%20RES%20EI%20Final%20Comments%20on%20RES%204.7.25-%20Public%2024-008.pdf"
       ]
@@ -421,6 +421,14 @@
       ],
       "outcome": "verified",
       "note": "Background mention only."
+    },
+    {
+      "url": "https://idnraqrr.iowadnr.gov/ConPermitSearch/ConstructionPermit?id=1499",
+      "used_for": [
+        "Status Detail"
+      ],
+      "outcome": "verified",
+      "note": "Iowa air permit page for Burlington Generating Station."
     }
   ]
 }

@@ -16,11 +16,7 @@ It binds 127.0.0.1 and refuses anything but loopback (the data is unreleased). W
 
 Every decision goes to the Google decision store first (review_app/ledger.py: the `log` tab of the spreadsheet in review_app/google.json, under the writer's address) and then to the two decision sidecars inside the staging dir. A store that cannot be written refuses the decision (502, nothing recorded anywhere). --no-store (tests, dev) writes the sidecars alone and says so. Nothing else is ever written: not the GEM database, not the staged_*.json files, not the deliverables; accepted edits reach GEM only through the actions workbook that scripts/build_review_package.py --decisions builds and the reviewer applies by hand.
 """
-import argparse
-import json
-import subprocess
 import sys
-import webbrowser
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -59,75 +55,41 @@ def make_server(app, host="127.0.0.1", port=8767):
 
 
 def git_user():
-    try:
-        return subprocess.run(["git", "config", "user.name"], capture_output=True, text=True,
-                              cwd=ROOT).stdout.strip() or "reviewer"
-    except OSError:
-        return "reviewer"
+    return core.git_user(ROOT)
 
 
-def main(argv=None):
-    ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+def _add_args(ap):
     ap.add_argument("--scope", action="append", default=[], help="batch scope, e.g. us-md (repeatable)")
     ap.add_argument("--dirs", nargs="*", default=[], help="explicit staging dirs")
     ap.add_argument("--export-csv", default=None, help="scoped export csv (default: the batch's own)")
-    ap.add_argument("--data", default=None, help="dataset path (default work/review_data.json)")
-    ap.add_argument("--reviewer", default=None, help="default: git config user.name; recorded as initials")
-    ap.add_argument("--host", default="127.0.0.1")
-    ap.add_argument("--port", type=int, default=8767)
-    ap.add_argument("--no-open", action="store_true", help="do not open the browser")
-    ap.add_argument("--no-build", action="store_true", help="serve --data as it is; do not rebuild")
-    ap.add_argument("--reviewer-email", default=None,
-                    help="the address written on this reviewer's store rows (default: the gws-gem-write account's)")
-    ap.add_argument("--no-store", action="store_true",
-                    help="dev/tests only: write the staging-dir sidecars alone, skipping the decision store")
-    args = ap.parse_args(argv)
-    try:
-        ensure_loopback(args.host)
-    except ValueError as e:
-        raise SystemExit(str(e))
-    data_path = Path(args.data) if args.data else paths.work_dir() / "review_data.json"
-    if not args.no_build:
-        if not (args.scope or args.dirs):
-            raise SystemExit("name at least one --scope or --dirs (or pass --no-build with --data)")
-        build = [x for s in args.scope for x in ("--scope", s)] + ["--out", str(data_path)]
-        if args.dirs:
-            build += ["--dirs", *args.dirs]
-        if args.export_csv:
-            build += ["--export-csv", args.export_csv]
-        review_data.main(build)
-    elif not data_path.exists():
-        raise SystemExit(f"{data_path} not found: run without --no-build, or pass --data")
-    led = None
-    if args.no_store:
-        print("review app: --no-store: decisions go to the staging-dir sidecars ONLY and will not be in the "
-              "decision store (dev/tests only)", file=sys.stderr)
-    else:
-        cfg = pull.config()
-        if not cfg.get("store_sheet_id"):
-            raise SystemExit("no decision store configured (review_app/google.json: store_sheet_id); "
-                             "pass --no-store only for dev/tests")
-        email = args.reviewer_email or ledger.whoami()
-        if not email:
-            raise SystemExit("cannot read the store account's address (gws-gem-write auth?): pass --reviewer-email, "
-                             "or --no-store for dev/tests")
-        data0 = json.loads(data_path.read_text(encoding="utf-8"))
-        led = ledger.Ledger(cfg["store_sheet_id"], *ledger.scope_of(data0), "local", reviewer_email=email)
-    app = App(data_path, args.reviewer or git_user(), ledger=led)
-    httpd = make_server(app, args.host, args.port)
-    url = f"http://{args.host}:{httpd.server_address[1]}/"
+
+
+def _build_argv(args, data_path):
+    if not (args.scope or args.dirs):
+        raise SystemExit("name at least one --scope or --dirs (or pass --no-build with --data)")
+    build = [x for s in args.scope for x in ("--scope", s)] + ["--out", str(data_path)]
+    if args.dirs:
+        build += ["--dirs", *args.dirs]
+    if args.export_csv:
+        build += ["--export-csv", args.export_csv]
+    return build
+
+
+def _where(led):
     where = (f"the decision store (log tab, as {led.reviewer_email}) and then each staging dir's review_log.jsonl"
              if led else "each staging dir's review_log.jsonl ONLY (--no-store)")
-    print(f"review app: {url}  (reviewer: {app.reviewer}; decisions write to {where}; "
-          f"the GEM database is never touched; Ctrl-C to stop)", file=sys.stderr)
-    if not args.no_open:
-        webbrowser.open(url)
-    try:
-        httpd.serve_forever()
-    except KeyboardInterrupt:
-        pass
-    finally:
-        httpd.server_close()
+    return f"decisions write to {where}; the GEM database is never touched"
+
+
+def main(argv=None):
+    """The shared command line (review_core.server.main) with the GOGPT dataset arguments."""
+    return core.main(
+        argv, description=__doc__.split("\n\n")[0], port=8767, add_args=_add_args, build_argv=_build_argv,
+        build_data=review_data.main, make_server=make_server, pull=pull, ledger=ledger,
+        make_app=lambda data_path, reviewer, build, led: App(data_path, reviewer, ledger=led),
+        data_default=paths.work_dir() / "review_data.json", git_root=ROOT, where=_where,
+        no_store_note="decisions go to the staging-dir sidecars ONLY and will not be in the decision store (dev/tests only)",
+        auth_hint="or --no-store for dev/tests")
 
 
 if __name__ == "__main__":

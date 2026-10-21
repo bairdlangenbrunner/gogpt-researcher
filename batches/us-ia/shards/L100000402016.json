@@ -41,10 +41,11 @@
    "unit_name": "RH",
    "findings": {
     "Status Detail": {
-     "value": "In July 2026 Interstate Power and Light filed its certificate application with the Iowa Utilities Commission for the 1,200 MW Riverhawk Energy Center near Emery Station. A decision is expected in the second quarter of 2027, and Alliant expects service in 2031.",
+     "value": "In July 2026 Interstate Power and Light filed its certificate application with the Iowa Utilities Commission for the 1,200 MW Riverhawk Energy Center near Emery Station. A decision is expected in the second quarter of 2027, and Alliant expects service in 2031. In July 2026 the company also sent the Iowa Department of Natural Resources a pre-application for the air construction permit, for five GE 7F.05 combustion turbines.",
      "refs": [
       "https://www.sec.gov/Archives/edgar/data/352541/000035254126000043/lnt-20260630.htm",
-      "https://www.alliantenergy.com/our-energy/natural-gas/riverhawk"
+      "https://www.alliantenergy.com/our-energy/natural-gas/riverhawk",
+      "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Pre_Application&SUBMISSION_RID=69395&SUB_FORM_RID=158053"
      ],
      "verifications": [
       {
@@ -58,11 +59,65 @@
        "ok": true,
        "contains_value": true,
        "name_found": true
+      },
+      {
+       "url": "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Pre_Application&SUBMISSION_RID=69395&SUB_FORM_RID=158053",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
       }
      ],
      "tier": "high",
      "independent": false,
-     "note": "Alliant's quarterly report for June 2026 gives the filing and decision timing. The Alliant project page gives the 2031 target."
+     "note": "Alliant's quarterly report for June 2026 gives the filing and decision timing. The Alliant project page gives the 2031 target. The air permit pre-application gives the last sentence."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE Vernova: 7F.05",
+     "refs": [
+      "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Pre_Application&SUBMISSION_RID=69395&SUB_FORM_RID=158053",
+      "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Application&SUBMISSION_RID=69070"
+     ],
+     "verifications": [
+      {
+       "url": "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Pre_Application&SUBMISSION_RID=69395&SUB_FORM_RID=158053",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Application&SUBMISSION_RID=69070",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Interstate Power and Light's air permit pre-application for Emery, signed July 23, 2026, says the project has five GE 7F.05 combustion turbines. The draft application it points to says the same."
+    },
+    "Status": {
+     "value": "pre-construction",
+     "refs": [
+      "https://www.sec.gov/Archives/edgar/data/352541/000035254126000043/lnt-20260630.htm",
+      "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Pre_Application&SUBMISSION_RID=69395&SUB_FORM_RID=158053"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254126000043/lnt-20260630.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Pre_Application&SUBMISSION_RID=69395&SUB_FORM_RID=158053",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The company is seeking approvals. Alliant's quarterly report for June 2026 says it filed for an Iowa Utilities Commission certificate in July 2026, and it sent the state an air permit pre-application the same month. Neither has been granted."
     }
    },
    "not_found": [
@@ -117,6 +172,24 @@
    ],
    "outcome": "not relevant",
    "note": "Does not name these units."
+  },
+  {
+   "url": "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Pre_Application&SUBMISSION_RID=69395&SUB_FORM_RID=158053",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Status",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Air permit pre-application for Emery in the state's online permit system, July 2026."
+  },
+  {
+   "url": "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Application&SUBMISSION_RID=69070",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Draft air permit application for Emery in the state's online permit system."
   }
  ]
 }

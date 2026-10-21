@@ -73,23 +73,6 @@
      "independent": false,
      "note": "The Alliant Energy press release from August 11, 2026 says the company expects commercial operation in 2029."
     },
-    "Capacity (MW)": {
-     "value": "720.0",
-     "refs": [
-      "https://www.alliantenergy.com/news/news-center/2026/081126-bobcat-construction-started"
-     ],
-     "verifications": [
-      {
-       "url": "https://www.alliantenergy.com/news/news-center/2026/081126-bobcat-construction-started",
-       "ok": true,
-       "contains_value": true,
-       "name_found": true
-      }
-     ],
-     "tier": "high",
-     "independent": false,
-     "note": "The Alliant Energy press release from August 11, 2026 says the plant will have about 720 megawatts of capacity."
-    },
     "City": {
      "value": "Marshalltown",
      "refs": [
@@ -112,6 +95,31 @@
     "Equipment Manufacturer/Model"
    ],
    "notes": "The turbine maker and model are not in any public document I found. The air permit application at the Iowa Department of Natural Resources would likely list them. Latest Activity is left alone because the project is moving."
+  },
+  {
+   "gem_unit_id": "G100001100829",
+   "unit_name": "3",
+   "findings": {
+    "Equipment Manufacturer/Model": {
+     "value": "Siemens Energy: SGT6-5000F",
+     "refs": [
+      "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-221-P%22,%22permitNumber2%22%3A%2226-A-221-P%22,%22projectNumber%22%3A%2226-003%22,%22emissionPointID%22%3A%22502%22,%22emissionPointDescription%22%3A%22Combustion%20Turbine%20%233%22,%22issueDate%22%3A%222026-07-29T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49444,%22documentType%22%3Anull,%22facilityNumber%22%3A%2264-01-012%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+     ],
+     "verifications": [
+      {
+       "url": "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-221-P%22,%22permitNumber2%22%3A%2226-A-221-P%22,%22projectNumber%22%3A%2226-003%22,%22emissionPointID%22%3A%22502%22,%22emissionPointDescription%22%3A%22Combustion%20Turbine%20%233%22,%22issueDate%22%3A%222026-07-29T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49444,%22documentType%22%3Anull,%22facilityNumber%22%3A%2264-01-012%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Iowa Department of Natural Resources air permit 26-A-221-P, issued July 29, 2026 for Combustion Turbine #3, gives the model as Siemens SGT6-5000F. Units 1 and 2 already carry this model, and this permit is already the source in the box."
+    }
+   },
+   "not_found": [],
+   "notes": ""
   }
  ],
  "plant_findings": {
@@ -142,13 +150,6 @@
    "refs": [
     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
    ]
-  },
-  {
-   "gem_unit_id": "G100001071243",
-   "concern_type": "Capacity (MW)",
-   "recommendation": "A KCRG story from August 11, 2026 calls the plant 650 MW. That figure is the existing Marshalltown station. Alliant's own releases say 720 MW. Keep 720.",
-   "note": "The KCRG figure looks like an error.",
-   "refs": []
   },
   {
    "gem_unit_id": "G100001071243",
@@ -235,6 +236,14 @@
    ],
    "outcome": "not relevant",
    "note": "Does not name Bobcat."
+  },
+  {
+   "url": "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-221-P%22,%22permitNumber2%22%3A%2226-A-221-P%22,%22projectNumber%22%3A%2226-003%22,%22emissionPointID%22%3A%22502%22,%22emissionPointDescription%22%3A%22Combustion%20Turbine%20%233%22,%22issueDate%22%3A%222026-07-29T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49444,%22documentType%22%3Anull,%22facilityNumber%22%3A%2264-01-012%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Iowa air permit 26-A-221-P for turbine 3, July 2026."
   }
  ]
 }

@@ -154,15 +154,15 @@
    "checks": [
     7
    ],
-   "recommendation": "Not found. I looked at the Sargent and Lundy project page, the City of Ames electric department page and the EIA-860M table for August 2026. None of them mention carbon capture for Unit 7. Nothing suggests the unit has carbon capture, so the value no stays, but no document states it.",
-   "note": "No document found that states whether Unit 7 has carbon capture.",
+   "recommendation": "Not found. I looked at the Sargent and Lundy project page, the City of Ames electric department page and the EIA-860M table for August 2026. None of them mention carbon capture for Unit 7. Nothing suggests the unit has carbon capture, so GEM's answer of no stays. No document says so, though.",
+   "note": "The database flags this unit because its carbon capture answer has no source. I found no document that says whether Unit 7 has carbon capture, so there is no source to add.",
    "refs": []
   },
   {
    "gem_unit_id": "G100001054408",
    "concern_type": "Fuel",
    "recommendation": "The City of Ames page says Unit 7 burns refuse derived fuel from municipal solid waste along with natural gas. GEM lists only natural gas. Consider adding a bioenergy fuel for waste. The page also says the city has started to phase this fuel out.",
-   "note": "A fuel question only. Not changed here.",
+   "note": "This is a question about the fuel only. I did not change the fuel here.",
    "refs": [
     "https://www.cityofames.org/My-Government/Departments/Electric-Department"
    ],
@@ -173,9 +173,12 @@
   {
    "gem_unit_id": "G100001054408",
    "concern_type": "Planned retire",
-   "recommendation": "The City of Ames plans to retire Units 7 and 8 when the new Ames Energy Center opens. A city podcast episode from November 2025 describes this. Local news says the new plant, built from reciprocating engines, will open in 2029. I found no firm retirement year from the city, so I did not report one.",
-   "note": "Retirement is planned but no firm year was found. Both units are still operating.",
+   "recommendation": "The city does not plan a firm retirement year for either unit. The Iowa State Daily reports that Unit 7 moves to standby once the three new engines run, about 2030. Ames Voice reports the electric director hopes Unit 8 can run until 2040. Neither is a firm plan, so I did not fill Planned retire. The city will stop burning garbage-derived fuel in July 2027, according to its project page.",
+   "note": "Retirement is planned in stages but no firm year was found. Both units are still operating.",
    "refs": [
+    "https://iowastatedaily.com/340719/city-of-ames/ames-is-building-a-new-power-plant/",
+    "https://amesvoice.com/2026/06/02/a-deep-dive-into-the-future-of-the-ames-municipal-power-plant/",
+    "https://www.cityofames.org/Resident-Services/Whats-Happening-in-Ames/Major-Projects/Ames-Municipal-Energy-Center",
     "https://amesinfocus.podbean.com/e/ames-in-focus-powering-forward-with-curtis-spence"
    ]
   }
@@ -184,15 +187,98 @@
   {
    "gem_unit_id": "G100001054408",
    "monitor_kind": "existing_plant",
-   "monitor_reason": "The city plans to retire Units 7 and 8 when the new Ames Energy Center opens, but no retirement year has been published.",
+   "monitor_reason": "Unit 7 moves to standby when the new engines run, about 2030, and the city hopes to run Unit 8 until 2040. No retirement year has been set for either.",
    "recheck_by": "2027-04",
-   "note": "A city podcast from November 2025 describes the planned retirement. Local news says the replacement engines arrive in October 2029.",
+   "note": "The three new engines arrive in October 2029. Check for a retirement year for Unit 7 once they are running.",
    "refs": [
+    "https://iowastatedaily.com/340719/city-of-ames/ames-is-building-a-new-power-plant/",
+    "https://amesvoice.com/2026/06/02/a-deep-dive-into-the-future-of-the-ames-municipal-power-plant/",
     "https://amesinfocus.podbean.com/e/ames-in-focus-powering-forward-with-curtis-spence"
    ]
   }
  ],
- "newunits": [],
+ "newunits": [
+  {
+   "gem_plant_id": "L100000103902",
+   "unit_name": "Phase 1",
+   "fields": {
+    "Unit name": "Phase 1",
+    "Fuel": "fossil gas: natural gas, fossil liquids: fuel oil",
+    "Number Of Engines": "3",
+    "Capacity Per Engine": "18.13",
+    "Status": "pre-construction",
+    "Start year": "2030",
+    "Turbine/Engine Technology": "internal combustion",
+    "Equipment Manufacturer/Model": "Wärtsilä"
+   },
+   "refs": {
+    "Fuel Data Source": [
+     "https://www.cityofames.org/Resident-Services/Whats-Happening-in-Ames/Major-Projects/Ames-Municipal-Energy-Center",
+     "https://amesvoice.com/2026/07/29/ames-approves-millions-in-energy-center-contracts/"
+    ],
+    "Capacity Data Source": [
+     "https://citizenportal.ai/articles/8905977/iowa/story-county/ames-city/council-approves-7679-million-award-for-engines-and-247-million-transformer-for-ames-energy-center",
+     "https://amesvoice.com/2026/07/29/ames-approves-millions-in-energy-center-contracts/",
+     "https://iowastatedaily.com/340719/city-of-ames/ames-is-building-a-new-power-plant/"
+    ],
+    "Status Data Source": [
+     "https://www.cityofames.org/Resident-Services/Whats-Happening-in-Ames/Major-Projects/Ames-Municipal-Energy-Center",
+     "https://amesvoice.com/2026/07/29/ames-approves-millions-in-energy-center-contracts/"
+    ],
+    "Start Year Data Source": [
+     "https://amesvoice.com/2026/06/02/a-deep-dive-into-the-future-of-the-ames-municipal-power-plant/",
+     "https://iowastatedaily.com/340719/city-of-ames/ames-is-building-a-new-power-plant/"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.cityofames.org/Resident-Services/Whats-Happening-in-Ames/Major-Projects/Ames-Municipal-Energy-Center",
+     "https://amesvoice.com/2026/07/29/ames-approves-millions-in-energy-center-contracts/"
+    ],
+    "Turbine/Engine Equipment Data Source": [
+     "https://www.cityofames.org/Resident-Services/Whats-Happening-in-Ames/Major-Projects/Ames-Municipal-Energy-Center",
+     "https://iowastatedaily.com/340719/city-of-ames/ames-is-building-a-new-power-plant/"
+    ],
+    "Unit name Data Source": [
+     "https://amesvoice.com/2026/06/02/a-deep-dive-into-the-future-of-the-ames-municipal-power-plant/",
+     "https://iowastatedaily.com/340719/city-of-ames/ames-is-building-a-new-power-plant/"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.cityofames.org/Resident-Services/Whats-Happening-in-Ames/Major-Projects/Ames-Municipal-Energy-Center",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://amesvoice.com/2026/07/29/ames-approves-millions-in-energy-center-contracts/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://amesvoice.com/2026/06/02/a-deep-dive-into-the-future-of-the-ames-municipal-power-plant/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://iowastatedaily.com/340719/city-of-ames/ames-is-building-a-new-power-plant/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://citizenportal.ai/articles/8905977/iowa/story-county/ames-city/council-approves-7679-million-award-for-engines-and-247-million-transformer-for-ames-energy-center",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": true,
+   "note": "The City of Ames is building a new gas plant, the Ames Municipal Energy Center, in the coal yard of this power plant. On July 28, 2026 the city council bought three Wärtsilä engines for about 76.8 million dollars. A summary of that council meeting gives 18.13 MW for each engine. Ames Voice says the three engines give more than 54 MW together, and the Iowa State Daily says 54 MW. The engines burn natural gas or fuel oil, according to the city's project page and Ames Voice. The city's page says the project is in engineering and pre-construction. No air permit application for the engines is on file with the state yet. The engines arrive in October 2029. Ames Voice and the Iowa State Daily expect them to run in spring or early 2030. The city's page says operational by 2031. I used 2030. The site has room for three more engines later, so this set is named Phase 1. An Ames Tribune story says the new engines make 108 MW. That figure does not match the three engines bought, so I did not use it. Please copy the owner, City of Ames, and the location from the other units. The city calls the whole site the Ames Municipal Energy Center, so that name could go in Other Name(s)."
+  }
+ ],
  "entities": [],
  "source_log": [
   {
@@ -231,10 +317,53 @@
   {
    "url": "https://bluewaterhealthyliving.com/news/national-news/iowa/ames-approves-76m-generator-purchase-for-new-power-plant/",
    "used_for": [
+    "Phase 1 engines"
+   ],
+   "outcome": "verified",
+   "note": "Loads now. An Ames Tribune story copied by Blue Water Healthy Living. It confirms the July 28, 2026 engine purchase and a 2029 opening. Its 108 MW figure does not match the three 18.13 MW engines bought, so it is not cited."
+  },
+  {
+   "url": "https://www.cityofames.org/Resident-Services/Whats-Happening-in-Ames/Major-Projects/Ames-Municipal-Energy-Center",
+   "used_for": [
+    "Phase 1 engines",
     "Planned retire"
    ],
-   "outcome": "blocked",
-   "note": "Returned HTTP 403 through the repo fetcher and no archive copy exists. Not cited."
+   "outcome": "verified",
+   "note": "The city's project page. Three engines bought from Wärtsilä, natural gas and fuel oil, pre-construction, operational by 2031."
+  },
+  {
+   "url": "https://amesvoice.com/2026/07/29/ames-approves-millions-in-energy-center-contracts/",
+   "used_for": [
+    "Phase 1 engines"
+   ],
+   "outcome": "verified",
+   "note": "Ames Voice on the July 28, 2026 council vote. Three engines, more than 54 MW, natural gas or fuel oil, delivered October 2029."
+  },
+  {
+   "url": "https://amesvoice.com/2026/06/02/a-deep-dive-into-the-future-of-the-ames-municipal-power-plant/",
+   "used_for": [
+    "Phase 1 engines",
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Ames Voice from June 2026. First three engines run in spring 2030; Unit 8 hoped to run until 2040."
+  },
+  {
+   "url": "https://iowastatedaily.com/340719/city-of-ames/ames-is-building-a-new-power-plant/",
+   "used_for": [
+    "Phase 1 engines",
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Iowa State Daily. Three Wärtsilä engines, 54 MW, early 2030; Unit 7 to standby."
+  },
+  {
+   "url": "https://citizenportal.ai/articles/8905977/iowa/story-county/ames-city/council-approves-7679-million-award-for-engines-and-247-million-transformer-for-ames-energy-center",
+   "used_for": [
+    "Phase 1 engines"
+   ],
+   "outcome": "verified",
+   "note": "A summary of the July 28, 2026 council meeting. Three dual fuel engines of 18.13 MW each."
   }
  ]
 }

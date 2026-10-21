@@ -117,6 +117,7 @@ from paths import REPO_ROOT, gem_export_csv, gogpt_scoped_csv, require_fresh_exp
 from schema_constants import (OUT_OF_SCOPE_COLUMNS, READ_ONLY_COLUMNS, RESEARCH_FIELDS,
                               STATUSES_IN_DEVELOPMENT)
 from build_review_package import ref_col_for
+import geo
 
 POSTAL = {
     "alabama": "AL", "alaska": "AK", "arizona": "AZ", "arkansas": "AR",
@@ -330,7 +331,7 @@ def conversion_tasks(r, peers=None):
     return out
 
 
-def unit_tasks(r, year=None, us=True, peers=None, status_pass=False):
+def unit_tasks(r, year=None, us=True, peers=None, status_pass=False, location=False):
     """The manual's per-unit checks plus the gap list, as (text, fields, checks).
     `checks` are the row numbers of the QC/Country checklist tab each task
     serves (review_app/checklist.py ROWS); they ride through the shard into
@@ -442,8 +443,10 @@ def unit_tasks(r, year=None, us=True, peers=None, status_pass=False):
     if ws(r.get(H_UNAME)) in ("", "--"):
         add("Unit name is blank. Say in a question what the source calls this unit; "
             "do not report it as a value.", checks=[11])
+    # with --location the location step (location_candidates.py) owns the
+    # coordinate tasks, so the generic blank-location task is left out
     loc_blank = [h for h in ("Latitude", "Longitude", "Location accuracy")
-                 if not ws(r.get(h))]
+                 if not ws(r.get(h))] if not location else []
     if loc_blank:
         add(f"{', '.join(loc_blank)}: blank. Fill from a source that gives the "
             "plant's location. Never change a coordinate that is already present.",
@@ -531,6 +534,10 @@ def identity_block(first, mode):
              ("Other IDs (location)", first.get("Other IDs (location)"))]
     for k, v in items:
         lines.append(f"- {k}: {blank(v)}")
+    links = geo.links_for(first.get("Latitude"), first.get("Longitude"))
+    if links:
+        lines.append(f"- Satellite view: {links['satellite']}")
+        lines.append(f"- Map pin: {links['pin']}")
     if mode == "update":
         lines.append(f"- Wiki URL: {blank(first.get('Wiki URL'))} (for gap detection only; never cite it)")
     return lines
@@ -554,8 +561,8 @@ def load_validation(path, scope, producer="validation_report.py"):
     None, item)]}. Each item gets the checklist row it serves unless it names
     its own: row 7 (the validation report), 38 (the ID match), 37 (the IRP
     step) or 6 and 44 (the captive LNG sheet)."""
-    default_checks = {"match_ids": [38], "irp_sheet": [37], "captive_lng": [6, 44]}.get(
-        producer.split(".")[0], [7])
+    default_checks = {"match_ids": [38], "irp_sheet": [37], "captive_lng": [6, 44],
+                      "location_candidates": [25]}.get(producer.split(".")[0], [7])
     p = Path(path)
     if not p.exists():
         sys.exit(f"ERROR: {p} not found; run {producer} first")
@@ -625,6 +632,24 @@ def load_promotions(staging_dir):
                         "checks": checks, "staging_dir": str(d),
                         "next_step": "write the full new-plant record (discovery lane) with sources"})
     return existing, new
+
+
+def location_task_text(e):
+    """The location step's task with the links the agent needs: GEM's point in
+    satellite view and as a pin, and every dataset point the same way."""
+    loc = e.get("location") or {}
+    cur = loc.get("current") or {}
+    parts = [e["task"]]
+    links = geo.links_for(cur.get("lat"), cur.get("lon"))
+    if links:
+        parts.append(f"GEM's point in satellite view: {links['satellite']} (pin: {links['pin']}).")
+    for p in loc.get("dataset_points") or []:
+        pl = geo.links_for(p.get("lat"), p.get("lon"))
+        if pl:
+            parts.append(f"The {p.get('source')} point in satellite view: {pl['satellite']}.")
+    parts.append("Follow the location ladder in the sweep instructions and report the "
+                 "method, the distance moved and whether a second look is needed.")
+    return " ".join(parts)
 
 
 def validation_tasks(items, rows):
@@ -808,6 +833,10 @@ def main():
                     help="work/captive_<tag>.json from captive_lng.py: the captive LNG sheet "
                          "step, checklist rows 6 and 44, plus the data-center search block "
                          "(row 39) for a US state (update mode, any scope)")
+    ap.add_argument("--location", default=None,
+                    help="work/location_<tag>.json from location_candidates.py: the location "
+                         "step (docs/reference/location.md), checklist row 25 and row 42 for "
+                         "operating plants; replaces the generic blank-coordinate task")
     ap.add_argument("--allow-stale-export", action="store_true",
                     help="warn instead of stopping when the export is over a day old")
     a = ap.parse_args()
@@ -874,8 +903,8 @@ def main():
     if unknown_extra:
         sys.exit(f"ERROR: --extra-tasks plants not in {name}: {sorted(unknown_extra)}")
 
-    if (a.validation or a.ids or a.irp or a.captive) and a.mode != "update":
-        sys.exit("ERROR: --validation, --ids, --irp and --captive are for update mode only")
+    if (a.validation or a.ids or a.irp or a.captive or a.location) and a.mode != "update":
+        sys.exit("ERROR: --validation, --ids, --irp, --captive and --location are for update mode only")
     validation = load_validation(a.validation, scope) if a.validation else {}
     ids = load_validation(a.ids, scope, producer="match_ids.py") if a.ids else {}
     irp, irp_data = {}, None
@@ -888,11 +917,21 @@ def main():
     if a.captive:
         captive = load_validation(a.captive, scope, producer="captive_lng.py")
         captive_data = json.loads(Path(a.captive).read_text(encoding="utf-8"))
+    loc, loc_data = {}, None
+    if a.location:
+        loc = load_validation(a.location, scope, producer="location_candidates.py")
+        loc_data = json.loads(Path(a.location).read_text(encoding="utf-8"))
+        for items in loc.values():
+            for _, e in items:
+                e["task"] = location_task_text(e)
     missing_val = sorted(set(validation) - set(plants))
     if missing_val and not a.plants:
         print(f"WARNING: validation fixes on plants not in {csv_path.name}: {missing_val}. "
               "Check their tracker assignment; they are not briefed.")
-    n_val = n_ids = n_irp = n_captive = 0
+    n_val = n_ids = n_irp = n_captive = n_loc = 0
+    missing_loc = sorted(set(loc) - set(plants))
+    if missing_loc and not a.plants:
+        print(f"WARNING: location tasks on plants not in {csv_path.name}: {missing_loc}; not briefed.")
     missing_irp = sorted(set(irp) - set(plants))
     if missing_irp and not a.plants:
         print(f"WARNING: IRP tasks on plants not in {csv_path.name}: {missing_irp}; not briefed.")
@@ -913,7 +952,8 @@ def main():
     tasks, plant_tasks, not_tasked = {}, {}, []
     for pid, rows in plants.items():
         tasks[pid] = ({r[H_UNIT]: unit_tasks(r, us=is_us and not a.ids, peers=peers,
-                                             status_pass=a.scope == "all")
+                                             status_pass=a.scope == "all",
+                                             location=bool(a.location))
                        for r in rows}
                       if a.mode == "update" else {})
         val_unit, val_plant = validation_tasks(validation.get(pid, []), rows)
@@ -934,7 +974,12 @@ def main():
         for uid, it in cap_unit.items():
             tasks[pid][uid] = tasks[pid].get(uid, []) + it
         n_captive += sum(len(v) for v in cap_unit.values()) + len(cap_plant)
-        own = extra.get(pid, []) + val_plant + id_plant + irp_plant + cap_plant
+        # location step tasks are whole-plant (unit_id null in the file)
+        loc_unit, loc_plant = validation_tasks(loc.get(pid, []), rows)
+        for uid, it in loc_unit.items():
+            tasks[pid][uid] = tasks[pid].get(uid, []) + it
+        n_loc += sum(len(v) for v in loc_unit.values()) + len(loc_plant)
+        own = extra.get(pid, []) + val_plant + id_plant + irp_plant + cap_plant + loc_plant
         plant_tasks[pid] = own + extra.get("*", [])
         has_task = any(tasks[pid].values()) or bool(own)
         if a.mode == "update" and a.scope == "ladder" and not has_task:
@@ -1033,6 +1078,13 @@ def main():
             "gem_only": [p.get("plant_id") for p in captive_data.get("gem_only") or []],
             # the row 39 block (US states): the search stages into the watch list only
             "data_center": captive_data.get("data_center") is not None}
+    location_index = None
+    if loc_data is not None:
+        location_index = {"file": str(Path(a.location).resolve()), "read": loc_data.get("read"),
+                          "sources": loc_data.get("sources"),
+                          "plants_checked": loc_data.get("plants_checked"),
+                          "candidates": sorted({t.get("plant_id")
+                                                for t in loc_data.get("tasks") or []})}
     idx_path = batch / "briefs" / "_index.json"
     # `state` / `postal` stay for US batches (older readers key on them); `where`
     # is the generic scope every reader should prefer.
@@ -1051,7 +1103,10 @@ def main():
         "irp": irp_index,
         # the captive LNG sheet step (captive_lng.py): the scope-wide agent reads
         # briefs/_captive.md; matched plants carry their task on their own brief
-        "captive": captive_index}, indent=2, ensure_ascii=False),
+        "captive": captive_index,
+        # the location step (location_candidates.py): the plants whose coordinates
+        # the sweep follows the ladder for; state_gate gate `location` checks the result
+        "location": location_index}, indent=2, ensure_ascii=False),
         encoding="utf-8")
 
     tag = f" ({scope['postal'].upper()})" if scope["postal"] else ""
@@ -1077,6 +1132,9 @@ def main():
               f"lacks, {len(captive_index['gem_only'])} GEM LNG plant(s) with no sheet row"
               f"{'; data-center block (row 39) included' if captive_index['data_center'] else ''}; "
               f"scope-wide block: {captive_index['brief_path']}")
+    if location_index is not None:
+        print(f"location step: {location_index['plants_checked']} plant(s) checked, "
+              f"{len(location_index['candidates'])} candidate(s), {n_loc} plant task(s)")
     if a.promote:
         print(f"promoted watch items: {n_promoted} task(s) on tracked plants; "
               f"{len(promoted_new)} new to the tracker (listed under promoted_new in the index)")

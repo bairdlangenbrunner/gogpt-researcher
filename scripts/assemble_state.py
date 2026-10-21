@@ -100,6 +100,20 @@ Plant-level findings become ONE record: `applies_to_all_units: true`,
 check every unit), anchored on the first unit whose verdict is fill/change
 (else the first unit), record_id `<plant_id>:plant:<field slug>`.
 
+Location (docs/reference/location.md): Latitude, Longitude and Location
+accuracy, wherever the shard reported them, become ONE plant-level record,
+record_id `<plant_id>:plant:location`, with `sibling_current` holding a dict
+of the three columns per sibling unit. The point is staged when it fills a
+blank, moves more than 500 m, or makes the plant exact; a nearer point on a
+plant that stays approximate is dropped. A move on a plant the brief did not
+hand to the location step (no checklist row 25 on its task) becomes a qa
+question instead. The shard's top-level `location` object (method, moved_m,
+control_points, fit_m, image, needs_review, review_note) passes through as
+`location_method`, `location_moved_m` (recomputed from the export),
+`location_control_points`, `location_fit_m`, `location_image` (made
+batch-relative) and `location_needs_review`; the pin link for the staged
+point is added to the Location Data Source refs when the shard left it out.
+
 The shard's qa / monitor / newunits / entities sections pass through to their
 lane files with identity and a record_id added. A shard's list-shaped `refs`
 on qa / monitor items is stored as {"links": [...]}, since those items have no
@@ -143,6 +157,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from build_review_package import (_split_urls, additive_value, inline_value,  # noqa: E402
                                   ref_col_for, validated_tier)
+from geo import distance_m, fmt5, parse_coord, pin_link, pin_point, valid_point  # noqa: E402
 from paths import gogpt_scoped_csv  # noqa: E402
 from schema_constants import (ADDITIVE_TEXT_COLUMNS, INLINE_SOURCE_COLUMNS,  # noqa: E402
                               RESEARCH_FIELDS)
@@ -160,6 +175,13 @@ INT_FIELDS = {"Number Of Engines", "Start year", "Retired year",
               "Planned retire", "Cancellation year"}
 COORD_FIELDS = {"Latitude", "Longitude"}
 COORD_TOL = 0.005
+# the location step (docs/reference/location.md): the three fields are staged
+# together in one plant-level record; a point that moves less than this on a
+# plant that stays approximate is not worth an edit
+LOCATION_FIELDS = ("Latitude", "Longitude", "Location accuracy")
+LOCATION_METHODS = ("address", "site_reference", "dataset", "map", "imagery")
+LOCATION_MOVE_M = 500
+TIER_RANK = {"high": 2, "medium": 1, "low": 0}
 ENTITY_FIELDS = {"Owner(s)", "Operator(s)"}
 TECH_ABBR = {"CC": "combined cycle", "GT": "gas turbine",
              "AGT": "aeroderivative gas turbine", "ST": "steam turbine",
@@ -340,15 +362,57 @@ def load_shard(batch: Path, pid: str):
     if not p.exists():
         return None, "no shard file"
     try:
-        return json.loads(p.read_text(encoding="utf-8")), ""
+        shard = json.loads(p.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError) as e:
         return None, f"shard does not parse ({e})"
+    return merge_location_review(shard, batch / "shards" / f"{pid}.review.json"), ""
+
+
+def merge_location_review(shard, review_path: Path):
+    """A second-look shard (build_sweep_args.py --location-review) replaces the
+    first shard's location: its `location` object and its coordinate findings,
+    wherever they sit, win; everything else in the first shard stays."""
+    if not review_path.exists():
+        return shard
+    try:
+        review = json.loads(review_path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return shard
+    if not review.get("meta", {}).get("done"):
+        return shard
+    pf = dict(shard.get("plant_findings") or {})
+    for f in LOCATION_FIELDS:
+        pf.pop(f, None)
+    for u in shard.get("units") or []:
+        for f in LOCATION_FIELDS:
+            (u.get("findings") or {}).pop(f, None)
+    rpf = review.get("plant_findings") or {}
+    found = {f: rpf[f] for f in LOCATION_FIELDS if f in rpf}
+    for u in review.get("units") or []:
+        for f in LOCATION_FIELDS:
+            if f in (u.get("findings") or {}) and f not in found:
+                found[f] = u["findings"][f]
+    pf.update(found)
+    shard["plant_findings"] = pf
+    shard["location"] = review.get("location") or {}
+    shard["qa"] = [q for q in shard.get("qa") or [] if q.get("concern_type") != "location"] + \
+        [q for q in review.get("qa") or [] if q.get("concern_type") == "location"]
+    shard["source_log"] = (shard.get("source_log") or []) + (review.get("source_log") or [])
+    shard.setdefault("meta", {})["location_review"] = str(review_path.name)
+    return shard
 
 
 # ------------------------------------------------------------ plain words ---
 
 def unit_label(unit_name: str, uid: str) -> str:
     return f"unit {unit_name} ({uid})" if unit_name else f"unit {uid}"
+
+
+def moved_words(m) -> str:
+    """A distance in plain words: 340 m, 1.2 km."""
+    if m is None:
+        return "an unknown distance"
+    return f"{m / 1000:.1f} km" if m >= 1000 else f"{int(round(m))} m"
 
 
 def link_phrase(n: int) -> str:
@@ -711,7 +775,11 @@ class Assembler:
         for u in missing:
             self.warnings.append(f"{pid}/{u}: unit not in the export; skipped")
         order = [u for u in order if u in self.export]
-        plant_findings = shard.get("plant_findings") or {}
+        plant_findings = dict(shard.get("plant_findings") or {})
+        # the location step: Latitude, Longitude and Location accuracy are
+        # one edit (docs/reference/location.md), wherever the shard put them
+        location = {f: plant_findings.pop(f) for f in LOCATION_FIELDS
+                    if f in plant_findings}
 
         for uid in order:
             su = shard_units.get(uid)
@@ -729,6 +797,9 @@ class Assembler:
                 reported.add(field)
                 self.compare(pid, plant_name, uid, field, ev["value"], None,
                              fd, "unit")
+                if field in LOCATION_FIELDS:
+                    location.setdefault(field, fd)
+                    continue
                 notes = ""
                 if ev["verdict"] != "match" or ev["new_urls"]:
                     notes = self.unit_notes_once(uid, su.get("notes"))
@@ -770,12 +841,185 @@ class Assembler:
             siblings = [u for u in order if u != anchor]
             self.stage(pid, plant_name, field, fd, anchor, ev, "", siblings)
 
+        if location and order:
+            self.stage_location(pid, plant_name, order, location,
+                                shard.get("location") or {})
+
         for section, lane in (("qa", "qa"), ("monitor", "monitor"),
                               ("newunits", "newunits"), ("entities", "entity")):
             for i, item in enumerate(shard.get(section) or []):
                 lane, item = self.confirmed_or_lead(lane, item)
                 self.lanes[lane].append(self.passthrough(pid, plant_name, lane,
                                                          item, i))
+
+    def shard_units_of(self, pid):
+        shard = self.shards.get(pid) or {}
+        return {u.get("gem_unit_id"): u for u in shard.get("units") or []}
+
+    def image_path(self, image):
+        """The saved map render as a batch-relative path, or "" when absent."""
+        if not ws(image):
+            return ""
+        p = Path(str(image).strip())
+        if p.is_absolute():
+            try:
+                return str(p.relative_to(self.batch))
+            except ValueError:
+                return str(p)
+        cand = self.batch / p
+        if cand.exists():
+            return str(p)
+        alt = self.batch / "staging" / "maps" / p.name
+        return f"staging/maps/{p.name}" if alt.exists() else str(p)
+
+    def stage_location(self, pid, plant_name, order, findings, meta):
+        """One plant-level record for Latitude, Longitude and Location accuracy
+        (docs/reference/location.md). The point is staged when it fills a
+        blank, moves more than LOCATION_MOVE_M, or makes the plant exact; a
+        nearer point on a plant that stays approximate is only reported in the
+        comparison. A move on a plant the brief did not hand to the location
+        step becomes a question, as the sweep rules promise."""
+        anchor = order[0]
+        siblings = [u for u in order if u != anchor]
+        row = self.export.get(anchor) or {}
+        fds = {f: dict(findings.get(f) or {}) for f in LOCATION_FIELDS}
+        values = {f: ws(fds[f].get("value")) for f in LOCATION_FIELDS}
+        for uid in order:
+            for f in LOCATION_FIELDS:
+                if f in findings:
+                    self.compare(pid, plant_name, uid, f, values[f], None,
+                                 fds[f], "plant")
+        current = {f: row.get(f, "") for f in LOCATION_FIELDS}
+        cur_lat, cur_lon = parse_coord(current["Latitude"]), parse_coord(current["Longitude"])
+        cur_acc = ws(current["Location accuracy"]).lower()
+        lat, lon = parse_coord(values["Latitude"]), parse_coord(values["Longitude"])
+        acc = values["Location accuracy"].lower()
+        if lat is None or lon is None:
+            if acc and cur_lat is not None and cur_lon is not None:
+                lat, lon = cur_lat, cur_lon      # only the accuracy changes
+            else:
+                self.warnings.append(f"{pid}: location finding without a full point; skipped")
+                return
+        if not valid_point(lat, lon):
+            self.warnings.append(f"{pid}: {lat}, {lon} is not a valid point; skipped")
+            return
+        if acc not in ("exact", "approximate"):
+            if acc:
+                self.warnings.append(f"{pid}: Location accuracy {acc!r} read as approximate")
+            acc = cur_acc if cur_acc in ("exact", "approximate") else "approximate"
+        blank = cur_lat is None or cur_lon is None
+        moved = None if blank else distance_m(cur_lat, cur_lon, lat, lon)
+        if blank:
+            verdict = "fill"
+        elif moved > LOCATION_MOVE_M or (acc == "exact" and cur_acc != "exact"):
+            verdict = "change"
+        else:
+            self.match_no_new_url += 1
+            return
+        refs, verifications, seen = [], [], set()
+        for f in LOCATION_FIELDS:
+            refs += [u for u in (fds[f].get("refs") or []) if ws(u) and u not in refs]
+            for v in fds[f].get("verifications") or []:
+                if isinstance(v, dict) and v.get("url") not in seen:
+                    seen.add(v.get("url"))
+                    verifications.append(v)
+        pin = pin_link(lat, lon)
+        if pin not in refs:
+            refs.append(pin)
+        # a pin link is the point itself, so it verifies by construction: it
+        # opens on the staged coordinate (the verifier cannot read a map page)
+        for u in refs:
+            pt = pin_point(u)
+            if pt and abs(pt[0] - lat) < 1e-4 and abs(pt[1] - lon) < 1e-4:
+                verifications = [v for v in verifications if v.get("url") != u]
+                verifications.append({"url": u, "ok": True, "contains_value": True,
+                                      "name_found": False,
+                                      "note": "a Google Maps pin that opens on the staged point"})
+            elif pt:
+                self.warnings.append(f"{pid}: pin link {u} does not open on the staged point")
+        checks = set()
+        for f in LOCATION_FIELDS:
+            checks |= set(self.checks_for(pid, anchor, f, siblings))
+        checks = sorted(checks)
+        tasked = 25 in checks
+        # the three findings usually share one note; say it once, then the
+        # unit's own notes (where the satellite look is usually described)
+        seen, parts = set(), []
+        for f in LOCATION_FIELDS:
+            n_ = ws(fds[f].get("note"))
+            if n_ and n_ not in seen:
+                seen.add(n_)
+                parts.append(n_)
+        unit_notes = ws((self.shard_units_of(pid).get(anchor) or {}).get("notes"))
+        if unit_notes and unit_notes not in seen:
+            parts.append(unit_notes)
+        notes = join_notes(*parts, meta.get("review_note"))
+        n = len(order)
+        target = (f"all {n} units of {plant_name}" if n > 1
+                  else unit_label(row.get("Unit name", ""), anchor))
+        fields = {"Latitude": fmt5(lat), "Longitude": fmt5(lon), "Location accuracy": acc}
+        if verdict == "change" and not tasked:
+            rec = self.base_record(pid, plant_name, anchor)
+            rec.update({
+                "record_id": f"{pid}:plant:qa-location", "concern_type": "location",
+                "recommendation": ("Decide whether GEM's point should move. This plant "
+                                   "was not in the location step, so the move is a "
+                                   "question, not an edit."),
+                "fields": {}, "refs": {"Location Data Source": refs},
+                "proposed_value": fields, "current": current,
+                "researcher_notes": join_notes(
+                    f"The research places the plant at {fmt5(lat)}, {fmt5(lon)}, "
+                    f"about {moved_words(moved)} from GEM's point.", notes),
+                "applies_to_all_units": True, "sibling_unit_ids": siblings})
+            if checks:
+                rec["checks"] = checks
+            self.lanes["qa"].append(rec)
+            return
+        best = max((str(fds[f].get("tier") or "").lower() for f in LOCATION_FIELDS
+                    if fds[f]), key=lambda t: TIER_RANK.get(t, -1), default="medium")
+        tier, extra = self.tier_for("Latitude", verdict,
+                                    {"tier": best if best in TIER_RANK else "medium",
+                                     "verifications": verifications, "note": notes},
+                                    refs)
+        method = ws(meta.get("method")).lower()
+        if method not in LOCATION_METHODS:
+            if method:
+                self.warnings.append(f"{pid}: location method {method!r} is not in the list")
+            method = method or ("dataset" if refs[:-1] and all(
+                host_of(u).endswith("eia.gov") for u in refs[:-1]) else "")
+        if blank:
+            now = "The boxes are empty now."
+        else:
+            now = (f"They now say {current['Latitude']}, {current['Longitude']} "
+                   f"and {cur_acc or 'blank'}, about {moved_words(moved)} away.")
+        action = (f"Set Latitude of {target} to {fields['Latitude']}, Longitude to "
+                  f"{fields['Longitude']} and Location accuracy to {acc}. {now} Add "
+                  f"{link_phrase(len(refs))} to the Location Data Source box"
+                  f"{' on each unit' if n > 1 else ''}. Keep the links already there.")
+        rec = self.base_record(pid, plant_name, anchor)
+        rec.update({
+            "record_id": f"{pid}:plant:location", "cluster": anchor, "verdict": verdict,
+            "fields": fields, "current": current,
+            "refs": {"Location Data Source": refs},
+            "verifications": verifications, "tier": tier,
+            "independent": any(bool(fds[f].get("independent")) for f in LOCATION_FIELDS),
+            "source_language": "en",
+            "researcher_notes": join_notes(notes, extra), "action": action,
+            "applies_to_all_units": True, "sibling_unit_ids": siblings,
+            "sibling_current": {u: {f: (self.export.get(u) or {}).get(f, "")
+                                    for f in LOCATION_FIELDS} for u in siblings},
+            "location_method": method,
+            "location_moved_m": None if moved is None else int(round(moved)),
+            "location_needs_review": bool(meta.get("needs_review"))})
+        if checks:
+            rec["checks"] = checks
+        if any(fds[f].get("irp") for f in LOCATION_FIELDS):
+            rec["irp"] = True
+        if meta.get("control_points") or method == "map":
+            rec["location_control_points"] = list(meta.get("control_points") or [])
+            rec["location_fit_m"] = meta.get("fit_m")
+            rec["location_image"] = self.image_path(meta.get("image"))
+        self.lanes["updates"].append(rec)
 
     @staticmethod
     def confirmed_or_lead(lane, item):

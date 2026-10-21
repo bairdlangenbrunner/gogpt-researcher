@@ -40,6 +40,7 @@ where, and what to do.
   unit 2. The EIA table lists the plant but not this unit, and the owner's
   website only gives the total capacity." Not: "start_year unresolved; EIA
   n/a."
+- **Every note makes sense read alone.** Write whole sentences that say what the note is about. Never squeeze a note into a fragment that only works next to the text beside it. "A no needs a document that states it. None found." became "The database flags this unit because its carbon capture answer has no source. I found no document that says whether the unit has carbon capture, so there is no source to add." (Baird, 2026-10-16.)
 - **The action line is an instruction a person follows in the web form.**
   "Set the status of unit GT5 to retired and the retired year to 2024. Add
   the two links below to the status and retired-year source boxes. Keep the

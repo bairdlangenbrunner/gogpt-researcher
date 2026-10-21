@@ -10,10 +10,10 @@
       "quarter": "q4-2026",
       "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
     },
-    "generated": "2026-10-16T16:31:47-04:00",
+    "generated": "2026-10-19T18:40:50-04:00",
     "mode": "update",
     "counts": {
-      "records": 7
+      "records": 9
     }
   },
   "records": [
@@ -198,6 +198,59 @@
       "record_id": "L100000103905:new:gt4"
     },
     {
+      "gem_plant_id": "L100001047779",
+      "plant_name": "Orient Energy Center power station",
+      "unit_name": "3",
+      "fields": {
+        "Unit name": "3",
+        "Capacity (MW)": "232.5",
+        "Fuel": "fossil gas: natural gas",
+        "Status": "pre-construction",
+        "Start year": "2029",
+        "Turbine/Engine Technology": "gas turbine"
+      },
+      "refs": {
+        "Unit name Data Source": [
+          "https://idnraqrr.iowadnr.gov/ConPermitSearch/ConstructionPermit?id=11491"
+        ],
+        "Capacity Data Source": [
+          "https://www.midamericanenergy.com/media/pdf/orient_energy_center_fact_sheet.pdf",
+          "https://idnraqrr.iowadnr.gov/ConPermitSearch/ConstructionPermit?id=11491"
+        ],
+        "Fuel Data Source": [
+          "https://www.midamericanenergy.com/media/pdf/orient_energy_center_fact_sheet.pdf"
+        ],
+        "Status Data Source": [
+          "https://idnraqrr.iowadnr.gov/ConPermitSearch/ConstructionPermit?id=11491",
+          "https://www.midamericanenergy.com/media/pdf/orient_energy_center_fact_sheet.pdf"
+        ],
+        "Start Year Data Source": [
+          "https://www.midamericanenergy.com/media/pdf/orient_energy_center_fact_sheet.pdf"
+        ],
+        "Turbine/Engine Technology Data Source": [
+          "https://www.midamericanenergy.com/media/pdf/orient_energy_center_fact_sheet.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://idnraqrr.iowadnr.gov/ConPermitSearch/ConstructionPermit?id=11491",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.midamericanenergy.com/media/pdf/orient_energy_center_fact_sheet.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "note": "The state issued air permit 26-A-246 on June 11, 2026 for a third combustion turbine at Orient, with the same heat input as units 1 and 2. MidAmerican's fact sheet says the plant will have up to 700 MW with unit 3 in service in spring 2029. The capacity of 232.5 MW is worked out, not stated: the turbines are the same size, and 700 MW less the 465 MW of units 1 and 2 leaves about 235 MW. The status is pre-construction because the permit is issued but the turbine is not yet installed. The owner is MidAmerican Energy, the same as the other units; please copy it from them.",
+      "researcher_notes": "The state issued an air permit on June 11, 2026 for a third turbine at Orient. MidAmerican's fact sheet says unit 3 enters service in spring 2029 and the plant totals up to 700 MW. The 232.5 MW size is worked out from the matching units 1 and 2. Copy the owner from the other units.",
+      "country": "United States",
+      "record_id": "L100001047779:new:3"
+    },
+    {
       "gem_plant_id": "L100000409203",
       "plant_name": "Ames GT power station",
       "unit_name": "GT1",
@@ -241,6 +294,89 @@
       "researcher_notes": "The EIA-860M table for August 2026, Operating sheet, lists generator GT1 at Ames GT, EIA plant 6463, as an operating combustion turbine of 21.3 MW that started in 1972. GEM does not have this unit. The table gives the fuel as distillate fuel oil, the same as unit GT2. The owner is City of Ames (Iowa), the same as the other units at this plant; please copy it from them. Its Other IDs (unit) entry is EIA: GT1.",
       "country": "United States",
       "record_id": "L100000409203:new:gt1"
+    },
+    {
+      "gem_plant_id": "L100000103902",
+      "unit_name": "Phase 1",
+      "fields": {
+        "Unit name": "Phase 1",
+        "Fuel": "fossil gas: natural gas, fossil liquids: fuel oil",
+        "Number Of Engines": "3",
+        "Capacity Per Engine": "18.13",
+        "Status": "pre-construction",
+        "Start year": "2030",
+        "Turbine/Engine Technology": "internal combustion",
+        "Equipment Manufacturer/Model": "Wärtsilä"
+      },
+      "refs": {
+        "Fuel Data Source": [
+          "https://www.cityofames.org/Resident-Services/Whats-Happening-in-Ames/Major-Projects/Ames-Municipal-Energy-Center",
+          "https://amesvoice.com/2026/07/29/ames-approves-millions-in-energy-center-contracts/"
+        ],
+        "Capacity Data Source": [
+          "https://citizenportal.ai/articles/8905977/iowa/story-county/ames-city/council-approves-7679-million-award-for-engines-and-247-million-transformer-for-ames-energy-center",
+          "https://amesvoice.com/2026/07/29/ames-approves-millions-in-energy-center-contracts/",
+          "https://iowastatedaily.com/340719/city-of-ames/ames-is-building-a-new-power-plant/"
+        ],
+        "Status Data Source": [
+          "https://www.cityofames.org/Resident-Services/Whats-Happening-in-Ames/Major-Projects/Ames-Municipal-Energy-Center",
+          "https://amesvoice.com/2026/07/29/ames-approves-millions-in-energy-center-contracts/"
+        ],
+        "Start Year Data Source": [
+          "https://amesvoice.com/2026/06/02/a-deep-dive-into-the-future-of-the-ames-municipal-power-plant/",
+          "https://iowastatedaily.com/340719/city-of-ames/ames-is-building-a-new-power-plant/"
+        ],
+        "Turbine/Engine Technology Data Source": [
+          "https://www.cityofames.org/Resident-Services/Whats-Happening-in-Ames/Major-Projects/Ames-Municipal-Energy-Center",
+          "https://amesvoice.com/2026/07/29/ames-approves-millions-in-energy-center-contracts/"
+        ],
+        "Turbine/Engine Equipment Data Source": [
+          "https://www.cityofames.org/Resident-Services/Whats-Happening-in-Ames/Major-Projects/Ames-Municipal-Energy-Center",
+          "https://iowastatedaily.com/340719/city-of-ames/ames-is-building-a-new-power-plant/"
+        ],
+        "Unit name Data Source": [
+          "https://amesvoice.com/2026/06/02/a-deep-dive-into-the-future-of-the-ames-municipal-power-plant/",
+          "https://iowastatedaily.com/340719/city-of-ames/ames-is-building-a-new-power-plant/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.cityofames.org/Resident-Services/Whats-Happening-in-Ames/Major-Projects/Ames-Municipal-Energy-Center",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://amesvoice.com/2026/07/29/ames-approves-millions-in-energy-center-contracts/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://amesvoice.com/2026/06/02/a-deep-dive-into-the-future-of-the-ames-municipal-power-plant/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://iowastatedaily.com/340719/city-of-ames/ames-is-building-a-new-power-plant/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://citizenportal.ai/articles/8905977/iowa/story-county/ames-city/council-approves-7679-million-award-for-engines-and-247-million-transformer-for-ames-energy-center",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": true,
+      "note": "The City of Ames is building a new gas plant, the Ames Municipal Energy Center, in the coal yard of this power plant. On July 28, 2026 the city council bought three Wärtsilä engines for about 76.8 million dollars. A summary of that council meeting gives 18.13 MW for each engine. Ames Voice says the three engines give more than 54 MW together, and the Iowa State Daily says 54 MW. The engines burn natural gas or fuel oil, according to the city's project page and Ames Voice. The city's page says the project is in engineering and pre-construction. No air permit application for the engines is on file with the state yet. The engines arrive in October 2029. Ames Voice and the Iowa State Daily expect them to run in spring or early 2030. The city's page says operational by 2031. I used 2030. The site has room for three more engines later, so this set is named Phase 1. An Ames Tribune story says the new engines make 108 MW. That figure does not match the three engines bought, so I did not use it. Please copy the owner, City of Ames, and the location from the other units. The city calls the whole site the Ames Municipal Energy Center, so that name could go in Other Name(s).",
+      "plant_name": "Ames Municipal Power Plant",
+      "country": "United States",
+      "record_id": "L100000103902:new:phase-1"
     },
     {
       "gem_plant_id": "L100000409255",
