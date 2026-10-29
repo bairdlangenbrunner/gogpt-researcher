@@ -11,7 +11,7 @@ Grid) are never used.
 
 The state's markets, transmission owners and name patterns are settings in
 `scopes/us-<st>/queues.json`, not logic. A new state is a new settings file
-there. Michigan is the first. Mississippi's settings are carried over so the
+there. Michigan is the first; North Dakota adds SPP. Mississippi's settings are carried over so the
 Mississippi case (`scopes/us-ms/pull_queues_mississippi.py`, which also reads
 Southern Company and TVA) can later move onto this script; until then that
 script stays the one for scope us-ms and nothing here touches it.
@@ -66,6 +66,22 @@ and similar count as gas or oil. "Methane" (landfill gas) does not. A blank or
 or oil technology, as fuel unknown. Capacity is the capacity MW, or the energy MW
 when capacity is zero.
 
+SPP (western North Dakota: Basin Electric, Western Area Power and their
+members; found 2026-10-29). The active generator interconnection queue is one
+open CSV, plain GET, no login: `https://opsportal.spp.org/Studies/GenerateActiveCSV`
+(the "Active" download on `https://opsportal.spp.org/Studies/GIActive`, about
+1,020 requests, 27 in North Dakota). The first line is "Last Updated On,<date>",
+the second the header; some header names carry a leading space. Fields: request
+number (GEN-, ERAS- for the Expedited Resource Adequacy Study, -SR for surplus,
+-GR for replacement), cluster, nearest town or county, state, transmission owner
+at the point of interconnection, in-service and commercial operation dates,
+capacity, summer MW, nameplate capacity, generation type, fuel type, substation
+or line, request received, date withdrawn, status. Every state row is kept.
+Gas or oil: a fuel of gas, CTG, combined cycle, oil or diesel. A Thermal row
+with a blank fuel is a fuel-unknown lead (the Pioneer phase IV rows at Judson
+are like that). Size is the nameplate capacity when above zero, else the
+capacity, else the summer MW.
+
 Output (batches/us-<st>/harvest/): `queues.json` and `queues.md`, the shape
 `build_state_brief.py --harvest` reads (same keys as the Mississippi output).
 Downloads stay out of the repo. Run with `--match-only FILE` to re-match a saved
@@ -93,6 +109,8 @@ PJM_SERIAL_XML = "https://www.pjm.com/pjmfiles/media/planning/queues-data/Planni
 PJM_SERIAL_PAGE = "https://www.pjm.com/planning/service-requests/serial-service-request-status"
 PJM_CYCLE_POST = "https://www.pjm.com/m/ProjectTransition/GenerateXMLTransitionProjectsAll"
 PJM_CYCLE_PAGE = "https://www.pjm.com/planning/m/cycle-service-request-status"
+SPP_CSV = "https://opsportal.spp.org/Studies/GenerateActiveCSV"
+SPP_PAGE = "https://opsportal.spp.org/Studies/GIActive"
 
 GAS_OIL = re.compile(r"natural gas|\bgas\b|ulsd|fuel oil|\boil\b|diesel|syngas|combustion turbine|"
                      r"combined cycle|reciprocating", re.I)
@@ -267,6 +285,89 @@ def fetch_pjm():
     return serial.text, r.stdout
 
 
+# ----------------------------------------------------------------- SPP ---
+
+SPP_GAS_OIL = re.compile(r"\bgas\b|\bctg?\b|combined cycle|combustion turbine|\boil\b|diesel|reciprocating", re.I)
+
+
+def spp_rows(text):
+    """(rows as dicts with stripped header names, 'Last Updated On' date) from the SPP active CSV."""
+    import csv
+    import io
+    lines = text.lstrip("﻿").splitlines()
+    updated = ""
+    if lines and lines[0].startswith(('"Last Updated', "Last Updated")):
+        updated = pjm_date(next(csv.reader([lines[0]]))[1])
+        lines = lines[1:]
+    rows = [{(k or "").strip(): (v or "").strip() for k, v in r.items()}
+            for r in csv.DictReader(io.StringIO("\n".join(lines)))]
+    return rows, updated
+
+
+def spp_mw(r):
+    for key in ("Nameplate Capacity", "Capacity", "MAX Summer MW"):
+        try:
+            v = float(r.get(key) or "")
+        except ValueError:
+            continue
+        if v > 0:
+            return v
+    return None
+
+
+def spp_fuel_class(r):
+    """('gas_oil'|'unknown'|'other', fuel text)."""
+    fuel, gen = r.get("Fuel Type", ""), r.get("Generation Type", "")
+    if SPP_GAS_OIL.search(fuel):
+        return "gas_oil", fuel
+    if re.fullmatch(r"thermal", gen, re.I) and not fuel:
+        return "unknown", "(not shown)"
+    return "other", fuel or gen
+
+
+def spp_entries(rows, cfg, state):
+    """Every row of the state; gas or oil flagged, Thermal with no fuel kept as a fuel-unknown lead."""
+    out = []
+    for r in rows:
+        if r.get("State") != state:
+            continue
+        cls, fuel = spp_fuel_class(r)
+        notes = []
+        if r.get("Commercial Operation Date"):
+            notes.append(f"Commercial operation date {pjm_date(r['Commercial Operation Date'])}")
+        if r.get("Nameplate Capacity") not in ("", "0") and r.get("Capacity"):
+            notes.append(f"Nameplate {r['Nameplate Capacity']} MW, capacity {r['Capacity']} MW")
+        out.append({
+            "source": "SPP",
+            "queue_id": r.get("Generation Interconnection Number"),
+            "project_name": "",
+            "county": r.get("Nearest Town or County", ""),
+            "state": state,
+            "fuel": fuel,
+            "facility_type": r.get("Generation Type", ""),
+            "mw": spp_mw(r),
+            "status": r.get("Status", ""),
+            "stage": r.get("Current Cluster", ""),
+            "queue_date": pjm_date(r.get("Request Received")),
+            "in_service": pjm_date(r.get("In-Service Date")),
+            "withdrawn": pjm_date(r.get("Date Withdrawn")),
+            "poi": r.get("Substation or Line", ""),
+            "owner": r.get("TO at POI", ""),
+            "note": "; ".join(notes),
+            "url": SPP_PAGE,
+            "gas_oil": cls == "gas_oil",
+            "fuel_unknown": cls == "unknown",
+        })
+    return out
+
+
+def fetch_spp():
+    page = fetch_page(SPP_CSV, timeout=120)
+    if page.status != "200" or "Generation Interconnection Number" not in page.text:
+        raise RuntimeError(f"SPP active queue CSV HTTP {page.status}")
+    return page.text
+
+
 # ---------------------------------------------------------------- match ---
 
 def load_plants(state_name, known, csv_path=None):
@@ -302,14 +403,17 @@ def match_all(plants, entries):
     matched = set()
     for i, e in enumerate(entries):
         e["matched"] = []
-        if not e["gas_oil"]:
+        if not (e["gas_oil"] or e.get("fuel_unknown")):
             continue
-        for p in plants:
-            how = match_entry(p, e)
-            if how:
-                e["matched"].append({"plant_id": p["id"], "plant": p["name"], "how": how})
-                by_plant[p["id"]].append(i)
-                matched.add(i)
+        hits = [(p, match_entry(p, e)) for p in plants]
+        hits = [(p, how) for p, how in hits if how and (e["gas_oil"] or not how.startswith("same county"))]
+        # a hand-checked name hit beats the plants that only share the county
+        if any(not how.startswith("same county") for _, how in hits):
+            hits = [(p, how) for p, how in hits if not how.startswith("same county")]
+        for p, how in hits:
+            e["matched"].append({"plant_id": p["id"], "plant": p["name"], "how": how})
+            by_plant[p["id"]].append(i)
+            matched.add(i)
     return by_plant, matched
 
 
@@ -321,7 +425,8 @@ def fmt_mw(mw):
 
 def entry_line(e):
     bits = [f"{e['source']} {e['queue_id']}", e["fuel"] or e["facility_type"], fmt_mw(e["mw"]),
-            norm_county(e["county"]).title() + " County" if e["county"] else "", e["status"],
+            ("nearest town or county: " + e["county"] if e["source"] == "SPP"
+             else norm_county(e["county"]).title() + " County") if e["county"] else "", e["status"],
             f"queued {e['queue_date']}" if e["queue_date"] else "",
             f"in service {e['in_service']}" if e["in_service"] else "",
             f"point of interconnection: {e['poi']}" if e["poi"] else "", e["owner"]]
@@ -358,7 +463,7 @@ def write_outputs(out_dir, state_name, plants, entries, by_plant, matched, sourc
     L += ["## Gas and oil entries that match no GEM plant (possible new plants or uprates)", ""]
     for e in sorted(unmatched, key=lambda x: (x["source"], str(x["queue_id"]))):
         L.append(f"- {entry_line(e)}. Citation: {e['url']}")
-    L += ["", "## Entries with fuel not shown (state's own transmission owner with the state blanked, or a PJM entry with no fuel)", "",
+    L += ["", "## Entries with fuel not shown (state's own transmission owner with the state blanked, a PJM entry with no fuel, or an SPP thermal entry with no fuel)", "",
           "MISO blanks state, fuel, county and point of interconnection on its newest entries. Sizes of 100 MW or more are worth a look when the sweep reaches the plant's utility.", ""]
     for e in sorted(unknown, key=lambda x: -(x["mw"] or 0)):
         if (e["mw"] or 0) >= 50:
@@ -417,6 +522,19 @@ def main():
             except Exception as e:  # noqa: BLE001
                 log(f"PJM failed: {e}")
                 sources.append({"name": "PJM", "url": PJM_SERIAL_PAGE, "how": f"NOT REACHED: {e}"})
+        if "SPP" in cfg["markets"]:
+            try:
+                rows, updated = spp_rows(fetch_spp())
+                sp = spp_entries(rows, cfg, st)
+                entries += sp
+                sources.append({"name": "SPP generator interconnection active queue (includes ERAS rows)", "url": SPP_PAGE,
+                                "how": f"open CSV {SPP_CSV}, plain GET; last updated {updated or 'not shown'}; "
+                                       f"{len(rows)} requests, {len(sp)} in {cfg['name']}, "
+                                       f"{sum(1 for e in sp if e['gas_oil'])} gas or oil, "
+                                       f"{sum(1 for e in sp if e['fuel_unknown'])} thermal with no fuel shown"})
+            except Exception as e:  # noqa: BLE001
+                log(f"SPP failed: {e}")
+                sources.append({"name": "SPP", "url": SPP_PAGE, "how": f"NOT REACHED: {e}"})
     by_plant, matched = match_all(plants, entries)
     unmatched, unknown = write_outputs(out_dir, cfg["name"], plants, entries, by_plant, matched, sources, today)
     for src in sorted({e["source"] for e in entries}):

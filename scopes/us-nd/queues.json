@@ -1,0 +1,46 @@
+{
+  "_about": "Queue settings for pull_queues.py --state ND. name is the State/Province value in the GEM export; markets are the queues read (North Dakota is split between MISO in the east and SPP in the west, where Basin Electric, Western Area Power and their members sit); owner is the transmission owners or utilities whose state-blank MISO entries are kept as leads, fuel unknown (Northern States Power, Otter Tail, Great River Energy, Minnesota Power and Missouri River Energy also serve Minnesota, so most of their blank entries are Minnesota projects; they are kept anyway because North Dakota's own new projects hide among them, and the brief says to check the state); shared_owner is neighboring owners whose blank entries are counted, not kept; pjm_states is empty; known is hand-checked patterns, GEM plant id to regexes that name that plant in a point of interconnection, project name or developer. Every match still says check.",
+  "state": "ND",
+  "name": "North Dakota",
+  "markets": [
+    "MISO",
+    "SPP"
+  ],
+  "owner": "minnkota|otter tail|northern states|montana-dakota|great river|minnesota power|missouri river energy|basin electric|western area power",
+  "shared_owner": "itc midwest|dairyland|southern minnesota|smmpa|rochester public|american transmission|^atc\\b",
+  "pjm_states": [],
+  "known": {
+    "L100001047848": [
+      "\\bbison\\b",
+      "springbrook",
+      "\\btande\\b"
+    ],
+    "L100000401741": [
+      "judson",
+      "\\bpioneer\\b"
+    ],
+    "L100000401740": [
+      "\\balexander\\b",
+      "lonesome"
+    ],
+    "L100001080387": [
+      "leland olds",
+      "\\bstanton\\b"
+    ],
+    "L100000104092": [
+      "heskett"
+    ],
+    "L100000104096": [
+      "spiritwood"
+    ]
+  },
+  "known_set": "2026-10-29, from the SPP active queue and the MISO queue themselves",
+  "known_names": {
+    "L100001047848": "Bison Generation Station, Williams County (SPP GEN-2024-081 and 082 on the Springbrook to Tande 345 kV line)",
+    "L100000401741": "Pioneer generating station, Williston (Judson 345 kV substation)",
+    "L100000401740": "Lonesome Creek Station, Alexander",
+    "L100001080387": "River Run Energy Center, Stanton (SPP ERAS-2025-011 and 012 at Leland Olds 345 kV)",
+    "L100000104092": "Heskett Station, Mandan",
+    "L100000104096": "Spiritwood Industrial Park, Jamestown"
+  }
+}

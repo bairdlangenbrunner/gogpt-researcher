@@ -108,12 +108,14 @@ def test_match_all_by_pattern_developer_and_county():
     assert ids("L100000402411") == ["AA2-116", "C01-1678"]
     assert ids("LX") == ["J3923"]
     assert ids("LY") == ["J4300"]
-    # fuel-unknown leads are never matched
+    # fuel-unknown leads match only a hand-checked pattern, never a county
     assert not any(e["queue_id"] in ("J4500", "AB1-004") for e in (entries[i] for i in matched))
 
 
-def test_state_settings_carry_mississippi_and_michigan():
+def test_state_settings_carry_mississippi_michigan_and_north_dakota():
     assert q.STATES["MS"]["markets"] == ["MISO"] and q.STATES["MI"]["markets"] == ["MISO", "PJM"]
+    assert q.STATES["ND"]["markets"] == ["MISO", "SPP"] and q.STATES["ND"]["name"] == "North Dakota"
+    assert q.STATES["ND"]["pjm_states"] == [] and "L100001047848" in q.STATES["ND"]["known"]
     ms_entries, _ = q.miso_entries([{"projectNumber": "J4176", "state": "", "fuelType": "", "summerNetMW": 1750,
                                      "transmissionOwner": "ENTERGY MISSISSIPPI, LLC."}], q.STATES["MS"], "MS")
     assert ms_entries[0]["fuel_unknown"]

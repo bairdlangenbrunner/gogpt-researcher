@@ -38,6 +38,8 @@ Planned 2026-10-29 for Amalia Llano's North Dakota assignment. Scope tag `us-nd`
 
 ## New tooling
 
+Built 2026-10-29 and tested on saved sample pages (`tests/test_harvest_permits_north_dakota.py`, `tests/test_harvest_psc_north_dakota.py`, `tests/test_pull_queues_north_dakota.py`). Not yet run live. CERIS is not blocked: the site search, the profile tabs and the document links answer anonymously when the request carries the map page as Referer, so the harvester reads CERIS for every power-like or matched air site.
+
 1. `scopes/us-nd/harvest_permits.py` (same shape as `scopes/us-ia/harvest_permits.py`; build on `scripts/harvest_lib.py` for fetch, Wayback, text and size helpers). Writes `scopes/us-nd/work/permits/<plant_id>.md` for each GEM plant, `scopes/us-nd/work/permits/_unmatched.md` for facilities that match no plant, and `scopes/us-nd/work/permits/index.json`. Sources, in order:
    - The Division of Air Quality public comment page `https://deq.nd.gov/AQ/PublicCom.aspx`: each facility anchor points at `https://deq.nd.gov/AQ/Notices/<Facility>/<file>.pdf`. Read every current notice.
    - Past notices: the `AQ/Notices/` directory listing returns 403, so enumerate it through the Wayback CDX API with `matchType=prefix` on `deq.nd.gov/AQ/Notices/` (288 PDFs across about 45 facility folders as of 2026-10-29) and on the older `ndhealth.gov/AQ/Notices/` prefix, and fetch each PDF from its `id_` raw snapshot when the live address fails. Known folders: `BasinElectricBison/` (20251119 notice of intent letter), `AppliedDigital/` (20260519 letter and notice), Marvin Composites (20261021, permit ACP-18354). Pace requests to avoid 429s.
