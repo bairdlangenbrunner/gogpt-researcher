@@ -9,12 +9,12 @@ itself when a brief says "queue entry J3923 lists a 1,414 MW combined cycle in
 Washtenaw County". The aggregators (interconnection.fyi, Cleanview, Ask the
 Grid) are never used.
 
-The state's markets, transmission owners and name patterns are settings in the
-`STATES` table below, not logic. A new state is a new entry there. Michigan is
-the first entry. Mississippi's settings are carried over so the Mississippi case
-(`pull_queues_mississippi.py`, which also reads Southern Company and TVA) can
-later move onto this script; until then that script stays the one for scope
-us-ms and nothing here touches it.
+The state's markets, transmission owners and name patterns are settings in
+`scopes/us-<st>/queues.json`, not logic. A new state is a new settings file
+there. Michigan is the first. Mississippi's settings are carried over so the
+Mississippi case (`scopes/us-ms/pull_queues_mississippi.py`, which also reads
+Southern Company and TVA) can later move onto this script; until then that
+script stays the one for scope us-ms and nothing here touches it.
 
 What was found per source (2026-10-23):
 
@@ -84,9 +84,8 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from fetch import fetch_page  # noqa: E402
-from ms_match import KNOWN as MS_KNOWN, REPO, clean_ws, norm_county  # noqa: E402
-
-CSV = REPO / "scripts" / "gem_export_gogpt_scoped.csv"
+from harvest_lib import CSV, REPO, clean_ws, norm_county  # noqa: E402
+from paths import SCOPES_DIR  # noqa: E402
 
 MISO_API = "https://www.misoenergy.org/api/giqueue/getprojects"
 MISO_PAGE = "https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/"
@@ -99,66 +98,19 @@ GAS_OIL = re.compile(r"natural gas|\bgas\b|ulsd|fuel oil|\boil\b|diesel|syngas|c
                      r"combined cycle|reciprocating", re.I)
 NOT_FOSSIL = re.compile(r"solar|battery|batteries|storage|wind|hydro|biomass|photovoltaic|inverter|methane|nuclear", re.I)
 
-# One entry per state. Everything that differs by state lives here.
-#   name          State/Province value in the GEM export
-#   markets       markets this script reads for the state ("MISO", "PJM")
-#   owner         transmission owner or utility names that, when MISO blanks the state, mean
-#                 the entry is this state's (a lead, fuel unknown)
-#   shared_owner  owners that also serve other states; blanked entries are counted, not kept
-#   known         hand-checked patterns: GEM plant id -> regexes that, found in a point of
-#                 interconnection, project name or developer, name that plant
-#   pjm_states    PJM State values to keep
-STATES = {
-    "MI": {
-        "name": "Michigan",
-        "markets": ["MISO", "PJM"],
-        "owner": r"^METC$|michigan electric trans|^ITC$|^ITC trans|international trans|dte electric|"
-                 r"consumers energy|upper michigan energy|uppco|upper peninsula power|wolverine|"
-                 r"michigan public power|\bmppa\b|lansing board",
-        "shared_owner": r"american transmission|^atc\b",
-        "pjm_states": ["MI"],
-        # Set 2026-10-23 from the queue lists themselves; every match still says "check".
-        "known": {
-            "L100000401674": [r"michigan power\b"],           # Michigan power station, Ludington
-            "L100000402411": [r"indeck niles", r"cook.east elkhart"],
-            "L100000402123": [r"covert", r"segreto"],
-            "L100000402478": [r"\bmcv\b", r"midland cogeneration"],
-            "L100000402079": [r"kalkaska"],
-            "L100000401829": [r"\bkarn\b"],
-            "L100000401855": [r"\bdean\b"],
-            "L100000401856": [r"delray"],
-            "L100000401857": [r"greenwood"],
-            "L100000401858": [r"renaissance"],
-            "L100000402393": [r"blue water"],
-            "L100000402385": [r"\balpine\b"],
-            "L100000402386": [r"sumpter"],
-            "L100000401790": [r"holland energy park"],
-            "L100000401789": [r"48th street"],
-            "L100000409227": [r"48th street"],
-            "L100000401824": [r"kalamazoo river"],
-            "L100000401830": [r"jackson generating"],
-            "L100000401831": [r"zeeland"],
-            "L100000103973": [r"belle river"],
-            "L100000103983": [r"lansing board"],
-            "L100000402461": [r"delta energy"],
-            "L100000409204": [r"mihm", r"\bM38\b"],
-            "L100000409210": [r"kuester", r"huron"],
-            "L100000409279": [r"marquette energy"],
-            "L100001083333": [r"thetford"],
-            "L100001088928": [r"\bmilan\b"],
-        },
-    },
-    # Carried over from pull_queues_mississippi.py / ms_match.py so Mississippi can move onto this
-    # script. Southern Company and TVA are not read here yet, only MISO.
-    "MS": {
-        "name": "Mississippi",
-        "markets": ["MISO"],
-        "owner": r"mississippi|emto|emmp|cooperative energy|\bsmep?\b|south mississippi",
-        "shared_owner": r"$^",
-        "pjm_states": [],
-        "known": MS_KNOWN,
-    },
-}
+# One settings file per state, scopes/us-<st>/queues.json (moved out of this file 2026-10-29).
+# Everything that differs by state lives there; its "_about" key explains each setting.
+def load_states(root=None):
+    """Postal code -> settings, from every scopes/*/queues.json."""
+    out = {}
+    for f in sorted((Path(root) if root else SCOPES_DIR).glob("*/queues.json")):
+        cfg = json.loads(f.read_text(encoding="utf-8"))
+        cfg["settings_file"] = str(f.relative_to(REPO)) if f.is_relative_to(REPO) else str(f)
+        out[cfg["state"]] = cfg
+    return out
+
+
+STATES = load_states()
 
 
 def log(msg):
@@ -417,14 +369,14 @@ def write_outputs(out_dir, state_name, plants, entries, by_plant, matched, sourc
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--state", required=True, help="postal code with an entry in STATES, for example MI")
+    ap.add_argument("--state", required=True, help="postal code with a scopes/us-<st>/queues.json, for example MI")
     ap.add_argument("--scope", help="batch scope, default us-<state>")
     ap.add_argument("--out", help="output folder, default batches/<scope>/harvest")
     ap.add_argument("--match-only", metavar="QUEUES_JSON", help="re-match a saved queues.json, no network")
     a = ap.parse_args()
     st = a.state.upper()
     if st not in STATES:
-        sys.exit(f"ERROR: no settings for {st}; add an entry to STATES (known: {', '.join(STATES)})")
+        sys.exit(f"ERROR: no settings for {st}; add scopes/us-{st.lower()}/queues.json (known: {', '.join(STATES)})")
     cfg = STATES[st]
     scope = a.scope or f"us-{st.lower()}"
     out_dir = Path(a.out) if a.out else REPO / "batches" / scope / "harvest"

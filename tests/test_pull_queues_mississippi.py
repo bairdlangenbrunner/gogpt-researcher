@@ -1,4 +1,4 @@
-"""Offline tests for pull_queues_mississippi.py: saved snippets of the MISO JSON and the
+"""Offline tests for scopes/us-ms/pull_queues_mississippi.py: saved snippets of the MISO JSON and the
 Southern Company Power BI response, no network."""
 import base64
 import json
@@ -6,7 +6,9 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-import pull_queues_mississippi as q  # noqa: E402
+from paths import load_scope_module  # noqa: E402
+
+q = load_scope_module("us-ms", "pull_queues_mississippi")
 
 MISO = [
     {"projectNumber": "J1249", "state": "MS", "county": "Lamar", "fuelType": "Gas", "facilityType": "Combined Cycle",

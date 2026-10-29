@@ -66,6 +66,7 @@ from urllib.parse import urlsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fetch  # noqa: E402
+from paths import scope_base  # noqa: E402
 
 CLASSES = ("rate_limited", "bot_wall", "firewall", "gone", "dead_host", "server_error",
            "empty_record", "pdf_no_text", "archive_refused", "value_missing", "not_tried",
@@ -220,7 +221,9 @@ def batch_hosts(batch_dirs: list[Path]) -> set[str]:
     leaving out the audit's own outputs, which would feed back on themselves."""
     hosts: set[str] = set()
     for d in batch_dirs:
-        roots = [d, d.parent.parent / "work" / "permits" / d.name]
+        repo, base = d.parent.parent, scope_base(d.name)
+        roots = [d, repo / "scopes" / base / "work" / ("permits" if d.name == base else f"{d.name}/permits"),
+                 repo / "work" / "permits" / d.name]  # the older harvest folder, read for one cycle
         for root in roots:
             for f in root.glob("**/*"):
                 if not f.is_file() or f.name in AUDIT_OUTPUTS or f.suffix not in (".json", ".jsonl", ".md", ".txt", ".csv"):

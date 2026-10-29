@@ -1,0 +1,100 @@
+{
+  "_about": "Queue settings for pull_queues.py --state MS. name is the State/Province value in the GEM export; markets are the queues read; owner is the transmission owners or utilities whose state-blank MISO entries are this state's (kept as leads, fuel unknown); shared_owner is owners that also serve other states (their blank entries are counted, not kept); pjm_states is the PJM State values kept; known is hand-checked patterns, GEM plant id to regexes that name that plant in a point of interconnection, project name or developer. Every match still says check.",
+  "state": "MS",
+  "name": "Mississippi",
+  "markets": [
+    "MISO"
+  ],
+  "owner": "mississippi|emto|emmp|cooperative energy|\\bsmep?\\b|south mississippi",
+  "shared_owner": "$^",
+  "pjm_states": [],
+  "known": {
+    "L100000401921": [
+      "attala",
+      "sallis"
+    ],
+    "L100000401833": [
+      "batesville"
+    ],
+    "L100000401922": [
+      "baxter wilson",
+      "\\bbaxter\\b"
+    ],
+    "L100000401627": [
+      "caledonia"
+    ],
+    "L100000402094": [
+      "chevron",
+      "pascagoula"
+    ],
+    "L100000401923": [
+      "choctaw county",
+      "french camp"
+    ],
+    "L100001047324": [
+      "colossus",
+      "new haven"
+    ],
+    "L100000401819": [
+      "crossroads",
+      "clarksdale"
+    ],
+    "L100001025781": [
+      "delta blues"
+    ],
+    "L100000401924": [
+      "andrus"
+    ],
+    "L100000401925": [
+      "hinds",
+      "greenacres"
+    ],
+    "L100000104009": [
+      "watson",
+      "gulfport"
+    ],
+    "L100000402320": [
+      "kemper"
+    ],
+    "L100000402322": [
+      "magnolia",
+      "ashland"
+    ],
+    "L100000104011": [
+      "morrow",
+      "purvis"
+    ],
+    "L100000401834": [
+      "moselle"
+    ],
+    "L100001023568": [
+      "new caledonia"
+    ],
+    "L100000402325": [
+      "quantum",
+      "ackerman"
+    ],
+    "L100000402096": [
+      "ratcliffe"
+    ],
+    "L100000401835": [
+      "silver creek"
+    ],
+    "L100000401628": [
+      "southaven"
+    ],
+    "L100001064651": [
+      "traceview",
+      "ridgeland"
+    ],
+    "L100001080981": [
+      "vicksburg advanced",
+      "vicksburg"
+    ],
+    "L100000402097": [
+      "daniel",
+      "escatawpa"
+    ]
+  },
+  "known_set": "2026-10-23, hand-checked for the Mississippi harvesters (scopes/us-ms/ms_match.py KNOWN); Southern Company and TVA are not read by pull_queues.py, only MISO"
+}

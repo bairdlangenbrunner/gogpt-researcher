@@ -1,10 +1,12 @@
-"""Offline tests for harvest_psc_mississippi.py: saved snippets of a monthly docket PDF
+"""Offline tests for scopes/us-ms/harvest_psc.py: saved snippets of a monthly docket PDF
 (pdftotext -layout), portal rows and document text, no network and no Chrome."""
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-import harvest_psc_mississippi as h  # noqa: E402
+from paths import load_scope_module  # noqa: E402
+
+h = load_scope_module("us-ms", "harvest_psc")
 
 AGENDA = """\
 2024-UA-18                                                  IN RE: PETITION OF ENTERGY MISSISSIPPI, LLC FOR A

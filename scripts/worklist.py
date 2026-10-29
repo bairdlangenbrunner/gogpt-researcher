@@ -29,7 +29,7 @@ does not decide statuses.
 Usage (from scripts/):
     python worklist.py --country Nigeria              # -> work/worklist_nigeria.csv
     python worklist.py --country Brazil --country Peru
-    python worklist.py --state Maryland               # -> work/worklist_us-maryland.csv
+    python worklist.py --state Maryland               # -> work/worklist_us-md.csv
     python worklist.py --state Texas --state Oklahoma # US states (implies --country "United States")
     python worklist.py                                # all countries, one file
     python worklist.py --all                          # include retired/cancelled
@@ -46,7 +46,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from paths import gogpt_scoped_csv, require_fresh_export, work_dir
+from paths import gogpt_scoped_csv, require_fresh_export, scope_tag, work_dir
 from pull_gem_db import derive_column_map
 from schema_constants import (
     CANCELLED_INFERRED_YEARS,
@@ -199,7 +199,9 @@ def main():
     if args.out:
         out_path = Path(args.out)
     else:
-        if states:
+        if states and len(states) == 1:
+            tag = scope_tag(state=next(iter(states)))   # us-nd, the tag every script uses
+        elif states:
             tag = "us-" + "_".join(sorted(x.replace(" ", "-") for x in states))
         else:
             tag = ("_".join(sorted(countries)).replace(" ", "-")

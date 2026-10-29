@@ -3,7 +3,9 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-import harvest_permits_mississippi as h  # noqa: E402
+from paths import load_scope_module  # noqa: E402
+
+h = load_scope_module("us-ms", "harvest_permits")
 
 ACTIVE = """<table><tr><th>AI ID</th></tr>
 <tr><td>86260</td><td><a href="ai_info.aspx?ai=86260">Entergy Mississippi LLC Delta Blues Advanced Power Station</a></td>

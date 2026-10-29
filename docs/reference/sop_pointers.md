@@ -96,8 +96,8 @@ rules an agent needs at batch time, and the live doc always wins on conflict.
 | QC | `qc.md` | batch gate before deliverables; country close-out |
 
 Reference docs supporting them all live in `docs/reference/`; country-specific
-source knowledge in `docs/country_notes/` (US states under
-`docs/country_notes/united_states/`).
+source knowledge in `scopes/<tag>/note.md` (US states and Germany so far) and
+`docs/country_notes/` (countries not yet moved, and `united_states.md`).
 
 ## Which distillation came from which doc
 

@@ -13,6 +13,8 @@ batches/<scope>/
   INDEX.md        one line per batch run: date, mode, what shipped, status
 ```
 
+A scope's permanent files (note, statewide source list, plan, harvesters, queue settings, permit harvest) live in `scopes/<tag>/`, not here: a batch folder is one run, and run variants such as `us-il-dc` share the `scopes/us-il/` folder.
+
 `batches/run_records/` holds cross-scope run logs (pull dates, row counts,
 colmap drift notices) — one small `.md` per run.
 

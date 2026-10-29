@@ -24,7 +24,7 @@ Source, the place fields already filled, the EIA plant codes in Other IDs (locat
 dataset point available with its distance from GEM's point: EIA-860M generator rows (one point
 per distinct coordinate per plant code, from eia860m.py) and the EIA-860 annual Plant table
 (address, county, coordinates, from eia860.py), both only for the United States and only with
-EIA codes. Permit-portal hits join the list only when work/permits/<tag>/harvest_log.jsonl
+EIA codes. Permit-portal hits join the list only when scopes/<tag>/work/permits/harvest_log.jsonl
 records coordinates; harvest_permits.py currently records none in that log (it uses the portal
 coordinates only to filter its search hits), so no permit points are read today and the code
 skips them without complaint. Nearest is the dataset point with the smallest distance; far is
@@ -54,7 +54,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 import geo
-from paths import gogpt_scoped_csv, require_fresh_export, work_dir
+from paths import gogpt_scoped_csv, require_fresh_export, scope_permits, work_dir
 from build_state_brief import (H_COUNTY, H_LOC, H_MAJOR, H_PLANT, H_UNAME, H_UNIT, make_scope,
                                status_group)
 from match_ids import tag_values
@@ -289,9 +289,10 @@ def eia_provider(eia860m_path=None, eia860_zip=None, gens=None, idx860=None, yea
 
 
 def permit_provider(tag):
-    """Points from work/permits/<tag>/harvest_log.jsonl procedures that record lat and lon.
+    """Points from scopes/<tag>/work/permits/harvest_log.jsonl procedures that record lat and lon
+    (an older harvest in work/permits/<tag>/ is read for one cycle).
     Returns None when the folder is absent or holds no coordinates."""
-    log = work_dir() / "permits" / tag / "harvest_log.jsonl"
+    log = scope_permits(tag) / "harvest_log.jsonl"
     if not log.exists():
         return None
     latest = {}

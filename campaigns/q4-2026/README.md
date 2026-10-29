@@ -34,7 +34,7 @@ earlier copy of the sheet; V2 is live). Kickoff/Guide doc linked there too.
 Supporting the US researcher's state assignments with agent-run batches that
 produce the normal actions/evidence deliverable pair per state scope
 (`batches/us-<st>/`). Texas (15 days, high, scheduled 11-05 → 12-01) is the
-pilot: `notes/texas_pilot_plan.md`. The week-of-09-15 states on the
+pilot: `scopes/us-tx/plan.md`. The week-of-09-15 states on the
 researcher's schedule (Hawaii, Maine, Maryland, Montana, New Hampshire, New
 York, Oregon, Rhode Island, Washington, Alabama, Colorado, Florida, Illinois,
 Iowa) are candidates for parallel small batches.

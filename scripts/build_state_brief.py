@@ -8,18 +8,18 @@ Usage (from scripts/):
     python build_state_brief.py --country Germany --mode update
     python build_state_brief.py --state Maryland --mode update \\
         --plants L100000402511,L100000103962 --batch ../batches/us-md \\
-        [--csv gem_export_gogpt_scoped.csv] [--worklist work/worklist_us-maryland.csv]
+        [--csv gem_export_gogpt_scoped.csv] [--worklist work/worklist_us-md.csv]
 
 Reads:
     the GOGPT-scoped export (default scripts/gem_export_gogpt_scoped.csv;
     utf-8-sig, headers matched by exact name), filtered to Country/Area ==
     United States and State/Province == --state, or to Country/Area ==
     --country (case-insensitive);
-    the worklist csv from worklist.py (default <repo>/work/worklist_us-<state-slug>.csv
-    or <repo>/work/worklist_<country-slug>.csv, what `worklist.py --state` /
-    `--country` writes; joined on GEM unit ID for priority and flag; optional);
-    docs/country_notes/united_states/<state-slug>.md or
-    docs/country_notes/<country-slug>.md (inlined when present).
+    the worklist csv from worklist.py (default <repo>/work/worklist_<tag>.csv, tag
+    us-<postal> or <country-slug>, what `worklist.py --state` / `--country` writes;
+    joined on GEM unit ID for priority and flag; optional);
+    the scope note scopes/<tag>/note.md (inlined when present; an older note in
+    docs/country_notes/ is read for one cycle).
 
 Writes (batch dir default ../batches/us-<postal> or ../batches/<country-slug>):
     briefs/<GEM location ID>.md      one brief per plant
@@ -31,7 +31,7 @@ Writes (batch dir default ../batches/us-<postal> or ../batches/<country-slug>):
                                      section to each affected plant's brief
     briefs/_scope.md                 every scope: the add rule (when a project GEM lacks is a new
                                      record and when it is a watch item, Baird 2026-10-23), then
-                                     with --ids or a docs/coverage/<scope>.json list the EIA
+                                     with --ids or a scopes/<tag>/coverage.json list the EIA
                                      plants missing from GEM (one task each) and the statewide
                                      sources to search, for the scope-wide agent; the gates
                                      `ids_followup`, `statewide-coverage` and `watch-case` check
@@ -96,7 +96,7 @@ Scope (update mode only; blind always takes every plant):
                      unfiltered export (--all-csv), or on a coal-to-gas conversion
                      unit, is marked optional under the manual. Web-UI-only items
                      are not briefed. A plant with a fix is in ladder scope.
-    --data-centers [F]  work/permits/<tag>/_data_centers.json from data_center_fleets.py
+    --data-centers [F]  scopes/<tag>/work/permits/_data_centers.json from data_center_fleets.py
                      (or the path F). Writes briefs/_data_centers.md and a check task
                      on each GEM plant a site matches. A missing file is reported and
                      skipped.
@@ -139,28 +139,15 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from paths import REPO_ROOT, gem_export_csv, gogpt_scoped_csv, require_fresh_export, work_dir
+from paths import (REPO_ROOT, US_POSTAL, gem_export_csv, gogpt_scoped_csv, require_fresh_export,
+                   scope_coverage, scope_note, scope_permits, scope_tag, work_dir)
 from schema_constants import (CAPACITY_THRESHOLD_EU_UK_MW, CAPACITY_THRESHOLD_MW, EU_UK_COUNTRIES,
                               OUT_OF_SCOPE_COLUMNS, READ_ONLY_COLUMNS, RESEARCH_FIELDS,
                               STATUSES_IN_DEVELOPMENT)
 from build_review_package import ref_col_for
 import geo
 
-POSTAL = {
-    "alabama": "AL", "alaska": "AK", "arizona": "AZ", "arkansas": "AR",
-    "california": "CA", "colorado": "CO", "connecticut": "CT", "delaware": "DE",
-    "district of columbia": "DC", "florida": "FL", "georgia": "GA", "hawaii": "HI",
-    "idaho": "ID", "illinois": "IL", "indiana": "IN", "iowa": "IA", "kansas": "KS",
-    "kentucky": "KY", "louisiana": "LA", "maine": "ME", "maryland": "MD",
-    "massachusetts": "MA", "michigan": "MI", "minnesota": "MN", "mississippi": "MS",
-    "missouri": "MO", "montana": "MT", "nebraska": "NE", "nevada": "NV",
-    "new hampshire": "NH", "new jersey": "NJ", "new mexico": "NM", "new york": "NY",
-    "north carolina": "NC", "north dakota": "ND", "ohio": "OH", "oklahoma": "OK",
-    "oregon": "OR", "pennsylvania": "PA", "rhode island": "RI",
-    "south carolina": "SC", "south dakota": "SD", "tennessee": "TN", "texas": "TX",
-    "utah": "UT", "vermont": "VT", "virginia": "VA", "washington": "WA",
-    "west virginia": "WV", "wisconsin": "WI", "wyoming": "WY",
-}
+POSTAL = US_POSTAL
 
 H_PLANT = "Plant name"
 H_LOC = "GEM location ID"
@@ -247,16 +234,13 @@ def load_worklist(path):
 
 
 def state_notes(scope):
-    """The inlined notes file: united_states/<state>.md or <country>.md."""
-    d = REPO_ROOT / "docs" / "country_notes"
-    if scope["kind"] == "state":
-        d = d / "united_states"
-    slug = scope["slug"]
-    for name in (slug, slug.replace("-", "_")):
-        p = d / f"{name}.md"
-        if p.exists():
-            return p.read_text(encoding="utf-8").rstrip() + "\n", p
-    return None, None
+    """The inlined scope note: scopes/<tag>/note.md (older notes in
+    docs/country_notes/ are read for one cycle; paths.scope_note)."""
+    p = (scope_note(state=scope["name"]) if scope["kind"] == "state"
+         else scope_note(country=scope["name"]))
+    if p is None:
+        return None, None
+    return p.read_text(encoding="utf-8").rstrip() + "\n", p
 
 
 def ws(v):
@@ -828,7 +812,7 @@ def data_center_plant_items(data):
 def render_scope_brief(leads, coverage, batch_tag, threshold_mw=50):
     """briefs/_scope.md: the add rule and the scope-wide agent's two
     checklists. `leads` from eia_lead_tasks, `coverage` the
-    docs/coverage/<scope>.json list (or None)."""
+    scopes/<tag>/coverage.json list (or None)."""
     L = ["# Scope-wide tasks", ""]
     L += [s.format(thr=threshold_mw) for s in ADD_RULE]
     L += ["## EIA plants missing from GEM", ""]
@@ -996,15 +980,15 @@ def task_line(text, checks):
 
 
 def load_harvest(folder):
-    """The pre-sweep harvest of one scope (psc_dockets.json from harvest_psc_mississippi.py and
-    queues.json from pull_queues_mississippi.py, both in `folder`) as
+    """The pre-sweep harvest of one scope (psc_dockets.json from the scope's harvest_psc.py and
+    queues.json from pull_queues.py or the scope's own queue reader, both in `folder`) as
     ({plant_id: [(None, item)]}, data). Each item is a whole-plant task that lists the dockets
     and queue entries matched to the plant; the unmatched ones go to briefs/_harvest.md."""
     folder = Path(folder)
     psc_p, q_p = folder / "psc_dockets.json", folder / "queues.json"
     if not psc_p.exists() and not q_p.exists():
-        sys.exit(f"ERROR: neither psc_dockets.json nor queues.json is in {folder}; run "
-                 "harvest_psc_mississippi.py and pull_queues_mississippi.py first")
+        sys.exit(f"ERROR: neither psc_dockets.json nor queues.json is in {folder}; run the "
+                 "scope's harvesters first (scopes/<tag>/harvest_psc.py, scripts/pull_queues.py)")
     psc = json.loads(psc_p.read_text(encoding="utf-8")) if psc_p.exists() else {}
     queues = json.loads(q_p.read_text(encoding="utf-8")) if q_p.exists() else {}
     lines = {}
@@ -1265,7 +1249,7 @@ def main():
                          "step (update mode, US states)")
     ap.add_argument("--harvest", default=None,
                     help="batches/<tag>/harvest folder with psc_dockets.json and queues.json (from "
-                         "harvest_psc_mississippi.py and pull_queues_mississippi.py): each plant's "
+                         "the scope's harvest_psc.py and pull_queues.py): each plant's "
                          "matched dockets and queue entries become tasks, the unmatched ones go to "
                          "briefs/_harvest.md (update mode)")
     ap.add_argument("--captive", default=None,
@@ -1273,7 +1257,7 @@ def main():
                          "step, checklist rows 6 and 44, plus the data-center search block "
                          "(row 39) for a US state (update mode, any scope)")
     ap.add_argument("--data-centers", nargs="?", const="auto", default=None,
-                    help="work/permits/<tag>/_data_centers.json (or the path given): one named add "
+                    help="scopes/<tag>/work/permits/_data_centers.json (or the path given): one named add "
                          "task per data center site at or near the threshold in briefs/_data_centers.md, "
                          "a check task on each matched GEM plant (update mode; a missing file is "
                          "reported and skipped)")
@@ -1316,8 +1300,12 @@ def main():
     if not csv_path.exists():
         sys.exit(f"ERROR: {csv_path} not found; run scope_filter.py first")
     require_fresh_export(csv_path, a.allow_stale_export)
-    wl_tag = f"us-{slug}" if scope["kind"] == "state" else slug
+    wl_tag = scope_tag(state=name) if scope["kind"] == "state" else scope_tag(country=name)
     wl_path = Path(a.worklist) if a.worklist else work_dir() / f"worklist_{wl_tag}.csv"
+    if not a.worklist and not wl_path.exists():
+        # worklist.py wrote worklist_us-<state-name>.csv before 2026-10-29; read it for one cycle
+        old = work_dir() / f"worklist_{'us-' + slug if scope['kind'] == 'state' else slug}.csv"
+        wl_path = old if old.exists() else wl_path
     wl = load_worklist(wl_path)
     batch_tag = f"us-{scope['postal']}" if scope["kind"] == "state" else slug
     batch = Path(a.batch).resolve() if a.batch else (REPO_ROOT / "batches" / batch_tag)
@@ -1376,7 +1364,7 @@ def main():
         captive_data = json.loads(Path(a.captive).read_text(encoding="utf-8"))
     dc_items, dc_data = {}, None
     if a.data_centers:
-        dc_path = (work_dir() / "permits" / batch_tag / "_data_centers.json"
+        dc_path = (scope_permits(batch_tag) / "_data_centers.json"
                    if a.data_centers == "auto" else Path(a.data_centers))
         dc_data = load_data_centers(dc_path)
         if dc_data is not None:
@@ -1574,7 +1562,7 @@ def main():
             "gem_only": [p.get("plant_id") for p in captive_data.get("gem_only") or []],
             # the row 39 block (US states): the data center search; adds go through briefs/_data_centers.md
             "data_center": captive_data.get("data_center") is not None}
-    cov_list = REPO_ROOT / "docs" / "coverage" / f"{batch_tag}.json"
+    cov_list = scope_coverage(batch_tag)
     coverage = json.loads(cov_list.read_text(encoding="utf-8")) if cov_list.exists() else None
     eia_leads = eia_lead_tasks(a.ids)
     # every scope: the add rule, then the EIA leads and the statewide source list when there are any

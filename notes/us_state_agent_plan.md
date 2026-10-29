@@ -5,7 +5,7 @@ agent that mirrors the pipelines and terminals engines: a worklist, one brief
 per plant, a Workflow that fans out one subagent per plant, one JSON shard per
 plant, an assemble step that turns shards into the staged lane files, a gate
 that must print clean, then the normal deliverable build. It extends
-`texas_pilot_plan.md` (Texas is the eventual scale target) and starts with one
+`scopes/us-tx/plan.md` (Texas is the eventual scale target) and starts with one
 of Amalia Llano's finished states as a calibration run.
 
 Decisions already made (2026-10-02):
@@ -40,7 +40,7 @@ The same pipeline runs for a whole country, first used for Dan O'Beirne's
 European countries (`notes/europe_batches_plan.md`). `build_state_brief.py
 --country "<Country>"` replaces `--state`; the batch dir is the country slug
 (`batches/germany/`; record IDs stay `<plant id>:<unit id>:<field>`); the note
-read is `docs/country_notes/<slug>.md`; the two EIA "Other IDs" tasks are not
+read is `scopes/<slug>/note.md`; the two EIA "Other IDs" tasks are not
 generated. The scope travels as a `where` object (`kind`, `name`, `slug`,
 `country`, `postal`) in `_index.json`, `sweep_args.json` and the staged
 records' `meta.scope`; old indexes with only `state`/`postal` still work. The
@@ -316,7 +316,7 @@ new-plant search.
    update-mode narrowing landed 2026-10-02 and were first used on New York.
 3. Run ahead of Amalia's schedule where it helps: Georgia (10-05), Indiana
    (10-07), Kentucky (10-13), in update mode.
-4. Texas, per `texas_pilot_plan.md` Phases 1 and 2.
+4. Texas, per `scopes/us-tx/plan.md` Phases 1 and 2.
 5. The review app, reading `batches/us-<st>/staging/`. Done 2026-10-02: `review_app/`
    (ported from the pipelines researcher's app), decisions in
    `staging/review_log.jsonl`, consumed by `build_review_package.py --decisions`.

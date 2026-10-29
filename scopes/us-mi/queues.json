@@ -1,0 +1,106 @@
+{
+  "_about": "Queue settings for pull_queues.py --state MI. name is the State/Province value in the GEM export; markets are the queues read; owner is the transmission owners or utilities whose state-blank MISO entries are this state's (kept as leads, fuel unknown); shared_owner is owners that also serve other states (their blank entries are counted, not kept); pjm_states is the PJM State values kept; known is hand-checked patterns, GEM plant id to regexes that name that plant in a point of interconnection, project name or developer. Every match still says check.",
+  "state": "MI",
+  "name": "Michigan",
+  "markets": [
+    "MISO",
+    "PJM"
+  ],
+  "owner": "^METC$|michigan electric trans|^ITC$|^ITC trans|international trans|dte electric|consumers energy|upper michigan energy|uppco|upper peninsula power|wolverine|michigan public power|\\bmppa\\b|lansing board",
+  "shared_owner": "american transmission|^atc\\b",
+  "pjm_states": [
+    "MI"
+  ],
+  "known": {
+    "L100000401674": [
+      "michigan power\\b"
+    ],
+    "L100000402411": [
+      "indeck niles",
+      "cook.east elkhart"
+    ],
+    "L100000402123": [
+      "covert",
+      "segreto"
+    ],
+    "L100000402478": [
+      "\\bmcv\\b",
+      "midland cogeneration"
+    ],
+    "L100000402079": [
+      "kalkaska"
+    ],
+    "L100000401829": [
+      "\\bkarn\\b"
+    ],
+    "L100000401855": [
+      "\\bdean\\b"
+    ],
+    "L100000401856": [
+      "delray"
+    ],
+    "L100000401857": [
+      "greenwood"
+    ],
+    "L100000401858": [
+      "renaissance"
+    ],
+    "L100000402393": [
+      "blue water"
+    ],
+    "L100000402385": [
+      "\\balpine\\b"
+    ],
+    "L100000402386": [
+      "sumpter"
+    ],
+    "L100000401790": [
+      "holland energy park"
+    ],
+    "L100000401789": [
+      "48th street"
+    ],
+    "L100000409227": [
+      "48th street"
+    ],
+    "L100000401824": [
+      "kalamazoo river"
+    ],
+    "L100000401830": [
+      "jackson generating"
+    ],
+    "L100000401831": [
+      "zeeland"
+    ],
+    "L100000103973": [
+      "belle river"
+    ],
+    "L100000103983": [
+      "lansing board"
+    ],
+    "L100000402461": [
+      "delta energy"
+    ],
+    "L100000409204": [
+      "mihm",
+      "\\bM38\\b"
+    ],
+    "L100000409210": [
+      "kuester",
+      "huron"
+    ],
+    "L100000409279": [
+      "marquette energy"
+    ],
+    "L100001083333": [
+      "thetford"
+    ],
+    "L100001088928": [
+      "\\bmilan\\b"
+    ]
+  },
+  "known_set": "2026-10-23, from the queue lists themselves",
+  "known_names": {
+    "L100000401674": "Michigan power station, Ludington"
+  }
+}

@@ -104,7 +104,7 @@ Hard gates (any failure exits 1)
               person (Baird 2026-10-19, after the Iowa air permit pages were
               skipped as "a search form that needs a script").
   statewide-coverage
-              every statewide source in docs/coverage/<scope>.json (a state
+              every statewide source in scopes/<tag>/coverage.json (a state
               batch must have that list) has an entry in
               <batch>/coverage.json: status "searched" with `how` (script
               name or pages read) and `found` (what turned up, or that nothing
@@ -114,7 +114,7 @@ Hard gates (any failure exits 1)
               reason all fail. (Named statewide-coverage because the first
               gate above already uses the name coverage.)
   data-centers
-              every site in work/permits/<tag>/_data_centers.json (written by
+              every site in scopes/<tag>/work/permits/_data_centers.json (written by
               data_center_fleets.py) with verdict at_threshold,
               unknown_capacity or in_gem has an entry under `data_centers` in
               <batch>/coverage.json, keyed by site_id, with a valid decision:
@@ -224,7 +224,7 @@ from build_review_package import (  # noqa: E402
 from schema_constants import (  # noqa: E402
     ADDITIVE_TEXT_COLUMNS, CAPACITY_THRESHOLD_EU_UK_MW, CAPACITY_THRESHOLD_MW,
     EU_UK_COUNTRIES, READ_ONLY_COLUMNS, WATCH_CASES)
-from paths import EXPORT_MAX_AGE_HOURS, gem_export_csv, work_dir  # noqa: E402
+from paths import EXPORT_MAX_AGE_HOURS, gem_export_csv, scope_coverage, scope_permits, work_dir  # noqa: E402
 from geo import decimals, in_state_box, valid_point  # noqa: E402
 from access_audit import EXCUSE, OUTCOMES, RETRY_FILE, gave_up_outcome, unknown_outcome  # noqa: E402
 
@@ -1232,11 +1232,15 @@ def load_coverage_file(batch):
 
 
 def coverage_list_path(batch, coverage_dir=None):
-    return Path(coverage_dir or SCRIPTS.parent / "docs" / "coverage") / f"{Path(batch).name}.json"
+    """scopes/<tag>/coverage.json (an older docs/coverage/<tag>.json is read for one
+    cycle); with coverage_dir, <coverage_dir>/<tag>.json (tests)."""
+    if coverage_dir:
+        return Path(coverage_dir) / f"{Path(batch).name}.json"
+    return scope_coverage(Path(batch).name)
 
 
 def gate_source_coverage(batch, index, coverage_dir=None):
-    """Statewide sources that must be searched (docs/coverage/<scope>.json) against
+    """Statewide sources that must be searched (scopes/<tag>/coverage.json) against
     what the statewide agent recorded in <batch>/coverage.json. Returns (offenders, info)."""
     if (index.get("where") or {}).get("kind", "state") != "state":
         return [], ["skipped: not a US state batch"]
@@ -1244,7 +1248,8 @@ def gate_source_coverage(batch, index, coverage_dir=None):
         return [], [f"skipped: narrow batch ({narrow_focus(index)}); the statewide batch searches the source list"]
     lp = coverage_list_path(batch, coverage_dir)
     if not lp.exists():
-        return [(lp.name, f"no statewide source list for this scope: write docs/coverage/{lp.name} "
+        shown = lp.name if coverage_dir else str(lp.relative_to(SCRIPTS.parent))
+        return [(shown, f"no statewide source list for this scope: write {shown} "
                           "(id, name, url, what for each source) before the batch runs")], []
     try:
         wanted = json.loads(lp.read_text(encoding="utf-8"))
@@ -1311,14 +1316,14 @@ def load_data_centers_coverage(batch):
 def gate_data_centers(index, lanes, batch, permits_dir=None, applied=None):
     """Every data center site that data_center_fleets.py found at the threshold, with
     unknown capacity, with no document on record, or already in GEM is answered in
-    coverage.json under `data_centers` (work/permits/<tag>/_data_centers.json; the tag
+    coverage.json under `data_centers` (scopes/<tag>/work/permits/_data_centers.json; the tag
     is the batch folder name). An at-threshold fleet is an add or already in GEM. A
     site the harvester could not size may also be closed below_threshold with the
     summed nameplate the researcher found, or no_generators / not_data_center /
     nothing_found with a note saying what was read or searched. Returns (offenders,
     info). A missing file is a warning, not a failure."""
     tag = Path(batch).name
-    p = Path(permits_dir or work_dir() / "permits" / tag) / "_data_centers.json"
+    p = Path(permits_dir or scope_permits(tag)) / "_data_centers.json"
     if not p.exists():
         return [], [f"warning: {p.name} not found for {tag}; run data_center_fleets.py so "
                     "backup engine fleets at data centers are checked"]

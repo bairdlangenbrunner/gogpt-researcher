@@ -17,7 +17,7 @@ Reads (nothing else, and the network only through fetch.py):
     batches/<tag>/harvest/facilities.json   the permit harvest's facility list with the
                                             permit documents it saved (Mississippi and
                                             Michigan). When that file is missing, the
-                                            harvest's markdown lists under work/permits/<tag>/
+                                            harvest's markdown lists under scopes/<tag>/work/permits/
                                             (_unmatched.md, _applications.md, _county.md)
                                             are read instead, which gives names and links only.
     the permit documents themselves         through fetch.py (disk cache, then the whole
@@ -53,7 +53,8 @@ Only the generator's electrical rating counts (kW, kWe, MW). Horsepower, brake h
 mechanical kilowatts (kWm) are never converted; when that is all a document gives, the
 engines are counted, the sum stays empty and the site is `unknown_capacity`.
 
-Writes work/permits/<tag>/_data_centers.json and _data_centers.md (never anywhere else):
+Writes scopes/<tag>/work/permits/_data_centers.json and _data_centers.md (never anywhere else;
+an older harvest still in work/permits/<tag>/ is read and written there for one cycle):
     scope, tag, generated, threshold_mw, sites[]. Each site: site_id, name, operator, address,
     city, permit_numbers, permit_urls, issue_date, fuel (diesel | natural gas | dual |
     unknown), engine_count, capacity_per_engine_mw (the most common engine size),
@@ -87,6 +88,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from paths import SCOPES_DIR, US_POSTAL, scope_permits  # noqa: E402
 
 # ------------------------------------------------------------------ constants
 
@@ -97,20 +99,7 @@ EU_COUNTRIES = {
     "portugal", "romania", "slovakia", "slovenia", "spain", "sweden", "united kingdom",
 }
 
-POSTAL = {
-    "alabama": "AL", "alaska": "AK", "arizona": "AZ", "arkansas": "AR", "california": "CA",
-    "colorado": "CO", "connecticut": "CT", "delaware": "DE", "district of columbia": "DC",
-    "florida": "FL", "georgia": "GA", "hawaii": "HI", "idaho": "ID", "illinois": "IL",
-    "indiana": "IN", "iowa": "IA", "kansas": "KS", "kentucky": "KY", "louisiana": "LA",
-    "maine": "ME", "maryland": "MD", "massachusetts": "MA", "michigan": "MI",
-    "minnesota": "MN", "mississippi": "MS", "missouri": "MO", "montana": "MT",
-    "nebraska": "NE", "nevada": "NV", "new hampshire": "NH", "new jersey": "NJ",
-    "new mexico": "NM", "new york": "NY", "north carolina": "NC", "north dakota": "ND",
-    "ohio": "OH", "oklahoma": "OK", "oregon": "OR", "pennsylvania": "PA",
-    "rhode island": "RI", "south carolina": "SC", "south dakota": "SD", "tennessee": "TN",
-    "texas": "TX", "utah": "UT", "vermont": "VT", "virginia": "VA", "washington": "WA",
-    "west virginia": "WV", "wisconsin": "WI", "wyoming": "WY",
-}
+POSTAL = US_POSTAL
 
 # Operator brands that mark a site as a data center when they are in the facility name.
 OPERATOR_WORDS = [
@@ -681,7 +670,7 @@ def names_with_data_center_codes(tag):
     """Facility names the harvest's markdown lists with SIC 7374 or NAICS 518210."""
     names = set()
     for fn in ("_unmatched.md",):
-        p = REPO_ROOT / "work" / "permits" / tag / fn
+        p = scope_permits(tag) / fn
         if not p.exists():
             continue
         for block in re.split(r"\n(?=- )", p.read_text(encoding="utf-8", errors="replace")):
@@ -694,7 +683,7 @@ def names_with_data_center_codes(tag):
 
 def facilities_from_markdown(scope):
     """Fallback when there is no facilities.json: names and links from the harvest's markdown lists."""
-    base = REPO_ROOT / "work" / "permits" / scope["tag"]
+    base = scope_permits(scope["tag"])
     out = []
     for fn in ("_unmatched.md", "_applications.md", "_county.md"):
         p = base / fn
@@ -955,9 +944,10 @@ def verdict_words(v):
 
 def write_outputs(scope, threshold, sites, unread, out_dir):
     out_dir = Path(out_dir)
-    work = (REPO_ROOT / "work").resolve()
-    if work not in out_dir.resolve().parents and out_dir.resolve() != work:
-        sys.exit(f"ERROR: refusing to write outside work/: {out_dir}")
+    r = out_dir.resolve()
+    works = [(REPO_ROOT / "work").resolve()] + [w.resolve() for w in SCOPES_DIR.glob("*/work")]
+    if not any(w == r or w in r.parents for w in works):
+        sys.exit(f"ERROR: refusing to write outside work/ or scopes/<tag>/work/: {out_dir}")
     out_dir.mkdir(parents=True, exist_ok=True)
     doc = {"scope": scope["name"], "tag": scope["tag"], "generated": dt.date.today().isoformat(),
            "threshold_mw": threshold, "sites": sites, "unread_sites": unread}
@@ -1015,12 +1005,12 @@ def main(argv=None):
     ap.add_argument("--max-docs", type=int, default=12, help="permit documents read per site")
     ap.add_argument("--offline", action="store_true", help="read no documents (lead list and export parts only)")
     ap.add_argument("--csv", help="scoped export CSV (default: the repo's scoped export)")
-    ap.add_argument("--out-dir", help="output folder under work/ (default work/permits/<tag>)")
+    ap.add_argument("--out-dir", help="output folder under a work folder (default scopes/<tag>/work/permits)")
     args = ap.parse_args(argv)
 
     scope = make_scope(args.state, args.country)
     threshold = threshold_for(scope)
-    out_dir = args.out_dir or (REPO_ROOT / "work" / "permits" / scope["tag"])
+    out_dir = args.out_dir or (scope_permits(scope["tag"]))
 
     cands = facilities_from_harvest(scope)
     if cands is None:

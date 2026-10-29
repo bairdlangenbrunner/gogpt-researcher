@@ -102,7 +102,7 @@ def test_coverage_accepts_list_form(tmp_path):
 
 
 def test_ms_source_list_is_well_formed():
-    data = json.loads((ROOT / "docs" / "coverage" / "us-ms.json").read_text(encoding="utf-8"))
+    data = json.loads((ROOT / "scopes" / "us-ms" / "coverage.json").read_text(encoding="utf-8"))
     ids = [d["id"] for d in data]
     assert len(ids) == len(set(ids)) >= 10
     for d in data:

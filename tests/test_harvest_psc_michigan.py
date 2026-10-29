@@ -1,11 +1,13 @@
-"""Offline tests for harvest_psc_michigan.py: saved snippets of the Michigan Public Service
+"""Offline tests for scopes/us-mi/harvest_psc.py: saved snippets of the Michigan Public Service
 Commission portal's Aura answers and of filing text (pdftotext -layout), no network."""
 import json
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-import harvest_psc_michigan as h  # noqa: E402
+from paths import load_scope_module  # noqa: E402
+
+h = load_scope_module("us-mi", "harvest_psc")
 
 BOOT = ('<script src="/s/sfsites/auraFW/javascript/x/aura_prod.js"></script>'
         '<script>var a="%7B%22mode%22%3A%22PROD%22%2C%22fwuid%22%3A%22FW123%22%2C%22loaded%22%3A%7B'

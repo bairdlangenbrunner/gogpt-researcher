@@ -102,10 +102,20 @@ docs/
     workbook_conventions.md  Deliverable naming, sheets, cell colors
     confidence_tiers.md      What earns green/yellow/red/blue
     sop_pointers.md          Which rule lives where + every GEM doc/sheet ID
-  country_notes/             One research-notes file per country
+  country_notes/             Country notes not yet moved to scopes/, and united_states.md
+
+scopes/<tag>/                One folder per scope (us-nd, germany): what outlives a run
+  note.md                    The state or country note, inlined into every brief
+  coverage.json              Statewide sources the scope-wide agent must search
+  plan.md                    The batch plan, when one was written
+  harvest_permits.py         The scope's permit harvester (built on scripts/harvest_lib.py)
+  harvest_psc.py             The scope's docket harvester, when one exists
+  queues.json                Queue settings read by scripts/pull_queues.py
+  work/                      Gitignored: permit harvests, docket copies, saved pages
 
 scripts/                     Python tools called by the workflows
-  paths.py                   Repo-relative path helpers (no hard-coded absolutes)
+  paths.py                   Repo-relative path helpers, incl. the scopes/<tag>/ paths
+  harvest_lib.py             Shared fetch, Wayback and text helpers for the scope harvesters
   pull_gem_db.py             Column-index map + schema-drift detection (both the engine and the
                              canonical 91-column map live in ../gem-db-ops/gem_colmap.py)
   scope_filter.py            Derive the GOGPT-only view from the all-combustion export

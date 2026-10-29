@@ -4,7 +4,9 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-import harvest_permits_michigan as h  # noqa: E402
+from paths import load_scope_module  # noqa: E402
+
+h = load_scope_module("us-mi", "harvest_permits")
 
 LISTING = """<pre><A HREF="/aps/downloads/SRN/">[To Parent Directory]</A><br><br> 7/28/2015  6:41 PM       102411 <A HREF="/aps/downloads/SRN/B6527/B6527_FCE_20140612.pdf">B6527_FCE_20140612.pdf</A><br>  4/4/2024  3:45 PM       &lt;dir&gt; <A HREF="/aps/downloads/SRN/B6527/old/">old</A><br></pre>"""
 

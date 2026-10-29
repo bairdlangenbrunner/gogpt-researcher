@@ -55,7 +55,8 @@ const COUNTRY = WHERE.country || 'United States'
 const IS_US = COUNTRY.toLowerCase() === 'united states'
 const PLACE = STATE ? `${STATE}, United States` : COUNTRY     // "Maryland, United States" or "Germany"
 const TAG = STATE ? POSTAL : (WHERE.slug || COUNTRY.toLowerCase().replace(/\s+/g, '-'))
-// The batch folder name (us-ia, germany), which the permit harvesters also use under work/permits/.
+// The scope tag (us-ia, germany): the batch folder name and the scope folder scopes/<tag>/,
+// whose work/permits/ holds the permit harvest.
 const SCOPE_TAG = STATE ? `us-${POSTAL.toLowerCase()}` : TAG
 const EU_UK = new Set(['austria', 'belgium', 'bulgaria', 'croatia', 'cyprus', 'czechia', 'czech republic',
   'denmark', 'estonia', 'finland', 'france', 'germany', 'greece', 'hungary', 'ireland', 'italy', 'latvia',
@@ -152,7 +153,8 @@ Work down this list. Prefer the document that names the plant AND states the val
    and operating hours, which also prove a unit is running.
 4. The state public utility commission docket search (certificates, siting orders, retirement filings).
 5. The state environmental agency's air permits (permits list units, turbine models and MW ratings).
-   If \`${REPO}/work/permits/${SCOPE_TAG}/${pid}.md\` exists, read it first: it is the
+   If \`${REPO}/scopes/${SCOPE_TAG}/work/permits/${pid}.md\` exists (or, from an older harvest,
+   \`${REPO}/work/permits/${SCOPE_TAG}/${pid}.md\`), read it first: it is the
    harvested permit index for this plant (permit numbers, dates, unit and size lines, PDF links).
    Read the permits it lists, then search the agency's portal yourself for anything newer.
    Every state has a permit search or a document portal. Use it: fill the search by its URL
@@ -212,7 +214,8 @@ them before you search.
    its delivery year.
 5. Planning and permit registers: environmental impact decisions, industrial emissions permits,
    construction permits. A permit lists units, turbine models and MW ratings.
-   If \`${REPO}/work/permits/${SCOPE_TAG}/${pid}.md\` exists, read it first: it is the
+   If \`${REPO}/scopes/${SCOPE_TAG}/work/permits/${pid}.md\` exists (or, from an older harvest,
+   \`${REPO}/work/permits/${SCOPE_TAG}/${pid}.md\`), read it first: it is the
    harvested permit index for this plant. Then search the register yourself for anything newer.
 6. The owner's investor pages, annual and half-year reports, press releases and asset lists.
 7. Trade press and local news, searched in the local language with the local words for power

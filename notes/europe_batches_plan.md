@@ -63,7 +63,7 @@ The state sweep (`docs/workflows.md` §7) is keyed on US states. Audit of
   postal-code lookup; filter rows on Country/Area only; batch dir
   `batches/<country-slug>/`; worklist default `work/worklist_<country-slug>.csv`
   (what `worklist.py --country` already writes); read
-  `docs/country_notes/<slug>.md`; drop the two EIA "Other IDs" tasks outside the
+  `scopes/<slug>/note.md`; drop the two EIA "Other IDs" tasks outside the
   US; relabel the identity block; write a `scope` key into `_index.json` alongside
   the existing `state`/`postal` keys.
 - `build_sweep_args.py`: pass `scope` through; stop requiring `state`/`postal`.
@@ -96,7 +96,7 @@ mapping sheet are something we may read; if yes they become ladder step 2.
 
 ## Step 2: country notes
 
-- `docs/country_notes/germany.md`: refreshed 2026-10-05 (status vocabulary of the
+- `scopes/germany/note.md`: refreshed 2026-10-05 (status vocabulary of the
   June 2026 Kraftwerksliste with the GEM mapping, the StromVKG tenders, the search
   vocabulary, and the rule to keep tender projects separate from CHP, district
   heating, industrial captive and data-center backup projects). Done.
