@@ -1,0 +1,63 @@
+{
+ "meta": {
+  "plant_id": "L100000401617",
+  "plant_name": "Great Bend Sunflower power station",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T09:38:46-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402346",
+   "unit_name": "3",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists this unit as operating, with no planned retirement date. Row read: Plant 1235, generator 3, status operating, nameplate 81.6 MW, operating year 1963. I searched the web for a retirement, mothballing or sale announcement and found none."
+    }
+   },
+   "not_found": [],
+   "notes": "The unit is still listed as operating in the newest federal monthly table. No retirement, mothballing or ownership change turned up in a web search."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "The file loaded. I read the rows for the plant in the Operating sheet and the Retired sheet myself."
+  },
+  {
+   "url": "https://www.kdhe.ks.gov/DocumentCenter/View/43574",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "dead",
+   "note": "This Kansas health department public notice link returned HTTP 404 and no archived copy could be read. It is only a permit lead and I did not use it as a source."
+  }
+ ]
+}

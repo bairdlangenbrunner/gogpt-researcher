@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "lane": "newunits",
+    "scope": {
+      "country": "United States",
+      "state": "Mississippi",
+      "postal": "ms",
+      "kind": "state",
+      "slug": "mississippi",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-27T11:46:30-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 1
+    }
+  },
+  "records": [
+    {
+      "gem_plant_id": "L100001088949",
+      "plant_name": "Amazon Web Services Canton Data Center power station",
+      "unit_name": "Unit 2",
+      "fields": {
+        "Unit name": "Unit 2",
+        "Capacity (MW)": "7.8",
+        "Number Of Engines": "10",
+        "Fuel": "fossil liquids: diesel",
+        "Status": "construction",
+        "Turbine/Engine Technology": "internal combustion",
+        "Equipment Manufacturer/Model": "CAT: C18, CAT: 3512C, CAT: C15, CAT: C9",
+        "Captive industry use": "power",
+        "Captive industry type": "data center",
+        "Backup Power": "yes"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Fuel Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Status Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Turbine/Engine Technology Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Unit name Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Captive Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Backup Power Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Turbine/Engine Equipment Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Mississippi air permit 1720-00098 for Amazon Data Services in Canton, issued 2024-12-04 and modified 2025-12-16. It lists each generator with its kW rating."
+        }
+      ],
+      "tier": "high",
+      "checks": [
+        39
+      ],
+      "note": "The Mississippi air permit for the Canton site lists 10 smaller generators that GEM does not carry. Five house generators are 750 kilowatts each, two water treatment generators are 1,500 kilowatts each, and three building generators are 400, 400 and 250 kilowatts. Together they are 7.8 megawatts. The permit lists them in addition to the 326 large generators that GEM already has as Unit 1. Ridgeland and Meridian already show their small generators as a separate unit, so this follows the same pattern. Not found: the exact start date for these generators.",
+      "researcher_notes": "The Mississippi Department of Environmental Quality air permit 1720-00098 for Amazon Data Services at Canton was issued on December 4, 2024 and modified on December 16, 2025. It lists 326 critical generators of 2,750 kilowatts each, which is 896.5 megawatts and matches GEM Unit 1. It also lists 5 house generators of 750 kilowatts, 2 water treatment generators of 1,500 kilowatts, 2 generators of 400 kilowatts and 1 of 250 kilowatts. Those 10 generators sum to 7.8 megawatts and are not in GEM. The permit total is 336 engines and 904.3 megawatts.",
+      "action": "Add Unit 2 to the Canton plant as a diesel internal combustion unit of 7.8 MW with 10 engines, status construction, Backup Power yes, captive power for a data center.",
+      "country": "United States",
+      "record_id": "L100001088949:new:unit-2"
+    }
+  ]
+}

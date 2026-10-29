@@ -1,0 +1,114 @@
+{
+ "meta": {
+  "plant_id": "L100000409259",
+  "plant_name": "Rubart power station",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T09:40:54-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000414197",
+   "unit_name": "IC",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists all twelve Rubart engines, generators 01 to 12, as operating. Each is 10.0 MW, so the total is 120 MW. No planned retirement is shown. This is a re-check with no change."
+    }
+   },
+   "not_found": [
+    "Capacity (MW)",
+    "Fuel",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Start year",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Status Detail",
+    "CHP",
+    "Owner(s)",
+    "Operator(s)",
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use",
+    "Conversion/replacement?"
+   ],
+   "notes": "The unit is still operating in the August 2026 EIA table. I found no retirement, mothballing or owner change in that file. The plant city is Ulysses according to the EIA plant table."
+  }
+ ],
+ "plant_findings": {
+  "City": {
+   "value": "Ulysses",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The 2024 EIA-860 plant table lists Rubart at 14255 East U.S. 160 Highway, Ulysses, Kansas 67880, in Grant County."
+  }
+ },
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Excel file read with python. "
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+   "used_for": [
+    "City",
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Excel file inside the zip, plant table, read with python."
+  },
+  {
+   "url": "https://www.kdhe.ks.gov/DocumentCenter/View/46802",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "dead_link",
+   "note": "The permit notice for CSD00071v1.2 returned HTTP 404 in the permit index. It places the site in Grant County but gives no city."
+  }
+ ]
+}

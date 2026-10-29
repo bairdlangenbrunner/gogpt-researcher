@@ -1,0 +1,87 @@
+{
+ "meta": {
+  "plant_id": "L100001063352",
+  "plant_name": "Evergy Kansas Central 2025 IRP power station 4",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T09:38:58-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001072781",
+   "unit_name": "1 IRP",
+   "findings": {},
+   "not_found": [
+    "Status",
+    "Capacity (MW)",
+    "Start year",
+    "Fuel",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Latest Activity",
+    "Operator(s)",
+    "Owner(s)",
+    "City"
+   ],
+   "notes": "This plant has no real site. It is a placeholder for capacity in the Evergy Kansas Central plan update of May 2025, so no location, city or coordinates were researched. The 2040 date lies beyond the end of both public plan decks, which stop at 2034 and 2035, so no public document confirms the 710 MW block. Only the note on the US IRPs tab of the Update sheet lists it."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001072781",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "recommendation": "The announced step is the May 2025 plan update, per the note on the US IRPs tab, which lists this block for 2040. The public May 2025 deck ends at 2034 and does not show it. A full plan document or a Kansas Corporation Commission filing was not found. Not found beyond that tab note.",
+   "note": "Searched the Evergy investor decks and the Kansas Corporation Commission records already gathered, plus one web search.",
+   "refs": [
+    "https://investors.evergy.com/2025IRPUpdate"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://shareus11.springcm.com/Public/Document/35150/e56d0963-88e0-4e4b-999a-0587e0573f89/ba249c18-eec2-f011-b84a-48df377ee718",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Start year"
+   ],
+   "outcome": "failed",
+   "note": "The link opens a document viewer page for a file named S202505011626148669.pdf, which is the May 2025 plan update deck. The viewer page carries no deck text, so the verifier could not find the capacity or the name. The same deck loads at the Evergy investor page and is cited from there."
+  },
+  {
+   "url": "https://investors.evergy.com/2025IRPUpdate",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Five page deck dated May 2, 2025. Kansas Central page shows natural gas additions by year. The investor site blocks plain curl, so it was read through the browser-impersonation route."
+  },
+  {
+   "url": "https://investors.evergy.com/2026IRPUpdate",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Five page deck for the June 2026 update. It covers 2026 to 2035 only."
+  },
+  {
+   "url": "https://efis.psc.mo.gov/Document/Display/888870",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "A web search result for the plan. It was not opened because it concerns Missouri filings."
+  }
+ ]
+}

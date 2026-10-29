@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "plant_id": "L100001088928",
+    "plant_name": "Milan Township power station",
+    "state": "Michigan",
+    "mode": "update",
+    "model": "opus",
+    "generated": "2026-10-26T23:48:52-04:00",
+    "done": true,
+    "urls_attempted": 1,
+    "urls_verified": 1
+  },
+  "units": [
+    {
+      "gem_unit_id": "G100001101140",
+      "unit_name": "1",
+      "findings": {},
+      "not_found": [],
+      "notes": "This review covered the plant location only. No other field was researched for this unit."
+    }
+  ],
+  "plant_findings": {
+    "Latitude": {
+      "value": "42.00269",
+      "refs": [
+        "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPrx7AAD",
+        "https://www.google.com/maps/search/?api=1&query=42.00269,-83.67031"
+      ],
+      "verifications": [
+        {
+          "url": "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPrx7AAD",
+          "ok": true,
+          "contains_value": false,
+          "name_found": true
+        }
+      ],
+      "tier": "medium",
+      "independent": false,
+      "irp": true,
+      "note": "The direct testimony of DTE witness H.O. Stansell Jr. in Michigan Public Service Commission case U-22168, at https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPrx7AAD, says the Monroe County project is planned for Milan Township, Monroe County. Figure 2 on page 892 of that file is an aerial map of the proposed site. It shows the site just east of US 23 and North Ann Arbor Road, south of Azalia and Ostrander Road, west of the Amrize quarry and north of the FCA Dundee Engine Plant. I fitted that map to four road crossings read from satellite imagery. The fit error is about 46 meters. The middle of the marked site falls at 42.00269, -83.67031, shown at https://www.google.com/maps/search/?api=1&query=42.00269,-83.67031. The satellite picture shows a large open farm field there, bounded by North Ann Arbor Road on the west and a tree line on the east, the same shape as the map. The imagery date is unknown."
+    },
+    "Longitude": {
+      "value": "-83.67031",
+      "refs": [
+        "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPrx7AAD",
+        "https://www.google.com/maps/search/?api=1&query=42.00269,-83.67031"
+      ],
+      "verifications": [
+        {
+          "url": "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPrx7AAD",
+          "ok": true,
+          "contains_value": false,
+          "name_found": true
+        }
+      ],
+      "tier": "medium",
+      "independent": false,
+      "irp": true,
+      "note": "The longitude comes from the same fitted map as the latitude. The direct testimony of DTE witness H.O. Stansell Jr. in Michigan Public Service Commission case U-22168, at https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPrx7AAD, says the Monroe County project is planned for Milan Township, Monroe County. Figure 2 on page 892 of that file is an aerial map of the proposed site. It shows the site just east of US 23 and North Ann Arbor Road, south of Azalia and Ostrander Road, west of the Amrize quarry and north of the FCA Dundee Engine Plant. I fitted that map to four road crossings read from satellite imagery. The fit error is about 46 meters. The middle of the marked site falls at 42.00269, -83.67031, shown at https://www.google.com/maps/search/?api=1&query=42.00269,-83.67031. The satellite picture shows a large open farm field there, bounded by North Ann Arbor Road on the west and a tree line on the east, the same shape as the map. The imagery date is unknown."
+    },
+    "Location accuracy": {
+      "value": "approximate",
+      "refs": [
+        "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPrx7AAD",
+        "https://www.google.com/maps/search/?api=1&query=42.00269,-83.67031"
+      ],
+      "verifications": [
+        {
+          "url": "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPrx7AAD",
+          "ok": true,
+          "contains_value": false,
+          "name_found": true
+        }
+      ],
+      "tier": "medium",
+      "independent": false,
+      "irp": true,
+      "note": "The testimony at https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPrx7AAD gives no street address or parcel number. The site is an empty field with nothing built on it yet, so the point is the middle of the area marked on the map. Accuracy stays approximate."
+    }
+  },
+  "location": {
+    "method": "map",
+    "moved_m": 8358,
+    "control_points": [
+      {
+        "feature": "Ostrander Road at North Ann Arbor Road",
+        "px": [
+          435,
+          300
+        ],
+        "lat": 42.01894,
+        "lon": -83.6741
+      },
+      {
+        "feature": "North Ann Arbor Road at the road on the south edge of the site",
+        "px": [
+          437,
+          652
+        ],
+        "lat": 41.997,
+        "lon": -83.6739
+      },
+      {
+        "feature": "Ostrander Road at the railroad in Azalia",
+        "px": [
+          547,
+          300
+        ],
+        "lat": 42.01907,
+        "lon": -83.66492
+      },
+      {
+        "feature": "North Ann Arbor Road at the road on the north edge of the site",
+        "px": [
+          435,
+          488
+        ],
+        "lat": 42.0082,
+        "lon": -83.67372
+      }
+    ],
+    "fit_m": 45.7,
+    "image": "batches/us-mi/staging/maps/L100001088928.jpg",
+    "needs_review": false,
+    "review_note": "This check redid the location the first pass asked about. The map in the testimony was fitted to four road crossings with an error of about 46 meters. The new point is about 64 meters from the first pass's point at 42.00263, -83.66954, so the two looks agree. The move from GEM's current point in the town of Milan is about 8.4 kilometers. The picture is clear: an open field east of North Ann Arbor Road with a tree line on its east side, matching the marked area."
+  },
+  "qa": [],
+  "monitor": [],
+  "newunits": [],
+  "entities": [],
+  "source_log": [
+    {
+      "url": "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPrx7AAD",
+      "used_for": [
+        "Latitude",
+        "Longitude",
+        "Location accuracy"
+      ],
+      "outcome": "verified",
+      "note": "The testimony file loaded and contains the Figure 2 title and the words Milan Township. Figure 2 is on page 892."
+    },
+    {
+      "url": "https://www.google.com/maps/search/?api=1&query=42.00269,-83.67031",
+      "used_for": [
+        "Latitude",
+        "Longitude"
+      ],
+      "outcome": "verified",
+      "note": "This is a Google Maps pin link for the new point. It was not run through the page checker."
+    }
+  ]
+}

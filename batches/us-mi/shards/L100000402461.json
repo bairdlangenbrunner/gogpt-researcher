@@ -1,0 +1,149 @@
+{
+ "meta": {
+  "plant_id": "L100000402461",
+  "plant_name": "Delta energy park",
+  "state": "Michigan",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-26T23:38:34-04:00",
+  "done": true,
+  "urls_attempted": 7,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402126",
+   "unit_name": "CC_set",
+   "findings": {},
+   "not_found": [
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "Still operating. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists generators DEPC2, DEPC3 and DEPST at plant 63259 as operating with no planned retirement. I could not read a public page that names the turbine maker, because the BWL project sheet address returned an error."
+  },
+  {
+   "gem_unit_id": "G100000403910",
+   "unit_name": "DEPS1",
+   "findings": {},
+   "not_found": [
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "Still operating. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists generator DEPS1 as operating, 58.0 megawatts, with no planned retirement. No turbine maker was found on a page I could read."
+  },
+  {
+   "gem_unit_id": "G100001053790",
+   "unit_name": "RICE_set",
+   "findings": {
+    "Number Of Engines": {
+     "value": "6",
+     "refs": [
+      "https://web.archive.org/web/20240502121707id_/https://www.egle.state.mi.us/aps/downloads/permits/PubNotice/APP-2023-0209/APP-2023-0209NOH.pdf",
+      "https://www.wkar.org/wkar-news/2024-07-01/bwl-receives-green-light-to-build-natural-gas-fired-plant"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20240502121707id_/https://www.egle.state.mi.us/aps/downloads/permits/PubNotice/APP-2023-0209/APP-2023-0209NOH.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.wkar.org/wkar-news/2024-07-01/bwl-receives-green-light-to-build-natural-gas-fired-plant",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "An EGLE public notice for permit application APP-2023-0209, saved on the Wayback Machine in May 2024 (https://web.archive.org/web/20240502121707id_/https://www.egle.state.mi.us/aps/downloads/permits/PubNotice/APP-2023-0209/APP-2023-0209NOH.pdf), lists six natural gas-fired reciprocating engines, each rated at 29,147 horsepower. A WKAR article from July 2024 (https://www.wkar.org/wkar-news/2024-07-01/bwl-receives-green-light-to-build-natural-gas-fired-plant) says the same. This is a saved copy of the notice."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Latest Activity",
+    "Other IDs"
+   ],
+   "notes": "The engine plant is probably not yet operating. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) has no engine generators at Delta Energy Park, only the four combined cycle and turbine generators. A Lansing Board of Water and Light page (https://lbwl.com/cleanenergyprojects) lists 110 MW of flexible generation at Delta Energy Park as part of work shown completed in 2027. WKAR reported in July 2024 (https://www.wkar.org/wkar-news/2024-07-01/bwl-receives-green-light-to-build-natural-gas-fired-plant) that BWL expects the plant to be operational by the end of 2026. I found no public report that the engines are running, so I did not change the status and raised a question."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001053790",
+   "concern_type": "Status",
+   "recommendation": "The engine plant may still be in construction or commissioning, not operating. Please confirm with Lansing Board of Water and Light before the status stays operating.",
+   "note": "The Environmental Integrity Project lists Delta energy park as proposed (https://oilandgaswatch.org/facility/rec_d4f1u5gq7easr8ra1esg), but its page is drawn by script and I could not read it. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) has no engine generators at this plant. WKAR in July 2024 (https://www.wkar.org/wkar-news/2024-07-01/bwl-receives-green-light-to-build-natural-gas-fired-plant) says BWL expects operation by the end of 2026. The BWL project page (https://lbwl.com/cleanenergyprojects) shows 110 MW of flexible generation at Delta Energy Park with the whole site completed in 2027. The Status Detail text already in GEM says the engines were being commissioned in August 2026. I found no public source that says the engines are running.",
+   "refs": [
+    "https://lbwl.com/cleanenergyprojects",
+    "https://www.wkar.org/wkar-news/2024-07-01/bwl-receives-green-light-to-build-natural-gas-fired-plant"
+   ],
+   "proposed_value": {
+    "Status": "construction"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Plant 63259 has four operating generators and no engines, in any sheet."
+  },
+  {
+   "url": "https://lbwl.com/cleanenergyprojects",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Page says 110MW of flexible generation at Delta Energy Park; gives no status."
+  },
+  {
+   "url": "https://web.archive.org/web/20240502121707id_/https://www.egle.state.mi.us/aps/downloads/permits/PubNotice/APP-2023-0209/APP-2023-0209NOH.pdf",
+   "used_for": [
+    "Number Of Engines",
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Saved Wayback copy; six engines at 29,147 horsepower each, no maker named."
+  },
+  {
+   "url": "https://www.wkar.org/wkar-news/2024-07-01/bwl-receives-green-light-to-build-natural-gas-fired-plant",
+   "used_for": [
+    "Status",
+    "Number Of Engines"
+   ],
+   "outcome": "verified",
+   "note": "Expects operation by end of 2026."
+  },
+  {
+   "url": "https://oilandgaswatch.org/facility/rec_d4f1u5gq7easr8ra1esg",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "failed",
+   "note": "fetch.py returned only the empty script shell; the data loads from an API I did not trace within budget."
+  },
+  {
+   "url": "https://lbwl.com/documents/delta-energy-park-project-information",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "failed",
+   "note": "HTTP 404 and no Wayback snapshot."
+  },
+  {
+   "url": "https://www.publicpower.org/periodical/article/lansing-michigan-utility-brings-gas-plant-online-replace-retired-coal-plant",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "failed",
+   "note": "Page loads but does not name Siemens."
+  }
+ ]
+}

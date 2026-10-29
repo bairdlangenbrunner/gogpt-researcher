@@ -1,0 +1,60 @@
+{
+ "meta": {
+  "plant_id": "L100001088855",
+  "plant_name": "Microsoft Osmium Data Center power station",
+  "state": "Iowa",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-27T18:00:00-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001101026",
+   "unit_name": "Unit 1",
+   "findings": {},
+   "not_found": [],
+   "notes": "I checked the state Title V permit 24-TV-004, issued October 17, 2024. The large Cummins QSK95-G9 fleet agrees with GEM's 100 engines and 300 MW. Four smaller engines are raised as a question."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_plant_id": "L100001088855",
+   "plant_name": "Microsoft Osmium Data Center power station",
+   "concern_type": "scope",
+   "recommendation": "Decide whether to add a small unit for the four smaller engines. Their ratings are in horsepower only, so the capacity would stay blank.",
+   "note": "The state Title V permit 24-TV-004, issued October 17, 2024, lists about 100 Cummins QSK95-G9 engines, which agrees with GEM's 100 engines and 300 MW. It also lists two Cummins QSK23-G7 engines of 1,220 horsepower and two Cummins QSX15-G9 engines of 755 horsepower that GEM does not carry. Not found: a kilowatt rating for these four engines. A newer application, project 26-332 received September 22, 2026, adds one more QSK95-G9 emergency engine and is not yet issued.",
+   "refs": [
+    "https://www.iowadnr.gov/media/6245/download"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.iowadnr.gov/media/6245/download",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Title V permit 24-TV-004 for the Osmium data center lists QSK95-G9, QSK23-G7 and QSX15-G9 engines."
+    }
+   ],
+   "proposed_value": "",
+   "irp": false,
+   "checks": [
+    39
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.iowadnr.gov/media/6245/download",
+   "used_for": "generator fleet check",
+   "outcome": "verified",
+   "note": "Title V permit 24-TV-004."
+  }
+ ]
+}

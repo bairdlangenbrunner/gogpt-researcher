@@ -1,0 +1,85 @@
+{
+ "meta": {
+  "plant_id": "L100001088852",
+  "plant_name": "Microsoft Ginger West Data Center power station",
+  "state": "Iowa",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-27T18:00:00-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001101019",
+   "unit_name": "Unit 1",
+   "findings": {
+    "Number Of Engines": {
+     "value": "130",
+     "refs": [
+      "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-371%22,%22permitNumber2%22%3A%2226-A-371%22,%22projectNumber%22%3A%2226-275%22,%22emissionPointID%22%3A%22EP-136%22,%22emissionPointDescription%22%3A%22Ginger%20West%20EG-136%22,%22issueDate%22%3A%222026-10-20T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A50587,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-008%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+     ],
+     "verifications": [
+      {
+       "url": "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-371%22,%22permitNumber2%22%3A%2226-A-371%22,%22projectNumber%22%3A%2226-275%22,%22emissionPointID%22%3A%22EP-136%22,%22emissionPointDescription%22%3A%22Ginger%20West%20EG-136%22,%22issueDate%22%3A%222026-10-20T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A50587,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-008%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Iowa DNR construction permits for project 26-275, issued October 20, 2026, to Microsoft at 11100 Booneville Road. The description says modification of limits for 126 existing engines and installation of 10 new engines."
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The newest state construction permits, project 26-275 issued October 20, 2026, cover 136 engines. Of these, 130 are Cummins QSK95 engines and 6 are Cummins QSX15 engines. Ten engines were added in this project. GEM has 120 large engines.",
+     "checks": [
+      39
+     ]
+    },
+    "Capacity (MW)": {
+     "value": "390",
+     "refs": [
+      "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-371%22,%22permitNumber2%22%3A%2226-A-371%22,%22projectNumber%22%3A%2226-275%22,%22emissionPointID%22%3A%22EP-136%22,%22emissionPointDescription%22%3A%22Ginger%20West%20EG-136%22,%22issueDate%22%3A%222026-10-20T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A50587,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-008%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+     ],
+     "verifications": [
+      {
+       "url": "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-371%22,%22permitNumber2%22%3A%2226-A-371%22,%22projectNumber%22%3A%2226-275%22,%22emissionPointID%22%3A%22EP-136%22,%22emissionPointDescription%22%3A%22Ginger%20West%20EG-136%22,%22issueDate%22%3A%222026-10-20T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A50587,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-008%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Iowa DNR construction permits for project 26-275, issued October 20, 2026, to Microsoft at 11100 Booneville Road. The description says modification of limits for 126 existing engines and installation of 10 new engines."
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The 130 QSK95 engines are described in the permit as C3000 series generator sets, which is 3 MW each, or 390 MW. GEM has 360 MW. The permit text gives horsepower, and the 3 MW rating matches the figure GEM already uses.",
+     "checks": [
+      39
+     ]
+    }
+   },
+   "not_found": [],
+   "notes": "The October 20, 2026 state permits add 10 Cummins QSK95 engines to the 120 in GEM. That makes 130 engines and 390 MW."
+  },
+  {
+   "gem_unit_id": "G100001101020",
+   "unit_name": "Unit 2",
+   "findings": {},
+   "not_found": [],
+   "notes": "The October 20, 2026 state permits list 6 Cummins QSX15 engines of 755 horsepower. That agrees with GEM's 6 engines."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-371%22,%22permitNumber2%22%3A%2226-A-371%22,%22projectNumber%22%3A%2226-275%22,%22emissionPointID%22%3A%22EP-136%22,%22emissionPointDescription%22%3A%22Ginger%20West%20EG-136%22,%22issueDate%22%3A%222026-10-20T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A50587,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-008%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT",
+   "used_for": "newest permit check",
+   "outcome": "verified",
+   "note": "Project 26-275, October 20, 2026."
+  }
+ ]
+}

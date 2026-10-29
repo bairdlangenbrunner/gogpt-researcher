@@ -23,7 +23,7 @@ Two distinct outputs depending on which trigger fired:
 1. **Batch QC gate** (§3–§5): no separate file — a pass/fail confirmation that the staging dir is clean, reported inline before `build_review_package.py` runs. A failure blocks the build until fixed.
 2. **Country close-out** (§6): the completed GC/Country Checklist, a clean GOGPT Validation Report for the country, and the roster row's close-out fields (notes, next-cycle time estimate) filled in.
 
-QC never writes to the live GEM database and never stages edits of its own — a QC failure routes back to the researcher to fix within the batch already in progress, not to a separate follow-up batch (contrast with the family's QC-detects/Update-fixes split for periodic audits — GOGPT's QC is an in-batch gate, tighter-scoped than that).
+QC never writes to the live GEM database and never stages edits of its own — a QC finding is fixed in a follow-on Update batch (QC detects, Update fixes). The batch QC gate in §3 to §5 only blocks the build until `qc_checks.py` is clean.
 
 ## §3 Mechanical validation — `qc_checks.py`
 
@@ -34,8 +34,8 @@ python qc_checks.py
 ```
 
 Checks, per the manual:
-- **Capacity thresholds** — ≥50 MW nameplate (generating MWe only), with the EU/UK <20 MW per-unit exception
-- **Status–year consistency** — Start Year blank on `shelved`/`cancelled` (and their inferred variants); no Retired Year on `mothballed`; Planned checkbox set while a start/retire year is projected, cleared once actual
+- **Capacity thresholds** — ≥50 MW electrical nameplate (20 MW in the EU and UK)
+- **Status–year consistency** — Start Year blank on `shelved`/`cancelled` (and their inferred variants); no Retired Year on `mothballed`; a projected start or retirement year is a scheduled event with an Event Year and a Source Year, never a Planned checkbox
 - **Controlled vocabulary** — Technology (CC, GT, AGT, ST, IC, ICCC, ISCC, AFC) and Fuel category/detail values inside the manual's enums; hydrogen fields untouched (do-not-research)
 - **Ownership shares** — stakes ≥5% only (smaller aggregate as "small shareholder(s)"), shares sum sensibly, four-largest-plus-other structure, sole owner explicit 100%, no national government listed directly as an owner
 
@@ -67,10 +67,10 @@ Once the human has applied the batch (or at the natural end of the country's res
 - The **GC/Country Checklist** (QC/Country checklist tab of the cycle's Update sheet — link hub `docs/reference/sop_pointers.md`) is completed. Its blocks, mirrored here so a batch can self-check before the human ticks the tab:
   - *During research*: unit counts reconciled against the assignments tab; every unit has a Record of Full Updates entry; Assigned Comments resolved; possible-updates backlog cleared; Country Tips updated
   - *Cycle docs*: a **Country tips trends** row for this cycle; the researcher-maintained status columns on the assignments tab filled
-  - *USA only* (each US state): **IRP checkbox** ticked on every unit that appears in an Integrated Resource Plan (and the "IRP" unit-name suffix rule applied); **US IRPs** tab and **United States research** tab rows updated; GEM IDs matched to **EIA-860M** (plant ID → Other IDs location, generator ID → Other IDs unit), **EIP** and the **Sierra Club** sheet (reference only — never cited); **data-center gas** searched and behind-the-meter plants marked captive with the data-centre industry type; US Data/Research Guide consulted
+  - *USA only* (each US state): **IRP checkbox** ticked on every unit that appears in an Integrated Resource Plan (and the "IRP" unit-name suffix rule applied); **US IRPs** tab and **United States research** tab rows updated; GEM IDs matched to **EIA-860M** (plant ID → Other IDs location, generator ID → Other IDs unit), **EIP** and the **Sierra Club** sheet (reference only — never cited); **data center power** searched (backup engine fleets included, `data_center_fleets.py`) and each plant marked captive with the data center industry type; US Data/Research Guide consulted
   - *Optional*: wiki Background text, entity clean-up beyond the batch's own edits
   - *End of update* (cycle close, 2026-12-18 → 12-24): the validation report and year-end rollover pass below
-- The **GOGPT Validation Report** is clean for the country (checklist rows 7 and 54). `python validation_report.py --country <name> --closeout` (or `--state <State>`) reads the same stored errors the web UI's "GOGPT Validation Report" tab lists (`plant.validation`, live from the read-only DB), writes `work/validation_<tag>.md`, and exits 1 while any *fix* or *person* item remains; attach the memo to the close-out. Errors found at close-out route to a follow-on Update batch through `build_state_brief.py --validation`. **Exception**: validation errors on project-level fields for co-located coal/gas plants (e.g. missing datasource for shared location or owner) or unit-level fields for coal-to-gas-conversion units (e.g. missing datasource for CCS) are **optional / low priority** — the manual explicitly deprioritizes these
+- The **GOGPT Validation Report** is clean for the country (checklist rows 7 and 54). `python validation_report.py --country <name> --closeout` (or `--state <State>`) reads the same stored errors the web UI's "GOGPT Validation Report" tab lists (`plant.validation`, live from the read-only DB), writes `work/validation_<tag>.md`, and exits 1 while any *fix* or *person* item remains; attach the memo to the close-out. Errors found at close-out route to a follow-on Update batch through `build_state_brief.py --validation`. **Exception** (M198, M220): validation errors on project-level fields for a plant that also has coal units, or unit-level fields for coal-to-gas-conversion units (e.g. missing datasource for CCS), are **optional / low priority**; the gate accepts "optional under the manual" as the answer
 - A time estimate for the next cycle is logged in the roster's notes (`campaigns/<quarter>/roster.csv`)
 - The roster row moves to `done`; the PM reviews and may flag fields needing revisit — process flags as a small follow-up batch
 

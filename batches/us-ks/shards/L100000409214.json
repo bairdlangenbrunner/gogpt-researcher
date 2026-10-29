@@ -1,0 +1,169 @@
+{
+ "meta": {
+  "plant_id": "L100000409214",
+  "plant_name": "CML&P Generating Facility No. 2",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T09:40:19-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000414291",
+   "unit_name": "IC",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists all three engines (generators 8, 9 and 10) at plant 59726 as operating, 18.7 MW each, natural gas internal combustion engines in service since January 2017. No planned retirement is shown."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Wärtsilä 50SG",
+     "refs": [
+      "https://www.wartsila.com/usa/media/local-news/03-04-2017-ribbon-cutting-city-of-coffeyville-ks"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.wartsila.com/usa/media/local-news/03-04-2017-ribbon-cutting-city-of-coffeyville-ks",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Wärtsilä news item from April 2017 says the 56 MW Coffeyville Municipal Light and Power plant has three gas-fired Wärtsilä 50SG engines."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Operator(s)"
+   ],
+   "notes": "Still operating. I found no retirement, mothballing or change of owner."
+  }
+ ],
+ "plant_findings": {
+  "City": {
+   "value": "Coffeyville",
+   "refs": [
+    "https://www.wartsila.com/usa/media/local-news/03-04-2017-ribbon-cutting-city-of-coffeyville-ks"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.wartsila.com/usa/media/local-news/03-04-2017-ribbon-cutting-city-of-coffeyville-ks",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "A Wärtsilä news item from April 2017 describes the ribbon cutting for the new Coffeyville Municipal Light and Power plant, 56 MW with three Wärtsilä 50SG engines, in Coffeyville, Kansas. The EIA table puts the plant in Montgomery County, which contains Coffeyville."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000414291",
+   "concern_type": "location",
+   "recommendation": "No change. GEM's point is already marked exact and sits on the engine building of this plant. Leave the coordinates and the accuracy as they are.",
+   "note": "The city of Coffeyville electric generation page names Generation Facility #2 and gives 2601 N. 5th Industrial Street. The 2024 EIA Form 860 plant table, which I read from the saved file, lists the same address for plant 59726 and the point 37.092977, -95.585154. That is the same point GEM holds, within one meter. The US Census geocoder found no match for the address, so I did not use it. A satellite picture at the point shows a white engine hall with exhaust stacks and a small switchyard, on a fenced pad in an industrial park, with the crosshair on the building. The picture date is unknown. The web search address is now confirmed by a city page, and GEM's point agrees with it.",
+   "refs": [
+    "https://www.coffeyville.com/352/Electric-Generation"
+   ],
+   "proposed_value": {},
+   "verifications": [
+    {
+     "url": "https://www.coffeyville.com/352/Electric-Generation",
+     "ok": true,
+     "contains_value": true,
+     "expected": [
+      "2601 N. 5th",
+      "Industrial",
+      "Generation Facility #2"
+     ],
+     "note": "Passed url_verifier.py on the three text pieces. The full phrase '2601 N. 5th Industrial Street' as one string did not match, so the cite rests on the pieces."
+    }
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Plant 59726 generators 8, 9, 10 operating."
+  },
+  {
+   "url": "https://www.wartsila.com/usa/media/local-news/03-04-2017-ribbon-cutting-city-of-coffeyville-ks",
+   "used_for": [
+    "City",
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Names Coffeyville, 56 MW and 50SG engines."
+  },
+  {
+   "url": "https://www.kdhe.ks.gov/DocumentCenter/View/43384",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "dead_link",
+   "note": "Public notice for the Coffeyville Municipal Power acid rain permit, site address 605 Sante Fe St. Returns 404. That address may be the older plant, so I did not use it."
+  },
+  {
+   "url": "https://www.kdhe.ks.gov/DocumentCenter/View/43387",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "dead_link",
+   "note": "Draft permit for the same notice. Returns 404."
+  },
+  {
+   "url": "https://www.coffeyville.com/352/Electric-Generation",
+   "used_for": [
+    "address",
+    "plant identity"
+   ],
+   "outcome": "verified",
+   "note": "City page for Generation Facility #2 with the 2601 N. 5th address."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+   "used_for": [
+    "address",
+    "point"
+   ],
+   "outcome": "failed",
+   "note": "I opened the plant table in the saved file. url_verifier.py cannot read spreadsheets inside zip files, so it is not cited as a reference. The verifier cannot read spreadsheets inside a zip file, so this was read from the local copy and is not cited."
+  },
+  {
+   "url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress",
+   "used_for": [
+    "geocode"
+   ],
+   "outcome": "failed",
+   "note": "No candidates for the address."
+  }
+ ]
+}

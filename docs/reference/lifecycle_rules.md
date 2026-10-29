@@ -1,10 +1,10 @@
 # Lifecycle Rules — Status Definitions and Review Priority
 
-Distilled from the GOGPT Editing Manual (March 2026); fetched 2026-07-27.
+Distilled from the GOGPT Editing Manual (September 2026); updated 2026-10-27.
 
 Covers the ten `Status` values a GOGPT unit can carry, the disappearance-from-documents
 tests behind the two inferred statuses, start/retired/cancellation-year conventions, the
-conflict-damage rule, the December year-end rollover, and the priority order for working
+conflict-damage rule, the December year-end check, and the priority order for working
 through a country during a research pass. See `unit_conventions.md` for how status
 interacts with unit naming (the "R" replacement suffix, conversion timepoints) and
 `controlled_vocab.md` for the exact casing GOGPT's `Status` field uses in the live export.
@@ -29,41 +29,20 @@ the research-priority tier during an update (see "Country-pass review priority" 
 
 ## Inferred statuses: the disappearance test
 
-Both inferred statuses use the same underlying test, applied only to units currently
-`announced`, `pre-construction`, or `construction`:
+Both inferred statuses use the same underlying test, applied only to units currently `announced`, `pre-construction`, or `construction`:
 
-> Projects with "announced", "pre-construction" or "construction" status that **disappear
-> from company documents**, even if no announcement is made, and show no activity over a
-> period of **2 years** → `shelved – inferred 2 y`.
+> Projects with "announced", "pre-construction" or "construction" status that **disappear from company documents**, even if no announcement is made, and show no activity over a period of **2 years** → `shelved – inferred 2 y`.
 > The same disappearance test over a period of **4 years** → `cancelled – inferred 4 y`.
 
-Note the test is disappearance from documents / lack of activity, not an explicit
-statement that the project was paused or killed — that's what makes it "inferred" rather
-than `shelved`/`cancelled` proper (which require an explicit owner/government
-announcement).
+The test is disappearance from documents and lack of activity, not an explicit statement that the project was paused or killed. That is what makes it "inferred" rather than `shelved` or `cancelled` proper, which need an explicit owner or government announcement.
 
-Use the unit's **Latest activity** field to track candidates: when a unit hasn't been
-mentioned in media or company documents for a while, record the most recent source found
-and the date it was last referenced there. That record is what a future pass uses to
-decide whether the 2-year or 4-year threshold has been crossed.
+**An inferred status is a milestone entry with a datasource** (manual, Unit Milestone Timeline section). The datasource is the Latest Activity source, the newest report found. The milestone year is the Latest Activity date plus two years for `shelved – inferred 2 y`, or plus four years for `cancelled – inferred 4 y` (manual tip on inferred milestone entries). The staged record carries that source in its refs and the computed year. It is no longer an exception to the rule that every value needs a datasource.
 
-**Which units get one** (Baird 2026-10-05, after Amalia Llano's New York review): the briefs
-offer Latest Activity only for (1) in-development units that have gone quiet, (2) shelved and
-shelved-inferred units, which are still counting toward the 4-year mark, (3) cancelled-inferred
-units, which are checked each pass for any newer report or a revival, and (4) any inferred
-status where the field is blank. In every case the date must be at least a year old: a report
-from the last twelve months means the project is moving, so it goes in the note and Latest
-Activity is left alone. It is never filled for operating, mothballed, retired or plainly
-cancelled units, or for planned-retirement checks. `build_state_brief.py` `unit_tasks` and the
-`state-sweep.js` prompt carry this, and `state_gate.py` fails an edit that breaks it (gate
-`latest-activity`).
+Use the unit's **Latest activity** field to track candidates: when an in-development unit has not been mentioned in media or company documents for some time, record the most recent source found and the date it was last referenced there (manual, Latest activity section). A future pass uses that record to decide whether the two-year or four-year mark has been crossed.
 
-**Format:** Latest Activity is a date field in the GEM database. The export renders it as
-`Year: 2024, Month: 6, Day: 17` (month and day optional), and every one of the ~2,100 filled
-values in the 2026-10-02 export has that form. Stage the date of the newest dated report; what
-happened goes in the researcher note and, if it changes the status story, in Status Detail, added
-above the text already in that box (Status Detail is a running log, newest entry first; it is never
-rewritten). Never move the date backward. `state_gate.py` fails any free-text Latest Activity value (gate `dates`).
+**Which units get one** (Baird 2026-10-05, after Amalia Llano's New York review; the manual sets no age or status limit beyond in-development, so this is the repo's working reading of "for some time", kept at one year because the inferred statuses are computed from it): the briefs offer Latest Activity only for (1) in-development units that have gone quiet, (2) shelved and shelved-inferred units, which are still counting toward the four-year mark, (3) cancelled-inferred units, which are checked each pass for any newer report or a revival, and (4) any inferred status where the field is blank. In every case the date must be at least a year old: a report from the last twelve months means the project is moving, so it goes in the note and Latest Activity is left alone. It is never filled for operating, mothballed, retired or plainly cancelled units, or for planned-retirement checks. `build_state_brief.py` `unit_tasks` and the `state-sweep.js` prompt carry this, and `state_gate.py` fails an edit that breaks it (gate `latest-activity`).
+
+**Format:** Latest Activity is a date field in the GEM database. The export renders it as `Year: 2024, Month: 6, Day: 17` (month and day optional), and every one of the ~2,100 filled values in the 2026-10-02 export has that form. Stage the date of the newest dated report; what happened goes in the researcher note and, if it changes the status story, in Status Detail, added above the text already in that box (Status Detail is a running log, newest entry first; it is never rewritten). Never move the date backward. `state_gate.py` fails any free-text Latest Activity value (gate `dates`).
 
 ## Tracking window: mothballed / retired / cancelled from 2020 forward
 
@@ -73,32 +52,17 @@ gas-plant changes since then, not to backfill history before the tracker existed
 
 ## Start year rules
 
-- Start year = the year the unit reached commercial operation.
-- For a proposed plant with a planned start year, record the projected year and check the
-  **Planned** checkbox. While the unit stays in-development, treat the year as an
-  estimate; remove the checkmark once the unit actually becomes operational.
-- **`shelved` and `cancelled` units never get a start year** — leave the Start Year field
-  (and its reference column) blank. A start year doesn't make sense once a project is
-  paused/killed rather than progressing toward operation.
-- If a unit is replaced (a new turbine installed in place of the old one), the old unit is
-  retired and the new unit gets its own new start year — see the "R" suffix convention in
-  `unit_conventions.md`.
-- Maintenance/upgrade without a turbine replacement does **not** get a new start year; the
-  original start year stands (only capacity/technology/retirement year may change).
-- **Operating units with an unknown start year** (Q4 2026 required deliverable, per the
-  kickoff doc): re-research, capped at ~10 minutes per unit. If sources pin only the
-  decade, enter the decade midpoint (e.g. "1975" for "the 1970s") and add an internal
-  note saying the year is a decade estimate. Unit-level Other IDs (EIA-860M generator
-  ID, national registries) are the fastest route to an exact year.
+- Start year = the year the unit reached commercial operation. It is recorded as an operating milestone entry.
+- A projected or planned start year is a **scheduled event** (status `operating`) with the projected year as the Event Year and the year the source reported it as the Source Year (manual, Start/Operating Year section). There is no Planned checkbox. The staged `Start year` value carries the Event Year and the action tells the human to add a new scheduled event entry. Every scheduled event needs an Event Year.
+- **`shelved` and `cancelled` units never get a start year**, and never get a new scheduled operating event. Leave the Start Year field (and its reference column) blank. Scheduled events added before the unit was shelved or cancelled stay in the timeline as a record of what was planned.
+- If a unit is replaced (a new turbine installed in place of the old one), the old unit is retired and the new unit gets its own new start year, never earlier than the old unit's retirement year (usually the same year). See the "R" suffix convention in `unit_conventions.md`.
+- Maintenance or an upgrade without a turbine replacement does **not** get a new start year or a new operating milestone; the original start year stands (only capacity, technology or the retirement date may change). If the work changes the expected retirement date, add a new scheduled retirement event with the revised Event Year and the year it was reported as the Source Year.
+- **Operating units with an unknown start year** (Q4 2026 required deliverable, per the kickoff doc): re-research, capped at about 10 minutes per unit. If sources pin only the decade, enter the decade midpoint (e.g. "1975" for "the 1970s") and add an internal note saying the year is a decade estimate. Unit-level Other IDs (EIA-860M generator ID, national registries) are the fastest route to an exact year.
 
 ## Retired year / planned retire year
 
-- **Retired Year** = the year the unit went offline. **Mothballed units must not have a
-  retired year** — they haven't been retired, only deactivated.
-- **Planned Retire Year**: when a source states a future retirement (often paired with a
-  replacement unit coming online), record that year and check **Planned**. Note any
-  replacement context in Status Details. Remove the Planned checkmark once the unit is
-  actually retired.
+- **Retired Year** = the year the unit went offline, recorded as a retired milestone entry. **Mothballed units must not have a retired year**, since they have not been retired, only deactivated.
+- **Planned retire year**: when a source states a future retirement (often paired with a replacement unit coming online), record it as a scheduled event (status `retired`) with the projected year as the Event Year and the reported year as the Source Year. If the planned year changes, add a new scheduled event; never edit the existing one. Note any replacement context in Status Detail. There is no Planned checkbox.
 
 ## Cancellation year
 
@@ -106,8 +70,7 @@ Cancellation Year = the year the unit or phase is officially cancelled.
 
 ## Conflict-damage / disruption rules
 
-When a plant or unit has been damaged by war/conflict, check the **"Disrupted by
-conflict"** checkbox (between Status and Status Details) and assign status as follows:
+When a plant or unit has been damaged by war/conflict, check the **"Disrupted due to conflict"** checkbox (between Status and Status Details) and assign status as follows:
 
 - **`mothballed`** + check the box — plant/unit completely destroyed, or rebuilding is
   likely to take many years with no indication reconstruction has begun or is imminent.
@@ -131,43 +94,35 @@ entered is:
 | **Milestone** | a status change that has actually happened (announced → pre-construction, construction → operating, → retired, → cancelled …) | this year or earlier | status, year it happened, source, note |
 | **Scheduled event** | a status the unit is projected to reach (planned operating year, planned construction start, planned retirement) | this year or later | status, event year, **source year** (when the schedule was reported), source |
 
-- Current status = the most recent milestone; **Planned start year and planned retire
-  year now live in the scheduled timeline** as `operating` / `retired` scheduled events.
-- A pushed-back start year is a *new* scheduled `operating` event with the new year and
-  the new source year — the old projection stays as history.
-- One research finding often stages several entries (Case B in the training doc: a
-  pre-construction milestone **plus** a scheduled `operating` 2029 event).
-- For the actions workbook this means a status change stages `status + year + source`
-  and a projected year stages `status + event year + source year + source`; the
-  evidence.md says which entry type each staged row is. Whether inferred statuses carry
-  the inference year or no year as their milestone year is answered in the training
-  doc's Case D video — confirm before staging the first inferred batch under the new
-  model.
+- Current status = the most recent milestone; **planned start year and planned retire year live in the scheduled timeline** as `operating` / `retired` scheduled events.
+- A pushed-back start year is a *new* scheduled `operating` event with the new year and the new source year; the old projection stays as history. A superseded scheduled event stays in place and the new status is recorded as a milestone.
+- **Every scheduled event has an Event Year.** Never stage one without it.
+- One research finding often stages several entries (Case B in the training doc: a pre-construction milestone **plus** a scheduled `operating` 2029 event).
+- Every new timeline entry carries a datasource, inferred statuses included (see "Inferred statuses" above).
+- **A wrong timeline entry is never edited by the researcher.** If an existing entry looks wrong, raise it to the project manager through a `qa` record (manual, Status Timeline section: consult the PM first).
+- For the actions workbook this means a status change stages `status + year + source`, a projected year stages `status + event year + source year + source` (the `Start year` or `Planned retire` value is the Event Year and the action says to add a new scheduled event entry), an inferred status stages `status + computed year + Latest Activity source`, and the evidence.md says which entry type each staged row is.
 
-## Year-end rollover rule
+## Year-end check (the December rule)
 
-During the second annual research update (concludes in December): no in-development or
-retiring plant should carry the current (ending) year as its start or retirement year
-unless a source confirms the plant actually entered operation or was actually retired. If
-no source confirms it, roll the start/retirement year forward to the following year.
+During the second annual research update, which concludes in December, check every in-development or retiring unit that has a scheduled operating or retired event falling in the current (ending) year. If no source confirms that the unit entered operation or was retired, add a **new** scheduled event with the following year as the Event Year and the current year as the Source Year (manual, Year-end note). Do not edit the existing entry.
+
+## Research status and close-out
+
+When you create a new unit or phase, choose "added" as its research status in the research-status section (manual, Research status section). If you start a unit and do not finish it, choose "in progress" so you can filter for it later. At the end of a country's research cycle, filter the database for every "in progress" unit in the country, review each, and change the research status to "updated" or "no changes".
 
 ## Country-pass review priority
 
 Per the General Guidelines, work a country's units in this order:
 
-1. **In-development units** — `announced`, `pre-construction`, `construction`.
-2. **`shelved` and `shelved – inferred 2 y` units** — re-check whether the 2-year
-   disappearance test now supports escalating to `cancelled – inferred 4 y`, or whether
-   new activity has resurfaced.
+1. **In-development units**: `announced`, `pre-construction`, `construction`.
+2. **`shelved` and `shelved – inferred 2 y` units**: re-check whether new activity has resurfaced.
 3. **Units with planned retirement in the current year.**
-4. **Units with planned retirement** (any year).
-5. **Operating units** — lowest priority. Not separately itemized in the manual's
-   priority list, but implied by the general instruction to "focus on in-development
-   units" during an update pass; review these only as research time allows.
+4. **Units with planned retirement** in any year.
+5. **Everything else**, as research time allows. Operating and mothballed units have no tier of their own in the manual.
 
-For an update specifically, filter the Status field to `announced` / `pre-construction` /
-`construction` first — that's the researcher's default lens before working down the rest
-of the list above.
+The cancelled-inferred test (four years) applies only to units that are `announced`, `pre-construction` or `construction`. Date arithmetic runs on the Latest Activity date, not on the calendar year.
+
+For an update specifically, filter the Status field to `announced` / `pre-construction` / `construction` first, then work down the list above.
 
 ## Cross-references
 

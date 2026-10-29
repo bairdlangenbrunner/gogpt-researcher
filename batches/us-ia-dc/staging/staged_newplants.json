@@ -1,0 +1,618 @@
+{
+  "meta": {
+    "lane": "newplants",
+    "scope": {
+      "country": "United States",
+      "state": "Iowa",
+      "postal": "ia",
+      "kind": "state",
+      "slug": "iowa",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-27T12:14:01-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 4
+    }
+  },
+  "records": [
+    {
+      "plant_name": "Microsoft Willow Creek Data Center power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Iowa",
+        "Local area (taluk, county)": "Polk",
+        "City": "West Des Moines",
+        "Operator(s)": "Microsoft",
+        "Captive industry use": "power",
+        "Captive industry type": "data center",
+        "Captive non-industry use": "none",
+        "Latitude": "41.51497",
+        "Longitude": "-93.71017",
+        "Location accuracy": "approximate",
+        "Owner(s)": "Microsoft Corp [100%]"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.iowadnr.gov/media/7168/download?inline",
+          "https://www.google.com/maps/search/?api=1&query=41.51497,-93.71017"
+        ],
+        "Captive Data Source": [
+          "https://www.iowadnr.gov/media/7168/download?inline"
+        ],
+        "Operators Data Source": [
+          "https://airquality.polkcountyiowa.gov/PERMITS/PR-000651-2023.pdf"
+        ],
+        "Owners Data Source": [
+          "https://www.iowadnr.gov/media/7168/download?inline"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.iowadnr.gov/media/7168/download?inline",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "State Title V permit 24-TV-005, issued December 9, 2024, for Willow Creek and Ginger East data centers, with kilowatt ratings for each engine group."
+        },
+        {
+          "url": "https://airquality.polkcountyiowa.gov/PERMITS/PR-000651-2023.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Polk County permit PR-000651-2023 for Willow Creek engines at 550 SE White Crane Road."
+        },
+        {
+          "url": "https://www.google.com/maps/search/?api=1&query=41.51497,-93.71017",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Opens at the point."
+        }
+      ],
+      "tier": "high",
+      "researcher_notes": "The state Title V permit 24-TV-005 and Polk County permits cover the Willow Creek data center at 550 SE White Crane Road in West Des Moines. A Polk County permit lists the contact as Microsoft. The older engines, emission units 1 to 66, are 66 Cummins diesel engines: one of 800 kilowatts, four of 2,000, sixty of 2,500 and one of 1,000. That is 159.8 MW. Emission units 67 to 86 are 20 Cummins QSK95-G9 engines of 3,000 kilowatts, 60 MW, permitted in 2024. This site is separate from Ginger East, which is at 1475 SE Maffitt Lake Road. The permit's own record keeping section separates Willow Creek (units 1 to 86) from Ginger East (units 101 to 201). Not found: start dates, and proof from imagery that the 20 newer engines are built. The point is the geocoded permit address, so the location is approximate. GEM has no Willow Creek record.",
+      "action": "Create the plant Microsoft Willow Creek Data Center power station in West Des Moines, Polk County, Iowa, then add the two units below.",
+      "irp": false,
+      "checks": [
+        39
+      ],
+      "units": [
+        {
+          "unit_name": "Units 1 to 66",
+          "fields": {
+            "Fuel": "fossil liquids: diesel",
+            "Turbine/Engine Technology": "internal combustion",
+            "Backup Power": "yes",
+            "Status": "operating",
+            "Number Of Engines": "66",
+            "Capacity (MW)": "159.8",
+            "Equipment Manufacturer/Model": "Cummins: QSK23-G7, Cummins: QSK60-G6, Cummins: QSK60-G19, Cummins: QST30-G5"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.iowadnr.gov/media/7168/download?inline",
+              "https://airquality.polkcountyiowa.gov/PERMITS/PR-000651-2023.pdf"
+            ],
+            "Fuel Data Source": [
+              "https://www.iowadnr.gov/media/7168/download?inline",
+              "https://airquality.polkcountyiowa.gov/PERMITS/PR-000651-2023.pdf"
+            ],
+            "Status Data Source": [
+              "https://www.iowadnr.gov/media/7168/download?inline",
+              "https://airquality.polkcountyiowa.gov/PERMITS/PR-000651-2023.pdf"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.iowadnr.gov/media/7168/download?inline",
+              "https://airquality.polkcountyiowa.gov/PERMITS/PR-000651-2023.pdf"
+            ],
+            "Backup Power Data Source": [
+              "https://www.iowadnr.gov/media/7168/download?inline",
+              "https://airquality.polkcountyiowa.gov/PERMITS/PR-000651-2023.pdf"
+            ],
+            "Turbine/Engine Equipment Data Source": [
+              "https://www.iowadnr.gov/media/7168/download?inline",
+              "https://airquality.polkcountyiowa.gov/PERMITS/PR-000651-2023.pdf"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.iowadnr.gov/media/7168/download?inline",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Title V permit lists the engines with kilowatt ratings."
+            },
+            {
+              "url": "https://airquality.polkcountyiowa.gov/PERMITS/PR-000651-2023.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Title V permit lists the engines with kilowatt ratings."
+            }
+          ],
+          "action": "Add one unit of 66 diesel engines, 159.8 MW in all, operating, backup power yes.",
+          "researcher_notes": "The state Title V permit lists one 800 kilowatt, four 2,000 kilowatt, sixty 2,500 kilowatt and one 1,000 kilowatt Cummins engine for emission units 1 to 66. The sizes differ, so no single size per engine is given."
+        },
+        {
+          "unit_name": "Units 67 to 86",
+          "fields": {
+            "Fuel": "fossil liquids: diesel",
+            "Turbine/Engine Technology": "internal combustion",
+            "Backup Power": "yes",
+            "Status": "pre-construction",
+            "Number Of Engines": "20",
+            "Capacity Per Engine": "3.0",
+            "Capacity (MW)": "60",
+            "Equipment Manufacturer/Model": "Cummins: QSK95-G9"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.iowadnr.gov/media/7168/download?inline",
+              "https://airquality.polkcountyiowa.gov/PERMITS/PR-000720-2024.pdf"
+            ],
+            "Fuel Data Source": [
+              "https://www.iowadnr.gov/media/7168/download?inline",
+              "https://airquality.polkcountyiowa.gov/PERMITS/PR-000720-2024.pdf"
+            ],
+            "Status Data Source": [
+              "https://www.iowadnr.gov/media/7168/download?inline",
+              "https://airquality.polkcountyiowa.gov/PERMITS/PR-000720-2024.pdf"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.iowadnr.gov/media/7168/download?inline",
+              "https://airquality.polkcountyiowa.gov/PERMITS/PR-000720-2024.pdf"
+            ],
+            "Backup Power Data Source": [
+              "https://www.iowadnr.gov/media/7168/download?inline",
+              "https://airquality.polkcountyiowa.gov/PERMITS/PR-000720-2024.pdf"
+            ],
+            "Turbine/Engine Equipment Data Source": [
+              "https://www.iowadnr.gov/media/7168/download?inline",
+              "https://airquality.polkcountyiowa.gov/PERMITS/PR-000720-2024.pdf"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.iowadnr.gov/media/7168/download?inline",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Permit lists 20 Cummins QSK95-G9 engines at 3,000 kilowatts."
+            },
+            {
+              "url": "https://airquality.polkcountyiowa.gov/PERMITS/PR-000720-2024.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Permit lists 20 Cummins QSK95-G9 engines at 3,000 kilowatts."
+            }
+          ],
+          "action": "Add one unit of 20 diesel engines at 3 MW each, 60 MW, pre-construction, backup power yes.",
+          "researcher_notes": "The permits for these 20 engines were issued in 2024. I found nothing saying they are built, so the status follows the permit alone."
+        }
+      ],
+      "location_method": "address",
+      "location_moved_m": null,
+      "location_route": "Address from the Polk County permit, 550 SE White Crane Road, geocoded with the Census geocoder. Not yet checked in satellite imagery.",
+      "record_id": "us-ia:new:microsoft-willow-creek-data-center-power-station"
+    },
+    {
+      "plant_name": "Microsoft West Des Moines Grand Avenue Data Center power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Iowa",
+        "Local area (taluk, county)": "Dallas",
+        "City": "West Des Moines",
+        "Operator(s)": "Microsoft",
+        "Captive industry use": "power",
+        "Captive industry type": "data center",
+        "Captive non-industry use": "none",
+        "Latitude": "41.53849",
+        "Longitude": "-93.82699",
+        "Location accuracy": "approximate",
+        "Owner(s)": "Microsoft Corp [100%]"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-260-S5%22,%22permitNumber2%22%3A%2212-A-260-S5%22,%22projectNumber%22%3A%2222-184%22,%22emissionPointID%22%3A%22EP-GS5.1%22,%22emissionPointDescription%22%3A%22CAT.DIESEL%20IC%20ENGINE%22,%22issueDate%22%3A%222022-08-18T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A41177,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-007%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT",
+          "https://www.google.com/maps/search/?api=1&query=41.53849,-93.82699"
+        ],
+        "Captive Data Source": [
+          "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-260-S5%22,%22permitNumber2%22%3A%2212-A-260-S5%22,%22projectNumber%22%3A%2222-184%22,%22emissionPointID%22%3A%22EP-GS5.1%22,%22emissionPointDescription%22%3A%22CAT.DIESEL%20IC%20ENGINE%22,%22issueDate%22%3A%222022-08-18T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A41177,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-007%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+        ],
+        "Operators Data Source": [
+          "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-260-S5%22,%22permitNumber2%22%3A%2212-A-260-S5%22,%22projectNumber%22%3A%2222-184%22,%22emissionPointID%22%3A%22EP-GS5.1%22,%22emissionPointDescription%22%3A%22CAT.DIESEL%20IC%20ENGINE%22,%22issueDate%22%3A%222022-08-18T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A41177,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-007%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+        ],
+        "Owners Data Source": [
+          "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-260-S5%22,%22permitNumber2%22%3A%2212-A-260-S5%22,%22projectNumber%22%3A%2222-184%22,%22emissionPointID%22%3A%22EP-GS5.1%22,%22emissionPointDescription%22%3A%22CAT.DIESEL%20IC%20ENGINE%22,%22issueDate%22%3A%222022-08-18T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A41177,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-007%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-260-S5%22,%22permitNumber2%22%3A%2212-A-260-S5%22,%22projectNumber%22%3A%2222-184%22,%22emissionPointID%22%3A%22EP-GS5.1%22,%22emissionPointDescription%22%3A%22CAT.DIESEL%20IC%20ENGINE%22,%22issueDate%22%3A%222022-08-18T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A41177,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-007%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Iowa DNR construction permits for project 22-184 at 8855 Grand Avenue, West Des Moines, for Microsoft's DM1-4 data center."
+        },
+        {
+          "url": "https://www.google.com/maps/search/?api=1&query=41.53849,-93.82699",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Opens at the point."
+        }
+      ],
+      "tier": "medium",
+      "researcher_notes": "The Iowa DNR permit record for facility 25-17-007 at 8855 Grand Avenue, West Des Moines, is held by Microsoft Corporation and named DM1-4 Data Center. Its permits from 2010 to 2022 list about 68 diesel engine emission points, mostly Caterpillar 3516C, Cummins QSK95 and MTU units. The ratings are in horsepower only. Not found: kilowatt ratings, an exact engine count and a start year. The capacity is left blank. This is a different site from Ginger West, Ginger East and Osmium, which GEM already has. The point is the geocoded permit address, so the location is approximate.",
+      "action": "Create the plant Microsoft West Des Moines Grand Avenue Data Center power station, then add the one unit below. Leave the capacity blank.",
+      "irp": false,
+      "checks": [
+        39
+      ],
+      "units": [
+        {
+          "unit_name": "Unit 1",
+          "fields": {
+            "Fuel": "fossil liquids: diesel",
+            "Turbine/Engine Technology": "internal combustion",
+            "Backup Power": "yes",
+            "Status": "operating"
+          },
+          "refs": {
+            "Fuel Data Source": [
+              "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-260-S5%22,%22permitNumber2%22%3A%2212-A-260-S5%22,%22projectNumber%22%3A%2222-184%22,%22emissionPointID%22%3A%22EP-GS5.1%22,%22emissionPointDescription%22%3A%22CAT.DIESEL%20IC%20ENGINE%22,%22issueDate%22%3A%222022-08-18T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A41177,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-007%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+            ],
+            "Status Data Source": [
+              "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-260-S5%22,%22permitNumber2%22%3A%2212-A-260-S5%22,%22projectNumber%22%3A%2222-184%22,%22emissionPointID%22%3A%22EP-GS5.1%22,%22emissionPointDescription%22%3A%22CAT.DIESEL%20IC%20ENGINE%22,%22issueDate%22%3A%222022-08-18T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A41177,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-007%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-260-S5%22,%22permitNumber2%22%3A%2212-A-260-S5%22,%22projectNumber%22%3A%2222-184%22,%22emissionPointID%22%3A%22EP-GS5.1%22,%22emissionPointDescription%22%3A%22CAT.DIESEL%20IC%20ENGINE%22,%22issueDate%22%3A%222022-08-18T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A41177,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-007%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+            ],
+            "Backup Power Data Source": [
+              "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-260-S5%22,%22permitNumber2%22%3A%2212-A-260-S5%22,%22projectNumber%22%3A%2222-184%22,%22emissionPointID%22%3A%22EP-GS5.1%22,%22emissionPointDescription%22%3A%22CAT.DIESEL%20IC%20ENGINE%22,%22issueDate%22%3A%222022-08-18T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A41177,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-007%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-260-S5%22,%22permitNumber2%22%3A%2212-A-260-S5%22,%22projectNumber%22%3A%2222-184%22,%22emissionPointID%22%3A%22EP-GS5.1%22,%22emissionPointDescription%22%3A%22CAT.DIESEL%20IC%20ENGINE%22,%22issueDate%22%3A%222022-08-18T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A41177,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-007%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "State permits list diesel engines at this address."
+            }
+          ],
+          "action": "Add one unit of diesel engines, operating, backup power yes, capacity blank.",
+          "researcher_notes": "The state permits list about 68 engine emission points in horsepower only. I did not turn horsepower into megawatts."
+        }
+      ],
+      "location_method": "address",
+      "location_moved_m": null,
+      "location_route": "Address from the state permit, 8855 Grand Avenue, geocoded with the Census geocoder. Not yet checked in satellite imagery.",
+      "record_id": "us-ia:new:microsoft-west-des-moines-grand-avenue-data-center-power-station"
+    },
+    {
+      "plant_name": "Meta Altoona Data Center power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Iowa",
+        "Local area (taluk, county)": "Polk",
+        "City": "Altoona",
+        "Operator(s)": "Meta Platforms Inc",
+        "Captive industry use": "power",
+        "Captive industry type": "data center",
+        "Captive non-industry use": "none",
+        "Latitude": "41.66336",
+        "Longitude": "-93.51229",
+        "Location accuracy": "approximate",
+        "Owner(s)": "Meta Platforms Inc [100%]"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://iowadnr.gov/media/2908/download?inline=",
+          "https://www.google.com/maps/search/?api=1&query=41.66336,-93.51229"
+        ],
+        "Captive Data Source": [
+          "https://iowadnr.gov/media/2908/download?inline="
+        ],
+        "Operators Data Source": [
+          "https://iowadnr.gov/media/2908/download?inline="
+        ],
+        "Owners Data Source": [
+          "https://iowadnr.gov/media/2908/download?inline="
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://iowadnr.gov/media/2908/download?inline=",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Iowa DNR Title V permit 18-TV-007R1 for Siculus, Inc. at 100 Share Way, Altoona, issued April 8, 2024, lists emergency generators with kilowatt ratings."
+        },
+        {
+          "url": "https://www.google.com/maps/search/?api=1&query=41.66336,-93.51229",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Opens at the point."
+        }
+      ],
+      "tier": "high",
+      "researcher_notes": "The Iowa DNR Title V permit 18-TV-007R1, issued April 8, 2024, covers Siculus, Inc. at 100 Share Way in Altoona. The responsible official is at Meta's Menlo Park address, and Polk County's facility list says Meta Platforms Inc, formerly known as Siculus, Inc. The permit lists 112 emergency generators: 104 of 3,000 kilowatts, 4 of 3,100, 3 of 1,000 and 1 of 600. That is 328.0 MW. Not found: install dates, and permits issued after April 2024. Meta Platforms is not in the entity list I searched, so it may need to be created. The point is the geocoded permit address, so the location is approximate.",
+      "action": "Create the plant Meta Altoona Data Center power station in Altoona, Polk County, Iowa, then add the three units below. The owner may need a new entity.",
+      "irp": false,
+      "checks": [
+        39
+      ],
+      "units": [
+        {
+          "unit_name": "Unit 1",
+          "fields": {
+            "Fuel": "fossil liquids: diesel",
+            "Turbine/Engine Technology": "internal combustion",
+            "Backup Power": "yes",
+            "Status": "operating",
+            "Number Of Engines": "104",
+            "Capacity Per Engine": "3.0",
+            "Capacity (MW)": "312"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://iowadnr.gov/media/2908/download?inline="
+            ],
+            "Fuel Data Source": [
+              "https://iowadnr.gov/media/2908/download?inline="
+            ],
+            "Status Data Source": [
+              "https://iowadnr.gov/media/2908/download?inline="
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://iowadnr.gov/media/2908/download?inline="
+            ],
+            "Backup Power Data Source": [
+              "https://iowadnr.gov/media/2908/download?inline="
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://iowadnr.gov/media/2908/download?inline=",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Permit lists 104 emergency generators of 3,000 kilowatts."
+            }
+          ],
+          "action": "Add one unit of 104 diesel engines at 3 MW each, 312 MW, operating, backup power yes.",
+          "researcher_notes": "The Title V permit lists 104 emergency generators of 3,000 kilowatts each."
+        },
+        {
+          "unit_name": "Unit 2",
+          "fields": {
+            "Fuel": "fossil liquids: diesel",
+            "Turbine/Engine Technology": "internal combustion",
+            "Backup Power": "yes",
+            "Status": "operating",
+            "Number Of Engines": "4",
+            "Capacity Per Engine": "3.1",
+            "Capacity (MW)": "12.4"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://iowadnr.gov/media/2908/download?inline="
+            ],
+            "Fuel Data Source": [
+              "https://iowadnr.gov/media/2908/download?inline="
+            ],
+            "Status Data Source": [
+              "https://iowadnr.gov/media/2908/download?inline="
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://iowadnr.gov/media/2908/download?inline="
+            ],
+            "Backup Power Data Source": [
+              "https://iowadnr.gov/media/2908/download?inline="
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://iowadnr.gov/media/2908/download?inline=",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Permit lists 4 emergency generators of 3,100 kilowatts."
+            }
+          ],
+          "action": "Add one unit of 4 diesel engines at 3.1 MW each, 12.4 MW, operating, backup power yes.",
+          "researcher_notes": "The Title V permit lists 4 emergency generators of 3,100 kilowatts each."
+        },
+        {
+          "unit_name": "Unit 3",
+          "fields": {
+            "Fuel": "fossil liquids: diesel",
+            "Turbine/Engine Technology": "internal combustion",
+            "Backup Power": "yes",
+            "Status": "operating",
+            "Number Of Engines": "4",
+            "Capacity (MW)": "3.6"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://iowadnr.gov/media/2908/download?inline="
+            ],
+            "Fuel Data Source": [
+              "https://iowadnr.gov/media/2908/download?inline="
+            ],
+            "Status Data Source": [
+              "https://iowadnr.gov/media/2908/download?inline="
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://iowadnr.gov/media/2908/download?inline="
+            ],
+            "Backup Power Data Source": [
+              "https://iowadnr.gov/media/2908/download?inline="
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://iowadnr.gov/media/2908/download?inline=",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Permit lists 3 generators of 1,000 and 1 of 600 kilowatts."
+            }
+          ],
+          "action": "Add one unit of 4 smaller diesel engines, 3.6 MW, operating, backup power yes.",
+          "researcher_notes": "Three generators of 1,000 kilowatts and one of 600 kilowatts. The sizes differ, so no size per engine is given."
+        }
+      ],
+      "location_method": "address",
+      "location_moved_m": null,
+      "location_route": "Address from the state Title V permit, 100 Share Way, geocoded with the Census geocoder. Not yet checked in satellite imagery.",
+      "record_id": "us-ia:new:meta-altoona-data-center-power-station"
+    },
+    {
+      "plant_name": "Google Council Bluffs Bunge Avenue Data Center power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Iowa",
+        "Local area (taluk, county)": "Pottawattamie",
+        "City": "Council Bluffs",
+        "Operator(s)": "Google",
+        "Captive industry use": "power",
+        "Captive industry type": "data center",
+        "Captive non-industry use": "none",
+        "Latitude": "41.16737",
+        "Longitude": "-95.79298",
+        "Location accuracy": "approximate",
+        "Owner(s)": "Google [100%]"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-215-S13%22,%22permitNumber2%22%3A%2212-A-215-S13%22,%22projectNumber%22%3A%2226-090%22,%22emissionPointID%22%3A%22EP-200001%22,%22emissionPointDescription%22%3A%22A-2-h%20EMERGENCY%20DIESEL%20ENGINE%22,%22issueDate%22%3A%222026-06-01T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49962,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-121%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT",
+          "https://www.google.com/maps/search/?api=1&query=41.16737,-95.79298"
+        ],
+        "Captive Data Source": [
+          "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-215-S13%22,%22permitNumber2%22%3A%2212-A-215-S13%22,%22projectNumber%22%3A%2226-090%22,%22emissionPointID%22%3A%22EP-200001%22,%22emissionPointDescription%22%3A%22A-2-h%20EMERGENCY%20DIESEL%20ENGINE%22,%22issueDate%22%3A%222026-06-01T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49962,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-121%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT",
+          "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-291%22,%22permitNumber2%22%3A%2226-A-291%22,%22projectNumber%22%3A%2226-090%22,%22emissionPointID%22%3A%22EP-W1-2-A%22,%22emissionPointDescription%22%3A%22W1-2-A%20DIESEL-FIRED%20IC%20ENGINE%22,%22issueDate%22%3A%222026-06-01T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49776,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-121%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+        ],
+        "Operators Data Source": [
+          "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-215-S13%22,%22permitNumber2%22%3A%2212-A-215-S13%22,%22projectNumber%22%3A%2226-090%22,%22emissionPointID%22%3A%22EP-200001%22,%22emissionPointDescription%22%3A%22A-2-h%20EMERGENCY%20DIESEL%20ENGINE%22,%22issueDate%22%3A%222026-06-01T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49962,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-121%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+        ],
+        "Owners Data Source": [
+          "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-215-S13%22,%22permitNumber2%22%3A%2212-A-215-S13%22,%22projectNumber%22%3A%2226-090%22,%22emissionPointID%22%3A%22EP-200001%22,%22emissionPointDescription%22%3A%22A-2-h%20EMERGENCY%20DIESEL%20ENGINE%22,%22issueDate%22%3A%222026-06-01T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49962,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-121%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-215-S13%22,%22permitNumber2%22%3A%2212-A-215-S13%22,%22projectNumber%22%3A%2226-090%22,%22emissionPointID%22%3A%22EP-200001%22,%22emissionPointDescription%22%3A%22A-2-h%20EMERGENCY%20DIESEL%20ENGINE%22,%22issueDate%22%3A%222026-06-01T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49962,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-121%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Iowa DNR construction permit, project 26-090 issued June 1, 2026, for QUESTA LLC at Bunge Avenue, Council Bluffs, with Google contacts."
+        },
+        {
+          "url": "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-291%22,%22permitNumber2%22%3A%2226-A-291%22,%22projectNumber%22%3A%2226-090%22,%22emissionPointID%22%3A%22EP-W1-2-A%22,%22emissionPointDescription%22%3A%22W1-2-A%20DIESEL-FIRED%20IC%20ENGINE%22,%22issueDate%22%3A%222026-06-01T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49776,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-121%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Iowa DNR permit 26-A-291 for a diesel IC engine in Building 8."
+        },
+        {
+          "url": "https://www.google.com/maps/search/?api=1&query=41.16737,-95.79298",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Opens at the point."
+        }
+      ],
+      "tier": "medium",
+      "researcher_notes": "The Iowa DNR permit record for QUESTA LLC at Bunge Avenue in Council Bluffs, with Google email contacts in the permits, shows a large diesel engine fleet. Project 26-090, issued June 1, 2026, re-issues about 540 existing engine permits and adds permits for Building 8. I count about 720 engine emission points in all, with Building 8 making up about 120 of them. All ratings are in horsepower only (for example 4,036 and 2,561). Not found: kilowatt ratings, exact engine counts and start dates. The capacity and engine count are left blank and the counts here are approximate. The point is the geocoded permit address, so the location is approximate. Google also has an older Council Bluffs site on Veterans Memorial Parkway, raised as a separate question.",
+      "action": "Create the plant Google Council Bluffs Bunge Avenue Data Center power station, then add the two units below. Leave capacities blank.",
+      "irp": false,
+      "checks": [
+        39
+      ],
+      "units": [
+        {
+          "unit_name": "Buildings 1 to 7",
+          "fields": {
+            "Fuel": "fossil liquids: diesel",
+            "Turbine/Engine Technology": "internal combustion",
+            "Backup Power": "yes",
+            "Status": "operating"
+          },
+          "refs": {
+            "Fuel Data Source": [
+              "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-215-S13%22,%22permitNumber2%22%3A%2212-A-215-S13%22,%22projectNumber%22%3A%2226-090%22,%22emissionPointID%22%3A%22EP-200001%22,%22emissionPointDescription%22%3A%22A-2-h%20EMERGENCY%20DIESEL%20ENGINE%22,%22issueDate%22%3A%222026-06-01T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49962,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-121%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+            ],
+            "Status Data Source": [
+              "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-215-S13%22,%22permitNumber2%22%3A%2212-A-215-S13%22,%22projectNumber%22%3A%2226-090%22,%22emissionPointID%22%3A%22EP-200001%22,%22emissionPointDescription%22%3A%22A-2-h%20EMERGENCY%20DIESEL%20ENGINE%22,%22issueDate%22%3A%222026-06-01T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49962,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-121%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-215-S13%22,%22permitNumber2%22%3A%2212-A-215-S13%22,%22projectNumber%22%3A%2226-090%22,%22emissionPointID%22%3A%22EP-200001%22,%22emissionPointDescription%22%3A%22A-2-h%20EMERGENCY%20DIESEL%20ENGINE%22,%22issueDate%22%3A%222026-06-01T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49962,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-121%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+            ],
+            "Backup Power Data Source": [
+              "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-215-S13%22,%22permitNumber2%22%3A%2212-A-215-S13%22,%22projectNumber%22%3A%2226-090%22,%22emissionPointID%22%3A%22EP-200001%22,%22emissionPointDescription%22%3A%22A-2-h%20EMERGENCY%20DIESEL%20ENGINE%22,%22issueDate%22%3A%222026-06-01T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49962,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-121%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2212-A-215-S13%22,%22permitNumber2%22%3A%2212-A-215-S13%22,%22projectNumber%22%3A%2226-090%22,%22emissionPointID%22%3A%22EP-200001%22,%22emissionPointDescription%22%3A%22A-2-h%20EMERGENCY%20DIESEL%20ENGINE%22,%22issueDate%22%3A%222026-06-01T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49962,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-121%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "State permits list diesel emergency engines at this site."
+            }
+          ],
+          "action": "Add one unit of diesel engines for the existing buildings, operating, backup power yes, capacity blank.",
+          "researcher_notes": "Roughly 600 engine permits for the older buildings, in horsepower only."
+        },
+        {
+          "unit_name": "Building 8",
+          "fields": {
+            "Fuel": "fossil liquids: diesel",
+            "Turbine/Engine Technology": "internal combustion",
+            "Backup Power": "yes",
+            "Status": "pre-construction"
+          },
+          "refs": {
+            "Fuel Data Source": [
+              "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-291%22,%22permitNumber2%22%3A%2226-A-291%22,%22projectNumber%22%3A%2226-090%22,%22emissionPointID%22%3A%22EP-W1-2-A%22,%22emissionPointDescription%22%3A%22W1-2-A%20DIESEL-FIRED%20IC%20ENGINE%22,%22issueDate%22%3A%222026-06-01T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49776,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-121%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+            ],
+            "Status Data Source": [
+              "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-291%22,%22permitNumber2%22%3A%2226-A-291%22,%22projectNumber%22%3A%2226-090%22,%22emissionPointID%22%3A%22EP-W1-2-A%22,%22emissionPointDescription%22%3A%22W1-2-A%20DIESEL-FIRED%20IC%20ENGINE%22,%22issueDate%22%3A%222026-06-01T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49776,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-121%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-291%22,%22permitNumber2%22%3A%2226-A-291%22,%22projectNumber%22%3A%2226-090%22,%22emissionPointID%22%3A%22EP-W1-2-A%22,%22emissionPointDescription%22%3A%22W1-2-A%20DIESEL-FIRED%20IC%20ENGINE%22,%22issueDate%22%3A%222026-06-01T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49776,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-121%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+            ],
+            "Backup Power Data Source": [
+              "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-291%22,%22permitNumber2%22%3A%2226-A-291%22,%22projectNumber%22%3A%2226-090%22,%22emissionPointID%22%3A%22EP-W1-2-A%22,%22emissionPointDescription%22%3A%22W1-2-A%20DIESEL-FIRED%20IC%20ENGINE%22,%22issueDate%22%3A%222026-06-01T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49776,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-121%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-291%22,%22permitNumber2%22%3A%2226-A-291%22,%22projectNumber%22%3A%2226-090%22,%22emissionPointID%22%3A%22EP-W1-2-A%22,%22emissionPointDescription%22%3A%22W1-2-A%20DIESEL-FIRED%20IC%20ENGINE%22,%22issueDate%22%3A%222026-06-01T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A49776,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-121%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "State permits 26-A-122 to 26-A-291 list engines for Building 8."
+            }
+          ],
+          "action": "Add one unit for Building 8, pre-construction, backup power yes, capacity blank.",
+          "researcher_notes": "About 120 original permits were issued June 1, 2026 for Building 8. I found nothing saying the building is under way, so the status follows the permit alone."
+        }
+      ],
+      "location_method": "address",
+      "location_moved_m": null,
+      "location_route": "Address from the state permit, 10420 Bunge Avenue, geocoded with the Census geocoder. Not yet checked in satellite imagery.",
+      "record_id": "us-ia:new:google-council-bluffs-bunge-avenue-data-center-power-station"
+    }
+  ]
+}

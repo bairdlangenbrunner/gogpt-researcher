@@ -1,0 +1,91 @@
+{
+ "meta": {
+  "plant_id": "L100000409204",
+  "plant_name": "A.J. Mihm Generating Station",
+  "state": "Michigan",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-26T23:43:48-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000414313",
+   "unit_name": "IC",
+   "findings": {
+    "Equipment Manufacturer/Model": {
+     "value": "Wärtsilä 18V50SG",
+     "refs": [
+      "https://mienviro.michigan.gov/ncore/downloadpdf/-855938557804062331"
+     ],
+     "verifications": [
+      {
+       "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-855938557804062331",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The state renewable operating permit staff report from January 2026 (https://mienviro.michigan.gov/ncore/downloadpdf/-855938557804062331) says the station runs three Wärtsilä 18V50SG natural gas spark ignition engines, each rated 19,260 kilowatts gross."
+    },
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://mienviro.michigan.gov/ncore/downloadpdf/-855938557804062331"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-855938557804062331",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists generators M1, M2 and M3 at plant 61391 as operating. The state issued a new renewable operating permit for the station in January 2026. I found no retirement notice or ownership change."
+    }
+   },
+   "not_found": [
+    "Latest Activity (not needed for an operating unit)"
+   ],
+   "notes": "The station has three engines, which GEM already holds as one unit with 3 engines at 18.8 MW each, 56.4 MW. The EIA table also gives 18.8 MW for each engine. The permit gives 19.26 MW gross each and the utility's integrated resource plan gives 54.9 MW net, so I kept the EIA nameplate figure. The unit split looks right. Latest Activity is not filled because the unit is operating."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Plant 61391, generators M1 to M3."
+  },
+  {
+   "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-855938557804062331",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read through fetch.py."
+  }
+ ]
+}

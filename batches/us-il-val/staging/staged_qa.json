@@ -1,0 +1,185 @@
+{
+  "meta": {
+    "lane": "qa",
+    "scope": {
+      "country": "United States",
+      "state": "Illinois",
+      "postal": "il",
+      "kind": "state",
+      "slug": "illinois",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-21T18:13:14-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 9
+    }
+  },
+  "records": [
+    {
+      "gem_unit_id": "G100000403513",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "recommendation": "Not found. I searched EIA tables, a 2025 Pollution Control Board filing and cooperative news. None says when unit 5 was mothballed, and EIA shows it as operating since 2003.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "country": "United States",
+      "unit_name": "5",
+      "fields": {},
+      "researcher_notes": "This answers the undated mothballed step in the validation report.",
+      "record_id": "L100000103868:G100000403513:qa-validation-1"
+    },
+    {
+      "gem_unit_id": "G100000403514",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "recommendation": "Not found. I searched EIA tables, a 2025 Pollution Control Board filing and cooperative news. None says when unit 6 was mothballed, and EIA shows it as operating since 2003.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "country": "United States",
+      "unit_name": "6",
+      "fields": {},
+      "researcher_notes": "This answers the undated mothballed step in the validation report.",
+      "record_id": "L100000103868:G100000403514:qa-validation-2"
+    },
+    {
+      "gem_unit_id": "G100001017993",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "recommendation": "I looked for a document that says whether carbon capture is attached to Joliet 29 units 7 and 8. The EIA table, the 2015 permit article and web search show no carbon capture at the plant. No document states it either way. Leave the value at no.",
+      "refs": {},
+      "gem_plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 7, timepoint 2",
+      "fields": {},
+      "researcher_notes": "Not found. Searched the EIA-860M table and the permit news. A document that says nothing about capture cannot be cited as saying no.",
+      "record_id": "L100000103864:G100001017993:qa-validation-1"
+    },
+    {
+      "gem_unit_id": "G100001017949",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "recommendation": "Same answer as unit 7. No document states carbon capture status for unit 8. No sign of capture at the plant. Leave the value at no.",
+      "refs": {},
+      "gem_plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 8, timepoint 2",
+      "fields": {},
+      "researcher_notes": "Not found.",
+      "record_id": "L100000103864:G100001017949:qa-validation-2"
+    },
+    {
+      "gem_unit_id": "G100001017993",
+      "concern_type": "identity",
+      "recommendation": "EIA plant 384 lists generator 7 (660 MW, natural gas steam turbine, operating April 1965, retired September 2023) and generator 8 (660 MW, operating March 1966, retired September 2023). Unit 7 matches generator 7 and unit 8 matches generator 8. Both agree with GEM's retired year of 2023.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 7, timepoint 2",
+      "fields": {},
+      "researcher_notes": "Identity only, not staged as values.",
+      "record_id": "L100000103864:G100001017993:qa-identity-3"
+    },
+    {
+      "gem_unit_id": "G100001017949",
+      "concern_type": "identity",
+      "recommendation": "Unit 8 matches EIA generator 8 at plant 384. See the note for unit 7.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 8, timepoint 2",
+      "fields": {},
+      "researcher_notes": "Identity only.",
+      "record_id": "L100000103864:G100001017949:qa-identity-4"
+    },
+    {
+      "gem_unit_id": "G100001017993",
+      "concern_type": "location",
+      "recommendation": "Joliet 9 (plant L100000103865) is a separate plant on the other side of the river. The EIA-860M table puts it at 41.4931, -88.1153, about 0.8 kilometers east. GEM gives Joliet 9 the same point as Joliet 29, so the Joliet 9 point looks wrong and should be moved to the EIA point after a satellite look. The Joliet 29 point is right.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 7, timepoint 2",
+      "fields": {},
+      "researcher_notes": "The satellite picture shows a second plant to the southeast across the river.",
+      "record_id": "L100000103864:G100001017993:qa-location-5"
+    },
+    {
+      "gem_unit_id": "G100001017847",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "recommendation": "Not found. The database says carbon capture is no. No document I found mentions carbon capture at Joliet 9. The EIA table and the 2015 air permit article say nothing about it.",
+      "refs": {},
+      "gem_plant_id": "L100000103865",
+      "plant_name": "Joliet 9 Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 6, timepoint 2",
+      "fields": {},
+      "researcher_notes": "No document states the carbon capture value for this unit. I looked at the August 2026 EIA monthly table and a Power Engineering article from October 2015.",
+      "record_id": "L100000103865:G100001017847:qa-validation-1"
+    },
+    {
+      "gem_unit_id": "G100001017847",
+      "concern_type": "Latitude",
+      "recommendation": "Move the plant point to the EIA location.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "proposed_value": {
+        "Latitude": "41.49310",
+        "Longitude": "-88.11530"
+      },
+      "gem_plant_id": "L100000103865",
+      "plant_name": "Joliet 9 Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 6, timepoint 2",
+      "fields": {},
+      "researcher_notes": "GEM's current point for Joliet 9 is the same as Joliet 29 and sits on the wrong side of the river. Joliet 29 may need its own check.",
+      "record_id": "L100000103865:G100001017847:qa-latitude-2",
+      "checks": [
+        7,
+        25
+      ]
+    }
+  ]
+}

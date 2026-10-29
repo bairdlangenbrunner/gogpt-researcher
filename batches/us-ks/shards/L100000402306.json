@@ -1,0 +1,130 @@
+{
+ "meta": {
+  "plant_id": "L100000402306",
+  "plant_name": "Garden City power station",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T09:39:44-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403572",
+   "unit_name": "S2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA monthly generator table for August 2026 lists Garden City generator S2 as operating, 97.9 MW, with no planned retirement date. A web search found no retirement, mothballing or sale announcement."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year"
+   ],
+   "notes": "Still operating. No retirement, mothballing or ownership change was found."
+  },
+  {
+   "gem_unit_id": "G100000403573",
+   "unit_name": "S4",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA monthly generator table for August 2026 lists Garden City generator S4 as operating, 71.2 MW, with no planned retirement date. A web search found no retirement, mothballing or sale announcement."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year"
+   ],
+   "notes": "Still operating. No retirement, mothballing or ownership change was found."
+  },
+  {
+   "gem_unit_id": "G100000403574",
+   "unit_name": "S5",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA monthly generator table for August 2026 lists Garden City generator S5 as operating, 71.2 MW, with no planned retirement date. A web search found no retirement, mothballing or sale announcement."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year"
+   ],
+   "notes": "Still operating. No retirement, mothballing or ownership change was found."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000403572",
+   "concern_type": "existence",
+   "recommendation": "No change. Neither generator belongs in GEM.",
+   "note": "The EIA-860M table for August 2026 lists two Garden City generators that GEM does not show, at plant 1336. Generator S3 is a 16.0 MW gas combustion turbine from 1968, listed as standby. Generator GC3 is an 11.5 MW gas steam unit that retired in December 2013. S3 is a single turbine under the manual's 50 MW unit threshold. GC3 retired before 2020, so it is not tracked.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "The August 2026 EIA monthly generator table was read from the local copy. It loaded and the plant rows were read directly."
+  },
+  {
+   "url": "https://www.kdhe.ks.gov/DocumentCenter/View/23333",
+   "used_for": [],
+   "outcome": "dead",
+   "note": "The Kansas Department of Health and Environment draft air permit link returned HTTP 404 with no archived copy for the checker. It was only a lead for the 2022 permit renewal, so nothing was cited from it."
+  }
+ ]
+}

@@ -1,0 +1,275 @@
+{
+ "meta": {
+  "plant_id": "L100000104011",
+  "plant_name": "Morrow Generating Plant",
+  "state": "Mississippi",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-23T14:07:08-04:00",
+  "done": true,
+  "urls_attempted": 8,
+  "urls_verified": 7
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000409451",
+   "unit_name": "MOR1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://www.power-eng.com/gas/572-mw-morrow-plant-completes-coal-to-natural-gas-conversion-in-mississippi/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.power-eng.com/gas/572-mw-morrow-plant-completes-coal-to-natural-gas-conversion-in-mississippi/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists generators MOR1 and MOR2 at plant 6061 as operating since March 2023. No retirement, mothballing or sale was found."
+    },
+    "Conversion/replacement?": {
+     "value": "replacement",
+     "refs": [
+      "https://www.powermag.com/morrow-reinvented-hl-class-gas-turbine-powers-a-coal-plants-rebirth/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.powermag.com/morrow-reinvented-hl-class-gas-turbine-powers-a-coal-plants-rebirth/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A POWER magazine article (https://www.powermag.com/morrow-reinvented-hl-class-gas-turbine-powers-a-coal-plants-rebirth/) says the cooperative board decided in June 2018 to retire the original two coal units and replace them with an advanced-class natural gas unit. That supports replacement as a new source for the Burns and McDonnell link that no longer shows the value. The Burns and McDonnell page now sits at https://www.burnsmcd.com/news/milestone-in-550-mw-heat-recovery-repower-project and describes the coal to gas conversion."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year"
+   ],
+   "notes": "The unit is still operating. EIA lists it as two generators of 156.0 MW and 402.0 MW, which total 558 MW as GEM shows. See the question about the Sierra Club 156 MW flag."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Cooperative Energy [100%]",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://cooperativeenergy.com/cooperative-energys-plant-morrow-enters-new-era/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://cooperativeenergy.com/cooperative-energys-plant-morrow-enters-new-era/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": true,
+   "note": "The EIA-860M table for September 2026 lists Cooperative Energy as the entity for plant 6061, and a Cooperative Energy announcement (https://cooperativeenergy.com/cooperative-energys-plant-morrow-enters-new-era/) calls Plant Morrow its plant. The documents agree with the value GEM holds."
+  },
+  "Latitude": {
+   "value": "31.21776",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://www.google.com/maps/search/?api=1&query=31.21776,-89.39397",
+    "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1407519"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=31.21776,-89.39397",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1407519",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860M table lists the plant at 31.2186. GEM's point is about 94 meters from it. The point sits on the power block in a satellite picture. The Mississippi Department of Environmental Quality air permit from February 2020 (https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1407519) covers the Morrow plant and its combustion turbines, and the department's facility page gives the address 304 Old Okahola School Road, Purvis."
+  },
+  "Longitude": {
+   "value": "-89.39397",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://www.google.com/maps/search/?api=1&query=31.21776,-89.39397",
+    "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1407519"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=31.21776,-89.39397",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1407519",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "Same document set and note as the latitude."
+  },
+  "Location accuracy": {
+   "value": "exact",
+   "refs": [
+    "https://www.google.com/maps/search/?api=1&query=31.21776,-89.39397",
+    "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1407519"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=31.21776,-89.39397",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1407519",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The satellite picture at the point shows the stacks, turbine hall, cooling equipment and switchyard of the power block. The date of the imagery is unknown."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000409451",
+   "concern_type": "Capacity (MW)",
+   "recommendation": "No change. The Sierra Club 156 MW flag appears to come from the first generator row alone.",
+   "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists Morrow as two generators: MOR1 at 156.0 MW and MOR2 at 402.0 MW, 558 MW together, which is the capacity GEM holds for the combined cycle block. Cooperative Energy and trade press (https://www.power-eng.com/gas/572-mw-morrow-plant-completes-coal-to-natural-gas-conversion-in-mississippi/) quote 572 MW as the plant rating, which is a different basis. I found no public source of an actual capacity change.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://www.power-eng.com/gas/572-mw-morrow-plant-completes-coal-to-natural-gas-conversion-in-mississippi/"
+   ],
+   "proposed_value": {}
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Owner(s)",
+    "Latitude",
+    "Longitude",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet for plant 6061."
+  },
+  {
+   "url": "https://cooperativeenergy.com/cooperative-energys-plant-morrow-enters-new-era/",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Cooperative Energy announcement."
+  },
+  {
+   "url": "https://www.powermag.com/morrow-reinvented-hl-class-gas-turbine-powers-a-coal-plants-rebirth/",
+   "used_for": [
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "POWER magazine article."
+  },
+  {
+   "url": "https://www.power-eng.com/gas/572-mw-morrow-plant-completes-coal-to-natural-gas-conversion-in-mississippi/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Power Engineering article on the 572 MW plant."
+  },
+  {
+   "url": "https://www.burnsmcd.com/news/milestone-in-550-mw-heat-recovery-repower-project",
+   "used_for": [
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "The page now lives at this address and describes the conversion, not an explicit replacement."
+  },
+  {
+   "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1407519",
+   "used_for": [
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Air permit lists the combustion turbines at Morrow."
+  },
+  {
+   "url": "https://www.google.com/maps/search/?api=1&query=31.21776,-89.39397",
+   "used_for": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "outcome": "verified",
+   "note": "Map pin link."
+  },
+  {
+   "url": "https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "The queue entry J1249 (600 MW, in service March 2022) is a lead only. EIA and the owner give the final figures."
+  }
+ ],
+ "location": {
+  "method": "imagery",
+  "moved_m": 0,
+  "control_points": [],
+  "fit_m": null,
+  "image": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/work/sweep_MS/maps/L100000104011_1.png",
+  "needs_review": false,
+  "review_note": ""
+ }
+}

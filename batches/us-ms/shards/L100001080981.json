@@ -1,0 +1,242 @@
+{
+ "meta": {
+  "plant_id": "L100001080981",
+  "plant_name": "Vicksburg Advanced power station",
+  "state": "Mississippi",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-23T14:10:00-04:00",
+  "done": true,
+  "urls_attempted": 7,
+  "urls_verified": 7
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001091020",
+   "unit_name": "1A",
+   "findings": {
+    "Status": {
+     "value": "construction",
+     "refs": [
+      "https://www.wlbt.com/2025/10/22/leaders-attend-new-vicksburg-advanced-power-station-groundbreaking-ceremony",
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.wlbt.com/2025/10/22/leaders-attend-new-vicksburg-advanced-power-station-groundbreaking-ceremony",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "A WLBT article from October 22, 2025 (https://www.wlbt.com/2025/10/22/leaders-attend-new-vicksburg-advanced-power-station-groundbreaking-ceremony) reports the groundbreaking at the Baxter Wilson site. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 69223 as under construction, less than 50 percent complete. Status stays construction."
+    },
+    "Start year": {
+     "value": "2028",
+     "refs": [
+      "https://www.entergymississippi.com/generation/vicksburg",
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.entergymississippi.com/generation/vicksburg",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "Entergy's Vicksburg project page (https://www.entergymississippi.com/generation/vicksburg) says construction is expected to be complete by August 2028. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) plans August 2028. Entergy's filing in docket 2025-AD-123 says the same."
+    },
+    "Status Detail": {
+     "value": "Entergy Mississippi held a groundbreaking on October 21, 2025. The Mississippi Department of Environmental Quality issued the air construction permit 2780-00027 on November 3, 2025.",
+     "refs": [
+      "https://www.wlbt.com/2025/10/22/leaders-attend-new-vicksburg-advanced-power-station-groundbreaking-ceremony",
+      "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1845094"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.wlbt.com/2025/10/22/leaders-attend-new-vicksburg-advanced-power-station-groundbreaking-ceremony",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1845094",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The WLBT article is dated October 22, 2025 and says the groundbreaking was held Tuesday, which was October 21 (https://www.wlbt.com/2025/10/22/leaders-attend-new-vicksburg-advanced-power-station-groundbreaking-ceremony). The permit's issue date is in the state's permit record (https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1845094). The existing text says the permit was approved in September 2025, and the state record shows November 3, 2025."
+    },
+    "Turbine/Engine Technology": {
+     "value": "combined cycle",
+     "refs": [
+      "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1845094"
+     ],
+     "verifications": [
+      {
+       "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1845094",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The air construction permit (https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1845094) lists a gas turbine with duct burner, a heat recovery steam generator and a steam turbine generator as unit VAPS-1A."
+    }
+   },
+   "not_found": [
+    "Capacity (MW)",
+    "Latest Activity",
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "Status and start year re-verified. Latest Activity is left alone because the project is moving. I did not find a turbine model in the permit or Entergy pages, and GEM's existing model comes from a source already cited."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001091020",
+   "concern_type": "Capacity (MW)",
+   "recommendation": "Decide which capacity to record. GEM has 750 MW. The EIA-860M table for September 2026 lists 819.4 MW nameplate (generator GT1 477.7 plus ST1 341.7). Entergy says 754 MW (https://www.entergymississippi.com/generation/vicksburg), and the air permit lists 773,000 kW rated power (https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1845094). The Sierra Club note about a capacity change most likely reflects the EIA figure.",
+   "note": "The figures probably measure different things. EIA gives nameplate, which is the GEM measure. I did not change the value.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://www.entergymississippi.com/generation/vicksburg",
+    "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1845094"
+   ],
+   "proposed_value": {
+    "Capacity (MW)": "819.4"
+   }
+  },
+  {
+   "gem_unit_id": "G100001091020",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "recommendation": "The construction step is dated October 2025. Entergy held the groundbreaking on October 21, 2025 (https://www.wlbt.com/2025/10/22/leaders-attend-new-vicksburg-advanced-power-station-groundbreaking-ceremony), and the Magnolia Tribune reported it on October 23, 2025 (https://magnoliatribune.com/2025/10/23/entergy-mississippi-breaks-ground-on-1-2-billion-vicksburg-advanced-power-station/).",
+   "note": "The WLBT article says the ceremony was held Tuesday.",
+   "refs": [
+    "https://www.wlbt.com/2025/10/22/leaders-attend-new-vicksburg-advanced-power-station-groundbreaking-ceremony",
+    "https://magnoliatribune.com/2025/10/23/entergy-mississippi-breaks-ground-on-1-2-billion-vicksburg-advanced-power-station/"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001091020",
+   "concern_type": "Status",
+   "recommendation": "The Energy Industry Partners Oil and Gas Watch page calls the plant proposed. That is out of date. The groundbreaking in October 2025 and the EIA-860M table both say construction.",
+   "note": "I did not open the Oil and Gas Watch page, so this answer rests on the groundbreaking report (https://www.wlbt.com/2025/10/22/leaders-attend-new-vicksburg-advanced-power-station-groundbreaking-ceremony) and the EIA table.",
+   "refs": [
+    "https://www.wlbt.com/2025/10/22/leaders-attend-new-vicksburg-advanced-power-station-groundbreaking-ceremony",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001091020",
+   "concern_type": "conversion-link",
+   "recommendation": "The field for the unit being replaced holds this unit's own ID, G100001091020. It should point at the retired Baxter Wilson unit, probably unit 2 (retired 2018) or unit 1 (retired 2023, EIA plant 2050).",
+   "note": "EIA retired list, plant 2050 Baxter Wilson: generator 1 retired March 2023 and generator 2 retired June 2018. Source: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001091020",
+   "concern_type": "location",
+   "recommendation": "GEM's point is 32.2831, -90.9306, the old Baxter Wilson coordinates. The EIA table puts the new plant at 32.28526, -90.92568, about 500 meters east. The permit address is 770 Kemp Bottom Road.",
+   "note": "Not changed. This brief had no location task.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1845094"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Start year",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Plant 69223, GT1 477.7 MW and ST1 341.7 MW, planned August 2028."
+  },
+  {
+   "url": "https://www.entergymississippi.com/generation/vicksburg",
+   "used_for": [
+    "Start year",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Entergy project page, read through the fetch ladder."
+  },
+  {
+   "url": "https://www.wlbt.com/2025/10/22/leaders-attend-new-vicksburg-advanced-power-station-groundbreaking-ceremony",
+   "used_for": [
+    "Status",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Groundbreaking report."
+  },
+  {
+   "url": "https://magnoliatribune.com/2025/10/23/entergy-mississippi-breaks-ground-on-1-2-billion-vicksburg-advanced-power-station/",
+   "used_for": [
+    "validation"
+   ],
+   "outcome": "verified",
+   "note": "Existing source, groundbreaking report."
+  },
+  {
+   "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1845094",
+   "used_for": [
+    "Turbine/Engine Technology",
+    "Status Detail",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Air permit 2780-00027. No turbine make or model."
+  },
+  {
+   "url": "https://www.powermag.com/entergy-mississippi-adding-third-gas-fired-power-plant-to-superpower-strategy/",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Power Magazine article, 754 MW."
+  },
+  {
+   "url": "https://oilandgaswatch.org/facility/rec_d3a2s1j6fg34frlqolu0",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "Not opened. Lead site."
+  }
+ ]
+}

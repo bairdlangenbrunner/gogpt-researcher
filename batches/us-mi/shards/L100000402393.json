@@ -1,0 +1,123 @@
+{
+ "meta": {
+  "plant_id": "L100000402393",
+  "plant_name": "Blue Water energy center",
+  "state": "Michigan",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-26T23:38:54-04:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402122",
+   "unit_name": "CC_set",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://dteenergy.com/us/en/newsroom/2022/DTE-Energy-s-Blue-Water-Energy-Center-begins-commercial-operation.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://dteenergy.com/us/en/newsroom/2022/DTE-Energy-s-Blue-Water-Energy-Center-begins-commercial-operation.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists plant 62192 generators 11, 12 and 1S as operating, all with operating year 2022. A DTE Energy press release from June 2022 at https://dteenergy.com/us/en/newsroom/2022/DTE-Energy-s-Blue-Water-Energy-Center-begins-commercial-operation.html says the plant began commercial operation. This matches GEM, so no change is proposed."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "General Electric H-class",
+     "refs": [
+      "https://www.nsenergybusiness.com/?p=293822"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.nsenergybusiness.com/?p=293822",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "An NS Energy article at https://www.nsenergybusiness.com/?p=293822 says the plant has two GE H-class gas turbine and generator sets with heat recovery steam generators and a steam turbine. It gives the class but not the exact model number."
+    }
+   },
+   "not_found": [
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Latest Activity",
+    "Retired year",
+    "Cancellation year",
+    "Operator(s)",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use",
+    "Conversion/replacement?",
+    "Equipment model number"
+   ],
+   "notes": "No retirement, mothballing or owner change was found. The EIA-860M table for September 2026 lists all three generators as operating. DTE's June 2022 release describes a 1,150 MW plant, while EIA nameplates sum to 1,267.4 MW. GEM's 1267.0 matches the EIA sum."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000402122",
+   "concern_type": "source",
+   "recommendation": "The harvested Michigan air permit index for this plant lists the DTE St. Clair and Belle River site (SRN B2796), and its three M501F turbines belong to that older site, not to Blue Water. I did not use them. A Blue Water air permit was not identified in the index.",
+   "note": "This matters only for finding the Blue Water turbine model number.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet for plant 62192."
+  },
+  {
+   "url": "https://www.nsenergybusiness.com/?p=293822",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Names GE H-class turbines."
+  },
+  {
+   "url": "https://dteenergy.com/us/en/newsroom/2022/DTE-Energy-s-Blue-Water-Energy-Center-begins-commercial-operation.html",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Commercial operation announced June 2022."
+  },
+  {
+   "url": "https://www.power-eng.com/gas/combined-cycle/dte-energy-breaks-ground-on-blue-water-gas-fired-plant/",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "failed",
+   "note": "The verifier did not find the expected General Electric text on this page, so it was not cited."
+  }
+ ]
+}

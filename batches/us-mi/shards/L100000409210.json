@@ -1,0 +1,122 @@
+{
+ "meta": {
+  "plant_id": "L100000409210",
+  "plant_name": "F.D. Kuester Generating Station",
+  "state": "Michigan",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-26T23:38:19-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000414274",
+   "unit_name": "IC",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M generator table for September 2026, released October 23, 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx), lists this unit as operating. Plant 61392, generators K1 to K7, status OP, nameplate 18.8 MW each, operating March 2019. It shows no planned retirement date. I found no retirement, mothballing or ownership change announced for it."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Wärtsilä 18V50SG",
+     "refs": [
+      "https://www.prnewswire.com/news-releases/burns--mcdonnell-reaches-substantial-completion-on-aj-mihm-and-fd-kuester-reciprocating-engine-power-generating-stations-in-michigans-upper-peninsula-300838584.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.prnewswire.com/news-releases/burns--mcdonnell-reaches-substantial-completion-on-aj-mihm-and-fd-kuester-reciprocating-engine-power-generating-stations-in-michigans-upper-peninsula-300838584.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Burns and McDonnell press release from April 25, 2019 (https://www.prnewswire.com/news-releases/burns--mcdonnell-reaches-substantial-completion-on-aj-mihm-and-fd-kuester-reciprocating-engine-power-generating-stations-in-michigans-upper-peninsula-300838584.html) says the 126 MW F.D. Kuester Generating Station has seven natural gas Wärtsilä 18V50SG reciprocating engines."
+    }
+   },
+   "not_found": [
+    "Latest Activity",
+    "Planned retire",
+    "Retired year"
+   ],
+   "notes": "The unit is still listed as operating. Latest Activity is only filled for units in development or with an inferred status, so it stays blank."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000414274",
+   "concern_type": "Capacity (MW)",
+   "recommendation": "GEM shows 131.6 MW, which is seven engines at 18.8 MW from the EIA-860M table. The sources give different numbers. Please decide whether to keep the EIA figure.",
+   "note": "The Burns and McDonnell press release (https://www.prnewswire.com/news-releases/burns--mcdonnell-reaches-substantial-completion-on-aj-mihm-and-fd-kuester-reciprocating-engine-power-generating-stations-in-michigans-upper-peninsula-300838584.html) gives 126 MW for the station, at about 18 MW per engine. The Michigan air permit staff report from January 2026 (https://mienviro.michigan.gov/ncore/downloadpdf/-7185968111409593870) says each engine drives a 19,260 kW generator, which would be 134.8 MW for seven. The Public Service Commission cases U-21081 and U-21542 give 125.6 MW. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) gives 18.8 MW per engine, so 131.6 MW. I did not change the value because the sources disagree and none is clearly the nameplate rating.",
+   "refs": [
+    "https://www.prnewswire.com/news-releases/burns--mcdonnell-reaches-substantial-completion-on-aj-mihm-and-fd-kuester-reciprocating-engine-power-generating-stations-in-michigans-upper-peninsula-300838584.html",
+    "https://mienviro.michigan.gov/ncore/downloadpdf/-7185968111409593870",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "proposed_value": {}
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet for plant 61392. The file loads."
+  },
+  {
+   "url": "https://www.prnewswire.com/news-releases/burns--mcdonnell-reaches-substantial-completion-on-aj-mihm-and-fd-kuester-reciprocating-engine-power-generating-stations-in-michigans-upper-peninsula-300838584.html",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Names Wärtsilä 18V50SG and Kuester."
+  },
+  {
+   "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-7185968111409593870",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Michigan air permit staff report; 19,260 kW per generator, seven engines, operation began March 2019."
+  },
+  {
+   "url": "https://www.egle.state.mi.us/aps/downloads/permits/finpticon/2017/35-17C.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "failed",
+   "note": "The permit loads but does not name the engine maker."
+  },
+  {
+   "url": "https://www.powermag.com/new-gas-fired-plants-come-online-in-michigan/",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "failed",
+   "note": "The verifier did not find the model text, so I did not cite it."
+  }
+ ]
+}

@@ -1,0 +1,247 @@
+{
+ "meta": {
+  "state": "Mississippi",
+  "kind": "data_centers",
+  "generated": "2026-10-27T14:00:00-04:00",
+  "done": true,
+  "urls_attempted": 8,
+  "urls_verified": 7,
+  "searched": [
+   "I read the newest Mississippi air permit for each of the six data center sites and added up the generator kilowatt ratings. I also read the public notice for the Clinton site."
+  ],
+  "irp_summary": []
+ },
+ "qa": [],
+ "monitor": [],
+ "newplants": [
+  {
+   "plant_name": "Amazon Web Services Clinton Data Center power station",
+   "gem_plant_id": "",
+   "country": "United States",
+   "checks": [
+    39
+   ],
+   "fields": {
+    "Other Name(s)": "JAN250 Data Center power station",
+    "State/Province": "Mississippi",
+    "Local area (taluk, county)": "Hinds",
+    "City": "Clinton",
+    "Latitude": "32.35609",
+    "Longitude": "-90.36350",
+    "Location accuracy": "approximate"
+   },
+   "refs": {
+    "Location Data Source": [
+     "https://www.google.com/maps?q=32.35609,-90.36350",
+     "https://opcgis.deq.state.ms.us/ensearchonline/ai_info.aspx?ai=1066"
+    ],
+    "Other Name(s) Data Source": [
+     "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://opcgis.deq.state.ms.us/ensearchonline/ai_info.aspx?ai=1066",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Mississippi air permit database page for the facility at 1001 Industrial Park Drive in Clinton, Hinds County. It shows the owner as Amazon Data Services and air construction permit 1080-00275 in the draft public comment stage."
+    },
+    {
+     "url": "https://www.google.com/maps?q=32.35609,-90.36350",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Google Maps pin link on the point. It opens on the coordinates but the verifier cannot read a map page."
+    },
+    {
+     "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "State public notice that calls the project the JAN250 Site."
+    }
+   ],
+   "tier": "medium",
+   "location": {
+    "method": "address",
+    "needs_review": false
+   },
+   "researcher_notes": "The Mississippi Department of Environmental Quality posted a public notice dated September 9, 2026. The JAN250 Site at 1001 Industrial Park Drive in Clinton, Hinds County, asked for an optional pre-permit construction approval for a data center. The data center would have emergency back-up generators with a total power capacity of approximately 250 megawatts and diesel fuel storage tanks. The notice does not name the company. The state air permit database page for the same address lists the facility as Amazon Data Services, with air construction permit file 1080-00275 and a comment period that ended on September 21, 2026. I did not find the draft permit itself. Guessed document addresses failed, and the saved copies of the public notice page on the Wayback Machine do not include this notice. The point is a street search result for Industrial Park Drive in Clinton and is approximate. The Census geocoder placed a different road name about 2 kilometers away, so I did not use it. Not found: the number of generators, the size of each, the start year and the exact site.",
+   "action": "Create the plant in Hinds County, Mississippi, with owner Amazon Data Services Inc, then add the unit below. Move the point onto the site if a person can see it on the map.",
+   "irp": false,
+   "units": [
+    {
+     "unit_name": "1",
+     "fields": {
+      "Unit name": "1",
+      "Capacity (MW)": "250",
+      "Fuel": "fossil liquids: diesel",
+      "Status": "announced",
+      "Turbine/Engine Technology": "internal combustion",
+      "Captive industry use": "power",
+      "Captive industry type": "data center",
+      "Backup Power": "yes",
+      "Owner(s)": "Amazon Data Services Inc [100%]"
+     },
+     "refs": {
+      "Capacity Data Source": [
+       "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016"
+      ],
+      "Fuel Data Source": [
+       "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016"
+      ],
+      "Status Data Source": [
+       "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016",
+       "https://opcgis.deq.state.ms.us/ensearchonline/ai_info.aspx?ai=1066"
+      ],
+      "Turbine/Engine Technology Data Source": [
+       "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016"
+      ],
+      "Captive Data Source": [
+       "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016"
+      ],
+      "Backup Power Data Source": [
+       "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016"
+      ],
+      "Owners Data Source": [
+       "https://opcgis.deq.state.ms.us/ensearchonline/ai_info.aspx?ai=1066"
+      ],
+      "Unit name Data Source": [
+       "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016"
+      ]
+     },
+     "verifications": [
+      {
+       "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Mississippi Department of Environmental Quality public notice, a Word document, for the JAN250 Site at 1001 Industrial Park Drive in Clinton. It asks for an optional pre-permit construction approval for emergency back-up generators of about 250 Megawatts."
+      },
+      {
+       "url": "https://opcgis.deq.state.ms.us/ensearchonline/ai_info.aspx?ai=1066",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Mississippi air permit database page for the facility at 1001 Industrial Park Drive in Clinton, Hinds County. It shows the owner as Amazon Data Services and air construction permit 1080-00275 in the draft public comment stage."
+      }
+     ],
+     "action": "Add unit 1 as announced, 250 MW of diesel back-up generators, Backup Power yes, captive power for a data center. Leave the engine count, capacity per engine and start year blank.",
+     "researcher_notes": "The public notice says the emergency back-up generators have a total power capacity of approximately 250 Megawatts. It does not give the number of generators or the size of each one, so those are blank. The notice names diesel fuel storage tanks, so the fuel is diesel."
+    }
+   ]
+  }
+ ],
+ "newunits": [
+  {
+   "gem_plant_id": "L100001088949",
+   "plant_name": "Amazon Web Services Canton Data Center power station",
+   "unit_name": "Unit 2",
+   "fields": {
+    "Unit name": "Unit 2",
+    "Capacity (MW)": "7.8",
+    "Number Of Engines": "10",
+    "Fuel": "fossil liquids: diesel",
+    "Status": "construction",
+    "Turbine/Engine Technology": "internal combustion",
+    "Equipment Manufacturer/Model": "CAT: C18, CAT: 3512C, CAT: C15, CAT: C9",
+    "Captive industry use": "power",
+    "Captive industry type": "data center",
+    "Backup Power": "yes"
+   },
+   "refs": {
+    "Capacity Data Source": [
+     "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+    ],
+    "Fuel Data Source": [
+     "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+    ],
+    "Status Data Source": [
+     "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+    ],
+    "Unit name Data Source": [
+     "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+    ],
+    "Captive Data Source": [
+     "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+    ],
+    "Backup Power Data Source": [
+     "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+    ],
+    "Turbine/Engine Equipment Data Source": [
+     "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Mississippi air permit 1720-00098 for Amazon Data Services in Canton, issued 2024-12-04 and modified 2025-12-16. It lists each generator with its kW rating."
+    }
+   ],
+   "tier": "high",
+   "checks": [
+    39
+   ],
+   "note": "The Mississippi air permit for the Canton site lists 10 smaller generators that GEM does not carry. Five house generators are 750 kilowatts each, two water treatment generators are 1,500 kilowatts each, and three building generators are 400, 400 and 250 kilowatts. Together they are 7.8 megawatts. The permit lists them in addition to the 326 large generators that GEM already has as Unit 1. Ridgeland and Meridian already show their small generators as a separate unit, so this follows the same pattern. Not found: the exact start date for these generators.",
+   "researcher_notes": "The Mississippi Department of Environmental Quality air permit 1720-00098 for Amazon Data Services at Canton was issued on December 4, 2024 and modified on December 16, 2025. It lists 326 critical generators of 2,750 kilowatts each, which is 896.5 megawatts and matches GEM Unit 1. It also lists 5 house generators of 750 kilowatts, 2 water treatment generators of 1,500 kilowatts, 2 generators of 400 kilowatts and 1 of 250 kilowatts. Those 10 generators sum to 7.8 megawatts and are not in GEM. The permit total is 336 engines and 904.3 megawatts.",
+   "action": "Add Unit 2 to the Canton plant as a diesel internal combustion unit of 7.8 MW with 10 engines, status construction, Backup Power yes, captive power for a data center."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1601559",
+   "used_for": "NASA Shared Services Center, Stennis",
+   "outcome": "verified",
+   "note": "Title V permit 1000-00054 lists 9 emergency diesel engines, 21.75 MW in total."
+  },
+  {
+   "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051",
+   "used_for": "Canton",
+   "outcome": "verified",
+   "note": "Permit 1720-00098, modified December 2025."
+  },
+  {
+   "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1855226",
+   "used_for": "Meridian",
+   "outcome": "verified",
+   "note": "Permit 1460-00133, issued June 2026."
+  },
+  {
+   "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1791725",
+   "used_for": "Ridgeland",
+   "outcome": "verified",
+   "note": "Permit 1720-00099, issued June 2025."
+  },
+  {
+   "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1834338",
+   "used_for": "Colossus 2",
+   "outcome": "verified",
+   "note": "Permit 0680-00119, issued March 2026."
+  },
+  {
+   "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016",
+   "used_for": "Clinton",
+   "outcome": "verified",
+   "note": "Public notice, September 2026. A Word document."
+  },
+  {
+   "url": "https://opcgis.deq.state.ms.us/ensearchonline/ai_info.aspx?ai=1066",
+   "used_for": "Clinton",
+   "outcome": "verified",
+   "note": "Facility page naming Amazon Data Services."
+  },
+  {
+   "url": "https://web.archive.org/web/20260917074112/https://opcgis.deq.state.ms.us/ensearchonline/",
+   "used_for": "Clinton draft permit",
+   "outcome": "failed",
+   "note": "The saved copy does not list the notice."
+  }
+ ]
+}

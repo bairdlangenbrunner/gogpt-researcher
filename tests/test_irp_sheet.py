@@ -222,6 +222,7 @@ def test_irp_step_end_to_end(tmp_path):
     kinds = {m["plant_name"]: m["monitor_kind"] for m in mon}
     assert kinds == {"Oglethorpe peaker idea": "new_to_tracker", "Plant McIntosh power station": "existing_plant"}
     assert all(m["monitor_reason"].startswith("New ") for m in mon)
+    assert {m["plant_name"]: m["lead_for"] for m in mon} == {"Oglethorpe peaker idea": "newplants", "Plant McIntosh power station": "newunits"}
     assert "newunits" not in lanes or lanes["newunits"] == []
     summary = json.loads((staging / "irp_summary.json").read_text())
     assert summary["utilities"]["Georgia Power"].startswith("The draft plan") and summary["skipped"] is False
@@ -264,11 +265,13 @@ def test_irp_step_end_to_end(tmp_path):
     data = review_data.build([staging], export_csv=csv_path)
     yates = next(p for p in data["plants"] if p["pid"] == "L1")
     assert yates["lines"][0]["irp"] is True
-    assert {u["gem_unit_id"]: u["irp_box"] for u in yates["units"]} == {"G1": "no"}
+    assert {u["gem_unit_id"]: u["irp_box"] for u in yates["units"]} == {"G1": "no", "G2": "no"}   # every export unit of the plant is on its card
     newp = next(p for p in data["plants"] if p["name"] == "Plant Yates CT expansion")
     assert newp["lines"][0]["irp"] is True and newp["lines"][0]["kind"] == "new_row"
-    watch = next(p for p in data["plants"] if p["pid"] == "L2")
-    assert watch["items"][0]["irp"] is False
+    # a new-unit lead on a tracked plant sits on that plant's proposed-additions card
+    watch = next(p for p in data["plants"] if p["pid"] == "L2#add")
+    assert watch["card_kind"] == "addition" and watch["plant_pid"] == "L2"
+    assert watch["items"][0]["irp"] is False and watch["items"][0]["lead_for"] == "newunits"
 
 
 def test_build_refuses_irp_outside_the_us(tmp_path):

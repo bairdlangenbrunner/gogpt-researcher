@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "lane": "monitor",
+    "scope": {
+      "country": "United States",
+      "state": "Mississippi",
+      "postal": "ms",
+      "kind": "state",
+      "slug": "mississippi",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-23T14:40:07-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 3
+    }
+  },
+  "records": [
+    {
+      "gem_unit_id": "G100000401969",
+      "monitor_kind": "existing_plant",
+      "monitor_reason": "TVA and TC Energy announced a carbon capture feasibility study at Ackerman in September 2023, but I found no later document showing a funded project, a decision or a cancellation.",
+      "recheck_by": "2027-03",
+      "refs": {
+        "links": [
+          "https://www.power-eng.com/gas/turbines/tva-to-study-carbon-capture-at-two-natural-gas-fired-plants/"
+        ]
+      },
+      "gem_plant_id": "L100000402325",
+      "plant_name": "Quantum Choctaw Power station",
+      "country": "United States",
+      "unit_name": "CC1",
+      "fields": {},
+      "researcher_notes": "A Power Engineering article from September 2023 (https://www.power-eng.com/gas/turbines/tva-to-study-carbon-capture-at-two-natural-gas-fired-plants/) says the two partners would invest 1.25 million dollars in a study of about one year. Searches of news and the TVA announcement trail found no results or follow-up. So the carbon capture box stays blank.",
+      "record_id": "L100000402325:G100000401969:monitor-1"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "Sylvarena generating plant",
+      "monitor_kind": "new_to_tracker",
+      "watch_case": "under_threshold",
+      "monitor_reason": "Three 47 MW gas combustion turbines owned by Cooperative Energy in Smith County. Each turbine is under 50 MW. If they are aeroderivative turbines they count as one set of 141 MW and the plant is an add.",
+      "recheck_by": "2027-04",
+      "checks": [],
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/",
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1875726"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1875726",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": ""
+        }
+      ],
+      "capacity_mw": 47,
+      "status": "operating",
+      "irp": false,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "EIA's monthly generator file at https://www.eia.gov/electricity/data/eia860m/ lists Sylvarena, EIA plant 7989, as three 47 MW natural gas combustion turbines from 2003, 141 MW in all, owned by Cooperative Energy. The state air permit renewal issued October 7, 2026 at https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1875726 covers three simple cycle combustion turbines of 417.7 million Btu per hour each, with water injection to control nitrogen oxides. It says new combustors were to be installed in 2026, a like-for-like replacement with no capacity change stated. The site is 3012 Smith County Road 97, Raleigh, at latitude 31.982076 and longitude -89.412714. No source I found names the turbine model. Water injection on a 47 MW gas turbine is typical of an aeroderivative model such as the LM6000. If a source confirms that, the three turbines are one set of 141 MW and the plant should be added at operating. Not found: the turbine maker or model.",
+      "record_id": "us-ms:plant:monitor-1"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "Entergy Mississippi unnamed MISO requests 2030 and 2031",
+      "monitor_kind": "new_to_tracker",
+      "watch_case": "no_generation",
+      "monitor_reason": "Four large MISO requests on Entergy Mississippi's system have no fuel or plant named in the public queue. Entergy's chief executive has said two new plants will be needed in the early 2030s.",
+      "recheck_by": "2027-04",
+      "checks": [],
+      "refs": {
+        "links": [
+          "https://mississippitoday.org/2025/09/17/entergy-mississippi-ceo-fisackerly-answers-questions-on-data-centers-and-electricity-rates/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://mississippitoday.org/2025/09/17/entergy-mississippi-ceo-fisackerly-answers-questions-on-data-centers-and-electricity-rates/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": ""
+        }
+      ],
+      "capacity_mw": null,
+      "status": "announced",
+      "irp": false,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "The MISO generator interconnection queue, read through MISO's public queue data at https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/, lists requests J4286 and J4295 of 770 MW each with in-service dates of 5/31/2030, and J4245 of 770 MW with an in-service date of 7/31/2031, in Mississippi on Entergy's system. J4176 of 1,750 MW is withdrawn. The queue hides the fuel for these requests and no filing I found names them. In a September 2025 interview at https://mississippitoday.org/2025/09/17/entergy-mississippi-ceo-fisackerly-answers-questions-on-data-centers-and-electricity-rates/ Entergy Mississippi's chief executive said the company would need two new power plants in the early 2030s to serve data center growth. A 770 MW size matches a single combined cycle block, but that is a guess, so nothing is added. Not found: the fuel, the owner, the site and any filing for these requests.",
+      "record_id": "us-ms:plant:monitor-2"
+    }
+  ]
+}

@@ -215,6 +215,20 @@ def run_staged(path):
         ident = (rec.get("gem_unit_id") or rec.get("plant_name")
                  or f"record {i}")
         check_record(fields, ident, findings)
+        # unit rows of a newplants record (Backup Power, Number Of Engines,
+        # Capacity Per Engine, Captive fields and the rest sit on the unit)
+        for j, unit in enumerate(rec.get("units") or []):
+            ufields = {}
+            uident = f"{ident} / {unit.get('unit_name') or f'unit {j}'}"
+            for header, value in (unit.get("fields") or {}).items():
+                short = header_to_short.get(header)
+                if short is None:
+                    findings.append(Finding("ERROR", "unknown-column", uident,
+                                            f"staged field {header!r} is not a known "
+                                            "CSV header"))
+                else:
+                    ufields[short] = value
+            check_record(ufields, uident, findings)
     return len(records), findings
 
 

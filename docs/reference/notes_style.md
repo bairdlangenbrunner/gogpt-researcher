@@ -22,6 +22,8 @@ where, and what to do.
   press release", "the EIA-860M table for July 2026", "a Baltimore Sun
   article". Avoid "primary source", "OEM statement", "regulatory filing" as
   stand-ins for the actual document.
+- **Every source a note names comes with its URL**, written out in full right after the name ("the EIA-860M table for August 2026 is at https://..."). The review page turns it into a link, and the researcher needs it to check the claim or paste it into a source box (Baird 2026-10-22). A source with no live link, such as a saved copy, says so and names the link that is cited instead.
+- **Never point to a file on your own computer.** The reader does not have it. No `work/...` or `batches/...` paths, no home folders, no saved file names like `pjm_cycle_queue_2026-10-21.xlsx`. Cite a web address that shows the claim. When a list only comes as a download, find the web page for the one entry if the site has one (PJM has a page per queue request at `https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=<queue number>`). If there is truly no address, write the steps anyone can follow to get the same file: "On PJM's cycle request status page at https://www.pjm.com/planning/m/cycle-service-request-status, click XLS under full export and find row C01-2036." `state_gate.py` flags a local path in any note (Baird 2026-10-27).
 - **No repo jargon in the note itself.** Words like lane, shard, tier, staged,
   stage, ref, orphan, blue/green, qa record, url_verifier, colmap, merge-never-
   replace belong in scripts and docs, not in a note a researcher reads. If a
@@ -64,6 +66,18 @@ After:
 > Senelec statement, so this counts as one source. I suggest clearing the
 > planned retirement year. I could not find a new contract end date, so I
 > have flagged that separately for a human to look into.
+
+## Questions
+
+A question record has four parts. The question is one sentence that ends with a question mark, stays under about 120 characters, and is specific to the record. The finding is one to three sentences on what the sources say. The recommendation is one or two sentences the reviewer can act on: leave as is, change X to Y, merge with Z, ask the PM, or cancel. Never write "the reviewer should decide". The note holds everything else, including what could not be reached and why. (Baird, 2026-10-27.) Name the filer of comments or testimony (the Environmental Law and Policy Center, the Iowa Environmental Council and Sierra Club), never "intervenors" or "the intervenor comments" on their own. When the database already carries a note from the reviewer on the unit, the question answers that note first: say whether the sources agree with it and why. (Baird, 2026-10-29.)
+
+question: Is the 430 MW combined cycle unit from the 2024 study still planned?
+
+finding: The study, dated February 13, 2025, adds a 430 MW combined cycle unit in 2029. No later filing names it. Alliant's quarterly report for June 30, 2026 lists only simple-cycle projects, Morgan Valley at 720 MW and Riverhawk at about 1,200 MW. Morgan Valley's April 2026 application says the site could later be converted to combined cycle, and nothing more.
+
+recommendation: Leave the unit as announced. Check again when Alliant files a combined cycle plan.
+
+note: everything else, including what could not be reached and why.
 
 ## Where the machine words still live
 

@@ -1,0 +1,103 @@
+{
+ "meta": {
+  "plant_id": "L100000402325",
+  "plant_name": "Quantum Choctaw Power station",
+  "state": "Mississippi",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-23T14:07:04-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401969",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists this unit as operating. The table lists plant 55694 with two gas turbines of 270.0 MW each and one steam turbine of 310.5 MW. Together that is 850.5 MW, a little under the 851.0 MW GEM shows. Start year 2006 is unchanged. No planned retirement date is listed. I found no retirement, mothballing or sale in the sources I checked."
+    },
+    "Capacity (MW)": {
+     "value": "850.5",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists this unit as operating. The nameplate is 850.5 MW. The table lists plant 55694 with two gas turbines of 270.0 MW each and one steam turbine of 310.5 MW. Together that is 850.5 MW, a little under the 851.0 MW GEM shows. Start year 2006 is unchanged."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year"
+   ],
+   "notes": "The unit is still operating. The only change is a 0.5 MW difference in total capacity."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [
+  {
+   "gem_unit_id": "G100000401969",
+   "monitor_kind": "existing_plant",
+   "monitor_reason": "TVA and TC Energy announced a carbon capture feasibility study at Ackerman in September 2023, but I found no later document showing a funded project, a decision or a cancellation.",
+   "recheck_by": "2027-03",
+   "note": "A Power Engineering article from September 2023 (https://www.power-eng.com/gas/turbines/tva-to-study-carbon-capture-at-two-natural-gas-fired-plants/) says the two partners would invest 1.25 million dollars in a study of about one year. Searches of news and the TVA announcement trail found no results or follow-up. So the carbon capture box stays blank.",
+   "refs": [
+    "https://www.power-eng.com/gas/turbines/tva-to-study-carbon-capture-at-two-natural-gas-fired-plants/"
+   ]
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Loaded; row read from the downloaded file."
+  },
+  {
+   "url": "https://www.power-eng.com/gas/turbines/tva-to-study-carbon-capture-at-two-natural-gas-fired-plants/",
+   "used_for": [
+    "CCS check"
+   ],
+   "outcome": "verified",
+   "note": "Study announcement, September 2023; no later update found."
+  },
+  {
+   "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1688539",
+   "used_for": [
+    "context"
+   ],
+   "outcome": "verified",
+   "note": "Title V permit renewed December 2023; lists the combined cycle turbines."
+  }
+ ]
+}

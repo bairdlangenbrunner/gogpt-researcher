@@ -54,7 +54,7 @@ GROUPS = [
      "blurb": "Owner, operator and parent changes, and new owners or operators to create."},
     {"id": 7, "key": "us", "label": "IDs, IRPs and data centers", "rows": [34, 37, 38, 39],
      "us_only": True,
-     "blurb": "United States only: EIA and other IDs, utility resource plans, gas-fired data centers."},
+     "blurb": "United States only: EIA and other IDs, utility resource plans, data center power (gas or diesel, routine or backup; a backup engine fleet counts and is added at the summed nameplate threshold)."},
     {"id": 8, "key": "new", "label": "New to the tracker", "rows": [6, 31, 44, 51, 55],
      "blurb": "New plants and units ready to add, candidates to watch, and the possible-updates rows."},
     {"id": 9, "key": "closeout", "label": "Close-out",
@@ -249,6 +249,7 @@ CONCERN_KINDS = {
     "location": (2, [25]),
     "source": (2, []),
     "validation": (1, [7]),
+    "notes_cleanup": (None, []),   # an outdated Notes line flagged for a human to remove; the researcher never shortens Notes
     "other": (None, []),
 }
 
@@ -258,6 +259,21 @@ CONCERN_KINDS = {
 # The calls are defined once, in the tracker config (gem-review-app trackers/gogpt/config.py).
 WATCH_CALLS = _CONFIG_WATCH_CALLS
 MONITOR_KINDS = ("new_to_tracker", "existing_plant")
+# A lead: a new-row record assemble_state.py found too thin for newunits or newplants and sent
+# to the watch list instead. It marks the record `lead_for`; older batches carry the note prefix only.
+_LEAD_NOTE = re.compile(r"^New (unit|plant) lead\b")
+
+
+def lead_for(rec):
+    """`newunits` | `newplants` for a watch item that started as a new-row lead, else ""."""
+    lf = rec.get("lead_for")
+    if lf in ("newunits", "newplants"):
+        return lf
+    for k in ("monitor_reason", "item", "researcher_notes"):
+        m = _LEAD_NOTE.match(_ws(rec.get(k)))
+        if m:
+            return "newunits" if m.group(1) == "unit" else "newplants"
+    return ""
 
 
 def name_key(name):
@@ -304,6 +320,7 @@ _CONCERN_WORDS = [
     (r"conversion|replacement", "conversion-link"),
     (r"identity|register", "identity"),
     (r"validation", "validation"),
+    (r"notes? ?clean|outdated note|stale note", "notes_cleanup"),
 ]
 
 
@@ -558,7 +575,8 @@ def tag(rec, lane, unit_row=None, us=True, today=None):
                 rec.get("monitor_kind") is None and _ws(rec.get("gem_plant_id"))):
             if us and _DC.search(text):
                 group, rows = 7, [39]
-            elif _EXPANSION.search(text):
+            elif lead_for(rec) or _EXPANSION.search(text):
+                # a new-unit lead at a tracked plant is a proposed addition to decide on (row 51)
                 group, rows = 8, [51]
             else:
                 group, rows = 3, ([10] if _status_group(unit_row.get("Status")) == "in development"

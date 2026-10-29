@@ -13,7 +13,9 @@ failures through the verifier as it is today (the full ladder plus the archive
 fallback), reports what changed, and writes `<batch>/access_retry.json`.
 state_gate.py's `access` gate reads that file: every `blocked` or `dead`
 source_log entry must have been retried, and one that loads now fails the gate
-until it is read and used.
+until it is read and used. A `dead` entry also needs its Wayback lookup recorded
+(the `archive` field), and any saved copy it finds must be cited as verified in
+the same shard. Outcome spellings such as `dead_link` count as give-ups.
 With `--render-missing` it also reopens pages that loaded but lacked the
 expected value in a real Chrome, which catches pages that fill in their text
 with JavaScript.
@@ -70,6 +72,24 @@ CLASSES = ("rate_limited", "bot_wall", "firewall", "gone", "dead_host", "server_
            "other")
 RETRY_FILE = "access_retry.json"
 GAVE_UP = ("blocked", "dead")
+# The source_log outcomes the sweep prompt defines. Agents also write spellings
+# such as "dead_link", so a give-up is matched by its first word.
+OUTCOMES = ("verified", "failed", "blocked", "dead", "not relevant")
+
+
+def gave_up_outcome(outcome) -> str:
+    """"dead", "blocked" or "" (the agent did not give up on the page)."""
+    o = str(outcome or "").strip().lower()
+    for kind in GAVE_UP:
+        if o.startswith(kind):
+            return kind
+    return ""
+
+
+def unknown_outcome(outcome) -> bool:
+    o = str(outcome or "").strip().lower()
+    return o not in OUTCOMES and not gave_up_outcome(o)
+
 # A source_log note that names a page's mechanics as the obstacle: a form, a
 # script, a session, paging. None of these stops a person, so none is a reason.
 EXCUSE = re.compile(
@@ -139,19 +159,40 @@ def source_log_gave_up(batch_dirs: list[Path]) -> dict[str, dict]:
             except (ValueError, OSError):
                 continue
             for e in shard.get("source_log") or []:
-                if not isinstance(e, dict) or e.get("outcome") not in GAVE_UP or not e.get("url"):
+                kind = gave_up_outcome(e.get("outcome")) if isinstance(e, dict) else ""
+                if not kind or not e.get("url"):
                     continue
-                out[e["url"]] = {"url": e["url"], "ok": False, "source": "fetch",
-                                 "reason": f"agent gave up: {e.get('outcome')}: {e.get('note', '')}",
+                out[e["url"]] = {"url": e["url"], "ok": False, "source": "fetch", "outcome": kind,
+                                 "reason": f"agent gave up: {kind}: {e.get('note', '')}",
                                  "expected": [], "batch": str(d), "shard": f.stem}
     return out
 
 
+def archive_check(failures: dict[str, dict]) -> dict[str, dict]:
+    """For each source an agent recorded as dead: look up the saved Wayback
+    copies of the exact address (the CDX index and the availability API, with
+    the verifier's retries). The record says whether the lookup answered and
+    which copies exist, so the gate can tell a dead page with no copy from one
+    whose saved copy nobody cited."""
+    from url_verifier import _wayback_snapshots
+    out = {}
+    for url, rec in failures.items():
+        if rec.get("outcome") != "dead":
+            continue
+        snaps = _wayback_snapshots(url, every=True)
+        if snaps == "lookup-failed":
+            out[url] = {"checked": False, "snapshots": []}
+        else:
+            out[url] = {"checked": True, "snapshots": [s for s, _ in reversed(snaps)]}
+    return out
+
+
 def write_retry(batch_dirs: list[Path], failures: dict[str, dict],
-                retried: dict[str, tuple[bool, str]]) -> None:
+                retried: dict[str, tuple[bool, str]],
+                archive: dict[str, dict] | None = None) -> None:
     """<batch>/access_retry.json: the retry result for each URL the batch's
-    shards gave up on (read by state_gate.py's access gate). Earlier results
-    for other URLs are kept."""
+    shards gave up on (read by state_gate.py's access gate), with the Wayback
+    lookup for each dead one. Earlier results for other URLs are kept."""
     ts = time.strftime("%Y-%m-%dT%H:%M:%S")
     for d in batch_dirs:
         path = d / RETRY_FILE
@@ -164,10 +205,41 @@ def write_retry(batch_dirs: list[Path], failures: dict[str, dict],
             if url in retried:
                 ok, reason = retried[url]
                 data[url] = {"ok": ok, "reason": reason, "ts": ts}
+                if archive and url in archive:
+                    data[url]["archive"] = archive[url]
         path.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+AUDIT_OUTPUTS = {"access_audit.md", RETRY_FILE}
+URL_RX = re.compile(r"https?://[^\s\"'<>)\]\\]+")
+
+
+def batch_hosts(batch_dirs: list[Path]) -> set[str]:
+    """Hosts of every URL the batches' own files mention (shards, link logs,
+    briefs, staging, and the permit harvester's output for the same scope),
+    leaving out the audit's own outputs, which would feed back on themselves."""
+    hosts: set[str] = set()
+    for d in batch_dirs:
+        roots = [d, d.parent.parent / "work" / "permits" / d.name]
+        for root in roots:
+            for f in root.glob("**/*"):
+                if not f.is_file() or f.name in AUDIT_OUTPUTS or f.suffix not in (".json", ".jsonl", ".md", ".txt", ".csv"):
+                    continue
+                try:
+                    text = f.read_text(errors="replace")
+                except OSError:
+                    continue
+                hosts.update(h for h in (host_of(u) for u in URL_RX.findall(text)) if h)
+    return hosts
+
+
 def _fetch_failures(batch_dirs: list[Path]) -> dict[str, dict]:
+    """The fetch log is shared by every session, so a time window alone pulls in
+    other batches' failures (Iowa and Illinois showed up in Kansas, 2026-10-22).
+    An entry counts only if it is tagged with this batch, or, when untagged, its
+    host appears in the batch's own files."""
+    scopes = {d.name for d in batch_dirs}
+    hosts = batch_hosts(batch_dirs)
     starts = [p.stat().st_mtime for d in batch_dirs for p in (d / "briefs").glob("*")]
     if not starts or not fetch.FAIL_LOG.exists():
         return {}
@@ -179,6 +251,11 @@ def _fetch_failures(batch_dirs: list[Path]) -> dict[str, dict]:
         except ValueError:
             continue
         if rec.get("ts", "") < since or not rec.get("url"):
+            continue
+        if rec.get("batch"):
+            if rec["batch"] not in scopes:
+                continue
+        elif host_of(rec["url"]) not in hosts:
             continue
         reason = ("empty record page" if "empty_answer" in rec.get("notes", []) else f"HTTP {rec.get('status')}")
         out[rec["url"]] = {"url": rec["url"], "ok": False, "reason": reason,
@@ -206,16 +283,18 @@ def host_of(url: str) -> str:
 
 
 def retry(failures: dict[str, dict], render_missing: bool) -> dict[str, tuple[bool, str]]:
-    from url_verifier import verify_url
+    from url_verifier import soft_error_title, verify_url
     out = {}
     for n, (url, rec) in enumerate(sorted(failures.items()), 1):
         expected = rec.get("expected") or []
         print(f"  [{n}/{len(failures)}] {url[:100]}", file=sys.stderr)
         if rec.get("source") == "fetch":         # a page read, no value to check
             page = fetch.fetch_page(url)
-            ok = page.status == "200" and "empty_answer" not in page.notes
+            bad_title = soft_error_title(page.text) if page.status == "200" else None
+            ok = page.status == "200" and "empty_answer" not in page.notes and not bad_title
             out[url] = (ok, "OK" if ok else (
-                "empty record page" if "empty_answer" in page.notes else f"HTTP {page.status}"))
+                "empty record page" if "empty_answer" in page.notes else
+                f"soft-error page (title: {bad_title!r})" if bad_title else f"HTTP {page.status}"))
             continue
         try:
             ok, reason = verify_url(url, expected)
@@ -295,8 +374,10 @@ def main(argv=None) -> int:
     if a.host:
         failures = {u: r for u, r in failures.items() if a.host in host_of(u)}
     retried = retry(failures, a.render_missing) if a.retry else None
-    if retried is not None and not a.host:
-        write_retry(a.batches, failures, retried)
+    # write_retry keeps earlier results for other URLs, so a host-limited
+    # retry records its own URLs without touching the rest
+    if retried is not None:
+        write_retry(a.batches, failures, retried, archive_check(failures))
     text = report(failures, retried)
     print(text)
     if a.out:

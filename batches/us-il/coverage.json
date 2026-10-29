@@ -1,0 +1,106 @@
+{
+  "sources": {
+    "pjm-cycle-queue": {
+      "status": "searched",
+      "how": "Downloaded the full PJM cycle request export on 2026-10-21 (1,792 rows, 239 in Illinois, 117 in the first cycle), saved as work/pjm/pjm_cycle_queue_2026-10-21.xlsx, and read every Illinois gas, oil and thermal request. Rechecked on 2026-10-23 for a citable page naming the four new gas requests.",
+      "found": "Four new gas requests filed in April 2026: C01-1569 (346 MW, Will County), C01-1570 (347 MW, Ogle County), C01-1571 (346 MW, LaSalle County) and C01-2036 (1,150 MW, Putnam County). No public page names them, so they are watch items with the case unverified (monitor-5 to monitor-8). Nelson uprate requests are noted on the Nelson watch item."
+    },
+    "pjm-serial-queue": {
+      "status": "searched",
+      "how": "Read PlanningQueues.xml fetched 2026-10-21 (9,263 projects, 706 in Illinois) and transitionProjects.xml.",
+      "found": "AB1-089, a 550 MW combined cycle plant in Lee County withdrawn in June 2025, is a watch item for a duplicate check against Nelson (monitor-9). Garden Prairie (U3-021 and AB2-096, 450 MW, withdrawn May 2022) is a watch item, not committed (monitor-10). AH1-563, AH1-564, AH1-567, AH1-700 and AE1-070 were withdrawn; AD2-194 and AD1-039 are plants already operating in GEM. The first-cycle requests are not in either file."
+    },
+    "pjm-deactivations": {
+      "status": "searched",
+      "how": "Read the PJM generator deactivation list and the Illinois owner letters during the plant sweep (shards for Joliet, Will County, Waukegan, Fisk and the Rockford and University Park peakers).",
+      "found": "Joliet 7 and 8 (AC1-142A) are deactivated. No other Illinois gas or oil deactivation since 2020 is missing from the staged records."
+    },
+    "miso-gi-queue": {
+      "status": "searched",
+      "how": "Read the MISO queue through https://www.misoenergy.org/api/giqueue/getprojects on 2026-10-21 and again on 2026-10-23 (494 Illinois entries, 3 with gas).",
+      "found": "J955 is Lincoln Land, already in GEM. J1839 (325 MW simple cycle turbine, Decatur ADM North 138 kV) is a watch item for a duplicate check against Broadwing (monitor-11). J2656 (180 MW, fuel blank) and about 30 Ameren-area requests with fuel and county hidden are watch items with the case unverified (monitor-12 and monitor-13)."
+    },
+    "miso-eras": {
+      "status": "searched",
+      "how": "Read the MISO expedited study spreadsheet (https://cdn.misoenergy.org/ERAS%20Interconnection%20Requests718482.xlsx) on 2026-10-21 and 2026-10-23.",
+      "found": "The Illinois entries are all solar. No Illinois gas or oil project."
+    },
+    "iepa-air-notices": {
+      "status": "searched",
+      "how": "Read 22 current and 2,163 archived Bureau of Air notices through the notice web service on 2026-10-21 and examined 146 construction, PSD, nonattainment and Title V construction records for power, data center and utility facilities (batches/us-il/audit/permit_sweep_20261021.md).",
+      "found": "No construction permit for a new gas or oil generator of 20 MW or more besides Broadwing, Lincoln Land and the Zion revision. Data center permits (Compass, Aligned, CyrusOne) cover diesel emergency generators only."
+    },
+    "rblc": {
+      "status": "searched",
+      "how": "Queried the RBLC API for Illinois turbine, engine and utility boiler determinations since 2020 on 2026-10-21.",
+      "found": "Lincoln Land (29 July 2022) is the only Illinois turbine determination since 2020."
+    },
+    "eia-860m": {
+      "status": "searched",
+      "how": "Read the Operating, Planned, Retired and Canceled or Postponed sheets of the August 2026 file (work/eia/august_generator2026.xlsx) and joined it to the export with match_ids.py.",
+      "found": "Every gas and oil plant of 50 MW or more is in GEM or staged except six plants answered under ids_followup below, all with units under 50 MW."
+    },
+    "eia-860": {
+      "status": "searched",
+      "how": "Read the 2024 annual Proposed generator sheet for Illinois gas and oil units.",
+      "found": "Only Lincoln Land (EIA 62022, 2 x 638.4 MW) reaches 50 MW, and it is in GEM. Waterloo (8 MW) and ITT Cogen (4.1 MW) are below the threshold."
+    },
+    "eip-oil-gas-watch": {
+      "status": "searched",
+      "how": "Used work/ids_us-illinois.md from match_ids.py (the EIP sheet join).",
+      "found": "The six possible new plants are the same six EIA plants answered under ids_followup. Nothing else."
+    },
+    "owner-news": {
+      "status": "searched",
+      "how": "About 55 news and company release searches on 2026-10-21 covering Vistra, Constellation, NRG, Hull Street, Invenergy, LS Power, Springfield City Water Light and Power, the cooperatives and the municipal agency (batches/us-il/audit/news_sweep_20261021.md).",
+      "found": "Lincoln Land: permit extended to January 2027, EmberClear back as developer, Eagle Rock data center offtake abandoned August 2026; these are in the Lincoln Land records. No other new, converted or sold gas plant."
+    },
+    "possible-updates-sheet": {
+      "status": "searched",
+      "how": "Read the gas/oil plants tab through the work profile on 2026-10-23 and checked every Illinois row (rows 139, 209, 1674, 1676, 1677, 1693, 1717, 1821, 1973).",
+      "found": "Row 139, Monarch Rockford data center engines (250 MW, 2027), is watch item monitor-1. Row 209 (Overwatch and Idemitsu data centers) names no Illinois site. The other rows are marked done and the plants are in GEM (Lincoln Land, Crete, Lincoln Generating, the three peakers, Three Rivers)."
+    },
+    "captive-lng-sheet": {
+      "status": "searched",
+      "how": "Ran captive_lng.py --state Illinois (work/captive_us-illinois.md).",
+      "found": "The sheet has no Illinois row."
+    },
+    "us-irps-tab": {
+      "status": "searched",
+      "how": "Ran irp_sheet.py --state Illinois.",
+      "found": "The tab has no Illinois rows (staging/irp_summary.json)."
+    },
+    "data-centers": {
+      "status": "searched",
+      "how": "Searched trade press, the Illinois EPA permit archive and city records for on-site gas generation at Illinois data center campuses.",
+      "found": "Monarch Rock Air (Rockford), Hut 8 Illinois Project 4 and the Joliet Technology Center are watch items with the data center hold (monitor-1 to monitor-3). The Eagle Rock site in Christian County was abandoned in August 2026. Compass, Aligned and CyrusOne permits cover diesel backup only."
+    },
+    "icc-edocket": {
+      "status": "searched",
+      "how": "Ran 19 queries (plant names, owners, certificate, procurement, large load, data center, generation) through the commission's site-wide full-text search at https://www.icc.illinois.gov/search, every result page, filtered to 2022 and later, on 2026-10-23, plus one web search for generating certificate dockets. The docket, case and document search pages sit behind a reCAPTCHA; fetch.py returned the same form page and Wayback has no snapshot.",
+      "found": "No filing since 2022 names a gas or oil generating project, unit addition, conversion or retirement. Plant-name hits were gas pipeline safety inspections at Nelson (2022, 2023) and Lincoln Generating Facility (2022, 2025), both in GEM, plus policy material (the 2025 Resource Adequacy Study), transmission case 25-0061 and the carbon dioxide pipeline cases 22-0497 and 23-0475. The certificate case list itself needs a person to solve the reCAPTCHA once."
+    }
+  },
+  "ids_followup": {
+    "899": {
+      "name": "Moline",
+      "decision": "below_threshold",
+      "evidence": "EIA-860M August 2026 file (https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx), Operating sheet: four 18 MW gas turbines plus small hydro units. No unit or set reaches 50 MW."
+    },
+    "54780": {
+      "name": "Abbott",
+      "decision": "below_threshold",
+      "evidence": "EIA-860M August 2026 file (https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx), Operating sheet: steam turbines of 3 to 12.5 MW and two 13 MW gas turbines. No unit reaches 50 MW."
+    },
+    "54044": {
+      "name": "UI Cogen",
+      "decision": "below_threshold",
+      "evidence": "EIA-860M August 2026 file (https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx), Operating sheet: three 7.8 MW gas turbines and engine groups of 12.6 MW, 7.4 MW and 16.5 MW. No unit or set reaches 50 MW."
+    },
+    "54556": {
+      "name": "Ingredion",
+      "decision": "below_threshold",
+      "evidence": "EIA-860M August 2026 file (https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx), Operating sheet: two 22.5 MW steam turbines and two 4.8 MW standby gas turbines. No unit reaches 50 MW."
+    }
+  }
+}

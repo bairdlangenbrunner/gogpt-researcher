@@ -1,0 +1,160 @@
+{
+ "meta": {
+  "plant_id": "L100000401935",
+  "plant_name": "Osawatomie power station",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T10:30:00-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402882",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists Osawatomie plant 7928, generator 1, as operating with 102.0 MW nameplate and an operating year of 2003. It shows no planned retirement and no change of owner. It does list a planned uprate of 11 MW of summer capacity for June 2027, which is not a retirement."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year"
+   ],
+   "notes": "The unit is still operating in the August 2026 EIA table with no retirement date. I searched the web and found no news of a retirement, mothballing or sale."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Evergy Metro Inc [100%]",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860M table for August 2026 gives Evergy Metro as the entity that holds Osawatomie plant 7928. This matches GEM's current owner."
+  },
+  "Latitude": {
+   "value": "38.53216",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+    "https://www.google.com/maps/search/?api=1&query=38.53216,-94.90263"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=38.53216,-94.90263",
+     "ok": true,
+     "contains_value": false,
+     "name_found": false
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860M table for August 2026 gives the plant's latitude as 38.532161, the same as GEM. A satellite picture at this point shows a small gas turbine site with a switchyard to its north. The imagery date is unknown."
+  },
+  "Longitude": {
+   "value": "-94.90263",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+    "https://www.google.com/maps/search/?api=1&query=38.53216,-94.90263"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=38.53216,-94.90263",
+     "ok": true,
+     "contains_value": false,
+     "name_found": false
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860M table for August 2026 gives the longitude as -94.90263, the same as GEM."
+  },
+  "Location accuracy": {
+   "value": "exact",
+   "refs": [
+    "https://www.google.com/maps/search/?api=1&query=38.53216,-94.90263"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=38.53216,-94.90263",
+     "ok": true,
+     "contains_value": false,
+     "name_found": false
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The satellite picture at this point shows a gas turbine pad with a nearby switchyard, so the point is on the plant. Imagery date is unknown."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000402882",
+   "concern_type": "existence",
+   "recommendation": "The EIA-860M table for August 2026 lists seven more Osawatomie gas turbines of 91.3 MW each (generators 2 to 8) under canceled or postponed. GEM shows only unit 1. Check whether GEM has a record of these cancelled units and whether any is wanted.",
+   "note": "These are cancelled projects, and the tracker records cancellations only from 2020 onward. No dates are in the table.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Owner(s)",
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Loads. Rows read from the Operating and Canceled or Postponed sheets for plant 7928."
+  },
+  {
+   "url": "https://www.gem.wiki/Osawatomie_power_station",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Not cited, gap detection only."
+  }
+ ]
+}

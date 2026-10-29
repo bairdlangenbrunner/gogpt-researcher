@@ -77,8 +77,8 @@ unit ID so the build can group a unit's edits)
                    researcher_notes (the finding's note, plus the unit's notes
                    on the unit's first record) / action / record_id
                    `<plant_id>:<unit_id>:<field slug>`.
-                   With no URL at all: kept with empty refs only when the value
-                   is an inferred status; otherwise it goes to the qa lane
+                   With no URL at all (an inferred status included: it cites the
+                   Latest Activity source, Baird 2026-10-27) it goes to the qa lane
                    (concern_type "other", the value in `proposed_value`).
   match + new URL  updates record with `reverified: true`, fields = the
                    export's current string (so the workbook colors it blue),
@@ -133,7 +133,9 @@ Checklist bookkeeping (review_app/checklist.py; the QC/Country checklist tab)
   monitor        `monitor_reason` is filled from the older `item` key or the
                  first sentence of the note; `monitor_kind` is the shard's
                  value, else existing_plant when a GEM plant id is set, else
-                 new_to_tracker. A candidate a reviewer removed from the watch
+                 new_to_tracker. `watch_case` (schema_constants.WATCH_CASES)
+                 is the shard's value; a new-row lead this script demotes gets
+                 `unverified`. A candidate a reviewer removed from the watch
                  list (call `remove` in staging/review_log.jsonl, matched by
                  record_id or by plant name) is dropped and listed.
 
@@ -160,7 +162,7 @@ from build_review_package import (_split_urls, additive_value, inline_value,  # 
 from geo import distance_m, fmt5, parse_coord, pin_link, pin_point, valid_point  # noqa: E402
 from paths import gogpt_scoped_csv  # noqa: E402
 from schema_constants import (ADDITIVE_TEXT_COLUMNS, INLINE_SOURCE_COLUMNS,  # noqa: E402
-                              RESEARCH_FIELDS)
+                              LOCATION_METHODS, RESEARCH_FIELDS)
 from review_app.checklist import (  # noqa: E402
     CONCERN_VOCAB, MONITOR_KINDS, name_key, normalize_concern_type)
 
@@ -179,7 +181,8 @@ COORD_TOL = 0.005
 # together in one plant-level record; a point that moves less than this on a
 # plant that stays approximate is not worth an edit
 LOCATION_FIELDS = ("Latitude", "Longitude", "Location accuracy")
-LOCATION_METHODS = ("address", "site_reference", "dataset", "map", "imagery")
+# place fields ride on the one Location card with the point (Baird 2026-10-21)
+PLACE_FIELDS = ("City", "Local area (taluk, county)", "Major area (prefecture, district)")
 LOCATION_MOVE_M = 500
 TIER_RANK = {"high": 2, "medium": 1, "low": 0}
 ENTITY_FIELDS = {"Owner(s)", "Operator(s)"}
@@ -464,6 +467,55 @@ def build_action(kind, field, value, current, target, ref_col, n_urls,
     return s
 
 
+def merge_plant_question(rec, qa_records, plant_unit_ids):
+    """Fold a plant-level question from the scope-wide pass into the shard's own question on the
+    same concern, so a reviewer sees one card (Baird 2026-10-27, gem-review-app docs/questions.md).
+
+    rec is the statewide qa record (gem_plant_id set, no gem_unit_id). It folds into a record in
+    qa_records on the same plant with the same concern_type when that record sits on the plant
+    itself, or on the plant's only unit. The kept record gains the union of refs and
+    verifications, a second paragraph in researcher_notes with the statewide finding and
+    recommendation, and merged_from with the dropped record id. Returns the kept record, or
+    None when nothing matches (the caller then appends rec as usual)."""
+    pid = ws(rec.get("gem_plant_id"))
+    if not pid or ws(rec.get("gem_unit_id")):
+        return None
+    ct = ws(rec.get("concern_type"))
+    units = [u for u in (plant_unit_ids or []) if u]
+    for target in qa_records:
+        if ws(target.get("gem_plant_id")) != pid or ws(target.get("concern_type")) != ct:
+            continue
+        tu = ws(target.get("gem_unit_id"))
+        if tu and not (len(units) == 1 and tu == units[0]):
+            continue
+        refs = dict(target.get("refs") or {})
+        for k, v in (rec.get("refs") or {}).items():
+            have = refs.get(k)
+            if isinstance(have, list) and isinstance(v, list):
+                refs[k] = have + [u for u in v if u not in have]
+            elif k not in refs:
+                refs[k] = v
+        target["refs"] = refs
+        vers = list(target.get("verifications") or [])
+        seen = {v.get("url") for v in vers if isinstance(v, dict)}
+        for v in rec.get("verifications") or []:
+            if isinstance(v, dict) and v.get("url") not in seen:
+                vers.append(v)
+                seen.add(v.get("url"))
+        if vers:
+            target["verifications"] = vers
+        second = " ".join(x for x in (ws(rec.get("finding")), ws(rec.get("recommendation"))) if x) \
+            or ws(rec.get("researcher_notes")) or ws(rec.get("note"))
+        if second:
+            target["researcher_notes"] = join_notes(ws(target.get("researcher_notes")),
+                                                    "A second check of the plan found: " + second)
+        target["merged_from"] = rec.get("record_id") or ""
+        if rec.get("irp"):
+            target["irp"] = True
+        return target
+    return None
+
+
 def join_notes(*parts) -> str:
     return " ".join(ws(p) for p in parts if ws(p))
 
@@ -510,6 +562,7 @@ class Assembler:
                     self.task_checks[(p["plant_id"], None, f)] |= set(t.get("checks") or [])
         self.removed_ids, self.removed_names = self.load_removed()
         self.dropped: list[str] = []
+        self.merged: list[tuple[str, str]] = []   # (statewide question id, the plant question it folded into)
         # the IRP step (build_state_brief.py --irp): plan links, so a record whose
         # source is a plan file is marked irp even when the shard forgot the flag
         irp = self.index.get("irp") or {}
@@ -710,7 +763,7 @@ class Assembler:
                                        len(ev["new_urls"]), plant_level and n > 1)})
         elif verdict in ("fill", "change"):
             value, refs = ev["value"], ev["refs"]
-            if not refs and "inferred" not in value.lower():
+            if not refs:
                 rec = self.base_record(pid, plant_name, anchor_uid)
                 rec.update({
                     "record_id": rid, "concern_type": "other",
@@ -780,6 +833,8 @@ class Assembler:
         # one edit (docs/reference/location.md), wherever the shard put them
         location = {f: plant_findings.pop(f) for f in LOCATION_FIELDS
                     if f in plant_findings}
+        place = {f: plant_findings.pop(f) for f in PLACE_FIELDS
+                 if f in plant_findings}
 
         for uid in order:
             su = shard_units.get(uid)
@@ -799,6 +854,9 @@ class Assembler:
                              fd, "unit")
                 if field in LOCATION_FIELDS:
                     location.setdefault(field, fd)
+                    continue
+                if field in PLACE_FIELDS:
+                    place.setdefault(field, fd)
                     continue
                 notes = ""
                 if ev["verdict"] != "match" or ev["new_urls"]:
@@ -841,9 +899,9 @@ class Assembler:
             siblings = [u for u in order if u != anchor]
             self.stage(pid, plant_name, field, fd, anchor, ev, "", siblings)
 
-        if location and order:
+        if (location or place) and order:
             self.stage_location(pid, plant_name, order, location,
-                                shard.get("location") or {})
+                                shard.get("location") or {}, place)
 
         for section, lane in (("qa", "qa"), ("monitor", "monitor"),
                               ("newunits", "newunits"), ("entities", "entity")):
@@ -872,18 +930,27 @@ class Assembler:
         alt = self.batch / "staging" / "maps" / p.name
         return f"staging/maps/{p.name}" if alt.exists() else str(p)
 
-    def stage_location(self, pid, plant_name, order, findings, meta):
+    def stage_location(self, pid, plant_name, order, findings, meta, place=None):
         """One plant-level record for Latitude, Longitude and Location accuracy
         (docs/reference/location.md). The point is staged when it fills a
         blank, moves more than LOCATION_MOVE_M, or makes the plant exact; a
         nearer point on a plant that stays approximate is only reported in the
-        comparison. A move on a plant the brief did not hand to the location
+        comparison. City, county and district findings (`place`) that differ
+        from GEM go on the same record, so a person sees one Location card. A move on a plant the brief did not hand to the location
         step becomes a question, as the sweep rules promise."""
         anchor = order[0]
         siblings = [u for u in order if u != anchor]
         row = self.export.get(anchor) or {}
         fds = {f: dict(findings.get(f) or {}) for f in LOCATION_FIELDS}
         values = {f: ws(fds[f].get("value")) for f in LOCATION_FIELDS}
+        # place edits: only values that differ from what GEM has now
+        place_new = {}
+        for f, fd in (place or {}).items():
+            v = ws((fd or {}).get("value"))
+            if v and v.lower() != ws(row.get(f, "")).lower():
+                place_new[f] = v
+                fds[f] = dict(fd)
+        keys = LOCATION_FIELDS + tuple(place_new)
         for uid in order:
             for f in LOCATION_FIELDS:
                 if f in findings:
@@ -895,8 +962,8 @@ class Assembler:
         lat, lon = parse_coord(values["Latitude"]), parse_coord(values["Longitude"])
         acc = values["Location accuracy"].lower()
         if lat is None or lon is None:
-            if acc and cur_lat is not None and cur_lon is not None:
-                lat, lon = cur_lat, cur_lon      # only the accuracy changes
+            if (acc or place_new) and cur_lat is not None and cur_lon is not None:
+                lat, lon = cur_lat, cur_lon      # only the accuracy or the place changes
             else:
                 self.warnings.append(f"{pid}: location finding without a full point; skipped")
                 return
@@ -913,11 +980,57 @@ class Assembler:
             verdict = "fill"
         elif moved > LOCATION_MOVE_M or (acc == "exact" and cur_acc != "exact"):
             verdict = "change"
+        elif place_new:
+            verdict = "change"       # the point stays; the place fields move with it
         else:
-            self.match_no_new_url += 1
+            # the point stays: when the Location Data Source box is empty or
+            # lacks these links, stage them alone (a missing location source
+            # is never optional, Baird 2026-10-21)
+            have = ws(row.get("Location Data Source", ""))
+            src = [u for f in LOCATION_FIELDS for u in (fds[f].get("refs") or [])
+                   if ws(u) and ws(u) not in have]
+            src = list(dict.fromkeys(src))
+            if acc != "exact" or cur_acc != "exact" or not src:
+                self.match_no_new_url += 1
+                return
+            pin = pin_link(lat, lon)
+            if pin not in src and pin not in have:
+                src.append(pin)
+            ver = [v for f in LOCATION_FIELDS for v in (fds[f].get("verifications") or [])
+                   if isinstance(v, dict) and v.get("url") in src]
+            ver = [v for v in ver if pin_point(v.get("url", "")) is None]
+            ver.append({"url": pin, "ok": True, "contains_value": True,
+                        "name_found": False,
+                        "note": "a Google Maps pin that opens on the staged point"})
+            n = len(order)
+            target = (f"all {n} units of {plant_name}" if n > 1
+                      else unit_label(row.get("Unit name", ""), anchor))
+            note = join_notes(*{ws(fds[f].get("note")): 1 for f in LOCATION_FIELDS
+                                if ws(fds[f].get("note"))})
+            rec = self.base_record(pid, plant_name, anchor)
+            rec.update({
+                "record_id": f"{pid}:plant:location-source", "cluster": anchor,
+                "verdict": "match", "reverified": True,
+                "fields": current, "current": current,
+                "refs": {"Location Data Source": src},
+                "verifications": ver,
+                "tier": "high", "independent": False, "source_language": "en",
+                "researcher_notes": note,
+                "action": (f"Leave the point of {target} as it is. Add "
+                           f"{link_phrase(len(src))} to the Location Data Source box"
+                           f"{' on each unit' if n > 1 else ''}. Keep the links "
+                           "already there."),
+                "applies_to_all_units": True, "sibling_unit_ids": siblings,
+                "sibling_current": {u: {f: (self.export.get(u) or {}).get(f, "")
+                                        for f in LOCATION_FIELDS} for u in siblings}})
+            ck = sorted({c for f in LOCATION_FIELDS
+                         for c in self.checks_for(pid, anchor, f, siblings)})
+            if ck:
+                rec["checks"] = ck
+            self.lanes["updates"].append(rec)
             return
         refs, verifications, seen = [], [], set()
-        for f in LOCATION_FIELDS:
+        for f in keys:
             refs += [u for u in (fds[f].get("refs") or []) if ws(u) and u not in refs]
             for v in fds[f].get("verifications") or []:
                 if isinstance(v, dict) and v.get("url") not in seen:
@@ -938,14 +1051,14 @@ class Assembler:
             elif pt:
                 self.warnings.append(f"{pid}: pin link {u} does not open on the staged point")
         checks = set()
-        for f in LOCATION_FIELDS:
+        for f in keys:
             checks |= set(self.checks_for(pid, anchor, f, siblings))
         checks = sorted(checks)
         tasked = 25 in checks
         # the three findings usually share one note; say it once, then the
         # unit's own notes (where the satellite look is usually described)
         seen, parts = set(), []
-        for f in LOCATION_FIELDS:
+        for f in keys:
             n_ = ws(fds[f].get("note"))
             if n_ and n_ not in seen:
                 seen.add(n_)
@@ -957,7 +1070,9 @@ class Assembler:
         n = len(order)
         target = (f"all {n} units of {plant_name}" if n > 1
                   else unit_label(row.get("Unit name", ""), anchor))
-        fields = {"Latitude": fmt5(lat), "Longitude": fmt5(lon), "Location accuracy": acc}
+        fields = {"Latitude": fmt5(lat), "Longitude": fmt5(lon), "Location accuracy": acc,
+                  **place_new}
+        current = {**current, **{f: row.get(f, "") for f in place_new}}
         if verdict == "change" and not tasked:
             rec = self.base_record(pid, plant_name, anchor)
             rec.update({
@@ -975,7 +1090,7 @@ class Assembler:
                 rec["checks"] = checks
             self.lanes["qa"].append(rec)
             return
-        best = max((str(fds[f].get("tier") or "").lower() for f in LOCATION_FIELDS
+        best = max((str(fds[f].get("tier") or "").lower() for f in keys
                     if fds[f]), key=lambda t: TIER_RANK.get(t, -1), default="medium")
         tier, extra = self.tier_for("Latitude", verdict,
                                     {"tier": best if best in TIER_RANK else "medium",
@@ -996,24 +1111,28 @@ class Assembler:
                   f"{fields['Longitude']} and Location accuracy to {acc}. {now} Add "
                   f"{link_phrase(len(refs))} to the Location Data Source box"
                   f"{' on each unit' if n > 1 else ''}. Keep the links already there.")
+        if place_new:
+            action += " Also set " + ", ".join(
+                f"{f} to {v}" for f, v in place_new.items()) + "."
         rec = self.base_record(pid, plant_name, anchor)
         rec.update({
             "record_id": f"{pid}:plant:location", "cluster": anchor, "verdict": verdict,
             "fields": fields, "current": current,
             "refs": {"Location Data Source": refs},
             "verifications": verifications, "tier": tier,
-            "independent": any(bool(fds[f].get("independent")) for f in LOCATION_FIELDS),
+            "independent": any(bool(fds[f].get("independent")) for f in keys),
             "source_language": "en",
             "researcher_notes": join_notes(notes, extra), "action": action,
             "applies_to_all_units": True, "sibling_unit_ids": siblings,
             "sibling_current": {u: {f: (self.export.get(u) or {}).get(f, "")
-                                    for f in LOCATION_FIELDS} for u in siblings},
+                                    for f in keys} for u in siblings},
             "location_method": method,
+            "location_route": ws(meta.get("location_route") or meta.get("route")),
             "location_moved_m": None if moved is None else int(round(moved)),
             "location_needs_review": bool(meta.get("needs_review"))})
         if checks:
             rec["checks"] = checks
-        if any(fds[f].get("irp") for f in LOCATION_FIELDS):
+        if any(fds[f].get("irp") for f in keys):
             rec["irp"] = True
         if meta.get("control_points") or method == "map":
             rec["location_control_points"] = list(meta.get("control_points") or [])
@@ -1024,7 +1143,9 @@ class Assembler:
     @staticmethod
     def confirmed_or_lead(lane, item):
         """A new-row lead (new unit or new plant) without proposed values and
-        verified refs is a candidate, not an edit: it goes to monitor."""
+        verified refs is a candidate, not an edit: it goes to monitor, marked
+        lead_for with the lane it was headed for so the review page shows it
+        among the proposed additions rather than the watch list."""
         if lane in ("newunits", "newplants") and not (
                 isinstance(item.get("fields"), dict) and item["fields"]
                 and isinstance(item.get("refs"), dict)
@@ -1033,6 +1154,8 @@ class Assembler:
             what = "New unit lead" if lane == "newunits" else "New plant lead"
             item["note"] = (f"{what}, not yet confirmed: "
                             + (item.get("note") or "")).strip()
+            item["lead_for"] = lane
+            item.setdefault("watch_case", "unverified")
             return "monitor", item
         return lane, item
 
@@ -1060,6 +1183,13 @@ class Assembler:
                 rec = self.passthrough(self.tag, item.get("plant_name") or wide,
                                        lane, dict(item), i)
                 rec["gem_plant_id"] = item.get("gem_plant_id") or ""
+                if lane == "qa":
+                    # the plant's own question on the same concern wins; this one folds into it
+                    kept = merge_plant_question(rec, self.lanes["qa"],
+                                                list(self.shard_units_of(rec["gem_plant_id"])))
+                    if kept is not None:
+                        self.merged.append((rec["record_id"], kept["record_id"]))
+                        continue
                 self.lanes[lane].append(rec)
         for i, item in enumerate(st.get("newplants") or []):
             lane, item = self.confirmed_or_lead("newplants", dict(item))
@@ -1074,6 +1204,8 @@ class Assembler:
                 lane, item = "monitor", dict(item)
                 item["note"] = ("New unit lead without a GEM plant: "
                                 + (item.get("note") or "")).strip()
+                item["lead_for"] = "newunits"
+                item.setdefault("watch_case", "duplicate_check")
                 rec = self.passthrough(self.tag, item.get("plant_name") or wide, lane, item, i)
                 rec["gem_plant_id"] = ""
             else:
@@ -1378,6 +1510,10 @@ def main():
           + (f"; dropped as removed by a reviewer: {len(a.dropped)}" if a.dropped else ""))
     for d in a.dropped:
         print(f"    dropped {d}")
+    if a.merged:
+        print(f"  statewide questions folded into the plant's own question: {len(a.merged)}")
+        for gone, kept in a.merged:
+            print(f"    {gone} into {kept}")
     print(f"  wrote {batch / 'staging'}/staged_<lane>.json")
     if a.mode == "blind":
         print(f"  wrote {batch / 'staging' / 'comparison.json'}")

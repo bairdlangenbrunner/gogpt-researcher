@@ -1,0 +1,149 @@
+{
+ "meta": {
+  "plant_id": "L100000402094",
+  "plant_name": "Chevron Oil power station",
+  "state": "Mississippi",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-23T14:06:40-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403187",
+   "unit_name": "5",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists Chevron Oil, plant 2047, generator 5, as operating. It is a gas turbine of 101.3 MW that started in May 1994. No retirement date is listed."
+    },
+    "Capacity (MW)": {
+     "value": "101.3",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The same EIA table gives a nameplate of 101.3 MW. GEM shows 101.0, so this is only a rounding difference. Change it only if you want the table's figure."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Latest Activity",
+    "Status Detail",
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "Still operating in the EIA table for September 2026. I found no retirement or mothballing notice."
+  }
+ ],
+ "plant_findings": {
+  "Captive industry use": {
+   "value": "both",
+   "refs": [
+    "https://www.sec.gov/Archives/edgar/data/92122/000009212225000018/so-20241231.htm"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212225000018/so-20241231.htm",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The Southern Company annual report for 2024 at https://www.sec.gov/Archives/edgar/data/92122/000009212225000018/so-20241231.htm says Mississippi Power provides retail service to the Chevron refinery in Pascagoula through at least 2038. It says Mississippi Power owns co-generation assets at the refinery, and that the contract refers to steam output at that facility. It does not name the 101 MW turbine alone, so the match to this unit is implied."
+  },
+  "Captive industry type": {
+   "value": "petroleum refining",
+   "refs": [
+    "https://www.sec.gov/Archives/edgar/data/92122/000009212225000018/so-20241231.htm"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212225000018/so-20241231.htm",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The Southern Company annual report for 2024 at https://www.sec.gov/Archives/edgar/data/92122/000009212225000018/so-20241231.htm says Mississippi Power provides retail service to the Chevron refinery in Pascagoula through at least 2038. It says Mississippi Power owns co-generation assets at the refinery, and that the contract refers to steam output at that facility. It does not name the 101 MW turbine alone, so the match to this unit is implied."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000403187",
+   "concern_type": "scope",
+   "recommendation": "The EIA table lists five turbines at this plant, units 1 to 5, for 170.5 MW. GEM holds only unit 5. Units 1 to 4 are each 16.6 to 18.0 MW and started in 1967 and 1971, so they are under the 50 MW threshold individually, but please decide whether they belong with unit 5 as one plant.",
+   "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists generators 1 to 4 at plant 2047 as operating gas turbines.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Read plant 2047 on the Operating sheet."
+  },
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212225000018/so-20241231.htm",
+   "used_for": [
+    "Captive industry use",
+    "Captive industry type"
+   ],
+   "outcome": "verified",
+   "note": "Verified with the expected strings co-generation assets and Chevron Products."
+  },
+  {
+   "url": "https://www.mississippipower.com/about-energy/plants/",
+   "used_for": [
+    "Captive industry use"
+   ],
+   "outcome": "failed",
+   "note": "The page loaded but did not contain the word Pascagoula."
+  },
+  {
+   "url": "https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "The queue entries in the brief are withdrawn combined cycle projects at other substations, not this turbine."
+  }
+ ]
+}

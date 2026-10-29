@@ -1,0 +1,145 @@
+{
+ "meta": {
+  "plant_id": "L100001088853",
+  "plant_name": "Microsoft Ginger East Data Center power station",
+  "state": "Iowa",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-27T18:00:00-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001101021",
+   "unit_name": "Unit 1",
+   "findings": {
+    "Number Of Engines": {
+     "value": "96",
+     "refs": [
+      "https://airquality.polkcountyiowa.gov/PERMITS/PR-000720-2024.pdf",
+      "https://airquality.polkcountyiowa.gov/PERMITS/PR-000722-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://airquality.polkcountyiowa.gov/PERMITS/PR-000722-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Polk County permit PR-000722-2024 issued December 20, 2024 lists Cummins QSK95-G9 engines at 1475 SE Maffitt Lake Road."
+      },
+      {
+       "url": "https://airquality.polkcountyiowa.gov/PERMITS/PR-000720-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Polk County permit PR-000720-2024 lists QSK95-G9 engines EP-102 to EP-121 at 1475 SE Maffitt Lake Road."
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Polk County permits of December 20, 2024 list 96 Cummins QSK95-G9 engines for the Ginger East site at 1475 SE Maffitt Lake Road: 20 in permit PR-000720-2024 and 76 in permit PR-000722-2024. The state permit defines Ginger East as emission units 101 to 201. GEM has 40 engines. The permits do not say how many are built.",
+     "checks": [
+      39
+     ]
+    },
+    "Capacity (MW)": {
+     "value": "288",
+     "refs": [
+      "https://airquality.polkcountyiowa.gov/PERMITS/PR-000722-2024.pdf",
+      "https://www.iowadnr.gov/media/7168/download?inline"
+     ],
+     "verifications": [
+      {
+       "url": "https://airquality.polkcountyiowa.gov/PERMITS/PR-000722-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Polk County permit PR-000722-2024 issued December 20, 2024 lists Cummins QSK95-G9 engines at 1475 SE Maffitt Lake Road."
+      },
+      {
+       "url": "https://www.iowadnr.gov/media/7168/download?inline",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "State Title V permit 24-TV-005 for Willow Creek and Ginger East data centers gives the QSK95-G9 as 3,000 kilowatts."
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "At 3 MW each, 96 engines is 288 MW. The 3 MW rating comes from the state Title V permit, which gives 3,000 kilowatts for this engine. GEM has 120 MW.",
+     "checks": [
+      39
+     ]
+    }
+   },
+   "not_found": [],
+   "notes": "The Polk County permits issued December 20, 2024 list 96 large engines for the Ginger East site, against 40 in GEM."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_plant_id": "L100001088853",
+   "plant_name": "Microsoft Ginger East Data Center power station",
+   "concern_type": "existence",
+   "recommendation": "Check whether the 96 engines are built or only permitted, and whether Willow Creek needs its own plant record.",
+   "note": "The Polk County permits split the campus into two sites. Willow Creek is emission units 1 to 86 at 550 SE White Crane Road. Ginger East is units 101 to 201 at 1475 SE Maffitt Lake Road, which is where GEM places this plant. Five more small Cummins QSX15 engines of 755 horsepower are in the Ginger East list, with no kilowatt rating found. Three Polk County applications received August 24, 2026 are for this campus. Two of them (permit numbers 3847 to 3866 and 3982 to 3997) change engines that already hold Ginger East permits. The third (permit numbers 4165 to 4178, 14 engines of 4,308 horsepower) uses new numbers, and the application does not say which of the two sites it is for. Not found: the site for those 14 engines.",
+   "refs": [
+    "https://airquality.polkcountyiowa.gov/PERMITS/PR-000722-2024.pdf",
+    "https://airquality.polkcountyiowa.gov/Pages/ConstructionDetails.aspx?Permitid=4841"
+   ],
+   "verifications": [
+    {
+     "url": "https://airquality.polkcountyiowa.gov/PERMITS/PR-000722-2024.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Names the Ginger East engines at 1475 SE Maffitt Lake Road."
+    },
+    {
+     "url": "https://airquality.polkcountyiowa.gov/Pages/ConstructionDetails.aspx?Permitid=4841",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Polk County application page for 14 diesel engines of 4,308 horsepower, received August 24, 2026."
+    }
+   ],
+   "proposed_value": "",
+   "irp": false,
+   "checks": [
+    39
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://airquality.polkcountyiowa.gov/PERMITS/PR-000722-2024.pdf",
+   "used_for": "Ginger East engine count",
+   "outcome": "verified",
+   "note": "Polk permit PR-000722-2024."
+  },
+  {
+   "url": "https://airquality.polkcountyiowa.gov/PERMITS/PR-000720-2024.pdf",
+   "used_for": "Ginger East engine count",
+   "outcome": "verified",
+   "note": "Polk permit PR-000720-2024."
+  },
+  {
+   "url": "https://www.iowadnr.gov/media/7168/download?inline",
+   "used_for": "engine rating and site definition",
+   "outcome": "verified",
+   "note": "Title V 24-TV-005."
+  },
+  {
+   "url": "https://airquality.polkcountyiowa.gov/Pages/ConstructionDetails.aspx?Permitid=4841",
+   "used_for": "application",
+   "outcome": "verified",
+   "note": "Application received August 24, 2026."
+  }
+ ]
+}

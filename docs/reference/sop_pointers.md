@@ -106,7 +106,7 @@ disagree, the live doc wins — update the distillation.
 
 | repo file | source document(s) | last checked |
 |---|---|---|
-| `lifecycle_rules.md`, `unit_conventions.md`, `controlled_vocab.md` | GOGPT Editing Manual; Status Timeline Training | 2026-09-15 against the March 2026 manual — **re-check against the September 2026 manual pending** |
+| `lifecycle_rules.md`, `unit_conventions.md`, `controlled_vocab.md` | GOGPT Editing Manual; Status Timeline Training | 2026-10-27 against the September 2026 manual; the alignment landed 2026-10-27, see `notes/manual_audit_2026-10-27.md` |
 | `datasource_conventions.md` | GEM Project Database Manual (+ Editing Manual datasource sections) | 2026-07-27 |
 | `wiki_pages.md` | GOGPT Wiki Pages Manual | 2026-07-27 |
 | `source_roster.md`, `docs/country_notes/*` | Gas/oil power plant data sources — by country; United States research tab; US Data/Research Guide | 2026-09-15 (US) |

@@ -56,6 +56,7 @@ def write_staging(d):
     qa = [{"record_id": "L1:G1:qa-unverified-value-1", "gem_plant_id": "L1", "plant_name": "Brandywine power facility",
            "gem_unit_id": "G1", "unit_name": "F701", "country": "United States", "fields": {},
            "concern_type": "unverified_value", "recommendation": "Check the capacity against the EIA table.",
+           "question": "Does the press release capacity match the export?", "finding": "The press release differs from the export.",
            "researcher_notes": "The capacity on the press release differs from the export."}]
     monitor = [{"record_id": "us-md:plant:monitor-1", "gem_plant_id": "", "plant_name": "Chesapeake repowering (Acme)",
                 "country": "United States", "fields": {}, "item": "new plant candidate", "recheck_by": "2027-01",
@@ -111,6 +112,9 @@ def test_dataset_shape(data, staging):
     plants = {p["pid"]: p for p in data["plants"]}
     # the candidate card drops the "(Acme)" parenthetical so the same candidate staged twice shares a card
     assert set(plants) == {"L1", "new:chesapeake-repowering", "new:severn-barge-station"}
+    assert {k: p["card_kind"] for k, p in plants.items()} == {"L1": "plant", "new:chesapeake-repowering": "addition",
+                                                              "new:severn-barge-station": "addition"}
+    assert plants["L1"]["plant_pid"] == "L1" and plants["new:severn-barge-station"]["plant_pid"] == ""
     assert data["us"] is True
     # the nine checklist groups, plus "other" because the fixture's concern names no column or kind
     assert [g["id"] for g in data["groups"]] == [1, 2, 3, 4, 5, 6, 7, 8, 9, "other"]
@@ -133,11 +137,68 @@ def test_dataset_shape(data, staging):
     items = {it["record_id"]: it for it in p["items"]}
     assert items["L1:G1:qa-unverified-value-1"]["kind"] == "concern"
     assert items["L1:G1:qa-unverified-value-1"]["concern_type"] == "unverified_value"
+    assert items["L1:G1:qa-unverified-value-1"]["question"] == "Does the press release capacity match the export?"
+    assert items["L1:G1:qa-unverified-value-1"]["finding"] == "The press release differs from the export."
+    assert "merged_from" not in items["L1:G1:qa-unverified-value-1"]
     cand = plants["new:chesapeake-repowering"]
     assert cand["items"][0]["kind"] == "monitor" and cand["items"][0]["links"] == [PR]
     # a watch item with no GEM id is new to the tracker and lands in the new-plants group
     assert cand["items"][0]["monitor_kind"] == "new_to_tracker" and cand["items"][0]["group"] == 8
+    assert cand["items"][0]["lead_for"] == ""
     assert all(l["key"] == f"{staging}::{l['record_id']}" for l in p["lines"])
+    # a new row whose sources were checked and state a value is marked ready to add
+    assert plants["new:severn-barge-station"]["lines"][0]["ready"] is True
+
+
+def test_card_kinds(tmp_path):
+    """One tracked plant with an edit, a staged new unit, a new-unit lead and a true watch item
+    makes three cards: plant edits, proposed additions (the unit row and the lead) and the
+    watch list, all pointing back at the plant id, in that order."""
+    staging = write_staging(tmp_path / "us-md" / "staging")
+    mon = json.loads((staging / "staged_monitor.json").read_text())
+    mon["records"] += [
+        {"record_id": "L1:plant:monitor-2", "gem_plant_id": "L1", "plant_name": "Brandywine power facility",
+         "country": "United States", "fields": {}, "monitor_reason": "A battery project shares the site.",
+         "recheck_by": "2027-03", "refs": {"links": [PR]}},
+        {"record_id": "L1:plant:monitor-3", "gem_plant_id": "L1", "plant_name": "Brandywine power facility",
+         "country": "United States", "fields": {}, "lead_for": "newunits",
+         "monitor_reason": "New unit lead: the owner says a fourth unit is under study.",
+         "recheck_by": "2027-03", "refs": {"links": [PR]}},
+    ]
+    mon["meta"]["counts"]["records"] = len(mon["records"])
+    (staging / "staged_monitor.json").write_text(json.dumps(mon))
+    newunits = [{"record_id": "L1:new:unit-3", "gem_plant_id": "L1", "plant_name": "Brandywine power facility",
+                 "unit_name": "Unit 3", "country": "United States",
+                 "fields": {"Status": "proposed", "Capacity (MW)": "300"}, "refs": {"Status Data Source": [PR]},
+                 "verifications": [{"url": PR, "ok": False, "contains_value": False, "name_found": False, "note": "timed out"}],
+                 "tier": "medium", "researcher_notes": "A press release from May 2026 announces a third unit."}]
+    (staging / "staged_newunits.json").write_text(json.dumps(envelope("newunits", newunits)))
+    csv = tmp_path / "export.csv"
+    csv.write_text("GEM unit ID,GEM location ID,Start year,Start Year Data Source,Status,Status Data Source,Latitude,Location Data Source\n"
+                   "G1,L1,,https://old.example.com/a,operating,,38.70,\n")
+    data = review_data.build([staging], export_csv=csv)
+    pids = [p["pid"] for p in data["plants"]]
+    # plant edits first, then the additions, then the watch list; the same plant's cards stay apart
+    assert pids == ["L1", "L1#add", "new:chesapeake-repowering", "new:severn-barge-station", "L1#watch"]
+    cards = {p["pid"]: p for p in data["plants"]}
+    assert [cards[k]["card_kind"] for k in pids] == ["plant", "addition", "addition", "addition", "watch"]
+    assert all(cards[k]["plant_pid"] == "L1" for k in ("L1", "L1#add", "L1#watch"))
+    assert cards["L1"]["name"] == cards["L1#add"]["name"] == cards["L1#watch"]["name"]
+    # the plant card holds only the edits and the concern
+    assert {l["record_id"] for l in cards["L1"]["lines"]} == {"L1:G1:start-year", "L1:G1:status", "L1:G1:latitude"}
+    assert [it["record_id"] for it in cards["L1"]["items"]] == ["L1:G1:qa-unverified-value-1"]
+    # the addition card: the new unit row (sources not verified, so not ready) and the lead
+    add = cards["L1#add"]
+    assert [l["record_id"] for l in add["lines"]] == ["L1:new:unit-3"]
+    assert add["lines"][0]["kind"] == "new_row" and add["lines"][0]["ready"] is False
+    assert [it["record_id"] for it in add["items"]] == ["L1:plant:monitor-3"]
+    lead = add["items"][0]
+    assert lead["kind"] == "monitor" and lead["monitor_kind"] == "existing_plant" and lead["lead_for"] == "newunits"
+    assert lead["group"] == 8 and lead["checks"] == [51]
+    # the watch card: the battery item alone, and it is not a lead
+    watch = cards["L1#watch"]
+    assert watch["lines"] == [] and [it["record_id"] for it in watch["items"]] == ["L1:plant:monitor-2"]
+    assert watch["items"][0]["lead_for"] == "" and watch["items"][0]["group"] != 8
 
 
 def test_new_plant_line_carries_its_units(data):
@@ -162,6 +223,52 @@ def test_severity_rule():
     assert review_data.line_kind({"applies_to_all_units": True}) == "plant"
     assert review_data.line_kind({"verdict": "change"}) == "change"
     assert review_data.line_kind({}) == "fill"
+
+
+def test_severity_minor_for_status_detail_and_ref_only_edits():
+    sev = review_data.severity_of
+    assert sev("reverified", True, "Start year", {"Start year": "1996"}, {"Start year": "1996"}, ["https://a"]) == "minor"
+    # a Status Detail edit is minor whatever it says
+    assert sev("change", False, "Status Detail", {"Status Detail": "new text"}, {"Status Detail": "old"}, []) == "minor"
+    # the value stands and the cell already has a link: only a source link is added
+    assert sev("change", False, "Capacity (MW)", {"Capacity (MW)": "1,300"}, {"Capacity (MW)": "1300"}, []) == "major"
+    assert sev("change", False, "Capacity (MW)", {"Capacity (MW)": "1300"}, {"Capacity (MW)": "1300 "}, ["https://a"]) == "minor"
+    assert sev("fill", False, "Start year", {"Start year": "1996"}, {"Start year": ""}, []) == "major"
+    assert sev("delete", False, "Start year", {"Start year": ""}, {"Start year": "1996"}, ["https://a"]) == "major"
+
+
+def test_every_plant_in_scope_gets_a_card(staging, tmp_path):
+    """The export's rows for the scope's country and state all land on the page: a touched plant
+    gets every unit of its plant, and an untouched plant gets a card with one "checked" line."""
+    csv = tmp_path / "export.csv"
+    csv.write_text("GEM unit ID,GEM location ID,Plant name,Unit name,Country/Area,State/Province,Status,Capacity (MW),Start year,Start Year Data Source,"
+                   "Last Updated,Researcher,Research status,Wiki URL\n"
+                   "G1,L1,Brandywine power facility,F701,United States,Maryland,operating,400,,https://old.example.com/a,2026-09-01,BL,updated,\n"
+                   "G2,L1,Brandywine power facility,F702,United States,Maryland,retired,,,,2025-01-01,,,\n"
+                   "G3,L9,Zed peaker,1,United States,Maryland,announced,100,,,2025-03-03,DO,no changes,https://www.gem.wiki/Zed\n"
+                   "G4,L8,Old mill,1,United States,Maryland,operating,50,,,,,,\n"
+                   "G5,L7,Elsewhere,1,United States,Virginia,announced,100,,,,,,\n")
+    data = review_data.build([staging], export_csv=csv)
+    plants = {p["pid"]: p for p in data["plants"]}
+    assert set(plants) == {"L1", "L9", "L8", "new:chesapeake-repowering", "new:severn-barge-station"}   # L7 is another state
+    # the touched plant now lists every unit of its plant, with the bookkeeping columns
+    assert [u["gem_unit_id"] for u in plants["L1"]["units"]] == ["G1", "G2"]
+    assert plants["L1"]["units"][0]["last_updated"] == "2026-09-01" and plants["L1"]["units"][0]["research_status"] == "updated"
+    assert not plants["L1"].get("no_changes")
+    zed = plants["L9"]
+    assert zed["no_changes"] is True and zed["card_kind"] == "plant" and zed["name"] == "Zed peaker" and zed["state"] == "Maryland"
+    assert zed["wiki"] == "https://www.gem.wiki/Zed" and zed["dir"] == str(staging)
+    assert len(zed["lines"]) == 1 and not zed["items"]
+    l = zed["lines"][0]
+    assert l["kind"] == "checked" and l["severity"] == "check" and l["record_id"] == "checked:L9"
+    assert l["key"] == f"{staging}::checked:L9" and l["default"] == "hold" and l["column"] == ""
+    # a plant in development answers checklist row 10 and 53; a plant with no unit in development only row 53
+    assert l["group"] == 3 and l["checks"] == [10, 53]
+    old = plants["L8"]["lines"][0]
+    assert old["group"] == 9 and old["checks"] == [53]
+    # plants with proposed changes sort before the ones with none; the no-change cards keep the name order
+    order = [p["pid"] for p in data["plants"] if p["card_kind"] == "plant"]
+    assert order == ["L1", "L8", "L9"]
 
 
 # ---- store -----------------------------------------------------------------------------
@@ -211,10 +318,10 @@ def test_store_items(data, staging):
 
 
 def test_store_watch_calls(data, staging):
-    """A watch item takes the four watchlist calls, never accept/reject; removing needs a note."""
+    """A watch item takes the five watchlist calls, never accept/reject; removing needs a note."""
     key = f"{staging}::us-md:plant:monitor-1"
     dirs = store.dir_paths(data)
-    assert store.ITEM_CALLS["monitor"] == ("add_to_database", "hold", "possible_updates", "remove")
+    assert store.ITEM_CALLS["monitor"] == ("add_to_database", "hold", "possible_updates", "research_further", "remove")
     with pytest.raises(store.Invalid):
         store.record_items([{"key": key, "call": "confirmed"}], data, "BL", dirs)
     with pytest.raises(store.Invalid, match="needs a note"):
@@ -323,6 +430,7 @@ def test_build_apply_decisions(data, staging):
     assert brp.validate(lanes) == []
     decisions = brp.load_decisions(staging)
     kept, left_out, counts = brp.apply_decisions(lanes, decisions)
+    assert counts.pop("validation_fixes") == {"accept": 0, "hold": 0, "reject": 0, "suggest": 0, "undecided": 0}
     assert counts == {"accept": 2, "hold": 0, "reject": 1, "suggest": 1, "undecided": 0}
     assert [r["record_id"] for r in kept["updates"]] == ["L1:G1:start-year"]
     # one call on a new plant carries its nested unit rows into the build
@@ -415,6 +523,9 @@ def test_build_watch_calls_and_pm_questions(tmp_path):
                  "promote_to_database", "possible_updates_rows", "questions_for_pm"):
         assert want in names, want
     assert "monitor_list" not in names
+    assert "qa_review" in names
+    qhdr = [c.value for c in wb["qa_review"][1]]
+    assert qhdr[qhdr.index("question"):qhdr.index("recommendation") + 1] == ["question", "finding", "recommendation"]
 
     def col(ws, name):
         hdr = [c.value for c in ws[1]]
@@ -604,3 +715,109 @@ def test_build_all_adapter_resolves_explicit_dirs():
     import build_all
     pg = {"dirs": ["batches/germany/staging"]}
     assert build_all.adapter().resolve_dirs(pg) == [build_all.ROOT / "batches/germany/staging"]
+
+
+def test_build_all_adapter_lists_the_last_builds_pictures(tmp_path, monkeypatch):
+    """The stale check reads the picture list build_page writes; a page never built lists none; a recorded upload for the page's url changes its parts."""
+    import build_all
+    monkeypatch.setattr(build_all.paths, "work_dir", lambda: tmp_path)
+    ad = build_all.adapter()
+    assert ad.assets({"name": "x"}) == [] and ad.asset_manifest == build_all.build_static.ASSETS
+    sha = "a" * 64
+    build_all.build_static.write_pictures(build_all.pictures_file("x"), {"artifact": "u", "shown": [sha + ".jpg"], "missing": [sha + ".jpg"]})
+    assert ad.assets({"name": "x"}) == [sha + ".jpg"]
+    monkeypatch.setattr(build_all.build_static, "ASSETS", tmp_path / "assets.json")
+    assert "assets" not in ad.extra_inputs({"name": "x", "url": "u"})
+    build_all.core_assets.record(tmp_path / "assets.json", "u", {sha + ".jpg": "/_blob/1"})
+    assert "assets" in ad.extra_inputs({"name": "x", "url": "u"})
+    assert "assets" not in ad.extra_inputs({"name": "y", "url": "v"})
+
+
+# ---- validation report answers ---------------------------------------------------------
+
+def _validation_staging(staging, tmp_path, monkeypatch):
+    """Two answers to the database's validation report on the fixture plant: a milestone date
+    with a source (a fix) and an unsourced status question; plus the report file they answer."""
+    import validation_report
+    qa = json.loads((staging / "staged_qa.json").read_text())
+    qa["records"] += [
+        {"record_id": "L1:G1:qa-other-2", "gem_plant_id": "L1", "plant_name": "Brandywine power facility",
+         "gem_unit_id": "G1", "unit_name": "F701", "country": "United States", "fields": {}, "checks": [7],
+         "concern_type": "other", "proposed_value": {"Milestone: pre-construction": "2023, October"},
+         "refs": {"links": [PR]}, "tier": "high",
+         "recommendation": "Type October 2023 as the date of the pre-construction step in the status history.",
+         "researcher_notes": "The press release dates the permit filing to October 2023."},
+        {"record_id": "L1:G2:qa-validation-1", "gem_plant_id": "L1", "plant_name": "Brandywine power facility",
+         "gem_unit_id": "G2", "unit_name": "F702", "country": "United States", "fields": {}, "checks": [7],
+         "concern_type": "validation", "proposed_value": {}, "refs": {},
+         "recommendation": "Find a source for the status.", "researcher_notes": "No source names this unit's status."},
+    ]
+    (staging / "staged_qa.json").write_text(json.dumps(qa))
+    work = tmp_path / "work"
+    work.mkdir()
+    (work / "validation_us-maryland.json").write_text(json.dumps({"errors": [
+        {"kind": "fix", "plant_id": "L1", "unit_id": "G1", "plant_name": "Brandywine power facility", "unit_name": "F701",
+         "item": 'Unit "F701" - Milestone Timeline', "section": "Milestone Timeline", "message": "Please supply a date"},
+        {"kind": "person", "plant_id": "L1", "unit_id": "G2", "plant_name": "Brandywine power facility", "unit_name": "F702",
+         "item": 'Unit "F702" - Status', "section": "Data Sources", "message": "Missing data source"},
+    ]}))
+    monkeypatch.setattr(validation_report, "work_dir", lambda: work)
+    return staging
+
+
+def test_validation_fix_is_a_line_question_keeps_error(staging, tmp_path, monkeypatch):
+    _validation_staging(staging, tmp_path, monkeypatch)
+    csv = tmp_path / "export.csv"
+    csv.write_text("GEM unit ID,GEM location ID,Status\nG1,L1,operating\n")
+    data = review_data.build([staging], export_csv=csv)
+    p = next(p for p in data["plants"] if p["pid"] == "L1")
+    fix = next(l for l in p["lines"] if l["record_id"] == "L1:G1:qa-other-2")
+    assert fix["validation_fix"] is True and fix["proposed_values"] == {"Milestone: pre-construction": "2023, October"}
+    assert fix["validation_errors"] == ["A step in the status history has no date."]
+    assert fix["proposed_refs"] == [PR]
+    assert "L1:G1:qa-other-2" not in {it["record_id"] for it in p["items"]}
+    q = next(it for it in p["items"] if it["record_id"] == "L1:G2:qa-validation-1")
+    assert q["kind"] == "concern" and q["validation_errors"] == ["Status has no data source."]
+    # an ordinary concern carries no error text
+    plain = next(it for it in p["items"] if it["record_id"] == "L1:G1:qa-unverified-value-1")
+    assert plain["validation_errors"] == []
+
+
+def test_validation_fix_build_sheet(staging, tmp_path, monkeypatch):
+    import openpyxl
+    _validation_staging(staging, tmp_path, monkeypatch)
+    csv = tmp_path / "export.csv"
+    csv.write_text("GEM unit ID,GEM location ID,Status\nG1,L1,operating\n")
+    data = review_data.build([staging], export_csv=csv)
+    dirs = store.dir_paths(data)
+    store.decide([{"key": f"{staging}::L1:G1:qa-other-2", "decision": "accept"}], data, "BL", dirs)
+    lanes = brp.load_lanes(staging)
+    kept, _, counts = brp.apply_decisions(lanes, brp.load_decisions(staging))
+    assert counts["validation_fixes"]["accept"] == 1
+    fix = next(r for r in kept["qa"] if r["record_id"] == "L1:G1:qa-other-2")
+    assert fix["validation_fix_decision"] == "accept" and brp.describe_decision(fix["review_call"]).startswith("accepted by BL")
+    brp.stamp_validation_errors(kept, staging)
+    out = tmp_path / "out.xlsx"
+    brp.build_xlsx(kept, out, all_lanes=lanes)
+    ws = openpyxl.load_workbook(out)["validation_fixes"]
+    hdr = [c.value for c in ws[1]]
+    rows = list(ws.iter_rows(min_row=2, values_only=True))
+    assert len(rows) == 1
+    row = dict(zip(hdr, rows[0]))
+    assert row["proposed_value"] == "Milestone: pre-construction: 2023, October"
+    assert row["validation_error"] == "A step in the status history has no date."
+    assert row["refs"] == PR and row["reviewer_call"].startswith("accepted by BL")
+
+
+def test_validation_errors_follow_the_answer_topic():
+    import validation_report as vr
+    ccs = {"kind": "fix", "plant_id": "L9", "unit_id": "G9", "item": 'Unit "U" - CCS', "section": "Data Sources",
+           "message": "Please supply a datasource"}
+    move = {"gem_plant_id": "L9", "gem_unit_id": "G9", "checks": [7, 25], "concern_type": "Latitude",
+            "proposed_value": {"Latitude": "41.4", "Longitude": "-88.1"}, "refs": {"links": [PR]}}
+    assert vr.errors_for(move, [ccs]) == []                       # a location move never shows a carbon capture error
+    ccs_answer = {**move, "concern_type": "CCS attachment?", "proposed_value": {}}
+    assert vr.errors_for(ccs_answer, [ccs]) == ["Carbon capture (CCS) has no data source."]
+    tasks = {("L9", "G9"): ['The database\'s validation report says the unit\'s status history has a "mothballed" step with no date. Find it.']}
+    status = {**move, "concern_type": "Status", "proposed_value": {"Status": "operating"}}
+    assert vr.errors_for(status, [], tasks) == ['The unit\'s status history has a "mothballed" step with no date. (No longer on the current validation report.)']

@@ -1,0 +1,105 @@
+{
+ "meta": {
+  "plant_id": "L100000401628",
+  "plant_name": "TVA Southaven Combined Cycle power station",
+  "state": "Mississippi",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-23T12:30:00-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401862",
+   "unit_name": "SCC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 55269, generators CTG1 and STG1, as operating, with an operating year of 2003. The table shows no planned retirement. I found no retirement, mothballing or ownership change announcement for this unit."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating according to the September 2026 EIA table. Nothing else was researched, as the brief asked."
+  },
+  {
+   "gem_unit_id": "G100000401863",
+   "unit_name": "SCC2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 55269, generators CTG2 and STG2, as operating, with an operating year of 2003. The table shows no planned retirement. I found no retirement, mothballing or ownership change announcement for this unit."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating according to the September 2026 EIA table. Nothing else was researched, as the brief asked."
+  },
+  {
+   "gem_unit_id": "G100000401864",
+   "unit_name": "SCC3",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 55269, generators CTG3 and STG3, as operating, with an operating year of 2003. The table shows no planned retirement. I found no retirement, mothballing or ownership change announcement for this unit."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating according to the September 2026 EIA table. Nothing else was researched, as the brief asked."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Excel file read directly. Generators CTG1 to CTG3 and STG1 to STG3 of plant 55269 are all listed as operating. It loads in the verifier with no expected text."
+  }
+ ]
+}

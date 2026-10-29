@@ -1,0 +1,548 @@
+# Michigan air permit harvest, 2026-10-26
+
+Air sites found by the searches: 4773. Power-like: 539. Matched to GEM plants: 34. Unmatched: 505.
+
+MiEnviro air notices open now: 7. AQD notice list entries (now and archive copies): 144. Older notice folders seen by the Wayback Machine: 69. AQD active PTIs: 4877. Pending applications at the end of 2024: 72. MiEnviro service calls: 6219.
+
+## Matches per GEM plant
+
+- 48th Street power station (L100000401789): Holland BPW, 48th Street Peaking Station (N2586, checked by hand, 5 permits, 11 documents read)
+- 491 E 48th Street power station (L100000409227): HOLLAND BOARD OF PUBLIC WORKS (N6000, checked by hand as a possible site, check it is this plant, 4 permits, 6 documents read); Holland BPW, 48th Street Peaking Station (N2586, checked by hand, 5 permits, 11 documents read)
+- A.J. Mihm Generating Station (L100000409204): Upper Michigan Energy Resources -A.J. Mihm G.S. (P0796, checked by hand, 2 permits, 15 documents read)
+- Alpine power plant (L100000402385): Wolverine Power Supply Cooperative Inc. - Alpine Power Plant (P0582, checked by hand, 4 permits, 12 documents read)
+- Bay County power station (L100001083332): Consumers Energy D.E. Karn Facility (B2840, checked by hand as a possible site, check it is this plant, 15 permits, 15 documents read)
+- Belle River Power Plant (L100000103973): DTE St. Clair / Belle River Power Plant (B2796, checked by hand, 20 permits, 15 documents read)
+- Blue Water energy center (L100000402393): DTE St. Clair / Belle River Power Plant (B2796, checked by hand as a possible site, check it is this plant, 20 permits, 15 documents read); Bluewater Energy Center LLC (N6945, checked by hand as a possible site, check it is this plant, 1 permits, 1 documents read)
+- Dan E Karn power station (L100000401829): Consumers Energy D.E. Karn Facility (B2840, checked by hand, 15 permits, 15 documents read)
+- Dean power station (L100000401855): DTE St. Clair / Belle River Power Plant (B2796, checked by hand as a possible site, check it is this plant, 20 permits, 15 documents read)
+- Dearborn Industrial Generation power station (L100000402454): Dearborn Industrial Generation (N6631, checked by hand, 9 permits, 15 documents read)
+- Delray power station (L100000401856): DTE Electric Company - Delray Power Plant (B2798, checked by hand, 3 permits, 8 documents read)
+- Delta energy park (L100000402461): Lansing Board of Water & Light - Erickson Station (B4001, checked by hand, 17 permits, 9 documents read)
+- F.D. Kuester Generating Station (L100000409210): Upper Michigan Energy Resources -F.D. Kuester G.S. (P0797, checked by hand, 3 permits, 15 documents read)
+- Genesee County power station (L100001083333): Consumers Energy Thetford Combustion Turbine Plant (B2918, checked by hand as a possible site, check it is this plant, 2 permits, 8 documents read)
+- Greenwood (MI) power station (L100000401857): DTE Electric Company - Greenwood Energy Center (B6145, checked by hand, 5 permits, 15 documents read)
+- Handy Township power station (L100001082478): DTE Electric Company - Colfax Peaking Facility (B2795, checked by hand as a possible site, check it is this plant, 2 permits, 15 documents read)
+- Holland energy park (L100000401790): Holland Board of Public Works-Holland Energy Park (P0465, checked by hand, 4 permits, 15 documents read)
+- Indeck Niles energy center (L100000402411): Indeck Niles LLC (N6921, checked by hand, 5 permits, 14 documents read)
+- Jackson generating station (L100000401830): Consumers Energy Co. - Jackson Generating Station (N6626, checked by hand, 3 permits, 15 documents read)
+- Kalamazoo River generating station (L100000401824): CMS Generation Kalamazoo River Generating Station (N6731, checked by hand, 4 permits, 15 documents read)
+- Kalkaska CT 1 power station (L100000402079): Michigan Public Power Agency (N7113, checked by hand, 4 permits, 15 documents read); WOLVERINE POWER SUPPLY COOPERATIVE INC (N6522, checked by hand as a possible site, check it is this plant, 1 permits, 1 documents read)
+- Lansing Board of Water and Light (L100000103983): Lansing Board of Water and Light - REO Town Plant (B2647, checked by hand, 6 permits, 9 documents read); Lansing Board of Water & Light - Erickson Station (B4001, checked by hand as a possible site, check it is this plant, 17 permits, 9 documents read)
+- MEC North power station (L100000407415): DTE Marshall (P1499, checked by hand as a possible site, check it is this plant, 2 permits, 10 documents read); Marshall Energy Center, LLC (P0884, checked by hand, 5 permits, 10 documents read)
+- MEC South power station (L100000407414): DTE Marshall (P1499, checked by hand as a possible site, check it is this plant, 2 permits, 10 documents read); Marshall Energy Center, LLC (P0884, checked by hand, 5 permits, 10 documents read)
+- Marquette Energy Center (L100000409279): Marquette Board of Light & Power (N5887, checked by hand as a possible site, check it is this plant, 2 permits, 2 documents read); MARQUETTE BOARD OF LIGHT & POWER (B1833, checked by hand as a possible site, check it is this plant, 3 permits, 4 documents read); Marquette Board of Light and Power (P0668, checked by hand, 3 permits, 15 documents read)
+- Michigan power station (L100000401674): DTE Michigan Power, LLC (N4975, checked by hand, 3 permits, 15 documents read)
+- Midland cogeneration Venture (L100000402478): Midland Cogeneration Venture (B6527, checked by hand, 9 permits, 12 documents read)
+- Milan Township power station (L100001088928): no site matched
+- New Covert generating facility (L100000402123): Covert Generating Station (N6767, checked by hand, 6 permits, 15 documents read)
+- Renaissance power plant (L100000401858): DTE Electric Company - Renaissance Power Plant (N6873, checked by hand, 4 permits, 15 documents read)
+- Sumpter power station (L100000402386): Sumpter Generating Plant (M4854, checked by hand, 4 permits, 15 documents read); Sumpter Energy Associates (M4095, checked by hand as a possible site, check it is this plant, 1 permits, 1 documents read); Sumpter Energy Associates (N7066, checked by hand as a possible site, check it is this plant, 2 permits, 2 documents read)
+- Zeeland generating station (L100000401831): Consumers Energy Co. - Zeeland Generating Station (N6521, checked by hand, 3 permits, 10 documents read)
+
+## Unmatched power-like facilities
+
+- 123NET- Data Center 4 (P1672), Byron Center, Kent County, power or data center industry code
+- 123Net (P1634), Southfield, Oakland County, power or data center industry code
+- 123Net (P1684), Southfiled, Oakland County, power or data center industry code
+- Alliance Cloud Services, LLC (B1557), Dowagiac, Cass County, power or data center industry code
+- Alpena Power Generation, L.L.C., CALCITE (N6607), ROGERS CITY, Presque Isle County, power or data center industry code
+- Alpena Power Generation, L.L.C., DEVERE (N6766), ALPENA, Alpena County, power or data center industry code
+- Alpena Power Generation, L.L.C., LONG LAKE (N6596), ALPENA, Alpena County, power or data center industry code
+- Alpena Power Generation, L.L.C., ROCKPORT (N6597), ALPENA, Alpena County, power or data center industry code
+- American Municipal Power - Clinton Generating Station (P1432), Clinton, Lenawee County, power or data center industry code
+- American Municipal Power - Coldwater Generating Station (P1433), Coldwater, Branch County, power or data center industry code
+- American Municipal Power - Marshall Generating Station (P1461), Marshall, Calhoun County, power or data center industry code
+- Arbor Hills Energy, LLC (P1504), Northville, Washtenaw County, power or data center industry code
+- Bay City Electric Light & Power (B7529), Bay City, Bay County, power or data center industry code
+- Bay City Electric Light & Power (N3195), Bay City, Bay County, power or data center industry code
+- Blue Water Renewables (P0262), Kimball, St. Clair County, power or data center industry code
+- Bluebird Fiber Grand Rapids Data Center (P1671), Grand Rapids, Kent County, power or data center industry code
+- Bronson Battle Creek (N3655), BATTLE CREEK, Calhoun County, power or data center industry code
+- CITY OF DEARBORN DPW (K1636), DEARBORN, Wayne County, power or data center industry code
+- CLINTON VILLAGE OF (B6508), CLINTON, Lenawee County, power or data center industry code
+- CLOVERLAND ELECTRIC - MANISTIQUE DIESEL PEAKERS (N8304), MANISTIQUE, Schoolcraft County, power or data center industry code
+- CMS Generation Zilwaukee Station (N6768), Zilwaukee, Saginaw County, power or data center industry code
+- Citiy of St. Louis (N5724), Saint Louis, Gratiot County, power or data center industry code
+- City of Chelsea (N6603), Chelsea, Washtenaw County, power or data center industry code
+- City of Harbor Springs (P0179), Harbor Springs, Emmet County, power or data center industry code
+- City of Harbor Springs (P0180), Harbor Springs, Emmet County, power or data center industry code
+- City of Harbor Springs (P0181), Harbor Springs, Emmet County, power or data center industry code
+- City of Portland Light and Power (N5352), PORTLAND, Ionia County, power or data center industry code
+- Cloverland Electric Cooperative - Dafter (B6107), Dafter, Chippewa County, power or data center industry code
+- Cloverland Electric Cooperative - DeTour (B6106), DeTour, Chippewa County, power or data center industry code
+- Coldwater Peaking Plant (P0521), Coldwater, Branch County, power or data center industry code
+- Consumers Energy - Grand Rapids Service Center (P0514), Grand Rapids, Kent County, power or data center industry code
+- Consumers Energy Company (N7177), GRAND RAPIDS, Kent County, power or data center industry code
+- Consumers Energy Morrow Combustion Turbine Plant (N6252), COMSTOCK, Kalamazoo County, power or data center industry code
+- Consumers Energy Straits Combustion Turbine Plant (B2919), Mackinaw City, Emmet County, power or data center industry code
+- Consumers Energy-Ludington Pumped Storage Facility (P0068), Ludingston, Mason County, power or data center industry code
+- Consumers Power Cpmpany  - Parnall Building (B2933), Jackson, Jackson County, power or data center industry code
+- Croswell Light and Power Department (N5545), Croswell, Sanilac County, power or data center industry code
+- DETROIT EDISON (N7363), CANTON, Wayne County, power or data center industry code
+- DETROIT EDISON (N7802), GOODLAND, Lapeer County, power or data center industry code
+- DETROIT EDISON PONTIAC SERVICE CENTER (N7597), SYLVAN LAKE, Oakland County, power or data center industry code
+- DETROIT EDISON UNION LAKE SUBSTATION (N7260), WATERFORD, Oakland County, power or data center industry code
+- DETROIT THERMAL HENRY HEATING PLANT (N6358), DETROIT, Wayne County, power or data center industry code
+- DETROIT THERMAL WILLIS HEATING PLANT (B3011), DETROIT, Wayne County, power or data center industry code
+- DTE (EMERGENCY GENERATORS AT FORD R&E CENTER) (N7844), DEARBORN, Wayne County, power or data center industry code
+- DTE - Electric Company DAYTON PEAKERS (B2809), VAN BUREN TWP, Wayne County, power or data center industry code
+- DTE ENERGY COMPANY - DOWNTOWN HEADQUARTERS (P1289), DETROIT, Wayne County, power or data center industry code
+- DTE ENERGY SERV-FORD MOTOR CO WORLD HEADQUARTERS (N7723), DEARBORN, Wayne County, power or data center industry code
+- DTE Electric Company (P1457), Redford Township, Wayne County, power or data center industry code
+- DTE Electric Company - Dearborn Energy Center (P0879), Dearborn, Wayne County, power or data center industry code
+- DXC Technology Services LLC (N5490), AUBURN HILLS, Oakland County, power or data center industry code
+- Detroit Edison (N7588), Wisner, Tuscola County, power or data center industry code
+- Detroit Edison (N7589), Reese, Tuscola County, power or data center industry code
+- Detroit Edison Fairgrove Substation (N7769), Fairgrove, Tuscola County, power or data center industry code
+- Detroit Thermal Boulevard -Heating Plant (B3012), Detroit, Wayne County, power or data center industry code
+- Diesel Plant (N6524), GRAND HAVEN, Ottawa County, power or data center industry code
+- Distributed Power Systems LLC (N6972), ALMA, Gratiot County, power or data center industry code
+- EDISON SAULT ELECTRIC CO (N6847), MACKINAC IS, Mackinac County, power or data center industry code
+- ESCANABA POWER PLANT (B1573), ESCANABA, Delta County, power or data center industry code
+- EXIGENT ENERGY PARTNERS LLC (P1274), KALKASKA, Kalkaska County, power or data center industry code
+- Eaton Rapids Electric Department (P0725), Eaton Rapids, Eaton County, power or data center industry code
+- Energy Developments Coopersville (N5890), Coopersville, Ottawa County, power or data center industry code
+- Energy Developments Pinconning, LLC (P0437), Pinconning, Bay County, power or data center industry code
+- Energy Developments Watervliet, LLC (P1470), Watervliet, Berrien County, power or data center industry code
+- FCA US LLC (N5505), AUBURN HILLS, Oakland County, power or data center industry code
+- Fawn River Generating Station (P1633), Sturgis, St. Joseph County, power or data center industry code
+- Ford Motor Company - Elm Street Boilerhouse (M4764), Dearborn, Wayne County, power or data center industry code
+- Generate Fremont Digester, LLC (N8210), FREMONT, Newaygo County, power or data center industry code
+- Gernaat Dairies Digester Plant (P1427), Falmouth, Missaukee County, power or data center industry code
+- Great Lakes Energy (N6708), Beaver Island, Charlevoix County, power or data center industry code
+- ITC HOLDINGS CORPORATION (N8312), NOVI, Oakland County, power or data center industry code
+- J.B. Sims Generating Station (B1976), Grand Haven, Ottawa County, power or data center industry code
+- Kinder Morgan (P1469), Buchanan, Berrien County, power or data center industry code
+- Lowell Light & Power (P0375), Lowell, Kent County, power or data center industry code
+- MANCELONA RENEWABLE RESOURCES LLC (N8220), MANCELONA TWP, Antrim County, power or data center industry code
+- MI GRR, LLC (P0709), GRAND RAPIDS, Kent County, power or data center industry code
+- MID-MICHIGAN ENERGY LLC (N7863), MIDLAND, Midland County, power or data center industry code
+- Marquette Green Energy, LLC (P0004), GWINN, Marquette County, power or data center industry code
+- Marshall City, Electric Power Plant (C6230), Marshall, Calhoun County, power or data center industry code
+- Michigan Department of Technology, Management and Budget (P0152), Dimondale, Eaton County, power or data center industry code
+- Modular Power Systems LLC (N6751), ALMA, Gratiot County, power or data center industry code
+- Modular Power Systems LLC (N6797), ITHACA, Gratiot County, power or data center industry code
+- NEXTGEN ENERGY LLC (N7767), MCBAIN, Missaukee County, power or data center industry code
+- Newberry Water & Light Board (P0008), NEWBERRY, Luce County, power or data center industry code
+- Palisades SMR LLC (P1677), Covert, Van Buren County, power or data center industry code
+- Panattoni Development Company (P1643), Van Buren Charter Township, Wayne County, power or data center industry code
+- Peoples LFG, LLC (P0415), Birch Run, Saginaw County, power or data center industry code
+- Project Mitten (P1598), Saline, Washtenaw County, power or data center industry code, watch list: Project Mitten data center, Saline Township
+- RW Popp Excavating Inc. (N6712), TRAVERSE CITY, Leelanau County, power or data center industry code
+- Riverfront Holdings, Inc. (M4168), Detroit, Wayne County, power or data center industry code
+- Riverview Energy Systems, LLC (P1477), Riverview, Wayne County, power or data center industry code
+- Sanhua International, Inc. (P0243), Troy, Oakland County, power or data center industry code
+- Scottville Power Plant (N6017), SCOTTVILLE, Mason County, power or data center industry code
+- Sebewaing Light and Water Department (N2726), Sebewaing, Huron County, power or data center industry code
+- Sebewaing Light and Water Department - Bulb Crusher (P0500), Sebewaing, Huron County, power or data center industry code
+- Sebewaing Light and Water Dept. (P0829), Sebewaing, Huron County, power or data center industry code
+- Sumpter Energy Associates, LLC (N8004), Lenox Township, Macomb County, power or data center industry code
+- THE CITY OF DOWAGIAC PUBLIC WORKS (N5953), DOWAGIAC, Cass County, power or data center industry code
+- Thomas Township Energy, LLC (P0995), HEMLOCK, Saginaw County, power or data center industry code
+- Thumb Electric Cooperative (N3517), Ubly, Huron County, power or data center industry code
+- Thumb Electric Cooperative (N5732), Caro, Tuscola County, power or data center industry code
+- Traverse City Light and Power Bayside Power Plant (B4257), TRAVERSE CITY, Grand Traverse County, power or data center industry code
+- US Signal (P1669), Kentwood, Kent County, power or data center industry code
+- US Signal (P1681), Byron Center, Kent County, power or data center industry code
+- United Shore Financial Services (P0923), PONTIAC, Oakland County, power or data center industry code
+- University of Michigan (P0821), Brighton, Livingston County, power or data center industry code
+- Upper Peninsula Power Company - Gladstone (N1430), GLADSTONE, Delta County, power or data center industry code
+- VILLAGE OF UNION CITY (N5956), UNION CITY, Branch County, power or data center industry code
+- Vicinity Energy Grand Rapids, LLC (B2838), Grand Rapids, Kent County, power or data center industry code
+- WOLVERINE POWER SUPPLY COOP (N7867), ROGERS CITY, Presque Isle County, power or data center industry code
+- White Pine Electric Power, LLC (B1966), White PIne, Ontonagon County, power or data center industry code
+- Wolverine Power Supply - Hersey (N5760), HERSEY, Osceola County, power or data center industry code
+- Wolverine Power Supply Cooperative (B5421), Dorr, Allegan County, power or data center industry code
+- Wolverine Power, Tower Power Plant (N6171), TOWER, Cheboygan County, power or data center industry code
+- Wolverine Power, Vestaburg Power Plant (N6249), VESTABURG, Montcalm County, power or data center industry code
+- ZEELAND BOARD OF PUBLIC WORKS (N7506), ZEELAND, Ottawa County, power or data center industry code
+- ZEELAND BPW (P1183), ZEELAND, Ottawa County, power or data center industry code
+- A & C Electric (N6908), HARRISON TOWNSHIP, Macomb County
+- AVL POWERTRAIN ENGINEERING INC (N7146), PLYMOUTH, Wayne County
+- AVL Powertrain Engineering (N6989), Ann Arbor, Washtenaw County
+- AWESOME POWER BOAT INC (N5751), COTTRELLVILLE, St. Clair County
+- Ada Cogeneration LLC (N1784), Ada, Kent County
+- Adema Generating Service (N0952), Coopersville, Ottawa County
+- Adrian Energy Associates (P0426), Orefield, Lenawee County
+- Adrian Energy Associates (N5752), ADRIAN, Lenawee County
+- Alpena Power Generation LLC (N6876), MCBRIDE, Montcalm County
+- Alpena Power Generation LLC (N6920), NEWAYGO, Newaygo County
+- Alpena Power Generation LLC (N6919), HERRON, Alpena County
+- Alpha Electric, Inc. (N6714), WARREN, Macomb County
+- American Electric Power (AEP) (B5855), BRIDGMAN, Berrien County
+- Arbor Hills Energy, LLC (N1504), Northville, Washtenaw County
+- Austin Energy LLC (P0933), PITTSFORD, Hillsdale County
+- Austin Energy LLC (P0943), PITTSFORD, Hillsdale County
+- Austin Energy LLC (P0937), HILLSDALE, Hillsdale County
+- Austin Energy LLC (P0942), NORTH ADAMS, Hillsdale County
+- Austin Energy LLC (P0939), OSSEO, Hillsdale County
+- Austin Energy LLC (P0938), HILLSDALE, Hillsdale County
+- Austin Energy LLC (P0940), OSSEO, Hillsdale County
+- Austin Energy LLC (P0934), OSSEO, Hillsdale County
+- Austin Energy LLC (P0941), HILLSDALE, Hillsdale County
+- Austin Energy LLC (P0935), OSSEO, Hillsdale County
+- Austin Energy LLC (P0944), PITTSFORD, Hillsdale County
+- BIOGAS ENERGY L P (N6511), CANTON TWP, Wayne County
+- BROOKS UTILITY PRODUCTS (N1902), FARMINGTN HLS, Oakland County
+- Barry Electric-Rovill Co (N1234), PORT HURON, St. Clair County
+- Beaudoin Electrical Construction (P1082), SAINT JOSEPH, Berrien County
+- Beaudoin Electrical Construction (P1072), Sodus, Berrien County
+- Beaver Island Generating Facility (N6172), SAINT JAMES, Charlevoix County
+- Belt Power, LLC (P1156), Grand Rapids, Kent County
+- Blue Skies Energy (P1510), Davison, Genesee County
+- Breitburn Energy Company, LP (N6110), CHARLTON TWP, Otsego County
+- C&C Energy LLC (P0222), Marshall, Calhoun County
+- CENTRAL WAYNE ENERGY RECOVERY (B4281), DEARBORN HEIGHTS, Wayne County
+- CIMAREX ENERGY (Oehrli 1-30) (P0735), HERSEY, Osceola County
+- CITIZENS GAS AND COKE UTILITY (N6528), LUDINGTON, Mason County
+- CITIZENS GAS AND COKE UTILITY (N6529), BALDWIN, Lake County
+- CMS Energy (B5224), LEONARD, Oakland County
+- CMS Generation Michigan Power LLD - Livingston Generating Station (N6526), Gaylord, Otsego County, watch list: Livingston Generating Station, EIA plant 55102 that GEM lacks
+- CMS Mini Mart (N3433), FLINT, Genesee County
+- CODE ELECTRICAL, INC. (P0692), MARQUETTE, Marquette County
+- COMMERICAL POWER BRAKE SVE (B4591), MELVINDALE, Wayne County
+- CONSUMERS ENERGY CO (N2945), ALMA, Gratiot County
+- COOPERATIVE ELEVATOR CO - BAD AXE (M3807), BAD AXE, Huron County
+- CSH Electric Motor Supply Inc (N7887), OWOSSO, Shiawassee County
+- Cadillac Renewable Energy Facility (N1395), Cadillac, Wexford County
+- City of Midland Utilities Division (N6004), Midland, Midland County
+- Coldwater Board of Public Utilities (B1525), Coldwater, Branch County
+- Consumers Energy Company   Beals Rd Substation (B2947), GRAND RAPIDS, Kent County
+- Consumers Energy Gaylord Combustion Turbine Plant (B2942), Gaylord, Otsego County, watch list: Consumers Gaylord combustion turbines
+- Consumers Energy Odorizing Station/Macomb Valve Si (B6638), MACOMB, Macomb County
+- Controlled Power Co (N1927), TROY, Oakland County
+- Cooperative Elevator - Akron (M1884), Akron, Tuscola County
+- Cooperative Elevator Co (M1921), Elkton, Huron County
+- Cooperative Elevator Co. (B1635), Pigeon, Huron County
+- Cooperative Elevator Co. (M3953), Fairgrove, Tuscola County
+- Cooperative Elevator Company (D7844), Ruth, Huron County
+- Cooperative Elevator Company (M3911), Pigeon, Huron County
+- Core Energy LLC - Bagley 11 (N6119), BAGLEY TWP, Otsego County
+- Core Energy LLC - Charlton 28 (N6086), Johannesburg, Otsego County
+- Core Energy LLC - Charlton 7 (N6089), Johannesburg, Otsego County
+- Core Energy LLC - Wesanen 2-19 (P1240), Johannesburg, Otsego County
+- Core Energy, Inc. - Chester 16 (P1100), Johannesburg, Otsego County
+- Corewell Health Bradford Data Center (P0402), Grand Rapids, Kent County
+- Cotter Electric Company (B7267), HOWELL, Livingston County
+- DELPHI ENERGY AND ENGINE MGMT SYSTEMS (N6505), WYOMING, Kent County
+- DETROIT EDISON (AT FIRE STATION) (N7600), MACOMB, Macomb County
+- DETROIT EDISON - REMEDIATION SITE AT NEW HUDSON (N7377), NEW HUDSON, Oakland County
+- DETROIT RENEWABLE POWER, LLC (M4148), DETROIT, Wayne County
+- DTE - Electric Company CONNERS CREEK (B2812), DETROIT, Wayne County
+- DTE - Electric Company Harbor Beach Power Plant (B2815), Harbor Beach, Huron County
+- DTE ENERGY LOCATED AT GENERAL DYNAMICS STERLING (N7770), STERLING HEIGHTS, Macomb County
+- DTE Electric Company - Fermi Energy Center (B4321), Newport, Monroe County, watch list: Fermi, EIA plant 1729 that GEM lacks (combustion turbines)
+- DTE Electric Company - Hancock Peaking Facility (B2805), Commerce Township, Oakland County, watch list: Hancock peakers, EIA plant 1730 that GEM lacks
+- DTE Electric Company - Monroe Power Plant (B2816), Monroe, Monroe County, watch list: Monroe coal plant, watch for gas replacement
+- DTE Electric Company - Northeast Peaking Facility (B2808), Warren, Macomb County, watch list: Northeast peakers, EIA plant 1734 that GEM lacks
+- DTE Electric Company - Oliver Peaking Facility (B2802), Pigeon, Huron County
+- DTE Electric Company - Placid Peaking Facility (B2803), Clarkston, Oakland County
+- DTE Electric Company - Putnam Peaking Facility (B2807), Mayville, Tuscola County
+- DTE Electric Company - River Rouge Power Plant (B2810), River Rouge, Wayne County
+- DTE Electric Company - Superior Peaking Facility (B2806), Ypsilanti, Washtenaw County, watch list: Superior peakers, EIA plant 1744 that GEM lacks
+- DTE Electric Company - Trenton Channel Power Plant (B2811), TRENTON, Wayne County
+- DTE Electric Company - Wilmot Peaking Facility (B2804), Kingston, Tuscola County
+- DTE Energy (N6663), DEARBORN, Wayne County
+- DTE Energy Services (N6890), STERLING HTS, Macomb County
+- DTE GAS AND OIL COMPANY - BOYNE VALLEY 31 (N6303), EAST JORDAN, Charlevoix County
+- DTE North Hamilton Gate Station (N5579), Harrison, Clare County
+- DTE PONTIAC NORTH, LLC (N7786), PONTIAC, Oakland County
+- DVM Utilities Inc. - Glendale Yard (P1551), Detroit, Wayne County
+- DVM Utilities, Inc. (P1540), Inkster, Wayne County
+- DYNA POWER (A9190), FARMINGTON HILLS, Oakland County
+- Danfoss Power Solutions II (A1908), Jackson, Jackson County
+- De Saegher Energy LLC (P1256), Middleton, Gratiot County
+- ECORSE ELECTRIC (B5048), ROMULUS, Wayne County
+- EDISON INSTITUTE (L0425), DEARBORN, Wayne County
+- ENERGY POWER SYSTEMS, LLC (P0593), TROY, Oakland County
+- East Jordan Cooperative (B7871), EAST JORDAN, Charlevoix County
+- El Paso Merchant Energy Company (N6990), ANN ARBOR, Washtenaw County
+- Electric Motor & Contracting (M1135), Detroit, Wayne County
+- Enbridge Energy (P0896), MARYSVILLE, St. Clair County
+- Enbridge Energy, LP (P1015), CRYSTAL FALLS, Iron County
+- Enbridge Energy, Limited Partnership (N3266), MARSHALL, Calhoun County
+- Enbridge Energy, Limited Partnership (N2207), Bay City, Bay County
+- Energy Developments - Grand River Generating Station (P1485), Grand Ledge, Clinton County
+- Energy Developments Byron Center, LLC (P1484), Byron Center, Kent County
+- Energy Developments Grand Blanc, LLC (P1475), Grand Blanc, Genesee County
+- Energy Developments Lansing, LLC (P1486), Lansing, Clinton County
+- Energy Developments Michigan, LLC (P1474), Montrose, Genesee County
+- Engine Power Components (N8231), GRAND HAVEN, Ottawa County
+- FEDERAL MOGUL POWERTRAIN INC (N6266), ANN ARBOR, Washtenaw County
+- FORCE ENERGY INC (N6462), ELMER TWP, Oscoda County
+- FORTU POWERCELL (P0285), MUSKEGON, Muskegon County
+- FREEHOLD ENERGY RNG LLC (P1264), BAILEY, Muskegon County
+- Federal-Mogul Powertrain Systems (B1709), SPARTA, Kent County
+- Federal-Mogul Powertrain, LLC (N6327), Plymouth, Wayne County
+- FortyFive Energy - Beaver Creek C3-11 (P0435), Grayling, Crawford County
+- FortyFive Energy - State Excelsior B1-24 (P0278), Kalkaska, Kalkaska County
+- GENERAL ELECTRIC CO., CARBOLOY SYSTEMS DEPT (N1317), KALAMAZOO, Kalamazoo County
+- GENERAL ELECTRIC ENERGY RENTALS (M4835), RIVERVIEW, Wayne County
+- GRANGER SEYMOUR ROAD GENERATING STATION (N5888), MONTROSE, Genesee County
+- Genesee Power Station Limited Partnership (N3570), FLINT, Genesee County
+- Grand Rapids Electric Motor Service, LLC (A2582), Grand Rapids, Kent County
+- Grayling Generating Station Ltd Partner (N2388), Grayling, Crawford County
+- HOOSIER ENERGY REC INC (N8229), VAN BUREN TWP, Wayne County
+- HOWARD ELECTRIC COMPANY (B3466), DETROIT, Wayne County
+- Hamilton Electric (B7160), Saginaw, Saginaw County
+- Hillman Power Company (N1266), Hillman, Montmorency County
+- Hillsdale  Board of  Public Utilities (B7536), Hillsdale, Hillsdale County
+- J. H. Campbell Plant (B2835), WEST OLIVE, Ottawa County, watch list: J.H. Campbell coal plant, watch for gas replacement
+- JACKSON CNTY BOARD OF PUBLIC WORKS (N6031), JACKSON, Jackson County
+- Jones Electric Company (F7434), Muskegon, Muskegon County
+- KITTY HAWK TURBINES (N5882), YPSILANTI, Washtenaw County
+- KOONTZ WAGNER ELECTRIC CO INC (N5662), MONROE, Monroe County
+- Kalkaska Generating LLC (N7143), RAPID RIV TWP, Kalkaska County
+- Kent County Waste to Energy Facility (N1604), Grand Rapids, Kent County
+- Keweenaw Power & Lite LLC (P1651), Hancock, Houghton County
+- Keystone Cooperative, Inc. (B7882), HAMILTON, Allegan County
+- L & S Electric Inc (N5215), Iron Mountain, Dickinson County
+- L'Anse Warden Electric Company, LLC (B4260), L'Anse, Baraga County
+- LG Energy Solution Michigan, Inc. (P0087), Holland, Allegan County
+- LUBE POWER INC. (N7439), SHELBY TOWNSHIP, Macomb County
+- Lambda Energy Gathering LLC - Junction Station (B6035), Johannesburg, Otsego County
+- Lambda Energy Gathering LLC - Lewiston Station (B6034), Lewiston, Crawford County
+- Lambda Energy Resources  LLC - Union 3-18 (N8017), MAYFIELD, Grand Traverse County
+- Lambda Energy Resources LLC - Bear Lake 13 (B9135), Bear Lake, Manistee County
+- Lambda Energy Resources LLC - Bear Lake 22 (B9136), Bear Lake, Manistee County
+- Lambda Energy Resources LLC - Bear Lake 32 (B9137), Bear Lake, Manistee County
+- Lambda Energy Resources LLC - Blair 36 (B9139), Kingsley, Grand Traverse County
+- Lambda Energy Resources LLC - Blue Lake 17 (N6005), Kalkaska, Kalkaska County
+- Lambda Energy Resources LLC - Blue Lake 27 (B5584), Kalkaska, Kalkaska County
+- Lambda Energy Resources LLC - Brown 7 (B5589), Manistee, Manistee County
+- Lambda Energy Resources LLC - CLEON 11 (B5552), Copemish, Manistee County
+- Lambda Energy Resources LLC - Charlton C (N6230), GAYLORD, Otsego County
+- Lambda Energy Resources LLC - Chester 10 South (N6090), JOHANNESBURG, Otsego County
+- Lambda Energy Resources LLC - Chester 34 (N6231), Gaylord, Otsego County
+- Lambda Energy Resources LLC - Coldsprings 29 (N7014), KALKASKA, Kalkaska County
+- Lambda Energy Resources LLC - Double Alex-Barney (P0183), Rust Township, Montmorency County
+- Lambda Energy Resources LLC - Edwards 1-22A HD-1 (N6490), PARADISE TWP, Grand Traverse County
+- Lambda Energy Resources LLC - Fawcett 24 (N7139), KALKASKA, Kalkaska County
+- Lambda Energy Resources LLC - Forest 24 (N5937), CHEBOYGAN, Cheboygan County
+- Lambda Energy Resources LLC - Foster 12 (N6232), MAYFIELD, Grand Traverse County
+- Lambda Energy Resources LLC - Frederic 2 (B9149), Gaylord, Crawford County
+- Lambda Energy Resources LLC - Frederic 20 (B5668), Frederic, Crawford County
+- Lambda Energy Resources LLC - Goose Creek (B7561), Kalkaska, Kalkaska County
+- Lambda Energy Resources LLC - Grant 1-16 (N7037), GRANT TWP, Grand Traverse County
+- Lambda Energy Resources LLC - Grant 29 (B9151), Traverse City, Grand Traverse County
+- Lambda Energy Resources LLC - HODGE RD (N7869), FIFE LAKE, Grand Traverse County
+- Lambda Energy Resources LLC - Hayes 22 (B9152), Gaylord, Otsego County
+- Lambda Energy Resources LLC - Kalkaska 11 (N6084), Kalkaska, Kalkaska County
+- Lambda Energy Resources LLC - Kalkaska 26 (N7141), KALKASKA TWP, Kalkaska County
+- Lambda Energy Resources LLC - Kalkaska 5 (N7104), KALKASKA, Kalkaska County
+- Lambda Energy Resources LLC - Kalkaska F 24 (N6233), Kalkaska, Kalkaska County
+- Lambda Energy Resources LLC - Komerska 14 (N6020), KARLIN, Grand Traverse County
+- Lambda Energy Resources LLC - Loud 29 (N5936), Loud Township, Montmorency County
+- Lambda Energy Resources LLC - Mancelona B (N6234), Mancelona, Antrim County
+- Lambda Energy Resources LLC - Manistee Sulfur Plan (B6013), Manistee, Manistee County
+- Lambda Energy Resources LLC - Maple Grove 16 (B9160), Kaleva, Manistee County
+- Lambda Energy Resources LLC - Maple Grove 6 (N6085), Manistee, Manistee County
+- Lambda Energy Resources LLC - Mayfield 16 (B9161), Mayfield, Grand Traverse County
+- Lambda Energy Resources LLC - Mayfield 19 (B9162), Traverse City, Grand Traverse County
+- Lambda Energy Resources LLC - Mayfield 23 (B5587), Kingsley, Grand Traverse County
+- Lambda Energy Resources LLC - Mayfield 28 (N6999), MAYFIELD, Grand Traverse County
+- Lambda Energy Resources LLC - Otsego 10 (N6096), Gaylord, Otsego County
+- Lambda Energy Resources LLC - Otsego 6 (B5667), Gaylord, Otsego County
+- Lambda Energy Resources LLC - Paradise 19 (B9164), Kingsley, Grand Traverse County
+- Lambda Energy Resources LLC - Rapid River 24 (B9165), Kalkaska, Kalkaska County
+- Lambda Energy Resources LLC - Ricci 19 (Blue Lk) (N6279), Kalkaska, Kalkaska County
+- Lambda Energy Resources LLC - Springdale 25 (N0199), Copemish, Manistee County
+- Lambda Energy Resources LLC - Springdale 28 (N6078), Bear Lake, Manistee County
+- Lambda Energy Resources LLC - St Otsego Lake 1-24 (N6952), OTSEGO LAKE, Otsego County
+- Lambda Energy Resources LLC - Whitewater 32 (B9169), Traverse City, Grand Traverse County
+- Lambda Energy Resources LLC - Whitewater E 22 (N6237), WILLIAMSBURG, Grand Traverse County
+- Lambda Energy Resources, LLC - 35-12 Unit (N8075), Lachine, Alpena County
+- Lambda Energy Resources, LLC - Albert 16 (N6609), Lewiston, Montmorency County
+- Lambda Energy Resources, LLC - Albert 25 (N6473), LOUD TWP, Montmorency County
+- Lambda Energy Resources, LLC - Bagley A 25 (N6229), Gaylord, Otsego County
+- Lambda Energy Resources, LLC - Blue Spruce (N8074), CALEDONIA TWP, Alcona County
+- Lambda Energy Resources, LLC - CASE 33 (N6088), Millersburg, Presque Isle County
+- Lambda Energy Resources, LLC - Caledonia 10 & 11 (N7470), Caledonia Township, Alcona County
+- Lambda Energy Resources, LLC - Charlton 12 (B9142), Johannesburg, Otsego County
+- Lambda Energy Resources, LLC - Charlton 4 (B9144), Johannesburg, Otsego County
+- Lambda Energy Resources, LLC - Chester 18 (N6091), Gaylord, Otsego County
+- Lambda Energy Resources, LLC - Enterprise TB (P0953), Merritt, Missaukee County
+- Lambda Energy Resources, LLC - FREDRIC 10 (N7775), FREDERIC, Crawford County
+- Lambda Energy Resources, LLC - Harju B2-16 (N6839), KALEVA, Manistee County
+- Lambda Energy Resources, LLC - Kruegerand (P0185), Ossineke, Alpena County
+- Lambda Energy Resources, LLC - Manistee 15 (B5551), MANISTEE TWP, Manistee County
+- Lambda Energy Resources, LLC - Otsego Lake 26 (N5960), WATERS, Otsego County
+- Lambda Energy Resources, LLC - Wise 1-16 (P0719), Kingsley, Grand Traverse County
+- Linn Energy - Mackinaw #2 Booster (N7579), HERRON, Alpena County
+- MAHLE POWERTRAIN LLC (N7539), NOVI, Oakland County
+- MERIT Energy L P (N6954), TOWER, Cheboygan County
+- MERIT Energy L P Cuningham 1-20B (N6955), PARADISE TWP, Grand Traverse County
+- MERIT Energy LP  Cleon 19 unit (N7038), CLEON TWP, Manistee County
+- MJ Electric formerly American Graphics (N0946), IRON MOUNTAIN, Dickinson County
+- MONARCH ELECTRIC APPARATUS (N7641), MELVINDALE, Wayne County
+- MONARCH ELECTRIC APPARATUS SERVICES, LLC (N6450), ROSEVILLE, Macomb County
+- MONARCH ELECTRIC APPARATUS SERVICES, LLC (N7023), MADISON HEIGHTS, Oakland County
+- MONROE ELECTRIC MOTOR CO (N8209), MONROE, Monroe County
+- MOONLIGHT INDUSTRIES INC (N5239), COMSTOCK PARK, Kent County
+- Magna Electric Vehicle Structures- Michigan (P1199), Saint Clair, St. Clair County
+- Makeen Energy (N7107), READING, Hillsdale County
+- Malton Electric Company (P1110), ISHPEMING, Marquette County
+- Marelco Power Systems (P0125), HOWELL, Livingston County
+- Marelco Power Systems(old address) (N3509), HOWELL, Livingston County
+- McPhee Electric & Telecommunications Inc (P0063), POTTERVILLE, Eaton County
+- Menominee Biomass Energy LLC (P0106), MENOMINEE, Menominee County
+- Merit Energy Company - Charlton 31 (N6087), Johannesburg, Otsego County
+- Metaldyne Powertrain Components, Inc. (A1403), Litchfield, Hillsdale County
+- Michigan State University (K3249), East Lansing, Ingham County, watch list: Michigan State University, T B Simon plant, EIA plant 10328 that GEM lacks
+- Miller Energy - Richmond CTB (M4163), Reed City, Osceola County
+- Miller Energy Company II, LLC (N0827), Essexville, Bay County
+- Miller Energy Company II, LLC: Nolet Road Facility (B8884), Essexville, Bay County
+- Modular Power Systems LLC (N6935), EDMORE, Montcalm County
+- Modular Power Systems LLC (N6602), CHELSEA, Washtenaw County
+- Modular Power Systems LLC (N6928), MANISTEE, Manistee County
+- Modular Power Systems, L.L.C. (N6604), COLDWATER, Branch County
+- NESTGEN ENERGY, LLC / NESTGEN WATERVLIET LLC (N7665), WATERVLIET, Berrien County
+- NEW GENERATION FINISHING INC (N7159), DETROIT, Wayne County
+- NORTH GRATIOT AUTO ELECTRIC (N5389), MOUNT CLEMENS, Macomb County
+- NORTHERN AMPOWER CORP (N3798), NOVI, Oakland County
+- NORTHERN LIGHT REFINISHING INC (N7533), CEDAR SPRINGS, Kent County
+- National Energy of Lincoln LLC (N0890), Lincoln, Alcona County
+- National Energy of McBain LLC (N1160), McBain, Missaukee County
+- Natron Energy Inc. (P1361), Holland, Allegan County
+- North American -- Central, LLC - Central Generating Station (P1468), Pierson, Montcalm County
+- North American Natural Resources -Venice Park 9526 Generating Station (P1471), Lennon, Shiawassee County
+- NorthStar Energy LLC - Hudson 34 (N7330), BOYNE FALLS, Charlevoix County
+- O.I.L. ENERGY CORP. -  Bagley 17 Facility (N6051), GAYLORD, Otsego County
+- OIL ENERGY CORP (N7586), CUSTER TWP, Antrim County
+- OIL Energy Corp - Kearney 29 (N7972), Bellaire, Antrim County
+- OIL Energy Corporation - Kearney South (N7971), Bellaire, Antrim County
+- Ocean Express Powerboats, Inc. (N0719), ALGONAC, St. Clair County
+- Omimex Energy (N1246), FILER TWP, Manistee County
+- Omimex Energy, Inc. - Walker PCA (B7067), Copemish, Manistee County
+- PARK ELECTRIC (N5405), ARMADA, Macomb County
+- Palisades Energy, LLC (B2934), Covert, Van Buren County
+- Panda Tallmadge Power LP (N7076), MARNE, Ottawa County
+- Platinum Power LLC (N6757), YPSILANTI, Washtenaw County
+- Power Solutions International (P0412), MADISON HEIGHTS, Oakland County
+- Power Storage Solutions (P1043), LIVONIA, Wayne County
+- Powerscreen Crushing and Screening (P1561), INDIANAPOLIS, Kent County
+- Pride Energy Company      (WADI PETROLEUM INC ) (B7174), MESICK, Wexford County
+- RENEWABLE ENERGY TECHNOLOGIES LLC (N1924), HOLLAND, Ottawa County
+- RIVERSIDE ENERGY - Chestonia 17 (N5694), CHESTONIA TWP, Antrim County
+- RIVERSIDE ENERGY MICHIGAN, LLC - BRUSH LIMBAUGH (N8255), HILLMAN, Montmorency County
+- RIVERSIDE ENERGY MICHIGAN, LLC - Charlton 27 (N6147), CHARLTON TWP, Otsego County
+- RIVERSIDE ENERGY MICHIGAN, LLC - Chester 16 (N6793), GAYLORD, Otsego County
+- ROGERS ELECTRIC CO (B7350), MADISON HEIGHTS, Oakland County
+- Rapa Electric (B6256), Allegan, Allegan County
+- Republic Industrial and Energy Solutions, LLC (M4796), Romulus, Wayne County
+- Reuland Electric Company (B2685), Howell, Livingston County
+- Richland Renewable Energy LLC (P1557), McBain, Missaukee County
+- Riverside Energy Michigan - N. Rust Never Sleeps (N6117), RUST TWP, Montmorency County
+- Riverside Energy Michigan LLC - Avery 16 Booster (N7819), AVERY TWP, Montmorency County
+- Riverside Energy Michigan LLC - Vienna 2 (N6077), Vienna Township, Montmorency County
+- Riverside Energy Michigan, LLC  Chester 10 CO2 Recovery (N5798), CHESTER TWP, Otsego County
+- Riverside Energy Michigan, LLC - BAGLEY 700 (N6105), BAGLEY TWP, Otsego County
+- Riverside Energy Michigan, LLC - Bagley 16 (N7084), Bagley Township, Otsego County
+- Riverside Energy Michigan, LLC - Bagley East (N6063), Bagley Township, Otsego County
+- Riverside Energy Michigan, LLC - CHARLTON 8 (N6122), Charlton Twp, Otsego County
+- Riverside Energy Michigan, LLC - Chester East (N6062), Chester Township, Otsego County
+- Riverside Energy Michigan, LLC - Custer 15/20 (N7088), Custer Township, Antrim County
+- Riverside Energy Michigan, LLC - Echo 26 (N7091), Central Lake, Antrim County
+- Riverside Energy Michigan, LLC - Fletch (N7464), Lewiston, Montmorency County
+- Riverside Energy Michigan, LLC - Hayes 10 (N6061), Hayes Township, Otsego County
+- Riverside Energy Michigan, LLC - Jordan 12 (N7089), East Jordan, Antrim County
+- Riverside Energy Michigan, LLC - Jordan 35 (N6055), EAST JORDAN, Antrim County
+- Riverside Energy Michigan, LLC - Kearney 2 (P1076), BELLAIRE, Antrim County
+- Riverside Energy Michigan, LLC - Loud 13 Unit 172 (N8213), RUST TWP, Montmorency County
+- Riverside Energy Michigan, LLC - Loud 15 - Unit 154 Booster (N8216), LOUD TWP, Montmorency County
+- Riverside Energy Michigan, LLC - Loudbert (N6106), LOUD TWP, Montmorency County
+- Riverside Energy Michigan, LLC - SKEBA CAPLE (N6111), HAYES TWP, Otsego County
+- Riverside Energy Michigan, LLC - South Briley 34 Unit 179 Booster (N8217), BRILEY TWP, Montmorency County
+- Riverside Energy Michigan, LLC - South Caple (N6112), HAYES TWP, Otsego County
+- Riverside Energy Michigan, LLC - Warner 27 (N7087), Warner Township, Antrim County
+- Riverside Energy Michigan, LLC - Warner 8 (N7086), Warner Township, Antrim County
+- Riverside Energy Michigan, LLC -- Central Lake 13 (N7811), CENTRAL LAKE, Antrim County
+- Riverside Energy Michigan, LLC Dover Ridge Booster (N7852), VANDERBILT, Otsego County
+- Riverside Energy Michigan, LLC – Echo 33 (P0888), Central Lake, Antrim County
+- Riverside Energy Michigan- Otsego Lake 34 (N0200), Waters, Otsego County
+- Riverside Energy of Michigan LLC - WESTERMAN (P0442), RAPID CITY, Kalkaska County
+- Rouge Power & Utility Operations (B3683), DEARBORN, Wayne County
+- SAVOY ENERGY LP (N7268), RUST TWP, Montmorency County
+- SAVOY ENERGY LP (N7310), WOODVILLE, Newaygo County
+- SAVOY ENERGY LP (N7487), BIG RAPIDS, Mecosta County
+- SAVOY ENERGY LP - RENSHAW 1-24A (P1182), ATHENS, Calhoun County
+- SAVOY ENERGY LP DOVER 12 (N7831), DOVER TWP, Otsego County
+- SAVOY ENERGY LP MOTZ 1-19 (P1178), BURLINGTON, Calhoun County
+- SEMCO ENERGY Gas Company - Collin Field (N6317), STARRVILLE, St. Clair County
+- SEMCO Energy Gas Company - Harris Station (N6241), PARTELLO, Calhoun County
+- STURGIS ELECTRIC MOTOR (N7540), STURGIS, St. Joseph County
+- Saginaw Powertrain, Inc. (N6383), Saginaw, Saginaw County
+- Savoy Energy L.P. - Bottomly 1-13A (P1179), Athens, Calhoun County
+- Savoy Energy L.P. - Coldsprings A2-24 (P0639), Cold Springs Township, Kalkaska County
+- Savoy Energy LP (N7140), S BOARDMAN, Grand Traverse County
+- Savoy Energy LP - Beck 1-7C (N6860), SPRUCE, Alcona County
+- Savoy Energy, L.P .- Washburn 1-30 HD1 (P1180), Athens, Calhoun County
+- Savoy Energy, L.P. - Seymore 1-43 (P1177), East Leroy, Calhoun County
+- Savoy Energy, L.P. - Wagley 1-1A (P1181), East Leroy, Calhoun County
+- Savoy Energy, L.P. Korn 2-30 (P1326), ATHENS, Calhoun County
+- Savoy Energy, L.P. Korn 30 (P1325), ATHENS, Calhoun County
+- Semco Energy Gas  Co.-Ray Center Nat Gas Transfer (N7226), RAY, Macomb County
+- South Huron Valley Utility Authority POTW (M4853), Rockwood, Wayne County
+- South Shore Power LLC       (Sempra Michigan) (N7078), BRIDGMAN, Berrien County
+- Spina Electric Company (B8693), Warren, Macomb County
+- State Street Generating Station (N6885), COLDWATER, Branch County
+- Sturgis Municipal Power Plant (B7287), Sturgis, St. Joseph County
+- Sumitomo Electric Wiring Systems (N6763), FARMINGTN HLS, Oakland County
+- TRENDWELL ENERGY CORP Fox Property Booster (N7821), AVERY TWP, Montmorency County
+- TUSCOLA ENERGY INC (N2259), WISNER TWP, Tuscola County
+- TUSCOLA ENERGY INC (P0200), AKRON, Tuscola County
+- TUSCOLA ENERGY INC (P0239), WISNER TWP, Tuscola County
+- TUSCOLA ENERGY INC (P0201), WISNER TWP, Tuscola County
+- TUSCOLA ENERGY INC - RUMBLE SHARP CTB (N8277), AKRON, Tuscola County
+- TUSCOLA ENERGY INC RUMBLE-1-19&SHARP ET AL A-1-30 (P0242), AKRON, Tuscola County
+- TUSCOLA ENERGY INC- STATE MOFFATT 1-34 (N1874), STERLING, Arenac County
+- TUSCOLA ENERGY INC-BOYCE JR TRUSTEE 1&STREETER 1 (N8274), AKRON, Tuscola County
+- TUSCOLA ENERGY INC. (P0493), AKRON, Tuscola County
+- TUSCOLA ENERGY INC. - M & D DOWNING 2-29 (N8275), AKRON, Tuscola County
+- TUSCOLA ENERGY INC. - MOWERY & BERNIA #1 (N8276), AKRON, Tuscola County
+- Tuscola Energy - Boyce B (N3228), Akron, Tuscola County
+- Tuscola Energy - McPherson A-1-24 (N7954), Akron, Tuscola County
+- Tuscola Energy - Walat 4-26 and 5-26 (P0388), Cass City, Tuscola County
+- Tuscola Energy Inc (P0142), AKRON, Tuscola County
+- Tuscola Energy Inc (P0199), Wisner Township, Tuscola County
+- Tuscola Energy Inc- Rachel T. Beaty 1-30 (P0169), Akron, Tuscola County
+- Tuscola Energy Inc. - Walat 6-111 (P0202), Wisner Township, Tuscola County
+- Tuscola Energy, Inc. (B7394), NORTH BRANCH, Lapeer County
+- Tuscola Energy, Inc. (P0286), Wisner Township, Tuscola County
+- UP Bio Energy (B7017), MENOMINEE, Menominee County
+- University of Michigan (M0675), Ann Arbor, Washtenaw County, watch list: University of Michigan central plant, EIA plant 50431 that GEM lacks
+- Upper Peninsula Power Company - Portage (B6553), SOUTH RANGE, Houghton County
+- Utility Workers Union of America (P0632), DETROIT, Wayne County
+- Van Wert Electric, LLC (P1121), Flushing, Genesee County
+- Viking Energy of Lincoln-Graying (never built) (N1174), GRAYLING, Crawford County
+- WESTINGHOUSE ELECTRIC CORP (N3808), SOUTHFIELD, Oakland County
+- WISCONSIN ELECTRIC POWER COMPANY (B4261), MARQUETTE, Marquette County
+- WMU Energy Resource Center (N6980), KALAMAZOO, Kalamazoo County
+- WOLVERINE BROACH CO (M3925), HARRISON TWP, Macomb County
+- WOLVERINE CARBIDE DIE CO (N0985), TROY, Oakland County
+- WOLVERINE GASKET DIVISION (B3234), INKSTER, Wayne County
+- WOLVERINE OIL AND SUPPLY CO., INC. (N7294), DEARBORN, Wayne County
+- WOLVERINE PAVING CO (N5793), LYONS, Ionia County
+- WOLVERINE POWER SUPPLY COOPERATIVE INC (B1560), BOYNE CITY, Charlevoix County
+- WYANDOTTE ENERGY (N6519), WYANDOTTE, Wayne County
+- WYLIE ELECTRIC MOTOR SERVICE (N4977), FERRYSBURG, Ottawa County
+- Ward Lake Energy (N7952), Charlton Township, Otsego County
+- Ward Lake Energy (N7182), FLANDERS, Alpena County
+- Ward Lake Energy - Charlton 2 (N6081), Charlton Township, Otsego County
+- Waste Energy Services, Inc. (M4441), VAN BUREN TWP, Wayne County
+- Wolverine Assembly, LLC (N3572), WIXOM, Oakland County
+- Wolverine Bronze Company (B5635), Roseville, Macomb County
+- Wolverine Die Cast Corporation (A3201), Warren, Macomb County
+- Wolverine Gas & Oil Company of Michigan, LLC (P1434), Scotts, Kalamazoo County
+- Wolverine Gas & Oil- Pease 20-134 (P0817), Scotts, Kalamazoo County
+- Wolverine Gas and Oil Company of Michigan LLC (P1415), SCOTTS, Kalamazoo County
+- Wolverine Gas and Oil Company of Michigan LLC (P1416), Scotts, Kalamazoo County
+- Wolverine Gas and Oil Company of Michigan, LLC (P1411), Climax, Kalamazoo County
+- Wolverine Gas and Oil Corp - Pease 20-24 (P0666), Scotts, Kalamazoo County
+- Wolverine Power, Gaylord Generating Station (N6833), Gaylord, Otsego County, watch list: Wolverine Gaylord Generating Station, EIA plant 7932 that GEM lacks
+- Wolverine World Wide - A, F and Sole Fac (B2980), ROCKFORD, Kent County
+- Wolverine World Wide Tannery (B2979), ROCKFORD, Kent County
+- Wyandotte Dept Municipal Power Plant (B2132), Wyandotte, Wayne County
+- XALT Energy, LLC (P0091), Midland, Midland County
+- Ypsilanti Community Utilities Authority (B6237), Ypsilanti, Washtenaw County
+- Zeeland Board of Public Works (B7977), Zeeland, Ottawa County

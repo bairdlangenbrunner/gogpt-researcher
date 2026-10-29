@@ -1,0 +1,137 @@
+{
+ "meta": {
+  "plant_id": "L100001088900",
+  "plant_name": "Sherlock Generation Project",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "opus",
+  "generated": "2026-10-27T13:00:00-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001101095",
+   "unit_name": "1",
+   "findings": {
+    "Number Of Engines": {
+     "value": "14",
+     "refs": [
+      "https://www.kdhe.ks.gov/DocumentCenter/View/60493"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.kdhe.ks.gov/DocumentCenter/View/60493",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Draft state air construction permit for Sherlock Generation LLC, Source ID 0550199."
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The draft state air construction permit says Sherlock will install up to 14 combustion turbines. This agrees with GEM.",
+     "checks": [
+      39
+     ]
+    },
+    "Capacity Per Engine": {
+     "value": "44.5",
+     "refs": [
+      "https://www.kdhe.ks.gov/DocumentCenter/View/60493"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.kdhe.ks.gov/DocumentCenter/View/60493",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Draft state air construction permit for Sherlock Generation LLC, Source ID 0550199."
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The draft permit says each turbine is rated at 44.5 megawatts. This agrees with GEM.",
+     "checks": [
+      39
+     ]
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "ProEnergy: PE6000",
+     "refs": [
+      "https://www.kdhe.ks.gov/DocumentCenter/View/60493"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.kdhe.ks.gov/DocumentCenter/View/60493",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Draft state air construction permit for Sherlock Generation LLC, Source ID 0550199."
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The draft permit names the ProEnergy PE6000 as the turbine. County papers said the maker was not final. The state permit now names it.",
+     "checks": [
+      39
+     ]
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.kdhe.ks.gov/DocumentCenter/View/60493"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.kdhe.ks.gov/DocumentCenter/View/60493",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Draft state air construction permit for Sherlock Generation LLC, Source ID 0550199."
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The draft permit describes a power plant of simple cycle gas turbines run at a yearly capacity factor of 10 to 20 percent. It does not call the turbines backup or emergency units. This agrees with GEM and gives the missing source.",
+     "checks": [
+      39
+     ]
+    }
+   },
+   "not_found": [
+    "Start year",
+    "Latest Activity",
+    "Other IDs (unit)"
+   ],
+   "notes": "The newest permit is the draft Kansas air construction permit for Sherlock Gas Plant, source 0550199, with public comments due October 26, 2026. It covers up to 14 natural gas simple cycle turbines of 44.5 megawatts each, 623 megawatts in all. This matches GEM in engine count, capacity per engine and total. GEM has one unit row and the permit does not split the fleet into phases. Status stays pre-construction. The project is moving, so Latest Activity is left alone. I found no EIA plant code or generator ID for it."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.kdhe.ks.gov/DocumentCenter/View/60493",
+   "used_for": [
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Equipment Manufacturer/Model",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Kansas draft air construction permit, Source ID 0550199"
+  },
+  {
+   "url": "https://www.kdhe.ks.gov/DocumentCenter/View/60494",
+   "used_for": [
+    "context"
+   ],
+   "outcome": "verified",
+   "note": "Public notice, comments due October 26, 2026"
+  }
+ ]
+}

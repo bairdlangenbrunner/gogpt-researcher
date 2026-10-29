@@ -1,0 +1,121 @@
+{
+ "sources": {
+  "egle-pti-notices": {
+   "status": "searched",
+   "how": "I read the permit to install notices and application lists gathered in work/permits/us-mi/_notices.md and _activity.md from the state air permit pages at https://www.michigan.gov/egle/about/organization/air-quality/air-permits, covering 2020 to October 2026.",
+   "found": "The gas generation permits of 50 MW or more are for plants GEM already has, or for Thomas Township Energy, which is new to GEM as a cancelled plant. The data center permits, for Project Mitten in Saline Township, the Panattoni site in Van Buren Township, Alliance Cloud Services in Dowagiac and others, cover diesel emergency generators only."
+  },
+  "egle-mienviro": {
+   "status": "searched",
+   "how": "I used the permit index from harvest_permits_michigan.py in work/permits/us-mi/ and read the permits to install and operating permit staff reports for each matched plant and for every EIA plant missing from GEM, for example https://mienviro.michigan.gov/ncore/downloadpdf/3438450417378425065 for Hancock.",
+   "found": "The permits for plants GEM has are handled in the plant research. For plants GEM lacks, the permits show that Hancock, Livingston and George Johnson have aeroderivative sets of 50 MW or more, and that Fermi, Superior, Northeast, Gaylord, Michigan State University and the University of Michigan have every unit under 50 MW."
+  },
+  "egle-harvest-unmatched": {
+   "status": "searched",
+   "how": "I worked through every site in work/permits/us-mi/_unmatched.md, 505 sites, and read the permits for each power or data center site.",
+   "found": "Hancock, Livingston and George Johnson are adds. Thomas Township Energy in Hemlock is an add as a cancelled plant. About 140 sites are oil and gas wells, compressor stations and processing plants, which do not generate power for the grid. The DTE peaker sites at Dayton, Conners Creek, Harbor Beach, Oliver, Placid, Putnam, Wilmot, Monroe, River Rouge and Trenton Channel and the Consumers sites at Morrow, Straits, Gaylord and Campbell either have every unit under 50 MW, retired before 2020, or are coal plants that other GEM trackers hold. Fermi, Superior, Northeast and the Gaylord peakers are under 50 MW per unit. The Zilwaukee, Alpena, Clinton, Coldwater, Marshall, Escanaba, Gladstone, Portage, Presque Isle, White Pine, Wyandotte, Rouge, Pontiac North, Genesee Power, Grayling, Mid-Michigan Energy and Riverview sites are under 50 MW per unit, retired before 2020, or burn coal, wood or waste. Old proposals for Panda Tallmadge, South Shore Power, El Paso Merchant, Kalkaska Generating and Viking Energy were dropped before 2020, so they are out of the tracked period. Landfill gas, digester and small municipal diesel plants are all under 50 MW. Data center sites, including 123Net, Bluebird, US Signal, Corewell, DXC, FCA, United Shore, Project Mitten and Panattoni, have diesel emergency generators only."
+  },
+  "mpsc-dockets": {
+   "status": "searched",
+   "how": "I used batches/us-mi/harvest/psc_dockets.md and read the filings in work/psc_mi/ for cases U-21090, U-21193, U-22168, U-22144, U-21990, U-22058, U-22175, U-21809, U-21407, U-22057, U-22069, U-21814, U-21377, U-21333, U-21810, U-21367 and U-21371, and checked the 2026 Consumers and DTE plan filings.",
+   "found": "The Consumers 2026 plan adds the Bay County and Genesee County gas plants, both in GEM. The DTE 2026 plan, filed September 24, 2026 according to an Earthjustice statement at https://earthjustice.org/press/2026/dte-plans-two-new-large-fossil-fuel-plants-to-power-ai-data-centers, adds about 2.1 GW of gas, the Milan Township and Handy Township plants in GEM. Case U-22144 is a 0.8 MW Zeeland Farm Services contract, under the threshold. The data center contracts in U-21990 for Green Chile Ventures in Saline Township and U-22058 for Google name no gas plant. The Upper Peninsula, Upper Michigan Energy Resources, Indiana Michigan Power and Northern States Power cases add no gas plant in Michigan. Case U-21407 is a coal and biomass plant contract."
+  },
+  "miso-gi-queue": {
+   "status": "searched",
+   "how": "I read every Michigan entry in the MISO queue data at https://www.misoenergy.org/api/giqueue/getprojects, gathered in batches/us-mi/harvest/queues.md, and entries with a Michigan-only transmission owner but no state.",
+   "found": "J3922, 1,445 MW gas combined cycle in Branch County, is new to GEM and is added at announced. J4159, 616 MW, and J4160, 55 MW, in Ottawa County at the Roosevelt substation go to a reviewer as a possible Zeeland expansion. J4024 and J4025 in Monroe County, J3923 Milan, J3799 Livingston County, J3935 Genesee County and J703 Kuester belong to plants GEM has. Withdrawn gas requests J3407, J1141, J1370, J841, J914, J1206, J1207 and J1264 need no action. Entries with the fuel hidden, such as R1040 and R1052 at Campbell, R1041 at Trenton Channel, S1172 in Clinton County, S1184, J4206 to J4237 and J4269, cannot be called gas from the queue alone."
+  },
+  "miso-eras": {
+   "status": "searched",
+   "how": "I read the fast track rows for the Expedited Resource Addition Study in the same MISO queue data at https://www.misoenergy.org/api/giqueue/getprojects, which includes them.",
+   "found": "The queue data has no Expedited Resource Addition Study rows in Michigan, so no Michigan gas project is on that list."
+  },
+  "pjm-queue": {
+   "status": "searched",
+   "how": "I read the PJM part of batches/us-mi/harvest/queues.md for the Indiana Michigan Power area of southwest Michigan.",
+   "found": "PJM lists seven Michigan gas entries. T94, AC1-072 and AD2-075 are New Covert, which GEM has; AD2-075, a 145 MW uprate, was withdrawn in 2023. AA2-116, AC1-141 and C01-1678, a 9.6 MW uprate due in 2027, are Indeck Niles, which GEM has. N46, a 1,120 MW Berrien County request, was withdrawn in 2005. Nothing to add."
+  },
+  "eia-860m": {
+   "status": "searched",
+   "how": "I read the Operating, Planned and Canceled or Postponed sheets of https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx for Michigan.",
+   "found": "Hancock, Livingston and George Johnson are the only missing plants with a set of 50 MW or more. Every other missing gas or oil plant has every unit under 50 MW, such as Dearborn Energy Center at 35 MW, Ada Cogeneration at 33.1 MW, Claude Vandyke at 24.8 MW and Gladstone at 22.6 MW. The planned Michigan State University turbine is 15 MW."
+  },
+  "eia-860": {
+   "status": "searched",
+   "how": "I checked owners and addresses for the Michigan gas plants against the EIA monthly file and the plant research, which read the 2024 annual plant and owner tables at https://www.eia.gov/electricity/data/eia860/.",
+   "found": "Owner and address checks for New Covert, Dearborn Industrial Generation and Midland Cogeneration Venture are in their own plant records. The three new plants take their owners from EIA, all of them existing GEM owners."
+  },
+  "consumers-energy": {
+   "status": "searched",
+   "how": "I read https://www.consumersenergy.com/news-releases, which loads no releases without a script, and so searched news on the 2026 plan and the plan summary at https://www.consumersenergy.com/-/media/CE/Documents/company/IRP-2026-Exec-Summary.pdf.",
+   "found": "The 2026 plan, filed September 3, 2026, proposes a gas plant of over 450 MW at the Karn site in Bay County and one of over 900 MW at Thetford in Genesee County, both for 2031 and both in GEM. It also buys power from the Midland plant, which GEM has. Karn units 3 and 4 are covered in the Karn plant research."
+  },
+  "dte-electric": {
+   "status": "searched",
+   "how": "The DTE newsroom at https://newsroom.dteenergy.com/ did not load through fetch.py, including the real browser step, and the Wayback Machine's newest copy is from December 2019, so I searched news on DTE's plans and read the DTE case filings.",
+   "found": "DTE filed its 2026 plan on September 24, 2026 with about 2.1 GW of new gas in 2031 and 2032. Those are the Milan Township and Handy Township plants in GEM. Belle River's gas conversion is covered in the Belle River plant research. The Google and Oracle data center contracts name solar, storage and demand response, not gas."
+  },
+  "wolverine-mppa-up": {
+   "status": "searched",
+   "how": "I read the Wolverine news page at https://www.wolverinepowercooperative.com/news/, the Michigan Public Power Agency news page at https://www.mpower.org/news, and the Upper Peninsula and Upper Michigan Energy Resources plan cases. The Lansing Board of Water and Light news page returned an error, so I relied on the Lansing plant research.",
+   "found": "Wolverine's news covers the Alpine plant's tenth year, which GEM has. George Johnson is a Wolverine peaker missing from GEM and is added. Gaylord is under 50 MW per unit. The power agency and the Upper Peninsula utilities name no new gas plant."
+  },
+  "possible-updates-sheet": {
+   "status": "searched",
+   "how": "I read the gas and oil plants tab of the possible updates sheet through the work profile and pulled every Michigan row.",
+   "found": "Row 154, the Marshall data center gas plant by Alterra, is GEM's MEC North and MEC South plants. Row 155 and row 314 list the Gibraltar, Metrobloks Southfield, Google Van Buren and Microsoft Gaines Township data centers. Each has diesel backup only or no gas plan in the sources I read, so none is a watch item. Rows 342, 2100 and 2132 are done and match plants GEM has."
+  },
+  "data-centers": {
+   "status": "searched",
+   "how": "I checked every Michigan data center announced since 2024 against the air permit list, the commission's contract cases and news, including the Saline Township campus served by DTE.",
+   "found": "Only Alliance Cloud Services in Dowagiac plans on-site gas generation, about 40 MW, and it goes on the watch list. Saline Township, the Google campus in Van Buren Township, Gibraltar, Southfield, Gaines Township and the other campuses use the grid with diesel backup."
+  }
+ },
+ "ids_followup": {
+  "1730": {
+   "decision": "add",
+   "evidence": "Two Pratt and Whitney FT4 twin pack jet turbines of 41.8 MW each, an aeroderivative set of 83.6 MW, per EIA's September 2026 monthly file and the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/3438450417378425065. The two 19 MW frame turbines are left out.",
+   "gem_plant_id": ""
+  },
+  "55102": {
+   "decision": "add",
+   "evidence": "Four Worthington twin pack gas turbine sets, 170.1 MW in all, per EIA's September 2026 monthly file and the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/-6094188335970412935.",
+   "gem_plant_id": ""
+  },
+  "1877": {
+   "decision": "add",
+   "evidence": "Two Rolls-Royce RB211 aeroderivative turbines of 25 MW each, a 50 MW set, per EIA's monthly file and the air inspection report at https://www.egle.state.mi.us/aps/downloads/SRN/N5760/N5760_SAR_20231108.pdf. Exactly at the threshold.",
+   "gem_plant_id": ""
+  },
+  "1729": {
+   "decision": "below_threshold",
+   "evidence": "Four GE Frame 5 diesel peaking turbines of 16 MW each per the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/1519237830729379873.",
+   "gem_plant_id": ""
+  },
+  "1744": {
+   "decision": "below_threshold",
+   "evidence": "Four diesel combustion turbines from 1966 of about 16 to 19 MW each per the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/6048297226606569993.",
+   "gem_plant_id": ""
+  },
+  "1734": {
+   "decision": "below_threshold",
+   "evidence": "Gas and oil frame turbines and two oil jet turbines of 21.2 MW each, 42.4 MW as a set, per EIA and the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/4106255214443739292.",
+   "gem_plant_id": ""
+  },
+  "7932": {
+   "decision": "below_threshold",
+   "evidence": "Three GE Frame 5 turbines of 23.4 MW each per the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/-7133973900997858976.",
+   "gem_plant_id": ""
+  },
+  "10328": {
+   "decision": "below_threshold",
+   "evidence": "Michigan State University's plant has steam turbines of 12.5 to 24 MW, a 14.3 MW gas turbine, engines of 28.2 MW as a set and a planned 15 MW turbine, per EIA and the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/-7640983059637335043.",
+   "gem_plant_id": ""
+  },
+  "50431": {
+   "decision": "below_threshold",
+   "evidence": "EIA groups the University of Michigan generators as one 60 MW combined cycle unit, but the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/-5303010553079006113 shows boiler-fed steam turbines and small heat recovery gas turbines, each well under 50 MW. Sent to a reviewer as a question.",
+   "gem_plant_id": ""
+  }
+ }
+}

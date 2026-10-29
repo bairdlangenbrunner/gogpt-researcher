@@ -1,0 +1,147 @@
+{
+  "state": "Kansas",
+  "postal": "ks",
+  "where": {
+    "kind": "state",
+    "name": "Kansas",
+    "slug": "kansas",
+    "country": "United States",
+    "postal": "ks"
+  },
+  "mode": "update",
+  "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv",
+  "scope": "ladder",
+  "focus": "data_centers",
+  "generated": "2026-10-27T11:40:17-04:00",
+  "plants": [
+    {
+      "plant_id": "L100001088900",
+      "plant_name": "Sherlock Generation Project",
+      "brief_path": "batches/us-ks-dc/briefs/L100001088900.md",
+      "unit_ids": [
+        "G100001101095"
+      ],
+      "n_units": 1,
+      "max_priority": null,
+      "wiki_url": "https://www.gem.wiki/Sherlock_Generation_Project",
+      "n_tasks": 5,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Latest Activity",
+        "Status Detail",
+        "Owner(s)",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Backup Power"
+      ],
+      "tasks": {
+        "G100001101095": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. A projected start year is a scheduled event: the Event Year is the projected year and the Source Year is the year the source reported it, and the human adds it as a new entry, never by changing an existing one. A shelved or cancelled unit gets no scheduled operating event. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "Other IDs (location) has no EIA plant code. If the plant appears in EIA data, give the plant code as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "Other IDs (unit) is blank. If the unit appears in EIA data, give the generator ID as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "Backup Power (currently no): the value is present but Backup Power Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Backup Power"
+            ],
+            "checks": []
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "A permit harvest lists this plant's data center (Sherlock Generation Project). Compare the fleet size, the phases, the Backup Power box and the engine counts with the newest permit and report each value that differs, with the permit link. Facts: at Garden City; 14 engines; 623.0 MW summed; fuel natural gas. This is a GEM data center plant in the scope (1 unit rows, 623.0 MW in GEM). No permit in the harvest matched it, so the check against the newest permit is still to do. Backup Power in GEM: no.",
+          "fields": [
+            "Capacity (MW)",
+            "Status",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Backup Power",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Status Detail"
+          ],
+          "checks": [
+            39
+          ]
+        }
+      ]
+    }
+  ],
+  "not_tasked": [],
+  "promoted_new": [],
+  "irp": null,
+  "captive": null,
+  "harvest": null,
+  "data_centers": {
+    "file": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/work/permits/us-ks-dc/_data_centers.json",
+    "brief_path": "batches/us-ks-dc/briefs/_data_centers.md",
+    "threshold_mw": 50.0,
+    "answer_sites": [
+      "red-wolf-dcd-de-soto",
+      "sherlock-generation-llc-garden-city",
+      "google-kansas-city",
+      "meta-kansas-city"
+    ],
+    "plant_tasks": 1
+  },
+  "location": null,
+  "ids_followup": null,
+  "coverage_list": "docs/coverage/us-ks.json",
+  "coverage_ids": [
+    "spp-gi-active",
+    "spp-eras",
+    "kdhe-air-notices",
+    "kansas-register",
+    "kcc-dockets",
+    "eia-860m",
+    "eia-860",
+    "evergy-irp",
+    "evergy-news",
+    "sunflower",
+    "midwest-energy",
+    "kansas-power-pool",
+    "kmea",
+    "bpu",
+    "liberty-empire",
+    "eip-oil-gas-watch",
+    "possible-updates-sheet",
+    "captive-lng-sheet",
+    "data-centers"
+  ]
+}

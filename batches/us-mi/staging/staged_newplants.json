@@ -1,0 +1,514 @@
+{
+  "meta": {
+    "lane": "newplants",
+    "scope": {
+      "country": "United States",
+      "state": "Michigan",
+      "postal": "mi",
+      "kind": "state",
+      "slug": "michigan",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-27T09:03:23-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 5
+    }
+  },
+  "records": [
+    {
+      "plant_name": "Hancock power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Michigan",
+        "Local area (taluk, county)": "Oakland",
+        "City": "Commerce Township",
+        "Latitude": "42.5497",
+        "Longitude": "-83.4425",
+        "Owner(s)": "DTE Electric Co [100%]"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://mienviro.michigan.gov/ncore/downloadpdf/3438450417378425065"
+        ],
+        "Owners Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "EIA monthly generator file, September 2026, Operating sheet. Rows for plant 1730 Hancock name DTE Electric Company and the values below."
+        },
+        {
+          "url": "https://mienviro.michigan.gov/ncore/downloadpdf/3438450417378425065",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "State air permit staff report for the Hancock peakers, SRN B2805. Read by text recognition."
+        }
+      ],
+      "tier": "high",
+      "researcher_notes": "GEM does not list the Hancock peaking plant. EIA's monthly generator file for September 2026 lists EIA plant 1730, Hancock, owned by DTE Electric Company, in Oakland County. Its Operating sheet rows read: \"Hancock | 5 | 41.8 | Natural Gas Fired Combustion Turbine | 1970\" and \"Hancock | 6 | 41.8 | Natural Gas Fired Combustion Turbine | 1966\". Generators 1 and 3 are 19 MW each. The point given is latitude 42.5497 and longitude -83.4425. The state air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/3438450417378425065 says the site at 1781 Haggerty Highway in Commerce Township has two Westinghouse combustion turbine generators of 18.5 MW each and two jet turbine generators of 41.27 MW each. The two jet units are Pratt and Whitney FT4 twin pack sets, which are aeroderivative turbines. The report also says one 18.5 MW unit and one 21.5 MW unit were retired on December 22, 2019. The two jet units together make an aeroderivative set of 83.6 MW, which is above the 50 MW threshold, so the plant is an add. The two 19 MW Westinghouse frame units are each under 50 MW and are left out. The staff report says the units were installed between April 1966 and May 1970.",
+      "action": "Create the Hancock plant in Commerce Township, Oakland County, Michigan, owned by DTE Electric Co, then add the one unit below. Leave the two small frame turbines out.",
+      "irp": false,
+      "units": [
+        {
+          "unit_name": "Jet turbines 5 and 6",
+          "fields": {
+            "Fuel": "fossil gas: natural gas",
+            "Status": "operating",
+            "Start year": "1966",
+            "Turbine/Engine Technology": "AGT",
+            "Number Of Engines": "2",
+            "Capacity Per Engine": "41.8",
+            "Equipment Manufacturer/Model": "Pratt & Whitney FT4 Twin-Pack"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Fuel Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Status Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "https://mienviro.michigan.gov/ncore/downloadpdf/3438450417378425065"
+            ],
+            "Start Year Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://mienviro.michigan.gov/ncore/downloadpdf/3438450417378425065"
+            ],
+            "Turbine/Engine Equipment Data Source": [
+              "https://mienviro.michigan.gov/ncore/downloadpdf/3438450417378425065"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Rows for generators 5 and 6 at 41.8 MW each, natural gas, operating."
+            },
+            {
+              "url": "https://mienviro.michigan.gov/ncore/downloadpdf/3438450417378425065",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Names the two Pratt and Whitney FT4 twin pack jet turbine generators of 41.27 MW each."
+            }
+          ],
+          "action": "Add one aeroderivative unit with 2 turbines of 41.8 MW each, 83.6 MW in all, natural gas, operating, first unit in service in 1966.",
+          "researcher_notes": "EIA monthly generator file for September 2026, Operating sheet, plant 1730. The rows read \"Hancock | 5 | 41.8 | Natural Gas Fired Combustion Turbine | 1970 | Operating | DTE Electric Company | Oakland\" and \"Hancock | 6 | 41.8 | Natural Gas Fired Combustion Turbine | 1966 | Operating | DTE Electric Company | Oakland\". The two jet turbines make one unit of 83.6 MW. The start year is the older of the two, 1966. The 19 MW generators 1 and 3 on the same sheet are left out because each is under 50 MW."
+        }
+      ],
+      "record_id": "us-mi:new:hancock-power-station"
+    },
+    {
+      "plant_name": "Livingston generating station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Michigan",
+        "Local area (taluk, county)": "Otsego",
+        "City": "Gaylord",
+        "Latitude": "45.030397",
+        "Longitude": "-84.7308",
+        "Owner(s)": "CMS Generation Michigan Power LLC [100%]"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://mienviro.michigan.gov/ncore/downloadpdf/-6094188335970412935"
+        ],
+        "Owners Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "EIA monthly generator file, September 2026, Operating sheet, plant 55102."
+        },
+        {
+          "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-6094188335970412935",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "State air permit staff report of September 21, 2026 for SRN N6526."
+        }
+      ],
+      "tier": "high",
+      "researcher_notes": "GEM does not list the Livingston peaking plant near Gaylord. EIA's monthly generator file for September 2026 lists EIA plant 55102, Livingston Generating Station, owned by CMS Generation MI Power LLC, in Otsego County. Its Operating sheet rows read: \"Livingston Generating Station | 001 | 42.9 | Natural Gas Fired Combustion Turbine | 1999\" and three more rows for generators 002, 003 and 004 at 42.4 MW each, all from 1999. That is 170.1 MW in all. The point given is latitude 45.030397 and longitude -84.7308. The state air permit staff report dated September 21, 2026 at https://mienviro.michigan.gov/ncore/downloadpdf/-6094188335970412935 covers the site at 155 North Townline Road in Gaylord. It describes four Worthington twin pack natural gas turbine units, each with two engines, rated 39 MW each, with water injection. Twin pack units are aeroderivative sets, so the four units are one set of 170.1 MW, above the 50 MW threshold. CMS Generation Michigan Power LLC is already a GEM owner, entity E100000002589.",
+      "action": "Create the Livingston plant in Gaylord, Otsego County, Michigan, owned by CMS Generation Michigan Power LLC, then add the one unit below.",
+      "irp": false,
+      "units": [
+        {
+          "unit_name": "1-4",
+          "fields": {
+            "Fuel": "fossil gas: natural gas",
+            "Status": "operating",
+            "Start year": "1999",
+            "Turbine/Engine Technology": "AGT",
+            "Number Of Engines": "4",
+            "Capacity Per Engine": "42.5",
+            "Equipment Manufacturer/Model": "Worthington Twin Pack"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Fuel Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Status Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "https://mienviro.michigan.gov/ncore/downloadpdf/-6094188335970412935"
+            ],
+            "Start Year Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://mienviro.michigan.gov/ncore/downloadpdf/-6094188335970412935"
+            ],
+            "Turbine/Engine Equipment Data Source": [
+              "https://mienviro.michigan.gov/ncore/downloadpdf/-6094188335970412935"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Four generator rows, 42.9, 42.4, 42.4 and 42.4 MW."
+            },
+            {
+              "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-6094188335970412935",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Names four Worthington twin pack gas turbine units."
+            }
+          ],
+          "action": "Add one aeroderivative unit with 4 twin pack turbine sets of about 42.5 MW each, 170.1 MW in all, natural gas, operating since 1999. EIA gives one set at 42.9 MW and three at 42.4 MW, so 42.5 MW is the average.",
+          "researcher_notes": "EIA monthly generator file for September 2026, Operating sheet, plant 55102. The rows read \"Livingston Generating Station | 001 | 42.9\", \"| 002 | 42.4\", \"| 003 | 42.4\" and \"| 004 | 42.4\", each \"Natural Gas Fired Combustion Turbine | 1999 | Operating | CMS Generation MI Power LLC | Otsego\". The four add to 170.1 MW, which is 42.5 MW per turbine on average."
+        }
+      ],
+      "record_id": "us-mi:new:livingston-generating-station"
+    },
+    {
+      "plant_name": "George Johnson power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Michigan",
+        "Local area (taluk, county)": "Osceola",
+        "City": "Hersey",
+        "Latitude": "43.8393",
+        "Longitude": "-85.426",
+        "Owner(s)": "Wolverine Power Supply Cooperative Inc [100%]"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://mienviro.michigan.gov/ncore/downloadpdf/-4754499885014064448"
+        ],
+        "Owners Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://www.egle.state.mi.us/aps/downloads/SRN/N5760/N5760_SAR_20231108.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "EIA monthly generator file, September 2026, Operating sheet, plant 1877."
+        },
+        {
+          "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-4754499885014064448",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "State permit to install 133-09 for the Wolverine site at Hersey, with two 25,000 kW turbines."
+        },
+        {
+          "url": "https://www.egle.state.mi.us/aps/downloads/SRN/N5760/N5760_SAR_20231108.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "State air inspection report of November 8, 2023, SRN N5760. Names Wolverine and the two Rolls-Royce RB211 turbines."
+        }
+      ],
+      "tier": "high",
+      "researcher_notes": "GEM does not list the George Johnson peaking plant at Hersey. EIA's monthly generator file for September 2026 lists EIA plant 1877, George Johnson, owned by Wolverine Power Supply Coop, in Osceola County. Its Operating sheet rows read: \"George Johnson | 9 | 25 | Natural Gas Fired Combustion Turbine | 2000\" and \"George Johnson | 10 | 25 | Natural Gas Fired Combustion Turbine | 2000\". Generator 11 is a 1 MW diesel engine and is left out. The point given is latitude 43.8393 and longitude -85.426. The state air inspection report of November 8, 2023 at https://www.egle.state.mi.us/aps/downloads/SRN/N5760/N5760_SAR_20231108.pdf describes two identical Rolls-Royce RB211 simple cycle combustion turbines of 25,000 kW each at 1529 170th Avenue, Hersey. The RB211 is an aeroderivative turbine, so the two make one set of 50 MW. The state permit to install 133-09 at https://mienviro.michigan.gov/ncore/downloadpdf/-4754499885014064448 lists both turbines at 25,000 kW. The set sits exactly at the 50 MW threshold, so a reviewer may want to confirm the add.",
+      "action": "Create the George Johnson plant in Hersey, Osceola County, Michigan, owned by Wolverine Power Supply Cooperative Inc, then add the one unit below. The set is exactly 50 MW.",
+      "irp": false,
+      "units": [
+        {
+          "unit_name": "9-10",
+          "fields": {
+            "Fuel": "fossil gas: natural gas",
+            "Status": "operating",
+            "Start year": "2000",
+            "Turbine/Engine Technology": "AGT",
+            "Number Of Engines": "2",
+            "Capacity Per Engine": "25",
+            "Equipment Manufacturer/Model": "Rolls-Royce RB211"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "https://www.egle.state.mi.us/aps/downloads/SRN/N5760/N5760_SAR_20231108.pdf"
+            ],
+            "Fuel Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Status Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "https://www.egle.state.mi.us/aps/downloads/SRN/N5760/N5760_SAR_20231108.pdf"
+            ],
+            "Start Year Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.egle.state.mi.us/aps/downloads/SRN/N5760/N5760_SAR_20231108.pdf"
+            ],
+            "Turbine/Engine Equipment Data Source": [
+              "https://www.egle.state.mi.us/aps/downloads/SRN/N5760/N5760_SAR_20231108.pdf"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Generators 9 and 10 at 25 MW each."
+            },
+            {
+              "url": "https://www.egle.state.mi.us/aps/downloads/SRN/N5760/N5760_SAR_20231108.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Two Rolls-Royce RB211 turbines of 25,000 kW each."
+            }
+          ],
+          "action": "Add one aeroderivative unit with 2 turbines of 25 MW each, 50 MW in all, natural gas, operating since 2000.",
+          "researcher_notes": "EIA monthly generator file for September 2026, Operating sheet, plant 1877. The rows read \"George Johnson | 9 | 25.0 | Natural Gas Fired Combustion Turbine | 2000 | Operating | Wolverine Power Supply Coop | Osceola\" and \"George Johnson | 10 | 25.0 | Natural Gas Fired Combustion Turbine | 2000 | Operating | Wolverine Power Supply Coop | Osceola\". Together they are exactly 50 MW. Generator 11 is a 1 MW oil standby unit and is left out."
+        }
+      ],
+      "record_id": "us-mi:new:george-johnson-power-station"
+    },
+    {
+      "plant_name": "Hiple Branch County power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Michigan",
+        "Local area (taluk, county)": "Branch"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.misoenergy.org/api/giqueue/getprojects",
+          "https://www.interconnection.fyi/project/miso-j3922"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "MISO's own queue data, the data behind the interactive queue page. It lists J3922."
+        },
+        {
+          "url": "https://www.interconnection.fyi/project/miso-j3922",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "interconnection.fyi copies the MISO queue. It names J3922 and 1445 MW."
+        }
+      ],
+      "tier": "medium",
+      "researcher_notes": "MISO's generator interconnection queue, read through the data behind its interactive queue page at https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/, lists request J3922 in Branch County, Michigan. It is a gas combined cycle project of 1,445 MW connecting at the Hiple substation on the METC transmission system. It was queued on March 4, 2025, is in the 2025 study cycle, phase 1, with status \"Pending Revision Approval\", and asks for an in-service date of March 1, 2030. The same row is copied at https://www.interconnection.fyi/project/miso-j3922. No developer, plant name, utility filing or air permit names the project. It is not one of the Consumers Energy or DTE Electric gas plants in their 2026 resource plans, which are in Bay, Genesee, Monroe and Livingston counties. The plant is named after its substation and county because the request has no other name. A queue entry is enough to add a plant at announced. Not found: the owner, the turbine model, the exact site and the coordinates.",
+      "action": "Create the plant in Branch County, Michigan, then add the unit below. Leave owner, technology and coordinates blank until a filing names them.",
+      "irp": false,
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Capacity (MW)": "1445",
+            "Fuel": "fossil gas: natural gas",
+            "Status": "announced",
+            "Start year": "2030",
+            "Turbine/Engine Technology": "CC"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects",
+              "https://www.interconnection.fyi/project/miso-j3922"
+            ],
+            "Fuel Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects",
+              "https://www.interconnection.fyi/project/miso-j3922"
+            ],
+            "Status Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects",
+              "https://www.interconnection.fyi/project/miso-j3922"
+            ],
+            "Start Year Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects",
+              "https://www.interconnection.fyi/project/miso-j3922"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects",
+              "https://www.interconnection.fyi/project/miso-j3922"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Row J3922: Gas, Combined Cycle, 1445 MW, Branch County, in service 2030-03-01."
+            },
+            {
+              "url": "https://www.interconnection.fyi/project/miso-j3922",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Copy of the same row."
+            }
+          ],
+          "action": "Add one combined cycle unit of 1,445 MW, natural gas, announced, start year 2030. A combined cycle block is one unit."
+        }
+      ],
+      "record_id": "us-mi:new:hiple-branch-county-power-station"
+    },
+    {
+      "plant_name": "Thomas Township Energy power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Michigan",
+        "Local area (taluk, county)": "Saginaw",
+        "City": "Hemlock",
+        "Owner(s)": "Thomas Township Energy LLC [100%]"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://mienviro.michigan.gov/ncore/downloadpdf/1162895226898629589"
+        ],
+        "Owners Data Source": [
+          "https://mienviro.michigan.gov/ncore/downloadpdf/1162895226898629589"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://mienviro.michigan.gov/ncore/downloadpdf/1162895226898629589",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "State permit to install 210-18, issued August 21, 2019. Read by text recognition."
+        }
+      ],
+      "tier": "medium",
+      "researcher_notes": "GEM does not list this proposed plant. The state air permit to install 210-18 at https://mienviro.michigan.gov/ncore/downloadpdf/1162895226898629589 was issued on August 21, 2019 to Thomas Township Energy, LLC for a site east of North Orr Road and north of Geddes Road in Hemlock, Saginaw County. It covers two natural gas combined cycle blocks, each one combustion turbine with a heat recovery boiler and one steam turbine, and each rated at a combined nominal 625 MW. That is 1,250 MW in all. The turbine maker is listed as to be determined. The state permit portal lists the permit as terminated on September 7, 2021, and the site has no other permit or document there. No news story, queue entry or utility filing names the project. GEM tracks cancelled projects from 2020 on, so it is added as cancelled in 2021. The status rests on one source, the state permit record, so it stays at medium confidence. The owner is a project company. The GEM entity system has no entry for Thomas Township Energy LLC, so it would be a new entity.",
+      "action": "Create the plant in Hemlock, Saginaw County, Michigan, then add the two units below as cancelled, cancellation year 2021, with no start year. Add Thomas Township Energy LLC as a new owner entity.",
+      "irp": false,
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Capacity (MW)": "625",
+            "Fuel": "fossil gas: natural gas",
+            "Status": "cancelled",
+            "Cancellation year": "2021",
+            "Turbine/Engine Technology": "CC"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://mienviro.michigan.gov/ncore/downloadpdf/1162895226898629589"
+            ],
+            "Fuel Data Source": [
+              "https://mienviro.michigan.gov/ncore/downloadpdf/1162895226898629589"
+            ],
+            "Status Data Source": [
+              "https://mienviro.michigan.gov/ncore/downloadpdf/1162895226898629589"
+            ],
+            "Cancellation year Data Source": [
+              "https://mienviro.michigan.gov/ncore/downloadpdf/1162895226898629589"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://mienviro.michigan.gov/ncore/downloadpdf/1162895226898629589"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://mienviro.michigan.gov/ncore/downloadpdf/1162895226898629589",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Each block has a combined nominal 625 MW."
+            }
+          ],
+          "action": "Add combined cycle block 1, 625 MW, natural gas, cancelled in 2021."
+        },
+        {
+          "unit_name": "2",
+          "fields": {
+            "Capacity (MW)": "625",
+            "Fuel": "fossil gas: natural gas",
+            "Status": "cancelled",
+            "Cancellation year": "2021",
+            "Turbine/Engine Technology": "CC"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://mienviro.michigan.gov/ncore/downloadpdf/1162895226898629589"
+            ],
+            "Fuel Data Source": [
+              "https://mienviro.michigan.gov/ncore/downloadpdf/1162895226898629589"
+            ],
+            "Status Data Source": [
+              "https://mienviro.michigan.gov/ncore/downloadpdf/1162895226898629589"
+            ],
+            "Cancellation year Data Source": [
+              "https://mienviro.michigan.gov/ncore/downloadpdf/1162895226898629589"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://mienviro.michigan.gov/ncore/downloadpdf/1162895226898629589"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://mienviro.michigan.gov/ncore/downloadpdf/1162895226898629589",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Each block has a combined nominal 625 MW."
+            }
+          ],
+          "action": "Add combined cycle block 2, 625 MW, natural gas, cancelled in 2021."
+        }
+      ],
+      "record_id": "us-mi:new:thomas-township-energy-power-station"
+    }
+  ]
+}

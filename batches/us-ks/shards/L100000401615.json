@@ -1,0 +1,137 @@
+{
+ "meta": {
+  "plant_id": "L100000401615",
+  "plant_name": "Clifton power station",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T09:40:19-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402344",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists Clifton generator 1 as operating, 85.0 MW, in service since December 1974."
+    },
+    "Planned retire": {
+     "value": "2028",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "https://www.sunflower.net/interconnection-guidelines/powering-progress-current-projects/clifton-replacement-project"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.sunflower.net/interconnection-guidelines/powering-progress-current-projects/clifton-replacement-project",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives a planned retirement of June 2028 for Clifton generator 1. Sunflower Electric's own Clifton Replacement Project page says Clifton 1, a Westinghouse 501 combustion turbine from 1974, has reached the end of its useful life and will be replaced by new gas-fired combustion turbines. The page gives no year. A Kansas Department of Health and Environment draft air permit from 2026 covers three new simple cycle turbines replacing one existing turbine, but I could not open it."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Owner(s)",
+    "Operator(s)"
+   ],
+   "notes": "Still operating. The plan is to replace it with new gas turbines at the same interconnection, with retirement in June 2028 per the EIA table. Sunflower states the plan but not the year. The new turbines are a possible new unit to watch."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [
+  {
+   "gem_unit_id": "G100000402344",
+   "monitor_kind": "existing_plant",
+   "monitor_reason": "Sunflower plans three new 33 MW simple cycle gas turbines to replace Clifton 1, with commercial operation in summer 2028.",
+   "recheck_by": "2027-03",
+   "note": "Sunflower's project fact sheet of July 2026 says it will install three Solar Turbines Titan 350 generators of 33 MW each, about 99 MW in all, next to the existing Clifton 1 and on the same grid connection. Construction begins in September 2026, turbines arrive in spring 2027, and commercial operation is planned for summer 2028. A state air permit notice from July 2026 covers the same three turbines, but its documents return a not found error. Add the three new units once a reviewer confirms the permit, and retire Clifton 1 when the new units start.",
+   "refs": [
+    "https://www.sunflower.net/interconnection-guidelines/powering-progress-current-projects/clifton-replacement-project",
+    "https://sunflower-epc.s3.us-west-2.amazonaws.com/260708_GEN_CliftonFactSheet_QFT_cf_jw_cf.pdf"
+   ],
+   "verifications": [
+    {
+     "url": "https://sunflower-epc.s3.us-west-2.amazonaws.com/260708_GEN_CliftonFactSheet_QFT_cf_jw_cf.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ]
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Plant 8037 generator 1 operating, planned retirement June 2028."
+  },
+  {
+   "url": "https://www.sunflower.net/interconnection-guidelines/powering-progress-current-projects/clifton-replacement-project",
+   "used_for": [
+    "Planned retire",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Sunflower page says Clifton 1 will be replaced. It names the plant and the 1974 start. No year."
+  },
+  {
+   "url": "https://www.kdhe.ks.gov/DocumentCenter/View/59376",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "dead_link",
+   "note": "Found by web search as the draft permit letter. fetch.py (curl, browser impersonation) returned 404, plain curl 403, the verifier found no Wayback copy, and the web.archive.org form returned 404."
+  },
+  {
+   "url": "https://www.kdhe.ks.gov/DocumentCenter/View/59377",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "dead_link",
+   "note": "Found by web search as the public notice. Same routes tried and the same 404."
+  },
+  {
+   "url": "https://sunflower-epc.s3.us-west-2.amazonaws.com/260708_GEN_CliftonFactSheet_QFT_cf_jw_cf.pdf",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Read in full after the first pass could not. It gives three 33 MW Titan 350 turbines, construction from September 2026 and commercial operation in summer 2028."
+  }
+ ]
+}

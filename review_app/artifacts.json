@@ -1,93 +1,104 @@
 {
-  "_note": "Index of every published review page. One interface (the shared page in ../gem-review-app: review_core/web plus trackers/gogpt/web), many pages: each entry differs only in data and reviewer. Run build_all.py --check after any change in gem-review-app or a batch; it lists stale pages. Rebuild, republish to the url, then build_all.py --mark-published NAME (writes the published block).",
-  "pages": [
-    {
-      "name": "new-york-maryland",
-      "title": "GOGPT reviewer - Amalia",
-      "reviewer": "Amalia Llano",
-      "kind": "artifact",
-      "url": "https://claude.ai/artifact/7bnX9RMity3Yw5mdaojNaL",
-      "dirs": ["batches/us-md/staging", "batches/us-ny/staging", "batches/us-md/staging-discovery", "batches/us-ny/staging-discovery", "batches/us-ia/staging"],
-      "published": {
-        "built": "2026-10-20T19:36:03-04:00",
-        "at": "2026-10-20T19:38:20-04:00",
-        "profile": "gem",
-        "fingerprint": "24e0c0d635ec273f06105ae006aea5be55bc49f55c6411d29e2996f573b5076a",
-        "parts": {
-          "builder": "419791b3dc63fa7841f2c826ffa3e6f89cc253d90073e979c7d9101129419ce1",
-          "decisions": {
-            "batches/us-ia/staging": "147fa965bc5a107d14a5de84dfd0a80bdd9e771411cabe4871f9915119c3287c",
-            "batches/us-md/staging": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-            "batches/us-md/staging-discovery": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-            "batches/us-ny/staging": "ef993d4ec975143b59371a7ce8898fd5149b58cdc8406a5d4913a3706a9503fe",
-            "batches/us-ny/staging-discovery": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-          },
-          "dirs": {
-            "batches/us-ia/staging": "30b3b3506235b900229b6d7c8013485f709b94e7966e669450033bc026cf8f06",
-            "batches/us-md/staging": "b2d0f317cf5b0e5258a7274acb6603d8dd3c85dcc117b64ba9370437ed0c23a9",
-            "batches/us-md/staging-discovery": "9e8564efa3d2289bd34245bc0c451f7cfec07c86014e2d6580058d711596aa13",
-            "batches/us-ny/staging": "904d05c5f61e41d9c158c9b1bffdb237907225bb15ac39ff255b176fd4b5f546",
-            "batches/us-ny/staging-discovery": "0bd07c634d4362b4c42e95cb675f3984b1bbca4eb3ce60c759009ecceb56b93d"
-          },
-          "export": "1440abc4bb6b85c3fc58a68e407f3f7593d695e323c3eaa041210da8e46512fb",
-          "interface": "af759072679523b147b075ea57d6f96e92f20f90025c028d6ee0585e86be1c8c",
-          "sop_pointers": "971b31da2d7a90d1ff01f2b008cd1ecd7129083f5b199cbc8199211f8b8c987b"
-        }
-      }
-    },
-    {
-      "name": "germany",
-      "title": "GOGPT reviewer - Dan",
-      "reviewer": "Dan O'Beirne",
-      "kind": "artifact",
-      "url": "https://claude.ai/artifact/3YnJ2C36PwrTJ8qYgUxbuW",
-      "dirs": ["batches/germany/staging", "batches/germany-permits/staging"],
-      "published": {
-        "built": "2026-10-20T19:36:04-04:00",
-        "at": "2026-10-20T19:38:20-04:00",
-        "profile": "gem",
-        "fingerprint": "bccbbffed161e359ac06751045cccd9657a6e59097d5922288cc97f66b33d182",
-        "parts": {
-          "builder": "419791b3dc63fa7841f2c826ffa3e6f89cc253d90073e979c7d9101129419ce1",
-          "decisions": {
-            "batches/germany-permits/staging": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-            "batches/germany/staging": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-          },
-          "dirs": {
-            "batches/germany-permits/staging": "4e75bc0894e2c40aaaaaf5de45d65acc9b24f331840cb947bd8887bb53194bd2",
-            "batches/germany/staging": "8493a60fff6f0d4bbb290d9b29a1d3112173fa3e33fe9d201e2c39c11ba72d7d"
-          },
-          "export": "1440abc4bb6b85c3fc58a68e407f3f7593d695e323c3eaa041210da8e46512fb",
-          "interface": "af759072679523b147b075ea57d6f96e92f20f90025c028d6ee0585e86be1c8c",
-          "sop_pointers": "971b31da2d7a90d1ff01f2b008cd1ecd7129083f5b199cbc8199211f8b8c987b"
-        }
-      }
-    },
-    {
-      "name": "illinois",
-      "title": "GOGPT reviewer - Baird",
-      "reviewer": "Baird Langenbrunner",
-      "kind": "artifact",
-      "url": "https://claude.ai/artifact/8C7yTha7YC2eYUdWxJ5Eik",
-      "dirs": ["batches/us-il/staging"],
-      "published": {
-        "built": "2026-10-20T19:35:57-04:00",
-        "at": "2026-10-20T19:38:21-04:00",
-        "profile": "gem",
-        "fingerprint": "19b320dd179004b39668dfe720b946847b5b0bd3964c2a7913d6e3b09c10ecd0",
-        "parts": {
-          "builder": "419791b3dc63fa7841f2c826ffa3e6f89cc253d90073e979c7d9101129419ce1",
-          "decisions": {
-            "batches/us-il/staging": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-          },
-          "dirs": {
-            "batches/us-il/staging": "0587266c766f8f9a29b7bf2b0ad24eaef489d17b025be89a7bd8d4566015917e"
-          },
-          "export": "1440abc4bb6b85c3fc58a68e407f3f7593d695e323c3eaa041210da8e46512fb",
-          "interface": "af759072679523b147b075ea57d6f96e92f20f90025c028d6ee0585e86be1c8c",
-          "sop_pointers": "971b31da2d7a90d1ff01f2b008cd1ecd7129083f5b199cbc8199211f8b8c987b"
-        }
+ "_note": "Index of every published review page. One interface (the shared page in ../gem-review-app: review_core/web plus trackers/gogpt/web), many pages: each entry differs only in data and reviewer. Run build_all.py --check after any change in gem-review-app or a batch; it lists stale pages. Rebuild, republish to the url, then build_all.py --mark-published NAME (writes the published block).",
+ "pages": [
+  {
+    "name": "new-york-maryland",
+    "title": "GOGPT reviewer - Amalia",
+    "reviewer": "Amalia Llano",
+    "kind": "artifact",
+    "url": "https://claude.ai/artifact/7bnX9RMity3Yw5mdaojNaL",
+    "dirs": ["batches/us-md/staging", "batches/us-ny/staging", "batches/us-md/staging-discovery", "batches/us-ny/staging-discovery", "batches/us-ia/staging", "batches/us-ks/staging", "batches/us-ms/staging", "batches/us-mi/staging"],
+    "published": {
+      "built": "2026-10-29T10:37:25-04:00",
+      "at": "2026-10-29T10:37:42-04:00",
+      "profile": "gem",
+      "fingerprint": "6a26f174cc326da9ebf3f498fb0bd82d427d7b519098485f31f3d47de40206c4",
+      "parts": {
+        "assets": "b072d0fdf551ef2bacc06c5c70b892c87ded50a6d3dc01fe4d88a2292cc7fbd3",
+        "builder": "72fbe53aece3a08ef7dd1df3b063bc5e1544c42678d0ed3adfc144d0cbc15f76",
+        "decisions": {
+          "batches/us-ia/staging": "147fa965bc5a107d14a5de84dfd0a80bdd9e771411cabe4871f9915119c3287c",
+          "batches/us-ks/staging": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "batches/us-md/staging": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "batches/us-md/staging-discovery": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "batches/us-mi/staging": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "batches/us-ms/staging": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "batches/us-ny/staging": "ef993d4ec975143b59371a7ce8898fd5149b58cdc8406a5d4913a3706a9503fe",
+          "batches/us-ny/staging-discovery": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "dirs": {
+          "batches/us-ia/staging": "85e3749ef378dd29acf48744e38dfc43dfd0afbc87657422dc25b3801fed8647",
+          "batches/us-ks/staging": "e3c6ab0ada88e077ff7e5b5b7ce67d9079bfbc1978be36bd78afec071d56feae",
+          "batches/us-md/staging": "b2d0f317cf5b0e5258a7274acb6603d8dd3c85dcc117b64ba9370437ed0c23a9",
+          "batches/us-md/staging-discovery": "9e8564efa3d2289bd34245bc0c451f7cfec07c86014e2d6580058d711596aa13",
+          "batches/us-mi/staging": "deed0572f1c08474ca8eec5beee781af64a4e80f97c352fd58c1b6375f9830e4",
+          "batches/us-ms/staging": "1377511ad96bc0247c4c0b55a94395b369c1180142abd3812cbeff1560a8ab77",
+          "batches/us-ny/staging": "904d05c5f61e41d9c158c9b1bffdb237907225bb15ac39ff255b176fd4b5f546",
+          "batches/us-ny/staging-discovery": "0bd07c634d4362b4c42e95cb675f3984b1bbca4eb3ce60c759009ecceb56b93d"
+        },
+        "export": "c0ce5c272d60ac7de4bae4ea788f32f9aac40543e9d3027dd08cc8d9f79becfd",
+        "interface": "383125640efb9149dd8bdab7c787f67ac7e3bb0b4097e4f3a38bcae6ac573af5",
+        "sop_pointers": "fb5d871c68832c98afcf8fc7e590e07569b3519b702b8aa486c988b57dfd5ce4"
       }
     }
-  ]
+  },
+  {
+    "name": "germany",
+    "title": "GOGPT reviewer - Dan",
+    "reviewer": "Dan O'Beirne",
+    "kind": "artifact",
+    "url": "https://claude.ai/artifact/3YnJ2C36PwrTJ8qYgUxbuW",
+    "dirs": ["batches/germany/staging", "batches/germany-permits/staging"],
+    "published": {
+      "built": "2026-10-29T10:37:06-04:00",
+      "at": "2026-10-29T10:37:14-04:00",
+      "profile": "gem",
+      "fingerprint": "533fa2889600c3fb365fa762994b254ffdfbea3afa952f0bed90d3ad33ac7f83",
+      "parts": {
+        "builder": "72fbe53aece3a08ef7dd1df3b063bc5e1544c42678d0ed3adfc144d0cbc15f76",
+        "decisions": {
+          "batches/germany-permits/staging": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "batches/germany/staging": "b5f04de196bf82e9f2c0e72cbc35ae9aa2270ce11da4095ca14ed5fdc7375af0"
+        },
+        "dirs": {
+          "batches/germany-permits/staging": "4e75bc0894e2c40aaaaaf5de45d65acc9b24f331840cb947bd8887bb53194bd2",
+          "batches/germany/staging": "8493a60fff6f0d4bbb290d9b29a1d3112173fa3e33fe9d201e2c39c11ba72d7d"
+        },
+        "export": "c0ce5c272d60ac7de4bae4ea788f32f9aac40543e9d3027dd08cc8d9f79becfd",
+        "interface": "383125640efb9149dd8bdab7c787f67ac7e3bb0b4097e4f3a38bcae6ac573af5",
+        "sop_pointers": "fb5d871c68832c98afcf8fc7e590e07569b3519b702b8aa486c988b57dfd5ce4"
+      }
+    }
+  },
+  {
+    "name": "illinois",
+    "title": "GOGPT reviewer - Baird",
+    "reviewer": "Baird Langenbrunner",
+    "kind": "artifact",
+    "url": "https://claude.ai/artifact/8C7yTha7YC2eYUdWxJ5Eik",
+    "dirs": ["batches/us-il/staging", "batches/us-il-val/staging", "batches/us-il-dc/staging"],
+    "published": {
+      "built": "2026-10-29T10:37:04-04:00",
+      "at": "2026-10-29T10:37:13-04:00",
+      "profile": "gem",
+      "fingerprint": "f76a502dca347ff39a8cc97e3e81d292471a55c1da16e87ac450ec0e9c560d84",
+      "parts": {
+        "builder": "72fbe53aece3a08ef7dd1df3b063bc5e1544c42678d0ed3adfc144d0cbc15f76",
+        "decisions": {
+          "batches/us-il-dc/staging": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "batches/us-il-val/staging": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "batches/us-il/staging": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "dirs": {
+          "batches/us-il-dc/staging": "59cea095901604fa214fde31e3f33381ecf00f1dcecbe61592d18a078506dd4d",
+          "batches/us-il-val/staging": "b7e1f5ac711af4ee42888aebf16b9ef24fe3c3deaa1421e40916857fbe327f83",
+          "batches/us-il/staging": "81d07b83f2083ec9b2baa16ad86a8751146b34207765086543777c16d769347c"
+        },
+        "export": "c0ce5c272d60ac7de4bae4ea788f32f9aac40543e9d3027dd08cc8d9f79becfd",
+        "interface": "383125640efb9149dd8bdab7c787f67ac7e3bb0b4097e4f3a38bcae6ac573af5",
+        "sop_pointers": "fb5d871c68832c98afcf8fc7e590e07569b3519b702b8aa486c988b57dfd5ce4"
+      }
+    }
+  }
+ ]
 }

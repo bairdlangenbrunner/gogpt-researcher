@@ -1,0 +1,152 @@
+{
+ "meta": {
+  "plant_id": "L100000401856",
+  "plant_name": "Delray power station",
+  "state": "Michigan",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-26T23:38:34-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402693",
+   "unit_name": "11-1",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "71.1",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://mienviro.michigan.gov/ncore/downloadpdf/-3126265583763517653"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-3126265583763517653",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists Delray generator 11-1 at 71.1 megawatts nameplate, status operating, in service February 2000. The Michigan air permit staff report from 2023 (https://mienviro.michigan.gov/ncore/downloadpdf/-3126265583763517653) also gives a load rating of 71.1 megawatts for each turbine. GEM shows 71.0."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "General Electric: Frame 7",
+     "refs": [
+      "https://mienviro.michigan.gov/ncore/downloadpdf/-3126265583763517653"
+     ],
+     "verifications": [
+      {
+       "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-3126265583763517653",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Michigan EGLE staff report for the Renewable Operating Permit, dated February 2023 (https://mienviro.michigan.gov/ncore/downloadpdf/-3126265583763517653), says units EU-CTG11-1 and EU-CTG12-1 are General Electric Frame 7 stationary gas turbines. The exact frame model is not given."
+    }
+   },
+   "not_found": [
+    "Latest Activity",
+    "Planned retire",
+    "Retired year"
+   ],
+   "notes": "Still operating. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists generator 11-1 as operating with no planned retirement, and the air operating permit is in effect until October 2027. I found no retirement, mothballing or ownership change."
+  },
+  {
+   "gem_unit_id": "G100000402694",
+   "unit_name": "12-1",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "71.1",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://mienviro.michigan.gov/ncore/downloadpdf/-3126265583763517653"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-3126265583763517653",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists Delray generator 12-1 at 71.1 megawatts nameplate, status operating, in service February 2000. The Michigan air permit staff report from 2023 (https://mienviro.michigan.gov/ncore/downloadpdf/-3126265583763517653) also gives a load rating of 71.1 megawatts for each turbine. GEM shows 71.0."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "General Electric: Frame 7",
+     "refs": [
+      "https://mienviro.michigan.gov/ncore/downloadpdf/-3126265583763517653"
+     ],
+     "verifications": [
+      {
+       "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-3126265583763517653",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Michigan EGLE staff report for the Renewable Operating Permit, dated February 2023 (https://mienviro.michigan.gov/ncore/downloadpdf/-3126265583763517653), says units EU-CTG11-1 and EU-CTG12-1 are General Electric Frame 7 stationary gas turbines. The exact frame model is not given."
+    }
+   },
+   "not_found": [
+    "Latest Activity",
+    "Planned retire",
+    "Retired year"
+   ],
+   "notes": "Still operating. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists generator 12-1 as operating with no planned retirement, and the air operating permit is in effect until October 2027. I found no retirement, mothballing or ownership change."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet for plant 1728, generators 11-1 and 12-1."
+  },
+  {
+   "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-3126265583763517653",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Staff report for the 2022 operating permit, read through the saved local copy."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Web searches for a Delray retirement or sale in 2026 found nothing."
+  }
+ ]
+}

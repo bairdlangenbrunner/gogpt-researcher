@@ -1,6 +1,6 @@
 # Controlled Vocabulary — Fuels, Technology, Capacity, Ownership
 
-Distilled from the GOGPT Editing Manual (March 2026); fetched 2026-07-27.
+Distilled from the GOGPT Editing Manual (September 2026); updated 2026-10-27.
 
 Covers the fuel category/detail dropdowns, the technology abbreviations, capacity
 inclusion and rounding rules, ownership-percentage rules, captive-plant fields, the
@@ -74,22 +74,18 @@ If unit technology is unavailable, select "unknown".
 
 - **Inclusion threshold: ≥50 MW nameplate/installed capacity**, per unit or per IC/AGT
   set. **EU and UK exception: ≥20 MW per unit.**
-- Capacity fields hold **nameplate MWe (electrical), never MWt (thermal)** — see the
-  captive-plant note in `unit_conventions.md` on generating vs. shaft/mechanical capacity.
+- Capacity fields hold **nameplate or installed electrical capacity in MW (MWe), never MWt (thermal)**. The manual's "generating capacity" is the lower operational figure and is not what GEM records; see the captive-plant note in `unit_conventions.md` on shaft/mechanical capacity.
   Watch specifically for thermal-capacity figures ("MWt") being entered into the
   electrical Capacity (MW) field by mistake.
 - **Ranges**: if a source gives a capacity range, record the **high end** of the range —
   don't enter the range itself. This commonly arises for undecided proposed capacities, or
   net-vs-gross comparisons.
-- **Rounding**: round to the nearest whole MW (e.g. 294.7 MW → 295 MW) — sub-MW precision
-  isn't needed and the underlying data is fuzzy anyway.
+- **Rounding is optional** (manual, Precision of Capacity Data): record the figure the source gives, at most one decimal. Rounding to the whole MW (294.7 MW to 295 MW) is allowed, never required.
 - **No breakdown available**: if you can't find a unit-by-unit breakdown but know the
   total plant capacity, stage one unit with the total (to be split later). If you know the
   number of units but not each one's capacity, you can assume an even average (e.g. a
   2000 MW plant with 4 CC units → 500 MW average per unit).
-- **IC engine sets / AGT sets**: capacity is not entered directly — enter Number of
-  Engines/Turbines and Capacity of Engine/Turbine (MW); total Capacity (MW) auto-
-  calculates and isn't directly editable.
+- **IC engine sets / AGT sets**: capacity is not entered directly. Enter Number of Engines/Turbines and Capacity of Engine/Turbine (MW); total Capacity (MW) is calculated and isn't directly editable.
 - **Standard (non-aeroderivative) GT units**: enter total capacity directly in Capacity
   (MW), since only one turbine is entered per unit.
 - If capacity can't be found at all, leave the field blank — "not found" is not a valid
@@ -116,27 +112,36 @@ If unit technology is unavailable, select "unknown".
   etc.) that actually owns the plant instead — this preserves the distinction between,
   say, the entity that owns power plants vs. the one that owns pipelines vs. the one that
   owns oil fields, rather than collapsing everything to "the government."
-- **Percentage**: enter 100% explicitly for a single confirmed owner (don't leave blank to
-  imply full ownership). If ownership shares aren't reported, list owner names with
-  percentages blank. Record unknown ownership as owner **"unknown"**.
-- **Equal-share cases** (e.g. 10 companies each owning 10%): prioritize the largest/most
-  recognizable companies for explicit listing; group smaller ones into "other". This
-  should be rare — ask the PM if genuinely unsure how to split a given case.
+- **Percentage**: enter 100% explicitly for a single confirmed owner (don't leave blank to imply full ownership). If ownership shares aren't reported, list owner names with percentages blank.
+- **Unknown owner**: record the owner as **"unknown"** when ownership is unknown. For a very new or vague proposal where you cannot find the owner, leave the owner field blank (manual, Owner section).
+- **Equal-share cases** (e.g. 10 companies each owning 10%): list the largest or best-known company or companies by name and group the rest as "other". This should be rare; ask the PM if unsure how to split a given case.
+- **Pending acquisition or merger**: note it in the Notes field, add it to the "GEM Trackers - possible updates" sheet, and revisit the plant in the next cycle. Do not change the owner until the transaction closes.
+- The company that buys the power (a PPA counterparty) is not the owner.
 - **Operator** ≠ owner. Only record an operator when a source states one explicitly and it
   differs from the lowest-level owner; don't search for it specifically.
+
+## Name, language and project fields
+
+- **Name (Other)**: record any variation of the plant's name in English, so the plant is not duplicated under a very different name.
+- **Language** and **Local Name**: add the plant's name in the local language, or in another language if the plant is known by a different name elsewhere (for example Ukrainian or Russian names).
+- **Project Links**: the names of related projects, such as the LNG terminal an LNG power station serves or the data center a plant will supply (manual, Project Links section).
+- **Fuel Percentage**: fill it only when a unit burns more than one fuel; leave it blank when the data is not available.
+- **Research status**: choose "added" for a new unit or phase, "in progress" for a unit you started and did not finish, and "updated" or "no changes" when done (see `lifecycle_rules.md`).
+- **Disrupted due to conflict** is the label of the checkbox between Status and Status Detail (see `lifecycle_rules.md`).
 
 ## Captive fields
 
 | Field | Values / notes |
 |---|---|
-| Captive Industry Type | Industry served by the plant, or "unknown" if no data. |
+| Captive Industry Type | Industry served by the plant, or "unknown" if no data. Filled for every captive plant, including one that exports power. |
 | Captive Data Source | Reference link(s) supporting the captive classification. |
 | Captive Industry Use | `heat`, `power`, or `both` — if data is available. |
 | Captive Non-Industry Use | `heat`, `power`, `both`, or `none` — covers cases like grid electricity sales or heat supplied to nearby homes/facilities. |
-| Emergency/Backup | Unit-level only; appears only when Captive + Industry Type = "Data Centre" is set at the unit level. Check only if the unit is an emergency/backup generator for the data center — do NOT check if it provides primary/routine power. |
+| Emergency/Backup (Backup Power in the export) | Unit-level only; appears only when Captive + Industry Type = "Data Centre" is set at the unit level. Check it when the unit is an emergency or backup generator for the data center. Backup units at data centers are captive units and are tracked (50 MW summed, 20 MW in the EU and UK). Do NOT check it if the unit provides primary or routine power. |
 
-See `unit_conventions.md` for the generating-MW-only capacity scope rule for captive
-units, and for plant-level vs. unit-level placement of these fields.
+Captive plants may sell a large share of their power outside; Captive Non-Industry Use records that, so the captive fields are filled for an exporting plant too.
+
+
 
 ## CCS and CHP: the "yes" / "not found" convention
 

@@ -1,0 +1,403 @@
+{
+  "state": "Illinois",
+  "postal": "il",
+  "where": {
+    "kind": "state",
+    "name": "Illinois",
+    "slug": "illinois",
+    "country": "United States",
+    "postal": "il"
+  },
+  "mode": "update",
+  "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv",
+  "scope": "ladder",
+  "generated": "2026-10-21T11:07:35-04:00",
+  "plants": [
+    {
+      "plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "brief_path": "batches/us-il-val/briefs/L100000103868.md",
+      "unit_ids": [
+        "G100000403513",
+        "G100000403514"
+      ],
+      "n_units": 2,
+      "max_priority": 4,
+      "wiki_url": "https://www.gem.wiki/Marion_Plant",
+      "n_tasks": 13,
+      "fields": [
+        "Status",
+        "Start year",
+        "Retired year",
+        "Status Detail",
+        "Owner(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "City",
+        "Location Data Source"
+      ],
+      "tasks": {
+        "G100000403513": [
+          {
+            "text": "This unit is mothballed. Is it still mothballed, back in operation, or retired? A status change needs two independent publishers. Never fill a retired year while the status stays mothballed.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Retired year"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Owner(s) (currently Southern Illinois Power Cooperative Inc [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 37.6196810); Longitude (currently -88.9529190); Location accuracy (currently exact); City (currently Marion): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The unit's status history has a \"mothballed\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 976) shows generator 5, 75 MW, natural gas fired combustion turbine, operating, operating since 2003, which reads as operating, while GEM says mothballed. Check which is right and report the status with a public source. A status change needs two independent publishers for high confidence.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100000403514": [
+          {
+            "text": "This unit is mothballed. Is it still mothballed, back in operation, or retired? A status change needs two independent publishers. Never fill a retired year while the status stays mothballed.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Retired year"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Owner(s) (currently Southern Illinois Power Cooperative Inc [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 37.6196810); Longitude (currently -88.9529190); Location accuracy (currently exact); City (currently Marion): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The unit's status history has a \"mothballed\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 976) shows generator 6, 75 MW, natural gas fired combustion turbine, operating, operating since 2003, which reads as operating, while GEM says mothballed. Check which is right and report the status with a public source. A status change needs two independent publishers for high confidence.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Location Data Source is empty and Owner 1 has no data source; the validation report treats both as required fixes. For location: confirm the exact point (37.619681, -88.952919) in satellite imagery (site_image.py), then stage the Google Maps pin link as the Location Data Source, plus any document that gives the address or coordinates (EIA-860 plant table). For the owner: find a document that states the plant's current owner and stage it as the Owner Data Source. Merge with any existing link.",
+          "fields": [
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Location Data Source",
+            "Owner(s)"
+          ],
+          "checks": [
+            25
+          ]
+        },
+        {
+          "text": "The database's validation report says Owner has no data source. Find a document that states the current value for this plant and report the value with that document. If the document gives a different value, say so.",
+          "fields": [
+            "Owner(s)"
+          ],
+          "checks": [
+            7
+          ]
+        },
+        {
+          "text": "The database's validation report says Location has no data source. Find a document that states the current value for this plant and report the value with that document. If the document gives a different value, say so.",
+          "fields": [
+            "Latitude",
+            "Longitude",
+            "Location accuracy"
+          ],
+          "checks": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "brief_path": "batches/us-il-val/briefs/L100000103864.md",
+      "unit_ids": [
+        "G100001017993",
+        "G100001017949"
+      ],
+      "n_units": 2,
+      "max_priority": 9,
+      "wiki_url": "https://www.gem.wiki/Joliet_29_Generating_Station",
+      "n_tasks": 12,
+      "fields": [
+        "Owner(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Conversion/replacement?",
+        "City",
+        "CCS attachment?",
+        "Location Data Source"
+      ],
+      "tasks": {
+        "G100001017993": [
+          {
+            "text": "Owner(s) (currently Midwest Generation EME LLC [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 41.4949190); Longitude (currently -88.1243420); Location accuracy (currently exact); City (currently Joliet): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The database's validation report says Carbon capture (CCS) has no data source. Find a document that states the current value for this unit and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "CCS attachment?"
+            ],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "This unit has no EIA generator id. The EIA-860M file for August 2026 lists at plant 384: generator 7, 660 MW, natural gas steam turbine, retired 2023, operating since 1965 (other possible matches: 8). Say in a question which generator id or ids belong to this unit; do not report them as values.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100001017949": [
+          {
+            "text": "Owner(s) (currently Midwest Generation EME LLC [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 41.4949190); Longitude (currently -88.1243420); Location accuracy (currently exact); City (currently Joliet): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The database's validation report says Carbon capture (CCS) has no data source. Find a document that states the current value for this unit and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "CCS attachment?"
+            ],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "This unit has no EIA generator id. The EIA-860M file for August 2026 lists at plant 384: generator 7, 660 MW, natural gas steam turbine, retired 2023, operating since 1965 (other possible matches: 8). Say in a question which generator id or ids belong to this unit; do not report them as values.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Location Data Source is empty and the validation report treats that as a required fix. GEM's point (41.494919, -88.124342) is marked exact. Confirm the point sits on the plant with a satellite look (site_image.py), then stage a Location Data Source: the Google Maps pin link for the point (docs/reference/location.md), plus any document that gives the plant's address or coordinates (the EIA-860 annual plant table gives a street address; the EIA-860M table gives coordinates). Merge with any existing link, never replace. Joliet 9 (L100000103865) shares the same point; say in the note whether the two plants really sit on the same site or whether one point is wrong.",
+          "fields": [
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Location Data Source"
+          ],
+          "checks": [
+            25
+          ]
+        },
+        {
+          "text": "The database's validation report says Location has no data source. Find a document that states the current value for this plant and report the value with that document. If the document gives a different value, say so.",
+          "fields": [
+            "Latitude",
+            "Longitude",
+            "Location accuracy"
+          ],
+          "checks": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000103865",
+      "plant_name": "Joliet 9 Generating Station",
+      "brief_path": "batches/us-il-val/briefs/L100000103865.md",
+      "unit_ids": [
+        "G100001017847"
+      ],
+      "n_units": 1,
+      "max_priority": 9,
+      "wiki_url": "https://www.gem.wiki/Joliet_9_Generating_Station",
+      "n_tasks": 6,
+      "fields": [
+        "Owner(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Conversion/replacement?",
+        "City",
+        "CCS attachment?",
+        "Location Data Source"
+      ],
+      "tasks": {
+        "G100001017847": [
+          {
+            "text": "Owner(s) (currently Midwest Generation EME LLC [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 41.4949190); Longitude (currently -88.1243420); Location accuracy (currently exact); City (currently Joliet): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The database's validation report says Carbon capture (CCS) has no data source. Find a document that states the current value for this unit and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "CCS attachment?"
+            ],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Location Data Source is empty and the validation report treats that as a required fix. GEM's point (41.494919, -88.124342) is marked exact and is the same point as Joliet 29. The EIA-860M table puts Joliet 9 at 41.4931, -88.1153, about 0.8 km east. Look at both points in satellite imagery (site_image.py), decide which sits on the Joliet 9 plant, and stage the Latitude, Longitude and Location accuracy if the point should move, with a Location Data Source: the Google Maps pin link for the final point plus the EIA table or any document that gives the address. Merge with any existing link, never replace.",
+          "fields": [
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Location Data Source"
+          ],
+          "checks": [
+            25
+          ]
+        },
+        {
+          "text": "The database's validation report says Location has no data source. Find a document that states the current value for this plant and report the value with that document. If the document gives a different value, say so.",
+          "fields": [
+            "Latitude",
+            "Longitude",
+            "Location accuracy"
+          ],
+          "checks": [
+            7
+          ]
+        }
+      ]
+    }
+  ],
+  "not_tasked": [],
+  "promoted_new": [],
+  "irp": null,
+  "captive": null,
+  "location": {
+    "file": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/work/location_us-il.json",
+    "read": "2026-10-21T11:00:07-04:00",
+    "sources": {
+      "eia860m": "august_generator2026.xlsx",
+      "eia860": "eia8602024.zip"
+    },
+    "plants_checked": 38,
+    "candidates": []
+  }
+}

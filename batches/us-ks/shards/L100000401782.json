@@ -1,0 +1,63 @@
+{
+ "meta": {
+  "plant_id": "L100000401782",
+  "plant_name": "Chanute 2 power station",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T09:42:22-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402564",
+   "unit_name": "14",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists Chanute 2 generator 14 as operating, 60.0 MW, natural gas combustion turbine, operating since February 2002, with no planned retirement date. Owner on the table is the City of Chanute."
+    }
+   },
+   "not_found": [],
+   "notes": "I found no retirement, planned retirement, mothballing or sale for this unit. The city's website still describes a 50 MW combustion turbine at the plant, but the page is undated."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Plant 1268, generator 14, status operating, 60.0 MW, operating 2002, no planned retirement."
+  },
+  {
+   "url": "https://chanute.org/346",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "City of Chanute power plants page, undated. Passed with combustion gas turbine. It lists a 50 MW turbine, so it does not match the 60 MW nameplate and is not used as a value."
+  }
+ ]
+}

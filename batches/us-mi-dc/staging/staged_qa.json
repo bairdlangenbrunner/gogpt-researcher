@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "lane": "qa",
+    "scope": {
+      "country": "United States",
+      "state": "Michigan",
+      "postal": "mi",
+      "kind": "state",
+      "slug": "michigan",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-27T12:13:54-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 1
+    }
+  },
+  "records": [
+    {
+      "gem_plant_id": "",
+      "plant_name": "Project Mitten Saline Township data center",
+      "concern_type": "capacity-threshold",
+      "recommendation": "No plant is added. Check again if a later permit raises the engine sizes.",
+      "refs": {
+        "links": [
+          "https://mienviro.michigan.gov/ncore/downloadpdf/-4632942554518496238"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-4632942554518496238",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Names 3,230 kilowatt engines at Saline Township."
+        }
+      ],
+      "proposed_value": "",
+      "irp": false,
+      "checks": [
+        39
+      ],
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "State air permit PTI0000135 version 2.0 (October 16, 2026) lists 12 diesel engines rated 3,230 kilowatts of shaft power each and four small gas and diesel units. The application form gives electrical sizes of 3,000 kilowatts for each large engine and smaller ones for the rest. The total is about 38.2 MW from the form. Even the shaft figures give about 40.4 MW. Both are under 50 MW, so no plant is added.",
+      "record_id": "us-mi:plant:qa-capacity-threshold-1"
+    }
+  ]
+}

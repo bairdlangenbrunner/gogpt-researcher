@@ -1,0 +1,123 @@
+{
+ "meta": {
+  "plant_id": "L100000401933",
+  "plant_name": "Gordon Evans energy center",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T09:38:46-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402877",
+   "unit_name": "GT1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists this unit as operating, with no planned retirement date. Row read: Plant 1240, generator GT1, status operating, nameplate 98.3 MW, operating year 2000. I searched the web for a retirement, mothballing or sale announcement and found none."
+    }
+   },
+   "not_found": [],
+   "notes": "The unit is still listed as operating in the newest federal monthly table. No retirement, mothballing or ownership change turned up in a web search."
+  },
+  {
+   "gem_unit_id": "G100000402878",
+   "unit_name": "GT2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists this unit as operating, with no planned retirement date. Row read: Plant 1240, generator GT2, status operating, nameplate 98.3 MW, operating year 2000. I searched the web for a retirement, mothballing or sale announcement and found none."
+    }
+   },
+   "not_found": [],
+   "notes": "The unit is still listed as operating in the newest federal monthly table. No retirement, mothballing or ownership change turned up in a web search."
+  },
+  {
+   "gem_unit_id": "G100000402879",
+   "unit_name": "GT3",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists this unit as operating, with no planned retirement date. Row read: Plant 1240, generator GT3, status operating, nameplate 178.5 MW, operating year 2001. I searched the web for a retirement, mothballing or sale announcement and found none."
+    }
+   },
+   "not_found": [],
+   "notes": "The unit is still listed as operating in the newest federal monthly table. No retirement, mothballing or ownership change turned up in a web search."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000402877",
+   "concern_type": "existence",
+   "recommendation": "No change. The engine is too small for GEM.",
+   "note": "The EIA-860M table for August 2026 lists a 2.9 MW oil standby engine, generator 5, at plant 1240 that GEM does not carry. It is under the manual's 50 MW unit threshold.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "The file loaded. I read the rows for the plant in the Operating sheet and the Retired sheet myself."
+  },
+  {
+   "url": "https://www.kdhe.ks.gov/DocumentCenter/View/44020",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "dead",
+   "note": "This Kansas health department public notice link returned HTTP 404 and no archived copy could be read. It is only a permit lead and I did not use it as a source."
+  }
+ ]
+}

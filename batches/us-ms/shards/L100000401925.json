@@ -1,0 +1,76 @@
+{
+ "meta": {
+  "plant_id": "L100000401925",
+  "plant_name": "Hinds energy facility",
+  "state": "Mississippi",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-23T14:09:28-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401847",
+   "unit_name": "PB01",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists Hinds Energy Facility, plant 55218, generators H01, H02 and H03 as operating, each with an operating year of 2001. It shows no planned retirement date. The Mississippi air permit renewal application of September 2026 also shows the plant is still active. I found no news of a retirement, mothballing or sale."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year"
+   ],
+   "notes": "The plant is still operating. The EIA table lists the three generators that make up this block (176.6, 176.6 and 198.1 MW, about 551 MW in all, matching GEM). No retirement, planned retirement, mothballing or owner change was found. The owner in the EIA table is Entergy Mississippi LLC, the same as GEM."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Plant 55218 rows H01, H02, H03 operating, 2001, owner Entergy Mississippi LLC, read from the downloaded file."
+  },
+  {
+   "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1413860",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Mississippi air permit 1080-00230 renewal issued March 2020 for Hinds County Plant, lists two natural gas turbines with heat recovery steam generators. The index page shows a renewal application received in September 2026."
+  },
+  {
+   "url": "https://www.entergy.com/news/entergy-mississippi-purchases-hinds-energy-facility",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "History of the 2012 purchase only, not run through the checker."
+  }
+ ]
+}

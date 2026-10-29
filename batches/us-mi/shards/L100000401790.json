@@ -1,0 +1,83 @@
+{
+ "meta": {
+  "plant_id": "L100000401790",
+  "plant_name": "Holland energy park",
+  "state": "Michigan",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-26T23:59:00-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402073",
+   "unit_name": "1012",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Read from the file: plant L100000401790"
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status is unchanged. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 59093, generators 10, 11 and 12 (two combustion turbines of 53.1 MW and one steam turbine of 43.2 MW), all operating since June 2017, with no planned retirement. I found no retirement, mothballing or sale announced."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Siemens SGT-800",
+     "refs": [
+      "https://www.power-eng.com/gas/turbines/siemens-to-supply-natural-gas-fired-turbines-for-michigan-power-plant/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.power-eng.com/gas/turbines/siemens-to-supply-natural-gas-fired-turbines-for-michigan-power-plant/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Power Engineering article (https://www.power-eng.com/gas/turbines/siemens-to-supply-natural-gas-fired-turbines-for-michigan-power-plant/) says Siemens supplies two SGT-800 gas turbines for the Holland Energy Park. A state air permit staff report from December 2023 (https://mienviro.michigan.gov/ncore/downloadpdf/-5736806201363183979) confirms two gas turbines and a steam turbine at the site."
+    }
+   },
+   "not_found": [
+    "Latest Activity"
+   ],
+   "notes": "The unit is still operating. Latest Activity is left blank because GEM only fills it for units in development or shelved."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet for this plant."
+  },
+  {
+   "url": "https://www.power-eng.com/gas/turbines/siemens-to-supply-natural-gas-fired-turbines-for-michigan-power-plant/",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Names the turbine make and model."
+  }
+ ]
+}

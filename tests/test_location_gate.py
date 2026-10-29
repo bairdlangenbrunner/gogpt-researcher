@@ -11,7 +11,7 @@ for p in (ROOT, ROOT / "scripts"):
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
 
-from state_gate import gate_location  # noqa: E402
+from state_gate import gate_location, gate_location_notes  # noqa: E402
 
 WHERE = {"kind": "state", "name": "Kansas", "slug": "kansas",
          "country": "United States", "postal": "ks"}
@@ -56,16 +56,36 @@ def test_invalid_point_and_bad_accuracy(tmp_path):
 
 
 def test_exact_needs_decimals_and_a_seen_note(tmp_path):
+    # imagery and published are valid routes to exact on their own
     r = record(fields={"Latitude": "38.12", "Longitude": "-97.54", "Location accuracy": "exact"},
                location_method="imagery", researcher_notes="Moved onto the site.")
-    out = gate_location(lanes(r), INDEX, tmp_path)
-    msgs = [m for _, m in out]
+    msgs = [m for _, m in gate_location(lanes(r), INDEX, tmp_path)]
     assert any("three decimals" in m for m in msgs)
-    assert any("satellite imagery" in m for m in msgs)
-    r = record(fields={"Latitude": "38.12345", "Longitude": "-97.54321", "Location accuracy": "exact"},
-               location_method="imagery",
+    assert not any("satellite imagery" in m for m in msgs)
+    exact = {"Latitude": "38.12345", "Longitude": "-97.54321", "Location accuracy": "exact"}
+    for method in ("imagery", "published"):
+        r = record(fields=exact, location_method=method, researcher_notes="Moved.")
+        assert gate_location(lanes(r), INDEX, tmp_path) == []
+    # address needs a seen note
+    r = record(fields=exact, location_method="address", researcher_notes="Moved.")
+    assert any("satellite imagery" in m for _, m in gate_location(lanes(r), INDEX, tmp_path))
+    r = record(fields=exact, location_method="address",
                researcher_notes="The turbine hall and stack are visible in satellite imagery at this point.")
     assert gate_location(lanes(r), INDEX, tmp_path) == []
+    # dataset needs a named route
+    r = record(fields=exact, location_method="dataset", researcher_notes="Moved.")
+    assert gate_location(lanes(r), INDEX, tmp_path)
+    r = record(fields=exact, location_method="dataset", location_route="EIA-860 coordinates")
+    assert gate_location(lanes(r), INDEX, tmp_path) == []
+
+
+def test_exact_without_a_route_is_only_advisory(tmp_path):
+    exact = {"Latitude": "38.12345", "Longitude": "-97.54321", "Location accuracy": "exact"}
+    r = record(fields=exact, location_method="published", researcher_notes="Moved.")
+    assert gate_location(lanes(r), INDEX, tmp_path) == []
+    assert any("location_route" in m for _, m in gate_location_notes(lanes(r)))
+    r = record(fields=exact, location_method="published", location_route="the permit lists it")
+    assert gate_location_notes(lanes(r)) == []
 
 
 def test_method_and_state_box(tmp_path):
@@ -78,11 +98,13 @@ def test_method_and_state_box(tmp_path):
     assert gate_location(lanes(r), country, tmp_path) == []
 
 
-def test_big_move_needs_a_note(tmp_path):
-    out = gate_location(lanes(record(location_moved_m=4200, researcher_notes="Moved.")),
-                        INDEX, tmp_path)
-    assert any("4.2 km" in m for _, m in out)
-    assert gate_location(lanes(record(location_moved_m=4200)), INDEX, tmp_path) == []
+def test_big_move_is_advisory_only(tmp_path):
+    r = record(location_moved_m=4200, researcher_notes="Moved.")
+    assert gate_location(lanes(r), INDEX, tmp_path) == []
+    assert any("4.2 km" in m for _, m in gate_location_notes(lanes(r)))
+    r = record(location_moved_m=700)
+    assert any("700" in m for _, m in gate_location_notes(lanes(r)))
+    assert gate_location_notes(lanes(record(location_moved_m=100))) == []
 
 
 def test_map_method_needs_points_fit_and_render(tmp_path):

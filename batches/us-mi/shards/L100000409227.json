@@ -1,0 +1,101 @@
+{
+ "meta": {
+  "plant_id": "L100000409227",
+  "plant_name": "491 E 48th Street power station",
+  "state": "Michigan",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-26T23:43:48-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000414071",
+   "unit_name": "9",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/N2586/N2586%20Staff%20Report%2007-22-20.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/N2586/N2586%20Staff%20Report%2007-22-20.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 7268, generator 9, as operating, 83.5 MW, a gas combustion turbine with operating year 2000. The state air permit staff report for the 48th Street Peaking Station (https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/N2586/N2586%20Staff%20Report%2007-22-20.pdf) describes the gas turbine of about 80 megawatts, and a new permit to install, number 125-24, was issued in October 2024. I found no retirement or ownership change."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Latest Activity (not needed for an operating unit)"
+   ],
+   "notes": "The merged record matches the EIA table for capacity of 83.5 MW, start year 2000 and gas fuel. The air permit lists the unit as Unit 9, an 80 MW gas turbine with dry low NOx controls and model year 1999. I could not find a turbine make or model in the permit staff report, the permit to install 125-24, the stack test reports or the annual compliance reports. Latest Activity is not filled because the unit is operating."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000414071",
+   "concern_type": "scope",
+   "recommendation": "The EIA table also lists units 7 and 8 at this plant, each 39.1 MW, gas and oil fired, operating since 1992. They are under the 50 MW unit threshold so I did not raise them as new units. Please confirm that is the intended handling.",
+   "note": "Source: https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/N2586/N2586%20Staff%20Report%2007-22-20.pdf",
+   "refs": [
+    "https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/N2586/N2586%20Staff%20Report%2007-22-20.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Plant 7268 generator 9."
+  },
+  {
+   "url": "https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/N2586/N2586%20Staff%20Report%2007-22-20.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Staff report for the 2020 renewable operating permit."
+  },
+  {
+   "url": "https://mienviro.michigan.gov/ncore/downloadpdf/5484405965280338850",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "not relevant",
+   "note": "Permit 125-24 gives MW and model year but no make or model."
+  },
+  {
+   "url": "https://www.egle.state.mi.us/aps/downloads/SRN/N2586/",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "not relevant",
+   "note": "Read the 2016 and 2020 stack tests and the 2021 and 2023 reports. None names the turbine maker."
+  }
+ ]
+}

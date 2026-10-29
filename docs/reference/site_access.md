@@ -18,6 +18,12 @@ python scripts/fetch.py <url> --render --text  # force the real-Chrome step
 5. Still walled: the page is opened in a real Chrome and read as a person's browser sees it. The cookies Chrome earns are kept, so later pages on that host open with plain curl again.
 6. Only then does `url_verifier.py` turn to the Internet Archive. It looks for up to three different saved copies, newest first, and passes if any of them shows the value. A pass keeps the live address as the citation.
 
+MDEQ's enSearch Online (`opcgis.deq.state.ms.us/ensearchonline`) is a WebForms site: a GET for the hidden form state, then a POST of the filled form (`harvest_permits_mississippi.py`). The activity search returns every application and issued permit since 2021, the active permit search takes air permit types and SIC codes, the public notice page has about 20 Wayback copies, and each facility page links its permit PDFs. The Permit Board agendas and minutes are PDF files on one page per year at www.mdeq.ms.gov, many of them scanned. The 2021 minutes page is missing from the minutes index.
+
+The TVA OASIS (www.oasis.oati.com/tva/) is a script app inside a frame, and its server certificate fails a plain curl check (`fetch.py` falls back to `insecure_tls`). Its documents are plain files under `https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/`. The interconnection queue was posted there as `OASIS_CurrentQueue.pdf` and `CurrentQ.pdf`, both 404 on the live site on 2026-10-23. List the folder in the Wayback index (`url=oasis.oati.com/woa/docs/TVA&matchType=prefix`) to find the newest queue and quarterly meeting files.
+
+Links already in the database get the same ladder before every sweep: `check_existing_links.py --state <State>` (or `--country`) runs each Data Source link in the export through `fetch.py`, looks up a saved copy for every dead one, and stages the saved-copy address when it still states the value. A blocked or dead link with no saved copy becomes a task on the plant's brief.
+
 Two things make the ladder learn:
 
 - **Learned routes.** Each host that needed more than plain curl is written to `work/fetch_routes.json` with the step that worked. The next fetch to that host starts there.
@@ -37,7 +43,7 @@ Run `python scripts/access_audit.py <batch dir> --retry` at the end of a batch. 
 | Bot wall | 401, 403, 406, "Just a moment", "Access denied", a captcha page | The ladder passes most of these. If even Chrome is stopped, use the archive and record the host below. |
 | Sign-in wall | A free or paid account is needed for the full text | A person signs in once: `python scripts/cf_clearance.py --login <site address>`. Chrome opens; sign in and close the tab. The session is kept and every later fetch to that site reads as that reader. The script never types a password. Creating an account is the user's call. |
 | Geographic or network block | "The URL you requested has been blocked" even in Chrome | Use the archive. An in-country connection also works: curl honors the `https_proxy` setting. |
-| Gone | 404, 410, or a "page not found" page | Search the site for the moved page. Official notices are often taken down after the display period, so look for the same document in the permit register or the agency's own archive. The verifier names an archived copy that still shows the value. Treat it as a lead to a live source; the Update SOP never cites an archive address. |
+| Gone | 404, 410, or a "page not found" page | Search the site for the moved page. Official notices are often taken down after the display period, so look for the same document in the permit register or the agency's own archive. The verifier names an archived copy that still shows the value. A web.archive.org snapshot address is always citable (Baird 2026-10-22): verify the snapshot address itself and cite it, and prefer a live copy of the same document when one exists. |
 | Dead host | No connection at all, or the domain no longer exists | The archive. Companies that merged or renamed usually moved their press archive to the new domain. |
 | Server error | 400 or 5xx | Try again later. If it persists, the site was rebuilt. Search for the document title to find its new address. |
 | Empty record | The page opens but shows the site's "no record" template, such as the permit register's "Keine Detailinformationen verfügbar" | The record may have been taken down, or the server sent the template under load. It is never cached. Try again later, open the record's documents by their own addresses, and look for a copy on another site (see below). |
@@ -81,6 +87,20 @@ Add a row whenever a host needs more than plain curl, and copy anything country 
 | United States | sec.gov | Not a bot wall. Needs a declared name and email in the user agent, which `fetch.py` sends. | 2026-10-02 |
 | United States | conedison.gcs-web.com, spglobal.com | Akamai "Access Denied". The Chrome fingerprint passes. | 2026-10-02 |
 | Global | power-technology.com, nsenergybusiness.com, offshore-technology.com | Bare 403. The Chrome fingerprint passes. | 2026-10-02 |
+
+## Kansas air permits (KDHE Bureau of Air)
+
+Run `cd scripts && python harvest_permits_kansas.py --scope us-ks` before a Kansas sweep. It writes one index per plant under `work/permits/us-ks/`, plus `_unmatched.md`, `_notices.md` and `harvest_log.jsonl`. The permit PDFs hold staff contact details, so they stay under `work/` and are never committed.
+
+KEIMS (the Kansas Environmental Information Management System, keims.kdhe.ks.gov/nsuite/ncore/) is a script-driven page. Its JSON services answer without a login for public notices only: `ss/publicnoticeslist` (every program currently on notice, filter `{"programAreaId":"AIR"}`, with the site address and latitude and longitude), `ss/publicnoticedocuments` (filter `{"publicNoticeId": id}`), and `DownloadFile/<document id>` for each PDF.
+
+The site search, permit list, site document list and the Data Explorer are not open. The ncore services answer 401 "IAM session is invalid". The Data Explorer (keims.kdhe.ks.gov/nsuite/nsite/) loads, but every call it makes fails with HTTP 400 "Value cannot be null (uriString)" because the server's services host setting is empty. This is a server fault, not a block: retry it from time to time.
+
+The KDHE public notice page (kdhe.ks.gov/413/Public-Notices) returns 403 to plain curl. The `cf_impersonate` route in `fetch.py` reads it. It lists only current notices, so the harvester also reads every Wayback snapshot of it (59 distinct ones from January 2022 to September 2026) through `https://web.archive.org/web/<timestamp>id_/<address>`. The Wayback service sometimes answers 503 for one snapshot; rerun to fill it.
+
+The Kansas Register (old kssos.org links now go to rules.ks.gov, an Esper app whose API answers 403) was tried and gave nothing usable.
+
+What this covers: permits and applications that went on public notice. A permit issued without a notice, such as a minor construction approval, is not visible without a KEIMS login. Ask KDHE for it with a Kansas Open Records Act (KORA) request, or look it up in KEIMS signed in. Older KDHE pages (kdheks.gov/bar, 2005 to 2020) exist only in the archive and were not harvested.
 
 ## Archive tips
 

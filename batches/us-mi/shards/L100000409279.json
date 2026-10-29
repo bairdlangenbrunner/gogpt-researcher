@@ -1,0 +1,98 @@
+{
+ "meta": {
+  "plant_id": "L100000409279",
+  "plant_name": "Marquette Energy Center",
+  "state": "Michigan",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-26T23:45:59-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000414244",
+   "unit_name": "IC",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 60559, generators MEC1, MEC2 and MEC3, as operating, 17.1 MW each, operating August 2017, with no planned retirement. The Michigan air quality staff report from October 2019 also describes the engines as running. I found no retirement, mothballing or sale notice."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Wärtsilä 18V50DF",
+     "refs": [
+      "https://www.egle.state.mi.us/aps/downloads/ROP/pub_ntce/P0668/P0668%20Staff%20Report%2010-01-19.pdf",
+      "https://www.wartsila.com/media/news/20-11-2015-wartsila-supplies-50-mw-of-reliable-power-capacity-to-michigan-usa"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.egle.state.mi.us/aps/downloads/ROP/pub_ntce/P0668/P0668%20Staff%20Report%2010-01-19.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.wartsila.com/media/news/20-11-2015-wartsila-supplies-50-mw-of-reliable-power-capacity-to-michigan-usa",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The Michigan air quality staff report from October 2019 (https://www.egle.state.mi.us/aps/downloads/ROP/pub_ntce/P0668/P0668%20Staff%20Report%2010-01-19.pdf) says the Marquette Energy Center has three Wärtsilä 18V50DF reciprocating engines that finished installation in 2017. A Wärtsilä press release from November 2015 (https://www.wartsila.com/media/news/20-11-2015-wartsila-supplies-50-mw-of-reliable-power-capacity-to-michigan-usa) announced the supply of the 50 MW plant to Marquette. The permit staff report gives the full model name."
+    }
+   },
+   "not_found": [
+    "Latest Activity (not filled for an operating unit)",
+    "Operator(s)"
+   ],
+   "notes": "Still operating according to the EIA table for September 2026. The air permit staff report names the engine maker and model. The harvested queue entries J3756 and J703 were not used because the first is a 4.2 MW entry and the second is a separate entry whose link to this plant is unclear."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Row read from the downloaded file."
+  },
+  {
+   "url": "https://www.egle.state.mi.us/aps/downloads/ROP/pub_ntce/P0668/P0668%20Staff%20Report%2010-01-19.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Names the engines."
+  },
+  {
+   "url": "https://www.wartsila.com/media/news/20-11-2015-wartsila-supplies-50-mw-of-reliable-power-capacity-to-michigan-usa",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Press release."
+  }
+ ]
+}

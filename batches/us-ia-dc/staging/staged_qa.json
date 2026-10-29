@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "lane": "qa",
+    "scope": {
+      "country": "United States",
+      "state": "Iowa",
+      "postal": "ia",
+      "kind": "state",
+      "slug": "iowa",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-27T12:14:01-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 3
+    }
+  },
+  "records": [
+    {
+      "gem_plant_id": "L100001088853",
+      "plant_name": "Microsoft Ginger East Data Center power station",
+      "concern_type": "existence",
+      "recommendation": "Check whether the 96 engines are built or only permitted, and whether Willow Creek needs its own plant record.",
+      "refs": {
+        "links": [
+          "https://airquality.polkcountyiowa.gov/PERMITS/PR-000722-2024.pdf",
+          "https://airquality.polkcountyiowa.gov/Pages/ConstructionDetails.aspx?Permitid=4841"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://airquality.polkcountyiowa.gov/PERMITS/PR-000722-2024.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Names the Ginger East engines at 1475 SE Maffitt Lake Road."
+        },
+        {
+          "url": "https://airquality.polkcountyiowa.gov/Pages/ConstructionDetails.aspx?Permitid=4841",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Polk County application page for 14 diesel engines of 4,308 horsepower, received August 24, 2026."
+        }
+      ],
+      "proposed_value": "",
+      "irp": false,
+      "checks": [
+        39
+      ],
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "The Polk County permits split the campus into two sites. Willow Creek is emission units 1 to 86 at 550 SE White Crane Road. Ginger East is units 101 to 201 at 1475 SE Maffitt Lake Road, which is where GEM places this plant. Five more small Cummins QSX15 engines of 755 horsepower are in the Ginger East list, with no kilowatt rating found. Three Polk County applications received August 24, 2026 are for this campus. Two of them (permit numbers 3847 to 3866 and 3982 to 3997) change engines that already hold Ginger East permits. The third (permit numbers 4165 to 4178, 14 engines of 4,308 horsepower) uses new numbers, and the application does not say which of the two sites it is for. Not found: the site for those 14 engines.",
+      "record_id": "L100001088853:plant:qa-existence-1"
+    },
+    {
+      "gem_plant_id": "L100001088855",
+      "plant_name": "Microsoft Osmium Data Center power station",
+      "concern_type": "scope",
+      "recommendation": "Decide whether to add a small unit for the four smaller engines. Their ratings are in horsepower only, so the capacity would stay blank.",
+      "refs": {
+        "links": [
+          "https://www.iowadnr.gov/media/6245/download"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.iowadnr.gov/media/6245/download",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Title V permit 24-TV-004 for the Osmium data center lists QSK95-G9, QSK23-G7 and QSX15-G9 engines."
+        }
+      ],
+      "proposed_value": "",
+      "irp": false,
+      "checks": [
+        39
+      ],
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "The state Title V permit 24-TV-004, issued October 17, 2024, lists about 100 Cummins QSK95-G9 engines, which agrees with GEM's 100 engines and 300 MW. It also lists two Cummins QSK23-G7 engines of 1,220 horsepower and two Cummins QSX15-G9 engines of 755 horsepower that GEM does not carry. Not found: a kilowatt rating for these four engines. A newer application, project 26-332 received September 22, 2026, adds one more QSK95-G9 emergency engine and is not yet issued.",
+      "record_id": "L100001088855:plant:qa-scope-1"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "Google Council Bluffs Veterans Memorial Parkway data center",
+      "concern_type": "existence",
+      "recommendation": "Check whether engines remain at this site. If a source gives a rating, add the site as a plant.",
+      "refs": {
+        "links": [
+          "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2207-A-1448-S2-R%22,%22permitNumber2%22%3A%2207-A-1448-S2-R%22,%22projectNumber%22%3Anull,%22emissionPointID%22%3A%2202%22,%22emissionPointDescription%22%3A%22COOLING%20MODULE%22,%22issueDate%22%3A%222026-03-26T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A48832,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-113%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2207-A-1448-S2-R%22,%22permitNumber2%22%3A%2207-A-1448-S2-R%22,%22projectNumber%22%3Anull,%22emissionPointID%22%3A%2202%22,%22emissionPointDescription%22%3A%22COOLING%20MODULE%22,%22issueDate%22%3A%222026-03-26T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A48832,%22documentType%22%3Anull,%22facilityNumber%22%3A%2278-01-113%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Rescission of TETRA LLC permits dated March 26, 2026."
+        }
+      ],
+      "proposed_value": "",
+      "irp": false,
+      "checks": [
+        39
+      ],
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "TETRA LLC, with a Google email contact, held state permits for about 70 diesel engines of 2,919 horsepower at 1430 Veterans Memorial Parkway in Council Bluffs. The state rescinded 29 to 30 of those permits on March 26, 2026 and the letter says the equipment was removed and replaced with units that do not need construction permits. Not found: kilowatt ratings and the replacement units. No plant is added.",
+      "record_id": "us-ia:plant:qa-existence-1"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 """The review dataset's location block: a staged location record becomes a line with `location`."""
+import re
 import sys
 from pathlib import Path
 
@@ -37,7 +38,8 @@ def test_location_block():
     assert isinstance(line["sibling_current"]["G100000401772"], dict)
 
 
-def test_blank_current_and_map_image():
+def test_blank_current_and_map_image(tmp_path, monkeypatch):
+    monkeypatch.setattr(review_data, "ROOT", tmp_path)        # no such picture under this root
     r = record(current={"Latitude": "", "Longitude": "", "Location accuracy": ""}, location_moved_m=None,
                location_method="map", location_image="staging/maps/L100000402511.jpg",
                location_control_points=[{"feature": "gate", "px": [1, 2], "lat": 38.69, "lon": -76.84}],
@@ -45,7 +47,24 @@ def test_blank_current_and_map_image():
     loc = review_data.update_line(r, "batches/us-ks/staging", {})["location"]
     assert loc["current"]["lat"] is None and loc["current"]["pin"] is None
     assert loc["moved_m"] is None and loc["needs_review"] is True and loc["fit_m"] == 45
-    assert loc["image"] == "batches/us-ks/staging/maps/L100000402511.jpg"
+    # a missing picture keeps its path and caption and gets no asset: the page says it was not uploaded
+    assert loc["image"] == {"role": "render", "caption": "saved map render", "path": "batches/us-ks/staging/maps/L100000402511.jpg"}
+
+
+def test_map_render_is_copied_as_an_artifact_asset(tmp_path, monkeypatch):
+    """The saved map render goes to work/review_assets/<sha256>.jpg and the line carries the asset name and size, never a url
+    (build_static fills that from assets.json for the page being built)."""
+    from PIL import Image
+    monkeypatch.setattr(review_data, "ROOT", tmp_path)
+    src = tmp_path / "batches" / "us-ks" / "staging" / "maps" / "L100000402511.jpg"
+    src.parent.mkdir(parents=True)
+    Image.new("RGB", (40, 30), "white").save(src, "JPEG")
+    r = record(location_method="map", location_image="staging/maps/L100000402511.jpg", location_fit_m=0.1)
+    img = review_data.update_line(r, "batches/us-ks/staging", {})["location"]["image"]
+    assert img["path"] == "batches/us-ks/staging/maps/L100000402511.jpg" and img["caption"] == "saved map render"
+    assert img["role"] == "render" and "url" not in img
+    assert re.fullmatch(r"[0-9a-f]{64}\.jpg", img["asset"]) and (img["width"], img["height"]) == (40, 30)
+    assert (tmp_path / "work" / "review_assets" / img["asset"]).is_file()
 
 
 def test_other_lines_have_no_location():

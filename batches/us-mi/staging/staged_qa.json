@@ -1,0 +1,745 @@
+{
+  "meta": {
+    "lane": "qa",
+    "scope": {
+      "country": "United States",
+      "state": "Michigan",
+      "postal": "mi",
+      "kind": "state",
+      "slug": "michigan",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-27T09:03:23-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 35
+    }
+  },
+  "records": [
+    {
+      "gem_unit_id": "G100001094118",
+      "concern_type": "identity",
+      "recommendation": "EIA-860M plant 1720, J C Weadock, generator A (18.6 MW gas turbine, retired 2015) sits 0.2 km from GEM's point. It is the old Weadock site, not this new plant, so no link is proposed.",
+      "refs": {},
+      "gem_plant_id": "L100001083332",
+      "plant_name": "Bay County power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The new plant is a proposal on the Karn site in Hampton Township. The Weadock turbine is a different, retired unit. EIA plant codes are not reported as values.",
+      "record_id": "L100001083332:G100001094118:qa-identity-1"
+    },
+    {
+      "gem_unit_id": "G100001094118",
+      "concern_type": "location",
+      "recommendation": "Leave the point at 43.64145, -83.84271. It is on the edge of the Karn and Weadock site beside the cooling canal. The Consumers Energy profile (https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002ROXtaAAH) places the project at the existing Karn site in Hampton Township, Bay County, connecting at the Hampton 345 kV substation. I could not find an address or parcel for the new turbines, and a geocode search for the substation found nothing. The EGLE point for source B2840 is 277 m away, under the 500 m bar. Imagery shows the existing plant footprint, not the proposed units, so the location stays approximate.",
+      "refs": {
+        "links": [
+          "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002ROXtaAAH"
+        ]
+      },
+      "gem_plant_id": "L100001083332",
+      "plant_name": "Bay County power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "I checked satellite imagery of the site. The date the imagery was taken is not known.",
+      "record_id": "L100001083332:G100001094118:qa-location-2"
+    },
+    {
+      "gem_unit_id": "G100001028277",
+      "concern_type": "Status",
+      "recommendation": "The coal timepoint 1 units for Belle River (G100000100742 and G100000100743) should be updated to match. DTE says Unit 1 stopped coal in 2025 and Unit 2 will finish converting by the end of 2026. Please retire Unit 1 coal timepoint 1 with 2025, and Unit 2 when the conversion is complete.",
+      "refs": {
+        "links": [
+          "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPf6CAAT"
+        ]
+      },
+      "proposed_value": {
+        "Retired year": "2025"
+      },
+      "gem_plant_id": "L100000103973",
+      "plant_name": "Belle River Power Plant",
+      "country": "United States",
+      "unit_name": "Unit 1, timepoint 2",
+      "fields": {},
+      "researcher_notes": "Case U-22168 testimony (https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPf6CAAT, page 3). The EIA-860M table for September 2026 still lists both steam generators as coal with planned retirement December 2028, so EIA has not caught up. These coal units were not in this brief, so I did not change them.",
+      "record_id": "L100000103973:G100001028277:qa-status-1",
+      "checks": [
+        37,
+        38,
+        43,
+        50
+      ]
+    },
+    {
+      "gem_unit_id": "G100001028278",
+      "concern_type": "Status",
+      "recommendation": "Keep Unit 2 as construction. The Sierra Club list says planned, but DTE's filing says the conversion is under way and due by the end of 2026.",
+      "refs": {
+        "links": [
+          "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPf6CAAT"
+        ]
+      },
+      "gem_plant_id": "L100000103973",
+      "plant_name": "Belle River Power Plant",
+      "country": "United States",
+      "unit_name": "Unit 2, timepoint 2",
+      "fields": {},
+      "researcher_notes": "State air permit approved July 2025 for the conversion (permit to install PTI0000036) and the August 2026 filing in Case U-22168. The Environmental Integrity Project listing of the plant as proposed was not found to rest on a different document.",
+      "record_id": "L100000103973:G100001028278:qa-status-2",
+      "checks": [
+        10,
+        37,
+        38,
+        49
+      ]
+    },
+    {
+      "gem_unit_id": "G100001094119",
+      "concern_type": "Owner(s)",
+      "recommendation": "leave as is",
+      "refs": {
+        "links": [
+          "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002RMFBBAA5"
+        ]
+      },
+      "gem_plant_id": "L100001083333",
+      "plant_name": "Genesee County power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Owner stays Consumers Energy Co. The filing says the company would own the plant.",
+      "record_id": "L100001083333:G100001094119:qa-owner-s-1",
+      "checks": [
+        10
+      ]
+    },
+    {
+      "gem_unit_id": "G100001092812",
+      "concern_type": "Owner(s)",
+      "recommendation": "change owner from DTE Energy Co to DTE Electric Co",
+      "refs": {
+        "links": [
+          "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPrx7AAD"
+        ]
+      },
+      "proposed_value": {
+        "Owner(s)": "DTE Electric Co"
+      },
+      "gem_plant_id": "L100001082478",
+      "plant_name": "Handy Township power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The filing names DTE Electric as the owner. Please confirm that the owner field should use the utility and not the parent.",
+      "record_id": "L100001082478:G100001092812:qa-owner-s-1",
+      "checks": [
+        10
+      ]
+    },
+    {
+      "gem_unit_id": "G100001092812",
+      "concern_type": "location",
+      "recommendation": "leave as is",
+      "refs": {
+        "links": [
+          "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPrx7AAD"
+        ]
+      },
+      "gem_plant_id": "L100001082478",
+      "plant_name": "Handy Township power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The point already sits on the cleared parcel north of Mason Road shown in Figure 1 of the testimony, beside the pipeline crossing and the Blackfoot to Madrid 345 kV line. The EGLE air site point at 42.6586, -84.0944 is the DTE Colfax peaking plant, a different site about 8 kilometers away. Accuracy stays approximate.",
+      "record_id": "L100001082478:G100001092812:qa-location-2"
+    },
+    {
+      "gem_unit_id": "G100000409472",
+      "concern_type": "Status",
+      "recommendation": "review whether to keep pre-construction",
+      "refs": {
+        "links": [
+          "https://mienviro.michigan.gov/ncore/downloadpdf/-2969402159834543584",
+          "https://mienviro.michigan.gov/ncore/downloadpdf/-5845399390879080786"
+        ]
+      },
+      "gem_plant_id": "L100000407415",
+      "plant_name": "MEC North power station",
+      "country": "United States",
+      "unit_name": "MECN",
+      "fields": {},
+      "researcher_notes": "The air permits for Marshall Energy Center were voided in December 2025, so the project may be shelved or cancelled. The Energy Information Administration table still shows it planned for 2034, and there is no two year gap yet, so the status is left alone. Recheck after December 2027 or if the table drops the project.",
+      "record_id": "L100000407415:G100000409472:qa-status-1",
+      "checks": [
+        10
+      ]
+    },
+    {
+      "gem_unit_id": "G100000409472",
+      "concern_type": "duplicate",
+      "recommendation": "no action",
+      "refs": {
+        "links": [
+          "https://www.mlive.com/news/jackson/2025/12/marshall-approves-112m-land-sale-for-data-center-gas-plant-project.html"
+        ]
+      },
+      "gem_plant_id": "L100000407415",
+      "plant_name": "MEC North power station",
+      "country": "United States",
+      "unit_name": "MECN",
+      "fields": {},
+      "researcher_notes": "The Marshall data center and gas plant in the possible updates list is a separate project, the Alterra Marshall Technology and Energy Center in Brooks Industrial Park, approved in December 2025 at https://www.mlive.com/news/jackson/2025/12/marshall-approves-112m-land-sale-for-data-center-gas-plant-project.html. The DTE and Ford heat and power site at 13700 W Michigan Ave is also a different site, about 6 kilometers away.",
+      "record_id": "L100000407415:G100000409472:qa-duplicate-2"
+    },
+    {
+      "gem_unit_id": "G100000409471",
+      "concern_type": "Status",
+      "recommendation": "review whether to keep pre-construction",
+      "refs": {
+        "links": [
+          "https://mienviro.michigan.gov/ncore/downloadpdf/-2969402159834543584",
+          "https://mienviro.michigan.gov/ncore/downloadpdf/-5845399390879080786"
+        ]
+      },
+      "gem_plant_id": "L100000407414",
+      "plant_name": "MEC South power station",
+      "country": "United States",
+      "unit_name": "MECS",
+      "fields": {},
+      "researcher_notes": "The air permits for Marshall Energy Center were voided in December 2025, so the project may be shelved or cancelled. The Energy Information Administration table still shows it planned for 2034, and there is no two year gap yet, so the status is left alone. Recheck after December 2027 or if the table drops the project.",
+      "record_id": "L100000407414:G100000409471:qa-status-1",
+      "checks": [
+        10
+      ]
+    },
+    {
+      "gem_unit_id": "G100000409471",
+      "concern_type": "duplicate",
+      "recommendation": "no action",
+      "refs": {
+        "links": [
+          "https://www.mlive.com/news/jackson/2025/12/marshall-approves-112m-land-sale-for-data-center-gas-plant-project.html"
+        ]
+      },
+      "gem_plant_id": "L100000407414",
+      "plant_name": "MEC South power station",
+      "country": "United States",
+      "unit_name": "MECS",
+      "fields": {},
+      "researcher_notes": "The Marshall data center and gas plant in the possible updates list is a separate project, the Alterra Marshall Technology and Energy Center in Brooks Industrial Park, approved in December 2025 at https://www.mlive.com/news/jackson/2025/12/marshall-approves-112m-land-sale-for-data-center-gas-plant-project.html. The DTE and Ford heat and power site at 13700 W Michigan Ave is also a different site, about 6 kilometers away.",
+      "record_id": "L100000407414:G100000409471:qa-duplicate-2"
+    },
+    {
+      "gem_unit_id": "G100001101140",
+      "concern_type": "IRP",
+      "recommendation": "tick the IRP box",
+      "refs": {
+        "links": [
+          "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPrx7AAD"
+        ]
+      },
+      "proposed_value": {
+        "IRP": "yes"
+      },
+      "gem_plant_id": "L100001088928",
+      "plant_name": "Milan Township power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The plant comes from DTE's integrated resource plan filing but its IRP box is not ticked in the export.",
+      "record_id": "L100001088928:G100001101140:qa-irp-1"
+    },
+    {
+      "gem_unit_id": "G100000414228",
+      "concern_type": "Fuel",
+      "recommendation": "The EIA-860M table for September 2026 lists ST2 as a natural gas combined cycle steam generator, not fuel oil. The only fuel oil generator at this plant in the table is a 5.2 MW diesel engine named 1G12. Please check whether unit 2 should be the 380 MW steam generator on natural gas, or the small diesel engine, which is below the 50 MW threshold.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "proposed_value": {
+        "Fuel": "fossil gas: natural gas"
+      },
+      "gem_plant_id": "L100000402478",
+      "plant_name": "Midland cogeneration Venture",
+      "country": "United States",
+      "unit_name": "2",
+      "fields": {},
+      "researcher_notes": "The EIA table is at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx. Its status for ST2 is standby, which is not the same as mothballed. I found no document that dates a mothballing.",
+      "record_id": "L100000402478:G100000414228:qa-fuel-1"
+    },
+    {
+      "gem_unit_id": "G100000414228",
+      "concern_type": "Status",
+      "recommendation": "Please decide whether unit 2 should stay mothballed. EIA calls ST2 standby, and no dated source I found says mothballed, retired or back in operation.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000402478",
+      "plant_name": "Midland cogeneration Venture",
+      "country": "United States",
+      "unit_name": "2",
+      "fields": {},
+      "researcher_notes": "A status change needs two independent publishers and I found none, so I proposed no change. Source: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "record_id": "L100000402478:G100000414228:qa-status-2"
+    },
+    {
+      "gem_unit_id": "G100000401607",
+      "concern_type": "duplicate",
+      "recommendation": "GEM unit 1 at 1849 MW includes the 380 MW steam generator ST2, which is also unit 2. Capacity for unit 1 should be 1468.6 MW unless ST2 is meant to be part of unit 1 and unit 2 is something else.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000402478",
+      "plant_name": "Midland cogeneration Venture",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "See the capacity finding for unit 1. Source: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "record_id": "L100000402478:G100000401607:qa-duplicate-3"
+    },
+    {
+      "gem_unit_id": "G100000401607",
+      "concern_type": "Owner(s)",
+      "recommendation": "No change proposed. A Capital Power press release from September 2022 says Capital Power and Manulife Investment Management bought 100% of MCV Holding Company, which owns Midland Cogeneration Venture, so the plant owner entity in GEM still looks right. The EIA-860 owner table for 2024 has no owner rows for this plant.",
+      "refs": {
+        "links": [
+          "https://www.capitalpower.com/?p=5573"
+        ]
+      },
+      "gem_plant_id": "L100000402478",
+      "plant_name": "Midland cogeneration Venture",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Press release: https://www.capitalpower.com/?p=5573",
+      "record_id": "L100000402478:G100000401607:qa-owner-s-4",
+      "checks": [
+        43,
+        50
+      ]
+    },
+    {
+      "gem_unit_id": "G100000414071",
+      "concern_type": "scope",
+      "recommendation": "The EIA table also lists units 7 and 8 at this plant, each 39.1 MW, gas and oil fired, operating since 1992. They are under the 50 MW unit threshold so I did not raise them as new units. Please confirm that is the intended handling.",
+      "refs": {
+        "links": [
+          "https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/N2586/N2586%20Staff%20Report%2007-22-20.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000409227",
+      "plant_name": "491 E 48th Street power station",
+      "country": "United States",
+      "unit_name": "9",
+      "fields": {},
+      "researcher_notes": "Source: https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/N2586/N2586%20Staff%20Report%2007-22-20.pdf",
+      "record_id": "L100000409227:G100000414071:qa-scope-1"
+    },
+    {
+      "gem_unit_id": "G100000403779",
+      "concern_type": "Capacity (MW)",
+      "recommendation": "The EIA-860M table for September 2026 gives 226.9 MW per unit. GEM shows 227.0. This is rounding only, so no change is proposed.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000402385",
+      "plant_name": "Alpine power plant",
+      "country": "United States",
+      "unit_name": "AI1",
+      "fields": {},
+      "researcher_notes": "Plant 59926, generators AI1 and AI2, each 226.9 MW nameplate. Source: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "record_id": "L100000402385:G100000403779:qa-capacity-mw-1"
+    },
+    {
+      "gem_unit_id": "G100000402122",
+      "concern_type": "source",
+      "recommendation": "The harvested Michigan air permit index for this plant lists the DTE St. Clair and Belle River site (SRN B2796), and its three M501F turbines belong to that older site, not to Blue Water. I did not use them. A Blue Water air permit was not identified in the index.",
+      "refs": {},
+      "gem_plant_id": "L100000402393",
+      "plant_name": "Blue Water energy center",
+      "country": "United States",
+      "unit_name": "CC_set",
+      "fields": {},
+      "researcher_notes": "This matters only for finding the Blue Water turbine model number.",
+      "record_id": "L100000402393:G100000402122:qa-source-1"
+    },
+    {
+      "gem_unit_id": "G100000402642",
+      "concern_type": "Planned retire",
+      "recommendation": "Confirm in the Consumers Energy 2026 plan filing (case U-22127) that Karn units 3 and 4 still retire in 2031. The plan summary at https://www.consumersenergy.com/-/media/CE/Documents/company/IRP-2026-Exec-Summary.pdf proposes a new 456 MW gas plant at Karn in service in 2031 but does not name the retirement date.",
+      "refs": {
+        "links": [
+          "https://www.consumersenergy.com/-/media/CE/Documents/company/IRP-2026-Exec-Summary.pdf"
+        ]
+      },
+      "proposed_value": {
+        "Planned retire": "2031"
+      },
+      "gem_plant_id": "L100000401829",
+      "plant_name": "Dan E Karn power station",
+      "country": "United States",
+      "unit_name": "3",
+      "fields": {},
+      "researcher_notes": "I searched the web and the plan summary. The Michigan Public Service Commission docket was not read directly.",
+      "record_id": "L100000401829:G100000402642:qa-planned-retire-1",
+      "checks": [
+        21,
+        43,
+        50
+      ]
+    },
+    {
+      "gem_unit_id": "G100000402689",
+      "concern_type": "Capacity (MW)",
+      "recommendation": "All four Dean units are 89.4 MW nameplate in the EIA table, while GEM shows 89.0 MW. The state air permit calls each one 82.4 MW.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://mienviro.michigan.gov/ncore/downloadpdf/7053521071983300652"
+        ]
+      },
+      "proposed_value": {
+        "Capacity (MW)": "89.4"
+      },
+      "gem_plant_id": "L100000401855",
+      "plant_name": "Dean power station",
+      "country": "United States",
+      "unit_name": "GT1",
+      "fields": {},
+      "researcher_notes": "EIA table: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx. Air permit staff report: https://mienviro.michigan.gov/ncore/downloadpdf/7053521071983300652.",
+      "record_id": "L100000401855:G100000402689:qa-capacity-mw-1"
+    },
+    {
+      "gem_unit_id": "G100000409552",
+      "concern_type": "Owner(s)",
+      "recommendation": "Leave the owner as it is. The Consumers Energy purchase of this plant did not happen.",
+      "refs": {
+        "links": [
+          "https://www.sec.gov/Archives/edgar/data/201533/000110465921084502/tm2120427d1_8k.htm",
+          "https://elpc.org/news/michigan-energy-regulators-approve-broadly-supported-settlement-on-consumers-energys-long-term-resource-plan/",
+          "https://s26.q4cdn.com/888045447/files/doc_financials/2026/q2/CMS-Energy-Second-Quarter-2026-Results-Outlook.pdf"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000402454",
+      "plant_name": "Dearborn Industrial Generation power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "CMS Energy and Consumers Energy signed a purchase agreement for Dearborn Industrial Generation in June 2021 (https://www.sec.gov/Archives/edgar/data/201533/000110465921084502/tm2120427d1_8k.htm). A press release from the Environmental Law and Policy Center on the 2022 Consumers resource plan settlement (https://elpc.org/news/michigan-energy-regulators-approve-broadly-supported-settlement-on-consumers-energys-long-term-resource-plan/) says the settlement precludes Consumers from buying the plant. In the CMS Energy second quarter 2026 outlook (https://s26.q4cdn.com/888045447/files/doc_financials/2026/q2/CMS-Energy-Second-Quarter-2026-Results-Outlook.pdf), CMS says it keeps Dearborn Industrial Generation inside its NorthStar Clean Energy business. The September 2026 EIA table still lists Dearborn Industrial Gen Inc as the owner. I found no document showing a closed sale to Consumers in 2025, so the brief's premise that U-21090 records that sale was not borne out. I could not read the Michigan Public Service Commission docket directly. The owner company is a CMS NorthStar subsidiary, which a researcher may want to confirm in a CMS annual report.",
+      "record_id": "L100000402454:G100000409552:qa-owner-s-1",
+      "checks": [
+        43,
+        50
+      ]
+    },
+    {
+      "gem_unit_id": "G100000409552",
+      "concern_type": "existence",
+      "recommendation": "GEM should not hold a unit for the 271 MW project. It was never built and its application was withdrawn in January 2018, before the 2020 start of tracking for cancelled units.",
+      "refs": {
+        "links": [
+          "https://www.cmsenergy.com/investor-relations/news-releases/news-release-details/2018/Dearborn-Industrial-Generation-Plant-Rescinds-Expansion-Permit-Request-from-DEQ/default.aspx"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000402454",
+      "plant_name": "Dearborn Industrial Generation power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "A CMS Energy press release from January 29, 2018 (https://www.cmsenergy.com/investor-relations/news-releases/news-release-details/2018/Dearborn-Industrial-Generation-Plant-Rescinds-Expansion-Permit-Request-from-DEQ/default.aspx) says the plant withdrew its request for a new unit expansion air permit. That is probably the project on the Sierra Club list. The release gives no megawatt figure, so the 271 MW size is not confirmed. The three turbines and three boilers in the 2023 permit are the existing plant, with no new unit.",
+      "record_id": "L100000402454:G100000409552:qa-existence-2"
+    },
+    {
+      "gem_unit_id": "G100001053790",
+      "concern_type": "Status",
+      "recommendation": "The engine plant may still be in construction or commissioning, not operating. Please confirm with Lansing Board of Water and Light before the status stays operating.",
+      "refs": {
+        "links": [
+          "https://lbwl.com/cleanenergyprojects",
+          "https://www.wkar.org/wkar-news/2024-07-01/bwl-receives-green-light-to-build-natural-gas-fired-plant"
+        ]
+      },
+      "proposed_value": {
+        "Status": "construction"
+      },
+      "gem_plant_id": "L100000402461",
+      "plant_name": "Delta energy park",
+      "country": "United States",
+      "unit_name": "RICE_set",
+      "fields": {},
+      "researcher_notes": "The Environmental Integrity Project lists Delta energy park as proposed (https://oilandgaswatch.org/facility/rec_d4f1u5gq7easr8ra1esg), but its page is drawn by script and I could not read it. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) has no engine generators at this plant. WKAR in July 2024 (https://www.wkar.org/wkar-news/2024-07-01/bwl-receives-green-light-to-build-natural-gas-fired-plant) says BWL expects operation by the end of 2026. The BWL project page (https://lbwl.com/cleanenergyprojects) shows 110 MW of flexible generation at Delta Energy Park with the whole site completed in 2027. The Status Detail text already in GEM says the engines were being commissioned in August 2026. I found no public source that says the engines are running.",
+      "record_id": "L100000402461:G100001053790:qa-status-1",
+      "checks": [
+        38,
+        43,
+        50
+      ]
+    },
+    {
+      "gem_unit_id": "G100000414274",
+      "concern_type": "Capacity (MW)",
+      "recommendation": "GEM shows 131.6 MW, which is seven engines at 18.8 MW from the EIA-860M table. The sources give different numbers. Please decide whether to keep the EIA figure.",
+      "refs": {
+        "links": [
+          "https://www.prnewswire.com/news-releases/burns--mcdonnell-reaches-substantial-completion-on-aj-mihm-and-fd-kuester-reciprocating-engine-power-generating-stations-in-michigans-upper-peninsula-300838584.html",
+          "https://mienviro.michigan.gov/ncore/downloadpdf/-7185968111409593870",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000409210",
+      "plant_name": "F.D. Kuester Generating Station",
+      "country": "United States",
+      "unit_name": "IC",
+      "fields": {},
+      "researcher_notes": "The Burns and McDonnell press release (https://www.prnewswire.com/news-releases/burns--mcdonnell-reaches-substantial-completion-on-aj-mihm-and-fd-kuester-reciprocating-engine-power-generating-stations-in-michigans-upper-peninsula-300838584.html) gives 126 MW for the station, at about 18 MW per engine. The Michigan air permit staff report from January 2026 (https://mienviro.michigan.gov/ncore/downloadpdf/-7185968111409593870) says each engine drives a 19,260 kW generator, which would be 134.8 MW for seven. The Public Service Commission cases U-21081 and U-21542 give 125.6 MW. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) gives 18.8 MW per engine, so 131.6 MW. I did not change the value because the sources disagree and none is clearly the nameplate rating.",
+      "record_id": "L100000409210:G100000414274:qa-capacity-mw-1"
+    },
+    {
+      "gem_unit_id": "G100000402698",
+      "concern_type": "identity",
+      "recommendation": "The Michigan air permit staff report calls the third gas turbine 12-1, while EIA and GEM call it 11-3. Please check whether the unit name should change.",
+      "refs": {
+        "links": [
+          "https://mienviro.michigan.gov/ncore/downloadpdf/-2238705120581514898"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000401857",
+      "plant_name": "Greenwood (MI) power station",
+      "country": "United States",
+      "unit_name": "11-3",
+      "fields": {},
+      "researcher_notes": "The Michigan air permit staff report from December 2024 (https://mienviro.michigan.gov/ncore/downloadpdf/-2238705120581514898) lists the three turbines as 11-1, 11-2 and 12-1. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists them as 11-1, 11-2 and 11-3. I did not change the name.",
+      "record_id": "L100000401857:G100000402698:qa-identity-1"
+    },
+    {
+      "gem_unit_id": "G100000403155",
+      "concern_type": "Turbine/Engine Technology",
+      "recommendation": "The Pratt and Whitney FT8 is an aeroderivative turbine. GEM shows gas turbine. Consider changing the technology to aeroderivative gas turbine.",
+      "refs": {
+        "links": [
+          "https://mienviro.michigan.gov/ncore/downloadpdf/-7062929243981508004"
+        ]
+      },
+      "proposed_value": {
+        "Turbine/Engine Technology": "aeroderivative gas turbine"
+      },
+      "gem_plant_id": "L100000402079",
+      "plant_name": "Kalkaska CT 1 power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The state air permit staff report from July 2024 (https://mienviro.michigan.gov/ncore/downloadpdf/-7062929243981508004) names the FT-8 Twin Pac. Calling it aeroderivative is my reading of the model, and the document does not use that word.",
+      "record_id": "L100000402079:G100000403155:qa-turbine-engine-technology-1"
+    },
+    {
+      "gem_unit_id": "G100000402063",
+      "concern_type": "identity",
+      "recommendation": "This record is the REO Town cogeneration plant, not the Erickson plant, the Eckert plant or Delta Energy Park. No change is needed to the plant itself.",
+      "refs": {
+        "links": [
+          "https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/B2647/B2647%20Staff%20Report%2003-18-24.pdf"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000103983",
+      "plant_name": "Lansing Board of Water and Light",
+      "country": "United States",
+      "unit_name": "CC1",
+      "fields": {},
+      "researcher_notes": "The Michigan air quality staff report from March 2024 (https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/B2647/B2647%20Staff%20Report%2003-18-24.pdf) describes the REO Town Plant at 1201 South Washington Avenue in Lansing as two natural gas turbines with heat recovery boilers and steam turbines, and says the coal-fired Eckert Station next to it shut down for good on December 31, 2020. The unit sizes in the EIA-860M table for September 2026 (42.0, 42.0 and 14.0 MW, total 98 MW) match GEM. GEM also holds a separate Delta energy park record (EIA plant 63259) that carries the 112.8 MW engine set built under permit 71-24, so this record does not duplicate it.",
+      "record_id": "L100000103983:G100000402063:qa-identity-1"
+    },
+    {
+      "gem_unit_id": "G100000402063",
+      "concern_type": "location",
+      "recommendation": "Consider changing City to Lansing and County to Ingham. The coordinates already sit at the plant, so leave them alone.",
+      "refs": {
+        "links": [
+          "https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/B2647/B2647%20Staff%20Report%2003-18-24.pdf"
+        ]
+      },
+      "proposed_value": {
+        "City": "Lansing",
+        "Local area (taluk, county)": "Ingham"
+      },
+      "gem_plant_id": "L100000103983",
+      "plant_name": "Lansing Board of Water and Light",
+      "country": "United States",
+      "unit_name": "CC1",
+      "fields": {},
+      "researcher_notes": "GEM lists City as Delta Twp. and county as Eaton. The Michigan air quality staff report from March 2024 (https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/B2647/B2647%20Staff%20Report%2003-18-24.pdf) puts the plant at 1201 South Washington Avenue, Lansing, in Ingham County, and the EIA-860M table for September 2026 also says Ingham. The Census geocoder places that address 0.1 km from GEM's point.",
+      "record_id": "L100000103983:G100000402063:qa-location-2"
+    },
+    {
+      "gem_unit_id": "G100000401776",
+      "concern_type": "Owner(s)",
+      "recommendation": "Owner is probably now DTE Sustainable Generation, not Osaka Gas USA Corp. Please confirm with a second publisher before changing it. Neither DTE Sustainable Generation nor Michigan Power Limited Partnership was found in the entity system, so a new entity may be needed.",
+      "refs": {
+        "links": [
+          "https://www.sec.gov/Archives/edgar/data/936340/000093634026000054/R20.htm",
+          "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPf6CAAT"
+        ]
+      },
+      "proposed_value": {
+        "Owner(s)": "DTE Sustainable Generation [100%]"
+      },
+      "gem_plant_id": "L100000401674",
+      "plant_name": "Michigan power station",
+      "country": "United States",
+      "unit_name": "CC1",
+      "fields": {},
+      "researcher_notes": "A DTE Energy annual report filed with the Securities and Exchange Commission (https://www.sec.gov/Archives/edgar/data/936340/000093634026000054/R20.htm) says that effective August 14, 2025 DTE Sustainable Generation closed on buying a 123 MW cogeneration facility in Michigan from Osaka Gas USA Corporation for about 216 million dollars. It does not name the plant. DTE Electric's filing in case U-22168 (https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPf6CAAT) says DTE Electric plans to buy the 138 MW Michigan Power Cogeneration facility from DTE Sustainable Generation in 2030 for 130 million dollars. Both documents come from DTE, so they count as one origin. GEM's current owner comes from the 2018 Osaka Gas purchase. The existing Osaka Gas link at inframationgroup.com did not load for the checker.",
+      "record_id": "L100000401674:G100000401776:qa-owner-s-1",
+      "checks": [
+        43,
+        50
+      ]
+    },
+    {
+      "gem_unit_id": "G100000401873",
+      "concern_type": "Operator(s)",
+      "recommendation": "Operator is blank. Consumers Energy now owns the plant and likely operates it, but I found no document that names the operator.",
+      "refs": {},
+      "gem_plant_id": "L100000402123",
+      "plant_name": "New Covert generating facility",
+      "country": "United States",
+      "unit_name": "CTG1",
+      "fields": {},
+      "researcher_notes": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) names only the owning entity.",
+      "record_id": "L100000402123:G100000401873:qa-operator-s-1"
+    },
+    {
+      "gem_unit_id": "G100000402699",
+      "concern_type": "Capacity (MW)",
+      "recommendation": "The EIA-860M table for September 2026 gives 195.5 MW for each of the four units, and GEM shows 196.0 MW. This rounds to the same figure, so no change is proposed.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000401858",
+      "plant_name": "Renaissance power plant",
+      "country": "United States",
+      "unit_name": "CT1",
+      "fields": {},
+      "researcher_notes": "Reported for information only.",
+      "record_id": "L100000401858:G100000402699:qa-capacity-mw-1"
+    },
+    {
+      "gem_unit_id": "G100000402644",
+      "concern_type": "Capacity (MW)",
+      "recommendation": "GEM shows 239 MW for unit 1A. EIA lists 188.7 MW. The May 2025 press release says the upgrade adds 50 MW across two turbines, so each turbine would be near 214 MW, not 239 MW for one. Please check units 1A and 1B together against an updated EIA-860 annual table once it lists the upgrade. The air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/9126372892444753909 says total plant output is about 884 MW.",
+      "refs": {
+        "links": [
+          "https://www.cmsenergy.com/investor-relations/news-releases/news-release-details/2025/Consumers-Energy-Expands-Zeeland-Natural-Gas-Plant-to-Grow-Michigans-Energy-Reliability/default.aspx",
+          "https://mienviro.michigan.gov/ncore/downloadpdf/9126372892444753909"
+        ]
+      },
+      "proposed_value": {
+        "Capacity (MW)": "188.7"
+      },
+      "gem_plant_id": "L100000401831",
+      "plant_name": "Zeeland generating station",
+      "country": "United States",
+      "unit_name": "1A",
+      "fields": {},
+      "researcher_notes": "Sources: https://www.cmsenergy.com/investor-relations/news-releases/news-release-details/2025/Consumers-Energy-Expands-Zeeland-Natural-Gas-Plant-to-Grow-Michigans-Energy-Reliability/default.aspx and https://mienviro.michigan.gov/ncore/downloadpdf/9126372892444753909.",
+      "record_id": "L100000401831:G100000402644:qa-capacity-mw-1",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_plant_id": "L100000401831",
+      "plant_name": "Zeeland generating station",
+      "concern_type": "duplicate",
+      "recommendation": "Decide whether MISO requests J4159 and J4160 are an expansion at Zeeland or a new plant. If no filing ties them to Zeeland by the next batch, add a new plant in Ottawa County from the queue.",
+      "refs": {
+        "links": [
+          "https://www.misoenergy.org/api/giqueue/getprojects",
+          "https://www.interconnection.fyi/project/miso-j4159",
+          "https://www.interconnection.fyi/project/miso-j4160"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "MISO queue data lists J4159 and J4160."
+        },
+        {
+          "url": "https://www.interconnection.fyi/project/miso-j4159",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Copy of J4159, 616 MW."
+        },
+        {
+          "url": "https://www.interconnection.fyi/project/miso-j4160",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Copy of J4160, 55 MW."
+        }
+      ],
+      "proposed_value": null,
+      "irp": false,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "MISO's generator interconnection queue at https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/ lists two gas requests in Ottawa County, both queued on August 13, 2025 and both connecting at the Roosevelt substation on the METC system. J4159 is a 616 MW combined cycle project in the 2026 study cycle with an in-service date of June 30, 2028. Some copies of the queue, such as the Cleanview list at https://cleanview.co/power-projects/planned/natural-gas-power-plants/michigan, give it as 664 MW, likely the winter rating. J4160 is a 55 MW simple cycle gas turbine with an in-service date of May 31, 2026. The rows are copied at https://www.interconnection.fyi/project/miso-j4159 and https://www.interconnection.fyi/project/miso-j4160. Neither request names a developer. The only gas plants GEM has in Ottawa County are Zeeland generating station and Holland energy park. Neither plant's research for this batch found the requests. I could not find which plant the Roosevelt substation serves. A 55 MW turbine with a 2026 date looks like an addition at an existing plant, and the 616 MW request could be a new combined cycle block there. If it is a new site, the 616 MW request meets the add threshold on the queue entry alone.",
+      "record_id": "us-mi:plant:qa-duplicate-1"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "University of Michigan central power plant",
+      "concern_type": "capacity-threshold",
+      "recommendation": "No add for now. A reviewer may want to confirm that the campus plant is under the 50 MW threshold.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://mienviro.michigan.gov/ncore/downloadpdf/-5303010553079006113"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Rows for plant 50431."
+        },
+        {
+          "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-5303010553079006113",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "University of Michigan staff report."
+        }
+      ],
+      "proposed_value": null,
+      "irp": false,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "EIA's monthly generator file for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists EIA plant 50431, University of Michigan, with generators CT6 at 15.5 MW, TG1, TG7 and TG8 at 12.5 MW each, and TG9 and TG10 at 3.5 MW each, all grouped as one combined cycle unit of 60 MW. The state air permit staff report of 2024 at https://mienviro.michigan.gov/ncore/downloadpdf/-5303010553079006113 describes four gas and oil fired boilers feeding steam turbines, plus combined heat and power gas turbines with heat recovery boilers. Most of the steam turbines run on boiler steam, not turbine exhaust, so they are not part of a combined cycle block. The largest gas turbine with its recovery boiler is well under 50 MW. I treated the plant as below the threshold.",
+      "record_id": "us-mi:plant:qa-capacity-threshold-2"
+    }
+  ]
+}

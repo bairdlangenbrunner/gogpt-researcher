@@ -86,7 +86,7 @@ each), Philadelphia Road (four 20.7 MW units), Gould Street (retired 2019),
 Notch Cliff, a withdrawn 108 MW oil entry by Lanyard Power (queued and
 withdrawn within days in June 2025), and the diesel backup fleets at the
 Frederick and Dickerson data centers (Aligned about 508 MW, Amazon about
-258 MW, Rowan about 253 MW), which are standby generators, not plants.
+258 MW, Rowan about 253 MW), which are backup engine fleets. The manual adds those as plants at the summed 50 MW threshold, so they are adds for the data center step (`data_center_fleets.py`).
 
 For the next update batch: Herbert Wagner units 3 and 4 show a planned
 retirement of June 2029 in the August 2026 EIA monthly table; Talen has

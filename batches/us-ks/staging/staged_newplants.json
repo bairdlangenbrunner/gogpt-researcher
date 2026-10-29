@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "lane": "newplants",
+    "scope": {
+      "country": "United States",
+      "state": "Kansas",
+      "postal": "ks",
+      "kind": "state",
+      "slug": "kansas",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-23T11:46:38-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 1
+    }
+  },
+  "records": [
+    {
+      "plant_name": "Labette County power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Kansas",
+        "Local area (taluk, county)": "Labette"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://opsportal.spp.org/Studies/GIActive"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://opsportal.spp.org/Studies/GIActive",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": ""
+        }
+      ],
+      "tier": "high",
+      "researcher_notes": "The Southwest Power Pool active generator list at https://opsportal.spp.org/Studies/GIActive shows request GEN-2024-129 in Labette County, Kansas. It is a thermal gas project of 910 MW with a nameplate of 969 MW, connecting at the Caney River to Neosho 345 kV line, with Evergy as the transmission owner. The request was received on 3/1/2025 and is in the cluster study. The proposed in-service date is 4/28/2030 and the commercial operation date is 12/31/2030. The list gives no sponsor, plant name, technology or site. The plant is named after its county, as a grid request with no other name. Capacity is the 969 MW nameplate. The grid list's injection figure is 910 MW. A trade press report from August 2026 at https://www.industrialinfo.com/news/article/evergy-sees-opportunities-in-midwests-data-center-buildout--361517 says Evergy plans a 910 MW simple cycle gas plant with batteries for data center demand. It names no site. The 910 MW figure matches, so this may be Evergy's plant, but no filing says so. For that reason owner is left blank and the trade report is not used as a source for any value. Not found: the sponsor, the exact site, the turbine type and the coordinates. The reviewer may change the plant name if an Evergy filing names it.",
+      "action": "Create the plant in Labette County, Kansas, then add the unit below. Leave owner, technology and coordinates blank until a document names them.",
+      "irp": false,
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Capacity (MW)": "969",
+            "Fuel": "fossil gas: natural gas",
+            "Status": "announced",
+            "Start year": "2030"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://opsportal.spp.org/Studies/GIActive"
+            ],
+            "Fuel Data Source": [
+              "https://opsportal.spp.org/Studies/GIActive"
+            ],
+            "Status Data Source": [
+              "https://opsportal.spp.org/Studies/GIActive"
+            ],
+            "Start Year Data Source": [
+              "https://opsportal.spp.org/Studies/GIActive"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://opsportal.spp.org/Studies/GIActive",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": ""
+            }
+          ],
+          "action": "Add unit 1 as announced, with a start year of 2030 from the grid list's commercial operation date. Rename the unit once a filing names the turbines."
+        }
+      ],
+      "record_id": "us-ks:new:labette-county-power-station"
+    }
+  ]
+}

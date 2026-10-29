@@ -1,0 +1,180 @@
+{
+ "meta": {
+  "plant_id": "L100000103865",
+  "plant_name": "Joliet 9 Generating Station",
+  "state": "Illinois",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T11:01:57-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001017847",
+   "unit_name": "Unit 6, timepoint 2",
+   "findings": {
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Power Engineering article from October 2015 reports that the Illinois EPA issued an air permit to convert coal-fired Units 6 to 8 at the Joliet plant to natural gas. It says Joliet 9 consists of Unit 6. So the conversion value is supported."
+    },
+    "Owner(s)": {
+     "value": "Midwest Generation EME LLC [100%]",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The August 2026 EIA monthly table lists the plant's entity as Midwest Generations EME LLC. EIA spells the name with an extra s. The table names a utility entity and does not give ownership shares, so this supports the owner name but not the 100 percent share."
+    }
+   },
+   "not_found": [
+    "City",
+    "CCS attachment?"
+   ],
+   "notes": "The EIA table shows this unit retired in June 2023 with 360.4 MW, which agrees with GEM. I found no document that states anything about carbon capture for this unit, and no document that gives the city in a field I could cite."
+  }
+ ],
+ "plant_findings": {
+  "Latitude": {
+   "value": "41.49310",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+    "https://www.google.com/maps/search/?api=1&query=41.49310,-88.11530"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The August 2026 EIA monthly generator table places Joliet 9, plant code 874, at 41.4931, -88.1153. The satellite picture at that point shows a power plant building with a stack and a coal yard beside the rail line and the river, so the footprint is visible. GEM's current point is about 790 meters west, on the other side of the Des Plaines River, where a larger plant with several stacks stands. That is Joliet 29, which a Power Engineering article says lies across the river from Joliet 9. The imagery date is unknown."
+  },
+  "Longitude": {
+   "value": "-88.11530",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+    "https://www.google.com/maps/search/?api=1&query=41.49310,-88.11530"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The August 2026 EIA monthly generator table places Joliet 9, plant code 874, at 41.4931, -88.1153. The satellite picture at that point shows a power plant building with a stack and a coal yard beside the rail line and the river, so the footprint is visible. GEM's current point is about 790 meters west, on the other side of the Des Plaines River, where a larger plant with several stacks stands. That is Joliet 29, which a Power Engineering article says lies across the river from Joliet 9. The imagery date is unknown."
+  },
+  "Location accuracy": {
+   "value": "exact",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+    "https://www.google.com/maps/search/?api=1&query=41.49310,-88.11530"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The August 2026 EIA monthly generator table places Joliet 9, plant code 874, at 41.4931, -88.1153. The satellite picture at that point shows a power plant building with a stack and a coal yard beside the rail line and the river, so the footprint is visible. GEM's current point is about 790 meters west, on the other side of the Des Plaines River, where a larger plant with several stacks stands. That is Joliet 29, which a Power Engineering article says lies across the river from Joliet 9. The imagery date is unknown."
+  }
+ },
+ "location": {
+  "method": "dataset",
+  "moved_m": 788,
+  "control_points": [],
+  "fit_m": null,
+  "image": "work/sweep_IL/maps/L100000103865b_1.png",
+  "needs_review": false,
+  "review_note": ""
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100001017847",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "recommendation": "Not found. The database says carbon capture is no. No document I found mentions carbon capture at Joliet 9. The EIA table and the 2015 air permit article say nothing about it.",
+   "note": "No document states the carbon capture value for this unit. I looked at the August 2026 EIA monthly table and a Power Engineering article from October 2015.",
+   "refs": []
+  },
+  {
+   "gem_unit_id": "G100001017847",
+   "concern_type": "Latitude",
+   "recommendation": "Move the plant point to the EIA location.",
+   "note": "GEM's current point for Joliet 9 is the same as Joliet 29 and sits on the wrong side of the river. Joliet 29 may need its own check.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "proposed_value": {
+    "Latitude": "41.49310",
+    "Longitude": "-88.11530"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Midwest Generation EME LLC",
+   "role": "owner",
+   "lookup_result": "Existing GEM owner, unchanged. I did not run a lookup because no owner change is proposed."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Owner(s)",
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "outcome": "verified",
+   "note": "Read plant 874 in the Retired sheet."
+  },
+  {
+   "url": "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/",
+   "used_for": [
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "Loaded through the fetcher's browser impersonation."
+  }
+ ]
+}

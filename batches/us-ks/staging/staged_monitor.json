@@ -1,0 +1,261 @@
+{
+  "meta": {
+    "lane": "monitor",
+    "scope": {
+      "country": "United States",
+      "state": "Kansas",
+      "postal": "ks",
+      "kind": "state",
+      "slug": "kansas",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-23T11:46:38-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 6
+    }
+  },
+  "records": [
+    {
+      "gem_unit_id": "G100000402344",
+      "monitor_kind": "existing_plant",
+      "monitor_reason": "Sunflower plans three new 33 MW simple cycle gas turbines to replace Clifton 1, with commercial operation in summer 2028.",
+      "recheck_by": "2027-03",
+      "refs": {
+        "links": [
+          "https://www.sunflower.net/interconnection-guidelines/powering-progress-current-projects/clifton-replacement-project",
+          "https://sunflower-epc.s3.us-west-2.amazonaws.com/260708_GEN_CliftonFactSheet_QFT_cf_jw_cf.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://sunflower-epc.s3.us-west-2.amazonaws.com/260708_GEN_CliftonFactSheet_QFT_cf_jw_cf.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "gem_plant_id": "L100000401615",
+      "plant_name": "Clifton power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Sunflower's project fact sheet of July 2026 says it will install three Solar Turbines Titan 350 generators of 33 MW each, about 99 MW in all, next to the existing Clifton 1 and on the same grid connection. Construction begins in September 2026, turbines arrive in spring 2027, and commercial operation is planned for summer 2028. A state air permit notice from July 2026 covers the same three turbines, but its documents return a not found error. Add the three new units once a reviewer confirms the permit, and retire Clifton 1 when the new units start.",
+      "record_id": "L100000401615:G100000402344:monitor-1"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "Buchanan Bluffs Energy Center",
+      "monitor_kind": "new_to_tracker",
+      "watch_case": "other_scope",
+      "monitor_reason": "Two Evergy combined cycle blocks planned near Frazier in Buchanan County, Missouri, which is a Missouri project and belongs in a Missouri batch.",
+      "recheck_by": "2027-01",
+      "checks": [],
+      "refs": {
+        "links": [
+          "https://okenergytoday.com/2026/09/evergy-wants-more-power-plants-in-kansas-and-missouri/",
+          "https://efis.psc.mo.gov/Document/Display/888870",
+          "https://investors.evergy.com/2026IRPUpdate",
+          "https://investors.evergy.com/2025IRPUpdate",
+          "https://kcc-connect.kcc.ks.gov/s/case/500cr0000112K3EAAU/27ekce0149pre"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://okenergytoday.com/2026/09/evergy-wants-more-power-plants-in-kansas-and-missouri/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": ""
+        },
+        {
+          "url": "https://efis.psc.mo.gov/Document/Display/888870",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": ""
+        },
+        {
+          "url": "https://investors.evergy.com/2026IRPUpdate",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": ""
+        },
+        {
+          "url": "https://investors.evergy.com/2025IRPUpdate",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": ""
+        },
+        {
+          "url": "https://kcc-connect.kcc.ks.gov/s/case/500cr0000112K3EAAU/27ekce0149pre",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "docket number in the page title"
+        }
+      ],
+      "capacity_mw": 710,
+      "status": "pre-construction",
+      "irp": true,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "On September 1, 2026 Evergy Kansas Central asked the Kansas Corporation Commission for prior approval of Buchanan Bluffs Energy Center Unit 1, in docket 27-EKCE-0149-PRE. I read the petition on the commission's filing site. It describes one advanced class combined cycle gas plant of 710 MW, to be built near the city of Frazier in Buchanan County, Missouri, owned entirely by Evergy Kansas Central, with commercial operation targeted for 2031. It also says a sister plant, Unit 2, will be built in the same county and owned jointly by Evergy Missouri Metro and Evergy Missouri West. That petition page needs a script to load, so the link cannot be checked by the verifier and is not cited here. A press report at https://okenergytoday.com/2026/09/evergy-wants-more-power-plants-in-kansas-and-missouri/ covers the same filing. Missouri commission filings at https://efis.psc.mo.gov/Document/Display/888870 cover the Evergy Missouri side. Evergy's 2026 plan updates at https://investors.evergy.com/2026IRPUpdate and https://investors.evergy.com/2025IRPUpdate show the 710 MW Kansas Central block in 2031 and the Metro share of 355 MW in 2032. The Metro 440 MW block of 2031 is Mullin Creek 2, which GEM already tracks under Missouri. GEM has no Buchanan Bluffs plant. This is a handoff for the Missouri batch.",
+      "record_id": "us-ks:plant:monitor-1"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "Leavenworth thermal and storage hybrid (SPP GEN-2024-253)",
+      "monitor_kind": "new_to_tracker",
+      "watch_case": "drive_or_storage",
+      "monitor_reason": "A 300 MW request in Leavenworth County is listed as thermal and storage together, with no split of generating and storage capacity.",
+      "recheck_by": "2027-01",
+      "checks": [],
+      "refs": {
+        "links": [
+          "https://opsportal.spp.org/Studies/GIActive"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://opsportal.spp.org/Studies/GIActive",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": ""
+        }
+      ],
+      "capacity_mw": 300,
+      "status": "announced",
+      "irp": false,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "The Southwest Power Pool active generator list at https://opsportal.spp.org/Studies/GIActive shows GEN-2024-253, 300 MW, hybrid, with fuel type thermal and storage, near Leavenworth, connecting at the Stranger Creek to 87th Street 345 kV line, with Evergy as the transmission owner. The nameplate is 300 MW, the proposed in-service date is 11/30/2027, commercial operation is 12/31/2027, and it was received on 3/1/2025. It is in the cluster study. The list does not say how much of the 300 MW is a gas or oil generator and how much is a battery. I found no sponsor, no air permit and no Evergy filing for it. It becomes an add once a document names the generating part.",
+      "record_id": "us-ks:plant:monitor-2"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "Kansas City Board of Public Utilities 237 MW combustion turbine option",
+      "monitor_kind": "new_to_tracker",
+      "watch_case": "not_committed",
+      "monitor_reason": "The Board's 2024 plan studies a 237 MW gas combustion turbine for 2039 only as one case, and the recommended plan builds no gas.",
+      "recheck_by": "2027-06",
+      "checks": [],
+      "refs": {
+        "links": [
+          "https://web.archive.org/web/20250402202525/https://www.bpu.com/Portals/0/pdf/2024-BPU_IRP_Report-2024_11-4-2024.pdf",
+          "https://bpu.com/wp-content/uploads/2026/08/2024-BPU_IRP_Report-2024-FINAL.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://web.archive.org/web/20250402202525/https://www.bpu.com/Portals/0/pdf/2024-BPU_IRP_Report-2024_11-4-2024.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": ""
+        },
+        {
+          "url": "https://bpu.com/wp-content/uploads/2026/08/2024-BPU_IRP_Report-2024-FINAL.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": ""
+        }
+      ],
+      "capacity_mw": 237,
+      "status": "announced",
+      "irp": true,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "The Kansas City Board of Public Utilities 2024 resource plan was read in full. A saved copy is at https://web.archive.org/web/20250402202525/https://www.bpu.com/Portals/0/pdf/2024-BPU_IRP_Report-2024_11-4-2024.pdf and the live copy is at https://bpu.com/wp-content/uploads/2026/08/2024-BPU_IRP_Report-2024-FINAL.pdf. Study case 2, on page 5-28, retires Nearman Creek 1 at the end of 2038 and adds a 237 MW simple cycle combustion turbine in 2039. Page 6-45 says new conventional thermal generation did not appear appreciably in the results, and recommends that \"new and highly efficient natural gas-fired thermal power plants still be included as possible options\". So gas stays an option and nothing is committed. The plan gives no site and no filing.",
+      "record_id": "us-ks:plant:monitor-3"
+    },
+    {
+      "gem_plant_id": "L100000103927",
+      "plant_name": "Riverton Power Plant",
+      "monitor_kind": "existing_plant",
+      "watch_case": "under_threshold",
+      "monitor_reason": "Two small replacement gas turbines of about 13.3 MW each are being built at Riverton, far under the 50 MW bar.",
+      "recheck_by": "2027-01",
+      "checks": [],
+      "refs": {
+        "links": [
+          "https://efis.psc.mo.gov/Document/Display/768252",
+          "https://efis.psc.mo.gov/Document/Display/773603",
+          "https://opsportal.spp.org/Studies/GIActive"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://efis.psc.mo.gov/Document/Display/768252",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": ""
+        },
+        {
+          "url": "https://efis.psc.mo.gov/Document/Display/773603",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": ""
+        },
+        {
+          "url": "https://opsportal.spp.org/Studies/GIActive",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": ""
+        }
+      ],
+      "capacity_mw": 26.6,
+      "irp": false,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "Liberty's Empire District Electric asked the Missouri Public Service Commission in case EA-2023-0131 to build two replacement combustion turbines at Riverton, Kansas. The Second Amended Application at https://efis.psc.mo.gov/Document/Display/768252 and the Staff Report of March 8, 2024 at https://efis.psc.mo.gov/Document/Display/773603 give each turbine a nominal net capacity of 13.3 MW, dual fuel, replacing the 1988 Units 10 and 11 of 16.3 MW each, with service expected in July 2026. The EIA-860M table for August 2026 lists Riverton generators 13 and 14 at 13.5 MW each, planned. The Southwest Power Pool list at https://opsportal.spp.org/Studies/GIActive shows GEN-2024-GR4, a 27.14 MW replacement at Riverton 452, commercial operation 5/8/2026, with the interconnection agreement signed. All of that is about 27 MW in total, under the bar. The old units are not in GEM. Check again to see whether the new units start and whether GEM wants units this small at an existing plant. Liberty's separate Missouri request for a 240 to 250 MW combined cycle plant called Stateline is in Missouri.",
+      "record_id": "us-ks:plant:monitor-4"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "Flint Hills Digital Campus",
+      "monitor_kind": "new_to_tracker",
+      "watch_case": "data_center_hold",
+      "monitor_reason": "A proposed gigawatt scale data center campus near Emporia plans some on-site generation, but no fuel, unit or capacity is named. Gas fired data centers stay on the watch list until a reviewer promotes them.",
+      "recheck_by": "2027-01",
+      "checks": [
+        39
+      ],
+      "refs": {
+        "links": [
+          "https://www.datacenterdynamics.com/en/news/gigawatt-scale-data-center-campus-proposed-in-kansas/",
+          "https://www.wibw.com/2026/06/02/flint-hills-digital-campus-proposed-emporia/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.datacenterdynamics.com/en/news/gigawatt-scale-data-center-campus-proposed-in-kansas/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": ""
+        },
+        {
+          "url": "https://www.wibw.com/2026/06/02/flint-hills-digital-campus-proposed-emporia/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": ""
+        }
+      ],
+      "irp": false,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "Data Center Dynamics reported on June 22, 2026 at https://www.datacenterdynamics.com/en/news/gigawatt-scale-data-center-campus-proposed-in-kansas/ that Kanza Park Place LLC proposed a campus of up to 1,000 acres in Lyon County near Emporia, with a combination of dedicated grid infrastructure and on-site generation. A television station report of June 2, 2026 at https://www.wibw.com/2026/06/02/flint-hills-digital-campus-proposed-emporia/ covers the same proposal. Neither names a fuel, a turbine, a capacity or a permit. I found no air permit notice or Kansas Corporation Commission filing for it. A gas fired data center stays on the watch list until a reviewer promotes it. It becomes an add when a document names the generating units.",
+      "record_id": "us-ks:plant:monitor-5"
+    }
+  ]
+}

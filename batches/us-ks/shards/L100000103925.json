@@ -1,0 +1,249 @@
+{
+ "meta": {
+  "plant_id": "L100000103925",
+  "plant_name": "Nearman Creek power station",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T12:30:00-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402582",
+   "unit_name": "CT4",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026, released September 2026, lists this unit as operating. Plant 6064, generator CT4, status operating, nameplate 104.0 MW, operating year 2006. The table shows no planned retirement. I found no retirement, mothballing or sale notice. "
+    }
+   },
+   "not_found": [
+    "City"
+   ],
+   "notes": "The unit is still operating in the newest EIA table. No retirement, mothballing or ownership change was found. The Kansas air permit documents for this plant could not be opened at the KDHE address, which returns a not found page. The city value of Kansas City was not confirmed in a document I could open, because the permit notice that gives the address 4240 North 55th Street, Kansas City, is no longer live."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "City of Kansas City (Kansas) [100%]",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860M table for August 2026 lists the plant 6064 entity as City of Kansas City, Kansas. That matches GEM's owner. The plant is run by the Board of Public Utilities, which is part of the city government."
+  },
+  "Latitude": {
+   "value": "39.17107",
+   "refs": [
+    "https://www.google.com/maps/search/?api=1&query=39.17107,-94.69719"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=39.17107,-94.69719",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "No document I could open states GEM's point. A satellite picture of this point shows the Nearman Creek plant footprint, with the boiler house, stack, coal yard and switchyard. The EIA-860M table gives a slightly different point of 39.1681 and -94.6975, about 270 meters south, also inside the plant. The imagery date is unknown."
+  },
+  "Longitude": {
+   "value": "-94.69719",
+   "refs": [
+    "https://www.google.com/maps/search/?api=1&query=39.17107,-94.69719"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=39.17107,-94.69719",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "Same note as for Latitude."
+  },
+  "Location accuracy": {
+   "value": "exact",
+   "refs": [
+    "https://www.google.com/maps/search/?api=1&query=39.17107,-94.69719"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=39.17107,-94.69719",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The point sits on the plant's main buildings in the satellite picture, so exact is supported."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000402582",
+   "concern_type": "Capacity (MW)",
+   "recommendation": "Keep 104 MW for unit CT4. No change needed. The federal EIA generator table gives 104 MW as the nameplate rating and 72 MW as the summer and winter rating. The 75 MW in the Board of Public Utilities testimony is most likely an operating or net figure, not the nameplate. GEM records nameplate, so 104 MW stands. ",
+   "note": "I compared the sources for this unit. The EIA table for August 2026 lists plant 6064, generator CT4, a natural gas combustion turbine that started in 2006, with nameplate 104 MW and summer and winter capability of 72 MW. The EIA annual survey file for 2024 shows the same three numbers. The Board of Public Utilities testimony from a 2023 rate hearing, by its executive director of electric production, calls CT4 the newest 75 MW oil and gas unit. That testimony does not say whether 75 MW is nameplate, net or summer. It also calls the coal unit 245 Net MW while EIA lists that unit at 261 MW nameplate and 243 MW net, so the testimony appears to use net or operating figures. A 75 MW figure sits close to the 72 MW EIA net rating and well below the 104 MW nameplate, which fits that pattern. A third source, a federal air-data map site, lists a generator 4 at 94 MW, which is probably an older EIA entry and does not match any current rating. I searched for a Board resource plan, annual report, rate filing, Kansas air permit and Southwest Power Pool document that gives the turbine model or a nameplate rating. The Kansas air permit pages did not open and no other document gave a turbine model or a different nameplate. The testimony PDF is gone from the Board's site, but a saved copy from January 2025 still has the 75 MW sentence. I read the EIA annual 2024 file from a local copy; the verifier could not read the zip file.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+    "https://web.archive.org/web/20250124120144/https://www.bpu.com/Portals/0/pdf/Rate-Hearings/RateHearingTestimony/Blen-Brendel_Electric-Production.pdf"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://web.archive.org/web/20250124120144/https://www.bpu.com/Portals/0/pdf/Rate-Hearings/RateHearingTestimony/Blen-Brendel_Electric-Production.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ]
+  },
+  {
+   "gem_unit_id": "G100000402582",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "recommendation": "The database says the location has no data source. The EIA annual plant table for 2024 gives the plant address as 4240 North 55th Street, Kansas City, Kansas 66104, and a point about 330 meters from GEM's point. Add this table to the Location Data Source box. The point may stay.",
+   "note": "The point itself was not moved. The EIA table was read from the 2024 annual plant table and the August 2026 monthly file.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Loads. Plant and generator rows read from the downloaded file."
+  },
+  {
+   "url": "https://www.kdhe.ks.gov/DocumentCenter/View/52603",
+   "used_for": [
+    "City",
+    "Owner(s)"
+   ],
+   "outcome": "blocked",
+   "note": "Verifier returned HTTP 404. fetch.py also returned the KDHE Custom404 page. No archive copy found."
+  },
+  {
+   "url": "https://www.kdhe.ks.gov/DocumentCenter/View/52601",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "dead_link",
+   "note": "Verifier returned HTTP 404 with no archived copy."
+  },
+  {
+   "url": "https://www.bpu.com/about-us/power-generation",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "dead_link",
+   "note": "HTTP 404."
+  },
+  {
+   "url": "https://www.google.com/maps/search/?api=1&query=39.17107,-94.69719",
+   "used_for": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "outcome": "verified",
+   "note": "Satellite picture saved and read."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602024.zip",
+   "used_for": "summer and winter ratings",
+   "outcome": "failed",
+   "note": "Verifier could not extract text from the zip. I read the local copy: CT4 nameplate 104, summer 72, winter 72, operating, 2006."
+  },
+  {
+   "url": "https://web.archive.org/web/20250124120144/https://www.bpu.com/Portals/0/pdf/Rate-Hearings/RateHearingTestimony/Blen-Brendel_Electric-Production.pdf",
+   "used_for": "75 MW figure",
+   "outcome": "verified",
+   "note": "Saved copy from January 2025. Says CT4 is the newest 75MW oil/gas-fired unit. The live address now returns 404."
+  },
+  {
+   "url": "https://www.bpu.com/Portals/0/pdf/Rate-Hearings/RateHearingTestimony/Blen-Brendel_Electric-Production.pdf",
+   "used_for": "75 MW figure",
+   "outcome": "dead",
+   "note": "Live address returns 404. Saved copy used instead."
+  },
+  {
+   "url": "https://ejmap.org/displayfacilityadvanced-65965.htm",
+   "used_for": "cross-check",
+   "outcome": "not relevant",
+   "note": "Lists generator 4 at 94 MW, started 2-1-2006. Federal-data republisher, not used."
+  },
+  {
+   "url": "https://www.gridinfo.com/plant/nearman-creek/6064",
+   "used_for": "cross-check",
+   "outcome": "not relevant",
+   "note": "Repeats the EIA value of 104 MW. A lead site, not cited."
+  },
+  {
+   "url": "https://www.bpu.com/Portals/0/pdf/Rate-Hearings/SierraClubIntervention/Testimony_Sarah-Shenstone-Harris.pdf",
+   "used_for": "CT4 rating",
+   "outcome": "not relevant",
+   "note": "No capacity figure for CT4 found in the text I read."
+  },
+  {
+   "url": "https://sos.ks.gov/publications/Register/Volume-44/Issues/Issue-44/10-30-25-53603.html",
+   "used_for": "air permit turbine details",
+   "outcome": "not relevant",
+   "note": "Notice of a permit change request for startup and shutdown rules; gives no turbine rating."
+  }
+ ],
+ "location": {
+  "method": "imagery",
+  "moved_m": 0,
+  "control_points": [],
+  "fit_m": null,
+  "image": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/work/sweep_KS/maps/L100000103925_1.png",
+  "needs_review": false,
+  "review_note": ""
+ }
+}

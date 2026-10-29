@@ -1,0 +1,85 @@
+{
+ "meta": {
+  "plant_id": "L100000409209",
+  "plant_name": "Goodman Energy Center",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T09:39:44-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000414264",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA monthly generator table for August 2026 lists all twelve Goodman engines as operating, 8.4 MW and 9.3 MW each, with no planned retirement dates. A web search found no retirement or ownership change."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year"
+   ],
+   "notes": "Still operating. The city is Hays. The EIA 2024 plant table gives the address as 1713 230th Ave, Hays, Ellis County."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000414264",
+   "concern_type": "location",
+   "recommendation": "Fill the City box with Hays. The EIA annual plant table for 2024 gives the plant address as 1713 230th Ave, Hays, Ellis County. Add this file to Location Data Source.",
+   "note": "The brief asked for the city to be filled from a source that places the plant. The coordinates in GEM already match the EIA table.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+   ],
+   "proposed_value": {
+    "City": "Hays"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "The August 2026 EIA monthly generator table was read from the local copy. It loaded and the plant rows were read directly."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+   "used_for": [
+    "City"
+   ],
+   "outcome": "verified",
+   "note": "The EIA 2024 annual file loaded. The plant table was read locally and gives Hays as the city."
+  },
+  {
+   "url": "https://www.mwenergy.com/news/P100",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "A search result about the utility. Not opened or cited."
+  }
+ ]
+}

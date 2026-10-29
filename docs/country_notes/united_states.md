@@ -46,10 +46,11 @@ file holds what is true of every state.
   enough to add it (Baird 2026-10-07). Placeholder plants named
   "<Utility> IRP CC power station 3" and the like are how earlier cycles
   recorded unsited plan capacity; whether that continues is still open.
-- **Data-center gas**: search every state for behind-the-meter gas serving data centers (the data-center block at the end of `briefs/_captive.md`, checklist row 39). For now every find stages into the watch list only (`monitor`, `checks: [39]`), never a new plant or unit; a reviewer promotes it (Baird 2026-10-08). When added, mark captive with industry type Data Center. Emergency/backup gensets are a unit-level checkbox, not a captive flag, and not watch items.
+- **Data center power**: search every state for gas or diesel generation serving data centers, backup engine fleets included (`python data_center_fleets.py --state <State>` after the permit harvest, then `build_state_brief.py --data-centers`; checklist row 39). A fleet at the summed nameplate threshold of 50 MW is an add, and so is a gas-fired data center plant, with no watch-list hold (Baird 2026-10-27; manual M237, M396, M578). Mark captive with industry type data center, industry use power and Backup Power yes at unit level for backup fleets, internal combustion with the engine count and per-engine MW from the permit, and name the plant "<Operator> <Place> Data Center power station" with the data center in Project Links. Every site at or above the threshold is answered in `coverage.json` under `data_centers` (gate `data-centers`).
 - **ISO/RTO context** decides where in-development units are visible (queues,
   CDR-type reports): ERCOT, SPP, MISO, PJM, NYISO, ISO-NE, CAISO, plus
   non-RTO Southeast and Northwest (balancing-authority queues instead).
+- **Queue entries are adds, not watch items** (Baird 2026-10-23, Discovery SOP §3.1). A gas or oil generating request in an ISO or RTO queue at or above 50 MW is a new plant at `announced`, named after the queue entry or its site, with the queue download as the source and the matching row quoted in the note; a signed interconnection agreement makes it `pre-construction`. The database already holds 18 US units whose only status source is an ERCOT, MISO, SPP or PJM document (Invenergy Calumet County, Limitless Energy Hub, Moon Hammer, SWPP ERAS Hobbs, Tyler Rose, WPL Sheboygan County). A request at a plant GEM has is a `newunits` record, or a `qa` duplicate question when it may be a unit GEM already lists. Baird confirmed both calls on 2026-10-23: queue-only entries are adds, and entries filed by a single-purpose company with no public footprint are added at `announced` too, owner blank unless a parent is named.
 - **EIA-860M** monthly is the status backbone (operating / planned /
   retired / cancelled, with planned and actual dates); **EIA-860 annual** for
   ownership shares and technology; **EPA CAMPD** for unit-level "actually
@@ -133,7 +134,7 @@ file holds what is true of every state.
   state.
 
 - *2026-09-15* — added the per-state structure and the US-specific Q4 2026
-  rules (ID matching, IRP, data-center captive, Sierra Club reference-only)
+  rules (ID matching, IRP, Sierra Club reference-only)
   from the GOGPT US Data/Research Guide, the Q4 kickoff doc and the Update
   sheet's United States research tab. First state file: `united_states/texas.md`.
 

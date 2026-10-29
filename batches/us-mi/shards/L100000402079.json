@@ -1,0 +1,96 @@
+{
+ "meta": {
+  "plant_id": "L100000402079",
+  "plant_name": "Kalkaska CT 1 power station",
+  "state": "Michigan",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-26T23:59:00-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403155",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Read from the file: plant L100000402079"
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status is unchanged. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 7984, generator 001, 60.5 MW, operating since December 2002, with no planned retirement. I found no retirement, mothballing or sale announced."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Pratt & Whitney FT8 Twin Pac",
+     "refs": [
+      "https://mienviro.michigan.gov/ncore/downloadpdf/-7062929243981508004"
+     ],
+     "verifications": [
+      {
+       "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-7062929243981508004",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A state air permit staff report from July 2024 (https://mienviro.michigan.gov/ncore/downloadpdf/-7062929243981508004) says the facility has one Pratt and Whitney FT-8 Twin Pac turbine set of two combustion turbines with a 55 MW nominal rating."
+    }
+   },
+   "not_found": [
+    "Latest Activity"
+   ],
+   "notes": "The unit is still operating. Latest Activity is left blank because GEM only fills it for units in development or shelved."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000403155",
+   "concern_type": "Turbine/Engine Technology",
+   "recommendation": "The Pratt and Whitney FT8 is an aeroderivative turbine. GEM shows gas turbine. Consider changing the technology to aeroderivative gas turbine.",
+   "note": "The state air permit staff report from July 2024 (https://mienviro.michigan.gov/ncore/downloadpdf/-7062929243981508004) names the FT-8 Twin Pac. Calling it aeroderivative is my reading of the model, and the document does not use that word.",
+   "refs": [
+    "https://mienviro.michigan.gov/ncore/downloadpdf/-7062929243981508004"
+   ],
+   "proposed_value": {
+    "Turbine/Engine Technology": "aeroderivative gas turbine"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet for this plant."
+  },
+  {
+   "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-7062929243981508004",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Names the turbine make and model."
+  }
+ ]
+}

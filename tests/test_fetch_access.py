@@ -257,7 +257,7 @@ def test_an_older_snapshot_with_the_value_passes(archive):
     assert ok and "20220101000000" in reason
 
 
-def test_a_dead_page_names_the_archived_copy_but_still_fails(archive):
+def test_a_dead_page_names_the_archived_copy_to_cite_but_the_live_url_fails(archive):
     archive["lookups"] = [f"20220101000000 {URL}\n"]
     snap = f"https://web.archive.org/web/20220101000000/{URL}"
     archive["pages"] = {snap: ("200", "<title>x</title>1.200 MW", False, [])}

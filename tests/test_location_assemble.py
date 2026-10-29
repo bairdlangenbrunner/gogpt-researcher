@@ -149,3 +149,32 @@ def test_review_shard_replaces_the_location(tmp_path):
     assert r["fields"]["Latitude"] == "38.40500"
     assert r["location_method"] == "imagery" and r["location_needs_review"] is False
     assert a.shards["L1"]["meta"]["location_review"] == "L1.review.json"
+
+
+def test_exact_point_that_stays_stages_its_missing_source(tmp_path):
+    """A missing Location data source is never optional (Baird 2026-10-21): an
+    exact point that does not move still gets a record that adds the links."""
+    csv_path = setup(tmp_path, cur=("38.5", "-97.5", "exact"))
+    loc = {"method": "imagery", "moved_m": 0, "needs_review": False}
+    (tmp_path / "shards" / "L1.json").write_text(json.dumps(shard(loc)), encoding="utf-8")
+    a = run(tmp_path, csv_path)
+    r = [r for r in a.lanes["updates"] if r["record_id"] == "L1:plant:location-source"]
+    assert len(r) == 1 and r[0]["verdict"] == "match"
+    assert PIN in r[0]["refs"]["Location Data Source"] and DOC in r[0]["refs"]["Location Data Source"]
+    assert validate(a.lanes) == []
+
+
+def test_place_change_rides_on_the_one_location_card(tmp_path):
+    """City, county and district edits go on the location record with the point
+    (Baird 2026-10-21), even when the point itself stays."""
+    csv_path = setup(tmp_path, cur=("38.5", "-97.5", "exact"))
+    s = shard({"method": "imagery", "moved_m": 0, "needs_review": False})
+    s["plant_findings"]["City"] = finding("Salina City")
+    (tmp_path / "shards" / "L1.json").write_text(json.dumps(s), encoding="utf-8")
+    a = run(tmp_path, csv_path)
+    recs = [r for r in a.lanes["updates"] if "City" in r["fields"]]
+    assert len(recs) == 1 and recs[0]["record_id"] == "L1:plant:location"
+    assert recs[0]["fields"]["City"] == "Salina City" and recs[0]["current"]["City"] == "Salina"
+    assert "Latitude" in recs[0]["fields"]
+    assert not [r for r in a.lanes["updates"] if r["record_id"].endswith("city")]
+    assert validate(a.lanes) == []

@@ -1,0 +1,148 @@
+{
+ "meta": {
+  "plant_id": "L100001063350",
+  "plant_name": "Evergy Kansas Central 2025 IRP power station 2",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T09:38:58-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001072779",
+   "unit_name": "1 IRP",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "710.0",
+     "refs": [
+      "https://investors.evergy.com/2025IRPUpdate"
+     ],
+     "verifications": [
+      {
+       "url": "https://investors.evergy.com/2025IRPUpdate",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "irp": true,
+     "note": "The May 2025 plan deck shows 710 MW of natural gas added for Kansas Central in 2033 and says the update includes a natural gas combined cycle plant in 2033."
+    },
+    "Turbine/Engine Technology": {
+     "value": "combined cycle",
+     "refs": [
+      "https://investors.evergy.com/2025IRPUpdate"
+     ],
+     "verifications": [
+      {
+       "url": "https://investors.evergy.com/2025IRPUpdate",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "irp": true,
+     "note": "The May 2025 plan deck says the update includes a natural gas combined cycle plant in 2033."
+    },
+    "Start year": {
+     "value": "2033",
+     "refs": [
+      "https://investors.evergy.com/2025IRPUpdate"
+     ],
+     "verifications": [
+      {
+       "url": "https://investors.evergy.com/2025IRPUpdate",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "irp": true,
+     "note": "The May 2025 plan deck shows the 710 MW block in 2033. The June 2026 deck no longer shows any Kansas Central gas in 2033, so the date may be out of date."
+    }
+   },
+   "not_found": [
+    "Fuel",
+    "Equipment Manufacturer/Model",
+    "Latest Activity",
+    "Operator(s)",
+    "Owner(s)",
+    "City"
+   ],
+   "notes": "This plant has no real site. It is a placeholder for capacity in the Evergy Kansas Central plan update of May 2025, so no location, city or coordinates were researched. The newest report is the June 2026 plan update, which is within a year, so Latest Activity is left alone."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001072779",
+   "concern_type": "existence",
+   "recommendation": "The June 2026 plan update shows no natural gas addition for Kansas Central in 2033. Its chart shows only 150 MW of wind that year. The 710 MW block of 2033 in the May 2025 update may have been dropped. The reviewer should decide whether to keep it as announced, treat it as cancelled, or watch for the full plan.",
+   "note": "The June 2026 deck covers 2026 to 2035 only and is a chart deck, so a full plan document could say more. Read from chart images.",
+   "refs": [
+    "https://investors.evergy.com/2026IRPUpdate",
+    "https://investors.evergy.com/2025IRPUpdate"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001072779",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "recommendation": "The announced step dates to the May 2025 plan update. The Evergy deck dated May 2, 2025 shows the 710 MW combined cycle block in 2033.",
+   "note": "No earlier document was found.",
+   "refs": [
+    "https://investors.evergy.com/2025IRPUpdate"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://shareus11.springcm.com/Public/Document/35150/e56d0963-88e0-4e4b-999a-0587e0573f89/ba249c18-eec2-f011-b84a-48df377ee718",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Start year"
+   ],
+   "outcome": "failed",
+   "note": "The link opens a document viewer page for a file named S202505011626148669.pdf, which is the May 2025 plan update deck. The viewer page carries no deck text, so the verifier could not find the capacity or the name. The same deck loads at the Evergy investor page and is cited from there."
+  },
+  {
+   "url": "https://investors.evergy.com/2025IRPUpdate",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Five page deck dated May 2, 2025. Kansas Central page shows natural gas additions by year. The investor site blocks plain curl, so it was read through the browser-impersonation route."
+  },
+  {
+   "url": "https://investors.evergy.com/2026IRPUpdate",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Five page deck for the June 2026 update. It covers 2026 to 2035 only."
+  },
+  {
+   "url": "https://efis.psc.mo.gov/Document/Display/888870",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "A web search result for the plan. It was not opened because it concerns Missouri filings."
+  }
+ ]
+}

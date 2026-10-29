@@ -1,0 +1,434 @@
+{
+ "meta": {
+  "state": "Mississippi",
+  "kind": "statewide",
+  "generated": "2026-10-23T21:00:00-04:00",
+  "done": true,
+  "urls_attempted": 13,
+  "urls_verified": 12,
+  "searched": [
+   "I read the Southern Company generator interconnection queue through its Power BI query and listed every Mississippi gas entry. Three active requests in Clarke County are new to GEM.",
+   "I read the MISO queue (3,990 requests) and the MISO fast-track list. Lakeover is Traceview and the Vicksburg request is Vicksburg Advanced. Four large Entergy requests have no fuel named.",
+   "I read the TVA current and archive queues posted September 14, 2026. The only Mississippi gas request in progress is number 569, which is New Caledonia.",
+   "I read the EIA monthly generator file and the 2024 annual EIA tables for Mississippi. The three EIA plants missing from GEM are Wilkins and Sylvarena, both with units under 50 MW, and Traceview, already in GEM.",
+   "I read the state air permit records for every unmatched power or data center facility. Each one is below the threshold, backup generation, or not a generating plant.",
+   "I read the Public Service Commission dockets for Entergy Mississippi, Mississippi Power and Cooperative Energy. Only Traceview, Vicksburg, Delta Blues and the Daniel gas conversion add gas, and all four are already in GEM.",
+   "I read every MDEQ Permit Board minutes file from 2020 to 2026, including the 2021 files missing from the index, using text recognition on the scanned pages. Every power plant permit in them is for a plant GEM already has."
+  ],
+  "irp_summary": [
+   "Mississippi Power's 2024 resource plan keeps its existing plants and names no new gas plant. A later docket converts Daniel unit 2 to gas by June 2029, which is already recorded at that plant.",
+   "Entergy Mississippi's 2024 resource plan material names no gas unit beyond the Traceview, Vicksburg and Delta Blues plants that GEM already holds.",
+   "The Mississippi Public Service Commission row has no plan of its own to read."
+  ]
+ },
+ "qa": [
+  {
+   "gem_plant_id": "L100001023568",
+   "plant_name": "New Caledonia power station",
+   "concern_type": "identity",
+   "recommendation": "No change. TVA interconnection request 569 is this plant. The reviewer may want to compare the 2028 start year with the queue's September 2026 in-service date.",
+   "note": "The TVA generator interconnection queue posted on September 14, 2026 at https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/OASIS_CurrentQueue_20260914.pdf lists request 569: gas, 515 MW, at the Lowndes 161 kV substation in Lowndes County, Mississippi, received 6/20/2023, in the facilities study, with an in-service date of 9/1/2026. TVA's environmental review page at https://tva.com/environment/environmental-stewardship/environmental-reviews/nepa-detail/new-caledonia-gas-plant describes the New Caledonia gas plant at the former gas plant site in Lowndes County, about 500 MW from six dual-fuel frame combustion turbines. GEM holds six units of 83.3 MW, which add to about 500 MW. The queue entry and the plant match by site, fuel and size, so no new plant is needed. The TVA archive queue lists request 575, also 515 MW at Lowndes, as withdrawn. It looks like a duplicate request. Caledonia power station (L100000401627) is the 2003 combined cycle plant on a neighboring site and is a different plant.",
+   "refs": [
+    "https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/OASIS_CurrentQueue_20260914.pdf",
+    "https://tva.com/environment/environmental-stewardship/environmental-reviews/nepa-detail/new-caledonia-gas-plant"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/OASIS_CurrentQueue_20260914.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": ""
+    },
+    {
+     "url": "https://tva.com/environment/environmental-stewardship/environmental-reviews/nepa-detail/new-caledonia-gas-plant",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": ""
+    }
+   ],
+   "proposed_value": null,
+   "irp": false
+  },
+  {
+   "gem_plant_id": "L100001064651",
+   "plant_name": "Traceview Advanced power station",
+   "concern_type": "identity",
+   "recommendation": "No change. The MISO fast-track request E0047, the Lakeover combined cycle plant, is this plant.",
+   "note": "MISO's Expedited Resource Addition Study list at https://cdn.misoenergy.org/ERAS%20Interconnection%20Requests718482.xlsx shows request E0047: Entergy Mississippi, Hinds County, a new Green Acres 230 kV substation, gas combined cycle, 820 MW maximum and 763.2 MW requested, in service 8/4/2028, study cycle 2, with the interconnection agreement executed or filed. Its summary reads: \"The Lakeover CCCT (J3825) is one of two generators proposed to serve\" new load of 1,000 to 1,300 MW, including large data centers. Entergy Mississippi's Traceview page at https://www.entergymississippi.com/generation/traceview describes a 754 MW combined cycle plant at Ridgeland, on the Hinds and Madison county line. The state air hearing notice at https://www.mdeq.ms.gov/wp-content/uploads/2026/06/Notice-of-Public-Hearing.pdf covers permit 1720-00100 for Traceview. The owner, site, size and 2028 date match, so Lakeover was the working name for Traceview. No new plant is needed.",
+   "refs": [
+    "https://cdn.misoenergy.org/ERAS%20Interconnection%20Requests718482.xlsx",
+    "https://www.entergymississippi.com/generation/traceview",
+    "https://www.mdeq.ms.gov/wp-content/uploads/2026/06/Notice-of-Public-Hearing.pdf"
+   ],
+   "verifications": [
+    {
+     "url": "https://cdn.misoenergy.org/ERAS%20Interconnection%20Requests718482.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": ""
+    },
+    {
+     "url": "https://www.entergymississippi.com/generation/traceview",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": ""
+    },
+    {
+     "url": "https://www.mdeq.ms.gov/wp-content/uploads/2026/06/Notice-of-Public-Hearing.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": ""
+    }
+   ],
+   "proposed_value": null,
+   "irp": false
+  },
+  {
+   "gem_plant_id": "L100001080981",
+   "plant_name": "Vicksburg Advanced power station",
+   "concern_type": "identity",
+   "recommendation": "No change. The MISO fast-track request E0031, the Vicksburg combined cycle plant, is this plant. The reviewer may compare the queue's August 2027 in-service date with the start year GEM holds.",
+   "note": "MISO's Expedited Resource Addition Study list at https://cdn.misoenergy.org/ERAS%20Interconnection%20Requests718482.xlsx shows request E0031, the Vicksburg CCCT (J3583): Entergy Mississippi, Warren County, at the Baxter Wilson 115 kV substation, gas combined cycle, 820 MW maximum and 768.1 MW requested, in service 8/21/2027. That matches this plant by owner, county, fuel and size, so no new plant is needed.",
+   "refs": [
+    "https://cdn.misoenergy.org/ERAS%20Interconnection%20Requests718482.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://cdn.misoenergy.org/ERAS%20Interconnection%20Requests718482.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": ""
+    }
+   ],
+   "proposed_value": null,
+   "irp": false
+  }
+ ],
+ "monitor": [
+  {
+   "gem_plant_id": "",
+   "plant_name": "Sylvarena generating plant",
+   "monitor_kind": "new_to_tracker",
+   "watch_case": "under_threshold",
+   "monitor_reason": "Three 47 MW gas combustion turbines owned by Cooperative Energy in Smith County. Each turbine is under 50 MW. If they are aeroderivative turbines they count as one set of 141 MW and the plant is an add.",
+   "recheck_by": "2027-04",
+   "checks": [],
+   "note": "EIA's monthly generator file at https://www.eia.gov/electricity/data/eia860m/ lists Sylvarena, EIA plant 7989, as three 47 MW natural gas combustion turbines from 2003, 141 MW in all, owned by Cooperative Energy. The state air permit renewal issued October 7, 2026 at https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1875726 covers three simple cycle combustion turbines of 417.7 million Btu per hour each, with water injection to control nitrogen oxides. It says new combustors were to be installed in 2026, a like-for-like replacement with no capacity change stated. The site is 3012 Smith County Road 97, Raleigh, at latitude 31.982076 and longitude -89.412714. No source I found names the turbine model. Water injection on a 47 MW gas turbine is typical of an aeroderivative model such as the LM6000. If a source confirms that, the three turbines are one set of 141 MW and the plant should be added at operating. Not found: the turbine maker or model.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/",
+    "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1875726"
+   ],
+   "verifications": [
+    {
+     "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1875726",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": ""
+    }
+   ],
+   "capacity_mw": 47,
+   "status": "operating",
+   "irp": false
+  },
+  {
+   "gem_plant_id": "",
+   "plant_name": "Entergy Mississippi unnamed MISO requests 2030 and 2031",
+   "monitor_kind": "new_to_tracker",
+   "watch_case": "no_generation",
+   "monitor_reason": "Four large MISO requests on Entergy Mississippi's system have no fuel or plant named in the public queue. Entergy's chief executive has said two new plants will be needed in the early 2030s.",
+   "recheck_by": "2027-04",
+   "checks": [],
+   "note": "The MISO generator interconnection queue, read through MISO's public queue data at https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/, lists requests J4286 and J4295 of 770 MW each with in-service dates of 5/31/2030, and J4245 of 770 MW with an in-service date of 7/31/2031, in Mississippi on Entergy's system. J4176 of 1,750 MW is withdrawn. The queue hides the fuel for these requests and no filing I found names them. In a September 2025 interview at https://mississippitoday.org/2025/09/17/entergy-mississippi-ceo-fisackerly-answers-questions-on-data-centers-and-electricity-rates/ Entergy Mississippi's chief executive said the company would need two new power plants in the early 2030s to serve data center growth. A 770 MW size matches a single combined cycle block, but that is a guess, so nothing is added. Not found: the fuel, the owner, the site and any filing for these requests.",
+   "refs": [
+    "https://mississippitoday.org/2025/09/17/entergy-mississippi-ceo-fisackerly-answers-questions-on-data-centers-and-electricity-rates/"
+   ],
+   "verifications": [
+    {
+     "url": "https://mississippitoday.org/2025/09/17/entergy-mississippi-ceo-fisackerly-answers-questions-on-data-centers-and-electricity-rates/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": ""
+    }
+   ],
+   "capacity_mw": null,
+   "status": "announced",
+   "irp": false
+  }
+ ],
+ "newplants": [
+  {
+   "plant_name": "Enterprise Clarke County power station",
+   "gem_plant_id": "",
+   "country": "United States",
+   "fields": {
+    "State/Province": "Mississippi",
+    "Local area (taluk, county)": "Clarke"
+   },
+   "refs": {
+    "Location Data Source": [
+     "https://www.interconnection.fyi/project/southern-company-26-ic-1425"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.interconnection.fyi/project/southern-company-26-ic-1425",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "interconnection.fyi is a lead site that copies the Southern Company queue. It names the request and states the value."
+    }
+   ],
+   "tier": "medium",
+   "researcher_notes": "The Southern Company generator interconnection queue, read through its Power BI report at https://www.southerncompany.info/power-bi/transmission-policy-services/index.html, lists request 26-IC-1425 in Clarke County, Mississippi. It is a combined cycle gas project of 785 MW (991 MVA) connecting at the Enterprise substation 230 kV bus. The request was received on 3/26/2026, its status is Active, it is in the cluster study, and the requested in-service date is 5/1/2032. The queue note reads: \"Affiliate request. Scoping Meeting scheduled for May 14, 2026.\" That means a Southern Company affiliate filed it, most likely Mississippi Power, but no filing says which one. The Power BI report needs a script to load, so the verifier cannot read it. The same row is copied at https://www.interconnection.fyi/project/southern-company-26-ic-1425, which passed the verifier and is cited here. Because that copy is a lead site, every value stays at medium confidence until a Mississippi Power or Public Service Commission filing names the project. Mississippi Power's 2024 resource plan at https://www.synapse-energy.com/mississippi-power-company-2024-integrated-resource-plan names no new gas plant. The plant is named after its substation and county because the request has no other name. Not found: the owner, the plant name, the turbine model, the exact site and the coordinates.",
+   "action": "Create the plant in Clarke County, Mississippi, then add the unit below. Leave owner, technology and coordinates blank until a filing names them.",
+   "irp": false,
+   "units": [
+    {
+     "unit_name": "1",
+     "fields": {
+      "Capacity (MW)": "785",
+      "Fuel": "fossil gas: natural gas",
+      "Status": "announced",
+      "Start year": "2032"
+     },
+     "refs": {
+      "Capacity Data Source": [
+       "https://www.interconnection.fyi/project/southern-company-26-ic-1425"
+      ],
+      "Fuel Data Source": [
+       "https://www.interconnection.fyi/project/southern-company-26-ic-1425"
+      ],
+      "Status Data Source": [
+       "https://www.interconnection.fyi/project/southern-company-26-ic-1425"
+      ],
+      "Start Year Data Source": [
+       "https://www.interconnection.fyi/project/southern-company-26-ic-1425"
+      ]
+     },
+     "verifications": [
+      {
+       "url": "https://www.interconnection.fyi/project/southern-company-26-ic-1425",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "interconnection.fyi is a lead site that copies the Southern Company queue. It names the request and states the value."
+      }
+     ],
+     "action": "Add unit 1 as announced, 785 MW, with a start year of 2032 from the requested in-service date. Treat it as one combined cycle block."
+    }
+   ]
+  },
+  {
+   "plant_name": "Sykes Clarke County power station",
+   "gem_plant_id": "",
+   "country": "United States",
+   "fields": {
+    "State/Province": "Mississippi",
+    "Local area (taluk, county)": "Clarke"
+   },
+   "refs": {
+    "Location Data Source": [
+     "https://www.interconnection.fyi/project/southern-company-26-ic-1489"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.interconnection.fyi/project/southern-company-26-ic-1489",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "interconnection.fyi is a lead site that copies the Southern Company queue. It names the request and states the value."
+    }
+   ],
+   "tier": "medium",
+   "researcher_notes": "The Southern Company generator interconnection queue, read through its Power BI report at https://www.southerncompany.info/power-bi/transmission-policy-services/index.html, lists two requests in Clarke County, Mississippi, both received on 4/3/2026: 26-IC-1489 and 26-IC-1490. Each is a gas combustion turbine of 199.4 MW (369.1 MVA) connecting on the Laurel East to Sykes substation 230 kV line, with a requested in-service date of 5/1/2029. Both are Active and in the cluster study. The queue gives no owner or plant name. The Power BI report needs a script to load, so the verifier cannot read it. The same rows are copied at https://www.interconnection.fyi/project/southern-company-26-ic-1489 and https://www.interconnection.fyi/project/southern-company-26-ic-1490, which passed the verifier and are cited here. Because those copies are a lead site, every value stays at medium confidence until a utility or Public Service Commission filing names the project. The two requests share a line and dates, so they are treated as one plant with two units. The plant is named after the substation and county. Not found: the owner, the plant name, the turbine model, the exact site and the coordinates. Moselle power station in Jones County is the nearest GEM gas plant. It is a different plant.",
+   "action": "Create the plant in Clarke County, Mississippi, then add the two units below. Leave owner, technology and coordinates blank until a filing names them.",
+   "irp": false,
+   "units": [
+    {
+     "unit_name": "1",
+     "fields": {
+      "Capacity (MW)": "199.4",
+      "Fuel": "fossil gas: natural gas",
+      "Status": "announced",
+      "Start year": "2029"
+     },
+     "refs": {
+      "Capacity Data Source": [
+       "https://www.interconnection.fyi/project/southern-company-26-ic-1489"
+      ],
+      "Fuel Data Source": [
+       "https://www.interconnection.fyi/project/southern-company-26-ic-1489"
+      ],
+      "Status Data Source": [
+       "https://www.interconnection.fyi/project/southern-company-26-ic-1489"
+      ],
+      "Start Year Data Source": [
+       "https://www.interconnection.fyi/project/southern-company-26-ic-1489"
+      ]
+     },
+     "verifications": [
+      {
+       "url": "https://www.interconnection.fyi/project/southern-company-26-ic-1489",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "interconnection.fyi is a lead site that copies the Southern Company queue. It names the request and states the value."
+      }
+     ],
+     "action": "Add unit 1 as announced, 199.4 MW, start year 2029, from request 26-IC-1489."
+    },
+    {
+     "unit_name": "2",
+     "fields": {
+      "Capacity (MW)": "199.4",
+      "Fuel": "fossil gas: natural gas",
+      "Status": "announced",
+      "Start year": "2029"
+     },
+     "refs": {
+      "Capacity Data Source": [
+       "https://www.interconnection.fyi/project/southern-company-26-ic-1490"
+      ],
+      "Fuel Data Source": [
+       "https://www.interconnection.fyi/project/southern-company-26-ic-1490"
+      ],
+      "Status Data Source": [
+       "https://www.interconnection.fyi/project/southern-company-26-ic-1490"
+      ],
+      "Start Year Data Source": [
+       "https://www.interconnection.fyi/project/southern-company-26-ic-1490"
+      ]
+     },
+     "verifications": [
+      {
+       "url": "https://www.interconnection.fyi/project/southern-company-26-ic-1490",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "interconnection.fyi is a lead site that copies the Southern Company queue. It names the request and states the value."
+      }
+     ],
+     "action": "Add unit 2 as announced, 199.4 MW, start year 2029, from request 26-IC-1490."
+    }
+   ]
+  }
+ ],
+ "newunits": [],
+ "source_log": [
+  {
+   "url": "https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/OASIS_CurrentQueue_20260914.pdf",
+   "used_for": [
+    "qa New Caledonia"
+   ],
+   "outcome": "verified",
+   "note": "TVA current queue, September 14, 2026 copy"
+  },
+  {
+   "url": "https://tva.com/environment/environmental-stewardship/environmental-reviews/nepa-detail/new-caledonia-gas-plant",
+   "used_for": [
+    "qa New Caledonia"
+   ],
+   "outcome": "verified",
+   "note": ""
+  },
+  {
+   "url": "https://cdn.misoenergy.org/ERAS%20Interconnection%20Requests718482.xlsx",
+   "used_for": [
+    "qa Traceview",
+    "qa Vicksburg"
+   ],
+   "outcome": "verified",
+   "note": "MISO fast-track list"
+  },
+  {
+   "url": "https://www.entergymississippi.com/generation/traceview",
+   "used_for": [
+    "qa Traceview"
+   ],
+   "outcome": "verified",
+   "note": ""
+  },
+  {
+   "url": "https://www.mdeq.ms.gov/wp-content/uploads/2026/06/Notice-of-Public-Hearing.pdf",
+   "used_for": [
+    "qa Traceview"
+   ],
+   "outcome": "verified",
+   "note": ""
+  },
+  {
+   "url": "https://www.interconnection.fyi/project/southern-company-26-ic-1425",
+   "used_for": [
+    "newplants Enterprise Clarke County"
+   ],
+   "outcome": "verified",
+   "note": "lead site copy of the Southern queue row"
+  },
+  {
+   "url": "https://www.interconnection.fyi/project/southern-company-26-ic-1489",
+   "used_for": [
+    "newplants Sykes Clarke County"
+   ],
+   "outcome": "verified",
+   "note": "lead site copy of the Southern queue row"
+  },
+  {
+   "url": "https://www.interconnection.fyi/project/southern-company-26-ic-1490",
+   "used_for": [
+    "newplants Sykes Clarke County"
+   ],
+   "outcome": "verified",
+   "note": "lead site copy of the Southern queue row"
+  },
+  {
+   "url": "https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+   "used_for": [
+    "newplants Clarke County, read only"
+   ],
+   "outcome": "failed",
+   "note": "The page is a published Power BI report. pull_queues_mississippi.py read its rows through the report's own data query, the same call the page makes, and the matching rows are quoted in the notes of the two Clarke County plants. The verifier reads only the page text, where the rows do not appear, so the page is not cited. Copies of the same rows on interconnection.fyi are cited instead."
+  },
+  {
+   "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1875726",
+   "used_for": [
+    "monitor Sylvarena",
+    "ids_followup 7989"
+   ],
+   "outcome": "verified",
+   "note": ""
+  },
+  {
+   "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1773795",
+   "used_for": [
+    "ids_followup 2059"
+   ],
+   "outcome": "verified",
+   "note": ""
+  },
+  {
+   "url": "https://mississippitoday.org/2025/09/17/entergy-mississippi-ceo-fisackerly-answers-questions-on-data-centers-and-electricity-rates/",
+   "used_for": [
+    "monitor Entergy unnamed requests"
+   ],
+   "outcome": "verified",
+   "note": ""
+  },
+  {
+   "url": "https://www.wdam.com/2026/03/11/state-approves-xais-use-gas-turbines-southaven/",
+   "used_for": [
+    "coverage data-center-xai"
+   ],
+   "outcome": "verified",
+   "note": ""
+  }
+ ]
+}

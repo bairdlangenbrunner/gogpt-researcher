@@ -1,0 +1,84 @@
+{
+ "meta": {
+  "plant_id": "L100000402096",
+  "plant_name": "Ratcliffe power plant",
+  "state": "Mississippi",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-23T14:07:04-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402041",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists this unit as operating. The table lists plant 57037 with two gas turbines of 235.5 MW each and one steam turbine of 369.0 MW. Together that is 840.0 MW, which matches GEM. Start year 2014 is unchanged. No planned retirement date is listed. I found no retirement, mothballing or sale in the sources I checked."
+    },
+    "Capacity (MW)": {
+     "value": "840.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists this unit as operating. The nameplate is 840.0 MW. The table lists plant 57037 with two gas turbines of 235.5 MW each and one steam turbine of 369.0 MW. Together that is 840.0 MW, which matches GEM. Start year 2014 is unchanged."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year"
+   ],
+   "notes": "The unit is still operating and every checked value matches GEM. The Public Service Commission dockets from 2023 and 2024 are routine equipment notices, not retirement filings."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Loaded; row read from the downloaded file."
+  },
+  {
+   "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1403027",
+   "used_for": [
+    "context"
+   ],
+   "outcome": "verified",
+   "note": "Air permit modification from February 2020 lists the combustion turbine and duct burner; the page text does not carry the plant name, so it is not cited."
+  }
+ ]
+}

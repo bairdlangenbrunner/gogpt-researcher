@@ -1,0 +1,162 @@
+{
+ "meta": {
+  "plant_id": "L100001023564",
+  "plant_name": "Walnut Energy Center power station",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T09:42:22-04:00",
+  "done": true,
+  "urls_attempted": 7,
+  "urls_verified": 7
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001028107",
+   "unit_name": "1",
+   "findings": {
+    "Status Detail": {
+     "value": "KPP Energy's board review for September and October 2025 says the state air agency's single-source determination has been received. The generator interconnection agreement was sent to the grid operator and its transmission owner for signatures and then goes to the Federal Energy Regulatory Commission. The board was also told KPP will seek a new construction air permit that depends on the technology chosen.",
+     "refs": [
+      "https://www.kpp.energy/wp-content/uploads/2025/11/Sept-Oct-25-Lightning-Round.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.kpp.energy/wp-content/uploads/2025/11/Sept-Oct-25-Lightning-Round.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Kansas Power Pool newsletter for September and October 2025 reports these steps for the Walnut Energy Center. It does not say the engines are chosen or built. The project is still in development."
+    }
+   },
+   "not_found": [
+    "Capacity (MW)",
+    "Fuel",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "Latest Activity",
+    "Cancellation year"
+   ],
+   "notes": "The unit is still in development. The newest Kansas Power Pool newsletter that mentions it is from February 2026, which lists evaluation of the Walnut Energy Center in the agency's strategic plan. The July and August 2026 newsletters do not mention it. No document says the engines were bought or built."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001028107",
+   "concern_type": "identity",
+   "recommendation": "EIA plant 7013, East 12th Street, is the City of Winfield's existing power plant at the same point. It has generator 4, a 26.5 MW natural gas steam unit operating since 1970, and generator 5, a 1.6 MW diesel backup engine operating since 2002. I believe the Walnut Energy Center is a planned Kansas Power Pool expansion at that site, not the same units. Please do not add plant code 7013 to this plant until a reviewer agrees.",
+   "note": "The August 2026 EIA-860M table lists plant 7013 under the City of Winfield with the same coordinates as GEM. The Kansas Power Pool newsletters describe the Walnut project as new generation and say the Winfield site connects through the city and GridLiance. None of them mention the old units.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001028107",
+   "concern_type": "existence",
+   "recommendation": "The existing City of Winfield units at EIA plant 7013 (generator 4, 26.5 MW steam, and generator 5, 1.6 MW backup engine) do not appear in GEM under this plant. A reviewer should check whether they belong in the tracker, under a different owner.",
+   "note": "The brief lists only the new unit 1. The EIA table shows two operating units at the same site owned by the City of Winfield.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001028107",
+   "concern_type": "Start year",
+   "recommendation": "GEM shows start year 2026, but no document says the engines are bought or built. The newsletters from September 2025 to February 2026 still describe permits and the interconnection agreement. A start year of 2026 looks too early. I did not find a new year in any document.",
+   "note": "The April 2025 board review said the project would cost more than 175 million dollars and the board chose to hold off on the full construction permit. The October 2025 review says a new construction air permit is still to be sought.",
+   "refs": [
+    "https://www.kpp.energy/wp-content/uploads/2025/05/April-25-Lightning-Round-1.pdf",
+    "https://www.kpp.energy/wp-content/uploads/2025/11/Sept-Oct-25-Lightning-Round.pdf"
+   ],
+   "proposed_value": {}
+  },
+  {
+   "gem_unit_id": "G100001028107",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "recommendation": "I did not find a document that dates when the unit reached pre-construction. The earliest newsletter I read, August 2024, already reports an air permit application with the state and engine specification reviews. By June 2025 the grid operator had finished its interconnection study. So the step happened in 2024 or earlier, but no document states a year or month. Not found, and I looked in the Kansas Power Pool monthly newsletters from August 2024 to August 2026. The March 2023 newsletter that GEM cites no longer loads at its old address.",
+   "note": "Newsletters are on the Kansas Power Pool website under Lightning Round.",
+   "refs": [
+    "https://www.kpp.energy/wp-content/uploads/2024/09/August-24-Lightning-Round-compressed.pdf",
+    "https://www.kpp.energy/wp-content/uploads/2025/05/April-25-Lightning-Round-1.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.kpp.energy/wp-content/uploads/2025/11/Sept-Oct-25-Lightning-Round.pdf",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Passed with the phrases Walnut Energy Center and single-source determination. Found at www.kpp.energy because the older www.kpp.agency address now redirects with a broken path."
+  },
+  {
+   "url": "https://www.kpp.energy/wp-content/uploads/2026/02/KPP-Lightning-Round-February-2026.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Passed with the word Walnut. Says evaluation of the Walnut Energy Center is part of the strategic plan."
+  },
+  {
+   "url": "https://www.kpp.energy/wp-content/uploads/2025/05/April-25-Lightning-Round-1.pdf",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Passed with Walnut Energy Center and Class 5."
+  },
+  {
+   "url": "https://www.kpp.energy/wp-content/uploads/2024/09/August-24-Lightning-Round-compressed.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Passed with Walnut Energy Center and air permit."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "identity"
+   ],
+   "outcome": "verified",
+   "note": "Plant 7013, generators 4 and 5, read from the downloaded file."
+  },
+  {
+   "url": "https://www.kpp.agency/wp-content/uploads/March-2023-KPP-Lightning-Round-min.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "dead",
+   "note": "Full ladder run on 2026-10-22. The live address gives a 301 to a broken address (www.kpp.energywp-content) with no file. The bare kpp.agency host has the same broken redirect. The same file name on www.kpp.energy returns 404, both at the bare path and under 2023/03 and 2023/04. The agency's lightning-round page does not list a 2023 issue. A saved copy exists, cited below."
+  },
+  {
+   "url": "https://web.archive.org/web/20230329141358/https://www.kpp.agency/wp-content/uploads/March-2023-KPP-Lightning-Round-min.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "A saved copy of the March 2023 Kansas Power Pool newsletter, captured 2023-03-29. Passes url_verifier.py on Walnut Energy Center, Southwest Power Pool and March 17th. The text says the Southwest Power Pool Phase 1 study results arrived on March 17, 2023, and staff told the grid operator they wish to push forward with the project. It describes three 18 MW engines, 54 MW in total. It does not date pre-construction."
+  },
+  {
+   "url": "https://www.kpp.energy/wp-content/uploads/2026/07/July-26-Lightning-Round-1.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Loads but does not mention the Walnut project."
+  }
+ ]
+}

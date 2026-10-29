@@ -118,7 +118,7 @@ tasks for each unit. Do those tasks and nothing else. Report only the fields in 
 re-verified with a source not already cited. Units marked "Nothing to check" are not researched;
 list them in \`units\` with empty findings. Harvest the existing source URLs first (they are
 candidates, still run them through the verifier). A dead existing link is never dropped by you; say
-in \`source_log\` that it is dead. Before naming a new owner or operator, run
+in \`source_log\` that it is dead, and only after the full fetch ladder below has failed on it. Before naming a new owner or operator, run
 \`python scripts/entity_lookup.py "<name>"\` (bare, no --country) and copy what it says into
 \`entities[].lookup_result\`. In \`not_found\` list the fields a task asked for that you could not
 fill. A value you notice in passing that looks wrong goes in \`qa\`, not in \`findings\`.
@@ -298,7 +298,7 @@ truncated or garbled, work this ladder in order and stop at the first rung that 
      SEC requires. Its "notes:" line says which route worked. Use --text for the whole body. PDFs
      and zip bundles come back as extracted text, with OCR for scanned PDFs.
   2. Run url_verifier.py on the URL. It uses the same fetcher and falls back to the newest Wayback
-     Machine snapshot when the live page still refuses. A Wayback pass keeps the LIVE URL citable.
+     Machine snapshot when the live page still refuses. A Wayback pass keeps the LIVE URL citable, and the snapshot address is citable too.
   3. Try other forms of the same page: www. or bare host, http or https, the canonical URL from a
      search result, a print view, or the publisher's own copy of a wire story.
   4. Find the same document at another address. Company press releases are usually also on PR
@@ -314,17 +314,25 @@ record a page as blocked. Assume the site is reachable and holds this plant's do
 a permit portal or an official document register. Fetch the page anyway, read its source and the
 scripts it loads, find the address the form calls or the per-record URL pattern (for example
 ?id= links), and use fetch.py's real-Chrome page load. "Did not run a search" is never an outcome.
-Only after the whole ladder fails may you record a URL as blocked in \`source_log\`, and the note
-must say what you tried. Never conclude a page lacks the value from a blocked or truncated fetch.
-Cite the live URL, never a web.archive.org address.
+Only after the whole ladder fails may you record a URL as blocked or dead in \`source_log\`, and the
+note must say what you tried, step by step. Dead means the page is gone on every route, so it needs
+the same ladder plus a Wayback lookup for the exact address: the snapshot index at
+http://archive.org/wayback/available?url=<address> and the CDX index at
+https://web.archive.org/cdx/search/cdx?url=<address>&output=json. Cite any snapshot that shows the
+value, as below. A 429 from the archive means wait and retry, not dead. Never mark a link dead from
+a single failed fetch. Never conclude a page lacks the value from a blocked or truncated fetch.
+Cite the live URL when it works. When the live page is gone or refuses every route, cite the web.archive.org snapshot address that shows the value (run url_verifier.py on the snapshot address itself). A Wayback snapshot is always citable, and the note says it is a saved copy.
 
 ## Rules
 - Values are cell content only, in exact controlled vocabulary. Status is lowercase: announced,
   pre-construction, construction, operating, mothballed, shelved, retired, cancelled. A
   shelved-inferred or cancelled-inferred status (stored as "shelved - inferred 2 y" or
-  "cancelled - inferred 4 y") carries NO URL and documents the search in \`note\`: where you looked,
-  the newest evidence you found and its date. It applies only to an announced, pre-construction or
-  construction unit with no activity in documents for 2 years (shelved) or 4 years (cancelled).
+  "cancelled - inferred 4 y") is a milestone entry with a data source: the \`refs\` hold the URL
+  of the Latest Activity source, the document that shows the newest activity. The note gives the
+  milestone year, which is the Latest Activity date plus two years (shelved) or plus four years
+  (cancelled), and documents the search: where you looked, the newest evidence you found and its
+  date. It applies only to an announced, pre-construction or construction unit with no activity in
+  documents for 2 years (shelved) or 4 years (cancelled).
 - Never a URL or a sentence in a value.
 - \`Status Detail\` is the one free-text box, and it is a running log with the newest entry first.
   Report only the new sentence or two you would add: what happened, when, and which document says
@@ -332,11 +340,22 @@ Cite the live URL, never a web.archive.org address.
   places your text above that text and keeps the old text word for word. If the box already says
   what you found, report the box's text unchanged with your source, so the link is added and the
   text is left alone.
-- Every URL in \`refs\` needs a passing verification. \`refs\` may be empty only for an inferred status.
+- Every URL in \`refs\` needs a passing verification. An inferred status carries the Latest Activity source in \`refs\` like any other value.
 - Hydrogen and computed columns are never reported.
 - A combined-cycle block is one unit, never split into turbines.
 - Capacity is electric generating MW (nameplate), not thermal, not mechanical. Give it as the
-  source states it, to one decimal at most (289.0, 53.1); for a range give the high end.
+  source states it, to one decimal at most (289.0, 53.1). Rounding to the whole MW is allowed and
+  never required. For a range give the high end. Use the nameplate or installed electrical
+  figure, never a lower operational or derated figure.
+- Timeline: a projected start year or retirement year is a scheduled event. Its Event Year is the
+  projected year and its Source Year is the year the source reported it. Report the projected year
+  in \`Start year\` or \`Planned retire\` and say in the note that the human adds a new scheduled
+  event, never changes an existing one. December rule: a unit in development, or one due to retire,
+  whose scheduled event falls in the year now ending with no source confirming it gets a new
+  scheduled event with the next year as Event Year and the current year as Source Year. A shelved
+  or cancelled unit gets no scheduled operating event. A maintenance change to a retirement date
+  is a new scheduled retirement event, never a new operating milestone. A timeline entry that
+  looks wrong goes in a \`qa\` item for the project manager, never into a finding.
 - No start year for shelved or cancelled units. No retired year for mothballed units.
 - Mothballed, retired and cancelled are only tracked from 2020 onward.
 - Owners as \`Name [share%]\`, separated by semicolons, five percent or more, top four plus "other",
@@ -370,7 +389,10 @@ Cite the live URL, never a web.archive.org address.
   computed field you never report. The utility or operator name in ${IS_US ? 'an EIA table' : 'a regulator register'} is not the owner.
   If it differs from GEM's owner, raise a \`qa\` question. Change an owner only on a dated, closed
   transaction (sale completed, not announced) from two independent publishers, and name the buying
-  entity that holds the plant, not its parent.
+  entity that holds the plant, not its parent. A pending acquisition or merger is not a change: add
+  it to Notes (the new text above the old) and flag it in the note for the possible-updates sheet.
+  When a real search finds no owner the value is "unknown". A vague new proposal leaves the owner
+  blank. With equal shares name the largest owner and group the rest as "other".
 ${IS_US
   ? `- Fuel: never remove a fuel that the EIA-860 energy source columns (1 to 6) list for the unit. The
   EIA-923 monthly fuel table shows what was burned recently, not what the unit can burn.`
@@ -380,11 +402,27 @@ ${IS_US
 - Conversion units (a unit name with "timepoint 2" or a \`Conversion/replacement?\` value): the
   start year is the year the converted unit began operating on the new fuel, and
   \`Conversion/replacement?\` takes only the values conversion or replacement.
-- \`Number Of Engines\` and \`Capacity Per Engine\` are for reciprocating engines (internal
-  combustion) only. Never fill them for turbines.
+- \`Number Of Engines\` and \`Capacity Per Engine\` are filled for internal combustion sets and for
+  aeroderivative gas turbine sets. A frame gas turbine is one turbine per unit, with its capacity
+  in \`Capacity (MW)\` only.
 - Captive fields (\`Captive industry use\`, \`Captive industry type\`, \`Captive non-industry use\`)
-  stay blank for a plant that sells to the grid. Never write "no" in them. Fill them only for a
-  plant that mainly serves one industrial site or a data center, with a source.
+  are filled for every captive plant, including one that also exports; \`Captive non-industry use\`
+  records the export (power, heat, both or none). They stay blank for a plant that sells to the
+  grid and serves no single industrial site or data center. Never write "no" in them. At a data
+  center, a backup engine unit gets \`Backup Power\` yes at unit level; a unit that supplies routine
+  power does not.
+- Names and links: a new plant serving a data center or an LNG terminal is named "XYZ Data Center
+  power station" or "XYZ LNG terminal power station", and Project Links names that data center or
+  terminal. Give an in-development unit its manufacturer's current name (GE Vernova, not General
+  Electric) and an older unit the name its document uses. Record the model, not the package
+  (LM6000, not LM6000VELOX package).
+- Unit relationships: when a gas turbine GT1 and steam turbine ST1 become a combined cycle CC1, add
+  CC1, retire GT1 and ST1 the same year, never delete them, and set "Use of GT in CC set" and
+  "Use of ST in CC set" on them with the CC unit's ID. A replacement unit carries the "R" suffix and
+  the old unit's ID, and its start year is never before the old unit's retirement. A project that
+  changed course is "change of plans" with the old unit's ID.
+- Notes is a running log: new text goes above the old and nothing is shortened. A note that is
+  outdated is a \`qa\` item with \`concern_type\` notes_cleanup for a human to remove.
 - \`Latest Activity\` is a date field in GEM. Its value is the date of the newest dated report of
   activity you found, written exactly as \`Year: 2024, Month: 6, Day: 17\` (leave off day, or month
   and day, when the source does not give them). What happened goes in the finding's note, never
@@ -396,7 +434,11 @@ ${IS_US
   Year fields (\`Start year\`, \`Retired year\`, \`Cancellation year\`, \`Planned retire\`) hold a
   four-digit year only.
 - Possible duplicates, units that look split or merged wrongly, and values you think are wrong but
-  cannot source go in \`qa\`. Units at the plant missing from the brief go in \`newunits\`, with refs.
+  cannot source go in \`qa\`. Units at the plant missing from the brief go in \`newunits\`, with refs:
+  an existing unit the tracker lacks, and also a planned one that a queue entry, a filing, a permit
+  application or a press report names at this plant (status from the manual's ladder, capacity as
+  stated or blank, start year blank when none is given). Only a request that may describe a unit
+  the brief already lists is a \`qa\` duplicate question instead.
 
 ## Location ladder
 Only for a plant whose brief has a location task${REVIEW === 'location' ? ' (this pass is a second look at the location only: research nothing else, and report only the three location fields and the `location` object)' : ''}. Work the rungs in order and stop at the first that settles the point.
@@ -424,8 +466,22 @@ Only for a plant whose brief has a location task${REVIEW === 'location' ? ' (thi
    that names what was searched.
 Report the point only when it fills a blank, moves GEM's point more than 500 m, or makes the plant
 exact; a nearby better point on a plant that stays approximate goes in the note only. Accuracy is
-\`exact\` only when you saw the plant's footprint, or the named parcel of a proposal, in the picture
-and say so in the note; everything else is \`approximate\`. Write coordinates with five decimals.
+\`exact\` by any one of the manual's five routes, and none of them needs imagery: (a) coordinates
+published by a government body or on the owner's or operator's site; (b) coordinates in a permit
+application or a similar document; (c) a map embedded on the owner's or operator's site; (d)
+Wikimapia or OpenStreetMap; (e) a project Google Maps identifies by name. The satellite look and
+the georeferenced map are extra routes: the plant's footprint, or the named parcel of a proposal,
+seen in the picture also makes it exact. Say in the note which route settled it. Set
+\`location.method\` to \`published\` for any of the five routes and to \`imagery\` for the satellite
+look; the other method values stay as they are. Add \`location.location_route\`, one plain sentence
+naming the route. Everything else is \`approximate\`. A proposed plant for which a source names
+only a city gets an approximate point in an open area near that city; its refs are the pin link
+plus the source that named the city. Coordinates on a plant the brief already shows as exact are
+never reopened.
+Separately from the coordinates, fill \`City\`, \`Local area\`, \`Major area\` and \`Subnational\`
+when they are blank, on any plant, exact ones included. Local area and Major area never contain
+"county", "township" or "district". Give one nearest city. For a city-state such as Seoul or
+Moscow, repeat the city in both City and Subnational. Write coordinates with five decimals.
 \`refs\` for the three fields hold the document that placed the plant plus the pin link
 \`https://www.google.com/maps/search/?api=1&query=<lat>,<lon>\`; the pin link alone is accepted when
 no document gave the address. Set \`location.needs_review\` true, with \`review_note\` saying why, when
@@ -433,10 +489,12 @@ the picture was unclear, the candidates disagreed, or the move is over 2 km; a s
 another look.
 
 ## How to write notes
-Every \`note\`, \`notes\` and \`recommendation\` is read by a GEM researcher who has never seen this
+Every \`question\`, \`finding\`, \`recommendation\`, \`note\` and \`notes\` is read by a GEM researcher who has never seen this
 repository. Write the way a careful colleague explains something across a desk.
 - Plain words, short sentences, one idea per sentence.
 - Say what the source says, then what it means.
+- Every source a note names comes with its full URL right after the name. Never mention a petition,
+  table, permit or article in a note without its link.
 - Name sources by what they are: ${IS_US
     ? '"a Constellation press release from March 2026", "the EIA-860M\n  table for July 2026", "a Baltimore Sun article"'
     : `"a Uniper press release from March 2026", "the national regulator's power\n  plant list dated April 2026", "a local newspaper article"`}.
@@ -495,13 +553,15 @@ python json.dump or your Write tool, then check it parses with
   ],
   "plant_findings": { "Owner(s)": { "...": "same shape; applies to every unit" },
                       "Latitude": { "...": "location fields go here together, see the ladder" } },
-  "location": { "method": "address", "moved_m": 1240, "control_points": [], "fit_m": null,
+  "location": { "method": "address", "location_route": "", "moved_m": 1240, "control_points": [], "fit_m": null,
                 "image": "", "needs_review": false, "review_note": "" },
   "qa": [ {"gem_unit_id": "G...", "concern_type": "duplicate",
+           "question": "...", "finding": "...",
            "recommendation": "...", "note": "...", "refs": [],
            "proposed_value": {"Capacity (MW)": "412"}} ],
   "monitor": [ {"gem_unit_id": "G...", "monitor_kind": "existing_plant",
                 "monitor_reason": "...", "recheck_by": "2027-03",
+                "watch_case": "duplicate_check", "capacity_mw": 98,
                 "note": "...", "refs": []} ],
   "newunits": [],
   "entities": [ {"entity_name": "...", "role": "owner", "lookup_result": "..."} ],
@@ -516,8 +576,8 @@ python json.dump or your Write tool, then check it parses with
   \`not_found\` listing the fields. A plant-level field you could not find goes in every unit's
   \`not_found\`.
 - Field keys in \`findings\` and \`plant_findings\` are exact CSV headers from RESEARCH_FIELDS.
-- \`location\` is present only when the ladder was followed: \`method\` is address, site_reference,
-  dataset, map or imagery; \`moved_m\` the distance from GEM's point in meters (null when GEM had none);
+- \`location\` is present only when the ladder was followed: \`method\` is published (any of the five no-imagery routes), address, site_reference,
+  dataset, map or imagery; \`location_route\` is one plain sentence naming the route; \`moved_m\` the distance from GEM's point in meters (null when GEM had none);
   \`control_points\` (each {"feature", "px": [x, y], "lat", "lon"}), \`fit_m\` and \`image\` (the saved
   render path) for a map; \`needs_review\` and \`review_note\` as the ladder says.
 - \`qa.concern_type\` is the exact header of the column the question is about (\`Status\`,
@@ -527,10 +587,25 @@ python json.dump or your Write tool, then check it parses with
   source (a dead or wrong link), validation (the answer to a **[Validation report]** task that names
   no field; add \`"checks": [7]\`), other. When the question is about a specific value, put it in
   \`proposed_value\` as {column: value}; never in \`findings\`.
+- A \`qa\` record has four person-facing parts. \`question\`: one sentence that ends with "?", under about 120 characters, specific to the record. \`finding\`: one to three sentences on what the sources say. \`recommendation\`: one or two sentences, an instruction the reviewer can act on (leave as is, change X to Y, merge with Z, ask the PM, cancel); never "the reviewer should decide". \`note\`: everything else, including what you could not reach and why.
 - \`monitor\` is the watch list. \`monitor_kind\` is existing_plant (a possible change or expansion at
   a plant in the brief; set \`gem_unit_id\` or \`gem_plant_id\`) or new_to_tracker (a plant GEM does
   not have). \`monitor_reason\` says in one sentence why it is not an edit yet; \`recheck_by\` is
-  YYYY-MM.
+  YYYY-MM. **A new unit or plant GEM lacks is an add, not a watch item, as soon as one verified
+  source names it, places it in the scope and gives a capacity at the threshold, a unit count, or
+  no capacity at all** (the manual adds a plant with a blank capacity and removes it later if it
+  proves small). A missing start year, owner, turbine model or exact point never holds an add
+  back; leave the field blank and say in \`notes\` what was not found. A planning document, a
+  grid-operator queue entry or a press report means status announced; a permit application, land,
+  financing, a prior-approval docket or a signed interconnection agreement means pre-construction.
+  A watch item for something GEM lacks therefore carries \`watch_case\`, one of: no_generation (no
+  generating unit named yet), under_threshold (every unit under the bar and not an engine or
+  aeroderivative set that sums to it), drive_or_storage (generator vs mechanical drive, or thermal
+  vs storage, unresolved), duplicate_check (it may be a unit GEM already has; prefer a \`qa\`
+  question), not_committed (a plan studies it only as an option), other_scope (another state or country),
+  unverified (nothing passed the verifier yet). A data center is not a watch case: a gas or diesel
+  plant at a data center, routine power or a backup engine fleet, is an add when the summed
+  nameplate reaches ${THRESHOLD_MW} MW (capacity blank when unknown), with \`"checks": [39]\`.
 - \`source_log\` lists every URL you tried, including failures, with outcome verified, failed,
   blocked, dead or not relevant.
 

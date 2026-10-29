@@ -1,0 +1,45 @@
+{
+ "L100000103864": [
+  {
+   "text": "Location Data Source is empty and the validation report treats that as a required fix. GEM's point (41.494919, -88.124342) is marked exact. Confirm the point sits on the plant with a satellite look (site_image.py), then stage a Location Data Source: the Google Maps pin link for the point (docs/reference/location.md), plus any document that gives the plant's address or coordinates (the EIA-860 annual plant table gives a street address; the EIA-860M table gives coordinates). Merge with any existing link, never replace. Joliet 9 (L100000103865) shares the same point; say in the note whether the two plants really sit on the same site or whether one point is wrong.",
+   "fields": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "Location Data Source"
+   ],
+   "checks": [
+    25
+   ]
+  }
+ ],
+ "L100000103865": [
+  {
+   "text": "Location Data Source is empty and the validation report treats that as a required fix. GEM's point (41.494919, -88.124342) is marked exact and is the same point as Joliet 29. The EIA-860M table puts Joliet 9 at 41.4931, -88.1153, about 0.8 km east. Look at both points in satellite imagery (site_image.py), decide which sits on the Joliet 9 plant, and stage the Latitude, Longitude and Location accuracy if the point should move, with a Location Data Source: the Google Maps pin link for the final point plus the EIA table or any document that gives the address. Merge with any existing link, never replace.",
+   "fields": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "Location Data Source"
+   ],
+   "checks": [
+    25
+   ]
+  }
+ ],
+ "L100000103868": [
+  {
+   "text": "Location Data Source is empty and Owner 1 has no data source; the validation report treats both as required fixes. For location: confirm the exact point (37.619681, -88.952919) in satellite imagery (site_image.py), then stage the Google Maps pin link as the Location Data Source, plus any document that gives the address or coordinates (EIA-860 plant table). For the owner: find a document that states the plant's current owner and stage it as the Owner Data Source. Merge with any existing link.",
+   "fields": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "Location Data Source",
+    "Owner(s)"
+   ],
+   "checks": [
+    25
+   ]
+  }
+ ]
+}

@@ -120,6 +120,23 @@ _SOFT_ERROR_TITLES = (
 )
 
 
+def soft_error_title(text):
+    """The page's <title> when it marks a soft error (an HTTP 200 that is really
+    a 404, a rate limit, a bot wall or a login page), else None."""
+    title_match = re.search(r"<title[^>]*>([^<]+)</title>", text or "", re.IGNORECASE)
+    if not title_match:
+        return None
+    title = title_match.group(1).lower()
+    for bad in _SOFT_ERROR_TITLES:
+        # status codes only as whole numbers: a parcel "Flur-Nr. 2404"
+        # or a postcode in a permit notice's title is not a 404
+        hit = (re.search(rf"(?<![\d.,]){bad}(?![\d.,])", title) if bad.isdigit()
+               else bad in title)
+        if hit:
+            return title_match.group(1).strip()
+    return None
+
+
 def _fetch(url, timeout=30):
     """Fetch URL through the shared escalation ladder (fetch.py: curl ->
     curl_cffi browser-fingerprint impersonation -> real-Chrome clearance
@@ -142,7 +159,8 @@ _BOT_BLOCK_STATUSES = ("401", "403", "429")
 # Outcomes that mean the live page is gone, moved, or the server is broken
 # ("000" = no connection at all, e.g. a domain that no longer resolves). A
 # person would open the archived copy, so these also try the Wayback copies,
-# but a pass only names the archived address; the live url still fails.
+# but a pass names the archived address, which is itself citable (Baird 2026-10-22);
+# the dead live url still fails.
 _DEAD_STATUSES = ("000", "400", "404", "410", "500", "502", "503", "504", "520",
                   "521", "522", "523", "525", "526")
 _BOT_BLOCK_TITLES = (
@@ -167,10 +185,15 @@ def _archive_get(api):
     return out
 
 
-def _wayback_snapshots(url, limit=3):
+def _wayback_snapshots(url, limit=3, every=False):
     """Up to `limit` Wayback snapshots of `url` that differ in content, newest
     first, as [(snapshot_url, timestamp)]. "lookup-failed" when neither lookup
     service answered (not cached: an archived copy may exist). Cached per process.
+
+    every=True lists every capture of the address with status 200 (up to 500,
+    newest first), with no merging of captures the index reports as identical.
+    The verifier keeps the merged list, so its content checks reach distinct
+    copies first; the dead-source check uses every=True so no saved copy is hidden.
 
     Two services, because each fails differently (October 2026): the
     availability API throttles (429) fully percent-encoded addresses and often
@@ -179,7 +202,9 @@ def _wayback_snapshots(url, limit=3):
     captures matter because a page's numbers change: the value a source was
     cited for may only be on an earlier copy.
     """
-    key = ("__wayback__", url, limit)
+    if every:
+        limit = 500
+    key = ("__wayback__", url, limit, every)
     if key in _CACHE:
         return _CACHE[key]
     light = urllib.parse.quote(url, safe=":/?=%~,+@;!$'()*")
@@ -190,7 +215,7 @@ def _wayback_snapshots(url, limit=3):
     snaps, index_answered = [], False
     for round_no in range(4):
         out = _archive_get("http://web.archive.org/cdx/search/cdx?url=" + light
-                           + "&filter=statuscode:200&collapse=digest"
+                           + "&filter=statuscode:200" + ("" if every else "&collapse=digest")
                            + "&fl=timestamp,original&limit=-" + str(limit))
         if out is not None:
             index_answered = True
@@ -250,9 +275,9 @@ def _check_wayback(url, expected, require_all, live_reason, dead=False):
     """Archive fallback: run the content check against up to three Wayback
     snapshots, newest first. For a blocked live page (dead=False) a pass means
     the LIVE url stays citable. For a dead or moved page (dead=True) the live
-    url is never citable, so the result is a FAIL that names the archived
-    address carrying the value as a lead (the Update SOP never cites
-    web.archive.org addresses)."""
+    url is not citable, so the result is a FAIL that names the archived
+    address carrying the value. That web.archive.org address is a full
+    citation (Baird 2026-10-22): verify it directly and cite it."""
     snaps = _wayback_snapshots(url)
     if snaps == "lookup-failed":
         return False, (f"{live_reason}; the Wayback lookup itself was refused, "
@@ -273,8 +298,8 @@ def _check_wayback(url, expected, require_all, live_reason, dead=False):
             continue
         if dead:
             return False, (f"{live_reason}; the live page is gone, but the archived copy "
-                           f"{snap_url} still shows the value. Use it as a lead to a live "
-                           f"source; citing an archived address is not an approved route")
+                           f"{snap_url} still shows the value. Cite that archived address "
+                           f"(verify it directly) or a live copy of the document")
         return True, (f"bot-blocked live ({live_reason}); value verified via "
                       f"Wayback snapshot {ts}")
     if not checked:
@@ -353,21 +378,15 @@ def _check(url, expected, require_all, wayback_fallback=True, timeout=30):
                            "poppler pdftotext CLI is unavailable)")
     else:
         # Soft-error detection via title (HTML only)
-        title_match = re.search(r"<title[^>]*>([^<]+)</title>", text, re.IGNORECASE)
-        if title_match:
-            title = title_match.group(1).lower()
-            for bad in _SOFT_ERROR_TITLES:
-                # status codes only as whole numbers: a parcel "Flur-Nr. 2404"
-                # or a postcode in a permit notice's title is not a 404
-                hit = (re.search(rf"(?<![\d.,]){bad}(?![\d.,])", title) if bad.isdigit()
-                       else bad in title)
-                if hit:
-                    reason = f"soft-error page (title: {title_match.group(1).strip()!r})"
-                    if wayback_fallback and any(b in title for b in _BOT_BLOCK_TITLES):
-                        # Bot-wall/paywall interstitial served as 200 — same
-                        # bot-block ≠ dead treatment as a 401/403.
-                        return _check_wayback(url, expected, require_all, reason)
-                    return False, reason
+        bad_title = soft_error_title(text)
+        if bad_title:
+            title = bad_title.lower()
+            reason = f"soft-error page (title: {bad_title!r})"
+            if wayback_fallback and any(b in title for b in _BOT_BLOCK_TITLES):
+                # Bot-wall/paywall interstitial served as 200 — same
+                # bot-block ≠ dead treatment as a 401/403.
+                return _check_wayback(url, expected, require_all, reason)
+            return False, reason
 
     # Content check
     text_lower = _norm(text)

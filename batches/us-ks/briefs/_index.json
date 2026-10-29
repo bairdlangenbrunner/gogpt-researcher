@@ -1,0 +1,3982 @@
+{
+  "state": "Kansas",
+  "postal": "ks",
+  "where": {
+    "kind": "state",
+    "name": "Kansas",
+    "slug": "kansas",
+    "country": "United States",
+    "postal": "ks"
+  },
+  "mode": "update",
+  "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv",
+  "scope": "all",
+  "generated": "2026-10-21T08:39:13-04:00",
+  "plants": [
+    {
+      "plant_id": "L100001063349",
+      "plant_name": "Evergy Kansas Central 2025 IRP power station 1",
+      "brief_path": "batches/us-ks/briefs/L100001063349.md",
+      "unit_ids": [
+        "G100001072778"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Evergy_Kansas_Central_2025_IRP_power_station_1",
+      "n_tasks": 7,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100001072778": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "City is blank. Fill it from a source that places the plant; the source goes in Location Data Source.",
+            "fields": [
+              "City"
+            ],
+            "checks": [
+              26
+            ]
+          },
+          {
+            "text": "The unit's status history has an \"announced\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "This plant is an unsited placeholder for capacity in Evergy Kansas Central's May 2025 plan update. It has no real site, and its map point was never set from a document. Do not run the location ladder on it, do not fill City, and do not stage coordinates. Skip the location and City tasks above and say in one plain sentence in your notes that the plant has no site. Answer the dated status history question from the plan or the backlog sheet's note if either gives a date. Check whether this block duplicates Viola or McNew, which together are the 355 MW blocks of 2029 and 2030 in the plan, and raise a question if it does.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        },
+        {
+          "text": "This plant belongs to Evergy Kansas Central, whose integrated resource plan (listed on the US IRPs tab as \"2025 IRP Update\") is at https://investors.evergy.com/2025IRPUpdate. Read the plan's preferred or recommended portfolio and check whether it names this plant: a new unit, a conversion, a retirement date, a capacity or start year that differs from GEM. Report any such value with the plan page it appears on as the source, and mark every finding that comes from the plan with irp true. The IRP box is already ticked on 1 of 1 units. The newest note on the US IRPs tab says: In 2025 IRP Update (May 2025), Evergy Kansas Central: 355 MW CC in 2029 (iViola Generating station - shared ownership with Evergy Missouri West), 355MW CC in 203 (MvNew Generating Station - shared ownership with Evergy Missouri West), 710 MW CC in 2031, 2033, 2039, 2040, 400 MW GT in 2044.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Start year",
+            "Planned retire",
+            "Retired year",
+            "Status Detail"
+          ],
+          "checks": [
+            37
+          ]
+        },
+        {
+          "text": "Location accuracy is approximate. GEM's point is 38.99581, -95.75671. Find the plant's address or a sentence that places the site in a primary document, turn it into a point, and check it in satellite imagery. No EIA or permit point is available. Stage new coordinates only when the point moves more than 500 m, fills a blank, or becomes exact. GEM's point in satellite view: https://www.google.com/maps/@?api=1&map_action=map&center=38.99581,-95.75671&zoom=17&basemap=satellite (pin: https://www.google.com/maps/search/?api=1&query=38.99581,-95.75671). Follow the location ladder in the sweep instructions and report the method, the distance moved and whether a second look is needed.",
+          "fields": [
+            "Latitude",
+            "Longitude",
+            "Location accuracy"
+          ],
+          "checks": [
+            25
+          ]
+        },
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001063350",
+      "plant_name": "Evergy Kansas Central 2025 IRP power station 2",
+      "brief_path": "batches/us-ks/briefs/L100001063350.md",
+      "unit_ids": [
+        "G100001072779"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Evergy_Kansas_Central_2025_IRP_power_station_2",
+      "n_tasks": 7,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100001072779": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "City is blank. Fill it from a source that places the plant; the source goes in Location Data Source.",
+            "fields": [
+              "City"
+            ],
+            "checks": [
+              26
+            ]
+          },
+          {
+            "text": "The unit's status history has an \"announced\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "This plant is an unsited placeholder for capacity in Evergy Kansas Central's May 2025 plan update. It has no real site, and its map point was never set from a document. Do not run the location ladder on it, do not fill City, and do not stage coordinates. Skip the location and City tasks above and say in one plain sentence in your notes that the plant has no site. Answer the dated status history question from the plan or the backlog sheet's note if either gives a date. Check whether this block duplicates Viola or McNew, which together are the 355 MW blocks of 2029 and 2030 in the plan, and raise a question if it does.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        },
+        {
+          "text": "This plant belongs to Evergy Kansas Central, whose integrated resource plan (listed on the US IRPs tab as \"2025 IRP Update\") is at https://investors.evergy.com/2025IRPUpdate. Read the plan's preferred or recommended portfolio and check whether it names this plant: a new unit, a conversion, a retirement date, a capacity or start year that differs from GEM. Report any such value with the plan page it appears on as the source, and mark every finding that comes from the plan with irp true. The IRP box is already ticked on 1 of 1 units. The newest note on the US IRPs tab says: In 2025 IRP Update (May 2025), Evergy Kansas Central: 355 MW CC in 2029 (iViola Generating station - shared ownership with Evergy Missouri West), 355MW CC in 203 (MvNew Generating Station - shared ownership with Evergy Missouri West), 710 MW CC in 2031, 2033, 2039, 2040, 400 MW GT in 2044.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Start year",
+            "Planned retire",
+            "Retired year",
+            "Status Detail"
+          ],
+          "checks": [
+            37
+          ]
+        },
+        {
+          "text": "Location accuracy is approximate. GEM's point is 38.95289, -95.27812. Find the plant's address or a sentence that places the site in a primary document, turn it into a point, and check it in satellite imagery. No EIA or permit point is available. Stage new coordinates only when the point moves more than 500 m, fills a blank, or becomes exact. GEM's point in satellite view: https://www.google.com/maps/@?api=1&map_action=map&center=38.95289,-95.27812&zoom=17&basemap=satellite (pin: https://www.google.com/maps/search/?api=1&query=38.95289,-95.27812). Follow the location ladder in the sweep instructions and report the method, the distance moved and whether a second look is needed.",
+          "fields": [
+            "Latitude",
+            "Longitude",
+            "Location accuracy"
+          ],
+          "checks": [
+            25
+          ]
+        },
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001063351",
+      "plant_name": "Evergy Kansas Central 2025 IRP power station 3",
+      "brief_path": "batches/us-ks/briefs/L100001063351.md",
+      "unit_ids": [
+        "G100001072780"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Evergy_Kansas_Central_2025_IRP_power_station_3",
+      "n_tasks": 7,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100001072780": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "City is blank. Fill it from a source that places the plant; the source goes in Location Data Source.",
+            "fields": [
+              "City"
+            ],
+            "checks": [
+              26
+            ]
+          },
+          {
+            "text": "The unit's status history has an \"announced\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "This plant is an unsited placeholder for capacity in Evergy Kansas Central's May 2025 plan update. It has no real site, and its map point was never set from a document. Do not run the location ladder on it, do not fill City, and do not stage coordinates. Skip the location and City tasks above and say in one plain sentence in your notes that the plant has no site. Answer the dated status history question from the plan or the backlog sheet's note if either gives a date. Check whether this block duplicates Viola or McNew, which together are the 355 MW blocks of 2029 and 2030 in the plan, and raise a question if it does.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        },
+        {
+          "text": "This plant belongs to Evergy Kansas Central, whose integrated resource plan (listed on the US IRPs tab as \"2025 IRP Update\") is at https://investors.evergy.com/2025IRPUpdate. Read the plan's preferred or recommended portfolio and check whether it names this plant: a new unit, a conversion, a retirement date, a capacity or start year that differs from GEM. Report any such value with the plan page it appears on as the source, and mark every finding that comes from the plan with irp true. The IRP box is already ticked on 1 of 1 units. The newest note on the US IRPs tab says: In 2025 IRP Update (May 2025), Evergy Kansas Central: 355 MW CC in 2029 (iViola Generating station - shared ownership with Evergy Missouri West), 355MW CC in 203 (MvNew Generating Station - shared ownership with Evergy Missouri West), 710 MW CC in 2031, 2033, 2039, 2040, 400 MW GT in 2044.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Start year",
+            "Planned retire",
+            "Retired year",
+            "Status Detail"
+          ],
+          "checks": [
+            37
+          ]
+        },
+        {
+          "text": "Location accuracy is approximate. GEM's point is 39.18259, -96.64390. Find the plant's address or a sentence that places the site in a primary document, turn it into a point, and check it in satellite imagery. No EIA or permit point is available. Stage new coordinates only when the point moves more than 500 m, fills a blank, or becomes exact. GEM's point in satellite view: https://www.google.com/maps/@?api=1&map_action=map&center=39.18259,-96.64390&zoom=17&basemap=satellite (pin: https://www.google.com/maps/search/?api=1&query=39.18259,-96.64390). Follow the location ladder in the sweep instructions and report the method, the distance moved and whether a second look is needed.",
+          "fields": [
+            "Latitude",
+            "Longitude",
+            "Location accuracy"
+          ],
+          "checks": [
+            25
+          ]
+        },
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001063352",
+      "plant_name": "Evergy Kansas Central 2025 IRP power station 4",
+      "brief_path": "batches/us-ks/briefs/L100001063352.md",
+      "unit_ids": [
+        "G100001072781"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Evergy_Kansas_Central_2025_IRP_power_station_4",
+      "n_tasks": 7,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100001072781": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "City is blank. Fill it from a source that places the plant; the source goes in Location Data Source.",
+            "fields": [
+              "City"
+            ],
+            "checks": [
+              26
+            ]
+          },
+          {
+            "text": "The unit's status history has an \"announced\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "This plant is an unsited placeholder for capacity in Evergy Kansas Central's May 2025 plan update. It has no real site, and its map point was never set from a document. Do not run the location ladder on it, do not fill City, and do not stage coordinates. Skip the location and City tasks above and say in one plain sentence in your notes that the plant has no site. Answer the dated status history question from the plan or the backlog sheet's note if either gives a date. Check whether this block duplicates Viola or McNew, which together are the 355 MW blocks of 2029 and 2030 in the plan, and raise a question if it does.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        },
+        {
+          "text": "This plant belongs to Evergy Kansas Central, whose integrated resource plan (listed on the US IRPs tab as \"2025 IRP Update\") is at https://investors.evergy.com/2025IRPUpdate. Read the plan's preferred or recommended portfolio and check whether it names this plant: a new unit, a conversion, a retirement date, a capacity or start year that differs from GEM. Report any such value with the plan page it appears on as the source, and mark every finding that comes from the plan with irp true. The IRP box is already ticked on 1 of 1 units. The newest note on the US IRPs tab says: In 2025 IRP Update (May 2025), Evergy Kansas Central: 355 MW CC in 2029 (iViola Generating station - shared ownership with Evergy Missouri West), 355MW CC in 203 (MvNew Generating Station - shared ownership with Evergy Missouri West), 710 MW CC in 2031, 2033, 2039, 2040, 400 MW GT in 2044.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Start year",
+            "Planned retire",
+            "Retired year",
+            "Status Detail"
+          ],
+          "checks": [
+            37
+          ]
+        },
+        {
+          "text": "Location accuracy is approximate. GEM's point is 38.79384, -97.66312. Find the plant's address or a sentence that places the site in a primary document, turn it into a point, and check it in satellite imagery. No EIA or permit point is available. Stage new coordinates only when the point moves more than 500 m, fills a blank, or becomes exact. GEM's point in satellite view: https://www.google.com/maps/@?api=1&map_action=map&center=38.79384,-97.66312&zoom=17&basemap=satellite (pin: https://www.google.com/maps/search/?api=1&query=38.79384,-97.66312). Follow the location ladder in the sweep instructions and report the method, the distance moved and whether a second look is needed.",
+          "fields": [
+            "Latitude",
+            "Longitude",
+            "Location accuracy"
+          ],
+          "checks": [
+            25
+          ]
+        },
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001063353",
+      "plant_name": "Evergy Kansas Central 2025 IRP power station 5",
+      "brief_path": "batches/us-ks/briefs/L100001063353.md",
+      "unit_ids": [
+        "G100001072782"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Evergy_Kansas_Central_2025_IRP_power_station_5",
+      "n_tasks": 7,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100001072782": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "City is blank. Fill it from a source that places the plant; the source goes in Location Data Source.",
+            "fields": [
+              "City"
+            ],
+            "checks": [
+              26
+            ]
+          },
+          {
+            "text": "The unit's status history has an \"announced\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "This plant is an unsited placeholder for capacity in Evergy Kansas Central's May 2025 plan update. It has no real site, and its map point was never set from a document. Do not run the location ladder on it, do not fill City, and do not stage coordinates. Skip the location and City tasks above and say in one plain sentence in your notes that the plant has no site. Answer the dated status history question from the plan or the backlog sheet's note if either gives a date. Check whether this block duplicates Viola or McNew, which together are the 355 MW blocks of 2029 and 2030 in the plan, and raise a question if it does.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        },
+        {
+          "text": "This plant belongs to Evergy Kansas Central, whose integrated resource plan (listed on the US IRPs tab as \"2025 IRP Update\") is at https://investors.evergy.com/2025IRPUpdate. Read the plan's preferred or recommended portfolio and check whether it names this plant: a new unit, a conversion, a retirement date, a capacity or start year that differs from GEM. Report any such value with the plan page it appears on as the source, and mark every finding that comes from the plan with irp true. The IRP box is already ticked on 1 of 1 units. The newest note on the US IRPs tab says: In 2025 IRP Update (May 2025), Evergy Kansas Central: 355 MW CC in 2029 (iViola Generating station - shared ownership with Evergy Missouri West), 355MW CC in 203 (MvNew Generating Station - shared ownership with Evergy Missouri West), 710 MW CC in 2031, 2033, 2039, 2040, 400 MW GT in 2044.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Start year",
+            "Planned retire",
+            "Retired year",
+            "Status Detail"
+          ],
+          "checks": [
+            37
+          ]
+        },
+        {
+          "text": "Location accuracy is approximate. GEM's point is 38.38727, -96.16725. Find the plant's address or a sentence that places the site in a primary document, turn it into a point, and check it in satellite imagery. No EIA or permit point is available. Stage new coordinates only when the point moves more than 500 m, fills a blank, or becomes exact. GEM's point in satellite view: https://www.google.com/maps/@?api=1&map_action=map&center=38.38727,-96.16725&zoom=17&basemap=satellite (pin: https://www.google.com/maps/search/?api=1&query=38.38727,-96.16725). Follow the location ladder in the sweep instructions and report the method, the distance moved and whether a second look is needed.",
+          "fields": [
+            "Latitude",
+            "Longitude",
+            "Location accuracy"
+          ],
+          "checks": [
+            25
+          ]
+        },
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000103922",
+      "plant_name": "Jeffrey Energy Center",
+      "brief_path": "batches/us-ks/briefs/L100000103922.md",
+      "unit_ids": [
+        "G100001055277"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Jeffrey_Energy_Center",
+      "n_tasks": 8,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100001055277": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "Retirement is planned for 2039. Does the plan still hold?",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              21
+            ]
+          },
+          {
+            "text": "Owner(s) (currently Evergy Kansas Central Inc [72%]; Evergy Kansas South Inc [20%]; Evergy Missouri West Inc [8%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The unit's status history has an \"announced\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 6068) shows generator 2, 720 MW, conventional steam coal, operating, operating since 1980, which reads as operating, while GEM says announced. Check which is right and report the status with a public source. A status change needs two independent publishers for high confidence.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "This plant belongs to Evergy Kansas Central, whose integrated resource plan (listed on the US IRPs tab as \"2025 IRP Update\") is at https://investors.evergy.com/2025IRPUpdate. Read the plan's preferred or recommended portfolio and check whether it names this plant: a new unit, a conversion, a retirement date, a capacity or start year that differs from GEM. Report any such value with the plan page it appears on as the source, and mark every finding that comes from the plan with irp true. The IRP box is not ticked on any of the 1 units. The newest note on the US IRPs tab says: In 2025 IRP Update (May 2025), Evergy Kansas Central: 355 MW CC in 2029 (iViola Generating station - shared ownership with Evergy Missouri West), 355MW CC in 203 (MvNew Generating Station - shared ownership with Evergy Missouri West), 710 MW CC in 2031, 2033, 2039, 2040, 400 MW GT in 2044.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Start year",
+            "Planned retire",
+            "Retired year",
+            "Status Detail"
+          ],
+          "checks": [
+            37
+          ]
+        },
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000103924",
+      "plant_name": "Lawrence Energy Center (Kansas)",
+      "brief_path": "batches/us-ks/briefs/L100000103924.md",
+      "unit_ids": [
+        "G100001072702",
+        "G100001017857"
+      ],
+      "n_units": 2,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Lawrence_Energy_Center_(Kansas)",
+      "n_tasks": 19,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City",
+        "CCS attachment?"
+      ],
+      "tasks": {
+        "G100001072702": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "Retirement is planned for 2032. Does the plan still hold?",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              21
+            ]
+          },
+          {
+            "text": "Owner(s) (currently Evergy Kansas Central Inc [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 39.0084500); Longitude (currently -95.2697360); Location accuracy (currently exact); City (currently Lawrence): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The unit's status history has an \"announced\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 1250) shows generator 4, 114 MW, conventional steam coal, operating, operating since 1960, which reads as operating, while GEM says announced. Check which is right and report the status with a public source. A status change needs two independent publishers for high confidence.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100001017857": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "Retirement is planned for 2032. Does the plan still hold?",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              21
+            ]
+          },
+          {
+            "text": "Owner(s) (currently Evergy Kansas Central Inc [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 39.0084500); Longitude (currently -95.2697360); Location accuracy (currently exact); City (currently Lawrence): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The database's validation report says Carbon capture (CCS) has no data source. Find a document that states the current value for this unit and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "CCS attachment?"
+            ],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The unit's status history has an \"announced\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 1250) shows generator 5, 403 MW, conventional steam coal, operating, operating since 1971, which reads as operating, while GEM says announced. Check which is right and report the status with a public source. A status change needs two independent publishers for high confidence.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year"
+            ],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "The EIP Oil & Gas Watch data of 2026-07-28 expects operation in 2033 (https://oilandgaswatch.org/facility/rec_d4f1u5oq7easr8ra1fc0), while GEM's start year is 2029. Check which is current.",
+            "fields": [
+              "Start year"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "The Other IDs (location) box on this plant lists the code rec_d4f1u5oq7easr8ra1fc0 twice, once labeled EIA and once labeled EIP. That code is an Environmental Integrity Project record code, so the EIA label looks like a data entry error. Raise a question that says so and that the label should be removed by hand in the web form. Do not report it as a value.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        },
+        {
+          "text": "This plant belongs to Evergy Kansas Central, whose integrated resource plan (listed on the US IRPs tab as \"2025 IRP Update\") is at https://investors.evergy.com/2025IRPUpdate. Read the plan's preferred or recommended portfolio and check whether it names this plant: a new unit, a conversion, a retirement date, a capacity or start year that differs from GEM. Report any such value with the plan page it appears on as the source, and mark every finding that comes from the plan with irp true. The IRP box is not ticked on any of the 2 units. The newest note on the US IRPs tab says: In 2025 IRP Update (May 2025), Evergy Kansas Central: 355 MW CC in 2029 (iViola Generating station - shared ownership with Evergy Missouri West), 355MW CC in 203 (MvNew Generating Station - shared ownership with Evergy Missouri West), 710 MW CC in 2031, 2033, 2039, 2040, 400 MW GT in 2044.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Start year",
+            "Planned retire",
+            "Retired year",
+            "Status Detail"
+          ],
+          "checks": [
+            37
+          ]
+        },
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001023601",
+      "plant_name": "McNew Generating Station",
+      "brief_path": "batches/us-ks/briefs/L100001023601.md",
+      "unit_ids": [
+        "G100001028229"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/McNew_Generating_Station",
+      "n_tasks": 6,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100001028229": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "The unit's status history has a \"pre-construction\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "McNew Generating Station, Reno County next to South Hutchinson, about 705 to 710 MW combined cycle owned half by Evergy Kansas Central and half by Evergy Missouri West. Evergy's first quarter 2026 report (May 8, 2026) says it is being built under a Kiewit engineering contract with Mitsubishi supplying the power equipment, and a generator tie line siting application was filed with the KCC on November 14, 2025 (docket 26-EKCE-0148-STG). In service is expected in January 2030. If construction has started, the status should say so with a dated source. The plant's location accuracy is approximate, so run the location ladder; the EIA table gives an address of TBD in Hutchison.",
+          "fields": [
+            "Status",
+            "Status Detail",
+            "Capacity (MW)",
+            "Start year",
+            "Latitude",
+            "Longitude",
+            "Location accuracy"
+          ],
+          "checks": []
+        },
+        {
+          "text": "This plant belongs to Evergy Kansas Central, whose integrated resource plan (listed on the US IRPs tab as \"2025 IRP Update\") is at https://investors.evergy.com/2025IRPUpdate. Read the plan's preferred or recommended portfolio and check whether it names this plant: a new unit, a conversion, a retirement date, a capacity or start year that differs from GEM. Report any such value with the plan page it appears on as the source, and mark every finding that comes from the plan with irp true. The IRP box is not ticked on any of the 1 units. The newest note on the US IRPs tab says: In 2025 IRP Update (May 2025), Evergy Kansas Central: 355 MW CC in 2029 (iViola Generating station - shared ownership with Evergy Missouri West), 355MW CC in 203 (MvNew Generating Station - shared ownership with Evergy Missouri West), 710 MW CC in 2031, 2033, 2039, 2040, 400 MW GT in 2044.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Start year",
+            "Planned retire",
+            "Retired year",
+            "Status Detail"
+          ],
+          "checks": [
+            37
+          ]
+        },
+        {
+          "text": "Location accuracy is approximate. GEM's point is 38.00054, -97.92066. Find the plant's address or a sentence that places the site in a primary document, turn it into a point, and check it in satellite imagery. The EIA-860M august_generator2026.xlsx places it at 38.00595, -97.92166, 608 m from GEM's point. The EIA-860 2024 Plant table gives TBD, Hutchison, KS 67501, county Reno, at 38.00595, -97.92166, 608 m from GEM's point. Stage new coordinates only when the point moves more than 500 m, fills a blank, or becomes exact. GEM's point in satellite view: https://www.google.com/maps/@?api=1&map_action=map&center=38.00054,-97.92066&zoom=17&basemap=satellite (pin: https://www.google.com/maps/search/?api=1&query=38.00054,-97.92066). The EIA-860M august_generator2026.xlsx point in satellite view: https://www.google.com/maps/@?api=1&map_action=map&center=38.00595,-97.92166&zoom=17&basemap=satellite. The EIA-860 2024 Plant table point in satellite view: https://www.google.com/maps/@?api=1&map_action=map&center=38.00595,-97.92166&zoom=17&basemap=satellite. Follow the location ladder in the sweep instructions and report the method, the distance moved and whether a second look is needed.",
+          "fields": [
+            "Latitude",
+            "Longitude",
+            "Location accuracy"
+          ],
+          "checks": [
+            25
+          ]
+        },
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001043000",
+      "plant_name": "Viola Generating Station",
+      "brief_path": "batches/us-ks/briefs/L100001043000.md",
+      "unit_ids": [
+        "G100001048433"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Viola_Generating_Station",
+      "n_tasks": 6,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100001048433": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "City is blank. Fill it from a source that places the plant; the source goes in Location Data Source.",
+            "fields": [
+              "City"
+            ],
+            "checks": [
+              26
+            ]
+          },
+          {
+            "text": "The unit's status history has a \"pre-construction\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Viola Generating Station, Sumner County, about 705 to 710 MW combined cycle owned half by Evergy Kansas Central and half by Evergy Missouri West. The KCC approved cost recovery in July 2025 and Evergy's first quarter 2026 report says the water main was under way and the baseline schedule was being set. The EIA file for August 2026 lists generator VIO1 at 765 MW with regulatory approvals received. GEM says 765 MW and start year 2029. Check the nameplate against the air permit or the KCC filings, whether construction has begun, and the start year. The brief's location task applies too.",
+          "fields": [
+            "Status",
+            "Status Detail",
+            "Capacity (MW)",
+            "Start year",
+            "Turbine/Engine Technology",
+            "Latest Activity"
+          ],
+          "checks": []
+        },
+        {
+          "text": "This plant belongs to Evergy Kansas Central, whose integrated resource plan (listed on the US IRPs tab as \"2025 IRP Update\") is at https://investors.evergy.com/2025IRPUpdate. Read the plan's preferred or recommended portfolio and check whether it names this plant: a new unit, a conversion, a retirement date, a capacity or start year that differs from GEM. Report any such value with the plan page it appears on as the source, and mark every finding that comes from the plan with irp true. The IRP box is not ticked on any of the 1 units. The newest note on the US IRPs tab says: In 2025 IRP Update (May 2025), Evergy Kansas Central: 355 MW CC in 2029 (iViola Generating station - shared ownership with Evergy Missouri West), 355MW CC in 203 (MvNew Generating Station - shared ownership with Evergy Missouri West), 710 MW CC in 2031, 2033, 2039, 2040, 400 MW GT in 2044.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Start year",
+            "Planned retire",
+            "Retired year",
+            "Status Detail"
+          ],
+          "checks": [
+            37
+          ]
+        },
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001023564",
+      "plant_name": "Walnut Energy Center power station",
+      "brief_path": "batches/us-ks/briefs/L100001023564.md",
+      "unit_ids": [
+        "G100001028107"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Walnut_Energy_Center_power_station",
+      "n_tasks": 5,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100001028107": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "The unit's status history has a \"pre-construction\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Walnut Energy Center power station is a 54.9 MW pre-construction unit owned by the Kansas Power Pool at Winfield. The ID matcher found EIA plant 7013 (East 12th Street, Cowley County) at the same point, with a 26.5 MW gas steam unit and a 1.6 MW backup unit. Say in a question whether that is this plant and give the plant code and generator IDs. Then find out whether the new engine has been built, from the Winfield city commission minutes, the Kansas Power Pool, or an air permit. GEM's start year and technology should follow the documents.",
+          "fields": [
+            "Status",
+            "Status Detail",
+            "Start year",
+            "Turbine/Engine Technology"
+          ],
+          "checks": []
+        },
+        {
+          "text": "This plant has no EIA plant code. The EIA-860M file for August 2026 has plant 7013 \"East 12th Street\" in Cowley County, 0.0 km from GEM's coordinates, with generator 4, 26.5 MW, natural gas steam turbine, operating, operating since 1970; generator 5, 1.6 MW, petroleum liquids, standby/backup: available for service but not normally used, operating since 2002. If that is this plant, say so in a question that gives the plant code and the generator IDs for each unit. Do not report the codes as values.",
+          "fields": [],
+          "checks": [
+            38
+          ]
+        },
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401792",
+      "plant_name": "Kaw power station",
+      "brief_path": "batches/us-ks/briefs/L100000401792.md",
+      "unit_ids": [
+        "G100000402579",
+        "G100000402580",
+        "G100000402581"
+      ],
+      "n_units": 3,
+      "max_priority": 4,
+      "wiki_url": "https://www.gem.wiki/Kaw_power_station",
+      "n_tasks": 10,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402579": [
+          {
+            "text": "This unit is mothballed. Is it still mothballed, back in operation, or retired? A status change needs two independent publishers. Never fill a retired year while the status stays mothballed.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Retired year"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The unit's status history has a \"mothballed\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 1294) shows generator 1, 50.1 MW, natural gas steam turbine, retired 2024, operating since 1955, which reads as retired, while GEM says mothballed. Check which is right and report the status with a public source. A status change needs two independent publishers for high confidence.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Retired year"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100000402580": [
+          {
+            "text": "This unit is mothballed. Is it still mothballed, back in operation, or retired? A status change needs two independent publishers. Never fill a retired year while the status stays mothballed.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Retired year"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The unit's status history has a \"mothballed\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 1294) shows generator 2, 50.1 MW, natural gas steam turbine, retired 2024, operating since 1957, which reads as retired, while GEM says mothballed. Check which is right and report the status with a public source. A status change needs two independent publishers for high confidence.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Retired year"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100000402581": [
+          {
+            "text": "This unit is mothballed. Is it still mothballed, back in operation, or retired? A status change needs two independent publishers. Never fill a retired year while the status stays mothballed.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Retired year"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The unit's status history has a \"mothballed\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 1294) shows generator 3, 65.5 MW, natural gas steam turbine, retired 2024, operating since 1962, which reads as retired, while GEM says mothballed. Check which is right and report the status with a public source. A status change needs two independent publishers for high confidence.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Retired year"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401782",
+      "plant_name": "Chanute 2 power station",
+      "brief_path": "batches/us-ks/briefs/L100000401782.md",
+      "unit_ids": [
+        "G100000402564"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Chanute_2_power_station",
+      "n_tasks": 2,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402564": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401614",
+      "plant_name": "Cimarron River power station",
+      "brief_path": "batches/us-ks/briefs/L100000401614.md",
+      "unit_ids": [
+        "G100000402343"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Cimarron_River_power_station",
+      "n_tasks": 2,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402343": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401615",
+      "plant_name": "Clifton power station",
+      "brief_path": "batches/us-ks/briefs/L100000401615.md",
+      "unit_ids": [
+        "G100000402344"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Clifton_power_station",
+      "n_tasks": 3,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402344": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 8037) gives a planned retirement year of 2028, and GEM has none. Check the plan and report it with a source.",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000409214",
+      "plant_name": "CML&P Generating Facility No. 2",
+      "brief_path": "batches/us-ks/briefs/L100000409214.md",
+      "unit_ids": [
+        "G100000414291"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/CML%26P_Generating_Facility_No._2",
+      "n_tasks": 3,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100000414291": [
+          {
+            "text": "City is blank. Fill it from a source that places the plant; the source goes in Location Data Source.",
+            "fields": [
+              "City"
+            ],
+            "checks": [
+              26
+            ]
+          },
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401930",
+      "plant_name": "Emporia energy center",
+      "brief_path": "batches/us-ks/briefs/L100000401930.md",
+      "unit_ids": [
+        "G100000402863",
+        "G100000402864",
+        "G100000402865",
+        "G100000402866",
+        "G100000402867",
+        "G100000402868",
+        "G100000402869"
+      ],
+      "n_units": 7,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Emporia_energy_center",
+      "n_tasks": 8,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402863": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402864": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402865": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402866": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402867": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402868": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402869": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401616",
+      "plant_name": "Fort Dodge power station",
+      "brief_path": "batches/us-ks/briefs/L100000401616.md",
+      "unit_ids": [
+        "G100000402345"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Fort_Dodge_power_station",
+      "n_tasks": 2,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402345": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000402306",
+      "plant_name": "Garden City power station",
+      "brief_path": "batches/us-ks/briefs/L100000402306.md",
+      "unit_ids": [
+        "G100000403572",
+        "G100000403573",
+        "G100000403574"
+      ],
+      "n_units": 3,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Garden_City_power_station",
+      "n_tasks": 4,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000403572": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000403573": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000403574": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000409209",
+      "plant_name": "Goodman Energy Center",
+      "brief_path": "batches/us-ks/briefs/L100000409209.md",
+      "unit_ids": [
+        "G100000414264"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Goodman_Energy_Center",
+      "n_tasks": 3,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100000414264": [
+          {
+            "text": "City is blank. Fill it from a source that places the plant; the source goes in Location Data Source.",
+            "fields": [
+              "City"
+            ],
+            "checks": [
+              26
+            ]
+          },
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401933",
+      "plant_name": "Gordon Evans energy center",
+      "brief_path": "batches/us-ks/briefs/L100000401933.md",
+      "unit_ids": [
+        "G100000402877",
+        "G100000402878",
+        "G100000402879"
+      ],
+      "n_units": 3,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Gordon_Evans_energy_center",
+      "n_tasks": 4,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402877": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402878": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402879": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401617",
+      "plant_name": "Great Bend Sunflower power station",
+      "brief_path": "batches/us-ks/briefs/L100000401617.md",
+      "unit_ids": [
+        "G100000402346"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Great_Bend_Sunflower_power_station",
+      "n_tasks": 2,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402346": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401931",
+      "plant_name": "Hutchinson energy center",
+      "brief_path": "batches/us-ks/briefs/L100000401931.md",
+      "unit_ids": [
+        "G100000402870",
+        "G100000402871",
+        "G100000402872",
+        "G100000414259"
+      ],
+      "n_units": 4,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Hutchinson_energy_center",
+      "n_tasks": 6,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402870": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402871": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402872": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000414259": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 1248) gives 129 MW nameplate for GT4, while GEM says 70 MW. Check the nameplate electric capacity and report it with a source.",
+            "fields": [
+              "Capacity (MW)"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401799",
+      "plant_name": "McPherson 2 power station",
+      "brief_path": "batches/us-ks/briefs/L100000401799.md",
+      "unit_ids": [
+        "G100000402588",
+        "G100000414230",
+        "G100000402589"
+      ],
+      "n_units": 3,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/McPherson_2_power_station",
+      "n_tasks": 4,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402588": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000414230": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402589": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401800",
+      "plant_name": "McPherson 3 power station",
+      "brief_path": "batches/us-ks/briefs/L100000401800.md",
+      "unit_ids": [
+        "G100000402590"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/McPherson_3_power_station",
+      "n_tasks": 2,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402590": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000103925",
+      "plant_name": "Nearman Creek power station",
+      "brief_path": "batches/us-ks/briefs/L100000103925.md",
+      "unit_ids": [
+        "G100000402582"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Nearman_Creek_power_station",
+      "n_tasks": 4,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100000402582": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          },
+          {
+            "text": "Owner(s) (currently City of Kansas City (Kansas) [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 39.1710670); Longitude (currently -94.6971890); Location accuracy (currently exact); City (currently Kansas City): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401935",
+      "plant_name": "Osawatomie power station",
+      "brief_path": "batches/us-ks/briefs/L100000401935.md",
+      "unit_ids": [
+        "G100000402882"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Osawatomie_power_station",
+      "n_tasks": 2,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402882": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000103926",
+      "plant_name": "Quindaro power station",
+      "brief_path": "batches/us-ks/briefs/L100000103926.md",
+      "unit_ids": [
+        "G100000414204",
+        "G100000414203",
+        "G100001017957",
+        "G100001017863"
+      ],
+      "n_units": 4,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Quindaro_power_station",
+      "n_tasks": 17,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City",
+        "CCS attachment?"
+      ],
+      "tasks": {
+        "G100000414204": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          },
+          {
+            "text": "Owner(s) (currently City of Kansas City (Kansas) [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 39.1509330); Longitude (currently -94.6366250); Location accuracy (currently exact); City (currently Kansas City): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ],
+        "G100000414203": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          },
+          {
+            "text": "Owner(s) (currently City of Kansas City (Kansas) [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 39.1509330); Longitude (currently -94.6366250); Location accuracy (currently exact); City (currently Kansas City): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ],
+        "G100001017957": [
+          {
+            "text": "Owner(s) (currently City of Kansas City (Kansas) [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 39.1509330); Longitude (currently -94.6366250); Location accuracy (currently exact); City (currently Kansas City): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The database's validation report says Carbon capture (CCS) has no data source. Find a document that states the current value for this unit and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "CCS attachment?"
+            ],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 1295) gives retirement year 2024, while GEM says 2019. Check which is right.",
+            "fields": [
+              "Retired year"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100001017863": [
+          {
+            "text": "Owner(s) (currently City of Kansas City (Kansas) [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 39.1509330); Longitude (currently -94.6366250); Location accuracy (currently exact); City (currently Kansas City): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The database's validation report says Carbon capture (CCS) has no data source. Find a document that states the current value for this unit and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "CCS attachment?"
+            ],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIA-860M file for August 2026 (plant 1295) gives retirement year 2024, while GEM says 2019. Check which is right.",
+            "fields": [
+              "Retired year"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000103927",
+      "plant_name": "Riverton Power Plant",
+      "brief_path": "batches/us-ks/briefs/L100000103927.md",
+      "unit_ids": [
+        "G100000401617"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Riverton_Power_Plant",
+      "n_tasks": 3,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100000401617": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          },
+          {
+            "text": "Latitude (currently 37.0718020); Longitude (currently -94.7001170); Location accuracy (currently exact); City (currently Riverton): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy",
+              "City"
+            ],
+            "checks": []
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000409259",
+      "plant_name": "Rubart power station",
+      "brief_path": "batches/us-ks/briefs/L100000409259.md",
+      "unit_ids": [
+        "G100000414197"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Rubart_power_station",
+      "n_tasks": 3,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "City"
+      ],
+      "tasks": {
+        "G100000414197": [
+          {
+            "text": "City is blank. Fill it from a source that places the plant; the source goes in Location Data Source.",
+            "fields": [
+              "City"
+            ],
+            "checks": [
+              26
+            ]
+          },
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401936",
+      "plant_name": "West Gardner power station",
+      "brief_path": "batches/us-ks/briefs/L100000401936.md",
+      "unit_ids": [
+        "G100000402883",
+        "G100000402884",
+        "G100000402885",
+        "G100000402886"
+      ],
+      "n_units": 4,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/West_Gardner_power_station",
+      "n_tasks": 5,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402883": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402884": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402885": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402886": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Kansas context. The Kansas Corporation Commission (KCC) regulates the utilities and its docket numbers look like 25-EKCE-207-RTS. Air construction permits come from the Kansas Department of Health and Environment (KDHE) Bureau of Air, and the state permit system is KEIMS at keims.kdhe.ks.gov, which is script-driven but not closed. A harvested permit index may exist under work/permits/us-ks/ for your plant; read it first. Almost all of Kansas is in the Southwest Power Pool (SPP). Evergy Kansas Central is the former Westar and Evergy Kansas South is the former Kansas Gas and Electric.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    }
+  ],
+  "not_tasked": [],
+  "promoted_new": [],
+  "irp": {
+    "file": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/work/irp_us-kansas.json",
+    "brief_path": "batches/us-ks/briefs/_irp.md",
+    "read": "2026-10-21",
+    "skipped": false,
+    "utilities": [
+      {
+        "utility": "Evergy Kansas Central",
+        "irp_year": "2025 IRP Update",
+        "is_draft": false,
+        "links": [
+          "https://investors.evergy.com/2025IRPUpdate",
+          "https://kskcc.my.site.com/s/case/500cr00000YjcjMAAR/24ekce387cpl?tabset-d4b00=2",
+          "https://shareus11.springcm.com/Public/Document/35150/e56d0963-88e0-4e4b-999a-0587e0573f89/ba249c18-eec2-f011-b84a-48df377ee718"
+        ],
+        "next_irp_due": "",
+        "plant_ids": [
+          "L100000401930",
+          "L100001063349",
+          "L100001063350",
+          "L100001063351",
+          "L100001063352",
+          "L100001063353",
+          "L100000401931",
+          "L100000103922",
+          "L100000103924",
+          "L100001023601",
+          "L100001043000"
+        ]
+      },
+      {
+        "utility": "Evergy Metro",
+        "irp_year": "2025 IRP Update",
+        "is_draft": false,
+        "links": [
+          "https://www.efis.psc.mo.gov/Document/Display/822210?utm"
+        ],
+        "next_irp_due": "",
+        "plant_ids": [
+          "L100000401935",
+          "L100000401936"
+        ]
+      },
+      {
+        "utility": "Kansas City Board of Public Utilities (BPU)",
+        "irp_year": "2024 IRP",
+        "is_draft": false,
+        "links": [
+          "https://www.bpu.com/Portals/0/pdf/2024-BPU_IRP_Report-2024_11-4-2024.pdf"
+        ],
+        "next_irp_due": "",
+        "plant_ids": []
+      }
+    ],
+    "links": [
+      "https://investors.evergy.com/2025IRPUpdate",
+      "https://kskcc.my.site.com/s/case/500cr00000YjcjMAAR/24ekce387cpl?tabset-d4b00=2",
+      "https://shareus11.springcm.com/Public/Document/35150/e56d0963-88e0-4e4b-999a-0587e0573f89/ba249c18-eec2-f011-b84a-48df377ee718",
+      "https://www.efis.psc.mo.gov/Document/Display/822210?utm",
+      "https://www.bpu.com/Portals/0/pdf/2024-BPU_IRP_Report-2024_11-4-2024.pdf"
+    ],
+    "irp_box_units": [
+      "G100001072778",
+      "G100001072779",
+      "G100001072780",
+      "G100001072781",
+      "G100001072782"
+    ]
+  },
+  "captive": {
+    "file": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/work/captive_us-kansas.json",
+    "brief_path": "batches/us-ks/briefs/_captive.md",
+    "read": "2026-10-16",
+    "threshold_mw": 50,
+    "terminals": [],
+    "new_candidates": [],
+    "gem_only": [],
+    "data_center": true
+  },
+  "location": {
+    "file": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/work/location_us-ks.json",
+    "read": "2026-10-21T08:36:22-04:00",
+    "sources": {
+      "eia860m": "august_generator2026.xlsx",
+      "eia860": "eia8602024.zip"
+    },
+    "plants_checked": 30,
+    "candidates": [
+      "L100001023601",
+      "L100001063349",
+      "L100001063350",
+      "L100001063351",
+      "L100001063352",
+      "L100001063353"
+    ]
+  }
+}

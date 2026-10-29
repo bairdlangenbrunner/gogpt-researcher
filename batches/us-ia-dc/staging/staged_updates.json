@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "lane": "updates",
+    "scope": {
+      "country": "United States",
+      "state": "Iowa",
+      "postal": "ia",
+      "kind": "state",
+      "slug": "iowa",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-27T12:14:01-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 4,
+      "fill": 0,
+      "change": 4,
+      "reverified": 0,
+      "match_no_new_url": 0,
+      "status_downgraded": 0,
+      "tier_promoted": 2
+    }
+  },
+  "records": [
+    {
+      "gem_unit_id": "G100001101021",
+      "gem_plant_id": "L100001088853",
+      "plant_name": "Microsoft Ginger East Data Center power station",
+      "unit_name": "Unit 1",
+      "country": "United States",
+      "record_id": "L100001088853:G100001101021:number-of-engines",
+      "cluster": "G100001101021",
+      "verdict": "change",
+      "fields": {
+        "Number Of Engines": "96"
+      },
+      "current": {
+        "Number Of Engines": "40"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://airquality.polkcountyiowa.gov/PERMITS/PR-000720-2024.pdf",
+          "https://airquality.polkcountyiowa.gov/PERMITS/PR-000722-2024.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://airquality.polkcountyiowa.gov/PERMITS/PR-000722-2024.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Polk County permit PR-000722-2024 issued December 20, 2024 lists Cummins QSK95-G9 engines at 1475 SE Maffitt Lake Road."
+        },
+        {
+          "url": "https://airquality.polkcountyiowa.gov/PERMITS/PR-000720-2024.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Polk County permit PR-000720-2024 lists QSK95-G9 engines EP-102 to EP-121 at 1475 SE Maffitt Lake Road."
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The Polk County permits of December 20, 2024 list 96 Cummins QSK95-G9 engines for the Ginger East site at 1475 SE Maffitt Lake Road: 20 in permit PR-000720-2024 and 76 in permit PR-000722-2024. The state permit defines Ginger East as emission units 101 to 201. GEM has 40 engines. The permits do not say how many are built. The Polk County permits issued December 20, 2024 list 96 large engines for the Ginger East site, against 40 in GEM.",
+      "action": "Set Number Of Engines of unit Unit 1 (G100001101021) to 96. It now says 40. Add the 2 links below to the Capacity Data Source box. Keep the links already there.",
+      "checks": [
+        39
+      ]
+    },
+    {
+      "gem_unit_id": "G100001101021",
+      "gem_plant_id": "L100001088853",
+      "plant_name": "Microsoft Ginger East Data Center power station",
+      "unit_name": "Unit 1",
+      "country": "United States",
+      "record_id": "L100001088853:G100001101021:capacity-mw",
+      "cluster": "G100001101021",
+      "verdict": "change",
+      "fields": {
+        "Capacity (MW)": "288"
+      },
+      "current": {
+        "Capacity (MW)": "120"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://airquality.polkcountyiowa.gov/PERMITS/PR-000722-2024.pdf",
+          "https://www.iowadnr.gov/media/7168/download?inline"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://airquality.polkcountyiowa.gov/PERMITS/PR-000722-2024.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Polk County permit PR-000722-2024 issued December 20, 2024 lists Cummins QSK95-G9 engines at 1475 SE Maffitt Lake Road."
+        },
+        {
+          "url": "https://www.iowadnr.gov/media/7168/download?inline",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "State Title V permit 24-TV-005 for Willow Creek and Ginger East data centers gives the QSK95-G9 as 3,000 kilowatts."
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "At 3 MW each, 96 engines is 288 MW. The 3 MW rating comes from the state Title V permit, which gives 3,000 kilowatts for this engine. GEM has 120 MW.",
+      "action": "Set Capacity (MW) of unit Unit 1 (G100001101021) to 288. It now says 120. Add the 2 links below to the Capacity Data Source box. Keep the links already there.",
+      "checks": [
+        10,
+        39,
+        49
+      ]
+    },
+    {
+      "gem_unit_id": "G100001101019",
+      "gem_plant_id": "L100001088852",
+      "plant_name": "Microsoft Ginger West Data Center power station",
+      "unit_name": "Unit 1",
+      "country": "United States",
+      "record_id": "L100001088852:G100001101019:number-of-engines",
+      "cluster": "G100001101019",
+      "verdict": "change",
+      "fields": {
+        "Number Of Engines": "130"
+      },
+      "current": {
+        "Number Of Engines": "120"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-371%22,%22permitNumber2%22%3A%2226-A-371%22,%22projectNumber%22%3A%2226-275%22,%22emissionPointID%22%3A%22EP-136%22,%22emissionPointDescription%22%3A%22Ginger%20West%20EG-136%22,%22issueDate%22%3A%222026-10-20T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A50587,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-008%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-371%22,%22permitNumber2%22%3A%2226-A-371%22,%22projectNumber%22%3A%2226-275%22,%22emissionPointID%22%3A%22EP-136%22,%22emissionPointDescription%22%3A%22Ginger%20West%20EG-136%22,%22issueDate%22%3A%222026-10-20T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A50587,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-008%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Iowa DNR construction permits for project 26-275, issued October 20, 2026, to Microsoft at 11100 Booneville Road. The description says modification of limits for 126 existing engines and installation of 10 new engines."
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The newest state construction permits, project 26-275 issued October 20, 2026, cover 136 engines. Of these, 130 are Cummins QSK95 engines and 6 are Cummins QSX15 engines. Ten engines were added in this project. GEM has 120 large engines. The October 20, 2026 state permits add 10 Cummins QSK95 engines to the 120 in GEM. That makes 130 engines and 390 MW.",
+      "action": "Set Number Of Engines of unit Unit 1 (G100001101019) to 130. It now says 120. Add the link below to the Capacity Data Source box. Keep the links already there.",
+      "checks": [
+        39
+      ]
+    },
+    {
+      "gem_unit_id": "G100001101019",
+      "gem_plant_id": "L100001088852",
+      "plant_name": "Microsoft Ginger West Data Center power station",
+      "unit_name": "Unit 1",
+      "country": "United States",
+      "record_id": "L100001088852:G100001101019:capacity-mw",
+      "cluster": "G100001101019",
+      "verdict": "change",
+      "fields": {
+        "Capacity (MW)": "390"
+      },
+      "current": {
+        "Capacity (MW)": "360.0"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-371%22,%22permitNumber2%22%3A%2226-A-371%22,%22projectNumber%22%3A%2226-275%22,%22emissionPointID%22%3A%22EP-136%22,%22emissionPointDescription%22%3A%22Ginger%20West%20EG-136%22,%22issueDate%22%3A%222026-10-20T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A50587,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-008%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://idnraqrr.iowadnr.gov/ConPermitSearch/DownloadFile?dataString=%7B%22permitNumber%22%3A%2226-A-371%22,%22permitNumber2%22%3A%2226-A-371%22,%22projectNumber%22%3A%2226-275%22,%22emissionPointID%22%3A%22EP-136%22,%22emissionPointDescription%22%3A%22Ginger%20West%20EG-136%22,%22issueDate%22%3A%222026-10-20T00%3A00%3A00%22,%22fileName%22%3Anull,%22rescissionDate%22%3Anull,%22easyAirPermitID%22%3A50587,%22documentType%22%3Anull,%22facilityNumber%22%3A%2225-17-008%22,%22documentID%22%3A0%7D&type=PERMIT_FILLED_OBJECT",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Iowa DNR construction permits for project 26-275, issued October 20, 2026, to Microsoft at 11100 Booneville Road. The description says modification of limits for 126 existing engines and installation of 10 new engines."
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The 130 QSK95 engines are described in the permit as C3000 series generator sets, which is 3 MW each, or 390 MW. GEM has 360 MW. The permit text gives horsepower, and the 3 MW rating matches the figure GEM already uses.",
+      "action": "Set Capacity (MW) of unit Unit 1 (G100001101019) to 390. It now says 360.0. Add the link below to the Capacity Data Source box. Keep the links already there.",
+      "checks": [
+        10,
+        39,
+        49
+      ]
+    }
+  ]
+}

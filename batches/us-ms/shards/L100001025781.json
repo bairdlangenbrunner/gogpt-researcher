@@ -1,0 +1,200 @@
+{
+ "meta": {
+  "plant_id": "L100001025781",
+  "plant_name": "Delta Blues Advanced Power Station",
+  "state": "Mississippi",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-23T14:00:00-04:00",
+  "done": true,
+  "urls_attempted": 8,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001030673",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "construction",
+     "refs": [
+      "https://www.entergy.com/blog/delta-blues-reaches-important-milestone-in-construction",
+      "https://www.powermag.com/entergy-mississippi-breaks-ground-on-754-mw-gas-fired-power-station/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.entergy.com/blog/delta-blues-reaches-important-milestone-in-construction",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      },
+      {
+       "url": "https://www.powermag.com/entergy-mississippi-breaks-ground-on-754-mw-gas-fired-power-station/",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "An Entergy blog post of May 19, 2026 (https://www.entergy.com/blog/delta-blues-reaches-important-milestone-in-construction) says the heat recovery steam generator modules are being erected. POWER Magazine reported a groundbreaking on November 7, 2024 (https://www.powermag.com/entergy-mississippi-breaks-ground-on-754-mw-gas-fired-power-station/). So the unit is under construction. The EIA table for September 2026 still says regulatory approvals pending, which looks out of date. This is the same status GEM already shows."
+    },
+    "Start year": {
+     "value": "2028",
+     "refs": [
+      "https://www.entergymississippi.com/generation/deltablues",
+      "https://www.powermag.com/entergy-mississippi-breaks-ground-on-754-mw-gas-fired-power-station/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.entergymississippi.com/generation/deltablues",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.powermag.com/entergy-mississippi-breaks-ground-on-754-mw-gas-fired-power-station/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "Entergy Mississippi's project page (https://www.entergymississippi.com/generation/deltablues) says construction is expected to finish by 2028. The EIA table for September 2026 gives a planned operating date of May 2028. GEM's 2028 is right."
+    },
+    "Status Detail": {
+     "value": "Entergy said on May 19, 2026 that the heat recovery steam generator modules were being erected and the project was on track. Construction began with a groundbreaking on November 7, 2024. The EIA table for September 2026 still lists regulatory approvals pending, which appears out of date.",
+     "refs": [
+      "https://www.entergy.com/blog/delta-blues-reaches-important-milestone-in-construction",
+      "https://www.powermag.com/entergy-mississippi-breaks-ground-on-754-mw-gas-fired-power-station/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.entergy.com/blog/delta-blues-reaches-important-milestone-in-construction",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      },
+      {
+       "url": "https://www.powermag.com/entergy-mississippi-breaks-ground-on-754-mw-gas-fired-power-station/",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "New dated entry for the Status Detail box, from the Entergy blog post (https://www.entergy.com/blog/delta-blues-reaches-important-milestone-in-construction) and the POWER Magazine article (https://www.powermag.com/entergy-mississippi-breaks-ground-on-754-mw-gas-fired-power-station/)."
+    }
+   },
+   "not_found": [
+    "Latest Activity",
+    "Turbine/Engine Technology",
+    "Owner(s)",
+    "Operator(s)"
+   ],
+   "notes": "The unit is moving, so Latest Activity is left alone. I found no new owner, operator or turbine information beyond what GEM has. The air permit lists 773 MW and the EIA table lists 477 plus 341.7 MW, but Entergy's 754 MW stays as the headline figure."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001030673",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "recommendation": "The construction step is best dated to November 2024. Entergy Mississippi held a groundbreaking on November 7, 2024, which POWER Magazine reported on November 8, 2024. The Mississippi air construction permit was issued later, on April 16, 2025.",
+   "note": "Sources are https://www.powermag.com/entergy-mississippi-breaks-ground-on-754-mw-gas-fired-power-station/ and the air permit at https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1779807.",
+   "refs": [
+    "https://www.powermag.com/entergy-mississippi-breaks-ground-on-754-mw-gas-fired-power-station/",
+    "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1779807"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001030673",
+   "concern_type": "Capacity (MW)",
+   "recommendation": "Different sources give different sizes. Entergy says 754 MW. The air permit lists a 773 MW heat input rating for the block. The EIA table for September 2026 lists generator 1A at 477 MW and generator 1C at 341.7 MW, which adds to 818.7 MW. I kept GEM's 754 MW because it is the company's own figure.",
+   "note": "Sources are https://www.entergymississippi.com/generation/deltablues, the permit at https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1779807 and the EIA table at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx.",
+   "refs": [
+    "https://www.entergymississippi.com/generation/deltablues",
+    "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1779807"
+   ],
+   "proposed_value": {
+    "Capacity (MW)": "754"
+   }
+  },
+  {
+   "gem_unit_id": "G100001030673",
+   "concern_type": "other",
+   "recommendation": "The Entergy Mississippi 2024 integrated resource plan link on the sheet points to a public workshop notice, not the plan. The notice does not mention Delta Blues, so no finding comes from the plan and none is marked as coming from it. The PSC docket 2024-UA-144 filing of December 12, 2024 gives a planned in service date of May 2028, which agrees with GEM's 2028. I could not open the docket through the portal.",
+   "note": "Notice checked: https://www.psc.ms.gov/sites/default/files/2023-07/EML-2024-IRP-Notice-Initial-Public-Workshop.pdf.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.entergy.com/blog/delta-blues-reaches-important-milestone-in-construction",
+   "used_for": [
+    "Status",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Entergy blog, May 19, 2026."
+  },
+  {
+   "url": "https://www.powermag.com/entergy-mississippi-breaks-ground-on-754-mw-gas-fired-power-station/",
+   "used_for": [
+    "Status",
+    "Start year",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "POWER Magazine, November 8, 2024."
+  },
+  {
+   "url": "https://www.entergymississippi.com/generation/deltablues",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Entergy Mississippi project page."
+  },
+  {
+   "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1779807",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Air permit 2800-00142, issued April 16, 2025."
+  },
+  {
+   "url": "https://www.entergy.com/delta-blues-reaches-important-milestone-in-construction",
+   "used_for": [],
+   "outcome": "failed",
+   "note": "Wrong address, returned 404. The blog address with /blog/ works."
+  },
+  {
+   "url": "https://www.psc.ms.gov/sites/default/files/2023-07/EML-2024-IRP-Notice-Initial-Public-Workshop.pdf",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Does not name Delta Blues."
+  },
+  {
+   "url": "https://meridianstar.com/2024/11/08/entergy-mississippi-breaks-ground-on-new-power-station",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Loaded but did not contain the word construction, not cited."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [],
+   "outcome": "verified",
+   "note": "Plant 67914, generators 1A 477 MW and 1C 341.7 MW, status L, planned May 2028."
+  }
+ ]
+}

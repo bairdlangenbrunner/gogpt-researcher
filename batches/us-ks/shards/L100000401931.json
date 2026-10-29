@@ -1,0 +1,166 @@
+{
+ "meta": {
+  "plant_id": "L100000401931",
+  "plant_name": "Hutchinson energy center",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T09:38:25-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402870",
+   "unit_name": "GT1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists this unit as operating with no planned retirement date. I read the row myself: Plant 1248, generator GT1, status operating, nameplate 71.2 MW, operating May 1974, no planned retirement. I found no announcement of a retirement, mothballing or sale."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating in the August 2026 EIA table, owned by Evergy Kansas Central. A web search found no retirement or sale news for the plant."
+  },
+  {
+   "gem_unit_id": "G100000402871",
+   "unit_name": "GT2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists this unit as operating with no planned retirement date. I read the row myself: Plant 1248, generator GT2, status operating, nameplate 71.2 MW, operating May 1974, no planned retirement. I found no announcement of a retirement, mothballing or sale."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating in the August 2026 EIA table, owned by Evergy Kansas Central. A web search found no retirement or sale news for the plant."
+  },
+  {
+   "gem_unit_id": "G100000402872",
+   "unit_name": "GT3",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists this unit as operating with no planned retirement date. I read the row myself: Plant 1248, generator GT3, status operating, nameplate 71.2 MW, operating May 1974, no planned retirement. I found no announcement of a retirement, mothballing or sale."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating in the August 2026 EIA table, owned by Evergy Kansas Central. A web search found no retirement or sale news for the plant."
+  },
+  {
+   "gem_unit_id": "G100000414259",
+   "unit_name": "GT4",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists this unit as operating with no planned retirement date. I read the row myself: Plant 1248, generator GT4, status operating, nameplate 129.0 MW, operating June 1975, no planned retirement. I found no announcement of a retirement, mothballing or sale."
+    },
+    "Capacity (MW)": {
+     "value": "129.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives 129.0 MW nameplate for GT4. The row read: Plant 1248, generator GT4, status operating, nameplate 129.0 MW, operating June 1975, no planned retirement. Summer net capacity in the same row is 69.8 MW, which is likely where GEM's 70 MW came from."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating in the August 2026 EIA table, owned by Evergy Kansas Central. A web search found no retirement or sale news for the plant. The nameplate is 129.0 MW, not 70 MW."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000402870",
+   "concern_type": "Capacity (MW)",
+   "recommendation": "No change. The EIA figure of 71.2 MW rounds to GEM's 71 MW.",
+   "note": "The EIA-860M table for August 2026 gives 71.2 MW nameplate for generators GT1, GT2 and GT3 at plant 1248. GEM shows 71.0 MW. The manual rounds capacity to the nearest whole megawatt, so both are 71 MW.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "EIA-860M August 2026 file loaded; plant 1248 rows read directly."
+  },
+  {
+   "url": "web search: Evergy Hutchinson Energy Center combustion turbines retirement 2026",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "No retirement, mothballing or ownership change news found. The KDHE permit index and Evergy documents on disk had no Hutchinson turbine notices."
+  }
+ ]
+}

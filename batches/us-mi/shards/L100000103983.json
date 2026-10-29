@@ -1,0 +1,153 @@
+{
+ "meta": {
+  "plant_id": "L100000103983",
+  "plant_name": "Lansing Board of Water and Light",
+  "state": "Michigan",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-26T23:45:42-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402063",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 58427, generators CTG1, CTG2 and ST, as operating, with no planned retirement date. Matching row: plant 58427, generators CTG1 and CTG2 at 42.0 MW each and ST at 14.0 MW, status OP, operating July 2013. The Michigan air quality staff report from March 2024 (https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/B2647/B2647%20Staff%20Report%2003-18-24.pdf) also describes the plant as running and holding a current operating permit. I found no retirement, mothballing or sale notice."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "General Electric",
+     "refs": [
+      "https://www.industrialinfo.com/news/article/reo-town-power-station-begins-commercial-operations-in-lansing-michigan--236860"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.industrialinfo.com/news/article/reo-town-power-station-begins-commercial-operations-in-lansing-michigan--236860",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "An Industrial Info Resources news item on the start of commercial operation at the REO Town power station (https://www.industrialinfo.com/news/article/reo-town-power-station-begins-commercial-operations-in-lansing-michigan--236860) says the plant has two General Electric combustion turbines. It does not give a model number, and the Michigan air permit documents I read do not give one either. So only the maker is reported."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model (model number only)",
+    "Latest Activity (not filled for an operating unit)",
+    "Operator(s)"
+   ],
+   "notes": "Still operating according to the EIA table for September 2026. The March 2024 air permit report says one turbine was replaced with a like-kind turbine in 2023 under permit 156-22, which does not change the capacity. The turbine model number was not found."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Lansing Board of Water and Light [100%]",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/B2647/B2647%20Staff%20Report%2003-18-24.pdf"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": false,
+     "name_found": true
+    },
+    {
+     "url": "https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/B2647/B2647%20Staff%20Report%2003-18-24.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": true,
+   "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) names Lansing Board of Water and Light as the entity for plant 58427, called Lansing BWL REO Town Plant. The Michigan air quality staff report from March 2024 (https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/B2647/B2647%20Staff%20Report%2003-18-24.pdf) refers to the owner and operator of the REO Town Plant and the permit is held by Lansing Board of Water and Light. The value matches GEM. The sources are an EIA table and a state agency, so they are separate publishers. The value is a municipal utility, so no share table exists."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000402063",
+   "concern_type": "identity",
+   "recommendation": "This record is the REO Town cogeneration plant, not the Erickson plant, the Eckert plant or Delta Energy Park. No change is needed to the plant itself.",
+   "note": "The Michigan air quality staff report from March 2024 (https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/B2647/B2647%20Staff%20Report%2003-18-24.pdf) describes the REO Town Plant at 1201 South Washington Avenue in Lansing as two natural gas turbines with heat recovery boilers and steam turbines, and says the coal-fired Eckert Station next to it shut down for good on December 31, 2020. The unit sizes in the EIA-860M table for September 2026 (42.0, 42.0 and 14.0 MW, total 98 MW) match GEM. GEM also holds a separate Delta energy park record (EIA plant 63259) that carries the 112.8 MW engine set built under permit 71-24, so this record does not duplicate it.",
+   "refs": [
+    "https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/B2647/B2647%20Staff%20Report%2003-18-24.pdf"
+   ],
+   "proposed_value": {}
+  },
+  {
+   "gem_unit_id": "G100000402063",
+   "concern_type": "location",
+   "recommendation": "Consider changing City to Lansing and County to Ingham. The coordinates already sit at the plant, so leave them alone.",
+   "note": "GEM lists City as Delta Twp. and county as Eaton. The Michigan air quality staff report from March 2024 (https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/B2647/B2647%20Staff%20Report%2003-18-24.pdf) puts the plant at 1201 South Washington Avenue, Lansing, in Ingham County, and the EIA-860M table for September 2026 also says Ingham. The Census geocoder places that address 0.1 km from GEM's point.",
+   "refs": [
+    "https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/B2647/B2647%20Staff%20Report%2003-18-24.pdf"
+   ],
+   "proposed_value": {
+    "City": "Lansing",
+    "Local area (taluk, county)": "Ingham"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Loads; row read from the downloaded file."
+  },
+  {
+   "url": "https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/B2647/B2647%20Staff%20Report%2003-18-24.pdf",
+   "used_for": [
+    "Owner(s)",
+    "identity",
+    "location"
+   ],
+   "outcome": "verified",
+   "note": "Read with the repo fetcher."
+  },
+  {
+   "url": "https://www.industrialinfo.com/news/article/reo-town-power-station-begins-commercial-operations-in-lansing-michigan--236860",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Names General Electric, no model."
+  },
+  {
+   "url": "https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/B2647/B2647%20FINAL%2003-18-24.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "not relevant",
+   "note": "The operating permit lists the turbines by heat input only, with no maker."
+  }
+ ]
+}

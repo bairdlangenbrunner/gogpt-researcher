@@ -1,0 +1,127 @@
+{
+ "meta": {
+  "plant_id": "L100000401924",
+  "plant_name": "Gerald Andrus power station",
+  "state": "Mississippi",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-23T14:06:27-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402852",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1641654"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1641654",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists Gerald Andrus generator 1 (plant 8054) as operating, 781.4 MW nameplate, operating since January 1975. A Mississippi Department of Environmental Quality Title V renewal issued April 26, 2023, at https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1641654 lists the 7,275 million Btu per hour steam boiler. The status is unchanged."
+    },
+    "Planned retire": {
+     "value": "2028",
+     "refs": [
+      "https://www.accessnewswire.com/newsroom/en/utilities/entergy-mississippi-breaks-ground-on-delta-blues-advanced-power-station-940135"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.accessnewswire.com/newsroom/en/utilities/entergy-mississippi-breaks-ground-on-delta-blues-advanced-power-station-940135",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "An Entergy Mississippi press release from November 7, 2024, at https://www.accessnewswire.com/newsroom/en/utilities/entergy-mississippi-breaks-ground-on-delta-blues-advanced-power-station-940135 says the Gerald Andrus Steam Electric Station will be retired when the new Delta Blues Advanced Power Station comes online in 2028. GEM shows 2035, and the EIA-860M table for September 2026 also still lists June 2035. The two dates conflict. The release is the owner's own statement and is newer than the EIA entry, but it is one source. I did not find the 2024 integrated resource plan itself or a Public Service Commission order stating the date."
+    }
+   },
+   "not_found": [
+    "Retired year"
+   ],
+   "notes": "Still operating. The planned retirement looks like 2028, not 2035, because Entergy says the unit closes when the replacement plant starts. No retirement or owner change has happened yet."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000402852",
+   "concern_type": "Planned retire",
+   "recommendation": "Check Entergy Mississippi's 2024 integrated resource plan and the Delta Blues approval docket for the retirement date. If they confirm 2028, change the planned retirement year from 2035 to 2028.",
+   "note": "The Entergy press release at https://www.accessnewswire.com/newsroom/en/utilities/entergy-mississippi-breaks-ground-on-delta-blues-advanced-power-station-940135 says retirement comes when Delta Blues starts in 2028. The EIA table still says June 2035. The Public Service Commission docket 2024-UA-144 named in the brief gives a Delta Blues in-service date of May 2028, which supports the earlier date, but I could not read the filing itself because the portal needs a session.",
+   "refs": [
+    "https://www.accessnewswire.com/newsroom/en/utilities/entergy-mississippi-breaks-ground-on-delta-blues-advanced-power-station-940135"
+   ],
+   "proposed_value": {
+    "Planned retire": "2028"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Plant 8054 generator 1: operating, 781.4 MW, planned retirement June 2035."
+  },
+  {
+   "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1641654",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Air permit renewal from April 2023."
+  },
+  {
+   "url": "https://www.accessnewswire.com/newsroom/en/utilities/entergy-mississippi-breaks-ground-on-delta-blues-advanced-power-station-940135",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Fetched through the repo fetcher after a browser-style retry. States retirement in 2028."
+  },
+  {
+   "url": "https://www.wicker.senate.gov/2024/11/senator-wicker-celebrates-groundbreaking-of-new-power-plant-in-washington-county",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "failed",
+   "note": "Page loaded but does not state 2028."
+  },
+  {
+   "url": "https://www.dumasclarion.com/business-local-content-press-releases-state/gerald-andrus-power-plant-greenville-mississippi-will-66304526e2958",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "failed",
+   "note": "Verifier did not find 2028 on the page."
+  }
+ ]
+}

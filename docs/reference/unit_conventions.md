@@ -1,6 +1,6 @@
 # Unit Conventions — Unit Definition, Naming, and Conversions
 
-Distilled from the GOGPT Editing Manual (March 2026); fetched 2026-07-27.
+Distilled from the GOGPT Editing Manual (September 2026); updated 2026-10-27.
 
 Covers what counts as one GOGPT "unit," the naming conventions for numbering, blocks,
 phases, replacements, and IRP units, which fields live at plant level vs. unit level,
@@ -21,13 +21,8 @@ A unit is a technology (or group of technologies) that operates as a single syst
   if a per-block capacity breakdown turns up.
 - **A gas turbine is its own unit** if it is not part of a combined-cycle system.
   **A steam turbine is its own unit** on the same condition.
-- **Internal combustion (IC) engine sets and aeroderivative gas turbine (AGT) sets are
-  entered as one unit for the whole set**, not one unit per engine/turbine: use "Number of
-  Engines/Turbines" for the count and "Capacity of Engine/Turbine (MW)" for the per-unit
-  figure. Total "Capacity (MW)" is auto-calculated from those two and is not directly
-  editable.
-- Standard (open-frame, non-aeroderivative) gas turbines are the opposite case: enter only
-  **one turbine per unit**, with its total capacity in the "Capacity (MW)" field directly.
+- **Internal combustion (IC) engine sets and aeroderivative gas turbine (AGT) sets are entered as one unit for the whole set**, not one unit per engine or turbine. Fill "Number of Engines/Turbines" for the count and "Capacity of Engine/Turbine (MW)" for the per-engine figure. Total "Capacity (MW)" is calculated from those two and is not directly editable (manual, Total Capacity section). In the staged JSON these are `Number Of Engines` and `Capacity Per Engine`.
+- Standard (open-frame, non-aeroderivative) gas turbines are the opposite case: enter only **one turbine per unit**, with its total capacity in the "Capacity (MW)" field directly.
 - One "power station" can contain more than one "power plant" (e.g. "Ballylumford A/B/C,"
   or Roman-numeral-differentiated plants, sometimes called "blocks") — don't assume
   power station and power plant are always synonymous.
@@ -45,23 +40,12 @@ A unit is a technology (or group of technologies) that operates as a single syst
   "Block" in the name.
 - **Phases**: if a plant is built in distinct phases (e.g. two IC-engine sets with
   different start years), name units `Phase 1`, `Phase 2`, etc.
-- **"R" replacement suffix**: when a new turbine/unit replaces an old one (old one is not
-  kept), append `R` to the unit name — e.g. old unit `5` retires, new unit is named `5R`.
-  See "Conversion vs. replacement" below.
-- **"IRP" suffix**: a unit that appears in Integrated Resource Plan data but doesn't yet
-  meet the detail threshold for the public data release gets `IRP` appended to the unit
-  name (e.g. `1 IRP`, `2 IRP`), status `announced`, and the IRP checkbox checked. Once a
-  unit crosses the detail threshold for `announced`-or-beyond, the IRP checkbox stays
-  checked but the **name drops the "IRP" suffix** — see "IRP" fields note below.
-- **Avoid "CC"/"ST" in the unit name** by default — that's what the Technology field is
-  for. **Exception**: at bigger stations mixing older simple-cycle steam/gas turbines with
-  newer combined-cycle units, prefacing with the technology type to disambiguate is fine —
-  `ST1`, `GT1`, `CC1`. For a combined-cycle unit assembled from parts each named
-  separately in a source (GT, HRSG, ST), collapse it to one unit named `1` or `CC1`.
-- **Combined-cycle unit built up from prior GT/ST units**: when the CC becomes
-  operational, replace the separate `GT1`/`ST1` unit entries with one new `CC1` unit and
-  give it its own new start year (do not keep `GT1`/`ST1` as separate live units once the
-  CC unit is combined).
+- **"R" replacement suffix**: when a new turbine/unit replaces an old one (old one is not kept), append `R` to the unit name, e.g. old unit `5` retires, new unit is named `5R`. In the Replacement/Change of Plans section of the new unit, choose type "replacement" and add the old unit's ID. See "Conversion vs. replacement" below.
+- **"IRP" naming**: the IRP checkbox is ticked for any unit that appears in Integrated Resource Plan data, whatever its status or level of detail (manual, IRP section). Add the suffix `IRP` to the unit name (`1 IRP`, `2 IRP`) only for planning-stage units: they lack the detail for the public data release, so they get status `announced`, the IRP checkbox and the `IRP` name suffix. A unit that meets the threshold for `announced` or beyond keeps the checkbox but has no `IRP` in its name.
+- **Data center and LNG terminal plants**: a plant that will serve a data center or an LNG terminal and has no individual name of its own is named "XYZ Data Center power station" or "XYZ LNG terminal power station" (manual, Project Name section). Name the data center or terminal in the Project Links field.
+- **Avoid "CC"/"ST" in the unit name** by default, since the Technology field says it. **Exception**: at bigger stations mixing older simple-cycle steam or gas turbines with newer combined-cycle units, prefacing with the technology type to disambiguate is fine: `ST1`, `GT1`, `CC1`. For a combined-cycle unit assembled from parts each named separately in a source (GT, HRSG, ST), collapse it to one unit named `1` or `CC1`.
+- **Combined-cycle set built from older GT and ST units**: when a gas turbine `GT1` entered operation in simple cycle and a steam turbine `ST1` was added later, they are separate units, each with its own operating milestone. When they are officially switched into a combined-cycle set: add a new unit `CC1` with an operating milestone for that year; add a retired milestone to `GT1` and `ST1` for the same year and **never delete them**; on `GT1` choose the type "Use of GT in a CC set" and on `ST1` "Use of ST in a CC set", and add the CC unit's ID to both (manual, Combined-Cycle Units section). A proposed steam turbine added to older gas turbines is a separate new unit; say in Status Detail that it will combine with them.
+- **Change of plans**: when initial plans change (a coal plant was announced but a gas plant will be built, a plant moves to a different state, a gas-turbine plant becomes a combined-cycle plant), the new unit takes the type "change of plans" and the ID of the unit it replaces. The initial plant must already be in the database to use this option.
 - All unit names within one plant must stay unambiguous — see "Co-located coal and gas
   units" below for the naming overlap rule when a plant tracks in two trackers.
 
@@ -74,10 +58,8 @@ A unit is a technology (or group of technologies) that operates as a single syst
   cases the same owner/operator applies to the whole plant, so plant-level is the default
   and unit-level is the exception (e.g. a plant where different units have different
   owners).
-- **Captive** fields (industry type, industry use, non-industry use) are entered at plant
-  level, except the **Emergency/Backup** checkbox, which is unit-level only and requires
-  the captive-data-center data to also be entered at the unit level even if it's already
-  present at the plant level (this is what reveals the checkbox).
+- **Captive** fields (industry type, industry use, non-industry use) are entered at plant level, except the **Backup Power** checkbox (the manual's Emergency/Backup box), which is unit-level only and requires the captive data center fields to also be entered at the unit level even if they are already present at plant level (this is what reveals the checkbox).
+- **Manufacturer and model** (manual, Technical details): for in-development units use the manufacturer's current name (GE Vernova, not GE Power, since GE Vernova was formed in 2024). For older units use the name the document gives (GE Power for a turbine made before the merger). In the Model field enter the model of the turbine or engine, not the package name (for the LM6000VELOX DLE package, enter LM6000).
 
 ## Co-located coal and gas units
 
@@ -145,19 +127,13 @@ steps are:
 
 ## Captive plants
 
-Captive plants are in GOGPT's scope. A captive plant sits within an industrial facility
-and primarily supplies power (and, for CHP captive plants, heat) to that facility; it may
-also export a portion of power/heat externally (grid sales, nearby industrial heat
-supply) — see Captive Industry Use / Captive Non-Industry Use in `controlled_vocab.md`.
+Captive plants are in GOGPT's scope. A captive plant sits within an industrial facility and primarily supplies power (and, for CHP captive plants, heat) to that facility; it may also export a portion of power or heat externally (grid sales, nearby industrial heat supply). Fill the captive fields for every captive plant, including one that exports, and record the export in Captive Non-Industry Use (power, heat, both, none); see `controlled_vocab.md`.
 
-**Only GENERATING capacity (electrical, MWe) is in scope for the Capacity (MW) field —
-never shaft or mechanical-drive capacity.** GOGPT tracks power *generation*: a captive gas
-turbine or engine that drives a compressor or other mechanical load directly (shaft power,
-no generator) is out of scope for the Capacity field even if co-located with generating
-units on the same industrial site. This follows the same generating-vs-nameplate-vs-
-installed distinction the manual draws for capacity generally (see `controlled_vocab.md`)
-— GOGPT's capacity fields are always the electricity-generating figure, not a thermal or
-mechanical one.
+**Capacity is nameplate or installed electrical capacity in MW**, per the manual's Capacity section. Never shaft or mechanical-drive capacity, never MWt. GOGPT tracks power *generation*: a captive gas turbine or engine that drives a compressor or other mechanical load directly (shaft power, no generator) is out of scope for the Capacity field even if co-located with generating units on the same industrial site. Note that the manual's "generating capacity" means the lower available or operational figure (a 200 MW plant with one unit under maintenance may have 100 MW generating capacity). That is **not** what GEM records; record the nameplate or installed figure.
+
+### Backup engine fleets at data centers
+
+Emergency and backup generator sets at a data center are captive units and are tracked (manual, Emergency/Backup checkbox and the 50 MW engine-set threshold). Add the plant when the summed nameplate reaches the threshold (50 MW, 20 MW in the EU and UK); capacity unknown means add with capacity blank, not a watch item. Enter one unit row per permit phase or building group, technology internal combustion (or the turbine type the permit lists), with `Number Of Engines` and `Capacity Per Engine` from the permit. At unit level set Backup Power to yes, Captive industry type to data center and Captive industry use to power. The Backup Power box appears only once the captive data center fields are also entered at the unit level, even if they are already at plant level. Name the plant "<Operator> <Place> Data Center power station" and name the data center in Project Links. A unit that provides primary or routine power to the data center does not get the Backup Power box.
 
 ## Cross-references
 

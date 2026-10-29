@@ -161,7 +161,7 @@ Energy Efficiency Income Trust, operator Ironclad; the largest gas unit is a
 industrial plant for a human call); Far Rockaway GT1 and GT2, which are
 GEM's Bayswater and Jamaica Bay records; Glenwood, Shoreham, Wading River
 and West Babylon, all in GEM; withdrawn and cancelled queue entries; and the
-diesel backup fleets at data center sites, which are standby generators.
+diesel backup fleets at data center sites, which the manual adds as plants at the summed 50 MW threshold (a task for the data center step, `data_center_fleets.py`).
 No new gas or oil project of 50 MW or more was found in development in New
 York.
 

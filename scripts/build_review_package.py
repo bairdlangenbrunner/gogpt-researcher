@@ -17,9 +17,10 @@ Hard guarantees enforced here:
   - read-only columns (schema_constants.READ_ONLY_COLUMNS) are never edit
     targets — a staged record touching one is a build ERROR
   - no orphan values/refs: every `fields` column needs its paired Data Source
-    entry in `refs`, and vice versa (exception: a `delete: true` record, and a
-    status proposal whose value contains "inferred" — inferences carry no ref
-    by design, see confidence_tiers.md). A Status Detail link is keyed under
+    entry in `refs`, and vice versa (exception: a `delete: true` record). An
+    inferred status is a milestone entry like any other: it cites the Latest
+    Activity source in Status Data Source (Baird 2026-10-27, manual M621/M637).
+    A Status Detail link is keyed under
     "Status Detail" itself and written into the text, never merged into
     Status Data Source (schema_constants.INLINE_SOURCE_COLUMNS)
   - blocklist: gem.wiki / globalenergymonitor / abarrelfull / wikidot /
@@ -36,7 +37,12 @@ With --decisions, only ACCEPTED edit records (updates / newplants / newunits)
 go into the workbook; held, rejected, suggested and not-yet-decided records
 are left out and listed at the top of the evidence file with the reviewer's
 note. Item records (qa / entity / monitor) are never cell edits, so they all
-stay in the deliverable, each with the reviewer's call appended. Validation
+stay in the deliverable, each with the reviewer's call appended. The one
+exception is a qa answer to the database's validation report that carries a
+value and a source (a milestone date, a carbon capture source): the review app
+shows it as an edit, and it is accepted or not like one. Accepted ones (all of
+them without --decisions) go on the `validation_fixes` sheet; it stays in
+qa_review either way. Validation
 runs on every staged record either way. A sidecar that is present but not
 asked for is reported and ignored, so an unreviewed rebuild stays honest.
 
@@ -63,6 +69,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -80,6 +87,7 @@ LANES = ["updates", "qa", "entity", "monitor", "newplants", "newunits"]
 # The review page's calls on items, in the words the page shows (review_app/README.md).
 CALL_LABELS = {"add_to_database": "incorporate into database", "hold": "hold",
                "possible_updates": "send to possible updates", "remove": "remove from watchlist",
+               "research_further": "research further",
                "confirmed": "confirmed", "dismissed": "dismissed", "needs_research": "needs research",
                "found": "found", "not_found": "not found", "ok": "ok"}
 
@@ -115,6 +123,10 @@ SHEET_DESCRIPTIONS = {
     "entity_additions": ("New entities to create BEFORE plant edits that link "
                          "them. entity_lookup.py found no existing match."),
     "qa_review": "Read-and-flag concerns. Never a paste target.",
+    "validation_fixes": ("Answers to the database's validation report that carry a value and a "
+                         "source, such as a milestone date. With review decisions, only the "
+                         "accepted ones. Type each value into the web form where the error "
+                         "points, with its source."),
     "watch_new_to_tracker": ("Watch list, part 1: plants and projects GEM does not have yet "
                              "that did not clear the add threshold. Recheck by the date given. "
                              "Never a paste target."),
@@ -153,6 +165,29 @@ def load_lanes(staging_dir):
 
 
 EDIT_LANES = ("updates", "newplants", "newunits")   # lanes whose records are cell edits
+
+
+def is_validation_fix(rec):
+    """A qa answer to a validation error with a value and a source (validation_report.is_fix).
+    Imported here, not at the top: validation_report imports this module through
+    build_state_brief."""
+    import validation_report
+    return validation_report.is_fix(rec)
+
+
+def stamp_validation_errors(lanes, staging_dir):
+    """Give each validation fix in qa the error text it answers (`_validation_errors`), read
+    from the scope's current validation file, else the batch's briefs."""
+    import validation_report
+    p = staging_dir / "staged_qa.json"
+    meta = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+    scope = (meta.get("meta") or {}).get("scope") or {} if isinstance(meta, dict) else {}
+    errs = validation_report.load_report(scope) if scope else []
+    ix = staging_dir.parent / "briefs" / "_index.json"
+    tasks = validation_report.brief_tasks(json.loads(ix.read_text(encoding="utf-8")) if ix.exists() else {})
+    for rec in lanes.get("qa", []):
+        if is_validation_fix(rec):
+            rec["_validation_errors"] = validation_report.errors_for(rec, errs, tasks)
 
 
 def load_decisions(staging_dir):
@@ -222,6 +257,7 @@ def apply_decisions(lanes, decisions):
     every watch item the reviewer removed from the watch list (those leave the workbook too)."""
     kept, left_out = {}, []
     counts = {"accept": 0, "hold": 0, "reject": 0, "suggest": 0, "undecided": 0}
+    fixes = {"accept": 0, "hold": 0, "reject": 0, "suggest": 0, "undecided": 0}
     for lane, recs in lanes.items():
         if lane in EDIT_LANES:
             keep = []
@@ -238,13 +274,21 @@ def apply_decisions(lanes, decisions):
             for rec in recs:
                 rec = dict(rec)
                 d = decisions.get(rec.get("record_id"))
-                if d and not d.get("undecided") and d.get("call"):
+                if lane == "qa" and is_validation_fix(rec):
+                    # decided like an edit (accept / hold / reject / suggest), kept in qa
+                    dec = decision_of(rec, decisions)
+                    fixes[dec] += 1
+                    rec["validation_fix_decision"] = dec
+                    if dec != "undecided":
+                        rec["review_call"] = d
+                elif d and not d.get("undecided") and d.get("call"):
                     rec["review_call"] = d
                 if lane == "monitor" and call_of(rec) == "remove":
                     left_out.append((lane, rec, d))
                     continue
                 out.append(rec)
             kept[lane] = out
+    counts["validation_fixes"] = fixes
     return kept, left_out, counts
 
 
@@ -566,6 +610,8 @@ def ref_col_for(value_col):
     special = {
         "Status": "Status Data Source",
         "City": "Location Data Source",
+        "State/Province": "Location Data Source",
+        "Local area (taluk, county)": "Location Data Source",
         "Capacity (MW)": "Capacity Data Source",
         "Number Of Engines": "Capacity Data Source",
         "Capacity Per Engine": "Capacity Data Source",
@@ -634,6 +680,18 @@ CAVEAT_RE = re.compile(r"\b(conflict\w*|contest\w*|differ\w*|disagree\w*|impl(?:
                        r"unclear|uncertain|not sure|may be|might be)\b", re.I)
 
 
+# Sites that find leads: a value they alone support stays yellow, never green
+# (Baird 2026-10-23; stricter than the Editing Manual, which has no such rule).
+# gem.wiki and globalenergymonitor.org are banned outright, not listed here.
+LEAD_ONLY = ("cleanview.co", "interconnection.fyi", "gridstatus.io", "gridinfo.com",
+             "wikipedia.org", "globalenergyobservatory.org", "datasets.wri.org")
+
+
+def is_lead_only(url):
+    h = (urlparse(str(url or "")).hostname or "").lower()
+    return next((d for d in LEAD_ONLY if h == d or h.endswith("." + d)), None)
+
+
 def validated_tier(field, verdict, tier, urls, verifications, notes=""):
     """One fully validated source is green (confidence_tiers.md, the
     pipelines-researcher rule of 2026-09-30, Baird 2026-10-02 and 2026-10-08).
@@ -644,23 +702,19 @@ def validated_tier(field, verdict, tier, urls, verifications, notes=""):
     follows the one-source rule. `low` is the researcher's call that the
     source is weak and is never promoted, and neither is a record whose note
     says the sources disagree or the value is only implied (CAVEAT_RE): that
-    is what medium is for. Returns the tier."""
+    is what medium is for. A link on a lead site (LEAD_ONLY) never promotes.
+    Returns the tier."""
     tier = str(tier or "medium").lower()
     if tier != "medium" or (field == "Status" and verdict == "change") \
             or CAVEAT_RE.search(str(notes or "")):
         return tier
     urls = set(urls or [])
     for v in verifications or []:
-        if v.get("url") in urls and v.get("ok") and v.get("name_found") is True \
+        if v.get("url") in urls and not is_lead_only(v.get("url")) and v.get("ok") \
+                and v.get("name_found") is True \
                 and v.get("contains_value") is True:
             return "high"
     return tier
-
-
-def is_inferred_only(rec):
-    fields = rec.get("fields", {})
-    status = str(fields.get("Status", "")) + str(fields.get("Status Detail", ""))
-    return "inferred" in status.lower()
 
 
 def _ws(v):
@@ -764,10 +818,10 @@ def validate(lanes):
                 for u in urls:
                     if any(b in u.lower() for b in BLOCKLIST):
                         errors.append(f"{ident}: blocklisted URL {u}")
-                exempt = rec.get("delete") or is_inferred_only(r)
+                exempt = rec.get("delete")
                 if r.get("fields") and not urls and not exempt:
                     errors.append(f"{ident}: proposes values with zero refs "
-                                  "(downgrade to monitor/qa, or mark delete/inferred)")
+                                  "(downgrade to monitor/qa, or mark delete)")
                 verified = {v.get("url") for v in r.get("verifications", [])
                             if v.get("ok")}
                 for u in urls:
@@ -1065,7 +1119,7 @@ def build_xlsx(lanes, out_path, export_csv=None, flags=None, all_lanes=None, irp
                  rec.get("unit_name", ""), rec.get("gem_plant_id", ""),
                  rec.get("gem_unit_id", ""), group_cell(rec), rows_cell(rec)]
                 + [rec.get(k, "") for k in extra_cols]
-                + ([describe_call(rec["review_call"]) if rec.get("review_call") else ""] if call else [])
+                + ([describe_decision(rec["review_call"]) if rec.get("review_call") else ""] if call else [])
                 + [json.dumps(rec.get("fields", {}), ensure_ascii=False), all_refs(rec),
                    rec.get("tier", ""), rec.get("researcher_notes", "")])
 
@@ -1090,9 +1144,22 @@ def build_xlsx(lanes, out_path, export_csv=None, flags=None, all_lanes=None, irp
               [flat(r, ["entity_name", "role", "entity_country", "lookup_result"], call=True)
                for r in by_group(lanes.get("entity", []))])
     add_sheet("qa_review",
-              base_hdr + ["concern_type", "recommendation", "reviewer_call"] + tail_hdr,
-              [flat(r, ["concern_type", "recommendation"], call=True)
+              base_hdr + ["concern_type", "question", "finding", "recommendation",
+                          "reviewer_call"] + tail_hdr,
+              [flat(r, ["concern_type", "question", "finding", "recommendation"], call=True)
                for r in by_group(lanes.get("qa", []))])
+    add_sheet("validation_fixes",
+              base_hdr + ["validation_error", "proposed_value", "refs", "what_to_do",
+                          "reviewer_call", "confidence", "notes"],
+              [[r.get("country", ""), r.get("plant_name", ""), r.get("unit_name", ""),
+                r.get("gem_plant_id", ""), r.get("gem_unit_id", ""), group_cell(r), rows_cell(r),
+                " ".join(r.get("_validation_errors") or []),
+                "; ".join(f"{k}: {v}" for k, v in (r.get("proposed_value") or {}).items()),
+                all_refs(r), r.get("recommendation", ""),
+                describe_decision(r["review_call"]) if r.get("review_call") else "",
+                r.get("tier", ""), r.get("researcher_notes", "")]
+               for r in by_group(lanes.get("qa", []))
+               if is_validation_fix(r) and r.get("validation_fix_decision", "accept") == "accept"])
 
     # The watch list, split by what it watches. A watch item the reviewer promoted or sent
     # to the possible-updates sheet also stays on its watch sheet, with the call beside it.
@@ -1112,8 +1179,10 @@ def build_xlsx(lanes, out_path, export_csv=None, flags=None, all_lanes=None, irp
                 ("a new plant" if monitor_kind(r) == "new_to_tracker" else "a change or new unit at this plant"),
                 r.get("monitor_reason", "") or r.get("item", ""), describe_call(r["review_call"]),
                 all_refs(r), r.get("researcher_notes", ""),
-                "research it in the next batch and stage the full edit (build_state_brief.py --promote)"]
-               for r in monitor if call_of(r) == "add_to_database"])
+                ("research it further in the next batch before adding it (build_state_brief.py --promote)"
+                 if call_of(r) == "research_further" else
+                 "research it in the next batch and stage the full edit (build_state_brief.py --promote)")]
+               for r in monitor if call_of(r) in ("add_to_database", "research_further")])
     add_sheet("possible_updates_rows",
               ["country", "plant", "unit", "gem_plant_id", "gem_unit_id", "what to check",
                "source links", "recheck_by", "reviewer_note", "added_by", "added_on"],
@@ -1293,8 +1362,9 @@ def build_evidence(lanes, out_path, stamp, scope, mode, left_out=None, flags=Non
         if lane == "qa":
             if rec.get("concern_type"):
                 lines.append(f"- about: {rec['concern_type']}")
-            if rec.get("recommendation"):
-                lines.append(f"- recommendation: {rec['recommendation']}")
+            for part in ("question", "finding", "recommendation"):
+                if rec.get(part):
+                    lines.append(f"- {part}: {rec[part]}")
         if lane == "entity":
             lines.append(f"- entity: {rec.get('entity_name', '')} ({rec.get('role', '')}); "
                          f"lookup: {rec.get('lookup_result', '')}")
@@ -1318,7 +1388,7 @@ def build_evidence(lanes, out_path, stamp, scope, mode, left_out=None, flags=Non
         if rec.get("researcher_notes"):
             lines.append(f"- notes: {rec['researcher_notes']}")
         if rec.get("review_call"):
-            lines.append(f"- reviewer call: {describe_call(rec['review_call'])}")
+            lines.append(f"- reviewer call: {describe_decision(rec['review_call'])}")
         lines.append("")
 
     groups = [g for g in groups_for(us) if not g.get("panel")]
@@ -1399,6 +1469,7 @@ def main():
             sys.exit(f"ERROR: --decisions but no review_log.jsonl in {staging} "
                      "(review the batch in the review app first, or drop the flag)")
         lanes, left_out, counts = apply_decisions(lanes, decisions)
+        vf = counts.pop("validation_fixes")
         flags = load_flags(staging)
         calls = {}
         for r in lanes.get("monitor", []):
@@ -1407,7 +1478,8 @@ def main():
                 calls[c] = calls.get(c, 0) + 1
         print("review decisions: " + ", ".join(f"{k}={v}" for k, v in counts.items())
               + f"; {counts['accept']} edits go into the workbook, "
-              f"{len(left_out)} left out (listed in the evidence file)")
+              f"{len(left_out)} left out (listed in the evidence file); validation fixes: "
+              + ", ".join(f"{k}={v}" for k, v in vf.items()))
         if calls or flags:
             print("watch-list calls: " + (", ".join(f"{CALL_LABELS.get(k, k)}={v}" for k, v in calls.items())
                                           or "none") + f"; questions for the PM: {len(flags)}")
@@ -1438,6 +1510,7 @@ def main():
                  "edit_backend_format sheet needs the fresh pull "
                  "(run the §1 pull chain, or pass --export-csv)")
     csv_or_none = export_csv if export_csv.exists() else None
+    stamp_validation_errors(lanes, staging)
     irp = load_irp(args.irp, staging)
     if irp and not is_us(all_lanes):
         sys.exit("ERROR: --irp is for US states (the US IRPs tab); this batch is not United States")

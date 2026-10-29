@@ -1,0 +1,83 @@
+{
+ "meta": {
+  "plant_id": "L100000401824",
+  "plant_name": "Kalamazoo River generating station",
+  "state": "Michigan",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-26T23:59:00-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402633",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Read from the file: plant L100000401824"
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status is unchanged. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 55101, generator 0001, 77.4 MW, operating since June 1999, with no planned retirement. A renewal application for the plant's operating permit was filed in May 2026, which also points to continued operation. I found no retirement, mothballing or sale announced."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE Frame 7E",
+     "refs": [
+      "https://www.deq.state.mi.us/Aps/downloads/SRN/N6731/N6731_TEST_20220927.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.deq.state.mi.us/Aps/downloads/SRN/N6731/N6731_TEST_20220927.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A state emissions test report from September 2022 (https://www.deq.state.mi.us/Aps/downloads/SRN/N6731/N6731_TEST_20220927.pdf) describes the unit as a GE Frame 7E combustion turbine."
+    }
+   },
+   "not_found": [
+    "Latest Activity"
+   ],
+   "notes": "The unit is still operating. Latest Activity is left blank because GEM only fills it for units in development or shelved."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet for this plant."
+  },
+  {
+   "url": "https://www.deq.state.mi.us/Aps/downloads/SRN/N6731/N6731_TEST_20220927.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Names the turbine make and model."
+  }
+ ]
+}

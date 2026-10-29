@@ -1,0 +1,140 @@
+{
+ "meta": {
+  "plant_id": "L100000401674",
+  "plant_name": "Michigan power station",
+  "state": "Michigan",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-26T23:45:59-04:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401776",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPf6CAAT"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      },
+      {
+       "url": "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPf6CAAT",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 54915, generators G001 and G101, as operating, with no planned retirement. DTE Electric's filing in Michigan Public Service Commission case U-22168 from September 2026 (https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPf6CAAT) calls it an existing 138 MW plant to be bought in 2030. I found no retirement or mothballing notice."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "General Electric PG7111EA",
+     "refs": [
+      "https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/N4975/N4975%20Staff%20Report%2010-29-21.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/N4975/N4975%20Staff%20Report%2010-29-21.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Michigan air quality staff report from October 2021 (https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/N4975/N4975%20Staff%20Report%2010-29-21.pdf) says the main part of the plant is a General Electric model PG7111EA natural gas turbine rated at 84 MW with a heat recovery boiler driving a steam turbine. The steam turbine maker was not named."
+    }
+   },
+   "not_found": [
+    "Latest Activity (not filled for an operating unit)",
+    "Operator(s)"
+   ],
+   "notes": "Still operating. The owner appears to have changed in August 2025, see the owner question. EIA lists 58.0 MW and 80.1 MW generators, 138.1 MW in all, which matches GEM's 138 MW."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000401776",
+   "concern_type": "Owner(s)",
+   "recommendation": "Owner is probably now DTE Sustainable Generation, not Osaka Gas USA Corp. Please confirm with a second publisher before changing it. Neither DTE Sustainable Generation nor Michigan Power Limited Partnership was found in the entity system, so a new entity may be needed.",
+   "note": "A DTE Energy annual report filed with the Securities and Exchange Commission (https://www.sec.gov/Archives/edgar/data/936340/000093634026000054/R20.htm) says that effective August 14, 2025 DTE Sustainable Generation closed on buying a 123 MW cogeneration facility in Michigan from Osaka Gas USA Corporation for about 216 million dollars. It does not name the plant. DTE Electric's filing in case U-22168 (https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPf6CAAT) says DTE Electric plans to buy the 138 MW Michigan Power Cogeneration facility from DTE Sustainable Generation in 2030 for 130 million dollars. Both documents come from DTE, so they count as one origin. GEM's current owner comes from the 2018 Osaka Gas purchase. The existing Osaka Gas link at inframationgroup.com did not load for the checker.",
+   "refs": [
+    "https://www.sec.gov/Archives/edgar/data/936340/000093634026000054/R20.htm",
+    "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPf6CAAT"
+   ],
+   "proposed_value": {
+    "Owner(s)": "DTE Sustainable Generation [100%]"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "DTE Sustainable Generation",
+   "role": "owner",
+   "lookup_result": "Local lookup found nothing (not_found_in_local_data). Not yet checked against the entity system with --pg."
+  },
+  {
+   "entity_name": "Osaka Gas USA",
+   "role": "owner",
+   "lookup_result": "Matches existing entity osaka-gas, on 36 units. Reuse it."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Row read from the downloaded file."
+  },
+  {
+   "url": "https://www.egle.state.mi.us/aps/downloads/rop/Pub_ntce/N4975/N4975%20Staff%20Report%2010-29-21.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Names the GE PG7111EA turbine."
+  },
+  {
+   "url": "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPf6CAAT",
+   "used_for": [
+    "Status",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "DTE Electric filing."
+  },
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/936340/000093634026000054/R20.htm",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Fetched through the declared SEC identity."
+  },
+  {
+   "url": "https://www.inframationgroup.com/apac-osaka-gas-buy-michigan-power-plant",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "failed",
+   "note": "Existing link. The checker did not find the expected words. Possibly behind a paywall."
+  }
+ ]
+}

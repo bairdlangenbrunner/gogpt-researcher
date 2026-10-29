@@ -1,0 +1,111 @@
+{
+ "sources": {
+  "mdeq-air-notices": {
+   "status": "searched",
+   "how": "I read the past public notices page at https://www.mdeq.ms.gov/air/air-division/past-public-notices-2/ and the current notices linked from https://www.mdeq.ms.gov/air/.",
+   "found": "Gas generation notices of 50 MW or more are Traceview (permit 1720-00100, hearing July 14, 2026 at https://www.mdeq.ms.gov/wp-content/uploads/2026/06/Notice-of-Public-Hearing.pdf), the xAI turbines at Southaven and the Sylvarena renewal. The data center notices for Amazon and Compass cover emergency diesel generator sets only."
+  },
+  "mdeq-permit-board": {
+   "status": "searched",
+   "how": "I downloaded every Permit Board minutes file linked from the yearly pages at https://www.mdeq.ms.gov/permits/permit-board/minutes/ for 2020 and 2022 to 2026, 69 files. MDEQ's index sends the 2021 link to a public notices page, and the Wayback Machine was offline on October 23, 2026, so I found the twelve 2021 minutes files through the MDEQ website's own media listing at https://www.mdeq.ms.gov/wp-json/wp/v2/media (for example https://www.mdeq.ms.gov/wp-content/uploads/2021/02/Signed-Minutes-of-the-January-12-2021-Permit-Board-Meeting.pdf). Most files are scanned images, so I ran text recognition on every page and searched them for generating plants, turbines and data centers.",
+   "found": "Every power generation permit in the minutes is for a plant GEM already has: Traceview, listed under its earlier name Madison County Advanced Power Station, Vicksburg Advanced, Delta Blues, the TVA Caledonia combustion turbine plant (permit 4680-00090, which is New Caledonia), Caledonia, Southaven, Magnolia, Ackerman, Kemper, Choctaw County, Crossroads, Chevron, Jack Watson, Morrow, Moselle, Silver Creek, Batesville and Gerald Andrus. The Wilkins and Sylvarena permits are answered under the EIA plants below. The MZX Tech turbine permit at Southaven is the Colossus 2 plant. The data center entries (Amazon in Madison and Marshall counties, ADP Rankin Data Hub, a site in Oktibbeha County) are storm water or construction permits with no gas generation. Pearl River Gas Turbine, Southern Pines and Leaf River are gas storage and pipeline sites."
+  },
+  "mdeq-harvest-unmatched": {
+   "status": "searched",
+   "how": "I read every power or data center facility in work/permits/us-ms/_unmatched.md and opened its permit on https://opcgis.deq.state.ms.us/ensearchonline/.",
+   "found": "Below the threshold: Plant Sweatt 41.9 MW, Benndale two engines of 28.4 MW in all, Canton Municipal Utilities five diesels of about 27 MW in all, the Entergy ERDC units at Vicksburg, eight 0.4 MW units, and Wilkins at Clarksdale, whose largest block is 29.7 MW (permit https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1773795). Sylvarena is three 47 MW turbines and is on the watch list. Backup only, not watch items: Amazon JAN200 Ridgeland (26 emergency diesel sets of 2.75 MW), the Amazon Madison site at Canton (326 emergency sets), Amazon JAN250 in Hinds County and Compass JAN I at Meridian (42 emergency sets). Not generating plants: the Discovery Energy engine plants at Hattiesburg are engine test cells, Utility Optimization Group at Moss Point is a fabrication shop, and the gas storage and compressor sites (Leaf River, Southern Pines, Pearl River, Burnside, Tinsley). Grand Gulf is nuclear. Mississippi Power's Kemper County gas units have their own state facility, number 36313, which matches GEM's Ratcliffe power plant."
+  },
+  "ms-psc-dockets": {
+   "status": "searched",
+   "how": "I searched the docket portal at https://ctsportal.psc.ms.gov/portal/PSC/ and the monthly docket lists for Entergy Mississippi, Mississippi Power and Cooperative Energy.",
+   "found": "Docket 2026-UA-55 is Traceview, 2025-AD-123 is Vicksburg, 2024-UA-144 is the Amazon tariff tied to Delta Blues and 2026-UA-5 converts Daniel unit 2 to gas by June 2029, all at GEM plants. Docket 2025-UA-102 is a 230 kV switching station for the AVAIO Digital data center in Brandon, with no on-site gas named. Docket 2025-UN-3 is a Mississippi Power contract with Compass Datacenters at Meridian. Docket 2023-UA-20 is Cooperative Energy transmission only."
+  },
+  "miso-gi-queue": {
+   "status": "searched",
+   "how": "I downloaded MISO's public queue data (3,990 requests) behind https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/ and listed every Mississippi entry.",
+   "found": "Gas entries are the Traceview and Vicksburg plants, both in GEM, and J888, a 25 MW engine set at Benndale, below the threshold. Requests J4286, J4295 and J4245 (770 MW each, 2030 and 2031) have no fuel named and are on the watch list. J4176 (1,750 MW) is withdrawn. J4287 (300 MW) sits in Morehouse Parish, Louisiana. J4346, J4244 and J4243 are 100 MW each with no fuel named."
+  },
+  "miso-eras": {
+   "status": "searched",
+   "how": "I read MISO's fast-track list at https://cdn.misoenergy.org/ERAS%20Interconnection%20Requests718482.xlsx.",
+   "found": "E0047, the Lakeover plant in Hinds County, 763.2 MW, 2028, is Traceview. E0031, the Vicksburg plant in Warren County, 768.1 MW, 2027, is Vicksburg Advanced. Both are owned by Entergy Mississippi and are in GEM."
+  },
+  "southern-oasis-queue": {
+   "status": "searched",
+   "how": "The OASIS folder is a script app, so I read the Southern Company queue through the query behind its Power BI report at https://www.southerncompany.info/power-bi/transmission-policy-services/index.html with scripts/pull_queues_mississippi.py.",
+   "found": "Three active Mississippi gas requests are new to GEM, all in Clarke County: 26-IC-1425, a 785 MW combined cycle at Enterprise for 2032, and 26-IC-1489 and 26-IC-1490, two 199.4 MW combustion turbines for 2029. Both plants are added at announced. Withdrawn requests IC-012 (640 MW in Clarke County, no dates) and IC-123 and IC-124 at Plant Sweatt are old and undated, so they are not added."
+  },
+  "tva-queue": {
+   "status": "searched",
+   "how": "The OASIS menu is a script app. I read OASIS_CurrentQueue_20260914.pdf and OASIS_ArchiveQueue_20260914.pdf, the live copies posted September 14, 2026 under https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/. The tables are in work/tva_queue/.",
+   "found": "The only active Mississippi gas request is 569, 515 MW at the Lowndes substation, which is New Caledonia. Archive request 575 is a withdrawn duplicate. Archive requests 229 in Clay County (200 MW) and 230 in Scott County (150 MW) were withdrawn in 2011."
+  },
+  "tva-nepa": {
+   "status": "searched",
+   "how": "I read the TVA environmental reviews list at https://www.tva.com/environment/environmental-stewardship/environmental-reviews and opened each Mississippi review.",
+   "found": "The only gas plant review in Mississippi is New Caledonia in Lowndes County, about 500 MW from six combustion turbines, with a record of decision in February 2025 (https://tva.com/environment/environmental-stewardship/environmental-reviews/nepa-detail/new-caledonia-gas-plant). It is in GEM."
+  },
+  "eia-860m": {
+   "status": "searched",
+   "how": "I read the Operating, Planned and Canceled or Postponed sheets for Mississippi in the newest monthly file from https://www.eia.gov/electricity/data/eia860m/.",
+   "found": "Every operating gas plant of 50 MW or more is in GEM except Sylvarena (three 47 MW turbines, on the watch list) and Wilkins (units under 50 MW). Traceview is in GEM under its own name. MPC1, plant 7875, a 360 MW gas turbine listed as canceled or postponed with no county, is an old placeholder with no site and is not added. Batesville unit CTG4 (292 MW) is canceled. Chevron unit 5 (101.3 MW) belongs to the GEM Chevron Oil plant. Below the threshold: Sweatt unit A 41.9 MW, Ergon at Vicksburg 15.8 MW, Yazoo 34.1 MW, retired in 2021, Mississippi State University 26 MW and CF Industries 25 MW. Daniel coal units 1 and 2 plan to retire in December 2027."
+  },
+  "eia-860": {
+   "status": "searched",
+   "how": "I read the 2024 annual Plant, Generator and Ownership tables for Mississippi from https://www.eia.gov/electricity/data/eia860/.",
+   "found": "They gave the Wilkins street address (240 Hicks Street, Clarksdale) and its unit sizes, and confirmed Cooperative Energy as sole owner of Sylvarena. No ownership share differs from GEM for the new plants found."
+  },
+  "entergy-mississippi": {
+   "status": "searched",
+   "how": "I read the Entergy Mississippi newsroom and the generation pages at https://www.entergymississippi.com/, including https://www.entergymississippi.com/generation/traceview.",
+   "found": "Traceview, Vicksburg and Delta Blues are the new gas plants, all in GEM. The chief executive said two more plants will be needed in the early 2030s (https://mississippitoday.org/2025/09/17/entergy-mississippi-ceo-fisackerly-answers-questions-on-data-centers-and-electricity-rates/), which is on the watch list."
+  },
+  "mississippi-power": {
+   "status": "searched",
+   "how": "I read the Mississippi Power newsroom at https://www.mississippipower.com/ and the 2024 resource plan.",
+   "found": "No new gas plant is named. Daniel unit 2 converts to gas by June 2029, already recorded at Daniel. Mississippi Power is closing its 40 percent share of the Greene County plant in Alabama by December 2026, an Alabama plant."
+  },
+  "cooperative-energy": {
+   "status": "searched",
+   "how": "I read the news releases at https://cooperativeenergy.com/news-releases/.",
+   "found": "No new, converted or retired gas plant of 50 MW or more was found. Sylvarena and Benndale are covered above."
+  },
+  "possible-updates-sheet": {
+   "status": "searched",
+   "how": "I read the gas and oil plants tab through the work profile and found two Mississippi rows.",
+   "found": "The planned retirements row points to Mississippi Power comments at https://www.synapse-energy.com/sites/default/files/2024-04-08%20SC%20Comments_Miss%20Power%202024%20Tech%20Conference%20IRP%2024-037.pdf. The retirements it names are the Greene County share in Alabama and Daniel coal, neither a Mississippi gas plant change. The Colossus 2 row on ownership and added turbines is answered at the Colossus 2 plant."
+  },
+  "captive-lng-sheet": {
+   "status": "searched",
+   "how": "I read work/captive_us-mississippi.md from captive_lng.py.",
+   "found": "Gulf LNG at Pascagoula is excluded on the sheet. Its permit shows two backup gas turbine generators of 12 MW each and the terminal runs on grid power, so there is no plant to add."
+  },
+  "data-center-xai": {
+   "status": "searched",
+   "how": "I followed the report to the state air permit and the March 2026 approval at https://www.wdam.com/2026/03/11/state-approves-xais-use-gas-turbines-southaven/.",
+   "found": "The state approved 41 gas turbines of about 1.2 GW at Southaven for MZX Tech, an xAI company. That is the Colossus 2 plant in GEM, answered at that plant. The same turbines are to supply the planned Colossus 3 data center in Mississippi. No other xAI gas site was found."
+  },
+  "data-center-amazon": {
+   "status": "searched",
+   "how": "I read the Amazon announcement and the Entergy Mississippi filings for the Warren County and Madison County campuses.",
+   "found": "The Amazon campuses are served by Entergy's Delta Blues plant, already in GEM. The state permits show emergency diesel sets only, with no routine on-site gas generation."
+  }
+ },
+ "ids_followup": {
+  "2059": {
+   "decision": "below_threshold",
+   "evidence": "EIA's 2024 tables list L L Wilkins as a combined cycle block of 29.7 MW (units 6, 7 and 8) and a 25.5 MW turbine (unit 9), 55.2 MW in all. No single frame unit or block reaches 50 MW. The state air permit is at https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1773795.",
+   "gem_plant_id": ""
+  },
+  "70187": {
+   "decision": "already_in_gem",
+   "evidence": "Traceview Advanced Power Station is in GEM under the same name, at construction.",
+   "gem_plant_id": "L100001064651"
+  },
+  "7989": {
+   "decision": "below_threshold",
+   "evidence": "Three 47 MW gas turbines, each under 50 MW, per EIA's monthly file and the air permit at https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1875726. No source names the model. If they are aeroderivative turbines the set is 141 MW and is an add, so the plant is on the watch list for that question.",
+   "gem_plant_id": ""
+  }
+ }
+}

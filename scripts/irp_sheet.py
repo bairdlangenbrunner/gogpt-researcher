@@ -387,7 +387,10 @@ def render_brief(state, data):
           "conversions, co-firing and retirements, with capacity and year.",
           "2. Compare with the GEM plants listed under the utility, and with the whole state "
           "list in the briefs. A unit GEM already has: report only a value the plan changes "
-          "(status, capacity, start year, planned retirement), with the plan page as the source.",
+          "(status, capacity, start year, planned retirement), with the plan page as the source. "
+          "A plant marked below as carrying an IRP task on its own brief gets its questions from "
+          "that brief: do not write a question about it here. Put what the plan says about it in "
+          "meta.irp_summary instead.",
           "3. A named gas unit the plan commits to that GEM lacks: write a new plant record "
           "(or a new unit at an existing plant) with the plan as the source, status announced "
           "unless the plan says construction has begun, the high end of any capacity range, "
@@ -396,7 +399,8 @@ def render_brief(state, data):
           "plant named \"<utility short name> <plan year> IRP power station <n>\" (see the "
           "existing names below). Write it as a new plant record with irp true. Capacity the "
           "plan only studies as an option, outside the preferred portfolio, goes on the watch "
-          "list as new to the tracker, with the plan as the source.",
+          "list as new to the tracker, with the plan as the source and \"watch_case\": "
+          "\"not_committed\".",
           "5. Say what the plan does not contain. A utility whose plan adds no gas gets one "
           "sentence in your summary so the tab's Notes can record it.",
           "6. Never stage the IRP column itself. The irp true flag on a finding tells the "

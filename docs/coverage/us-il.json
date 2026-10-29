@@ -1,0 +1,98 @@
+[
+  {
+    "id": "pjm-cycle-queue",
+    "name": "PJM cycle service request export (Transition Cycles 1 and 2 and Cycle 1)",
+    "url": "https://www.pjm.com/planning/m/cycle-service-request-status",
+    "what": "Download the full export (XLS under full export; keep it in work/pjm/ for your own reading, never name that file in a note) and list every Illinois gas, oil or thermal request with its queue number, capacity, point of interconnection, county, developer, requested in-service date and status. The status page itself passes the URL check for any text, so never cite it alone. Cite each request's own page, https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=<queue number>, which shows the queue number, point of interconnection, phase, submitted date and developer but not the capacity, fuel or county; for those cite a PJM cycle or study report that names the request. The cycle requests are not in PlanningQueues.xml, transitionProjects.xml or clusterReports.xml (checked 2026-10-27). With no document for the capacity and fuel, the request is a watch item; in its note, give the steps to the export (the status page, XLS under full export, the queue number's row) rather than a file name. Decide each under the add threshold: a new plant at announced, a new unit or uprate at a plant GEM has, a duplicate question, or a watch item with its case."
+  },
+  {
+    "id": "pjm-serial-queue",
+    "name": "PJM serial queue file (PlanningQueues.xml)",
+    "url": "https://www.pjm.com/pjmfiles/media/planning/queues-data/PlanningQueues.xml",
+    "what": "Read the fresh file (the older copy under pub/planning/downloads/xml has stale statuses) for every active Illinois gas or oil request, and use it as the citable PJM source for cycle requests where it carries them."
+  },
+  {
+    "id": "pjm-deactivations",
+    "name": "PJM generator deactivation list and owner letters",
+    "url": "https://www.pjm.com/planning/service-requests/gen-deactivations",
+    "what": "Read the list and the Illinois letters for retirement notices, withdrawals and reliability-must-run extensions of gas and oil units since 2020. Record only the latest letter for each unit."
+  },
+  {
+    "id": "miso-gi-queue",
+    "name": "MISO generator interconnection queue",
+    "url": "https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/",
+    "what": "Read the queue through the JSON the interactive page calls (https://www.misoenergy.org/api/giqueue/getprojects) and list every Illinois gas, oil, thermal or blank-fuel request that is active or was withdrawn after a public announcement, with request number, capacity, county, point of interconnection, transmission owner, in-service date and study phase. A blank-fuel request needs its fuel found before it is set aside. Decide each under the add threshold."
+  },
+  {
+    "id": "miso-eras",
+    "name": "MISO Expedited Resource Addition Study (ERAS) list",
+    "url": "https://www.misoenergy.org/planning/resource-utilization/GI_Queue/",
+    "what": "Read the ERAS spreadsheet for Illinois entries and record the sponsor and whether an agreement is signed (that makes a project pre-construction)."
+  },
+  {
+    "id": "iepa-air-notices",
+    "name": "Illinois Environmental Protection Agency air permit notices, current and archive",
+    "url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/",
+    "what": "Read every current and archived Bureau of Air notice through the notice web service the public notice page calls, and open every construction, PSD, nonattainment new source review and Title V construction record for power, data center and utility facilities since 2020. List each gas or oil turbine, engine or boiler of 50 MW or more, with the permit number, date and the permit document URL."
+  },
+  {
+    "id": "rblc",
+    "name": "EPA RACT/BACT/LAER Clearinghouse, Illinois entries",
+    "url": "https://cfpub.epa.gov/rblc/",
+    "what": "Query Illinois combustion turbine, engine and utility boiler determinations since 2020 and match each to a GEM plant or a permit notice."
+  },
+  {
+    "id": "icc-edocket",
+    "name": "Illinois Commerce Commission e-Docket",
+    "url": "https://www.icc.illinois.gov/docket/",
+    "what": "Search dockets since 2022 for certificate, procurement, large-load and Climate and Equitable Jobs Act filings that name gas or oil generation: new units, conversions, retirements, and on-site gas generation at data centers. Most independent plants need no certificate, so record what was searched even when nothing turns up."
+  },
+  {
+    "id": "eia-860m",
+    "name": "EIA-860M newest monthly generator file",
+    "url": "https://www.eia.gov/electricity/data/eia860m/",
+    "what": "Read the Operating, Planned, Retired and Canceled or Postponed sheets for Illinois in the newest file (work/eia/) and account for every gas or oil plant: in GEM, staged, or answered in coverage.json ids_followup."
+  },
+  {
+    "id": "eia-860",
+    "name": "EIA-860 annual survey, generator and plant tables",
+    "url": "https://www.eia.gov/electricity/data/eia860/",
+    "what": "Read the newest annual Proposed generator sheet for Illinois gas and oil units, and the Plant table for street addresses where a location is approximate."
+  },
+  {
+    "id": "eip-oil-gas-watch",
+    "name": "Environmental Integrity Project Oil and Gas Watch, Illinois power plant projects",
+    "url": "https://oilandgaswatch.org/",
+    "what": "Use work/ids_us-illinois.md from match_ids.py (the EIP sheet join) and the public facility pages for every Illinois power plant project EIP lists that GEM lacks."
+  },
+  {
+    "id": "owner-news",
+    "name": "Owner, utility and local news for Illinois gas and oil plants",
+    "url": "https://news.google.com/search?q=Illinois%20gas%20power%20plant",
+    "what": "Search news and read the release pages of Vistra, Constellation (Calpine), NRG, Hull Street Energy, Invenergy, LS Power, Dairyland, Springfield City Water Light and Power, Prairie Power, Southern Illinois Power Cooperative, the Illinois Municipal Electric Agency and MidAmerican for new, converted, sold or retired gas and oil units since 2024."
+  },
+  {
+    "id": "possible-updates-sheet",
+    "name": "Possible updates sheet, Illinois rows",
+    "url": "https://docs.google.com/spreadsheets/d/1GAXwGdI0UFeW9mFSxJhhR6MRBW7VDtlWBqsooVZyUzs",
+    "what": "Read the gas and oil plants tab through the work profile for every Illinois row and answer each one in a record or a coverage note."
+  },
+  {
+    "id": "captive-lng-sheet",
+    "name": "Captive LNG sheet, Illinois rows",
+    "url": "https://docs.google.com/spreadsheets/d/19YvVT918PYHq_DkdvKWtoXYJ2Xl7l7R3",
+    "what": "Use work/captive_us-illinois.json from captive_lng.py and answer every Illinois row."
+  },
+  {
+    "id": "us-irps-tab",
+    "name": "US IRPs tab of the Update sheet, Illinois rows",
+    "url": "https://docs.google.com/spreadsheets/d/1xTcMPmwDfB1z3EcP6v3lg3y7Hcmo1wL_U8EJFQc9EtY",
+    "what": "Use work/irp_us-illinois.json from irp_sheet.py; read every plan it lists for gas additions and retirements, or record that the tab has no Illinois rows."
+  },
+  {
+    "id": "data-centers",
+    "name": "Data center gas generation in Illinois",
+    "url": "https://www.datacenterdynamics.com/en/search/?q=Illinois%20gas%20turbines",
+    "what": "Search trade press, permit notices and city council records for on-site gas generation at Illinois data center campuses (Monarch Rock Air in Rockford, Hut 8, the Joliet Technology Center, the Eagle Rock site in Christian County and any newer ones). Each goes on the watch list with the data center hold case."
+  }
+]

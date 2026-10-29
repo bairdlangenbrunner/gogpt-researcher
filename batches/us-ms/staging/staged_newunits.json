@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "lane": "newunits",
+    "scope": {
+      "country": "United States",
+      "state": "Mississippi",
+      "postal": "ms",
+      "kind": "state",
+      "slug": "mississippi",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-23T14:40:07-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 1
+    }
+  },
+  "records": [
+    {
+      "gem_plant_id": "L100000402097",
+      "plant_name": "Victor J Daniel Jr power station",
+      "unit_name": "2 (gas conversion)",
+      "fields": {
+        "Unit name": "2 (gas conversion)",
+        "Capacity (MW)": "548.3",
+        "Fuel": "fossil gas: natural gas",
+        "Status": "pre-construction",
+        "Turbine/Engine Technology": "steam turbine",
+        "Conversion/replacement?": "conversion"
+      },
+      "refs": {
+        "Status Data Source": [
+          "https://www.psc.ms.gov/sites/default/files/2026-02/3-2026-CONSENT-DOCKET.pdf",
+          "https://www.psc.ms.gov/sites/default/files/2026-07/7-7-26-Agenda.pdf"
+        ],
+        "Capacity Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ],
+        "Fuel Data Source": [
+          "https://www.psc.ms.gov/sites/default/files/2026-02/3-2026-CONSENT-DOCKET.pdf"
+        ],
+        "Unit name Data Source": [
+          "https://www.psc.ms.gov/sites/default/files/2026-02/3-2026-CONSENT-DOCKET.pdf"
+        ],
+        "Turbine/Engine Technology Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ],
+        "Conversion/replacement Data Source": [
+          "https://www.psc.ms.gov/sites/default/files/2026-02/3-2026-CONSENT-DOCKET.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.psc.ms.gov/sites/default/files/2026-02/3-2026-CONSENT-DOCKET.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.psc.ms.gov/sites/default/files/2026-07/7-7-26-Agenda.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "medium",
+      "independent": false,
+      "researcher_notes": "Mississippi Power asked the Mississippi Public Service Commission in docket 2026-UA-5, filed 12 February 2026, for a certificate to convert coal Unit 2 at Plant Daniel to natural gas. The February 2026 consent docket (https://www.psc.ms.gov/sites/default/files/2026-02/3-2026-CONSENT-DOCKET.pdf) and the commission agenda for 7 July 2026 (https://www.psc.ms.gov/sites/default/files/2026-07/7-7-26-Agenda.pdf) both list this petition. The agenda shows a proposed order was up for action, but I did not find the final order. A supplemental petition filed in June 2026 says the company now wants to convert one of the two coal units, Unit 1 or Unit 2, and will name the unit later. The company's testimony says the conversion work would finish in May 2029 and gas operation would begin in June 2029. I left the start year blank because the filings sit in the commission portal, which needs a session, and I could not verify a link for them. The capacity of 548.3 MW is the EIA nameplate for coal Unit 2 in the September 2026 EIA-860M table. The company's testimony gives 502 MW. The owner is not stated in these filings, so I left it blank. Units 1 and 2 are listed in the EIA table with a planned retirement in December 2027, which the petition suggests may change. The EIA-860M table for September 2026, Operating sheet, has this row: plant 6073, Victor J Daniel Jr, generator 2, nameplate 548.3 MW, technology Conventional Steam Coal, prime mover ST, energy source SUB, status (OP) Operating, planned retirement year 2027. The prime mover ST is the steam turbine the gas unit would keep.",
+      "country": "United States",
+      "record_id": "L100000402097:new:2-gas-conversion"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+ "meta": {
+  "plant_id": "L100000401922",
+  "plant_name": "Baxter Wilson power station",
+  "state": "Mississippi",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-23T14:07:14-04:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402851",
+   "unit_name": "1",
+   "findings": {
+    "Retired year": {
+     "value": "2023",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists Baxter Wilson plant 2050, generator 1, as retired. It shows nameplate 544.6 MW, operating March 1967 and retirement March 2023. So the retired year 2023 in GEM is confirmed."
+    }
+   },
+   "not_found": [],
+   "notes": "Retirement in March 2023 confirmed by the EIA table."
+  },
+  {
+   "gem_unit_id": "G100001055022",
+   "unit_name": "2",
+   "findings": {},
+   "not_found": [],
+   "notes": "Nothing to check on this unit. A question about its 2018 retirement is raised for Amalia."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001055022",
+   "concern_type": "Retired year",
+   "recommendation": "Amalia, please look at unit 2. GEM shows a retired year of 2018, which is before the 2020 floor for retired units. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) agrees on the date: plant 2050, generator 2, retired, 783.0 MW, operating October 1971, retirement June 2018. So the sources back 2018, and the problem is only the tracker rule. A SuperTalk Mississippi article (https://www.supertalk.fm/entergy-demolishes-retired-vicksburg-power-plant-to-make-way-for-new-station/) calls the whole station retired and says it was demolished to make way for the new Vicksburg plant, but it gives no unit dates. I did not stage a change. Please decide whether to keep the unit as a link for the replacement or handle it another way.",
+   "note": "No change is proposed, as the brief asked.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://www.supertalk.fm/entergy-demolishes-retired-vicksburg-power-plant-to-make-way-for-new-station/"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Retired year"
+   ],
+   "outcome": "verified",
+   "note": "Excel file read directly, Retired sheet, plant 2050."
+  },
+  {
+   "url": "https://www.supertalk.fm/entergy-demolishes-retired-vicksburg-power-plant-to-make-way-for-new-station/",
+   "used_for": [
+    "qa"
+   ],
+   "outcome": "verified",
+   "note": "Calls Baxter Wilson retired and demolished."
+  },
+  {
+   "url": "https://www.entergymississippi.com/generation/vicksburg",
+   "used_for": [
+    "qa"
+   ],
+   "outcome": "verified",
+   "note": "Entergy Mississippi page on the Vicksburg plant."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602024ER.zip",
+   "used_for": [
+    "Retired year"
+   ],
+   "outcome": "failed",
+   "note": "Zip loaded but verifier found no extractable text. The September 2026 table was used instead."
+  },
+  {
+   "url": "https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "The two queue entries are withdrawn new gas projects, not evidence for the retired units."
+  }
+ ]
+}

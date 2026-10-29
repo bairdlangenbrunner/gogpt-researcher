@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "lane": "newplants",
+    "scope": {
+      "country": "United States",
+      "state": "Mississippi",
+      "postal": "ms",
+      "kind": "state",
+      "slug": "mississippi",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-23T14:40:07-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 2
+    }
+  },
+  "records": [
+    {
+      "plant_name": "Enterprise Clarke County power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Mississippi",
+        "Local area (taluk, county)": "Clarke"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.interconnection.fyi/project/southern-company-26-ic-1425"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.interconnection.fyi/project/southern-company-26-ic-1425",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "interconnection.fyi is a lead site that copies the Southern Company queue. It names the request and states the value."
+        }
+      ],
+      "tier": "medium",
+      "researcher_notes": "The Southern Company generator interconnection queue, read through its Power BI report at https://www.southerncompany.info/power-bi/transmission-policy-services/index.html, lists request 26-IC-1425 in Clarke County, Mississippi. It is a combined cycle gas project of 785 MW (991 MVA) connecting at the Enterprise substation 230 kV bus. The request was received on 3/26/2026, its status is Active, it is in the cluster study, and the requested in-service date is 5/1/2032. The queue note reads: \"Affiliate request. Scoping Meeting scheduled for May 14, 2026.\" That means a Southern Company affiliate filed it, most likely Mississippi Power, but no filing says which one. The Power BI report needs a script to load, so the verifier cannot read it. The same row is copied at https://www.interconnection.fyi/project/southern-company-26-ic-1425, which passed the verifier and is cited here. Because that copy is a lead site, every value stays at medium confidence until a Mississippi Power or Public Service Commission filing names the project. Mississippi Power's 2024 resource plan at https://www.synapse-energy.com/mississippi-power-company-2024-integrated-resource-plan names no new gas plant. The plant is named after its substation and county because the request has no other name. Not found: the owner, the plant name, the turbine model, the exact site and the coordinates.",
+      "action": "Create the plant in Clarke County, Mississippi, then add the unit below. Leave owner, technology and coordinates blank until a filing names them.",
+      "irp": false,
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Capacity (MW)": "785",
+            "Fuel": "fossil gas: natural gas",
+            "Status": "announced",
+            "Start year": "2032"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.interconnection.fyi/project/southern-company-26-ic-1425"
+            ],
+            "Fuel Data Source": [
+              "https://www.interconnection.fyi/project/southern-company-26-ic-1425"
+            ],
+            "Status Data Source": [
+              "https://www.interconnection.fyi/project/southern-company-26-ic-1425"
+            ],
+            "Start Year Data Source": [
+              "https://www.interconnection.fyi/project/southern-company-26-ic-1425"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.interconnection.fyi/project/southern-company-26-ic-1425",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "interconnection.fyi is a lead site that copies the Southern Company queue. It names the request and states the value."
+            }
+          ],
+          "action": "Add unit 1 as announced, 785 MW, with a start year of 2032 from the requested in-service date. Treat it as one combined cycle block."
+        }
+      ],
+      "record_id": "us-ms:new:enterprise-clarke-county-power-station"
+    },
+    {
+      "plant_name": "Sykes Clarke County power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Mississippi",
+        "Local area (taluk, county)": "Clarke"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.interconnection.fyi/project/southern-company-26-ic-1489"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.interconnection.fyi/project/southern-company-26-ic-1489",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "interconnection.fyi is a lead site that copies the Southern Company queue. It names the request and states the value."
+        }
+      ],
+      "tier": "medium",
+      "researcher_notes": "The Southern Company generator interconnection queue, read through its Power BI report at https://www.southerncompany.info/power-bi/transmission-policy-services/index.html, lists two requests in Clarke County, Mississippi, both received on 4/3/2026: 26-IC-1489 and 26-IC-1490. Each is a gas combustion turbine of 199.4 MW (369.1 MVA) connecting on the Laurel East to Sykes substation 230 kV line, with a requested in-service date of 5/1/2029. Both are Active and in the cluster study. The queue gives no owner or plant name. The Power BI report needs a script to load, so the verifier cannot read it. The same rows are copied at https://www.interconnection.fyi/project/southern-company-26-ic-1489 and https://www.interconnection.fyi/project/southern-company-26-ic-1490, which passed the verifier and are cited here. Because those copies are a lead site, every value stays at medium confidence until a utility or Public Service Commission filing names the project. The two requests share a line and dates, so they are treated as one plant with two units. The plant is named after the substation and county. Not found: the owner, the plant name, the turbine model, the exact site and the coordinates. Moselle power station in Jones County is the nearest GEM gas plant. It is a different plant.",
+      "action": "Create the plant in Clarke County, Mississippi, then add the two units below. Leave owner, technology and coordinates blank until a filing names them.",
+      "irp": false,
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Capacity (MW)": "199.4",
+            "Fuel": "fossil gas: natural gas",
+            "Status": "announced",
+            "Start year": "2029"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.interconnection.fyi/project/southern-company-26-ic-1489"
+            ],
+            "Fuel Data Source": [
+              "https://www.interconnection.fyi/project/southern-company-26-ic-1489"
+            ],
+            "Status Data Source": [
+              "https://www.interconnection.fyi/project/southern-company-26-ic-1489"
+            ],
+            "Start Year Data Source": [
+              "https://www.interconnection.fyi/project/southern-company-26-ic-1489"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.interconnection.fyi/project/southern-company-26-ic-1489",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "interconnection.fyi is a lead site that copies the Southern Company queue. It names the request and states the value."
+            }
+          ],
+          "action": "Add unit 1 as announced, 199.4 MW, start year 2029, from request 26-IC-1489."
+        },
+        {
+          "unit_name": "2",
+          "fields": {
+            "Capacity (MW)": "199.4",
+            "Fuel": "fossil gas: natural gas",
+            "Status": "announced",
+            "Start year": "2029"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.interconnection.fyi/project/southern-company-26-ic-1490"
+            ],
+            "Fuel Data Source": [
+              "https://www.interconnection.fyi/project/southern-company-26-ic-1490"
+            ],
+            "Status Data Source": [
+              "https://www.interconnection.fyi/project/southern-company-26-ic-1490"
+            ],
+            "Start Year Data Source": [
+              "https://www.interconnection.fyi/project/southern-company-26-ic-1490"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.interconnection.fyi/project/southern-company-26-ic-1490",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "interconnection.fyi is a lead site that copies the Southern Company queue. It names the request and states the value."
+            }
+          ],
+          "action": "Add unit 2 as announced, 199.4 MW, start year 2029, from request 26-IC-1490."
+        }
+      ],
+      "record_id": "us-ms:new:sykes-clarke-county-power-station"
+    }
+  ]
+}

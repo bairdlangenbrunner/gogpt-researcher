@@ -26,8 +26,9 @@ Every error is sorted into one of three kinds:
              a unit named "--" on a plant with several units.
   exception  the manual's optional, low-priority cases: an error on a coal unit
              with no oil or gas fuel (the coal side of a shared plant, or a coal
-             phase before a conversion), or a plant-level data source on a
-             plant that also has coal units.
+             phase before a conversion). A plant-level error is never an
+             exception: a plant in the tracker is in scope even when it also has
+             coal units (Baird 2026-10-21).
   person     needs a click in the web UI, not research: plant-name rules,
              hydrogen data sources (hydrogen columns are never researched here),
              and any error on a unit with no fuel at all (usually a blank unit
@@ -157,8 +158,6 @@ def classify(sec, key, warning, unit, plant_fuels, undated, replaced, current):
         return "person", None, []
     if unit is not None and COAL in unit[3] and not (set(unit[3]) & gas_or_oil):
         return "exception", None, []
-    if unit is None and sec == "Data Sources" and COAL in (plant_fuels or []):
-        return "exception", None, []
     if base == "Hydrogen":
         return "person", None, []
     if sec == "Project Name":
@@ -264,6 +263,136 @@ def describe(e):
     if sec == "Milestone Timeline" and msg == "Please supply a date":
         return "A step in the status history has no date."
     return f"{sec}: {msg.rstrip('.')}."
+
+
+# ---- answers in a batch's staging (review page and workbook) ----
+
+# words in an answer that tie it to one kind of error on its unit, so a unit
+# with two errors shows only the one the answer is about
+ERROR_HINTS = {
+    "CCS": ("carbon capture", "ccs"),
+    "CHP": ("combined heat", "chp"),
+    "Location": ("location", "address", "coordinate", "latitude", "longitude"),
+    "Milestone Timeline": ("milestone", "step", "status history", "reached"),
+    "Unit Replacement": ("replac",),
+    "Unit name": ("unit name", "named"),
+    "Owner": ("owner",),
+    "Operator": ("operator",),
+    "Fuel": ("fuel",),
+    "Capacity": ("capacity",),
+    "Technology": ("technology",),
+    "Status": ("status",),
+    "Captive": ("captive",),
+    "Latest Activity": ("latest activity",),
+}
+
+
+def report_path(scope, out_dir=None):
+    """work/validation_<tag>.json for a staging meta scope ({country, state, slug})."""
+    state = (scope or {}).get("state") or ""
+    name = state or (scope or {}).get("country") or ""
+    slug = (scope or {}).get("slug") or re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+    tag = f"us-{slug}" if state and (scope.get("country") or "United States") == "United States" else slug
+    return Path(out_dir or work_dir()) / f"validation_{tag}.json"
+
+
+def load_report(scope, out_dir=None):
+    """The fix and person errors of the scope's current validation file ([] when absent)."""
+    p = report_path(scope, out_dir)
+    if not p.exists():
+        return []
+    data = json.loads(p.read_text(encoding="utf-8"))
+    return [e for e in data.get("errors", []) if e.get("kind") in ("fix", "person")]
+
+
+def is_answer(rec):
+    return 7 in (rec.get("checks") or []) or rec.get("concern_type") == "validation"
+
+
+def is_fix(rec):
+    """A qa answer to a validation error that proposes a value with a source: the review
+    page shows it as an edit to accept, and an accepted one goes on the workbook's
+    validation_fixes sheet (milestone dates and other values with no export column)."""
+    refs = rec.get("refs") or {}
+    has_link = any(v for v in refs.values())
+    pv = rec.get("proposed_value")
+    return bool(is_answer(rec) and isinstance(pv, dict) and pv and has_link)
+
+
+def brief_tasks(index):
+    """(plant id, unit id or None) -> the check-7 task texts of a batch's briefs/_index.json:
+    the errors as the batch was briefed, for an answer whose error is gone from the
+    current report (typed in since)."""
+    out = defaultdict(list)
+    for p in (index or {}).get("plants") or []:
+        for uid, tasks in (p.get("tasks") or {}).items():
+            out[(p["plant_id"], uid)] += [t.get("text", "") for t in tasks if 7 in (t.get("checks") or [])]
+        out[(p["plant_id"], None)] += [t.get("text", "") for t in p.get("plant_tasks") or []
+                                       if 7 in (t.get("checks") or [])]
+    return out
+
+
+def _first_sentence(text):
+    m = re.match(r"(.+?\.)(\s|$)", text.strip())
+    return m.group(1) if m else text.strip()
+
+
+def errors_for(rec, errors, tasks=None):
+    """The plain sentences of the validation errors a check-7 record answers: errors on
+    its unit (or its siblings), else plant-wide errors of its plant, narrowed by the words
+    of the answer when there is more than one. An answer whose concern or proposed
+    columns name a topic (a location move, a milestone date) only matches errors on that
+    topic, so a location answer never shows a unit's carbon capture error. An error gone
+    from the current report falls back to the batch's brief task (`tasks`, from
+    brief_tasks), marked as gone."""
+    if not is_answer(rec):
+        return []
+    pid = rec.get("gem_plant_id")
+    uids = {rec.get("gem_unit_id")} | set(rec.get("sibling_unit_ids") or [])
+    pv = rec.get("proposed_value")
+    cols = " ".join(pv) if isinstance(pv, dict) else ""
+    head = " ".join([str(rec.get("concern_type") or ""), cols]).lower()
+    words = " ".join([head, str(rec.get("recommendation") or ""), str(rec.get("researcher_notes") or "")]).lower()
+    topics = {k for k, hints in ERROR_HINTS.items() if any(w in head for w in hints)}
+    if "Milestone Timeline" in topics:
+        topics.discard("Status")
+    elif "Status" in topics:
+        topics.add("Milestone Timeline")     # a status answer also speaks to the status history
+
+    def narrow(cands, key_of):
+        if topics:
+            return [c for c in cands if key_of(c) in topics]
+        if len(cands) < 2:
+            return cands
+        hits = [c for c in cands if any(w in words for w in ERROR_HINTS.get(key_of(c), (key_of(c).lower(),)))]
+        return hits or cands
+
+    def err_key(e):
+        key = label_of(e.get("item", "")) if e.get("section") == "Data Sources" else e.get("section", "")
+        return re.sub(r"\s+\d+$", "", key)
+
+    on_plant = [e for e in errors if e.get("plant_id") == pid]
+    cands = [e for e in on_plant if e.get("unit_id") in uids] or \
+            [e for e in on_plant if not e.get("unit_id")]
+    out = []
+    for e in narrow(cands, err_key):
+        s = describe(e)
+        if s not in out:
+            out.append(s)
+    if out or not tasks:
+        return out
+    texts = [t for u in uids for t in tasks.get((pid, u), [])] or tasks.get((pid, None), [])
+
+    def task_key(t):
+        if "status history" in t.lower():
+            return "Milestone Timeline"
+        return next((k for k in ERROR_HINTS if k.lower() in t.lower()), "")
+    for t in narrow(list(dict.fromkeys(texts)), task_key):
+        s = _first_sentence(t).replace("The database's validation report says ", "")
+        s = s[:1].upper() + s[1:] + " (No longer on the current validation report.)"
+        if s not in out:
+            out.append(s)
+    return out
 
 
 def why_exception(e):

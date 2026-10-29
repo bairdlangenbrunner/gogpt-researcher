@@ -9,7 +9,13 @@ Select the plants whose location is weak, for the location step (docs/reference/
 Reads the fresh scoped export (gogpt_scoped_csv(), refused when older than a day unless
 --allow-stale-export). A plant is a candidate when the first row of the plant has Location
 accuracy "approximate" (any case) or a blank Latitude or Longitude. A plant marked exact is
-never selected, even when a dataset point disagrees with it. Scope matching: a state takes
+never selected for its coordinates, even when a dataset point disagrees with it. A plant with
+a blank City or State/Province (Subnational) is also selected, for the place fields only: its
+task lists the blank place fields (City, State/Province, and Local area or Major area when
+blank too) in "fields" and carries "coordinates_locked": true when the plant is exact, so the
+brief builder and the gate know the point is not to be touched (Baird 2026-10-27, manual:
+fill in as much of the location identifiers as possible). Local area and Major area are
+often legitimately blank, so they ride along on a selected plant but never select one. Scope matching: a state takes
 United States rows whose State/Province equals the state; a country takes rows whose
 Country/Area equals the country (both case-insensitive).
 
@@ -112,6 +118,19 @@ def is_candidate(first):
     return ws(first.get(H_ACC)).lower() == "approximate" or lat is None or lon is None
 
 
+PLACE_HEADERS = ("City", H_COUNTY, H_MAJOR, H_STATE)
+
+
+def blank_place_fields(first):
+    """Place fields blank on the plant: City, Local area, Major area, Subnational."""
+    return [h for h in PLACE_HEADERS if not ws(first.get(h))]
+
+
+def needs_place(first):
+    """City or Subnational blank: the two that select a plant for the place step."""
+    return any(h in ("City", H_STATE) for h in blank_place_fields(first))
+
+
 def _point(source, lat, lon, cur, address=None, county=None):
     lat, lon = geo.parse_coord(lat), geo.parse_coord(lon)
     if lat is None or lon is None:
@@ -158,6 +177,14 @@ def build_task_text(loc):
     return " ".join(parts)
 
 
+def build_place_task_text(blanks):
+    names = ", ".join(("Subnational" if h == H_STATE else h) for h in blanks)
+    return (f"GEM's point is marked exact, so leave the coordinates alone. These place fields "
+            f"are blank: {names}. Fill them from a document or the project's location. Local "
+            "area and Major area never carry the words county, township or district. Choose "
+            "the one nearest city.")
+
+
 def select_candidates(rows, scope, provider=None):
     """Pure selection. rows: dicts with the export headers. provider(plant) -> list of dataset
     point dicts {source, lat, lon, address?, county?}; distances and links are added here.
@@ -166,7 +193,8 @@ def select_candidates(rows, scope, provider=None):
     tasks, problems = [], []
     for pid, prows in plants.items():
         first = prows[0]
-        if not is_candidate(first):
+        coord = is_candidate(first)
+        if not coord and not needs_place(first):
             continue
         lat, lon = geo.parse_coord(first.get(H_LAT)), geo.parse_coord(first.get(H_LON))
         groups = sorted({status_group(r.get("Status")) for r in prows})
@@ -197,12 +225,26 @@ def select_candidates(rows, scope, provider=None):
                "far": bool(nearest and nearest["distance_m"] > FAR_M),
                "operating": "operating" in groups, "groups": groups,
                "unit_ids": [ws(r.get(H_UNIT)) for r in prows if ws(r.get(H_UNIT))]}
-        tasks.append({"plant_id": pid, "plant_name": plant["plant_name"], "unit_id": None,
-                      "unit_name": None, "source": "location_candidates", "section": "location",
-                      "kind": "fix", "task": build_task_text(loc),
-                      "fields": [H_LAT, H_LON, H_ACC],
-                      "checks": [25, 42] if loc["operating"] else [25],
-                      "confidence": "high", "location": loc})
+        blanks = blank_place_fields(first)
+        if coord:
+            task = {"plant_id": pid, "plant_name": plant["plant_name"], "unit_id": None,
+                    "unit_name": None, "source": "location_candidates", "section": "location",
+                    "kind": "fix", "task": build_task_text(loc),
+                    "fields": [H_LAT, H_LON, H_ACC],
+                    "checks": [25, 42] if loc["operating"] else [25],
+                    "confidence": "high", "location": loc}
+        else:
+            checks = []
+            if any(h in ("City", H_STATE) for h in blanks):
+                checks.append(26)
+            if any(h in (H_COUNTY, H_MAJOR) for h in blanks):
+                checks.append(25)
+            task = {"plant_id": pid, "plant_name": plant["plant_name"], "unit_id": None,
+                    "unit_name": None, "source": "location_candidates", "section": "location",
+                    "kind": "fix", "task": build_place_task_text(blanks),
+                    "fields": blanks, "coordinates_locked": True,
+                    "checks": sorted(checks), "confidence": "high", "location": loc}
+        tasks.append(task)
     return {"plants_checked": len(plants), "candidates": len(tasks), "tasks": tasks,
             "problems": problems}
 

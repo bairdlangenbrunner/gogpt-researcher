@@ -1,0 +1,522 @@
+{
+  "state": "Mississippi",
+  "postal": "ms",
+  "where": {
+    "kind": "state",
+    "name": "Mississippi",
+    "slug": "mississippi",
+    "country": "United States",
+    "postal": "ms"
+  },
+  "mode": "update",
+  "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv",
+  "scope": "ladder",
+  "focus": "data_centers",
+  "generated": "2026-10-27T11:40:11-04:00",
+  "plants": [
+    {
+      "plant_id": "L100001047324",
+      "plant_name": "Colossus 2 power station",
+      "brief_path": "batches/us-ms-dc/briefs/L100001047324.md",
+      "unit_ids": [
+        "G100001053819",
+        "G100001070976"
+      ],
+      "n_units": 2,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Colossus_2_power_station",
+      "n_tasks": 9,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Planned retire",
+        "Latest Activity",
+        "Status Detail",
+        "Owner(s)",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Backup Power"
+      ],
+      "tasks": {
+        "G100001053819": [
+          {
+            "text": "Retirement is planned for 2027. Does the plan still hold?",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              21
+            ]
+          },
+          {
+            "text": "Other IDs (location) has no EIA plant code. If the plant appears in EIA data, give the plant code as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "Other IDs (unit) is blank. If the unit appears in EIA data, give the generator ID as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "Backup Power (currently no): the value is present but Backup Power Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Backup Power"
+            ],
+            "checks": []
+          }
+        ],
+        "G100001070976": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. A projected start year is a scheduled event: the Event Year is the projected year and the Source Year is the year the source reported it, and the human adds it as a new entry, never by changing an existing one. A shelved or cancelled unit gets no scheduled operating event. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10,
+              49
+            ]
+          },
+          {
+            "text": "Other IDs (location) has no EIA plant code. If the plant appears in EIA data, give the plant code as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "Other IDs (unit) is blank. If the unit appears in EIA data, give the generator ID as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "Backup Power (currently no): the value is present but Backup Power Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Backup Power"
+            ],
+            "checks": []
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "A permit harvest lists this plant's data center (Colossus 2 power station). Compare the fleet size, the phases, the Backup Power box and the engine counts with the newest permit and report each value that differs, with the permit link. Facts: at Southaven; 1735.5 MW summed; fuel natural gas. This is a GEM data center plant in the scope (2 unit rows, 1,735.5 MW in GEM). No permit in the harvest matched it, so the check against the newest permit is still to do. Backup Power in GEM: no.",
+          "fields": [
+            "Capacity (MW)",
+            "Status",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Backup Power",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Status Detail"
+          ],
+          "checks": [
+            39
+          ]
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001088949",
+      "plant_name": "Amazon Web Services Canton Data Center power station",
+      "brief_path": "batches/us-ms-dc/briefs/L100001088949.md",
+      "unit_ids": [
+        "G100001101182"
+      ],
+      "n_units": 1,
+      "max_priority": null,
+      "wiki_url": "https://www.gem.wiki/Amazon_Web_Services_Canton_Data_Center_power_station",
+      "n_tasks": 4,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Latest Activity",
+        "Status Detail",
+        "Owner(s)",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Backup Power"
+      ],
+      "tasks": {
+        "G100001101182": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. A projected start year is a scheduled event: the Event Year is the projected year and the Source Year is the year the source reported it, and the human adds it as a new entry, never by changing an existing one. A shelved or cancelled unit gets no scheduled operating event. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10,
+              49
+            ]
+          },
+          {
+            "text": "Other IDs (location) has no EIA plant code. If the plant appears in EIA data, give the plant code as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "Other IDs (unit) is blank. If the unit appears in EIA data, give the generator ID as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "A permit harvest lists this plant's data center (Amazon Data Services Inc, Madison Mega Site). Compare the fleet size, the phases, the Backup Power box and the engine counts with the newest permit and report each value that differs, with the permit link. Facts: at 1978 Highway 22 Canton, MS 39046, Canton; permit 1720-00098; issued 2025-12-16; 336 engines; 2.75 MW per engine; 904.3 MW summed; fuel diesel. Phase Critical Emergency Backup Electrical Power Generators 4,043: 326 engines, 896.5 MW, construction. Phase House Emergency Backup Electrical Power Generators AB-001 HEG: 5 engines, 3.75 MW, construction. Phase Water Treatment System Emergency Backup Electrical Power Gene: 2 engines, 3.0 MW, construction. Phase Building Emergency Backup Electrical Power Generators 619 HP Caterpil: 3 engines, 1.05 MW, construction. Permit links: https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051. The sum comes from Air - Construction Permit Modification 1720-00098 issued 2025-12-16. Read Air - Construction Permit Modification 1720-00098 issued 2025-12-16 (route: plain curl). From the numbered generator lines it lists 336 generators adding up to 904.3 MW electrical. Engines differ in size; capacity per engine is the most common size. GEM already has this campus as Amazon Web Services Canton Data Center power station (L100001088949), 896.5 MW over 1 unit rows. Check the fleet size, the phases, the Backup Power box and the engine counts against the permit. Without the GEM match the verdict would be at threshold.",
+          "fields": [
+            "Capacity (MW)",
+            "Status",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Backup Power",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Status Detail"
+          ],
+          "checks": [
+            39
+          ]
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001088950",
+      "plant_name": "Amazon Web Services Ridgeland Data Center power station",
+      "brief_path": "batches/us-ms-dc/briefs/L100001088950.md",
+      "unit_ids": [
+        "G100001101183",
+        "G100001101185",
+        "G100001101184"
+      ],
+      "n_units": 3,
+      "max_priority": null,
+      "wiki_url": "https://www.gem.wiki/Amazon_Web_Services_Ridgeland_Data_Center_power_station",
+      "n_tasks": 10,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Latest Activity",
+        "Status Detail",
+        "Owner(s)",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Backup Power"
+      ],
+      "tasks": {
+        "G100001101183": [
+          {
+            "text": "Other IDs (location) has no EIA plant code. If the plant appears in EIA data, give the plant code as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "Other IDs (unit) is blank. If the unit appears in EIA data, give the generator ID as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100001101185": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. A projected start year is a scheduled event: the Event Year is the projected year and the Source Year is the year the source reported it, and the human adds it as a new entry, never by changing an existing one. A shelved or cancelled unit gets no scheduled operating event. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10,
+              49
+            ]
+          },
+          {
+            "text": "Other IDs (location) has no EIA plant code. If the plant appears in EIA data, give the plant code as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "Other IDs (unit) is blank. If the unit appears in EIA data, give the generator ID as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "Captive industry use (currently power); Captive industry type (currently data center): the value is present but Captive Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Captive industry use",
+              "Captive industry type"
+            ],
+            "checks": []
+          }
+        ],
+        "G100001101184": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. A projected start year is a scheduled event: the Event Year is the projected year and the Source Year is the year the source reported it, and the human adds it as a new entry, never by changing an existing one. A shelved or cancelled unit gets no scheduled operating event. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10,
+              49
+            ]
+          },
+          {
+            "text": "Other IDs (location) has no EIA plant code. If the plant appears in EIA data, give the plant code as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "Other IDs (unit) is blank. If the unit appears in EIA data, give the generator ID as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "A permit harvest lists this plant's data center (Amazon Data Services Inc, JAN200). Compare the fleet size, the phases, the Backup Power box and the engine counts with the newest permit and report each value that differs, with the permit link. Facts: at 1626 County Line Road Ridgeland, MS 39157, Ridgeland; permit 1720-00099; issued 2025-06-25; 391 engines; 2.75 MW per engine; 1060.05 MW summed; fuel diesel. Phase maximum rated power capacity of 2,750 kW and one House Generator with: 26 engines, 71.5 MW, construction. Phase Building 2: 26 engines, 71.5 MW, construction. Phase Building 3: 26 engines, 71.5 MW, construction. Phase Building 4: 26 engines, 71.5 MW, construction. Phase Building 5: 28 engines, 77.0 MW, construction. Phase Building 6: 28 engines, 77.0 MW, construction. Phase Building 7: 28 engines, 77.0 MW, construction. Phase Building 8: 28 engines, 77.0 MW, construction. Phase Building 9: 28 engines, 77.0 MW, construction. Phase Building 10: 28 engines, 77.0 MW, construction. Phase Building 11: 28 engines, 77.0 MW, construction. Phase Building 12: 28 engines, 77.0 MW, construction. Phase Building 13: 28 engines, 77.0 MW, construction. Phase Building 14: 28 engines, 77.0 MW, construction. Phase Four (4) House Emergency Backup Electrical Power Generators (: 4 engines, 3.0 MW, construction. Phase Three (3) Support Emergency Backup Electrical Power Generator: 3 engines, 1.05 MW, construction. Permit links: https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1791725. The sum comes from Air - Construction Permit 1720-00099 issued 2025-06-25. Read Air - Construction Permit 1720-00099 issued 2025-06-25 (route: plain curl). From the numbered generator lines it lists 391 generators adding up to 1,060.0 MW electrical. Engines differ in size; capacity per engine is the most common size. GEM already has this campus as Amazon Web Services Ridgeland Data Center power station (L100001088950), 1,060.1 MW over 3 unit rows. Check the fleet size, the phases, the Backup Power box and the engine counts against the permit. Without the GEM match the verdict would be at threshold.",
+          "fields": [
+            "Capacity (MW)",
+            "Status",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Backup Power",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Status Detail"
+          ],
+          "checks": [
+            39
+          ]
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001088945",
+      "plant_name": "Meridian Compass Data Center power station",
+      "brief_path": "batches/us-ms-dc/briefs/L100001088945.md",
+      "unit_ids": [
+        "G100001101169",
+        "G100001101179"
+      ],
+      "n_units": 2,
+      "max_priority": null,
+      "wiki_url": "https://www.gem.wiki/Meridian_Compass_Data_Center_power_station",
+      "n_tasks": 7,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Latest Activity",
+        "Status Detail",
+        "Owner(s)",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Backup Power"
+      ],
+      "tasks": {
+        "G100001101169": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. A projected start year is a scheduled event: the Event Year is the projected year and the Source Year is the year the source reported it, and the human adds it as a new entry, never by changing an existing one. A shelved or cancelled unit gets no scheduled operating event. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10,
+              49
+            ]
+          },
+          {
+            "text": "Other IDs (location) has no EIA plant code. If the plant appears in EIA data, give the plant code as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "Other IDs (unit) is blank. If the unit appears in EIA data, give the generator ID as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100001101179": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. A projected start year is a scheduled event: the Event Year is the projected year and the Source Year is the year the source reported it, and the human adds it as a new entry, never by changing an existing one. A shelved or cancelled unit gets no scheduled operating event. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10,
+              49
+            ]
+          },
+          {
+            "text": "Other IDs (location) has no EIA plant code. If the plant appears in EIA data, give the plant code as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "Other IDs (unit) is blank. If the unit appears in EIA data, give the generator ID as a question, not a value.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "A permit harvest lists this plant's data center (Compass Datacenters JAN I, LLC). Compare the fleet size, the phases, the Backup Power box and the engine counts with the newest permit and report each value that differs, with the permit link. Facts: at I20-59 Industrial Park Meridian, MS 39301, Meridian; permit 1460-00133; issued 2026-06-24; 420 engines; 2.0 MW per engine; 813.0 MW summed; fuel unknown. Phase Building 1: 60 engines, 93.0 MW, construction. Phase Building 2: 40 engines, 80.0 MW, construction. Phase Building 3: 40 engines, 80.0 MW, construction. Phase Building 4: 40 engines, 80.0 MW, construction. Phase Building 5: 40 engines, 80.0 MW, construction. Phase Building 6: 40 engines, 80.0 MW, construction. Phase Building 7: 40 engines, 80.0 MW, construction. Phase Building 8: 40 engines, 80.0 MW, construction. Phase Building 9: 40 engines, 80.0 MW, construction. Phase Building 10: 40 engines, 80.0 MW, construction. Permit links: https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1855226. The sum comes from Air - Construction Permit 1460-00133 issued 2026-06-24. Read Air - Construction Permit 1460-00133 issued 2026-06-24 (route: plain curl). From the numbered generator lines it lists 420 generators adding up to 813.0 MW electrical. Engines differ in size; capacity per engine is the most common size. GEM already has this campus as Meridian Compass Data Center power station (L100001088945), 813.0 MW over 2 unit rows. Check the fleet size, the phases, the Backup Power box and the engine counts against the permit. Without the GEM match the verdict would be at threshold.",
+          "fields": [
+            "Capacity (MW)",
+            "Status",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Backup Power",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Status Detail"
+          ],
+          "checks": [
+            39
+          ]
+        }
+      ]
+    }
+  ],
+  "not_tasked": [],
+  "promoted_new": [],
+  "irp": null,
+  "captive": null,
+  "harvest": null,
+  "data_centers": {
+    "file": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/work/permits/us-ms-dc/_data_centers.json",
+    "brief_path": "batches/us-ms-dc/briefs/_data_centers.md",
+    "threshold_mw": 50.0,
+    "answer_sites": [
+      "amazon-canton",
+      "amazon-clinton",
+      "compass-meridian",
+      "amazon-ridgeland",
+      "mzt-tech-llc-100-southaven",
+      "nasa-shared-service-cent-stennis-space-center"
+    ],
+    "plant_tasks": 4
+  },
+  "location": null,
+  "ids_followup": null,
+  "coverage_list": "docs/coverage/us-ms.json",
+  "coverage_ids": [
+    "mdeq-air-notices",
+    "mdeq-permit-board",
+    "mdeq-harvest-unmatched",
+    "ms-psc-dockets",
+    "miso-gi-queue",
+    "miso-eras",
+    "southern-oasis-queue",
+    "tva-queue",
+    "tva-nepa",
+    "eia-860m",
+    "eia-860",
+    "entergy-mississippi",
+    "mississippi-power",
+    "cooperative-energy",
+    "possible-updates-sheet",
+    "captive-lng-sheet",
+    "data-center-xai",
+    "data-center-amazon"
+  ]
+}

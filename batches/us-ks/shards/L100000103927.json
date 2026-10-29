@@ -1,0 +1,177 @@
+{
+ "meta": {
+  "plant_id": "L100000103927",
+  "plant_name": "Riverton Power Plant",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T09:40:54-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401617",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists Riverton generators 12 and 12-2, the two parts of combined cycle block CC1, as operating. The table shows no planned retirement for them. This is a re-check with no change."
+    }
+   },
+   "not_found": [
+    "Capacity (MW)",
+    "Fuel",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Start year",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Status Detail",
+    "CHP",
+    "Owner(s)",
+    "Operator(s)",
+    "Location accuracy",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use",
+    "Conversion/replacement?"
+   ],
+   "notes": "The unit is still operating in the August 2026 EIA table, with no retirement date and no owner change found in that file. Nameplate capacity of the two parts adds up to 267.6 MW, which matches the 268 MW in GEM."
+  }
+ ],
+ "plant_findings": {
+  "Latitude": {
+   "value": "37.07180",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The 2024 EIA-860 plant table lists the Riverton plant at 7240 SE Highway 66 with latitude 37.072616. GEM has 37.07180, which is about 90 meters away. I report GEM's value with this document as its source. I did not look at a satellite picture."
+  },
+  "Longitude": {
+   "value": "-94.70012",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The 2024 EIA-860 plant table lists longitude -94.698704. GEM has -94.70012, about 130 meters away. The two points fall on the same site. I report GEM's value with this document as its source."
+  },
+  "City": {
+   "value": "Riverton",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The 2024 EIA-860 plant table lists the city as Riverton, Kansas 66770."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000401617",
+   "concern_type": "location",
+   "recommendation": "No change to the point or to exact. GEM's point is inside the plant grounds. Optional: GEM's Location Data Source box is blank, so the reviewer may add the map pin link.",
+   "note": "I looked at a satellite picture at GEM's point. It sits inside the fenced Riverton plant grounds on the Spring River, among tanks, storage buildings and yard equipment. The combined cycle block with its tall stack, the air-cooled condenser and the main turbine building are about 100 to 130 meters to the east and southeast, and a large switchyard lies to the northwest. The EIA 2024 plant table, which I read from the saved file, lists Riverton at 7240 SE Highway 66 with point 37.072616, -94.698704. That point is about 155 meters from GEM's and also falls inside the same plant grounds, near the northern switchyard. Both points are on the plant, so exact holds. The picture date is unknown.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000401617",
+   "concern_type": "existence",
+   "recommendation": "No change. The new turbines are too small for GEM, and the retired ones were never in GEM.",
+   "note": "The EIA-860M table for August 2026 lists two new 13.5 MW gas combustion turbines, generators 13 and 14 at plant 1239, as built but not yet in commercial operation. It also shows older turbines 10 and 11 retired in August 2026. Together the two new turbines are 27 MW, under the manual's 50 MW threshold for a unit or a set of turbines.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000401617",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "recommendation": "The database says the location has no data source. The EIA annual plant table for 2024 gives the plant address as 7240 SE Highway 66, Riverton, Kansas 66770, and a point about 155 meters from GEM's point. Add this table to the Location Data Source box. The point may stay.",
+   "note": "The point itself was not moved. The EIA table was read from the 2024 annual plant table and the August 2026 monthly file.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Excel file read with python. "
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602024.zip",
+   "used_for": [
+    "City",
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Excel file inside the zip, plant table, read with python."
+  },
+  {
+   "url": "https://www.kdhe.ks.gov/DocumentCenter/View/35956",
+   "used_for": [
+    "Location"
+   ],
+   "outcome": "dead_link",
+   "note": "The harvested permit notice documents returned HTTP 404 in the permit index. Not retried beyond the harvest."
+  }
+ ]
+}

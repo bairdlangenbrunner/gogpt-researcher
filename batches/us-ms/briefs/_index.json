@@ -1,0 +1,3560 @@
+{
+  "state": "Mississippi",
+  "postal": "ms",
+  "where": {
+    "kind": "state",
+    "name": "Mississippi",
+    "slug": "mississippi",
+    "country": "United States",
+    "postal": "ms"
+  },
+  "mode": "update",
+  "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv",
+  "scope": "all",
+  "generated": "2026-10-23T14:03:44-04:00",
+  "plants": [
+    {
+      "plant_id": "L100001047324",
+      "plant_name": "Colossus 2 power station",
+      "brief_path": "batches/us-ms/briefs/L100001047324.md",
+      "unit_ids": [
+        "G100001053819",
+        "G100001070976"
+      ],
+      "n_units": 2,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Colossus_2_power_station",
+      "n_tasks": 7,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "Notes"
+      ],
+      "tasks": {
+        "G100001053819": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          },
+          {
+            "text": "The EIP Oil & Gas Watch data of 2026-07-28 lists \"xAI Southaven Power Plant\" as proposed (https://oilandgaswatch.org/facility/rec_d5nrijecevv1v46o78d0), while GEM says operating. Check which is right and report the status with a public source; EIP's own source documents are a good start.",
+            "fields": [
+              "Status",
+              "Status Detail"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100001070976": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "The unit's status history has a \"pre-construction\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Re-research in full: the April 2026 review recorded no changes. Colossus 2 is xAI's data center power plant. Unit 1 is the operating temporary turbines (495 MW, listed in Status Detail), unit 2 is 1,240.5 MW of Solar Turbines Titan 350 sets, pre-construction, 2027. Read the MDEQ air permit for the MZX Tech LLC facility (agency interest 12592) and any later permit or modification. Check the number and size of the Titan 350 turbines against unit 2's capacity, and whether they form one set behind one grid connection or separate units. Check the owner name: MDEQ says MZX Tech LLC, GEM says MZT Tech LLC. The possible-updates sheet has a May 2026 row: change of ownership and additional gas turbines (an ESG Dive story on the NAACP lawsuit over the turbines). Answer it, including the Solaris Energy Infrastructure joint venture named in Notes. Report whether unit 2 construction has begun, with dated sources.",
+          "fields": [
+            "Status",
+            "Status Detail",
+            "Capacity (MW)",
+            "Start year",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Owner(s)",
+            "Latest Activity",
+            "Notes"
+          ],
+          "checks": []
+        },
+        {
+          "text": "This plant has no EIA plant code. The EIA-860M file for September 2026 has plant 55373 \"Enterprise Energy Facility\" in Clark County, 0.6 km from GEM's coordinates, with generator CT3, 86.5 MW, natural gas fired combustion turbine, retired 2006, operating since 2002; generator CT4, 86.5 MW, natural gas fired combustion turbine, retired 2006, operating since 2002; generator CT5, 86.5 MW, natural gas fired combustion turbine, retired 2006, operating since 2002; generator CT6, 86.5 MW, natural gas fired combustion turbine, retired 2006, operating since 2002. If that is this plant, say so in a question that gives the plant code and the generator IDs for each unit. Do not report the codes as values.",
+          "fields": [],
+          "checks": [
+            38
+          ]
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001025781",
+      "plant_name": "Delta Blues Advanced Power Station",
+      "brief_path": "batches/us-ms/briefs/L100001025781.md",
+      "unit_ids": [
+        "G100001030673"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Delta_Blues_Advanced_Power_Station",
+      "n_tasks": 7,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100001030673": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10,
+              49
+            ]
+          },
+          {
+            "text": "The unit's status history has a \"construction\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIA-860M file for September 2026 (plant 67914) shows generator 1A, 477 MW, natural gas fired combined cycle, regulatory approvals pending. not under construction, planned for 2028, which reads as pre-construction, while GEM says construction. Check which is right and report the status with a public source. A status change needs two independent publishers for high confidence.",
+            "fields": [
+              "Status",
+              "Status Detail"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Re-research in full: the April 2026 review recorded no changes. Delta Blues is Entergy Mississippi's combined cycle at Greenville. GEM says construction and 754 MW, start 2028. EIA-860M September 2026 says regulatory approvals pending, not under construction. Settle the status with dated sources (the Public Service Commission certificate order, the MDEQ air permit, Entergy releases or quarterly reports), and record a Latest Activity entry.",
+          "fields": [
+            "Status",
+            "Status Detail",
+            "Capacity (MW)",
+            "Start year",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Owner(s)",
+            "Latest Activity"
+          ],
+          "checks": []
+        },
+        {
+          "text": "This plant belongs to Entergy Mississippi, whose integrated resource plan (listed on the US IRPs tab as \"2024 IRP\") is at https://www.psc.ms.gov/sites/default/files/2023-07/EML-2024-IRP-Notice-Initial-Public-Workshop.pdf. Read the plan's preferred or recommended portfolio and check whether it names this plant: a new unit, a conversion, a retirement date, a capacity or start year that differs from GEM. Report any such value with the plan page it appears on as the source, and mark every finding that comes from the plan with irp true. The IRP box is not ticked on any of the 1 units.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Start year",
+            "Planned retire",
+            "Retired year",
+            "Status Detail"
+          ],
+          "checks": [
+            37
+          ]
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2024-UA-144 (Entergy Mississippi, LLC, filed 2024-12-12): AWS INFORMATIONAL TARIFF FILING FOR DELTA BLUES ADVANCED POWER STATION BY ENTERGY MISSISSIPPI, LLC. in service: To support EML’s capacity and energy needs, the planned in-service date for Delta Blues is May 2028.. retirements: EML’s 2021 Integrated Resource Plan (‘IRP”) identified the need for dispatchable generation in early 2030s due to generation unit retirements.. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001023568",
+      "plant_name": "New Caledonia power station",
+      "brief_path": "batches/us-ms/briefs/L100001023568.md",
+      "unit_ids": [
+        "G100001028154",
+        "G100001028155",
+        "G100001028156",
+        "G100001028157",
+        "G100001028158",
+        "G100001028159"
+      ],
+      "n_units": 6,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/New_Caledonia_power_station",
+      "n_tasks": 22,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100001028154": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10,
+              49
+            ]
+          },
+          {
+            "text": "The unit's status history has a \"construction\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "This unit has no EIA generator id. The EIA-860M file for September 2026 lists at plant 69147: generator G1, 84 MW, natural gas fired combustion turbine, planned for installation, but regulatory approvals not initiated, planned for 2028 (other possible matches: G2; G3; G4). Say in a question which generator id or ids belong to this unit; do not report them as values.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "The EIP Oil & Gas Watch data of 2026-07-28 lists \"New Caledonia Power Station\" as proposed (https://oilandgaswatch.org/facility/rec_d4f1u5oq7easr8ra1fmg), while GEM says construction. Check which is right and report the status with a public source; EIP's own source documents are a good start.",
+            "fields": [
+              "Status",
+              "Status Detail"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100001028155": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10,
+              49
+            ]
+          },
+          {
+            "text": "The unit's status history has a \"construction\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "This unit has no EIA generator id. The EIA-860M file for September 2026 lists at plant 69147: generator G1, 84 MW, natural gas fired combustion turbine, planned for installation, but regulatory approvals not initiated, planned for 2028 (other possible matches: G2; G3; G4). Say in a question which generator id or ids belong to this unit; do not report them as values.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100001028156": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10,
+              49
+            ]
+          },
+          {
+            "text": "The unit's status history has a \"construction\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "This unit has no EIA generator id. The EIA-860M file for September 2026 lists at plant 69147: generator G1, 84 MW, natural gas fired combustion turbine, planned for installation, but regulatory approvals not initiated, planned for 2028 (other possible matches: G2; G3; G4). Say in a question which generator id or ids belong to this unit; do not report them as values.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100001028157": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10,
+              49
+            ]
+          },
+          {
+            "text": "The unit's status history has a \"construction\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "This unit has no EIA generator id. The EIA-860M file for September 2026 lists at plant 69147: generator G1, 84 MW, natural gas fired combustion turbine, planned for installation, but regulatory approvals not initiated, planned for 2028 (other possible matches: G2; G3; G4). Say in a question which generator id or ids belong to this unit; do not report them as values.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100001028158": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10,
+              49
+            ]
+          },
+          {
+            "text": "The unit's status history has a \"construction\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "This unit has no EIA generator id. The EIA-860M file for September 2026 lists at plant 69147: generator G1, 84 MW, natural gas fired combustion turbine, planned for installation, but regulatory approvals not initiated, planned for 2028 (other possible matches: G2; G3; G4). Say in a question which generator id or ids belong to this unit; do not report them as values.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100001028159": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10,
+              49
+            ]
+          },
+          {
+            "text": "The unit's status history has a \"construction\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "This unit has no EIA generator id. The EIA-860M file for September 2026 lists at plant 69147: generator G1, 84 MW, natural gas fired combustion turbine, planned for installation, but regulatory approvals not initiated, planned for 2028 (other possible matches: G2; G3; G4). Say in a question which generator id or ids belong to this unit; do not report them as values.",
+            "fields": [],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Re-research in full: the April 2026 review recorded no changes. New Caledonia is TVA's six-unit GE 7E.03 peaking plant in Lowndes County, construction since the October 22, 2025 groundbreaking, start 2028. Check capacity per unit (EIA says 84 MW each), the start year, the MDEQ air permit, and record a Latest Activity entry with a dated source.",
+          "fields": [
+            "Status",
+            "Status Detail",
+            "Capacity (MW)",
+            "Start year",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Owner(s)",
+            "Latest Activity"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: Southern queue entry IC-003; Combustion Turbine (Natural Gas); 500.0 MW; Withdrawn or terminated; point of interconnection Miller - Lowndes 500 kV Tie-line. A queue entry is a lead, not proof. Cite the queue page: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001064651",
+      "plant_name": "Traceview Advanced power station",
+      "brief_path": "batches/us-ms/briefs/L100001064651.md",
+      "unit_ids": [
+        "G100001074418"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Traceview_Advanced_power_station",
+      "n_tasks": 8,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100001074418": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10
+            ]
+          },
+          {
+            "text": "The unit's status history has an \"announced\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Re-research in full: the April 2026 review recorded no changes. Traceview is Entergy Mississippi's combined cycle in Madison County; its MDEQ permit is under the name Madison County Advanced Power Station (agency interest 89056). GEM says announced, 760 MW, 2029, and has no turbine make and model. EIA-860M September 2026 lists plant 70187 as under construction with CT1 477.7 MW and ST1 341.7 MW, planned 2028. Find the status, capacity, start year and turbine model from the air permit, the Public Service Commission docket and Entergy sources. The location is approximate; the location task on this brief applies.",
+          "fields": [
+            "Status",
+            "Status Detail",
+            "Capacity (MW)",
+            "Start year",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Owner(s)",
+            "Latest Activity",
+            "Latitude",
+            "Longitude",
+            "Location accuracy"
+          ],
+          "checks": []
+        },
+        {
+          "text": "This plant has no EIA plant code. The EIA-860M file for September 2026 has plant 70187 \"Traceview Advanced Power Station\" in Madison County, 7.2 km from GEM's coordinates, with generator CT1, 477.7 MW, natural gas fired combined cycle, under construction, less than or equal to 50 percent complete, planned for 2028; generator ST1, 341.7 MW, natural gas fired combined cycle, under construction, less than or equal to 50 percent complete, planned for 2028. If that is this plant, say so in a question that gives the plant code and the generator IDs for each unit. Do not report the codes as values.",
+          "fields": [],
+          "checks": [
+            38
+          ]
+        },
+        {
+          "text": "This plant belongs to Entergy Mississippi, whose integrated resource plan (listed on the US IRPs tab as \"2024 IRP\") is at https://www.psc.ms.gov/sites/default/files/2023-07/EML-2024-IRP-Notice-Initial-Public-Workshop.pdf. Read the plan's preferred or recommended portfolio and check whether it names this plant: a new unit, a conversion, a retirement date, a capacity or start year that differs from GEM. Report any such value with the plan page it appears on as the source, and mark every finding that comes from the plan with irp true. The IRP box is not ticked on any of the 1 units.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Start year",
+            "Planned retire",
+            "Retired year",
+            "Status Detail"
+          ],
+          "checks": [
+            37
+          ]
+        },
+        {
+          "text": "Location accuracy is approximate. GEM's point is 32.41000, -90.14500. Find the plant's address or a sentence that places the site in a primary document, turn it into a point, and check it in satellite imagery. No EIA or permit point is available. Stage new coordinates only when the point moves more than 500 m, fills a blank, or becomes exact. GEM's point in satellite view: https://www.google.com/maps/@?api=1&map_action=map&center=32.41000,-90.14500&zoom=17&basemap=satellite (pin: https://www.google.com/maps/search/?api=1&query=32.41000,-90.14500). Follow the location ladder in the sweep instructions and report the method, the distance moved and whether a second look is needed.",
+          "fields": [
+            "Latitude",
+            "Longitude",
+            "Location accuracy"
+          ],
+          "checks": [
+            25
+          ]
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2026-UA-55 (Entergy Mississippi, LLC, filed 2026-07-22): INFORMATIONAL FILING FOR THE TRACEVIEW ADVANCED POWER STATION PROJECT. in service: To support EML’s capacity and : energy needs, the planned in-service date for TAPS is August 2029. | : oo In order to continue to reliably serve its customers, . retirements: A map showing EML’s existing cértificated area and the location of TAPS is . attached as composite EXHIBIT B. : : ， EML’s 2021 Integrated Resource Plan identifi. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100001080981",
+      "plant_name": "Vicksburg Advanced power station",
+      "brief_path": "batches/us-ms/briefs/L100001080981.md",
+      "unit_ids": [
+        "G100001091020"
+      ],
+      "n_units": 1,
+      "max_priority": 1,
+      "wiki_url": "https://www.gem.wiki/Vicksburg_Advanced_power_station",
+      "n_tasks": 10,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100001091020": [
+          {
+            "text": "This unit is in development. Has the status moved? Look for a start year or a scheduled operating date, the turbine make and model, the owner and the capacity. Add a Latest Activity entry only if the project has gone quiet, meaning the newest report you can find is more than a year old. Then give the date and the source of that report. If the project is visibly moving, leave Latest Activity alone.",
+            "fields": [
+              "Status",
+              "Status Detail",
+              "Start year",
+              "Equipment Manufacturer/Model",
+              "Turbine/Engine Technology",
+              "Owner(s)",
+              "Capacity (MW)",
+              "Latest Activity"
+            ],
+            "checks": [
+              10,
+              49
+            ]
+          },
+          {
+            "text": "The unit's status history has a \"construction\" step with no date. Find the year, and the month if a document gives it, when the unit reached that step. Give it as a question, not a value, with the document that says so.",
+            "fields": [],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIP Oil & Gas Watch data of 2026-07-28 lists \"Vicksburg Advanced Power Station\" as proposed (https://oilandgaswatch.org/facility/rec_d3a2s1j6fg34frlqolu0), while GEM says construction. Check which is right and report the status with a public source; EIP's own source documents are a good start.",
+            "fields": [
+              "Status",
+              "Status Detail"
+            ],
+            "checks": [
+              38
+            ]
+          },
+          {
+            "text": "The Sierra Club list (April '26, reference only, never cited) flags capacity change for this unit, with status under construction and 478 MW. Look for a public source that shows what changed and report it; never cite the Sierra Club data.",
+            "fields": [
+              "Status",
+              "Capacity (MW)",
+              "Turbine/Engine Technology",
+              "Owner(s)"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Re-research in full: the April 2026 review recorded no changes. Vicksburg is Entergy Mississippi's combined cycle at the Baxter Wilson site, construction, 750 MW, 2028. EIA-860M September 2026 lists GT1 477.7 MW and ST1 341.7 MW, about 819 MW. Check the capacity against the air permit and Entergy filings, the start year, and record a Latest Activity entry.",
+          "fields": [
+            "Status",
+            "Status Detail",
+            "Capacity (MW)",
+            "Start year",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Owner(s)",
+            "Latest Activity"
+          ],
+          "checks": []
+        },
+        {
+          "text": "This plant belongs to Entergy Mississippi, whose integrated resource plan (listed on the US IRPs tab as \"2024 IRP\") is at https://www.psc.ms.gov/sites/default/files/2023-07/EML-2024-IRP-Notice-Initial-Public-Workshop.pdf. Read the plan's preferred or recommended portfolio and check whether it names this plant: a new unit, a conversion, a retirement date, a capacity or start year that differs from GEM. Report any such value with the plan page it appears on as the source, and mark every finding that comes from the plan with irp true. The IRP box is not ticked on any of the 1 units.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Start year",
+            "Planned retire",
+            "Retired year",
+            "Status Detail"
+          ],
+          "checks": [
+            37
+          ]
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2025-AD-123 (Entergy Mississippi, LLC, filed 2025-12-17): INFORMATIONAL FILING FOR THE VICKSBURG POWER STATION PROJECT. in service: To support EML’s capacity and energy needs, the planned in-service date for VAPS is August 2028.. retirements: A map showing EML’s existing certificated area and the location of VAPS utilizing EML’s existing ： Baxter Wilson Steam Electric Station site is attached as comp. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: MISO queue entry J1130; Gas; 966.0 MW; Withdrawn; queued 2018-03-12; in service 2023-05-01; point of interconnection Baxter Wilson SES 115/500 kV Sw YD. A queue entry is a lead, not proof. Cite the queue page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: MISO queue entry J3538; Gas; 730.0 MW; Withdrawn; queued 2024-04-17; in service 2027-03-30; point of interconnection Baxter 115/34kV. A queue entry is a lead, not proof. Cite the queue page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401921",
+      "plant_name": "Attala power station",
+      "brief_path": "batches/us-ms/briefs/L100000401921.md",
+      "unit_ids": [
+        "G100000401848"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Attala_power_station",
+      "n_tasks": 3,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000401848": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2022-UA-153 (Entergy Mississippi, LLC, filed 2022-12-07): SCHEDULING ORDER. megawatts: As discussed in more detail by EML witnesses Mary Decuir and Antonette Harvey in 14 their direct testimonies, the EDGE Resources were selected out of the 2022 R. in service: This portion of 2 the analysis provided the variable supply cost forecast for EML with the EDGE 3 Resources in service and savings relative to the portfolio wit. retirements: Decuir December 2022 1 MMD-Chart 2 2 3 The chart above depicts the Company’s projected long-term capacity requirements based 4 on projected peak load requiremen. Match: named 3 times in the documents read.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401833",
+      "plant_name": "Batesville generation facility",
+      "brief_path": "batches/us-ms/briefs/L100000401833.md",
+      "unit_ids": [
+        "G100000401786",
+        "G100000401787",
+        "G100000401788"
+      ],
+      "n_units": 3,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Batesville_generation_facility",
+      "n_tasks": 4,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000401786": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000401787": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000401788": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401627",
+      "plant_name": "Caledonia power station",
+      "brief_path": "batches/us-ms/briefs/L100000401627.md",
+      "unit_ids": [
+        "G100000401837",
+        "G100000401838",
+        "G100000401839"
+      ],
+      "n_units": 3,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Caledonia_power_station",
+      "n_tasks": 6,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000401837": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000401838": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000401839": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "GEM's owner is GE Energy Financial Services Inc, but MDEQ names the facility TVA Caledonia Combined Cycle Plant. Find who owns the plant now and since when, with a dated source, and run entity_lookup.py before staging any owner.",
+          "fields": [
+            "Owner(s)",
+            "Operator(s)"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: Southern queue entry IC-003; Combustion Turbine (Natural Gas); 500.0 MW; Withdrawn or terminated; point of interconnection Miller - Lowndes 500 kV Tie-line. A queue entry is a lead, not proof. Cite the queue page: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000402094",
+      "plant_name": "Chevron Oil power station",
+      "brief_path": "batches/us-ms/briefs/L100000402094.md",
+      "unit_ids": [
+        "G100000403187"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Chevron_Oil_power_station",
+      "n_tasks": 7,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000403187": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Optional check: Chevron Pascagoula's 101 MW gas turbine sits at the Chevron refinery and its captive fields are blank. If a source says the plant serves the refinery, fill the captive fields with that source.",
+          "fields": [
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: Southern queue entry IC-200; Combined Cycle (Natural Gas); 655.0 MW; Withdrawn or terminated; queued 2003-09-10; point of interconnection Daniel 230 kV Substation. A queue entry is a lead, not proof. Cite the queue page: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: Southern queue entry IC-201; Combined Cycle (Natural Gas); 655.0 MW; Withdrawn or terminated; queued 2003-09-10; point of interconnection Daniel 230 kV Substation. A queue entry is a lead, not proof. Cite the queue page: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: Southern queue entry IC-062; Combined Cycle (Natural Gas); 630.0 MW; Withdrawn or terminated; point of interconnection Daniel 500 kV Switchyard. A queue entry is a lead, not proof. Cite the queue page: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: Southern queue entry IC-064; Combined Cycle (Natural Gas); 630.0 MW; Withdrawn or terminated; point of interconnection Moss Point 230 kV T.S.. A queue entry is a lead, not proof. Cite the queue page: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401923",
+      "plant_name": "Choctaw County power station",
+      "brief_path": "batches/us-ms/briefs/L100000401923.md",
+      "unit_ids": [
+        "G100000401972"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Choctaw_County_power_station",
+      "n_tasks": 3,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000401972": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2022-UA-153 (Entergy Mississippi, LLC, filed 2022-12-07): SCHEDULING ORDER. megawatts: As discussed in more detail by EML witnesses Mary Decuir and Antonette Harvey in 14 their direct testimonies, the EDGE Resources were selected out of the 2022 R. in service: This portion of 2 the analysis provided the variable supply cost forecast for EML with the EDGE 3 Resources in service and savings relative to the portfolio wit. retirements: Decuir December 2022 1 MMD-Chart 2 2 3 The chart above depicts the Company’s projected long-term capacity requirements based 4 on projected peak load requiremen. Match: named 5 times in the documents read.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401819",
+      "plant_name": "Crossroads energy center",
+      "brief_path": "batches/us-ms/briefs/L100000401819.md",
+      "unit_ids": [
+        "G100000402624",
+        "G100000402625",
+        "G100000402626",
+        "G100000402627"
+      ],
+      "n_units": 4,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Crossroads_energy_center",
+      "n_tasks": 5,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402624": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402625": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402626": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402627": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401924",
+      "plant_name": "Gerald Andrus power station",
+      "brief_path": "batches/us-ms/briefs/L100000401924.md",
+      "unit_ids": [
+        "G100000402852"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Gerald_Andrus_power_station",
+      "n_tasks": 6,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402852": [
+          {
+            "text": "Retirement is planned for 2035. Does the plan still hold?",
+            "fields": [
+              "Planned retire"
+            ],
+            "checks": [
+              21
+            ]
+          },
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Gerald Andrus unit 1 has a planned retirement of 2035. Check it against Entergy Mississippi's 2024 integrated resource plan and newer filings.",
+          "fields": [
+            "Planned retire"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2022-UA-153 (Entergy Mississippi, LLC, filed 2022-12-07): SCHEDULING ORDER. megawatts: As discussed in more detail by EML witnesses Mary Decuir and Antonette Harvey in 14 their direct testimonies, the EDGE Resources were selected out of the 2022 R. in service: This portion of 2 the analysis provided the variable supply cost forecast for EML with the EDGE 3 Resources in service and savings relative to the portfolio wit. retirements: Decuir December 2022 1 MMD-Chart 2 2 3 The chart above depicts the Company’s projected long-term capacity requirements based 4 on projected peak load requiremen. Match: named 9 times in the documents read.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2024-UA-144 (Entergy Mississippi, LLC, filed 2024-12-12): AWS INFORMATIONAL TARIFF FILING FOR DELTA BLUES ADVANCED POWER STATION BY ENTERGY MISSISSIPPI, LLC. in service: To support EML’s capacity and energy needs, the planned in-service date for Delta Blues is May 2028.. retirements: EML’s 2021 Integrated Resource Plan (‘IRP”) identified the need for dispatchable generation in early 2030s due to generation unit retirements.. Match: named 16 times in the documents read.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401925",
+      "plant_name": "Hinds energy facility",
+      "brief_path": "batches/us-ms/briefs/L100000401925.md",
+      "unit_ids": [
+        "G100000401847"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Hinds_energy_facility",
+      "n_tasks": 3,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000401847": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: MISO queue entry J3825; Gas; 730.0 MW; Withdrawn; queued 2024-04-17; in service 2028-01-01; point of interconnection 230kV Greenacres Substation. A queue entry is a lead, not proof. Cite the queue page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000104009",
+      "plant_name": "Jack Watson Generating Plant",
+      "brief_path": "batches/us-ms/briefs/L100000104009.md",
+      "unit_ids": [
+        "G100001017948",
+        "G100001017947"
+      ],
+      "n_units": 2,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Jack_Watson_Generating_Plant",
+      "n_tasks": 20,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "CCS attachment?"
+      ],
+      "tasks": {
+        "G100001017948": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          },
+          {
+            "text": "Owner(s) (currently Mississippi Power Co [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 30.4392330); Longitude (currently -89.0261060); Location accuracy (currently exact): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The database's validation report says Carbon capture (CCS) has no data source. Find a document that states the current value for this unit and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "CCS attachment?"
+            ],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIA-860M file for September 2026 (plant 2049) gives operating year 1968, while GEM's start year is 2015. Check which is right.",
+            "fields": [
+              "Start year"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ],
+        "G100001017947": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          },
+          {
+            "text": "Owner(s) (currently Mississippi Power Co [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 30.4392330); Longitude (currently -89.0261060); Location accuracy (currently exact): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Conversion/replacement? (currently conversion): the value is present but Conversion/replacement Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Conversion/replacement?"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The database's validation report says Carbon capture (CCS) has no data source. Find a document that states the current value for this unit and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "CCS attachment?"
+            ],
+            "checks": [
+              7
+            ]
+          },
+          {
+            "text": "The EIA-860M file for September 2026 (plant 2049) gives operating year 1973, while GEM's start year is 2015. Check which is right.",
+            "fields": [
+              "Start year"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "The database's validation report says Owner has no data source. Find a document that states the current value for this plant and report the value with that document. If the document gives a different value, say so.",
+          "fields": [
+            "Owner(s)"
+          ],
+          "checks": [
+            7
+          ]
+        },
+        {
+          "text": "The database's validation report says Location has no data source. Find a document that states the current value for this plant and report the value with that document. If the document gives a different value, say so.",
+          "fields": [
+            "Latitude",
+            "Longitude",
+            "Location accuracy"
+          ],
+          "checks": [
+            7
+          ]
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2023-UN-57 (Mississippi Power Company, filed 2023-04-04): RULE 7.103 NOTICE/ PLANT WATSON UNIT 5. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2025-UN-87 (Mississippi Power Company, filed 2025-08-28): RULE 7.103 NOTICE TO REPLACE PLANT WATSON UNIT 4 HUMAN MACHINE INTERFACE. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2025-UN-88 (Mississippi Power Company, filed 2025-08-28): RULE 7.103 NOTICE TO REPLACE PLANT WATSON UNIT 4 SIDEWALL OUTLET HEADER. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2025-UN-89 (Mississippi Power Company, filed 2025-08-28): RULE 7.103 NOTICE TO REPLACE PLANT WATSON UNIT 4 OUTLET HEADERS. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2025-UN-90 (Mississippi Power Company, filed 2025-08-28): RULE 7.103 NOTICE TO REPLACE PLANT WATSON UNIT 4 TAPROGGE SYSTEM. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000402320",
+      "plant_name": "Kemper County power station",
+      "brief_path": "batches/us-ms/briefs/L100000402320.md",
+      "unit_ids": [
+        "G100000403629",
+        "G100000403630",
+        "G100000403631",
+        "G100000403632"
+      ],
+      "n_units": 4,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Kemper_County_power_station",
+      "n_tasks": 7,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000403629": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000403630": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000403631": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000403632": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: Southern queue entry 25-IC-1316; Combustion Turbine (Natural Gas); 25.0 MW; Withdrawn or terminated; queued 2025-04-11; point of interconnection Plant Ratcliffe Substation 230 kV Bus. A queue entry is a lead, not proof. Cite the queue page: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: Southern queue entry IC-235; Combined Cycle (Syngas / Natural Gas); 592.0 MW; In service; in service 2014-08-08. A queue entry is a lead, not proof. Cite the queue page: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000402322",
+      "plant_name": "Magnolia power plant",
+      "brief_path": "batches/us-ms/briefs/L100000402322.md",
+      "unit_ids": [
+        "G100000401924",
+        "G100000401925",
+        "G100000401926"
+      ],
+      "n_units": 3,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Magnolia_power_plant",
+      "n_tasks": 5,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000401924": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000401925": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000401926": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2025-UA-46 (Cooperative Energy, filed 2025-04-01): JOINT PETITION OF COOPERATIVE ENERGY AND MAGNOLIA ELECTRIC POWER ASSOCIATION FOR CERTIFICATE OF PUBLIC CONVENIENCE AND NECESSITY AUTHORIZING THEM TO ACQUIRE, CONSTRUCT, OWN AND OPERATE ELECTRICAL TRAN. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000104011",
+      "plant_name": "Morrow Generating Plant",
+      "brief_path": "batches/us-ms/briefs/L100000104011.md",
+      "unit_ids": [
+        "G100000409451"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Morrow_Generating_Plant",
+      "n_tasks": 8,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000409451": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          },
+          {
+            "text": "Owner(s) (currently Cooperative Energy [100%]): the value is present but Owners Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Owner(s)"
+            ],
+            "checks": []
+          },
+          {
+            "text": "Latitude (currently 31.2177560); Longitude (currently -89.3939720); Location accuracy (currently exact): the value is present but Location Data Source is empty. Find a document that states it and report the value with that document. If the document gives a different value, say so.",
+            "fields": [
+              "Latitude",
+              "Longitude",
+              "Location accuracy"
+            ],
+            "checks": []
+          },
+          {
+            "text": "The Sierra Club list (April '26, reference only, never cited) flags capacity change for this unit, with status operating and 156 MW. Look for a public source that shows what changed and report it; never cite the Sierra Club data.",
+            "fields": [
+              "Status",
+              "Capacity (MW)",
+              "Turbine/Engine Technology",
+              "Owner(s)"
+            ],
+            "checks": [
+              38
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "The database's validation report says Owner has no data source. Find a document that states the current value for this plant and report the value with that document. If the document gives a different value, say so.",
+          "fields": [
+            "Owner(s)"
+          ],
+          "checks": [
+            7
+          ]
+        },
+        {
+          "text": "The database's validation report says Location has no data source. Find a document that states the current value for this plant and report the value with that document. If the document gives a different value, say so.",
+          "fields": [
+            "Latitude",
+            "Longitude",
+            "Location accuracy"
+          ],
+          "checks": [
+            7
+          ]
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: MISO queue entry J1249; Gas; 600.0 MW; Done; queued 2019-04-29; in service 2022-03-01; point of interconnection Morrow 161 kV Substation. A queue entry is a lead, not proof. Cite the queue page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401834",
+      "plant_name": "Moselle power station",
+      "brief_path": "batches/us-ms/briefs/L100000401834.md",
+      "unit_ids": [
+        "G100000402658",
+        "G100000402659",
+        "G100000402660",
+        "G100000401636",
+        "G100000401637"
+      ],
+      "n_units": 5,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Moselle_power_station",
+      "n_tasks": 10,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402658": [
+          {
+            "text": "The planned retirement year 2025 is in the past. Did the unit retire? If so the status is retired with a retired year. If the plan moved, give the new year and its source.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire"
+            ],
+            "checks": [
+              21,
+              23
+            ]
+          },
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402659": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402660": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000401636": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000401637": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Unit 3 (59 MW steam unit) has a planned retirement of 2025, which has passed. Find out from Cooperative Energy, EIA-860M or MDEQ whether it retired, and when. If it retired, give the year with sources; if not, find the new planned date.",
+          "fields": [
+            "Status",
+            "Retired year",
+            "Planned retire",
+            "Status Detail"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: Southern queue entry IC-110; Combined Cycle (Natural Gas); 855.0 MW; Withdrawn or terminated; point of interconnection Laurel East 230 kV Substation. A queue entry is a lead, not proof. Cite the queue page: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: Southern queue entry IC-127; Combustion Turbine (Natural Gas); 320.0 MW; Withdrawn or terminated; point of interconnection S.Hattiesburg 115 kV Line. A queue entry is a lead, not proof. Cite the queue page: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000402325",
+      "plant_name": "Quantum Choctaw Power station",
+      "brief_path": "batches/us-ms/briefs/L100000402325.md",
+      "unit_ids": [
+        "G100000401969"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Quantum_Choctaw_Power_station",
+      "n_tasks": 3,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "CCS attachment?",
+        "Notes"
+      ],
+      "tasks": {
+        "G100000401969": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "The possible-updates sheet marks TVA's carbon capture study at Ackerman (this plant, TVA Ackerman Combined Cycle in the MDEQ permit) as 'check next cycle'. Find the newest TVA or Department of Energy document on the study and say whether anything changed: a funded project, a decision or a cancellation. Report the carbon capture box only on a source that names this plant.",
+          "fields": [
+            "CCS attachment?",
+            "Status Detail",
+            "Notes"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000402096",
+      "plant_name": "Ratcliffe power plant",
+      "brief_path": "batches/us-ms/briefs/L100000402096.md",
+      "unit_ids": [
+        "G100000402041"
+      ],
+      "n_units": 1,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Ratcliffe_power_plant",
+      "n_tasks": 9,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402041": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2023-UN-54 (Mississippi Power Company, filed 2023-04-04): RULE 7.103 NOTICE/ PLANT RATCLIFFE 1. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2023-UN-55 (Mississippi Power Company, filed 2023-04-04): RULE 7.103 NOTICE/ PLANT RATCLIFFE 1. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2023-UN-56 (Mississippi Power Company, filed 2023-04-04): RULE 7.103 NOTICE/ PLANT RATCLIFFE 1. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2024-UN-150 (Mississippi Power Company, filed 2024-12-18): RULE 7.103 NOTICE TO UPGRADE PLANT RATCLIFFE UNIT 1 OVATION CONTROLS SYSTEM ON THE BALANCE OF PLANT (BOP). Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2024-UN-151 (Mississippi Power Company, filed 2024-12-18): RULE 7.103 NOTICE TO REPLACE PLANT RATCLIFFE UNIT 1 STEAM VALVE. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: Southern queue entry 25-IC-1316; Combustion Turbine (Natural Gas); 25.0 MW; Withdrawn or terminated; queued 2025-04-11; point of interconnection Plant Ratcliffe Substation 230 kV Bus. A queue entry is a lead, not proof. Cite the queue page: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: Southern queue entry IC-235; Combined Cycle (Syngas / Natural Gas); 592.0 MW; In service; in service 2014-08-08. A queue entry is a lead, not proof. Cite the queue page: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401835",
+      "plant_name": "Silver Creek power station",
+      "brief_path": "batches/us-ms/briefs/L100000401835.md",
+      "unit_ids": [
+        "G100000402661",
+        "G100000402662",
+        "G100000402663"
+      ],
+      "n_units": 3,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Silver_Creek_power_station",
+      "n_tasks": 4,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000402661": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402662": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402663": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401628",
+      "plant_name": "TVA Southaven Combined Cycle power station",
+      "brief_path": "batches/us-ms/briefs/L100000401628.md",
+      "unit_ids": [
+        "G100000401862",
+        "G100000401863",
+        "G100000401864"
+      ],
+      "n_units": 3,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/TVA_Southaven_Combined_Cycle_power_station",
+      "n_tasks": 5,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {
+        "G100000401862": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000401863": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000401864": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: MISO queue entry J1813; Gas; 920.0 MW; Done; queued 2022-07-07; in service 2020-03-20; point of interconnection Entergy Freeport 230 kV Substation. A queue entry is a lead, not proof. Cite the queue page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000402097",
+      "plant_name": "Victor J Daniel Jr power station",
+      "brief_path": "batches/us-ms/briefs/L100000402097.md",
+      "unit_ids": [
+        "G100000402099",
+        "G100000402100"
+      ],
+      "n_units": 2,
+      "max_priority": 5,
+      "wiki_url": "https://www.gem.wiki/Victor_J_Daniel_Jr_power_station",
+      "n_tasks": 34,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?",
+        "Notes"
+      ],
+      "tasks": {
+        "G100000402099": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ],
+        "G100000402100": [
+          {
+            "text": "Last check on an operating unit. Is it still operating? Look for a retirement, a planned retirement date, a mothballing, or a change of owner announced since the last update. Do not research anything else on this unit.",
+            "fields": [
+              "Status",
+              "Retired year",
+              "Planned retire",
+              "Owner(s)"
+            ],
+            "checks": [
+              50,
+              43
+            ]
+          }
+        ]
+      },
+      "plant_tasks": [
+        {
+          "text": "The coal side of Plant Daniel has unit 2 with a planned retirement of 2029 in the unfiltered export. Check Mississippi Power's 2024 integrated resource plan and later filings for a gas conversion or a gas replacement at Daniel. The Sierra Club list mentions a planned 548 MW unit 2 here; identify what it is from a public source and stage it only on that source.",
+          "fields": [
+            "Status",
+            "Planned retire",
+            "Conversion/replacement?",
+            "Notes"
+          ],
+          "checks": []
+        },
+        {
+          "text": "The Sierra Club list (April '26, reference only, never cited) has a row \"Victor J. Daniel Jr.\" unit 2 (planned, 548 MW) matched to this plant, but no GEM unit here has that status (GEM units: 3 (operating); 4 (operating)). It may be a project GEM holds under another plant or not at all. Say in a question what it is and whether GEM should hold it; never cite the Sierra Club data.",
+          "fields": [],
+          "checks": [
+            38
+          ]
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2023-UN-41 (Mississippi Power Company, filed 2023-04-04): RULE 7.103 NOTICE/ PLANT DANIEL 2. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2023-UN-42 (Mississippi Power Company, filed 2023-04-04): RULE 7.103 NOTICE/ PLANT DANIEL 3. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2023-UN-43 (Mississippi Power Company, filed 2023-04-04): RULE 7.103 NOTICE/ PLANT DANIEL UNIT 3. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2023-UN-44 (Mississippi Power Company, filed 2023-04-04): RULE 7.103 NOTICE/ PLANT DANIEL 3A. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2023-UN-45 (Mississippi Power Company, filed 2023-04-04): RULE 7.103 NOTICE/ PLANT DANIEL 3A. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2023-UN-46 (Mississippi Power Company, filed 2023-04-04): RULE 7.103 NOTICE/ PLANT DANIEL 3B. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2023-UN-47 (Mississippi Power Company, filed 2023-04-04): RULE 7.103 NOTICE/ PLANT DANIEL 3B. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2023-UN-48 (Mississippi Power Company, filed 2023-04-04): RULE 7.103 NOTICE/ PLANT DANIEL 4. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2023-UN-49 (Mississippi Power Company, filed 2023-04-04): RULE 7.103 NOTICE/ PLANT DANIEL UNIT 4. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2023-UN-50 (Mississippi Power Company, filed 2023-04-04): RULE 7.103 NOTICE/ PLANT DANIEL UNIT 4. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2023-UN-51 (Mississippi Power Company, filed 2023-04-04): RULE 7.103 NOTICE/ PLANT DANIEL 4B. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2023-UN-52 (Mississippi Power Company, filed 2023-04-04): RULE 7.103 NOTICE/ PLANT DANIEL 4B. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2023-UN-53 (Mississippi Power Company, filed 2023-04-04): RULE 7.103 NOTICE/ PLANT DANIEL UNITS3&4. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2024-UA-122 (Mississippi Power Company, filed 2024-11-08): PETITION OF MISSISSIPPI POWER ASSOCIATION FOR AN ACCOUNTING AUTHORIZATION RELATED TO THE ACQUISITION OF REMAINING PROPERTY RIGHTS AT PLANT DANIEL. retirements: MPC and FPL have heretofore entered into that certain Second Amended and Restated Plant Daniel Operating Agreement, dated as of July 8, 2022 (“Operating Agreeme. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2024-UN-147 (Mississippi Power Company, filed 2024-12-18): RULE 7.103 NOTICE TO REBUILD PLANT DANIEL UNIT 2 - 2A PULVERIZER&nbsp;. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2024-UN-148 (Mississippi Power Company, filed 2024-12-18): RULE 7.103 NOTICE TO REPLACE PLANT DANIEL UNIT 3 GAS TURBINE EXHAUST DUCT LINERS. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2024-UN-149 (Mississippi Power Company, filed 2024-12-18): RULE 7.103 NOTICE TO INSTALL PLANT DANIEL NEW CRASH GATE. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2026-UA-5 (Mississippi Power Company, filed 2026-02-12): PETITION OF MISSISSIPPI POWER FOR A CERTIFICATE OF PUBLIC CONVENIENCE AND NECESSITY AUTHORIZING THE CONVERSION TO NATURAL GAS OF UNIT 2 OF PLANT VICTOR J. DANIEL IN JACKSON COUNTY, MISSISSIPPI. megawatts: SO2MW 0 00 000 SISMW 7 00000 1 __ Maintenance Capital - . 6860 O&M ㆍ . .. in service: The conversion outage is expected to take | place in Spring 2029 with an expected completion in May and commencement of gas operation in June 2029. | 10.. retirements: The rule requires owners of existing | 8 coalfired power plants to retire by 2032, fully convert or co-fire with natural gas beginning 9 in 2030, or install cap. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2026-UN-41 (Mississippi Power Company, filed 2026-06-30): RULE 7.103 NOTICE TO REPLACE PLANT DANIEL UNIT 2 AIR HEATER BASKET&nbsp;. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2026-UN-42 (Mississippi Power Company, filed 2026-06-30): RULE 7.103 NOTICE TO REPLACE PLANT DANIEL UNIT 2 DUCTWORK. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2026-UN-43 (Mississippi Power Company, filed 2026-06-30): RULE 7.103 NOTICE TO REPLACE PLANT DANIEL UNIT 2 PULVERIZER. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2026-UN-44 (Mississippi Power Company, filed 2026-06-30): RULE 7.103 NOTICE TO REPLACE PLANT DANIEL UNIT 2 SOOTBLOWERS. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2026-UN-45 (Mississippi Power Company, filed 2026-06-30): RULE 7.103 NOTICE TO REPLACE PLANT DANIEL UNIT 2 TURBINE VALVES. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2026-UN-46 (Mississippi Power Company, filed 2026-06-30): RULE 7.103 NOTICE TO REPLACE PLANT DANIEL UNIT 1 CT INSULATION&nbsp;. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2026-UN-47 (Mississippi Power Company, filed 2026-06-30): RULE 7.103 NOTICE TO REPLACE PLANT DANIEL UNIT 1 EXCITER. Match: name in the docket title or comments.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: Southern queue entry IC-200; Combined Cycle (Natural Gas); 655.0 MW; Withdrawn or terminated; queued 2003-09-10; point of interconnection Daniel 230 kV Substation. A queue entry is a lead, not proof. Cite the queue page: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: Southern queue entry IC-201; Combined Cycle (Natural Gas); 655.0 MW; Withdrawn or terminated; queued 2003-09-10; point of interconnection Daniel 230 kV Substation. A queue entry is a lead, not proof. Cite the queue page: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: Southern queue entry IC-062; Combined Cycle (Natural Gas); 630.0 MW; Withdrawn or terminated; point of interconnection Daniel 500 kV Switchyard. A queue entry is a lead, not proof. Cite the queue page: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: Southern queue entry IC-064; Combined Cycle (Natural Gas); 630.0 MW; Withdrawn or terminated; point of interconnection Moss Point 230 kV T.S.. A queue entry is a lead, not proof. Cite the queue page: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    },
+    {
+      "plant_id": "L100000401922",
+      "plant_name": "Baxter Wilson power station",
+      "brief_path": "batches/us-ms/briefs/L100000401922.md",
+      "unit_ids": [
+        "G100000402851",
+        "G100001055022"
+      ],
+      "n_units": 2,
+      "max_priority": 9,
+      "wiki_url": "https://www.gem.wiki/Baxter_Wilson_power_station",
+      "n_tasks": 5,
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Fuel",
+        "Turbine/Engine Technology",
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Start year",
+        "Retired year",
+        "Planned retire",
+        "Cancellation year",
+        "Latest Activity",
+        "Status Detail",
+        "CHP",
+        "Owner(s)",
+        "Operator(s)",
+        "Latitude",
+        "Longitude",
+        "Location accuracy",
+        "Captive industry use",
+        "Captive industry type",
+        "Captive non-industry use",
+        "Conversion/replacement?"
+      ],
+      "tasks": {},
+      "plant_tasks": [
+        {
+          "text": "Unit 2 has a retired year of 2018, before the 2020 floor for retired units. Amalia Llano added it in July 2025, likely as the link for the Vicksburg replacement. Do not stage a change to unit 2; write one question for Amalia that states what the sources say about its retirement. Check unit 1's 2023 retirement date and source.",
+          "fields": [
+            "Retired year",
+            "Status"
+          ],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: PSC docket 2022-UA-153 (Entergy Mississippi, LLC, filed 2022-12-07): SCHEDULING ORDER. megawatts: As discussed in more detail by EML witnesses Mary Decuir and Antonette Harvey in 14 their direct testimonies, the EDGE Resources were selected out of the 2022 R. in service: This portion of 2 the analysis provided the variable supply cost forecast for EML with the EDGE 3 Resources in service and savings relative to the portfolio wit. retirements: Decuir December 2022 1 MMD-Chart 2 2 3 The chart above depicts the Company’s projected long-term capacity requirements based 4 on projected peak load requiremen. Match: named 11 times in the documents read.",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: MISO queue entry J1130; Gas; 966.0 MW; Withdrawn; queued 2018-03-12; in service 2023-05-01; point of interconnection Baxter Wilson SES 115/500 kV Sw YD. A queue entry is a lead, not proof. Cite the queue page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Pre-sweep harvest found this for the plant, read the source and use it when it is evidence for a value: MISO queue entry J3538; Gas; 730.0 MW; Withdrawn; queued 2024-04-17; in service 2027-03-30; point of interconnection Baxter 115/34kV. A queue entry is a lead, not proof. Cite the queue page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/",
+          "fields": [],
+          "checks": []
+        },
+        {
+          "text": "Mississippi context. The Mississippi Public Service Commission regulates Entergy Mississippi, Mississippi Power and Cooperative Energy; docket numbers look like 2022-UA-153, and the portal needs a session, so cite the docket number and document name or the monthly docket list PDF. Air permits come from the Mississippi Department of Environmental Quality (MDEQ) Permit Board through enSearch Online. Read the harvested permit index in work/permits/us-ms/<plant id>.md and the dockets and queue entries on this brief first. Entergy Mississippi and Cooperative Energy are in MISO, Mississippi Power is in the Southern Company balancing area, and TVA serves the north of the state. TVA projects need no state certificate; TVA environmental reviews and records of decision are the approval documents.",
+          "fields": [
+            "Status",
+            "Capacity (MW)",
+            "Fuel",
+            "Turbine/Engine Technology",
+            "Equipment Manufacturer/Model",
+            "Number Of Engines",
+            "Capacity Per Engine",
+            "Start year",
+            "Retired year",
+            "Planned retire",
+            "Cancellation year",
+            "Latest Activity",
+            "Status Detail",
+            "CHP",
+            "Owner(s)",
+            "Operator(s)",
+            "Latitude",
+            "Longitude",
+            "Location accuracy",
+            "Captive industry use",
+            "Captive industry type",
+            "Captive non-industry use",
+            "Conversion/replacement?"
+          ],
+          "checks": []
+        }
+      ]
+    }
+  ],
+  "not_tasked": [],
+  "promoted_new": [],
+  "irp": {
+    "file": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/work/irp_us-mississippi.json",
+    "brief_path": "batches/us-ms/briefs/_irp.md",
+    "read": "2026-10-23",
+    "skipped": false,
+    "utilities": [
+      {
+        "utility": "Mississippi Power Company",
+        "irp_year": "2024 IRP",
+        "is_draft": false,
+        "links": [
+          "https://www.synapse-energy.com/mississippi-power-company-2024-integrated-resource-plan"
+        ],
+        "next_irp_due": "",
+        "plant_ids": [
+          "L100000402094",
+          "L100000104009",
+          "L100000402096",
+          "L100000402097"
+        ]
+      },
+      {
+        "utility": "Entergy Mississippi",
+        "irp_year": "2024 IRP",
+        "is_draft": false,
+        "links": [
+          "https://www.psc.ms.gov/sites/default/files/2023-07/EML-2024-IRP-Notice-Initial-Public-Workshop.pdf"
+        ],
+        "next_irp_due": "",
+        "plant_ids": [
+          "L100000401921",
+          "L100000401922",
+          "L100000401923",
+          "L100001025781",
+          "L100000401924",
+          "L100000401925",
+          "L100001064651",
+          "L100001080981"
+        ]
+      },
+      {
+        "utility": "Mississippi PSC",
+        "irp_year": "",
+        "is_draft": false,
+        "links": [
+          "https://www.mississippipower.com/company/energy-sources.html"
+        ],
+        "next_irp_due": "",
+        "plant_ids": []
+      }
+    ],
+    "links": [
+      "https://www.synapse-energy.com/mississippi-power-company-2024-integrated-resource-plan",
+      "https://www.psc.ms.gov/sites/default/files/2023-07/EML-2024-IRP-Notice-Initial-Public-Workshop.pdf",
+      "https://www.mississippipower.com/company/energy-sources.html"
+    ],
+    "irp_box_units": []
+  },
+  "captive": {
+    "file": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/work/captive_us-mississippi.json",
+    "brief_path": "batches/us-ms/briefs/_captive.md",
+    "read": "2026-10-23",
+    "threshold_mw": 50,
+    "terminals": [
+      {
+        "terminal": "Gulf LNG Terminal",
+        "terminal_id": "T100000130228",
+        "qualifying": false,
+        "mechanical_only": false,
+        "plant_ids": []
+      }
+    ],
+    "new_candidates": [],
+    "gem_only": [],
+    "data_center": true
+  },
+  "harvest": {
+    "folder": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/batches/us-ms/harvest",
+    "plant_tasks": 67,
+    "unmatched_dockets": [
+      "2023-UA-20",
+      "2025-UA-102"
+    ],
+    "unmatched_queue_entries": [
+      "J888",
+      "26-IC-1490",
+      "26-IC-1489",
+      "26-IC-1425",
+      "IC-012",
+      "IC-123",
+      "IC-124"
+    ]
+  },
+  "location": {
+    "file": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/work/location_us-ms.json",
+    "read": "2026-10-23T13:59:38-04:00",
+    "sources": {
+      "eia860m": "september_generator2026.xlsx",
+      "eia860": "eia8602024.zip"
+    },
+    "plants_checked": 24,
+    "candidates": [
+      "L100001064651"
+    ]
+  },
+  "ids_followup": [
+    {
+      "eia_id": "2059",
+      "name": "L L Wilkins",
+      "capacity_mw": 55.2,
+      "status": "operating"
+    },
+    {
+      "eia_id": "70187",
+      "name": "Traceview Advanced Power Station",
+      "capacity_mw": 819.4,
+      "status": "construction"
+    },
+    {
+      "eia_id": "7989",
+      "name": "Sylvarena",
+      "capacity_mw": 141.0,
+      "status": "operating"
+    }
+  ],
+  "coverage_list": "docs/coverage/us-ms.json",
+  "coverage_ids": [
+    "mdeq-air-notices",
+    "mdeq-permit-board",
+    "mdeq-harvest-unmatched",
+    "ms-psc-dockets",
+    "miso-gi-queue",
+    "miso-eras",
+    "southern-oasis-queue",
+    "tva-queue",
+    "tva-nepa",
+    "eia-860m",
+    "eia-860",
+    "entergy-mississippi",
+    "mississippi-power",
+    "cooperative-energy",
+    "possible-updates-sheet",
+    "captive-lng-sheet",
+    "data-center-xai",
+    "data-center-amazon"
+  ]
+}

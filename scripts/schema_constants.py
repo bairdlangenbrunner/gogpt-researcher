@@ -5,7 +5,7 @@ scope_filter.py, worklist.py, qc_checks.py, and build_review_package.py.
 
 Column names are the exact gem_export_gogpt.csv header strings (the 91-column
 layout in gem-db-ops/gem_all_fields.py GOGPT_COLUMNS); enum values follow the
-GOGPT Editing Manual (March 2026) — see docs/reference/controlled_vocab.md and
+GOGPT Editing Manual (September 2026) — see docs/reference/controlled_vocab.md and
 docs/reference/lifecycle_rules.md. Enum casing in the live export can drift;
 compare case-insensitively and update here if verification against a fresh
 pull shows different display strings.
@@ -51,7 +51,9 @@ STATUSES_ENDED = {"cancelled", "cancelled - inferred 4 y",
 STATUSES = (STATUSES_IN_DEVELOPMENT | STATUSES_OPERATING
             | STATUSES_PAUSED | STATUSES_ENDED)
 
-# Start year must be blank (or Planned-flagged projection) for these:
+# Start year must be blank for these. A projected start year is not a start
+# year: it is a scheduled event (Event Year = the projected year, Source Year =
+# the year the source reported it) and is staged as a new scheduled event entry.
 STATUSES_NO_START_YEAR = {"shelved", "shelved - inferred 2 y",
                           "shelved – inferred 2 y",
                           "cancelled", "cancelled - inferred 4 y",
@@ -113,7 +115,7 @@ NON_GOGPT_FUEL_HINTS = {
 }
 
 # --- Capacity inclusion thresholds (MW) -------------------------------------
-CAPACITY_THRESHOLD_MW = 50        # global floor (nameplate, per unit / per set)
+CAPACITY_THRESHOLD_MW = 50        # global floor (nameplate or installed electrical MW, per unit / per set)
 CAPACITY_THRESHOLD_EU_UK_MW = 20  # EU + UK use a lower per-unit bar
 
 EU_UK_COUNTRIES = {
@@ -137,9 +139,20 @@ RESEARCH_FIELDS = [
     "Start year", "Retired year", "Planned retire", "Cancellation year",
     "Latest Activity", "Status Detail", "CHP", "Owner(s)", "Operator(s)",
     "Latitude", "Longitude", "Location accuracy", "Captive industry use",
-    "Captive industry type", "Captive non-industry use",
+    "Captive industry type", "Captive non-industry use", "Backup Power",
     "Conversion/replacement?",
 ]
+
+# --- Location methods (the staged `location_method` of a Location record) -----
+# `published` covers the manual's five routes to an exact point that need no
+# imagery: coordinates or a map published by a government body, the owner or
+# the operator; coordinates in a permit or similar document; a Google map
+# embedded on the owner's or operator's site; Wikimapia or OpenStreetMap; a
+# project Google Maps identifies by name. The record's `location_route` text
+# names which route. `imagery` is the satellite look; `dataset`, `site_reference`
+# (both exact only when the route text names the publisher), `address` and
+# `map` (a georeferenced figure) are the other ways a point is found.
+LOCATION_METHODS = ("address", "site_reference", "dataset", "map", "imagery", "published")
 
 # --- Free-text boxes that are only ever added to ------------------------------
 # Status Detail and Notes are running logs in the GEM web form, newest entry at
@@ -147,7 +160,10 @@ RESEARCH_FIELDS = [
 # already there, which stays word for word; never a rewrite, never a deletion
 # (Baird 2026-10-07). build_review_package.additive_value composes the cell,
 # assemble_state.py uses it, and state_gate.py (gate `additive`) plus
-# build_review_package.validate reject anything else.
+# build_review_package.validate reject anything else. The manual lets a human
+# clean up Notes; the researcher never does. An outdated Notes entry is flagged
+# with a qa record of concern type `notes_cleanup` for a human to remove
+# (Baird 2026-10-27).
 ADDITIVE_TEXT_COLUMNS = ("Status Detail", "Notes")
 
 # --- Boxes that carry their own source link -----------------------------------
@@ -158,3 +174,38 @@ ADDITIVE_TEXT_COLUMNS = ("Status Detail", "Notes")
 # column to itself, so a staged record keys the link under the column's own
 # name and the build never merges it into a Data Source cell.
 INLINE_SOURCE_COLUMNS = ("Status Detail",)
+
+# --- The add threshold and the watch list (Baird 2026-10-23) -----------------
+# A project GEM lacks is ADDED (newplants or newunits) as soon as one verified
+# public source names a gas or oil generating project, places it in scope, and
+# gives a capacity at the threshold, a unit count with a plant total, or no
+# capacity at all (the manual: leave capacity blank and remove it later if it
+# turns out small). The manual's status ladder decides the status, never the
+# add: a planning document, a grid-operator queue entry or a press
+# announcement is `announced`; a permit application, land, financing, a
+# prior-approval docket or a signed interconnection agreement is
+# `pre-construction`. Start year, owner, turbine model and exact coordinates
+# never hold an add back; they stay blank with a note saying what was not
+# found. The live database already holds queue-only entries this way (18 US
+# units whose only status source is an ERCOT, MISO, SPP or PJM document,
+# counted 2026-10-23). A gas-fired data center plant is added like any other
+# project, and a backup or emergency engine fleet at a data center is a plant
+# at its summed nameplate (Baird 2026-10-27; the old data_center_hold case is
+# gone). A watch item (monitor, new_to_tracker or lead_for) is
+# only for the seven cases below, and names its case in `watch_case`; state_gate.py
+# gate `watch-case` (advisory) flags a watch item that names none or whose
+# case the record's own values contradict.
+WATCH_CASES = {
+    "no_generation": "no gas or oil generating unit is named yet (a campus, a site or a "
+                     "program with no plant in it)",
+    "under_threshold": "every unit is under the add threshold and they are not an engine or "
+                       "aeroderivative set that sums to it",
+    "drive_or_storage": "generator or mechanical drive, or thermal or storage, is unresolved",
+    "duplicate_check": "it may be a plant or unit GEM already has under another name (really "
+                       "a question for the qa lane)",
+    "not_committed": "a plan studies it as an option or a sensitivity case; no project is "
+                     "described",
+    "other_scope": "it sits in another state or country; the evidence file lists it as a "
+                   "handoff",
+    "unverified": "no source has passed the verifier yet; a lead for the next batch",
+}

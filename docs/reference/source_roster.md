@@ -166,6 +166,10 @@ These identify candidate plants and rough parameters fast, but their
 values must always be re-verified against a Tier 1/2 primary before
 staging — never cite the aggregator itself as the `[ref]`.
 
+This tier is a repo rule, stricter than the GOGPT Editing Manual, which has no rule against citing these sites. A value that rests only on one of them stays yellow and is never promoted to green; `state_gate.py` reports such links in the advisory `lead-only` gate (Baird 2026-10-23). gem.wiki and globalenergymonitor.org are different: never cited at all.
+
+- **Cleanview** (`cleanview.co`), **interconnection.fyi**, **gridstatus.io** and **GridInfo** (`gridinfo.com`): repackaged interconnection queue and plant lists. Find the queue file, filing or permit they point to. In Illinois a Cleanview entry read as a 391 MW plant was an 11 MW uprate in the PJM study.
+
 - **Global Energy Observatory** (`globalenergyobservatory.org`) — legacy
   crowdsourced plant database; largely inactive/frozen. Historically used
   for start-year leads; corroborate independently, don't cite.

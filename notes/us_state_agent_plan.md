@@ -98,7 +98,7 @@ python build_sweep_args.py --batch ../batches/us-ga --model sonnet --group-max 5
 #    gas plants, reads briefs/_irp.md, briefs/_captive.md (captive LNG terminals,
 #    then the data-center block) and the promoted candidates, and writes
 #    shards/_state.json (qa, monitor, newplants, newunits, meta.irp_summary);
-#    data centers go to monitor only, checks [39]; captive LNG items carry
+#    data center plants and backup fleets are newplants, checks [39] (briefs/_data_centers.md); captive LNG items carry
 #    captive_lng: true and checks [6, 44]
 #    Location: the sweep agent climbs the ladder in docs/reference/location.md
 #    (address or site sentence, geocode.py, site_image.py satellite look); a plant it
@@ -114,7 +114,7 @@ python build_review_package.py --staging ../batches/us-ga/staging --scope us-ga 
 
 A staging folder curated by hand after assembly (Maryland, New York) is never
 rebuilt from its shards; `add_checklist_fields.py --staging <dir>` adds the
-checklist fields in place.
+checklist fields in place, and `add_question_fields.py --staging <dir>` the question fields.
 
 ## Modes
 
@@ -147,7 +147,7 @@ else; anything it notices in passing goes to `qa`. The prompt also carries
 the Maryland lessons as rules: never change a present coordinate, the EIA
 utility name is not the owner, never drop an EIA-860 fuel, conversion-unit
 start year, engine fields only for reciprocating engines, captive fields
-blank for grid plants. A statewide agent writes `shards/_state.json` (qa, monitor, newplants and newunits) for newly announced plants, the captive LNG sheet's terminals (`briefs/_captive.md`; qualifying rows are the only LNG captive plants at the add threshold) and gas-fired data centers (watch list only, Baird 2026-10-08); `assemble_state.py` passes it through with record IDs starting `us-<postal>:plant`.
+blank for grid plants. A statewide agent writes `shards/_state.json` (qa, monitor, newplants and newunits) for newly announced plants, the captive LNG sheet's terminals (`briefs/_captive.md`; qualifying rows are the only LNG captive plants at the add threshold) and data center plants and backup engine fleets (adds at the summed nameplate threshold, Baird 2026-10-27, `briefs/_data_centers.md`); `assemble_state.py` passes it through with record IDs starting `us-<postal>:plant`.
 
 ## Shard contract (`shards/<L...>.json`)
 

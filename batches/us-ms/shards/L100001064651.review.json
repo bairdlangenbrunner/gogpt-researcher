@@ -1,0 +1,162 @@
+{
+ "meta": {
+  "plant_id": "L100001064651",
+  "plant_name": "Traceview Advanced power station",
+  "state": "Mississippi",
+  "mode": "update",
+  "model": "opus",
+  "generated": "2026-10-23T14:11:56-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001074418",
+   "unit_name": "Unit 1",
+   "findings": {},
+   "not_found": [],
+   "notes": "This pass checked the plant location only. The first pass covered the other fields."
+  }
+ ],
+ "plant_findings": {
+  "Latitude": {
+   "value": "32.40700",
+   "refs": [
+    "https://www.entergymississippi.com/generation/traceview",
+    "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1877274",
+    "https://www.google.com/maps/search/?api=1&query=32.40700,-90.21500"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.entergymississippi.com/generation/traceview",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1877274",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=32.40700,-90.21500",
+     "ok": true,
+     "contains_value": false,
+     "name_found": false
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "Entergy Mississippi's Traceview project page at https://www.entergymississippi.com/generation/traceview says the plant will sit north of West County Line Road in Ridgeland, between Livingston Road and the Natchez Trace Parkway, next to an existing high-voltage transmission corridor, on a 585 acre property. The final air permit from the Mississippi Department of Environmental Quality, issued October 14, 2026, gives the address as 1972 W County Line Road at https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1877274. Entergy's July 2026 informational filing to the Mississippi Public Service Commission in docket 2026-UA-55 says the same 585 acre site lies next to the Amazon Web Services facility in Madison County. In satellite imagery of unknown date, the only large cleared ground between those roads is a set of graded pads on both sides of the transmission lines, about 800 meters north of West County Line Road. The Amazon Web Services data center buildings are visible about 2 kilometers to the east, past Livingston Road. I placed the point at 32.40700, -90.21500, at the middle of the graded pads where the transmission lines cross them. No stacks, turbine hall or switchyard are built yet, so the point stays approximate. GEM's current point at 32.41000, -90.14500 is about 6.6 kilometers east of the site, in a different part of Madison County."
+  },
+  "Longitude": {
+   "value": "-90.21500",
+   "refs": [
+    "https://www.entergymississippi.com/generation/traceview",
+    "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1877274",
+    "https://www.google.com/maps/search/?api=1&query=32.40700,-90.21500"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.entergymississippi.com/generation/traceview",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1877274",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=32.40700,-90.21500",
+     "ok": true,
+     "contains_value": false,
+     "name_found": false
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "This goes with the latitude. The point is the middle of the graded site north of West County Line Road described in the latitude note."
+  },
+  "Location accuracy": {
+   "value": "approximate",
+   "refs": [
+    "https://www.entergymississippi.com/generation/traceview",
+    "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1877274",
+    "https://www.google.com/maps/search/?api=1&query=32.40700,-90.21500"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.entergymississippi.com/generation/traceview",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1877274",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=32.40700,-90.21500",
+     "ok": true,
+     "contains_value": false,
+     "name_found": false
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The satellite picture shows cleared and graded ground and a construction yard on the described property, but no plant buildings yet. The date of the imagery is unknown. I cannot tell which pad will hold the turbine and which the switchyard, so the point is approximate."
+  }
+ },
+ "location": {
+  "method": "site_reference",
+  "moved_m": 6590,
+  "control_points": [],
+  "fit_m": null,
+  "image": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/work/sweep_MS/maps/L100001064651_mid_1.png",
+  "needs_review": false,
+  "review_note": "The move from GEM's point is about 6.6 kilometers, so the site was checked again against Entergy's description, the permit address and the EIA point, and all three agree. Entergy's own description of the site matches the graded ground in the picture, and the street address and the EIA-860M point for plant 70187 both fall on or next to the same property. The EIA point at 32.40565, -90.22114 is about 600 meters west of my point, on the western cleared area of the same property. The address geocodes to the road edge about 800 meters to the south. All three agree on the site, so no further look is needed."
+ },
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.entergymississippi.com/generation/traceview",
+   "used_for": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "outcome": "verified",
+   "note": "Entergy's project page gives the site description north of West County Line Road between Livingston Road and the Natchez Trace Parkway, next to a transmission corridor."
+  },
+  {
+   "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1877274",
+   "used_for": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "outcome": "verified",
+   "note": "The October 2026 air permit gives the address 1972 W County Line Road, Ridgeland."
+  },
+  {
+   "url": "https://www.google.com/maps/search/?api=1&query=32.40700,-90.21500",
+   "used_for": [
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "outcome": "verified",
+   "note": "Map pin for the proposed point."
+  }
+ ]
+}

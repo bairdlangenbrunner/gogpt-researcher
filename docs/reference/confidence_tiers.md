@@ -26,7 +26,7 @@ validated):
    Nuances).
 4. It is not a GEM-derived republisher.
 
-**Exception: a STATUS CHANGE is green only on 2+ independent publishers; a single-source status change is medium/yellow.** Inferred statuses are unchanged (no URL by design). Only the Status value itself counts as a status change: a Status Detail entry, a Latest Activity date or any other field closes at green on one fully validated ref (Baird 2026-10-08).
+**Exception: a STATUS CHANGE is green only on 2+ independent publishers; a single-source status change is medium/yellow.** An inferred status is a status change computed from dates; it cites the Latest Activity source and its tier follows the strength of that source (Baird 2026-10-27, manual rule that every timeline entry carries a datasource). Only the Status value itself counts as a status change: a Status Detail entry, a Latest Activity date or any other field closes at green on one fully validated ref (Baird 2026-10-08).
 
 **The machine half (same as pipelines-researcher).** `assemble_state.py` raises a `medium` finding to `high` when one of its links has a verification that loaded (`ok`), names the plant (`name_found`) and states the value (`contains_value`), via `build_review_package.validated_tier`. Never raised: a Status change, a `low`, or a record whose note says the sources disagree or the value is only implied. `scripts/repair_staged.py` applies the same rule to staging assembled before 2026-10-08.
 
@@ -35,7 +35,6 @@ validated):
 | **High** | green | one ref that passes every validation check; or, for a status change, 2+ **independent** publishers agree |
 | **Medium** | yellow | a single-source status change; or a ref that validates only partially (names the plant but the value is implied, or sources contested) |
 | **Low** | red | a single ref that does NOT fully validate (weak, doesn't name the plant, value not on the page), or sources partially conflict |
-| **Inferred** | (blank + note) | no verifiable source — e.g. a shelved/cancelled-inferred status from the 2y/4y disappearance test; never fabricate a URL for an inference |
 | **Re-verified** | blue | value unchanged from the existing GEM value but checked again this batch |
 
 **Independent** = genuinely separate origins (an operator press release AND a
@@ -77,9 +76,4 @@ Prior citations are candidate sources, not auto-valid: they still go through
 `url_verifier.py`, and a dead link gets logged (never removed — see
 `datasource_conventions.md`).
 
-**Inferred statuses carry no ref by design.** A `shelved – inferred` /
-`cancelled – inferred` proposal rests on the documented ABSENCE of evidence
-(the 2y/4y tests in `lifecycle_rules.md`). Its staged record documents the
-search performed (where you looked, newest evidence found and its date) in
-`researcher_notes` instead of `refs` — and a single fresh piece of activity
-evidence refutes the inference entirely.
+**Inferred statuses carry the Latest Activity source.** A `shelved - inferred` / `cancelled - inferred` proposal is a milestone entry with a datasource (the manual requires one on every timeline entry). The ref is the source of the newest report found, the same one staged under Latest Activity, and the milestone year is that report's date plus two years (shelved) or four years (cancelled); see `lifecycle_rules.md`. The record's `researcher_notes` also says where else the agent looked. A single fresh piece of activity evidence refutes the inference entirely.

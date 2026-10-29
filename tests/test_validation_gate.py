@@ -56,9 +56,9 @@ def test_passes_when_every_item_has_a_check_7_record(tmp_path):
     vp = report(tmp_path, [{"kind": "fix", "plant_id": "L1", "unit_id": "G2", "item": "Status"},
                            {"kind": "exception", "plant_id": "L9", "unit_id": "G9"}])
     lanes = answered(qa("L1", "G1", siblings=["G2"]), qa("L2", None))
-    out, info = gate_validation(index(), lanes, vp, now=NOW)
+    out, info = gate_validation(index(), lanes, vp, now=NOW, unfiltered_csv=tmp_path / 'none.csv')
     assert out == []
-    assert "validation items to answer: 3" in info
+    assert any(i.startswith("validation items to answer: 3") for i in info)
 
 
 def test_fails_on_an_unanswered_item(tmp_path):
@@ -73,6 +73,13 @@ def test_whole_plant_item_needs_a_record_on_that_plant(tmp_path):
     vp = report(tmp_path, [])
     out, _ = gate_validation(index(), answered(qa("L1", "G1")), vp, now=NOW)
     assert [k for k, _ in out] == ["L2:plant"]
+
+
+def test_an_answer_already_typed_into_the_database_still_counts(tmp_path):
+    vp = report(tmp_path, [])
+    moved = dict(qa("L2", None), applied={"found": "2026-10-22"})
+    out, _ = gate_validation(index(), answered(qa("L1", "G1")), vp, now=NOW, applied=[moved])
+    assert out == []
 
 
 def test_missing_and_stale_report(tmp_path):

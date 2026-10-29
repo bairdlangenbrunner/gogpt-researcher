@@ -1,0 +1,83 @@
+{
+ "meta": {
+  "plant_id": "L100000401830",
+  "plant_name": "Jackson generating station",
+  "state": "Michigan",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-26T23:59:00-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401865",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Read from the file: plant L100000401830"
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status is unchanged. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 55270, generators 7EA, LM1 to LM6, ST1 and ST2, all operating since July 2002, with no planned retirement. I found no retirement, mothballing or sale announced."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE LM6000",
+     "refs": [
+      "https://mienviro.michigan.gov/ncore/downloadpdf/-3244922643802319973"
+     ],
+     "verifications": [
+      {
+       "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-3244922643802319973",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A state air permit staff report from October 2025 (https://mienviro.michigan.gov/ncore/downloadpdf/-3244922643802319973) names six GE LM6000 turbines at the plant. It does not name the model of the larger seventh turbine. The EIA generator code 7EA suggests a GE 7EA, but no document states it, so that is not reported."
+    }
+   },
+   "not_found": [
+    "Latest Activity"
+   ],
+   "notes": "The unit is still operating. Latest Activity is left blank because GEM only fills it for units in development or shelved."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet for this plant."
+  },
+  {
+   "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-3244922643802319973",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Names the turbine make and model."
+  }
+ ]
+}

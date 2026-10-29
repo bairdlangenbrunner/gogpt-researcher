@@ -1,0 +1,690 @@
+{
+  "meta": {
+    "lane": "updates",
+    "scope": {
+      "country": "United States",
+      "state": "Illinois",
+      "postal": "il",
+      "kind": "state",
+      "slug": "illinois",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-21T18:13:14-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 15,
+      "fill": 2,
+      "change": 3,
+      "reverified": 10,
+      "match_no_new_url": 0,
+      "status_downgraded": 0,
+      "tier_promoted": 0
+    }
+  },
+  "records": [
+    {
+      "gem_unit_id": "G100000403513",
+      "gem_plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "unit_name": "5",
+      "country": "United States",
+      "record_id": "L100000103868:G100000403513:status",
+      "cluster": "G100000403513",
+      "verdict": "change",
+      "fields": {
+        "Status": "operating"
+      },
+      "current": {
+        "Status": "mothballed"
+      },
+      "refs": {
+        "Status Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "medium",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The EIA-860M table for August 2026 lists generator 5 at Marion, plant 976, as operating, 75 MW, natural gas combustion turbine, operating since May 2003. The EIA annual generation survey for 2024, which I read from a file on disk, shows the plant's gas turbines generated about 113,500 megawatt-hours that year, so they ran. Both come from the Energy Information Administration, so this is one source. An Illinois Country Living article from 2020 also says the cooperative still has two natural gas units after Unit 4 closed. No source says these units are mothballed. This is a status change from mothballed, so it needs a second publisher. I found no document that says unit 5 is mothballed or gives a date for that step. EIA lists it as operating.",
+      "action": "Set Status of unit 5 (G100000403513) to operating. It now says mothballed. Add the link below to the Status Data Source box. Keep the links already there.",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100000403513",
+      "gem_plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "unit_name": "5",
+      "country": "United States",
+      "record_id": "L100000103868:G100000403513:start-year",
+      "cluster": "G100000403513",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Start year": "2003"
+      },
+      "current": {
+        "Start year": "2003"
+      },
+      "refs": {
+        "Start Year Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The EIA-860M table for August 2026 gives an operating date of May 2003 for generator 5.",
+      "action": "Leave Start year of unit 5 (G100000403513) as 2003. It is still correct. Add the link below to the Start Year Data Source box. Keep the links already there.",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100000403513",
+      "gem_plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "unit_name": "5",
+      "country": "United States",
+      "record_id": "L100000103868:G100000403513:status-detail",
+      "cluster": "G100000403513",
+      "verdict": "fill",
+      "fields": {
+        "Status Detail": "The EIA-860M table for August 2026 lists this unit as operating. Electricity generation reported to the Energy Information Administration for 2024 shows the plant's gas turbines ran that year.\n\nhttps://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+      },
+      "current": {
+        "Status Detail": ""
+      },
+      "refs": {
+        "Status Detail": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "Status Detail is not a status change, so one validated source is enough. The box is blank today, so this is the full new text.",
+      "action": "Set Status Detail of unit 5 (G100000403513) to the entry below. The box is empty now. The source links are part of the entry, one per line. Do not add them to the Status Data Source box.\n\nThe EIA-860M table for August 2026 lists this unit as operating. Electricity generation reported to the Energy Information Administration for 2024 shows the plant's gas turbines ran that year.\n\nhttps://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100000403514",
+      "gem_plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "unit_name": "6",
+      "country": "United States",
+      "record_id": "L100000103868:G100000403514:status",
+      "cluster": "G100000403514",
+      "verdict": "change",
+      "fields": {
+        "Status": "operating"
+      },
+      "current": {
+        "Status": "mothballed"
+      },
+      "refs": {
+        "Status Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "medium",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The EIA-860M table for August 2026 lists generator 6 at Marion, plant 976, as operating, 75 MW, natural gas combustion turbine, operating since May 2003. The EIA annual generation survey for 2024, which I read from a file on disk, shows the plant's gas turbines generated about 113,500 megawatt-hours that year, so they ran. Both come from the Energy Information Administration, so this is one source. An Illinois Country Living article from 2020 also says the cooperative still has two natural gas units after Unit 4 closed. No source says these units are mothballed. This is a status change from mothballed, so it needs a second publisher. I found no document that says unit 6 is mothballed or gives a date for that step. EIA lists it as operating.",
+      "action": "Set Status of unit 6 (G100000403514) to operating. It now says mothballed. Add the link below to the Status Data Source box. Keep the links already there.",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100000403514",
+      "gem_plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "unit_name": "6",
+      "country": "United States",
+      "record_id": "L100000103868:G100000403514:start-year",
+      "cluster": "G100000403514",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Start year": "2003"
+      },
+      "current": {
+        "Start year": "2003"
+      },
+      "refs": {
+        "Start Year Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The EIA-860M table for August 2026 gives an operating date of May 2003 for generator 6.",
+      "action": "Leave Start year of unit 6 (G100000403514) as 2003. It is still correct. Add the link below to the Start Year Data Source box. Keep the links already there.",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100000403514",
+      "gem_plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "unit_name": "6",
+      "country": "United States",
+      "record_id": "L100000103868:G100000403514:status-detail",
+      "cluster": "G100000403514",
+      "verdict": "fill",
+      "fields": {
+        "Status Detail": "The EIA-860M table for August 2026 lists this unit as operating. Electricity generation reported to the Energy Information Administration for 2024 shows the plant's gas turbines ran that year.\n\nhttps://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+      },
+      "current": {
+        "Status Detail": ""
+      },
+      "refs": {
+        "Status Detail": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "Status Detail is not a status change, so one validated source is enough. The box is blank today, so this is the full new text.",
+      "action": "Set Status Detail of unit 6 (G100000403514) to the entry below. The box is empty now. The source links are part of the entry, one per line. Do not add them to the Status Data Source box.\n\nThe EIA-860M table for August 2026 lists this unit as operating. Electricity generation reported to the Energy Information Administration for 2024 shows the plant's gas turbines ran that year.\n\nhttps://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100000403513",
+      "gem_plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "unit_name": "5",
+      "country": "United States",
+      "record_id": "L100000103868:plant:owner-s",
+      "cluster": "G100000403513",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Owner(s)": "Southern Illinois Power Cooperative Inc [100%]"
+      },
+      "current": {
+        "Owner(s)": "Southern Illinois Power Cooperative Inc [100%]"
+      },
+      "refs": {
+        "Owners Data Source": [
+          "https://pcb.illinois.gov/documents/dsweb/Get/Document-114055/as%2021-6%20SIPC%20Hearing%20Exhibits%20and%20Exhibit%20List_6-13-25.pdf",
+          "https://icl.coop/sipc-approves-plan-to-retire-unit-4-operation/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://pcb.illinois.gov/documents/dsweb/Get/Document-114055/as%2021-6%20SIPC%20Hearing%20Exhibits%20and%20Exhibit%20List_6-13-25.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://icl.coop/sipc-approves-plan-to-retire-unit-4-operation/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "A June 2025 filing to the Illinois Pollution Control Board by the Southern Illinois Power Cooperative describes the Marion Generating Station as its plant. The 2020 Illinois Country Living article describes the cooperative as the owner of the remaining coal and two natural gas units. Both documents support the current owner value. The two are not fully independent because the article repeats the cooperative's own statement.",
+      "action": "Leave Owner(s) of all 2 units of Marion Plant as Southern Illinois Power Cooperative Inc [100%]. It is still correct. Add the 2 links below to the Owners Data Source box on each unit. Keep the links already there.",
+      "checks": [
+        7,
+        25
+      ],
+      "applies_to_all_units": true,
+      "sibling_unit_ids": [
+        "G100000403514"
+      ],
+      "sibling_current": {
+        "G100000403514": "Southern Illinois Power Cooperative Inc [100%]"
+      }
+    },
+    {
+      "gem_unit_id": "G100000403513",
+      "gem_plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "unit_name": "5",
+      "country": "United States",
+      "record_id": "L100000103868:plant:location-source",
+      "cluster": "G100000403513",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Latitude": "37.6196810",
+        "Longitude": "-88.9529190",
+        "Location accuracy": "exact"
+      },
+      "current": {
+        "Latitude": "37.6196810",
+        "Longitude": "-88.9529190",
+        "Location accuracy": "exact"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.google.com/maps/search/?api=1&query=37.61968,-88.95292",
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.google.com/maps/search/?api=1&query=37.61968,-88.95292",
+          "ok": true,
+          "contains_value": true,
+          "name_found": false,
+          "note": "a Google Maps pin that opens on the staged point"
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The EIA-860M table gives 37.619747 for the plant, about 25 meters from GEM's point. The EIA-860M table gives -88.95311 for the plant, about 25 meters from GEM's point. A satellite picture centered on this point shows the plant's boiler building, stacks, coal yard and switchyard. The imagery date is unknown. The EIA-860M table is at https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "action": "Leave the point of all 2 units of Marion Plant as it is. Add the 2 links below to the Location Data Source box on each unit. Keep the links already there.",
+      "applies_to_all_units": true,
+      "sibling_unit_ids": [
+        "G100000403514"
+      ],
+      "sibling_current": {
+        "G100000403514": {
+          "Latitude": "37.6196810",
+          "Longitude": "-88.9529190",
+          "Location accuracy": "exact"
+        }
+      },
+      "checks": [
+        7,
+        25
+      ]
+    },
+    {
+      "gem_unit_id": "G100001017993",
+      "gem_plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "unit_name": "Unit 7, timepoint 2",
+      "country": "United States",
+      "record_id": "L100000103864:G100001017993:conversion-replacement",
+      "cluster": "G100001017993",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Conversion/replacement?": "conversion"
+      },
+      "current": {
+        "Conversion/replacement?": "conversion"
+      },
+      "refs": {
+        "Conversion/replacement Data Source": [
+          "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "A Power Engineering article from October 2015 says the Illinois EPA issued a permit for NRG to convert the coal units 6 to 8 at the Joliet plant to burn natural gas. It says units 7 and 8 are part of Joliet 29. So both units were converted from coal to gas. Conversion is supported by a 2015 trade article. I found no document that speaks of carbon capture at this plant, and no document that states the city beyond the EIA table, which gives the county only.",
+      "action": "Leave Conversion/replacement? of unit Unit 7, timepoint 2 (G100001017993) as conversion. It is still correct. Add the link below to the Conversion/replacement Data Source box. Keep the links already there."
+    },
+    {
+      "gem_unit_id": "G100001017949",
+      "gem_plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "unit_name": "Unit 8, timepoint 2",
+      "country": "United States",
+      "record_id": "L100000103864:G100001017949:conversion-replacement",
+      "cluster": "G100001017949",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Conversion/replacement?": "conversion"
+      },
+      "current": {
+        "Conversion/replacement?": "conversion"
+      },
+      "refs": {
+        "Conversion/replacement Data Source": [
+          "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "A Power Engineering article from October 2015 says the Illinois EPA issued a permit for NRG to convert the coal units 6 to 8 at the Joliet plant to burn natural gas. It says units 7 and 8 are part of Joliet 29. So both units were converted from coal to gas. Conversion is supported by a 2015 trade article. I found no document that speaks of carbon capture at this plant, and no document that states the city beyond the EIA table, which gives the county only.",
+      "action": "Leave Conversion/replacement? of unit Unit 8, timepoint 2 (G100001017949) as conversion. It is still correct. Add the link below to the Conversion/replacement Data Source box. Keep the links already there."
+    },
+    {
+      "gem_unit_id": "G100001017993",
+      "gem_plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "unit_name": "Unit 7, timepoint 2",
+      "country": "United States",
+      "record_id": "L100000103864:plant:owner-s",
+      "cluster": "G100001017993",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Owner(s)": "Midwest Generation EME LLC [100%]"
+      },
+      "current": {
+        "Owner(s)": "Midwest Generation EME LLC [100%]"
+      },
+      "refs": {
+        "Owners Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The EIA-860M table for August 2026 lists Joliet 29 generators 7 and 8 under the entity Midwest Generations EME LLC, which is the same company with a spelling slip. The table lists a single owner and gives no share. The table names the plant and the company, so the owner is supported.",
+      "action": "Leave Owner(s) of all 2 units of Joliet 29 Generating Station as Midwest Generation EME LLC [100%]. It is still correct. Add the link below to the Owners Data Source box on each unit. Keep the links already there.",
+      "applies_to_all_units": true,
+      "sibling_unit_ids": [
+        "G100001017949"
+      ],
+      "sibling_current": {
+        "G100001017949": "Midwest Generation EME LLC [100%]"
+      }
+    },
+    {
+      "gem_unit_id": "G100001017993",
+      "gem_plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "unit_name": "Unit 7, timepoint 2",
+      "country": "United States",
+      "record_id": "L100000103864:plant:location-source",
+      "cluster": "G100001017993",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Latitude": "41.4949190",
+        "Longitude": "-88.1243420",
+        "Location accuracy": "exact"
+      },
+      "current": {
+        "Latitude": "41.4949190",
+        "Longitude": "-88.1243420",
+        "Location accuracy": "exact"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "https://www.google.com/maps/search/?api=1&query=41.49492,-88.12434"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.google.com/maps/search/?api=1&query=41.49492,-88.12434",
+          "ok": true,
+          "contains_value": true,
+          "name_found": false,
+          "note": "a Google Maps pin that opens on the staged point"
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The EIA-860M table for August 2026 puts Joliet 29 at 41.49464, -88.12383. That is about 35 meters from GEM's point. A satellite picture with a crosshair at GEM's point shows a large power plant with boiler house, switchyard and cooling lake beside a river. The imagery date is unknown. The point sits on the plant, so it is exact. The EIA-860M table for August 2026 is at https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "action": "Leave the point of all 2 units of Joliet 29 Generating Station as it is. Add the 2 links below to the Location Data Source box on each unit. Keep the links already there.",
+      "applies_to_all_units": true,
+      "sibling_unit_ids": [
+        "G100001017949"
+      ],
+      "sibling_current": {
+        "G100001017949": {
+          "Latitude": "41.4949190",
+          "Longitude": "-88.1243420",
+          "Location accuracy": "exact"
+        }
+      },
+      "checks": [
+        7,
+        25
+      ]
+    },
+    {
+      "gem_unit_id": "G100001017847",
+      "gem_plant_id": "L100000103865",
+      "plant_name": "Joliet 9 Generating Station",
+      "unit_name": "Unit 6, timepoint 2",
+      "country": "United States",
+      "record_id": "L100000103865:G100001017847:conversion-replacement",
+      "cluster": "G100001017847",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Conversion/replacement?": "conversion"
+      },
+      "current": {
+        "Conversion/replacement?": "conversion"
+      },
+      "refs": {
+        "Conversion/replacement Data Source": [
+          "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "A Power Engineering article from October 2015 reports that the Illinois EPA issued an air permit to convert coal-fired Units 6 to 8 at the Joliet plant to natural gas. It says Joliet 9 consists of Unit 6. So the conversion value is supported. The EIA table shows this unit retired in June 2023 with 360.4 MW, which agrees with GEM. I found no document that states anything about carbon capture for this unit, and no document that gives the city in a field I could cite.",
+      "action": "Leave Conversion/replacement? of unit Unit 6, timepoint 2 (G100001017847) as conversion. It is still correct. Add the link below to the Conversion/replacement Data Source box. Keep the links already there."
+    },
+    {
+      "gem_unit_id": "G100001017847",
+      "gem_plant_id": "L100000103865",
+      "plant_name": "Joliet 9 Generating Station",
+      "unit_name": "Unit 6, timepoint 2",
+      "country": "United States",
+      "record_id": "L100000103865:G100001017847:owner-s",
+      "cluster": "G100001017847",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Owner(s)": "Midwest Generation EME LLC [100%]"
+      },
+      "current": {
+        "Owner(s)": "Midwest Generation EME LLC [100%]"
+      },
+      "refs": {
+        "Owners Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "medium",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The August 2026 EIA monthly table lists the plant's entity as Midwest Generations EME LLC. EIA spells the name with an extra s. The table names a utility entity and does not give ownership shares, so this supports the owner name but not the 100 percent share.",
+      "action": "Leave Owner(s) of unit Unit 6, timepoint 2 (G100001017847) as Midwest Generation EME LLC [100%]. It is still correct. Add the link below to the Owners Data Source box. Keep the links already there."
+    },
+    {
+      "gem_unit_id": "G100001017847",
+      "gem_plant_id": "L100000103865",
+      "plant_name": "Joliet 9 Generating Station",
+      "unit_name": "Unit 6, timepoint 2",
+      "country": "United States",
+      "record_id": "L100000103865:plant:location",
+      "cluster": "G100001017847",
+      "verdict": "change",
+      "fields": {
+        "Latitude": "41.49310",
+        "Longitude": "-88.11530",
+        "Location accuracy": "exact"
+      },
+      "current": {
+        "Latitude": "41.4949190",
+        "Longitude": "-88.1243420",
+        "Location accuracy": "exact"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "https://www.google.com/maps/search/?api=1&query=41.49310,-88.11530"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.google.com/maps/search/?api=1&query=41.49310,-88.11530",
+          "ok": true,
+          "contains_value": true,
+          "name_found": false,
+          "note": "a Google Maps pin that opens on the staged point"
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The August 2026 EIA monthly generator table places Joliet 9, plant code 874, at 41.4931, -88.1153. The satellite picture at that point shows a power plant building with a stack and a coal yard beside the rail line and the river, so the footprint is visible. GEM's current point is about 790 meters west, on the other side of the Des Plaines River, where a larger plant with several stacks stands. That is Joliet 29, which a Power Engineering article says lies across the river from Joliet 9. The imagery date is unknown. The EIA table shows this unit retired in June 2023 with 360.4 MW, which agrees with GEM. I found no document that states anything about carbon capture for this unit, and no document that gives the city in a field I could cite. The August 2026 EIA monthly generator table is at https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx The Power Engineering article is at https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/",
+      "action": "Set Latitude of unit Unit 6, timepoint 2 (G100001017847) to 41.49310, Longitude to -88.11530 and Location accuracy to exact. They now say 41.4949190, -88.1243420 and exact, about 780 m away. Add the 2 links below to the Location Data Source box. Keep the links already there.",
+      "applies_to_all_units": true,
+      "sibling_unit_ids": [],
+      "sibling_current": {},
+      "location_method": "dataset",
+      "location_moved_m": 780,
+      "location_needs_review": false,
+      "checks": [
+        7,
+        25
+      ]
+    }
+  ]
+}

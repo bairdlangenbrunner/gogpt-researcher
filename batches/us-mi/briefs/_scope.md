@@ -1,0 +1,51 @@
+# Scope-wide tasks
+
+## When a project GEM lacks is added (Baird 2026-10-23)
+
+Write a new plant record (shards/_state.json, newplants) or a new unit at a tracked plant (newunits) as soon as ONE verified public source names a gas or oil generating project, places it in this scope, and gives a capacity at the threshold (50 MW; engine and aeroderivative sets summed), a unit count with a plant total, or no capacity at all. The manual adds a plant whose capacity cannot be found with the cell blank and removes it later if it proves small. A missing start year, owner, turbine model or exact point never holds an add back: leave the field blank and say in researcher_notes what was not found.
+
+The manual's status ladder decides the status, never the add. A long-range planning document, a grid-operator interconnection queue entry or a press announcement is announced. A permit application, land, financing, a prior-approval docket or a signed interconnection agreement is pre-construction. A project found already cancelled, shelved or retired since 2020 is an add with that status. A queue entry under a shell company's name is still an add at announced, named after the queue entry or its site; the database already holds such plants.
+
+A watch item (monitor, new to the tracker) is only for these cases, and names its case in watch_case: no_generation (a campus, site or program with no generating unit named yet), under_threshold (every unit under the bar and not an engine or aeroderivative set that sums to it), drive_or_storage (generator or mechanical drive, or thermal or storage, unresolved), duplicate_check (it may be a unit GEM already has; prefer a qa question), data_center_hold (gas-fired data center plants stay on the watch list with checks [39] until a reviewer promotes them), not_committed (a plan studies it only as an option), other_scope (another state or country; the evidence file lists it as a handoff), unverified (nothing passed the verifier yet). Anything else is an add.
+
+Every new record uses exact export headers in fields and keys refs by Data Source column with a link for every filled field; a grid-operator spreadsheet is cited by the download address with the matching row quoted in researcher_notes.
+
+## EIA plants missing from GEM
+
+The EIA-860M file lists these plants and no GEM plant matches them. Every one is a task. Decide each one and say why, with evidence:
+
+- add (stage it as a new plant in the newplants lane)
+- below_threshold (under the add threshold, with the capacity evidence)
+- out_of_scope (not a combustion plant GOGPT tracks, with the evidence)
+- already_in_gem (it sits under another name; give the GEM plant ID)
+
+Stage an add as a record in the newplants lane. For any other answer, write it in batches/us-mi/coverage.json under `ids_followup`, keyed by EIA plant ID: `{"decision": "below_threshold", "evidence": "...", "gem_plant_id": ""}`. A plant with no answer fails the gate `ids_followup`.
+
+- EIA plant 10328: T B Simon Power Plant; 142.5 MW; status construction, operating (Ingham, Michigan State University)
+- EIA plant 1729: Fermi; 64.0 MW; status operating (Monroe, DTE Electric Company)
+- EIA plant 1730: Hancock; 121.6 MW; status operating (Oakland, DTE Electric Company)
+- EIA plant 1734: Northeast (MI); 113.8 MW; status operating (Macomb, DTE Electric Company)
+- EIA plant 1744: Superior; 64.0 MW; status operating (Washtenaw, DTE Electric Company)
+- EIA plant 1877: George Johnson; 51.0 MW; status operating (Osceola, Wolverine Power Supply Coop)
+- EIA plant 50431: University of Michigan; 60.0 MW; status mothballed, operating (Washtenaw, University of Michigan)
+- EIA plant 55102: Livingston Generating Station; 170.1 MW; status operating (Otsego, CMS Generation MI Power LLC)
+- EIA plant 7932: Gaylord - Wolverine; 70.2 MW; status operating (Otsego, Wolverine Power Supply Coop)
+
+## Statewide sources to search
+
+Search every source below. For each, record an entry in batches/us-mi/coverage.json under `sources`, keyed by the id: `{"status": "searched", "how": "the script or pages read", "found": "what turned up, or that nothing did"}`. A source you could not read is `blocked`, with an `access` note that says what fetch.py returned and what the Wayback lookup found. Never write "not searched" or "skipped". A search form, a script or a paged table is never a reason to stop.
+
+- egle-pti-notices: EGLE Air Quality Division permit to install public notices and applications of interest (https://www.michigan.gov/egle/about/organization/air-quality/air-permits). Read the current and past public comment notices for permits to install (Wayback copies for past years back to 2020) and the applications of interest pages, and list every gas or oil fired generator, turbine or engine permit of 50 MW or more, including data centers, campus and industrial plants.
+- egle-mienviro: EGLE MiEnviro Portal permits and documents (https://mienviro.michigan.gov/). Use the harvested permit index in work/permits/us-mi/ from harvest_permits_michigan.py. Read each plant's permits to install and Renewable Operating Permit for unit lists, megawatts, turbine make and model, and any new, replaced or removed units.
+- egle-harvest-unmatched: EGLE air sources that match no GEM plant (https://mienviro.michigan.gov/). Answer every power or data center facility in work/permits/us-mi/_unmatched.md. For each, say whether it is a gas or oil generating plant of 50 MW or more that GEM lacks, a plant GEM has under another name, below the threshold, a data center for the watch list, or not a generating plant, with the permit as evidence.
+- mpsc-dockets: Michigan Public Service Commission electronic dockets (https://mi-psc.my.site.com/s/). Use batches/us-mi/harvest/psc_dockets.md from harvest_psc_michigan.py, then search the docket site for anything it missed: the Consumers Energy plan (Case U-21090 and the plan filed in 2026), the DTE Electric plan (Case U-21193 and any newer filing), certificates of necessity, the Belle River conversion, the Monroe replacement, plant purchases, and data center contracts that name gas generation.
+- miso-gi-queue: MISO generator interconnection queue (https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/). Use batches/us-mi/harvest/queues.md from pull_queues.py and list every gas or oil entry in Michigan, including entries whose state MISO has blanked but whose transmission owner is Michigan only, then chase each one to a primary document.
+- miso-eras: MISO Expedited Resource Addition Study (ERAS) entries (https://www.misoenergy.org/planning/resource-utilization/generator-interconnection/). List every ERAS gas project in Michigan from the same queue data, with its owner and in-service date.
+- pjm-queue: PJM interconnection queue, southwest Michigan (https://www.pjm.com/planning/service-requests/services-request-status). Use the PJM part of batches/us-mi/harvest/queues.md and list every gas or oil entry in Michigan, mainly in the Indiana Michigan Power area, then chase each one to a primary document.
+- eia-860m: EIA-860M newest monthly generator file (https://www.eia.gov/electricity/data/eia860m/). Read the Operating, Planned and Canceled or Postponed sheets for Michigan in the newest file, and account for every gas or oil plant of 50 MW or more that GEM does not list.
+- eia-860: EIA-860 annual survey, ownership and plant tables (https://www.eia.gov/electricity/data/eia860/). Read the newest annual Ownership and Plant tables for Michigan to confirm owners, shares and street addresses of gas and oil plants, especially New Covert, Dearborn Industrial Generation and Midland Cogeneration Venture.
+- consumers-energy: Consumers Energy news and plan pages (https://www.consumersenergy.com/news-releases). Read the news releases and the clean energy plan pages for gas plants that are announced, filed for approval, bought, expanded or being retired, including the two new gas plants in the 2026 plan and Karn units 3 and 4.
+- dte-electric: DTE Energy news and plan pages (https://newsroom.dteenergy.com/). Read the newsroom and the integrated resource plan pages for gas plants that are announced, under construction, converting or being retired, including Belle River, Monroe's replacement and plants tied to data center customers.
+- wolverine-mppa-up: Wolverine Power Cooperative, Michigan Public Power Agency and Upper Peninsula utilities (https://www.wolverinepowercooperative.com/). Read the news pages of Wolverine Power Cooperative, the Michigan Public Power Agency, Lansing Board of Water and Light, Upper Michigan Energy Resources and UPPCO for new, converted or retired gas or oil generation, including engine plants.
+- possible-updates-sheet: Possible updates sheet, Michigan rows (https://docs.google.com/spreadsheets/d/1GAXwGdI0UFeW9mFSxJhhR6MRBW7VDtlWBqsooVZyUzs). Read the gas and oil plants tab through the work profile for every Michigan row and answer each one in a record or a coverage note.
+- data-centers: Data center campuses with on-site or dedicated gas generation (https://www.michigan.gov/mpsc). Find every Michigan data center campus announced since 2024, starting with the Saline Township campus served by DTE, and check each for on-site gas turbines or engines or a utility gas plant built for it. Stage anything found as a watch item only.

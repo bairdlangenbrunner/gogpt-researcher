@@ -1,0 +1,78 @@
+{
+ "meta": {
+  "plant_id": "L100000401923",
+  "plant_name": "Choctaw County power station",
+  "state": "Mississippi",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-23T14:06:40-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401972",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists Choctaw County, plant 55706, as operating. Three combustion turbines of 179.0 MW each and one steam turbine of 362.0 MW started in July 2003. No planned retirement date is listed."
+    },
+    "Capacity (MW)": {
+     "value": "899",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The same EIA table gives three turbines of 179.0 MW and one steam turbine of 362.0 MW. Together that is 899 MW, the value GEM already shows."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "notes": "Still operating in the EIA table for September 2026. The Mississippi Department of Environmental Quality renewed the Title V air permit in February 2025. I found no retirement or mothballing notice. The Public Service Commission docket 2022-UA-153 in the brief concerns new Entergy Mississippi resources, not a change to this unit."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Read plant 55706 on the Operating sheet."
+  }
+ ]
+}

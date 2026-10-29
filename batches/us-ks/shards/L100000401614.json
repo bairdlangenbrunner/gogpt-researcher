@@ -1,0 +1,76 @@
+{
+ "meta": {
+  "plant_id": "L100000401614",
+  "plant_name": "Cimarron River power station",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T09:40:19-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402343",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists Cimarron River generator 1 as operating, 50.0 MW, natural gas steam turbine, in service since October 1963. It shows no planned retirement date."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year",
+    "Owner(s)",
+    "Operator(s)"
+   ],
+   "notes": "The unit is still operating. I found no retirement, mothballing or sale. A web search found no announcement, and the Kansas Corporation Commission 2025 retirement report says no retirement requests were made in 2024, though that report covers coal and nuclear units."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "The file loads. Plant 1230 generator 1 is operating with no planned retirement."
+  },
+  {
+   "url": "https://www.kcc.ks.gov/images/PDFs/legislative-reports/2025%20KCC%20Electric%20Generation%20Retirement%20Report.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "Seen only in search results. I did not open it, and it covers coal and nuclear units."
+  },
+  {
+   "url": "https://kdhe.ks.gov permit index (work/permits/us-ks/L100000401614.md)",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "No public notice matched this plant. KEIMS permit search needs a login for non-notice permits. A KDHE draft permit for Cimarron Generation (CSP03270) was seen in the notice list but its documents returned 404 on KDHE and I did not find an archived copy."
+  }
+ ]
+}

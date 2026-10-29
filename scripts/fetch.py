@@ -638,8 +638,10 @@ def _log_failure(url: str, status: str, notes: list[str]) -> None:
     try:
         FAIL_LOG.parent.mkdir(parents=True, exist_ok=True)
         with FAIL_LOG.open("a", encoding="utf-8") as f:
-            f.write(json.dumps({"ts": time.strftime("%Y-%m-%dT%H:%M:%S"), "url": url,
-                                "status": status, "notes": notes}) + "\n")
+            rec = {"ts": time.strftime("%Y-%m-%dT%H:%M:%S"), "url": url, "status": status, "notes": notes}
+            if os.environ.get("GEM_BATCH"):     # batch scope, e.g. us-ks; lets access_audit.py keep batches apart
+                rec["batch"] = os.environ["GEM_BATCH"]
+            f.write(json.dumps(rec) + "\n")
     except OSError:
         pass
 

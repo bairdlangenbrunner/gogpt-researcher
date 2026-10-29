@@ -49,6 +49,8 @@ suggested and undecided edits are listed at the top of the evidence file with th
 note. Items keep their call in the evidence file. Without the flag the build ignores the log
 and says so.
 
+Answers to the database's validation report (checklist row 7) live in the qa lane. One that carries a value and a source link (a milestone date, a carbon capture source) shows as a change with a "validation fix" chip and takes accept, hold, reject or suggest like any edit; the accepted ones go on the workbook's `validation_fixes` sheet, since most have no export column. One with no value stays a question. Both show the error text from the validation report above the note, read from `work/validation_<tag>.json`, or from the batch's briefs with "No longer on the current validation report" when the error has since been fixed.
+
 ## Sharing with a colleague (one html file)
 
 A reviewer who does not run the repo gets the same page as a single file. From the repo root:
@@ -77,10 +79,12 @@ python review_app/import_log.py ~/Downloads/review_log_us-md+us-ny_AL_20261003_0
 ## Sharing as a claude.ai artifact (the current way; decisions save themselves)
 
 The same file is published as a claude.ai artifact with Claude Code's Artifact tool, capabilities
-`{db: {}, user: {scopes: ["profile"]}, downloads: true}`. Opened there, the page saves every call
+`{db: {}, user: {scopes: ["profile"]}, downloads: true, assets: {}}` (`assets` from 2026-10-27, for the map pictures below). Opened there, the page saves every call
 to the artifact's own database as it is made (collection `logs`, one document per viewer named by
 their viewer id, the whole log in `records`), so nothing has to be sent back. The "download
 decisions" button is then only a backup (a `.json` of the same records).
+
+**Map pictures (2026-10-27).** A location line found from a georeferenced map shows the saved map render under its satellite panes. The picture is an artifact asset, never a repo path (a path like `batches/us-mi/staging/maps/L1.jpg` loads on no page, which is what the broken "saved map render" picture was): the build copies it to `work/review_assets/<sha256>.jpg` (`review_data.map_render`, through `review_core/assets.py` in gem-review-app) and fills its url from `review_app/assets.json` (committed, keyed by picture and page url); on a page that has not uploaded it the card says "image not uploaded". `build_all.py --check` says `assets missing: N` for such a page. To upload: publish the page with the capabilities above (`assets` included; an upload is refused until the live version declares it, and declaring it makes the page organization-internal, which the database already requires), upload the files that `python review_app/build_all.py --assets <name>` lists with the Artifact tool (`asset: true`, `file_paths`, up to 25 per call), record the returned urls with `python review_app/map_assets.py --page <name> --uploads FILE.json` (or `NAME=URL` pairs), commit `assets.json`, then rebuild, republish and `--mark-published`. The loopback server serves the same files at `/asset/<name>`.
 
 Rules that came out of the first round (2026-10-05):
 
@@ -107,10 +111,7 @@ python review_app/build_static.py --scope us-md --scope us-ny --discovery --revi
 
 By default the build first pulls the decision store into the local logs, so the page is not built behind the store. `--no-pull` skips that. If the pull fails (no network, expired login), the build warns and goes on from the logs as they are.
 
-A new plant is one call for the plant and every unit row nested under it (the build script keys
-the decision on the plant record), so the page shows the unit rows under the plant fields on one
-line. The import then writes the calls to the `review_log.jsonl` of whichever folder the record
-came from.
+A new plant is one call for the plant and every unit row nested under it (the build script keys the decision on the plant record), so the page shows the unit rows under the plant fields on one line. A new unit at a tracked plant is one call per unit. The import then writes the calls to the `review_log.jsonl` of whichever folder the record came from.
 
 Live pages: the index is `artifacts.json`, with one interface (the shared app in `../gem-review-app`) and one page per reviewer, titled `GOGPT reviewer - <first name>`. `python review_app/build_all.py --list` prints the table of name, reviewer, url and when each was last published, straight from the index, so there is no copy of it to keep up to date here.
 
@@ -142,8 +143,8 @@ The import appends the records to each batch's `review_log.jsonl` and regenerate
 ## On the page
 
 - Top: the header says what the page covers ("Maryland and New York, United States · 27 plants"). The country and state menus in the filter row are checkbox lists: tick the countries or states to show, and the select-all button ticks or clears every box. The state menu appears only when the page covers more than one state. Country batches such as Germany have no states.
-- Left: the plants with something to decide. The badge counts open changes.
-- Card: the plant's changes, grouped by unit. "Now" is the cell today, "proposed" is what the
+- Left: one list of cards in three sections, each with a header and a count: **plant edits** (one card per tracked plant: its cell changes, concerns and entity checks), **proposed additions** (one card per plant the batch wants to add, and one per tracked plant with new unit rows or leads), then the **watch list** (one card per tracked plant with something to keep an eye on). What a record is decides its section; how strong its evidence is shows as a chip. A plant with cards in more than one section links to its other cards from the card head. The badge counts open changes; `j` / `k` run through all three sections in order.
+- Card: a plant-edits card shows the plant's changes, grouped by unit. An additions card and a watch card have no tabs: the rows, then the items, on one page. "Now" is the cell today, "proposed" is what the
   researcher wants. A proposed Data Source link is added next to the links already in the cell;
   the manual's merge rule, so nothing is ever replaced.
 - Location: a plant with a staged coordinate gets a location block on its card: the current and proposed points as Google Maps links, the distance moved, how the point was found, and two satellite patches side by side (Esri World Imagery tiles assembled in the page from the coordinate, with a crosshair and the Esri attribution; no image files are stored). A plant placed from a georeferenced map also shows the saved render with its control points from the batch's `staging/maps/` folder (`docs/reference/location.md`). The interface lives in `../gem-review-app` (`trackers/gogpt/web/ext.js`), so it never gets a shim here.
@@ -160,16 +161,15 @@ The import appends the records to each batch's `review_log.jsonl` and regenerate
   and item carries a "checklist N" chip. Group 9 opens the close-out panel: a draft close-out
   note to copy, the sheets and docs to update with links, and on a United States page the IRP
   boxes to tick (row 37). "Ask the PM" is a checkbox beside any call, with its own filter.
-- Watch items take one of four calls: incorporate into database, hold, send to possible updates,
-  remove from watchlist. Remove needs a note.
+- Watch items take one of four calls: incorporate into database, hold, send to possible updates, remove from watchlist. Remove needs a note. A lead (a new plant or new unit too thin to stage as a row; `lead_for` on the record) sits on the proposed-additions card with the staged rows and takes a fifth call, research further: the next batch's briefs pick it up through `build_state_brief.py --promote`, the same path as incorporate into database.
+- Readiness chip on a proposed row: "ready to add" means at least one source link was checked and states a value on the page; "sources not verified" means none was, so read the sources before accepting.
 - IRP chip (United States only): the finding comes from a utility integrated resource plan. The
   chip says whether the unit's IRP box in the database is already ticked; "IRP: tick the box"
   means it is not.
 
 ## Files
 
-- `review_data.py`: builds the dataset (one card per plant, one line per staged cell edit, one
-  item per concern, watch-list entry or entity check).
+- `review_data.py`: builds the dataset (up to three cards per plant, `card_kind` plant, addition or watch, every one carrying the GEM id as `plant_pid`; one line per staged cell edit or new row, one item per concern, watch-list entry, lead or entity check; a sourced validation answer is a line).
 - **The app itself lives in the sibling repo `../gem-review-app`** (shared with pipelines-researcher since 2026-10-08; `GEM_REVIEW_APP` in the environment overrides the location). Its `review_core/` holds the page (`web/index.html`, `app.js`, `style.css`), the browser-side stores (`web/static_store.js` for the single-file and artifact page, `web/gas.js`), the generic decision log, the loopback server and the single-file builder; `trackers/gogpt/` holds the GOGPT config (kinds, calls, note rules, the ask-the-PM flag) and the page extension (`web/ext.js`, `web/ext.css`: checklist tabs, watch items, IRP chips). Any interface change is made there, never here, and reaches every tracker's pages. The files below are what is GOGPT's own.
 - `store.py`: the shared store bound to the GOGPT config; validates decisions and writes the staging dir sidecars (`review_log.jsonl`, the derived `review_decisions.json`), through a ledger sink when one is given.
 - `ledger.py`: the store spreadsheet door (row shape, verified append, the `Ledger` sink every decision path uses, `status`); `pull.py`: the `gws` wrapper, `google.json` config, and the store-to-sidecar mirror; `google.json`: the store sheet id.

@@ -8,11 +8,7 @@ purpose so no repo prompts differently from the others.
 
 Personal per-machine overrides go in `.claude/settings.local.json`
 (gitignored, never committed). Settings layer as: enterprise policy → CLI
-flags → `settings.local.json` → this repo's `settings.json` (absent) →
+flags → `settings.local.json` → this repo's `settings.json` (hooks only, no permissions) →
 user-global.
 
-The guardrails that matter for this project are not permission rules: the
-"never write to the live GEM database" rule and the staging-deliverable
-workflow live in `CLAUDE.md`. Secrets (`GEM_READONLY_DB_URL`, GEM auth
-cookies) live in `.env`, which is gitignored and denied to Claude's Read
-tool at the user-global layer.
+The guardrails that matter for this project are not permission rules: the "never write to the live GEM database" rule (with its one exception, the supervised Claude in Chrome apply) and the staging-deliverable workflow live in `CLAUDE.md`. `settings.json` carries hooks only: the review app's page refresh, and `hooks/guard_browser_db.py`, which asks Baird before every browser click or keystroke and refuses them in bypass, auto, and don't-ask mode (`docs/sops/database-browser-edits.md`). `skills/browser-apply/` is the recipe for that apply (`/browser-apply <scope>`). Secrets (`GEM_READONLY_DB_URL`, GEM auth cookies) live in `.env`, which is gitignored and denied to Claude's Read tool at the user-global layer.

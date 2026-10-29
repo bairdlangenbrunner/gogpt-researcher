@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "plant_id": "L100000407414",
+    "plant_name": "MEC South power station",
+    "state": "Michigan",
+    "mode": "update",
+    "model": "sonnet",
+    "generated": "2026-10-26T23:44:41-04:00",
+    "done": true,
+    "urls_attempted": 4,
+    "urls_verified": 4
+  },
+  "units": [
+    {
+      "gem_unit_id": "G100000409471",
+      "unit_name": "MECS",
+      "findings": {
+        "Start year": {
+          "value": "2034",
+          "refs": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+          ],
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "tier": "high",
+          "independent": false,
+          "note": "The Energy Information Administration monthly generator table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists plant 63912 MEC South, generator MECS, 500.0 megawatts, natural gas combined cycle, coordinates 42.237103, -84.95915, Calhoun County. Planned operation is June 2034. The status there is (L) regulatory approvals pending, not under construction. This matches the database."
+        },
+        "Capacity (MW)": {
+          "value": "500",
+          "refs": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+          ],
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "tier": "high",
+          "independent": false,
+          "note": "The same monthly table lists 500.0 megawatts, natural gas fired combined cycle."
+        },
+        "Status Detail": {
+          "value": "The Michigan Department of Environment, Great Lakes, and Energy sent void letters dated December 2, 2025 to Marshall Energy Center, LLC for air permits 167-17B and 168-17B. The letters say the permits are void because construction did not begin within 18 months. The Energy Information Administration table for September 2026 still lists the project as planned for June 2034. Source: https://mienviro.michigan.gov/ncore/downloadpdf/-2969402159834543584 and https://mienviro.michigan.gov/ncore/downloadpdf/-5845399390879080786",
+          "refs": [
+            "https://mienviro.michigan.gov/ncore/downloadpdf/-2969402159834543584",
+            "https://mienviro.michigan.gov/ncore/downloadpdf/-5845399390879080786"
+          ],
+          "verifications": [
+            {
+              "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-2969402159834543584",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            },
+            {
+              "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-5845399390879080786",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true
+            }
+          ],
+          "tier": "high",
+          "independent": false,
+          "note": "New sentence to place above the existing Status Detail text. Both letters are from the same state agency, so this is one source."
+        }
+      },
+      "not_found": [
+        "Equipment Manufacturer/Model",
+        "Number Of Engines",
+        "Capacity Per Engine",
+        "Latest Activity"
+      ],
+      "notes": "Status stays pre-construction for now. The permit void letters are dated within the last year, so Latest Activity is left alone. A start year of 2028 seen in one outside list was not verified, and the filing record points to 2034. Older Midcontinent Independent System Operator queue requests J936, J937 and J1459 are all withdrawn and say nothing about the current project. Location is already exact and matches the Energy Information Administration table."
+    }
+  ],
+  "plant_findings": {},
+  "qa": [
+    {
+      "gem_unit_id": "G100000409471",
+      "concern_type": "Status",
+      "recommendation": "review whether to keep pre-construction",
+      "note": "The air permits for Marshall Energy Center were voided in December 2025, so the project may be shelved or cancelled. The Energy Information Administration table still shows it planned for 2034, and there is no two year gap yet, so the status is left alone. Recheck after December 2027 or if the table drops the project.",
+      "refs": [
+        "https://mienviro.michigan.gov/ncore/downloadpdf/-2969402159834543584",
+        "https://mienviro.michigan.gov/ncore/downloadpdf/-5845399390879080786"
+      ]
+    },
+    {
+      "gem_unit_id": "G100000409471",
+      "concern_type": "duplicate",
+      "recommendation": "no action",
+      "note": "The Marshall data center and gas plant in the possible updates list is a separate project, the Alterra Marshall Technology and Energy Center in Brooks Industrial Park, approved in December 2025 at https://www.mlive.com/news/jackson/2025/12/marshall-approves-112m-land-sale-for-data-center-gas-plant-project.html. The DTE and Ford heat and power site at 13700 W Michigan Ave is also a different site, about 6 kilometers away.",
+      "refs": [
+        "https://www.mlive.com/news/jackson/2025/12/marshall-approves-112m-land-sale-for-data-center-gas-plant-project.html"
+      ]
+    }
+  ],
+  "monitor": [],
+  "newunits": [],
+  "entities": [
+    {
+      "entity_name": "Development Partners Group LLC",
+      "role": "owner",
+      "lookup_result": "no local match found, owner unchanged"
+    }
+  ],
+  "source_log": [
+    {
+      "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "used_for": "start year, capacity, location",
+      "outcome": "verified",
+      "note": "Planned sheet row read directly."
+    },
+    {
+      "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-2969402159834543584",
+      "used_for": "permit void",
+      "outcome": "verified",
+      "note": "Void letter for 167-17B."
+    },
+    {
+      "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-5845399390879080786",
+      "used_for": "permit void",
+      "outcome": "verified",
+      "note": "Void letter for 168-17B."
+    },
+    {
+      "url": "https://www.mlive.com/news/jackson/2025/12/marshall-approves-112m-land-sale-for-data-center-gas-plant-project.html",
+      "used_for": "separate Marshall project",
+      "outcome": "verified",
+      "note": "Opened through the browser route."
+    }
+  ]
+}

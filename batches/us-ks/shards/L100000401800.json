@@ -1,0 +1,63 @@
+{
+ "meta": {
+  "plant_id": "L100000401800",
+  "plant_name": "McPherson 3 power station",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T12:30:00-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402590",
+   "unit_name": "NA1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026, released September 2026, lists this unit as operating. Plant 7515, generator NA1, status operating, nameplate 115.6 MW, operating year 1998. The table shows no planned retirement. I found no retirement, mothballing or sale notice. "
+    }
+   },
+   "not_found": [],
+   "notes": "The unit is still operating in the newest EIA table. No retirement, mothballing or ownership change was found. The Kansas air permit documents for this plant could not be opened at the KDHE address, which returns a not found page."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Loads. Plant and generator rows read from the downloaded file."
+  },
+  {
+   "url": "https://www.kdhe.ks.gov/DocumentCenter/View/41563",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "dead_link",
+   "note": "The harvested KDHE notice for the 2024 McPherson permits returns a not found page on the live site, through the repo fetcher, and has no archived copy the verifier could use."
+  }
+ ]
+}

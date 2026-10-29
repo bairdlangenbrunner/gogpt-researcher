@@ -27,8 +27,8 @@ Per the manual, review units within a country in this order:
 1. **In-development units** — `announced`, `pre-construction`, `construction`. This is the manual's stated update focus and always comes first.
 2. **Shelved review** — `shelved` and `shelved – inferred 2 y` units due for a fresh look.
 3. **Units with planned retirement in the current year.**
-4. **Other units with planned or actual retirement** (mothballed, retiring in a future year, or past retirements needing a datasource check).
-5. **Operating spot-checks** — a lower-priority tier, worked only after 1–4 are exhausted or when the batch is explicitly scoped as an exhaustive/refresh pass rather than a priority-driven one.
+4. **Units with planned retirement in any other year.**
+5. **The rest** (mothballed, operating and past retirements needing a datasource check) — a lower-priority tier, worked only after 1–4 are exhausted or when the batch is explicitly scoped as an exhaustive/refresh pass rather than a priority-driven one.
 
 `worklist.py --country <name>` outputs the country's units in this order; work top to bottom unless the user has scoped the batch narrower (e.g. "just the in-development units").
 
@@ -42,16 +42,16 @@ Run this against the **GOGPT-scoped CSV** (`scope_filter.py` output, per update.
 
 ## §5 The inferred-status sweep (2y / 4y)
 
-`worklist.py` flags two kinds of candidates by pure date arithmetic against each in-development unit's most recent evidence date:
+`worklist.py` flags two kinds of candidates by pure date arithmetic against each unit's Latest Activity date (the date, not the calendar year):
 
-- **Shelved – inferred**: an `announced`/`pre-construction`/`construction` unit with no evidence of activity for **≥2 years** → candidate for `shelved – inferred 2 y`.
-- **Cancelled – inferred**: the same disappearance test at **≥4 years** → candidate for `cancelled – inferred 4 y`.
+- **Shelved – inferred**: a unit with no evidence of activity for **≥2 years** → candidate for `shelved – inferred 2 y`.
+- **Cancelled – inferred**: the same disappearance test at **≥4 years**, applied only to `announced`, `pre-construction` and `construction` units (never to shelved units) → candidate for `cancelled – inferred 4 y`.
 
 A flag is a **candidate**, not a decision. For each one:
 
 1. Search specifically for recent evidence — company disclosures, permit renewals, news, regulator filings — dated more recently than the unit's current last-seen date.
 2. **Evidence found** → the clock resets. Do not change status. If the evidence is more than a year old, update the Latest Activity date and its datasource so the next cycle's date arithmetic starts from the new date. If it is from the last twelve months the project is moving: describe it in the note and leave Latest Activity alone (`docs/reference/lifecycle_rules.md`).
-3. **No evidence found** after a genuine search → confirm the inferred status. Stage it in the `updates` lane with the paired year-field blanking (Start Year blanks for both `shelved` and `cancelled`, per update.md §4.2) and record the last-seen source/date in the Latest Activity field so a future cycle can re-run the clock from a documented baseline.
+3. **No evidence found** after a genuine search → confirm the inferred status. Stage it in the `updates` lane with the paired year-field blanking (Start Year blanks for both `shelved` and `cancelled`, per update.md §4.2) and record the last-seen source/date in the Latest Activity field so a future cycle can re-run the clock from a documented baseline. The inferred status is a milestone entry with a datasource: the Latest Activity source, with the milestone year equal to the Latest Activity date plus two years (shelved) or four years (cancelled).
 4. **Never leave a flagged candidate un-staged with a hedge.** Per update.md §4.1: if the search genuinely turns up nothing, that itself is the confirmation — stage the inferred status rather than punting it to a `qa` note. A `qa` record is for genuine ambiguity (conflicting evidence), not for "didn't get to it."
 
 ## §6 Working the "possible updates" backlog during country research
@@ -78,7 +78,7 @@ Triage doesn't build a deliverable workbook itself — `build_review_package.py`
 ## §8 Hard rules
 
 - **Always work from the GOGPT-scoped CSV**, never the unfiltered export (§4).
-- **Priority ladder order is fixed** — in-development, then shelved review, then current-year retirements, then other retirements, then operating spot-checks (§3).
+- **Priority ladder order is fixed** — in-development, then shelved review, then current-year retirements, then retirements in any other year, then the rest (§3).
 - **An inferred-status flag is a candidate, not a decision** — confirm or refute with an active search before staging anything (§5).
 - **No evidence found is itself the confirmation** — don't leave a flagged candidate unstaged with a hedge (§5.4).
 - **Fold the possible-updates backlog in during the pass**, not after (§6).
@@ -101,11 +101,11 @@ Stop and consult the user when:
 | 1 | announced, pre-construction, construction | Always first |
 | 2 | shelved, shelved – inferred 2 y | Second |
 | 3 | planned retirement this year | Third |
-| 4 | other mothballed / retiring | Fourth |
-| 5 | operating | Spot-check only, lowest priority |
+| 4 | planned retirement in any other year | Fourth |
+| 5 | the rest (mothballed, operating) | Spot-check only, lowest priority |
 
 | Inferred flag | Trigger | Confirm action |
 |---|---|---|
 | Shelved – inferred 2 y | ≥2 y no activity evidence | Stage `shelved – inferred 2 y`, blank Start Year, log last-seen source |
-| Cancelled – inferred 4 y | ≥4 y no activity evidence | Stage `cancelled – inferred 4 y`, blank Start Year, log last-seen source |
+| Cancelled – inferred 4 y | ≥4 y no activity evidence, on announced, pre-construction or construction units only | Stage `cancelled – inferred 4 y`, blank Start Year, log last-seen source |
 | Either, evidence found | Recent evidence located | No status change — reset the clock; update the Latest Activity date only if the evidence is more than a year old |

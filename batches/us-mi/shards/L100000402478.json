@@ -1,0 +1,139 @@
+{
+ "meta": {
+  "plant_id": "L100000402478",
+  "plant_name": "Midland cogeneration Venture",
+  "state": "Michigan",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-26T23:43:48-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401607",
+   "unit_name": "1",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "1468.6",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 10745 with these operating gas generators: steam generator BP15 at 13.4 MW, twelve gas turbines GT3 to GT14 at 87.1 MW each, and steam generator ST1 at 410.0 MW. That adds up to 1468.6 MW of nameplate capacity. The EIA table lists the 380.0 MW steam generator ST2 separately as standby, and GEM already carries it as unit 2. GEM's 1849 MW for unit 1 is 1468.6 plus 380.0, so ST2 is counted twice. EIA nameplate is the figure GEM records, not summer or winter ratings. The sum is my own addition of the table rows, so the value is implied rather than printed."
+    },
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists BP15, GT3 to GT14 and ST1 at plant 10745 as operating. A Michigan regulator filing from August 2026 for Consumers Energy case U-22127 also describes a new power purchase agreement with this plant for 1,240 MW of dispatchable capacity. I found no retirement notice, planned retirement date or mothballing. A list kept by the Sierra Club shows this unit as terminated, but I did not cite it, and the EIA table shows no sign of that."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Latest Activity (not needed for an operating unit)",
+    "Planned retire"
+   ],
+   "notes": "The plant is still operating according to the September 2026 EIA table. The capacity in GEM looks too high because it includes the 380 MW steam generator ST2 that is also listed as unit 2. I found no turbine model for the gas turbines in the permit index, so Equipment Manufacturer/Model stays blank."
+  },
+  {
+   "gem_unit_id": "G100000414228",
+   "unit_name": "2",
+   "findings": {},
+   "not_found": [
+    "Status",
+    "Fuel",
+    "Equipment Manufacturer/Model",
+    "Latest Activity",
+    "Retired year"
+   ],
+   "notes": "I could not settle unit 2. The EIA-860M table for September 2026 lists ST2 as a 380.0 MW natural gas combined cycle steam generator in standby status, which means available for service but not normally used, with an operating year of 1990. GEM lists it as fuel oil and mothballed. I found no dated source that says mothballed, retired or restarted, so status is left alone."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000414228",
+   "concern_type": "Fuel",
+   "recommendation": "The EIA-860M table for September 2026 lists ST2 as a natural gas combined cycle steam generator, not fuel oil. The only fuel oil generator at this plant in the table is a 5.2 MW diesel engine named 1G12. Please check whether unit 2 should be the 380 MW steam generator on natural gas, or the small diesel engine, which is below the 50 MW threshold.",
+   "note": "The EIA table is at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx. Its status for ST2 is standby, which is not the same as mothballed. I found no document that dates a mothballing.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "proposed_value": {
+    "Fuel": "fossil gas: natural gas"
+   }
+  },
+  {
+   "gem_unit_id": "G100000414228",
+   "concern_type": "Status",
+   "recommendation": "Please decide whether unit 2 should stay mothballed. EIA calls ST2 standby, and no dated source I found says mothballed, retired or back in operation.",
+   "note": "A status change needs two independent publishers and I found none, so I proposed no change. Source: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000401607",
+   "concern_type": "duplicate",
+   "recommendation": "GEM unit 1 at 1849 MW includes the 380 MW steam generator ST2, which is also unit 2. Capacity for unit 1 should be 1468.6 MW unless ST2 is meant to be part of unit 1 and unit 2 is something else.",
+   "note": "See the capacity finding for unit 1. Source: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000401607",
+   "concern_type": "Owner(s)",
+   "recommendation": "No change proposed. A Capital Power press release from September 2022 says Capital Power and Manulife Investment Management bought 100% of MCV Holding Company, which owns Midland Cogeneration Venture, so the plant owner entity in GEM still looks right. The EIA-860 owner table for 2024 has no owner rows for this plant.",
+   "note": "Press release: https://www.capitalpower.com/?p=5573",
+   "refs": [
+    "https://www.capitalpower.com/?p=5573"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Fuel"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet for plant 10745."
+  },
+  {
+   "url": "https://www.capitalpower.com/?p=5573",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Press release on the September 2022 sale of MCV Holding Company."
+  }
+ ]
+}

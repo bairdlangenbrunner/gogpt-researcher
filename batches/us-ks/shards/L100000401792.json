@@ -1,0 +1,221 @@
+{
+ "meta": {
+  "plant_id": "L100000401792",
+  "plant_name": "Kaw power station",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T09:42:22-04:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402579",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "retired",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists this unit as retired in December 2024. Row read: Plant 1294, generator 1, status retired, nameplate 50.1 MW, operating year 1955, retirement December 2024. A City of Kansas City Kansas news item from September 2023 calls Kaw the former generating plant, which fits a shutdown but does not give a retirement date. So this is a single-source status change."
+    },
+    "Retired year": {
+     "value": "2024",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives December 2024 as the retirement month. Only fill this if the status is changed to retired."
+    }
+   },
+   "not_found": [],
+   "notes": "The EIA table says retired in December 2024 while GEM says mothballed. I found no Kansas City Board of Public Utilities document that dates the shutdown or the mothballing."
+  },
+  {
+   "gem_unit_id": "G100000402580",
+   "unit_name": "2",
+   "findings": {
+    "Status": {
+     "value": "retired",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists this unit as retired in December 2024. Row read: Plant 1294, generator 2, status retired, nameplate 50.1 MW, operating year 1957, retirement December 2024. A City of Kansas City Kansas news item from September 2023 calls Kaw the former generating plant, which fits a shutdown but does not give a retirement date. So this is a single-source status change."
+    },
+    "Retired year": {
+     "value": "2024",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives December 2024 as the retirement month. Only fill this if the status is changed to retired."
+    }
+   },
+   "not_found": [],
+   "notes": "The EIA table says retired in December 2024 while GEM says mothballed. I found no Kansas City Board of Public Utilities document that dates the shutdown or the mothballing."
+  },
+  {
+   "gem_unit_id": "G100000402581",
+   "unit_name": "3",
+   "findings": {
+    "Status": {
+     "value": "retired",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 lists this unit as retired in December 2024. Row read: Plant 1294, generator 3, status retired, nameplate 65.5 MW, operating year 1962, retirement December 2024. A City of Kansas City Kansas news item from September 2023 calls Kaw the former generating plant, which fits a shutdown but does not give a retirement date. So this is a single-source status change."
+    },
+    "Retired year": {
+     "value": "2024",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for August 2026 gives December 2024 as the retirement month. Only fill this if the status is changed to retired."
+    }
+   },
+   "not_found": [],
+   "notes": "The EIA table says retired in December 2024 while GEM says mothballed. I found no Kansas City Board of Public Utilities document that dates the shutdown or the mothballing."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000402579",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "recommendation": "I did not find a year or month when this unit became mothballed. The Board of Public Utilities called Kaw a former generating plant in a September 2023 request for proposals, so it was out of service by then. The EIA table says the unit retired in December 2024. I searched the board's news pages, its 2024 resource plan and the EIA files. Not found.",
+   "note": "The board's 2024 resource plan does not mention Kaw at all.",
+   "refs": [
+    "https://www.wycokck.org/Engage-With-Us/News-articles/BPU-Looks-to-lease-or-Sell-Former-Facilities",
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000402580",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "recommendation": "I did not find a year or month when this unit became mothballed. The Board of Public Utilities called Kaw a former generating plant in a September 2023 request for proposals, so it was out of service by then. The EIA table says the unit retired in December 2024. I searched the board's news pages, its 2024 resource plan and the EIA files. Not found.",
+   "note": "The board's 2024 resource plan does not mention Kaw at all.",
+   "refs": [
+    "https://www.wycokck.org/Engage-With-Us/News-articles/BPU-Looks-to-lease-or-Sell-Former-Facilities",
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000402581",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "recommendation": "I did not find a year or month when this unit became mothballed. The Board of Public Utilities called Kaw a former generating plant in a September 2023 request for proposals, so it was out of service by then. The EIA table says the unit retired in December 2024. I searched the board's news pages, its 2024 resource plan and the EIA files. Not found.",
+   "note": "The board's 2024 resource plan does not mention Kaw at all.",
+   "refs": [
+    "https://www.wycokck.org/Engage-With-Us/News-articles/BPU-Looks-to-lease-or-Sell-Former-Facilities",
+    "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Retired year"
+   ],
+   "outcome": "verified",
+   "note": "Plant 1294 generators 1, 2 and 3 read from the Retired sheet."
+  },
+  {
+   "url": "https://www.wycokck.org/Engage-With-Us/News-articles/BPU-Looks-to-lease-or-Sell-Former-Facilities",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Passed with the phrase former Kaw generating plant. Plain curl and WebFetch were not needed; the repo fetcher read it."
+  },
+  {
+   "url": "https://ingrams.com/article/bpu-issues-proposals-for-utility-sites-in-kaw-and-quindaro/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Business news article from October 2023 about the same request for proposals. It says the Kaw site is for sale or lease but gives no retirement date."
+  },
+  {
+   "url": "https://www.kdhe.ks.gov/DocumentCenter/View/43284",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "dead_link",
+   "note": "The harvested air permit notice for the Kaw acid rain permit from November 2024 returns 404 and the draft permit at View/43289 also returns 404. Wayback was not used for a citation."
+  }
+ ]
+}

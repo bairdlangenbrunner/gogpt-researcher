@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "lane": "newplants",
+    "scope": {
+      "country": "United States",
+      "state": "Mississippi",
+      "postal": "ms",
+      "kind": "state",
+      "slug": "mississippi",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-27T11:46:30-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 1
+    }
+  },
+  "records": [
+    {
+      "plant_name": "Amazon Web Services Clinton Data Center power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "checks": [
+        39
+      ],
+      "fields": {
+        "Other Name(s)": "JAN250 Data Center power station",
+        "State/Province": "Mississippi",
+        "Local area (taluk, county)": "Hinds",
+        "City": "Clinton",
+        "Latitude": "32.35609",
+        "Longitude": "-90.36350",
+        "Location accuracy": "approximate"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.google.com/maps?q=32.35609,-90.36350",
+          "https://opcgis.deq.state.ms.us/ensearchonline/ai_info.aspx?ai=1066"
+        ],
+        "Other Name(s) Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://opcgis.deq.state.ms.us/ensearchonline/ai_info.aspx?ai=1066",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Mississippi air permit database page for the facility at 1001 Industrial Park Drive in Clinton, Hinds County. It shows the owner as Amazon Data Services and air construction permit 1080-00275 in the draft public comment stage."
+        },
+        {
+          "url": "https://www.google.com/maps?q=32.35609,-90.36350",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Google Maps pin link on the point. It opens on the coordinates but the verifier cannot read a map page."
+        },
+        {
+          "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "State public notice that calls the project the JAN250 Site."
+        }
+      ],
+      "tier": "medium",
+      "location": {
+        "method": "address",
+        "needs_review": false
+      },
+      "researcher_notes": "The Mississippi Department of Environmental Quality posted a public notice dated September 9, 2026. The JAN250 Site at 1001 Industrial Park Drive in Clinton, Hinds County, asked for an optional pre-permit construction approval for a data center. The data center would have emergency back-up generators with a total power capacity of approximately 250 megawatts and diesel fuel storage tanks. The notice does not name the company. The state air permit database page for the same address lists the facility as Amazon Data Services, with air construction permit file 1080-00275 and a comment period that ended on September 21, 2026. I did not find the draft permit itself. Guessed document addresses failed, and the saved copies of the public notice page on the Wayback Machine do not include this notice. The point is a street search result for Industrial Park Drive in Clinton and is approximate. The Census geocoder placed a different road name about 2 kilometers away, so I did not use it. Not found: the number of generators, the size of each, the start year and the exact site.",
+      "action": "Create the plant in Hinds County, Mississippi, with owner Amazon Data Services Inc, then add the unit below. Move the point onto the site if a person can see it on the map.",
+      "irp": false,
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Unit name": "1",
+            "Capacity (MW)": "250",
+            "Fuel": "fossil liquids: diesel",
+            "Status": "announced",
+            "Turbine/Engine Technology": "internal combustion",
+            "Captive industry use": "power",
+            "Captive industry type": "data center",
+            "Backup Power": "yes",
+            "Owner(s)": "Amazon Data Services Inc [100%]"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016"
+            ],
+            "Fuel Data Source": [
+              "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016"
+            ],
+            "Status Data Source": [
+              "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016",
+              "https://opcgis.deq.state.ms.us/ensearchonline/ai_info.aspx?ai=1066"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016"
+            ],
+            "Captive Data Source": [
+              "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016"
+            ],
+            "Backup Power Data Source": [
+              "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016"
+            ],
+            "Owners Data Source": [
+              "https://opcgis.deq.state.ms.us/ensearchonline/ai_info.aspx?ai=1066"
+            ],
+            "Unit name Data Source": [
+              "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=pnotice&id=1869016",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Mississippi Department of Environmental Quality public notice, a Word document, for the JAN250 Site at 1001 Industrial Park Drive in Clinton. It asks for an optional pre-permit construction approval for emergency back-up generators of about 250 Megawatts."
+            },
+            {
+              "url": "https://opcgis.deq.state.ms.us/ensearchonline/ai_info.aspx?ai=1066",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Mississippi air permit database page for the facility at 1001 Industrial Park Drive in Clinton, Hinds County. It shows the owner as Amazon Data Services and air construction permit 1080-00275 in the draft public comment stage."
+            }
+          ],
+          "action": "Add unit 1 as announced, 250 MW of diesel back-up generators, Backup Power yes, captive power for a data center. Leave the engine count, capacity per engine and start year blank.",
+          "researcher_notes": "The public notice says the emergency back-up generators have a total power capacity of approximately 250 Megawatts. It does not give the number of generators or the size of each one, so those are blank. The notice names diesel fuel storage tanks, so the fuel is diesel."
+        }
+      ],
+      "record_id": "us-ms:new:amazon-web-services-clinton-data-center-power-station"
+    }
+  ]
+}

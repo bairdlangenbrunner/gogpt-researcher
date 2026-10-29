@@ -1,0 +1,240 @@
+{
+ "meta": {
+  "plant_id": "L100001023601",
+  "plant_name": "McNew Generating Station",
+  "state": "Kansas",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-21T09:49:09-04:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001028229",
+   "unit_name": "1",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "710",
+     "refs": [
+      "https://efis.psc.mo.gov/Document/Display/886439",
+      "https://shareus11.springcm.com/Public/DownloadPdf/35150/de2f9819-c4da-4fd2-b99e-9e4607134e79/3cde782e-8bc2-f011-b84a-48df377ee718"
+     ],
+     "verifications": [
+      {
+       "url": "https://efis.psc.mo.gov/Document/Display/886439",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://shareus11.springcm.com/Public/DownloadPdf/35150/de2f9819-c4da-4fd2-b99e-9e4607134e79/3cde782e-8bc2-f011-b84a-48df377ee718",
+       "ok": true,
+       "contains_value": true,
+       "name_found": false
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Evergy's second quarter 2026 Missouri filing and its Kansas rate petition both call this a 710 MW combined cycle plant. The Kansas air permit says about 720 MW gross and 705 MW net. GEM shows 765 MW from the EIA-860M table."
+    },
+    "Status Detail": {
+     "value": "In its filing for the second quarter of 2026, Evergy reported that no construction took place at McNew from April to June 2026 and that crews are expected on site in the third quarter of 2026. Kiewit Power Constructors is the builder. Siemens Energy was picked to supply the transformers. Evergy Missouri West and Evergy Kansas Central each own half.",
+     "refs": [
+      "https://efis.psc.mo.gov/Document/Display/886439"
+     ],
+     "verifications": [
+      {
+       "url": "https://efis.psc.mo.gov/Document/Display/886439",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "New text for the top of the box. The existing text stays below it. Status stays pre-construction because no construction has been reported."
+    }
+   },
+   "not_found": [
+    "Status change",
+    "Operator(s)",
+    "Cancellation year",
+    "Planned retire",
+    "CHP",
+    "Fuel"
+   ],
+   "notes": "Start year 2030 is unchanged. Evergy's earlier capital plan and the January 2026 filing agree on summer 2030. No document I found says construction has begun."
+  }
+ ],
+ "plant_findings": {
+  "Location accuracy": {
+   "value": "exact",
+   "refs": [
+    "https://shareus11.springcm.com/Public/DownloadPdf/35150/de2f9819-c4da-4fd2-b99e-9e4607134e79/3cde782e-8bc2-f011-b84a-48df377ee718",
+    "https://www.sos.ks.gov/publications/Register/Volume-44/Issues/Issue-48/11-27-25-53674.html"
+   ],
+   "verifications": [
+    {
+     "url": "https://shareus11.springcm.com/Public/DownloadPdf/35150/de2f9819-c4da-4fd2-b99e-9e4607134e79/3cde782e-8bc2-f011-b84a-48df377ee718",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    },
+    {
+     "url": "https://www.sos.ks.gov/publications/Register/Volume-44/Issues/Issue-48/11-27-25-53674.html",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The air permit application for the McNew Energy Center gives the center of the facility and seven fence line corners in map grid coordinates. The center converts to 38.00300, -97.91896. The fence line forms a box that touches South McNew Road on the west and East Morgan Avenue on the south, the same crossing the permit names. In the satellite picture those two roads sit exactly where the fence line puts them, and the box is one unbroken irrigated farm field with no plant yet. Evergy's rate petition gives 38.00284, -97.91975, about 70 meters away. GEM's old point was about 300 meters to the southwest. The permit application no longer loads on the state site, so a saved copy was read and the permit notice in the Kansas Register is cited instead. I moved the point to the center of the fenced site and marked it exact."
+  },
+  "Latitude": {
+   "value": "38.00300",
+   "refs": [
+    "https://shareus11.springcm.com/Public/DownloadPdf/35150/de2f9819-c4da-4fd2-b99e-9e4607134e79/3cde782e-8bc2-f011-b84a-48df377ee718",
+    "https://www.sos.ks.gov/publications/Register/Volume-44/Issues/Issue-48/11-27-25-53674.html"
+   ],
+   "verifications": [
+    {
+     "url": "https://shareus11.springcm.com/Public/DownloadPdf/35150/de2f9819-c4da-4fd2-b99e-9e4607134e79/3cde782e-8bc2-f011-b84a-48df377ee718",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    },
+    {
+     "url": "https://www.sos.ks.gov/publications/Register/Volume-44/Issues/Issue-48/11-27-25-53674.html",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The air permit application for the McNew Energy Center gives the center of the facility and seven fence line corners in map grid coordinates. The center converts to 38.00300, -97.91896. The fence line forms a box that touches South McNew Road on the west and East Morgan Avenue on the south, the same crossing the permit names. In the satellite picture those two roads sit exactly where the fence line puts them, and the box is one unbroken irrigated farm field with no plant yet. Evergy's rate petition gives 38.00284, -97.91975, about 70 meters away. GEM's old point was about 300 meters to the southwest. The permit application no longer loads on the state site, so a saved copy was read and the permit notice in the Kansas Register is cited instead. I moved the point to the center of the fenced site and marked it exact."
+  },
+  "Longitude": {
+   "value": "-97.91896",
+   "refs": [
+    "https://shareus11.springcm.com/Public/DownloadPdf/35150/de2f9819-c4da-4fd2-b99e-9e4607134e79/3cde782e-8bc2-f011-b84a-48df377ee718",
+    "https://www.sos.ks.gov/publications/Register/Volume-44/Issues/Issue-48/11-27-25-53674.html"
+   ],
+   "verifications": [
+    {
+     "url": "https://shareus11.springcm.com/Public/DownloadPdf/35150/de2f9819-c4da-4fd2-b99e-9e4607134e79/3cde782e-8bc2-f011-b84a-48df377ee718",
+     "ok": true,
+     "contains_value": true,
+     "name_found": false
+    },
+    {
+     "url": "https://www.sos.ks.gov/publications/Register/Volume-44/Issues/Issue-48/11-27-25-53674.html",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The air permit application for the McNew Energy Center gives the center of the facility and seven fence line corners in map grid coordinates. The center converts to 38.00300, -97.91896. The fence line forms a box that touches South McNew Road on the west and East Morgan Avenue on the south, the same crossing the permit names. In the satellite picture those two roads sit exactly where the fence line puts them, and the box is one unbroken irrigated farm field with no plant yet. Evergy's rate petition gives 38.00284, -97.91975, about 70 meters away. GEM's old point was about 300 meters to the southwest. The permit application no longer loads on the state site, so a saved copy was read and the permit notice in the Kansas Register is cited instead. I moved the point to the center of the fenced site and marked it exact."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100001028229",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "recommendation": "I could not pin the exact month of the pre-construction step. The Missouri Public Service Commission order granting the certificate is dated July 31, 2025. The Kansas Corporation Commission approved the cost principles in July 2025. The Kansas air permit notice ran until December 29, 2025. Please use July 2025 as the earliest firm date.",
+   "note": "Answer to the validation report question about step dates."
+  },
+  {
+   "gem_unit_id": "G100001028229",
+   "concern_type": "identity",
+   "recommendation": "Evergy's May 2025 plan update has five placeholder plants named Evergy Kansas Central 2025 IRP power station 1 to 5. The 355 MW Kansas Central share of this plant appears in the 2030 column, so one placeholder may duplicate it. Please check and remove the placeholder if so.",
+   "note": "Plan decks show only chart totals."
+  },
+  {
+   "gem_unit_id": "G100001028229",
+   "concern_type": "Capacity",
+   "recommendation": "GEM shows 765 MW from the EIA-860M table. Evergy and the permit documents give 710 MW. Please confirm the change in the web form.",
+   "note": "Also covered by the proposed capacity edit."
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://efis.psc.mo.gov/Document/Display/886439",
+   "used_for": [
+    "Capacity (MW)",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Evergy Missouri West quarterly status report for the second quarter of 2026, filed August 10, 2026."
+  },
+  {
+   "url": "https://efis.psc.mo.gov/Document/Display/862533",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Fourth quarter 2025 report."
+  },
+  {
+   "url": "https://shareus11.springcm.com/Public/DownloadPdf/35150/de2f9819-c4da-4fd2-b99e-9e4607134e79/3cde782e-8bc2-f011-b84a-48df377ee718",
+   "used_for": [
+    "Capacity (MW)",
+    "Location accuracy"
+   ],
+   "outcome": "verified",
+   "note": "Evergy petition to the Kansas Corporation Commission, filed November 2024."
+  },
+  {
+   "url": "https://www.sos.ks.gov/publications/Register/Volume-44/Issues/Issue-48/11-27-25-53674.html",
+   "used_for": [
+    "Location accuracy"
+   ],
+   "outcome": "verified",
+   "note": "Kansas Register notice of the air permit, November 27, 2025."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Plant 68295, generator MCN1, 765 MW nameplate, planned January 2030."
+  },
+  {
+   "url": "https://investors.evergy.com/2025IRPUpdate",
+   "used_for": [
+    "identity"
+   ],
+   "outcome": "verified",
+   "note": "May 2025 plan update."
+  },
+  {
+   "url": "https://www.kdhe.ks.gov/DocumentCenter/View/52884",
+   "used_for": [
+    "Location accuracy"
+   ],
+   "outcome": "dead",
+   "note": "KDHE air permit application for McNew. Live link returns 404. I read an Internet Archive copy, which is not citable."
+  }
+ ],
+ "location": {
+  "method": "site_reference",
+  "moved_m": 311,
+  "control_points": [],
+  "fit_m": null,
+  "image": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/work/sweep_us-ks/maps/L100001023601_2.png",
+  "needs_review": false,
+  "review_note": ""
+ }
+}
