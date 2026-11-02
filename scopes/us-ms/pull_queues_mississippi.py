@@ -81,6 +81,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
 from fetch import CHROME_UA, fetch_page  # noqa: E402
 from ms_match import OUT, clean_ws, known_hit, load_plants, norm_county  # noqa: E402
+from pull_queues import entry_key, needs_answer, source_record  # noqa: E402
 
 MISO_API = "https://www.misoenergy.org/api/giqueue/getprojects"
 MISO_PAGE = "https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/"
@@ -411,7 +412,8 @@ def write_outputs(out_dir, plants, entries, by_plant, matched, sources, today):
     data = {"generated": today, "sources": sources, "entries": entries,
             "by_plant": {pid: [entries[i]["queue_id"] for i in ix] for pid, ix in by_plant.items()},
             "unmatched_gas_oil": [e["queue_id"] for e in unmatched],
-            "hidden_fuel_leads": [e["queue_id"] for e in unknown]}
+            "hidden_fuel_leads": [e["queue_id"] for e in unknown],
+            "needs_answer": sorted({entry_key(e) for e in needs_answer(entries)})}
     (out_dir / "queues.json").write_text(json.dumps(data, indent=1, default=str))
     L = [f"# Mississippi interconnection queues, gas and oil ({today})", "",
          "A queue entry is a lead, not proof that a plant exists or will be built. The queue file or page below is the citation.", ""]
@@ -463,36 +465,41 @@ def main():
             projects = fetch_miso()
             ms = miso_entries(projects)
             entries += ms
-            sources.append({"name": "MISO generator interconnection queue (includes ERAS rows)", "url": MISO_PAGE,
-                            "how": f"open JSON {MISO_API}, plain GET; {len(projects)} projects, "
-                                   f"{sum(1 for e in ms if e['state'] == 'MS')} in Mississippi, "
-                                   f"{sum(1 for e in ms if e['state'] != 'MS')} state-hidden Mississippi-utility leads"})
+            sources.append(source_record(
+                "MISO generator interconnection queue (includes ERAS rows)", "MISO", MISO_PAGE,
+                f"open JSON {MISO_API}, plain GET; {len(projects)} projects, "
+                f"{sum(1 for e in ms if e['state'] == 'MS')} in Mississippi, "
+                f"{sum(1 for e in ms if e['state'] != 'MS')} state-hidden Mississippi-utility leads",
+                rows=len(projects), state_rows=len(ms), entries=ms, floor="MISO"))
         except Exception as e:  # noqa: BLE001
             log(f"MISO failed: {e}")
-            sources.append({"name": "MISO", "url": MISO_PAGE, "how": f"NOT REACHED: {e}"})
+            sources.append(source_record("MISO", "MISO", MISO_PAGE, f"NOT REACHED: {e}"))
         try:
             tables = fetch_southern()
             ss = southern_entries(tables)
             entries += ss
-            sources.append({"name": "Southern Company active, inactive, in-service and surplus lists", "url": SOUTHERN_PAGE,
-                            "how": "Power BI published-to-web report queried directly; "
-                                   + ", ".join(f"{k} {len(v)} rows" for k, v in tables.items())
-                                   + f"; {len(ss)} in Mississippi"})
+            sources.append(source_record(
+                "Southern Company active, inactive, in-service and surplus lists", "Southern", SOUTHERN_PAGE,
+                "Power BI published-to-web report queried directly; "
+                + ", ".join(f"{k} {len(v)} rows" for k, v in tables.items()) + f"; {len(ss)} in Mississippi",
+                rows=sum(len(v) for v in tables.values()), state_rows=len(ss), entries=ss))
         except Exception as e:  # noqa: BLE001
             log(f"Southern failed: {e}")
-            sources.append({"name": "Southern Company", "url": SOUTHERN_PAGE, "how": f"NOT REACHED: {e}"})
+            sources.append(source_record("Southern Company", "Southern", SOUTHERN_PAGE, f"NOT REACHED: {e}"))
         if not a.tva_file:
-            sources.append({"name": "TVA", "url": TVA_OASIS,
-                            "how": "NOT REACHED: the queue is inside the OASIS application and no address for it was found "
-                                   "(see the module notes for what was tried); pass --tva-file with a saved copy"})
+            sources.append(source_record(
+                "TVA", "TVA", TVA_OASIS,
+                "NOT REACHED: the queue is inside the OASIS application and no address for it was found "
+                "(see the module notes for what was tried); pass --tva-file with a saved copy"))
     if a.tva_file:
         entries = [e for e in entries if not e["source"].startswith("TVA")]
         sources = [s for s in sources if not s["name"].startswith("TVA")]
         for f in a.tva_file:
             te = tva_file_entries(f)
             entries += te
-            sources.append({"name": "TVA saved queue file", "url": te[0]["url"] if te else TVA_OASIS,
-                            "how": f"{f}: {len(te)} Mississippi rows"})
+            sources.append(source_record("TVA saved queue file", "TVA", te[0]["url"] if te else TVA_OASIS,
+                                         f"{f}: {len(te)} Mississippi rows", rows=len(te), state_rows=len(te),
+                                         entries=te))
     by_plant, matched = match_all(plants, entries)
     unmatched, unknown = write_outputs(Path(a.out), plants, entries, by_plant, matched, sources, today)
     log(f"{len(entries)} entries; {sum(1 for e in entries if e['gas_oil'])} gas or oil; "

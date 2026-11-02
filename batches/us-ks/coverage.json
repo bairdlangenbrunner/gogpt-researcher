@@ -15,6 +15,11 @@
    "how": "Read the state health department public notice pages and the saved copies of the Crooked Creek notice, draft permit, summary and application. Read the Sherlock draft permit at https://www.kdhe.ks.gov/DocumentCenter/View/60493.",
    "found": "Crooked Creek and Sherlock are the only gas power plant permits open. Both are already in GEM. Two questions on Crooked Creek (point and start year) are in the question list. No other power plant notice found."
   },
+  "kdhe-keims": {
+   "status": "searched",
+   "how": "scopes/us-ks/harvest_permits.py read the KEIMS public notice list and its documents on October 21, 2026, and every saved copy of the KDHE air notice page back to 2022 (205 notices, scopes/us-ks/work/permits/_notices.md). The KEIMS facility and permit search needs a login, so it was not searched by plant name; a construction permit that never went to public notice is not reachable there without a records request.",
+   "found": "Crooked Creek and Sherlock are the only gas power plant permits in the notices, both already in GEM. The notices that match no GEM plant are in _unmatched.md and are answered under kdhe-air-notices and in the records. No Kansas plant in the batch has a permit in the notices that GEM lacks."
+  },
   "kansas-register": {
    "status": "searched",
    "how": "Read the Kansas Register notice of April 23, 2026 at https://sos.ks.gov/publications/register/Volume-45/Issues/Issue-17/04-23-26-54081.html and searched recent issues for power plant, generating and air quality notices.",
@@ -94,6 +99,61 @@
    "status": "searched",
    "how": "Searched the web and trade press for Kansas data center campuses with on-site gas generation, and checked Southwest Power Pool rows tied to data centers.",
    "found": "Flint Hills Digital Campus in Emporia, which plans some on-site generation with no unit named (watch list). Beale Infrastructure and Digital Realty have only grid service agreements with Evergy. Sherlock is a data center plant already in GEM. An offer to buy the closed Quindaro site is not generation."
+  }
+ },
+ "queues": {
+  "SPP GEN-2026-GR1": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000401615",
+   "record_id": "us-ks:plant:qa-capacity-threshold-9",
+   "evidence": "A 97.8 MW replacement request at the Clifton substation owned by Sunflower Electric. It is the new unit 2 at Clifton, three 33 MW turbines that GEM already has as one 99 MW unit."
+  },
+  "SPP GEN-2024-249": {
+   "decision": "update",
+   "plant_id": "L100000103922",
+   "record_id": "us-ks:plant:qa-duplicate-10",
+   "evidence": "A 737.1 MW gas request at the Jeffrey Energy Center 345 kV substation, owned by Evergy. It may be GEM's announced gas unit 2 at Jeffrey or a new block, and a question for the reviewer asks which."
+  },
+  "SPP GEN-2024-129": {
+   "decision": "add",
+   "record_id": "us-ks:new:labette-county-power-station",
+   "evidence": "A 969 MW gas request on the Caney River to Neosho 345 kV line in Labette County. GEM has no plant there, so it is added as a new plant."
+  },
+  "SPP GEN-2020-003": {
+   "decision": "already_in_gem",
+   "plant_id": "L100001023564",
+   "evidence": "A 58 MW diesel and gas request at the Winfield East Substation for the Kansas Power Pool. It is the Walnut Energy Center in Winfield, which GEM already has at 54.9 MW."
+  },
+  "SPP GEN-2004-017": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000103927",
+   "evidence": "A 250 MW combustion turbine and steam turbine request at Riverton 161 kV for Empire District Electric, in commercial operation since 2007. It is the combined cycle unit at the Riverton Power Plant that GEM already has."
+  },
+  "SPP ERAS-2025-031": {
+   "decision": "add",
+   "record_id": "L100000103926:new:diesel-1",
+   "evidence": "A 165.8 MW diesel request at the Quindaro 161 kV substation for the Kansas City Board of Public Utilities. It is added as a new unit at the Quindaro power station."
+  },
+  "SPP ERAS-2025-017": {
+   "decision": "already_in_gem",
+   "plant_id": "L100001088900",
+   "record_id": "us-ks:plant:qa-duplicate-11",
+   "evidence": "A 623 MW combustion turbine request at the Holcomb 345 kV substation near Garden City. It matches the Sherlock Generation Project that GEM already has at 623 MW."
+  },
+  "SPP ERAS-2025-008": {
+   "decision": "already_in_gem",
+   "plant_id": "L100001043000",
+   "evidence": "A 737.1 MW combined cycle request at the Viola 345 kV substation near Conway Springs for Evergy. It is the Evergy plant in Sumner County that GEM has as Chisholm Trail Energy Center, also called Viola Generating Station."
+  },
+  "SPP ERAS-2025-006": {
+   "decision": "already_in_gem",
+   "plant_id": "L100001023601",
+   "evidence": "A 737.1 MW combined cycle request at the Reno County 345 kV substation for Evergy. It is the McNew Generating Station that GEM already has in Reno County."
+  },
+  "SPP ASGI-2024-020": {
+   "decision": "add",
+   "record_id": "L100000401800:new:2",
+   "evidence": "A 123.7 MW gas request at the Johns-Manville 115 kV substation for McPherson Board of Public Utilities. It is added as a new unit at the McPherson 3 power station."
   }
  }
 }

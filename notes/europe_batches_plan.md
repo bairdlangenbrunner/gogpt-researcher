@@ -1,160 +1,49 @@
 # Europe batches for Dan O'Beirne's Q4 2026 countries
 
-Drafted 2026-10-03. Status: Baird agreed to start with Germany on 2026-10-05; the
-Germany packet was built the same day (`batches/germany/INDEX.md`, 215 edits, 122
-questions, 12 watch items) and awaits review. Not yet discussed with Dan. Open
-questions 1 to 3 below are still unanswered.
+First drafted 2026-10-03 (Germany then Ireland). Rewritten 2026-10-29 after Baird's ruling: Dan's remaining countries are run one at a time on the North Dakota blueprint (`scopes/us-nd/plan.md`), each with its own harvesters, coverage list and gates. Germany's first packet (2026-10-05, `batches/germany/INDEX.md`) is the model for the review page; its redo comes after the tender awards.
 
-## Who and when
+## Order and dates (Baird 2026-10-29)
 
-Dan O'Beirne holds every European row on the Q4 2026 assignments tab (plus Armenia,
-Azerbaijan, Georgia, Cyprus and Türkiye). His weekly schedule (Update V2 sheet,
-"Weekly schedule" tab, 0.5 day per working day):
+Dan's weekly schedule (Update V2 sheet, "Weekly schedule" tab, read 2026-10-29): Ireland to 11-02, Italy 11-02 to 11-09, Poland 11-09 to 11-13, Romania 11-13 to 11-19, United Kingdom 11-19 to 12-04.
 
-| dates | country | priority | days | in-dev units | total rows | backlog rows still open |
-|---|---|---|---|---|---|---|
-| 10-02 to 10-07 | Czech Republic | medium | 1.25 | 17 | 32 | 0 |
-| 10-07 to 10-08 | Greece | medium | 0.75 | 10 | 58 | 3 |
-| 10-08 to 10-09 | Hungary | medium | 0.5 | 3 | 26 | 0 |
-| 10-09 to 10-21 | Germany | high | 3.5 | 35 | 355 | 1 |
-| 10-21 to 11-02 | Ireland | high | 4.0 | 33 | 90 | 9 |
-| 11-02 to 11-09 | Italy | high | 2.5 | 8 | 225 | 1 |
-| 11-09 to 11-13 | Poland | high | 1.25 | 28 | 59 | 0 |
-| 11-13 to 11-19 | Romania | high | 2.0 | 17 | 64 | 2 |
-| 11-19 to 12-04 | United Kingdom | high | 5.0 | 50 | 235 | 2 |
+| order | country | packet ready by | plan |
+|---|---|---|---|
+| 1 | Poland | about 11-06 | `scopes/poland/plan.md` |
+| 2 | Romania | about 11-12 | to write |
+| 3 | United Kingdom | about 11-18 | to write |
+| 4 | Germany redo | after the StromVKG awards (due by 11-03) | `scopes/germany/` |
 
-Counts are from `campaigns/q4-2026/roster.csv` (pull of 2026-10-02) and the
-"gas/oil plants" tab of the possible-updates sheet (rows with a blank Status
-cell). Every one of his rows still reads "to do" in column N, including the small
-September countries, so the status column is not a reliable progress signal.
+Ireland and Italy are Dan's before a packet could land, so they run only as follow-up passes after he finishes them.
 
-## Which countries first
+## How the review works (Baird 2026-10-29)
 
-Recommended pair: **Germany, then Ireland.**
+- Dan makes the calls. Every country's staging goes onto his existing review page, the `germany` entry in `review_app/artifacts.json` (https://claude.ai/artifact/3YnJ2C36PwrTJ8qYgUxbuW): add `batches/<country>/staging` to its `dirs`, rebuild with `review_app/build_all.py`, republish.
+- Baird messages Dan about each batch himself.
 
-- Germany starts 10-09. Biggest fleet on his list after the UK, the best regulator
-  data in Europe (Bundesnetzagentur Kraftwerksliste), a country note already in the
-  repo, and a live news hook: the capacity tenders under the StromVKG law (passed
-  July 2026). Round one closed on 8 September 2026 for 4,500 MW, awards are due by
-  3 November 2026, round two is 29 December 2026 for another 4,500 MW, and a 2,000 MW
-  round follows on 18 May 2027. (The Q2 2026 trend row's "9 GW on 8 September and
-  22 December" figures were the earlier draft; the country note has the checked
-  dates and sources.) Newly awarded projects are exactly the "newly announced"
-  class the manual asks for.
-- Ireland starts 10-21. Compact fleet, English-language sources, nine open backlog
-  rows (the most of any of his countries), and strong public registers (EPA
-  industrial emissions licenses and LEAP documents, EirGrid capacity statement, T-4
-  capacity auction results, An Bord Pleanala planning files).
+## What carries over from North Dakota unchanged
 
-Optional shakedown before Germany: **Greece** (58 rows, 10 in-development units,
-RAE license register, energypress.gr). It is small enough to run in a day and
-catches country-mode bugs cheaply. It only pays off if the pipeline work is done by
-Monday 10-05, since Dan reaches Greece on 10-07.
+`validation_report.py`, `assigned_comments.py`, `no_tracker.py`, `worklist.py`, `captive_lng.py`, `location_candidates.py`, `check_existing_links.py`, `data_center_fleets.py` (20 MW threshold for the EU and UK), `build_state_brief.py --country`, `build_sweep_args.py`, `.claude/workflows/state-sweep.js`, `assemble_state.py`, `state_gate.py`, `qc_checks.py`, `build_review_package.py` and the review page. Country mode in these scripts was built for Germany on 2026-10-05.
 
-Not now: Czech Republic (he is on it this week), Hungary (3 units), Italy, Poland,
-Romania and the UK (all November; pick up after the first two land).
+US-only and skipped: `irp_sheet.py` and `match_ids.py` (EIA, EIP and Sierra Club). `state_gate.py`'s ID follow-up gate reads `match_registers.py` output for a country and skips a country without it.
 
-## Step 1: country mode for the research agent
+## Shared pieces to build (once, used by every country)
 
-The state sweep (`docs/workflows.md` §7) is keyed on US states. Audit of
-2026-10-03, changes needed:
+1. Built 2026-10-29: `scripts/match_registers.py --country <name>`, the European counterpart of `match_ids.py`. Joins the export to the European Environment Agency large combustion plant tables and the ENTSO-E per-unit capacity list, plus any national register a country adds. Writes `work/ids_<tag>.json` and `.md` in the `match_ids.py` contract; `build_state_brief.py --ids` and `state_gate.py`'s `ids_followup` gate read it. A national register a country adds goes in as another lead source.
+2. A per-country queue or auction reader at `scopes/<tag>/harvest_<source>.py` writing `batches/<tag>/harvest/queues.json` in the existing contract, so `build_state_brief.py --harvest` briefs it with no change. Settings go in `scopes/<tag>/harvest_<source>.json`, never `queues.json` (`pull_queues.py` reads those as US states). Poland's `harvest_pse.py` is the model.
+3. An ENTSO-E API token, registered by Baird and kept outside the repo as `ENTSOE_API_TOKEN`.
 
-- `build_state_brief.py`: add `--country` (exclusive with `--state`); skip the
-  postal-code lookup; filter rows on Country/Area only; batch dir
-  `batches/<country-slug>/`; worklist default `work/worklist_<country-slug>.csv`
-  (what `worklist.py --country` already writes); read
-  `scopes/<slug>/note.md`; drop the two EIA "Other IDs" tasks outside the
-  US; relabel the identity block; write a `scope` key into `_index.json` alongside
-  the existing `state`/`postal` keys.
-- `build_sweep_args.py`: pass `scope` through; stop requiring `state`/`postal`.
-- `.claude/workflows/state-sweep.js`: generic intro; a country research ladder in
-  place of the EIA / ISO ladder (below); EIA-specific rules gated to the US; state
-  the 20 MW EU and UK threshold; work dir and labels keyed on the slug.
-- `assemble_state.py`: replace the hard-coded `COUNTRY = "United States"` with the
-  scope's country (record IDs stay `<plant id>:<unit id>:<field>`; the slug names
-  the batch dir and the staged `meta.scope`).
-- `state_gate.py`, `build_review_package.py`, `worklist.py`, `qc_checks.py`: no
-  change (the 20 MW threshold is already applied by `qc_checks.py` from the
-  record's country).
-- Docs: §7 of `docs/workflows.md` becomes "Scope sweep (US state or country)";
-  `notes/us_state_agent_plan.md` gets a country-mode paragraph.
+## Per country
 
-Country research ladder for the prompt (replaces EIA / PJM / NYISO):
+`scopes/<tag>/` with `note.md`, `coverage.json`, `plan.md`, a permit harvester and a grid operator or capacity market harvester, each with tests on saved pages. Then steps A to G of the North Dakota plan: refresh and scripts, harvest, briefs and sweep, location, assemble and gate, deliverables, drafts for Dan. About five working days each.
 
-1. The country note (inlined) and the record's existing Data Source links.
-2. The national regulator's plant register or license register.
-3. The transmission operator: connection queue, capacity statement, generation
-   adequacy report; ENTSO-E transparency as the cross-check.
-4. Capacity market registers where they exist (Ireland, Poland, Italy, UK, Belgium).
-5. Planning and permit registers (environmental permits, EIA decisions).
-6. Owner and sponsor investor pages and annual reports.
-7. Trade press, searched in the local language with the local word for power plant.
+Country sources to start from:
 
-Beyond Fossil Fuels (BFF) is the GEM team's main partner dataset for European gas
-plants (Europe Workflow Map). Ask Dan whether the BFF dashboard and the GEM-BFF id
-mapping sheet are something we may read; if yes they become ladder step 2.
+- **Poland**: probed 2026-10-29, see `scopes/poland/note.md`.
+- **Romania**: ANRE license register, Transelectrica connection approvals and adequacy reports, environmental agency (ANPM) decisions, OMV Petrom, Romgaz and Hidroelectrica releases, Modernisation Fund awards.
+- **United Kingdom**: the Transmission Entry Capacity register (National Energy System Operator), capacity market register and T-4 results, Planning Inspectorate national infrastructure projects, Environment Agency and SEPA permits, Department for Energy Security and Net Zero section 36 consents, data center backup fleets in the London area.
+- **Germany redo**: Bundesnetzagentur Kraftwerksliste and the national unit register (Marktstammdatenregister), the StromVKG tender awards, the existing country note.
 
-## Step 2: country notes
+## Open questions
 
-- `scopes/germany/note.md`: refreshed 2026-10-05 (status vocabulary of the
-  June 2026 Kraftwerksliste with the GEM mapping, the StromVKG tenders, the search
-  vocabulary, and the rule to keep tender projects separate from CHP, district
-  heating, industrial captive and data-center backup projects). Done.
-- `docs/country_notes/ireland.md`: new. Sources: EPA industrial emissions license
-  database (search by address, not operator; "View Applicant Documents", the
-  non-technical summary gives turbine counts), EPA LEAP annual environmental
-  reports (manufacturer details), EirGrid and SONI All-Island Generation Capacity
-  Statement and Resource Adequacy statement, SEM Committee T-4 capacity auction
-  results, An Bord Pleanala, CRU. Data-center gas and oil engine gensets are the
-  growth story.
-- `docs/country_notes/greece.md` only if the shakedown runs: RAE license register
-  and annual report, IPTO (ADMIE) market statistics, energypress.gr.
-
-## Step 3: what each batch checks
-
-Update mode per the September 2026 manual, not a deep sweep:
-
-- the ladder: in-development, shelved review, planned retirement this year, planned
-  retirement, mothballed; 2 year and 4 year inferred-status candidates from
-  `worklist.py`;
-- newly announced plants (Germany: the tender awards; Ireland: data-center
-  generation and the latest T-4 results);
-- the open backlog rows for the country, folded in as extra tasks;
-- the Q4 required item: operating units with no start year (Germany 1, Ireland 3);
-- missing Data Source cells on the units touched;
-- turbine make and model on in-development units ("not found" only after a search).
-
-Upstream scans (`export_to_dump.py`, then `gogpt_csv_query.py --counts-only`,
-`--ownership-scan`, `--in-progress-scan`, `--duplicate-scan`, `--possible-updates`)
-run before the briefs are built; the unit-count baseline is reconciled against the
-assignments tab row.
-
-## Step 4: hand-off to Dan
-
-- Output is the normal pair in `batches/<slug>/deliverables/` plus the review page
-  (`review_app/build_static.py`, published as a claude.ai artifact from the work
-  profile and shared with Dan by email as an editor), so Dan can accept or reject
-  each change in a browser, his calls save on the page, and we rebuild from them.
-  Germany's page: https://claude.ai/artifact/3YnJ2C36PwrTJ8qYgUxbuW (published
-  2026-10-05, not yet shared).
-- Before any run, tell Dan which countries we are taking and when the packet lands,
-  so he does not research the same units. Ask: packet format he prefers, whether he
-  wants to make the review calls himself, where on Drive to put the files, and the
-  BFF access question above.
-- The Country tips trends tab needs a Q4 2026 row per country from him; the
-  evidence file's summary section is written so he can lift it.
-
-## Timeline (proposed)
-
-| day | work |
-|---|---|
-| Mon 10-05 | country mode in the four scripts and the workflow; Germany note refresh; Germany fresh pull, scans, briefs, sweep, gate and packet (all done) |
-| Tue 10-06 to Thu 10-08 | Germany: Baird reviews, packet to Dan by 10-08; Ireland note; Greece shakedown skipped unless Baird asks |
-| week of 10-12 | Ireland: same steps, packet by 10-16 |
-| after | pick the next pair from Italy, Poland, Romania, UK based on what Dan says helped |
-
-## Open questions for Baird
-
-1. Confirm the pair (Germany, Ireland) and whether to run the Greece shakedown.
-2. Message Dan before the pipeline work starts, or after Greece proves it works?
-3. Who makes the accept and reject calls in the review app: Baird, Dan, or both?
+- Beyond Fossil Fuels is the GEM team's main partner dataset for European gas plants. Ask Dan whether the repo may read the dashboard and the GEM to Beyond Fossil Fuels ID sheet; if yes it becomes a register in `match_registers.py`.
+- Poland's grid connection list names about ten large gas projects GEM lacks. Settle with Dan whether a connection request alone is enough to add a European project before any is staged.

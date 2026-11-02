@@ -801,6 +801,9 @@ class Assembler:
                                        inline=inline)})
             if additive:
                 rec["additive"] = True
+            # a staged status carries its dated milestone entries (Baird 2026-11-02)
+            if field == "Status" and fd.get("milestones"):
+                rec["milestones"] = list(fd["milestones"])
         else:
             return
         if checks:

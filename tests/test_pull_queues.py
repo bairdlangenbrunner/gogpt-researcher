@@ -127,7 +127,7 @@ def test_write_outputs_keys_match_what_the_brief_reads(tmp_path):
     by_plant, matched = q.match_all(PLANTS, entries)
     q.write_outputs(tmp_path, "Michigan", PLANTS, entries, by_plant, matched, [], "2026-10-23")
     data = json.loads((tmp_path / "queues.json").read_text())
-    assert set(data) == {"generated", "sources", "entries", "by_plant", "unmatched_gas_oil", "hidden_fuel_leads"}
+    assert set(data) == {"generated", "sources", "entries", "by_plant", "unmatched_gas_oil", "hidden_fuel_leads", "needs_answer"}
     assert "J4500" in data["hidden_fuel_leads"] and "J3923" not in data["unmatched_gas_oil"]
     md = (tmp_path / "queues.md").read_text()
     assert "Washtenaw County" in md and "County County" not in md

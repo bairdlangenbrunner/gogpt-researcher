@@ -69,9 +69,9 @@ These are not pipeline plants, but the audit surfaced them and they need a decis
 
 ## Coverage gaps that remain
 
-1. Illinois EPA permits issued without a public notice (minor construction permits) are not in the notice archive. Closing this needs a records request or the Document Explorer, which cannot list by permit type.
+1. Illinois EPA permits issued without a public notice (minor construction permits) are not in the notice archive. Closed on 2026-10-30: the document cabinet behind Document Explorer lists every air permit and application by category and date, and scopes/us-il/harvest_permits.py read every final air permit and application filed since 2021 plus every entry under each GEM plant's site IDs and name words. Results are in scopes/us-il/work/permits/ and batches/us-il/harvest/facilities.json.
 2. The scanned Broadwing and Lincoln Land permits were read by OCR on the first pages only, and about 20 data center and industrial notices were judged by title and industry code without opening them.
-3. The Illinois Commerce Commission e-Docket was not opened. Gas plants in Illinois do not need a certificate from the commission, so the relevance is low.
+3. The Illinois Commerce Commission e-Docket holds no generating plant cases for this scope: Illinois requires no siting certificate for a generating plant, and the two commission-regulated utilities, ComEd and Ameren Illinois, own no generation, so a new gas plant appears in the air permit cabinet and the grid queues (both read in full, see item 1 and batches/us-il/harvest/queues.md) and not in a commission docket.
 4. PJM Cycle 1 study reports are not yet posted, so the four C01 requests have no site or developer detail beyond the queue row.
 5. The MISO blank-fuel 2026 requests above are unclassified.
 6. The Illinois Secretary of State search for the three 346 MW LLCs has not been run.

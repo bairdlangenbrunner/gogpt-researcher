@@ -1,16 +1,23 @@
-# Mississippi interconnection queues, gas and oil (2026-10-23)
+# Mississippi interconnection queues, gas and oil (2026-10-30)
 
 A queue entry is a lead, not proof that a plant exists or will be built. The queue file or page below is the citation.
 
 ## Sources
 
-- MISO generator interconnection queue (includes ERAS rows): open JSON https://www.misoenergy.org/api/giqueue/getprojects, plain GET; 3990 projects, 204 in Mississippi, 12 state-hidden Mississippi-utility leads (https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/)
-- Southern Company active, inactive, in-service and surplus lists: Power BI published-to-web report queried directly; Active 276 rows, Inactive 1034 rows, COD 80 rows, Surplus 13 rows; 88 in Mississippi (https://www.southerncompany.info/power-bi/transmission-policy-services/index.html)
-- TVA saved queue file: ../work/tva_queue/tva_current_queue_20260914.csv: 14 Mississippi rows (https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/OASIS_CurrentQueue_20260914.pdf)
-- TVA saved queue file: ../work/tva_queue/tva_archive_queue_20260914.csv: 142 Mississippi rows (https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/OASIS_ArchiveQueue_20260914.pdf)
-- TVA saved queue file: ../work/tva_queue/tva_affected_system_queue_20220516.csv: 1 Mississippi rows (https://www.oasis.oati.com/tva/)
+- MISO generator interconnection queue (includes ERAS rows): open JSON https://www.misoenergy.org/api/giqueue/getprojects, plain GET; 4030 projects, 204 in Mississippi, 12 state-hidden Mississippi-utility leads (https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/)
+- Southern Company active, inactive, in-service and surplus lists: Power BI published-to-web report queried directly; Active 275 rows, Inactive 1034 rows, COD 81 rows, Surplus 13 rows; 88 in Mississippi (https://www.southerncompany.info/power-bi/transmission-policy-services/index.html)
+- TVA saved queue file: work/tva_queue/tva_current_queue_20260914.csv: 14 Mississippi rows (https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/OASIS_CurrentQueue_20260914.pdf)
+- TVA saved queue file: work/tva_queue/tva_archive_queue_20260914.csv: 142 Mississippi rows (https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/OASIS_ArchiveQueue_20260914.pdf)
 
 ## Matched to GEM plants
+
+### Amazon Web Services Canton Data Center power station (L100001088949), Canton, Madison County
+
+No queue entry matched.
+
+### Amazon Web Services Ridgeland Data Center power station (L100001088950), Ridgeland, Madison County
+
+No queue entry matched.
 
 ### Attala power station (L100000401921), Sallis, Attala County
 
@@ -45,9 +52,12 @@ No queue entry matched.
 
 No queue entry matched.
 
-### Colossus 2 power station (L100001047324), New Haven,  County
+### Colossus 2 power station (L100001047324), Southaven, Desoto County
 
-No queue entry matched.
+- MISO J1813; Gas; 920 MW; DeSoto County; Done; queued 2022-07-07; in service 2020-03-20; point of interconnection: Entergy Freeport 230 kV Substation; ENTERGY MISSISSIPPI, LLC. EMTO (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- TVA tva_archive_queue_20260914 317; Gas; 107 MW; DeSoto County; In-Service; queued 6/15/2017 (same county, gas or oil, check it is this plant). Citation: https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/OASIS_ArchiveQueue_20260914.pdf
+- TVA tva_archive_queue_20260914 396; Gas; 494 MW; DeSoto County; Withdrawn; queued 8/30/2019 (same county, gas or oil, check it is this plant). Citation: https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/OASIS_ArchiveQueue_20260914.pdf
+- TVA tva_archive_queue_20260914 397; Gas; 395 MW; DeSoto County; Withdrawn; queued 8/30/2019 (same county, gas or oil, check it is this plant). Citation: https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/OASIS_ArchiveQueue_20260914.pdf
 
 ### Crossroads energy center (L100000401819), Clarksdale, Coahoma County
 
@@ -79,6 +89,11 @@ No queue entry matched.
 - TVA tva_archive_queue_20260914 218; Gas; 70 MW; Benton County; In-Service; queued 12/19/2008 (same county, gas or oil, check it is this plant). Citation: https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/OASIS_ArchiveQueue_20260914.pdf
 - TVA tva_archive_queue_20260914 312; Gas; 115 MW; Benton County; In-Service; queued 3/30/2017 (same county, gas or oil, check it is this plant). Citation: https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/OASIS_ArchiveQueue_20260914.pdf
 - TVA tva_archive_queue_20260914 TC25-053; Gas; 54 MW; Benton County; Withdrawn; queued 10/1/2024 (same county, gas or oil, check it is this plant). Citation: https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/OASIS_ArchiveQueue_20260914.pdf
+
+### Meridian Compass Data Center power station (L100001088945), Meridian, Lauderdale County
+
+- Southern IC-123; Combined Cycle (Natural Gas); 615 MW; Lauderdale County; Withdrawn or terminated; point of interconnection: Plant Sweatt 230 kV Substation; Southern Company (same county, gas or oil, check it is this plant). Citation: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html
+- Southern IC-124; Combustion Turbine (Natural Gas); 626 MW; Lauderdale County; Withdrawn or terminated; point of interconnection: Plant Sweatt 230 kV Substation; Southern Company (same county, gas or oil, check it is this plant). Citation: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html
 
 ### Morrow Generating Plant (L100000104011), Purvis, Lamar County
 
@@ -141,8 +156,6 @@ No queue entry matched.
 - Southern 26-IC-1489; Combustion Turbine (Natural Gas); 199.4 MW; Clarke County; Active, Cluster Study; queued 2026-04-03; in service 2029-05-01; point of interconnection: Laurel East - Sykes SS 230 kV Line; Southern Company. Citation: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html
 - Southern 26-IC-1490; Combustion Turbine (Natural Gas); 199.4 MW; Clarke County; Active, Cluster Study; queued 2026-04-03; in service 2029-05-01; point of interconnection: Laurel East - Sykes SS 230 kV Line; Southern Company. Citation: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html
 - Southern IC-012; Combined Cycle (Natural Gas); 640 MW; Clarke County; Withdrawn or terminated; point of interconnection: Meridian NE - Laurel East line; Southern Company. Citation: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html
-- Southern IC-123; Combined Cycle (Natural Gas); 615 MW; Lauderdale County; Withdrawn or terminated; point of interconnection: Plant Sweatt 230 kV Substation; Southern Company. Citation: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html
-- Southern IC-124; Combustion Turbine (Natural Gas); 626 MW; Lauderdale County; Withdrawn or terminated; point of interconnection: Plant Sweatt 230 kV Substation; Southern Company. Citation: https://www.southerncompany.info/power-bi/transmission-policy-services/index.html
 - TVA tva_archive_queue_20260914 229; Gas; 200 MW; Clay County; Withdrawn; queued 10/1/2011. Citation: https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/OASIS_ArchiveQueue_20260914.pdf
 - TVA tva_archive_queue_20260914 230; Gas; 150 MW; Scott County; Withdrawn; queued 10/1/2011. Citation: https://www.oasis.oati.com/woa/docs/TVA/TVAdocs/OASIS_ArchiveQueue_20260914.pdf
 

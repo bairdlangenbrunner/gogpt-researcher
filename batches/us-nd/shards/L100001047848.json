@@ -1,0 +1,416 @@
+{
+ "meta": {
+  "plant_id": "L100001047848",
+  "plant_name": "Bison Generation Station",
+  "state": "North Dakota",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-29T18:31:16-04:00",
+  "done": true,
+  "urls_attempted": 8,
+  "urls_verified": 8
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001054598",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "construction",
+     "refs": [
+      "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/4882770595279333132",
+      "https://www.basinelectric.com/News-Center/news-releases/Basin-Electric-breaks-ground-on-historic-generation-facility",
+      "https://www.minotdailynews.com/news/local-news/2026/05/basin-electric-breaks-ground-on-historic-generation-facility/"
+     ],
+     "verifications": [
+      {
+       "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/4882770595279333132",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.basinelectric.com/News-Center/news-releases/Basin-Electric-breaks-ground-on-historic-generation-facility",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.minotdailynews.com/news/local-news/2026/05/basin-electric-breaks-ground-on-historic-generation-facility/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "Status stays construction. Basin Electric told the North Dakota Department of Environmental Quality in a letter dated January 21, 2026 that construction began on January 8, 2026. A Basin Electric news release from May 2026 and a Minot Daily News article from May 2026 report the groundbreaking. The EIA-860M table for September 2026 still shows regulatory approvals pending, which looks out of date because it predates these documents."
+    },
+    "Capacity (MW)": {
+     "value": "759.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists plant 69071 with a combustion turbine of 496.0 MW and a steam turbine of 263.0 MW for this block, so 759.0 MW nameplate. The air permit at https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-6052959693102246591 and the Basin Electric release at https://www.basinelectric.com/News-Center/news-releases/Basin-Electric-breaks-ground-on-historic-generation-facility both say about 745 MW per unit, and the Southwest Power Pool queue shows 760 MW. The permit and release do not say whether 745 is nameplate."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Mitsubishi Power M501JAC",
+     "refs": [
+      "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-6052959693102246591"
+     ],
+     "verifications": [
+      {
+       "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-6052959693102246591",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The final air permit to construct ACP-18273 version 1.0 from December 2025 lists a Mitsubishi 1x1 M501JAC natural gas combined cycle combustion turbine with a duct burner for each block."
+    },
+    "Start year": {
+     "value": "2029",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 gives a planned operation of February 2029 for this block. The human adds a new scheduled event with 2029 as Event Year and 2026 as Source Year."
+    },
+    "Status Detail": {
+     "value": "Basin Electric reported to the state air regulator that construction began on January 8, 2026. The company held a groundbreaking in May 2026.",
+     "refs": [
+      "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/4882770595279333132",
+      "https://www.basinelectric.com/News-Center/news-releases/Basin-Electric-breaks-ground-on-historic-generation-facility"
+     ],
+     "verifications": [
+      {
+       "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/4882770595279333132",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.basinelectric.com/News-Center/news-releases/Basin-Electric-breaks-ground-on-historic-generation-facility",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The letter dated January 21, 2026 gives the construction start date. The Basin Electric release from May 2026 reports the groundbreaking."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-40749731620493823"
+     ],
+     "verifications": [
+      {
+       "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-40749731620493823",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The air permit support document lists one standby diesel generator and one diesel fire pump engine for the whole plant. Both are small support engines, not power units. The document does not say the combined cycle blocks serve as backup power, so this unit stays no."
+    }
+   },
+   "not_found": [
+    "Latest Activity (not needed, project is moving)",
+    "Turbine/Engine Technology unchanged"
+   ],
+   "notes": "Construction is confirmed under way. Nameplate is 759 MW by the EIA table and the Southwest Power Pool queue was not opened in this pass."
+  },
+  {
+   "gem_unit_id": "G100001054668",
+   "unit_name": "2",
+   "findings": {
+    "Status": {
+     "value": "construction",
+     "refs": [
+      "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/4882770595279333132",
+      "https://www.basinelectric.com/News-Center/news-releases/Basin-Electric-breaks-ground-on-historic-generation-facility",
+      "https://www.minotdailynews.com/news/local-news/2026/05/basin-electric-breaks-ground-on-historic-generation-facility/"
+     ],
+     "verifications": [
+      {
+       "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/4882770595279333132",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.basinelectric.com/News-Center/news-releases/Basin-Electric-breaks-ground-on-historic-generation-facility",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.minotdailynews.com/news/local-news/2026/05/basin-electric-breaks-ground-on-historic-generation-facility/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "Status stays construction. Basin Electric told the North Dakota Department of Environmental Quality in a letter dated January 21, 2026 that construction began on January 8, 2026. A Basin Electric news release from May 2026 and a Minot Daily News article from May 2026 report the groundbreaking. The EIA-860M table for September 2026 still shows regulatory approvals pending, which looks out of date because it predates these documents."
+    },
+    "Capacity (MW)": {
+     "value": "759.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists plant 69071 with a combustion turbine of 496.0 MW and a steam turbine of 263.0 MW for this block, so 759.0 MW nameplate. The air permit at https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-6052959693102246591 and the Basin Electric release at https://www.basinelectric.com/News-Center/news-releases/Basin-Electric-breaks-ground-on-historic-generation-facility both say about 745 MW per unit, and the Southwest Power Pool queue shows 760 MW. The permit and release do not say whether 745 is nameplate."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Mitsubishi Power M501JAC",
+     "refs": [
+      "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-6052959693102246591"
+     ],
+     "verifications": [
+      {
+       "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-6052959693102246591",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The final air permit to construct ACP-18273 version 1.0 from December 2025 lists a Mitsubishi 1x1 M501JAC natural gas combined cycle combustion turbine with a duct burner for each block."
+    },
+    "Start year": {
+     "value": "2030",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://www.basinelectric.com/News-Center/news-releases/Basin-Electric-breaks-ground-on-historic-generation-facility"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.basinelectric.com/News-Center/news-releases/Basin-Electric-breaks-ground-on-historic-generation-facility",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 gives a planned operation of March 2030 for this block. The Basin Electric release from May 2026 says the plant is expected to be fully operational in 2030. The human adds a new scheduled event with 2030 as Event Year and 2026 as Source Year."
+    },
+    "Status Detail": {
+     "value": "Basin Electric reported to the state air regulator that construction began on January 8, 2026. The company held a groundbreaking in May 2026.",
+     "refs": [
+      "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/4882770595279333132",
+      "https://www.basinelectric.com/News-Center/news-releases/Basin-Electric-breaks-ground-on-historic-generation-facility"
+     ],
+     "verifications": [
+      {
+       "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/4882770595279333132",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.basinelectric.com/News-Center/news-releases/Basin-Electric-breaks-ground-on-historic-generation-facility",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The letter dated January 21, 2026 gives the construction start date. The Basin Electric release from May 2026 reports the groundbreaking."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-40749731620493823"
+     ],
+     "verifications": [
+      {
+       "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-40749731620493823",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The air permit support document lists one standby diesel generator and one diesel fire pump engine for the whole plant. Both are small support engines, not power units. The document does not say the combined cycle blocks serve as backup power, so this unit stays no."
+    }
+   },
+   "not_found": [
+    "Latest Activity (not needed, project is moving)",
+    "Turbine/Engine Technology unchanged"
+   ],
+   "notes": "Construction is confirmed under way. Nameplate is 759 MW by the EIA table and the Southwest Power Pool queue was not opened in this pass."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Basin Electric Power Cooperative [100%]",
+   "refs": [
+    "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-6052959693102246591",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-6052959693102246591",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The air permit names Basin Electric Power Cooperative as the permit holder, and the EIA-860M table for September 2026 lists Basin Electric Power Coop as the owner."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100001054598",
+   "concern_type": "existence",
+   "question": "Does Bison need extra units for the Sierra Club CA1 and CA2 rows?",
+   "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists each block as a 496 MW combustion turbine plus a 263 MW steam turbine, generators CA1 and CT1 for block one and CA2 and CT2 for block two. The CA rows are the steam turbine halves of the two blocks that GEM holds as units 1 and 2.",
+   "recommendation": "Add no new units. Leave units 1 and 2 as combined cycle blocks.",
+   "note": "I did not cite the Sierra Club list. The Southwest Power Pool queue entries GEN-2024-081 and GEN-2024-082 were not downloaded in this pass.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001054598",
+   "concern_type": "Capacity (MW)",
+   "question": "Should unit capacity change from 745 MW to 759 MW?",
+   "finding": "The EIA table gives 759.0 MW nameplate per block, while the permit at https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-6052959693102246591 and Basin Electric's release at https://www.basinelectric.com/News-Center/news-releases/Basin-Electric-breaks-ground-on-historic-generation-facility say about 745 MW per unit.",
+   "recommendation": "Keep 759 MW if you accept the EIA nameplate over the company's round figure. Otherwise leave 745 MW.",
+   "note": "The queue entries show 760 MW.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-6052959693102246591",
+    "https://www.basinelectric.com/News-Center/news-releases/Basin-Electric-breaks-ground-on-historic-generation-facility"
+   ],
+   "proposed_value": {
+    "Capacity (MW)": "759.0"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Basin Electric Power Cooperative",
+   "role": "owner",
+   "lookup_result": "Already the owner in GEM; no new entity needed."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/4882770595279333132",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Start of construction letter, read through OCR."
+  },
+  {
+   "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-6052959693102246591",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Final permit to construct from CERIS-ND."
+  },
+  {
+   "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-40749731620493823",
+   "used_for": [
+    "Backup Power",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Technical support document."
+  },
+  {
+   "url": "https://www.basinelectric.com/News-Center/news-releases/Basin-Electric-breaks-ground-on-historic-generation-facility",
+   "used_for": [
+    "Status",
+    "Start year",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Basin Electric groundbreaking release."
+  },
+  {
+   "url": "https://www.minotdailynews.com/news/local-news/2026/05/basin-electric-breaks-ground-on-historic-generation-facility/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Minot Daily News article."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Capacity (MW)",
+    "Start year",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Excel file read locally, plant 69071."
+  },
+  {
+   "url": "https://www.basinelectric.com/About-Us/Generation/Bison-Generation-Station",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Page does not show 2029."
+  }
+ ]
+}

@@ -1,0 +1,108 @@
+{
+ "meta": {
+  "plant_id": "L100001083334",
+  "plant_name": "Polaris Forge 1 power station",
+  "state": "North Dakota",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-29T18:28:50-04:00",
+  "done": true,
+  "urls_attempted": 8,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001094120",
+   "unit_name": "1",
+   "findings": {},
+   "not_found": [
+    "No document found for a gas steam plant at Ellendale",
+    "No owner document found",
+    "No air permit or commission case found for a power plant at this campus"
+   ],
+   "notes": "The 400 megawatt figure matches the data center load in the Applied Digital release and not a power plant."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "concern_type": "existence",
+   "gem_unit_id": "G100001094120",
+   "question": "Does Polaris Forge 1 have its own 400 megawatt gas steam plant, or is 400 megawatts the data center load?",
+   "finding": "The Applied Digital release at https://ir.applieddigital.com/news-events/press-releases/detail/133/applied-digital-achieves-ready-for-service-for-phase-1-at calls Polaris Forge 1 a 400 megawatt critical IT load campus in Ellendale, with a first phase of 50 megawatts. The Babcock and Wilcox release at https://www.babcock.com/home/about/corporate/news/babcock-and-wilcox-receives-full-notice-to-proceed-on-24-billion-power-generation-project-for-base-electron-to-supply-power-to-applied-digital-ai-factory-campuses covers four 300 megawatt gas boilers with Siemens Energy steam turbines for Base Electron, and does not name Ellendale or Minnkota. No document found ties a steam plant to Ellendale.",
+   "recommendation": "Treat the 400 megawatts as data center load and do not keep this unit as a generating plant unless a document shows a power plant at Ellendale. Ask the plant owner or the reviewer who found the original entry for the source.",
+   "note": "The Base Electron project of four 300 megawatt units is a separate plant in the database near Center, North Dakota. The diesel backup fleet at Ellendale is also separate. I could not read the Power magazine article on this, so I did not cite it.",
+   "refs": [
+    "https://ir.applieddigital.com/news-events/press-releases/detail/133/applied-digital-achieves-ready-for-service-for-phase-1-at",
+    "https://www.babcock.com/home/about/corporate/news/babcock-and-wilcox-receives-full-notice-to-proceed-on-24-billion-power-generation-project-for-base-electron-to-supply-power-to-applied-digital-ai-factory-campuses"
+   ]
+  },
+  {
+   "concern_type": "Owner(s)",
+   "gem_unit_id": "G100001094120",
+   "question": "Why is Minnkota Power Cooperative listed as a 50 percent owner of this unit?",
+   "finding": "The 2025 Minnkota integrated resource plan at https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf describes Minnkota as the power supplier to Applied Digital under a data center rate. It does not say Minnkota owns generation at the campus. The Babcock and Wilcox release at https://www.babcock.com/home/about/corporate/news/babcock-and-wilcox-receives-full-notice-to-proceed-on-24-billion-power-generation-project-for-base-electron-to-supply-power-to-applied-digital-ai-factory-campuses names Base Electron as the buyer and does not name Minnkota.",
+   "recommendation": "Remove the 50 percent Babcock and Wilcox and 50 percent Minnkota ownership if the unit is kept. Find an owner document first.",
+   "note": "This follows the open question on whether the unit exists at all.",
+   "refs": [
+    "https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf",
+    "https://www.babcock.com/home/about/corporate/news/babcock-and-wilcox-receives-full-notice-to-proceed-on-24-billion-power-generation-project-for-base-electron-to-supply-power-to-applied-digital-ai-factory-campuses"
+   ]
+  },
+  {
+   "concern_type": "location",
+   "gem_unit_id": "G100001094120",
+   "question": "Is there a site address for a power plant at Ellendale, separate from the diesel backup site?",
+   "finding": "The Department of Environmental Quality notice at https://deq.nd.gov/AQ/Notices/ELN/DRAFTACP18296v10.pdf gives 9663 87th Avenue Southeast, Ellendale as the address of the diesel backup plant, which is its own entry in the database. Imagery of that address shows the diesel plant area and farmland and no steam plant. The database point is approximate.",
+   "recommendation": "Leave the point approximate. Do not move it to the diesel plant address.",
+   "note": "The county is spelled Dikey County in the database and should read Dickey County. City and area fields are also blank.",
+   "refs": [
+    "https://deq.nd.gov/AQ/Notices/ELN/DRAFTACP18296v10.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://ir.applieddigital.com/news-events/press-releases/detail/133/applied-digital-achieves-ready-for-service-for-phase-1-at",
+   "used_for": [
+    "existence"
+   ],
+   "outcome": "verified",
+   "note": "Applied Digital release, 400 megawatt critical IT load."
+  },
+  {
+   "url": "https://www.babcock.com/home/about/corporate/news/babcock-and-wilcox-receives-full-notice-to-proceed-on-24-billion-power-generation-project-for-base-electron-to-supply-power-to-applied-digital-ai-factory-campuses",
+   "used_for": [
+    "existence",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Four 300 megawatt boilers for Base Electron, no site named."
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Minnkota integrated resource plan, read for data center loads."
+  },
+  {
+   "url": "https://deq.nd.gov/AQ/Notices/ELN/DRAFTACP18296v10.pdf",
+   "used_for": [
+    "location"
+   ],
+   "outcome": "verified",
+   "note": "Diesel backup plant notice."
+  },
+  {
+   "url": "https://www.powermag.com/babcock-wilcox-will-deliver-1-2-gw-of-gas-fired-capacity-for-applied-digital-data-centers/",
+   "used_for": [],
+   "outcome": "failed",
+   "note": "Verifier could not match the expected text."
+  }
+ ]
+}

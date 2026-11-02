@@ -13,8 +13,9 @@
     "generated": "2026-10-09T18:15:23-04:00",
     "mode": "update",
     "counts": {
-      "records": 9
-    }
+      "records": 13
+    },
+    "annotated": "2026-10-30: MPH Elwood confirmed new and Hull Street Energy confirmed existing (100000001233) against the entity system"
   },
   "records": [
     {
@@ -39,8 +40,8 @@
     },
     {
       "entity_name": "Hull Street Energy",
-      "role": "owner",
-      "lookup_result": "Not found in local data. A bare lookup gave nothing. The entity system was not checked.",
+      "role": "parent",
+      "lookup_result": "Local lookup found nothing. entity_lookup --pg found Hull Street Energy, entity ID 100000001233, on 2026-10-30. Existing entity; use it as the parent of MPH Elwood.",
       "gem_plant_id": "L100000401554",
       "plant_name": "Elwood Energy power station",
       "country": "United States",
@@ -50,7 +51,7 @@
     {
       "entity_name": "MPH Elwood",
       "role": "owner",
-      "lookup_result": "Not found in local data. A bare lookup gave nothing. The entity system was not checked.",
+      "lookup_result": "Local lookup found nothing and entity_lookup --pg found no MPH Elwood on 2026-10-30. New entity, the buyer of Elwood units 1 to 4 named in its June 2026 letter to the Illinois EPA. The entity system holds Hull Street's other project companies under names such as MPH Bastrop Peakers and MPH Energy Rockaway Peaking Facilities, so the name follows that pattern. Parent: Hull Street Energy, entity 100000001233.",
       "gem_plant_id": "L100000401554",
       "plant_name": "Elwood Energy power station",
       "country": "United States",
@@ -106,6 +107,90 @@
       "country": "United States",
       "entity_country": "United States",
       "record_id": "L100000103865:entity:midwest-generation-eme-llc"
+    },
+    {
+      "entity_name": "Will County Facility LLC",
+      "role": "owner",
+      "lookup_result": "entity_lookup --pg found no match on 2026-10-30. New entity. Parent is Constellation Energy, entity 100001000208, which already exists. Two Federal Energy Regulatory Commission reports by Constellation Energy Corporation (April 15 and July 20, 2026) list this company as one it controls.",
+      "gem_plant_id": "",
+      "plant_name": "Will County Facility power station",
+      "country": "United States",
+      "entity_country": "United States",
+      "record_id": "us-il:new:will-county-facility-power-station:entity:will-county-facility-llc",
+      "parent_entity": "Constellation Energy",
+      "parent_entity_id": "100001000208",
+      "refs": {
+        "Owners Data Source": [
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260721-5282",
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260416-5230"
+        ]
+      }
+    },
+    {
+      "entity_name": "Ogle County Hub LLC",
+      "role": "owner",
+      "lookup_result": "entity_lookup --pg found no match on 2026-10-30. New entity. Parent is Constellation Energy, entity 100001000208, which already exists. Two Federal Energy Regulatory Commission reports by Constellation Energy Corporation (April 15 and July 20, 2026) list this company as one it controls.",
+      "gem_plant_id": "",
+      "plant_name": "Ogle County Hub power station",
+      "country": "United States",
+      "entity_country": "United States",
+      "record_id": "us-il:new:ogle-county-hub-power-station:entity:ogle-county-hub-llc",
+      "parent_entity": "Constellation Energy",
+      "parent_entity_id": "100001000208",
+      "refs": {
+        "Owners Data Source": [
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260721-5282",
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260416-5230"
+        ]
+      }
+    },
+    {
+      "entity_name": "Prairie Pulse Project LLC",
+      "role": "owner",
+      "lookup_result": "entity_lookup --pg found no match on 2026-10-30. New entity. Parent is Constellation Energy, entity 100001000208, which already exists. Two Federal Energy Regulatory Commission reports by Constellation Energy Corporation (April 15 and July 20, 2026) list this company as one it controls.",
+      "gem_plant_id": "",
+      "plant_name": "Prairie Pulse power station",
+      "country": "United States",
+      "entity_country": "United States",
+      "record_id": "us-il:new:prairie-pulse-power-station:entity:prairie-pulse-project-llc",
+      "parent_entity": "Constellation Energy",
+      "parent_entity_id": "100001000208",
+      "refs": {
+        "Owners Data Source": [
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260721-5282",
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260416-5230"
+        ]
+      }
+    },
+    {
+      "entity_name": "Marquis Solar LLC",
+      "role": "owner",
+      "lookup_result": "entity_lookup --pg found no match on 2026-10-30. New entity. No parent named.",
+      "gem_plant_id": "",
+      "plant_name": "Marquis Solar power station",
+      "country": "United States",
+      "entity_country": "United States",
+      "record_id": "us-il:new:marquis-solar-power-station:entity:marquis-solar-llc"
+    },
+    {
+      "entity_name": "Tilton Energy LLC",
+      "role": "owner",
+      "lookup_result": "Local lookup found nothing and entity_lookup --pg found no Tilton Energy on 2026-10-30. New entity, the project company named as the source in the Illinois EPA permit 00050017 and as the owner in the EIA-860M table for September 2026. Parent: Earthrise Energy, entity 100000002885.",
+      "gem_plant_id": "",
+      "plant_name": "Tilton Energy Center",
+      "country": "United States",
+      "entity_country": "United States",
+      "record_id": "us-il:new:tilton-energy-center:entity:tilton-energy-llc"
+    },
+    {
+      "entity_name": "Earthrise Energy",
+      "role": "parent",
+      "lookup_result": "Found in the GEM entity system as entity 100000002885 on 2026-10-30. POWER Magazine's September 8, 2022 article says Earthrise Energy bought the Tilton plant from Rockland Capital in February 2022.",
+      "gem_plant_id": "",
+      "plant_name": "Tilton Energy Center",
+      "country": "United States",
+      "entity_country": "United States",
+      "record_id": "us-il:new:tilton-energy-center:entity:earthrise-energy"
     }
   ]
 }

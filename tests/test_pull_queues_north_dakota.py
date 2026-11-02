@@ -76,7 +76,7 @@ def test_write_outputs_with_spp(tmp_path):
     by_plant, matched = q.match_all(PLANTS, entries)
     q.write_outputs(tmp_path, "North Dakota", PLANTS, entries, by_plant, matched, [], "2026-10-29")
     data = json.loads((tmp_path / "queues.json").read_text())
-    assert set(data) == {"generated", "sources", "entries", "by_plant", "unmatched_gas_oil", "hidden_fuel_leads"}
+    assert set(data) == {"generated", "sources", "entries", "by_plant", "unmatched_gas_oil", "hidden_fuel_leads", "needs_answer"}
     assert data["hidden_fuel_leads"] == ["GEN-2022-009"] and data["unmatched_gas_oil"] == []
     md = (tmp_path / "queues.md").read_text()
     assert "nearest town or county: Stanton" in md and "Stanton County" not in md

@@ -31,7 +31,8 @@
         "Captive non-industry use": "none",
         "Latitude": "42.8525",
         "Longitude": "-85.5604",
-        "Location accuracy": "exact"
+        "Location accuracy": "exact",
+        "Owner(s)": "MI GRR, LLC [100%]"
       },
       "refs": {
         "Location Data Source": [
@@ -43,6 +44,9 @@
         ],
         "Operators Data Source": [
           "https://www.switch.com/pyramid/"
+        ],
+        "Owners Data Source": [
+          "https://mienviro.michigan.gov/ncore/downloadpdf/-1202005711889361747"
         ]
       },
       "verifications": [
@@ -51,7 +55,7 @@
           "ok": true,
           "contains_value": true,
           "name_found": true,
-          "note": "State air permit 112-16A, version 4.0, issued September 29, 2026, to MI GRR, LLC at 6100 East Paris Avenue, Grand Rapids. Lists 2,740 kilowatt diesel emergency engines."
+          "note": "State air permit 112-16A, version 4.0, issued September 29, 2026, to MI GRR, LLC at 6100 East Paris Avenue, Grand Rapids. Lists 2,740 kilowatt diesel emergency engines. The Michigan air permit 112-16A, version 4.0, issued September 29, 2026. It is issued to MI GRR, LLC for the engines at 6100 East Paris Avenue."
         },
         {
           "url": "https://www.switch.com/pyramid/",
@@ -69,8 +73,8 @@
         }
       ],
       "tier": "high",
-      "researcher_notes": "Switch runs the Pyramid campus data center at 6100 East Paris Avenue in Gaines Township, Grand Rapids, Kent County. The state air permit 112-16A, version 4.0, was issued on September 29, 2026 to MI GRR, LLC for that address. It lists 39 diesel emergency engines, numbered EUEG4 through EUEG42, of 2,740 kilowatts each. That is 106.86 MW. The permit repeats the same 39 engines under two groups of engines, so the earlier permit harvest total of 78 engines and 213.7 MW counted them twice. A separate 90 kilowatt fire pump is left out. The engines were installed from 2017 through April 2026. The permit says the building will be taken off the grid for a planned outage in October 2026. Not found: the owner of MI GRR, LLC by name in a source, and the coordinates, which the location step still has to place. Switch's own page names the Pyramid campus but does not name this company. Location: the permit gives 6100 East Paris Avenue. The Census geocoder puts that address on the road at 42.85254, -85.56538. In satellite imagery the Switch pyramid data center building and its engine yard sit about 400 meters east of that point on the same side of the road, so the point is placed on the pyramid building.",
-      "action": "Create the plant Switch Grand Rapids Data Center power station in Grand Rapids, Kent County, Michigan, then add the one unit below. Leave the owner blank until a source names it.",
+      "researcher_notes": "Switch runs the Pyramid campus data center at 6100 East Paris Avenue in Gaines Township, Grand Rapids, Kent County. The state air permit 112-16A, version 4.0, was issued on September 29, 2026 to MI GRR, LLC for that address. It lists 39 diesel emergency engines, numbered EUEG4 through EUEG42, of 2,740 kilowatts each. That is 106.86 MW. The permit repeats the same 39 engines under two groups of engines, so the earlier permit harvest total of 78 engines and 213.7 MW counted them twice. A separate 90 kilowatt fire pump is left out. The engines were installed from 2017 through April 2026. The permit says the building will be taken off the grid for a planned outage in October 2026. Not found: the coordinates, which the location step still has to place. Location: the permit gives 6100 East Paris Avenue. The Census geocoder puts that address on the road at 42.85254, -85.56538. In satellite imagery the Switch pyramid data center building and its engine yard sit about 400 meters east of that point on the same side of the road, so the point is placed on the pyramid building. The owner is MI GRR, LLC, the holder of the state air permit issued September 29, 2026 for the engines at this address. It is not in the GEM entity list. No source was found that names Switch as the owner of MI GRR, LLC, so no parent is entered.",
+      "action": "Create the plant Switch Grand Rapids Data Center power station in Grand Rapids, Kent County, Michigan, then add the one unit below. Owner: create a new entity, MI GRR, LLC, at 100 percent. No parent is entered.",
       "irp": false,
       "checks": [
         39
@@ -116,8 +120,19 @@
               "note": "Permit lists engines EUEG4 to EUEG42 of 2,740 kilowatts, install dates 2017 to April 2026."
             }
           ],
-          "action": "Add one unit of 39 diesel engines at 2.74 MW each, 106.86 MW in all, operating, backup power yes, first engine installed in 2017.",
-          "researcher_notes": "The state air permit 112-16A version 4.0 lists 39 emergency engines of 2,740 kilowatts each. The start year is the earliest install date in the permit. The permit's flexible groups repeat the same engines and are not added again. The 90 kilowatt fire pump is left out."
+          "action": "Add one unit of 39 diesel engines at 2.74 MW each, 106.86 MW in all, operating, backup power yes, first engine installed in 2017. Milestone timeline: add an operating milestone for April 2017, when the first backup engines were installed at the Switch Grand Rapids site, with the Michigan air permit approved in September 2026 as the source.",
+          "researcher_notes": "The state air permit 112-16A version 4.0 lists 39 emergency engines of 2,740 kilowatts each. The start year is the earliest install date in the permit. The permit's flexible groups repeat the same engines and are not added again. The 90 kilowatt fire pump is left out.",
+          "milestones": [
+            {
+              "status": "operating",
+              "year": 2017,
+              "period": "April",
+              "sources": [
+                "https://mienviro.michigan.gov/ncore/downloadpdf/-1202005711889361747"
+              ],
+              "note": "a Michigan air permit approved in September 2026 lists the first diesel engines at the site as installed on April 17, 2017. later engines were installed through April 2026."
+            }
+          ]
         }
       ],
       "location_method": "imagery",
@@ -139,7 +154,8 @@
         "Captive non-industry use": "none",
         "Latitude": "42.22655",
         "Longitude": "-83.44326",
-        "Location accuracy": "approximate"
+        "Location accuracy": "approximate",
+        "Owner(s)": "Google [100%]"
       },
       "refs": {
         "Location Data Source": [
@@ -150,6 +166,9 @@
           "https://mienviro.michigan.gov/ncore/downloadpdf/-2294603731756421535"
         ],
         "Operators Data Source": [
+          "https://www.cbsnews.com/detroit/news/google-van-buren-township-data-center-plan/"
+        ],
+        "Owners Data Source": [
           "https://www.cbsnews.com/detroit/news/google-van-buren-township-data-center-plan/"
         ]
       },
@@ -166,7 +185,7 @@
           "ok": true,
           "contains_value": true,
           "name_found": true,
-          "note": "CBS Detroit, March 17, 2026: Google is behind the Van Buren Township data center plan and the land is under agreement with Panattoni."
+          "note": "CBS Detroit, March 17, 2026: Google is behind the Van Buren Township data center plan and the land is under agreement with Panattoni. A CBS Detroit story of March 17, 2026. Says Google is the company behind the Van Buren Township data center."
         },
         {
           "url": "https://planetdetroit.org/2026/02/project-cannoli-preliminary-site-plan/",
@@ -184,8 +203,8 @@
         }
       ],
       "tier": "high",
-      "researcher_notes": "The state air permit to install PTI0000209, version 1.0, was issued on July 30, 2026 to Panattoni Development Company at 10385 Haggerty Road, Van Buren Charter Township, Wayne County. It lists 24 emergency engines of 2,750 kilowatts each that burn diesel or renewable diesel. That is 66.0 MW. Two 170 horsepower fire pumps are left out. Panattoni's application response letter of June 5, 2026 says it cut the proposed engines from 155 to 24. A Planet Detroit story from February 2026 quoted Panattoni as saying 156 diesel generators. CBS Detroit reported in March 2026 that Google is behind the project and that the land is under agreement with Panattoni, so the plant is named for Google. The township approved the final site plan in October 2026 and reports say site work began in August. The permit alone fits pre-construction, so that is the status here. A reviewer may choose construction if site work is confirmed. Not found: the start year and the coordinates. Location: the permit gives 10385 Haggerty Road. The Census geocoder puts that address on the road at 42.22707, -83.44481. Satellite imagery shows open farmland east of the road with no buildings yet, so the point is placed in the field just east of the address and stays approximate because the parcel lines were not seen.",
-      "action": "Create the plant Google Van Buren Township Data Center power station in Van Buren Township, Wayne County, Michigan, then add the one unit below. The owner is left blank.",
+      "researcher_notes": "The state air permit to install PTI0000209, version 1.0, was issued on July 30, 2026 to Panattoni Development Company at 10385 Haggerty Road, Van Buren Charter Township, Wayne County. It lists 24 emergency engines of 2,750 kilowatts each that burn diesel or renewable diesel. That is 66.0 MW. Two 170 horsepower fire pumps are left out. Panattoni's application response letter of June 5, 2026 says it cut the proposed engines from 155 to 24. A Planet Detroit story from February 2026 quoted Panattoni as saying 156 diesel generators. CBS Detroit reported in March 2026 that Google is behind the project and that the land is under agreement with Panattoni, so the plant is named for Google. The township approved the final site plan in October 2026 and reports say site work began in August. The permit alone fits pre-construction, so that is the status here. A reviewer may choose construction if site work is confirmed. Not found: the start year and the coordinates. Location: the permit gives 10385 Haggerty Road. The Census geocoder puts that address on the road at 42.22707, -83.44481. Satellite imagery shows open farmland east of the road with no buildings yet, so the point is placed in the field just east of the address and stays approximate because the parcel lines were not seen. The owner is Google. CBS Detroit reported in March 2026 that Google is the company behind this data center. The state air permit was issued to the developer Panattoni Development Company, which has the land under agreement, so Panattoni is not entered as owner. Google is not in the GEM entity list. Alphabet is, with ID 100000001137.",
+      "action": "Create the plant Google Van Buren Township Data Center power station in Van Buren Township, Wayne County, Michigan, then add the one unit below. Owner: create a new entity, Google, at 100 percent, with parent Alphabet, ID 100000001137, once you have checked that entity is Google's parent company.",
       "irp": false,
       "checks": [
         39
@@ -227,8 +246,19 @@
               "note": "Permit lists 24 emergency engines of 2,750 kilowatts."
             }
           ],
-          "action": "Add one unit of 24 engines at 2.75 MW each, 66.0 MW in all, pre-construction, backup power yes. Leave the start year blank.",
-          "researcher_notes": "The state air permit PTI0000209 version 1.0 lists 24 emergency engines of 2,750 kilowatts each. Panattoni's application response letter says the count was cut from 155 to 24. The two fire pumps are left out."
+          "action": "Add one unit of 24 engines at 2.75 MW each, 66.0 MW in all, pre-construction, backup power yes. Leave the start year blank. Milestone timeline: add a pre-construction milestone for July 2026, when Michigan approved the air permit to install for the Van Buren Township engines, with that permit as the source.",
+          "researcher_notes": "The state air permit PTI0000209 version 1.0 lists 24 emergency engines of 2,750 kilowatts each. Panattoni's application response letter says the count was cut from 155 to 24. The two fire pumps are left out.",
+          "milestones": [
+            {
+              "status": "pre-construction",
+              "year": 2026,
+              "period": "July",
+              "sources": [
+                "https://mienviro.michigan.gov/ncore/downloadpdf/-2294603731756421535"
+              ],
+              "note": "a Michigan air permit to install for the site was approved on July 30, 2026, with all information received on July 21, 2026."
+            }
+          ]
         }
       ],
       "location_method": "address",
@@ -249,7 +279,8 @@
         "Captive non-industry use": "none",
         "Latitude": "42.10629",
         "Longitude": "-83.19680",
-        "Location accuracy": "approximate"
+        "Location accuracy": "approximate",
+        "Owner(s)": "Raeden [100%]"
       },
       "refs": {
         "Location Data Source": [
@@ -261,6 +292,9 @@
         ],
         "Operators Data Source": [
           "https://planetdetroit.org/2026/03/gibraltar-data-center-diesel-generators/"
+        ],
+        "Owners Data Source": [
+          "https://planetdetroit.org/2026/03/gibraltar-data-center-diesel-generators/"
         ]
       },
       "verifications": [
@@ -269,7 +303,7 @@
           "ok": true,
           "contains_value": true,
           "name_found": true,
-          "note": "Planet Detroit, March 12, 2026: Raeden's proposed 100 MW Gibraltar data center would have 30 to 35 backup diesel generators. The same article gives the site address, an existing building at 27800 W. Jefferson Ave. on the former McLouth Steel property, with the Humbug Marsh directly across the road."
+          "note": "Planet Detroit, March 12, 2026: Raeden's proposed 100 MW Gibraltar data center would have 30 to 35 backup diesel generators. The same article gives the site address, an existing building at 27800 W. Jefferson Ave. on the former McLouth Steel property, with the Humbug Marsh directly across the road. A Planet Detroit story of March 12, 2026. Names Raeden as the developer of the Gibraltar data center."
         },
         {
           "url": "https://www.google.com/maps/search/?api=1&query=42.10629,-83.19680",
@@ -280,8 +314,8 @@
         }
       ],
       "tier": "high",
-      "researcher_notes": "Planet Detroit reported on March 12, 2026 that the developer Raeden plans a 100 megawatt data center on the former McLouth Steel site in Gibraltar, Wayne County. Its chief operating officer said it would have 30 to 35 backup diesel generators. The city passed a one year moratorium on data centers on March 9, 2026, and the developer may ask for a waiver. No air permit application, generator size or coordinates were found. The capacity is left blank. The engine count is the high end of the range. Location: the Planet Detroit report gives the address, an existing building at 27800 W. Jefferson Ave. on the former McLouth Steel property in Gibraltar, with the Humbug Marsh across the road. The Census address search places 27800 W. Jefferson Ave. at 42.10629, -83.19680. A satellite look shows the former McLouth mill buildings on the west side of West Jefferson Avenue at that point, with marsh and woods on the east side, which matches the report. The point stays approximate because the report also names an adjacent Superfund lot at 28000 W. Jefferson, and the line between the two lots was not found. The report says that lot could host natural gas generation; no plan for it was found.",
-      "action": "Create the plant Raeden Gibraltar Data Center power station in Gibraltar, Wayne County, Michigan, then add the one unit below. Leave the capacity blank.",
+      "researcher_notes": "Planet Detroit reported on March 12, 2026 that the developer Raeden plans a 100 megawatt data center on the former McLouth Steel site in Gibraltar, Wayne County. Its chief operating officer said it would have 30 to 35 backup diesel generators. The city passed a one year moratorium on data centers on March 9, 2026, and the developer may ask for a waiver. No air permit application, generator size or coordinates were found. The capacity is left blank. The engine count is the high end of the range. Location: the Planet Detroit report gives the address, an existing building at 27800 W. Jefferson Ave. on the former McLouth Steel property in Gibraltar, with the Humbug Marsh across the road. The Census address search places 27800 W. Jefferson Ave. at 42.10629, -83.19680. A satellite look shows the former McLouth mill buildings on the west side of West Jefferson Avenue at that point, with marsh and woods on the east side, which matches the report. The point stays approximate because the report also names an adjacent Superfund lot at 28000 W. Jefferson, and the line between the two lots was not found. The report says that lot could host natural gas generation; no plan for it was found. The owner is Raeden. Planet Detroit reported on March 12, 2026 that Raeden is the developer. No air permit or other filing naming a project company was found. Raeden is not in the GEM entity list.",
+      "action": "Create the plant Raeden Gibraltar Data Center power station in Gibraltar, Wayne County, Michigan, then add the one unit below. Leave the capacity blank. Owner: create a new entity, Raeden, at 100 percent.",
       "irp": false,
       "checks": [
         39
@@ -322,8 +356,19 @@
               "note": "States 30 to 35 backup diesel generators."
             }
           ],
-          "action": "Add one unit with 35 diesel engines, announced, backup power yes. Leave the capacity and start year blank.",
-          "researcher_notes": "The only source is a news report of a town hall. It gives 30 to 35 generators and no size. A permit application would give the size."
+          "action": "Add one unit with 35 diesel engines, announced, backup power yes. Leave the capacity and start year blank. Milestone timeline: add an announced milestone for March 2026, when the developer first publicly described the Gibraltar data center backup generators, with a Planet Detroit report from March 2026 as the source.",
+          "researcher_notes": "The only source is a news report of a town hall. It gives 30 to 35 generators and no size. A permit application would give the size.",
+          "milestones": [
+            {
+              "status": "announced",
+              "year": 2026,
+              "period": "March",
+              "sources": [
+                "https://planetdetroit.org/2026/03/gibraltar-data-center-diesel-generators/"
+              ],
+              "note": "a Planet Detroit report from March 12, 2026 gives the developer's first public plan for 30 to 35 backup diesel generators."
+            }
+          ]
         }
       ],
       "location_method": "address",

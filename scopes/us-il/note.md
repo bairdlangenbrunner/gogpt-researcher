@@ -30,7 +30,7 @@ Scope: 143 unit rows across 38 plants in the pull of 2026-10-09 (3 pre-construct
 - Joliet 29 units 7 and 8 match EIA generators 7 and 8, retired September 2023, which agrees with GEM. Only the unit matching is a question.
 - Grand Tower ceased operations in February 2021 per local news, and a sale to Perdomo Worldwide has no closing date.
 - Three gas-fired data center campuses are on the watch list: Monarch Rock Air in Rockford, Hut 8 Illinois Project 4 and the Joliet Technology Center.
-- Queues (read 2026-10-21 and 2026-10-23): four new PJM gas requests from April 2026 (C01-1569, 1570, 1571 and 2036) appear only in the PJM cycle export, which has no web address, so they are watch items until a citable page names them. AB1-089 near Nelson and MISO J1839 near Broadwing are duplicate checks. MISO hides fuel and county on its newest Ameren-area requests; recheck when it fills them in. The statewide source list is `scopes/us-il/coverage.json`.
+- Queues (read 2026-10-21 and 2026-10-23): four new PJM gas requests from April 2026 (C01-1569, 1570, 1571 and 2036) appear only in the PJM cycle export, which has no web address, so they are watch items until a citable page names them. AB1-089 near Nelson is a duplicate check. MISO J1839 at the Decatur ADM North substation is Broadwing's grid request (same substation, queued 2020 when the project was the earlier 8 Rivers design, in-service date moved to December 2029 in August 2026); don't add it. MISO hides fuel and county on its newest Ameren-area requests; recheck when it fills them in. The statewide source list is `scopes/us-il/coverage.json`.
 
 ## Gotchas
 

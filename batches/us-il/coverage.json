@@ -3,7 +3,7 @@
     "pjm-cycle-queue": {
       "status": "searched",
       "how": "Downloaded the full PJM cycle request export on 2026-10-21 (1,792 rows, 239 in Illinois, 117 in the first cycle), saved as work/pjm/pjm_cycle_queue_2026-10-21.xlsx, and read every Illinois gas, oil and thermal request. Rechecked on 2026-10-23 for a citable page naming the four new gas requests.",
-      "found": "Four new gas requests filed in April 2026: C01-1569 (346 MW, Will County), C01-1570 (347 MW, Ogle County), C01-1571 (346 MW, LaSalle County) and C01-2036 (1,150 MW, Putnam County). No public page names them, so they are watch items with the case unverified (monitor-5 to monitor-8). Nelson uprate requests are noted on the Nelson watch item."
+      "found": "Four new gas requests filed in April 2026: C01-1569 (346 MW, Will County), C01-1570 (347 MW, Ogle County), C01-1571 (346 MW, LaSalle County) and C01-2036 (1,150 MW, Putnam County). PJM's own pages name each request but not its size or fuel. The interconnection.fyi page for each request gives the size, fuel and county, verified October 29, 2026 (staged as new plants: Will County Facility, Ogle County Hub, Prairie Pulse and Marquis Solar power stations). Nelson uprate requests are noted on the Nelson watch item."
     },
     "pjm-serial-queue": {
       "status": "searched",
@@ -18,7 +18,7 @@
     "miso-gi-queue": {
       "status": "searched",
       "how": "Read the MISO queue through https://www.misoenergy.org/api/giqueue/getprojects on 2026-10-21 and again on 2026-10-23 (494 Illinois entries, 3 with gas).",
-      "found": "J955 is Lincoln Land, already in GEM. J1839 (325 MW simple cycle turbine, Decatur ADM North 138 kV) is a watch item for a duplicate check against Broadwing (monitor-11). J2656 (180 MW, fuel blank) and about 30 Ameren-area requests with fuel and county hidden are watch items with the case unverified (monitor-12 and monitor-13)."
+      "found": "J955 is Lincoln Land, already in GEM. J1839 (325 MW, Decatur ADM North 138 kV, queued June 2020, in service moved to December 2029) is Broadwing's grid request, settled 2026-10-30 as a duplicate question on Broadwing. J2656 (180 MW, fuel blank) and about 30 Ameren-area requests with fuel and county hidden are watch items with the case unverified (monitor-12 and monitor-13)."
     },
     "miso-eras": {
       "status": "searched",
@@ -73,12 +73,17 @@
     "data-centers": {
       "status": "searched",
       "how": "Searched trade press, the Illinois EPA permit archive and city records for on-site gas generation at Illinois data center campuses.",
-      "found": "Monarch Rock Air (Rockford), Hut 8 Illinois Project 4 and the Joliet Technology Center are watch items with the data center hold (monitor-1 to monitor-3). The Eagle Rock site in Christian County was abandoned in August 2026. Compass, Aligned and CyrusOne permits cover diesel backup only."
+      "found": "Monarch Rock Air (Rockford), Hut 8 Illinois Project 4 and the Joliet Technology Center are watch items with no generating unit named (monitor-1 to monitor-3). The Eagle Rock site in Christian County was abandoned in August 2026. The diesel backup fleets at the data center campuses are added in the companion data center batch (us-il-dc), because a backup engine fleet at or above 50 MW is a plant under the manual: Compass Hoffman Estates (406.25 MW), Aligned Elk Grove Village (336 MW), CyrusOne Aurora (211.25 MW), Aligned Northlake (148 MW), CyrusOne Aurora Bilter Road (127.3 MW) and Edged DeKalb Project Vector (capacity blank). The Illinois EPA permit record system (iepa-document-explorer) was read in full on October 30, 2026 for the rest; see that entry."
     },
     "icc-edocket": {
       "status": "searched",
       "how": "Ran 19 queries (plant names, owners, certificate, procurement, large load, data center, generation) through the commission's site-wide full-text search at https://www.icc.illinois.gov/search, every result page, filtered to 2022 and later, on 2026-10-23, plus one web search for generating certificate dockets. The docket, case and document search pages sit behind a reCAPTCHA; fetch.py returned the same form page and Wayback has no snapshot.",
       "found": "No filing since 2022 names a gas or oil generating project, unit addition, conversion or retirement. Plant-name hits were gas pipeline safety inspections at Nelson (2022, 2023) and Lincoln Generating Facility (2022, 2025), both in GEM, plus policy material (the 2025 Resource Adequacy Study), transmission case 25-0061 and the carbon dioxide pipeline cases 22-0497 and 23-0475. The certificate case list itself needs a person to solve the reCAPTCHA once."
+    },
+    "iepa-document-explorer": {
+      "status": "searched",
+      "how": "Ran scopes/us-il/harvest_permits.py on October 30, 2026 against the DocuWare cabinet behind the Illinois EPA Document Explorer: every final air permit, air permit application, air permit correspondence and air permit file entry filed since January 1, 2021 (14,186 documents at 4,551 sites), plus every cabinet entry under each GEM plant's site numbers and name words. 116 sites looked like power producers; 26 matched GEM plants and 96 did not. The permits and applications of 122 sites were read (248 scanned documents, text pulled by OCR) and summarized under scopes/us-il/work/permits/ (one file per GEM plant, _unmatched.md for the power-like sites GEM lacks, _applications.md). The companion data center batch reran the same harvest for its leads.",
+      "found": "Nelson Energy Center: the 2025 construction permit 25030007 is a turbine blade and compressor uprate of the two combined cycle turbines with no capacity figure, and permit 15060042 for the two simple cycle peaking turbines was reissued in 2025 and 2026; no permit for a new combined cycle unit exists in the cabinet, so PJM request AB1-089 has no permit record. Edged Chicago LLC at 2835 Bilter Road in Aurora holds final permit 24010010 (June 18, 2024) for 64 non-emergency and 2 emergency diesel generators, 45.27 MW in all, under the 50 MW threshold; it is a watch item in the data center batch (monitor-7). Compass Datacenters ORD I in Hoffman Estates has a final construction permit 23110012 issued February 18, 2026 and revised in August 2026, for 200 generators of 2,000 kWe, five of 500 kWe and five of 800 kWe. Monarch Rock Air: a construction permit issued May 13, 2026 to Monarch Rock Air Gen LLC for the Milkweed Energy Center, twenty 12.37 MW Wartsila gas engines, 247.4 MW, in Rockford; added in the data center batch and the Illinois watch item closed. Elwood: a June 2026 letter from MPH Elwood LLC says it bought units 1 to 4 from Elwood Energy LLC on June 1, 2025, holds its own operating permit 25070017 since December 15, 2025, and shut the four units permanently on June 1, 2026; the owner of GT1 to GT4 is changed to MPH Elwood with parent Hull Street Energy, and units 5 to 9 stayed with Elwood Energy. MicroLink Stickney: no entry in the index under MicroLink; the Stickney entries are the water reclamation district's own plant and a biosolids facility, so the lead stays unverified on the watch list. Hut 8 and the Joliet Technology Center campus: no entry under either name."
     }
   },
   "ids_followup": {
@@ -101,6 +106,633 @@
       "name": "Ingredion",
       "decision": "below_threshold",
       "evidence": "EIA-860M August 2026 file (https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx), Operating sheet: two 22.5 MW steam turbines and two 4.8 MW standby gas turbines. No unit reaches 50 MW."
+    },
+    "7760": {
+      "name": "Tilton",
+      "decision": "add",
+      "record_id": "us-il:new:tilton-energy-center",
+      "evidence": "EIA-860M September 2026 file (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx), Operating sheet: Tilton Energy LLC, four 47 MW gas turbines operating since June 1999. The Illinois EPA permit 00050017 (https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000153526?dwdocid=1353998) lists the same four 47 MW turbines, and the October 2011 stack test report (https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000153526?dwdocid=827443) names them as GE LM-6000 aeroderivative machines, which are one GEM unit of 188 MW. Added as a new plant."
+    },
+    "7818": {
+      "name": "Alsey",
+      "decision": "below_threshold",
+      "record_id": "us-il:plant:monitor-15",
+      "evidence": "EIA-860M September 2026 file (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx), Operating sheet: six gas turbines of 30, 30, 20, 20, 25 and 48 MW. Prairie Power's portfolio page (https://www.ppi.coop/about/assets/) gives 169 MW in all with a 45 MW GE LM6000 PC Sprint as the sixth unit, and its February 15, 2016 award release (https://www.ppi.coop/prairie-power-inc-awards-proenergy-services-llc-electric-generation-epc-project/) names three Westinghouse W251 frame turbines and two GE LM2500 turbines as the older machines. The Illinois EPA permit 01050083 (https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000148169?dwdocid=1352176) calls the LM6000 nominal 50 MW. No unit reaches 50 MW by nameplate: the frame turbines are under 50 each, the two LM2500s together are 40 MW, and the LM6000 is 48 MW. Recorded as a watch item because the LM6000 sits at the edge."
     }
-  }
+  },
+  "dedup": {
+    "us-il:new:will-county-facility-power-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-10-30",
+      "evidence": "The request connects at the Braidwood nuclear station switchyard. Will County Generating Station is a retired coal plant in Romeoville, about 45 kilometers north of Braidwood, owned by Midwest Generation, so the shared name is the county only. The other eight GEM plants in Will County are existing gas or retired coal plants 23 to 55 kilometers from Braidwood: Elwood Energy, Jackson Generation, Joliet 9, Joliet 29, Lincoln Generating Facility, Crete Energy Venture and University Park North and South. None is at the Braidwood switchyard and none is a new project."
+    },
+    "us-il:new:marquis-solar-power-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-10-30",
+      "evidence": "The only GEM plant in Putnam County is the retired Hennepin coal plant, owned by Dynegy. PJM's queue gives the request's connection as the Crescent Ridge to Corbin 138 kV line, not the Hennepin station, and the developer is Marquis Solar LLC, not the coal plant's owner. Nothing found ties the request to the Hennepin site. The request itself may be a queue entry error, which is a separate question on the record."
+    }
+  },
+  "queues": {
+    "PJM C01-1569": {
+      "decision": "add",
+      "record_id": "us-il:new:will-county-facility-power-station",
+      "evidence": "A 346 MW gas request at the Braidwood 345 kV switchyard from Will County Facility LLC. Added as a new plant."
+    },
+    "PJM C01-1570": {
+      "decision": "add",
+      "record_id": "us-il:new:ogle-county-hub-power-station",
+      "evidence": "A 347 MW gas request at the Byron 345 kV switchyard from Ogle County Hub LLC. Added as a new plant."
+    },
+    "PJM C01-1571": {
+      "decision": "add",
+      "record_id": "us-il:new:prairie-pulse-power-station",
+      "evidence": "A 346 MW gas request at LaSalle 345 kV from Prairie Pulse Project LLC. Added as a new plant."
+    },
+    "PJM C01-2036": {
+      "decision": "add",
+      "record_id": "us-il:new:marquis-solar-power-station",
+      "evidence": "A 1,150 MW gas request on the Crescent Ridge to Corbin 138 kV line in Putnam County from Marquis Solar LLC. Added as a new plant."
+    },
+    "PJM AD2-194": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000402412",
+      "evidence": "PJM names this request Jackson Generation, 120 MW of gas at Elwood 345 kV in Will County, partly in service. It is a capacity increase at the Jackson Generation power station that GEM already has."
+    },
+    "MISO J955": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000402416",
+      "evidence": "A 1,040 MW gas combined cycle request at the Austin substation in Sangamon County, queued in March 2018. It is the Lincoln Land energy center that GEM already has as two pre-construction units."
+    },
+    "MISO J734": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000402074",
+      "evidence": "A 57.1 MW gas combustion turbine request at the Gibson City South substation in Ford County, in service since 2017. It is a capacity increase at the Gibson City energy center that GEM already has."
+    },
+    "MISO J1839": {
+      "decision": "update",
+      "plant_id": "L100000407695",
+      "record_id": "L100000407695:G100000410074:qa-duplicate-3",
+      "evidence": "A 325 MW gas request at the ADM North 138 kV substation in Decatur. It is the grid connection of the Broadwing Energy Center, and a question for the reviewer sets out the match."
+    },
+    "MISO S1040": {
+      "decision": "not_gas_or_oil",
+      "evidence": "The interconnection.fyi page for this request names it 'Surplus; J734', a 135 MW solar project at Gibson City South in McLean County. J734 is the old MISO request for the existing Gibson City gas peaker, which the MISO data feed shows as a 57.1 MW gas combustion turbine. A July 2026 Renewable Energy Magazine article says Earthrise Energy's 270 MWac Archtop Solar Project (Gibson City Solar 1 and 2) started commercial operation on June 9, 2026 using MISO surplus interconnection at that peaker. Two requests of 135 MW each fit that 270 MW total. The request is solar and does not add gas capacity.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1040",
+        "https://www.interconnection.fyi/project/miso-j734",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.renewableenergymagazine.com/pv_solar/earthrise-energya-s-gibson-city-solar-project-20260701"
+      ]
+    },
+    "MISO S1041": {
+      "decision": "not_gas_or_oil",
+      "evidence": "The interconnection.fyi page for this request names it 'Surplus; J33/J734', a 135 MW solar project at Gibson City South in Ford County. J734 is the old MISO request for the existing Gibson City gas peaker. A July 2026 Renewable Energy Magazine article says Earthrise Energy's 270 MWac Archtop Solar Project started commercial operation on June 9, 2026 using MISO surplus interconnection at that peaker. Two 135 MW requests fit that total. The request is solar and adds no gas capacity.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1041",
+        "https://www.interconnection.fyi/project/miso-j734",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.renewableenergymagazine.com/pv_solar/earthrise-energya-s-gibson-city-solar-project-20260701"
+      ]
+    },
+    "MISO S1057": {
+      "decision": "not_gas_or_oil",
+      "evidence": "The interconnection.fyi page for this request names it 'Surplus; Glacier Moraine', a 210 MW solar project in Cumberland County at Neoga South. The July 2026 Renewable Energy Magazine article on Earthrise Energy lists Glacier Moraine Solar in Cumberland and Coles counties among its next surplus interconnection solar projects. The request is solar.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1057",
+        "https://www.renewableenergymagazine.com/pv_solar/earthrise-energya-s-gibson-city-solar-project-20260701"
+      ]
+    },
+    "MISO S1052": {
+      "decision": "not_gas_or_oil",
+      "evidence": "The interconnection.fyi page for this request names it 'Surplus; Shelby', a 150 MW solar project in Cumberland County at Neoga South 138 kV. It sits at the same substation as the Glacier Moraine solar request. The tracking site is the only source I found for this one, and it names solar.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1052"
+      ]
+    },
+    "MISO R1055": {
+      "decision": "not_gas_or_oil",
+      "evidence": "The interconnection.fyi page for this request is titled 'Replacing 106 MW Coal with 106 MW BESS; Edwards Unit 3' and lists the technology as battery. Vistra plans battery storage and solar at the retired Edwards plant, per energy-storage.news and Peoria public radio coverage found by search. The 322 MW summer rating in the MISO feed is the old coal unit rights, with a 110 MW winter figure. The request is battery storage.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-r1055",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.energy-storage.news/vistra-wins-miso-interconnection-exemption-for-illinois-coal-to-battery-storage-projects/"
+      ]
+    },
+    "MISO R1025": {
+      "decision": "not_gas_or_oil",
+      "evidence": "The interconnection.fyi page for this request is titled 'Replacing 180 MW of existing coal generation with BESS at Marion Unit 4' and lists the technology as battery, 180 MW, Williamson County. The MISO feed shows the request as done. I found no source naming gas for this replacement.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-r1025",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO J4343": {
+      "decision": "other_state",
+      "evidence": "The interconnection.fyi page for this request lists it as a 500 MW project in Redwood County, Minnesota. Redwood County is in Minnesota. A Minnesota Public Utilities Commission filing found by search describes the Cedar Mountain and Lyon County 345 kV substations and a line through Lyon, Redwood, Brown and Renville counties, all in Minnesota. MISO assigns the request to Ameren Illinois, but the point of interconnection is in Minnesota. Fuel is not shown.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4343",
+        "https://puc.eip.mn.gov/sites/default/files/2024-01/pdfs/bd76f1b0-02df-4cf5-b406-59fcf48c99f2.pdf",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO J4321": {
+      "decision": "other_state",
+      "evidence": "The interconnection.fyi page for this request lists it as a 250 MW project in Redwood County, Minnesota. Redwood County is in Minnesota. A Minnesota Public Utilities Commission filing found by search describes the Cedar Mountain and Lyon County 345 kV substations and a line through Lyon, Redwood, Brown and Renville counties, all in Minnesota. MISO assigns the request to Ameren Illinois, but the point of interconnection is in Minnesota. Fuel is not shown.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4321",
+        "https://puc.eip.mn.gov/sites/default/files/2024-01/pdfs/bd76f1b0-02df-4cf5-b406-59fcf48c99f2.pdf",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO J4402": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no fuel type for this request. I also read the page for it on interconnection.fyi, a queue tracking site, and it lists the technology as not available. The point of interconnection, 'J2192 POI', reuses the site of J2192, an older MISO request for a 99.9 MW wind project in Vermilion County at the Bunsonville-Sidney 345 kV line, now withdrawn. That says where the site is, not what the new 200 MW request will burn. Searches for Vermilion County gas, battery or solar proposals in 2026 found nothing naming this request. No source I read names its fuel.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4402",
+        "https://www.interconnection.fyi/project/miso-j2192",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO J4344": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no fuel type for this request. I also read the page for it on interconnection.fyi, a queue tracking site, and it lists the technology as not available. The request matches an older MISO request, J3417, in every listed detail: 300 MW, Oreana, Macon County, in service September 6, 2028. The MISO feed lists J3417 as battery storage. J4344 may be a second request for the same site, but no source I read names its fuel, so I treat it as unresolved. It may be battery storage and should not be treated as gas.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4344",
+        "https://www.interconnection.fyi/project/miso-j3417",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO J4301": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no fuel type for this request. I also read the page for it on interconnection.fyi, a queue tracking site, and it lists the technology as not available. The point of interconnection is the Fargo-Sandburg 345 kV line in Peoria County. Other queue requests near that line are wind, solar and battery, but none is this request. Searches for Peoria County gas, battery or solar proposals in 2026 found nothing naming this request. No source I read names its fuel.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4301",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO J4267": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no fuel type for this request. I also read the page for it on interconnection.fyi, a queue tracking site, and it lists the technology as not available. The 200 MW request is in Tazewell County with an in-service date of December 1, 2030. A separate request at the same county, J3946, is a 300 MW battery with a different date, so it does not settle this one. Searches of local news found Tazewell County zoning actions on solar and storage, and no gas plant proposal. No source I read names the fuel for this request.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4267",
+        "https://www.wcbu.org/local-news/2026-08-03/tazewell-county-shuts-down-proposed-mackinaw-township-community-solar-farm",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO J4262": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no fuel type for this request. I also read the page for it on interconnection.fyi, a queue tracking site, and it lists the technology as not available. The 250 MW request is in Tazewell County with an in-service date of December 1, 2030. A separate request at the same county, J3946, is a 300 MW battery with a different date, so it does not settle this one. Searches of local news found Tazewell County zoning actions on solar and storage, and no gas plant proposal. No source I read names the fuel for this request.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4262",
+        "https://www.wcbu.org/local-news/2026-08-03/tazewell-county-shuts-down-proposed-mackinaw-township-community-solar-farm",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO J4260": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no fuel type for this request. I also read the page for it on interconnection.fyi, a queue tracking site, and it lists the technology as not available. The 300 MW request is in Wayne County at the Kays-Reifen 138 kV line, in service June 1, 2031. Searches for Wayne County gas, solar, battery or data center projects found nothing naming this request. No source I read names its fuel.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4260",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1168": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no fuel type for this request. I also read the page for it on interconnection.fyi, a queue tracking site, and it lists the technology as not available. This is a 99 MW surplus interconnection request at Finks 138 kV in Marion County, in service December 1, 2028. A surplus request reuses the grid connection of an existing plant. The Crooked Creek solar plant in Marion County is a 99 MW plant that began operating in April 2026, and it may be the host site, but no source I read says so. Searches found nothing naming Finks or this request. The fuel is not stated anywhere I read.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1168",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1167": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no fuel type for this request. I also read the page for it on interconnection.fyi, a queue tracking site, and it lists the technology as not available. This is a 99 MW surplus interconnection request at Greenway 138 kV in Coles County, in service December 1, 2028, filed the same day as S1168. The Cooks Mill solar plant in Coles County is a 99 MW plant that began operating in April 2026, and it may be the host site, but no source I read says so. Searches found nothing naming Greenway or this request. The fuel is not stated anywhere I read.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1167",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO J2656": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no fuel type for this 180 MW request in Macon County at the Latham-North Decatur East 138 kV line. The interconnection.fyi page lists the type as 'Other'. The InfraSure tracking site calls it a solar project, but gives no developer or document behind that, so I do not treat it as a source. Searches found no news, permit or county item for the request. The in-service date of May 1, 2026 has passed.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j2656",
+        "https://www.infrasure.ai/project/miso-j2656",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1143": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no fuel type for this request. I also read the page for it on interconnection.fyi, a queue tracking site, and it lists the technology as not available. This is a 135 MW surplus interconnection request in Illinois with no county or substation shown. Surplus requests reuse an existing plant's grid connection, so the host plant is unknown. Searches found no document naming this request. The fuel is not stated anywhere I read.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1143",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1149": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no fuel type for this request. I also read the page for it on interconnection.fyi, a queue tracking site, and it lists the technology as not available. This is a 80 MW surplus interconnection request in Illinois with no county or substation shown. Surplus requests reuse an existing plant's grid connection, so the host plant is unknown. Searches found no document naming this request. The fuel is not stated anywhere I read.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1149",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1150": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no fuel type for this request. I also read the page for it on interconnection.fyi, a queue tracking site, and it lists the technology as not available. This is a 80 MW surplus interconnection request in Illinois with no county or substation shown. Surplus requests reuse an existing plant's grid connection, so the host plant is unknown. Searches found no document naming this request. The fuel is not stated anywhere I read.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1150",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO J4401": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no fuel type for this request. I also read the page for it on interconnection.fyi, a queue tracking site, and it lists the technology as not available. This is a 123 MW request with no county or point of interconnection shown and an in-service date of October 1, 2005, which looks like an entry error. No source I read names its fuel or location.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4401",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO R5101": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no fuel type for this request. I also read the page for it on interconnection.fyi, a queue tracking site, and it lists the technology as not available. This is a replacement request with no capacity, county or point of interconnection shown and an in-service date of May 10, 2025. Replacement requests reuse a retired plant's rights. No source I read names the retired plant or the new fuel.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-r5101",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO J4443": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 300 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4443",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    },
+    "MISO J4282": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 242.8 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4282",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    },
+    "MISO J4283": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 243.4 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4283",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    },
+    "MISO J4419": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 150 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location. This request is in the East (ATC) study group, which may be outside Illinois.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4419",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    },
+    "MISO J4415": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 150 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4415",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    },
+    "MISO J4412": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 250 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4412",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    },
+    "MISO J4429": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 150 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4429",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    },
+    "MISO J4438": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 200 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4438",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    },
+    "MISO J4439": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 140 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4439",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    },
+    "MISO J4334": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 294 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4334",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    },
+    "MISO J4329": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 250 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4329",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    },
+    "MISO J4336": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 250 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4336",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    },
+    "MISO J4363": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 200 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4363",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    },
+    "MISO J4238": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 125 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4238",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    },
+    "MISO J4247": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 120 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4247",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    },
+    "MISO J4254": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 250 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4254",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    },
+    "MISO J4232": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 200 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4232",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    },
+    "MISO J4257": {
+      "decision": "fuel_not_published",
+      "evidence": "I read the MISO queue data feed. It shows no state, county, point of interconnection or fuel for this 80 MW request in the 2026 definitive planning cycle, and Ameren is the listed transmission owner. I checked the interconnection.fyi and InfraSure tracking sites, which list it only as an unnamed project of unknown location and 'Other' technology. A search for MISO 2026 cycle application lists found only a Modo Energy note that gas is 51% of all requests system-wide, with nothing request by request. No source I read names the fuel or location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4257",
+        "https://www.interconnection.fyi/clusters/miso/dpp-2026%20central"
+      ]
+    }
+  },
+  "data_centers": {
+    "compass-compass-datacenters-illinois-cam": {
+      "decision": "add",
+      "record_id": "us-il:new:compass-hoffman-estates-data-center-power-station",
+      "note": "Added. The Illinois EPA revised construction permit of February 18, 2026 covers 200 diesel generator sets of 2,000 kWe, five of 500 kWe and five of 800 kWe, 406.5 MW in all; the record carries three unit rows. The village issued the construction permit for the first building in September 2025, so the status is construction. Found in the database on October 30, 2026 as plant L100001089104, typed in by Baird the day before; the staged record moved to applied_in_db.json. Found in the database on October 30, 2026 as plant L100001089104, typed in by Baird the day before; the staged record moved to applied_in_db.json.",
+      "plant_id": "L100001089104",
+      "checked": "2026-10-30",
+      "batch": "us-il-dc"
+    },
+    "aligned-aligned-data-centers-illinois-ca": {
+      "decision": "add",
+      "record_id": "us-il:new:aligned-elk-grove-village-data-center-power-station",
+      "note": "Aligned has two Illinois campuses with permits. At Elk Grove Village, a final permit of August 14, 2025 covers 112 diesel generators of 3,000 kWe, 336 MW (this record). At Northlake, a final permit of October 4, 2021 covers 49 generators of 3,000 kW and 2 of 500 kW, 148 MW, staged as the separate record us-il:new:aligned-northlake-data-center-power-station. Found in the database on October 30, 2026 as plant L100001089100, typed in by Baird the day before; the staged record moved to applied_in_db.json. Found in the database on October 30, 2026 as plant L100001089100, typed in by Baird the day before; the staged record moved to applied_in_db.json.",
+      "plant_id": "L100001089100",
+      "checked": "2026-10-30",
+      "batch": "us-il-dc"
+    },
+    "edged-dekalb-project-vector": {
+      "decision": "add",
+      "record_id": "us-il:new:edged-dekalb-project-vector-data-center-power-station",
+      "note": "This lead was not on the worklist. I searched the Illinois EPA air notice list (no record for Edged or Endeavor), DeKalb news and trade press. A WTVO article of December 2, 2025 names TurboCell natural gas generators for Project Vector and gives no rating. I found no capacity, so it is staged as an add with capacity blank. Found in the database on October 30, 2026 as plant L100001089110, typed in by Baird the day before; the staged record moved to applied_in_db.json. Found in the database on October 30, 2026 as plant L100001089110, typed in by Baird the day before; the staged record moved to applied_in_db.json.",
+      "plant_id": "L100001089110",
+      "checked": "2026-10-30",
+      "batch": "us-il-dc"
+    },
+    "cyrusone-aurora": {
+      "decision": "add",
+      "record_id": "us-il:new:cyrusone-aurora-data-center-power-station",
+      "note": "I read the final Title V permit of July 21, 2026 for CyrusOne at 2905 E. Diehl Road, Aurora. It lists 91 diesel emergency generators from 1,250 to 2,750 kW that add up to 211.25 MW.",
+      "batch": "us-il-dc"
+    },
+    "meta-dekalb": {
+      "decision": "nothing_found",
+      "note": "I searched the Illinois EPA air notice archive (2,165 records) for Meta, Facebook and DeKalb data center permits and found none. News says the DeKalb campus is open with five buildings. No generator list, count or rating was found in any source."
+    },
+    "t5-data-centers-grayslake": {
+      "decision": "nothing_found",
+      "note": "I searched the Illinois EPA air notice archive for a Grayslake data center permit and found none. The T5 permits in the archive are for Elk Grove Village. News describes a 1.2 GW campus planned for 2027 with grid power and says nothing about generators."
+    },
+    "microsoft-hoffman-estates": {
+      "decision": "add",
+      "record_id": "us-il:new:microsoft-hoffman-estates-data-center-power-station",
+      "note": "The cabinet holds the CHI05 revised construction permit of March 22, 2024 (twenty 3,266 kW and one 569 kW generators, 65.9 MW) and the CHI06 and CHI07 construction permit of December 19, 2024 (thirty-two 3,100 kW and two 500 kW, 100.2 MW), 166.1 MW together.",
+      "checked": "2026-10-30",
+      "batch": "us-il-dc"
+    },
+    "warwick-capital-partners-decatur": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000407695",
+      "note": "I checked the final Illinois EPA construction permit issued October 14, 2026. It covers one turbine at 452 MW gross, the same as GEM. It is a power plant for the Archer Daniels Midland complex, not a backup fleet, so Backup Power no is right."
+    },
+    "hut-8-hut-8-illinois-project-4-data-cent": {
+      "decision": "nothing_found",
+      "note": "The Data Center Dynamics article names a 50 MW Illinois Project 4 and no generator. I searched news and the Illinois EPA notices for gas generation and found none. It stays a watch item for no generating unit named."
+    },
+    "powerhouse-data-centers-joliet": {
+      "decision": "nothing_found",
+      "note": "The Data Center Dynamics article describes grid substations and names no generator. I searched news and the Illinois EPA notices and found no on-site generation. It stays a watch item for no generating unit named."
+    },
+    "monarch-rock-air-rockford": {
+      "decision": "add",
+      "record_id": "us-il:new:milkweed-energy-center",
+      "note": "The Illinois EPA document library holds a construction permit issued May 13, 2026 to Monarch Rock Air Gen LLC for the Milkweed Energy Center: twenty Wärtsilä gas engines of 12.37 MW each, 247.4 MW, non-emergency, at 42.1526, -89.1186 in Rockford. Added as a primary power plant for the data center campus. The earlier nothing_found answer rested on the public notice feed alone.",
+      "batch": "us-il-dc"
+    },
+    "cyrusone-wood-dale": {
+      "decision": "add",
+      "record_id": "us-il:new:cyrusone-wood-dale-data-center-power-station",
+      "note": "Found by reading the Illinois EPA document library rather than the lead list. Construction permit issued May 16, 2025 for the CyrusOne CHI6 Facility at 460 and 480 Bryn Mawr Avenue, Wood Dale: 42 diesel emergency generators of 2,250 kW and two of 1,250 kW, 97.0 MW. Data Center Dynamics reported the topping out on May 21, 2025. No GEM plant exists in Wood Dale.",
+      "batch": "us-il-dc"
+    },
+    "cyrusone-aurora-2": {
+      "decision": "add",
+      "record_id": "us-il:new:cyrusone-aurora-bilter-road-data-center-power-station",
+      "note": "A second CyrusOne campus at 2725 Bilter Road, under construction since October 2024. An Illinois EPA construction permit of December 4, 2024, number 24080019, covers 57 diesel emergency generators for its two buildings, 127.25 MW in all, above the 50 MW threshold.",
+      "checked": "2026-10-30",
+      "batch": "us-il-dc"
+    },
+    "iron-mountain-des-plaines": {
+      "decision": "add",
+      "record_id": "us-il:new:iron-mountain-des-plaines-data-center-power-station",
+      "note": "The construction permit issued June 5, 2025 covers one 1,000 kW and twenty-two 3,000 to 3,213 kW diesel emergency generators, up to 71.7 MW. The company page says the site is open.",
+      "checked": "2026-10-30",
+      "batch": "us-il-dc"
+    },
+    "ensono-data-center-downers-grove": {
+      "decision": "below_threshold",
+      "summed_nameplate_mw": 7.75,
+      "source": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002409427?dwdocid=1446701",
+      "fleet": [
+        {
+          "count": 2,
+          "mw_each": 2.123
+        },
+        {
+          "count": 1,
+          "mw_each": 2.145
+        },
+        {
+          "count": 1,
+          "mw_each": 1.358
+        }
+      ],
+      "note": "The operating permit issued July 17, 2024 covers four diesel emergency generators rated in horsepower only: two of 2,847 hp, one of 2,876 hp and one of 1,821 hp. Converted whole to electrical output that is at most 7.75 MW, far under the 50 MW threshold. The harvester's 1.25 MW figure came from a table in the permit, not the fleet.",
+      "checked": "2026-10-30"
+    },
+    "equinix-ch-5-data-center-elk-grove-village": {
+      "decision": "add",
+      "record_id": "us-il:new:equinix-elk-grove-village-data-center-power-station",
+      "note": "The CH-5 operating permit issued May 21, 2026 covers fourteen 3,500 kW and one 800 kW generators, 49.8 MW; the construction permit says CH-5 and CH-3 are one source, so the plant holds both buildings, 97.3 MW.",
+      "checked": "2026-10-30",
+      "batch": "us-il-dc"
+    },
+    "equinix-llc-elk-grove-village": {
+      "decision": "add",
+      "record_id": "us-il:new:equinix-elk-grove-village-data-center-power-station",
+      "note": "The CH-3 revised operating permit of April 1, 2026 covers nineteen 2,500 kW generators, 47.5 MW; it is the second unit of the Equinix Elk Grove Village plant.",
+      "checked": "2026-10-30",
+      "batch": "us-il-dc"
+    },
+    "stream-data-centers-elk-grove-village": {
+      "decision": "below_threshold",
+      "summed_nameplate_mw": 40.5,
+      "source": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002399759?dwdocid=1475874",
+      "fleet": [
+        {
+          "count": 1,
+          "mw_each": 1.0
+        },
+        {
+          "count": 12,
+          "mw_each": 2.25
+        },
+        {
+          "count": 5,
+          "mw_each": 2.5
+        }
+      ],
+      "note": "The operating permit issued May 29, 2025 for SDC CHI I, LLC covers one 1,000 kWe, twelve 2,250 kWe and five 2,500 kWe diesel emergency generator sets, 40.5 MW. The harvester's 56 MW double counted the 2,250 kWe sets. Watch item monitor-8.",
+      "checked": "2026-10-30"
+    },
+    "digital-grand-avenue-llc-franklin-park": {
+      "decision": "add",
+      "record_id": "us-il:new:digital-realty-franklin-park-data-center-power-station",
+      "note": "The operating permit issued November 19, 2020 covers sixty-three diesel emergency generators from 500 to 3,000 kW, 148.75 MW, across the ORD12 to ORD14 buildings.",
+      "checked": "2026-10-30",
+      "batch": "us-il-dc"
+    },
+    "digital-realty-inc-franklin-park": {
+      "decision": "add",
+      "record_id": "us-il:new:microsoft-franklin-park-data-center-power-station",
+      "note": "The cabinet for 9401 W Grand Avenue holds Microsoft's CHI22 permits, not Digital Realty's: the revised construction permit of February 16, 2024 covers twenty-two 3,266 kW diesel emergency generators, 71.9 MW.",
+      "checked": "2026-10-30",
+      "batch": "us-il-dc"
+    },
+    "equinix-llc-minooka": {
+      "decision": "add",
+      "record_id": "us-il:new:equinix-minooka-data-center-power-station",
+      "note": "The construction permit issued July 9, 2026 covers ninety-two 3.5 MW and three 1 MW diesel emergency generators, 325 MW, plus 0.65 MW of exempt engines. The harvester's 1,288 MW came from repeated table rows.",
+      "checked": "2026-10-30",
+      "batch": "us-il-dc"
+    },
+    "digital-northlake-llc-northlake": {
+      "decision": "below_threshold",
+      "summed_nameplate_mw": 44.37,
+      "source": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002371154?dwdocid=1520024",
+      "fleet": [
+        {
+          "count": 9,
+          "mw_each": 2.0
+        },
+        {
+          "count": 6,
+          "mw_each": 2.25
+        },
+        {
+          "count": 1,
+          "mw_each": 0.42
+        },
+        {
+          "count": 4,
+          "mw_each": 3.0
+        },
+        {
+          "count": 1,
+          "mw_each": 0.45
+        }
+      ],
+      "note": "The revised operating permit of April 30, 2026 covers nine 2,000 kWe, six 2,250 kWe, four 3,000 kWe, one 420 kWe and one 450 kWe diesel emergency generator sets, 44.37 MW. The harvester's 100.62 MW double counted several groups. Watch item monitor-9.",
+      "checked": "2026-10-30"
+    },
+    "edged-100-dekalb": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001089110",
+      "note": "Baird created the Edged DeKalb Project Vector plant on October 29, 2026; the staged record is in applied_in_db.json.",
+      "checked": "2026-10-30"
+    },
+    "elk-grove-data-center-ll-elk-grove-village": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001089100",
+      "note": "Baird created the Aligned Elk Grove Village plant on October 29, 2026 with 105 and 231 MW units; the staged record is in applied_in_db.json. The harvester's 5,526.5 MW is a parsing error. One update fills the blank Captive industry use box on unit 1.",
+      "checked": "2026-10-30"
+    },
+    "compass-hoffman-estates": {
+      "decision": "update",
+      "plant_id": "L100001089104",
+      "note": "Baird created the Compass Hoffman Estates plant on October 29, 2026 with 400 and 6.25 MW units. This batch stages Backup Power yes and the captive fields on unit 1, 2.5 MW on unit 2 from the revised permit, and a new unit 3 of 4.0 MW. The harvester's 818.75 MW is a parsing error.",
+      "checked": "2026-10-30"
+    }
+  },
+  "data_centers_note": "Answers copied on 2026-10-30 from the companion data center batch batches/us-il-dc/coverage.json, which holds the new plant and watch records for these sites; the two batches share the scope's data center harvest."
 }

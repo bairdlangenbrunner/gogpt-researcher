@@ -1,0 +1,180 @@
+{
+ "meta": {
+  "plant_id": "L100001089086",
+  "plant_name": "Minnkota Power Cass power station",
+  "state": "North Dakota",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-29T18:30:00-04:00",
+  "done": true,
+  "urls_attempted": 7,
+  "urls_verified": 6
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001101376",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "announced",
+     "refs": [
+      "https://www.psc.nd.gov/webdocs/case/26-0254/001-020.pdf",
+      "https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf",
+      "https://northdakotamonitor.com/2026/10/06/minnkota-plans-gas-fired-power-plant-in-cass-county-adding-to-energy-development/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.psc.nd.gov/webdocs/case/26-0254/001-020.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://northdakotamonitor.com/2026/10/06/minnkota-plans-gas-fired-power-plant-in-cass-county-adding-to-energy-development/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": true,
+     "note": "Minnkota's ten-year plan filed with the commission in July 2026 says it is evaluating a natural gas plant and would operate it in the early 2030s if it goes ahead. The 2025 integrated resource plan says the same. The North Dakota Monitor article of October 6, 2026 reports that Minnkota has bought land and plans one 400 MW turbine. None of these shows a permit application, so announced stands. The two Minnkota documents are one origin, and the news article is a second.",
+     "irp": true
+    },
+    "Start year": {
+     "value": "2031",
+     "refs": [
+      "https://northdakotamonitor.com/2026/10/06/minnkota-plans-gas-fired-power-plant-in-cass-county-adding-to-energy-development/",
+      "https://www.psc.nd.gov/webdocs/case/26-0254/001-020.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://northdakotamonitor.com/2026/10/06/minnkota-plans-gas-fired-power-plant-in-cass-county-adding-to-energy-development/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.psc.nd.gov/webdocs/case/26-0254/001-020.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The North Dakota Monitor article says the plant could start generating in 2031 or 2032. Minnkota's 2026 ten-year plan says early 2030s. The lower year, 2031, is kept. The human adds a new scheduled event with Event Year 2031 and Source Year 2026 only if none exists."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Backup Power",
+    "Latest Activity"
+   ],
+   "notes": "The plant is a single planned 400 MW gas turbine. No source names the turbine maker or model, and no document states a backup power use. Latest Activity is left alone because the newest report is from October 2026."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001101376",
+   "concern_type": "location",
+   "question": "Should the Minnkota plant point move near the Bison Substation?",
+   "finding": "The article at https://northdakotamonitor.com/2026/10/06/minnkota-plans-gas-fired-power-plant-in-cass-county-adding-to-energy-development/ says the land is in Harmony Township north of Mapleton, near the Bison Substation at the end of an existing WBI Energy gas pipeline. A 2018 commission filing at https://www.psc.nd.gov/webdocs/case/18-0219/064-130.pdf places that substation in Section 11 of Township 140 North, Range 51 West. A map in that filing labels a point near 46.94188, -97.10511.",
+   "recommendation": "Keep GEM's point for now and ask the project manager whether to use the substation area, about 3 km from GEM's point, as an approximate location until Minnkota files a site.",
+   "note": "A satellite picture at that point shows farm fields and no substation, and the imagery date is unknown, so I could not confirm the point. No address, parcel number or permit map for the plant was found. A geocode of Harmony Township gave 46.92729, -97.11547.",
+   "refs": [
+    "https://northdakotamonitor.com/2026/10/06/minnkota-plans-gas-fired-power-plant-in-cass-county-adding-to-energy-development/",
+    "https://www.psc.nd.gov/webdocs/case/18-0219/064-130.pdf"
+   ],
+   "proposed_value": {
+    "Latitude": "46.94188",
+    "Longitude": "-97.10511"
+   }
+  },
+  {
+   "gem_unit_id": "G100001101376",
+   "concern_type": "Capacity (MW)",
+   "question": "Is the Minnkota plant 400 MW or 450 MW?",
+   "finding": "The North Dakota Monitor article at https://northdakotamonitor.com/2026/10/06/minnkota-plans-gas-fired-power-plant-in-cass-county-adding-to-energy-development/ quotes Minnkota's chief executive saying one turbine of 400 MW. The existing Status Detail says the Midcontinent queue may show 450 MW.",
+   "recommendation": "Leave capacity at 400 MW until Minnkota names a turbine or files a siting case.",
+   "note": "Minnkota's ten-year plan at https://www.psc.nd.gov/webdocs/case/26-0254/001-020.pdf and its integrated resource plan at https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf give no size or site. I did not find the Midcontinent queue entry for this plant.",
+   "refs": [
+    "https://northdakotamonitor.com/2026/10/06/minnkota-plans-gas-fired-power-plant-in-cass-county-adding-to-energy-development/",
+    "https://www.psc.nd.gov/webdocs/case/26-0254/001-020.pdf",
+    "https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://northdakotamonitor.com/2026/10/06/minnkota-plans-gas-fired-power-plant-in-cass-county-adding-to-energy-development/",
+   "used_for": [
+    "Status",
+    "Start year",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Passed with 400 megawatts and Mapleton."
+  },
+  {
+   "url": "https://www.valleynewslive.com/2026/10/07/minnkota-plans-gas-fired-power-plant-cass-county-adding-energy-development/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Same article as the North Dakota Monitor; counted as one source."
+  },
+  {
+   "url": "https://www.psc.nd.gov/webdocs/case/26-0254/001-020.pdf",
+   "used_for": [
+    "Status",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Ten-year plan lists potential gas development and early-2030s operation."
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Evaluating natural gas generation; no size or site."
+  },
+  {
+   "url": "https://www.minnkota.com/minnkota-website/our-power/integrated-resource-plan",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Index page that links the plan."
+  },
+  {
+   "url": "https://www.psc.nd.gov/webdocs/case/18-0219/064-130.pdf",
+   "used_for": [
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Names the Bison Substation in Section 11 of Township 140 North, Range 51 West."
+  },
+  {
+   "url": "https://docs.casscountynd.gov/WebLink/0/edoc/4669681/02. Harmony Solar update and letter of support.pdf",
+   "used_for": [
+    "Latitude"
+   ],
+   "outcome": "failed",
+   "note": "Could not be fetched and no saved copy exists."
+  }
+ ]
+}

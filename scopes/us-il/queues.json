@@ -1,0 +1,15 @@
+{
+  "_about": "Queue settings for pull_queues.py --state IL. name is the State/Province value in the GEM export; markets are the queues read (Illinois is split between PJM in the north, the ComEd zone, and MISO in the center and south, the Ameren Illinois zone); owner is the transmission owners or utilities whose state-blank MISO entries are this state's (kept as leads, fuel unknown); shared_owner is owners that also serve other states (MidAmerican, American Transmission Company, Hoosier Energy), whose blank entries are counted, not kept; pjm_states is the PJM State values kept; known is hand-checked patterns, GEM plant id to regexes that name that plant in a point of interconnection, project name or developer, empty until the first Illinois queue run is checked. Owner strings checked against the MISO queue 2026-10-30. Every match still says check.",
+  "state": "IL",
+  "name": "Illinois",
+  "markets": [
+    "MISO",
+    "PJM"
+  ],
+  "owner": "ameren illinois|ameren transmission company of illinois|prairie power|southern illinois power|city water light|cwlp",
+  "shared_owner": "midamerican|american transmission|^atc\\b|hoosier",
+  "pjm_states": [
+    "IL"
+  ],
+  "known": {}
+}

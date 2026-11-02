@@ -1,0 +1,122 @@
+# Illinois air permit harvest, 2026-10-30
+
+Cabinet documents since 2021-01-01 in categories 03K, 03M, 03N, 03L: 14186. Sites with an entry: 4551. Power-like: 116. Matched to GEM plants: 26. Unmatched power-like: 96.
+
+## Matches per GEM plant
+
+- Aurora power station (L100000401731): AURORA GENERATION LLC (043407AAF, checked by hand); CYRUSONE LLC (043407ACW, same city, power-like name, check it is this plant); EDGED CHICAGO LLC (043407AEA, same city, power-like name, check it is this plant); CYRUSONE LLC (043407AEH, same city, power-like name, check it is this plant)
+- Broadwing Energy Center (L100000407695): BROADWING ENERGY CENTER (115015BWL, checked by hand)
+- CPV Three Rivers energy center (L100000407358): CPV THREE RIVERS ENERGY CENTER (063060AEV, checked by hand); MORRIS COGENERATION LLC (063800AAJ, same city, power-like name, check it is this plant); CONSTELLATION ENERGY GENERATION LLC-DRE (063806AAC, same city, power-like name, check it is this plant)
+- Elwood Energy power station (L100000401554): ELWOOD ENERGY FACILITY (197035AAG, checked by hand); ELWOOD ENERGY FACILITY (197035AAH, checked by hand); ELWOOD ENERGY FACILITY (197808AAG, checked by hand); JACKSON ENERGY CENTER (197035ABD, same city, power-like name, check it is this plant)
+- Grand Tower energy center (L100000402075): GRAND TOWER ENERGY CTR (077806AAA, checked by hand)
+- Joliet 29 Generating Station (L100000103864): MIDWEST GENERATION LLC (197809AAO, checked by hand); MIDWEST GENERATION,LLC-JOLIET 9 (197445ACD, checked by hand)
+- Joliet 9 Generating Station (L100000103865): MIDWEST GENERATION,LLC-JOLIET 9 (197445ACD, checked by hand); MIDWEST GENERATION LLC (197809AAO, checked by hand)
+- Lee energy facility (L100000401569): DYNEGY LEE II LLC (103817AAH, checked by hand)
+- Lincoln Land energy center (L100000402416): LINCOLN LAND ENERGY CENTER (167085ABB, checked by hand)
+- Marion Plant (L100000103868): SOUTHERN ILL POWER-MARION (199055ACS, checked by hand)
+- NRG Rockford I power station (L100000402251): NRG ROCKFORD ENERGY CENTER (201030BCG, checked by hand); NRG ROCKFORD ENERGY CENTER (201030BCO, checked by hand)
+- NRG Rockford II energy center (L100000402252): NRG ROCKFORD ENERGY CENTER (201030BCG, checked by hand); NRG ROCKFORD ENERGY CENTER (201030BCO, checked by hand)
+- Nelson energy center (L100000402024): INVENERGY NELSON LLC (103814AAC, checked by hand); INVENERGY NELSON LLC (103814AAD, checked by hand)
+- Tate & Lyle Decatur cogeneration power station (L100000407386): TATE & LYLE INGREDIENTS AMERICAS LLC (115015ABX, checked by hand)
+- University Park North power station (L100000402061): UNIVERSITY PARK ENERGY LLC (197899AAB, checked by hand); LSP UNIVERSITY PARK LLC (197899AAC, checked by hand)
+- University Park South power station (L100000402343): LSP UNIVERSITY PARK LLC (197899AAC, checked by hand); UNIVERSITY PARK ENERGY LLC (197899AAB, checked by hand)
+- Zion energy center (L100000402389): ZION ENERGY CENTER (097200ABB, checked by hand)
+
+## Unmatched power-like sites
+
+- ADKINS ENERGY LLC (177802AAA), Lena, Stephenson County, 24 documents, permits 25070010, 23020017, 21040040, 17060011
+- AEP GENERATING CO (127854AAC), Metropolis, Massac County, 4 documents, permits none listed
+- ALIGNED ENERGY (031471AEN), Northlake, Cook County, 6 documents, permits 21050040
+- AMAZON.COM SVCS LLC HMW1 (197110AEM), Wilmington, Will County, 2 documents, permits 21040002
+- AMAZON.COM SVCS LLC ORD4 (197065ACC), Monee, Will County, 9 documents, permits 23070015, 22100006, 19060029
+- AMEREN ENERGY GENERATING CO (121803AAA), Patoka, Marion County, 11 documents, permits 02100074
+- AMEREN MISSOURI VENICE ENERGY CTR (119105AAA), Venice, Madison County, 3 documents, permits 95090017, 095090017
+- AMEREN SERVICES (147803AAC), Monticello, Piatt County, 12 documents, permits 03080011
+- ANZU POWER (119010BBJ), Alton, Madison County, 3 documents, permits 26050010
+- BOONE COUNTY & BELVIDERE MUNICIPAL LAND (007800AAU), Belvidere, Boone County, 2 documents, permits 01060078
+- BREESE MUNICIPAL POWER PLANT (027025AAB), Breese, Clinton County, 6 documents, permits 95080109, 26040004
+- BUSHNELL MUNICIPAL POWER PLANT (109015AAH), Bushnell, McDonough County, 8 documents, permits 95080034, 25080027
+- CALUMET ENERGY TEAM LLC (031600GHA), Chicago, Cook County, 2 documents, permits 03030094
+- CARLYLE MUNICIPAL ELECTRIC PLANT (027030AAA), Carlyle, Clinton County, 6 documents, permits 95080031
+- CITY OF PERU GENERATING STATION (099085AAH), Peru, LaSalle County, 11 documents, permits 95090020
+- CITY WATER LIGHT & POWER (167120AAO), Springfield, Sangamon County, 4 documents, permits 95090091, 22020018
+- CITY WATER LIGHT & POWER (167120AGQ), Springfield, Sangamon County, 3 documents, permits 01040052
+- CITY WATER LIGHT & POWER (167120AHJ), Springfield, Sangamon County, 2 documents, permits 01040083
+- CITY WATER LIGHT & POWER (167822ABG), Springfield, Sangamon County, 1 documents, permits 98090001
+- COMMONWEALTH EDISON (031600RCK), Chicago, Cook County, 1 documents, permits 17120034
+- COMPASS DATACENTERS ORD I LLC (031449AEJ), Hoffman Estates, Cook County, 8 documents, permits 23110012
+- CONSTELLATION ENERGY GENERATION LLC-BYR (141820AAA), Byron, Ogle County, 1 documents, permits 78090018
+- CONSTELLATION ENERGY GENERATION LLC-CLI (039804AAC), Clinton, DeWitt County, 2 documents, permits 07100046
+- CONSTELLATION ENERGY GENERATION LLC-QUA (161807AAB), Cordova, Rock Island County, 1 documents, permits 73020832
+- CORDOVA ENERGY CO LLC (161807AAN), Cordova, Rock Island County, 6 documents, permits 02020052
+- CRETE ENERGY PARK (197030AAO), Crete, Will County, 11 documents, permits 03040071
+- CYRUSONE CHI6 FACILITY (043120AEZ), Wood Dale, DuPage County, 3 documents, permits 24060010
+- DATA CENTER DEVELOPMENT (031440AXU), , Cook County, 2 documents, permits none listed
+- DIGITAL GRAND AVENUE LLC (031096AOH), Franklin Park, Cook County, 81 documents, permits A202000238, 18090011, 16110009, 16110008
+- DIGITAL LAKESIDE LLC (031600GUL), Chicago, Cook County, 4 documents, permits 24080007, 09110011
+- DIGITAL NORTHLAKE LLC (031471AEF), Northlake, Cook County, 5 documents, permits 26010013, 19050026
+- DIGITAL PRINTERS SQ (031600LXN), Chicago, Cook County, 6 documents, permits 18070024
+- DIGITAL REALTY (031096ATE), , Cook County, 1 documents, permits 24120006
+- DIGITAL REALTY INC (031096ARO), Franklin Park, Cook County, 6 documents, permits 23110010, 21040018
+- DIPPER VENTURES LLC CH3 DATA CENTER (031440ARA), Elk Grove Village, Cook County, 2 documents, permits 16120028
+- DUPAGE COUNTY POWER PLANT (043105ABU), Wheaton, DuPage County, 10 documents, permits 22100029, 12070027
+- DYNEGY JOPPA PLANT (127855AAC), Joppa, Massac County, 1 documents, permits 95090120
+- DYNEGY KENDALL ENERGY LLC (093808AAD), Minooka, Kendall County, 3 documents, permits 03030002
+- DYNEGY MIDWEST GENERATION LLC (157851AAA), Baldwin, Randolph County, 4 documents, permits 95090026
+- ELK GROVE DATA CENTER LLC (031440AUU), Elk Grove Village, Cook County, 11 documents, permits 26050001, 21080031
+- ENSONO DATA CENTER (043030AKW), Downers Grove, DuPage County, 6 documents, permits 20020002
+- EQUINIX CH-5 DATA CENTER (031440AVZ), Elk Grove Village, Cook County, 13 documents, permits 26010002, 23080013
+- EQUINIX LLC (031440ANI), Elk Grove Village, Cook County, 3 documents, permits 08010054
+- EQUINIX LLC (031600GNA), Chicago, Cook County, 7 documents, permits 23110015, 08030005
+- EQUINIX LLC (093455AAN), Minooka, Kendall County, 1 documents, permits 25110011
+- EXELON GENERATION CO LLC (031600GKE), Chicago, Cook County, 7 documents, permits 03050025
+- EXELON GENERATION CO LLC (197816AAB), Braceville, Will County, 4 documents, permits 79020011
+- EXELON LASALLE COUNTY STATION (099802AAA), Marseilles, LaSalle County, 1 documents, permits 75040086
+- Elgin Energy Center (031438ABC), Elgin, Cook County, 9 documents, permits 03080009, 00100065
+- FISK ELECTRIC GENERATING STATION (031600AMI), Chicago, Cook County, 10 documents, permits 95090081
+- FREEDOM POWER STATION (051808AAK), St Elmo, Fayette County, 2 documents, permits SOURCE, 01080001
+- GENEVA GENERATING PLANT (089035ABY), Geneva, Kane County, 8 documents, permits 05090044
+- GIBSON CITY ENERGY CENTER LLC (053803AAL), Gibson City, Ford County, 8 documents, permits 01050068
+- GRAND RIDGE ENERGY LLC (099050AAR), , LaSalle County, 6 documents, permits none listed
+- GRANDE PRAIRIE ENERGY LLC (043412AAH), Bartlett, DuPage County, 9 documents, permits 99090051
+- HIGHLAND ELECTRIC LIGHT PLANT (119055AAD), Highland, Madison County, 13 documents, permits 95080103
+- HOLLAND ENERGY LLC (173807AAG), Beecher City, Shelby County, 3 documents, permits 03060072
+- ILLINOIS MUNICIPAL ELECTRIC AGENCY (025010ABM), Flora, Clay County, 10 documents, permits 00020017
+- ILLINOIS POWER GENERATING CO (079808AAA), Newton, Jasper County, 7 documents, permits 95090066, 16050017, 08010049
+- ILLINOIS POWER RESOURCES GENERATING LLC (143805AAG), Bartonville, Peoria County, 2 documents, permits 95070026
+- IRON MOUNTAIN (031063AUJ), Des Plaines, Cook County, 7 documents, permits 23050030, 23050029
+- LINCOLN GENERATING FACILITY (197811AAH), Manhattan, Will County, 340 documents, permits 99020021, 50147, 01050012
+- MARSHALL MUNICIPAL UTILITIES (023010AAK), Marshall, Clark County, 9 documents, permits 95060168
+- MCLEANSBORO POWER PLANT (065020AAW), McLeansboro, Hamilton County, 6 documents, permits 77070049
+- MICROSOFT CHI05 DATA CENTER (031449ADS), Hoffman Estates, Cook County, 13 documents, permits 23110003, 23100001, 21120011
+- MIDAMERICAN ENERGY CO (161065AGG), Rock Island, Rock Island County, 1 documents, permits 94080050
+- MIDWEST ELECTRIC POWER INC (127899AAA), Joppa, Massac County, 5 documents, permits 01050058
+- MIDWEST GENERATION LLC (179801AAA), Pekin, Tazewell County, 4 documents, permits 95090074, 19030014
+- MOLINE COMBUSTION TURBINES (161045AAV), Moline, Rock Island County, 18 documents, permits 95090071
+- NEW CONTINUUM DATA CENTER (043090AIC), West Chicago, DuPage County, 1 documents, permits 19010031
+- NORTHERN TRUST DATA CENTER (043467AMN), Naperville, DuPage County, 2 documents, permits 23040028
+- NTT GLOBAL DATA CENTERS CH LLC (043450ACJ), Itasca, DuPage County, 9 documents, permits 25100005, 23030002, 22050019
+- ONE EARTH ENERGY LLC (053010AAW), Gibson City, Ford County, 4 documents, permits 26080009, 22060014
+- PINCKNEYVILLE POWER PLANT (145842AAA), Pinckneyville, Perry County, 5 documents, permits 01050020
+- PRAIRIE ENERGY RESOURCES / MARION (121807AAB), , Marion County, 4 documents, permits none listed
+- PRAIRIE POWER INC (149817AAB), Pearl, Pike County, 3 documents, permits 95080060
+- PRAIRIE POWER INC (171851AAA), Alsey, Scott County, 11 documents, permits 01050083
+- PRAIRIE STATE GENERATING STATION (189808AAB), Marissa, Washington County, 21 documents, permits 20050015, 19060020, 17120028, 17020018
+- PRIME DATA CENTERS (031440AWZ), Elk Grove Village, Cook County, 3 documents, permits 24090003
+- PRINCETON MUNICIPAL ELECTRIC UTILITY (011085AAA), Princeton, Bureau County, 6 documents, permits 95070114
+- RANTOUL ELECTRIC GENERATING PLANT (019065AAN), Rantoul, Champaign County, 1 documents, permits 95080033
+- ROCHELLE ENERGY LLC (141050ABU), Rochelle, Ogle County, 7 documents, permits 13050046
+- ROCHELLE MUNICIPAL UTILITIES (141050AAV), Rochelle, Ogle County, 14 documents, permits 95080035
+- ROCKY ROAD POWER LLC (089425AAC), East Dundee, Kane County, 7 documents, permits 0050067, 00050067
+- SHELBY COUNTY ENERGY CENTER (173801AAA), Neoga, Shelby County, 18 documents, permits 99090085, 02020093
+- SOUTHERN ILLINOIS CLEAN ENERGY CENTER (199858AAG), , Williamson County, 2 documents, permits 04100062
+- STREAM DATA CENTERS (031804ACL), Elk Grove Village, Cook County, 9 documents, permits 21040035, 031804ACL
+- SULLIVAN POWER PLANT (139030AAE), Sullivan, Moultrie County, 20 documents, permits 95080101
+- T5@CHICAGO II LLC (031804ACM), Elk Grove Village, Cook County, 19 documents, permits 22080001, 21080029, 20070004
+- T5@CHICAGO III LP (031471AEU), Northlake, Cook County, 5 documents, permits 24020017
+- TILTON ENERGY CENTER (183090AAE), Tilton, Vermilion County, 6 documents, permits 00050017
+- UNION ELECTRIC CO DBA AMEREN MISSOURI-R (025803AAD), Flora, Clay County, 10 documents, permits 02100010
+- WAUKEGAN ELECTRIC GENERATING STATION (097190AAC), Waukegan, Lake County, 9 documents, permits 95090047, 7500155, 19030011, 07050007
+- WILL COUNTY ELECTRIC GENERATING STATION (197810AAK), Romeoville, Will County, 7 documents, permits SOURCE, 95090080, 22040015, 19040020
+- WILL COUNTY ENERGY (197005AAI), Beecher, Will County, 2 documents, permits 21050022
+- WINNETKA ELECTRIC PLANT (031333AAD), Winnetka, Cook County, 9 documents, permits 95090027

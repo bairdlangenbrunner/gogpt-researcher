@@ -1,0 +1,673 @@
+{
+  "meta": {
+    "lane": "newplants",
+    "scope": {
+      "country": "United States",
+      "state": "Illinois",
+      "postal": "il",
+      "kind": "state",
+      "slug": "illinois",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-29T17:29:12-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 4
+    }
+  },
+  "records": [
+    {
+      "plant_name": "Will County Facility power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Illinois",
+        "Local area (taluk, county)": "Will",
+        "Owner(s)": "Will County Facility LLC [100%]",
+        "Latitude": "41.24770",
+        "Longitude": "-88.22800",
+        "Location accuracy": "approximate"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1569",
+          "https://www.interconnection.fyi/project/pjm-c01-1569",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://www.google.com/maps/search/?api=1&query=41.24770,-88.22800"
+        ],
+        "Owners Data Source": [
+          "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1569",
+          "https://www.interconnection.fyi/project/pjm-c01-1569",
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260721-5282",
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260416-5230"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1569",
+          "ok": true,
+          "contains_value": false,
+          "name_found": true,
+          "note": "names the request, the developer and the filing date; does not give the size or fuel"
+        },
+        {
+          "url": "https://www.interconnection.fyi/project/pjm-c01-1569",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "gives 346 MW, gas, Will County, the developer and a completion date of December 31, 2029; checked October 29, 2026"
+        },
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "EIA monthly generator file, September 2026, Operating sheet. Plant 6022, Braidwood Generation Station, Will County, at 41.2435, -88.2286. This is the station where the request connects, not the gas plant itself. The staged point is the switchyard about 470 meters north, found on satellite imagery."
+        },
+        {
+          "url": "https://www.google.com/maps/search/?api=1&query=41.24770,-88.22800",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Opens at the point."
+        },
+        {
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260416-5230",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "FERC eLibrary, informational report of interlocking positions filed April 16, 2026; the filing names Will County Facility LLC, Ogle County Hub LLC and Prairie Pulse Project LLC; checked October 30, 2026"
+        },
+        {
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260721-5282",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "FERC eLibrary, informational report of interlocking positions filed July 21, 2026, Docket ID-8375; the filing names the same three LLCs; checked October 30, 2026"
+        }
+      ],
+      "tier": "medium",
+      "researcher_notes": "PJM's first-cycle queue lists request C01-1569: 346 MW of natural gas generation in Will County, Illinois, from Will County Facility LLC. It was filed on April 25, 2026, connects at the Braidwood 345 kV switchyard, and asks to be in service by December 31, 2029. I read these values from PJM's own full queue export, downloaded on October 29, 2026. The interconnection.fyi page for the request at https://www.interconnection.fyi/project/pjm-c01-1569 shows the same size, fuel, county, developer and completion date. PJM's page for the request at https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1569 confirms the queue number, the developer and the filing date. A grid queue entry makes the status announced. The plant is named after the developer's company name, since no other name is published. The owner is Will County Facility LLC at 100 percent. PJM's page for the request names it as the company behind the request, and the interconnection.fyi page says the project is owned by it. Both pages were checked again on October 30, 2026. GEM accepts a project company as the owner. The parent company is Constellation Energy. Two reports Constellation Energy Corporation filed with the Federal Energy Regulatory Commission, on April 15 and July 20, 2026, list Will County Facility LLC among the companies where its officers hold posts, and the July report says Constellation Energy Corporation owns enough of each listed company to elect its directors. Both reports were checked on October 30, 2026. Constellation Energy is already in GEM's company list as entity 100001000208, so it is not a new company. Will County Facility LLC is not in GEM's company list, so it is a new company record. The size and fuel come from a queue tracker site, not PJM's own page, so they are less certain until PJM posts a study report. Not found: a news story, permit, site address or turbine type. The location is approximate. No document gives the plant's own site, so the point is placed at the Braidwood 345 kV switchyard, where PJM says the request connects. The switchyard sits at the Braidwood nuclear station, which the EIA-860M table for September 2026 places at 41.24350, -88.22860. On satellite imagery the switchyard is the fenced yard just north and east of the reactor buildings, about 470 meters north of that point. The point is the middle of that yard, 41.24770, -88.22800: https://www.google.com/maps/search/?api=1&query=41.24770,-88.22800. The plant could be built anywhere on or near Constellation's land at the station. Move the point if a permit or study report names the site. Checked for duplicates on October 30, 2026. GEM has no plant of any fuel at the Braidwood nuclear station, where this request connects. The nearest GEM plant is CPV Three Rivers energy center, about 15 kilometers away, which is a different, operating plant. No GEM wiki page or other request in this batch names Will County Facility LLC. Three gas requests of about 346 MW each were filed on the same day at Constellation's Braidwood, Byron and LaSalle nuclear stations, and the same reports tie all three companies to Constellation. They are separate sites, so each is its own plant.",
+      "action": "Create the plant in Will County, Illinois, then add the unit below. Set the owner to Will County Facility LLC at 100 percent as a new company, with Constellation Energy (entity 100001000208) as its parent. Enter latitude 41.24770 and longitude -88.22800 with location accuracy approximate, and add the EIA-860M table and the Google Maps link to the Location Data Source box. Leave technology blank until a document names it.",
+      "irp": false,
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Capacity (MW)": "346",
+            "Fuel": "fossil gas: natural gas",
+            "Status": "announced",
+            "Start year": "2029"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.interconnection.fyi/project/pjm-c01-1569"
+            ],
+            "Fuel Data Source": [
+              "https://www.interconnection.fyi/project/pjm-c01-1569"
+            ],
+            "Status Data Source": [
+              "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1569",
+              "https://www.interconnection.fyi/project/pjm-c01-1569"
+            ],
+            "Start Year Data Source": [
+              "https://www.interconnection.fyi/project/pjm-c01-1569"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1569",
+              "ok": true,
+              "contains_value": false,
+              "name_found": true,
+              "note": "names the request, the developer and the filing date; does not give the size or fuel"
+            },
+            {
+              "url": "https://www.interconnection.fyi/project/pjm-c01-1569",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "gives 346 MW, gas, Will County, the developer and a completion date of December 31, 2029; checked October 29, 2026"
+            }
+          ],
+          "action": "Add unit 1 as announced, 346 MW, natural gas, with a start year of 2029 from the requested in-service date. Rename the unit once a filing names the turbines. Milestone timeline: add an announced milestone for April 2026, when the request was filed in the PJM interconnection queue, with the PJM queue page as the source.",
+          "researcher_notes": "PJM's page for request C01-1569 shows it is in PJM's queue. A grid queue entry makes the status announced. The size, fuel and start year come from the interconnection.fyi page, which matches PJM's full queue export.",
+          "milestones": [
+            {
+              "status": "announced",
+              "year": 2026,
+              "period": "April",
+              "sources": [
+                "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1569"
+              ],
+              "note": "PJM's queue page for request C01-1569 gives a filing date of April 25, 2026."
+            }
+          ]
+        }
+      ],
+      "record_id": "us-il:new:will-county-facility-power-station",
+      "location_method": "site_reference",
+      "location_route": "The point is the Braidwood 345 kV switchyard, where PJM says the request connects, found on satellite imagery next to the Braidwood nuclear station as placed by the EIA-860M table for September 2026."
+    },
+    {
+      "plant_name": "Ogle County Hub power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Illinois",
+        "Local area (taluk, county)": "Ogle",
+        "Owner(s)": "Ogle County Hub LLC [100%]"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1570",
+          "https://www.interconnection.fyi/project/pjm-c01-1570"
+        ],
+        "Owners Data Source": [
+          "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1570",
+          "https://www.interconnection.fyi/project/pjm-c01-1570",
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260721-5282",
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260416-5230"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1570",
+          "ok": true,
+          "contains_value": false,
+          "name_found": true,
+          "note": "names the request, the developer and the filing date; does not give the size or fuel"
+        },
+        {
+          "url": "https://www.interconnection.fyi/project/pjm-c01-1570",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "gives 347 MW, gas, Ogle County, the developer and a completion date of December 31, 2029; checked October 29, 2026"
+        },
+        {
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260416-5230",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "FERC eLibrary, informational report of interlocking positions filed April 16, 2026; the filing names Will County Facility LLC, Ogle County Hub LLC and Prairie Pulse Project LLC; checked October 30, 2026"
+        },
+        {
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260721-5282",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "FERC eLibrary, informational report of interlocking positions filed July 21, 2026, Docket ID-8375; the filing names the same three LLCs; checked October 30, 2026"
+        }
+      ],
+      "tier": "medium",
+      "researcher_notes": "PJM's first-cycle queue lists request C01-1570: 347 MW of natural gas generation in Ogle County, Illinois, from Ogle County Hub LLC. It was filed on April 25, 2026, connects at the Byron 345 kV switchyard, and asks to be in service by December 31, 2029. I read these values from PJM's own full queue export, downloaded on October 29, 2026. The interconnection.fyi page for the request at https://www.interconnection.fyi/project/pjm-c01-1570 shows the same size, fuel, county, developer and completion date. PJM's page for the request at https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1570 confirms the queue number, the developer and the filing date. A grid queue entry makes the status announced. The plant is named after the developer's company name, since no other name is published. The owner is Ogle County Hub LLC at 100 percent. PJM's page for the request names it as the company behind the request, and the interconnection.fyi page says the project is owned by it. Both pages were checked again on October 30, 2026. GEM accepts a project company as the owner. The parent company is Constellation Energy. Two reports Constellation Energy Corporation filed with the Federal Energy Regulatory Commission, on April 15 and July 20, 2026, list Ogle County Hub LLC among the companies where its officers hold posts, and the July report says Constellation Energy Corporation owns enough of each listed company to elect its directors. Both reports were checked on October 30, 2026. Constellation Energy is already in GEM's company list as entity 100001000208, so it is not a new company. Ogle County Hub LLC is not in GEM's company list, so it is a new company record. The size and fuel come from a queue tracker site, not PJM's own page, so they are less certain until PJM posts a study report. Not found: a news story, permit, site, turbine type or coordinates. Checked for duplicates on October 30, 2026. GEM has no plant of any fuel at the Byron nuclear station, where this request connects, and none within 20 kilometers. The watch item for the Byron to Wayne gas request in Lee County is a different request on a different line. No GEM wiki page names Ogle County Hub LLC. Three gas requests of about 346 MW each were filed on the same day at Constellation's Braidwood, Byron and LaSalle nuclear stations, and the same reports tie all three companies to Constellation. They are separate sites, so each is its own plant.",
+      "action": "Create the plant in Ogle County, Illinois, then add the unit below. Set the owner to Ogle County Hub LLC at 100 percent as a new company, with Constellation Energy (entity 100001000208) as its parent. Leave technology and coordinates blank until a document names them.",
+      "irp": false,
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Capacity (MW)": "347",
+            "Fuel": "fossil gas: natural gas",
+            "Status": "announced",
+            "Start year": "2029"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.interconnection.fyi/project/pjm-c01-1570"
+            ],
+            "Fuel Data Source": [
+              "https://www.interconnection.fyi/project/pjm-c01-1570"
+            ],
+            "Status Data Source": [
+              "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1570",
+              "https://www.interconnection.fyi/project/pjm-c01-1570"
+            ],
+            "Start Year Data Source": [
+              "https://www.interconnection.fyi/project/pjm-c01-1570"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1570",
+              "ok": true,
+              "contains_value": false,
+              "name_found": true,
+              "note": "names the request, the developer and the filing date; does not give the size or fuel"
+            },
+            {
+              "url": "https://www.interconnection.fyi/project/pjm-c01-1570",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "gives 347 MW, gas, Ogle County, the developer and a completion date of December 31, 2029; checked October 29, 2026"
+            }
+          ],
+          "action": "Add unit 1 as announced, 347 MW, natural gas, with a start year of 2029 from the requested in-service date. Rename the unit once a filing names the turbines. Milestone timeline: add an announced milestone for April 2026, when the request was filed in the PJM interconnection queue, with the PJM queue page as the source.",
+          "researcher_notes": "PJM's page for request C01-1570 shows it is in PJM's queue. A grid queue entry makes the status announced. The size, fuel and start year come from the interconnection.fyi page, which matches PJM's full queue export.",
+          "milestones": [
+            {
+              "status": "announced",
+              "year": 2026,
+              "period": "April",
+              "sources": [
+                "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1570"
+              ],
+              "note": "PJM's queue page for request C01-1570 gives a filing date of April 25, 2026."
+            }
+          ]
+        }
+      ],
+      "record_id": "us-il:new:ogle-county-hub-power-station"
+    },
+    {
+      "plant_name": "Prairie Pulse power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Illinois",
+        "Local area (taluk, county)": "LaSalle",
+        "Owner(s)": "Prairie Pulse Project LLC [100%]",
+        "Latitude": "41.24550",
+        "Longitude": "-88.66907",
+        "Location accuracy": "approximate"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1571",
+          "https://www.interconnection.fyi/project/pjm-c01-1571",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://www.google.com/maps/search/?api=1&query=41.24550,-88.66907"
+        ],
+        "Owners Data Source": [
+          "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1571",
+          "https://www.interconnection.fyi/project/pjm-c01-1571",
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260721-5282",
+          "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260416-5230"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1571",
+          "ok": true,
+          "contains_value": false,
+          "name_found": true,
+          "note": "names the request, the developer and the filing date; does not give the size or fuel"
+        },
+        {
+          "url": "https://www.interconnection.fyi/project/pjm-c01-1571",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "gives 346 MW, gas, LaSalle County, the developer and a completion date of December 31, 2029; checked October 29, 2026"
+        },
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "EIA monthly generator file, September 2026, Operating sheet. Plant 6026, LaSalle Generating Station, LaSalle County, at 41.245498, -88.66907. This is the station where the request connects, not the gas plant itself."
+        },
+        {
+          "url": "https://www.google.com/maps/search/?api=1&query=41.24550,-88.66907",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Opens at the point."
+        },
+        {
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260416-5230",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "FERC eLibrary, informational report of interlocking positions filed April 16, 2026; the filing names Will County Facility LLC, Ogle County Hub LLC and Prairie Pulse Project LLC; checked October 30, 2026"
+        },
+        {
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260721-5282",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "FERC eLibrary, informational report of interlocking positions filed July 21, 2026, Docket ID-8375; the filing names the same three LLCs; checked October 30, 2026"
+        }
+      ],
+      "tier": "medium",
+      "researcher_notes": "PJM's first-cycle queue lists request C01-1571: 346 MW of natural gas generation in LaSalle County, Illinois, from Prairie Pulse Project LLC. It was filed on April 25, 2026, connects at the LaSalle 345 kV substation, and asks to be in service by December 31, 2029. I read these values from PJM's own full queue export, downloaded on October 29, 2026. The interconnection.fyi page for the request at https://www.interconnection.fyi/project/pjm-c01-1571 shows the same size, fuel, county, developer and completion date. PJM's page for the request at https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1571 confirms the queue number, the developer and the filing date. A grid queue entry makes the status announced. The plant is named after the developer's company name, since no other name is published. The owner is Prairie Pulse Project LLC at 100 percent. PJM's page for the request names it as the company behind the request, and the interconnection.fyi page says the project is owned by it. Both pages were checked again on October 30, 2026. GEM accepts a project company as the owner. The parent company is Constellation Energy. Two reports Constellation Energy Corporation filed with the Federal Energy Regulatory Commission, on April 15 and July 20, 2026, list Prairie Pulse Project LLC among the companies where its officers hold posts, and the July report says Constellation Energy Corporation owns enough of each listed company to elect its directors. Both reports were checked on October 30, 2026. Constellation Energy is already in GEM's company list as entity 100001000208, so it is not a new company. Prairie Pulse Project LLC is not in GEM's company list, so it is a new company record. The size and fuel come from a queue tracker site, not PJM's own page, so they are less certain until PJM posts a study report. Not found: a news story, permit, site address or turbine type. The location is approximate. No document gives the plant's own site, so the point is placed at the LaSalle nuclear station, where PJM says the request connects. The coordinates are the station's, 41.24550, -88.66907, from the EIA-860M table for September 2026: https://www.google.com/maps/search/?api=1&query=41.24550,-88.66907. A likely build site is nearby. In late 2025 the City of Marseilles annexed about 715 acres of Constellation land south of the Illinois River, along North 2553rd Road, about 6 kilometers north of the station. The annexation agreement zones that land for uses that include power plants and data centers: https://www.cityofmarseilles.com/wp-content/uploads/2025/10/Annexation-Agreement-final.pdf. The agreement does not name this plant, and the mayor said in 2026 that no customer had been found. Move the point if a permit or study report names the site. Checked for duplicates on October 30, 2026. GEM has no plant of any fuel within 25 kilometers of the LaSalle nuclear station, where this request connects. No GEM wiki page or other request in this batch names Prairie Pulse Project LLC. Three gas requests of about 346 MW each were filed on the same day at Constellation's Braidwood, Byron and LaSalle nuclear stations, and the same reports tie all three companies to Constellation. They are separate sites, so each is its own plant.",
+      "action": "Create the plant in LaSalle County, Illinois, then add the unit below. Set the owner to Prairie Pulse Project LLC at 100 percent as a new company, with Constellation Energy (entity 100001000208) as its parent. Enter latitude 41.24550 and longitude -88.66907 with location accuracy approximate, and add the EIA-860M table and the Google Maps link to the Location Data Source box. Leave technology blank until a document names it.",
+      "irp": false,
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Capacity (MW)": "346",
+            "Fuel": "fossil gas: natural gas",
+            "Status": "announced",
+            "Start year": "2029"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.interconnection.fyi/project/pjm-c01-1571"
+            ],
+            "Fuel Data Source": [
+              "https://www.interconnection.fyi/project/pjm-c01-1571"
+            ],
+            "Status Data Source": [
+              "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1571",
+              "https://www.interconnection.fyi/project/pjm-c01-1571"
+            ],
+            "Start Year Data Source": [
+              "https://www.interconnection.fyi/project/pjm-c01-1571"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1571",
+              "ok": true,
+              "contains_value": false,
+              "name_found": true,
+              "note": "names the request, the developer and the filing date; does not give the size or fuel"
+            },
+            {
+              "url": "https://www.interconnection.fyi/project/pjm-c01-1571",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "gives 346 MW, gas, LaSalle County, the developer and a completion date of December 31, 2029; checked October 29, 2026"
+            }
+          ],
+          "action": "Add unit 1 as announced, 346 MW, natural gas, with a start year of 2029 from the requested in-service date. Rename the unit once a filing names the turbines. Milestone timeline: add an announced milestone for April 2026, when the request was filed in the PJM interconnection queue, with the PJM queue page as the source.",
+          "researcher_notes": "PJM's page for request C01-1571 shows it is in PJM's queue. A grid queue entry makes the status announced. The size, fuel and start year come from the interconnection.fyi page, which matches PJM's full queue export.",
+          "milestones": [
+            {
+              "status": "announced",
+              "year": 2026,
+              "period": "April",
+              "sources": [
+                "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1571"
+              ],
+              "note": "PJM's queue page for request C01-1571 gives a filing date of April 25, 2026."
+            }
+          ]
+        }
+      ],
+      "record_id": "us-il:new:prairie-pulse-power-station",
+      "location_method": "dataset",
+      "location_route": "The point is the LaSalle nuclear station, where PJM says the request connects, taken from the station's entry in the EIA-860M table for September 2026."
+    },
+    {
+      "plant_name": "Marquis Solar power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Illinois",
+        "Local area (taluk, county)": "Putnam",
+        "Owner(s)": "Marquis Solar LLC [100%]",
+        "Latitude": "41.27622",
+        "Longitude": "-89.31781",
+        "Location accuracy": "approximate"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-2036",
+          "https://www.interconnection.fyi/project/pjm-c01-2036",
+          "https://data.epa.gov/efservice/pub_dim_facility/facility_id/1005374/year/2023/JSON",
+          "https://www.google.com/maps/search/?api=1&query=41.27622,-89.31781"
+        ],
+        "Owners Data Source": [
+          "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-2036",
+          "https://www.interconnection.fyi/project/pjm-c01-2036"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-2036",
+          "ok": true,
+          "contains_value": false,
+          "name_found": true,
+          "note": "names the request, the developer and the filing date; does not give the size or fuel"
+        },
+        {
+          "url": "https://www.interconnection.fyi/project/pjm-c01-2036",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "gives 1150 MW, gas, Putnam County, the developer and a completion date of June 30, 2031; checked October 29, 2026"
+        },
+        {
+          "url": "https://data.epa.gov/efservice/pub_dim_facility/facility_id/1005374/year/2023/JSON",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "EPA greenhouse gas reporting record for 2023, facility 1005374, Marquis Energy - Illinois LLC, 11953 Prairie Industrial Parkway, Hennepin, Putnam County, at 41.276218, -89.31781. This is the Marquis ethanol plant, not the gas plant itself. Checked October 30, 2026."
+        },
+        {
+          "url": "https://www.google.com/maps/search/?api=1&query=41.27622,-89.31781",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Opens at the point."
+        }
+      ],
+      "tier": "medium",
+      "researcher_notes": "PJM's first-cycle queue lists request C01-2036: 1150 MW of natural gas generation in Putnam County, Illinois, from Marquis Solar LLC. It was filed on April 27, 2026, connects at the Crescent Ridge to Corbin 138 kV line, and asks to be in service by June 30, 2031. I read these values from PJM's own full queue export, downloaded on October 29, 2026. The interconnection.fyi page for the request at https://www.interconnection.fyi/project/pjm-c01-2036 shows the same size, fuel, county, developer and completion date. PJM's page for the request at https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-2036 confirms the queue number, the developer and the filing date. A grid queue entry makes the status announced. The plant is named after its county, since no other name is published. The owner is Marquis Solar LLC at 100 percent. PJM's page for the request names it as the company behind the request, and the interconnection.fyi page says the project is owned by it. Both pages were checked again on October 30, 2026. GEM accepts a project company as the owner. No parent company is named in any public document found so far. Marquis Solar LLC is not in GEM's company list, so it is a new company record. The size and fuel come from a queue tracker site, not PJM's own page, so they are less certain until PJM posts a study report. The company name sounds like a solar developer, but the queue lists the fuel as natural gas. Not found: a news story, permit, site address or turbine type. The location is approximate. No document gives the plant's own site. The point is the Marquis industrial complex at 11953 Prairie Industrial Parkway in Hennepin, Putnam County, at 41.27622, -89.31781: https://www.google.com/maps/search/?api=1&query=41.27622,-89.31781. The coordinates come from the EPA greenhouse gas reporting record for the Marquis ethanol plant there. The complex is the only large industrial site in Putnam County tied to the Marquis name, and the state economic development site sheet says it has 138 kilovolt power and spare gas supply. No document links Marquis Solar LLC to the Marquis companies, so this is a guess from the name. Move the point if a permit or study report names the site. Checked for duplicates on October 30, 2026. No GEM gas plant matches. Two things make this request doubtful. First, Marquis Solar LLC filed a second request the same day, C01-1722, for 120 MW of solar at the same Crescent Ridge to Corbin 138 kV line. Second, 1,150 MW is far more than a 138 kV line usually carries. The gas request may be a data entry error in PJM's queue, or a mislabeled copy of the solar request. The retired Hennepin coal plant in GEM is about half a kilometer from the center of this area, but nothing ties this request to that site.",
+      "action": "Create the plant in Putnam County, Illinois, then add the unit below. Set the owner to Marquis Solar LLC at 100 percent as a new company. Enter latitude 41.27622 and longitude -89.31781 with location accuracy approximate, and add the EPA record and the Google Maps link to the Location Data Source box. Leave technology blank until a document names it.",
+      "irp": false,
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Capacity (MW)": "1150",
+            "Fuel": "fossil gas: natural gas",
+            "Status": "announced",
+            "Start year": "2031"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.interconnection.fyi/project/pjm-c01-2036"
+            ],
+            "Fuel Data Source": [
+              "https://www.interconnection.fyi/project/pjm-c01-2036"
+            ],
+            "Status Data Source": [
+              "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-2036",
+              "https://www.interconnection.fyi/project/pjm-c01-2036"
+            ],
+            "Start Year Data Source": [
+              "https://www.interconnection.fyi/project/pjm-c01-2036"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-2036",
+              "ok": true,
+              "contains_value": false,
+              "name_found": true,
+              "note": "names the request, the developer and the filing date; does not give the size or fuel"
+            },
+            {
+              "url": "https://www.interconnection.fyi/project/pjm-c01-2036",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "gives 1150 MW, gas, Putnam County, the developer and a completion date of June 30, 2031; checked October 29, 2026"
+            }
+          ],
+          "action": "Add unit 1 as announced, 1150 MW, natural gas, with a start year of 2031 from the requested in-service date. Rename the unit once a filing names the turbines. Milestone timeline: add an announced milestone for April 2026, when the request was filed in the PJM interconnection queue, with the PJM queue page as the source.",
+          "researcher_notes": "PJM's page for request C01-2036 shows it is in PJM's queue. A grid queue entry makes the status announced. The size, fuel and start year come from the interconnection.fyi page, which matches PJM's full queue export.",
+          "milestones": [
+            {
+              "status": "announced",
+              "year": 2026,
+              "period": "April",
+              "sources": [
+                "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-2036"
+              ],
+              "note": "PJM's queue page for request C01-2036 gives a filing date of April 27, 2026."
+            }
+          ]
+        }
+      ],
+      "record_id": "us-il:new:marquis-solar-power-station",
+      "location_method": "dataset",
+      "location_route": "The point is the Marquis industrial complex at Hennepin, taken from the EPA greenhouse gas reporting record for the Marquis ethanol plant there."
+    },
+    {
+      "plant_name": "Tilton Energy Center",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Illinois",
+        "Local area (taluk, county)": "Vermilion",
+        "City": "Tilton",
+        "Owner(s)": "Tilton Energy LLC [100%]",
+        "Latitude": "40.1061",
+        "Longitude": "-87.6538",
+        "Location accuracy": "exact"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000153526?dwdocid=1353998",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://www.google.com/maps/search/?api=1&query=40.10612,-87.65382"
+        ],
+        "Owners Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000153526?dwdocid=1353998",
+          "https://www.powermag.com/two-illinois-gas-power-plants-acquired-by-public-benefit-corporation-earthrise-energy",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000153526?dwdocid=1353998",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Illinois EPA Clean Air Act permit 00050017 for the Tilton Energy Center, 80 West First Street, Tilton, issued April 30, 2019 and revised February 15, 2022. Names Tilton Energy, LLC as the source and lists four 47 MW natural gas turbines with water injection. Read through the Document Explorer on October 30, 2026."
+        },
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "EIA-860M September 2026 file, Operating sheet: plant 7760, Tilton Energy LLC, generators 1 to 4, 47 MW each, gas turbine, natural gas, operating since June 1999, Vermilion County, at 40.106125, -87.65382. The link checker cannot read a spreadsheet, so this entry records a reading of the downloaded file on October 30, 2026."
+        },
+        {
+          "url": "https://www.google.com/maps/search/?api=1&query=40.10612,-87.65382",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Opens at the point. Satellite imagery at this point shows the four turbine packages beside the switchyard, checked October 30, 2026."
+        },
+        {
+          "url": "https://www.powermag.com/two-illinois-gas-power-plants-acquired-by-public-benefit-corporation-earthrise-energy",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "POWER Magazine article of September 8, 2022. Says Earthrise Energy closed its first acquisition in February 2022, three Illinois gas plants bought from Rockland Capital, including the 184 MW Tilton Energy plant."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/0000879215/000089155401501957/d25376_u3a2.txt",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Dynegy's Form U-3A-2 for 2000, filed with the Securities and Exchange Commission. Lists the Tilton Energy Center at 80 W First Street, Tilton, Illinois, 176 MW, leased by Illinois Power in 1999 and subleased to Dynegy Midwest Generation."
+        },
+        {
+          "url": "https://rocklandcapital.com/?p=582",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Rockland Capital release of July 5, 2017 on the sale of its Elgin, Rocky Road and Tilton peaking plants to a Carlyle Group fund. Gives Tilton as 180 MW, in the MISO market with a pseudo-tie into PJM."
+        }
+      ],
+      "tier": "high",
+      "checks": [
+        38,
+        39
+      ],
+      "irp": false,
+      "location_method": "satellite",
+      "location_route": "The EIA-860M table for September 2026 places plant 7760 at 40.106125, -87.65382. Satellite imagery at that point shows the four turbine packages beside the switchyard at 80 West First Street, so the point is exact.",
+      "researcher_notes": "The Tilton Energy Center is an operating 188 MW gas peaking plant at 80 West First Street in Tilton, Vermilion County, Illinois, that is missing from GEM. The EIA-860M table for September 2026 lists it as plant 7760, Tilton Energy LLC, with four 47 MW natural gas turbines in service since June 1999. The Illinois EPA Clean Air Act permit 00050017, issued April 30, 2019 and revised February 15, 2022, names Tilton Energy, LLC as the source and lists four 47 MW natural gas combustion turbines built in May and June 1999 with water injection. An October 2011 stack test report filed with the Illinois EPA says the four turbines are identical General Electric LM-6000 simple cycle machines. Aeroderivative turbines installed together are one GEM unit, so the four turbines are entered as one unit with four engines of 47 MW each, 188 MW in total. Published totals vary: Dynegy's 2000 filing with the Securities and Exchange Commission says 176 MW, Rockland Capital's July 2017 sale release says 180 MW, and POWER Magazine's September 2022 article says 184 MW. The nameplate figure of 47 MW per turbine from the permit and the EIA table is used. History: Illinois Power leased the turbines in 1999 and subleased them to Dynegy Midwest Generation, Dynegy bought them in 2004, Rockland Capital acquired the plant in 2014 or 2015 and sold it in July 2017 to a Carlyle Group fund, and Earthrise Energy bought it from Rockland Capital in February 2022, according to POWER Magazine. The owner is Tilton Energy LLC at 100 percent. It is not in GEM's company list, so it is a new company record. Earthrise Energy is already in GEM's company list as entity 100000002885 and is the parent. The operator is not filled in. The only page naming an operator is the company's own website, which is a lead and not a citation. The location is exact. The EIA-860M point, 40.10612, -87.65382, lands on the four turbine packages beside the switchyard in satellite imagery: https://www.google.com/maps/search/?api=1&query=40.10612,-87.65382. Checked for duplicates on October 30, 2026 against the full GEM export by name, by county and by distance. No GEM plant matches. Not found: a published retirement plan, a current capacity market or interconnection filing, and a document naming the operator.",
+      "action": "Create the Tilton Energy Center in Vermilion County, Illinois, city Tilton, then add the unit below. Set the owner to Tilton Energy LLC at 100 percent as a new company, with Earthrise Energy (entity 100000002885) as its parent. Enter latitude 40.1061 and longitude -87.6538 with location accuracy exact, and put the Illinois EPA permit, the EIA-860M table and the Google Maps link in the Location Data Source box. Type EIA: 7760 into the Other IDs (location) box. Leave the operator blank.",
+      "units": [
+        {
+          "unit_name": "GT1-GT4",
+          "fields": {
+            "Capacity (MW)": "188",
+            "Number Of Engines": "4",
+            "Capacity Per Engine": "47",
+            "Fuel": "fossil gas: natural gas",
+            "Status": "operating",
+            "Start year": "1999",
+            "Turbine/Engine Technology": "aeroderivative gas turbine",
+            "Equipment Manufacturer/Model": "GE LM6000"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000153526?dwdocid=1353998",
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Fuel Data Source": [
+              "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000153526?dwdocid=1353998",
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Status Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000153526?dwdocid=1353998"
+            ],
+            "Start Year Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000153526?dwdocid=1353998"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000153526?dwdocid=827443",
+              "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000153526?dwdocid=1353998"
+            ],
+            "Turbine/Engine Equipment Data Source": [
+              "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000153526?dwdocid=827443"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000153526?dwdocid=1353998",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Illinois EPA Clean Air Act permit 00050017 for the Tilton Energy Center, 80 West First Street, Tilton, issued April 30, 2019 and revised February 15, 2022. Names Tilton Energy, LLC as the source and lists four 47 MW natural gas turbines with water injection. Read through the Document Explorer on October 30, 2026."
+            },
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "EIA-860M September 2026 file, Operating sheet: plant 7760, Tilton Energy LLC, generators 1 to 4, 47 MW each, gas turbine, natural gas, operating since June 1999, Vermilion County, at 40.106125, -87.65382. The link checker cannot read a spreadsheet, so this entry records a reading of the downloaded file on October 30, 2026."
+            },
+            {
+              "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000153526?dwdocid=827443",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "October 2011 stack test report filed with the Illinois EPA. Says Tilton Energy, LLC operates four identical General Electric model LM-6000 simple cycle combustion turbines at the Tilton Energy Center. Read through the Document Explorer on October 30, 2026."
+            }
+          ],
+          "action": "Add one unit, GT1-GT4: four aeroderivative gas turbines of 47 MW each, 188 MW in total, natural gas, operating, start year 1999, manufacturer and model GE LM6000. Type the EIA generator IDs 1, 2, 3 and 4 into the Other IDs (unit) box. Milestone timeline: add an operating milestone for June 1999, when the four turbines entered service, with the EIA generator table as the source.",
+          "researcher_notes": "The Illinois EPA permit 00050017 lists four 47 MW natural gas turbines with water injection, built in May and June 1999. The EIA-860M table for September 2026 lists the same four generators at 47 MW each, operating since June 1999. The October 2011 stack test report filed with the Illinois EPA names them as General Electric LM-6000 simple cycle turbines, which are aeroderivative machines, so the four are one GEM unit with four engines. The status is operating on two independent sources, the EIA table and the state permit.",
+          "milestones": [
+            {
+              "status": "operating",
+              "year": 1999,
+              "period": "June",
+              "sources": [
+                "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+              ],
+              "note": "the EIA monthly table for September 2026 lists all four Tilton turbines as in service since June 1999. The Illinois air permit says they were built in May and June 1999."
+            }
+          ]
+        }
+      ],
+      "record_id": "us-il:new:tilton-energy-center"
+    }
+  ]
+}

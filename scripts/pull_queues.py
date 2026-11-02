@@ -84,6 +84,17 @@ capacity, else the summer MW.
 
 Output (batches/us-<st>/harvest/): `queues.json` and `queues.md`, the shape
 `build_state_brief.py --harvest` reads (same keys as the Mississippi output).
+
+Completeness (2026-10-30). Each source in queues.json says which market it
+belongs to, how many rows the file held, how many were the state's, whether it
+was reached and whether it came back short of a floor (`MIN_ROWS`: a file far
+smaller than usual is a broken download, not a quiet queue). A market listed in
+the settings that this script has no reader for (ERCOT, CAISO, NYISO, ISO-NE,
+a utility's own queue) is written as a source with `NO READER`, so the gap
+shows instead of passing silently. `needs_answer` lists every request that must
+be answered in the batch's coverage.json under `queues` (state_gate.py gate
+`queues`): gas, oil or fuel not shown, not withdrawn, 50 MW or more or size
+not shown, and not an in-service request already matched to a GEM plant.
 Downloads stay out of the repo. Run with `--match-only FILE` to re-match a saved
 queues.json without the network.
 """
@@ -111,6 +122,12 @@ PJM_CYCLE_POST = "https://www.pjm.com/m/ProjectTransition/GenerateXMLTransitionP
 PJM_CYCLE_PAGE = "https://www.pjm.com/planning/m/cycle-service-request-status"
 SPP_CSV = "https://opsportal.spp.org/Studies/GenerateActiveCSV"
 SPP_PAGE = "https://opsportal.spp.org/Studies/GIActive"
+
+READERS = ("MISO", "PJM", "SPP")
+# rows each full file held when last seen, roughly halved: fewer means a broken download
+MIN_ROWS = {"MISO": 2000, "PJM serial": 4500, "PJM cycle": 900, "SPP": 500}
+WITHDRAWN = re.compile(r"withdrawn|terminated|cancel+ed|deactivated", re.I)
+IN_SERVICE = re.compile(r"^\s*in service\s*$|commercial operation", re.I)  # not "partially in service"
 
 GAS_OIL = re.compile(r"natural gas|\bgas\b|ulsd|fuel oil|\boil\b|diesel|syngas|combustion turbine|"
                      r"combined cycle|reciprocating", re.I)
@@ -144,11 +161,24 @@ def is_gas_oil_miso(p):
     return bool(GAS_OIL.search(fuel)) and not NOT_FOSSIL.search(fuel)
 
 
+def miso_mw(p):
+    """Summer net MW, else the largest study MW (a study-phase request can show 0 summer MW
+    and its size only in the ERIS and NRIS fields), else None."""
+    for v in [p.get("summerNetMW"), max((p.get(k) or 0 for k in
+              ("dp2NrisMw", "dp2ErisMw", "dp1NrisMw", "dp1ErisMw", "winterNetMW")), default=0)]:
+        try:
+            if v and float(v) > 0:
+                return float(v)
+        except (TypeError, ValueError):
+            continue
+    return None
+
+
 def miso_entries(projects, cfg, state):
     """State entries, plus blank-state entries owned by one of the state's own owners.
     Returns (entries, count of blank-state entries held back as a shared owner's)."""
-    owner_re = re.compile(cfg["owner"], re.I)
-    shared_re = re.compile(cfg["shared_owner"], re.I)
+    owner_re = re.compile(cfg.get("owner") or r"(?!)", re.I)
+    shared_re = re.compile(cfg.get("shared_owner") or r"(?!)", re.I)
     out, shared = [], 0
     for p in projects:
         st = (p.get("state") or "").strip()
@@ -166,7 +196,7 @@ def miso_entries(projects, cfg, state):
             "state": st or "(hidden by MISO)",
             "fuel": (p.get("fuelType") or "").strip() or "(not shown)",
             "facility_type": (p.get("facilityType") or "").strip(),
-            "mw": p.get("summerNetMW"),
+            "mw": miso_mw(p),
             "status": p.get("applicationStatus") or "",
             "stage": " / ".join(x for x in [p.get("studyCycle"), p.get("studyPhase")] if x),
             "queue_date": (p.get("queueDate") or "")[:10],
@@ -176,7 +206,8 @@ def miso_entries(projects, cfg, state):
             "owner": owner,
             "url": MISO_PAGE,
             "gas_oil": is_gas_oil_miso(p),
-            "fuel_unknown": hidden and not (p.get("fuelType") or "").strip(),
+            # a blank fuel on a state-shown row too: surplus requests (S numbers) leave it blank
+            "fuel_unknown": not (p.get("fuelType") or "").strip(),
         })
     return out, shared
 
@@ -417,6 +448,48 @@ def match_all(plants, entries):
     return by_plant, matched
 
 
+# --------------------------------------------------------- completeness ---
+
+def entry_key(e):
+    """The key a coverage.json `queues` answer uses: "MISO J3923"."""
+    return f"{e['source']} {e['queue_id']}"
+
+
+def needs_answer(entries, threshold=50):
+    """Entries the batch must answer: gas, oil or fuel not shown; not withdrawn; at the
+    threshold or size not shown; an in-service request only when it matched no GEM plant."""
+    out = []
+    for e in entries:
+        if not (e.get("gas_oil") or e.get("fuel_unknown")):
+            continue
+        if e.get("withdrawn") or WITHDRAWN.search(str(e.get("status") or "")):
+            continue
+        if e.get("mw") not in (None, "") and 0 < float(e["mw"]) < threshold:  # 0 means not shown
+            continue
+        if IN_SERVICE.search(str(e.get("status") or "")) and e.get("matched"):
+            continue
+        out.append(e)
+    return out
+
+
+def source_record(name, market, url, how, rows=None, state_rows=None, entries=(), floor=None):
+    """One sources[] item with the completeness fields the gate reads."""
+    short = rows is not None and floor is not None and rows < MIN_ROWS.get(floor, 0)
+    return {"name": name, "market": market, "url": url, "how": how, "reached": rows is not None,
+            "rows_read": rows, "min_rows": MIN_ROWS.get(floor) if floor else None, "short": short,
+            "state_rows": state_rows,
+            "gas_oil": sum(1 for e in entries if e.get("gas_oil")),
+            "fuel_unknown": sum(1 for e in entries if e.get("fuel_unknown"))}
+
+
+def completeness_line(s):
+    if not s.get("reached"):
+        return f"{s['name']}: {s['how']}"
+    line = (f"{s['name']}: {s['rows_read']} rows read, {s['state_rows']} for the state, "
+            f"{s['gas_oil']} gas or oil, {s['fuel_unknown']} fuel not shown")
+    return line + (f"; SHORT, fewer than {s['min_rows']} rows, rerun" if s.get("short") else "")
+
+
 # --------------------------------------------------------------- output ---
 
 def fmt_mw(mw):
@@ -440,13 +513,18 @@ def write_outputs(out_dir, state_name, plants, entries, by_plant, matched, sourc
     data = {"generated": today, "sources": sources, "entries": entries,
             "by_plant": {pid: [entries[i]["queue_id"] for i in ix] for pid, ix in by_plant.items()},
             "unmatched_gas_oil": [e["queue_id"] for e in unmatched],
-            "hidden_fuel_leads": [e["queue_id"] for e in unknown]}
+            "hidden_fuel_leads": [e["queue_id"] for e in unknown],
+            "needs_answer": [entry_key(e) for e in needs_answer(entries)]}
     (out_dir / "queues.json").write_text(json.dumps(data, indent=1, default=str))
     L = [f"# {state_name} interconnection queues, gas and oil ({today})", "",
          "A queue entry is a lead, not proof that a plant exists or will be built. The queue file or page below is the citation.", ""]
     L += ["## Sources", ""]
     for s in sources:
         L.append(f"- {s['name']}: {s['how']} ({s['url']})")
+    L += ["", "## Completeness", ""]
+    L += [f"- {completeness_line(s)}" for s in sources]
+    L += ["", f"Requests to answer in coverage.json under `queues`: {len(data['needs_answer'])}.", ""]
+    L += [f"- {k}" for k in data["needs_answer"]]
     L += ["", "## Matched to GEM plants", ""]
     for p in plants:
         ix = by_plant.get(p["id"], [])
@@ -499,42 +577,60 @@ def main():
                 ms, shared = miso_entries(projects, cfg, st)
                 entries += ms
                 eras = sum(1 for e in ms if str(e["stage"]).startswith("ERAS"))
-                sources.append({"name": "MISO generator interconnection queue (includes ERAS rows)", "url": MISO_PAGE,
-                                "how": f"open JSON {MISO_API}, plain GET; {len(projects)} projects, "
-                                       f"{sum(1 for e in ms if e['state'] == st)} in {cfg['name']}, "
-                                       f"{sum(1 for e in ms if e['state'] != st)} state-hidden leads of the state's own owners, "
-                                       f"{eras} ERAS rows, {shared} state-hidden entries of owners shared with other states not kept"})
+                unplaced = sum(1 for p in projects if not (p.get("state") or "").strip()
+                               and not clean_ws(p.get("transmissionOwner")))
+                sources.append(source_record(
+                    "MISO generator interconnection queue (includes ERAS rows)", "MISO", MISO_PAGE,
+                    f"open JSON {MISO_API}, plain GET; {len(projects)} projects, "
+                    f"{sum(1 for e in ms if e['state'] == st)} in {cfg['name']}, "
+                    f"{sum(1 for e in ms if e['state'] != st)} state-hidden leads of the state's own owners, "
+                    f"{eras} ERAS rows, {shared} state-hidden entries of owners shared with other states not kept, "
+                    f"{unplaced} entries with neither state nor owner shown",
+                    rows=len(projects), state_rows=len(ms), entries=ms, floor="MISO"))
             except Exception as e:  # noqa: BLE001
                 log(f"MISO failed: {e}")
-                sources.append({"name": "MISO", "url": MISO_PAGE, "how": f"NOT REACHED: {e}"})
+                sources.append(source_record("MISO", "MISO", MISO_PAGE, f"NOT REACHED: {e}"))
         if "PJM" in cfg["markets"]:
             try:
                 serial_xml, cycle_xml = fetch_pjm()
-                ps = pjm_entries(pjm_projects(serial_xml), cfg, "serial")
-                pc = pjm_entries(pjm_projects(cycle_xml), cfg, "cycle")
+                serial, cycle = pjm_projects(serial_xml), pjm_projects(cycle_xml)
+                ps = pjm_entries(serial, cfg, "serial")
+                pc = pjm_entries(cycle, cfg, "cycle")
                 seen = {e["queue_id"] for e in ps}
                 pc = [e for e in pc if e["queue_id"] not in seen]
                 entries += ps + pc
-                sources.append({"name": "PJM serial queue (A01 through AJ1)", "url": PJM_SERIAL_PAGE,
-                                "how": f"open XML {PJM_SERIAL_XML}, plain GET; {len(ps)} {cfg['name']} gas, oil or thermal-unknown entries"})
-                sources.append({"name": "PJM cycle queue (Transition Cycle 1 and 2, Cycle 1)", "url": PJM_CYCLE_PAGE,
-                                "how": f"open XML posted to {PJM_CYCLE_POST} with an empty grid filter; {len(pc)} {cfg['name']} gas, oil or thermal-unknown entries"})
+                in_state = lambda ps_: sum(1 for x in ps_ if clean_ws(x.get("State")) in cfg["pjm_states"])  # noqa: E731
+                sources.append(source_record(
+                    "PJM serial queue (A01 through AJ1)", "PJM", PJM_SERIAL_PAGE,
+                    f"open XML {PJM_SERIAL_XML}, plain GET; {len(ps)} {cfg['name']} gas, oil or thermal-unknown entries",
+                    rows=len(serial), state_rows=in_state(serial), entries=ps, floor="PJM serial"))
+                sources.append(source_record(
+                    "PJM cycle queue (Transition Cycle 1 and 2, Cycle 1)", "PJM", PJM_CYCLE_PAGE,
+                    f"open XML posted to {PJM_CYCLE_POST} with an empty grid filter; {len(pc)} {cfg['name']} gas, oil or thermal-unknown entries",
+                    rows=len(cycle), state_rows=in_state(cycle), entries=pc, floor="PJM cycle"))
             except Exception as e:  # noqa: BLE001
                 log(f"PJM failed: {e}")
-                sources.append({"name": "PJM", "url": PJM_SERIAL_PAGE, "how": f"NOT REACHED: {e}"})
+                sources.append(source_record("PJM", "PJM", PJM_SERIAL_PAGE, f"NOT REACHED: {e}"))
         if "SPP" in cfg["markets"]:
             try:
                 rows, updated = spp_rows(fetch_spp())
                 sp = spp_entries(rows, cfg, st)
                 entries += sp
-                sources.append({"name": "SPP generator interconnection active queue (includes ERAS rows)", "url": SPP_PAGE,
-                                "how": f"open CSV {SPP_CSV}, plain GET; last updated {updated or 'not shown'}; "
-                                       f"{len(rows)} requests, {len(sp)} in {cfg['name']}, "
-                                       f"{sum(1 for e in sp if e['gas_oil'])} gas or oil, "
-                                       f"{sum(1 for e in sp if e['fuel_unknown'])} thermal with no fuel shown"})
+                sources.append(source_record(
+                    "SPP generator interconnection active queue (includes ERAS rows)", "SPP", SPP_PAGE,
+                    f"open CSV {SPP_CSV}, plain GET; last updated {updated or 'not shown'}; "
+                    f"{len(rows)} requests, {len(sp)} in {cfg['name']}, "
+                    f"{sum(1 for e in sp if e['gas_oil'])} gas or oil, "
+                    f"{sum(1 for e in sp if e['fuel_unknown'])} thermal with no fuel shown",
+                    rows=len(rows), state_rows=len(sp), entries=sp, floor="SPP"))
             except Exception as e:  # noqa: BLE001
                 log(f"SPP failed: {e}")
-                sources.append({"name": "SPP", "url": SPP_PAGE, "how": f"NOT REACHED: {e}"})
+                sources.append(source_record("SPP", "SPP", SPP_PAGE, f"NOT REACHED: {e}"))
+        for m in cfg["markets"]:
+            if m not in READERS:
+                sources.append(source_record(
+                    m, m, "", f"NO READER: pull_queues.py cannot read the {m} queue yet; read it by hand "
+                              "and answer it in coverage.json under queues, key \"market " + m + "\""))
     by_plant, matched = match_all(plants, entries)
     unmatched, unknown = write_outputs(out_dir, cfg["name"], plants, entries, by_plant, matched, sources, today)
     for src in sorted({e["source"] for e in entries}):
@@ -544,6 +640,9 @@ def main():
             f"{sum(1 for e in es if e['gas_oil'] and not e['matched'])} unmatched, "
             f"{sum(1 for e in es if e.get('fuel_unknown'))} fuel-unknown leads")
     log(f"{len(entries)} entries; {len(matched)} matched; {len(unmatched)} unmatched gas or oil; {len(unknown)} fuel-hidden leads")
+    for s_ in sources:
+        log(f"completeness: {completeness_line(s_)}")
+    log(f"requests to answer in coverage.json under queues: {len(needs_answer(entries))}")
     for p in plants:
         log(f"  {p['name']}: {len(by_plant[p['id']])}")
 

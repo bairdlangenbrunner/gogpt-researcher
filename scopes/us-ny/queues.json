@@ -1,0 +1,12 @@
+{
+  "_about": "Queue settings for pull_queues.py --state NY. name is the State/Province value in the GEM export; markets are the queues read (New York is one market, NYISO; pull_queues.py has no NYISO reader yet, so the run records NO READER and the queue is read by hand: NYISO publishes its interconnection queue as an Excel file on its Interconnections page, and the batch answers it in coverage.json under queues, key \"market NYISO\", with every gas or oil request found under its own key); owner and shared_owner are only used for MISO, so both are empty; pjm_states is empty; known is empty. Every match still says check.",
+  "state": "NY",
+  "name": "New York",
+  "markets": [
+    "NYISO"
+  ],
+  "owner": "",
+  "shared_owner": "",
+  "pjm_states": [],
+  "known": {}
+}

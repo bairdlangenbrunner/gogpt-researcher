@@ -41,7 +41,8 @@
           "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
         ],
         "Status Data Source": [
-          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051",
+          "https://www.constructionequipmentguide.com/several-top-regional-contractors-are-building-10b-twin-aws-data-centers-in-mississippi/65887"
         ],
         "Turbine/Engine Technology Data Source": [
           "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
@@ -66,6 +67,13 @@
           "contains_value": true,
           "name_found": true,
           "note": "Mississippi air permit 1720-00098 for Amazon Data Services in Canton, issued 2024-12-04 and modified 2025-12-16. It lists each generator with its kW rating."
+        },
+        {
+          "url": "https://www.constructionequipmentguide.com/several-top-regional-contractors-are-building-10b-twin-aws-data-centers-in-mississippi/65887",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Construction Equipment Guide article of September 18, 2024, reprinted from the Magnolia Tribune. It says work began on the Madison County Megasite in Canton last fall, meaning fall 2023."
         }
       ],
       "tier": "high",
@@ -74,9 +82,30 @@
       ],
       "note": "The Mississippi air permit for the Canton site lists 10 smaller generators that GEM does not carry. Five house generators are 750 kilowatts each, two water treatment generators are 1,500 kilowatts each, and three building generators are 400, 400 and 250 kilowatts. Together they are 7.8 megawatts. The permit lists them in addition to the 326 large generators that GEM already has as Unit 1. Ridgeland and Meridian already show their small generators as a separate unit, so this follows the same pattern. Not found: the exact start date for these generators.",
       "researcher_notes": "The Mississippi Department of Environmental Quality air permit 1720-00098 for Amazon Data Services at Canton was issued on December 4, 2024 and modified on December 16, 2025. It lists 326 critical generators of 2,750 kilowatts each, which is 896.5 megawatts and matches GEM Unit 1. It also lists 5 house generators of 750 kilowatts, 2 water treatment generators of 1,500 kilowatts, 2 generators of 400 kilowatts and 1 of 250 kilowatts. Those 10 generators sum to 7.8 megawatts and are not in GEM. The permit total is 336 engines and 904.3 megawatts.",
-      "action": "Add Unit 2 to the Canton plant as a diesel internal combustion unit of 7.8 MW with 10 engines, status construction, Backup Power yes, captive power for a data center.",
+      "action": "Add Unit 2 to the Canton plant as a diesel internal combustion unit of 7.8 MW with 10 engines, status construction, Backup Power yes, captive power for a data center. Milestone timeline: add a construction milestone for 2023, when work began on the Canton site, with the Construction Equipment Guide article as the source. Add a pre-construction milestone for December 2024, when the state issued the air construction permit, with the permit as the source.",
       "country": "United States",
-      "record_id": "L100001088949:new:unit-2"
+      "record_id": "L100001088949:new:unit-2",
+      "milestones": [
+        {
+          "status": "construction",
+          "year": 2023,
+          "period": "",
+          "sources": [
+            "https://www.constructionequipmentguide.com/several-top-regional-contractors-are-building-10b-twin-aws-data-centers-in-mississippi/65887"
+          ],
+          "note": "A Construction Equipment Guide article of September 18, 2024 says work began on the Madison County Megasite in Canton the fall before.",
+          "period_note": "The article gives only last fall, so the month is not known. These ten generators are part of the same site work."
+        },
+        {
+          "status": "pre-construction",
+          "year": 2024,
+          "period": "December",
+          "sources": [
+            "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+          ],
+          "note": "Mississippi air construction permit 1720-00098 for the Canton site was issued December 4, 2024 and modified December 16, 2025. It covers all 336 engines, including these 10 smaller ones."
+        }
+      ]
     }
   ]
 }

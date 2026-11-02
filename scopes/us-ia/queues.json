@@ -1,0 +1,13 @@
+{
+  "_about": "Queue settings for pull_queues.py --state IA. name is the State/Province value in the GEM export; markets are the queues read (Iowa is almost all MISO; the northwest corner's cooperatives sit in SPP through Basin Electric); owner is the transmission owners or utilities whose state-blank MISO entries are kept as leads, fuel unknown (ITC Midwest and MidAmerican also serve Minnesota, Illinois and Missouri, so some of their blank entries are other states' projects; they are kept because Iowa's own new projects hide among them, and the brief says to check the state); shared_owner is neighboring owners whose blank entries are counted, not kept; pjm_states is empty; known is hand-checked patterns, GEM plant id to regexes that name that plant in a point of interconnection, project name or developer, empty until the first Iowa queue run is checked. Owner strings checked against the MISO queue 2026-10-30. Every match still says check.",
+  "state": "IA",
+  "name": "Iowa",
+  "markets": [
+    "MISO",
+    "SPP"
+  ],
+  "owner": "midamerican|itc midwest|alliant energy west|interstate power|central iowa power|cipco|muscatine|cedar falls|city of ames",
+  "shared_owner": "dairyland|smmpa|southern minnesota|ameren missouri|great river|american transmission|^atc\\b",
+  "pjm_states": [],
+  "known": {}
+}

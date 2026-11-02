@@ -612,21 +612,30 @@ EIA_DECISIONS = ("add (stage it as a new plant in the newplants lane)",
                  "already_in_gem (it sits under another name; give the GEM plant ID)")
 
 
+REGISTER_LABEL = {"eia": "EIA plant", "eea": "EEA combustion plant", "entsoe": "ENTSO-E unit"}
+
+
 def eia_lead_tasks(ids_path):
-    """EIA plants of 50 MW or more that match_ids.py found in no GEM plant, as
-    [{eia_id, name, capacity_mw, status, county, owner}]. Empty without the file."""
+    """Register plants that match_ids.py (EIA, 50 MW or more) or match_registers.py (European
+    Environment Agency, ENTSO-E) found in no GEM plant, as [{eia_id, register, name, capacity_mw,
+    status, county, owner}]. `eia_id` is the register's own ID. Empty without the file."""
     if not ids_path or not Path(ids_path).exists():
         return []
     data = json.loads(Path(ids_path).read_text(encoding="utf-8"))
     out = []
     for d in data.get("leads") or []:
-        if d.get("source") != "eia":
+        src = d.get("source")
+        if src not in REGISTER_LABEL:
             continue
-        m = re.search(r"\d+", d.get("ids") or "")
-        out.append({"eia_id": m.group(0) if m else "", "name": d.get("name"),
+        if src == "eia":
+            m = re.search(r"\d+", d.get("ids") or "")
+            rid = m.group(0) if m else ""
+        else:
+            rid = re.sub(r"^ENTSO-E:\s*", "", d.get("ids") or "")
+        out.append({"eia_id": rid, "register": REGISTER_LABEL[src], "name": d.get("name"),
                     "capacity_mw": d.get("capacity_mw"), "status": d.get("status"),
                     "county": d.get("county"), "owner": d.get("owner"),
-                    "staged_in": d.get("staged_in")})
+                    "staged_in": d.get("staged_in"), "basis": d.get("basis") if src != "eia" else None})
     return out
 
 
@@ -639,6 +648,12 @@ ADD_RULE = [
     "manual adds a plant whose capacity cannot be found with the cell blank and removes it later "
     "if it proves small. A missing start year, owner, turbine model or exact point never holds "
     "an add back: leave the field blank and say in researcher_notes what was not found.", "",
+    "Research the owner on every add all the same, and stage it (Baird 2026-10-29). The owner "
+    "is the company the documents name as building or owning the project: the developer, the "
+    "data center company, the utility or a project company. A legal entity name is not "
+    "needed. A landowner who only filed a zoning petition is not the owner, nor is a buyer of "
+    "the power. Run entity_lookup.py --pg and use the existing entity's exact name. Leave the "
+    "owner blank only when no source names any company behind the project.", "",
     "The manual's status ladder decides the status, never the add. A long-range planning "
     "document, a grid-operator interconnection queue entry or a press announcement is "
     "announced. A permit application, land, financing, a prior-approval docket or a signed "
@@ -815,22 +830,26 @@ def render_scope_brief(leads, coverage, batch_tag, threshold_mw=50):
     scopes/<tag>/coverage.json list (or None)."""
     L = ["# Scope-wide tasks", ""]
     L += [s.format(thr=threshold_mw) for s in ADD_RULE]
-    L += ["## EIA plants missing from GEM", ""]
+    european = any(d.get("register", "EIA plant") != "EIA plant" for d in leads)
+    L += ["## Register plants missing from GEM" if european else "## EIA plants missing from GEM", ""]
     if leads:
-        L += ["The EIA-860M file lists these plants and no GEM plant matches them. "
-              "Every one is a task. Decide each one and say why, with evidence:", ""]
+        L += [("The European registers (match_registers.py) list these plants and no GEM plant "
+               "matches them. Thermal input is not electrical capacity. "
+               if european else "The EIA-860M file lists these plants and no GEM plant matches them. ")
+              + "Every one is a task. Decide each one and say why, with evidence:", ""]
         L += [f"- {d}" for d in EIA_DECISIONS]
         L += ["", "Stage an add as a record in the newplants lane. For any other answer, "
               f"write it in batches/{batch_tag}/coverage.json under `ids_followup`, keyed "
-              "by EIA plant ID: `{\"decision\": \"below_threshold\", \"evidence\": "
+              f"by {'register ID' if european else 'EIA plant ID'}: `{{\"decision\": \"below_threshold\", \"evidence\": "
               "\"...\", \"gem_plant_id\": \"\"}`. A plant with no answer fails the gate "
               "`ids_followup`.", ""]
         for d in leads:
-            bits = [f"EIA plant {d['eia_id']}: {d['name']}",
+            bits = [f"{d.get('register', 'EIA plant')} {d['eia_id']}: {d['name']}",
                     f"{d['capacity_mw']} MW" if d.get("capacity_mw") not in (None, "") else "capacity not given",
                     f"status {d['status']}" if d.get("status") else "status not given"]
             extra = ", ".join(x for x in (d.get("county"), d.get("owner")) if x)
             L.append("- " + "; ".join(bits) + (f" ({extra})" if extra else "")
+                     + (f". Basis: {d['basis']}" if d.get("basis") else "")
                      + (f". {d['staged_in']}" if d.get("staged_in") else ""))
         L.append("")
     else:
@@ -843,9 +862,17 @@ def render_scope_brief(leads, coverage, batch_tag, threshold_mw=50):
               "nothing did\"}`. A source you could not read is `blocked`, with an `access` note "
               "that says what fetch.py returned and what the Wayback lookup found. Never "
               "write \"not searched\" or \"skipped\". A search form, a script or a paged "
-              "table is never a reason to stop.", ""]
+              "table is never a reason to stop. The permit record system (marked below) is "
+              "searched by name for every GEM plant in the scope and for every project or "
+              "data center lead, not only browsed: a public notice feed lists only the "
+              "permits that went to notice, and a small construction permit never does. "
+              "\"No permit found\" for a named site is only true once that system was "
+              "searched for the name, and the note says so.", ""]
         for c in coverage:
-            L.append(f"- {c.get('id')}: {c.get('name')} ({c.get('url')}). {c.get('what')}")
+            role = {"permit_record": " [permit record system]",
+                    "permit_notices": " [public notice feed]"}.get(c.get("role"), "")
+            L.append(f"- {c.get('id')}{role}: {c.get('name')} ({c.get('url')}). {c.get('what')}"
+                     + (f" Gap: {c['gap']}" if c.get("gap") else ""))
         L.append("")
     return "\n".join(L)
 
@@ -1617,7 +1644,7 @@ def main():
         "location": location_index,
         # EIA plants missing from GEM (match_ids.py leads): one named task each in
         # briefs/_scope.md; state_gate gate `ids_followup` checks every one is answered
-        "ids_followup": ([{k: d[k] for k in ("eia_id", "name", "capacity_mw", "status")}
+        "ids_followup": ([{k: d.get(k) for k in ("eia_id", "register", "name", "capacity_mw", "status")}
                           for d in eia_leads] if a.ids else None),
         "coverage_list": (str(cov_list.relative_to(REPO_ROOT)) if coverage else None),
         "coverage_ids": [c.get("id") for c in coverage or []]}, indent=2, ensure_ascii=False),

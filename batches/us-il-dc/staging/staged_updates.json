@@ -20,7 +20,293 @@
       "match_no_new_url": 0,
       "status_downgraded": 0,
       "tier_promoted": 0
-    }
+    },
+    "records": 6
   },
-  "records": []
+  "records": [
+    {
+      "gem_plant_id": "L100001089104",
+      "plant_name": "Compass Hoffman Estates Data Center power station",
+      "country": "United States",
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "checks": [
+        39
+      ],
+      "gem_unit_id": "G100001101406",
+      "unit_name": "1",
+      "record_id": "L100001089104:G100001101406:backup-power",
+      "cluster": "G100001101406",
+      "verdict": "change",
+      "fields": {
+        "Backup Power": "yes"
+      },
+      "current": {
+        "Backup Power": "no"
+      },
+      "refs": {
+        "Backup Power Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047",
+          "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/9420",
+          "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/9421"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Illinois EPA revised construction permit for Compass Datacenters ORD I, LLC at 3333 Beverly Road, Hoffman Estates, Cook County, application 23110012, received January 12, 2026 and issued February 18, 2026, site number 031449AEJ. It covers two hundred 2,000 kWe, five 500 kWe and five 800 kWe diesel emergency generator sets."
+        },
+        {
+          "url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/9420",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Illinois EPA document for application 23110012 (Compass Datacenters ORD I). Names 3333 Beverly Road, 200 generators of 2,000 kWe and 5 of 1,250 kWe."
+        },
+        {
+          "url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/9421",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Illinois EPA document for application 23110012 (Compass Datacenters ORD I). Names 3333 Beverly Road, 200 generators of 2,000 kWe and 5 of 1,250 kWe."
+        }
+      ],
+      "researcher_notes": "The database row for unit 1 of Compass Hoffman Estates, 200 diesel emergency generators of 2 MW, has Backup Power set to no and the two captive boxes empty. The Illinois EPA permits for the site, the June 2024 draft documents and the revised construction permit of February 18, 2026, describe every generator as a diesel emergency generator at a data center. Unit 2 of the same plant already says Backup Power yes, Captive industry use power and Captive industry type data center. Unit 1 should match.",
+      "action": "Set Backup Power of unit 1 (G100001101406) to yes. It now says no. Add the 3 links below to the Backup Power Data Source box, which is empty."
+    },
+    {
+      "gem_plant_id": "L100001089104",
+      "plant_name": "Compass Hoffman Estates Data Center power station",
+      "country": "United States",
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "checks": [
+        39
+      ],
+      "gem_unit_id": "G100001101406",
+      "unit_name": "1",
+      "record_id": "L100001089104:G100001101406:captive-industry-use",
+      "cluster": "G100001101406",
+      "verdict": "fill",
+      "fields": {
+        "Captive industry use": "power"
+      },
+      "current": {
+        "Captive industry use": ""
+      },
+      "refs": {
+        "Captive Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047",
+          "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/9420",
+          "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/9421"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Illinois EPA revised construction permit for Compass Datacenters ORD I, LLC at 3333 Beverly Road, Hoffman Estates, Cook County, application 23110012, received January 12, 2026 and issued February 18, 2026, site number 031449AEJ. It covers two hundred 2,000 kWe, five 500 kWe and five 800 kWe diesel emergency generator sets."
+        },
+        {
+          "url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/9420",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Illinois EPA document for application 23110012 (Compass Datacenters ORD I). Names 3333 Beverly Road, 200 generators of 2,000 kWe and 5 of 1,250 kWe."
+        },
+        {
+          "url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/9421",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Illinois EPA document for application 23110012 (Compass Datacenters ORD I). Names 3333 Beverly Road, 200 generators of 2,000 kWe and 5 of 1,250 kWe."
+        }
+      ],
+      "researcher_notes": "The database row for unit 1 of Compass Hoffman Estates, 200 diesel emergency generators of 2 MW, has Backup Power set to no and the two captive boxes empty. The Illinois EPA permits for the site, the June 2024 draft documents and the revised construction permit of February 18, 2026, describe every generator as a diesel emergency generator at a data center. Unit 2 of the same plant already says Backup Power yes, Captive industry use power and Captive industry type data center. Unit 1 should match.",
+      "action": "Set Captive industry use of unit 1 (G100001101406) to power. The box is empty now. Add the 3 links below to the Captive Data Source box, which is empty."
+    },
+    {
+      "gem_plant_id": "L100001089104",
+      "plant_name": "Compass Hoffman Estates Data Center power station",
+      "country": "United States",
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "checks": [
+        39
+      ],
+      "gem_unit_id": "G100001101406",
+      "unit_name": "1",
+      "record_id": "L100001089104:G100001101406:captive-industry-type",
+      "cluster": "G100001101406",
+      "verdict": "fill",
+      "fields": {
+        "Captive industry type": "data center"
+      },
+      "current": {
+        "Captive industry type": ""
+      },
+      "refs": {
+        "Captive Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047",
+          "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/9420",
+          "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/9421"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Illinois EPA revised construction permit for Compass Datacenters ORD I, LLC at 3333 Beverly Road, Hoffman Estates, Cook County, application 23110012, received January 12, 2026 and issued February 18, 2026, site number 031449AEJ. It covers two hundred 2,000 kWe, five 500 kWe and five 800 kWe diesel emergency generator sets."
+        },
+        {
+          "url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/9420",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Illinois EPA document for application 23110012 (Compass Datacenters ORD I). Names 3333 Beverly Road, 200 generators of 2,000 kWe and 5 of 1,250 kWe."
+        },
+        {
+          "url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/9421",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Illinois EPA document for application 23110012 (Compass Datacenters ORD I). Names 3333 Beverly Road, 200 generators of 2,000 kWe and 5 of 1,250 kWe."
+        }
+      ],
+      "researcher_notes": "The database row for unit 1 of Compass Hoffman Estates, 200 diesel emergency generators of 2 MW, has Backup Power set to no and the two captive boxes empty. The Illinois EPA permits for the site, the June 2024 draft documents and the revised construction permit of February 18, 2026, describe every generator as a diesel emergency generator at a data center. Unit 2 of the same plant already says Backup Power yes, Captive industry use power and Captive industry type data center. Unit 1 should match.",
+      "action": "Set Captive industry type of unit 1 (G100001101406) to data center. The box is empty now. The Captive Data Source links are the same 3 as for Captive industry use."
+    },
+    {
+      "gem_plant_id": "L100001089104",
+      "plant_name": "Compass Hoffman Estates Data Center power station",
+      "country": "United States",
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "checks": [
+        39
+      ],
+      "gem_unit_id": "G100001101405",
+      "unit_name": "2",
+      "record_id": "L100001089104:G100001101405:capacity-mw",
+      "cluster": "G100001101405",
+      "verdict": "change",
+      "fields": {
+        "Capacity (MW)": "2.5"
+      },
+      "current": {
+        "Capacity (MW)": "6.25"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Illinois EPA revised construction permit for Compass Datacenters ORD I, LLC at 3333 Beverly Road, Hoffman Estates, Cook County, application 23110012, received January 12, 2026 and issued February 18, 2026, site number 031449AEJ. It covers two hundred 2,000 kWe, five 500 kWe and five 800 kWe diesel emergency generator sets."
+        }
+      ],
+      "researcher_notes": "The database row for unit 2 of Compass Hoffman Estates says 5 generators of 1.25 MW, 6.25 MW in all. That follows the June 2024 draft permit, which listed five 1,250 kWe sets. The revised construction permit issued February 18, 2026 replaced them with five 500 kWe sets and five 800 kWe sets. So unit 2 becomes 5 generators of 0.5 MW, 2.5 MW, and the five 800 kWe sets, 4.0 MW, are added as a new unit 3 in this batch.",
+      "action": "Set Capacity (MW) of unit 2 (G100001101405) to 2.5. It now says 6.25. Add the link below to the Capacity Data Source box. Keep the links already there."
+    },
+    {
+      "gem_plant_id": "L100001089104",
+      "plant_name": "Compass Hoffman Estates Data Center power station",
+      "country": "United States",
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "checks": [
+        39
+      ],
+      "gem_unit_id": "G100001101405",
+      "unit_name": "2",
+      "record_id": "L100001089104:G100001101405:capacity-per-engine",
+      "cluster": "G100001101405",
+      "verdict": "change",
+      "fields": {
+        "Capacity Per Engine": "0.5"
+      },
+      "current": {
+        "Capacity Per Engine": "1.25"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Illinois EPA revised construction permit for Compass Datacenters ORD I, LLC at 3333 Beverly Road, Hoffman Estates, Cook County, application 23110012, received January 12, 2026 and issued February 18, 2026, site number 031449AEJ. It covers two hundred 2,000 kWe, five 500 kWe and five 800 kWe diesel emergency generator sets."
+        }
+      ],
+      "researcher_notes": "The database row for unit 2 of Compass Hoffman Estates says 5 generators of 1.25 MW, 6.25 MW in all. That follows the June 2024 draft permit, which listed five 1,250 kWe sets. The revised construction permit issued February 18, 2026 replaced them with five 500 kWe sets and five 800 kWe sets. So unit 2 becomes 5 generators of 0.5 MW, 2.5 MW, and the five 800 kWe sets, 4.0 MW, are added as a new unit 3 in this batch.",
+      "action": "Set Capacity Per Engine of unit 2 (G100001101405) to 0.5. It now says 1.25. The Capacity Data Source link is the same as for Capacity (MW)."
+    },
+    {
+      "gem_plant_id": "L100001089100",
+      "plant_name": "Aligned Elk Grove Village Data Center power station",
+      "country": "United States",
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "checks": [
+        39
+      ],
+      "gem_unit_id": "G100001101398",
+      "unit_name": "1",
+      "record_id": "L100001089100:G100001101398:captive-industry-use",
+      "cluster": "G100001101398",
+      "verdict": "fill",
+      "fields": {
+        "Captive industry use": "power"
+      },
+      "current": {
+        "Captive industry use": ""
+      },
+      "refs": {
+        "Captive Data Source": [
+          "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/9820",
+          "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/9881"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/9820",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Illinois EPA document for the Aligned Data Centers (EGV) PropCo application at 800 East Devon Avenue, Elk Grove Village. Names diesel emergency generators of 3,000 kWe at the data center."
+        },
+        {
+          "url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/9881",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Illinois EPA document for the Aligned Data Centers (EGV) PropCo application at 800 East Devon Avenue, Elk Grove Village. Names diesel emergency generators of 3,000 kWe at the data center."
+        }
+      ],
+      "researcher_notes": "The database row for unit 1 of Aligned Elk Grove Village has Captive industry type data center and Backup Power yes, but the Captive industry use box is empty. Unit 2 of the same plant says power. The Illinois EPA permit documents already in the Captive Data Source box describe diesel emergency generators serving the data center, so unit 1 should say power too.",
+      "action": "Set Captive industry use of unit 1 (G100001101398) to power. The box is empty now. The 2 links below are already in the Captive Data Source box; nothing to add there."
+    }
+  ]
 }

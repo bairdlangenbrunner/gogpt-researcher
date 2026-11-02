@@ -1,0 +1,408 @@
+{
+ "meta": {
+  "plant_id": "L100000104096",
+  "plant_name": "Spiritwood Industrial Park",
+  "state": "North Dakota",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-29T16:40:00-04:00",
+  "done": true,
+  "urls_attempted": 9,
+  "urls_verified": 8
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001017988",
+   "unit_name": "Unit 1, timepoint 2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 56786, Spiritwood Station, generator 1, as operating. Nameplate is 106.2 MW and there is no planned retirement date. The Great River Energy 2026 North Dakota ten-year plan (https://www.psc.nd.gov/webdocs/case/26-0279/001-010.pdf) still lists the station as a working heat and power plant. I found no retirement, mothballing or owner change."
+    },
+    "Capacity (MW)": {
+     "value": "106.2",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) shows plant 56786, generator 1, status OP, nameplate 106.2 MW, operating year 2014. This is a live replacement for the dead Great River Energy fact sheet. The utility's own ten-year plan lists 99 MW, which is a lower generating capability figure, so GEM keeps the nameplate."
+    },
+    "CHP": {
+     "value": "yes",
+     "refs": [
+      "https://www.psc.nd.gov/webdocs/case/26-0279/001-010.pdf",
+      "https://www.psc.nd.gov/webdocs/case/16-0490/001-010.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.psc.nd.gov/webdocs/case/26-0279/001-010.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.psc.nd.gov/webdocs/case/16-0490/001-010.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Great River Energy 2026 ten-year plan (https://www.psc.nd.gov/webdocs/case/26-0279/001-010.pdf) lists Spiritwood Station as a heat and power plant. The 2016 ten-year plan (https://www.psc.nd.gov/webdocs/case/16-0490/001-010.pdf) calls it a combined heat and power plant that began commercial operation on November 1, 2014. Both are filings by the same company, so they are one origin."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Siemens SST-800",
+     "refs": [
+      "https://www.psc.nd.gov/webdocs/case/26-0279/001-010.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.psc.nd.gov/webdocs/case/26-0279/001-010.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Great River Energy 2026 ten-year plan (https://www.psc.nd.gov/webdocs/case/26-0279/001-010.pdf) lists Spiritwood Station as heat and power, one unit, Siemens SST 800, fuel natural gas and coal, 99 MW. The boiler is a Babcock and Wilcox unit per the air permit renewal application of October 2025 (https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349). I report the turbine maker and model."
+    },
+    "Start year": {
+     "value": "2022",
+     "refs": [
+      "https://www.psc.nd.gov/webdocs/case/22-0275/001-010.pdf",
+      "https://www.psc.nd.gov/webdocs/case/20-0333/001-010.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.psc.nd.gov/webdocs/case/22-0275/001-010.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.psc.nd.gov/webdocs/case/20-0333/001-010.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The 2020 ten-year plan (https://www.psc.nd.gov/webdocs/case/20-0333/001-010.pdf) says the gas conversion would be finished by the end of 2022. The July 2022 ten-year plan (https://www.psc.nd.gov/webdocs/case/22-0275/001-010.pdf) says the station has been retrofitted to allow 100 percent natural gas generation. Neither gives the month gas first ran, so 2022 is the latest year it could have started. GEM shows 2014, the year the unit began on coal. The human should add the new start year with these two links. The coal unit's retired year is 2022, so the gas start cannot be earlier."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://www.psc.nd.gov/webdocs/case/20-0333/001-010.pdf",
+      "https://www.psc.nd.gov/webdocs/case/22-0275/001-010.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.psc.nd.gov/webdocs/case/20-0333/001-010.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.psc.nd.gov/webdocs/case/22-0275/001-010.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The 2020 ten-year plan (https://www.psc.nd.gov/webdocs/case/20-0333/001-010.pdf) says Great River Energy intends to convert Spiritwood Station from coal to natural gas. The 2022 plan (https://www.psc.nd.gov/webdocs/case/22-0275/001-010.pdf) says the retrofit is done."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.psc.nd.gov/webdocs/case/20-0333/001-010.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.psc.nd.gov/webdocs/case/20-0333/001-010.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The 2020 ten-year plan (https://www.psc.nd.gov/webdocs/case/20-0333/001-010.pdf) says Spiritwood Station will remain a full-time generating facility. That means it is not a backup unit. The document does not use the words backup power."
+    },
+    "CCS attachment?": {
+     "value": "no",
+     "refs": [
+      "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349",
+      "https://www.psc.nd.gov/webdocs/case/25-0263/001-010.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.psc.nd.gov/webdocs/case/25-0263/001-010.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The air permit renewal application of October 2025 (https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349) proposes a yearly megawatt-hour limit so that Unit 1 is exempt from the carbon capture rules, which means no capture equipment is installed. The Otter Tail Power filing in commission case PU-25-263 (https://www.psc.nd.gov/webdocs/case/25-0263/001-010.pdf) describes a separate DSA Capture Company carbon capture facility next to the ethanol plant in the Spiritwood Energy Park. It is not attached to the power plant."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Latest Activity (not filled for an operating unit)",
+    "Fuel (no change proposed, see question)"
+   ],
+   "notes": "The unit is still operating per EIA. The start year probably should move from 2014 to 2022, the year the gas retrofit was finished. No retirement or planned retirement date was found."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Great River Energy Cooperative [100%]",
+   "refs": [
+    "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349",
+    "https://www.psc.nd.gov/webdocs/case/26-0279/001-010.pdf"
+   ],
+   "verifications": [
+    {
+     "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.psc.nd.gov/webdocs/case/26-0279/001-010.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The air permit renewal application of October 2025 (https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349) names Great River Energy as the permit holder for Spiritwood Station. The 2026 ten-year plan (https://www.psc.nd.gov/webdocs/case/26-0279/001-010.pdf) lists the station in Great River Energy's own portfolio. The EIA-860M table for September 2026 also lists Great River Energy as the entity. No document gives a share, but none names another owner. The value matches GEM."
+  },
+  "Latitude": {
+   "value": "46.92551",
+   "refs": [
+    "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349"
+   ],
+   "verifications": [
+    {
+     "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The air permit renewal application of October 2025 (https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349) gives the site as latitude 46.92589 and longitude -98.50071. That is about 120 meters from GEM's point, so GEM's point stays. The EIA-860M table for September 2026 has 46.92642, -98.49971, about 210 meters away. All three are the same site."
+  },
+  "Longitude": {
+   "value": "-98.50217",
+   "refs": [
+    "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349"
+   ],
+   "verifications": [
+    {
+     "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "See the latitude note. The permit application point is about 120 meters from GEM's longitude, so no change."
+  },
+  "Location accuracy": {
+   "value": "exact",
+   "refs": [
+    "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349"
+   ],
+   "verifications": [
+    {
+     "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "Coordinates stated in a permit application make the point exact under the manual. GEM already shows exact."
+  }
+ },
+ "location": {
+  "method": "published",
+  "location_route": "The air permit renewal application of October 2025 states the site coordinates, and they sit within about 120 meters of GEM's point.",
+  "moved_m": 120,
+  "control_points": [],
+  "fit_m": null,
+  "image": "",
+  "needs_review": false,
+  "review_note": ""
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100001017988",
+   "concern_type": "Fuel",
+   "question": "Should Spiritwood Unit 1 keep coal in its fuel list?",
+   "finding": "GEM lists natural gas only. The air permit renewal application of October 2025 (https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349) lets the main boiler burn lignite, natural gas or propane, with coal limited to 10 percent of heat input in the gas scenario. The 2026 ten-year plan (https://www.psc.nd.gov/webdocs/case/26-0279/001-010.pdf) lists the fuel as natural gas and coal.",
+   "recommendation": "Leave the fuel as natural gas for now. Ask the project manager whether to add coal: lignite as a second fuel, since the permit still allows it.",
+   "note": "I found no document that says how much coal was burned in recent years. EIA-923 fuel data was not read in this pass.",
+   "refs": [
+    "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349",
+    "https://www.psc.nd.gov/webdocs/case/26-0279/001-010.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001017988",
+   "concern_type": "Start year",
+   "question": "Is 2022 the right gas start year for Spiritwood Unit 1?",
+   "finding": "The July 2022 ten-year plan (https://www.psc.nd.gov/webdocs/case/22-0275/001-010.pdf) says the retrofit for 100 percent gas was done. The 2020 plan (https://www.psc.nd.gov/webdocs/case/20-0333/001-010.pdf) targeted the end of 2022, with gas as the main fuel from 2023.",
+   "recommendation": "Use 2022 as the start year for the converted unit. If the reviewer wants the first full year on gas, use 2023.",
+   "note": "I found no document with the month gas was first burned.",
+   "refs": [
+    "https://www.psc.nd.gov/webdocs/case/22-0275/001-010.pdf",
+    "https://www.psc.nd.gov/webdocs/case/20-0333/001-010.pdf"
+   ],
+   "proposed_value": {
+    "Start year": "2022"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Great River Energy Cooperative",
+   "role": "owner",
+   "lookup_result": "Entity appears on 15 units in the United States. Reuse the existing entity."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "EIA-860M September 2026, plant 56786 row read."
+  },
+  {
+   "url": "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349",
+   "used_for": [
+    "Owner(s)",
+    "Latitude",
+    "Longitude",
+    "CCS attachment?"
+   ],
+   "outcome": "verified",
+   "note": "Title V renewal application read in full."
+  },
+  {
+   "url": "https://www.psc.nd.gov/webdocs/case/26-0279/001-010.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "CHP",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "2026 ten-year plan."
+  },
+  {
+   "url": "https://www.psc.nd.gov/webdocs/case/22-0275/001-010.pdf",
+   "used_for": [
+    "Start year",
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "2022 ten-year plan."
+  },
+  {
+   "url": "https://www.psc.nd.gov/webdocs/case/20-0333/001-010.pdf",
+   "used_for": [
+    "Conversion/replacement?",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "2020 ten-year plan."
+  },
+  {
+   "url": "https://www.psc.nd.gov/webdocs/case/25-0263/001-010.pdf",
+   "used_for": [
+    "CCS attachment?"
+   ],
+   "outcome": "verified",
+   "note": "Otter Tail Power filing for DSA Capture."
+  },
+  {
+   "url": "https://www.psc.nd.gov/webdocs/case/16-0490/001-010.pdf",
+   "used_for": [
+    "CHP"
+   ],
+   "outcome": "verified",
+   "note": "2016 ten-year plan."
+  },
+  {
+   "url": "https://greatriverenergy.com/wp-content/uploads/2015/05/052918-spiritwood-fact-sheet.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "CHP"
+   ],
+   "outcome": "dead",
+   "note": "The live address returns 404. The Wayback copy from December 2021 loads and says the plant is combined heat and power and can make up to 99 megawatts. That is an older figure than 106, so EIA and the resource plans carry the capacity."
+  },
+  {
+   "url": "https://www.jamestownsun.com/business/energy-and-mining/6482711-Spiritwood-Station-converting-to-natural-gas",
+   "used_for": [
+    "Fuel"
+   ],
+   "outcome": "verified",
+   "note": "Existing source, loads, 2020 article."
+  },
+  {
+   "url": "https://web.archive.org/web/20211205204607/https://greatriverenergy.com/wp-content/uploads/2015/05/052918-spiritwood-fact-sheet.pdf",
+   "used_for": [
+    "CHP"
+   ],
+   "outcome": "verified",
+   "note": "Saved copy from December 2021 of the Great River Energy Spiritwood Station fact sheet. It says the plant is combined heat and power and can make up to 99 megawatts."
+  }
+ ]
+}

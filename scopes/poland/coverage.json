@@ -1,0 +1,94 @@
+[
+  {
+    "id": "pse-connection-list",
+    "name": "PSE list of projects asking to connect to the transmission grid (article 7 section 8l)",
+    "url": "https://www.pse.pl/documents/20182/51490/Informacje_publikowane_zgodnie_z_Art_7_ust_8l_ustawy_PE.xlsx",
+    "what": "Use batches/poland/harvest/queues.json from scopes/poland/harvest_pse.py. Answer every row with a gas type code (BG, BGP, SG, JS) or a gas word in the name: matched to a GEM plant and checked, staged as an add, or a qa record. Rows include Turów, Pątnów, Opole Dobrzeń, Kraków Wanda, Lublin Abramowice, Łaziska and the Połaniec peaker."
+  },
+  {
+    "id": "pse-capacity-auctions",
+    "name": "PSE capacity market main auction results, delivery years 2021 to 2030",
+    "url": "https://www.pse.pl/aukcje-mocy",
+    "what": "Use the auction rows in batches/poland/harvest/queues.json. Every new or upgraded unit on a 15 or 17 year contract is answered: matched to a GEM unit, identified as not gas, or researched as a possible add. Obligation MW are never staged as capacity."
+  },
+  {
+    "id": "pse-additional-auctions",
+    "name": "PSE capacity market additional (quarterly) auction results",
+    "url": "https://www.pse.pl/aukcje-dodatkowe-archiwum",
+    "what": "Skim the newest year for unit names not seen in the main auctions."
+  },
+  {
+    "id": "ure-registers",
+    "name": "URE registers, including generation licenses",
+    "url": "https://rejestry.ure.gov.pl/",
+    "what": "Retry through fetch.py with a slow pace and a full browser load. If it opens, check each GEM plant's operator holds a generation license and list gas licensees with no GEM plant. If every route fails on a second day, record what was tried."
+  },
+  {
+    "id": "ure-bip-decisions",
+    "name": "URE public information site, license decisions",
+    "url": "https://bip.ure.gov.pl/bip/rejestry-i-bazy",
+    "what": "Search the decisions for license grants or changes naming a GEM plant or a gas unit GEM lacks."
+  },
+  {
+    "id": "marshal-integrated-permits",
+    "name": "Integrated permit lists on the 16 marshal offices' public information sites",
+    "url": "https://bip.kujawsko-pomorskie.pl/4416/srodowisko-pozwolenia-zintegrowane-dla-instalacji-przemyslowych.html",
+    "what": "Use scopes/poland/work/permits/ from scopes/poland/harvest_permits.py. For each region holding a GEM plant or a candidate, read every permit or permit change for a gas or oil combustion plant from 2020 on and record capacity, units and dates.",
+    "role": "permit_record",
+    "gap": "Integrated permits cover combustion plants at or above the industrial emissions threshold (50 MW thermal); a smaller plant holds a sector emission permit from the county or city office, read under city-bip-decisions, and the environmental decision under govpl-rdos-gdos."
+  },
+  {
+    "id": "govpl-rdos-gdos",
+    "name": "Regional and national environment office decisions and notices on gov.pl",
+    "url": "https://www.gov.pl/api/data/search",
+    "what": "Use the gov.pl search results the permit harvester saves for every GEM plant and candidate name, and read each matched decision or notice."
+  },
+  {
+    "id": "city-bip-decisions",
+    "name": "City and town public information sites (environmental decisions by the city head)",
+    "url": "https://wykaz.ekoportal.pl/",
+    "what": "For every plant in development, find its environmental decision: look up the case on the ekoportal list by municipality, then read the decision on the city site. Record which plants have none online."
+  },
+  {
+    "id": "eea-lcp",
+    "name": "European Environment Agency large combustion plant and industrial installation tables, version 16",
+    "url": "https://sdi.eea.europa.eu/datashare/s/AnfiqFkZYBSq36B",
+    "what": "List every Polish large combustion plant burning natural gas in 2023 or 2024 and answer each: matched to a GEM plant, under 20 MW electric, or a possible add."
+  },
+  {
+    "id": "entsoe-units",
+    "name": "ENTSO-E installed capacity per production unit, Poland",
+    "url": "https://transparency.entsoe.eu/generation/r2/installedCapacityPerProductionUnit/show",
+    "what": "With the API token, pull gas and oil units for Poland and match each to a GEM unit; a unit GEM lacks is a possible add, a capacity disagreement is a task."
+  },
+  {
+    "id": "pse-unit-output",
+    "name": "PSE open data, generation per unit",
+    "url": "https://api.raporty.pse.pl/api/gen-jw",
+    "what": "For every unit GEM shows under construction with a start year of 2026 or earlier, check whether the unit code reports output, and cite it as evidence of operation only alongside a named source."
+  },
+  {
+    "id": "company-releases",
+    "name": "Owner press rooms: PGE, PGE Energia Ciepła, Orlen, Energa, Enea, Tauron, Veolia, Fortum, CEZ, Polenergia, KGHM, Synthos, Grupa Azoty",
+    "url": "https://www.gkpge.pl/media",
+    "what": "Read each owner's releases from 2024 on for gas plant decisions, contracts, start-ups and closures, and each annual report's list of units."
+  },
+  {
+    "id": "trade-press",
+    "name": "Polish energy trade press: wnp.pl, cire.pl, enerad.pl, gramwzielone.pl, wysokienapiecie.pl, energetyka24.com",
+    "url": "https://www.cire.pl/",
+    "what": "Search each for gas plant news from 2025 on, by plant and owner name, and for new gas engine sets at heat plants."
+  },
+  {
+    "id": "data-centers",
+    "name": "Data center campuses with backup generation",
+    "url": "https://www.datacentermap.com/poland/",
+    "what": "Use scopes/poland/work/permits/_data_centers.md from data_center_fleets.py. Answer every campus whose summed backup generators may reach 20 MW, starting with Atman Warsaw-3, Equinix WA3 and WA4, Data4 Jawczyce, Vantage WAW1 and Beyond.pl Poznań."
+  },
+  {
+    "id": "coal-side",
+    "name": "Coal plants in the unfiltered export",
+    "url": "https://gem-project-db.herokuapp.com/",
+    "what": "For each live coal plant (Bełchatów, Opole, Łaziska, Turów, Pątnów, Konin, Połaniec, Jaworzno, Kozienice and the city heat plants), check for a gas unit added or planned at the site or a conversion to gas."
+  }
+]

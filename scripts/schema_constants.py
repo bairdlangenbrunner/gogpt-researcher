@@ -175,6 +175,26 @@ ADDITIVE_TEXT_COLUMNS = ("Status Detail", "Notes")
 # name and the build never merges it into a Data Source cell.
 INLINE_SOURCE_COLUMNS = ("Status Detail",)
 
+# --- Milestone timeline entries (Baird 2026-11-02) ---------------------------
+# A staged status always comes with a dated milestone entry for that status:
+# the database's milestone_timeline row (status, eventYear,
+# eventMonthOrHalfYear, statusDatasource). The period is the finest the source
+# gives: a full month name, a quarter or a half, as the web form stores it.
+# Staged on the unit (a newplants unit, a newunits or updates record) as
+#   "milestones": [{"status": "construction", "year": 2025, "period": "May",
+#                   "sources": [url, ...], "note": "the air construction permit
+#                   was issued May 16, 2025"}]
+# A blank period needs a period_note saying what was looked for. Earlier steps
+# (announced, pre-construction) may be added when found; they are optional.
+MONTHS = ("January", "February", "March", "April", "May", "June", "July",
+          "August", "September", "October", "November", "December")
+MILESTONE_PERIODS = MONTHS + ("Q1", "Q2", "Q3", "Q4", "H1", "H2")
+
+
+def milestone_label(m):
+    """'May 2025', 'H2 2024', '2023' for one staged milestone entry."""
+    return " ".join(str(x) for x in (m.get("period") or "", m.get("year") or "") if str(x).strip())
+
 # --- The add threshold and the watch list (Baird 2026-10-23) -----------------
 # A project GEM lacks is ADDED (newplants or newunits) as soon as one verified
 # public source names a gas or oil generating project, places it in scope, and

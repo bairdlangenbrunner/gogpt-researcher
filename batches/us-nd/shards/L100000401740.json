@@ -1,0 +1,868 @@
+{
+ "meta": {
+  "plant_id": "L100000401740",
+  "plant_name": "Lonesome Creek Station",
+  "state": "North Dakota",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-29T18:22:10-04:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402504",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists this unit as operating. Matching row: Plant 57943, generator 01, status operating, nameplate 60.5 MW, no planned retirement, began operating November 2013. It shows no planned retirement, mothballing or owner change."
+    },
+    "Capacity (MW)": {
+     "value": "61.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx gives 60.5 MW nameplate for this unit. GEM shows 61.0 MW, which is the same figure rounded up, so no change is needed."
+    },
+    "Turbine/Engine Technology": {
+     "value": "aeroderivative gas turbine",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The North Dakota air quality draft Title V permit renewal from June 2026 at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf says the station has six GE LM6000 PF Sprint simple cycle gas turbines. The LM6000 is an aeroderivative turbine, but the permit does not use that word. GEM now says gas turbine."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE LM6000 PF Sprint",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The draft Title V permit renewal from June 2026 at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf says the station has six GE Model LM6000 PF Sprint simple cycle natural gas turbines, each rated at 46.0 MW gross."
+    },
+    "Number Of Engines": {
+     "value": "1",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The draft permit at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf lists each unit as one LM6000 turbine, so each unit has one engine."
+    },
+    "Capacity Per Engine": {
+     "value": "61.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Each unit is one turbine, so the capacity per engine equals the unit capacity of 61.0 MW. The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx gives 60.5 MW."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The draft permit at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf calls the station a natural gas-fired electric generating peaking plant. It sells to the grid and no document describes it as backup power. So the value stays no."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Latest Activity"
+   ],
+   "notes": "The unit is operating in the EIA table for September 2026. No retirement, mothballing or owner change was found. Latest Activity is left alone because the unit is operating."
+  },
+  {
+   "gem_unit_id": "G100000402505",
+   "unit_name": "2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists this unit as operating. Matching row: Plant 57943, generator 02, status operating, nameplate 60.5 MW, no planned retirement, began operating January 2015. It shows no planned retirement, mothballing or owner change."
+    },
+    "Capacity (MW)": {
+     "value": "61.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx gives 60.5 MW nameplate for this unit. GEM shows 61.0 MW, which is the same figure rounded up, so no change is needed."
+    },
+    "Turbine/Engine Technology": {
+     "value": "aeroderivative gas turbine",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The North Dakota air quality draft Title V permit renewal from June 2026 at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf says the station has six GE LM6000 PF Sprint simple cycle gas turbines. The LM6000 is an aeroderivative turbine, but the permit does not use that word. GEM now says gas turbine."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE LM6000 PF Sprint",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The draft Title V permit renewal from June 2026 at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf says the station has six GE Model LM6000 PF Sprint simple cycle natural gas turbines, each rated at 46.0 MW gross."
+    },
+    "Number Of Engines": {
+     "value": "1",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The draft permit at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf lists each unit as one LM6000 turbine, so each unit has one engine."
+    },
+    "Capacity Per Engine": {
+     "value": "61.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Each unit is one turbine, so the capacity per engine equals the unit capacity of 61.0 MW. The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx gives 60.5 MW."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The draft permit at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf calls the station a natural gas-fired electric generating peaking plant. It sells to the grid and no document describes it as backup power. So the value stays no."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Latest Activity"
+   ],
+   "notes": "The unit is operating in the EIA table for September 2026. No retirement, mothballing or owner change was found. Latest Activity is left alone because the unit is operating."
+  },
+  {
+   "gem_unit_id": "G100000402506",
+   "unit_name": "3",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists this unit as operating. Matching row: Plant 57943, generator 03, status operating, nameplate 60.5 MW, no planned retirement, began operating January 2015. It shows no planned retirement, mothballing or owner change."
+    },
+    "Capacity (MW)": {
+     "value": "61.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx gives 60.5 MW nameplate for this unit. GEM shows 61.0 MW, which is the same figure rounded up, so no change is needed."
+    },
+    "Turbine/Engine Technology": {
+     "value": "aeroderivative gas turbine",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The North Dakota air quality draft Title V permit renewal from June 2026 at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf says the station has six GE LM6000 PF Sprint simple cycle gas turbines. The LM6000 is an aeroderivative turbine, but the permit does not use that word. GEM now says gas turbine."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE LM6000 PF Sprint",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The draft Title V permit renewal from June 2026 at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf says the station has six GE Model LM6000 PF Sprint simple cycle natural gas turbines, each rated at 46.0 MW gross."
+    },
+    "Number Of Engines": {
+     "value": "1",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The draft permit at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf lists each unit as one LM6000 turbine, so each unit has one engine."
+    },
+    "Capacity Per Engine": {
+     "value": "61.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Each unit is one turbine, so the capacity per engine equals the unit capacity of 61.0 MW. The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx gives 60.5 MW."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The draft permit at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf calls the station a natural gas-fired electric generating peaking plant. It sells to the grid and no document describes it as backup power. So the value stays no."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Latest Activity"
+   ],
+   "notes": "The unit is operating in the EIA table for September 2026. No retirement, mothballing or owner change was found. Latest Activity is left alone because the unit is operating."
+  },
+  {
+   "gem_unit_id": "G100000402507",
+   "unit_name": "4",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists this unit as operating. Matching row: Plant 57943, generator 04, status operating, nameplate 60.5 MW, no planned retirement, began operating May 2017. It shows no planned retirement, mothballing or owner change."
+    },
+    "Capacity (MW)": {
+     "value": "61.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx gives 60.5 MW nameplate for this unit. GEM shows 61.0 MW, which is the same figure rounded up, so no change is needed."
+    },
+    "Turbine/Engine Technology": {
+     "value": "aeroderivative gas turbine",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The North Dakota air quality draft Title V permit renewal from June 2026 at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf says the station has six GE LM6000 PF Sprint simple cycle gas turbines. The LM6000 is an aeroderivative turbine, but the permit does not use that word. GEM now says gas turbine."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE LM6000 PF Sprint",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The draft Title V permit renewal from June 2026 at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf says the station has six GE Model LM6000 PF Sprint simple cycle natural gas turbines, each rated at 46.0 MW gross."
+    },
+    "Number Of Engines": {
+     "value": "1",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The draft permit at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf lists each unit as one LM6000 turbine, so each unit has one engine."
+    },
+    "Capacity Per Engine": {
+     "value": "61.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Each unit is one turbine, so the capacity per engine equals the unit capacity of 61.0 MW. The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx gives 60.5 MW."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The draft permit at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf calls the station a natural gas-fired electric generating peaking plant. It sells to the grid and no document describes it as backup power. So the value stays no."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Latest Activity"
+   ],
+   "notes": "The unit is operating in the EIA table for September 2026. No retirement, mothballing or owner change was found. Latest Activity is left alone because the unit is operating."
+  },
+  {
+   "gem_unit_id": "G100000402508",
+   "unit_name": "5",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists this unit as operating. Matching row: Plant 57943, generator 05, status operating, nameplate 60.5 MW, no planned retirement, began operating May 2017. It shows no planned retirement, mothballing or owner change."
+    },
+    "Capacity (MW)": {
+     "value": "61.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx gives 60.5 MW nameplate for this unit. GEM shows 61.0 MW, which is the same figure rounded up, so no change is needed."
+    },
+    "Turbine/Engine Technology": {
+     "value": "aeroderivative gas turbine",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The North Dakota air quality draft Title V permit renewal from June 2026 at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf says the station has six GE LM6000 PF Sprint simple cycle gas turbines. The LM6000 is an aeroderivative turbine, but the permit does not use that word. GEM now says gas turbine."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE LM6000 PF Sprint",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The draft Title V permit renewal from June 2026 at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf says the station has six GE Model LM6000 PF Sprint simple cycle natural gas turbines, each rated at 46.0 MW gross."
+    },
+    "Number Of Engines": {
+     "value": "1",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The draft permit at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf lists each unit as one LM6000 turbine, so each unit has one engine."
+    },
+    "Capacity Per Engine": {
+     "value": "61.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Each unit is one turbine, so the capacity per engine equals the unit capacity of 61.0 MW. The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx gives 60.5 MW."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The draft permit at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf calls the station a natural gas-fired electric generating peaking plant. It sells to the grid and no document describes it as backup power. So the value stays no."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Latest Activity"
+   ],
+   "notes": "The unit is operating in the EIA table for September 2026. No retirement, mothballing or owner change was found. Latest Activity is left alone because the unit is operating."
+  },
+  {
+   "gem_unit_id": "G100000409510",
+   "unit_name": "6",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists this unit as operating. Matching row: Plant 57943, generator 06, status operating, nameplate 60.5 MW, no planned retirement, began operating October 2021. It shows no planned retirement, mothballing or owner change."
+    },
+    "Capacity (MW)": {
+     "value": "61.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx gives 60.5 MW nameplate for this unit. GEM shows 61.0 MW, which is the same figure rounded up, so no change is needed."
+    },
+    "Turbine/Engine Technology": {
+     "value": "aeroderivative gas turbine",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The North Dakota air quality draft Title V permit renewal from June 2026 at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf says the station has six GE LM6000 PF Sprint simple cycle gas turbines. The LM6000 is an aeroderivative turbine, but the permit does not use that word. GEM now says gas turbine."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE LM6000 PF Sprint",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The draft Title V permit renewal from June 2026 at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf says the station has six GE Model LM6000 PF Sprint simple cycle natural gas turbines, each rated at 46.0 MW gross."
+    },
+    "Number Of Engines": {
+     "value": "1",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The draft permit at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf lists each unit as one LM6000 turbine, so each unit has one engine."
+    },
+    "Capacity Per Engine": {
+     "value": "61.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Each unit is one turbine, so the capacity per engine equals the unit capacity of 61.0 MW. The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx gives 60.5 MW."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The draft permit at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf calls the station a natural gas-fired electric generating peaking plant. It sells to the grid and no document describes it as backup power. So the value stays no."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Latest Activity"
+   ],
+   "notes": "The unit is operating in the EIA table for September 2026. No retirement, mothballing or owner change was found. Latest Activity is left alone because the unit is operating."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Basin Electric Power Cooperative [100%]",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists Basin Electric Power Coop as the owning entity for all six units. This matches GEM and is not a new source for the share."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000409510",
+   "concern_type": "duplicate",
+   "question": "Is Southwest Power Pool request GEN-2020-014 the same as unit 6 at Lonesome Creek?",
+   "finding": "The queue entry from the brief is 45 MW of gas at Lonesome Creek, in commercial operation with an in-service date of 17 June 2021. The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists six units at plant 57943, with unit 6 operating since October 2021. The state permit at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf also lists six turbines.",
+   "recommendation": "Treat the request as unit 6 and add no new unit. Leave the unit count at six.",
+   "note": "I did not open the Southwest Power Pool queue page itself because its list is drawn by script and the brief already quotes the entry. No seventh unit appears in the EIA table or the permit.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Loaded and read plant 57943 rows in the Operating sheet."
+  },
+  {
+   "url": "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Turbine/Engine Technology",
+    "Number Of Engines",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Draft Title V permit renewal and statement of basis, read as text."
+  },
+  {
+   "url": "https://opsportal.spp.org/Studies/GIActive",
+   "used_for": [
+    "duplicate check"
+   ],
+   "outcome": "not relevant",
+   "note": "Not opened. Entry quoted in the brief was used as a lead only."
+  }
+ ]
+}

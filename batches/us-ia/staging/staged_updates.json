@@ -120,7 +120,8 @@
       },
       "refs": {
         "Status Data Source": [
-          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "https://www.sec.gov/Archives/edgar/data/352541/000035254122000020/lnt-20211231.htm"
         ]
       },
       "verifications": [
@@ -129,17 +130,35 @@
           "ok": true,
           "contains_value": true,
           "name_found": true
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254122000020/lnt-20211231.htm",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Alliant Energy annual report for 2021 says the company completed the fuel switch of the 212 MW Burlington station from coal to natural gas in December 2021."
         }
       ],
       "tier": "high",
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists plant 1104, generator 1, as operating, 212.0 MW, natural gas steam turbine, with no planned retirement date. I found no retirement, mothballing or sale announcement. This confirms the current status. I could not find any document that states whether the unit has carbon capture. I found no sign of it. The start year is unresolved. See the questions.",
-      "action": "Leave Status of unit Unit 1, timepoint 2 (G100001017907) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit Unit 1, timepoint 2 (G100001017907) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for December 2021, when the fuel switch to natural gas was completed, with the Alliant Energy annual report for 2021 as the source.",
       "checks": [
         37,
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2021,
+          "period": "December",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/352541/000035254122000020/lnt-20211231.htm"
+          ],
+          "note": "the Alliant Energy annual report for 2021 says the fuel switch from coal to natural gas was completed in December 2021. a federal agency letter from March 2022 says the unit burns only gas from January 1, 2022, so first full gas operation may fall at the turn of the year."
+        }
       ]
     },
     {
@@ -353,11 +372,22 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists plant 8031, Emery Station, generators 11, 12 and ST1 as operating, 173.4 MW, 173.4 MW and 256.0 MW, natural gas combined cycle, started in May 2004, with no planned retirement. I found no retirement, mothballing or sale notice. Still operating with no change found.",
-      "action": "Leave Status of unit G821 (G100000402192) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit G821 (G100000402192) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for May 2004, when the EIA-860M file for August 2026 shows generators 11, 12, ST1 at plant 8031 entering service, with that file as the source.",
       "checks": [
         37,
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2004,
+          "period": "May",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generators 11, 12, ST1 at plant 8031 as operating since May 2004"
+        }
       ]
     },
     {
@@ -495,10 +525,22 @@
       "independent": true,
       "source_language": "en",
       "researcher_notes": "The company is seeking approvals. Alliant's quarterly report for June 2026 says it filed for an Iowa Utilities Commission certificate in July 2026, and it sent the state an air permit pre-application the same month. Neither has been granted.",
-      "action": "Set Status of unit RH (G100001096185) to pre-construction. It now says announced. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+      "action": "Set Status of unit RH (G100001096185) to pre-construction. It now says announced. Add the 2 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add a pre-construction milestone for July 2026, when the utility filed for its state certificate and sent the air permit pre-application, with Alliant's quarterly report and the state air permit form as the sources.",
       "checks": [
         10,
         37
+      ],
+      "milestones": [
+        {
+          "status": "pre-construction",
+          "year": 2026,
+          "period": "July",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/352541/000035254126000043/lnt-20260630.htm",
+            "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Pre_Application&SUBMISSION_RID=69395&SUB_FORM_RID=158053"
+          ],
+          "note": "Alliant's quarterly report for June 2026 says its Iowa utility filed for a state certificate in July 2026. The state air permit pre-application is dated July 23, 2026."
+        }
       ]
     },
     {
@@ -666,9 +708,20 @@
       "independent": true,
       "source_language": "en",
       "researcher_notes": "The cooperative is seeking approvals. It applied for a state air construction permit in January 2026, and it asked the Iowa Utilities Commission for a certificate after the county turned down the zoning change. The commission held its public meeting on April 6, 2026. Neither has been granted.",
-      "action": "Set Status of unit 1 (G100001071244) to pre-construction. It now says announced. Add the 3 links below to the Status Data Source box. Keep the links already there.",
+      "action": "Set Status of unit 1 (G100001071244) to pre-construction. It now says announced. Add the 3 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add a pre-construction milestone for January 2026, when the cooperative signed its state air construction permit application, with that application as the source.",
       "checks": [
         10
+      ],
+      "milestones": [
+        {
+          "status": "pre-construction",
+          "year": 2026,
+          "period": "January",
+          "sources": [
+            "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Application&SUBMISSION_RID=66788"
+          ],
+          "note": "The state air construction permit application is signed January 8, 2026."
+        }
       ]
     },
     {
@@ -1246,10 +1299,21 @@
       "independent": true,
       "source_language": "en",
       "researcher_notes": "The Adair County supervisors minutes of March 18, 2026 say crews would be onsite the next week. A Western Iowa Today report from September 16, 2026 says MidAmerican's construction manager told the supervisors that construction began in April. Construction appears to have started in spring 2026 per county minutes. No turbine model was found. The project is moving, so Latest Activity is left alone.",
-      "action": "Set Status of unit 1 (G100001054496) to construction. It now says pre-construction. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+      "action": "Set Status of unit 1 (G100001054496) to construction. It now says pre-construction. Add the 2 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add a construction milestone for April 2026, when construction began, with a Western Iowa Today report from September 2026 as the source.",
       "checks": [
         10,
         37
+      ],
+      "milestones": [
+        {
+          "status": "construction",
+          "year": 2026,
+          "period": "April",
+          "sources": [
+            "https://westerniowatoday.com/2026/09/16/midamerican-energy-provides-update-on-adair-county-projects/"
+          ],
+          "note": "A Western Iowa Today report from September 2026 says MidAmerican's construction manager told county supervisors that construction began in April. County minutes from March 18, 2026 said crews would be onsite soon."
+        }
       ]
     },
     {
@@ -1420,10 +1484,21 @@
       "independent": true,
       "source_language": "en",
       "researcher_notes": "The Adair County supervisors minutes of March 18, 2026 say crews would be onsite the next week. A Western Iowa Today report from September 16, 2026 says MidAmerican's construction manager told the supervisors that construction began in April. Construction appears to have started in spring 2026 per county minutes. No turbine model was found. The project is moving, so Latest Activity is left alone.",
-      "action": "Set Status of unit 2 (G100001055236) to construction. It now says pre-construction. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+      "action": "Set Status of unit 2 (G100001055236) to construction. It now says pre-construction. Add the 2 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add a construction milestone for April 2026, when construction began, with a Western Iowa Today report from September 2026 as the source.",
       "checks": [
         10,
         37
+      ],
+      "milestones": [
+        {
+          "status": "construction",
+          "year": 2026,
+          "period": "April",
+          "sources": [
+            "https://westerniowatoday.com/2026/09/16/midamerican-energy-provides-update-on-adair-county-projects/"
+          ],
+          "note": "A Western Iowa Today report from September 2026 says MidAmerican's construction manager told county supervisors that construction began in April. County minutes from March 18, 2026 said crews would be onsite soon."
+        }
       ]
     },
     {
@@ -1588,10 +1663,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists plant 6463, generator GT2, as operating, 57.4 MW nameplate, operating year 2005, with no planned retirement date. No retirement, mothballing or owner change was found. A web search found no announcement about these turbines.",
-      "action": "Leave Status of unit GT2 (G100000414312) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit GT2 (G100000414312) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for September 2005, when the EIA-860M file for August 2026 shows generator GT2 at plant 6463 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2005,
+          "period": "September",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator GT2 at plant 6463 as operating since September 2005"
+        }
       ]
     },
     {
@@ -1613,7 +1699,9 @@
       "refs": {
         "Status Data Source": [
           "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
-          "https://www.cityofames.org/My-Government/Departments/Electric-Department"
+          "https://www.cityofames.org/My-Government/Departments/Electric-Department",
+          "https://www.sargentlundy.com/projects/steam-electric-plant-coal-to-gas-boiler-conversion/",
+          "https://content.govdelivery.com/accounts/IAAMES/bulletins/41aa06d"
         ]
       },
       "verifications": [
@@ -1628,16 +1716,43 @@
           "ok": true,
           "contains_value": true,
           "name_found": true
+        },
+        {
+          "url": "https://www.sargentlundy.com/projects/steam-electric-plant-coal-to-gas-boiler-conversion/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The engineering firm's project page says the Ames coal-to-gas boiler conversion ran from May 2014 to July 2016."
+        },
+        {
+          "url": "https://content.govdelivery.com/accounts/IAAMES/bulletins/41aa06d",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A City of Ames notice says the power plant was converted to natural gas in 2016."
         }
       ],
       "tier": "high",
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Plant 1122, generator 7, as operating with 37.5 MW. The City of Ames electric department page says Unit 7 is in service. Still operating. Gas start year should be 2016 per the conversion project. No retirement year published yet.",
-      "action": "Leave Status of unit Unit 7, timepoint 2 (G100001054408) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit Unit 7, timepoint 2 (G100001054408) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for 2016, when the converted units began running on natural gas, with an engineering firm project page and a City of Ames notice as the sources. The month is blank because no checkable source gave it.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2016,
+          "period": "",
+          "sources": [
+            "https://www.sargentlundy.com/projects/steam-electric-plant-coal-to-gas-boiler-conversion/",
+            "https://content.govdelivery.com/accounts/IAAMES/bulletins/41aa06d"
+          ],
+          "note": "",
+          "period_note": "a project page from the engineering firm gives July 2016 as the project completion and a city notice says the plant was converted in 2016. the month the units first ran on gas was not found in a source that could be checked. a local newspaper from May 2016 reportedly says coal burning stopped April 24, 2016, but that article could not be found."
+        }
       ]
     },
     {
@@ -1694,7 +1809,9 @@
       "refs": {
         "Status Data Source": [
           "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
-          "https://www.cityofames.org/My-Government/Departments/Electric-Department"
+          "https://www.cityofames.org/My-Government/Departments/Electric-Department",
+          "https://www.sargentlundy.com/projects/steam-electric-plant-coal-to-gas-boiler-conversion/",
+          "https://content.govdelivery.com/accounts/IAAMES/bulletins/41aa06d"
         ]
       },
       "verifications": [
@@ -1709,16 +1826,43 @@
           "ok": true,
           "contains_value": true,
           "name_found": true
+        },
+        {
+          "url": "https://www.sargentlundy.com/projects/steam-electric-plant-coal-to-gas-boiler-conversion/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The engineering firm's project page says the Ames coal-to-gas boiler conversion ran from May 2014 to July 2016."
+        },
+        {
+          "url": "https://content.govdelivery.com/accounts/IAAMES/bulletins/41aa06d",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A City of Ames notice says the power plant was converted to natural gas in 2016."
         }
       ],
       "tier": "high",
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Plant 1122, generator 8, as operating with 71.3 MW. The City of Ames electric department page says Unit 8 burns only natural gas and is in service. Still operating. The 1982 year in the EIA table is the original coal unit, so the 2016 start year stays.",
-      "action": "Leave Status of unit Unit 8, timepoint 2 (G100001017969) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit Unit 8, timepoint 2 (G100001017969) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for 2016, when the converted units began running on natural gas, with an engineering firm project page and a City of Ames notice as the sources. The month is blank because no checkable source gave it.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2016,
+          "period": "",
+          "sources": [
+            "https://www.sargentlundy.com/projects/steam-electric-plant-coal-to-gas-boiler-conversion/",
+            "https://content.govdelivery.com/accounts/IAAMES/bulletins/41aa06d"
+          ],
+          "note": "",
+          "period_note": "a project page from the engineering firm gives July 2016 as the project completion and a city notice says the plant was converted in 2016. the month the units first ran on gas was not found in a source that could be checked. a local newspaper from May 2016 reportedly says coal burning stopped April 24, 2016, but that article could not be found."
+        }
       ]
     },
     {
@@ -1827,10 +1971,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Plant 1217, generator 2, as operating with 81.6 MW. It shows no planned retirement. The only planned change is an uprate of 0 MW in December 2027. Still operating. No retirement or sale found.",
-      "action": "Leave Status of unit 2 (G100000402232) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 2 (G100000402232) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for April 2004, when the EIA-860M file for August 2026 shows generator 2 at plant 1217 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2004,
+          "period": "April",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 2 at plant 1217 as operating since April 2004"
+        }
       ]
     },
     {
@@ -1982,10 +2137,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Plant 6063, generator 1, as operating with 71.2 MW. It shows no planned retirement. A news search found no retirement or sale announcement. Still operating. No retirement, mothballing or sale found.",
-      "action": "Leave Status of unit 1 (G100000403156) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 1 (G100000403156) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for May 1975, when the EIA-860M file for August 2026 shows generator 1 at plant 6063 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1975,
+          "period": "May",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 1 at plant 6063 as operating since May 1975"
+        }
       ]
     },
     {
@@ -2021,10 +2187,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Plant 6063, generator 2, as operating with 89.0 MW. It shows no planned retirement. A news search found no retirement or sale announcement. Still operating. No retirement, mothballing or sale found.",
-      "action": "Leave Status of unit 2 (G100000403157) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 2 (G100000403157) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for January 1978, when the EIA-860M file for August 2026 shows generator 2 at plant 6063 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1978,
+          "period": "January",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 2 at plant 6063 as operating since January 1978"
+        }
       ]
     },
     {
@@ -2060,10 +2237,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Plant 6063, generator 3, as operating with 103.9 MW. It shows no planned retirement. A news search found no retirement or sale announcement. Still operating. No retirement, mothballing or sale found.",
-      "action": "Leave Status of unit 3 (G100000403158) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 3 (G100000403158) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for January 1978, when the EIA-860M file for August 2026 shows generator 3 at plant 6063 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1978,
+          "period": "January",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 3 at plant 6063 as operating since January 1978"
+        }
       ]
     },
     {
@@ -2099,10 +2287,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA monthly generator table for August 2026 lists plant 56013, generator U1, as operating with no planned retirement. The owner is the Western Minnesota Municipal Power Agency. Still operating. No retirement, mothballing or owner change was found.",
-      "action": "Leave Status of unit U1 (G100000403754) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit U1 (G100000403754) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for April 2004, when the EIA-860M file for August 2026 shows generator U1 at plant 56013 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2004,
+          "period": "April",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator U1 at plant 56013 as operating since April 2004"
+        }
       ]
     },
     {
@@ -2138,10 +2337,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA monthly generator table for August 2026 lists plant 56013, generator U2, as operating with no planned retirement. The owner is the Western Minnesota Municipal Power Agency. Still operating. No retirement, mothballing or owner change was found.",
-      "action": "Leave Status of unit U2 (G100000403755) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit U2 (G100000403755) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for May 2004, when the EIA-860M file for August 2026 shows generator U2 at plant 56013 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2004,
+          "period": "May",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator U2 at plant 56013 as operating since May 2004"
+        }
       ]
     },
     {
@@ -2177,10 +2387,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA monthly generator table for August 2026 lists plant 56013, generator U3, as operating with no planned retirement. The owner is the Western Minnesota Municipal Power Agency. Still operating. No retirement, mothballing or owner change was found.",
-      "action": "Leave Status of unit U3 (G100000403756) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit U3 (G100000403756) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for April 2007, when the EIA-860M file for August 2026 shows generator U3 at plant 56013 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2007,
+          "period": "April",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator U3 at plant 56013 as operating since April 2007"
+        }
       ]
     },
     {
@@ -2259,10 +2480,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA monthly generator table for August 2026 lists plant 7985 units GT1, GT2 and ST1 as operating with no planned retirement. Owner is MidAmerican Energy Co. Still operating. No retirement, mothballing or owner change was found.",
-      "action": "Leave Status of unit CC1 (G100000402188) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit CC1 (G100000402188) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for December 2004, when the steam turbine completed the combined cycle block, with the EIA monthly generator table as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2004,
+          "period": "December",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "The combined cycle block has two combustion turbines (GT1 and GT2) that started in May 2003 and a steam turbine (ST1) that started in December 2004. The block ran as combined cycle once the steam turbine was in service."
+        }
       ]
     },
     {
@@ -2298,10 +2530,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA monthly generator table for August 2026 lists plant 7155 generators 1 and 2 as operating, 45.1 MW each, with no planned retirement. Owner is Interstate Power and Light Co. Still operating. No retirement, mothballing or owner change was found.",
-      "action": "Leave Status of unit 1 (G100001054470) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 1 (G100001054470) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for May 1991, when the EIA-860M file for August 2026 shows generators 1, 2 at plant 7155 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1991,
+          "period": "May",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generators 1, 2 at plant 7155 as operating since May 1991"
+        }
       ]
     },
     {
@@ -2337,10 +2580,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA monthly generator table for August 2026 lists plant 58236 units CTG1, CTG2 and STG1 as operating with no planned retirement. Owner is Interstate Power and Light Co. Still operating. No retirement, mothballing or owner change was found.",
-      "action": "Leave Status of unit MGS1 (G100000402061) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit MGS1 (G100000402061) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for April 2017, when the EIA-860M file for August 2026 shows generators CTG1, CTG2, STG1 at plant 58236 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2017,
+          "period": "April",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generators CTG1, CTG2, STG1 at plant 58236 as operating since April 2017"
+        }
       ]
     },
     {
@@ -2384,10 +2638,21 @@
       "independent": true,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists this unit as operating. Alliant Energy's annual report for 2025, filed in 2026, lists the Marshalltown combustion turbines, units 1 to 3, in service in 1978 among Interstate Power and Light's gas plants. I found no retirement, mothballing or sale notice. Still operating. No retirement, planned retirement, mothballing or owner change was found.",
-      "action": "Leave Status of unit 1 (G100000403015) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 1 (G100000403015) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 1978, when the EIA-860M file for August 2026 shows generator 1 at plant 1068 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1978,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 1 at plant 1068 as operating since June 1978"
+        }
       ]
     },
     {
@@ -2431,10 +2696,21 @@
       "independent": true,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists this unit as operating. Alliant Energy's annual report for 2025, filed in 2026, lists the Marshalltown combustion turbines, units 1 to 3, in service in 1978 among Interstate Power and Light's gas plants. I found no retirement, mothballing or sale notice. Still operating. No retirement, planned retirement, mothballing or owner change was found.",
-      "action": "Leave Status of unit 2 (G100000403016) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 2 (G100000403016) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 1978, when the EIA-860M file for August 2026 shows generator 2 at plant 1068 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1978,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 2 at plant 1068 as operating since June 1978"
+        }
       ]
     },
     {
@@ -2478,10 +2754,21 @@
       "independent": true,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists this unit as operating. Alliant Energy's annual report for 2025, filed in 2026, lists the Marshalltown combustion turbines, units 1 to 3, in service in 1978 among Interstate Power and Light's gas plants. I found no retirement, mothballing or sale notice. Still operating. No retirement, planned retirement, mothballing or owner change was found.",
-      "action": "Leave Status of unit 3 (G100000403017) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 3 (G100000403017) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for July 1978, when the EIA-860M file for August 2026 shows generator 3 at plant 1068 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1978,
+          "period": "July",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 3 at plant 1068 as operating since July 1978"
+        }
       ]
     },
     {
@@ -2525,10 +2812,21 @@
       "independent": true,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists this generator as operating. MidAmerican Energy's table of generating plants in the Berkshire Hathaway Energy annual report for 2025 lists Pleasant Hill, 1990 to 1994, as a gas or oil plant in service. I found no retirement, mothballing or sale notice. Still operating. No retirement, planned retirement, mothballing or owner change was found.",
-      "action": "Leave Status of unit 1 (G100001054416) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 1 (G100001054416) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 1990, when generator 1 entered service, with the EIA monthly generator table as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1990,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "The EIA table lists generator 1 as operating since June 1990."
+        }
       ]
     },
     {
@@ -2572,10 +2870,21 @@
       "independent": true,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists this generator as operating. MidAmerican Energy's table of generating plants in the Berkshire Hathaway Energy annual report for 2025 lists Pleasant Hill, 1990 to 1994, as a gas or oil plant in service. I found no retirement, mothballing or sale notice. Still operating. No retirement, planned retirement, mothballing or owner change was found.",
-      "action": "Leave Status of unit 2 (G100001054415) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 2 (G100001054415) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 1990, when generator 2 entered service, with the EIA monthly generator table as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1990,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "The EIA table lists generator 2 as operating since June 1990."
+        }
       ]
     },
     {
@@ -2619,10 +2928,21 @@
       "independent": true,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists this generator as operating. MidAmerican Energy's table of generating plants in the Berkshire Hathaway Energy annual report for 2025 lists Pleasant Hill, 1990 to 1994, as a gas or oil plant in service. I found no retirement, mothballing or sale notice. Still operating. No retirement, planned retirement, mothballing or owner change was found.",
-      "action": "Leave Status of unit 3 (G100000403159) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 3 (G100000403159) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 1994, when the EIA-860M file for August 2026 shows generator 3 at plant 7145 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1994,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 3 at plant 7145 as operating since June 1994"
+        }
       ]
     },
     {
@@ -2644,7 +2964,8 @@
       "refs": {
         "Status Data Source": [
           "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
-          "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm"
+          "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm",
+          "https://www.power-eng.com/coal/alliant-finishes-up-coal-to-gas-conversion/"
         ]
       },
       "verifications": [
@@ -2660,16 +2981,34 @@
           "ok": true,
           "contains_value": true,
           "name_found": true
+        },
+        {
+          "url": "https://www.power-eng.com/coal/alliant-finishes-up-coal-to-gas-conversion/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "An Associated Press story from November 2, 2017 says the Prairie Creek conversion was expected to be finished that Friday, November 3."
         }
       ],
       "tier": "high",
       "independent": true,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists unit 4 as operating on natural gas. Alliant Energy's annual report for 2025 lists Prairie Creek unit 4 among Interstate Power and Light's gas plants. It says units 3 and 4 face a federal rule, but no retirement of unit 4 is announced. Still operating on natural gas. The 1967 date in the EIA table is the original coal start, not the conversion.",
-      "action": "Leave Status of unit Unit 4- timepoint 2 (G100000403018) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit Unit 4- timepoint 2 (G100000403018) as operating. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for November 2017, when the converted unit finished switching to natural gas, with an Associated Press story from November 2017 as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2017,
+          "period": "November",
+          "sources": [
+            "https://www.power-eng.com/coal/alliant-finishes-up-coal-to-gas-conversion/"
+          ],
+          "note": "an Associated Press story from November 2, 2017 says the natural gas conversion was almost done and expected to finish that Friday. no story confirming the exact finish day was found, so november 2017 is the best supported month."
+        }
       ]
     },
     {
@@ -2958,10 +3297,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists generators R1, R2 and R3 at Summit Lake, plant 1206, as operating natural gas engines of 18.8 MW each, in service since April 2021. The sheet shows no retirement, mothballing or planned retirement for them, and the owner is still Central Iowa Power Cooperative. Still operating. No retirement or sale found. The city was filled from a news article on the cooperative's rebuild.",
-      "action": "Leave Status of unit IC (G100000414185) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit IC (G100000414185) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for April 2021, when the EIA-860M file for August 2026 shows generators R1, R2, R3 at plant 1206 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2021,
+          "period": "April",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generators R1, R2, R3 at plant 1206 as operating since April 2021"
+        }
       ]
     },
     {
@@ -3034,10 +3384,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Sycamore (Iowa), plant 8029, generator 1 as operating, 78.8 MW nameplate, owned by MidAmerican Energy Co, in service 1974. The sheet shows no retirement, planned retirement or owner change. Still operating. No retirement, mothballing or sale found.",
-      "action": "Leave Status of unit 1 (G100000403161) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 1 (G100000403161) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for August 1974, when the EIA-860M file for August 2026 shows generator 1 at plant 8029 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1974,
+          "period": "August",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 1 at plant 8029 as operating since August 1974"
+        }
       ]
     },
     {
@@ -3073,10 +3434,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Sycamore (Iowa), plant 8029, generator 2 as operating, 78.8 MW nameplate, owned by MidAmerican Energy Co, in service 1974. The sheet shows no retirement, planned retirement or owner change. Still operating. No retirement, mothballing or sale found.",
-      "action": "Leave Status of unit 2 (G100000403162) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 2 (G100000403162) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for November 1974, when the EIA-860M file for August 2026 shows generator 2 at plant 8029 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1974,
+          "period": "November",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 2 at plant 8029 as operating since November 1974"
+        }
       ]
     },
     {

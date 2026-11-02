@@ -1,0 +1,143 @@
+{
+ "meta": {
+  "plant_id": "L100001089073",
+  "plant_name": "Applied Digital FAR Generation Plant",
+  "state": "North Dakota",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-29T18:22:12-04:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001101351",
+   "unit_name": "FAR01",
+   "findings": {
+    "Status Detail": {
+     "value": "A draft air permit to construct, number ACP-18345 version 1.0, for 192 diesel emergency generator engines at the FAR Generation Plant in Harwood was open for public comment from June 15 to July 15, 2026.",
+     "refs": [
+      "https://deq.nd.gov/aq/Notices/AppliedDigital/DRAFTACP18345v1_0AQEA.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/aq/Notices/AppliedDigital/DRAFTACP18345v1_0AQEA.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The North Dakota Department of Environmental Quality air quality effects analysis dated June 11, 2026 gives the comment dates and the engine count. I did not find a final permit or any later notice, so the status stays pre-construction."
+    }
+   },
+   "not_found": [
+    "Start year",
+    "Latest Activity",
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "notes": "The draft permit says building FAR01 holds 96 Caterpillar 3516E engines of 3 MW each, so 288 MW, diesel, as GEM already shows. No start year or scheduled operating date was found. Latest Activity is left alone because the newest report is from June 2026, under a year old. The commission case PU-26-155 covers the Ellendale site and does not name Harwood."
+  },
+  {
+   "gem_unit_id": "G100001101352",
+   "unit_name": "FAR02",
+   "findings": {
+    "Status Detail": {
+     "value": "A draft air permit to construct, number ACP-18345 version 1.0, for 192 diesel emergency generator engines at the FAR Generation Plant in Harwood was open for public comment from June 15 to July 15, 2026.",
+     "refs": [
+      "https://deq.nd.gov/aq/Notices/AppliedDigital/DRAFTACP18345v1_0AQEA.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/aq/Notices/AppliedDigital/DRAFTACP18345v1_0AQEA.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The North Dakota Department of Environmental Quality air quality effects analysis dated June 11, 2026 gives the comment dates and the engine count. I did not find a final permit or any later notice, so the status stays pre-construction."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "CAT: 3516E",
+     "refs": [
+      "https://deq.nd.gov/aq/Notices/AppliedDigital/DRAFTACP18345v1_0AQEA.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://deq.nd.gov/aq/Notices/AppliedDigital/DRAFTACP18345v1_0AQEA.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Department of Environmental Quality analysis says building FAR02 will hold ninety-six Caterpillar 3516E engines rated at 3,000 kilowatts each. Unit FAR01 already shows this model."
+    }
+   },
+   "not_found": [
+    "Start year",
+    "Latest Activity",
+    "Latitude",
+    "Longitude",
+    "Location accuracy"
+   ],
+   "notes": "The draft permit says building FAR02 holds 96 Caterpillar 3516E engines of 3 MW each, so 288 MW, diesel, as GEM already shows. No start year or scheduled operating date was found. Latest Activity is left alone because the newest report is from June 2026, under a year old. The commission case PU-26-155 covers the Ellendale site and does not name Harwood."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001101351",
+   "concern_type": "location",
+   "question": "Can the Harwood plant point be made exact from the 6805 County Road 81 address?",
+   "finding": "The draft air permit analysis at https://deq.nd.gov/aq/Notices/AppliedDigital/DRAFTACP18345v1_0AQEA.pdf gives the site address as 6805 County Road 81, Harwood, ND 58042. The geocoder returned no match for that address. Satellite imagery at GEM's point shows bare farm fields with no buildings.",
+   "recommendation": "Leave the point as approximate. Look up 6805 County Road 81 in Cass County parcel records or a map to place the point and make it exact.",
+   "note": "I tried four address spellings in the geocoder and a web search for Polaris Forge 2, which only says the campus is south and east of Harwood. The imagery date is unknown and may predate construction.",
+   "refs": [
+    "https://deq.nd.gov/aq/Notices/AppliedDigital/DRAFTACP18345v1_0AQEA.pdf"
+   ],
+   "proposed_value": {}
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://deq.nd.gov/aq/Notices/AppliedDigital/DRAFTACP18345v1_0AQEA.pdf",
+   "used_for": [
+    "Status Detail",
+    "Equipment Manufacturer/Model",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Capacity (MW)",
+    "Location"
+   ],
+   "outcome": "verified",
+   "note": "Verified with the plant name, engine model and engine count."
+  },
+  {
+   "url": "https://www.psc.nd.gov/webdocs/case/26-0155/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "The case concerns the Ellendale site, not Harwood. Read from the saved copy."
+  },
+  {
+   "url": "https://web.archive.org/cdx/search/cdx?url=deq.nd.gov/aq/Notices/AppliedDigital/*",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "failed",
+   "note": "The Internet Archive was offline, so I could not look for newer notices."
+  }
+ ]
+}

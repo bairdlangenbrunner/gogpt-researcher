@@ -25,7 +25,8 @@ how strong its evidence is only changes a chip on the card:
   gets a separate "new units at" card, `pid` "<GEM id>#add", holding its newunits lines (one
   decidable block per unit) and its leads: watch items assemble_state.py made from a new-row
   record too thin to stage (`lead_for` names the lane it was headed for, newunits or
-  newplants; review_app/checklist.py reads the older note prefix too).
+  newplants; review_app/checklist.py reads the older note prefix too), and any question in the
+  `NEW_QUESTION_TYPES` (is it a duplicate, does it exist, does it pass the size threshold).
 - `watch`: a genuine watch at a tracked plant (`existing_plant` watch items that are not
   leads), `pid` "<GEM id>#watch".
 
@@ -53,10 +54,14 @@ plant), checked (see below).
 Every plant GEM tracks in the scope is on the page, not only the ones the batch touched: the
 export rows of the scope's country and state are read whole, a plant card gets every unit of
 its plant (with the unit's Status, Capacity, Last Updated, Researcher and Research status as
-the export shows them), and a plant no record touches gets a card flagged `no_changes` with
+the export shows them), and a plant no line touches gets a card flagged `no_changes` with
 one `checked` line (key `<dir>::checked:<plant id>`, severity `check`) that the researcher
 marks checked once they have looked at the plant and set its Last Updated and Research status
-in the database, or holds for later. The card lands in the first staging dir of that scope
+in the database, or holds for later. When every unit's Last Updated falls on or after the cycle
+start (the "Cycle window" line of campaigns/<quarter>/README.md), the plant was already checked
+in the database this cycle: its line carries `checked_in_db` (the oldest of those dates) and the
+page shows it grayed and done until a person calls it; such a plant that has items gets no
+`checked` line, so its card sits with the suggestions until the items are answered. The card lands in the first staging dir of that scope
 (a discovery dir never gets one). The page's status filter opens on the plants in
 development, so the researcher can say every one of them was looked at.
 
@@ -93,12 +98,16 @@ for p in (ROOT / "scripts", HERE, ROOT):
 
 import paths  # noqa: E402
 from build_review_package import URL_RE, ref_col_for  # noqa: E402
+from schema_constants import milestone_label  # noqa: E402
 from review_app.checklist import GROUP_BY_ID, MONITOR_KINDS, lead_for, summarize, tag  # noqa: E402
 import geo  # noqa: E402
 import validation_report  # noqa: E402
 
 ET = ZoneInfo("America/New_York")
 KIND_ORDER = {"plant": 0, "addition": 1, "watch": 2}
+# qa concern types that ask whether something is new to the tracker: they sit on the "new units at"
+# card. Identity and scope questions in the same checklist group are about existing units and stay put.
+NEW_QUESTION_TYPES = frozenset({"duplicate", "existence", "capacity-threshold"})
 LINE_LANES = ("updates", "newunits", "newplants")
 ITEM_LANES = {"qa": "concern", "monitor": "monitor", "entity": "entity"}
 # scope-wide items carry the batch tag as their plant id: us-md for a state,
@@ -262,6 +271,23 @@ def checked_line(label, pid, units, us=True):
     return line
 
 
+def cycle_start(quarters):
+    """The first day of the update cycle (YYYY-MM-DD), from the "Cycle window" line of the
+    newest quarter's campaigns/<quarter>/README.md; "" when no README states one."""
+    for q in sorted(quarters, reverse=True):
+        f = ROOT / "campaigns" / q / "README.md"
+        m = re.search(r"Cycle window (\d{4}-\d{2}-\d{2})", f.read_text(encoding="utf-8")) if f.exists() else None
+        if m:
+            return m.group(1)
+    return ""
+
+
+def stale(units, start):
+    """True when any unit's Last Updated is blank or falls before the cycle start (every unit
+    when no start is known): the plant has not been looked at this cycle."""
+    return not start or any(str(u.get("last_updated") or "").strip()[:10] < start for u in units)
+
+
 DEV_STATUS = ("announced", "preconstruction", "construction", "shelved", "shelvedinferred")
 
 
@@ -396,7 +422,11 @@ def update_line(r, label, export_rows, us=True):
     cols = list(fields)
     column = cols[0] if cols else ""
     ref_col = ref_col_for(column) if column else ""
-    refs = r.get("refs") or {}
+    refs = dict(r.get("refs") or {})
+    m_fields, m_refs = milestone_rows(r)
+    fields.update(m_fields)
+    refs.update(m_refs)
+    cols = list(fields)
     proposed_refs = []
     for rc, urls in refs.items():
         for u in (urls if isinstance(urls, list) else split_urls(urls)):
@@ -444,6 +474,23 @@ def _refs_by_col(refs):
     return {k: (v if isinstance(v, list) else split_urls(v)) for k, v in (refs or {}).items()}
 
 
+def milestone_rows(rec):
+    """(fields, refs) to show a record's staged milestone timeline entries on its card:
+    "Milestone: construction" = "May 2025", with the entry's own sources under
+    "Milestone: construction Data Source". Display only; the staged fields stay export columns."""
+    fields, refs = {}, {}
+    for m in rec.get("milestones") or []:
+        col = f"Milestone: {m.get('status') or '?'}"
+        val = milestone_label(m) or "(no date)"
+        if not m.get("period") and m.get("period_note"):
+            val += f" (no month, quarter or half found: {m['period_note']})"
+        fields[col] = val
+        srcs = [u for u in (m.get("sources") or []) if u]
+        if srcs:
+            refs[f"{col} Data Source"] = srcs
+    return fields, refs
+
+
 def new_row_line(r, label, lane, us=True):
     """One line per new-row record. A newplants record carries its unit rows nested under
     `units` (plant-level fields on the record, per-unit fields on each unit); the whole plant is
@@ -454,9 +501,13 @@ def new_row_line(r, label, lane, us=True):
     proposed_refs = []
     verifications = verification_map(r)
     units = []
+    m_fields, m_refs = milestone_rows(r)
+    fields.update(m_fields)
+    refs = {**refs, **m_refs}
     for u in r.get("units") or []:
-        units.append({"unit_name": u.get("unit_name") or "", "fields": dict(u.get("fields") or {}),
-                      "refs_by_col": _refs_by_col(u.get("refs")),
+        uf, ur = milestone_rows(u)
+        units.append({"unit_name": u.get("unit_name") or "", "fields": {**(u.get("fields") or {}), **uf},
+                      "refs_by_col": {**_refs_by_col(u.get("refs")), **ur},
                       "notes": u.get("researcher_notes") or "", "action": u.get("action") or ""})
         verifications.update(verification_map(u))
     for rc, urls in list(refs.items()) + [kv for u in units for kv in u["refs_by_col"].items()]:
@@ -666,7 +717,9 @@ def build(dirs, export_csv=None):
                         continue
                 it = item(r, label, kind, unit_row_for(r), us)
                 if kind != "monitor":
-                    p = card(r)
+                    # a question on whether something is new to the tracker goes with the additions,
+                    # so the reviewer decides it on the new tab
+                    p = card(r, "addition" if it.get("concern_type") in NEW_QUESTION_TYPES else "plant")
                 elif it["monitor_kind"] == "new_to_tracker" or it["lead_for"]:
                     # a candidate plant, or a new-unit lead at a tracked plant: a proposed addition
                     p = card(r, "addition")
@@ -680,7 +733,10 @@ def build(dirs, export_csv=None):
                         it["duplicate_of"] = first["key"]
                 p["items"].append(it)
 
-    # every plant in the scope: a plant card gets all of its units, and a plant no record touched gets a card with one "checked" line
+    # every plant in the scope: a plant card gets all of its units, and a plant no record touched gets a card
+    # with one "checked" line (the to check tab), already marked checked in the database when every unit
+    # shows a Last Updated from this cycle
+    start = cycle_start(quarters)
     by_plant = {}
     for (label, state, rows) in scope_rows.values():
         for uid, row in rows.items():
@@ -700,8 +756,12 @@ def build(dirs, export_csv=None):
             for uid, row in units:
                 if uid not in known:
                     have["units"].append(unit_entry(uid, row))
-            if not have["lines"]:
-                have["lines"].append(checked_line(have["dir"], lid, have["units"], us))
+            fresh = not stale(have["units"], start)
+            if not have["lines"] and not (fresh and have["items"]):
+                line = checked_line(have["dir"], lid, have["units"], us)
+                if fresh:
+                    line["checked_in_db"] = min(u["last_updated"][:10] for u in have["units"])
+                have["lines"].append(line)
                 have["no_changes"] = True
         by_plant = {}
 

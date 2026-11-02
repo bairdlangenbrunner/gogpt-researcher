@@ -91,9 +91,11 @@ def clean_ws(s):
 
 
 def norm_county(s):
-    """'Madison County' / 'madison' / 'Jackson County, MS' -> 'madison'."""
+    """'Madison County' / 'madison' / 'Jackson County, MS' -> 'madison';
+    "Prince George's" and 'St. Clair' match 'Prince Georges' and 'St Clair'."""
     s = re.sub(r",.*$", "", str(s or "")).strip().lower()
-    return re.sub(r"\s+county$", "", s).strip()
+    s = re.sub(r"\s+", " ", re.sub(r"['\u2019.]", "", s))
+    return re.sub(r"\s+(county|cnty)$", "", s).strip()
 
 
 def lines_of(text):

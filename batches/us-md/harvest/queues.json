@@ -1,0 +1,4393 @@
+{
+ "generated": "2026-10-30",
+ "sources": [
+  {
+   "name": "PJM serial queue (A01 through AJ1)",
+   "market": "PJM",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "how": "open XML https://www.pjm.com/pjmfiles/media/planning/queues-data/PlanningQueues.xml, plain GET; 111 Maryland gas, oil or thermal-unknown entries",
+   "reached": true,
+   "rows_read": 9263,
+   "min_rows": 4500,
+   "short": false,
+   "state_rows": 605,
+   "gas_oil": 111,
+   "fuel_unknown": 0
+  },
+  {
+   "name": "PJM cycle queue (Transition Cycle 1 and 2, Cycle 1)",
+   "market": "PJM",
+   "url": "https://www.pjm.com/planning/m/cycle-service-request-status",
+   "how": "open XML posted to https://www.pjm.com/m/ProjectTransition/GenerateXMLTransitionProjectsAll with an empty grid filter; 9 Maryland gas, oil or thermal-unknown entries",
+   "reached": true,
+   "rows_read": 1792,
+   "min_rows": 900,
+   "short": false,
+   "state_rows": 98,
+   "gas_oil": 9,
+   "fuel_unknown": 0
+  }
+ ],
+ "entries": [
+  {
+   "source": "PJM",
+   "queue_id": "A07",
+   "project_name": "",
+   "county": "Montgomery",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 120.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "1997-05-01",
+   "in_service": "",
+   "withdrawn": "2002-07-22",
+   "poi": "Dickerson 120 MW",
+   "owner": "PEPCO",
+   "note": "Energy MW 25, capacity MW 120",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103964",
+     "plant": "Dickerson Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "A29",
+   "project_name": "Rock Springs",
+   "county": "Cecil",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 465.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "1998-11-18",
+   "in_service": "2003-06-13",
+   "withdrawn": "",
+   "poi": "Colora Tap",
+   "owner": "DPL",
+   "note": "Energy MW 465, capacity MW 465",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401929",
+     "plant": "Essential Power Rock Springs station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402170",
+     "plant": "Wildcat Point generation facility",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "A30",
+   "project_name": "Rock Springs",
+   "county": "Cecil",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 465.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "1998-12-03",
+   "in_service": "2005-12-01",
+   "withdrawn": "",
+   "poi": "Colora Tap",
+   "owner": "DPL",
+   "note": "Energy MW 465, capacity MW 465",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401929",
+     "plant": "Essential Power Rock Springs station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402170",
+     "plant": "Wildcat Point generation facility",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "A47",
+   "project_name": "",
+   "county": "Harford",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 740.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "1999-04-30",
+   "in_service": "",
+   "withdrawn": "1999-08-30",
+   "poi": "Perryman 230kV or 115kV",
+   "owner": "BGE",
+   "note": "Energy MW 740, capacity MW 740",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100001080785",
+     "plant": "Constellation (Project 1) power station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001080791",
+     "plant": "Constellation (Project 2) power station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000401827",
+     "plant": "Perryman power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "A58",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 450.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "1999-03-29",
+   "in_service": "",
+   "withdrawn": "1999-08-28",
+   "poi": "Hawkins Gate / Oak Grove 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 450, capacity MW 450",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "B01",
+   "project_name": "",
+   "county": "Montgomery",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 398.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "1999-04-29",
+   "in_service": "",
+   "withdrawn": "2002-07-22",
+   "poi": "Dickerson",
+   "owner": "PEPCO",
+   "note": "Energy MW 398, capacity MW 398",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103964",
+     "plant": "Dickerson Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "B02",
+   "project_name": "Morgantown Units 1 & 2",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 80.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "1999-04-30",
+   "in_service": "2001-03-17",
+   "withdrawn": "",
+   "poi": "Morgantown",
+   "owner": "PEPCO",
+   "note": "Energy MW 80, capacity MW 80",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "B15",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 550.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "1999-07-12",
+   "in_service": "2003-06-01",
+   "withdrawn": "2002-10-02",
+   "poi": "Morgantown/Oak Grove 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 550, capacity MW 550",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "B16",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 550.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "1999-07-12",
+   "in_service": "2004-06-01",
+   "withdrawn": "2002-10-02",
+   "poi": "Morgantown/Oak Grove 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 550, capacity MW 550",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "B22",
+   "project_name": "",
+   "county": "Baltimore City",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 9.9,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "1999-08-11",
+   "in_service": "",
+   "withdrawn": "",
+   "poi": "Gould St. 34.5 kV",
+   "owner": "BGE",
+   "note": "Energy MW 9.9, capacity MW 9.9",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401828",
+     "plant": "Westport power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "B24",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 6.8,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "1999-09-07",
+   "in_service": "",
+   "withdrawn": "",
+   "poi": "Oak Grove 13.8kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 6.8, capacity MW 6.8",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "B29",
+   "project_name": "",
+   "county": "Harford",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 750.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "1999-11-15",
+   "in_service": "",
+   "withdrawn": "2001-04-17",
+   "poi": "Perryman 230kV/115kV",
+   "owner": "BGE",
+   "note": "Energy MW 750, capacity MW 750",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100001080785",
+     "plant": "Constellation (Project 1) power station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001080791",
+     "plant": "Constellation (Project 2) power station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000401827",
+     "plant": "Perryman power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "B48",
+   "project_name": "",
+   "county": "Harford",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 550.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "1999-11-30",
+   "in_service": "2005-06-01",
+   "withdrawn": "2003-10-17",
+   "poi": "Graceton 230kV",
+   "owner": "PECO",
+   "note": "Energy MW 550, capacity MW 550",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100001080785",
+     "plant": "Constellation (Project 1) power station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001080791",
+     "plant": "Constellation (Project 2) power station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000401827",
+     "plant": "Perryman power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "C03",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 550.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2000-01-11",
+   "in_service": "2003-12-01",
+   "withdrawn": "2002-09-16",
+   "poi": "Morgantown/Oak Grove 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 550, capacity MW 550",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "C04",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 550.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2000-01-11",
+   "in_service": "",
+   "withdrawn": "2002-01-25",
+   "poi": "Burches Hill 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 550, capacity MW 550",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "C12",
+   "project_name": "",
+   "county": "Harford",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 550.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2000-03-15",
+   "in_service": "2004-12-01",
+   "withdrawn": "2004-06-22",
+   "poi": "Conastone - Peach Bottom 500kV",
+   "owner": "PECO",
+   "note": "Energy MW 550, capacity MW 550",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100001080785",
+     "plant": "Constellation (Project 1) power station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001080791",
+     "plant": "Constellation (Project 2) power station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000401827",
+     "plant": "Perryman power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "C13",
+   "project_name": "",
+   "county": "Harford",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 550.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2000-03-15",
+   "in_service": "2004-12-01",
+   "withdrawn": "2004-06-22",
+   "poi": "Conastone - Peach Bottom 500kV",
+   "owner": "PECO",
+   "note": "Energy MW 550, capacity MW 550",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100001080785",
+     "plant": "Constellation (Project 1) power station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001080791",
+     "plant": "Constellation (Project 2) power station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000401827",
+     "plant": "Perryman power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "D05_W17",
+   "project_name": "",
+   "county": "Garrett",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 432.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2000-06-15",
+   "in_service": "2004-06-01",
+   "withdrawn": "2002-09-20",
+   "poi": "Friendsville 500 kV",
+   "owner": "APS",
+   "note": "Energy MW 432, capacity MW 432",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "D10",
+   "project_name": "NIH Unit 1",
+   "county": "Montgomery",
+   "state": "MD",
+   "fuel": "Oil",
+   "facility_type": "Generation Interconnection",
+   "mw": 25.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2000-07-26",
+   "in_service": "2004-06-01",
+   "withdrawn": "",
+   "poi": "NIH 13kV",
+   "owner": "PEPCO",
+   "note": "",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103964",
+     "plant": "Dickerson Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "D29",
+   "project_name": "",
+   "county": "Montgomery",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 3.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2000-07-31",
+   "in_service": "2001-06-29",
+   "withdrawn": "",
+   "poi": "Derwood 13kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 3, capacity MW 3",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103964",
+     "plant": "Dickerson Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "E05",
+   "project_name": "Sparrow Point",
+   "county": "Baltimore County",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 2.5,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2000-09-14",
+   "in_service": "2001-01-01",
+   "withdrawn": "",
+   "poi": "Bethlehem Steel 33kV",
+   "owner": "BGE",
+   "note": "Energy MW 2.5, capacity MW 2.5",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "E05_W25",
+   "project_name": "",
+   "county": "Frederick",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 620.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2000-10-04",
+   "in_service": "2004-05-01",
+   "withdrawn": "2002-11-26",
+   "poi": "Doubs 500 kV or 230 kV",
+   "owner": "APS",
+   "note": "Energy MW 620, capacity MW 620",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "F07",
+   "project_name": "Dickerson",
+   "county": "Montgomery",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 16.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2001-01-31",
+   "in_service": "2001-03-17",
+   "withdrawn": "",
+   "poi": "Dickerson 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 16, capacity MW 16",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103964",
+     "plant": "Dickerson Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "F08",
+   "project_name": "Chalk Point",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 6.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2001-01-31",
+   "in_service": "2001-03-17",
+   "withdrawn": "",
+   "poi": "Chalk Point 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 6, capacity MW 6",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "G00_W39",
+   "project_name": "",
+   "county": "Frederick",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 668.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2001-02-05",
+   "in_service": "2004-04-01",
+   "withdrawn": "2002-10-25",
+   "poi": "Doubs 500 kV or 230 kV",
+   "owner": "APS",
+   "note": "Energy MW 668, capacity MW 668",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "G02",
+   "project_name": "",
+   "county": "Montgomery",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 234.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2001-02-14",
+   "in_service": "2006-05-01",
+   "withdrawn": "2003-10-23",
+   "poi": "Dickerson 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 234, capacity MW 234",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103964",
+     "plant": "Dickerson Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "G03",
+   "project_name": "",
+   "county": "Dorchester",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 5.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2001-02-22",
+   "in_service": "2002-12-01",
+   "withdrawn": "2002-04-22",
+   "poi": "Todd 69kV",
+   "owner": "DPL",
+   "note": "Energy MW 5, capacity MW 5",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000409301",
+     "plant": "Vienna Operations power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "G28",
+   "project_name": "",
+   "county": "Dorchester",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 390.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2001-05-03",
+   "in_service": "2004-12-01",
+   "withdrawn": "",
+   "poi": "Vienna 230kV",
+   "owner": "DPL",
+   "note": "Energy MW 390, capacity MW 390",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000409301",
+     "plant": "Vienna Operations power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "G30_W55",
+   "project_name": "",
+   "county": "Unknown",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 500.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2001-05-29",
+   "in_service": "2006-01-01",
+   "withdrawn": "2002-11-19",
+   "poi": "Kempton 500 kV",
+   "owner": "APS",
+   "note": "Energy MW 500, capacity MW 500",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "G35",
+   "project_name": "",
+   "county": "St. Mary's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 340.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2001-07-11",
+   "in_service": "2004-12-01",
+   "withdrawn": "2003-09-25",
+   "poi": "Chalk Point",
+   "owner": "PEPCO",
+   "note": "Energy MW 340, capacity MW 340",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "G39",
+   "project_name": "",
+   "county": "Baltimore County",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 4.2,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2001-07-19",
+   "in_service": "2002-06-01",
+   "withdrawn": "2002-06-13",
+   "poi": "Joppatowne 13kV",
+   "owner": "BGE",
+   "note": "Energy MW 4.2, capacity MW 4.2",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "G50",
+   "project_name": "",
+   "county": "Frederick",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 910.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2001-07-31",
+   "in_service": "2005-12-01",
+   "withdrawn": "2002-05-25",
+   "poi": "Dickerson 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 910, capacity MW 910",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "G51_W62",
+   "project_name": "Catoctin CC",
+   "county": "Frederick",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 640.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2001-07-31",
+   "in_service": "2013-03-01",
+   "withdrawn": "2010-04-21",
+   "poi": "Eastalco 230 kV",
+   "owner": "APS",
+   "note": "Energy MW 640, capacity MW 640",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "H05",
+   "project_name": "",
+   "county": "Baltimore County",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 600.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2001-09-18",
+   "in_service": "2007-12-01",
+   "withdrawn": "2002-08-06",
+   "poi": "Riverside 230/115kV",
+   "owner": "BGE",
+   "note": "Energy MW 600, capacity MW 600",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "H13",
+   "project_name": "Owings Mills",
+   "county": "Baltimore County",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 9.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2001-11-27",
+   "in_service": "2004-06-01",
+   "withdrawn": "",
+   "poi": "Dolfield",
+   "owner": "BGE",
+   "note": "Energy MW 9, capacity MW 0",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "I05",
+   "project_name": "",
+   "county": "Calvert",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 6.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2002-04-02",
+   "in_service": "2003-12-01",
+   "withdrawn": "2003-05-21",
+   "poi": "Whiteoak (sub153) 13kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 6, capacity MW 6",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401847",
+     "plant": "Cove Point LNG Terminal power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "I10",
+   "project_name": "",
+   "county": "Montgomery",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 2.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2002-06-11",
+   "in_service": "2004-10-01",
+   "withdrawn": "",
+   "poi": "Bethesda (Sub 6)",
+   "owner": "PEPCO",
+   "note": "",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103964",
+     "plant": "Dickerson Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "J08",
+   "project_name": "GSA Federal Research Center (FDA)",
+   "county": "Montgomery",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 8.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2002-12-12",
+   "in_service": "2004-08-15",
+   "withdrawn": "",
+   "poi": "Whiteoak",
+   "owner": "PEPCO",
+   "note": "Energy MW 8, capacity MW 8",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103964",
+     "plant": "Dickerson Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "K06",
+   "project_name": "Easton Utilities Substation 2",
+   "county": "Talbot",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 5.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2003-05-06",
+   "in_service": "2004-11-01",
+   "withdrawn": "",
+   "poi": "Easton 69kV",
+   "owner": "DPL",
+   "note": "Energy MW 5, capacity MW 5",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "K07",
+   "project_name": "Easton Utilities Substation 2",
+   "county": "Talbot",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 5.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2003-05-07",
+   "in_service": "2004-11-01",
+   "withdrawn": "",
+   "poi": "Easton 69kV",
+   "owner": "DPL",
+   "note": "Energy MW 5, capacity MW 5",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "K08",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 1800.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2003-05-21",
+   "in_service": "",
+   "withdrawn": "2003-08-13",
+   "poi": "Morgantown / Oak Grove",
+   "owner": "PEPCO",
+   "note": "",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "L01",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 1800.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2003-08-01",
+   "in_service": "2008-01-06",
+   "withdrawn": "2004-04-08",
+   "poi": "Morgantown / Oak Grove",
+   "owner": "PEPCO",
+   "note": "Energy MW 1800, capacity MW 1800",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "L14",
+   "project_name": "",
+   "county": "Worcester",
+   "state": "MD",
+   "fuel": "Diesel",
+   "facility_type": "Generation Interconnection",
+   "mw": 5.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2004-01-20",
+   "in_service": "2005-07-01",
+   "withdrawn": "2004-08-19",
+   "poi": "Berlin 69kV Tap 5 MW",
+   "owner": "AEC",
+   "note": "Energy MW 5, capacity MW 5",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "M01",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 1800.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2004-02-01",
+   "in_service": "2008-01-01",
+   "withdrawn": "2005-03-18",
+   "poi": "Morgantown-Oak Grove",
+   "owner": "PEPCO",
+   "note": "Energy MW 1800, capacity MW 1800",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "O34",
+   "project_name": "",
+   "county": "Frederick",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 3.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2005-06-03",
+   "in_service": "2006-05-01",
+   "withdrawn": "2005-10-06",
+   "poi": "Frederick 12kV",
+   "owner": "APS",
+   "note": "Energy MW 3, capacity MW 3",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "P32",
+   "project_name": "GSA Federal Research Center (FDA)",
+   "county": "Montgomery",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 19.5,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2005-12-07",
+   "in_service": "2007-12-31",
+   "withdrawn": "",
+   "poi": "White Oak",
+   "owner": "PEPCO",
+   "note": "",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103964",
+     "plant": "Dickerson Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "Q31",
+   "project_name": "Hawkins Point",
+   "county": "Baltimore City",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 10.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2006-04-11",
+   "in_service": "2006-06-01",
+   "withdrawn": "",
+   "poi": "Wagner 34kV",
+   "owner": "BGE",
+   "note": "Energy MW 10, capacity MW 0",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401828",
+     "plant": "Westport power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "R17",
+   "project_name": "CPV St. Charles",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 645.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2006-10-02",
+   "in_service": "2013-06-01",
+   "withdrawn": "2010-04-01",
+   "poi": "Morgantown - Oak Grove 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 645, capacity MW 645",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "R20",
+   "project_name": "Rock Springs Units 3 & 4",
+   "county": "Cecil",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 20.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2006-10-04",
+   "in_service": "2007-01-01",
+   "withdrawn": "",
+   "poi": "Rock Springs",
+   "owner": "ODEC",
+   "note": "Energy MW 20, capacity MW 20",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401929",
+     "plant": "Essential Power Rock Springs station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402170",
+     "plant": "Wildcat Point generation facility",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "S17",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 225.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2007-03-19",
+   "in_service": "2017-12-31",
+   "withdrawn": "2013-12-18",
+   "poi": "Talbert 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 225, capacity MW 225",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "S18",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 1250.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2007-03-19",
+   "in_service": "2011-12-31",
+   "withdrawn": "2008-02-21",
+   "poi": "Talbert 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 1250, capacity MW 1250",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "S29",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 900.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2007-04-24",
+   "in_service": "2007-12-31",
+   "withdrawn": "2008-02-23",
+   "poi": "Morgantown-Oak Grove",
+   "owner": "PEPCO",
+   "note": "Energy MW 900, capacity MW 900",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "S30",
+   "project_name": "Sun Paper",
+   "county": "Baltimore City",
+   "state": "MD",
+   "fuel": "Diesel",
+   "facility_type": "Generation Interconnection",
+   "mw": 4.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2007-04-30",
+   "in_service": "2007-12-31",
+   "withdrawn": "",
+   "poi": "Gould",
+   "owner": "BGE",
+   "note": "Energy MW 4, capacity MW 0",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401828",
+     "plant": "Westport power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "S32",
+   "project_name": "Perryman 6 Units 1-4",
+   "county": "Harford",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 130.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2007-05-03",
+   "in_service": "2015-05-09",
+   "withdrawn": "",
+   "poi": "Perryman",
+   "owner": "BGE",
+   "note": "Energy MW 130, capacity MW 130",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100001080785",
+     "plant": "Constellation (Project 1) power station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001080791",
+     "plant": "Constellation (Project 2) power station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000401827",
+     "plant": "Perryman power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "S33",
+   "project_name": "",
+   "county": "Baltimore County",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 85.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2007-05-03",
+   "in_service": "2010-05-01",
+   "withdrawn": "2009-07-02",
+   "poi": "Riverside",
+   "owner": "BGE",
+   "note": "Energy MW 120, capacity MW 85",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "S67",
+   "project_name": "Gould Street",
+   "county": "Baltimore City",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 101.0,
+   "status": "Deactivated",
+   "stage": "",
+   "queue_date": "2007-07-26",
+   "in_service": "2008-06-01",
+   "withdrawn": "",
+   "poi": "Gould St.",
+   "owner": "BGE",
+   "note": "Energy MW 101, capacity MW 101",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401828",
+     "plant": "Westport power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "T133",
+   "project_name": "Powell Generation Facility",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 225.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2008-01-10",
+   "in_service": "2018-07-31",
+   "withdrawn": "2014-09-25",
+   "poi": "Chalk Point-Bowie 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 225, capacity MW 225",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "T134",
+   "project_name": "Powell Generation Facility",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 325.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2008-01-10",
+   "in_service": "2018-07-31",
+   "withdrawn": "2014-09-25",
+   "poi": "Chalk Point-Bowie 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 325, capacity MW 325",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "T147",
+   "project_name": "Perryman Generating Unit 51",
+   "county": "Harford",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 10.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2008-01-24",
+   "in_service": "2008-06-01",
+   "withdrawn": "",
+   "poi": "Perryman",
+   "owner": "BGE",
+   "note": "Energy MW 10, capacity MW 10",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100001080785",
+     "plant": "Constellation (Project 1) power station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001080791",
+     "plant": "Constellation (Project 2) power station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000401827",
+     "plant": "Perryman power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "U1-036",
+   "project_name": "",
+   "county": "Baltimore County",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 100.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2008-02-25",
+   "in_service": "2011-06-01",
+   "withdrawn": "2009-10-29",
+   "poi": "Steel Side 115 kV",
+   "owner": "BGE",
+   "note": "Energy MW 220, capacity MW 100",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "U2-081",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 600.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2008-07-30",
+   "in_service": "2012-12-31",
+   "withdrawn": "2008-12-01",
+   "poi": "Chalk Point 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 600, capacity MW 600",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "U2-082",
+   "project_name": "",
+   "county": "Montgomery",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 400.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2008-07-30",
+   "in_service": "2012-12-31",
+   "withdrawn": "2008-12-01",
+   "poi": "Dickerson 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 400, capacity MW 400",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103964",
+     "plant": "Dickerson Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "U2-083",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 400.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2008-07-30",
+   "in_service": "2012-12-31",
+   "withdrawn": "2008-12-01",
+   "poi": "Chalk Point 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 400, capacity MW 400",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "U2-084",
+   "project_name": "",
+   "county": "Montgomery",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 600.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2008-07-30",
+   "in_service": "2012-12-31",
+   "withdrawn": "2008-12-01",
+   "poi": "Dickerson",
+   "owner": "PEPCO",
+   "note": "Energy MW 600, capacity MW 600",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103964",
+     "plant": "Dickerson Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "U4-015",
+   "project_name": "Rocks Springs 1 & 2",
+   "county": "Cecil",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 8.7,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2008-11-25",
+   "in_service": "2009-05-31",
+   "withdrawn": "",
+   "poi": "Rock Springs 500kV",
+   "owner": "ODEC",
+   "note": "Energy MW 8.7, capacity MW 8.7",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401929",
+     "plant": "Essential Power Rock Springs station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402170",
+     "plant": "Wildcat Point generation facility",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "V2-037",
+   "project_name": "White Oak",
+   "county": "Montgomery",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 4.5,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2009-07-24",
+   "in_service": "2010-03-31",
+   "withdrawn": "",
+   "poi": "White Oak",
+   "owner": "PEPCO",
+   "note": "Energy MW 4.5, capacity MW 0",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103964",
+     "plant": "Dickerson Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "V3-001",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 750.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2009-08-03",
+   "in_service": "2015-05-01",
+   "withdrawn": "2010-03-02",
+   "poi": "Burches Hill 500kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 750, capacity MW 750",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "V3-017",
+   "project_name": "St. Charles Combined Cycle Facility",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 725.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2009-08-24",
+   "in_service": "2016-11-25",
+   "withdrawn": "",
+   "poi": "Morgantown-Oak Grove",
+   "owner": "PEPCO",
+   "note": "Energy MW 725, capacity MW 725",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "V3-037",
+   "project_name": "Millersville Landfill & Resource Recovery Facility",
+   "county": "Anne Arundel",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 4.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2009-09-14",
+   "in_service": "2012-06-13",
+   "withdrawn": "",
+   "poi": "Naval Academy Junction 13kV",
+   "owner": "BGE",
+   "note": "Energy MW 4, capacity MW 4",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103965",
+     "plant": "Herbert Wagner Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "W1-034",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 750.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2010-02-26",
+   "in_service": "2015-05-01",
+   "withdrawn": "2010-08-24",
+   "poi": "Burches Hill",
+   "owner": "PEPCO",
+   "note": "Energy MW 750, capacity MW 750",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "W3-105",
+   "project_name": "Dickerson CT1 (D-CT1)",
+   "county": "Montgomery",
+   "state": "MD",
+   "fuel": "Oil",
+   "facility_type": "Generation Interconnection",
+   "mw": 5.0,
+   "status": "Deactivated",
+   "stage": "",
+   "queue_date": "2010-10-29",
+   "in_service": "2011-08-23",
+   "withdrawn": "",
+   "poi": "Dickerson 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 5, capacity MW 5",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103964",
+     "plant": "Dickerson Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "W4-010",
+   "project_name": "",
+   "county": "Montgomery",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 29.1,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2010-11-22",
+   "in_service": "2014-05-08",
+   "withdrawn": "",
+   "poi": "White Oak",
+   "owner": "PEPCO",
+   "note": "Energy MW 29.1, capacity MW 0",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103964",
+     "plant": "Dickerson Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "W4-044",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 725.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2011-01-05",
+   "in_service": "2015-06-01",
+   "withdrawn": "2013-07-31",
+   "poi": "Kelson Ridge 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 725, capacity MW 725",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "X2-030",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 830.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2011-05-31",
+   "in_service": "2016-01-01",
+   "withdrawn": "2012-02-01",
+   "poi": "Morgantown-Oak Grove 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 830, capacity MW 830",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "X3-087",
+   "project_name": "Mattawoman Energy",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 744.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2011-10-31",
+   "in_service": "2022-03-01",
+   "withdrawn": "2020-12-23",
+   "poi": "Burches Hill-Brandywine 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 894, capacity MW 744",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "X3-088",
+   "project_name": "",
+   "county": "Montgomery",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 440.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2011-10-31",
+   "in_service": "2016-12-31",
+   "withdrawn": "2012-06-21",
+   "poi": "Dickerson 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 440, capacity MW 440",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103964",
+     "plant": "Dickerson Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "X3-102",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 937.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2011-10-31",
+   "in_service": "2016-06-01",
+   "withdrawn": "2012-06-20",
+   "poi": "Burches Hill-Possum Point 500kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 971.2, capacity MW 937",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "X3-103",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 971.2,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2011-10-31",
+   "in_service": "2016-06-01",
+   "withdrawn": "2011-11-18",
+   "poi": "Oakgrove-Morgantown 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 971.2, capacity MW 971.2",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "X4-006",
+   "project_name": "St. Charles Combined Cycle Facility",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 60.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2011-11-03",
+   "in_service": "2017-01-28",
+   "withdrawn": "",
+   "poi": "Kelson Ridge 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 60, capacity MW 0",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "X4-007",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 60.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2011-11-03",
+   "in_service": "2015-06-01",
+   "withdrawn": "2013-07-31",
+   "poi": "Kelson Ridge 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 60, capacity MW 0",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "X4-026",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 650.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2011-11-30",
+   "in_service": "2015-06-01",
+   "withdrawn": "2012-08-02",
+   "poi": "Aquasco 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 792, capacity MW 650",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "X4-035",
+   "project_name": "Keys Energy Center",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 735.5,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2012-01-20",
+   "in_service": "2018-05-21",
+   "withdrawn": "",
+   "poi": "Burches Hill-Chalk Point 500kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 735.5, capacity MW 735.5",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "Y1-065",
+   "project_name": "Wildcat Point",
+   "county": "Cecil",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 805.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2012-04-27",
+   "in_service": "2017-07-26",
+   "withdrawn": "",
+   "poi": "Rock Springs 500kV",
+   "owner": "Essential Power",
+   "note": "Energy MW 834.1, capacity MW 805",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401929",
+     "plant": "Essential Power Rock Springs station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402170",
+     "plant": "Wildcat Point generation facility",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "Y2-108",
+   "project_name": "",
+   "county": "Somerset",
+   "state": "MD",
+   "fuel": "Oil",
+   "facility_type": "Generation Interconnection",
+   "mw": 2.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2012-11-02",
+   "in_service": "2015-03-31",
+   "withdrawn": "2014-12-11",
+   "poi": "Crisfield 25kV",
+   "owner": "DPL",
+   "note": "Energy MW 2, capacity MW 2",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "Y3-029",
+   "project_name": "Hickory Plains Hydroponics",
+   "county": "Frederick",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 4.375,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2013-02-01",
+   "in_service": "2017-12-31",
+   "withdrawn": "2018-04-04",
+   "poi": "Damascus-Mt. Airy 34.5kV",
+   "owner": "APS",
+   "note": "Energy MW 4.375, capacity MW 4.375",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "Y3-102",
+   "project_name": "Wildcat Point",
+   "county": "Cecil",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 135.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2013-04-30",
+   "in_service": "2017-07-27",
+   "withdrawn": "",
+   "poi": "Rock Springs 500kV",
+   "owner": "Essential Power",
+   "note": "Energy MW 166, capacity MW 135",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401929",
+     "plant": "Essential Power Rock Springs station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402170",
+     "plant": "Wildcat Point generation facility",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "Z1-041",
+   "project_name": "Rock Springs Units #1 & #2",
+   "county": "Cecil",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 2.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2013-08-14",
+   "in_service": "2015-05-28",
+   "withdrawn": "",
+   "poi": "Rock Springs 500kV",
+   "owner": "Essential Power",
+   "note": "Energy MW 2, capacity MW 2",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401929",
+     "plant": "Essential Power Rock Springs station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402170",
+     "plant": "Wildcat Point generation facility",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "Z1-052",
+   "project_name": "Keys Energy Center",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 44.5,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2013-08-29",
+   "in_service": "2018-07-23",
+   "withdrawn": "",
+   "poi": "Burches Hill-Chalk Point 500kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 64.5, capacity MW 44.5",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "Z2-060",
+   "project_name": "Mattawoman Energy",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 116.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2014-03-31",
+   "in_service": "2022-03-01",
+   "withdrawn": "2020-12-23",
+   "poi": "Burches Hill-Brandywine 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 33, capacity MW 116",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AA2-170",
+   "project_name": "Mattawoman Energy",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 92.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2015-04-30",
+   "in_service": "2022-03-01",
+   "withdrawn": "2020-12-23",
+   "poi": "Burches Hill-Brandywine 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 111.1, capacity MW 92",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AB1-005",
+   "project_name": "",
+   "county": "Baltimore County",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 1.3,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2015-05-18",
+   "in_service": "2021-12-01",
+   "withdrawn": "2021-07-02",
+   "poi": "Harrisonville 13kV",
+   "owner": "BGE",
+   "note": "Energy MW 1.3, capacity MW 0",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AC2-018",
+   "project_name": "Rock Springs Units #3 & #4",
+   "county": "Cecil",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 8.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2017-01-19",
+   "in_service": "2017-10-01",
+   "withdrawn": "",
+   "poi": "Rock Springs 500kV",
+   "owner": "Essential Power",
+   "note": "Energy MW 60, capacity MW 8",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401929",
+     "plant": "Essential Power Rock Springs station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402170",
+     "plant": "Wildcat Point generation facility",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AD1-114",
+   "project_name": "CPV Maryland",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 75.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2017-09-26",
+   "in_service": "2019-03-28",
+   "withdrawn": "",
+   "poi": "Kelson Ridge 230kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 75, capacity MW 75",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AD2-004",
+   "project_name": "",
+   "county": "Caroline",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 600.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2017-10-26",
+   "in_service": "2022-12-01",
+   "withdrawn": "2018-09-19",
+   "poi": "Steel-Vienna 230 kV",
+   "owner": "DPL",
+   "note": "Energy MW 600, capacity MW 600",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AD2-103",
+   "project_name": "",
+   "county": "Baltimore County",
+   "state": "MD",
+   "fuel": "Oil",
+   "facility_type": "Generation Interconnection",
+   "mw": 14.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2018-03-22",
+   "in_service": "2019-10-31",
+   "withdrawn": "2021-10-27",
+   "poi": "Crane CT 1 115kV",
+   "owner": "BGE",
+   "note": "Energy MW 14, capacity MW 14",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AD2-104",
+   "project_name": "",
+   "county": "Baltimore County",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 144.6,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2018-03-22",
+   "in_service": "2019-10-31",
+   "withdrawn": "2021-10-27",
+   "poi": "Crane CT 2-3-4 115kV",
+   "owner": "BGE",
+   "note": "Energy MW 144.6, capacity MW 144.6",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": []
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AD2-167",
+   "project_name": "Wildcat Point",
+   "county": "Cecil",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 52.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2018-03-27",
+   "in_service": "2017-07-27",
+   "withdrawn": "",
+   "poi": "Rock Springs 500kV",
+   "owner": "Essential Power",
+   "note": "Energy MW 90, capacity MW 52",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401929",
+     "plant": "Essential Power Rock Springs station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402170",
+     "plant": "Wildcat Point generation facility",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AE1-151",
+   "project_name": "",
+   "county": "Baltimore City",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 9.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2018-09-24",
+   "in_service": "2020-03-02",
+   "withdrawn": "2019-10-08",
+   "poi": "PACA Street 13.8kV",
+   "owner": "BGE",
+   "note": "Energy MW 9, capacity MW 9",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401828",
+     "plant": "Westport power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AE2-061",
+   "project_name": "Rock Springs Unit #1 and Unit #2",
+   "county": "Cecil",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 7.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2019-02-04",
+   "in_service": "2019-08-12",
+   "withdrawn": "",
+   "poi": "Rock Springs 500 kV",
+   "owner": "Essential Power",
+   "note": "Energy MW 0, capacity MW 7",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401929",
+     "plant": "Essential Power Rock Springs station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402170",
+     "plant": "Wildcat Point generation facility",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AF2-152",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Oil",
+   "facility_type": "Generation Interconnection",
+   "mw": 2.0,
+   "status": "Deactivated",
+   "stage": "",
+   "queue_date": "2020-03-16",
+   "in_service": "2021-02-28",
+   "withdrawn": "2022-12-13",
+   "poi": "Morgantown CT5 230 kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 2, capacity MW 2",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AF2-153",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Oil",
+   "facility_type": "Generation Interconnection",
+   "mw": 2.0,
+   "status": "Deactivated",
+   "stage": "",
+   "queue_date": "2020-03-16",
+   "in_service": "2021-02-28",
+   "withdrawn": "2022-12-13",
+   "poi": "Morgantown CT4 230 kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 2, capacity MW 2",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AF2-154",
+   "project_name": "Dickerson HCT1, HCT2, DCT1",
+   "county": "Montgomery",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 5.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2020-03-16",
+   "in_service": "2023-05-31",
+   "withdrawn": "",
+   "poi": "Dickerson H2 CT 230 kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 5, capacity MW 5",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103964",
+     "plant": "Dickerson Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AF2-155",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 13.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2020-03-16",
+   "in_service": "2021-02-28",
+   "withdrawn": "2022-12-13",
+   "poi": "Chalk Point CT3-CT6 230 kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 13, capacity MW 13",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AF2-156",
+   "project_name": "Chalk Point CT 2",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 2.0,
+   "status": "In Service",
+   "stage": "",
+   "queue_date": "2020-03-16",
+   "in_service": "2023-05-31",
+   "withdrawn": "",
+   "poi": "Chalk Point CT2 69 kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 2, capacity MW 2",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AF2-157",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 1.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2020-03-16",
+   "in_service": "2021-02-28",
+   "withdrawn": "2022-12-13",
+   "poi": "Chalk Point CT1 69 kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 0, capacity MW 1",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AF2-158",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 4.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2020-03-16",
+   "in_service": "2021-02-28",
+   "withdrawn": "2022-12-13",
+   "poi": "Chalk Point Unit 4 230 kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 4, capacity MW 4",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AF2-159",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 2.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2020-03-16",
+   "in_service": "2021-02-28",
+   "withdrawn": "2022-12-13",
+   "poi": "Chalk Point ST3 230 kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 2, capacity MW 2",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AG1-094",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 35.3,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2020-08-07",
+   "in_service": "2021-08-31",
+   "withdrawn": "2023-09-12",
+   "poi": "Burches Hill 230 kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 35.3, capacity MW 0",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AG2-313",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 35.3,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2021-03-23",
+   "in_service": "2021-08-31",
+   "withdrawn": "2023-09-12",
+   "poi": "Burches Hill 230 kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 0, capacity MW 35.3",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AH1-744 - moved to TC2",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 48.285,
+   "status": "Engineering and Procurement",
+   "stage": "",
+   "queue_date": "2025-04-11",
+   "in_service": "2028-06-01",
+   "withdrawn": "",
+   "poi": "Cheltenham 500 kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 53.5, capacity MW 48.285",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AH2-269A",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 45.0,
+   "status": "Withdrawn",
+   "stage": "",
+   "queue_date": "2022-03-10",
+   "in_service": "2026-11-02",
+   "withdrawn": "",
+   "poi": "Burches Hill-Chalk Point 500kV",
+   "owner": "PEPCO",
+   "note": "Energy MW 45, capacity MW 45",
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "AH1-744",
+   "project_name": "PARKWAY GENERATION OPERATING LLC",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 48.285,
+   "status": "EP",
+   "stage": "TC2 / Final Agreement",
+   "queue_date": "2025-04-11",
+   "in_service": "2027-11-22",
+   "withdrawn": "",
+   "poi": "Cheltenham 500 kV",
+   "owner": "PEPCO",
+   "note": "Developer: Parkway Generation Operating, LLC; Energy MW 53.5, capacity MW 48.285",
+   "url": "https://www.pjm.com/planning/m/cycle-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "C01-1013",
+   "project_name": "",
+   "county": "Charles County",
+   "state": "MD",
+   "fuel": "Oil",
+   "facility_type": "Generation Interconnection",
+   "mw": 108.0,
+   "status": "Withdrawn",
+   "stage": "C01 / Application Submission",
+   "queue_date": "2025-05-30",
+   "in_service": "2028-06-30",
+   "withdrawn": "2025-06-02",
+   "poi": "",
+   "owner": "PEPCO",
+   "note": "Developer: Lanyard Power Holdings, LLC; Energy MW 108.0, capacity MW 108.0",
+   "url": "https://www.pjm.com/planning/m/cycle-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "C01-1338",
+   "project_name": "",
+   "county": "Charles",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 510.0,
+   "status": "Withdrawn",
+   "stage": "C01 / Phase 1",
+   "queue_date": "2026-04-27",
+   "in_service": "2031-06-30",
+   "withdrawn": "2026-09-25",
+   "poi": "Talbert - Hawkins Gate 230 kV & Talbert to Morgantown 230 kV",
+   "owner": "PEPCO",
+   "note": "Developer: Old Line Reserve Energy, LLC; Energy MW 510.0, capacity MW 510.0",
+   "url": "https://www.pjm.com/planning/m/cycle-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000401837",
+     "plant": "CPV St. Charles energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103967",
+     "plant": "Morgantown Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "C01-1494",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 618.0,
+   "status": "Active",
+   "stage": "C01 / Phase 1",
+   "queue_date": "2026-04-27",
+   "in_service": "2031-04-15",
+   "withdrawn": "",
+   "poi": "Cheltenham 500 kV",
+   "owner": "PEPCO",
+   "note": "Developer: Parkway Generation Operating, LLC; Energy MW 618.0, capacity MW 618.0",
+   "url": "https://www.pjm.com/planning/m/cycle-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "C01-1505",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 620.0,
+   "status": "Active",
+   "stage": "C01 / Phase 1",
+   "queue_date": "2026-04-27",
+   "in_service": "2031-04-15",
+   "withdrawn": "",
+   "poi": "Brandywine 230 kV",
+   "owner": "PEPCO",
+   "note": "Developer: KMC Thermo, LLC; Energy MW 620.0, capacity MW 620.0",
+   "url": "https://www.pjm.com/planning/m/cycle-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "C01-1579",
+   "project_name": "",
+   "county": "Harford",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 555.0,
+   "status": "Active",
+   "stage": "C01 / Phase 1",
+   "queue_date": "2026-04-25",
+   "in_service": "2029-12-15",
+   "withdrawn": "",
+   "poi": "Perryman 115 kV",
+   "owner": "BGE",
+   "note": "Developer: PERRYMAN GAS, LLC; Energy MW 555.0, capacity MW 555.0",
+   "url": "https://www.pjm.com/planning/m/cycle-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100001080785",
+     "plant": "Constellation (Project 1) power station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001080791",
+     "plant": "Constellation (Project 2) power station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000401827",
+     "plant": "Perryman power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "C01-1802",
+   "project_name": "",
+   "county": "Anne Arundel",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 269.0,
+   "status": "Active",
+   "stage": "C01 / Phase 1",
+   "queue_date": "2026-04-24",
+   "in_service": "2030-08-31",
+   "withdrawn": "",
+   "poi": "Brandon Shores 230 kV",
+   "owner": "BGE",
+   "note": "Developer: FS CT Project LLC; Energy MW 300.0, capacity MW 269.0",
+   "url": "https://www.pjm.com/planning/m/cycle-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103965",
+     "plant": "Herbert Wagner Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "C01-2150",
+   "project_name": "",
+   "county": "Prince George's",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 35.0,
+   "status": "Withdrawn",
+   "stage": "C01 / Application Review",
+   "queue_date": "2026-04-24",
+   "in_service": "2031-04-30",
+   "withdrawn": "2026-08-03",
+   "poi": "Burches Hill 230 kV",
+   "owner": "PEPCO",
+   "note": "Developer: KMC Thermo, LLC; Energy MW 35.0, capacity MW 35.0",
+   "url": "https://www.pjm.com/planning/m/cycle-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000402511",
+     "plant": "Brandywine power facility",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000103962",
+     "plant": "Chalk Point Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402218",
+     "plant": "Keys energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100000402417",
+     "plant": "Mattawoman energy center",
+     "how": "same county, gas or oil, check it is this plant"
+    },
+    {
+     "plant_id": "L100001047726",
+     "plant": "NRG Chalk Point CT power station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  },
+  {
+   "source": "PJM",
+   "queue_id": "C01-2160",
+   "project_name": "",
+   "county": "Montgomery",
+   "state": "MD",
+   "fuel": "Natural Gas",
+   "facility_type": "Generation Interconnection",
+   "mw": 200.0,
+   "status": "Active",
+   "stage": "C01 / Phase 1",
+   "queue_date": "2026-04-27",
+   "in_service": "2029-07-18",
+   "withdrawn": "",
+   "poi": "Dickerson H 230 kV",
+   "owner": "PEPCO",
+   "note": "Developer: Terrapin Power Holdings, LLC (Dickerson Power, LLC); Energy MW 200.0, capacity MW 200.0",
+   "url": "https://www.pjm.com/planning/m/cycle-service-request-status",
+   "gas_oil": true,
+   "fuel_unknown": false,
+   "matched": [
+    {
+     "plant_id": "L100000103964",
+     "plant": "Dickerson Generating Station",
+     "how": "same county, gas or oil, check it is this plant"
+    }
+   ]
+  }
+ ],
+ "by_plant": {
+  "L100000402511": [
+   "A58",
+   "B24",
+   "F08",
+   "T133",
+   "T134",
+   "U2-081",
+   "U2-083",
+   "V3-001",
+   "W1-034",
+   "X3-087",
+   "X4-026",
+   "X4-035",
+   "Z1-052",
+   "Z2-060",
+   "AA2-170",
+   "AF2-155",
+   "AF2-156",
+   "AF2-157",
+   "AF2-158",
+   "AF2-159",
+   "AG1-094",
+   "AG2-313",
+   "AH1-744 - moved to TC2",
+   "AH2-269A",
+   "AH1-744",
+   "C01-1494",
+   "C01-1505",
+   "C01-2150"
+  ],
+  "L100000401837": [
+   "B02",
+   "B15",
+   "B16",
+   "C03",
+   "C04",
+   "K08",
+   "L01",
+   "M01",
+   "R17",
+   "S17",
+   "S18",
+   "S29",
+   "V3-017",
+   "W4-044",
+   "X2-030",
+   "X3-102",
+   "X3-103",
+   "X4-006",
+   "X4-007",
+   "AD1-114",
+   "AF2-152",
+   "AF2-153",
+   "C01-1013",
+   "C01-1338"
+  ],
+  "L100000103962": [
+   "A58",
+   "B24",
+   "F08",
+   "T133",
+   "T134",
+   "U2-081",
+   "U2-083",
+   "V3-001",
+   "W1-034",
+   "X3-087",
+   "X4-026",
+   "X4-035",
+   "Z1-052",
+   "Z2-060",
+   "AA2-170",
+   "AF2-155",
+   "AF2-156",
+   "AF2-157",
+   "AF2-158",
+   "AF2-159",
+   "AG1-094",
+   "AG2-313",
+   "AH1-744 - moved to TC2",
+   "AH2-269A",
+   "AH1-744",
+   "C01-1494",
+   "C01-1505",
+   "C01-2150"
+  ],
+  "L100001080785": [
+   "A47",
+   "B29",
+   "B48",
+   "C12",
+   "C13",
+   "S32",
+   "T147",
+   "C01-1579"
+  ],
+  "L100001080791": [
+   "A47",
+   "B29",
+   "B48",
+   "C12",
+   "C13",
+   "S32",
+   "T147",
+   "C01-1579"
+  ],
+  "L100000401847": [
+   "I05"
+  ],
+  "L100000103964": [
+   "A07",
+   "B01",
+   "D10",
+   "D29",
+   "F07",
+   "G02",
+   "I10",
+   "J08",
+   "P32",
+   "U2-082",
+   "U2-084",
+   "V2-037",
+   "W3-105",
+   "W4-010",
+   "X3-088",
+   "AF2-154",
+   "C01-2160"
+  ],
+  "L100000401929": [
+   "A29",
+   "A30",
+   "R20",
+   "U4-015",
+   "Y1-065",
+   "Y3-102",
+   "Z1-041",
+   "AC2-018",
+   "AD2-167",
+   "AE2-061"
+  ],
+  "L100000103965": [
+   "V3-037",
+   "C01-1802"
+  ],
+  "L100000402218": [
+   "A58",
+   "B24",
+   "F08",
+   "T133",
+   "T134",
+   "U2-081",
+   "U2-083",
+   "V3-001",
+   "W1-034",
+   "X3-087",
+   "X4-026",
+   "X4-035",
+   "Z1-052",
+   "Z2-060",
+   "AA2-170",
+   "AF2-155",
+   "AF2-156",
+   "AF2-157",
+   "AF2-158",
+   "AF2-159",
+   "AG1-094",
+   "AG2-313",
+   "AH1-744 - moved to TC2",
+   "AH2-269A",
+   "AH1-744",
+   "C01-1494",
+   "C01-1505",
+   "C01-2150"
+  ],
+  "L100000402417": [
+   "A58",
+   "B24",
+   "F08",
+   "T133",
+   "T134",
+   "U2-081",
+   "U2-083",
+   "V3-001",
+   "W1-034",
+   "X3-087",
+   "X4-026",
+   "X4-035",
+   "Z1-052",
+   "Z2-060",
+   "AA2-170",
+   "AF2-155",
+   "AF2-156",
+   "AF2-157",
+   "AF2-158",
+   "AF2-159",
+   "AG1-094",
+   "AG2-313",
+   "AH1-744 - moved to TC2",
+   "AH2-269A",
+   "AH1-744",
+   "C01-1494",
+   "C01-1505",
+   "C01-2150"
+  ],
+  "L100000103967": [
+   "B02",
+   "B15",
+   "B16",
+   "C03",
+   "C04",
+   "K08",
+   "L01",
+   "M01",
+   "R17",
+   "S17",
+   "S18",
+   "S29",
+   "V3-017",
+   "W4-044",
+   "X2-030",
+   "X3-102",
+   "X3-103",
+   "X4-006",
+   "X4-007",
+   "AD1-114",
+   "AF2-152",
+   "AF2-153",
+   "C01-1013",
+   "C01-1338"
+  ],
+  "L100001047726": [
+   "A58",
+   "B24",
+   "F08",
+   "T133",
+   "T134",
+   "U2-081",
+   "U2-083",
+   "V3-001",
+   "W1-034",
+   "X3-087",
+   "X4-026",
+   "X4-035",
+   "Z1-052",
+   "Z2-060",
+   "AA2-170",
+   "AF2-155",
+   "AF2-156",
+   "AF2-157",
+   "AF2-158",
+   "AF2-159",
+   "AG1-094",
+   "AG2-313",
+   "AH1-744 - moved to TC2",
+   "AH2-269A",
+   "AH1-744",
+   "C01-1494",
+   "C01-1505",
+   "C01-2150"
+  ],
+  "L100000401827": [
+   "A47",
+   "B29",
+   "B48",
+   "C12",
+   "C13",
+   "S32",
+   "T147",
+   "C01-1579"
+  ],
+  "L100000409301": [
+   "G03",
+   "G28"
+  ],
+  "L100000401828": [
+   "B22",
+   "Q31",
+   "S30",
+   "S67",
+   "AE1-151"
+  ],
+  "L100000402170": [
+   "A29",
+   "A30",
+   "R20",
+   "U4-015",
+   "Y1-065",
+   "Y3-102",
+   "Z1-041",
+   "AC2-018",
+   "AD2-167",
+   "AE2-061"
+  ]
+ },
+ "unmatched_gas_oil": [
+  "D05_W17",
+  "E05",
+  "E05_W25",
+  "G00_W39",
+  "G30_W55",
+  "G35",
+  "G39",
+  "G50",
+  "G51_W62",
+  "H05",
+  "H13",
+  "K06",
+  "K07",
+  "L14",
+  "O34",
+  "S33",
+  "U1-036",
+  "Y2-108",
+  "Y3-029",
+  "AB1-005",
+  "AD2-004",
+  "AD2-103",
+  "AD2-104"
+ ],
+ "hidden_fuel_leads": [],
+ "needs_answer": [
+  "PJM C01-1494",
+  "PJM C01-1505",
+  "PJM C01-1579",
+  "PJM C01-1802",
+  "PJM C01-2160"
+ ]
+}

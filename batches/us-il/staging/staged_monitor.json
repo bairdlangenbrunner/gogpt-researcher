@@ -13,9 +13,9 @@
     "generated": "2026-10-09T18:15:23-04:00",
     "mode": "update",
     "counts": {
-      "records": 15
+      "records": 16
     },
-    "annotated": "2026-10-22: discovery audit addendum. Both Nelson watch items amended with the PJM queue facts (AH1-718 is an uprate); four April 2026 PJM Cycle 1 gas requests added as watch items (Will, Ogle, LaSalle and Putnam counties)."
+    "annotated": "2026-10-22: discovery audit addendum. Both Nelson watch items amended with the PJM queue facts (AH1-718 is an uprate); four April 2026 PJM Cycle 1 gas requests added as watch items (Will, Ogle, LaSalle and Putnam counties). 2026-10-29: the four PJM Cycle 1 gas requests moved to new plants after their interconnection.fyi pages passed the verifier. 2026-10-30: MISO J1839 watch item dropped; it is Broadwing's grid request, now a duplicate question on Broadwing in the qa file.; 2026-10-30: Monarch Rock Air watch item closed (Milkweed Energy Center permit, added in the data center batch); the three data center holds recast as no_generation; Hut 8, Joliet Technology Center and both Nelson items updated from the full Illinois EPA permit index; MicroLink Stickney added as an unverified lead"
   },
   "records": [
     {
@@ -60,13 +60,26 @@
       "monitor_kind": "existing_plant",
       "monitor_reason": "PJM queue request AH1-718 from Invenergy Nelson Expansion LLC is an uprate of the existing plant, 11 MW of energy and 38 MW of capacity, with an in-service date of May 29, 2028. It is not a new unit, so it is not an edit until it is in service.",
       "recheck_by": "2028-06",
-      "refs": {},
+      "refs": {
+        "links": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000109530?dwdocid=1523224"
+        ]
+      },
       "plant_name": "Nelson energy center",
       "country": "United States",
       "unit_name": "BLK1",
       "fields": {},
-      "researcher_notes": "The PJM cycle queue export of October 21, 2026 lists request AH1-718, Invenergy Nelson Expansion LLC, filed April 7, 2025, facility output 391 MW, energy uprate 11 MW, capacity uprate 38 MW, Active in Phase 3, in-service May 29, 2028. A second request, C01-1171 from Invenergy Nelson LLC, filed April 24, 2026, asks for a 66 MW energy and 6 MW capacity uprate by April 28, 2028. An earlier 575 MW request, AB1-089, was withdrawn on June 9, 2025. Capacity stays 315 MW until an uprate is in service. The PJM Cycle Service Request Status page (https://www.pjm.com/planning/m/cycle-service-request-status) is a script-driven grid, so its spreadsheet export of October 21, 2026 is kept in the repository's work folder under pjm and is not cited as a link.",
-      "record_id": "L100000402024:G100000401832:monitor-1"
+      "researcher_notes": "Update of October 30, 2026: the Illinois EPA document library was read in full for the Nelson site. Permit 15060042 for the two simple cycle peaking turbines was reissued as a revised construction permit on August 17, 2026 to Invenergy Nelson Expansion LLC, the company behind PJM request AH1-718. The 2025 construction permit 25030007 is a turbine blade and compressor uprate of the two combined cycle turbines and gives no capacity figure. No permit for a new combined cycle unit exists, so PJM request AB1-089 has no permit record and nothing is added. Earlier notes: The PJM cycle queue export of October 21, 2026 lists request AH1-718, Invenergy Nelson Expansion LLC, filed April 7, 2025, facility output 391 MW, energy uprate 11 MW, capacity uprate 38 MW, Active in Phase 3, in-service May 29, 2028. A second request, C01-1171 from Invenergy Nelson LLC, filed April 24, 2026, asks for a 66 MW energy and 6 MW capacity uprate by April 28, 2028. An earlier 575 MW request, AB1-089, was withdrawn on June 9, 2025. Capacity stays 315 MW until an uprate is in service. The PJM Cycle Service Request Status page (https://www.pjm.com/planning/m/cycle-service-request-status) is a script-driven grid, so its spreadsheet export of October 21, 2026 is kept in the repository's work folder under pjm and is not cited as a link.",
+      "record_id": "L100000402024:G100000401832:monitor-1",
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000109530?dwdocid=1523224",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Illinois EPA revised construction permit for application 15060042, site 103814AAC, issued August 17, 2026 to Invenergy Nelson Expansion LLC, 1311 Nelson Road, Rock Falls, for a peaking facility with two simple cycle combustion turbines at the Nelson Energy Center. First issued September 27, 2016, extended January 24, 2018, revision application received July 8, 2026."
+        }
+      ]
     },
     {
       "gem_unit_id": "G100000403457",
@@ -144,7 +157,7 @@
       "gem_plant_id": "",
       "plant_name": "Monarch Rock Air data center campus (Rockford)",
       "monitor_kind": "new_to_tracker",
-      "monitor_reason": "A gas generation plan for this data center is not confirmed by any source I could read, and no capacity, equipment or permit is public.",
+      "monitor_reason": "Closed on October 30, 2026: the air permit names twenty gas engines of 12.37 MW each, and the plant is added in the companion data center batch as the Milkweed Energy Center. Earlier reason: A gas generation plan for this data center is not confirmed by any source I could read, and no capacity, equipment or permit is public.",
       "recheck_by": "2027-03",
       "checks": [
         39
@@ -152,7 +165,8 @@
       "capacity_mw": "",
       "refs": {
         "links": [
-          "https://www.rockrivercurrent.com/2026/06/monarch-has-entered-tax-incentive-deal-with-state-for-rockford-data-center-records-request-shows/"
+          "https://www.rockrivercurrent.com/2026/06/monarch-has-entered-tax-incentive-deal-with-state-for-rockford-data-center-records-request-shows/",
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002756097?dwdocid=1513807"
         ]
       },
       "verifications": [
@@ -161,13 +175,20 @@
           "ok": true,
           "contains_value": true,
           "name_found": true
+        },
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002756097?dwdocid=1513807",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Illinois EPA construction permit for the Milkweed Energy Center, issued May 13, 2026 to Monarch Rock Air Gen LLC, application 26020005, site number 201030DIR: twenty 12.37 MWe natural gas fired Wartsila non-emergency engine generator sets at 42.1526, -89.1186 in Rockford, Winnebago County. Scanned pages read by OCR."
         }
       ],
       "country": "United States",
       "fields": {},
-      "researcher_notes": "Monarch Rock Air, a company tied to Monarch Energy, plans a data center campus on Friday Road in Rockford, Illinois. A Rock River Current article from June 2026, based on state incentive records, says the campus has associated power generation and is a 1,400 megawatt phased data center. That is the size of the data center, not of any power plant. The task list mentions 250 MW of gas engines planned for 2027 from Monarch's own website. I could not confirm that: the Monarch page is built with scripts and showed no text about Illinois or engines, and other articles describe ComEd grid supply. Still unknown: fuel, number of engines, generating capacity and air permit. Check for an Illinois air permit application. If added later, the captive fields are captive industry use power and captive industry type data center.",
+      "researcher_notes": "Update of October 30, 2026: the Illinois EPA document library, read in full, holds a construction permit issued May 13, 2026 to Monarch Rock Air Gen LLC for the Milkweed Energy Center, twenty Wartsila natural gas engine generator sets of 12.37 MW each, 247.4 MW, at the coordinates 42.1526, -89.1186 in Rockford. The plant is added in the companion data center batch (record us-il:new:milkweed-energy-center), so this watch item is closed. The earlier search had read only the public notice feed, which does not list this permit. Earlier notes: Monarch Rock Air, a company tied to Monarch Energy, plans a data center campus on Friday Road in Rockford, Illinois. A Rock River Current article from June 2026, based on state incentive records, says the campus has associated power generation and is a 1,400 megawatt phased data center. That is the size of the data center, not of any power plant. The task list mentions 250 MW of gas engines planned for 2027 from Monarch's own website. I could not confirm that: the Monarch page is built with scripts and showed no text about Illinois or engines, and other articles describe ComEd grid supply. Still unknown: fuel, number of engines, generating capacity and air permit. Check for an Illinois air permit application. If added later, the captive fields are captive industry use power and captive industry type data center.",
       "record_id": "us-il:plant:monitor-1",
-      "watch_case": "data_center_hold"
+      "watch_case": "no_generation"
     },
     {
       "gem_plant_id": "",
@@ -194,9 +215,9 @@
       ],
       "country": "United States",
       "fields": {},
-      "researcher_notes": "Hut 8 announced four data center sites in Louisiana, Texas and Illinois. A Data Center Dynamics article says the Illinois site, called Project 4, totals 50 MW. The source does not say where in Illinois, and does not say the site will make its own power from gas. The possible-updates sheet row mentions 1.5 GW across Texas and Illinois, but the Illinois share is only 50 MW. Still unknown: town, power source, any gas turbines or engines and their capacity. It stays on the list only to see whether on-site gas is announced. If added later, the captive fields are captive industry use power and captive industry type data center.",
+      "researcher_notes": "Update of October 30, 2026: the Illinois EPA air permit index, every final permit, application, correspondence and file entry filed since January 1, 2021, read in full for this batch on October 30, 2026, has no entry under Hut 8. A gas plant would need a construction permit before it is built, so none is on file. Earlier notes: Hut 8 announced four data center sites in Louisiana, Texas and Illinois. A Data Center Dynamics article says the Illinois site, called Project 4, totals 50 MW. The source does not say where in Illinois, and does not say the site will make its own power from gas. The possible-updates sheet row mentions 1.5 GW across Texas and Illinois, but the Illinois share is only 50 MW. Still unknown: town, power source, any gas turbines or engines and their capacity. It stays on the list only to see whether on-site gas is announced. If added later, the captive fields are captive industry use power and captive industry type data center.",
       "record_id": "us-il:plant:monitor-2",
-      "watch_case": "data_center_hold"
+      "watch_case": "no_generation"
     },
     {
       "gem_plant_id": "",
@@ -223,9 +244,9 @@
       ],
       "country": "United States",
       "fields": {},
-      "researcher_notes": "The Joliet city council approved the PowerHouse Data Centers and Hillwood campus in March 2026. A Data Center Dynamics article says it will offer up to 1.8 GW at full buildout, built in four phases, each with its own six-acre substation. The article describes grid substations and names no on-site gas turbines or engines. Still unknown: whether any on-site gas generation will be built, and its capacity. Only a gas plant tied to this campus would be added. If added later, the captive fields are captive industry use power and captive industry type data center.",
+      "researcher_notes": "Update of October 30, 2026: the Illinois EPA air permit index, every final permit, application, correspondence and file entry filed since January 1, 2021, read in full for this batch on October 30, 2026, has no entry under PowerHouse, Hillwood or Joliet Technology Center. A gas plant would need a construction permit before it is built, so none is on file. Earlier notes: The Joliet city council approved the PowerHouse Data Centers and Hillwood campus in March 2026. A Data Center Dynamics article says it will offer up to 1.8 GW at full buildout, built in four phases, each with its own six-acre substation. The article describes grid substations and names no on-site gas turbines or engines. Still unknown: whether any on-site gas generation will be built, and its capacity. Only a gas plant tied to this campus would be added. If added later, the captive fields are captive industry use power and captive industry type data center.",
       "record_id": "us-il:plant:monitor-3",
-      "watch_case": "data_center_hold"
+      "watch_case": "no_generation"
     },
     {
       "gem_plant_id": "L100000402024",
@@ -237,7 +258,8 @@
       "capacity_mw": "391",
       "refs": {
         "links": [
-          "https://www.infrasure.ai/project/pjm-ah1-718-moved-to-tc2-nelson-345-kv"
+          "https://www.infrasure.ai/project/pjm-ah1-718-moved-to-tc2-nelson-345-kv",
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000109530?dwdocid=1523224"
         ]
       },
       "verifications": [
@@ -246,204 +268,19 @@
           "ok": true,
           "contains_value": true,
           "name_found": true
+        },
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000109530?dwdocid=1523224",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Illinois EPA revised construction permit for application 15060042, site 103814AAC, issued August 17, 2026 to Invenergy Nelson Expansion LLC, 1311 Nelson Road, Rock Falls, for a peaking facility with two simple cycle combustion turbines at the Nelson Energy Center. First issued September 27, 2016, extended January 24, 2018, revision application received July 8, 2026."
         }
       ],
       "country": "United States",
       "fields": {},
-      "researcher_notes": "The PJM cycle queue export of October 21, 2026 confirms the Infrasure listing: AH1-718 is Invenergy Nelson Expansion LLC, 391 MW facility output, an 11 MW energy and 38 MW capacity uprate, filed April 7, 2025, Active in Phase 3, in-service May 29, 2028. The 391 MW is the facility output after the uprate, not an addition. No air permit for an expansion appears on the Illinois Environmental Protection Agency notice site. This is not a data center item. The PJM Cycle Service Request Status page (https://www.pjm.com/planning/m/cycle-service-request-status) is a script-driven grid, so its spreadsheet export of October 21, 2026 is kept in the repository's work folder under pjm and is not cited as a link.",
+      "researcher_notes": "Update of October 30, 2026: the Illinois EPA document library was read in full for the Nelson site. Permit 15060042 for the two simple cycle peaking turbines was reissued as a revised construction permit on August 17, 2026 to Invenergy Nelson Expansion LLC, the company behind PJM request AH1-718. The 2025 construction permit 25030007 is a turbine blade and compressor uprate of the two combined cycle turbines and gives no capacity figure. No permit for a new combined cycle unit exists, so PJM request AB1-089 has no permit record and nothing is added. Earlier notes: The PJM cycle queue export of October 21, 2026 confirms the Infrasure listing: AH1-718 is Invenergy Nelson Expansion LLC, 391 MW facility output, an 11 MW energy and 38 MW capacity uprate, filed April 7, 2025, Active in Phase 3, in-service May 29, 2028. The 391 MW is the facility output after the uprate, not an addition. No air permit for an expansion appears on the Illinois Environmental Protection Agency notice site. This is not a data center item. The PJM Cycle Service Request Status page (https://www.pjm.com/planning/m/cycle-service-request-status) is a script-driven grid, so its spreadsheet export of October 21, 2026 is kept in the repository's work folder under pjm and is not cited as a link.",
       "record_id": "us-il:plant:monitor-4"
-    },
-    {
-      "gem_plant_id": "",
-      "plant_name": "Will County Facility LLC gas request (PJM C01-1569)",
-      "monitor_kind": "new_to_tracker",
-      "monitor_reason": "PJM's first-cycle queue list shows request C01-1569 for 346 MW of natural gas generation in Will County, Illinois, from Will County Facility, LLC. It was filed on April 25, 2026 with a requested in-service date of 2029. PJM's page for the request at https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1569 confirms the queue number, the developer, the Braidwood 345 kV Switchyard connection point and the filing date. That page does not give the size, the fuel or the county. Those are only in the full queue list. To see them, open PJM's cycle request status page at https://www.pjm.com/planning/m/cycle-service-request-status, click XLS under full export, and find row C01-1569. No news story, filing or other page I could find names the request.",
-      "recheck_by": "2026-12",
-      "checks": [],
-      "capacity_mw": "346",
-      "refs": {
-        "links": [
-          "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1569"
-        ]
-      },
-      "verifications": [
-        {
-          "url": "https://www.pjm.com/planning/m/cycle-service-request-status",
-          "ok": false,
-          "contains_value": false,
-          "name_found": false,
-          "note": "page is a script grid with no rows in the source, so the request cannot be read from it"
-        },
-        {
-          "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1569",
-          "ok": true,
-          "contains_value": false,
-          "name_found": true,
-          "note": "names C01-1569, the developer and the filing date; does not give the size or fuel"
-        }
-      ],
-      "country": "United States",
-      "fields": {},
-      "researcher_notes": "PJM's first-cycle request list shows C01-1569: 346 MW of natural gas in Will County, filed in April 2026, with a requested in-service date of 2029. The developer is Will County Facility, LLC. PJM's page for the request at https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1569 confirms the queue number, developer and filing date, but not the size or fuel. To see them, open PJM's cycle request status page at https://www.pjm.com/planning/m/cycle-service-request-status, click XLS under full export, and find row C01-1569. If the queue list is enough of a source, add it as a new plant with status announced and the owner blank, and cite the request's PJM page. Otherwise keep it on the watch list until PJM posts a study report that names it.",
-      "record_id": "us-il:plant:monitor-5",
-      "watch_case": "unverified",
-      "proposed_add": {
-        "plant_name": "Braidwood 345 kV gas request, Will County",
-        "State/Province": "Illinois",
-        "Local area (taluk, county)": "Will County",
-        "Capacity (MW)": 346,
-        "Fuel": "fossil gas: natural gas",
-        "Status": "announced",
-        "Start year": 2029,
-        "queue_id": "C01-1569",
-        "company": "Will County Facility, LLC",
-        "source_if_accepted": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1569 for the request, with the size and fuel from the full queue list on https://www.pjm.com/planning/m/cycle-service-request-status"
-      },
-      "status": "announced"
-    },
-    {
-      "gem_plant_id": "",
-      "plant_name": "Ogle County Hub LLC gas request (PJM C01-1570)",
-      "monitor_kind": "new_to_tracker",
-      "monitor_reason": "PJM's first-cycle queue list shows request C01-1570 for 347 MW of natural gas generation in Ogle County, Illinois, from Ogle County Hub, LLC. It was filed on April 25, 2026 with a requested in-service date of 2029. PJM's page for the request at https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1570 confirms the queue number, the developer, the Byron 345 kV Switchyard connection point and the filing date. That page does not give the size, the fuel or the county. Those are only in the full queue list. To see them, open PJM's cycle request status page at https://www.pjm.com/planning/m/cycle-service-request-status, click XLS under full export, and find row C01-1570. No news story, filing or other page I could find names the request.",
-      "recheck_by": "2026-12",
-      "checks": [],
-      "capacity_mw": "347",
-      "refs": {
-        "links": [
-          "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1570"
-        ]
-      },
-      "verifications": [
-        {
-          "url": "https://www.pjm.com/planning/m/cycle-service-request-status",
-          "ok": false,
-          "contains_value": false,
-          "name_found": false,
-          "note": "page is a script grid with no rows in the source, so the request cannot be read from it"
-        },
-        {
-          "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1570",
-          "ok": true,
-          "contains_value": false,
-          "name_found": true,
-          "note": "names C01-1570, the developer and the filing date; does not give the size or fuel"
-        }
-      ],
-      "country": "United States",
-      "fields": {},
-      "researcher_notes": "PJM's first-cycle request list shows C01-1570: 347 MW of natural gas in Ogle County, filed in April 2026, with a requested in-service date of 2029. The developer is Ogle County Hub, LLC. PJM's page for the request at https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1570 confirms the queue number, developer and filing date, but not the size or fuel. To see them, open PJM's cycle request status page at https://www.pjm.com/planning/m/cycle-service-request-status, click XLS under full export, and find row C01-1570. If the queue list is enough of a source, add it as a new plant with status announced and the owner blank, and cite the request's PJM page. Otherwise keep it on the watch list until PJM posts a study report that names it.",
-      "record_id": "us-il:plant:monitor-6",
-      "watch_case": "unverified",
-      "proposed_add": {
-        "plant_name": "Byron 345 kV gas request, Ogle County",
-        "State/Province": "Illinois",
-        "Local area (taluk, county)": "Ogle County",
-        "Capacity (MW)": 347,
-        "Fuel": "fossil gas: natural gas",
-        "Status": "announced",
-        "Start year": 2029,
-        "queue_id": "C01-1570",
-        "company": "Ogle County Hub, LLC",
-        "source_if_accepted": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1570 for the request, with the size and fuel from the full queue list on https://www.pjm.com/planning/m/cycle-service-request-status"
-      },
-      "status": "announced"
-    },
-    {
-      "gem_plant_id": "",
-      "plant_name": "Prairie Pulse Project LLC gas request (PJM C01-1571)",
-      "monitor_kind": "new_to_tracker",
-      "monitor_reason": "PJM's first-cycle queue list shows request C01-1571 for 346 MW of natural gas generation in LaSalle County, Illinois, from Prairie Pulse Project, LLC. It was filed on April 25, 2026 with a requested in-service date of 2029. PJM's page for the request at https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1571 confirms the queue number, the developer, the LaSalle 345 kV connection point and the filing date. That page does not give the size, the fuel or the county. Those are only in the full queue list. To see them, open PJM's cycle request status page at https://www.pjm.com/planning/m/cycle-service-request-status, click XLS under full export, and find row C01-1571. No news story, filing or other page I could find names the request.",
-      "recheck_by": "2026-12",
-      "checks": [],
-      "capacity_mw": "346",
-      "refs": {
-        "links": [
-          "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1571"
-        ]
-      },
-      "verifications": [
-        {
-          "url": "https://www.pjm.com/planning/m/cycle-service-request-status",
-          "ok": false,
-          "contains_value": false,
-          "name_found": false,
-          "note": "page is a script grid with no rows in the source, so the request cannot be read from it"
-        },
-        {
-          "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1571",
-          "ok": true,
-          "contains_value": false,
-          "name_found": true,
-          "note": "names C01-1571, the developer and the filing date; does not give the size or fuel"
-        }
-      ],
-      "country": "United States",
-      "fields": {},
-      "researcher_notes": "PJM's first-cycle request list shows C01-1571: 346 MW of natural gas in LaSalle County, filed in April 2026, with a requested in-service date of 2029. The developer is Prairie Pulse Project, LLC. PJM's page for the request at https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1571 confirms the queue number, developer and filing date, but not the size or fuel. To see them, open PJM's cycle request status page at https://www.pjm.com/planning/m/cycle-service-request-status, click XLS under full export, and find row C01-1571. If the queue list is enough of a source, add it as a new plant with status announced and the owner blank, and cite the request's PJM page. Otherwise keep it on the watch list until PJM posts a study report that names it.",
-      "record_id": "us-il:plant:monitor-7",
-      "watch_case": "unverified",
-      "proposed_add": {
-        "plant_name": "LaSalle 345 kV gas request, LaSalle County",
-        "State/Province": "Illinois",
-        "Local area (taluk, county)": "LaSalle County",
-        "Capacity (MW)": 346,
-        "Fuel": "fossil gas: natural gas",
-        "Status": "announced",
-        "Start year": 2029,
-        "queue_id": "C01-1571",
-        "company": "Prairie Pulse Project, LLC",
-        "source_if_accepted": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1571 for the request, with the size and fuel from the full queue list on https://www.pjm.com/planning/m/cycle-service-request-status"
-      },
-      "status": "announced"
-    },
-    {
-      "gem_plant_id": "",
-      "plant_name": "Marquis Solar LLC gas request (PJM C01-2036)",
-      "monitor_kind": "new_to_tracker",
-      "monitor_reason": "PJM's first-cycle queue list shows request C01-2036 for 1150 MW of natural gas generation in Putnam County, Illinois, from Marquis Solar LLC. It was filed on April 27, 2026 with a requested in-service date of 2031. PJM's page for the request at https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-2036 confirms the queue number, the developer, the Crescent Ridge to Corbin 138 kV connection point and the filing date. That page does not give the size, the fuel or the county. Those are only in the full queue list. To see them, open PJM's cycle request status page at https://www.pjm.com/planning/m/cycle-service-request-status, click XLS under full export, and find row C01-2036. No news story, filing or other page I could find names the request.",
-      "recheck_by": "2026-12",
-      "checks": [],
-      "capacity_mw": "1150",
-      "refs": {
-        "links": [
-          "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-2036"
-        ]
-      },
-      "verifications": [
-        {
-          "url": "https://www.pjm.com/planning/m/cycle-service-request-status",
-          "ok": false,
-          "contains_value": false,
-          "name_found": false,
-          "note": "page is a script grid with no rows in the source, so the request cannot be read from it"
-        },
-        {
-          "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-2036",
-          "ok": true,
-          "contains_value": false,
-          "name_found": true,
-          "note": "names C01-2036, the developer and the filing date; does not give the size or fuel"
-        }
-      ],
-      "country": "United States",
-      "fields": {},
-      "researcher_notes": "PJM's first-cycle request list shows C01-2036: 1150 MW of natural gas in Putnam County, filed in April 2026, with a requested in-service date of 2031. The developer is Marquis Solar LLC. PJM's page for the request at https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-2036 confirms the queue number, developer and filing date, but not the size or fuel. To see them, open PJM's cycle request status page at https://www.pjm.com/planning/m/cycle-service-request-status, click XLS under full export, and find row C01-2036. If the queue list is enough of a source, add it as a new plant with status announced and the owner blank, and cite the request's PJM page. Otherwise keep it on the watch list until PJM posts a study report that names it. The company name sounds like a solar developer, so confirm the fuel in a PJM study report when one is posted.",
-      "record_id": "us-il:plant:monitor-8",
-      "watch_case": "unverified",
-      "proposed_add": {
-        "plant_name": "Crescent Ridge to Corbin 138 kV gas request, Putnam County",
-        "State/Province": "Illinois",
-        "Local area (taluk, county)": "Putnam County",
-        "Capacity (MW)": 1150,
-        "Fuel": "fossil gas: natural gas",
-        "Status": "announced",
-        "Start year": 2031,
-        "queue_id": "C01-2036",
-        "company": "Marquis Solar LLC",
-        "source_if_accepted": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-2036 for the request, with the size and fuel from the full queue list on https://www.pjm.com/planning/m/cycle-service-request-status"
-      },
-      "status": "announced"
     },
     {
       "gem_plant_id": "",
@@ -516,35 +353,6 @@
     },
     {
       "gem_plant_id": "",
-      "plant_name": "MISO J1839, Decatur ADM North 138 kV, Macon County",
-      "monitor_kind": "new_to_tracker",
-      "watch_case": "duplicate_check",
-      "monitor_reason": "MISO request J1839 is a 325 MW simple cycle gas turbine in Macon County with a signed interconnection agreement and a 2027 in-service date. It may be part of the Broadwing energy center GEM already has, or a separate unit.",
-      "recheck_by": "2026-11",
-      "checks": [],
-      "capacity_mw": "325",
-      "status": "pre-construction",
-      "refs": {
-        "Capacity Data Source": [
-          "https://www.misoenergy.org/api/giqueue/getprojects"
-        ]
-      },
-      "verifications": [
-        {
-          "url": "https://www.misoenergy.org/api/giqueue/getprojects",
-          "ok": true,
-          "contains_value": true,
-          "name_found": true,
-          "note": "J1839, Decatur ADM North 138 kV, 325 found"
-        }
-      ],
-      "country": "United States",
-      "fields": {},
-      "researcher_notes": "MISO's queue lists J1839 as a 325 MW simple cycle gas turbine at the Decatur ADM North 138 kV substation, with a finished study and an in-service date of January 2027. GEM already tracks the Broadwing energy center (452 MW, combined cycle) at the same industrial site. They could be one project or two. Ask whether J1839 is a separate unit. If it is, add it as a new unit, status pre-construction, start year 2027.",
-      "record_id": "us-il:plant:monitor-11"
-    },
-    {
-      "gem_plant_id": "",
       "plant_name": "MISO J2656, Latham 138 kV, Macon County",
       "monitor_kind": "new_to_tracker",
       "watch_case": "unverified",
@@ -576,6 +384,41 @@
       "fields": {},
       "researcher_notes": "MISO hides the state, county and fuel on its newest requests. About 30 Ameren requests of 80 MW or more are active and cannot be placed. Examples are J4241, J4264, J4343, J4260 and J4254. Check again when MISO fills in the fields.",
       "record_id": "us-il:plant:monitor-13"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "MicroLink CHI1 data center (Stickney)",
+      "monitor_kind": "new_to_tracker",
+      "watch_case": "unverified",
+      "monitor_reason": "A data center listing describes a gas bridge for this site, but no source that passes the link checker names a generator, a fuel system or a size.",
+      "recheck_by": "2027-04",
+      "checks": [
+        39
+      ],
+      "capacity_mw": "",
+      "refs": {},
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "The news search of October 21, 2026 found a Baxtel listing snippet for a MicroLink data center called CHI1 at the Stickney water reclamation plant in Cook County, described as grid power with a behind-the-meter gas bridge and a 2028 target. The listing page returned a 404 error and the Baxtel news page did not mention it, so no source could be verified. On October 30, 2026 the Illinois EPA air permit index, every final permit, application, correspondence and file entry filed since January 1, 2021, read in full for this batch on October 30, 2026, had no entry under MicroLink; its Stickney entries belong to the Metropolitan Water Reclamation District's own plant and a biosolids facility. Nothing read names a generator size or fuel. Check again for an air permit application under MicroLink or the site address.",
+      "record_id": "us-il:plant:monitor-14"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "Alsey Generating Station",
+      "monitor_kind": "new_to_tracker",
+      "watch_case": "under_threshold",
+      "monitor_reason": "Prairie Power's Alsey plant in Scott County has six gas turbines that total 169 MW, but no single unit reaches 50 MW. The largest, a GE LM6000 PC Sprint added in 2016, is 48 MW in the EIA-860M table and 45 MW on the owner's own page, though the state air permit calls it nominal 50 MW.",
+      "recheck_by": "2027-10",
+      "checks": [
+        38,
+        39
+      ],
+      "capacity_mw": "48",
+      "refs": {},
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "The EIA-860M table for September 2026 lists plant 7818, Prairie Power Inc, at 331 Campbell Road, Alsey, Scott County, with six operating natural gas turbines of 30, 30, 20, 20, 25 and 48 MW. Five date from 1999 and the sixth from December 2016. Prairie Power's own portfolio page at https://www.ppi.coop/about/assets/ says the plant has six units, five in service since June 1999 and a sixth added in 2017, a simple cycle 45 MW GE LM6000 PC Sprint, for 169 MW in all. Prairie Power's February 15, 2016 release at https://www.ppi.coop/prairie-power-inc-awards-proenergy-services-llc-electric-generation-epc-project/ describes the addition as a 42 MW GE LM6000 PC Sprint and names the older machines as three Westinghouse W251 turbines and two GE LM2500 turbines. The Illinois EPA Clean Air Act permit 01050083 at https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170000148169?dwdocid=1352176 names the plant and Prairie Power and, in section 4.2, calls the sixth turbine ACT 6, nominal 50 MW at 467 million Btu per hour. How the threshold applies: the three Westinghouse W251 machines are frame turbines and count one per unit, each under 50 MW. The two LM2500 turbines are aeroderivative machines installed together in 1999 and would be one unit of 40 MW. The LM6000 was installed on its own in 2016 and is one unit of 48 MW by the EIA nameplate. So no unit reaches 50 MW and the plant is not added. The LM6000 is a close call. The permit's nominal 50 MW rating would put it at the threshold, while the EIA nameplate of 48 MW, the owner's 45 MW figure and the 42 MW figure in the award release all fall short. The EIA nameplate is used. Check again in a year for any uprate or added unit. The owner, Prairie Power Inc, is already in GEM's company list as entity 100001001384.",
+      "record_id": "us-il:plant:monitor-15"
     }
   ]
 }

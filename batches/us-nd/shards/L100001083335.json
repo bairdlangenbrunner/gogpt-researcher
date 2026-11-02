@@ -1,0 +1,87 @@
+{
+ "meta": {
+  "plant_id": "L100001083335",
+  "plant_name": "Polaris Forge 2 power station",
+  "state": "North Dakota",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-29T18:28:50-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001094121",
+   "unit_name": "1",
+   "findings": {},
+   "not_found": [
+    "No document found for a gas steam plant at Harwood",
+    "No owner document found",
+    "No site address found for a power plant at Harwood"
+   ],
+   "notes": "The 280 megawatt figure matches the campus load named in the Minnkota plan and not a power plant."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "concern_type": "existence",
+   "gem_unit_id": "G100001094121",
+   "question": "Does Polaris Forge 2 have its own 280 megawatt gas steam plant, or is 280 megawatts the data center load?",
+   "finding": "The 2025 Minnkota integrated resource plan at https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf calls Polaris Forge 2 a 280 megawatt AI data center campus near Harwood and says Minnkota serves it under a data center rate. It lists no generation at the campus. The Construction Review article at https://constructionreviewonline.com/applied-digital-to-break-ground-on-3b-280mw-polaris-forge-2-ai-campus-in-north-dakota/ also describes a 280 megawatt campus powered by Minnkota and Cass County Electric Cooperative.",
+   "recommendation": "Treat the 280 megawatts as data center load and do not keep this unit as a generating plant unless a document shows a power plant at Harwood.",
+   "note": "The Minnkota plan says system upgrades and power supply resources for this load will be paid for by Applied Digital, so a future dedicated plant is possible but none is named. This is a plan source.",
+   "refs": [
+    "https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf",
+    "https://constructionreviewonline.com/applied-digital-to-break-ground-on-3b-280mw-polaris-forge-2-ai-campus-in-north-dakota/"
+   ],
+   "irp": true
+  },
+  {
+   "concern_type": "Owner(s)",
+   "gem_unit_id": "G100001094121",
+   "question": "Why is Minnkota Power Cooperative listed as a 50 percent owner of this unit?",
+   "finding": "The Minnkota plan at https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf and the article at https://constructionreviewonline.com/applied-digital-to-break-ground-on-3b-280mw-polaris-forge-2-ai-campus-in-north-dakota/ show Minnkota supplying grid power to the campus. Neither says it owns generation there. The Babcock and Wilcox release at https://www.babcock.com/home/about/corporate/news/babcock-and-wilcox-receives-full-notice-to-proceed-on-24-billion-power-generation-project-for-base-electron-to-supply-power-to-applied-digital-ai-factory-campuses names no site.",
+   "recommendation": "Remove the 50 percent Babcock and Wilcox and 50 percent Minnkota ownership if the unit is kept. Find an owner document first.",
+   "note": "Same concern as at Polaris Forge 1.",
+   "refs": [
+    "https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf",
+    "https://constructionreviewonline.com/applied-digital-to-break-ground-on-3b-280mw-polaris-forge-2-ai-campus-in-north-dakota/",
+    "https://www.babcock.com/home/about/corporate/news/babcock-and-wilcox-receives-full-notice-to-proceed-on-24-billion-power-generation-project-for-base-electron-to-supply-power-to-applied-digital-ai-factory-campuses"
+   ],
+   "irp": true
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf",
+   "used_for": [
+    "existence",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Minnkota integrated resource plan, data center section."
+  },
+  {
+   "url": "https://constructionreviewonline.com/applied-digital-to-break-ground-on-3b-280mw-polaris-forge-2-ai-campus-in-north-dakota/",
+   "used_for": [
+    "existence",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Construction Review article, Harwood campus."
+  },
+  {
+   "url": "https://www.babcock.com/home/about/corporate/news/babcock-and-wilcox-receives-full-notice-to-proceed-on-24-billion-power-generation-project-for-base-electron-to-supply-power-to-applied-digital-ai-factory-campuses",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Base Electron boilers, no site named."
+  }
+ ]
+}

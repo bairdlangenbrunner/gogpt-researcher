@@ -325,3 +325,36 @@ def test_failed_reads_are_logged_and_the_audit_lists_them(net, tmp_path):
     failed = access_audit.load_failures([batch])
     assert set(failed) == {URL}
     assert access_audit.classify(failed[URL]["reason"]) == "rate_limited"
+
+
+# ---- Illinois EPA Document Explorer records (2026-10-30) ----------------------
+
+IEPA_RECORD = "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002668842"
+
+
+def test_iepa_record_pages_are_read_through_the_docuware_session(net, monkeypatch):
+    seen = []
+
+    def fake_record(url, timeout):
+        seen.append(url)
+        return "200", "text/plain; charset=utf-8", url, b"CYRUSONE LLC 2725 Bilter Rd. 56 engines of 2,250 kW."
+
+    monkeypatch.setattr(fetch, "_iepa_record", fake_record)
+    page = fetch.fetch_page(IEPA_RECORD + "?dwdocid=1465329")
+    assert page.status == "200" and "iepa_docuware" in page.notes
+    assert "2,250 kW" in page.text and net["calls"] == 0 and seen == [IEPA_RECORD + "?dwdocid=1465329"]
+    assert "disk_cache" not in fetch.fetch_page(IEPA_RECORD).notes      # never served from the disk cache
+
+
+def test_iepa_route_falls_back_to_curl_when_the_cabinet_gives_nothing(net, monkeypatch):
+    monkeypatch.setattr(fetch, "_iepa_record", lambda url, timeout: None)
+    net["responses"] = [("200", "text/html", IEPA_RECORD, b"<html><title>Document Explorer</title></html>")]
+    page = fetch.fetch_page(IEPA_RECORD)
+    assert page.status == "200" and "iepa_docuware" not in page.notes and net["calls"] == 1
+
+
+def test_only_record_pages_take_the_iepa_route():
+    assert fetch._IEPA_RECORD.match(IEPA_RECORD)
+    assert fetch._IEPA_RECORD.match(IEPA_RECORD + "?dwdocid=1465329")
+    assert not fetch._IEPA_RECORD.match("https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Search")
+    assert not fetch._IEPA_RECORD.match("https://docuware7.illinois.gov/DocuWare/PlatformRO/WebClient/Integration?ep=x")

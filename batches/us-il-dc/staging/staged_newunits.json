@@ -14,7 +14,95 @@
     "mode": "update",
     "counts": {
       "records": 0
-    }
+    },
+    "records": 1
   },
-  "records": []
+  "records": [
+    {
+      "gem_plant_id": "L100001089104",
+      "plant_name": "Compass Hoffman Estates Data Center power station",
+      "unit_name": "3",
+      "country": "United States",
+      "fields": {
+        "Unit name": "3",
+        "Capacity (MW)": "4.0",
+        "Number Of Engines": "5",
+        "Capacity Per Engine": "0.8",
+        "Fuel": "fossil liquids: diesel",
+        "Status": "construction",
+        "Owner(s)": "Compass Datacenters LLC [100%]",
+        "Turbine/Engine Technology": "internal combustion",
+        "Captive industry use": "power",
+        "Captive industry type": "data center",
+        "Captive non-industry use": "none",
+        "Backup Power": "yes",
+        "Latest Activity": "Year: 2025, Month: 9, Day: 6"
+      },
+      "refs": {
+        "Unit name Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047"
+        ],
+        "Capacity Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047"
+        ],
+        "Fuel Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047"
+        ],
+        "Status Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047",
+          "https://www.dailyherald.com/20250906/business/compass-datacenters-ready-to-build-on-cleared-sears-headquarters-site-in-hoffman-estates/"
+        ],
+        "Owners Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047"
+        ],
+        "Turbine/Engine Technology Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047"
+        ],
+        "Captive Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047"
+        ],
+        "Backup Power Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047"
+        ],
+        "Latest Activity Data Source": [
+          "https://www.dailyherald.com/20250906/business/compass-datacenters-ready-to-build-on-cleared-sears-headquarters-site-in-hoffman-estates/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002613928?dwdocid=1503047",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Illinois EPA revised construction permit for Compass Datacenters ORD I, LLC at 3333 Beverly Road, Hoffman Estates, Cook County, application 23110012, received January 12, 2026 and issued February 18, 2026, site number 031449AEJ. It covers two hundred 2,000 kWe, five 500 kWe and five 800 kWe diesel emergency generator sets."
+        },
+        {
+          "url": "https://www.dailyherald.com/20250906/business/compass-datacenters-ready-to-build-on-cleared-sears-headquarters-site-in-hoffman-estates/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A Daily Herald article of September 6, 2025. The village manager says the construction permit for the core and shell of the first Compass building has been issued, and demolition is changing over to construction this month."
+        }
+      ],
+      "tier": "high",
+      "checks": [
+        39
+      ],
+      "irp": false,
+      "researcher_notes": "The revised Illinois EPA construction permit for Compass Datacenters ORD I at 3333 Beverly Road, issued February 18, 2026, covers two hundred 2,000 kWe, five 500 kWe and five 800 kWe diesel emergency generator sets. The database has unit 1 for the 2,000 kWe sets and unit 2 for five sets that are now 500 kWe. The five 800 kWe sets, 4.0 MW together, have no row, so this adds them as unit 3 with the same status as the other units. A Daily Herald article of September 6, 2025 says the village issued the construction permit for the first building that month. Owner as on the other rows, Compass Datacenters LLC.",
+      "action": "Add unit 3 to Compass Hoffman Estates Data Center power station (L100001089104): 5 diesel emergency generators of 0.8 MW, 4.0 MW, under construction, Backup Power yes, captive power for a data center, owner Compass Datacenters LLC at 100 percent. Milestone timeline: add a construction milestone for September 2025, from the Daily Herald article of September 6, 2025.",
+      "record_id": "L100001089104:new:3",
+      "milestones": [
+        {
+          "status": "construction",
+          "year": 2025,
+          "period": "September",
+          "sources": [
+            "https://www.dailyherald.com/20250906/business/compass-datacenters-ready-to-build-on-cleared-sears-headquarters-site-in-hoffman-estates/"
+          ],
+          "note": "the Daily Herald reported on September 6, 2025 that the village issued the construction permit for the first building and that work was starting that month"
+        }
+      ]
+    }
+  ]
 }

@@ -33,7 +33,15 @@
     "id": "iepa-air-notices",
     "name": "Illinois Environmental Protection Agency air permit notices, current and archive",
     "url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/",
-    "what": "Read every current and archived Bureau of Air notice through the notice web service the public notice page calls, and open every construction, PSD, nonattainment new source review and Title V construction record for power, data center and utility facilities since 2020. List each gas or oil turbine, engine or boiler of 50 MW or more, with the permit number, date and the permit document URL."
+    "what": "Read every current and archived Bureau of Air notice through the notice web service the public notice page calls, and open every construction, PSD, nonattainment new source review and Title V construction record for power, data center and utility facilities since 2020. List each gas or oil turbine, engine or boiler of 50 MW or more, with the permit number, date and the permit document URL.",
+    "role": "permit_notices"
+  },
+  {
+    "id": "iepa-document-explorer",
+    "role": "permit_record",
+    "name": "Illinois EPA Document Explorer and the DocuWare cabinet behind it (every air permit record, including construction permits that never went to public notice)",
+    "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/",
+    "what": "Run or reuse scopes/us-il/harvest_permits.py (scopes/us-il/work/permits/), which reads the cabinet behind Document Explorer through scripts/iepa_docuware.py: every final air permit and air permit application filed since 2021, plus every cabinet entry under each GEM plant's site IDs and name words, matched to GEM plants by site ID, name, owner and city, with the permits and applications of every power-like site read and their equipment, sizes, fuel and address pulled into one file per plant, _unmatched.md for the power-like sites GEM lacks and _applications.md. Search the cabinet by name (python scripts/iepa_docuware.py query '[SITENAME] LIKE \"*WORD*\"') for every data center, queue and news lead the harvest did not match. Cite the record page, Documents/Index/<record id>; fetch.py and url_verifier.py read it through the cabinet session, scanned permits by page render and OCR, so say in the note when figures were read from scanned pages. The CyrusOne Bilter Road permit 24080019 (57 diesel generators, 127.25 MW) was only here, not in the notice feed."
   },
   {
     "id": "rblc",

@@ -781,6 +781,71 @@ def _cffi_get(url: str, timeout: int, ua: str | None, headers: dict | None,
             str(r.url or ""), r.content or b"")
 
 
+_FERC_API = "https://elibrary.ferc.gov/eLibraryWebAPI/api/File"
+
+
+def _ferc_elibrary(url: str, timeout: int):
+    """
+    FERC eLibrary (2026-10-30): a `filelist?accession_number=` or `docinfo`
+    page is an Angular shell with no document text, even in real Chrome. The
+    page's own JSON API lists the filing's files and serves each one, so the
+    first public PDF of the filing comes back as the body. None when the URL
+    names no accession number or the API gives nothing.
+    """
+    q = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
+    acc = next((v[0] for k, v in q.items()
+                if k.lower() in ("accession_number", "accession_num")), "")
+    if not re.fullmatch(r"\d{8}-\d{4}", acc):
+        return None
+    try:
+        from curl_cffi import requests as cffi_requests
+        listing = cffi_requests.get(f"{_FERC_API}/GetFileListFromP8/{acc}", impersonate="chrome",
+                                    timeout=timeout, headers={"Referer": url}).json()
+        files = [f for f in listing.get("DataList") or []
+                 if (f.get("MimeType") or "").endswith("pdf") and f.get("Availability_Mode") == "P"]
+        if not files:
+            return None
+        body = {"serverLocation": "", "securityLevel": "", "fileSize": 0, "accession": acc,
+                "fileidLst": [files[0]["ID"]], "Islegacy": False}
+        r = cffi_requests.post(f"{_FERC_API}/DownloadP8File", impersonate="chrome", timeout=timeout,
+                               data=json.dumps(body),
+                               headers={"Content-Type": "application/json", "Referer": url,
+                                        "Origin": "https://elibrary.ferc.gov"})
+    except Exception as e:
+        print(f"  [fetch] FERC eLibrary API error for {url}: {e}", file=sys.stderr)
+        return None
+    if r.status_code != 200 or not r.content.startswith(b"%PDF"):
+        return None
+    return "200", "application/pdf", url, r.content
+
+
+_IEPA_RECORD = re.compile(r"^https?://webapps\.illinois\.gov/EPA/DocumentExplorer/Documents/Index/\d+", re.I)
+
+
+def _iepa_record(url: str, timeout: int):
+    """
+    Illinois EPA Document Explorer (2026-10-30): a record page
+    (`.../DocumentExplorer/Documents/Index/<interest id>`) lists a site's permit
+    files by category, and every file sits in a DocuWare cabinet that only a
+    browser session can open. `iepa_docuware.record_text` opens that session,
+    pulls the document named by `?dwdocid=` (or the newest final permits and
+    applications when none is named) and OCRs scanned pages, so the body is the
+    record page's words plus the permit text. None when the address is not a
+    record page or the cabinet gave nothing.
+    """
+    if not _IEPA_RECORD.match(url):
+        return None
+    try:
+        from iepa_docuware import record_text
+        text = record_text(url)
+    except Exception as e:
+        print(f"  [fetch] Illinois EPA Document Explorer error for {url}: {e}", file=sys.stderr)
+        return None
+    if not text or not text.strip():
+        return None
+    return "200", "text/plain; charset=utf-8", url, text.encode("utf-8")
+
+
 def _clearance_cookie(url: str) -> tuple[str | None, str | None]:
     """(Cookie header value, UA it was earned with) from the cf_clearance store."""
     try:
@@ -848,7 +913,9 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
     if rate_limit_attempts is None:
         rate_limit_attempts = RATE_LIMIT_ATTEMPTS
     pace_key, pace_gap = _paced(host)
-    cached = _cache_get(url) if not headers else None
+    ferc = host == "elibrary.ferc.gov"      # a JS shell even when rendered; read through its API
+    iepa = bool(_IEPA_RECORD.match(url))    # permit files in a DocuWare cabinet; read through its session
+    cached = _cache_get(url) if not headers and not (ferc or iepa) else None
     learned = "" if sec else _route_for(host)
     if learned == "cf_impersonate":
         _IMPERSONATE_HOSTS.add(host)
@@ -874,6 +941,12 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
             content_type, final_url, raw = cached
             status = "200"
             notes.append("disk_cache")
+        elif ferc and (got := _ferc_elibrary(url, timeout)):
+            status, content_type, final_url, raw = got
+            notes.append("ferc_api")
+        elif iepa and (got := _iepa_record(url, timeout)):
+            status, content_type, final_url, raw = got
+            notes.append("iepa_docuware")
         elif host in _IMPERSONATE_HOSTS:
             got = _impersonate(url, timeout, ua, headers, cookie)
             if got:
@@ -881,7 +954,7 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
                 notes.append("cf_impersonate")
             else:
                 _IMPERSONATE_HOSTS.discard(host)     # the wall changed; run the full ladder
-        if not cached and "cf_impersonate" not in notes:
+        if not cached and not any(n in notes for n in ("cf_impersonate", "ferc_api", "iepa_docuware")):
             if pace_key:
                 with _host_turn(pace_key, pace_gap):
                     status, content_type, final_url, raw = _curl_attempts(

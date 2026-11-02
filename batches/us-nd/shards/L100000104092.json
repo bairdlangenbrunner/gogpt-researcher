@@ -1,0 +1,274 @@
+{
+ "meta": {
+  "plant_id": "L100000104092",
+  "plant_name": "Heskett Station",
+  "state": "North Dakota",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-29T18:25:02-04:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 6
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403194",
+   "unit_name": "Unit 3",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Plant 2790, generator 3, status OP, nameplate 88.0 MW, operating 2014 in the EIA-860M table for September 2026 (released 23 October 2026). No retirement date is planned."
+    },
+    "Start year": {
+     "value": "2014",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Plant 2790, generator 3, operating month 8, operating year 2014 in the EIA-860M table for September 2026."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists generator 3 as operating, not as standby or backup. The only standby generator at the plant is a 2 MW engine named EMER."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire"
+   ],
+   "notes": "The unit is still operating with no retirement planned. The Montana-Dakota Utilities owner value is carried in the plant findings."
+  },
+  {
+   "gem_unit_id": "G100000403835",
+   "unit_name": "Unit 4",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Plant 2790, generator 4, status OP, nameplate 88.4 MW, operating July 2024 in the EIA-860M table for September 2026. No retirement date is planned."
+    },
+    "Start year": {
+     "value": "2024",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Plant 2790, generator 4, operating month 7, operating year 2024 in the EIA-860M table for September 2026."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists generator 4 as operating, not as standby or backup."
+    },
+    "Conversion/replacement?": {
+     "value": "replacement",
+     "refs": [
+      "https://www.psc.nd.gov/webdocs/case/19-0307/001-010.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.psc.nd.gov/webdocs/case/19-0307/001-010.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Montana-Dakota's application to the North Dakota Public Service Commission in case PU-19-307 says Heskett 4 will be used after the retirement of the Heskett 1 and Heskett 2 coal units. So the unit replaced coal units 1 and 2."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire"
+   ],
+   "notes": "EIA lists 88.4 MW against GEM's 88.0 MW. The difference is within rounding, so capacity stays as it is."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Montana-Dakota Utilities Co [100%]",
+   "refs": [
+    "https://www.psc.nd.gov/webdocs/case/19-0307/001-010.pdf"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.psc.nd.gov/webdocs/case/19-0307/001-010.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "Montana-Dakota's application in case PU-19-307 asks to own and operate Heskett 4 and calls Heskett Unit 3 its own unit. The commission order in case PU-25-280 from February 2026 also names Montana-Dakota Utilities Co. as the owner of the Heskett units 1 and 2 assets. Both units 3 and 4 are therefore owned by Montana-Dakota. The value matches GEM."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000403835",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "Which unit did Heskett unit 4 replace?",
+   "finding": "The Montana-Dakota application in case PU-19-307 (https://www.psc.nd.gov/webdocs/case/19-0307/001-010.pdf) says Heskett 4 serves customers after the retirement of the coal units Heskett 1 and Heskett 2. A February 2026 commission order in case PU-25-280 (https://www.psc.nd.gov/webdocs/case/25-0280/013-010.pdf) confirms those two units are retired.",
+   "recommendation": "Link Heskett unit 4 to GEM unit G100000103860 (Heskett Unit 1) and G100000103861 (Heskett Unit 2), replacing the link to ID 0. If only one link is allowed, use G100000103861.",
+   "note": "The same application also names Lewis and Clark 1 in Montana as retired for the same need. That plant is not part of this one.",
+   "refs": [
+    "https://www.psc.nd.gov/webdocs/case/19-0307/001-010.pdf",
+    "https://www.psc.nd.gov/webdocs/case/25-0280/013-010.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000403194",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "What document gives the Heskett owner that the validation report found unsourced?",
+   "finding": "Case PU-19-307 (https://www.psc.nd.gov/webdocs/case/19-0307/001-010.pdf) shows Montana-Dakota Utilities owns the Heskett site and Heskett Unit 3. It states no other owner.",
+   "recommendation": "Add the commission filing in case PU-19-307 as the Owners Data Source and leave the value as is.",
+   "note": "The September 2026 EIA-860M table lists Montana-Dakota Utilities Co. as the plant's entity.",
+   "refs": [
+    "https://www.psc.nd.gov/webdocs/case/19-0307/001-010.pdf",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000403835",
+   "concern_type": "other",
+   "question": "Should the possible Heskett combined cycle conversion be tracked?",
+   "finding": "Montana-Dakota's 2024 North Dakota resource plan, volume IV (https://www.montana-dakota.com/wp-content/uploads/PDFs/Rates-Tariffs/2024-ND-IRP-Vol-4_nonprint.pdf), lists a 329.7 MW expansion of Heskett 3 and 4 to combined cycle among the least-cost options in some scenarios. The base plan only completes Heskett 4 in 2024.",
+   "recommendation": "Do not add anything. Check the next resource plan for a committed combined cycle.",
+   "note": "I found no commission case for it. The queue entries J1193 and R1000 are the earlier requests for unit 4.",
+   "refs": [
+    "https://www.montana-dakota.com/wp-content/uploads/PDFs/Rates-Tariffs/2024-ND-IRP-Vol-4_nonprint.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Start year",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Read plant 2790 on the Operating and Retired sheets."
+  },
+  {
+   "url": "https://www.psc.nd.gov/webdocs/case/19-0307/001-010.pdf",
+   "used_for": [
+    "Owner(s)",
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "Montana-Dakota application for Heskett 4."
+  },
+  {
+   "url": "https://www.psc.nd.gov/webdocs/case/25-0280/013-010.pdf",
+   "used_for": [
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "Order of 18 February 2026."
+  },
+  {
+   "url": "https://www.psc.nd.gov/webdocs/case/11-0631/001-010.pdf",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "failed",
+   "note": "The page loads and names Heskett and 88 MW, but the words own and operate did not appear."
+  },
+  {
+   "url": "https://www.montana-dakota.com/wp-content/uploads/PDFs/Rates-Tariffs/2024-ND-IRP-Vol-4_nonprint.pdf",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "No plan to retire Heskett 3 or 4."
+  },
+  {
+   "url": "https://www.montana-dakota.com/montana-dakota-utilities-heskett-4-plant-ready-to-produce-power/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Already cited by GEM."
+  }
+ ]
+}

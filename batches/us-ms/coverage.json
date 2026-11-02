@@ -5,6 +5,11 @@
    "how": "I read the past public notices page at https://www.mdeq.ms.gov/air/air-division/past-public-notices-2/ and the current notices linked from https://www.mdeq.ms.gov/air/.",
    "found": "Gas generation notices of 50 MW or more are Traceview (permit 1720-00100, hearing July 14, 2026 at https://www.mdeq.ms.gov/wp-content/uploads/2026/06/Notice-of-Public-Hearing.pdf), the xAI turbines at Southaven and the Sylvarena renewal. The data center notices for Amazon and Compass cover emergency diesel generator sets only."
   },
+  "mdeq-ensearch": {
+   "status": "searched",
+   "how": "scopes/us-ms/harvest_permits.py read enSearch Online on October 23, 2026: the active air permits by permit type and industry code, the activity search for every application and permit since January 1, 2021, and the facility page of every power-like facility. The results are in batches/us-ms/harvest/facilities.json, activity_air.json and harvest_summary.md.",
+   "found": "598 facilities with an air permit or air action, 60 of them power-like. 26 matched a GEM plant and each plant's permits were read for its brief. The 34 unmatched facilities are answered under mdeq-harvest-unmatched. Every GEM plant in the batch was found in the system under its permit holder's name."
+  },
   "mdeq-permit-board": {
    "status": "searched",
    "how": "I downloaded every Permit Board minutes file linked from the yearly pages at https://www.mdeq.ms.gov/permits/permit-board/minutes/ for 2020 and 2022 to 2026, 69 files. MDEQ's index sends the 2021 link to a public notices page, and the Wayback Machine was offline on October 23, 2026, so I found the twelve 2021 minutes files through the MDEQ website's own media listing at https://www.mdeq.ms.gov/wp-json/wp/v2/media (for example https://www.mdeq.ms.gov/wp-content/uploads/2021/02/Signed-Minutes-of-the-January-12-2021-Permit-Board-Meeting.pdf). Most files are scanned images, so I ran text recognition on every page and searched them for generating plants, turbines and data centers.",
@@ -106,6 +111,175 @@
    "decision": "below_threshold",
    "evidence": "Three 47 MW gas turbines, each under 50 MW, per EIA's monthly file and the air permit at https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1875726. No source names the model. If they are aeroderivative turbines the set is 141 MW and is an add, so the plant is on the watch list for that question.",
    "gem_plant_id": ""
+  }
+ },
+ "dedup": {
+  "us-ms:new:enterprise-clarke-county-power-station": {
+   "decision": "not_a_duplicate",
+   "checked": "2026-10-30",
+   "evidence": "The only overlap is the county. The Sykes record in this batch is two 199.4 MW combustion turbines on the Laurel East to Sykes line, filed in April 2026 for 2029. This record is one 785 MW combined cycle request at the Enterprise substation, filed in March 2026 for 2032. The type, size, connection point and dates all differ."
+  },
+  "us-ms:new:sykes-clarke-county-power-station": {
+   "decision": "not_a_duplicate",
+   "checked": "2026-10-30",
+   "evidence": "The only overlap is the county. The Enterprise record in this batch is one 785 MW combined cycle request at the Enterprise substation, filed in March 2026 for 2032. This record is two 199.4 MW combustion turbines on the Laurel East to Sykes line, filed in April 2026 for 2029. The type, size, connection point and dates all differ."
+  }
+ },
+ "queues": {
+  "MISO J1249": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000104011",
+   "evidence": "A 600 MW gas combined cycle request at the Morrow 161 kV substation in Lamar County, owned by Cooperative Energy. It is the gas conversion at the Morrow plant, which GEM has as a 558 MW unit operating since 2023."
+  },
+  "MISO J1813": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000401628",
+   "evidence": "A 920 MW gas combined cycle request at the Freeport 230 kV substation in DeSoto County. Its in-service date of March 2020 is before its 2022 queue date, so it is a request for an existing plant. The only gas plant of that size in DeSoto County before 2025 is the Southaven combined cycle plant, 903 MW in GEM. Colossus 2 started in 2025 and is not this request."
+  },
+  "MISO J4183": {
+   "decision": "fuel_not_published",
+   "evidence": "A 99.9 MW request on Entergy Mississippi's system entered in October 2025, with no fuel, county or substation in MISO's public queue. No filing or news item names it."
+  },
+  "MISO J4146": {
+   "decision": "fuel_not_published",
+   "evidence": "A zero megawatt request on Entergy Mississippi's system entered in September 2025, in MISO's zero megawatt agreement stage, so it changes an existing connection and adds no capacity. MISO does not show the fuel or the plant."
+  },
+  "MISO R5073": {
+   "decision": "fuel_not_published",
+   "evidence": "A zero megawatt replacement request on Entergy Mississippi's system entered in December 2025. MISO does not show the fuel or the plant, and a zero megawatt request adds no capacity."
+  },
+  "MISO R5075": {
+   "decision": "fuel_not_published",
+   "evidence": "A zero megawatt replacement request on Entergy Mississippi's system entered in December 2025. MISO does not show the fuel or the plant, and a zero megawatt request adds no capacity."
+  },
+  "MISO J4286": {
+   "decision": "watch",
+   "record_id": "us-ms:plant:monitor-2",
+   "evidence": "A 770 MW request on Entergy Mississippi's system for May 2030 with no fuel shown. It is on the watch list with J4295 and J4245, since Entergy Mississippi has said it needs two new plants in the early 2030s but no filing names these requests."
+  },
+  "MISO J4295": {
+   "decision": "watch",
+   "record_id": "us-ms:plant:monitor-2",
+   "evidence": "A 770 MW request on Entergy Mississippi's system for May 2030 with no fuel shown. It is on the watch list with J4286 and J4245."
+  },
+  "MISO J4245": {
+   "decision": "watch",
+   "record_id": "us-ms:plant:monitor-2",
+   "evidence": "A 770 MW request on Entergy Mississippi's system for July 2031 with no fuel shown. It is on the watch list with J4286 and J4295."
+  },
+  "MISO J4346": {
+   "decision": "fuel_not_published",
+   "evidence": "A 100 MW request on Entergy Mississippi's system with no fuel, county or substation in MISO's public queue. No filing or news item names it."
+  },
+  "MISO J4244": {
+   "decision": "fuel_not_published",
+   "evidence": "A 100 MW request on Entergy Mississippi's system with no fuel, county or substation in MISO's public queue. No filing or news item names it."
+  },
+  "MISO J4243": {
+   "decision": "fuel_not_published",
+   "evidence": "A 100 MW request on Entergy Mississippi's system with no fuel, county or substation in MISO's public queue. No filing or news item names it."
+  },
+  "MISO J4287": {
+   "decision": "other_state",
+   "evidence": "A 300 MW request in Morehouse Parish, Louisiana, on the Baxter Wilson to Perryville line. The owner column names Entergy Mississippi, but the site is in Louisiana."
+  },
+  "Southern 26-IC-1425": {
+   "decision": "add",
+   "record_id": "us-ms:new:enterprise-clarke-county-power-station",
+   "evidence": "A 785 MW gas combined cycle request at the Enterprise 230 kV substation in Clarke County for 2032, in the Southern Company active queue. Added at announced."
+  },
+  "Southern 26-IC-1489": {
+   "decision": "add",
+   "record_id": "us-ms:new:sykes-clarke-county-power-station",
+   "evidence": "One of two 199.4 MW gas combustion turbine requests on the Laurel East to Sykes 230 kV line in Clarke County for 2029, in the Southern Company active queue. Both are added as one plant at announced."
+  },
+  "Southern 26-IC-1490": {
+   "decision": "add",
+   "record_id": "us-ms:new:sykes-clarke-county-power-station",
+   "evidence": "The second of two 199.4 MW gas combustion turbine requests on the Laurel East to Sykes 230 kV line in Clarke County for 2029. Both are added as one plant at announced."
+  },
+  "TVA tva_current_queue_20260914 569": {
+   "decision": "already_in_gem",
+   "plant_id": "L100001023568",
+   "evidence": "A 515 MW gas request at the Lowndes 161 kV substation in Lowndes County, in facilities study. It is TVA's New Caledonia plant, which GEM has under construction."
+  },
+  "TVA tva_archive_queue_20260914 000": {
+   "decision": "not_gas_or_oil",
+   "plant_id": "L100000104012",
+   "evidence": "A 480 MW request in Choctaw County from 1997, in service, with no fuel shown. It is the Red Hills lignite plant, 514 MW, which is a coal plant."
+  },
+  "TVA tva_archive_queue_20260914 001": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000401833",
+   "evidence": "An 860 MW request in Panola County from 1997, in service. It is the Batesville gas plant, 891 MW in GEM, the only large plant in the county."
+  },
+  "TVA tva_archive_queue_20260914 004": {
+   "decision": "out_of_scope",
+   "evidence": "A 1998 request in Itawamba County with no size or fuel. The EIA September 2026 generator file lists no plant of any kind in Itawamba County, operating, planned or retired, so nothing was built."
+  },
+  "TVA tva_archive_queue_20260914 015": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000401627",
+   "evidence": "A 450 MW request in Lowndes County from 1998, in service. The only gas plant in Lowndes County before New Caledonia is the Caledonia plant, 801 MW in GEM, so this is an early request for it."
+  },
+  "TVA tva_archive_queue_20260914 053": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000401627",
+   "evidence": "A 900 MW request in Lowndes County from 1999, in service. It is the Caledonia gas plant, 801 MW in GEM."
+  },
+  "TVA tva_archive_queue_20260914 223": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000401627",
+   "evidence": "A 122 MW gas request in Lowndes County from 2010, in service. It is an increase at the Caledonia plant, the only operating gas plant in the county."
+  },
+  "TVA tva_archive_queue_20260914 310": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000401627",
+   "evidence": "A 78 MW summer gas request in Lowndes County from 2017, in service. It is an increase at the Caledonia plant, the only operating gas plant in the county."
+  },
+  "TVA tva_archive_queue_20260914 017": {
+   "decision": "out_of_scope",
+   "evidence": "A 390 MW request in Union County from 1998, in service. It is the New Albany Energy Facility, six 71.2 MW gas turbines, which the EIA September 2026 generator file shows retired in April 2015. GEM tracks retirements from 2020 on."
+  },
+  "TVA tva_archive_queue_20260914 044": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000401628",
+   "evidence": "A 900 MW request in DeSoto County from 1999, in service. It is the Southaven combined cycle plant, 903 MW in GEM."
+  },
+  "TVA tva_archive_queue_20260914 317": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000401628",
+   "evidence": "A 107 MW summer gas request in DeSoto County from 2017, in service. It is an increase at the Southaven combined cycle plant, the only gas plant in the county before Colossus 2 in 2025."
+  },
+  "TVA tva_archive_queue_20260914 068": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000402320",
+   "evidence": "A 316 MW request in Kemper County from 1999, in service. It is TVA's Kemper County combustion turbine plant, 372 MW in GEM. Ratcliffe in the same county came later and is on Southern Company's system."
+  },
+  "TVA tva_archive_queue_20260914 070": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000402325",
+   "evidence": "An 815 MW request in Choctaw County from 1999, in service. Choctaw County has two gas plants, Quantum Choctaw at 851 MW and Choctaw County at 899 MW, both in GEM. Matching this request to Quantum Choctaw by size is a guess, but both plants are in GEM."
+  },
+  "TVA tva_archive_queue_20260914 084": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000401923",
+   "evidence": "An 875 MW request in Choctaw County from 2000, in service. It is the Choctaw County gas plant, 899 MW in GEM, or Quantum Choctaw, also in GEM."
+  },
+  "TVA tva_archive_queue_20260914 080": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000402322",
+   "evidence": "A 900 MW request in Benton County from 2000, in service. It is the Magnolia gas plant, 1,005 MW in GEM, the only plant in the county."
+  },
+  "TVA tva_archive_queue_20260914 218": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000402322",
+   "evidence": "A 70 MW gas request in Benton County from 2008, in service. It is an increase at the Magnolia plant, the only gas plant in the county."
+  },
+  "TVA tva_archive_queue_20260914 312": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000402322",
+   "evidence": "A 115 MW gas request in Benton County from 2017, in service. It is an increase at the Magnolia plant, the only gas plant in the county."
   }
  }
 }

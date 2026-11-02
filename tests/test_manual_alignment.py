@@ -207,3 +207,23 @@ def test_notes_cleanup_is_in_the_concern_vocabulary():
     assert "notes_cleanup" in CONCERN_VOCAB
     assert normalize_concern_type("notes_cleanup") == "notes_cleanup"
     assert normalize_concern_type("Notes cleanup: the 2019 line is outdated") == "notes_cleanup"
+
+
+def test_dc_at_threshold_site_may_close_only_with_an_audited_hand_count(tmp_path):
+    permit = "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/1?dwdocid=2"
+    note = ("Read the final permit of May 29, 2025. It lists one 1,000 kWe, twelve 2,250 kWe and five "
+            "2,500 kWe diesel emergency generator sets, 40.5 MW in all, under the 50 MW threshold.")
+    fleet = [{"count": 1, "mw_each": 1.0}, {"count": 12, "mw_each": 2.25}, {"count": 5, "mw_each": 2.5}]
+    good = {"decision": "below_threshold", "summed_nameplate_mw": 40.5, "fleet": fleet, "source": permit, "note": note}
+    out, info = run_dc(tmp_path, {"S1": good})
+    assert out == [] and any("overruled by a hand count" in i for i in info)
+    # the lines must add up to the number given, the number must be under the threshold,
+    # and the answer must name the permit and say what was read
+    out, _ = run_dc(tmp_path, {"S1": dict(good, summed_nameplate_mw=41.0)})
+    assert out and "cannot be below_threshold" in out[0][1]
+    out, _ = run_dc(tmp_path, {"S1": dict(good, fleet=fleet + [{"count": 4, "mw_each": 3.0}], summed_nameplate_mw=52.5)})
+    assert out and "cannot be below_threshold" in out[0][1]
+    out, _ = run_dc(tmp_path, {"S1": dict(good, source="")})
+    assert out and "cannot be below_threshold" in out[0][1]
+    out, _ = run_dc(tmp_path, {"S1": dict(good, note="short")})
+    assert out and "cannot be below_threshold" in out[0][1]

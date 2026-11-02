@@ -1,121 +1,657 @@
 {
- "sources": {
-  "egle-pti-notices": {
-   "status": "searched",
-   "how": "I read the permit to install notices and application lists gathered in work/permits/us-mi/_notices.md and _activity.md from the state air permit pages at https://www.michigan.gov/egle/about/organization/air-quality/air-permits, covering 2020 to October 2026.",
-   "found": "The gas generation permits of 50 MW or more are for plants GEM already has, or for Thomas Township Energy, which is new to GEM as a cancelled plant. The data center permits, for Project Mitten in Saline Township, the Panattoni site in Van Buren Township, Alliance Cloud Services in Dowagiac and others, cover diesel emergency generators only."
+  "sources": {
+    "egle-pti-notices": {
+      "status": "searched",
+      "how": "I read the permit to install notices and application lists gathered in work/permits/us-mi/_notices.md and _activity.md from the state air permit pages at https://www.michigan.gov/egle/about/organization/air-quality/air-permits, covering 2020 to October 2026.",
+      "found": "The gas generation permits of 50 MW or more are for plants GEM already has, or for Thomas Township Energy, which is new to GEM as a cancelled plant. The data center permits, for Project Mitten in Saline Township, the Panattoni site in Van Buren Township, Alliance Cloud Services in Dowagiac and others, cover diesel emergency generators only."
+    },
+    "egle-mienviro": {
+      "status": "searched",
+      "how": "I used the permit index from harvest_permits_michigan.py in work/permits/us-mi/ and read the permits to install and operating permit staff reports for each matched plant and for every EIA plant missing from GEM, for example https://mienviro.michigan.gov/ncore/downloadpdf/3438450417378425065 for Hancock.",
+      "found": "The permits for plants GEM has are handled in the plant research. For plants GEM lacks, the permits show that Hancock, Livingston and George Johnson have aeroderivative sets of 50 MW or more, and that Fermi, Superior, Northeast, Gaylord, Michigan State University and the University of Michigan have every unit under 50 MW."
+    },
+    "egle-harvest-unmatched": {
+      "status": "searched",
+      "how": "I worked through every site in work/permits/us-mi/_unmatched.md, 505 sites, and read the permits for each power or data center site.",
+      "found": "Hancock, Livingston and George Johnson are adds. Thomas Township Energy in Hemlock is an add as a cancelled plant. About 140 sites are oil and gas wells, compressor stations and processing plants, which do not generate power for the grid. The DTE peaker sites at Dayton, Conners Creek, Harbor Beach, Oliver, Placid, Putnam, Wilmot, Monroe, River Rouge and Trenton Channel and the Consumers sites at Morrow, Straits, Gaylord and Campbell either have every unit under 50 MW, retired before 2020, or are coal plants that other GEM trackers hold. Fermi, Superior, Northeast and the Gaylord peakers are under 50 MW per unit. The Zilwaukee, Alpena, Clinton, Coldwater, Marshall, Escanaba, Gladstone, Portage, Presque Isle, White Pine, Wyandotte, Rouge, Pontiac North, Genesee Power, Grayling, Mid-Michigan Energy and Riverview sites are under 50 MW per unit, retired before 2020, or burn coal, wood or waste. Old proposals for Panda Tallmadge, South Shore Power, El Paso Merchant, Kalkaska Generating and Viking Energy were dropped before 2020, so they are out of the tracked period. Landfill gas, digester and small municipal diesel plants are all under 50 MW. Data center sites, including 123Net, Bluebird, US Signal, Corewell, DXC, FCA, United Shore, Project Mitten and Panattoni, have diesel emergency generators only."
+    },
+    "mpsc-dockets": {
+      "status": "searched",
+      "how": "I used batches/us-mi/harvest/psc_dockets.md and read the filings in work/psc_mi/ for cases U-21090, U-21193, U-22168, U-22144, U-21990, U-22058, U-22175, U-21809, U-21407, U-22057, U-22069, U-21814, U-21377, U-21333, U-21810, U-21367 and U-21371, and checked the 2026 Consumers and DTE plan filings.",
+      "found": "The Consumers 2026 plan adds the Bay County and Genesee County gas plants, both in GEM. The DTE 2026 plan, filed September 24, 2026 according to an Earthjustice statement at https://earthjustice.org/press/2026/dte-plans-two-new-large-fossil-fuel-plants-to-power-ai-data-centers, adds about 2.1 GW of gas, the Milan Township and Handy Township plants in GEM. Case U-22144 is a 0.8 MW Zeeland Farm Services contract, under the threshold. The data center contracts in U-21990 for Green Chile Ventures in Saline Township and U-22058 for Google name no gas plant. The Upper Peninsula, Upper Michigan Energy Resources, Indiana Michigan Power and Northern States Power cases add no gas plant in Michigan. Case U-21407 is a coal and biomass plant contract."
+    },
+    "miso-gi-queue": {
+      "status": "searched",
+      "how": "I read every Michigan entry in the MISO queue data at https://www.misoenergy.org/api/giqueue/getprojects, gathered in batches/us-mi/harvest/queues.md, and entries with a Michigan-only transmission owner but no state.",
+      "found": "J3922, 1,445 MW gas combined cycle in Branch County, is new to GEM and is added at announced. J4159, 616 MW, and J4160, 55 MW, in Ottawa County at the Roosevelt substation go to a reviewer as a possible Zeeland expansion. J4024 and J4025 in Monroe County, J3923 Milan, J3799 Livingston County, J3935 Genesee County and J703 Kuester belong to plants GEM has. Withdrawn gas requests J3407, J1141, J1370, J841, J914, J1206, J1207 and J1264 need no action. Entries with the fuel hidden, such as R1040 and R1052 at Campbell, R1041 at Trenton Channel, S1172 in Clinton County, S1184, J4206 to J4237 and J4269, cannot be called gas from the queue alone."
+    },
+    "miso-eras": {
+      "status": "searched",
+      "how": "I read the fast track rows for the Expedited Resource Addition Study in the same MISO queue data at https://www.misoenergy.org/api/giqueue/getprojects, which includes them.",
+      "found": "The queue data has no Expedited Resource Addition Study rows in Michigan, so no Michigan gas project is on that list."
+    },
+    "pjm-queue": {
+      "status": "searched",
+      "how": "I read the PJM part of batches/us-mi/harvest/queues.md for the Indiana Michigan Power area of southwest Michigan.",
+      "found": "PJM lists seven Michigan gas entries. T94, AC1-072 and AD2-075 are New Covert, which GEM has; AD2-075, a 145 MW uprate, was withdrawn in 2023. AA2-116, AC1-141 and C01-1678, a 9.6 MW uprate due in 2027, are Indeck Niles, which GEM has. N46, a 1,120 MW Berrien County request, was withdrawn in 2005. Nothing to add."
+    },
+    "eia-860m": {
+      "status": "searched",
+      "how": "I read the Operating, Planned and Canceled or Postponed sheets of https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx for Michigan.",
+      "found": "Hancock, Livingston and George Johnson are the only missing plants with a set of 50 MW or more. Every other missing gas or oil plant has every unit under 50 MW, such as Dearborn Energy Center at 35 MW, Ada Cogeneration at 33.1 MW, Claude Vandyke at 24.8 MW and Gladstone at 22.6 MW. The planned Michigan State University turbine is 15 MW."
+    },
+    "eia-860": {
+      "status": "searched",
+      "how": "I checked owners and addresses for the Michigan gas plants against the EIA monthly file and the plant research, which read the 2024 annual plant and owner tables at https://www.eia.gov/electricity/data/eia860/.",
+      "found": "Owner and address checks for New Covert, Dearborn Industrial Generation and Midland Cogeneration Venture are in their own plant records. The three new plants take their owners from EIA, all of them existing GEM owners."
+    },
+    "consumers-energy": {
+      "status": "searched",
+      "how": "I read https://www.consumersenergy.com/news-releases, which loads no releases without a script, and so searched news on the 2026 plan and the plan summary at https://www.consumersenergy.com/-/media/CE/Documents/company/IRP-2026-Exec-Summary.pdf.",
+      "found": "The 2026 plan, filed September 3, 2026, proposes a gas plant of over 450 MW at the Karn site in Bay County and one of over 900 MW at Thetford in Genesee County, both for 2031 and both in GEM. It also buys power from the Midland plant, which GEM has. Karn units 3 and 4 are covered in the Karn plant research."
+    },
+    "dte-electric": {
+      "status": "searched",
+      "how": "The DTE newsroom at https://newsroom.dteenergy.com/ did not load through fetch.py, including the real browser step, and the Wayback Machine's newest copy is from December 2019, so I searched news on DTE's plans and read the DTE case filings.",
+      "found": "DTE filed its 2026 plan on September 24, 2026 with about 2.1 GW of new gas in 2031 and 2032. Those are the Milan Township and Handy Township plants in GEM. Belle River's gas conversion is covered in the Belle River plant research. The Google and Oracle data center contracts name solar, storage and demand response, not gas."
+    },
+    "wolverine-mppa-up": {
+      "status": "searched",
+      "how": "I read the Wolverine news page at https://www.wolverinepowercooperative.com/news/, the Michigan Public Power Agency news page at https://www.mpower.org/news, and the Upper Peninsula and Upper Michigan Energy Resources plan cases. The Lansing Board of Water and Light news page returned an error, so I relied on the Lansing plant research.",
+      "found": "Wolverine's news covers the Alpine plant's tenth year, which GEM has. George Johnson is a Wolverine peaker missing from GEM and is added. Gaylord is under 50 MW per unit. The power agency and the Upper Peninsula utilities name no new gas plant."
+    },
+    "possible-updates-sheet": {
+      "status": "searched",
+      "how": "I read the gas and oil plants tab of the possible updates sheet through the work profile and pulled every Michigan row.",
+      "found": "Row 154, the Marshall data center gas plant by Alterra, is GEM's MEC North and MEC South plants. Row 155 and row 314 list the Gibraltar, Metrobloks Southfield, Google Van Buren and Microsoft Gaines Township data centers. Each has diesel backup only or no gas plan in the sources I read, so none is a watch item. Rows 342, 2100 and 2132 are done and match plants GEM has."
+    },
+    "data-centers": {
+      "status": "searched",
+      "how": "I checked every Michigan data center announced since 2024 against the air permit list, the commission's contract cases and news, including the Saline Township campus served by DTE.",
+      "found": "Only Alliance Cloud Services in Dowagiac plans on-site gas generation, about 40 MW, and it goes on the watch list. Saline Township, the Google campus in Van Buren Township, Gibraltar, Southfield, Gaines Township and the other campuses use the grid with diesel backup."
+    }
   },
-  "egle-mienviro": {
-   "status": "searched",
-   "how": "I used the permit index from harvest_permits_michigan.py in work/permits/us-mi/ and read the permits to install and operating permit staff reports for each matched plant and for every EIA plant missing from GEM, for example https://mienviro.michigan.gov/ncore/downloadpdf/3438450417378425065 for Hancock.",
-   "found": "The permits for plants GEM has are handled in the plant research. For plants GEM lacks, the permits show that Hancock, Livingston and George Johnson have aeroderivative sets of 50 MW or more, and that Fermi, Superior, Northeast, Gaylord, Michigan State University and the University of Michigan have every unit under 50 MW."
+  "ids_followup": {
+    "1730": {
+      "decision": "add",
+      "evidence": "Two Pratt and Whitney FT4 twin pack jet turbines of 41.8 MW each, an aeroderivative set of 83.6 MW, per EIA's September 2026 monthly file and the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/3438450417378425065. The two 19 MW frame turbines are left out.",
+      "gem_plant_id": ""
+    },
+    "55102": {
+      "decision": "add",
+      "evidence": "Four Worthington twin pack gas turbine sets, 170.1 MW in all, per EIA's September 2026 monthly file and the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/-6094188335970412935.",
+      "gem_plant_id": ""
+    },
+    "1877": {
+      "decision": "add",
+      "evidence": "Two Rolls-Royce RB211 aeroderivative turbines of 25 MW each, a 50 MW set, per EIA's monthly file and the air inspection report at https://www.egle.state.mi.us/aps/downloads/SRN/N5760/N5760_SAR_20231108.pdf. Exactly at the threshold.",
+      "gem_plant_id": ""
+    },
+    "1729": {
+      "decision": "below_threshold",
+      "evidence": "Four GE Frame 5 diesel peaking turbines of 16 MW each per the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/1519237830729379873.",
+      "gem_plant_id": ""
+    },
+    "1744": {
+      "decision": "below_threshold",
+      "evidence": "Four diesel combustion turbines from 1966 of about 16 to 19 MW each per the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/6048297226606569993.",
+      "gem_plant_id": ""
+    },
+    "1734": {
+      "decision": "below_threshold",
+      "evidence": "Gas and oil frame turbines and two oil jet turbines of 21.2 MW each, 42.4 MW as a set, per EIA and the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/4106255214443739292.",
+      "gem_plant_id": ""
+    },
+    "7932": {
+      "decision": "below_threshold",
+      "evidence": "Three GE Frame 5 turbines of 23.4 MW each per the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/-7133973900997858976.",
+      "gem_plant_id": ""
+    },
+    "10328": {
+      "decision": "below_threshold",
+      "evidence": "Michigan State University's plant has steam turbines of 12.5 to 24 MW, a 14.3 MW gas turbine, engines of 28.2 MW as a set and a planned 15 MW turbine, per EIA and the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/-7640983059637335043.",
+      "gem_plant_id": ""
+    },
+    "50431": {
+      "decision": "below_threshold",
+      "evidence": "EIA groups the University of Michigan generators as one 60 MW combined cycle unit, but the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/-5303010553079006113 shows boiler-fed steam turbines and small heat recovery gas turbines, each well under 50 MW. Sent to a reviewer as a question.",
+      "gem_plant_id": ""
+    }
   },
-  "egle-harvest-unmatched": {
-   "status": "searched",
-   "how": "I worked through every site in work/permits/us-mi/_unmatched.md, 505 sites, and read the permits for each power or data center site.",
-   "found": "Hancock, Livingston and George Johnson are adds. Thomas Township Energy in Hemlock is an add as a cancelled plant. About 140 sites are oil and gas wells, compressor stations and processing plants, which do not generate power for the grid. The DTE peaker sites at Dayton, Conners Creek, Harbor Beach, Oliver, Placid, Putnam, Wilmot, Monroe, River Rouge and Trenton Channel and the Consumers sites at Morrow, Straits, Gaylord and Campbell either have every unit under 50 MW, retired before 2020, or are coal plants that other GEM trackers hold. Fermi, Superior, Northeast and the Gaylord peakers are under 50 MW per unit. The Zilwaukee, Alpena, Clinton, Coldwater, Marshall, Escanaba, Gladstone, Portage, Presque Isle, White Pine, Wyandotte, Rouge, Pontiac North, Genesee Power, Grayling, Mid-Michigan Energy and Riverview sites are under 50 MW per unit, retired before 2020, or burn coal, wood or waste. Old proposals for Panda Tallmadge, South Shore Power, El Paso Merchant, Kalkaska Generating and Viking Energy were dropped before 2020, so they are out of the tracked period. Landfill gas, digester and small municipal diesel plants are all under 50 MW. Data center sites, including 123Net, Bluebird, US Signal, Corewell, DXC, FCA, United Shore, Project Mitten and Panattoni, have diesel emergency generators only."
+  "dedup": {
+    "us-mi:new:livingston-generating-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-10-30",
+      "evidence": "The nearby GEM Alpine power plant, 8.3 kilometers away near Elmira, is EIA plant 59926 with two 227 MW units from 2016. This record is EIA plant 55102 at 155 North Townline Road in Gaylord, with four turbine sets from 1999. They are different plants."
+    }
   },
-  "mpsc-dockets": {
-   "status": "searched",
-   "how": "I used batches/us-mi/harvest/psc_dockets.md and read the filings in work/psc_mi/ for cases U-21090, U-21193, U-22168, U-22144, U-21990, U-22058, U-22175, U-21809, U-21407, U-22057, U-22069, U-21814, U-21377, U-21333, U-21810, U-21367 and U-21371, and checked the 2026 Consumers and DTE plan filings.",
-   "found": "The Consumers 2026 plan adds the Bay County and Genesee County gas plants, both in GEM. The DTE 2026 plan, filed September 24, 2026 according to an Earthjustice statement at https://earthjustice.org/press/2026/dte-plans-two-new-large-fossil-fuel-plants-to-power-ai-data-centers, adds about 2.1 GW of gas, the Milan Township and Handy Township plants in GEM. Case U-22144 is a 0.8 MW Zeeland Farm Services contract, under the threshold. The data center contracts in U-21990 for Green Chile Ventures in Saline Township and U-22058 for Google name no gas plant. The Upper Peninsula, Upper Michigan Energy Resources, Indiana Michigan Power and Northern States Power cases add no gas plant in Michigan. Case U-21407 is a coal and biomass plant contract."
-  },
-  "miso-gi-queue": {
-   "status": "searched",
-   "how": "I read every Michigan entry in the MISO queue data at https://www.misoenergy.org/api/giqueue/getprojects, gathered in batches/us-mi/harvest/queues.md, and entries with a Michigan-only transmission owner but no state.",
-   "found": "J3922, 1,445 MW gas combined cycle in Branch County, is new to GEM and is added at announced. J4159, 616 MW, and J4160, 55 MW, in Ottawa County at the Roosevelt substation go to a reviewer as a possible Zeeland expansion. J4024 and J4025 in Monroe County, J3923 Milan, J3799 Livingston County, J3935 Genesee County and J703 Kuester belong to plants GEM has. Withdrawn gas requests J3407, J1141, J1370, J841, J914, J1206, J1207 and J1264 need no action. Entries with the fuel hidden, such as R1040 and R1052 at Campbell, R1041 at Trenton Channel, S1172 in Clinton County, S1184, J4206 to J4237 and J4269, cannot be called gas from the queue alone."
-  },
-  "miso-eras": {
-   "status": "searched",
-   "how": "I read the fast track rows for the Expedited Resource Addition Study in the same MISO queue data at https://www.misoenergy.org/api/giqueue/getprojects, which includes them.",
-   "found": "The queue data has no Expedited Resource Addition Study rows in Michigan, so no Michigan gas project is on that list."
-  },
-  "pjm-queue": {
-   "status": "searched",
-   "how": "I read the PJM part of batches/us-mi/harvest/queues.md for the Indiana Michigan Power area of southwest Michigan.",
-   "found": "PJM lists seven Michigan gas entries. T94, AC1-072 and AD2-075 are New Covert, which GEM has; AD2-075, a 145 MW uprate, was withdrawn in 2023. AA2-116, AC1-141 and C01-1678, a 9.6 MW uprate due in 2027, are Indeck Niles, which GEM has. N46, a 1,120 MW Berrien County request, was withdrawn in 2005. Nothing to add."
-  },
-  "eia-860m": {
-   "status": "searched",
-   "how": "I read the Operating, Planned and Canceled or Postponed sheets of https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx for Michigan.",
-   "found": "Hancock, Livingston and George Johnson are the only missing plants with a set of 50 MW or more. Every other missing gas or oil plant has every unit under 50 MW, such as Dearborn Energy Center at 35 MW, Ada Cogeneration at 33.1 MW, Claude Vandyke at 24.8 MW and Gladstone at 22.6 MW. The planned Michigan State University turbine is 15 MW."
-  },
-  "eia-860": {
-   "status": "searched",
-   "how": "I checked owners and addresses for the Michigan gas plants against the EIA monthly file and the plant research, which read the 2024 annual plant and owner tables at https://www.eia.gov/electricity/data/eia860/.",
-   "found": "Owner and address checks for New Covert, Dearborn Industrial Generation and Midland Cogeneration Venture are in their own plant records. The three new plants take their owners from EIA, all of them existing GEM owners."
-  },
-  "consumers-energy": {
-   "status": "searched",
-   "how": "I read https://www.consumersenergy.com/news-releases, which loads no releases without a script, and so searched news on the 2026 plan and the plan summary at https://www.consumersenergy.com/-/media/CE/Documents/company/IRP-2026-Exec-Summary.pdf.",
-   "found": "The 2026 plan, filed September 3, 2026, proposes a gas plant of over 450 MW at the Karn site in Bay County and one of over 900 MW at Thetford in Genesee County, both for 2031 and both in GEM. It also buys power from the Midland plant, which GEM has. Karn units 3 and 4 are covered in the Karn plant research."
-  },
-  "dte-electric": {
-   "status": "searched",
-   "how": "The DTE newsroom at https://newsroom.dteenergy.com/ did not load through fetch.py, including the real browser step, and the Wayback Machine's newest copy is from December 2019, so I searched news on DTE's plans and read the DTE case filings.",
-   "found": "DTE filed its 2026 plan on September 24, 2026 with about 2.1 GW of new gas in 2031 and 2032. Those are the Milan Township and Handy Township plants in GEM. Belle River's gas conversion is covered in the Belle River plant research. The Google and Oracle data center contracts name solar, storage and demand response, not gas."
-  },
-  "wolverine-mppa-up": {
-   "status": "searched",
-   "how": "I read the Wolverine news page at https://www.wolverinepowercooperative.com/news/, the Michigan Public Power Agency news page at https://www.mpower.org/news, and the Upper Peninsula and Upper Michigan Energy Resources plan cases. The Lansing Board of Water and Light news page returned an error, so I relied on the Lansing plant research.",
-   "found": "Wolverine's news covers the Alpine plant's tenth year, which GEM has. George Johnson is a Wolverine peaker missing from GEM and is added. Gaylord is under 50 MW per unit. The power agency and the Upper Peninsula utilities name no new gas plant."
-  },
-  "possible-updates-sheet": {
-   "status": "searched",
-   "how": "I read the gas and oil plants tab of the possible updates sheet through the work profile and pulled every Michigan row.",
-   "found": "Row 154, the Marshall data center gas plant by Alterra, is GEM's MEC North and MEC South plants. Row 155 and row 314 list the Gibraltar, Metrobloks Southfield, Google Van Buren and Microsoft Gaines Township data centers. Each has diesel backup only or no gas plan in the sources I read, so none is a watch item. Rows 342, 2100 and 2132 are done and match plants GEM has."
-  },
-  "data-centers": {
-   "status": "searched",
-   "how": "I checked every Michigan data center announced since 2024 against the air permit list, the commission's contract cases and news, including the Saline Township campus served by DTE.",
-   "found": "Only Alliance Cloud Services in Dowagiac plans on-site gas generation, about 40 MW, and it goes on the watch list. Saline Township, the Google campus in Van Buren Township, Gibraltar, Southfield, Gaines Township and the other campuses use the grid with diesel backup."
+  "queues": {
+    "MISO S1015": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; J928' and lists its technology as solar. Surplus service at the existing request J928, a solar project, at Garden Corners in Delta County. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1015",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1018": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; J986' and lists its technology as battery storage. Surplus service at the existing request J986, a battery storage project, at 7 Mile Creek. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1018",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1019": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; Gratiot Solar' and lists its technology as solar. Surplus service at the existing Gratiot Solar project, a solar plant, at Redstone. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1019",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1020": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; Polaris Solar' and lists its technology as solar. Surplus service at the existing Polaris Solar project, a solar plant, at the Slate substation in Gratiot County. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1020",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1021": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; Pine River Solar' and lists its technology as solar. Surplus service at the existing Pine River Solar project, a solar plant, at the Luce substation in Gratiot County. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1021",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1031": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; J717' and lists its technology as solar. Surplus service at the existing request J717, a solar project, at Salt River in Isabella County. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1031",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1032": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; J728' and lists its technology as solar. Surplus service at the existing request J728, a solar project, at Salt River in Isabella County. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1032",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1058": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; J806' and lists its technology as battery storage. Surplus service at the existing request J806, a battery storage project, at Stonehill in Calhoun County. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1058",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1059": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; J199 and J202' and lists its technology as battery storage. Surplus service at the existing requests J199 and J202, battery storage projects, at Dixon in Tuscola County. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1059",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1060": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; J796' and lists its technology as battery storage. Surplus service at the existing request J796, a battery storage project, at Gross in Shiawassee County. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1060",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1061": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; G905' and lists its technology as battery storage. Surplus service at the existing request G905, a battery storage project, at Redstone in Midland County. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1061",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1062": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; J1320' and lists its technology as battery storage. Surplus service at the existing request J1320, a battery storage project, at New Byers in Branch County. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1062",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1063": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; J758' and lists its technology as battery storage. Surplus service at the existing request J758, a battery storage project, at Verona and Foundry in Calhoun County. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1063",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1065": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; J1224 and J1329' and lists its technology as battery storage. Surplus service at the existing requests J1224 and J1329, battery storage projects, on the Majestic to Milan 345 kV line in Washtenaw County. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1065",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1066": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; J875' and lists its technology as battery storage. Surplus service at the existing request J875, a battery storage project, in Lenawee County. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1066",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1067": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; J1062' and lists its technology as battery storage. Surplus service at the existing request J1062, listed as a battery storage project, on the Majestic to Lemoyne 345 kV line in Washtenaw County. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1067",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1068": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; J1658' and lists its technology as battery storage. Surplus service at the existing request J1658, a battery storage project, at Cronk Road in Hillsdale County. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1068",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1069": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO calls this a surplus interconnection request, which adds service at an existing project and is not a new plant. The interconnection.fyi copy of the MISO queue names it 'Surplus; J1379' and lists its technology as battery storage. Surplus service at the existing request J1379, a battery storage project, on the Eureka to Vestaburg 138 kV line in Montcalm County. No source I read names gas or oil for this request. The MISO queue data at the misoenergy.org address shows no fuel for it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1069",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO R1009": {
+      "decision": "not_gas_or_oil",
+      "evidence": "The MISO queue copy names this replacement request for 23 MW at the Consumers Energy Hillman unit in Montmorency County, to be replaced with solar. MISO data also shows it withdrawn on July 30, 2025. The title in the interconnection.fyi copy of the MISO queue reads 'Replace 23 MW at CONS.HILLMAN Unit with Solar; Hillman'. No source names gas or oil for this request.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-r1009",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO R1040": {
+      "decision": "not_gas_or_oil",
+      "evidence": "The MISO queue copy names this replacement request for the retiring Campbell unit 3 coal plant in Ottawa County, to be replaced with a battery energy storage system at the Campbell 345 kV substation. The title in the interconnection.fyi copy of the MISO queue reads 'Replacing 749 MW of coal generation with BESS; Campbell 3'. No source names gas or oil for this request.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-r1040",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO R1052": {
+      "decision": "not_gas_or_oil",
+      "evidence": "The MISO queue copy names this replacement request for Campbell units 1 and 2 coal generation, 615 MW, to be replaced with 615 MW of battery storage. The title in the interconnection.fyi copy of the MISO queue reads 'Replacing 615 MW Coal with 615 MW BESS; Campbell Units 1 & 2'. No source names gas or oil for this request.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-r1052",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO R1041": {
+      "decision": "not_gas_or_oil",
+      "evidence": "The MISO queue copy names this replacement request for Trenton Channel unit 9, 220 MW of coal, to be replaced with a battery energy storage system. A DTE project report from 2024 says the Trenton Channel site is being converted to a 220 MW battery storage center and that DTE has no plans to repower it with gas. The title in the interconnection.fyi copy of the MISO queue reads 'Replacing 220 MW of coal generation with BESS; Trenton Channel 9'. No source names gas or oil for this request.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-r1041",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.power-eng.com/energy-storage/batteries/powin-selected-as-battery-supplier-for-dtes-trenton-channel-energy-center-in-michigan/"
+      ]
+    },
+    "MISO S1172": {
+      "decision": "other_state",
+      "evidence": "The MISO queue copy at interconnection.fyi names this surplus request 'Calamus East' and places it in Clinton County, Iowa, not Michigan. Calamus is a substation in Iowa. MISO's own data shows only the county name Clinton with no state, which is why it was read as Michigan. No fuel is published. The site is outside Michigan, so it is not a Michigan request.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1172",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1184": {
+      "decision": "other_state",
+      "evidence": "The MISO queue copy at interconnection.fyi names this surplus request 'Ramsey' and places it in Fayette County, Illinois. Ramsey is a town in Fayette County, Illinois. MISO's own data gives the county as Fayette with no state, and also shows the request withdrawn on September 22, 2026. No fuel is published. It is not a Michigan site.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1184",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO J3799": {
+      "decision": "update",
+      "plant_id": "L100001082478",
+      "record_id": "L100001082478:G100001092812:equipment-manufacturer-model",
+      "evidence": "MISO shows J3799 as 1,452 MW gas combined cycle in Livingston County at the Blackfoot to Madrid 345 kV line, with status Pending Revision Approval. DTE Electric testimony in Michigan Public Service Commission case U-22168, filed September 24, 2026, says the Livingston County combined cycle project at Handy Township is studied under J3799 for up to 1,452 MW. GEM already has the Handy Township power station, and a staged update in this batch covers its details.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j3799",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPrx7AAD"
+      ]
+    },
+    "MISO J4024": {
+      "decision": "update",
+      "plant_id": "L100001088928",
+      "record_id": "L100001088928:G100001101140:equipment-manufacturer-model",
+      "evidence": "MISO shows J4024 as 1,499 MW gas combined cycle in Monroe County. DTE Electric testimony in Michigan Public Service Commission case U-22168 says DTE holds two requests, J4024 and J4025, of up to 1,499 MW each for the Monroe County project, which together support a plant of about 700 MW. The project is the Milan Township power station, which GEM already has, and a staged update covers it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4024",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPrx7AAD"
+      ]
+    },
+    "MISO J4025": {
+      "decision": "update",
+      "plant_id": "L100001088928",
+      "record_id": "L100001088928:G100001101140:equipment-manufacturer-model",
+      "evidence": "MISO shows J4025 as 1,499 MW gas combined cycle in Monroe County. DTE Electric testimony in Michigan Public Service Commission case U-22168 names J4024 and J4025 as its two requests of up to 1,499 MW each for the Monroe County project of about 700 MW. The project is the Milan Township power station, which GEM already has, and a staged update covers it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4025",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002WPrx7AAD"
+      ]
+    },
+    "MISO J3935": {
+      "decision": "update",
+      "plant_id": "L100001083333",
+      "record_id": "L100001083333:G100001094119:capacity-mw",
+      "evidence": "MISO shows J3935 as 975.4 MW gas simple cycle combustion turbine in Genesee County at the Thetford point of interconnection. The staged update for the Genesee County power station says Consumers Energy's 2026 resource plan filing, case U-22127, describes a 919 MW natural gas simple cycle plant at its existing Thetford site, and notes that J3935 is the matching queue entry. GEM already has the plant, and the staged capacity record covers it.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j3935",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002RMFBBAA5"
+      ]
+    },
+    "MISO J703": {
+      "decision": "update",
+      "plant_id": "L100000409210",
+      "record_id": "L100000409210:G100000414274:status",
+      "evidence": "MISO shows J703 as 128.1 MW of gas piston engines in Marquette County at the Huron 138 kV substation, with status Done and an in-service date of 2019. This matches the F.D. Kuester Generating Station, seven Wartsila gas engines at 18.8 MW each, in GEM as plant L100000409210. The staged update for its status confirms the unit is operating.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j703",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.prnewswire.com/news-releases/burns--mcdonnell-reaches-substantial-completion-on-aj-mihm-and-fd-kuester-reciprocating-engine-power-generating-stations-in-michigans-upper-peninsula-300838584.html"
+      ]
+    },
+    "MISO J704": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000409204",
+      "evidence": "MISO shows J704 as 54.9 MW of gas piston engines in Baraga County at the M38 substation, with status Done and a 2019 in-service date. A 2019 Burns and McDonnell press release describes the A.J. Mihm and F.D. Kuester engine plants in the Upper Peninsula as finished together. GEM has A.J. Mihm Generating Station in Baraga County as plant L100000409204, 56.4 MW operating gas engines. Same county and same engine type and size, so this is the same project.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j704",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.prnewswire.com/news-releases/burns--mcdonnell-reaches-substantial-completion-on-aj-mihm-and-fd-kuester-reciprocating-engine-power-generating-stations-in-michigans-upper-peninsula-300838584.html"
+      ]
+    },
+    "MISO J793": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000103973",
+      "evidence": "MISO shows J793 as 1,175 MW combined cycle gas in St. Clair County on the Belle River to Fitz 345 kV line tap, status Done, in service in 2021. GEM has the Belle River Power Plant in St. Clair County as plant L100000103973, which was converted to gas around that time. No document I read states that J793 was the conversion, so the match rests on the site, the line name and the date. The GEM unit capacities total about 1,395 MW, which does not match 1,175 MW exactly. A reviewer may want to confirm.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j793",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO J3922": {
+      "decision": "add",
+      "record_id": "us-mi:new:hiple-branch-county-power-station",
+      "evidence": "MISO shows J3922 as 1,445 MW gas combined cycle in Branch County at the Hiple substation, queued March 4, 2025, in service March 1, 2030, status Pending Revision Approval. The transmission owner is METC. The batch already stages a new plant for it. I searched for a developer, county or township filing, and news and found none. A planned 345 kV line from Helix to Hiple was approved by Michigan regulators in 2025 but does not name a generator. Cleanview lists it only as a planned gas plant named Hiple.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j3922",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://cleanview.co/power-projects/planned/natural-gas-power-plants/iowa/J3922/hiple",
+        "https://www.constructionowners.com/news/mpsc-oks-two-transmission-lines-for-southern-michigan"
+      ]
+    },
+    "MISO J4159": {
+      "decision": "update",
+      "plant_id": "L100000401831",
+      "record_id": "us-mi:plant:qa-duplicate-1",
+      "evidence": "MISO shows J4159 as 616 MW (664 MW winter) gas combined cycle, in service June 2028 in Ottawa County at the Roosevelt substation on the METC system. No filing I found ties it to Zeeland or to any owner. Consumers Energy's 2026 plan adds gas plants only in Bay and Genesee counties, and the 2025 Zeeland work was a 50 MW turbine upgrade. The Roosevelt substation is a 345 kV METC station and the Zeeland plant lists a 345 kV Zeeland substation nearby, so this is only a possible link. The batch holds a question for the reviewer about whether it is a Zeeland expansion or a new plant.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4159",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.consumersenergy.com/news-releases/news-release-details/2025/05/05/consumers-energy-expands-zeeland-natural-gas-plant-to-grow-michigans-energy-reliability",
+        "https://cleanview.co/power-projects/planned/natural-gas-power-plants/iowa/J4159/roosevelt"
+      ]
+    },
+    "MISO J4160": {
+      "decision": "update",
+      "plant_id": "L100000401831",
+      "record_id": "us-mi:plant:qa-duplicate-1",
+      "evidence": "MISO shows J4160 as 55 MW gas simple cycle turbine, in service May 2026 in Ottawa County at the Roosevelt substation on the METC system. No filing I found ties it to Zeeland or to any owner. Consumers Energy's 2026 plan adds gas plants only in Bay and Genesee counties, and the 2025 Zeeland work was a 50 MW turbine upgrade. The Roosevelt substation is a 345 kV METC station and the Zeeland plant lists a 345 kV Zeeland substation nearby, so this is only a possible link. The batch holds a question for the reviewer about whether it is a Zeeland expansion or a new plant.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4160",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.consumersenergy.com/news-releases/news-release-details/2025/05/05/consumers-energy-expands-zeeland-natural-gas-plant-to-grow-michigans-energy-reliability",
+        "https://cleanview.co/power-projects/planned/natural-gas-power-plants/iowa/J4160/roosevelt"
+      ]
+    },
+    "MISO J4423": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel for J4423, a 300 MW energy request queued September 12, 2026 in the DPP-2026 cycle, county listed as Clinton, at the Greenwood to Rapson 345 kV line, ITC. That line runs through Sanilac and Huron counties in the Thumb, not Clinton County, so the county looks like a data entry error. The same point of interconnection and size appear on J4195, a 300 MW wind request in the queue. Another request, J4422, queued the same day at the same line, lists Otter Tail Power as owner. No source I found states the fuel of J4423. I did not call it wind because J4195 is a separate request. I searched MISO data, interconnection.fyi and infrasure pages, and news.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4423",
+        "https://www.interconnection.fyi/project/miso-j4195",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1182": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel for S1182, a surplus request at Salt River 138 kV in Isabella County, listed as active. Earlier surplus requests S1031 and S1032 at this station are surplus service for the solar projects J717 and J728, so these may be more surplus service at the same solar sites, but no source says so. No public source I read states its fuel or the host project. Searched the MISO queue data, interconnection.fyi, infrasure.ai and web news.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1182",
+        "https://www.interconnection.fyi/project/miso-s1031",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1183": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel for S1183, a surplus request at Salt River 138 kV in Isabella County, listed as active. Earlier surplus requests S1031 and S1032 at this station are surplus service for the solar projects J717 and J728, so these may be more surplus service at the same solar sites, but no source says so. No public source I read states its fuel or the host project. Searched the MISO queue data, interconnection.fyi, infrasure.ai and web news.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1183",
+        "https://www.interconnection.fyi/project/miso-s1031",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1146": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel for S1146, a surplus request at Du Pont to White Lake 138 kV in Muskegon County, listed as active. Other requests at this point are J1375, a 100 MW solar project, and S1081, a 100 MW battery project, so this is likely service at an existing site, but no source names the host. No public source I read states its fuel or the host project. Searched the MISO queue data, interconnection.fyi, infrasure.ai and web news.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1146",
+        "https://www.interconnection.fyi/project/miso-j1375",
+        "https://www.infrasure.ai/project/miso-s1081",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1130": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, county and point of interconnection for S1130, a 225 MW surplus request listed with state Michigan and METC as the transmission owner. A surplus request adds service at an existing plant, so it is not a new plant by itself. The interconnection.fyi and infrasure copies list no technology and no project name. I searched the MISO queue data, those two sites and web news and found no document naming its fuel or host project.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1130",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1136": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, county and point of interconnection for S1136, a 100 MW surplus request listed with state Michigan and METC as the transmission owner. A surplus request adds service at an existing plant, so it is not a new plant by itself. The interconnection.fyi and infrasure copies list no technology and no project name. I searched the MISO queue data, those two sites and web news and found no document naming its fuel or host project.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1136",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1138": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, county and point of interconnection for S1138, a 100 MW surplus request listed with state Michigan and METC as the transmission owner. A surplus request adds service at an existing plant, so it is not a new plant by itself. The interconnection.fyi and infrasure copies list no technology and no project name. I searched the MISO queue data, those two sites and web news and found no document naming its fuel or host project.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1138",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1144": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, county and point of interconnection for S1144, a 200 MW surplus request listed with state Michigan and METC as the transmission owner. A surplus request adds service at an existing plant, so it is not a new plant by itself. The interconnection.fyi and infrasure copies list no technology and no project name. I searched the MISO queue data, those two sites and web news and found no document naming its fuel or host project.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1144",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1147": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, county and point of interconnection for S1147, a 132 MW surplus request listed with state Michigan and METC as the transmission owner. A surplus request adds service at an existing plant, so it is not a new plant by itself. The interconnection.fyi and infrasure copies list no technology and no project name. I searched the MISO queue data, those two sites and web news and found no document naming its fuel or host project.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1147",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1174": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, state, county and size for S1174, a surplus request under the no-cycle process with no point of interconnection published. The interconnection.fyi page shows 0 to 10 MW and an undisclosed location. It is not clear this is even in Michigan; it was listed only because the owner is Michigan-linked. I searched the MISO queue data, interconnection.fyi, infrasure and web news and found nothing naming a fuel or site.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1174",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO S1175": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, state, county and size for S1175, a surplus request under the no-cycle process with no point of interconnection published. The interconnection.fyi page shows 0 to 10 MW and an undisclosed location. It is not clear this is even in Michigan; it was listed only because the owner is Michigan-linked. I searched the MISO queue data, interconnection.fyi, infrasure and web news and found nothing naming a fuel or site.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-s1175",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO R5077": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, county, point of interconnection and size for R5077, a replacement request with no capacity published. The interconnection.fyi page shows 0 to 10 MW and an undisclosed location. Replacement requests tie to a retiring or suspended unit but MISO does not name it. I searched the MISO queue data, interconnection.fyi, infrasure and web news and found nothing naming the unit or the fuel.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-r5077",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO R5078": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, county, point of interconnection and size for R5078, a replacement request with no capacity published. The interconnection.fyi page shows 0 to 10 MW and an undisclosed location. Replacement requests tie to a retiring or suspended unit but MISO does not name it. I searched the MISO queue data, interconnection.fyi, infrasure and web news and found nothing naming the unit or the fuel.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-r5078",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO R5082": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, county, point of interconnection and size for R5082, a replacement request with no capacity published. The interconnection.fyi page shows 0 to 10 MW and an undisclosed location. Replacement requests tie to a retiring or suspended unit but MISO does not name it. I searched the MISO queue data, interconnection.fyi, infrasure and web news and found nothing naming the unit or the fuel.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-r5082",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+    },
+    "MISO J4414": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, state, county and point of interconnection for J4414, a 250 MW request in the DPP-2026 study cycle, queued September 14, 2026, with METC as transmission owner. The interconnection.fyi and infrasure copies list technology as not available and the location as undisclosed. I searched the MISO queue data, those two sites and web news for a name, developer or fuel and found none. Modo Energy reports gas is about half of the MW in DPP-2026 overall, but that does not say anything about this request, so it is not used.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4414",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://modoenergy.com/research/miso-bess-queue-q3-2026-5-gw-signed"
+      ]
+    },
+    "MISO J4269": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, state, county and point of interconnection for J4269, a 300 MW request in the DPP-2026 study cycle, queued August 13, 2026, with METC as transmission owner. The interconnection.fyi and infrasure copies list technology as not available and the location as undisclosed. I searched the MISO queue data, those two sites and web news for a name, developer or fuel and found none. Modo Energy reports gas is about half of the MW in DPP-2026 overall, but that does not say anything about this request, so it is not used.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4269",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://modoenergy.com/research/miso-bess-queue-q3-2026-5-gw-signed"
+      ]
+    },
+    "MISO J4208": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, state, county and point of interconnection for J4208, a 100 MW request in the DPP-2026 study cycle, queued December 20, 2025, with METC as transmission owner. The interconnection.fyi and infrasure copies list technology as not available and the location as undisclosed. I searched the MISO queue data, those two sites and web news for a name, developer or fuel and found none. Modo Energy reports gas is about half of the MW in DPP-2026 overall, but that does not say anything about this request, so it is not used.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4208",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://modoenergy.com/research/miso-bess-queue-q3-2026-5-gw-signed"
+      ]
+    },
+    "MISO J4210": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, state, county and point of interconnection for J4210, a 250 MW request in the DPP-2026 study cycle, queued February 6, 2026, with ITC as transmission owner. The interconnection.fyi and infrasure copies list technology as not available and the location as undisclosed. I searched the MISO queue data, those two sites and web news for a name, developer or fuel and found none. Modo Energy reports gas is about half of the MW in DPP-2026 overall, but that does not say anything about this request, so it is not used.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4210",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://modoenergy.com/research/miso-bess-queue-q3-2026-5-gw-signed"
+      ]
+    },
+    "MISO J4207": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, state, county and point of interconnection for J4207, a 100 MW request in the DPP-2026 study cycle, queued December 20, 2025, with METC as transmission owner. The interconnection.fyi and infrasure copies list technology as not available and the location as undisclosed. I searched the MISO queue data, those two sites and web news for a name, developer or fuel and found none. Modo Energy reports gas is about half of the MW in DPP-2026 overall, but that does not say anything about this request, so it is not used.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4207",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://modoenergy.com/research/miso-bess-queue-q3-2026-5-gw-signed"
+      ]
+    },
+    "MISO J4206": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, state, county and point of interconnection for J4206, a 100 MW request in the DPP-2026 study cycle, queued December 20, 2025, with METC as transmission owner. The interconnection.fyi and infrasure copies list technology as not available and the location as undisclosed. I searched the MISO queue data, those two sites and web news for a name, developer or fuel and found none. Modo Energy reports gas is about half of the MW in DPP-2026 overall, but that does not say anything about this request, so it is not used.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4206",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://modoenergy.com/research/miso-bess-queue-q3-2026-5-gw-signed"
+      ]
+    },
+    "MISO J4212": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, state, county and point of interconnection for J4212, a 150 MW request in the DPP-2026 study cycle, queued February 18, 2026, with ITC as transmission owner. The interconnection.fyi and infrasure copies list technology as not available and the location as undisclosed. I searched the MISO queue data, those two sites and web news for a name, developer or fuel and found none. Modo Energy reports gas is about half of the MW in DPP-2026 overall, but that does not say anything about this request, so it is not used.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4212",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://modoenergy.com/research/miso-bess-queue-q3-2026-5-gw-signed"
+      ]
+    },
+    "MISO J4209": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, state, county and point of interconnection for J4209, a 100 MW request in the DPP-2026 study cycle, queued December 20, 2025, with METC as transmission owner. The interconnection.fyi and infrasure copies list technology as not available and the location as undisclosed. I searched the MISO queue data, those two sites and web news for a name, developer or fuel and found none. Modo Energy reports gas is about half of the MW in DPP-2026 overall, but that does not say anything about this request, so it is not used.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4209",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://modoenergy.com/research/miso-bess-queue-q3-2026-5-gw-signed"
+      ]
+    },
+    "MISO J4237": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, state, county and point of interconnection for J4237, a 200 MW request in the DPP-2026 study cycle, queued March 24, 2026, with METC as transmission owner. The interconnection.fyi and infrasure copies list technology as not available and the location as undisclosed. I searched the MISO queue data, those two sites and web news for a name, developer or fuel and found none. Modo Energy reports gas is about half of the MW in DPP-2026 overall, but that does not say anything about this request, so it is not used.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4237",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://modoenergy.com/research/miso-bess-queue-q3-2026-5-gw-signed"
+      ]
+    },
+    "MISO J4228": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, state, county and point of interconnection for J4228, a 100 MW request in the DPP-2026 study cycle, queued March 19, 2026, with METC as transmission owner. The interconnection.fyi and infrasure copies list technology as not available and the location as undisclosed. I searched the MISO queue data, those two sites and web news for a name, developer or fuel and found none. Modo Energy reports gas is about half of the MW in DPP-2026 overall, but that does not say anything about this request, so it is not used.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4228",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://modoenergy.com/research/miso-bess-queue-q3-2026-5-gw-signed"
+      ]
+    },
+    "MISO J4233": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, state, county and point of interconnection for J4233, a 300 MW request in the DPP-2026 study cycle, queued March 21, 2026, with ITC as transmission owner. The interconnection.fyi and infrasure copies list technology as not available and the location as undisclosed. I searched the MISO queue data, those two sites and web news for a name, developer or fuel and found none. Modo Energy reports gas is about half of the MW in DPP-2026 overall, but that does not say anything about this request, so it is not used.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4233",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://modoenergy.com/research/miso-bess-queue-q3-2026-5-gw-signed"
+      ]
+    },
+    "MISO J4234": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO hides fuel, state, county and point of interconnection for J4234, a 300 MW request in the DPP-2026 study cycle, queued March 21, 2026, with ITC as transmission owner. The interconnection.fyi and infrasure copies list technology as not available and the location as undisclosed. I searched the MISO queue data, those two sites and web news for a name, developer or fuel and found none. Modo Energy reports gas is about half of the MW in DPP-2026 overall, but that does not say anything about this request, so it is not used.",
+      "urls": [
+        "https://www.interconnection.fyi/project/miso-j4234",
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://modoenergy.com/research/miso-bess-queue-q3-2026-5-gw-signed"
+      ]
+    }
   }
- },
- "ids_followup": {
-  "1730": {
-   "decision": "add",
-   "evidence": "Two Pratt and Whitney FT4 twin pack jet turbines of 41.8 MW each, an aeroderivative set of 83.6 MW, per EIA's September 2026 monthly file and the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/3438450417378425065. The two 19 MW frame turbines are left out.",
-   "gem_plant_id": ""
-  },
-  "55102": {
-   "decision": "add",
-   "evidence": "Four Worthington twin pack gas turbine sets, 170.1 MW in all, per EIA's September 2026 monthly file and the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/-6094188335970412935.",
-   "gem_plant_id": ""
-  },
-  "1877": {
-   "decision": "add",
-   "evidence": "Two Rolls-Royce RB211 aeroderivative turbines of 25 MW each, a 50 MW set, per EIA's monthly file and the air inspection report at https://www.egle.state.mi.us/aps/downloads/SRN/N5760/N5760_SAR_20231108.pdf. Exactly at the threshold.",
-   "gem_plant_id": ""
-  },
-  "1729": {
-   "decision": "below_threshold",
-   "evidence": "Four GE Frame 5 diesel peaking turbines of 16 MW each per the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/1519237830729379873.",
-   "gem_plant_id": ""
-  },
-  "1744": {
-   "decision": "below_threshold",
-   "evidence": "Four diesel combustion turbines from 1966 of about 16 to 19 MW each per the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/6048297226606569993.",
-   "gem_plant_id": ""
-  },
-  "1734": {
-   "decision": "below_threshold",
-   "evidence": "Gas and oil frame turbines and two oil jet turbines of 21.2 MW each, 42.4 MW as a set, per EIA and the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/4106255214443739292.",
-   "gem_plant_id": ""
-  },
-  "7932": {
-   "decision": "below_threshold",
-   "evidence": "Three GE Frame 5 turbines of 23.4 MW each per the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/-7133973900997858976.",
-   "gem_plant_id": ""
-  },
-  "10328": {
-   "decision": "below_threshold",
-   "evidence": "Michigan State University's plant has steam turbines of 12.5 to 24 MW, a 14.3 MW gas turbine, engines of 28.2 MW as a set and a planned 15 MW turbine, per EIA and the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/-7640983059637335043.",
-   "gem_plant_id": ""
-  },
-  "50431": {
-   "decision": "below_threshold",
-   "evidence": "EIA groups the University of Michigan generators as one 60 MW combined cycle unit, but the air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/-5303010553079006113 shows boiler-fed steam turbines and small heat recovery gas turbines, each well under 50 MW. Sent to a reviewer as a question.",
-   "gem_plant_id": ""
-  }
- }
 }

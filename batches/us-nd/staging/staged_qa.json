@@ -1,0 +1,766 @@
+{
+  "meta": {
+    "lane": "qa",
+    "scope": {
+      "country": "United States",
+      "state": "North Dakota",
+      "postal": "nd",
+      "kind": "state",
+      "slug": "north-dakota",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-30T08:07:24-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 33
+    }
+  },
+  "records": [
+    {
+      "gem_unit_id": "G100001101354",
+      "concern_type": "Capacity Per Engine",
+      "question": "Is each MTU engine at ELN03 rated 3,490 kilowatts or 3,250 kilowatts?",
+      "finding": "The permit table at https://deq.nd.gov/AQ/Notices/AppliedDigital/DRAFT_ACP18338v1_0.pdf says the 48 MTU 20V4000 DS3250 engines produce 3,490 kilowatts each. The analysis at https://deq.nd.gov/AQ/Notices/AppliedDigital/DRAFT_ACP18338v1_0AQEA.pdf says 3,250 kilowatts each. The database uses 3.49 megawatts per engine and 167.52 megawatts in total.",
+      "recommendation": "Keep 3.49 for now. Ask the North Dakota air quality office which figure the final permit uses, and change to 3.25 and 156.0 megawatts if it says 3,250.",
+      "refs": {
+        "links": [
+          "https://deq.nd.gov/AQ/Notices/AppliedDigital/DRAFT_ACP18338v1_0.pdf",
+          "https://deq.nd.gov/AQ/Notices/AppliedDigital/DRAFT_ACP18338v1_0AQEA.pdf",
+          "https://www.psc.nd.gov/webdocs/case/26-0155/001-010.pdf"
+        ]
+      },
+      "proposed_value": {
+        "Capacity Per Engine": "3.25",
+        "Capacity (MW)": "156.0"
+      },
+      "gem_plant_id": "L100001089074",
+      "plant_name": "Applied Digital ELN Generation Plant",
+      "country": "United States",
+      "unit_name": "ELN03-MTU",
+      "fields": {},
+      "researcher_notes": "The commission filing at https://www.psc.nd.gov/webdocs/case/26-0155/001-010.pdf says the site plans about 252 engines of 3 megawatts each, up to 756 megawatts. That rounds the MTU engines down and does not settle the question.",
+      "record_id": "L100001089074:G100001101354:qa-capacity-per-engine-1",
+      "checks": [
+        39
+      ]
+    },
+    {
+      "gem_unit_id": "G100001101353",
+      "concern_type": "location",
+      "question": "Should the Ellendale engine plant move to the point the air quality division publishes for it?",
+      "finding": "The air quality division's site record for the permitted generator plant, at 9663 87th Ave. SE, sits at 46.01438, -98.57427. The database point, 46.02178, -98.57360, is about 76 meters from a separate stormwater construction record named Applied Digital ELN-03, which the department places at 46.0211, -98.573731.",
+      "recommendation": "Move the plant point to 46.01438, -98.57427 and mark it exact, since both engine air permits sit on that site record.",
+      "refs": {
+        "links": [
+          "https://deq.nd.gov/AQ/Notices/AppliedDigital/DRAFT_ACP18338v1_0.pdf",
+          "https://www.openstreetmap.org/way/1422191450",
+          "https://www.google.com/maps/search/?api=1&query=46.01438,-98.57427"
+        ]
+      },
+      "proposed_value": {
+        "Latitude": "46.01438",
+        "Longitude": "-98.57427",
+        "Location accuracy": "exact"
+      },
+      "gem_plant_id": "L100001089074",
+      "plant_name": "Applied Digital ELN Generation Plant",
+      "country": "United States",
+      "unit_name": "ELN02",
+      "fields": {},
+      "researcher_notes": "The first look used the street address geocoded to 46.01096, -98.56866. That point sits on the road at the southeast corner of the campus, about 450 meters from the department's point. The ELN-03 record covers a construction stormwater permit, NDR113237, and no air permit, so the database point may mark the ELN03 engine building site rather than the generator plant record. The site record page is https://ceris.deq.nd.gov/ext/nsite/DEFAULT/map/results/detail/-8841860088109998100/detail. It is drawn by a script, so the coordinates were read from the department's map search service and could not be checked by text match on the page. Imagery of the database point shows farmland, but the imagery date is unknown and may be older than construction.",
+      "record_id": "L100001089074:G100001101353:qa-location-2"
+    },
+    {
+      "gem_unit_id": "G100001101351",
+      "concern_type": "location",
+      "question": "Can the Harwood plant point be made exact from the 6805 County Road 81 address?",
+      "finding": "The air quality analysis at https://deq.nd.gov/aq/Notices/AppliedDigital/DRAFTACP18345v1_0AQEA.pdf gives the site address as 6805 County Road 81, Harwood, ND 58042. The geocoder found no match for that address, and only placed Harwood town about 2.4 km from GEM's point.",
+      "recommendation": "Leave the point as approximate. Place 6805 County Road 81 using Cass County parcel records or a map and then mark it exact.",
+      "refs": {
+        "links": [
+          "https://deq.nd.gov/aq/Notices/AppliedDigital/DRAFTACP18345v1_0AQEA.pdf"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100001089073",
+      "plant_name": "Applied Digital FAR Generation Plant",
+      "country": "United States",
+      "unit_name": "FAR01",
+      "fields": {},
+      "researcher_notes": "I tried the geocoder with several spellings. A web search found a data center listing with the same address but no coordinates. A satellite image of GEM's point, Esri World Imagery at zoom 15, shows bare farm fields east of Interstate 29 near Harwood, with no buildings yet. The imagery is older than the construction, so it cannot place the plant. The Internet Archive was offline during this pass, so older Harwood notices could not be read there.",
+      "record_id": "L100001089073:G100001101351:qa-location-1"
+    },
+    {
+      "gem_unit_id": "G100001101351",
+      "concern_type": "source",
+      "question": "Should the permit number on the June 2026 Harwood notice letter be treated as a typo?",
+      "finding": "The notice letter at https://deq.nd.gov/aq/Notices/AppliedDigital/20260611BaylisLtrandNOT.pdf names the FAR Generation Plant but its comment line gives permit ACP-18338 version 1.0, which is the Ellendale permit. The analysis at https://deq.nd.gov/aq/Notices/AppliedDigital/DRAFTACP18345v1_0AQEA.pdf says ACP-18345 version 1.0.",
+      "recommendation": "Use ACP-18345 for Harwood and treat the letter's number as a copy error.",
+      "refs": {
+        "links": [
+          "https://deq.nd.gov/aq/Notices/AppliedDigital/20260611BaylisLtrandNOT.pdf",
+          "https://deq.nd.gov/aq/Notices/AppliedDigital/DRAFTACP18345v1_0AQEA.pdf"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100001089073",
+      "plant_name": "Applied Digital FAR Generation Plant",
+      "country": "United States",
+      "unit_name": "FAR01",
+      "fields": {},
+      "researcher_notes": "The commission case PU-26-155 covers the Ellendale site per the earlier pass and does not name Harwood.",
+      "record_id": "L100001089073:G100001101351:qa-source-2"
+    },
+    {
+      "gem_unit_id": "G100001101332",
+      "concern_type": "identity",
+      "question": "Is the Sierra Club's Applied Digital Natural Gas Plant units 1 to 4 this plant?",
+      "finding": "Only Base Electron has four 300 MW natural gas steam units in North Dakota. Polaris Forge 1 is 400 MW and Polaris Forge 2 is 280 MW in GEM, and the Applied Digital engine plants are 3 MW diesel engine sets.",
+      "recommendation": "Treat the Sierra Club row as Base Electron power station and add no new plant for it.",
+      "refs": {
+        "links": [
+          "https://www.babcock.com/home/about/corporate/news/babcock-and-wilcox-receives-full-notice-to-proceed-on-24-billion-power-generation-project-for-base-electron-to-supply-power-to-applied-digital-ai-factory-campuses",
+          "https://ir.applieddigital.com/sec-filings/all-sec-filings/content/0001144879-26-000059/apld-20260831.htm"
+        ]
+      },
+      "gem_plant_id": "L100001089055",
+      "plant_name": "Base Electron power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The Babcock and Wilcox release at https://www.babcock.com/home/about/corporate/news/babcock-and-wilcox-receives-full-notice-to-proceed-on-24-billion-power-generation-project-for-base-electron-to-supply-power-to-applied-digital-ai-factory-campuses gives four 300 MW boilers with steam turbines for Applied Digital campuses, and the quarterly report at https://ir.applieddigital.com/sec-filings/all-sec-filings/content/0001144879-26-000059/apld-20260831.htm ties the 1,200 MW plant to Polaris Forge 3. I could not open the Sierra Club list as a citable source, so this rests on the matching size and unit count.",
+      "record_id": "L100001089055:G100001101332:qa-identity-1"
+    },
+    {
+      "gem_unit_id": "G100001101332",
+      "concern_type": "location",
+      "question": "Can the Base Electron point be improved beyond GEM's approximate point near Center?",
+      "finding": "Montana-Dakota Utilities filings PU-26-219 and PU-26-236 place the Applied Digital campus in Section 24, Township 142 North, Range 85 West, Oliver County, west of Center. GEM's point is 47.09400, -101.27980, about 2.9 km from the town of Center at 47.11639, -101.29959.",
+      "recommendation": "Leave the point as approximate. A person should convert the section and township to a point or find the county conditional use permit 1105 site map.",
+      "refs": {
+        "links": [
+          "https://s25.q4cdn.com/697625600/files/doc_news/Montana-Dakota-Utilities-Announces-Electric-Service-Agreement-with-Applied-Digital-for-Proposed-AI-Factory-2026.pdf"
+        ]
+      },
+      "gem_plant_id": "L100001089055",
+      "plant_name": "Base Electron power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The filings are at https://www.psc.nd.gov/webdocs/case/26-0219/ and https://www.psc.nd.gov/webdocs/case/26-0236/. I did not convert the survey description into coordinates or look at satellite imagery, and the campus is not confirmed to be the power plant site. The Oliver County permit documents were behind a sign-in page.",
+      "record_id": "L100001089055:G100001101332:qa-location-2"
+    },
+    {
+      "gem_unit_id": "G100001054598",
+      "concern_type": "existence",
+      "question": "Does Bison need extra units for the Sierra Club CA1 and CA2 rows?",
+      "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists each block as a 496 MW combustion turbine plus a 263 MW steam turbine, generators CA1 and CT1 for block one and CA2 and CT2 for block two. The CA rows are the steam turbine halves of the two blocks that GEM holds as units 1 and 2.",
+      "recommendation": "Add no new units. Leave units 1 and 2 as combined cycle blocks.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100001047848",
+      "plant_name": "Bison Generation Station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "I did not cite the Sierra Club list. The Southwest Power Pool queue entries GEN-2024-081 and GEN-2024-082 were not downloaded in this pass.",
+      "record_id": "L100001047848:G100001054598:qa-existence-1"
+    },
+    {
+      "gem_unit_id": "G100001054598",
+      "concern_type": "Capacity (MW)",
+      "question": "Should unit capacity change from 745 MW to 759 MW?",
+      "finding": "The EIA table gives 759.0 MW nameplate per block, while the permit at https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-6052959693102246591 and Basin Electric's release at https://www.basinelectric.com/News-Center/news-releases/Basin-Electric-breaks-ground-on-historic-generation-facility say about 745 MW per unit.",
+      "recommendation": "Keep 759 MW if you accept the EIA nameplate over the company's round figure. Otherwise leave 745 MW.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/-6052959693102246591",
+          "https://www.basinelectric.com/News-Center/news-releases/Basin-Electric-breaks-ground-on-historic-generation-facility"
+        ]
+      },
+      "proposed_value": {
+        "Capacity (MW)": "759.0"
+      },
+      "gem_plant_id": "L100001047848",
+      "plant_name": "Bison Generation Station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The queue entries show 760 MW.",
+      "record_id": "L100001047848:G100001054598:qa-capacity-mw-2",
+      "checks": [
+        10,
+        49
+      ]
+    },
+    {
+      "gem_unit_id": "G100001101376",
+      "concern_type": "location",
+      "question": "Should the Minnkota plant point move near the Bison Substation?",
+      "finding": "The article at https://northdakotamonitor.com/2026/10/06/minnkota-plans-gas-fired-power-plant-in-cass-county-adding-to-energy-development/ says the land is in Harmony Township north of Mapleton, near the Bison Substation at the end of an existing WBI Energy gas pipeline. A 2018 commission filing at https://www.psc.nd.gov/webdocs/case/18-0219/064-130.pdf places that substation in Section 11 of Township 140 North, Range 51 West. A map in that filing labels a point near 46.94188, -97.10511.",
+      "recommendation": "Keep GEM's point for now and ask the project manager whether to use the substation area, about 3 km from GEM's point, as an approximate location until Minnkota files a site.",
+      "refs": {
+        "links": [
+          "https://northdakotamonitor.com/2026/10/06/minnkota-plans-gas-fired-power-plant-in-cass-county-adding-to-energy-development/",
+          "https://www.psc.nd.gov/webdocs/case/18-0219/064-130.pdf"
+        ]
+      },
+      "proposed_value": {
+        "Latitude": "46.94188",
+        "Longitude": "-97.10511"
+      },
+      "gem_plant_id": "L100001089086",
+      "plant_name": "Minnkota Power Cass power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "A satellite picture at that point shows farm fields and no substation, and the imagery date is unknown, so I could not confirm the point. No address, parcel number or permit map for the plant was found. A geocode of Harmony Township gave 46.92729, -97.11547.",
+      "record_id": "L100001089086:G100001101376:qa-location-1"
+    },
+    {
+      "gem_unit_id": "G100001101376",
+      "concern_type": "Capacity (MW)",
+      "question": "Is the Minnkota plant 400 MW or 450 MW?",
+      "finding": "The North Dakota Monitor article at https://northdakotamonitor.com/2026/10/06/minnkota-plans-gas-fired-power-plant-in-cass-county-adding-to-energy-development/ quotes Minnkota's chief executive saying one turbine of 400 MW. The existing Status Detail says the Midcontinent queue may show 450 MW.",
+      "recommendation": "Leave capacity at 400 MW until Minnkota names a turbine or files a siting case.",
+      "refs": {
+        "links": [
+          "https://northdakotamonitor.com/2026/10/06/minnkota-plans-gas-fired-power-plant-in-cass-county-adding-to-energy-development/",
+          "https://www.psc.nd.gov/webdocs/case/26-0254/001-020.pdf",
+          "https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf"
+        ]
+      },
+      "gem_plant_id": "L100001089086",
+      "plant_name": "Minnkota Power Cass power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Minnkota's ten-year plan at https://www.psc.nd.gov/webdocs/case/26-0254/001-020.pdf and its integrated resource plan at https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf give no size or site. I did not find the Midcontinent queue entry for this plant.",
+      "record_id": "L100001089086:G100001101376:qa-capacity-mw-2",
+      "checks": [
+        10,
+        37
+      ]
+    },
+    {
+      "concern_type": "Number Of Engines",
+      "gem_unit_id": "G100001096407",
+      "question": "Should each unit show 20 turbines of 16.9 megawatts, or 22 including spares?",
+      "finding": "The letter of intent at https://www.sec.gov/Archives/edgar/data/1462223/000168316826004843/nixxy_ex1001.htm counts 22 NovaLT16 turbines per 300 megawatt phase, 20 operating and 2 spare, each 16.9 megawatts. The database uses 20 per unit, 338 megawatts, and 1,014 megawatts in all. The announced target is up to 1 gigawatt.",
+      "recommendation": "Keep 20 turbines and 338 megawatts per unit. The spares are not counted in capacity.",
+      "refs": {
+        "links": [
+          "https://www.sec.gov/Archives/edgar/data/1462223/000168316826004843/nixxy_ex1001.htm"
+        ]
+      },
+      "gem_plant_id": "L100001084854",
+      "plant_name": "Nakota Data Center Campus Power Plant",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The database technology is gas turbine, which matches the letter. The brief called the fleet engines, but these are turbines. No air permit exists yet to confirm the count.",
+      "record_id": "L100001084854:G100001096407:qa-number-of-engines-1",
+      "checks": [
+        39
+      ]
+    },
+    {
+      "gem_unit_id": "G100001096407",
+      "concern_type": "location",
+      "question": "Should the Nakota plant point move about 40 kilometers to the campus parcel near Trenton shown in the developer's slides?",
+      "finding": "The letter of intent at https://www.sec.gov/Archives/edgar/data/1462223/000168316826004843/nixxy_ex1001.htm says in words that the campus is 5 miles west of Williston. Its site rendering photo at https://www.sec.gov/Archives/edgar/data/1462223/000168316826004843/image_062.jpg matches satellite imagery of section 1, township 153 north, range 103 west, near Trenton, about 12 miles west-southwest of downtown Williston. The database point is in farmland about 40 kilometers northeast of that parcel.",
+      "recommendation": "Move all three units to 48.10124, -103.87389 and keep the accuracy approximate until a permit or county filing names the parcel.",
+      "refs": {
+        "links": [
+          "https://www.sec.gov/Archives/edgar/data/1462223/000168316826004843/nixxy_ex1001.htm",
+          "https://www.sec.gov/Archives/edgar/data/1462223/000168316826004843/image_062.jpg",
+          "https://www.google.com/maps/search/?api=1&query=48.10124,-103.87389"
+        ]
+      },
+      "proposed_value": {
+        "Latitude": "48.10124",
+        "Longitude": "-103.87389",
+        "Location accuracy": "approximate"
+      },
+      "gem_plant_id": "L100001084854",
+      "plant_name": "Nakota Data Center Campus Power Plant",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "I matched the photo by three oil well pads and a road corner, with a fit error of about 2 meters. The pipeline map slide at https://www.sec.gov/Archives/edgar/data/1462223/000168316826004843/image_065.jpg shades a parcel in the same section. The Williams County news site pages about a data center zoning change could not be opened because their host name does not resolve. No air permit or Public Service Commission case for this campus was found by the first look.",
+      "record_id": "L100001084854:G100001096407:qa-location-2"
+    },
+    {
+      "concern_type": "existence",
+      "gem_unit_id": "G100001094120",
+      "question": "Does Polaris Forge 1 have its own 400 megawatt gas steam plant, or is 400 megawatts the data center load?",
+      "finding": "The Applied Digital release at https://ir.applieddigital.com/news-events/press-releases/detail/133/applied-digital-achieves-ready-for-service-for-phase-1-at calls Polaris Forge 1 a 400 megawatt critical IT load campus in Ellendale, with a first phase of 50 megawatts. The Babcock and Wilcox release at https://www.babcock.com/home/about/corporate/news/babcock-and-wilcox-receives-full-notice-to-proceed-on-24-billion-power-generation-project-for-base-electron-to-supply-power-to-applied-digital-ai-factory-campuses covers four 300 megawatt gas boilers with Siemens Energy steam turbines for Base Electron, and does not name Ellendale or Minnkota. No document found ties a steam plant to Ellendale.",
+      "recommendation": "Treat the 400 megawatts as data center load and do not keep this unit as a generating plant unless a document shows a power plant at Ellendale. Ask the plant owner or the reviewer who found the original entry for the source.",
+      "refs": {
+        "links": [
+          "https://ir.applieddigital.com/news-events/press-releases/detail/133/applied-digital-achieves-ready-for-service-for-phase-1-at",
+          "https://www.babcock.com/home/about/corporate/news/babcock-and-wilcox-receives-full-notice-to-proceed-on-24-billion-power-generation-project-for-base-electron-to-supply-power-to-applied-digital-ai-factory-campuses"
+        ]
+      },
+      "gem_plant_id": "L100001083334",
+      "plant_name": "Polaris Forge 1 power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The Base Electron project of four 300 megawatt units is a separate plant in the database near Center, North Dakota. The diesel backup fleet at Ellendale is also separate. I could not read the Power magazine article on this, so I did not cite it.",
+      "record_id": "L100001083334:G100001094120:qa-existence-1"
+    },
+    {
+      "concern_type": "Owner(s)",
+      "gem_unit_id": "G100001094120",
+      "question": "Why is Minnkota Power Cooperative listed as a 50 percent owner of this unit?",
+      "finding": "The 2025 Minnkota integrated resource plan at https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf describes Minnkota as the power supplier to Applied Digital under a data center rate. It does not say Minnkota owns generation at the campus. The Babcock and Wilcox release at https://www.babcock.com/home/about/corporate/news/babcock-and-wilcox-receives-full-notice-to-proceed-on-24-billion-power-generation-project-for-base-electron-to-supply-power-to-applied-digital-ai-factory-campuses names Base Electron as the buyer and does not name Minnkota.",
+      "recommendation": "Remove the 50 percent Babcock and Wilcox and 50 percent Minnkota ownership if the unit is kept. Find an owner document first.",
+      "refs": {
+        "links": [
+          "https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf",
+          "https://www.babcock.com/home/about/corporate/news/babcock-and-wilcox-receives-full-notice-to-proceed-on-24-billion-power-generation-project-for-base-electron-to-supply-power-to-applied-digital-ai-factory-campuses"
+        ]
+      },
+      "gem_plant_id": "L100001083334",
+      "plant_name": "Polaris Forge 1 power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "This follows the open question on whether the unit exists at all.",
+      "record_id": "L100001083334:G100001094120:qa-owner-s-2",
+      "checks": [
+        10,
+        49
+      ]
+    },
+    {
+      "concern_type": "location",
+      "gem_unit_id": "G100001094120",
+      "question": "Is there a site address for a power plant at Ellendale, separate from the diesel backup site?",
+      "finding": "The Department of Environmental Quality notice at https://deq.nd.gov/AQ/Notices/ELN/DRAFTACP18296v10.pdf gives 9663 87th Avenue Southeast, Ellendale as the address of the diesel backup plant, which is its own entry in the database. Imagery of that address shows the diesel plant area and farmland and no steam plant. The database point is approximate.",
+      "recommendation": "Leave the point approximate. Do not move it to the diesel plant address.",
+      "refs": {
+        "links": [
+          "https://deq.nd.gov/AQ/Notices/ELN/DRAFTACP18296v10.pdf"
+        ]
+      },
+      "gem_plant_id": "L100001083334",
+      "plant_name": "Polaris Forge 1 power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The county is spelled Dikey County in the database and should read Dickey County. City and area fields are also blank.",
+      "record_id": "L100001083334:G100001094120:qa-location-3"
+    },
+    {
+      "concern_type": "existence",
+      "gem_unit_id": "G100001094121",
+      "question": "Does Polaris Forge 2 have its own 280 megawatt gas steam plant, or is 280 megawatts the data center load?",
+      "finding": "The 2025 Minnkota integrated resource plan at https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf calls Polaris Forge 2 a 280 megawatt AI data center campus near Harwood and says Minnkota serves it under a data center rate. It lists no generation at the campus. The Construction Review article at https://constructionreviewonline.com/applied-digital-to-break-ground-on-3b-280mw-polaris-forge-2-ai-campus-in-north-dakota/ also describes a 280 megawatt campus powered by Minnkota and Cass County Electric Cooperative.",
+      "recommendation": "Treat the 280 megawatts as data center load and do not keep this unit as a generating plant unless a document shows a power plant at Harwood.",
+      "refs": {
+        "links": [
+          "https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf",
+          "https://constructionreviewonline.com/applied-digital-to-break-ground-on-3b-280mw-polaris-forge-2-ai-campus-in-north-dakota/"
+        ]
+      },
+      "irp": true,
+      "gem_plant_id": "L100001083335",
+      "plant_name": "Polaris Forge 2 power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The Minnkota plan says system upgrades and power supply resources for this load will be paid for by Applied Digital, so a future dedicated plant is possible but none is named. This is a plan source.",
+      "record_id": "L100001083335:G100001094121:qa-existence-1"
+    },
+    {
+      "concern_type": "Owner(s)",
+      "gem_unit_id": "G100001094121",
+      "question": "Why is Minnkota Power Cooperative listed as a 50 percent owner of this unit?",
+      "finding": "The Minnkota plan at https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf and the article at https://constructionreviewonline.com/applied-digital-to-break-ground-on-3b-280mw-polaris-forge-2-ai-campus-in-north-dakota/ show Minnkota supplying grid power to the campus. Neither says it owns generation there. The Babcock and Wilcox release at https://www.babcock.com/home/about/corporate/news/babcock-and-wilcox-receives-full-notice-to-proceed-on-24-billion-power-generation-project-for-base-electron-to-supply-power-to-applied-digital-ai-factory-campuses names no site.",
+      "recommendation": "Remove the 50 percent Babcock and Wilcox and 50 percent Minnkota ownership if the unit is kept. Find an owner document first.",
+      "refs": {
+        "links": [
+          "https://cdn.prod.website-files.com/5ef212e2cdca1e094063db4e/6a32962a1710e21255119192_2025%20Integrated%20Resource%20Plan%20Public%20Website%20Final.pdf",
+          "https://constructionreviewonline.com/applied-digital-to-break-ground-on-3b-280mw-polaris-forge-2-ai-campus-in-north-dakota/",
+          "https://www.babcock.com/home/about/corporate/news/babcock-and-wilcox-receives-full-notice-to-proceed-on-24-billion-power-generation-project-for-base-electron-to-supply-power-to-applied-digital-ai-factory-campuses"
+        ]
+      },
+      "irp": true,
+      "gem_plant_id": "L100001083335",
+      "plant_name": "Polaris Forge 2 power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Same concern as at Polaris Forge 1.",
+      "record_id": "L100001083335:G100001094121:qa-owner-s-2",
+      "checks": [
+        10,
+        49
+      ]
+    },
+    {
+      "gem_unit_id": "G100001090288",
+      "concern_type": "scope",
+      "question": "Should River Run stay one 1,450 MW unit when the queue shows two 750 MW requests?",
+      "finding": "The Southwest Power Pool queue (https://opsportal.spp.org/Studies/GIActive) lists requests ERAS-2025-011 and ERAS-2025-012 at 750 megawatts each, in service 27 September 2029, at the Leland Olds substation. Company documents, such as the FAQ at https://www.nexteraenergyresources.com/river-run-energy-center/faq.html, give one plant of about 1,450 megawatts and never mention two blocks.",
+      "recommendation": "Leave one unit at 1,450 MW. Ask the project manager to split it into two 725 MW units only if a later filing shows two combined cycle blocks.",
+      "refs": {
+        "links": [
+          "https://opsportal.spp.org/Studies/GIActive",
+          "https://www.nexteraenergyresources.com/river-run-energy-center/faq.html"
+        ]
+      },
+      "gem_plant_id": "L100001080387",
+      "plant_name": "River Run Energy Center",
+      "country": "United States",
+      "unit_name": "Unit 1",
+      "fields": {},
+      "researcher_notes": "I searched the harvested commission cases, the air permit harvest and company pages. I found no letter of intent, siting application or air permit application for this plant yet.",
+      "record_id": "L100001080387:G100001090288:qa-scope-1"
+    },
+    {
+      "gem_unit_id": "G100001090288",
+      "concern_type": "Owner(s)",
+      "question": "What ownership shares should River Run carry when no document gives them?",
+      "finding": "GEM shows NextEra Energy Inc at 50 percent and Basin Electric Cooperative at 50 percent. The December 2025 release at https://www.investor.nexteraenergy.com/news-and-events/news-releases/2025/12-08-2025-123038666 says only that the two companies signed a memorandum of understanding to explore joint development, and gives no shares. The developer named there is the subsidiary NextEra Energy Resources.",
+      "recommendation": "Keep the entries for now and add a note that the split is not documented. Revisit when a siting or air permit filing names the owner.",
+      "refs": {
+        "links": [
+          "https://www.investor.nexteraenergy.com/news-and-events/news-releases/2025/12-08-2025-123038666",
+          "https://www.nexteraenergyresources.com/river-run-energy-center/faq.html"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100001080387",
+      "plant_name": "River Run Energy Center",
+      "country": "United States",
+      "unit_name": "Unit 1",
+      "fields": {},
+      "researcher_notes": "The FAQ at https://www.nexteraenergyresources.com/river-run-energy-center/faq.html also gives no ownership split.",
+      "record_id": "L100001080387:G100001090288:qa-owner-s-2",
+      "checks": [
+        10
+      ]
+    },
+    {
+      "gem_unit_id": "G100001090288",
+      "concern_type": "location",
+      "question": "Is GEM's River Run point near enough to the described site to leave unchanged?",
+      "finding": "The FAQ at https://www.nexteraenergyresources.com/river-run-energy-center/faq.html places the plant on about 150 acres next to the Leland Olds 345-kilovolt substation off Highway 200 in Mercer County. GEM's point at 47.26818, -101.31580 sits on a cleared field beside a 345 kilovolt substation and Highway 200 in satellite imagery of unknown date. The Leland Olds station itself is about 1.4 kilometers north.",
+      "recommendation": "Leave the point and the approximate accuracy as they are. Make it exact only when a permit or county filing gives the parcel.",
+      "refs": {
+        "links": [
+          "https://www.nexteraenergyresources.com/river-run-energy-center/faq.html"
+        ]
+      },
+      "gem_plant_id": "L100001080387",
+      "plant_name": "River Run Energy Center",
+      "country": "United States",
+      "unit_name": "Unit 1",
+      "fields": {},
+      "researcher_notes": "No address or parcel was found. The footprint is not built, so imagery cannot make it exact.",
+      "record_id": "L100001080387:G100001090288:qa-location-3"
+    },
+    {
+      "gem_unit_id": "G100000403835",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "question": "Which unit did Heskett unit 4 replace?",
+      "finding": "The Montana-Dakota application in case PU-19-307 (https://www.psc.nd.gov/webdocs/case/19-0307/001-010.pdf) says Heskett 4 serves customers after the retirement of the coal units Heskett 1 and Heskett 2. A February 2026 commission order in case PU-25-280 (https://www.psc.nd.gov/webdocs/case/25-0280/013-010.pdf) confirms those two units are retired.",
+      "recommendation": "Link Heskett unit 4 to GEM unit G100000103860 (Heskett Unit 1) and G100000103861 (Heskett Unit 2), replacing the link to ID 0. If only one link is allowed, use G100000103861.",
+      "refs": {
+        "links": [
+          "https://www.psc.nd.gov/webdocs/case/19-0307/001-010.pdf",
+          "https://www.psc.nd.gov/webdocs/case/25-0280/013-010.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000104092",
+      "plant_name": "Heskett Station",
+      "country": "United States",
+      "unit_name": "Unit 4",
+      "fields": {},
+      "researcher_notes": "The same application also names Lewis and Clark 1 in Montana as retired for the same need. That plant is not part of this one.",
+      "record_id": "L100000104092:G100000403835:qa-validation-1"
+    },
+    {
+      "gem_unit_id": "G100000403194",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "question": "What document gives the Heskett owner that the validation report found unsourced?",
+      "finding": "Case PU-19-307 (https://www.psc.nd.gov/webdocs/case/19-0307/001-010.pdf) shows Montana-Dakota Utilities owns the Heskett site and Heskett Unit 3. It states no other owner.",
+      "recommendation": "Add the commission filing in case PU-19-307 as the Owners Data Source and leave the value as is.",
+      "refs": {
+        "links": [
+          "https://www.psc.nd.gov/webdocs/case/19-0307/001-010.pdf",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000104092",
+      "plant_name": "Heskett Station",
+      "country": "United States",
+      "unit_name": "Unit 3",
+      "fields": {},
+      "researcher_notes": "The September 2026 EIA-860M table lists Montana-Dakota Utilities Co. as the plant's entity.",
+      "record_id": "L100000104092:G100000403194:qa-validation-2"
+    },
+    {
+      "gem_unit_id": "G100000403835",
+      "concern_type": "other",
+      "question": "Should the possible Heskett combined cycle conversion be tracked?",
+      "finding": "Montana-Dakota's 2024 North Dakota resource plan, volume IV (https://www.montana-dakota.com/wp-content/uploads/PDFs/Rates-Tariffs/2024-ND-IRP-Vol-4_nonprint.pdf), lists a 329.7 MW expansion of Heskett 3 and 4 to combined cycle among the least-cost options in some scenarios. The base plan only completes Heskett 4 in 2024.",
+      "recommendation": "Do not add anything. Check the next resource plan for a committed combined cycle.",
+      "refs": {
+        "links": [
+          "https://www.montana-dakota.com/wp-content/uploads/PDFs/Rates-Tariffs/2024-ND-IRP-Vol-4_nonprint.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000104092",
+      "plant_name": "Heskett Station",
+      "country": "United States",
+      "unit_name": "Unit 4",
+      "fields": {},
+      "researcher_notes": "I found no commission case for it. The queue entries J1193 and R1000 are the earlier requests for unit 4.",
+      "record_id": "L100000104092:G100000403835:qa-other-3"
+    },
+    {
+      "gem_unit_id": "G100000409510",
+      "concern_type": "duplicate",
+      "question": "Is Southwest Power Pool request GEN-2020-014 the same as unit 6 at Lonesome Creek?",
+      "finding": "The queue entry from the brief is 45 MW of gas at Lonesome Creek, in commercial operation with an in-service date of 17 June 2021. The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists six units at plant 57943, with unit 6 operating since October 2021. The state permit at https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf also lists six turbines.",
+      "recommendation": "Treat the request as unit 6 and add no new unit. Leave the unit count at six.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://deq.nd.gov/AQ/Notices/LonesomeCreek/LonesomeCrkNoticeSOBDraftPTO.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000401740",
+      "plant_name": "Lonesome Creek Station",
+      "country": "United States",
+      "unit_name": "6",
+      "fields": {},
+      "researcher_notes": "I did not open the Southwest Power Pool queue page itself because its list is drawn by script and the brief already quotes the entry. No seventh unit appears in the EIA table or the permit.",
+      "record_id": "L100000401740:G100000409510:qa-duplicate-1"
+    },
+    {
+      "gem_unit_id": "G100000402509",
+      "concern_type": "Status",
+      "question": "Is the Oil and Gas Watch under construction label for Pioneer unit 1 out of date?",
+      "finding": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists all seven generator groups at the plant as operating, including the phase IV turbines and engines from 2025.",
+      "recommendation": "Leave the status as operating for every unit. Tell the Oil and Gas Watch team that their record looks out of date.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000401741",
+      "plant_name": "Pioneer generating station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "I did not open the Oil and Gas Watch page, since it is a lead site and not a citable source.",
+      "record_id": "L100000401741:G100000402509:qa-status-1",
+      "checks": [
+        38,
+        43,
+        50
+      ]
+    },
+    {
+      "gem_unit_id": "G100000413123",
+      "concern_type": "Capacity (MW)",
+      "question": "Should the capacity of the phase IV turbines match the EIA figure of 245.7 MW?",
+      "finding": "The EIA table lists 245.7 MW for each of the two new turbines. GEM shows 250.0 MW. The EIA table lists 60.5 MW for each of units 1 to 3, while GEM shows 61.0 MW.",
+      "recommendation": "Leave as is, since the differences are small and the 250 MW figure came from the owner's plan. Look at the EIA figures only if a nameplate check is wanted.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000401741",
+      "plant_name": "Pioneer generating station",
+      "country": "United States",
+      "unit_name": "4-1",
+      "fields": {},
+      "researcher_notes": "Capacity was not in this batch's report list, so no change is proposed.",
+      "record_id": "L100000401741:G100000413123:qa-capacity-mw-2"
+    },
+    {
+      "gem_unit_id": "G100001017988",
+      "concern_type": "Fuel",
+      "question": "Should Spiritwood Unit 1 keep coal in its fuel list?",
+      "finding": "GEM lists natural gas only. The air permit renewal application of October 2025 (https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349) lets the main boiler burn lignite, natural gas or propane, with coal limited to 10 percent of heat input in the gas scenario. The 2026 ten-year plan (https://www.psc.nd.gov/webdocs/case/26-0279/001-010.pdf) lists the fuel as natural gas and coal.",
+      "recommendation": "Leave the fuel as natural gas for now. Ask the project manager whether to add coal: lignite as a second fuel, since the permit still allows it.",
+      "refs": {
+        "links": [
+          "https://ceris.deq.nd.gov/ext/ncore/downloadpdf/68774514989013349",
+          "https://www.psc.nd.gov/webdocs/case/26-0279/001-010.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000104096",
+      "plant_name": "Spiritwood Industrial Park",
+      "country": "United States",
+      "unit_name": "Unit 1, timepoint 2",
+      "fields": {},
+      "researcher_notes": "I found no document that says how much coal was burned in recent years. EIA-923 fuel data was not read in this pass.",
+      "record_id": "L100000104096:G100001017988:qa-fuel-1"
+    },
+    {
+      "gem_unit_id": "G100001017988",
+      "concern_type": "Start year",
+      "question": "Is 2022 the right gas start year for Spiritwood Unit 1?",
+      "finding": "The July 2022 ten-year plan (https://www.psc.nd.gov/webdocs/case/22-0275/001-010.pdf) says the retrofit for 100 percent gas was done. The 2020 plan (https://www.psc.nd.gov/webdocs/case/20-0333/001-010.pdf) targeted the end of 2022, with gas as the main fuel from 2023.",
+      "recommendation": "Use 2022 as the start year for the converted unit. If the reviewer wants the first full year on gas, use 2023.",
+      "refs": {
+        "links": [
+          "https://www.psc.nd.gov/webdocs/case/22-0275/001-010.pdf",
+          "https://www.psc.nd.gov/webdocs/case/20-0333/001-010.pdf"
+        ]
+      },
+      "proposed_value": {
+        "Start year": "2022"
+      },
+      "gem_plant_id": "L100000104096",
+      "plant_name": "Spiritwood Industrial Park",
+      "country": "United States",
+      "unit_name": "Unit 1, timepoint 2",
+      "fields": {},
+      "researcher_notes": "I found no document with the month gas was first burned.",
+      "record_id": "L100000104096:G100001017988:qa-start-year-2",
+      "checks": [
+        13
+      ]
+    },
+    {
+      "gem_unit_id": "G100000410559",
+      "concern_type": "location",
+      "question": "Can the Xcel Fargo turbine site be placed any better than Fargo?",
+      "finding": "The Xcel Energy 2019 resource plan filing (https://www.psc.nd.gov/webdocs/case/19-0220/001-010.pdf) and the reply comments saved at the Wayback Machine name only Fargo. GEM's point of 46.88087, -96.82783 matches a point in the World Resources Institute power plant database, not a site document. I found no air permit, commission case or address for this project.",
+      "recommendation": "Leave the point as it is and keep the accuracy approximate. The project was cancelled before any site was named.",
+      "refs": {
+        "links": [
+          "https://www.psc.nd.gov/webdocs/case/19-0220/001-010.pdf",
+          "https://web.archive.org/web/20220118235603/https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/Upper%20Midwest%20Energy%20Plan%20-%20Reply%20Comments.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000407864",
+      "plant_name": "Xcel Fargo power plant",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Searched: the harvested air permit index (nothing matched), North Dakota commission documents, the Xcel reply comments, and a web search. The Minnesota decision of February 2022 is described at https://elpc.org/news/solar-advocates-celebrate-decision-on-xcel-energy-resource-plan/ and names no site.",
+      "record_id": "L100000407864:G100000410559:qa-location-1"
+    },
+    {
+      "gem_unit_id": "G100000410559",
+      "concern_type": "identity",
+      "question": "Is MISO request J3163 in Cass County the cancelled Xcel Fargo turbine?",
+      "finding": "MISO request J3163 is an active Northern States Power hybrid of 481 MW in Cass County, queued July 2022, in service March 2028, with the connection at the Bison substation. The Fargo turbine was a 400 MW unit dropped in 2022 per https://elpc.org/news/solar-advocates-celebrate-decision-on-xcel-energy-resource-plan/. No document ties the two together.",
+      "recommendation": "Treat J3163 as a separate project and leave this unit cancelled. Add J3163 as its own plant in a discovery pass once a document gives its turbine type.",
+      "refs": {},
+      "gem_plant_id": "L100000407864",
+      "plant_name": "Xcel Fargo power plant",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "I could not verify the queue entry text: the MISO queue page at https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/ is drawn by script and does not show the request to the verifier. The entry was read from the pre-sweep harvest for this batch.",
+      "record_id": "L100000407864:G100000410559:qa-identity-2"
+    },
+    {
+      "gem_plant_id": "L100000407864",
+      "plant_name": "Xcel Fargo power plant",
+      "concern_type": "duplicate",
+      "question": "Is the new Xcel Bison plant the same project as GEM's cancelled Xcel Fargo power plant?",
+      "finding": "GEM lists Xcel Fargo as a 400 MW gas plant near Fargo, cancelled in 2022, with an approximate point. Xcel's filings in case PU-24-342 now name a 447 MW plant at the Bison Substation west of Fargo for 2032, to meet the same settlement duty from 2016.",
+      "recommendation": "Keep Xcel Fargo as cancelled, add Xcel Bison Generating Station as a new plant, and add a line to the Notes of each plant that links the two.",
+      "researcher_notes": "Xcel Fargo was last reviewed on October 29, 2026 and marked as no changes. The 2016 settlement required a gas plant of at least 200 MW in eastern North Dakota by the end of 2025. Xcel did not build one. In 2024 Xcel asked to move the deadline, and the commission moved it to the end of 2032 on October 23, 2025. The new site is next to the Bison Substation in Harmony Township, Cass County. The old record has no site beyond Fargo. A new record is cleaner than reviving the cancelled one, because the site, size and timeline have all changed.",
+      "refs": {
+        "links": [
+          "https://www.psc.nd.gov/webdocs/case/24-0342/011-010.pdf",
+          "https://www.psc.nd.gov/webdocs/case/24-0342/016-010.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.psc.nd.gov/webdocs/case/24-0342/011-010.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Names the 447 MW resource next to the Bison Substation and the 2016 settlement duty."
+        },
+        {
+          "url": "https://www.psc.nd.gov/webdocs/case/24-0342/016-010.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Order of October 23, 2025 moving the deadline to December 31, 2032."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-nd:plant:qa-duplicate-1"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "Cerilon gas to liquids complex, Trenton",
+      "concern_type": "scope",
+      "question": "Should GEM track the steam power units at Cerilon's planned gas to liquids plant near Trenton?",
+      "finding": "The commission approved two gas to liquids plants near Trenton in Williams County, each with a 100 MW steam turbine plant driven by process heat and boilers burning leftover fuel gas. Most of the power is used on site and less than 50 MW per phase goes to the grid.",
+      "recommendation": "Leave it out of GEM for now. Add each phase as a 100 MW waste heat from natural gas steam turbine unit only if the manual's lead confirms captive waste heat units at a gas to liquids plant are in scope.",
+      "researcher_notes": "The commission order in case PU-23-325, dated September 27, 2024, approves the site and describes two phases, each with an associated 100 MW steam powered electric facility. Excess process heat drives the steam turbines, and the plant also has fuel gas fired boilers. Output is 65 to 81 MW per phase, depending on catalyst age. All power is sold to Basin Electric and all power used is bought from Lower Yellowstone Rural Electric Cooperative. Phase 1 construction starts in 2026 with operation in 2029. Phase 2 operation is planned for 2033. The application gives the site as Sections 25 and 36, Township 153 North, Range 103 West, about 1.5 miles southwest of Trenton. The state air permit draft for this site, ACP-18233 from November 2024, now returns a not found page and the Wayback Machine was offline when tried on October 29, 2026. The fuel would count as waste heat from natural gas with a steam turbine. Each phase is over 50 MW gross, which is why it is raised here.",
+      "refs": {
+        "links": [
+          "https://www.psc.nd.gov/webdocs/case/23-0325/067-010.pdf",
+          "https://www.psc.nd.gov/webdocs/case/23-0325/001-010.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.psc.nd.gov/webdocs/case/23-0325/067-010.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Commission order of September 27, 2024 naming two 100 MW steam powered electric facilities."
+        },
+        {
+          "url": "https://www.psc.nd.gov/webdocs/case/23-0325/001-010.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Site application giving 100 MW gross per phase and the site sections near Trenton."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-nd:plant:qa-scope-2"
+    },
+    {
+      "gem_plant_id": "L100001047848",
+      "plant_name": "Bison Generation Station",
+      "concern_type": "Other IDs (location)",
+      "question": "Should the EIP row named Brickhouse Power Plant be matched to Basin's Bison Generation Station?",
+      "finding": "The Environmental Integrity Project sheet has a North Dakota row named Brickhouse Power Plant, a proposed 1,400 MW combined cycle plant for 2030. It points at GEM ID L100001025913, which is not in the current GEM export.",
+      "recommendation": "Put L100001047848 and Bison's unit IDs in the GEM ID columns of that EIP sheet row, since it describes Basin's Bison plant.",
+      "researcher_notes": "Todd Brickhouse is Basin Electric's chief executive, and the row's research note cites a North Dakota Monitor story of May 15, 2024 about Basin's planned gas plant. The size, technology and year match Bison Generation Station, which GEM lists with two 745 MW combined cycle units. The old GEM ID seems to belong to a record that was merged or removed. This is a sheet fix only and needs no change in the database.",
+      "refs": {},
+      "verifications": [],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-nd:plant:qa-other-ids-location-3"
+    }
+  ]
+}

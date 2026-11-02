@@ -75,7 +75,7 @@ from zoneinfo import ZoneInfo
 sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from schema_constants import (ADDITIVE_TEXT_COLUMNS, INLINE_SOURCE_COLUMNS,
-                              READ_ONLY_COLUMNS)
+                              READ_ONLY_COLUMNS, milestone_label)
 from colmap import load_colmap
 import geo
 from paths import gem_export_csv
@@ -127,6 +127,9 @@ SHEET_DESCRIPTIONS = {
                          "source, such as a milestone date. With review decisions, only the "
                          "accepted ones. Type each value into the web form where the error "
                          "points, with its source."),
+    "milestones": ("Unit Milestone Timeline entries to add in the web form, one row per entry: the "
+                   "status, the year, the month, quarter or half, and the source. Every staged "
+                   "status has one. Add a new entry; never edit an existing one."),
     "watch_new_to_tracker": ("Watch list, part 1: plants and projects GEM does not have yet "
                              "that did not clear the add threshold. Recheck by the date given. "
                              "Never a paste target."),
@@ -1161,6 +1164,23 @@ def build_xlsx(lanes, out_path, export_csv=None, flags=None, all_lanes=None, irp
                for r in by_group(lanes.get("qa", []))
                if is_validation_fix(r) and r.get("validation_fix_decision", "accept") == "accept"])
 
+    # Milestone timeline entries to add in the web form, one row per entry (Baird 2026-11-02)
+    ms_rows = []
+    for lane in ("updates", "newunits", "newplants"):
+        for rec in by_group(lanes.get(lane, [])):
+            for u in [rec] + list(rec.get("units") or []):
+                for m in u.get("milestones") or []:
+                    ms_rows.append([rec.get("country", ""), rec.get("plant_name", ""),
+                                    u.get("unit_name", "") or rec.get("unit_name", ""),
+                                    rec.get("gem_plant_id", ""), u.get("gem_unit_id", "") or rec.get("gem_unit_id", ""),
+                                    group_cell(rec), rows_cell(rec),
+                                    m.get("status", ""), m.get("year", ""), m.get("period", ""),
+                                    "; ".join(m.get("sources") or []),
+                                    m.get("note", "") or m.get("period_note", "")])
+    add_sheet("milestones",
+              base_hdr + ["status", "event_year", "month_quarter_or_half", "sources", "note"],
+              ms_rows)
+
     # The watch list, split by what it watches. A watch item the reviewer promoted or sent
     # to the possible-updates sheet also stays on its watch sheet, with the call beside it.
     monitor = by_group(lanes.get("monitor", []))
@@ -1371,9 +1391,15 @@ def build_evidence(lanes, out_path, stamp, scope, mode, left_out=None, flags=Non
         for col, val in rec.get("fields", {}).items():
             cur = rec.get("current", {}).get(col, "")
             lines.append(f"- `{col}`: `{cur!s}` -> `{val!s}`")
+        for m in rec.get("milestones") or []:
+            lines.append(f"- milestone `{m.get('status', '')}`: {milestone_label(m) or '(no date)'}"
+                         f" ({'; '.join(m.get('sources') or [])})")
         for u in rec.get("units", []) or []:
             for col, val in u.get("fields", {}).items():
                 lines.append(f"- unit {u.get('unit_name', '?')} `{col}`: `{val!s}`")
+            for m in u.get("milestones") or []:
+                lines.append(f"- unit {u.get('unit_name', '?')} milestone `{m.get('status', '')}`: "
+                             f"{milestone_label(m) or '(no date)'} ({'; '.join(m.get('sources') or [])})")
         lines.extend(location_lines(rec))
         for ref_col, urls in rec.get("refs", {}).items():
             for u in (urls if isinstance(urls, list) else [urls]):

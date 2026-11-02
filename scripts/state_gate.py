@@ -112,7 +112,20 @@ Hard gates (any failure exits 1)
               fetch.py and Wayback tries. "not searched", "skipped", an empty
               entry, a missing id, or a form, script or paging given as the
               reason all fail. (Named statewide-coverage because the first
-              gate above already uses the name coverage.)
+              gate above already uses the name coverage.) Runs for a US
+              state and for a country alike (Baird 2026-10-30).
+  permit-system
+              scopes/<tag>/coverage.json names the scope's complete permit
+              record system: an entry with `role` "permit_record" whose
+              `what` names the harvester that reads it or says it is
+              searched by name for every GEM plant and every lead. A public
+              notice feed (`role` "permit_notices") lists only the permits
+              that went to notice; a small construction permit, such as a
+              data center's engine fleet, never does. Illinois ran its first
+              batches on the notice feed alone and the CyrusOne Bilter Road
+              permit was missed (Baird 2026-10-30). A `gap` sentence records
+              what the system does not expose online and what covers it.
+              Checked on every batch of the scope, narrow ones included.
   data-centers
               every site in scopes/<tag>/work/permits/_data_centers.json (written by
               data_center_fleets.py) with verdict at_threshold,
@@ -132,7 +145,13 @@ Hard gates (any failure exits 1)
               only" and the like are flagged unless a summed MW figure sits in
               the same note. If it is worth writing down it is worth
               chasing: research it, then stage it, or say plainly what was
-              searched and not found.
+              searched and not found. The batch's audit memos
+              (audit/*.md) are read the same way, plus the memo give-ups
+              ("a person could request these", "no public copy", "not used
+              as a source", "was not read"): the Illinois permit memo of
+              2026-10-21 said that of construction permits that sat on the
+              agency's own document system. A line that reports what an
+              earlier run left undone, or states the scope, is not flagged.
   ids_followup
               every EIA plant that match_ids.py lists as missing from GEM
               (50 MW or more; the "leads" in work/ids_us-<st>.json, copied into
@@ -141,12 +160,42 @@ Hard gates (any failure exits 1)
               plant name, or an `ids_followup` entry in coverage.json with
               decision add, below_threshold, out_of_scope or already_in_gem
               and evidence text. Update mode, US states only.
+  dedup       every new plant has a current entry in <batch>/dedup.json,
+              written by dedup_check.py (Discovery SOP §5): the unfiltered
+              export searched by name and by county or distance, gem.wiki
+              searched by name, the batch's other records compared. An entry
+              is stale when the plant's name, county, state or point changed
+              after the check, and a gem.wiki search that did not load needs
+              a rerun. A plant with any hit needs an entry under `dedup` in
+              coverage.json, keyed by record_id, with decision
+              not_a_duplicate and evidence text; decision duplicate fails
+              (move the finding to the existing plant). Illinois 2026-10-30.
+  queues      every gas, oil or fuel-not-shown interconnection request of the
+              state in <batch>/harvest/queues.json (pull_queues.py, under a
+              week old) that is not withdrawn, is 50 MW or more or of unknown
+              size, and is not an in-service request matched to a GEM plant,
+              has an entry under `queues` in coverage.json keyed "<source>
+              <queue id>" ("PJM C01-2036"): add (a newplants or newunits
+              record_id), watch (a monitor record_id), already_in_gem or
+              update (a plant_id or record_id), or withdrawn,
+              below_threshold, not_gas_or_oil, other_state, out_of_scope,
+              fuel_not_published (fuel not shown only) with `evidence` text.
+              Every market in scopes/<tag>/queues.json must be in the file,
+              reached and not short of its row floor; a market with no reader
+              (ERCOT, CAISO, NYISO, ISO-NE) is answered under "market <name>"
+              with decision read_by_hand. US state batches only; narrow
+              batches skip it (Baird 2026-10-30).
   build       build_review_package.validate() on the lane files: the errors
               that would stop the build anyway (qa records with fields, etc.)
   qc_checks   qc_checks.py --staged on each lane file present must exit 0
               (skipped with --no-qc)
 
 Advisory gates (reported, never fail the run)
+  milestones    every staged Status carries a milestone entry for that status:
+                a four-digit year, a month, quarter or half (blank only with a
+                period_note), and a source that loaded (Baird 2026-11-02;
+                schema_constants.MILESTONE_PERIODS). To become hard once the
+                sweep prompt writes milestones.
   lead-only     a cited link in updates, newunits or newplants on a lead site
                 (build_review_package.LEAD_ONLY: cleanview.co,
                 interconnection.fyi, gridstatus.io, GridInfo, Wikipedia, the
@@ -218,7 +267,7 @@ from review_app.checklist import CONCERN_VOCAB, MONITOR_KINDS  # noqa: E402
 from assemble_state import (  # noqa: E402
     host_of, is_blank, load_export, load_index, norm_entities, norm_status,
     resolve_csv, ws)
-from schema_constants import LOCATION_METHODS, STATUSES_IN_DEVELOPMENT  # noqa: E402
+from schema_constants import LOCATION_METHODS, MILESTONE_PERIODS, STATUSES_IN_DEVELOPMENT  # noqa: E402
 from build_review_package import (  # noqa: E402
     URL_RE, additive_errors, is_lead_only, load_lanes, ref_col_for, validate)
 from schema_constants import (  # noqa: E402
@@ -226,6 +275,8 @@ from schema_constants import (  # noqa: E402
     EU_UK_COUNTRIES, READ_ONLY_COLUMNS, WATCH_CASES)
 from paths import EXPORT_MAX_AGE_HOURS, gem_export_csv, scope_coverage, scope_permits, work_dir  # noqa: E402
 from geo import decimals, in_state_box, valid_point  # noqa: E402
+from dedup_check import DEDUP_FILE, fingerprint  # noqa: E402
+from paths import scope_base, scope_dir  # noqa: E402
 from access_audit import EXCUSE, OUTCOMES, RETRY_FILE, gave_up_outcome, unknown_outcome  # noqa: E402
 
 SCRIPTS = Path(__file__).resolve().parent
@@ -530,6 +581,41 @@ def gate_dates(lanes):
                 out.append((rid, f"Latest Activity is a date field; write Year: YYYY, Month: M, Day: D, not {v[:60]!r}"))
             elif col in YEAR_COLS and not re.fullmatch(r"\d{4}", v):
                 out.append((rid, f"{col} must be a four-digit year, not {v[:40]!r}"))
+    return out
+
+
+def gate_milestones(lanes):
+    """Every staged Status comes with a dated milestone timeline entry for that status
+    (Baird 2026-11-02): status, a four-digit year, the month, quarter or half
+    (schema_constants.MILESTONE_PERIODS; blank only with a period_note saying what was
+    looked for), and at least one source that loaded."""
+    out = []
+    for lane, rid, rec in iter_records(lanes, VALUE_LANES):
+        if rec.get("delete"):
+            continue
+        st = ws((rec.get("fields") or {}).get("Status")).lower()
+        if not st:
+            continue
+        ms = [m for m in rec.get("milestones") or [] if ws(m.get("status")).lower() == st]
+        if not ms:
+            out.append((rid, f"status {st} is staged with no milestone entry; add one with the "
+                             "year and the month, quarter or half it happened, and its source"))
+            continue
+        ok = ok_urls(rec)
+        for m in ms:
+            if not re.fullmatch(r"\d{4}", str(m.get("year") or "")):
+                out.append((rid, f"the {st} milestone needs a four-digit year"))
+            per = ws(m.get("period"))
+            if per and per not in MILESTONE_PERIODS:
+                out.append((rid, f"the {st} milestone period {per!r} must be a full month name, Q1 to Q4, H1 or H2"))
+            if not per and not ws(m.get("period_note")):
+                out.append((rid, f"the {st} milestone has no month, quarter or half; find one, or say "
+                                 "in period_note what was looked for"))
+            srcs = [u for u in m.get("sources") or [] if ws(u)]
+            if not srcs:
+                out.append((rid, f"the {st} milestone has no source"))
+            elif ok and not any(u in ok for u in srcs):
+                out.append((rid, f"no source of the {st} milestone has a verification that loaded"))
     return out
 
 
@@ -1188,6 +1274,61 @@ def chase_hits(text):
     return sorted(hits)
 
 
+# A memo that hands the search to someone else or admits a record set was not
+# read. The Illinois permit memo of 2026-10-21 said "a person could request
+# these" of construction permits that were on the agency's own document system.
+MEMO_GIVEUP_RE = re.compile(r"\b(?:a (?:person|researcher|human) could (?:request|ask for|obtain)|could be requested|"
+                            r"available (?:on|by|upon) request|by request from|"
+                            r"(?:found|has|have|there is|there was) no public copy|not used as a source|"
+                            r"(?:was|were) not (?:read|opened|downloaded|searched)|could not be (?:read|opened|searched)|"
+                            r"would (?:need|require) a (?:records?|FOIA) request)\b", re.I)
+
+
+# A memo line that reports what an earlier run left undone is the audit doing its
+# job (the memo then closes the gaps); a scope statement ("emergency-only sets are
+# out of scope") is a rule, not a give-up. Neither is flagged in a memo.
+MEMO_QUOTE_RE = re.compile(r"\b(?:original|earlier|first|previous|prior|2026-\d\d-\d\d) (?:pass|run|batch|sweep)\b"
+                           r"|\bits (?:own )?log says\b|\bnote repeats this\b", re.I)
+MEMO_SKIP_PHRASES = ("out of scope", "outside scope", "outside the scope", "outside this scope",
+                     "beyond scope", "beyond the scope")
+
+
+def memo_giveup_hits(path):
+    """(line number, phrase) for every give-up phrase in one audit memo."""
+    hits = []
+    try:
+        lines = Path(path).read_text(encoding="utf-8", errors="replace").splitlines()
+    except OSError:
+        return hits
+    for n, line in enumerate(lines, 1):
+        t = URL_RE.sub("", line)
+        if MEMO_QUOTE_RE.search(t):
+            continue
+        found = {m.group(0).strip().lower() for m in MEMO_GIVEUP_RE.finditer(t)}
+        found |= {m.group(0).strip().lower() for m in CHASE_RE.finditer(t) if m.group(0).strip()}
+        for phrase in sorted(found):
+            if phrase.startswith(MEMO_SKIP_PHRASES) or any(k in phrase for k in ("scope",)):
+                continue
+            hits.append((n, phrase))
+    return hits
+
+
+def gate_chase_memos(batch):
+    """Audit memos (batches/<tag>/audit/*.md) that say a source was noticed and
+    left: a permit set a person could request, a copy nobody looked for, a
+    register not read. Each is a search the batch still owes."""
+    out = []
+    audit = Path(batch) / "audit"
+    if not audit.is_dir():
+        return out
+    for path in sorted(audit.glob("*.md")):
+        for n, phrase in memo_giveup_hits(path):
+            out.append((f"audit/{path.name}:{n}", f"the memo says the search stopped ({phrase!r}). Read the "
+                                                   "record system now (the scope's harvest_permits.py or a "
+                                                   "search by name), then rewrite the line to say what was read"))
+    return out
+
+
 def gate_chase(lanes, coverage=None):
     out = []
     for lane, rid, rec in iter_records(lanes):
@@ -1240,16 +1381,15 @@ def coverage_list_path(batch, coverage_dir=None):
 
 
 def gate_source_coverage(batch, index, coverage_dir=None):
-    """Statewide sources that must be searched (scopes/<tag>/coverage.json) against
-    what the statewide agent recorded in <batch>/coverage.json. Returns (offenders, info)."""
-    if (index.get("where") or {}).get("kind", "state") != "state":
-        return [], ["skipped: not a US state batch"]
+    """Scope-wide sources that must be searched (scopes/<tag>/coverage.json) against
+    what the scope-wide agent recorded in <batch>/coverage.json. A US state and a
+    country are held to the same list (Baird 2026-10-30). Returns (offenders, info)."""
     if narrow_focus(index):
         return [], [f"skipped: narrow batch ({narrow_focus(index)}); the statewide batch searches the source list"]
     lp = coverage_list_path(batch, coverage_dir)
     if not lp.exists():
         shown = lp.name if coverage_dir else str(lp.relative_to(SCRIPTS.parent))
-        return [(shown, f"no statewide source list for this scope: write {shown} "
+        return [(shown, f"no scope source list: write {shown} "
                           "(id, name, url, what for each source) before the batch runs")], []
     try:
         wanted = json.loads(lp.read_text(encoding="utf-8"))
@@ -1286,6 +1426,53 @@ def gate_source_coverage(batch, index, coverage_dir=None):
     listed = {w.get("id") for w in wanted}
     info = [f"sources to search: {len(wanted)}",
             f"extra ids in coverage.json: {sorted(set(entries) - listed) or 'none'}"]
+    return out, info
+
+
+PERMIT_RECORD_HOW = re.compile(r"harvest_\w+\.py|by name|by facility name|every (gem )?plant|each (gem )?plant", re.I)
+
+
+def gate_permit_system(batch, coverage_dir=None):
+    """The scope's source list names its complete permit record system: an entry with
+    `role` "permit_record" whose `what` names the harvester that reads it or says it is
+    searched by name for every GEM plant and every lead. A notice feed alone fails: it
+    lists only permits that went to public notice, and a small construction permit (a
+    data center's engine fleet) never does. A `gap` sentence of at least 40 characters
+    records what the system does not expose online and what covers it. Runs on every
+    batch of the scope, narrow ones included. Returns (offenders, info)."""
+    lp = coverage_list_path(scope_base(Path(batch).name), coverage_dir)
+    shown = lp.name if coverage_dir else str(lp.relative_to(SCRIPTS.parent))
+    if not lp.exists():
+        return [(shown, "no scope source list, so no permit record system is named: write it "
+                        "with a `role` \"permit_record\" entry before the batch runs")], []
+    try:
+        wanted = json.loads(lp.read_text(encoding="utf-8"))
+    except (ValueError, OSError) as e:
+        return [(shown, f"the source list does not parse: {e}")], []
+    records = [w for w in wanted if ws(w.get("role")).lower() == "permit_record"]
+    notices = [w.get("id") for w in wanted if ws(w.get("role")).lower() == "permit_notices"]
+    if not records:
+        why = (f"only a public notice feed is named ({', '.join(notices)}); it lists the permits "
+               "that went to notice, and a small construction permit never does. "
+               if notices else "")
+        return [(shown, f"no entry with `role` \"permit_record\": {why}name the system that holds "
+                        "every permit in this scope (the one a permit number can be looked up "
+                        "in), with a `what` that names its harvester or says it is searched by "
+                        "name for every GEM plant and every lead")], []
+    out = []
+    for w in records:
+        sid = w.get("id") or shown
+        if not ws(w.get("url")):
+            out.append((sid, "permit_record entry has no url"))
+        if not PERMIT_RECORD_HOW.search(ws(w.get("what"))):
+            out.append((sid, "`what` must name the harvester (scopes/<tag>/harvest_*.py) that reads "
+                             "the record system, or say it is searched by name for every GEM "
+                             "plant and every lead"))
+        if "gap" in w and len(ws(w.get("gap"))) < 40:
+            out.append((sid, "`gap` must say in a sentence what the system does not expose "
+                             "online and what covers it"))
+    info = [f"permit record system: {', '.join(w.get('id') or '?' for w in records)}"
+            + (f"; notice feed: {', '.join(notices)}" if notices else "")]
     return out, info
 
 
@@ -1339,7 +1526,8 @@ def gate_data_centers(index, lanes, batch, permits_dir=None, applied=None):
     rids = {rec.get("record_id") for lane in ("newplants", "newunits", "applied")
             for rec in lanes.get(lane, []) if rec.get("record_id")}
     all_rids = {rec.get("record_id") for _, _, rec in iter_records(lanes) if rec.get("record_id")}
-    out, need = [], 0
+    companions = {}
+    out, need, disputed = [], 0, []
     for s in sites:
         verdict, sid = s.get("verdict"), s.get("site_id")
         if verdict not in DC_NEEDS_ANSWER:
@@ -1355,9 +1543,14 @@ def gate_data_centers(index, lanes, batch, permits_dir=None, applied=None):
         if dec not in DC_DECISIONS:
             out.append((f"data_centers:{sid}", f"decision {a.get('decision')!r} is not one of "
                                                f"{', '.join(DC_DECISIONS)}"))
+        elif dec == "below_threshold" and verdict == "at_threshold" and hand_count_ok(a, data):
+            disputed.append(f"{s.get('name') or sid}: harvester {s.get('summed_nameplate_mw')} MW, "
+                            f"permit read by hand {a.get('summed_nameplate_mw')} MW")
         elif dec in DC_CLOSE_WITH_NUMBER + DC_CLOSE_WITH_NOTE and verdict == "at_threshold":
             out.append((f"data_centers:{sid}", f"{label} cannot be {dec}: a fleet summed at the "
-                                               "threshold is an add, or already in GEM"))
+                                               "threshold is an add, or already in GEM, unless the "
+                                               "answer lists every generator line of the permit "
+                                               "(`fleet`, `source`, a note of 80 characters or more)"))
         elif dec in DC_CLOSE_WITH_NUMBER and not isinstance(a.get("summed_nameplate_mw"), (int, float)):
             out.append((f"data_centers:{sid}", f"{dec} must give `summed_nameplate_mw` as a number, "
                                                "the electrical nameplate the researcher added up"))
@@ -1365,8 +1558,16 @@ def gate_data_centers(index, lanes, batch, permits_dir=None, applied=None):
             out.append((f"data_centers:{sid}", f"{dec} needs a `note` saying what was read or searched "
                                                "and what it showed"))
         elif dec == "add" and ws(a.get("record_id")) not in rids:
+            other = ws(a.get("batch"))
+            if other and other not in companions:
+                companions[other] = companion_add_rids(batch, other)
+            if other and ws(a.get("record_id")) in companions[other]:
+                continue
+            where = f"batch {other}" if other else "the batch"
             out.append((f"data_centers:{sid}", "add must name the record_id of a newplants or "
-                                               f"newunits record in the batch, not {a.get('record_id')!r}"))
+                                               f"newunits record in {where}, not {a.get('record_id')!r}"
+                                               + ("" if other else "; a record in a companion batch of "
+                                                  "the same scope is named with `batch`")))
         elif dec in ("already_in_gem", "update") and not (
                 ws(a.get("plant_id")) or ws(a.get("record_id"))):
             out.append((f"data_centers:{sid}", f"{dec} must name a plant_id or a record_id"))
@@ -1374,7 +1575,45 @@ def gate_data_centers(index, lanes, batch, permits_dir=None, applied=None):
                 and ws(a.get("record_id")) not in all_rids:
             out.append((f"data_centers:{sid}", f"update names record_id {a.get('record_id')!r}, "
                                                "which is not in the batch"))
-    return out, [f"data center sites needing an answer: {need} of {len(sites)}"]
+    info = [f"data center sites needing an answer: {need} of {len(sites)}"]
+    if disputed:
+        info.append("harvester sums overruled by a hand count of the permit (fix data_center_fleets.py "
+                    "parsing for these): " + "; ".join(disputed))
+    return out, info
+
+
+def companion_add_rids(batch, tag):
+    """The record_ids of the newplants, newunits and applied records of a companion batch
+    (a sibling folder of <batch>, such as the data center catch-up batch of the same scope)."""
+    staging = Path(batch).parent / tag / "staging"
+    out = set()
+    for name in ("staged_newplants.json", "staged_newunits.json", "applied_in_db.json"):
+        try:
+            data = json.loads((staging / name).read_text(encoding="utf-8"))
+        except (ValueError, OSError):
+            continue
+        for rec in data.get("records") or []:
+            if isinstance(rec, dict) and rec.get("record_id"):
+                out.add(rec["record_id"])
+    return out
+
+
+def hand_count_ok(answer, data):
+    """A below_threshold answer on an at_threshold site stands only when it is auditable: `fleet`
+    lists every generator line of the permit as {count, mw_each}, the lines add up to
+    `summed_nameplate_mw`, that sum is under the scope threshold, `source` is the permit's
+    address, and the note says what was read."""
+    fleet = answer.get("fleet")
+    total = answer.get("summed_nameplate_mw")
+    if not isinstance(fleet, list) or not fleet or not isinstance(total, (int, float)):
+        return False
+    try:
+        summed = sum(int(f["count"]) * float(f["mw_each"]) for f in fleet)
+    except (KeyError, TypeError, ValueError):
+        return False
+    threshold = data.get("threshold_mw") or 50.0
+    return (abs(summed - total) < 0.05 and total < threshold
+            and ws(answer.get("source")).startswith("http") and len(ws(answer.get("note"))) >= 80)
 
 
 # ------------------------------------------------ EIA plants missing from GEM ---
@@ -1388,27 +1627,38 @@ def ids_leads(index, batch, ids_file=None):
         if p is None:
             w = index.get("where") or {}
             slug = w.get("slug") or (index.get("state") or "").lower().replace(" ", "-")
-            p = work_dir() / f"ids_us-{slug}.json"
+            p = work_dir() / (f"ids_{slug}.json" if w.get("kind") == "country" else f"ids_us-{slug}.json")
         if not p.exists():
             return None
         data = json.loads(p.read_text(encoding="utf-8"))
         leads = []
         for d in data.get("leads") or []:
-            if d.get("source") != "eia":
+            src = d.get("source")
+            if src == "eia":
+                m = re.search(r"\d+", d.get("ids", ""))
+                rid = m.group(0) if m else ""
+            elif src in ("eea", "entsoe"):
+                rid = re.sub(r"^ENTSO-E:\s*", "", d.get("ids") or "")
+            else:
                 continue
-            m = re.search(r"\d+", d.get("ids", ""))
-            leads.append({"eia_id": m.group(0) if m else "", "name": d.get("name"),
+            leads.append({"eia_id": rid, "register": REGISTER_LABEL[src], "name": d.get("name"),
                           "capacity_mw": d.get("capacity_mw"), "status": d.get("status")})
     return leads
 
 
+REGISTER_LABEL = {"eia": "EIA plant", "eea": "EEA combustion plant", "entsoe": "ENTSO-E unit"}
+
+
 def gate_ids_followup(index, lanes, batch, ids_file=None, applied=None):
     out, info = [], []
-    if (index.get("mode") or "update") != "update" or (index.get("where") or {}).get("kind", "state") != "state":
-        return out, ["skipped: not a US state update batch"]
+    kind = (index.get("where") or {}).get("kind", "state")
+    if (index.get("mode") or "update") != "update" or kind not in ("state", "country"):
+        return out, ["skipped: not a state or country update batch"]
     if narrow_focus(index):
         return out, [f"skipped: narrow batch ({narrow_focus(index)}); the statewide batch answers the EIA leads"]
     leads = ids_leads(index, batch, ids_file)
+    if leads is None and kind == "country":
+        return out, ["skipped: no match_registers.py file for this country"]
     if leads is None:
         return [("ids", "no match_ids.py file for this scope: run match_ids.py --state <State> "
                         "and rebuild the briefs with --ids")], []
@@ -1419,21 +1669,168 @@ def gate_ids_followup(index, lanes, batch, ids_file=None, applied=None):
     _, fol, _ = load_coverage_file(batch)
     for d in leads:
         eid, name = str(d.get("eia_id") or ""), ws(d.get("name")).lower()
-        idre = re.compile(rf"\b(?:eia\W{{0,12}}|plant\W{{0,3}}|eia_?){re.escape(eid)}\b", re.I) if eid else None
+        reg = d.get("register") or "EIA plant"
+        if reg == "EIA plant":
+            idre = re.compile(rf"\b(?:eia\W{{0,12}}|plant\W{{0,3}}|eia_?){re.escape(eid)}\b", re.I) if eid else None
+        else:
+            idre = re.compile(re.escape(eid.lower()), re.I) if eid else None
         if any((idre and idre.search(t)) or (name and f'"{name}"' in t) for t in texts):
             continue
         a = fol.get(eid) or {}
         dec = ws(a.get("decision")).lower()
-        label = f"EIA plant {eid} {d.get('name')} ({d.get('capacity_mw')} MW, {d.get('status')})"
+        label = f"{reg} {eid} {d.get('name')} ({d.get('capacity_mw')} MW, {d.get('status')})"
         if dec not in DECISIONS:
-            out.append((f"EIA:{eid}", f"{label} is missing from GEM and has no staged record and no "
+            out.append((f"{reg.split()[0]}:{eid}", f"{label} is missing from GEM and has no staged record and no "
                                       f"answer: stage it as a new plant, or record a decision in "
                                       f"coverage.json ids_followup ({', '.join(DECISIONS)}) with evidence"))
         elif not ws(a.get("evidence")):
-            out.append((f"EIA:{eid}", f"{label}: decision {dec} has no evidence text"))
+            out.append((f"{reg.split()[0]}:{eid}", f"{label}: decision {dec} has no evidence text"))
         elif dec == "already_in_gem" and not ws(a.get("gem_plant_id")):
-            out.append((f"EIA:{eid}", f"{label}: already_in_gem needs the gem_plant_id it sits under"))
-    info.append(f"EIA plants missing from GEM: {len(leads)}")
+            out.append((f"{reg.split()[0]}:{eid}", f"{label}: already_in_gem needs the gem_plant_id it sits under"))
+    info.append(f"register plants missing from GEM: {len(leads)}")
+    return out, info
+
+
+def gate_dedup(lanes, batch):
+    out = []
+    recs = [(rid_of(r, "newplants", i), r) for i, r in enumerate(lanes.get("newplants") or [])]
+    if not recs:
+        return out, ["no new plants in this batch"]
+    p = Path(batch) / DEDUP_FILE
+    if not p.exists():
+        return [("dedup", f"{DEDUP_FILE} is missing: run dedup_check.py --batch {Path(batch).name}")], []
+    checked = (json.loads(p.read_text(encoding="utf-8")).get("records") or {})
+    try:
+        answers = json.loads((Path(batch) / "coverage.json").read_text(encoding="utf-8")).get("dedup") or {}
+    except (OSError, ValueError, AttributeError):
+        answers = {}
+    hits = 0
+    for rid, rec in recs:
+        e = checked.get(rid)
+        if not e:
+            out.append((rid, "not in dedup.json: rerun dedup_check.py"))
+            continue
+        if e.get("fingerprint") != fingerprint(rec):
+            out.append((rid, "name, county, state or point changed after the duplicate check: rerun dedup_check.py"))
+            continue
+        if (e.get("wiki") or {}).get("status") != "ok":
+            out.append((rid, "the gem.wiki search did not run: rerun dedup_check.py"))
+        if not e.get("hits"):
+            continue
+        hits += 1
+        a = answers.get(rid) or {}
+        dec = ws(a.get("decision")).lower()
+        if dec == "duplicate":
+            out.append((rid, "answered duplicate: move the finding to the existing plant and drop this new plant"))
+        elif dec != "not_a_duplicate":
+            out.append((rid, f"{e['hits']} possible matches in dedup.md and no answer: add coverage.json "
+                             "dedup entry with decision not_a_duplicate and evidence"))
+        elif not ws(a.get("evidence")):
+            out.append((rid, "decision not_a_duplicate has no evidence text"))
+    return out, [f"new plants checked: {len(recs)}, with possible matches: {hits}"]
+
+
+# ------------------------------------------------ interconnection queues ---
+
+QUEUE_DECISIONS = ("add", "already_in_gem", "update", "watch", "withdrawn", "below_threshold",
+                   "not_gas_or_oil", "other_state", "out_of_scope", "fuel_not_published")
+QUEUE_CLOSE_WITH_EVIDENCE = ("withdrawn", "below_threshold", "not_gas_or_oil", "other_state",
+                             "out_of_scope", "fuel_not_published")
+QUEUE_MAX_AGE_DAYS = 7
+
+
+def gate_queues(index, lanes, batch, applied=None, today=None, settings=None):
+    """Every gas, oil or fuel-not-shown interconnection request of the state that is live
+    and at the threshold (pull_queues.needs_answer) is answered in coverage.json under
+    `queues`, keyed "MISO J3923"; every market in scopes/<tag>/queues.json was read in
+    full, or read by hand and answered under "market <name>". US state batches only;
+    narrow batches (one checklist step) skip it. Returns (offenders, info)."""
+    from pull_queues import entry_key, needs_answer
+    w = index.get("where") or {}
+    if w.get("kind") != "state" or w.get("country") != "United States":
+        return [], ["skipped: not a US state batch"]
+    if narrow_focus(index):
+        return [], [f"skipped: narrow batch ({narrow_focus(index)})"]
+    tag = Path(batch).name
+    settings_path = Path(settings) if settings else scope_dir(tag) / "queues.json"
+    if not settings_path.exists():
+        return [("queues", f"no queue settings for this state: write scopes/{tag}/queues.json "
+                           "(markets, owners) and run pull_queues.py")], []
+    markets = json.loads(settings_path.read_text(encoding="utf-8")).get("markets") or []
+    hp = Path(batch) / "harvest" / "queues.json"
+    if not hp.exists():
+        return [("queues", f"harvest/queues.json is missing: run pull_queues.py --state "
+                           f"{(w.get('postal') or '').upper()}")], [f"markets: {', '.join(markets)}"]
+    data = json.loads(hp.read_text(encoding="utf-8"))
+    st = (w.get("postal") or "").upper()
+    if "needs_answer" not in data:
+        return [("queues", f"harvest/queues.json was written by an older script: rerun "
+                           f"pull_queues.py --state {st}")], []
+    out = []
+    today = today or datetime.date.today()
+    try:
+        age = (today - datetime.date.fromisoformat(str(data.get("generated")))).days
+    except ValueError:
+        age = None
+    if age is None or age > QUEUE_MAX_AGE_DAYS:
+        out.append(("queues", f"harvest/queues.json is from {data.get('generated')}, more than "
+                              f"{QUEUE_MAX_AGE_DAYS} days old: rerun pull_queues.py --state {st}"))
+    try:
+        answers = json.loads((Path(batch) / "coverage.json").read_text(encoding="utf-8")).get("queues") or {}
+    except (OSError, ValueError, AttributeError):
+        answers = {}
+    sources = data.get("sources") or []
+    for m in markets:
+        if not any(s_.get("market") == m for s_ in sources):
+            out.append((f"market {m}", "listed in the queue settings but not in harvest/queues.json: "
+                                       f"rerun pull_queues.py --state {st}"))
+    for s_ in sources:
+        name = s_.get("name") or s_.get("market")
+        if s_.get("short"):
+            out.append((name, f"only {s_.get('rows_read')} rows, fewer than {s_.get('min_rows')}: "
+                              "the download broke, rerun pull_queues.py"))
+        elif not s_.get("reached"):
+            a = answers.get(f"market {s_.get('market')}") or {}
+            if ws(a.get("decision")).lower() != "read_by_hand" or len(ws(a.get("evidence"))) < 40:
+                out.append((name, f"{s_.get('how')} Answer it under queues with key "
+                                  f"\"market {s_.get('market')}\", decision read_by_hand and evidence "
+                                  "naming what was read, with every gas or oil request found added "
+                                  "under its own key"))
+    lanes = dict(lanes or {})
+    if applied:
+        lanes["applied"] = list(applied)
+    adds = {rec.get("record_id") for lane in ("newplants", "newunits", "applied")
+            for rec in lanes.get(lane, []) if rec.get("record_id")}
+    watches = {rec.get("record_id") for rec in lanes.get("monitor", []) if rec.get("record_id")}
+    all_rids = {rec.get("record_id") for _, _, rec in iter_records(lanes) if rec.get("record_id")}
+    need = needs_answer(data.get("entries") or [], scope_threshold_mw(index))
+    for e in need:
+        key = entry_key(e)
+        label = f"{e.get('fuel')}, {e.get('mw') or 'size not shown'} MW, {e.get('status')}:"
+        a = answers.get(key)
+        if not a:
+            out.append((f"queues:{key}", f"{label} has no entry under queues in coverage.json"))
+            continue
+        dec = ws(a.get("decision")).lower()
+        if dec not in QUEUE_DECISIONS:
+            out.append((f"queues:{key}", f"decision {a.get('decision')!r} is not one of "
+                                         f"{', '.join(QUEUE_DECISIONS)}"))
+        elif dec == "add" and ws(a.get("record_id")) not in adds:
+            out.append((f"queues:{key}", "add must name the record_id of a newplants or newunits "
+                                         f"record in the batch, not {a.get('record_id')!r}"))
+        elif dec == "watch" and ws(a.get("record_id")) not in watches:
+            out.append((f"queues:{key}", "watch must name the record_id of a monitor record in the batch"))
+        elif dec in ("already_in_gem", "update") and not (ws(a.get("plant_id")) or ws(a.get("record_id"))):
+            out.append((f"queues:{key}", f"{dec} must name a plant_id or a record_id"))
+        elif dec in ("already_in_gem", "update") and ws(a.get("record_id")) \
+                and not ws(a.get("plant_id")) and ws(a.get("record_id")) not in all_rids:
+            out.append((f"queues:{key}", f"{dec} names record_id {a.get('record_id')!r}, which is not in the batch"))
+        elif dec == "fuel_not_published" and not e.get("fuel_unknown"):
+            out.append((f"queues:{key}", "fuel_not_published is only for a request whose fuel the queue does not show"))
+        elif dec in QUEUE_CLOSE_WITH_EVIDENCE and len(ws(a.get("evidence"))) < 40:
+            out.append((f"queues:{key}", f"{dec} needs `evidence` saying what was read and what it showed"))
+    info = [f"queue file {data.get('generated')}; markets: {', '.join(markets)}",
+            f"requests needing an answer: {len(need)} of {len(data.get('entries') or [])} entries"]
     return out, info
 
 
@@ -1487,6 +1884,7 @@ def run(args):
     add("cell-prose", True, gate_cell_prose(lanes))
     add("dates", True, gate_dates(lanes))
     add("latest-activity", True, gate_latest_activity(lanes, export))
+    add("milestones", False, gate_milestones(lanes))
     add("additive", True, gate_additive(lanes))
     add("location", True, gate_location(lanes, index, batch))
     acc, acc_info = gate_access(batch)
@@ -1503,9 +1901,15 @@ def run(args):
     add("data-centers", True, dc, info=dc_info)
     add("lead-only", False, gate_lead_only(lanes))
     cov_entries, _, _ = load_coverage_file(batch)
-    add("chase", True, gate_chase(lanes, cov_entries))
+    add("chase", True, gate_chase(lanes, cov_entries) + gate_chase_memos(batch))
     sc, sc_info = gate_source_coverage(batch, index)
     add("statewide-coverage", True, sc, info=sc_info)
+    ps, ps_info = gate_permit_system(batch)
+    add("permit-system", True, ps, info=ps_info)
+    dd, dd_info = gate_dedup(lanes, batch)
+    add("dedup", True, dd, info=dd_info)
+    qq, qq_info = gate_queues(index, lanes, batch, applied=applied)
+    add("queues", True, qq, info=qq_info)
     add("build", True, gate_build(lanes))
     add("false-high", False, gate_false_high(lanes))
     add("independence", False, gate_independence(lanes))

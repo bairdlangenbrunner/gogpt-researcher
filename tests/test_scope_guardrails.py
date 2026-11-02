@@ -12,7 +12,7 @@ for p in (ROOT, ROOT / "scripts"):
 
 from build_state_brief import eia_lead_tasks, render_scope_brief  # noqa: E402
 from state_gate import (chase_hits, gate_chase, gate_ids_followup, gate_lead_only,  # noqa: E402
-                        gate_source_coverage)
+                        gate_permit_system, gate_source_coverage)
 
 WHERE = {"kind": "state", "name": "Mississippi", "slug": "mississippi",
          "country": "United States", "postal": "ms"}
@@ -99,6 +99,82 @@ def test_coverage_accepts_list_form(tmp_path):
     b = batch_dir(tmp_path, [dict(good(), id="a"), dict(good(), id="b")])
     out, _ = gate_source_coverage(b, {"where": WHERE}, cov_dir(tmp_path))
     assert out == []
+
+
+def test_coverage_checks_a_country_too(tmp_path):
+    country = {"kind": "country", "name": "Poland", "slug": "poland", "country": "Poland"}
+    b = batch_dir(tmp_path, {"sources": {"a": good()}}, name="poland")
+    out, _ = gate_source_coverage(b, {"where": country}, cov_dir(tmp_path, name="poland"))
+    assert [o[0] for o in out] == ["b"]
+
+
+# ---------------------------------------------------------- permit system ---
+
+NOTICES = {"id": "notices", "role": "permit_notices", "name": "Air permit public notices",
+           "url": "https://example.gov/notices", "what": "Read every notice."}
+RECORD = {"id": "records", "role": "permit_record", "name": "Air permit record system",
+          "url": "https://example.gov/records",
+          "what": "Use the index from scopes/us-ms/harvest_permits.py and read every permit."}
+
+
+def _sub(tmp_path, name):
+    d = tmp_path / name
+    d.mkdir()
+    return d
+
+
+def test_permit_system_passes_with_harvester_or_by_name(tmp_path):
+    b = batch_dir(tmp_path, {"sources": {}})
+    out, info = gate_permit_system(b, cov_dir(tmp_path, wanted=[NOTICES, RECORD]))
+    assert out == []
+    assert info and "records" in info[0] and "notices" in info[0]
+    by_name = dict(RECORD, what="Search the facility list by name for every GEM plant and every lead.")
+    out, _ = gate_permit_system(b, cov_dir(_sub(tmp_path, "x"), wanted=[by_name]))
+    assert out == []
+
+
+def test_permit_system_fails_on_notices_only(tmp_path):
+    b = batch_dir(tmp_path, {"sources": {}})
+    out, _ = gate_permit_system(b, cov_dir(tmp_path, wanted=[NOTICES]))
+    assert len(out) == 1 and "notice feed" in out[0][1] and "notices" in out[0][1]
+
+
+def test_permit_system_fails_without_any_role(tmp_path):
+    b = batch_dir(tmp_path, {"sources": {}})
+    out, _ = gate_permit_system(b, cov_dir(tmp_path))
+    assert len(out) == 1 and "permit_record" in out[0][1]
+
+
+def test_permit_system_checks_what_url_and_gap(tmp_path):
+    b = batch_dir(tmp_path, {"sources": {}})
+    bad = dict(RECORD, what="Read the permits.", url="", gap="login needed")
+    out, _ = gate_permit_system(b, cov_dir(tmp_path, wanted=[bad]))
+    msgs = " | ".join(o[1] for o in out)
+    assert [o[0] for o in out] == ["records"] * 3
+    assert "no url" in msgs and "harvester" in msgs and "`gap`" in msgs
+    ok = dict(RECORD, gap="Permit PDFs need a login; the public notice feed and a records request cover them.")
+    out, _ = gate_permit_system(b, cov_dir(_sub(tmp_path, "y"), wanted=[ok]))
+    assert out == []
+
+
+def test_permit_system_missing_list_is_one_finding(tmp_path):
+    b = batch_dir(tmp_path, {"sources": {}})
+    out, _ = gate_permit_system(b, cov_dir(tmp_path, wanted=None))
+    assert len(out) == 1 and "no scope source list" in out[0][1]
+
+
+def test_permit_system_runs_on_narrow_batches(tmp_path):
+    b = batch_dir(tmp_path, {"sources": {}}, name="us-ms-dc")
+    out, _ = gate_permit_system(b, cov_dir(tmp_path, wanted=[NOTICES], name="us-ms"))
+    assert len(out) == 1
+
+
+def test_scope_lists_name_a_permit_record_system():
+    for tag in ("us-il", "us-mi", "us-nd", "us-ms", "us-ks"):
+        data = json.loads((ROOT / "scopes" / tag / "coverage.json").read_text(encoding="utf-8"))
+        roles = [d.get("role") for d in data]
+        assert "permit_record" in roles, tag
+        assert "permit_notices" in roles, tag
 
 
 def test_ms_source_list_is_well_formed():
@@ -259,3 +335,34 @@ def test_scope_brief_has_one_line_per_eia_plant(tmp_path):
 def test_scope_brief_without_leads_says_so():
     assert "no EIA plant" in render_scope_brief([], None, "us-ks")
     assert eia_lead_tasks(None) == []
+
+
+def test_ids_followup_country_reads_register_leads(tmp_path):
+    f = tmp_path / "ids.json"
+    f.write_text(json.dumps({"leads": [
+        {"source": "eea", "name": "Elektrociepłownia Kielce", "ids": "PL.MŚ/000000366.PART", "capacity_mw": None},
+        {"source": "entsoe", "name": "Unit X", "ids": "ENTSO-E: 19W000000000294O", "capacity_mw": 450}]}),
+        encoding="utf-8")
+    cov = {"sources": {}, "ids_followup": {
+        "19W000000000294O": {"decision": "already_in_gem", "evidence": "same unit", "gem_plant_id": "L1"}}}
+    b = batch_dir(tmp_path, cov, name="poland")
+    where = {"kind": "country", "name": "Poland", "slug": "poland"}
+    out, _ = gate_ids_followup({"where": where, "mode": "update"}, {}, b, ids_file=f)
+    assert [o[0] for o in out] == ["EEA:PL.MŚ/000000366.PART"]
+    lanes = {"qa": [{"record_id": "Q1", "researcher_notes": "PL.MŚ/000000366.PART is a heat plant."}]}
+    assert gate_ids_followup({"where": where, "mode": "update"}, lanes, b, ids_file=f)[0] == []
+
+
+def test_ids_followup_country_without_file_is_skipped(tmp_path):
+    b = batch_dir(tmp_path, name="atlantis")
+    out, info = gate_ids_followup({"where": {"kind": "country", "name": "Atlantis", "slug": "atlantis"},
+                                   "mode": "update"}, {}, b)
+    assert out == [] and "skipped" in info[0]
+
+
+def test_scope_brief_names_register_leads():
+    leads = [{"eia_id": "PL.MŚ/000000366.PART", "register": "EEA combustion plant", "name": "EC Kielce",
+              "capacity_mw": None, "status": "reported", "basis": "100% gas"}]
+    text = render_scope_brief(leads, None, "poland", 20)
+    assert "## Register plants missing from GEM" in text and "- EEA combustion plant PL.MŚ/000000366.PART: EC Kielce" in text
+    assert "keyed by register ID" in text

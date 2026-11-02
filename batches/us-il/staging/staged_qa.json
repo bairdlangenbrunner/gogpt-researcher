@@ -16,7 +16,7 @@
    "records": 33
   },
   "validation_answered": "2026-10-16: validation report items answered in place, checks [7]",
-  "annotated": "2026-10-21: five planned-retire qa records (Aurora, Rockford I and II, University Park North and South) dropped, superseded by a 2031 planned retire decision; 2026-10-22: discovery audit addendum, one Lincoln Land capacity question (1,276 MW against about 1,100 MW nominal)"
+  "annotated": "2026-10-21: five planned-retire qa records (Aurora, Rockford I and II, University Park North and South) dropped, superseded by a 2031 planned retire decision; 2026-10-22: discovery audit addendum, one Lincoln Land capacity question (1,276 MW against about 1,100 MW nominal); 2026-10-30: Broadwing duplicate question on MISO J1839, moved from the watch list; 2026-10-30: the Elwood owner question dropped, answered by the GT1 to GT4 owner edits; the GT8 and GT9 status question rewritten with the MPH Elwood letter, which says those two units were not sold"
  },
  "records": [
   {
@@ -340,11 +340,12 @@
   {
    "gem_unit_id": "G100000402263",
    "concern_type": "Status",
-   "recommendation": "Check units 8 and 9 against federal data.",
+   "recommendation": "Check units 8 and 9 against the next EIA-860M table and PJM's deactivation list, and set them back to operating if they are still running. Do not give them the MPH Elwood owner; they stayed with Elwood Energy LLC, whose units 5 to 7 GEM lists under Dairyland Power Cooperative, so confirm and apply that owner instead.",
    "refs": {
     "links": [
      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
-     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-revision-8-9.pdf"
+     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-revision-8-9.pdf",
+     "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
     ]
    },
    "proposed_value": {},
@@ -353,26 +354,19 @@
    "country": "United States",
    "unit_name": "GT8",
    "fields": {},
-   "researcher_notes": "GEM shows GT8 and GT9 as retired. PJM's May 2025 letter said they would retire on June 1, 2025 if the Hull Street sale closed. The EIA-860M table for August 2026 still lists both under plant 69979 as operating, 192 MW each. They may not have retired.",
-   "record_id": "L100000401554:G100000402263:qa-status-2"
-  },
-  {
-   "gem_unit_id": "G100000402256",
-   "concern_type": "Owner(s)",
-   "recommendation": "Decide the owner of units 1 to 4 and 8 and 9.",
-   "refs": {
-    "links": [
-     "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/"
-    ]
-   },
-   "proposed_value": {},
-   "gem_plant_id": "L100000401554",
-   "plant_name": "Elwood Energy power station",
-   "country": "United States",
-   "unit_name": "GT1",
-   "fields": {},
-   "researcher_notes": "EIA lists the owner of plant 69979 as MPH Elwood, LLC. Utility Dive says Hull Street Energy owns the Elwood plant. I could not find a dated closing document from two publishers, so I did not report a change. The name MPH Elwood is not in the entity data, and Hull Street Energy is not either, so a new owner entry would be needed.",
-   "record_id": "L100000401554:G100000402256:qa-owner-s-3"
+   "researcher_notes": "GEM shows GT8 and GT9 as retired with J-POWER USA Development Co Ltd as owner. PJM's May 2025 letter said they would retire on June 1, 2025 if the Hull Street sale closed. The June 2026 letter from MPH Elwood LLC to the Illinois EPA, found in the agency's document library on October 30, 2026, says the sale covered units 1 to 4 only and that units 5 to 9 remained with Elwood Energy LLC. The EIA-860M table for August 2026 lists GT8 and GT9 under plant 69979 as operating, 192 MW each. Dairyland Power Cooperative withdrew the retirement notice for units 5 to 7 on May 6, 2026. No source read for this batch says whether units 8 and 9 were shut down or kept running after June 2025, so both the status and the owner of these two units stay open questions.",
+   "record_id": "L100000401554:G100000402263:qa-status-2",
+   "question": "Are units GT8 and GT9 really retired, and who owns them now?",
+   "finding": "A June 2026 letter from MPH Elwood LLC to the Illinois EPA says the company bought units 1 to 4 only, on June 1, 2025, and that units 5 to 9 at 24391 South Patterson Road stayed with Elwood Energy LLC. PJM's May 2025 letter said units 8 and 9 would retire on June 1, 2025 if the Hull Street sale closed, but the sale that closed did not include them. The EIA-860M table for August 2026 still lists both as operating, 192 MW each.",
+   "verifications": [
+    {
+     "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
+    }
+   ]
   },
   {
    "gem_unit_id": "G100000402256",
@@ -751,6 +745,52 @@
    "record_id": "L100000402416:G100000403820:qa-capacity-mw-1",
    "checks": [
     10
+   ]
+  },
+  {
+   "gem_unit_id": "G100000410074",
+   "concern_type": "duplicate",
+   "question": "Is MISO interconnection request J1839 at the Decatur ADM North substation the Broadwing Energy Center, or a separate plant?",
+   "finding": "J1839 is a 325 MW summer, 340 MW winter gas request at the ADM North 138 kV substation in Decatur, queued in June 2020. In August 2026 MISO moved its in-service date to December 2029, which matches Broadwing's target. Broadwing's net output of about 418 to 467 MW, less the power ADM takes on site, fits the 325 to 340 MW the request sends to the grid.",
+   "recommendation": "Treat J1839 as Broadwing's grid connection and do not add it as a new plant or unit.",
+   "refs": {
+    "links": [
+     "https://www.misoenergy.org/api/giqueue/getprojects",
+     "https://cdn.misoenergy.org/20260903%20CSPM%20Item%2004b%20Illinois779204.pdf",
+     "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/10283"
+    ]
+   },
+   "gem_plant_id": "L100000407695",
+   "plant_name": "Broadwing Energy Center",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "MISO's live queue lists J1839 as a simple cycle combustion turbine, while Broadwing is one turbine with a heat recovery steam generator and a duct burner. The request dates from 2020, when the project at ADM was an earlier 280 MW design by 8 Rivers, so the technology label was probably never updated. No public document names the company behind J1839. I found no signed interconnection agreement for it on MISO's site or at the Federal Energy Regulatory Commission, and the Illinois air permit papers do not give a queue number. The match rests on the same substation, the same schedule and a fitting size. This also answers the older note that no grid queue entry was found for Broadwing.",
+   "record_id": "L100000407695:G100000410074:qa-duplicate-3",
+   "checks": [],
+   "proposed_value": {},
+   "verifications": [
+    {
+     "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "J1839, Decatur ADM North 138 kV, queued 2020-06-25, 325 MW summer, 340.3 MW winter, gas"
+    },
+    {
+     "url": "https://cdn.misoenergy.org/20260903%20CSPM%20Item%2004b%20Illinois779204.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "New ADM North (J1839) 138 kV Interconnection, in-service date changed from 12/1/2027 to 12/1/2029, information as of 8/19/26"
+    },
+    {
+     "url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/10283",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Broadwing project summary: 452 MW gross, about 418 MW net at 102 F and 467 MW at 18 F, power not sold to ADM goes to MISO"
+    }
    ]
   }
  ]

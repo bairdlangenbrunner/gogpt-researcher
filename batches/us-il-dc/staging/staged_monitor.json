@@ -13,8 +13,9 @@
     "generated": "2026-10-27T11:52:07-04:00",
     "mode": "update",
     "counts": {
-      "records": 3
-    }
+      "records": 6
+    },
+    "records": 8
   },
   "records": [
     {
@@ -22,14 +23,15 @@
       "plant_name": "Monarch Rock Air data center campus (Rockford)",
       "monitor_kind": "new_to_tracker",
       "watch_case": "no_generation",
-      "monitor_reason": "The campus has power generation mentioned in state records, but no generating unit, fuel or size is named.",
+      "monitor_reason": "Closed on October 30, 2026: the air permit names twenty gas engines of 12.37 MW each, and the plant is added in this batch as the Milkweed Energy Center. Earlier reason: The campus has power generation mentioned in state records, but no generating unit, fuel or size is named.",
       "recheck_by": "2027-04",
       "checks": [
         39
       ],
       "refs": {
         "links": [
-          "https://www.rockrivercurrent.com/2026/06/monarch-has-entered-tax-incentive-deal-with-state-for-rockford-data-center-records-request-shows/"
+          "https://www.rockrivercurrent.com/2026/06/monarch-has-entered-tax-incentive-deal-with-state-for-rockford-data-center-records-request-shows/",
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002756097?dwdocid=1513807"
         ]
       },
       "verifications": [
@@ -39,15 +41,23 @@
           "contains_value": true,
           "name_found": true,
           "note": "Names Monarch Rock Air, Friday Road, a 1,400 megawatt phased data center and associated power generation."
+        },
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002756097?dwdocid=1513807",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Illinois EPA construction permit for the Milkweed Energy Center, issued May 13, 2026 to Monarch Rock Air Gen LLC of 101 Cooper Street, Santa Cruz, California, application 26020005 received February 5, 2026, site number 201030DIR. The location line gives coordinates 42.1526, -89.1186 in Rockford, Winnebago County, 61109. The permit allows construction of twenty 12.37 MWe (12,372 kW) natural gas fired Wartsila non-emergency engine generator sets with selective catalytic reduction and an oxidation catalyst, and caps their combined operation at 130,680 hours a year. The permit pages are scans and the figures were read from the OCR text."
         }
       ],
-      "capacity_mw": "",
-      "status": "announced",
+      "capacity_mw": "247.4",
+      "status": "pre-construction",
       "irp": false,
       "country": "United States",
       "fields": {},
-      "researcher_notes": "A Rock River Current article from June 2026, based on state incentive records, says Monarch Rock Air plans a multibuilding data center campus with associated power generation on Friday Road in Rockford. It is described as a 1,400 MW phased data center, which is the size of the campus and not of any generator. No source I found names gas engines or turbines. The 250 MW of gas engines mentioned in the earlier task list could not be confirmed, and a Caterpillar order for a site called Monarch belongs to a West Virginia campus. Other reports describe grid power from ComEd. I looked for an Illinois EPA air permit notice and found none. Not found: fuel, number of engines and generating capacity. Check again for an air permit application.",
-      "record_id": "us-il:plant:monitor-1"
+      "researcher_notes": "Update of October 30, 2026: the Illinois EPA document library, read in full for this batch, holds a construction permit issued May 13, 2026 to Monarch Rock Air Gen LLC for the Milkweed Energy Center, twenty Wärtsilä natural gas engine generator sets of 12.37 MW each, 247.4 MW, at the coordinates 42.1526, -89.1186 in Rockford. The plant is added in this batch as the Milkweed Energy Center, so this watch item is closed. The earlier search had read only the public notice feed, which does not list this permit. A Rock River Current article from June 2026, based on state incentive records, says Monarch Rock Air plans a multibuilding data center campus with associated power generation on Friday Road in Rockford. It is described as a 1,400 MW phased data center, which is the size of the campus and not of any generator. No source I found names gas engines or turbines. The 250 MW of gas engines mentioned in the earlier task list could not be confirmed, and a Caterpillar order for a site called Monarch belongs to a West Virginia campus. Other reports describe grid power from ComEd. I looked for an Illinois EPA air permit notice and found none. Not found: fuel, number of engines and generating capacity. Check again for an air permit application.",
+      "record_id": "us-il:plant:monitor-1",
+      "resolved_record_id": "us-il:new:milkweed-energy-center"
     },
     {
       "gem_plant_id": "",
@@ -112,6 +122,174 @@
       "fields": {},
       "researcher_notes": "The Joliet city council approved the PowerHouse Data Centers and Hillwood campus in March 2026. A Data Center Dynamics article says it will offer up to 1.8 GW at full build in four phases, each with its own substation. A data center listing says the developer is securing its own electricity supply, but names no fuel or equipment. No Illinois EPA permit notice names the campus. Not found: any on-site gas turbines or engines and their size.",
       "record_id": "us-il:plant:monitor-3"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "Aligned Northlake ORD-02 data center",
+      "monitor_kind": "new_to_tracker",
+      "watch_case": "no_generation",
+      "monitor_reason": "The second Aligned building in Northlake has no air permit or generator count found yet.",
+      "recheck_by": "2027-04",
+      "checks": [
+        39
+      ],
+      "refs": {
+        "links": [
+          "https://www.datacenterdynamics.com/en/news/aligned-completes-first-chicago-data-center-breaks-ground-on-second"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.datacenterdynamics.com/en/news/aligned-completes-first-chicago-data-center-breaks-ground-on-second",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A Data Center Dynamics article of April 20, 2022. Says Aligned completed the first phase of ORD-01 in Northlake, 48 MW, and started work on a second building, ORD-02, next door."
+        }
+      ],
+      "capacity_mw": "",
+      "status": "construction",
+      "irp": false,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "A Data Center Dynamics article of April 20, 2022 says Aligned started work on ORD-02, a second building next to ORD-01 in Northlake. The two buildings together would offer more than 100 MW of IT capacity. Other listings put ORD-02 at 501 Northwest Ave. The air permit for ORD-01 covers only the 51 generators at 505 Northwest Ave. I found no Illinois EPA air permit notice for ORD-02 and no source that names its generators. Not found: fuel, number of engines and generating capacity. Check again for an air permit or a later permit that adds generators.",
+      "record_id": "us-il:plant:monitor-4"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "CyrusOne Yorkville data center campus",
+      "monitor_kind": "new_to_tracker",
+      "watch_case": "no_generation",
+      "monitor_reason": "The planned CyrusOne campus in Yorkville has no generators named yet.",
+      "recheck_by": "2027-04",
+      "checks": [
+        39
+      ],
+      "refs": {
+        "links": [
+          "https://www.datacenterdynamics.com/en/news/cyrusone-files-for-nine-building-data-center-campus-outside-chicago-illinois/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.datacenterdynamics.com/en/news/cyrusone-files-for-nine-building-data-center-campus-outside-chicago-illinois/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A Data Center Dynamics article of June 10, 2024. Says C1 Yorkville LLC, a CyrusOne subsidiary, filed with the City of Yorkville for a campus of up to nine buildings on 230 acres, with an on-site substation."
+        }
+      ],
+      "capacity_mw": "",
+      "status": "announced",
+      "irp": false,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "A Data Center Dynamics article of June 10, 2024 says C1 Yorkville LLC, a CyrusOne subsidiary, filed with the City of Yorkville in Kendall County for a campus of up to nine two-story buildings on 230 acres, built over 10 to 20 years with an on-site substation. No source I found names gas or diesel generators. I found no Illinois EPA air permit notice. Not found: fuel, number of engines and generating capacity. Check again for an air permit or the city approval.",
+      "record_id": "us-il:plant:monitor-6"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "Edged Chicago data center backup generators (2835 Bilter Road, Aurora)",
+      "monitor_kind": "new_to_tracker",
+      "watch_case": "under_threshold",
+      "monitor_reason": "The permitted backup generator fleet adds up to 45.27 MW, under the 50 MW threshold for a data center backup fleet. A later permit could take it over the line.",
+      "recheck_by": "2027-04",
+      "checks": [
+        39
+      ],
+      "refs": {
+        "links": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002620180?dwdocid=1442104",
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002620180?dwdocid=1440719"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002620180?dwdocid=1442104",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Illinois EPA construction permit 24010010 for Edged Chicago LLC at 2835 Bilter Road, Aurora, issued June 18, 2024, site number 043407AEA. It covers 64 diesel non-emergency generators of 685 kW, G1 to G64, and two diesel emergency generators of 715 kW, G65 and G66. The permit pages are scans and the figures were read from the OCR text."
+        },
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002620180?dwdocid=1440719",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Edged Chicago air permit application prepared in October 2023. It names Volvo Penta engines of 625 and 640 kW electrical output for demand response and backup."
+        }
+      ],
+      "capacity_mw": "45.27",
+      "status": "",
+      "irp": false,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "Edged Chicago LLC holds an Illinois EPA construction permit for a data center at 2835 Bilter Road in Aurora, DuPage County, next door to the CyrusOne campus at 2725 Bilter Road that is added in this batch. The final permit, number 24010010, was issued on June 18, 2024. It covers 64 diesel non-emergency generators of 685 kW each, numbered G1 to G64, and two diesel emergency generators of 715 kW, G65 and G66. Together they come to 45.27 MW, which is under the 50 MW threshold for adding a backup generator fleet. The application, prepared in October 2023, names the engines as Volvo Penta units of 625 and 640 kW electrical output, used for demand response and backup. The permit is in the Illinois EPA document library under site number 043407AEA; the permit pages are scans and the figures were read from the OCR text. The Edged DeKalb Project Vector campus is a different site and is already in the tracker. Not found: any later permit that adds generators at this site. Check the site's record in the Illinois EPA document library again for a new permit or application.",
+      "record_id": "us-il:plant:monitor-7"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "Stream Data Centers Elk Grove Village backup generators (2080 Lunt Avenue)",
+      "monitor_kind": "new_to_tracker",
+      "watch_case": "under_threshold",
+      "monitor_reason": "The permitted backup generator fleet adds up to 40.5 MW, under the 50 MW threshold for a data center backup fleet. A later permit could take it over the line.",
+      "recheck_by": "2027-04",
+      "checks": [
+        39
+      ],
+      "refs": {
+        "links": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002399759?dwdocid=1475874"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002399759?dwdocid=1475874",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Illinois EPA federally enforceable state operating permit for SDC CHI I, LLC at 2080 Lunt Avenue, Elk Grove Village, application 21040035 received April 23, 2021, issued May 29, 2025, site number 031804ACL. It covers one 1,000 kWe, twelve 2,250 kWe and five 2,500 kWe diesel emergency generator sets. The permit pages are scans and the figures were read from the OCR text."
+        }
+      ],
+      "capacity_mw": "40.5",
+      "status": "",
+      "irp": false,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "SDC CHI I, LLC, a Stream Data Centers company, holds an Illinois EPA operating permit issued May 29, 2025 for its data center at 2080 Lunt Avenue in Elk Grove Village, Cook County. The permit covers one 1,000 kWe, twelve 2,250 kWe and five 2,500 kWe diesel emergency generator sets, 40.5 MW together, under the 50 MW threshold. The permit harvester had read the fleet as 56 MW; the permit text was read by hand and the figures corrected. Check again in April 2027 for a new construction permit at this address.",
+      "record_id": "us-il:plant:monitor-8"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "Digital Northlake data center backup generators (505 North Railroad Avenue)",
+      "monitor_kind": "new_to_tracker",
+      "watch_case": "under_threshold",
+      "monitor_reason": "The permitted backup generator fleet adds up to 44.37 MW, under the 50 MW threshold for a data center backup fleet. A later permit could take it over the line.",
+      "recheck_by": "2027-04",
+      "checks": [
+        39
+      ],
+      "refs": {
+        "links": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002371154?dwdocid=1520024"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002371154?dwdocid=1520024",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Illinois EPA revised federally enforceable state operating permit for Digital Northlake, LLC at 505 North Railroad Avenue, Suite 700, Northlake, received January 20, 2026, revised April 30, 2026, expires March 3, 2030, site number 031471AEF. It covers nine 2,000 kWe, six 2,250 kWe, four 3,000 kWe, one 420 kWe and one 450 kWe diesel emergency generator sets. The permit pages are scans and the figures were read from the OCR text."
+        }
+      ],
+      "capacity_mw": "44.37",
+      "status": "",
+      "irp": false,
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "Digital Northlake, LLC holds an Illinois EPA operating permit, revised April 30, 2026, for its data center at 505 North Railroad Avenue in Northlake, Cook County. The permit covers nine 2,000 kWe, six 2,250 kWe, four 3,000 kWe, one 420 kWe and one 450 kWe diesel emergency generator sets, 44.37 MW together, under the 50 MW threshold. The permit harvester had read the fleet as 100.62 MW; the permit text was read by hand and the figures corrected. This is a different site from the Aligned Northlake campus on Northwest Avenue added in this batch. Check again in April 2027 for a new construction permit at this address.",
+      "record_id": "us-il:plant:monitor-9"
     }
   ]
 }

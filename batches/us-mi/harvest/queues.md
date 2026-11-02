@@ -1,18 +1,84 @@
-# Michigan interconnection queues, gas and oil (2026-10-23)
+# Michigan interconnection queues, gas and oil (2026-10-30)
 
 A queue entry is a lead, not proof that a plant exists or will be built. The queue file or page below is the citation.
 
 ## Sources
 
-- MISO generator interconnection queue (includes ERAS rows): open JSON https://www.misoenergy.org/api/giqueue/getprojects, plain GET; 3990 projects, 530 in Michigan, 26 state-hidden leads of the state's own owners, 0 ERAS rows, 18 state-hidden entries of owners shared with other states not kept (https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/)
+- MISO generator interconnection queue (includes ERAS rows): open JSON https://www.misoenergy.org/api/giqueue/getprojects, plain GET; 4030 projects, 530 in Michigan, 28 state-hidden leads of the state's own owners, 0 ERAS rows, 18 state-hidden entries of owners shared with other states not kept, 60 entries with neither state nor owner shown (https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/)
 - PJM serial queue (A01 through AJ1): open XML https://www.pjm.com/pjmfiles/media/planning/queues-data/PlanningQueues.xml, plain GET; 6 Michigan gas, oil or thermal-unknown entries (https://www.pjm.com/planning/service-requests/serial-service-request-status)
 - PJM cycle queue (Transition Cycle 1 and 2, Cycle 1): open XML posted to https://www.pjm.com/m/ProjectTransition/GenerateXMLTransitionProjectsAll with an empty grid filter; 1 Michigan gas, oil or thermal-unknown entries (https://www.pjm.com/planning/m/cycle-service-request-status)
 
+## Completeness
+
+- MISO generator interconnection queue (includes ERAS rows): 4030 rows read, 558 for the state, 35 gas or oil, 57 fuel not shown
+- PJM serial queue (A01 through AJ1): 9263 rows read, 50 for the state, 6 gas or oil, 0 fuel not shown
+- PJM cycle queue (Transition Cycle 1 and 2, Cycle 1): 1792 rows read, 23 for the state, 1 gas or oil, 0 fuel not shown
+
+Requests to answer in coverage.json under `queues`: 61.
+
+- MISO S1184
+- MISO J3799
+- MISO J4414
+- MISO J4423
+- MISO J793
+- MISO J703
+- MISO J704
+- MISO J4269
+- MISO J3922
+- MISO J3923
+- MISO J4159
+- MISO J4160
+- MISO R5077
+- MISO J4208
+- MISO R5078
+- MISO J4210
+- MISO S1020
+- MISO S1021
+- MISO S1018
+- MISO S1031
+- MISO S1015
+- MISO S1019
+- MISO S1032
+- MISO R1009
+- MISO S1183
+- MISO S1182
+- MISO J4207
+- MISO S1138
+- MISO J4206
+- MISO S1136
+- MISO S1147
+- MISO S1130
+- MISO J4212
+- MISO J4209
+- MISO S1144
+- MISO R5082
+- MISO J3935
+- MISO S1146
+- MISO S1172
+- MISO J4237
+- MISO S1174
+- MISO J4228
+- MISO J4233
+- MISO S1175
+- MISO J4234
+- MISO J4024
+- MISO J4025
+- MISO R1052
+- MISO S1066
+- MISO S1069
+- MISO S1063
+- MISO R1040
+- MISO S1060
+- MISO S1058
+- MISO S1068
+- MISO S1065
+- MISO S1059
+- MISO S1061
+- MISO S1062
+- MISO R1041
+- MISO S1067
+
 ## Matched to GEM plants
-
-### 48th Street power station (L100000401789), Holland, Allegan County
-
-No queue entry matched.
 
 ### 491 E 48th Street power station (L100000409227), Holland, Allegan County
 
@@ -52,14 +118,14 @@ No queue entry matched.
 - MISO J1262; Gas; 25 MW; Wayne County; Done; queued 2019-04-29; in service 2019-06-01; point of interconnection: Waterman 120kV Substation; ITC MIDWEST (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
 - MISO J1346; Gas; 334 MW; Wayne County; Withdrawn; queued 2019-04-29; in service 2022-01-01; point of interconnection: Brownstown 345kV Substation; ITC MIDWEST (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
 - MISO J444; Gas; 235 MW; Wayne County; Withdrawn; queued 2015-05-07; in service 2017-01-31; point of interconnection: Waterman/Navarre 230kV; ITC MIDWEST (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
-- MISO J1798; Gas; 0 MW; Wayne County; Done; queued 2020-06-24; in service 2021-06-01; point of interconnection: Waterman 120kV; ITC (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J1798; Gas; 25 MW; Wayne County; Done; queued 2020-06-24; in service 2021-06-01; point of interconnection: Waterman 120kV; ITC (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
 
 ### Delray power station (L100000401856), Detroit, Wayne County
 
 - MISO J1262; Gas; 25 MW; Wayne County; Done; queued 2019-04-29; in service 2019-06-01; point of interconnection: Waterman 120kV Substation; ITC MIDWEST (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
 - MISO J1346; Gas; 334 MW; Wayne County; Withdrawn; queued 2019-04-29; in service 2022-01-01; point of interconnection: Brownstown 345kV Substation; ITC MIDWEST (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
 - MISO J444; Gas; 235 MW; Wayne County; Withdrawn; queued 2015-05-07; in service 2017-01-31; point of interconnection: Waterman/Navarre 230kV; ITC MIDWEST (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
-- MISO J1798; Gas; 0 MW; Wayne County; Done; queued 2020-06-24; in service 2021-06-01; point of interconnection: Waterman 120kV; ITC (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J1798; Gas; 25 MW; Wayne County; Done; queued 2020-06-24; in service 2021-06-01; point of interconnection: Waterman 120kV; ITC (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
 
 ### Delta energy park (L100000402461), Lansing, Eaton County
 
@@ -76,7 +142,7 @@ No queue entry matched.
 
 ### Greenwood (MI) power station (L100000401857), Avoca, St Clair County
 
-No queue entry matched.
+- MISO J4423; (not shown); 300 MW; Clinton County; Active; queued 2026-09-12; in service 2031-05-30; point of interconnection: GREENWOOD - RAPSON 345.0kV; ITC (point of interconnection or name matches the plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
 
 ### Handy Township power station (L100001082478), Fowlerville, Livingston County
 
@@ -123,8 +189,7 @@ No queue entry matched.
 
 ### Marquette Energy Center (L100000409279), Marquette, Marquette County
 
-- MISO J3756; Gas; 4.2 MW; Marquette County; Active; queued 2024-04-17; in service 2019-01-21; point of interconnection: Huron; AMERICAN TRANSMISSION COMPANY (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
-- MISO J703; Gas; 128.1 MW; Marquette County; Done; queued 2016-09-08; in service 2019-03-01; point of interconnection: Huron 138kV Substation -looping Lines FREG11 (National to Freeman) & Goose Lake (PI to Empire); American Transmission Co. LLC (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+No queue entry matched.
 
 ### Michigan power station (L100000401674), Ludington, Mason County
 
@@ -139,6 +204,7 @@ No queue entry matched.
 - MISO J3923; Gas; 1414 MW; Washtenaw County; Active; queued 2025-02-28; in service 2030-03-01; point of interconnection: Majestic-Milan 345 kV Line; ITC (point of interconnection or name matches the plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
 - MISO J4024; Gas; 1499 MW; Monroe County; Active; queued 2025-05-05; in service 2030-09-30; point of interconnection: Other_; ITC (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
 - MISO J4025; Gas; 1499 MW; Monroe County; Active; queued 2025-05-05; in service 2030-09-30; point of interconnection: Other_; ITC (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO S1065; (not shown); 76.5 MW; Washtenaw County; Active; queued 2024-10-07; in service 2028-09-30; point of interconnection: Majestic 345kV to Milan 345kV; ITC (point of interconnection or name matches the plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
 
 ### New Covert generating facility (L100000402123), Covert, Van Buren County
 
@@ -157,7 +223,7 @@ No queue entry matched.
 - MISO J1262; Gas; 25 MW; Wayne County; Done; queued 2019-04-29; in service 2019-06-01; point of interconnection: Waterman 120kV Substation; ITC MIDWEST (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
 - MISO J1346; Gas; 334 MW; Wayne County; Withdrawn; queued 2019-04-29; in service 2022-01-01; point of interconnection: Brownstown 345kV Substation; ITC MIDWEST (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
 - MISO J444; Gas; 235 MW; Wayne County; Withdrawn; queued 2015-05-07; in service 2017-01-31; point of interconnection: Waterman/Navarre 230kV; ITC MIDWEST (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
-- MISO J1798; Gas; 0 MW; Wayne County; Done; queued 2020-06-24; in service 2021-06-01; point of interconnection: Waterman 120kV; ITC (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J1798; Gas; 25 MW; Wayne County; Done; queued 2020-06-24; in service 2021-06-01; point of interconnection: Waterman 120kV; ITC (same county, gas or oil, check it is this plant). Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
 
 ### Zeeland generating station (L100000401831), Zeeland, Ottawa County
 
@@ -177,25 +243,55 @@ No queue entry matched.
 - MISO J914; Gas; 30 MW; Manistee County; Withdrawn; queued 2017-06-16; in service 2019-10-01; point of interconnection: Filer City 138 kV Substation; METC. Citation: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
 - PJM N46; Natural Gas; 1120 MW; Berrien County; Withdrawn; queued 2005-01-31; in service 2009-06-01; point of interconnection: Cook 345kV; AEP. Citation: https://www.pjm.com/planning/service-requests/serial-service-request-status
 
-## Entries with fuel not shown (state's own transmission owner with the state blanked, or a PJM entry with no fuel)
+## Entries with fuel not shown (state's own transmission owner with the state blanked, a PJM entry with no fuel, or an SPP thermal entry with no fuel)
 
 MISO blanks state, fuel, county and point of interconnection on its newest entries. Sizes of 100 MW or more are worth a look when the sweep reaches the plant's utility.
 
 - MISO R1040; (not shown); 749 MW; Ottawa County; Done; queued 2023-11-09; in service 2028-03-31; point of interconnection: Campbell Substation 345kV; METC
 - MISO R1052; (not shown); 615 MW; Active; queued 2024-06-24; in service 2028-03-31; point of interconnection: "18CAMPBELLW”, “18CAMPBELLB; METC
+- MISO J4423; (not shown); 300 MW; Clinton County; Active; queued 2026-09-12; in service 2031-05-30; point of interconnection: GREENWOOD - RAPSON 345.0kV; ITC
 - MISO J4269; (not shown); 300 MW; Active; queued 2026-08-13; in service 2031-03-26; METC
 - MISO J4233; (not shown); 300 MW; Active; queued 2026-03-21; in service 2031-06-30; ITC
 - MISO J4234; (not shown); 300 MW; Active; queued 2026-03-21; in service 2031-06-30; ITC
+- MISO J4414; (not shown); 250 MW; Active; queued 2026-09-14; in service 2031-09-30; METC
 - MISO J4210; (not shown); 250 MW; Active; queued 2026-02-06; in service 2030-01-06; ITC
+- MISO S1130; (not shown); 225 MW; Active; queued 2026-01-29; in service 2027-03-15; METC
 - MISO R1041; (not shown); 220 MW; Wayne County; Done; queued 2023-10-11; in service 2025-05-31; point of interconnection: TCHPP Position JC 120kV; METC
+- MISO S1144; (not shown); 200 MW; Active; queued 2026-02-10; in service 2028-03-31; METC
 - MISO S1172; (not shown); 200 MW; Clinton County; Active; queued 2026-03-07; in service 2027-12-01; point of interconnection: Calamus East; METC
 - MISO J4237; (not shown); 200 MW; Active; queued 2026-03-24; in service 2031-06-30; METC
+- MISO S1069; (not shown); 200 MW; Montcalm County; Done; queued 2024-11-01; in service 2027-01-01; point of interconnection: Eureka to Vestaburg 138kV; ITC
 - MISO J4212; (not shown); 150 MW; Active; queued 2026-02-18; in service 2030-01-06; ITC
+- MISO S1068; (not shown); 150 MW; Hillsdale County; Active; in service 2027-01-01; point of interconnection: Cronk Road; ITC
+- MISO S1060; (not shown); 149 MW; Shiawasse County; Done; queued 2024-07-25; in service 2026-02-01; point of interconnection: Gross 138kV - Bus #256155; METC
+- MISO S1147; (not shown); 132 MW; Active; queued 2026-01-17; in service 2027-01-07; METC
+- MISO S1146; (not shown); 125 MW; Muskegon County; Active; queued 2026-03-16; in service 2029-06-01; point of interconnection: DU PONT - WHITE LAKE 138.0kV; ITC
+- MISO S1059; (not shown); 100.3 MW; Tuscola County; Active; queued 2024-07-26; in service 2027-01-30; point of interconnection: Dixon 120kV - Bus # 265182; ITC
 - MISO S1184; (not shown); 100 MW; Fayette County; Active; queued 2026-04-04; in service 2027-06-07; point of interconnection: Ramsey; METC
 - MISO J4208; (not shown); 100 MW; Active; queued 2025-12-20; in service 2029-05-01; METC
+- MISO S1011; (not shown); 100 MW; Gratiot County; Withdrawn; queued 2021-10-15; in service 2023-09-01; point of interconnection: Slate 345 kV Sub (256573); METC
+- MISO S1020; (not shown); 100 MW; Gratiot County; Done; queued 2022-04-25; in service 2023-09-01; point of interconnection: Slate Substation 345kV; METC
 - MISO J4207; (not shown); 100 MW; Active; queued 2025-12-20; in service 2030-06-30; METC
+- MISO S1138; (not shown); 100 MW; Active; queued 2025-12-13; in service 2027-03-27; METC
 - MISO J4206; (not shown); 100 MW; Active; queued 2025-12-20; in service 2030-06-30; METC
+- MISO S1136; (not shown); 100 MW; Active; queued 2025-12-19; in service 2026-12-04; METC
 - MISO J4209; (not shown); 100 MW; Active; queued 2025-12-20; in service 2030-06-30; METC
 - MISO J4228; (not shown); 100 MW; Active; queued 2026-03-19; in service 2032-04-20; METC
+- MISO S1058; (not shown); 100 MW; Calhoun County; Done; in service 2026-08-01; point of interconnection: Stonehill Substation 138kV; METC
+- MISO S1031; (not shown); 90 MW; Isabella County; Active; queued 2022-08-19; in service 2025-07-30; point of interconnection: Salt River Substation 138kV; METC
 - MISO S1032; (not shown); 90 MW; Isabella County; Active; queued 2022-08-19; in service 2025-07-30; point of interconnection: Salt River Substation 138kV; METC
+- MISO S1021; (not shown); 80 MW; Gratiot County; Done; queued 2022-04-25; in service 2023-09-01; point of interconnection: Luce Substation; METC
 - MISO S1012; (not shown); 80 MW; Withdrawn; queued 2021-10-15; point of interconnection: Luce 138 kV Sub(256594); METC
+- MISO S1065; (not shown); 76.5 MW; Washtenaw County; Active; queued 2024-10-07; in service 2028-09-30; point of interconnection: Majestic 345kV to Milan 345kV; ITC
+- MISO S1018; (not shown); 75 MW; Done; queued 2022-04-20; in service 2022-06-01; point of interconnection: 7 Mile Creek 138kV; AMERICAN TRANSMISSION COMPANY
+- MISO S1066; (not shown); 75 MW; Lenawee County; Active; queued 2024-10-07; in service 2027-09-30; METC
+- MISO S1062; (not shown); 75 MW; Branch County; Done; queued 2024-08-15; in service 2026-10-15; point of interconnection: New Byers 138kV; METC
+- MISO S1067; (not shown); 75 MW; Washtenaw County; Done; queued 2024-10-02; in service 2027-09-30; point of interconnection: Majestic- Lemoyne 345 kV; ITC
+- MISO S1007; (not shown); 70 MW; Tuscola County; Withdrawn; queued 2021-07-08; in service 2022-10-01; point of interconnection: Atlanta – Tuscola 120 kV line(265183); ITC
+- MISO S1002; (not shown); 70 MW; Withdrawn; queued 2020-10-01
+- MISO S1063; (not shown); 70 MW; Calhoun County; Done; queued 2024-08-28; in service 2027-09-30; point of interconnection: Verona - Foundry 138kV; METC
+- MISO S1015; (not shown); 55 MW; Delta County; Active; queued 2022-04-11; in service 2025-11-01; point of interconnection: Garden Corners 138kV; AMERICAN TRANSMISSION COMPANY
+- MISO S1010; (not shown); 50 MW; Gratiot County; Withdrawn; queued 2021-10-15; in service 2021-09-01; point of interconnection: Redstone138 kV Sub(256542); METC
+- MISO S1038; (not shown); 50 MW; Shiawassee County; Withdrawn; queued 2022-12-07; in service 2025-02-01; point of interconnection: Gross 138kV; ITC
+- MISO S1019; (not shown); 50 MW; Done; queued 2022-04-25; in service 2023-09-01; point of interconnection: Redstone 138kV; METC
+- MISO S1061; (not shown); 50 MW; Midland County; Active; queued 2024-08-01; in service 2026-09-30; point of interconnection: Redstone 138 kV - Bus #256543; METC

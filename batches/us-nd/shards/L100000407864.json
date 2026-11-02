@@ -1,0 +1,142 @@
+{
+ "meta": {
+  "plant_id": "L100000407864",
+  "plant_name": "Xcel Fargo power plant",
+  "state": "North Dakota",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-10-29T16:40:00-04:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000410559",
+   "unit_name": "1",
+   "findings": {
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://web.archive.org/web/20220118235603/https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/Upper%20Midwest%20Energy%20Plan%20-%20Reply%20Comments.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20220118235603/https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/Upper%20Midwest%20Energy%20Plan%20-%20Reply%20Comments.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "A saved copy of Xcel Energy's Upper Midwest Energy Plan reply comments (https://web.archive.org/web/20220118235603/https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/Upper%20Midwest%20Energy%20Plan%20-%20Reply%20Comments.pdf) describes a 400 MW combustion turbine in Fargo as a system reliability unit, not a data center backup unit. It does not use the words backup power. This is a saved copy because the live page is gone."
+    }
+   },
+   "not_found": [
+    "Status (no new document; existing source still stands)",
+    "Equipment Manufacturer/Model",
+    "Latest Activity (not filled for a cancelled unit)"
+   ],
+   "notes": "The unit stays cancelled. No document names a turbine maker or model, because the project never reached a permit."
+  }
+ ],
+ "plant_findings": {
+  "Location accuracy": {
+   "value": "approximate",
+   "refs": [
+    "https://web.archive.org/web/20220118235603/https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/Upper%20Midwest%20Energy%20Plan%20-%20Reply%20Comments.pdf"
+   ],
+   "verifications": [
+    {
+     "url": "https://web.archive.org/web/20220118235603/https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/Upper%20Midwest%20Energy%20Plan%20-%20Reply%20Comments.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The saved copy of Xcel Energy's reply comments (https://web.archive.org/web/20220118235603/https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/Upper%20Midwest%20Energy%20Plan%20-%20Reply%20Comments.pdf) says only that a combustion turbine is planned for Fargo, North Dakota, near existing gas infrastructure. That places it at city level, so the accuracy is approximate. This is a saved copy because the live page is gone."
+  }
+ },
+ "location": {
+  "method": "site_reference",
+  "location_route": "No document gives an address or parcel; the only reference is the city of Fargo, so the point stays approximate.",
+  "moved_m": null,
+  "control_points": [],
+  "fit_m": null,
+  "image": "",
+  "needs_review": false,
+  "review_note": "No satellite look was taken because no stated site exists to check."
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000410559",
+   "concern_type": "location",
+   "question": "Can the Xcel Fargo turbine site be placed any better than Fargo?",
+   "finding": "The Xcel Energy 2019 resource plan filing (https://www.psc.nd.gov/webdocs/case/19-0220/001-010.pdf) and the reply comments saved at the Wayback Machine name only Fargo. GEM's point of 46.88087, -96.82783 matches a point in the World Resources Institute power plant database, not a site document. I found no air permit, commission case or address for this project.",
+   "recommendation": "Leave the point as it is and keep the accuracy approximate. The project was cancelled before any site was named.",
+   "note": "Searched: the harvested air permit index (nothing matched), North Dakota commission documents, the Xcel reply comments, and a web search. The Minnesota decision of February 2022 is described at https://elpc.org/news/solar-advocates-celebrate-decision-on-xcel-energy-resource-plan/ and names no site.",
+   "refs": [
+    "https://www.psc.nd.gov/webdocs/case/19-0220/001-010.pdf",
+    "https://web.archive.org/web/20220118235603/https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/Upper%20Midwest%20Energy%20Plan%20-%20Reply%20Comments.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000410559",
+   "concern_type": "identity",
+   "question": "Is MISO request J3163 in Cass County the cancelled Xcel Fargo turbine?",
+   "finding": "MISO request J3163 is an active Northern States Power hybrid of 481 MW in Cass County, queued July 2022, in service March 2028, with the connection at the Bison substation. The Fargo turbine was a 400 MW unit dropped in 2022 per https://elpc.org/news/solar-advocates-celebrate-decision-on-xcel-energy-resource-plan/. No document ties the two together.",
+   "recommendation": "Treat J3163 as a separate project and leave this unit cancelled. Add J3163 as its own plant in a discovery pass once a document gives its turbine type.",
+   "note": "I could not verify the queue entry text: the MISO queue page at https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/ is drawn by script and does not show the request to the verifier. The entry was read from the pre-sweep harvest for this batch.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/Upper%20Midwest%20Energy%20Plan%20-%20Reply%20Comments.pdf",
+   "used_for": [
+    "Location accuracy"
+   ],
+   "outcome": "dead",
+   "note": "Live address returns 404. Wayback copy of January 2022 shows Fargo."
+  },
+  {
+   "url": "https://web.archive.org/web/20220118235603/https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/Upper%20Midwest%20Energy%20Plan%20-%20Reply%20Comments.pdf",
+   "used_for": [
+    "Backup Power",
+    "Location accuracy"
+   ],
+   "outcome": "verified",
+   "note": "Saved copy; Fargo 400 MW turbine passage read."
+  },
+  {
+   "url": "https://www.psc.nd.gov/webdocs/case/19-0220/001-010.pdf",
+   "used_for": [
+    "Location"
+   ],
+   "outcome": "verified",
+   "note": "Xcel 2019 resource plan cover letter; no site given."
+  },
+  {
+   "url": "https://elpc.org/news/solar-advocates-celebrate-decision-on-xcel-energy-resource-plan/",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Existing source, February 2022."
+  },
+  {
+   "url": "https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/",
+   "used_for": [
+    "identity question"
+   ],
+   "outcome": "failed",
+   "note": "Script-drawn page; verifier did not find J3163."
+  }
+ ]
+}

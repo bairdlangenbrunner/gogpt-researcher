@@ -128,7 +128,18 @@
    "independent": false,
    "source_language": "en",
    "researcher_notes": "The EIA-860M table for August 2026 lists Astoria Generating Station, plant 8906, generator 4, in its retired sheet. It shows a nameplate of 387.0 MW, an operating date of December 1961, and a retirement date of February 2021. GEM has this unit as mothballed. That is a status change, and I found only this one publisher. The New York Independent System Operator and the plant owner did not give a second document that I could open. The federal table says this unit retired in February 2021, not mothballed. I could not find a second publisher, so the change is medium confidence. I found no mothball notice for unit 4.",
-   "action": "Set Status of unit 4 (G100000402811) to retired. It now says mothballed. Add the link below to the Status Data Source box. Keep the links already there."
+   "action": "Set Status of unit 4 (G100000402811) to retired. It now says mothballed. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add a retired milestone for February 2021, when the unit retired, with the EIA-860M table for August 2026 as the source.",
+   "milestones": [
+    {
+     "status": "retired",
+     "year": 2021,
+     "period": "February",
+     "sources": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     ],
+     "note": "the EIA-860M table for August 2026 lists Astoria Generating Station generator 4 in its retired sheet with a retirement date of February 2021."
+    }
+   ]
   },
   {
    "gem_unit_id": "G100000402811",
@@ -182,7 +193,8 @@
    },
    "refs": {
     "Status Data Source": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+     "https://www.eia.gov/electricity/data/eia860m/archive/xls/february_generator2022.xlsx"
     ]
    },
    "verifications": [
@@ -191,13 +203,39 @@
      "ok": true,
      "contains_value": true,
      "name_found": true
+    },
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/february_generator2022.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "the February 2022 EIA-860M table lists West Babylon generator 4 on the operating sheet with the standby code."
+    },
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/archive/xls/january_generator2022.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "the January 2022 EIA-860M table lists West Babylon generator 4 on the retired sheet, retired December 2020."
     }
    ],
    "tier": "high",
    "independent": false,
    "source_language": "en",
    "researcher_notes": "The EIA-860M table for August 2026 lists West Babylon, plant 2521, generator 4, as standby. Its code reads: available for service but not normally used. It is on the operating sheet with no planned retirement. This matches GEM's mothballed status, so nothing changes. Still mothballed according to the August 2026 federal table. No retirement date is listed. A web search showed National Grid filed a notice in April 2020 to retire this unit in December 2020, but the unit is still listed, and I could not open that notice to learn why.",
-   "action": "Leave Status of unit 4 (G100000414080) as mothballed. It is still correct. Add the link below to the Status Data Source box. Keep the links already there."
+   "action": "Leave Status of unit 4 (G100000414080) as mothballed. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add a mothballed milestone for 2022 with no month, when the unit first appeared as standby in the EIA-860M table for February 2022, with that table as the source.",
+   "milestones": [
+    {
+     "status": "mothballed",
+     "year": 2022,
+     "period": "",
+     "sources": [
+      "https://www.eia.gov/electricity/data/eia860m/archive/xls/february_generator2022.xlsx"
+     ],
+     "note": "the EIA-860M table for February 2022 is the first one to list West Babylon generator 4 as standby, available for service but not normally used. the January 2022 table still listed it as retired in December 2020. the exact month it went on standby is not given.",
+     "period_note": "searched the monthly EIA-860M tables from November 2020 to December 2024 and the 2020 New York grid operator deactivation list. they show only that the unit changed from retired to standby between the January and February 2022 tables, with no month of its own."
+    }
+   ]
   },
   {
    "gem_unit_id": "G100001017984",

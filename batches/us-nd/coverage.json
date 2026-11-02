@@ -1,0 +1,725 @@
+{
+  "sources": {
+    "nddeq-public-notices": {
+      "status": "searched",
+      "how": "Read the harvested index in scopes/us-nd/work/permits from harvest_permits.py: 298 notices and 248 saved permit documents in 94 folders, matched to GEM plants, with the 24 unmatched power-like facilities checked by hand.",
+      "found": "Permits for all GEM plants with permits. The Applied Digital Ellendale backup fleets match GEM. Unmatched facilities are small emergency, peaking or industrial sources: Minnkota Colfax diesel engines, Hillsboro peaking engines, Basin's Bismarck emergency generator, Cavalier, Minot Air Force Base, AIC fuels and LM Wind. Crusoe's flare gas engines are portable sets under 50 MW per site. No new gas plant of 50 MW or more."
+    },
+    "nddeq-notices-wayback": {
+      "status": "searched",
+      "how": "The harvester enumerated past notices through the Wayback Machine and read 113 saved copies of the notice page. On October 29, 2026 single addresses were also read from saved copies, such as the Colfax memo.",
+      "found": "Past notices for Heskett, Spiritwood, Pioneer, Lonesome Creek, Bison, Coal Creek and the Applied Digital sites. Nothing new at 50 MW or more. Later direct lookups hit a 429 limit and then an outage, fetch.py returned a not found page for the old notice addresses, and the Wayback Machine lookup returned 429 and then was offline on October 29, 2026."
+    },
+    "nddeq-general-notices": {
+      "status": "searched",
+      "how": "Read the general public notice list and the notice feed, both answering with 37 items, through the harvester.",
+      "found": "No power plant or data center item beyond those on the air quality page."
+    },
+    "ceris-nd": {
+      "status": "searched",
+      "how": "The harvester read the CERIS public notice list and the air site records: 14 air sites and 9 notices.",
+      "found": "Air site records for Bison, Heskett, Lonesome Creek, Pioneer, Spiritwood, Coal Creek, Coyote, Antelope Valley, Leland Olds, Young, the Hillsboro peak load generators, Basin's Bismarck emergency generator and LM Wind. No new gas plant."
+    },
+    "psc-case-search": {
+      "status": "searched",
+      "how": "Used batches/us-nd/harvest/psc_dockets.md: case search by filing date from 2022, 13 entity names and 8 description words, plus 23 hand-checked cases, 2,140 cases with 415 about generation.",
+      "found": "PU-24-342 is Xcel's eastern North Dakota gas plant duty, not a Basin case, and now names the 447 MW Bison plant, added in this batch. PU-23-325 is Cerilon, raised as a question. PU-26-155 is Applied Digital's backup engines. PU-26-284 is the 200 MW Harmony battery. PU-25-086 is Basin's Bison Generation Station, already in GEM."
+    },
+    "psc-webdocs": {
+      "status": "searched",
+      "how": "Read the documents of every gas case with pdftotext, including PU-24-342 entries 9, 11 and 16, PU-23-325 entries 1 and 67, and PU-26-155 entries 1.",
+      "found": "The 447 MW Bison plant with a late 2032 service date, the Cerilon steam turbine units of 100 MW gross per phase, and Applied Digital's statement that similar backup engines would be used at its other North Dakota sites."
+    },
+    "psc-siting": {
+      "status": "searched",
+      "how": "Read the siting page and its siting spreadsheet, 80 lines kept, through the harvester and again by fetch.py on October 29, 2026.",
+      "found": "No letter of intent or certificate for a gas plant of 50 MW or more without a case number."
+    },
+    "spp-queue": {
+      "status": "searched",
+      "how": "Used batches/us-nd/harvest/queues.md from pull_queues.py.",
+      "found": "GEN-2024-081 and 082 are Basin's Bison plant, ERAS-2025-011 and 012 are River Run, GEN-2022-083, 010 and 009 are Pioneer, and GEN-2020-014 is Lonesome Creek. All are in GEM. No other gas or oil entry."
+    },
+    "miso-queue": {
+      "status": "searched",
+      "how": "Used the MISO part of batches/us-nd/harvest/queues.md and the MISO queue data.",
+      "found": "J3163 is Xcel's 481 MW Bison turbine, added in this batch at the 447 MW in Xcel's filing. S1036 is Great River Energy's 400 MW Discovery Wind project, not gas. J1193 Heskett is withdrawn. J4335 and J4366 are in Clay County, Minnesota with fuel blank. Blank-state entries J4180, J4187, J4333 and J4408 give no fuel or county."
+    },
+    "eia-860m": {
+      "status": "searched",
+      "how": "Read the Operating, Planned and Canceled sheets for North Dakota in the September 2026 file.",
+      "found": "Every gas or oil plant of 50 MW or more is in GEM. Bison is EIA plant 69071. The rest are under 50 MW or retired before 2020, listed under ids_followup."
+    },
+    "eia-860": {
+      "status": "searched",
+      "how": "Read the 2025 annual Plant and Owner tables for North Dakota plants 2790, 56786, 57881, 57943 and 69071.",
+      "found": "Heskett at 2025 38th St, Mandan; Spiritwood at 3366 93rd Ave SE, Spiritwood; Pioneer at 5639 151st Ave NW, Williston; Lonesome Creek at 2648 140th Ave NW, Alexander; Bison at 6261 121st Ave NW, Ray. All are owned wholly by the reporting utility, so none appear in the joint owner table."
+    },
+    "basin-electric": {
+      "status": "searched",
+      "how": "Read Basin's news releases and project pages for Bison, Pioneer, Lonesome Creek and River Run during the plant research.",
+      "found": "Dates, sizes and turbine details for Basin's plants, all already in GEM. No new Basin gas plant in North Dakota."
+    },
+    "minnkota": {
+      "status": "searched",
+      "how": "Read Minnkota's news and resource plan page, and the Valley News Live story of October 7, 2026.",
+      "found": "The 400 MW Cass County gas plant for 2031, already in GEM. The Colfax diesel engines are under 50 MW. No other gas plant."
+    },
+    "otter-tail": {
+      "status": "searched",
+      "how": "Read the resource plan page and searched news for Otter Tail gas plans.",
+      "found": "The Minnesota plan of May 15, 2026 proposes a 50 MW gas plant for 2031 or 2032 with no site named, put on the watch list. The Jamestown oil units are 48.2 MW in total. No link to the Geronimo data center was found."
+    },
+    "mdu": {
+      "status": "searched",
+      "how": "Read Volume IV of the 2024 North Dakota resource plan and the ten year plan filed in South Dakota in July 2026.",
+      "found": "Heskett 3 and 4 are the only Montana-Dakota gas units in North Dakota. Coyote replacement turbines appear only as a sensitivity case, put on the watch list. The owner source for Heskett is the plan and the EIA annual survey."
+    },
+    "great-river-energy": {
+      "status": "searched",
+      "how": "Read Great River Energy's news releases and the Discovery Wind release.",
+      "found": "The McLean County surplus interconnection entry is the 400 MW Discovery Wind project. Spiritwood's owner and site match the EIA annual survey. No new gas plant."
+    },
+    "xcel-nsp": {
+      "status": "searched",
+      "how": "Read Xcel's filings in case PU-24-342 and the MISO queue entry J3163.",
+      "found": "The 447 MW Bison combustion turbine for late 2032, added as a new plant. GEM's Xcel Fargo record stays cancelled, raised in a question card."
+    },
+    "possible-updates-sheet": {
+      "status": "searched",
+      "how": "Read the gas/oil plants tab through the work Google profile on October 29, 2026; two North Dakota rows.",
+      "found": "The River Run row from December 2025 is done. The October 28, 2026 row lists data centers: Polaris Forge 3 has grid power with no permit yet and is on the watch list; Harmony Energy Park is on the watch list; Critical Data House and Project Fighting Pike are the same Williston campus, on the watch list; Bitzero Nekoma is a small grid supplied site of 2.5 to 10 MW with no gas plant found; the Coal Creek campus is added as the Coal Creek gas plant; Nakota is already in GEM."
+    },
+    "data-centers": {
+      "status": "searched",
+      "how": "Answered every site in the data center file, read the Applied Digital permits and commission filings, and searched news for the Harmony, Center, Williston, Nekoma and Coal Creek campuses.",
+      "found": "Ellendale, Harwood, Base Electron, Nakota and River Run are in GEM. Coal Creek is added. Harmony, Polaris Forge 3 and Fighting Pike are on the watch list with no generation named. Crusoe's flare gas engine sets are under 50 MW per site."
+    }
+  },
+  "ids_followup": {
+    "2801": {
+      "decision": "below_threshold",
+      "evidence": "Jamestown, Otter Tail Power: two oil standby turbines of 24.1 MW each, 48.2 MW in all, in the EIA monthly file for September 2026.",
+      "gem_plant_id": ""
+    },
+    "52133": {
+      "decision": "below_threshold",
+      "evidence": "Tesoro Mandan refinery: three units of 3.1 MW in the EIA monthly file.",
+      "gem_plant_id": ""
+    },
+    "6030": {
+      "decision": "below_threshold",
+      "evidence": "Coal Creek oil units: two 3.0 MW standby units in the EIA monthly file; the coal units are tracked by the coal tracker.",
+      "gem_plant_id": ""
+    },
+    "69583": {
+      "decision": "below_threshold",
+      "evidence": "Marvin Composites: 2.5 MW in the EIA monthly file.",
+      "gem_plant_id": ""
+    },
+    "2811": {
+      "decision": "below_threshold",
+      "evidence": "Grafton: under 3 MW in the EIA monthly file.",
+      "gem_plant_id": ""
+    },
+    "7884": {
+      "decision": "below_threshold",
+      "evidence": "Dakota Magic: under 3 MW in the EIA monthly file.",
+      "gem_plant_id": ""
+    },
+    "56098": {
+      "decision": "below_threshold",
+      "evidence": "Hillsboro: under 3 MW in the EIA monthly file.",
+      "gem_plant_id": ""
+    },
+    "56242": {
+      "decision": "below_threshold",
+      "evidence": "Kindred School: under 3 MW in the EIA monthly file.",
+      "gem_plant_id": ""
+    },
+    "2821": {
+      "decision": "out_of_scope",
+      "evidence": "Grand Forks, Minnkota: small units retired in 2012, before the 2020 cutoff for retired units.",
+      "gem_plant_id": ""
+    },
+    "2822": {
+      "decision": "out_of_scope",
+      "evidence": "Harwood: small units retired in 2007 and 2012, before the 2020 cutoff.",
+      "gem_plant_id": ""
+    },
+    "2791": {
+      "decision": "out_of_scope",
+      "evidence": "Williston, Montana-Dakota: two 5 MW turbines retired in 2012, before the 2020 cutoff.",
+      "gem_plant_id": ""
+    },
+    "2824": {
+      "decision": "out_of_scope",
+      "evidence": "Stanton, Great River Energy: a 1 MW unit retired in 2017, before the 2020 cutoff.",
+      "gem_plant_id": ""
+    },
+    "2790": {
+      "decision": "already_in_gem",
+      "evidence": "R M Heskett, Mandan, in the EIA monthly and annual files.",
+      "gem_plant_id": "L100000104092"
+    },
+    "56786": {
+      "decision": "already_in_gem",
+      "evidence": "Spiritwood Station in the EIA monthly and annual files.",
+      "gem_plant_id": "L100000104096"
+    },
+    "57881": {
+      "decision": "already_in_gem",
+      "evidence": "Pioneer Generation Station; EIA shows unit 1 operating.",
+      "gem_plant_id": "L100000401741"
+    },
+    "57943": {
+      "decision": "already_in_gem",
+      "evidence": "Lonesome Creek Station in the EIA monthly and annual files.",
+      "gem_plant_id": "L100000401740"
+    },
+    "69071": {
+      "decision": "already_in_gem",
+      "evidence": "Bison Generation Station, four planned generators in the EIA monthly file.",
+      "gem_plant_id": "L100001047848"
+    }
+  },
+  "data_centers": {
+    "applied-digital-corporat-applied-digital": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001089074",
+      "note": "State air permit draft ACP-18296 covers 60 Caterpillar 3516E diesel engines of 3,000 kW each, 180 MW, at the Ellendale campus. This is part of GEM's Applied Digital ELN Generation Plant."
+    },
+    "applied-digital-corporat-applied-digital-2": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001089074",
+      "note": "State air permit draft ACP-18338 adds 192 engines for 252 in all at Ellendale, matching the 779.52 MW GEM lists for Applied Digital ELN Generation Plant."
+    },
+    "crusoe-energy-systems-crusoe-energy-syst": {
+      "decision": "below_threshold",
+      "summed_nameplate_mw": 15,
+      "note": "State permit ACP-18252, applied for August 20, 2024, covers a portable fleet of Waukesha gas engines run on flare gas, numbered ENG-01 to ENG-43, with up to 10 engines at any one well site. At roughly 1.5 MW per engine that is about 15 MW per site, an estimate because the permit pages now return not found and the Wayback Machine was offline. Each site is far under 50 MW."
+    },
+    "base-electron-corp-100-center": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001089055",
+      "note": "Base Electron's four 300 MW gas units, 1,200 MW, are GEM's Base Electron power station."
+    },
+    "applied-digital-corp-100-ellendale": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001089074",
+      "note": "Applied Digital's Ellendale backup engine fleet, 779.52 MW, is GEM's Applied Digital ELN Generation Plant."
+    },
+    "babcock-wilcox-enterpris-ellendale": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001083334",
+      "note": "Babcock and Wilcox's 400 MW gas plant for the Ellendale campus is GEM's Polaris Forge 1 power station."
+    },
+    "applied-digital-corp-100-harwood": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001089073",
+      "note": "Applied Digital's Harwood backup engine fleet, 576 MW, is GEM's Applied Digital FAR Generation Plant."
+    },
+    "babcock-wilcox-enterpris-harwood": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001083335",
+      "note": "Babcock and Wilcox's 280 MW gas plant for the Harwood campus is GEM's Polaris Forge 2 power station."
+    },
+    "nextera-energy-stanton": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001080387",
+      "note": "NextEra and Basin's combined cycle plant near Stanton is GEM's River Run Energy Center."
+    },
+    "tachyon9-corporation-50-williston": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001084854",
+      "note": "The Nakota campus gas power of up to 1 GW in Williams County is GEM's Nakota Data Center Campus Power Plant."
+    }
+  },
+  "dedup": {
+    "us-nd:new:xcel-bison-generating-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-10-30",
+      "evidence": "The name match is Basin Electric's Bison Generation Station in Williams County, about 500 kilometers away. It has another owner and is a separate project. The nearby GEM plant is Minnkota Power's Cass power station, 2.8 kilometers away and also planned for Harmony Township. Minnkota is a different utility, and its plant was announced in October 2026 at 400 MW. This record is Xcel's 447 MW bid in Public Service Commission case PU-24-342 and MISO request J3163, which Northern States Power filed."
+    }
+  },
+  "queues": {
+    "MISO J4180": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 755.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location. The batch coverage notes already list this blank-state request.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4180"
+      ]
+    },
+    "MISO J4187": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 755.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location. The batch coverage notes already list this blank-state request.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4187"
+      ]
+    },
+    "MISO R5092": {
+      "decision": "other_state",
+      "evidence": "MISO's queue file shows Washington County with the point of interconnection 4JORD to 4ASHLEY 138 kV. North Dakota has no Washington County. The interconnection.fyi tracker places the request in Washington County, Minnesota. It is a replacement request with fuel hidden, and nothing found names a fuel.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-r5092"
+      ]
+    },
+    "MISO J4288": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 140.0 MW request (owner Great River Energy) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Great River Energy's 2026 North Dakota ten-year plan says it will build up to 420 MW of gas combustion turbines for 2031 and 2032 and that sites are not yet chosen, so no request can be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4288"
+      ]
+    },
+    "MISO J4442": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 584.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4442"
+      ]
+    },
+    "MISO J4306": {
+      "decision": "other_state",
+      "evidence": "MISO's queue file shows Ford County with a point of interconnection of Other. North Dakota, Minnesota and South Dakota have no Ford County, so this is not a North Dakota project. The only MISO state with a Ford County is Illinois, but no source read confirms that, so the state is left open. Fuel is hidden and nothing found names it.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4306"
+      ]
+    },
+    "MISO J4289": {
+      "decision": "other_state",
+      "evidence": "MISO's queue file shows Goodhue County with the point of interconnection North Rochester to Prairie Island 345 kV. Goodhue County and Prairie Island are in Minnesota, and North Dakota has no Goodhue County. The interconnection.fyi tracker also lists Minnesota. Fuel is hidden and no source names it.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4289"
+      ]
+    },
+    "MISO J4427": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 250.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4427"
+      ]
+    },
+    "MISO J4338": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 300.0 MW request (owner Great River Energy) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Great River Energy's 2026 North Dakota ten-year plan says it will build up to 420 MW of gas combustion turbines for 2031 and 2032 and that sites are not yet chosen, so no request can be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4338"
+      ]
+    },
+    "MISO J4372": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 470.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4372"
+      ]
+    },
+    "MISO J4431": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 200.0 MW request (owner Great River Energy) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Great River Energy's 2026 North Dakota ten-year plan says it will build up to 420 MW of gas combustion turbines for 2031 and 2032 and that sites are not yet chosen, so no request can be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4431"
+      ]
+    },
+    "MISO J4374": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 250.0 MW request (owner Otter Tail Power Company Otp) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Otter Tail's May 2026 Minnesota resource plan proposes only a 50 MW gas plant, much smaller than this request, so it cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4374"
+      ]
+    },
+    "MISO J4376": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 250.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4376"
+      ]
+    },
+    "MISO J4370": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 400.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4370"
+      ]
+    },
+    "MISO J4432": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 420.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4432"
+      ]
+    },
+    "MISO J4394": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 400.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4394"
+      ]
+    },
+    "MISO J4395": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 100.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4395"
+      ]
+    },
+    "MISO J4397": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 300.0 MW request (owner Minnesota Power Inc.) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4397"
+      ]
+    },
+    "MISO J4375": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 250.0 MW request (owner Otter Tail Power Company Otp) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Otter Tail's May 2026 Minnesota resource plan proposes only a 50 MW gas plant, much smaller than this request, so it cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4375"
+      ]
+    },
+    "MISO J4396": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 250.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4396"
+      ]
+    },
+    "MISO J4430": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 125.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4430"
+      ]
+    },
+    "MISO J4422": {
+      "decision": "other_state",
+      "evidence": "MISO's queue file shows Clinton County with the point of interconnection Greenwood to Rapson 345 kV. North Dakota has no Clinton County. A trade press article on the ITC Thumb Loop places the Greenwood and Rapson 345 kV substations in Michigan's Thumb region, so the line is not in North Dakota, even though the owner is listed as Otter Tail. Fuel is hidden and nothing found names it.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.tdworld.com/overhead-transmission/article/20963520/tc-thumb-loop-update",
+        "https://www.interconnection.fyi/project/miso-j4422"
+      ]
+    },
+    "MISO J4348": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 200.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4348"
+      ]
+    },
+    "MISO J4240": {
+      "decision": "other_state",
+      "evidence": "MISO's queue file shows Grant County and the Big Stone South 345 kV substation, owned by Otter Tail. North Dakota has a Grant County too, but Big Stone South is at Big Stone City, South Dakota, the start of the Big Stone South to Alexandria line in South Dakota Public Utilities Commission docket EL24-015. The interconnection.fyi tracker lists Grant County, South Dakota. Fuel is hidden and nothing found names it.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://puc.sd.gov/commission/dockets/electric/2024/EL24-015/EL24-015Settlestip.pdf",
+        "https://www.interconnection.fyi/project/miso-j4240"
+      ]
+    },
+    "MISO J4333": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 490.0 MW request (owner Great River Energy) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Great River Energy's 2026 North Dakota ten-year plan says it will build up to 420 MW of gas combustion turbines for 2031 and 2032 and that sites are not yet chosen, so no request can be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location. The batch coverage notes already list this blank-state request.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4333"
+      ]
+    },
+    "MISO J4391": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 392.0 MW request (owner Great River Energy) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Great River Energy's 2026 North Dakota ten-year plan says it will build up to 420 MW of gas combustion turbines for 2031 and 2032 and that sites are not yet chosen, so no request can be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4391"
+      ]
+    },
+    "MISO J4305": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 200.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4305"
+      ]
+    },
+    "MISO J4335": {
+      "decision": "other_state",
+      "evidence": "MISO's queue file shows Clay County and the point of interconnection Alexandria to Bison 345 kV, with Missouri River Energy Services as owner. North Dakota has no Clay County. The Minnesota Public Utilities Commission project page for the Bison to Alexandria second circuit says the Minnesota part of the line starts at the border in Clay County, Minnesota. Fuel is hidden and no source names the project.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://puc.eip.mn.gov/web/project/25116",
+        "https://www.interconnection.fyi/project/miso-j4335"
+      ]
+    },
+    "MISO J4364": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 200.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4364"
+      ]
+    },
+    "MISO J4366": {
+      "decision": "other_state",
+      "evidence": "MISO's queue file shows Clay County and the point of interconnection Alexandria to Bison 345 kV, with Missouri River Energy Services as owner. North Dakota has no Clay County. The Minnesota Public Utilities Commission project page for the Bison to Alexandria second circuit says the Minnesota part of the line starts at the border in Clay County, Minnesota. Fuel is hidden and no source names the project.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://puc.eip.mn.gov/web/project/25116",
+        "https://www.interconnection.fyi/project/miso-j4366"
+      ]
+    },
+    "MISO J4408": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 500.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location. The batch coverage notes already list this blank-state request.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4408"
+      ]
+    },
+    "MISO J4311": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 200.0 MW request (owner Otter Tail Power Company Otp) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Otter Tail's May 2026 Minnesota resource plan proposes only a 50 MW gas plant, much smaller than this request, so it cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4311"
+      ]
+    },
+    "MISO J3163": {
+      "decision": "add",
+      "record_id": "us-nd:new:xcel-bison-generating-station",
+      "evidence": "MISO's queue file lists J3163 as an active Northern States Power request of 481 MW in Cass County, North Dakota, with the point of interconnection Bison and the type combustion turbine, simple cycle. Xcel's filing in North Dakota Public Service Commission case PU-24-342 describes a 447 MW dispatchable plant beside its Bison substation in Cass County. A new plant record for it is already staged in this batch.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.psc.nd.gov/webdocs/case/24-0342/009-010.pdf",
+        "https://www.interconnection.fyi/project/miso-j3163"
+      ]
+    },
+    "MISO R1000": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000104092",
+      "record_id": "L100000104092:G100000403835:qa-other-3",
+      "evidence": "MISO's queue file shows Morton County and the R.M. Heskett Station point of interconnection, owned by Montana-Dakota Utilities, done and in service in 2022. The interconnection.fyi tracker lists it as gas. Heskett Station is already in the GEM database, with units 3 and 4 operating on gas. The staged note on a possible Heskett combined cycle conversion is a different question.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-r1000"
+      ]
+    },
+    "MISO S1036": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO's queue file shows McLean County in North Dakota with the point of interconnection Dickinson 345 kV, Buffalo, MN, owned by Great River Energy. The interconnection.fyi tracker lists the request as wind, and the batch coverage notes already identify it as the Discovery Wind project. It is a surplus service request and not gas or oil.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-s1036"
+      ]
+    },
+    "MISO R1036": {
+      "decision": "other_state",
+      "evidence": "MISO's queue file shows Sherburne County and the Sherburne County 345 kV substation, which is the Sherco plant in Becker, Minnesota. Xcel's 710 MW Sherco Solar project replaces retired Sherco coal capacity, and the interconnection.fyi tracker lists this request as solar at 710 MW. Not in North Dakota and not gas or oil.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.pv-tech.org/xcel-energy-retires-minnesota-coal-unit-eyes-710mw-solar-and-100-hour-battery-as-replacement",
+        "https://www.interconnection.fyi/project/miso-r1036"
+      ]
+    },
+    "MISO S1185": {
+      "decision": "other_state",
+      "evidence": "MISO's queue file shows Faribault County with the point of interconnection Huntley to Blue Earth 161 kV. Huntley and Blue Earth are in Minnesota, and North Dakota has no Faribault County. It is surplus service at an existing project. Fuel is hidden and no source names it.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-s1185"
+      ]
+    },
+    "MISO R5090": {
+      "decision": "fuel_not_published",
+      "evidence": "This is a replacement request (R-number) from Northern States Power with no county, state, point of interconnection, fuel or size shown in MISO's public queue file. The interconnection.fyi tracker shows nothing more. Searches for the request number and for Xcel replacement projects found no source naming its fuel or site, and it cannot be placed in North Dakota.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-r5090"
+      ]
+    },
+    "MISO J4223": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 250.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4223"
+      ]
+    },
+    "MISO R5089": {
+      "decision": "fuel_not_published",
+      "evidence": "This is a replacement request (R-number) from Northern States Power with no county, state, point of interconnection, fuel or size shown in MISO's public queue file. The interconnection.fyi tracker shows nothing more. Searches for the request number and for Xcel replacement projects found no source naming its fuel or site, and it cannot be placed in North Dakota.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-r5089"
+      ]
+    },
+    "MISO J4230": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 250.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4230"
+      ]
+    },
+    "MISO J4225": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 250.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4225"
+      ]
+    },
+    "MISO J4224": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 250.0 MW request (owner Northern States Power Company) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Xcel's North Dakota gas plan (case PU-24-342) names only the 447 MW Bison plant, which is already staged, so this request cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4224"
+      ]
+    },
+    "MISO S1173": {
+      "decision": "other_state",
+      "evidence": "MISO's queue file shows Union County with the point of interconnection Huttig to Strong 115 kV. Huttig and Strong are towns in Union County, Arkansas, and the interconnection.fyi tracker lists Arkansas. The owner label of Northern States Power looks like a data quirk. North Dakota has no Union County. Fuel is hidden.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-s1173",
+        "https://www.transit.wiki/Huttig"
+      ]
+    },
+    "MISO J4252": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 250.0 MW request (owner Great River Energy) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Great River Energy's 2026 North Dakota ten-year plan says it will build up to 420 MW of gas combustion turbines for 2031 and 2032 and that sites are not yet chosen, so no request can be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4252"
+      ]
+    },
+    "MISO J4250": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 200.0 MW request (owner Great River Energy) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Great River Energy's 2026 North Dakota ten-year plan says it will build up to 420 MW of gas combustion turbines for 2031 and 2032 and that sites are not yet chosen, so no request can be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4250"
+      ]
+    },
+    "MISO J4297": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 200.0 MW request (owner Otter Tail Power Company Otp) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Otter Tail's May 2026 Minnesota resource plan proposes only a 50 MW gas plant, much smaller than this request, so it cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4297"
+      ]
+    },
+    "MISO R1038": {
+      "decision": "other_state",
+      "evidence": "MISO's queue file shows Benton County and the Mayhew Lake 115 kV point of interconnection. North Dakota has no Benton County. The interconnection.fyi tracker lists Benton County, Minnesota, and a battery project replacing unbuilt solar. Not gas or oil.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-r1038"
+      ]
+    },
+    "MISO J4280": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 245.8 MW request (owner Otter Tail Power Company Otp) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Otter Tail's May 2026 Minnesota resource plan proposes only a 50 MW gas plant, much smaller than this request, so it cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4280"
+      ]
+    },
+    "MISO J4300": {
+      "decision": "fuel_not_published",
+      "evidence": "MISO's public queue file lists this (not shown) 238.7 MW request (owner Otter Tail Power Company Otp) in the 2026 study cycle with the state, county, point of interconnection and fuel all blank. The interconnection.fyi tracker shows no state, county or technology either. Otter Tail's May 2026 Minnesota resource plan proposes only a 50 MW gas plant, much smaller than this request, so it cannot be tied to it. Searches of news, state dockets and resource plans found no source that names this request, its fuel or its location.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://www.interconnection.fyi/project/miso-j4300"
+      ]
+    },
+    "MISO R1045": {
+      "decision": "other_state",
+      "evidence": "MISO's queue file shows Chippewa County and the Wheaton 161 kV point of interconnection. Wheaton Generating Station is in the Town of Wheaton, Chippewa County, Wisconsin, run by Xcel's Northern States Power. The Wisconsin Public Service Commission page for case 4220-CE-185 covers a repowering with one 210 MW combustion turbine and five 9 MW engines on gas or fuel oil. North Dakota has no Chippewa County. Not a North Dakota project.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://psc.wi.gov:443/Pages/CommissionActions/CasePages/WheatonRICEProject.aspx",
+        "https://www.interconnection.fyi/project/miso-r1045"
+      ]
+    },
+    "MISO R1050": {
+      "decision": "other_state",
+      "evidence": "MISO's queue file shows Scott County and the Blue Lake 115 kV point of interconnection, at Xcel's Blue Lake peaking plant in Shakopee, Minnesota. The Minnesota Public Utilities Commission lists a Blue Lake Battery Energy Storage Project with a 135.5 MW site permit, matching this request's 135.5 MW, and interconnection.fyi lists it as a battery. North Dakota has no Scott County.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://puc.eip.mn.gov/web/project/16354",
+        "https://content.govdelivery.com/accounts/MNPUBUC/bulletins/3f0d18a",
+        "https://www.interconnection.fyi/project/miso-r1050"
+      ]
+    },
+    "MISO S1045": {
+      "decision": "not_gas_or_oil",
+      "evidence": "MISO's queue file shows Emmons County, North Dakota, at the Napoleon SW 230 kV point, owned by Montana-Dakota Utilities. Great River Energy's 2026 resource plan says its 140 MW Emmons-Logan battery will use the existing MISO wind interconnection at the Emmons-Logan wind project, and interconnection.fyi lists the request as a battery. It is not gas or oil.",
+      "urls": [
+        "https://www.misoenergy.org/api/giqueue/getprojects",
+        "https://greatriverenergy.com/wp-content/uploads/2026/04/2026-2040-GRE-IRP-FINAL-4-1-2026-1.pdf",
+        "https://www.interconnection.fyi/project/miso-s1045"
+      ]
+    },
+    "SPP GEN-2024-082": {
+      "decision": "update",
+      "plant_id": "L100001047848",
+      "record_id": "L100001047848:G100001054598:qa-existence-1",
+      "evidence": "Basin Electric's Bison Generation Station in Williams County is already in GEM as two 745 MW units under construction. The Southwest Power Pool queue lists this request as a 760 MW gas thermal request at the Springbrook to Tande 345 kV line, owned by Basin Electric. North Dakota Public Service Commission case PU-25-086 covers the plant. A staged question in this batch already covers the extra units.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive",
+        "https://www.psc.nd.gov/webdocs/case/25-0086/037-010.pdf"
+      ]
+    },
+    "SPP GEN-2024-081": {
+      "decision": "update",
+      "plant_id": "L100001047848",
+      "record_id": "L100001047848:G100001054598:qa-existence-1",
+      "evidence": "Basin Electric's Bison Generation Station in Williams County is already in GEM as two 745 MW units under construction. The Southwest Power Pool queue lists this request as a 760 MW gas thermal request at the Springbrook to Tande 345 kV line, owned by Basin Electric. North Dakota Public Service Commission case PU-25-086 covers the plant. A staged question in this batch already covers the extra units.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive",
+        "https://www.psc.nd.gov/webdocs/case/25-0086/037-010.pdf"
+      ]
+    },
+    "SPP ERAS-2025-012": {
+      "decision": "update",
+      "plant_id": "L100001080387",
+      "record_id": "L100001080387:G100001090288:qa-scope-1",
+      "evidence": "NextEra's River Run Energy Center is already in GEM as one 1,450 MW unit at Stanton in Mercer County. The Southwest Power Pool queue lists this request as one of two 750 MW combined cycle requests at the Leland Olds 345 kV substation, in service September 2029. A staged question in this batch asks whether to keep one unit or split it.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive",
+        "https://www.nexteraenergyresources.com/river-run-energy-center/faq.html"
+      ]
+    },
+    "SPP ERAS-2025-011": {
+      "decision": "update",
+      "plant_id": "L100001080387",
+      "record_id": "L100001080387:G100001090288:qa-scope-1",
+      "evidence": "NextEra's River Run Energy Center is already in GEM as one 1,450 MW unit at Stanton in Mercer County. The Southwest Power Pool queue lists this request as one of two 750 MW combined cycle requests at the Leland Olds 345 kV substation, in service September 2029. A staged question in this batch asks whether to keep one unit or split it.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive",
+        "https://www.nexteraenergyresources.com/river-run-energy-center/faq.html"
+      ]
+    }
+  }
+}

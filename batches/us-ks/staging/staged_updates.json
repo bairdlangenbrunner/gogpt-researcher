@@ -160,7 +160,8 @@
       },
       "refs": {
         "Status Data Source": [
-          "https://www.efis.psc.mo.gov/Document/Display/831465"
+          "https://www.efis.psc.mo.gov/Document/Display/831465",
+          "https://investors.evergy.com/static-files/5ef38971-0e2c-4f5f-8f39-04a9479dd7fc"
         ]
       },
       "verifications": [
@@ -181,11 +182,22 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "Evergy's first quarter 2025 earnings presentation from May 2025 lists a delayed retirement and conversion to natural gas for Jeffrey unit 2. Sierra Club comments filed in Missouri in May 2025 say the 2025 plan stops coal burning at unit 2 in 2030 with a gas conversion. The EIA-860M table for August 2026 lists generator 2 as an operating coal unit built in 1980. That row is the coal unit, which GEM carries as the earlier timepoint. So the gas conversion is still only planned and the status stays announced. Both sources describe the same Evergy plan, so this counts as one source. No document gives a turbine model or a capacity for the converted gas unit. The 720 MW in GEM is the coal unit nameplate in the EIA-860M table for August 2026. The coal unit is still operating, so the gas conversion has not happened.",
-      "action": "Leave Status of unit Unit 2, timepoint 2 (G100001055277) as announced. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit Unit 2, timepoint 2 (G100001055277) as announced. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add a announced milestone for May 2025, when Evergy's earnings presentation listed the delayed retirement and gas conversion of Jeffrey unit 2, with an Evergy earnings presentation from May 2025 as the source.",
       "checks": [
         10,
         37,
         38
+      ],
+      "milestones": [
+        {
+          "status": "announced",
+          "year": 2025,
+          "period": "May",
+          "sources": [
+            "https://investors.evergy.com/static-files/5ef38971-0e2c-4f5f-8f39-04a9479dd7fc"
+          ],
+          "note": "Evergy's first quarter 2025 earnings presentation, dated May 8, 2025, lists a delayed retirement and conversion to natural gas for Jeffrey unit 2."
+        }
       ]
     },
     {
@@ -601,13 +613,24 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "GEM already shows shelved. A Lawrence Journal-World article of May 15, 2026 says Evergy confirmed the gas conversion is scrapped indefinitely and Evergy is keeping the coal option. Evergy's June 2026 plan update slides show no Lawrence conversion. Shelved is still right.",
-      "action": "Leave Status of unit Unit 5, timepoint 2 (G100001017857) as shelved. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit Unit 5, timepoint 2 (G100001017857) as shelved. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add a shelved milestone for May 2026, when Evergy confirmed that the gas conversion was dropped indefinitely, with a Lawrence Journal-World article from May 2026 as the source.",
       "checks": [
         10,
         37,
         38
       ],
-      "irp": true
+      "irp": true,
+      "milestones": [
+        {
+          "status": "shelved",
+          "year": 2026,
+          "period": "May",
+          "sources": [
+            "https://www2.ljworld.com/news/general-news/2026/may/15/evergy-drops-plans-to-end-coal-burning-at-lawrence-energy-center-by-2028-not-clear-when-coal-burning-may-stop/"
+          ],
+          "note": "A Lawrence Journal-World article of May 15, 2026 says Evergy confirmed the gas conversion at Lawrence is scrapped indefinitely."
+        }
+      ]
     },
     {
       "gem_unit_id": "G100001017857",
@@ -940,7 +963,8 @@
       "refs": {
         "Status Data Source": [
           "https://www.kwch.com/2026/05/13/evergy-breaks-ground-natural-gas-plant-sumner-county/",
-          "https://efis.psc.mo.gov/Document/Display/886443"
+          "https://efis.psc.mo.gov/Document/Display/886443",
+          "https://newsroom.evergy.com/2026-05-12-Evergy-begins-construction-on-710-MW-high-efficiency-natural-gas-plant"
         ]
       },
       "verifications": [
@@ -967,10 +991,21 @@
       "independent": true,
       "source_language": "en",
       "researcher_notes": "Evergy announced on May 12, 2026 that it began construction of the plant in northwest Sumner County and held a groundbreaking. KWCH television reported the groundbreaking the next day. Evergy's own second quarter 2026 filing to the Missouri Public Service Commission also describes construction work on site. GEM shows pre-construction. The status change is supported by Evergy's release and local television news from the next day. Evergy's Missouri filing for the second quarter of 2026 gives the steam turbine drain pit and tower crane foundations as examples of work done.",
-      "action": "Leave Status of unit 1 (G100001048433) as construction. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 1 (G100001048433) as construction. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add a construction milestone for May 2026, when Evergy began construction and held a groundbreaking, with an Evergy news release from May 2026 as the source.",
       "checks": [
         10,
         37
+      ],
+      "milestones": [
+        {
+          "status": "construction",
+          "year": 2026,
+          "period": "May",
+          "sources": [
+            "https://newsroom.evergy.com/2026-05-12-Evergy-begins-construction-on-710-MW-high-efficiency-natural-gas-plant"
+          ],
+          "note": "An Evergy news release of May 12, 2026 says the company began construction and held a groundbreaking. A KWCH report followed on May 13."
+        }
       ]
     },
     {
@@ -1229,10 +1264,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Chanute 2 generator 14 as operating, 60.0 MW, natural gas combustion turbine, operating since February 2002, with no planned retirement date. Owner on the table is the City of Chanute. I found no retirement, planned retirement, mothballing or sale for this unit. The city's website still describes a 50 MW combustion turbine at the plant, but the page is undated.",
-      "action": "Leave Status of unit 14 (G100000402564) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 14 (G100000402564) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for February 2002, when the EIA-860M file for August 2026 shows generator 14 at plant 1268 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2002,
+          "period": "February",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 14 at plant 1268 as operating since February 2002"
+        }
       ]
     },
     {
@@ -1268,10 +1314,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Cimarron River generator 1 as operating, 50.0 MW, natural gas steam turbine, in service since October 1963. It shows no planned retirement date. The unit is still operating. I found no retirement, mothballing or sale. A web search found no announcement, and the Kansas Corporation Commission 2025 retirement report says no retirement requests were made in 2024, though that report covers coal and nuclear units.",
-      "action": "Leave Status of unit 1 (G100000402343) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 1 (G100000402343) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for October 1963, when the EIA-860M file for August 2026 shows generator 1 at plant 1230 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1963,
+          "period": "October",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 1 at plant 1230 as operating since October 1963"
+        }
       ]
     },
     {
@@ -1307,10 +1364,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Clifton generator 1 as operating, 85.0 MW, in service since December 1974. Still operating. The plan is to replace it with new gas turbines at the same interconnection, with retirement in June 2028 per the EIA table. Sunflower states the plan but not the year. The new turbines are a possible new unit to watch.",
-      "action": "Leave Status of unit 1 (G100000402344) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 1 (G100000402344) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for December 1974, when the EIA-860M file for August 2026 shows generator 1 at plant 8037 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1974,
+          "period": "December",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 1 at plant 8037 as operating since December 1974"
+        }
       ]
     },
     {
@@ -1393,10 +1461,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists all three engines (generators 8, 9 and 10) at plant 59726 as operating, 18.7 MW each, natural gas internal combustion engines in service since January 2017. No planned retirement is shown. Still operating. I found no retirement, mothballing or change of owner.",
-      "action": "Leave Status of unit IC (G100000414291) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit IC (G100000414291) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for January 2017, when the EIA-860M file for August 2026 shows generators 10, 8, 9 at plant 59726 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2017,
+          "period": "January",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generators 10, 8, 9 at plant 59726 as operating since January 2017"
+        }
       ]
     },
     {
@@ -1466,10 +1545,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists generator 1 at plant 56502 as operating, with nameplate 54 MW and an operating date of 6/2008. It shows no planned retirement. A web search found no retirement, mothballing or sale announcement for the plant. Still operating in the EIA monthly inventory. No retirement or owner change was found.",
-      "action": "Leave Status of unit 1 (G100000402863) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 1 (G100000402863) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 2008, when the EIA-860M file for August 2026 shows generator 1 at plant 56502 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2008,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 1 at plant 56502 as operating since June 2008"
+        }
       ]
     },
     {
@@ -1505,10 +1595,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists generator 2 at plant 56502 as operating, with nameplate 54 MW and an operating date of 6/2008. It shows no planned retirement. A web search found no retirement, mothballing or sale announcement for the plant. Still operating in the EIA monthly inventory. No retirement or owner change was found.",
-      "action": "Leave Status of unit 2 (G100000402864) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 2 (G100000402864) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 2008, when the EIA-860M file for August 2026 shows generator 2 at plant 56502 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2008,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 2 at plant 56502 as operating since June 2008"
+        }
       ]
     },
     {
@@ -1544,10 +1645,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists generator 3 at plant 56502 as operating, with nameplate 54 MW and an operating date of 6/2008. It shows no planned retirement. A web search found no retirement, mothballing or sale announcement for the plant. Still operating in the EIA monthly inventory. No retirement or owner change was found.",
-      "action": "Leave Status of unit 3 (G100000402865) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 3 (G100000402865) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 2008, when the EIA-860M file for August 2026 shows generator 3 at plant 56502 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2008,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 3 at plant 56502 as operating since June 2008"
+        }
       ]
     },
     {
@@ -1583,10 +1695,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists generator 4 at plant 56502 as operating, with nameplate 54 MW and an operating date of 6/2008. It shows no planned retirement. A web search found no retirement, mothballing or sale announcement for the plant. Still operating in the EIA monthly inventory. No retirement or owner change was found.",
-      "action": "Leave Status of unit 4 (G100000402866) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 4 (G100000402866) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 2008, when the EIA-860M file for August 2026 shows generator 4 at plant 56502 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2008,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 4 at plant 56502 as operating since June 2008"
+        }
       ]
     },
     {
@@ -1622,10 +1745,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists generator 5 at plant 56502 as operating, with nameplate 171.4 MW and an operating date of 6/2008. It shows no planned retirement. A web search found no retirement, mothballing or sale announcement for the plant. Still operating in the EIA monthly inventory. No retirement or owner change was found.",
-      "action": "Leave Status of unit 5 (G100000402867) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 5 (G100000402867) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 2008, when the EIA-860M file for August 2026 shows generator 5 at plant 56502 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2008,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 5 at plant 56502 as operating since June 2008"
+        }
       ]
     },
     {
@@ -1661,10 +1795,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists generator 6 at plant 56502 as operating, with nameplate 171.4 MW and an operating date of 2/2009. It shows no planned retirement. A web search found no retirement, mothballing or sale announcement for the plant. Still operating in the EIA monthly inventory. No retirement or owner change was found.",
-      "action": "Leave Status of unit 6 (G100000402868) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 6 (G100000402868) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for February 2009, when the EIA-860M file for August 2026 shows generator 6 at plant 56502 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2009,
+          "period": "February",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 6 at plant 56502 as operating since February 2009"
+        }
       ]
     },
     {
@@ -1700,10 +1845,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists generator 7 at plant 56502 as operating, with nameplate 171.4 MW and an operating date of 2/2009. It shows no planned retirement. A web search found no retirement, mothballing or sale announcement for the plant. Still operating in the EIA monthly inventory. No retirement or owner change was found.",
-      "action": "Leave Status of unit 7 (G100000402869) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 7 (G100000402869) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for February 2009, when the EIA-860M file for August 2026 shows generator 7 at plant 56502 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2009,
+          "period": "February",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 7 at plant 56502 as operating since February 2009"
+        }
       ]
     },
     {
@@ -1739,10 +1895,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA monthly generator table for August 2026 lists Fort Dodge generator 4 as operating, 149.0 MW, with no planned retirement date. A web search found no retirement, mothballing or sale announcement. Still operating. No retirement, mothballing or ownership change was found.",
-      "action": "Leave Status of unit 4 (G100000402345) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 4 (G100000402345) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 1969, when the EIA-860M file for August 2026 shows generator 4 at plant 1233 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1969,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 4 at plant 1233 as operating since June 1969"
+        }
       ]
     },
     {
@@ -1778,10 +1945,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA monthly generator table for August 2026 lists Garden City generator S2 as operating, 97.9 MW, with no planned retirement date. A web search found no retirement, mothballing or sale announcement. Still operating. No retirement, mothballing or ownership change was found.",
-      "action": "Leave Status of unit S2 (G100000403572) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit S2 (G100000403572) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for April 1973, when the EIA-860M file for August 2026 shows generator S2 at plant 1336 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1973,
+          "period": "April",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator S2 at plant 1336 as operating since April 1973"
+        }
       ]
     },
     {
@@ -1817,10 +1995,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA monthly generator table for August 2026 lists Garden City generator S4 as operating, 71.2 MW, with no planned retirement date. A web search found no retirement, mothballing or sale announcement. Still operating. No retirement, mothballing or ownership change was found.",
-      "action": "Leave Status of unit S4 (G100000403573) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit S4 (G100000403573) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for May 1976, when the EIA-860M file for August 2026 shows generator S4 at plant 1336 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1976,
+          "period": "May",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator S4 at plant 1336 as operating since May 1976"
+        }
       ]
     },
     {
@@ -1856,10 +2045,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA monthly generator table for August 2026 lists Garden City generator S5 as operating, 71.2 MW, with no planned retirement date. A web search found no retirement, mothballing or sale announcement. Still operating. No retirement, mothballing or ownership change was found.",
-      "action": "Leave Status of unit S5 (G100000403574) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit S5 (G100000403574) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for July 1979, when the EIA-860M file for August 2026 shows generator S5 at plant 1336 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1979,
+          "period": "July",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator S5 at plant 1336 as operating since July 1979"
+        }
       ]
     },
     {
@@ -1895,10 +2095,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA monthly generator table for August 2026 lists all twelve Goodman engines as operating, 8.4 MW and 9.3 MW each, with no planned retirement dates. A web search found no retirement or ownership change. Still operating. The city is Hays. The EIA 2024 plant table gives the address as 1713 230th Ave, Hays, Ellis County.",
-      "action": "Leave Status of unit 1 (G100000414264) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 1 (G100000414264) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add a operating milestone for June 2008, when the first Goodman engines entered service, with the EIA-860M table for August 2026 as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2008,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "The EIA table lists engines 1 to 6 as operating since June 2008 and engines 7 to 9 since September 2008. GEM's start year for this unit is 2008, so the first engines are used."
+        }
       ]
     },
     {
@@ -1934,10 +2145,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists this unit as operating, with no planned retirement date. Row read: Plant 1240, generator GT1, status operating, nameplate 98.3 MW, operating year 2000. I searched the web for a retirement, mothballing or sale announcement and found none. The unit is still listed as operating in the newest federal monthly table. No retirement, mothballing or ownership change turned up in a web search.",
-      "action": "Leave Status of unit GT1 (G100000402877) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit GT1 (G100000402877) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 2000, when the EIA-860M file for August 2026 shows generator GT1 at plant 1240 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2000,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator GT1 at plant 1240 as operating since June 2000"
+        }
       ]
     },
     {
@@ -1973,10 +2195,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists this unit as operating, with no planned retirement date. Row read: Plant 1240, generator GT2, status operating, nameplate 98.3 MW, operating year 2000. I searched the web for a retirement, mothballing or sale announcement and found none. The unit is still listed as operating in the newest federal monthly table. No retirement, mothballing or ownership change turned up in a web search.",
-      "action": "Leave Status of unit GT2 (G100000402878) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit GT2 (G100000402878) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 2000, when the EIA-860M file for August 2026 shows generator GT2 at plant 1240 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2000,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator GT2 at plant 1240 as operating since June 2000"
+        }
       ]
     },
     {
@@ -2012,10 +2245,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists this unit as operating, with no planned retirement date. Row read: Plant 1240, generator GT3, status operating, nameplate 178.5 MW, operating year 2001. I searched the web for a retirement, mothballing or sale announcement and found none. The unit is still listed as operating in the newest federal monthly table. No retirement, mothballing or ownership change turned up in a web search.",
-      "action": "Leave Status of unit GT3 (G100000402879) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit GT3 (G100000402879) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 2001, when the EIA-860M file for August 2026 shows generator GT3 at plant 1240 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2001,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator GT3 at plant 1240 as operating since June 2001"
+        }
       ]
     },
     {
@@ -2051,10 +2295,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists this unit as operating, with no planned retirement date. Row read: Plant 1235, generator 3, status operating, nameplate 81.6 MW, operating year 1963. I searched the web for a retirement, mothballing or sale announcement and found none. The unit is still listed as operating in the newest federal monthly table. No retirement, mothballing or ownership change turned up in a web search.",
-      "action": "Leave Status of unit 3 (G100000402346) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 3 (G100000402346) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 1963, when the EIA-860M file for August 2026 shows generator 3 at plant 1235 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1963,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 3 at plant 1235 as operating since June 1963"
+        }
       ]
     },
     {
@@ -2090,10 +2345,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists this unit as operating with no planned retirement date. I read the row myself: Plant 1248, generator GT1, status operating, nameplate 71.2 MW, operating May 1974, no planned retirement. I found no announcement of a retirement, mothballing or sale. Still operating in the August 2026 EIA table, owned by Evergy Kansas Central. A web search found no retirement or sale news for the plant.",
-      "action": "Leave Status of unit GT1 (G100000402870) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit GT1 (G100000402870) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for May 1974, when the EIA-860M file for August 2026 shows generator GT1 at plant 1248 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1974,
+          "period": "May",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator GT1 at plant 1248 as operating since May 1974"
+        }
       ]
     },
     {
@@ -2129,10 +2395,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists this unit as operating with no planned retirement date. I read the row myself: Plant 1248, generator GT2, status operating, nameplate 71.2 MW, operating May 1974, no planned retirement. I found no announcement of a retirement, mothballing or sale. Still operating in the August 2026 EIA table, owned by Evergy Kansas Central. A web search found no retirement or sale news for the plant.",
-      "action": "Leave Status of unit GT2 (G100000402871) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit GT2 (G100000402871) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for May 1974, when the EIA-860M file for August 2026 shows generator GT2 at plant 1248 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1974,
+          "period": "May",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator GT2 at plant 1248 as operating since May 1974"
+        }
       ]
     },
     {
@@ -2168,10 +2445,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists this unit as operating with no planned retirement date. I read the row myself: Plant 1248, generator GT3, status operating, nameplate 71.2 MW, operating May 1974, no planned retirement. I found no announcement of a retirement, mothballing or sale. Still operating in the August 2026 EIA table, owned by Evergy Kansas Central. A web search found no retirement or sale news for the plant.",
-      "action": "Leave Status of unit GT3 (G100000402872) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit GT3 (G100000402872) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for May 1974, when the EIA-860M file for August 2026 shows generator GT3 at plant 1248 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1974,
+          "period": "May",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator GT3 at plant 1248 as operating since May 1974"
+        }
       ]
     },
     {
@@ -2207,10 +2495,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists this unit as operating with no planned retirement date. I read the row myself: Plant 1248, generator GT4, status operating, nameplate 129.0 MW, operating June 1975, no planned retirement. I found no announcement of a retirement, mothballing or sale. Still operating in the August 2026 EIA table, owned by Evergy Kansas Central. A web search found no retirement or sale news for the plant. The nameplate is 129.0 MW, not 70 MW.",
-      "action": "Leave Status of unit GT4 (G100000414259) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit GT4 (G100000414259) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 1975, when the EIA-860M file for August 2026 shows generator GT4 at plant 1248 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1975,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator GT4 at plant 1248 as operating since June 1975"
+        }
       ]
     },
     {
@@ -2246,10 +2545,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026, released September 2026, lists this unit as operating. Plant 1305, generator GT1, status operating, nameplate 72.4 MW, operating year 1973. The table shows no planned retirement. I found no retirement, mothballing or sale notice. The unit is still operating in the newest EIA table. No retirement, mothballing or ownership change was found. The Kansas air permit documents for this plant could not be opened at the KDHE address, which returns a not found page.",
-      "action": "Leave Status of unit GT1 (G100000402588) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit GT1 (G100000402588) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 1973, when the EIA-860M file for August 2026 shows generator GT1 at plant 1305 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1973,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator GT1 at plant 1305 as operating since June 1973"
+        }
       ]
     },
     {
@@ -2285,10 +2595,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026, released September 2026, lists this unit as operating. Plant 1305, generator GT2, status operating, nameplate 71.2 MW, operating year 1976. The table shows no planned retirement. I found no retirement, mothballing or sale notice. The unit is still operating in the newest EIA table. No retirement, mothballing or ownership change was found. The Kansas air permit documents for this plant could not be opened at the KDHE address, which returns a not found page.",
-      "action": "Leave Status of unit GT2 (G100000414230) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit GT2 (G100000414230) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 1976, when the EIA-860M file for August 2026 shows generator GT2 at plant 1305 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1976,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator GT2 at plant 1305 as operating since June 1976"
+        }
       ]
     },
     {
@@ -2324,10 +2645,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026, released September 2026, lists this unit as operating. Plant 1305, generator GT3, status operating, nameplate 71.2 MW, operating year 1979. The table shows no planned retirement. I found no retirement, mothballing or sale notice. The unit is still operating in the newest EIA table. No retirement, mothballing or ownership change was found. The Kansas air permit documents for this plant could not be opened at the KDHE address, which returns a not found page.",
-      "action": "Leave Status of unit GT3 (G100000402589) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit GT3 (G100000402589) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 1979, when the EIA-860M file for August 2026 shows generator GT3 at plant 1305 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1979,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator GT3 at plant 1305 as operating since June 1979"
+        }
       ]
     },
     {
@@ -2363,10 +2695,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026, released September 2026, lists this unit as operating. Plant 7515, generator NA1, status operating, nameplate 115.6 MW, operating year 1998. The table shows no planned retirement. I found no retirement, mothballing or sale notice. The unit is still operating in the newest EIA table. No retirement, mothballing or ownership change was found. The Kansas air permit documents for this plant could not be opened at the KDHE address, which returns a not found page.",
-      "action": "Leave Status of unit NA1 (G100000402590) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit NA1 (G100000402590) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for October 1998, when the EIA-860M file for August 2026 shows generator NA1 at plant 7515 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1998,
+          "period": "October",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator NA1 at plant 7515 as operating since October 1998"
+        }
       ]
     },
     {
@@ -2402,10 +2745,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026, released September 2026, lists this unit as operating. Plant 6064, generator CT4, status operating, nameplate 104.0 MW, operating year 2006. The table shows no planned retirement. I found no retirement, mothballing or sale notice. The unit is still operating in the newest EIA table. No retirement, mothballing or ownership change was found. The Kansas air permit documents for this plant could not be opened at the KDHE address, which returns a not found page. The city value of Kansas City was not confirmed in a document I could open, because the permit notice that gives the address 4240 North 55th Street, Kansas City, is no longer live.",
-      "action": "Leave Status of unit CT4 (G100000402582) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit CT4 (G100000402582) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for February 2006, when the EIA-860M file for August 2026 shows generator CT4 at plant 6064 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2006,
+          "period": "February",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator CT4 at plant 6064 as operating since February 2006"
+        }
       ]
     },
     {
@@ -2526,10 +2880,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Osawatomie plant 7928, generator 1, as operating with 102.0 MW nameplate and an operating year of 2003. It shows no planned retirement and no change of owner. It does list a planned uprate of 11 MW of summer capacity for June 2027, which is not a retirement. The unit is still operating in the August 2026 EIA table with no retirement date. I searched the web and found no news of a retirement, mothballing or sale.",
-      "action": "Leave Status of unit 1 (G100000402882) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 1 (G100000402882) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 2003, when the EIA-860M file for August 2026 shows generator 1 at plant 7928 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2003,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 1 at plant 7928 as operating since June 2003"
+        }
       ]
     },
     {
@@ -2663,10 +3028,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Quindaro plant 1295, generator GT2, as operating with 72.4 MW nameplate and an operating year of 1974. It shows no planned retirement. The City of Kansas City Board of Public Utilities 2024 resource plan still lists both oil-fired turbines as owned, and only tests retiring them in 2028 or 2031 as scenarios. Still operating in the August 2026 EIA table. No announced retirement was found.",
-      "action": "Leave Status of unit GT2 (G100000414204) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit GT2 (G100000414204) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for July 1974, when the EIA-860M file for August 2026 shows generator GT2 at plant 1295 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1974,
+          "period": "July",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator GT2 at plant 1295 as operating since July 1974"
+        }
       ]
     },
     {
@@ -2702,10 +3078,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Quindaro plant 1295, generator GT3, as operating with 71.2 MW nameplate and an operating year of 1977. It shows no planned retirement. The City of Kansas City Board of Public Utilities 2024 resource plan still lists both oil-fired turbines as owned, and only tests retiring them in 2028 or 2031 as scenarios. Still operating in the August 2026 EIA table. No announced retirement was found.",
-      "action": "Leave Status of unit GT3 (G100000414203) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit GT3 (G100000414203) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for August 1977, when the EIA-860M file for August 2026 shows generator GT3 at plant 1295 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1977,
+          "period": "August",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator GT3 at plant 1295 as operating since August 1977"
+        }
       ]
     },
     {
@@ -3011,10 +3398,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Riverton generators 12 and 12-2, the two parts of combined cycle block CC1, as operating. The table shows no planned retirement for them. This is a re-check with no change. The unit is still operating in the August 2026 EIA table, with no retirement date and no owner change found in that file. Nameplate capacity of the two parts adds up to 267.6 MW, which matches the 268 MW in GEM.",
-      "action": "Leave Status of unit CC1 (G100000401617) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit CC1 (G100000401617) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add a operating milestone for May 2016, when the steam part entered service and the combined cycle block first ran, with the EIA-860M table for August 2026 as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2016,
+          "period": "May",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "The EIA table lists generator 12 (gas turbine) as operating since May 2007 and generator 12-2 (steam part) since May 2016. The combined cycle block ran when the steam part entered service, which matches GEM's start year of 2016."
+        }
       ]
     },
     {
@@ -3106,10 +3504,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists all twelve Rubart engines, generators 01 to 12, as operating. Each is 10.0 MW, so the total is 120 MW. No planned retirement is shown. This is a re-check with no change. The unit is still operating in the August 2026 EIA table. I found no retirement, mothballing or owner change in that file. The plant city is Ulysses according to the EIA plant table.",
-      "action": "Leave Status of unit IC (G100000414197) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit IC (G100000414197) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for September 2014, when the EIA-860M file for August 2026 shows generators 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12 at plant 58255 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2014,
+          "period": "September",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generators 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12 at plant 58255 as operating since September 2014"
+        }
       ]
     },
     {
@@ -3145,10 +3554,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Evergy Metro's West Gardner plant, generator 1, as operating with 102.0 MW nameplate and an operating date of June 2003. No planned retirement is listed. The table does list a small planned uprate for June 2027. I found no news of a retirement, mothballing or sale. Still operating. I searched the web once for a retirement, mothballing or sale and found nothing about this plant.",
-      "action": "Leave Status of unit 1 (G100000402883) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 1 (G100000402883) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 2003, when the EIA-860M file for August 2026 shows generator 1 at plant 7929 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2003,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 1 at plant 7929 as operating since June 2003"
+        }
       ]
     },
     {
@@ -3184,10 +3604,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Evergy Metro's West Gardner plant, generator 2, as operating with 102.0 MW nameplate and an operating date of June 2003. No planned retirement is listed. The table does list a small planned uprate for June 2027. I found no news of a retirement, mothballing or sale. Still operating. I searched the web once for a retirement, mothballing or sale and found nothing about this plant.",
-      "action": "Leave Status of unit 2 (G100000402884) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 2 (G100000402884) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 2003, when the EIA-860M file for August 2026 shows generator 2 at plant 7929 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2003,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 2 at plant 7929 as operating since June 2003"
+        }
       ]
     },
     {
@@ -3223,10 +3654,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Evergy Metro's West Gardner plant, generator 3, as operating with 102.0 MW nameplate and an operating date of June 2003. No planned retirement is listed. The table does list a small planned uprate for June 2027. I found no news of a retirement, mothballing or sale. Still operating. I searched the web once for a retirement, mothballing or sale and found nothing about this plant.",
-      "action": "Leave Status of unit 3 (G100000402885) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 3 (G100000402885) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 2003, when the EIA-860M file for August 2026 shows generator 3 at plant 7929 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2003,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 3 at plant 7929 as operating since June 2003"
+        }
       ]
     },
     {
@@ -3262,10 +3704,21 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Evergy Metro's West Gardner plant, generator 4, as operating with 102.0 MW nameplate and an operating date of June 2003. No planned retirement is listed. The table does list a small planned uprate for June 2027. I found no news of a retirement, mothballing or sale. Still operating. I searched the web once for a retirement, mothballing or sale and found nothing about this plant.",
-      "action": "Leave Status of unit 4 (G100000402886) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit 4 (G100000402886) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for June 2003, when the EIA-860M file for August 2026 shows generator 4 at plant 7929 entering service, with that file as the source.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 2003,
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "the EIA-860M file for August 2026 lists generator 4 at plant 7929 as operating since June 2003"
+        }
       ]
     }
   ]

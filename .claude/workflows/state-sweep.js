@@ -359,6 +359,19 @@ Cite the live URL when it works. When the live page is gone or refuses every rou
   or cancelled unit gets no scheduled operating event. A maintenance change to a retirement date
   is a new scheduled retirement event, never a new operating milestone. A timeline entry that
   looks wrong goes in a \`qa\` item for the project manager, never into a finding.
+- Milestone dates: every status you report comes with a dated milestone entry for that status,
+  under \`milestones\` on the Status finding (and on each unit of a new plant or new unit):
+  \`{"status": "construction", "year": 2025, "period": "May", "sources": ["https://..."],
+  "note": "the owner reported the frame finished by May 13, 2025"}\`. \`period\` is the finest the
+  source gives: a full month name, or Q1 to Q4, or H1 or H2. Date each step by the event that marks
+  it: pre-construction by the permit application or approval filing, construction by the
+  reported start of work (never by a construction permit, which dates pre-construction only; with
+  no start date, use the earliest report of work under way and say so in \`period_note\`),
+  operating by commercial operation (for a data center backup fleet, the "began operation" date in
+  the owner's annual emissions report counts), retired or cancelled by the reported date. If no month, quarter or half can be found, leave \`period\` blank
+  and say in \`period_note\` what you looked for. Earlier steps (announced, pre-construction) may
+  be added when you find them; they are optional. Each source must be in \`refs\` with a passing
+  verification.
 - No start year for shelved or cancelled units. No retired year for mothballed units.
 - Mothballed, retired and cancelled are only tracked from 2020 onward.
 - Owners as \`Name [share%]\`, separated by semicolons, five percent or more, top four plus "other",
@@ -546,6 +559,8 @@ python json.dump or your Write tool, then check it parses with
           "verifications": [{"url": "https://...", "ok": true,
                              "contains_value": true, "name_found": true}],
           "tier": "high", "independent": false,
+          "milestones": [{"status": "operating", "year": 2019, "period": "June",
+                          "sources": ["https://..."], "note": "commercial operation began June 2019"}],
           "note": "${IS_US ? 'The EIA-860M table for July 2026 lists this unit as operating.' : "The regulator's power plant list dated April 2026 shows this unit as in operation."}"
         },
         "Capacity (MW)": { "...": "same shape" }

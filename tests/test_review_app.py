@@ -201,6 +201,24 @@ def test_card_kinds(tmp_path):
     assert watch["items"][0]["lead_for"] == "" and watch["items"][0]["group"] != 8
 
 
+def test_new_to_tracker_question_goes_on_the_addition_card(tmp_path):
+    """A qa question on whether something is new to the tracker (a duplicate) at a tracked plant
+    lands on the plant's "new units at" card, so it shows on the new tab; other questions stay on the plant card."""
+    staging = write_staging(tmp_path / "us-md" / "staging")
+    qa = json.loads((staging / "staged_qa.json").read_text())
+    qa["records"].append({"record_id": "L1:G1:qa-duplicate-2", "gem_plant_id": "L1", "gem_unit_id": "G1",
+                          "plant_name": "Brandywine power facility", "unit_name": "1", "country": "United States",
+                          "concern_type": "duplicate", "question": "Is queue request J1 this plant?",
+                          "finding": "The queue entry sits at the same substation.", "recommendation": "Do not add it.",
+                          "researcher_notes": "", "proposed_value": {}, "refs": {"links": [PR]}})
+    qa["meta"]["counts"]["records"] = len(qa["records"])
+    (staging / "staged_qa.json").write_text(json.dumps(qa))
+    cards = {p["pid"]: p for p in review_data.build([staging])["plants"]}
+    assert [it["record_id"] for it in cards["L1#add"]["items"]] == ["L1:G1:qa-duplicate-2"]
+    assert cards["L1#add"]["card_kind"] == "addition" and cards["L1#add"]["items"][0]["group"] == 8
+    assert [it["record_id"] for it in cards["L1"]["items"]] == ["L1:G1:qa-unverified-value-1"]
+
+
 def test_new_plant_line_carries_its_units(data):
     """A newplants record is one decision for the plant and its nested unit rows: the units
     ride along on the line, and their links count toward the line's publishers and marks."""
@@ -237,9 +255,19 @@ def test_severity_minor_for_status_detail_and_ref_only_edits():
     assert sev("delete", False, "Start year", {"Start year": ""}, {"Start year": "1996"}, ["https://a"]) == "major"
 
 
+def test_stale_last_updated():
+    assert review_data.cycle_start(["q4-2026"]) == "2026-09-14"
+    assert review_data.cycle_start(["no-such-quarter"]) == ""
+    fresh, old, blank = {"last_updated": "2026-10-01"}, {"last_updated": "2026-09-13"}, {"last_updated": ""}
+    assert not review_data.stale([fresh], "2026-09-14")
+    assert review_data.stale([fresh, old], "2026-09-14") and review_data.stale([blank], "2026-09-14")
+    assert review_data.stale([fresh], "")      # no cycle start known: every plant gets checked
+
+
 def test_every_plant_in_scope_gets_a_card(staging, tmp_path):
     """The export's rows for the scope's country and state all land on the page: a touched plant
-    gets every unit of its plant, and an untouched plant gets a card with one "checked" line."""
+    gets every unit of its plant, and an untouched plant gets a card with one "checked" line,
+    already checked in the database when its Last Updated is from this cycle."""
     csv = tmp_path / "export.csv"
     csv.write_text("GEM unit ID,GEM location ID,Plant name,Unit name,Country/Area,State/Province,Status,Capacity (MW),Start year,Start Year Data Source,"
                    "Last Updated,Researcher,Research status,Wiki URL\n"
@@ -247,10 +275,11 @@ def test_every_plant_in_scope_gets_a_card(staging, tmp_path):
                    "G2,L1,Brandywine power facility,F702,United States,Maryland,retired,,,,2025-01-01,,,\n"
                    "G3,L9,Zed peaker,1,United States,Maryland,announced,100,,,2025-03-03,DO,no changes,https://www.gem.wiki/Zed\n"
                    "G4,L8,Old mill,1,United States,Maryland,operating,50,,,,,,\n"
-                   "G5,L7,Elsewhere,1,United States,Virginia,announced,100,,,,,,\n")
+                   "G5,L7,Elsewhere,1,United States,Virginia,announced,100,,,,,,\n"
+                   "G6,L6,Fresh peaker,1,United States,Maryland,announced,100,,,2026-10-01,AL,updated,\n")
     data = review_data.build([staging], export_csv=csv)
     plants = {p["pid"]: p for p in data["plants"]}
-    assert set(plants) == {"L1", "L9", "L8", "new:chesapeake-repowering", "new:severn-barge-station"}   # L7 is another state
+    assert set(plants) == {"L1", "L9", "L8", "L6", "new:chesapeake-repowering", "new:severn-barge-station"}   # L7 is another state
     # the touched plant now lists every unit of its plant, with the bookkeeping columns
     assert [u["gem_unit_id"] for u in plants["L1"]["units"]] == ["G1", "G2"]
     assert plants["L1"]["units"][0]["last_updated"] == "2026-09-01" and plants["L1"]["units"][0]["research_status"] == "updated"
@@ -266,9 +295,12 @@ def test_every_plant_in_scope_gets_a_card(staging, tmp_path):
     assert l["group"] == 3 and l["checks"] == [10, 53]
     old = plants["L8"]["lines"][0]
     assert old["group"] == 9 and old["checks"] == [53]
+    # stale plants wait to be checked; one updated since the cycle start arrives already checked in the database
+    assert "checked_in_db" not in l and "checked_in_db" not in old
+    assert plants["L6"]["no_changes"] is True and plants["L6"]["lines"][0]["checked_in_db"] == "2026-10-01"
     # plants with proposed changes sort before the ones with none; the no-change cards keep the name order
     order = [p["pid"] for p in data["plants"] if p["card_kind"] == "plant"]
-    assert order == ["L1", "L8", "L9"]
+    assert order == ["L1", "L6", "L8", "L9"]
 
 
 # ---- store -----------------------------------------------------------------------------
@@ -821,3 +853,18 @@ def test_validation_errors_follow_the_answer_topic():
     tasks = {("L9", "G9"): ['The database\'s validation report says the unit\'s status history has a "mothballed" step with no date. Find it.']}
     status = {**move, "concern_type": "Status", "proposed_value": {"Status": "operating"}}
     assert vr.errors_for(status, [], tasks) == ['The unit\'s status history has a "mothballed" step with no date. (No longer on the current validation report.)']
+
+
+def test_chrome_rules_match_the_sop():
+    """The copy-for-Chrome message carries the rules of the browser-edits SOP §8 word for word (the
+    page's copy lives in the shared app, so a change to either is made in both)."""
+    import re
+    from review_app import GEM_REVIEW_APP
+    sop = (ROOT / "docs" / "sops" / "database-browser-edits.md").read_text(encoding="utf-8")
+    block = re.search(r"## §8.*?```\n(.*?)```", sop, re.S).group(1)
+    rules = [re.sub(r"^\d+\. ", "", ln) for ln in block.strip().splitlines()]
+    assert len(rules) == 7
+    ext = (GEM_REVIEW_APP / "trackers" / "gogpt" / "web" / "ext.js").read_text(encoding="utf-8")
+    js_rules = re.search(r"var CHROME_RULES = \[(.*?)\n    \];", ext, re.S).group(1)
+    js_rules = [m for m in re.findall(r'^\s*"(.*)",?$', js_rules, re.M)]
+    assert js_rules == rules
