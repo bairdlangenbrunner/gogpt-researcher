@@ -88,12 +88,22 @@
     "possible-updates-sheet": {
       "status": "searched",
       "how": "Read the gas/oil plants tab through the work Google profile on October 29, 2026; two North Dakota rows.",
-      "found": "The River Run row from December 2025 is done. The October 28, 2026 row lists data centers: Polaris Forge 3 has grid power with no permit yet and is on the watch list; Harmony Energy Park is on the watch list; Critical Data House and Project Fighting Pike are the same Williston campus, on the watch list; Bitzero Nekoma is a small grid supplied site of 2.5 to 10 MW with no gas plant found; the Coal Creek campus is added as the Coal Creek gas plant; Nakota is already in GEM."
+      "found": "The River Run row from December 2025 is done. The October 28, 2026 row lists data centers: Polaris Forge 3 near Center is added as a backup engine fleet with capacity blank, from the Oliver County building permit of July 7, 2026; Harmony Energy Park is added as a backup diesel generator fleet with capacity blank, from the conditional use permit application filed September 15, 2026; Critical Data House and Project Fighting Pike are the same Williston campus, added on November 3, 2026 from the City of Williston planning records, which name 25 diesel backup generators per building; Bitzero Nekoma is a small grid supplied site of 2.5 to 10 MW with no gas plant found; the Coal Creek campus is added as the Coal Creek gas plant; Nakota is already in GEM."
     },
     "data-centers": {
       "status": "searched",
       "how": "Answered every site in the data center file, read the Applied Digital permits and commission filings, and searched news for the Harmony, Center, Williston, Nekoma and Coal Creek campuses.",
-      "found": "Ellendale, Harwood, Base Electron, Nakota and River Run are in GEM. Coal Creek is added. Harmony, Polaris Forge 3 and Fighting Pike are on the watch list with no generation named. Crusoe's flare gas engine sets are under 50 MW per site."
+      "found": "Ellendale, Harwood, Base Electron, Nakota and River Run are in GEM. Coal Creek is added. Critical Data House's Project Fighting Pike in Williston is added from the city planning records. Applied Digital's Polaris Forge 3 near Center is added as a backup engine fleet with capacity blank, from the Oliver County building permit conditions and the company's commission filing. Geronimo Power's Harmony Energy Park near Mapleton is added as a backup diesel generator fleet with capacity blank, from its conditional use permit application to Harmony Township. Crusoe's flare gas engine sets are under 50 MW per site."
+    },
+    "city-of-williston-planning": {
+      "status": "searched",
+      "how": "Read the City of Williston Planning and Zoning Commission staff report of March 10, 2025 for the Project Fighting Pike rezoning and plat, the March 25, 2025 commission packet, and the RWDI noise study of February 7, 2025 on the city website, on November 3, 2026.",
+      "found": "The staff report says each building has 20 to 25 diesel backup generators, Caterpillar 3516E sets. The noise study lists 25 sets per building across seven buildings in three phases, 175 in all. The plat names Critical Data House, LLC. The campus is added as a new plant with three backup generator units."
+    },
+    "local-planning-records": {
+      "status": "searched",
+      "how": "On November 3, 2026, opened the local records for each data center lead and each in-development plant without a state air permit: the City of Williston planning staff report, commission packet and noise study for Project Fighting Pike; the Oliver County Commission minutes, which are posted only through April 30, 2026, and the county permit conditions reported for Polaris Forge 3; and the Harmony Township conditional use permit application and appendices for Harmony Energy Park, posted by Geronimo Power.",
+      "found": "Williston names 25 diesel backup generators per building for Project Fighting Pike. The Oliver County building permit of July 7, 2026 sets testing hours for the Polaris Forge 3 emergency generators. The Harmony Township application names EPA-certified diesel backup generators for a 540 MW data center. All three are added as new plants."
     }
   },
   "ids_followup": {
@@ -233,6 +243,21 @@
       "decision": "already_in_gem",
       "plant_id": "L100001084854",
       "note": "The Nakota campus gas power of up to 1 GW in Williams County is GEM's Nakota Data Center Campus Power Plant."
+    },
+    "critical-data-house-williston": {
+      "decision": "add",
+      "record_id": "us-nd:new:critical-data-house-williston-data-center-power-station",
+      "note": "City of Williston planning records name 25 Caterpillar 3516 diesel backup generators per building across seven buildings, 175 in all, roughly 420 MW at about 2.4 MW each. Added with capacity per engine blank until an air permit names the engines."
+    },
+    "applied-digital-polaris-forge-3-center": {
+      "decision": "add",
+      "record_id": "us-nd:new:applied-digital-bis-generation-plant",
+      "note": "Oliver County approved Applied Digital's building permit near Center on July 7, 2026, with a condition on emergency generator testing, and the company's commission filing says its North Dakota sites use diesel engine backup. Added with capacity blank. The county minutes posted only through April 30, 2026 were read; no engine count was found."
+    },
+    "geronimo-harmony-energy-park": {
+      "decision": "add",
+      "record_id": "us-nd:new:geronimo-power-harmony-data-center-power-station",
+      "note": "The conditional use permit application filed with Harmony Township on September 15, 2026 names EPA-certified diesel backup generators for a 540 MW data center. Added with capacity blank."
     }
   },
   "dedup": {
@@ -240,6 +265,21 @@
       "decision": "not_a_duplicate",
       "checked": "2026-10-30",
       "evidence": "The name match is Basin Electric's Bison Generation Station in Williams County, about 500 kilometers away. It has another owner and is a separate project. The nearby GEM plant is Minnkota Power's Cass power station, 2.8 kilometers away and also planned for Harmony Township. Minnkota is a different utility, and its plant was announced in October 2026 at 400 MW. This record is Xcel's 447 MW bid in Public Service Commission case PU-24-342 and MISO request J3163, which Northern States Power filed."
+    },
+    "us-nd:new:coal-creek-gas-plant": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-03",
+      "evidence": "Both hits are Rainbow Energy Center's Coal Creek Station, the coal plant at the same site, which the coal tracker covers. GEM lists no gas units there. This record is the separate 2,000 MW or more gas project Rainbow plans next to the coal plant, so it is a new gas plant, not a copy of the coal one."
+    },
+    "us-nd:new:applied-digital-bis-generation-plant": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-03",
+      "evidence": "The nearby GEM plant is the Base Electron power station, 8.8 kilometers away, a gas plant for a different data center campus by a different company. This record is the diesel backup generator fleet at Applied Digital's Polaris Forge 3 campus, held by APLD BIS-01, LLC in Section 24, Township 142 North, Range 85 West."
+    },
+    "us-nd:new:geronimo-power-harmony-data-center-power-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-03",
+      "evidence": "The nearby GEM plant is Minnkota Power's Cass power station, 3.1 kilometers away, a 400 MW utility gas plant announced for Harmony Township. This record is the diesel backup generator fleet inside Geronimo Power's data center, held by CCDC ND, LLC. The Geronimo project page says any new generation serving the site would be permitted separately, and it names no Minnkota plant. The other hit, Xcel's Bison bid, is a utility gas plant from another company in the same county."
     }
   },
   "queues": {

@@ -1,0 +1,121 @@
+{
+  "*": [
+    {
+      "text": "Oklahoma context: the whole state is in the Southwest Power Pool. OG&E and PSO (an AEP company) file generation preapproval and certificate cases at the Oklahoma Corporation Commission; cases filed since March 2022 need a sign-in to search, so the daily Public Utility Division docket PDFs and the harvest file batches/us-ok/harvest/psc_dockets.md are the way in. Air permits in process sit in the Oklahoma DEQ Permits for Public Review table and their documents (applications, draft permits, notices, from 2016 on) are in scopes/us-ok/work/permits/<plant_id>.md. Permits older than 2016 are not online; say 'open records request needed' rather than searching again. Cooperatives (Western Farmers, Associated Electric, Grand River Dam Authority, OMPA, Peoples Electric) do not file at the commission; their record is the SPP queue, the DEQ permit and their own reports. Amalia Llano edited many Oklahoma rows on 2026-10-29 and 2026-11-03; treat the export values as her baseline and stage a change against one only when a verified document disagrees.",
+      "fields": []
+    },
+    {
+      "text": "OG&E resource plans: the 2024 IRP, the 2025 IRP update (its 2025 request for proposals selected Horseshoe Lake units 13 and 14) and the 2026 IRP. The 2026 IRP PDF is on OGE Energy's investor site (ogeenergy.gcs-web.com, needs the browser-fingerprint route in fetch.py) and the commission's copy of the 2025 IRP is at https://oklahoma.gov/content/dam/ok/en/occ/documents/pud/reports/2025-oge-irp.pdf. Extracted copies, if the harvest step made them, are under scopes/us-ok/work/irp/. For every OG&E plant (Horseshoe Lake, Mustang, Seminole, McClain, Redbud, Frontier, Muskogee, Tinker, River Valley, Charles D. Lamb through OMPA) check the plan for a start date, a retirement year or a capacity that disagrees with the export, cite the PDF page, and give the reviewer an IRP Notes line. The US IRPs tab matched no plant automatically because it names the utility OG&E and the export says Oklahoma Gas and Electric.",
+      "fields": ["Status", "Start year", "Planned retirement year", "Capacity (MW)"]
+    },
+    {
+      "text": "PSO resource plans: the 2024 IRP and the 2026 IRP Refresh on PSO's website (plain fetch works). They cover the Comanche combined cycle additions (ERAS-2025-024 and ERAS-2025-026), the Northeastern gas turbine (ERAS-2025-023), the Green Country acquisition and the retirement dates at Northeastern 3, Riverside, Southwestern, Tulsa, Weleetka and Comanche. Cite the page.",
+      "fields": ["Status", "Start year", "Planned retirement year", "Capacity (MW)"]
+    }
+  ],
+  "L100000402231": [
+    {
+      "text": "Comanche (OK) power station: SPP ERAS-2025-024 and ERAS-2025-026 (775.2 MW combined cycle each, Lawton East Side and Oklaunion to Lawton 138 kV, AEP, interconnection agreement executed, in service 2029-04-01) and EIA-860M planned generators 2G1 and 3G1 (408.8 MW combustion turbines) with 2S1 and 3S1 (277.6 MW steam) for September 2029 are two new combined cycle units GEM lacks. Stage two newunits records at pre-construction (executed agreement plus EIA planned record), each block one unit, owner Public Service Company of Oklahoma at 100 percent, with the DEQ permit 2022-0055-C M-1 and the commission preapproval cause from the daily dockets if found. Name them Comanche CC 1 and CC 2 unless PSO's filing names them."
+    }
+  ],
+  "L100000104126": [
+    {
+      "text": "Northeastern Station: SPP ERAS-2025-023 (513 MW gas turbine, Oologah 345 kV, 2029-11-01) against GEM's Northeastern Unit 3 timepoint 2 (473 MW, announced, the coal unit's gas conversion) and the DEQ permits 2019-0607-C M-2 to M-4 (issued). Settle whether the queue row is the conversion, a new turbine at the site, or both. The timepoint 2 row needs a dated status-history step (validation fix) and a Latest Activity. The coal unit 3 timepoint 1 has a 2026 planned retirement; the December rule applies."
+    }
+  ],
+  "L100000402162": [
+    {
+      "text": "Horseshoe Lake: units 11 and 12 are operating 2026 in GEM and 'construction complete, testing' for October 2026 in the September EIA-860M file; a status change needs two independent publishers. Units 13 and 14 (224 MW, 2029 in GEM, February 2029 in EIA) sit beside ERAS-2025-010 (496 MW gas turbine, 2028-04-01) and GEN-2024-GR1 (492 MW, executed); unit 15 (755 MW, 2031) beside ERAS-2025-004 (756.2 MW combined cycle, 2029-04-01): the dates disagree, ask in a question. Steam unit 7 (220 MW) and unit 6 (163 MW) retired in 2024 per EIA; say where they are in GEM. Units 8, 9 and 10 planned retirements against the 2026 IRP. DEQ permit 2024-0324-ARR5 M-2 in process."
+    }
+  ],
+  "L100000401595": [
+    {
+      "text": "Redbud: SPP ERAS-2025-003 (186 MW combined cycle addition, Luther 345 kV, 2025-10-24) with the OG&E 2026 IRP is a new unit GEM lacks; stage it at the plant with the owner shares from EIA-860 (OG&E, OMPA, Grand River Dam Authority)."
+    }
+  ],
+  "L100000104122": [
+    {
+      "text": "Grand River Energy Center: unit 4 is 594 MW in EIA and in SPP GEN-2024-GR5 (gas and storage hybrid, executed, commercial) against 426 MW in GEM; EIP and the Sierra Club list still say under construction. A capacity question naming both sources; status stays operating unless a document says otherwise. Unit 3's replacement link points at a unit that does not exist (validation fix). GEN-2025-SR19 (100 MW, Maid 161 kV, Chouteau) is a lead."
+    }
+  ],
+  "L100000402164": [
+    {
+      "text": "Mustang (OK) power station: 462 MW in GEM for units 6 to 12 against a 66 MW GT1 in EIA; the GEM row may be the whole plant of seven aeroderivative turbines. A capacity question with the unit convention from docs/reference/unit_conventions.md. SPP GEN-2025-SR23 (100 MW special study) and GEN-2016-047 (24 MW) are leads. The DEQ document store has no Mustang documents; do not search it again."
+    }
+  ],
+  "L100001063385": [
+    {
+      "text": "Tinker Air Force Base power station: EIA plant 63628 'Tinker' (Oklahoma County; generators 1 and 2 of 48.1 MW from 2026, 5A and 5B of 41 MW from 1971, out of service) is this site; write a question stating the match with the code and generator ids, for Baird to type into Other IDs. DEQ permits 2025-0595-C M-1 and TV in process (OG&E Tinker Turbines); SPP GEN-2023-GR2 (94.242 MW, executed). City is blank."
+    }
+  ],
+  "L100001089274": [
+    {
+      "text": "Bristow Energy Center: owner is blank and Associated Electric is the operator; stage the project company or the cooperative at 100 percent from a document. Location is approximate (location ladder). SPP GEN-2024-340 (1,440 MW, Creek County, AEP) is not this plant; find its own queue row or say none was found. Check the DEQ table for a permit application."
+    }
+  ],
+  "L100000104124": [
+    {
+      "text": "Muskogee Generating Station: three validation fixes, Owner 1 has no source, Location has no source, and the carbon capture field on units 4 and 5 timepoint 2 has no source. Units 4 and 5 timepoint 2 carry start year 2019, the conversion year, while EIA gives 1977 and 1978 for the original units; GEM's convention is the conversion year, so say so in a question rather than edit. SPP GEN-2025-SR9 (400 MW, OG&E, pending) and GEN-2024-293 (248 MW, Muskoge7, 2032) may be this plant or the Core Scientific data center plant."
+    }
+  ],
+  "L100001081005": [
+    {
+      "text": "Muskogee Data Center: 283.1 MW pre-construction (Core Scientific) against SPP GEN-2025-SR9 (400 MW) and GEN-2024-293 (248 MW) at Muskogee substations; undated status-history step (validation fix); county is blank."
+    }
+  ],
+  "L100000402369": [
+    {
+      "text": "Anadarko: units 1 to 3 retired December 2024 per EIA, GEM agrees; EIP's 'under construction' row is Roulet 12 and 13 (50.2 MW each, construction), which match SPP GEN-2023-GR1 (97.488 MW, 69 kV, executed). Check the DEQ Western Farmers Anadarko row for the construction permit and a start date."
+    }
+  ],
+  "L100000104123": [
+    {
+      "text": "Hugo: Amalia added Site A (73.5 MW) and Site B (342 MW), pre-construction 2029, Western Farmers. SPP GEN-2026-SR34 (75 MW, Hugo 138 kV, Fort Towson) and GEN-2024-323 (372 MW, ITC Hugo 7 345 kV, 2029) are the queue rows; if the capacities disagree with hers, ask. City reads 'Fort Townsend'; the town is Fort Towson. EIA 6772 lists the coal unit only."
+    }
+  ],
+  "L100001023579": [
+    {
+      "text": "Ripley Energy Center: 445 MW in GEM against 419 MW in EIA (RP1, under construction, April 2027). A capacity question; check the DEQ permit and the owner."
+    }
+  ],
+  "L100001080983": [
+    {
+      "text": "Cross Timbers (Konawa, 255 MW, two units pre-construction): undated status-history step (validation fix); Latest Activity; duplicate check against the Seminole-area queue row GEN-2024-321 (507 MW, Seminole 345 kV, 2029)."
+    }
+  ],
+  "L100001063386": [
+    {
+      "text": "Chickasha industrial park (500 MW, announced): undated status-history step (validation fix); city and county blank; location ladder; the completed Assigned Comments thread on its technology is the baseline."
+    }
+  ],
+  "L100001082617": [
+    {
+      "text": "ONE Nuclear power station unit 1 (1,000 MW gas, announced): undated status-history step (validation fix); city and county blank; location ladder; confirm the fuel is gas, not nuclear, from the source."
+    }
+  ],
+  "L100000401991": [
+    {
+      "text": "Green Country (795 MW, Jenks): PSO's acquisition. Stage an ownership change only on the closing document; before closing, a Status Detail entry on top. DEQ draft permit OK0043869 dated 2026-10-16 is in the document store."
+    }
+  ],
+  "L100000402165": [
+    {
+      "text": "Seminole (OK): city reads 'Konowa'; the town is Konawa. Planned retirements 2030, 2032 and 2034 against the OG&E 2026 IRP. SPP GEN-2024-321 (507 MW, Seminole 345 kV, 2029) and a GEN-2025-SR special study at Seminole are leads."
+    }
+  ],
+  "L100000409256": [
+    {
+      "text": "Stillwater Energy Center: city blank; SPP ASGI-2014-014 Ferguson (56.4 MW, Payne County) is probably this plant. Say so or say why not."
+    }
+  ],
+  "L100000401932": [
+    {
+      "text": "Spring Creek (Evergy Kansas Central): the Evergy IRP updates; SPP GEN-2024-255 (300 MW thermal and storage hybrid at Spring Creek 345 kV) is a lead, not this plant."
+    }
+  ],
+  "L100000402236": [
+    {
+      "text": "Weleetka: units 4 and 5 planned retirement 2030 against the PSO 2026 IRP Refresh."
+    }
+  ]
+}

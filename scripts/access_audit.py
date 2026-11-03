@@ -236,6 +236,19 @@ def batch_hosts(batch_dirs: list[Path]) -> set[str]:
     return hosts
 
 
+def _window_roots(batch_dirs: list[Path]) -> list[Path]:
+    """The folders whose oldest file opens the audit's time window: the briefs, and the
+    scope's harvest folders (permits, docket cache, the batch's own harvest folder), which
+    are written before the briefs exist. Without them a harvester's give-ups fell outside the
+    window (Oklahoma planning, 2026-11-03)."""
+    roots = []
+    for d in batch_dirs:
+        repo, base = d.parent.parent, scope_base(d.name)
+        work = repo / "scopes" / base / "work" / ("" if d.name == base else d.name)
+        roots += [d / "briefs", d / "harvest", work / "permits", work / "psc"]
+    return [r for r in roots if r.is_dir()]
+
+
 def _fetch_failures(batch_dirs: list[Path]) -> dict[str, dict]:
     """The fetch log is shared by every session, so a time window alone pulls in
     other batches' failures (Iowa and Illinois showed up in Kansas, 2026-10-22).
@@ -243,7 +256,7 @@ def _fetch_failures(batch_dirs: list[Path]) -> dict[str, dict]:
     host appears in the batch's own files."""
     scopes = {d.name for d in batch_dirs}
     hosts = batch_hosts(batch_dirs)
-    starts = [p.stat().st_mtime for d in batch_dirs for p in (d / "briefs").glob("*")]
+    starts = [p.stat().st_mtime for d in _window_roots(batch_dirs) for p in d.glob("*")]
     if not starts or not fetch.FAIL_LOG.exists():
         return {}
     since = time.strftime("%Y-%m-%dT%H:%M:%S", time.localtime(min(starts)))

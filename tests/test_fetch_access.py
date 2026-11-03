@@ -54,6 +54,9 @@ def net(monkeypatch, tmp_path):
     monkeypatch.setattr(fetch, "FAIL_LOG", tmp_path / "failures.jsonl")
     monkeypatch.setattr(fetch, "_IMPERSONATE_HOSTS", set())
     monkeypatch.delenv("GEM_FETCH_NO_CACHE", raising=False)
+    # a scope harvester imported earlier in the same process tags fetches with its scope
+    # (harvest_lib.tag_batch); these tests read the log for an untagged batch
+    monkeypatch.delenv("GEM_BATCH", raising=False)
     return state
 
 

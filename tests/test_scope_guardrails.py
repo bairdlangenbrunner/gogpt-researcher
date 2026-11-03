@@ -12,7 +12,8 @@ for p in (ROOT, ROOT / "scripts"):
 
 from build_state_brief import eia_lead_tasks, render_scope_brief  # noqa: E402
 from state_gate import (chase_hits, gate_chase, gate_ids_followup, gate_lead_only,  # noqa: E402
-                        gate_permit_system, gate_source_coverage)
+                        gate_local_records, gate_permit_system, gate_source_coverage,
+                        local_records_strict)
 
 WHERE = {"kind": "state", "name": "Mississippi", "slug": "mississippi",
          "country": "United States", "postal": "ms"}
@@ -115,6 +116,10 @@ NOTICES = {"id": "notices", "role": "permit_notices", "name": "Air permit public
 RECORD = {"id": "records", "role": "permit_record", "name": "Air permit record system",
           "url": "https://example.gov/records",
           "what": "Use the index from scopes/us-ms/harvest_permits.py and read every permit."}
+LOCAL = {"id": "local", "role": "local_records", "name": "City and county planning records",
+         "url": "https://example.gov/planning",
+         "what": "Open the staff reports, packets, minutes and use permits for every lead and "
+                 "every in-development plant."}
 
 
 def _sub(tmp_path, name):
@@ -125,11 +130,11 @@ def _sub(tmp_path, name):
 
 def test_permit_system_passes_with_harvester_or_by_name(tmp_path):
     b = batch_dir(tmp_path, {"sources": {}})
-    out, info = gate_permit_system(b, cov_dir(tmp_path, wanted=[NOTICES, RECORD]))
+    out, info = gate_permit_system(b, cov_dir(tmp_path, wanted=[NOTICES, RECORD, LOCAL]))
     assert out == []
     assert info and "records" in info[0] and "notices" in info[0]
     by_name = dict(RECORD, what="Search the facility list by name for every GEM plant and every lead.")
-    out, _ = gate_permit_system(b, cov_dir(_sub(tmp_path, "x"), wanted=[by_name]))
+    out, _ = gate_permit_system(b, cov_dir(_sub(tmp_path, "x"), wanted=[by_name, LOCAL]))
     assert out == []
 
 
@@ -148,13 +153,59 @@ def test_permit_system_fails_without_any_role(tmp_path):
 def test_permit_system_checks_what_url_and_gap(tmp_path):
     b = batch_dir(tmp_path, {"sources": {}})
     bad = dict(RECORD, what="Read the permits.", url="", gap="login needed")
-    out, _ = gate_permit_system(b, cov_dir(tmp_path, wanted=[bad]))
+    out, _ = gate_permit_system(b, cov_dir(tmp_path, wanted=[bad, LOCAL]))
     msgs = " | ".join(o[1] for o in out)
     assert [o[0] for o in out] == ["records"] * 3
     assert "no url" in msgs and "harvester" in msgs and "`gap`" in msgs
     ok = dict(RECORD, gap="Permit PDFs need a login; the public notice feed and a records request cover them.")
-    out, _ = gate_permit_system(b, cov_dir(_sub(tmp_path, "y"), wanted=[ok]))
+    out, _ = gate_permit_system(b, cov_dir(_sub(tmp_path, "y"), wanted=[ok, LOCAL]))
     assert out == []
+
+
+def test_permit_system_needs_local_records(tmp_path):
+    b = batch_dir(tmp_path, {"sources": {}})
+    out, _ = gate_permit_system(b, cov_dir(tmp_path, wanted=[RECORD]))
+    assert len(out) == 1 and "local_records" in out[0][1]
+    vague = dict(LOCAL, what="Read the county minutes.")
+    out, _ = gate_permit_system(b, cov_dir(_sub(tmp_path, "z"), wanted=[RECORD, vague]))
+    assert [o[0] for o in out] == ["local"] and "every lead" in out[0][1]
+
+
+# ---------------------------------------------------------- local records ---
+
+def _watch(note, case="no_generation", kind="new_to_tracker"):
+    return {"plant_name": "Example data center", "monitor_kind": kind, "watch_case": case,
+            "researcher_notes": note, "record_id": "x:monitor-1"}
+
+
+def test_local_records_flags_watch_item_without_local_record(tmp_path):
+    b = batch_dir(tmp_path, {"sources": {}})
+    out = gate_local_records({"monitor": [_watch("News says a data center is planned.")]}, b)
+    assert [o[0] for o in out] == ["x:monitor-1"]
+    ok = _watch("The Oliver County Commission minutes and the township conditional use "
+                "permit application were read; neither names generators.")
+    assert gate_local_records({"monitor": [ok]}, b) == []
+
+
+def test_local_records_skips_other_cases_and_existing_plants(tmp_path):
+    b = batch_dir(tmp_path, {"sources": {}})
+    lanes = {"monitor": [_watch("No source.", case="plan_option"),
+                         _watch("No source.", kind="existing_plant")]}
+    assert gate_local_records(lanes, b) == []
+
+
+def test_local_records_checks_closed_data_centers(tmp_path):
+    b = batch_dir(tmp_path, {"sources": {}, "data_centers": {
+        "a": {"decision": "no_generators", "note": "Nothing in the news."},
+        "b": {"decision": "no_generators", "note": "The city planning staff report names no generators."}}})
+    out = gate_local_records({"monitor": []}, b)
+    assert [o[0] for o in out] == ["data_centers:a"]
+
+
+def test_local_records_strict_from_date():
+    assert local_records_strict({}, flag=True)
+    assert not local_records_strict({"monitor": {"generated": "2026-11-03T10:00"}})
+    assert local_records_strict({"monitor": {"generated": "2026-11-04T10:00"}})
 
 
 def test_permit_system_missing_list_is_one_finding(tmp_path):

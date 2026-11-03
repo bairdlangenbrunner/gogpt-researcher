@@ -593,7 +593,11 @@ python json.dump or your Write tool, then check it parses with
 - \`units\` has one entry per unit ID listed above, every unit, even if nothing was found, with
   \`not_found\` listing the fields. A plant-level field you could not find goes in every unit's
   \`not_found\`.
-- Field keys in \`findings\` and \`plant_findings\` are exact CSV headers from RESEARCH_FIELDS.
+- Field keys in \`findings\` and \`plant_findings\` are exact CSV headers from RESEARCH_FIELDS, always the
+  VALUE column (\`Status\`, \`Fuel\`, \`Capacity (MW)\`), never a Data Source column. A replacement link for a
+  dead link is a finding on the value column with the value as it stands and the new link in its sources.
+  A name column (\`Unit name\`, \`Other Name(s)\`) has no Data Source box; its evidence links go under the
+  refs key \`links\`.
 - \`location\` is present only when the ladder was followed: \`method\` is published (any of the five no-imagery routes), address, site_reference,
   dataset, map or imagery; \`location_route\` is one plain sentence naming the route; \`moved_m\` the distance from GEM's point in meters (null when GEM had none);
   \`control_points\` (each {"feature", "px": [x, y], "lat", "lon"}), \`fit_m\` and \`image\` (the saved

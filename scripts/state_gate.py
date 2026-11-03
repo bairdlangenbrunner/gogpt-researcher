@@ -113,7 +113,24 @@ Hard gates (any failure exits 1)
               entry, a missing id, or a form, script or paging given as the
               reason all fail. (Named statewide-coverage because the first
               gate above already uses the name coverage.) Runs for a US
-              state and for a country alike (Baird 2026-10-30).
+              state and for a country alike (Baird 2026-10-30). A searched
+              entry also carries proof of the reading: `read`, a list of the
+              addresses or harvest files actually opened, and `date`
+              (YYYY-MM-DD). Hard for batches assembled from 2026-11-04 on
+              (--strict-proof for older ones).
+  access-proof
+              before the sweep, access_check.py --scope <tag> opened every
+              source in scopes/<tag>/coverage.json through fetch.py's whole
+              ladder, read one real document from each when the list names
+              one, checked the body is the promised kind (PDF bytes, a CSV
+              header, table rows, JSON, a phrase on the page) and wrote
+              <batch>/access_proof.json. The gate fails when the file is
+              missing or older than seven days, a listed id has no record,
+              or a record is not ok and the list has no `human_wall`
+              sentence saying what a person must do to open it (a sign-in,
+              a records request). Human walls are listed as info. Baird
+              2026-11-03: "I want to be ASSURED that you're able to access
+              any documents and websites that are helpful or relevant."
   permit-system
               scopes/<tag>/coverage.json names the scope's complete permit
               record system: an entry with `role` "permit_record" whose
@@ -125,7 +142,20 @@ Hard gates (any failure exits 1)
               batches on the notice feed alone and the CyrusOne Bilter Road
               permit was missed (Baird 2026-10-30). A `gap` sentence records
               what the system does not expose online and what covers it.
+              The list also names the city and county planning and zoning
+              records (`role` "local_records"), opened for every lead and
+              every in-development plant (Baird 2026-11-03).
               Checked on every batch of the scope, narrow ones included.
+  local-records
+              a watch item for a project GEM lacks, held as no_generation,
+              unverified or under_threshold, names the city
+              or county planning, zoning or council record that was read,
+              and so does a data center closed no_generators, nothing_found
+              or not_data_center. Project Fighting Pike in Williston was
+              watched as "no generation named" while the city staff report
+              listed 25 diesel backup generators per building. Hard for
+              batches assembled from 2026-11-04 on (--strict-local-records
+              for older ones).
   data-centers
               every site in scopes/<tag>/work/permits/_data_centers.json (written by
               data_center_fleets.py) with verdict at_threshold,
@@ -272,7 +302,8 @@ from build_review_package import (  # noqa: E402
     URL_RE, additive_errors, is_lead_only, load_lanes, ref_col_for, validate)
 from schema_constants import (  # noqa: E402
     ADDITIVE_TEXT_COLUMNS, CAPACITY_THRESHOLD_EU_UK_MW, CAPACITY_THRESHOLD_MW,
-    EU_UK_COUNTRIES, READ_ONLY_COLUMNS, WATCH_CASES)
+    EU_UK_COUNTRIES, EVIDENCE_KEY, IDENTITY_COLUMNS, INLINE_SOURCE_COLUMNS,
+    READ_ONLY_COLUMNS, WATCH_CASES, is_data_source_column)
 from paths import EXPORT_MAX_AGE_HOURS, gem_export_csv, scope_coverage, scope_permits, work_dir  # noqa: E402
 from geo import decimals, in_state_box, valid_point  # noqa: E402
 from dedup_check import DEDUP_FILE, fingerprint  # noqa: E402
@@ -485,6 +516,7 @@ def gate_orphans(lanes):
         if isinstance(refs, list):
             out.append((rid, "refs is a list, not keyed by Data Source column"))
             continue
+        any_links = any(ws(u) for us in refs.values() for u in (us or []))
         for col, val in fields.items():
             # an inferred status is a milestone entry like any value: it needs the
             # Latest Activity source in Status Data Source (Baird 2026-10-27).
@@ -494,6 +526,13 @@ def gate_orphans(lanes):
             if rec.get("delete"):
                 continue
             rc = ref_col_for(col)
+            if col in IDENTITY_COLUMNS:
+                # a name has no Data Source column; the record's other links
+                # (or its "links" evidence) carry it. Only a record with no
+                # link at all is an unsupported name.
+                if not any_links:
+                    out.append((rid, f"{col} has a value but the record has no link"))
+                continue
             if not [u for u in refs.get(rc) or [] if ws(u)]:
                 out.append((rid, f"{col} has a value but no link under {rc}"))
             elif rc == col:
@@ -530,13 +569,31 @@ def gate_fresh(lanes, export):
 
 
 def gate_headers(lanes, header):
+    """Every `fields` key is a value column of the export, never a Data Source
+    column; every `refs` key is a Data Source column of the export, "Status
+    Detail" (its link lives in its text) or "links" (evidence for a name
+    change). Before 2026-11-03 only the fields keys were checked, so the
+    North Dakota batch staged "Fuel Data Source" as a value with its link
+    under "Fuel Data Source Data Source", and every new-unit record keyed a
+    link under "Unit name Data Source", a column that does not exist."""
     out, hset = [], set(header)
     for lane, rid, rec in iter_records(lanes, VALUE_LANES):
-        for col in rec.get("fields") or {}:
-            if col not in hset:
-                out.append((rid, f"{col!r} is not an export header"))
-            elif col in READ_ONLY_COLUMNS:
-                out.append((rid, f"{col!r} is a read-only column"))
+        for r in [rec] + list(rec.get("units") or []):
+            for col in r.get("fields") or {}:
+                if col not in hset:
+                    out.append((rid, f"{col!r} is not an export header"))
+                elif col in READ_ONLY_COLUMNS:
+                    out.append((rid, f"{col!r} is a read-only column"))
+                elif is_data_source_column(col):
+                    out.append((rid, f"{col!r} is a Data Source column, not a value; "
+                                     "key the finding on the value it backs"))
+            refs = r.get("refs") or {}
+            for key in (refs if isinstance(refs, dict) else {}):
+                if key in INLINE_SOURCE_COLUMNS or key == EVIDENCE_KEY:
+                    continue
+                if key not in hset or not is_data_source_column(key):
+                    out.append((rid, f"refs key {key!r} is not a Data Source column of "
+                                     f"the export (use {EVIDENCE_KEY!r} for a name change)"))
     return out
 
 
@@ -1380,10 +1437,25 @@ def coverage_list_path(batch, coverage_dir=None):
     return scope_coverage(Path(batch).name)
 
 
-def gate_source_coverage(batch, index, coverage_dir=None):
+PROOF_FROM = "2026-11-04"   # searched entries in batches assembled from this date on carry read and date
+DATE_RX = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def proof_strict(lanes_meta, flag=False):
+    """The read-proof part of statewide-coverage is hard for a batch assembled from
+    PROOF_FROM on (any lane's `generated`), or under --strict-proof."""
+    if flag:
+        return True
+    gen = max((str((m or {}).get("generated") or "")[:10] for m in (lanes_meta or {}).values()), default="")
+    return gen >= PROOF_FROM
+
+
+def gate_source_coverage(batch, index, coverage_dir=None, strict_proof=False):
     """Scope-wide sources that must be searched (scopes/<tag>/coverage.json) against
     what the scope-wide agent recorded in <batch>/coverage.json. A US state and a
-    country are held to the same list (Baird 2026-10-30). Returns (offenders, info)."""
+    country are held to the same list (Baird 2026-10-30). With strict_proof a
+    searched entry must also show what was read (`read`, a list) and when
+    (`date`). Returns (offenders, info)."""
     if narrow_focus(index):
         return [], [f"skipped: narrow batch ({narrow_focus(index)}); the statewide batch searches the source list"]
     lp = coverage_list_path(batch, coverage_dir)
@@ -1412,6 +1484,13 @@ def gate_source_coverage(batch, index, coverage_dir=None):
                 out.append((sid, "searched but `how` is empty: name the script or the pages read"))
             if not found:
                 out.append((sid, "searched but `found` is empty: say what turned up, or that nothing did"))
+            if strict_proof:
+                read = e.get("read")
+                if not (isinstance(read, list) and any(ws(r) for r in read)):
+                    out.append((sid, "searched without proof: `read` must list the addresses or harvest "
+                                     "files that were actually opened"))
+                if not DATE_RX.match(ws(e.get("date"))):
+                    out.append((sid, "searched without a `date` (YYYY-MM-DD) saying when it was read"))
         elif status == "blocked":
             if not (re.search(r"fetch\.py|access_audit", access, re.I)
                     and re.search(r"wayback|web\.archive|archive", access, re.I)):
@@ -1426,7 +1505,113 @@ def gate_source_coverage(batch, index, coverage_dir=None):
     listed = {w.get("id") for w in wanted}
     info = [f"sources to search: {len(wanted)}",
             f"extra ids in coverage.json: {sorted(set(entries) - listed) or 'none'}"]
+    if not strict_proof:
+        info.append("advisory: read and date not required (batch assembled before the proof rule; "
+                    "--strict-proof makes them hard)")
     return out, info
+
+
+def gate_access_proof(batch, index, coverage_dir=None, now=None):
+    """access_check.py proved every listed source before the sweep (see the module
+    docstring). Returns (offenders, info)."""
+    from access_check import MAX_AGE_DAYS, PROOF_FILE, age_days
+    if narrow_focus(index):
+        return [], [f"skipped: narrow batch ({narrow_focus(index)}); the statewide batch proves the source list"]
+    lp = coverage_list_path(batch, coverage_dir)
+    if not lp.exists():
+        return [], ["no scope source list; statewide-coverage reports it"]
+    try:
+        wanted = json.loads(lp.read_text(encoding="utf-8"))
+    except (ValueError, OSError):
+        return [], ["the source list does not parse; statewide-coverage reports it"]
+    pf = Path(batch) / PROOF_FILE
+    tag = Path(batch).name
+    if not pf.exists():
+        return [(PROOF_FILE, f"missing: run `python scripts/access_check.py --scope {tag}` before the sweep")], []
+    try:
+        proof = json.loads(pf.read_text(encoding="utf-8"))
+    except (ValueError, OSError) as e:
+        return [(PROOF_FILE, f"does not parse: {e}")], []
+    out, info = [], []
+    age = age_days(str(proof.get("checked") or ""), now)
+    if age is None:
+        out.append((PROOF_FILE, "has no `checked` time stamp"))
+    elif age > MAX_AGE_DAYS:
+        out.append((PROOF_FILE, f"is {age:.0f} days old (over {MAX_AGE_DAYS}): run access_check.py again"))
+    sources = proof.get("sources") or {}
+    walls = []
+    for w in wanted:
+        sid = w.get("id")
+        r = sources.get(sid)
+        if not isinstance(r, dict):
+            out.append((sid, f"not in {PROOF_FILE}: run `access_check.py --scope {tag} --only {sid}`"))
+            continue
+        if r.get("ok"):
+            continue
+        wall = ws(w.get("human_wall") or r.get("human_wall"))
+        if wall:
+            walls.append(f"{sid}: {wall}")
+            continue
+        out.append((sid, f"not proven ({r.get('reason') or 'no reason recorded'}; route {r.get('route') or '?'}): "
+                         "fix the route, name a real document as `proof.sample`, or say in `human_wall` "
+                         "what a person must do"))
+    info.append(f"proven: {sum(1 for r in sources.values() if isinstance(r, dict) and r.get('ok'))} of {len(wanted)}"
+                + (f", checked {str(proof.get('checked'))[:16]}" if proof.get("checked") else ""))
+    info += [f"person needed: {w}" for w in walls]
+    return out, info
+
+
+LOCAL_RECORDS_HOW =re.compile(r"every (?:lead|site|project|in-development)|each (?:lead|site|project)", re.I)
+LOCAL_RECORDS_FROM = "2026-11-04"   # watch items in batches assembled from this date on must show it
+# Words that show a city, county or township record was opened, not only state or news sources.
+LOCAL_RECORD_RE = re.compile(
+    r"\b(?:city|county|township|parish|village|borough|town|municipal)\b.{0,60}?"
+    r"\b(?:planning|zoning|council|commission(?:ers)?|board|supervisors|packet|agenda|minutes|"
+    r"staff report|permit|ordinance|records?)\b"
+    r"|\b(?:planning|zoning) (?:commission|board|department|office|staff|records?|file|case|hearing)\b"
+    r"|\brezon\w*|\bplat\b|\b(?:conditional|special) use\b|\bdevelopment agreement\b"
+    r"|\bsite plan\b|\bstaff report\b|\btax abatement\b|\bPILOT agreement\b", re.I)
+LOCAL_CASES = ("no_generation", "unverified", "under_threshold")   # a plan option has no site to look up
+
+
+def local_records_strict(lanes_meta, flag=False):
+    """The local-records gate is hard for a batch whose monitor lane was assembled from
+    LOCAL_RECORDS_FROM on, or under --strict-local-records."""
+    if flag:
+        return True
+    meta = (lanes_meta or {}).get("monitor") or {}
+    return str(meta.get("generated") or "")[:10] >= LOCAL_RECORDS_FROM
+
+
+def gate_local_records(lanes, batch):
+    """City and county records are always opened (Baird 2026-11-03, after Project Fighting
+    Pike in Williston sat on the North Dakota watch list as "no generation named" while the
+    city's own planning staff report named 25 diesel backup generators per building). A
+    watch item for a project GEM lacks, held for no generation named, nothing verified,
+    no commitment or under the threshold, says which city or county planning, zoning or
+    council record was read and what it showed. So does a data center answered
+    no_generators, nothing_found or not_data_center in coverage.json."""
+    out = []
+    for lane, rid, rec in iter_records(lanes, ("monitor",)):
+        if rec.get("monitor_kind") != "new_to_tracker" and not rec.get("lead_for"):
+            continue
+        if rec.get("watch_case") not in LOCAL_CASES:
+            continue
+        text = " ".join(str(rec.get(k) or "") for k in PROSE_KEYS + ("item",))
+        text += " " + " ".join(str(v.get("note") or "") + " " + str(v.get("url") or "")
+                               for v in rec.get("verifications") or [] if isinstance(v, dict))
+        if not LOCAL_RECORD_RE.search(text):
+            out.append((rid, f"watch_case {rec.get('watch_case')} with no city or county record "
+                             "named: open the planning, zoning and council records of the city "
+                             "and county where it sits (agendas, staff reports, packets, minutes, "
+                             "rezonings, plats, use permits) and say in the note what they showed"))
+    for sid, a in load_data_centers_coverage(batch).items():
+        if ws(a.get("decision")).lower() in DC_CLOSE_WITH_NOTE and not LOCAL_RECORD_RE.search(
+                ws(a.get("note")) + " " + ws(a.get("source"))):
+            out.append((f"data_centers:{sid}", f"{a.get('decision')} with no city or county "
+                                               "record named: say which planning, zoning or "
+                                               "council records were opened and what they showed"))
+    return out
 
 
 PERMIT_RECORD_HOW = re.compile(r"harvest_\w+\.py|by name|by facility name|every (gem )?plant|each (gem )?plant", re.I)
@@ -1460,6 +1645,17 @@ def gate_permit_system(batch, coverage_dir=None):
                         "in), with a `what` that names its harvester or says it is searched by "
                         "name for every GEM plant and every lead")], []
     out = []
+    local = [w for w in wanted if ws(w.get("role")).lower() == "local_records"]
+    if not local:
+        out.append((shown, "no entry with `role` \"local_records\": name the city and county "
+                           "planning and zoning records (agendas, staff reports, packets, minutes, "
+                           "rezonings, plats, conditional or special use permits, development "
+                           "agreements, tax abatements), with a `what` that says they are opened "
+                           "for every lead and every in-development plant (Baird 2026-11-03)"))
+    for w in local:
+        if not LOCAL_RECORDS_HOW.search(ws(w.get("what"))):
+            out.append((w.get("id") or shown, "`what` must say the local records are opened for "
+                                              "every lead and every in-development plant"))
     for w in records:
         sid = w.get("id") or shown
         if not ws(w.get("url")):
@@ -1472,7 +1668,8 @@ def gate_permit_system(batch, coverage_dir=None):
             out.append((sid, "`gap` must say in a sentence what the system does not expose "
                              "online and what covers it"))
     info = [f"permit record system: {', '.join(w.get('id') or '?' for w in records)}"
-            + (f"; notice feed: {', '.join(notices)}" if notices else "")]
+            + (f"; notice feed: {', '.join(notices)}" if notices else "")
+            + (f"; local records: {', '.join(w.get('id') or '?' for w in local)}" if local else "")]
     return out, info
 
 
@@ -1902,8 +2099,10 @@ def run(args):
     add("lead-only", False, gate_lead_only(lanes))
     cov_entries, _, _ = load_coverage_file(batch)
     add("chase", True, gate_chase(lanes, cov_entries) + gate_chase_memos(batch))
-    sc, sc_info = gate_source_coverage(batch, index)
+    sc, sc_info = gate_source_coverage(batch, index, strict_proof=proof_strict(lanes_meta, args.strict_proof))
     add("statewide-coverage", True, sc, info=sc_info)
+    apf, apf_info = gate_access_proof(batch, index)
+    add("access-proof", True, apf, info=apf_info)
     ps, ps_info = gate_permit_system(batch)
     add("permit-system", True, ps, info=ps_info)
     dd, dd_info = gate_dedup(lanes, batch)
@@ -1929,6 +2128,10 @@ def run(args):
     add("concern-types", False, gate_concern_types(lanes))
     add("monitor-fields", False, gate_monitor_fields(lanes))
     add("watch-case", False, gate_watch_case(lanes, index))
+    strict_l = local_records_strict(lanes_meta, args.strict_local_records)
+    add("local-records", strict_l, gate_local_records(lanes, batch),
+        info=[] if strict_l else ["advisory: a batch assembled before the local records rule; "
+                                  "--strict-local-records makes it hard"])
     add("location-notes", False, gate_location_notes(lanes))
     add("note-drift", False, gate_note_drift(batch, index, export))
     qc_ran = []
@@ -1986,6 +2189,10 @@ def main():
                     help="warn instead of failing when the validation file is over a day old")
     ap.add_argument("--strict-questions", action="store_true",
                     help="fail on a qa record without question and finding, whatever the batch's date")
+    ap.add_argument("--strict-local-records", action="store_true",
+                    help="fail on a watch item with no city or county record named, whatever the batch's date")
+    ap.add_argument("--strict-proof", action="store_true",
+                    help="fail on a searched source with no `read` list or `date`, whatever the batch's date")
     ap.add_argument("--no-qc", action="store_true",
                     help="skip qc_checks.py --staged on the lane files")
     ap.add_argument("--json", action="store_true")

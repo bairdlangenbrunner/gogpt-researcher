@@ -1,0 +1,89 @@
+{
+  "_about": "Queue settings for pull_queues.py --state OK. name is the State/Province value in the GEM export; markets are the queues read (all of Oklahoma sits in the Southwest Power Pool, so SPP is the one market; the panhandle's Xcel territory is SPP too); owner and shared_owner are only used for MISO's state-blank rows and are empty here; pjm_states is empty; known is hand-checked patterns, GEM plant id to regexes that name that plant in a point of interconnection, project name or developer. Every match still says check. A county-only match is never a known match: GEN-2024-340 (1,440 MW, Creek County, AEP) is not Bristow Energy Center (420 MW, Associated Electric), and the AES 5 rows in Oklahoma County are not Horseshoe Lake.",
+  "state": "OK",
+  "name": "Oklahoma",
+  "markets": [
+    "SPP"
+  ],
+  "owner": "",
+  "shared_owner": "",
+  "pjm_states": [],
+  "known": {
+    "L100000402162": [
+      "horseshoe lake"
+    ],
+    "L100000402164": [
+      "mustang"
+    ],
+    "L100000402165": [
+      "seminole"
+    ],
+    "L100000401594": [
+      "mcclain",
+      "norman hills"
+    ],
+    "L100000401595": [
+      "redbud"
+    ],
+    "L100000104122": [
+      "grec",
+      "grand river",
+      "grda"
+    ],
+    "L100000104123": [
+      "hugo"
+    ],
+    "L100000104124": [
+      "muskogee"
+    ],
+    "L100000104126": [
+      "northeastern",
+      "oologah"
+    ],
+    "L100001063385": [
+      "tinker"
+    ],
+    "L100000402369": [
+      "anadarko"
+    ],
+    "L100000402231": [
+      "comanche",
+      "lawton east side",
+      "oklaunion"
+    ],
+    "L100000402235": [
+      "tulsa power station"
+    ],
+    "L100000401723": [
+      "chouteau",
+      "maid 161"
+    ],
+    "L100000402166": [
+      "lamb",
+      "ponca city"
+    ],
+    "L100000409256": [
+      "ferguson",
+      "stillwater"
+    ]
+  },
+  "known_set": "2026-11-03, from the SPP active queue read that day. Hugo matches GEN-2026-SR34 (Fort Towson, 75 MW) and GEN-2024-323 (ITC Hugo 7, 372 MW), which are Hugo Site A and Site B; Muskogee matches GEN-2025-SR9 (400 MW) and GEN-2024-293 (Muskoge7, 248 MW), which may be OG&E units or the Core Scientific data center plant; Northeastern matches ERAS-2025-023 (513 MW Oologah); Comanche matches ERAS-2025-024 and ERAS-2025-026 (775.2 MW each, Lawton). Each still needs the check.",
+  "known_names": {
+    "L100000402162": "Horseshoe Lake power station",
+    "L100000402164": "Mustang (OK) power station",
+    "L100000402165": "Seminole (OK) power station",
+    "L100000401594": "McClain energy facility",
+    "L100000401595": "Redbud power plant",
+    "L100000104122": "Grand River Energy Center",
+    "L100000104123": "Hugo power station",
+    "L100000104124": "Muskogee Generating Station",
+    "L100000104126": "Northeastern Station",
+    "L100001063385": "Tinker Air Force Base power station",
+    "L100000402369": "Anadarko power station",
+    "L100000402231": "Comanche (OK) power station",
+    "L100000402235": "Tulsa power station",
+    "L100000401723": "Chouteau power station",
+    "L100000402166": "Charles D. Lamb energy center",
+    "L100000409256": "Stillwater Energy Center"
+  }
+}

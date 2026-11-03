@@ -158,11 +158,11 @@ from zoneinfo import ZoneInfo
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from build_review_package import (_split_urls, additive_value, inline_value,  # noqa: E402
-                                  ref_col_for, validated_tier)
+                                  ref_col_for, validated_tier, value_cols_for)
 from geo import distance_m, fmt5, parse_coord, pin_link, pin_point, valid_point  # noqa: E402
 from paths import gogpt_scoped_csv  # noqa: E402
-from schema_constants import (ADDITIVE_TEXT_COLUMNS, INLINE_SOURCE_COLUMNS,  # noqa: E402
-                              LOCATION_METHODS, RESEARCH_FIELDS)
+from schema_constants import (ADDITIVE_TEXT_COLUMNS, EVIDENCE_KEY, INLINE_SOURCE_COLUMNS,  # noqa: E402
+                              LOCATION_METHODS, RESEARCH_FIELDS, is_data_source_column)
 from review_app.checklist import (  # noqa: E402
     CONCERN_VOCAB, MONITOR_KINDS, name_key, normalize_concern_type)
 
@@ -457,6 +457,11 @@ def build_action(kind, field, value, current, target, ref_col, n_urls,
         # Status Detail carries its own link (Baird 2026-10-08)
         s += (" The source link is part of this text. Do not add it to the "
               "Status Data Source box.")
+    elif n_urls and ref_col == EVIDENCE_KEY:
+        # a name has no Data Source box (schema_constants.IDENTITY_COLUMNS)
+        s += (f" {link_phrase(n_urls).capitalize()} {'are' if n_urls > 1 else 'is'} the "
+              "evidence for the name. A name has no Data Source box, so there is "
+              "no link to add.")
     elif n_urls:
         s += (f" Add {link_phrase(n_urls)} to the {ref_col} box"
               f"{' on each unit' if each_unit else ''}. "
@@ -542,6 +547,8 @@ class Assembler:
         self.match_no_new_url = 0
         self.downgraded = 0
         self.promoted = 0
+        self.misplaced_remapped = 0
+        self.misplaced_dropped = 0
         self.comparison: dict = {}
         self.unit_notes_used: set[str] = set()
         self.shards: dict = {}
@@ -675,6 +682,34 @@ class Assembler:
             "tier": (fd or {}).get("tier", ""), "refs": list((fd or {}).get("refs") or []),
             "scope": scope, "note": (fd or {}).get("note", "")}
         self.verdicts[verdict] += 1
+
+    # -- a finding keyed on a Data Source box instead of its value column
+    def remap_finding(self, pid, uid, field, fd, row):
+        """A finding keyed on "Fuel Data Source" is the agent offering a link
+        for that box, usually to replace a dead one (North Dakota, 2026-11-03).
+        It is rekeyed to the value column the box backs, carrying the export's
+        own value, so it stages as a re-verification that merges the link and
+        never changes a value. Returns (value_column, finding, remapped);
+        the column is None when no value column of that box holds the value."""
+        if not is_data_source_column(field):
+            return field, fd, False
+        value = ws(fd.get("value"))
+        fits = [c for c in value_cols_for(field)
+                if not is_blank(row.get(c))
+                and (not value or values_equal(c, row.get(c), value))]
+        if not fits:
+            self.misplaced_dropped += 1
+            self.warnings.append(
+                f"{pid}/{uid}: finding keyed on the {field} box with value {value!r} "
+                "matches no value in the export; skipped")
+            return None, fd, True
+        col = fits[0]
+        self.misplaced_remapped += 1
+        self.warnings.append(f"{pid}/{uid}: finding keyed on the {field} box rekeyed "
+                             f"to {col} as a re-verification")
+        new = dict(fd)
+        new["value"] = row.get(col)
+        return col, new, True
 
     # -- one finding against one unit
     def evaluate(self, field, fd, row):
@@ -845,13 +880,29 @@ class Assembler:
                 self.warnings.append(f"{pid}/{uid}: unit not reported in shard")
                 continue
             row = self.export[uid]
-            findings = su.get("findings") or {}
+            findings = dict(su.get("findings") or {})
+            # a plant-level finding keyed on a Data Source box is answered
+            # unit by unit, since the units may hold different values
+            for field, fd in list(plant_findings.items()):
+                if is_data_source_column(field):
+                    findings.setdefault(field, fd)
             reported = set()
             for field, fd in findings.items():
                 fd = fd or {}
+                field, fd, remapped = self.remap_finding(pid, uid, field, fd, row)
+                if field is None:
+                    continue
                 ev = self.evaluate(field, fd, row)
                 if is_blank(ev["value"]):
                     continue        # an empty finding is treated as not found
+                if remapped:
+                    # only ever a re-verification that merges the new link
+                    if ev["new_urls"]:
+                        self.stage(pid, plant_name, field, fd, uid, ev,
+                                   self.unit_notes_once(uid, su.get("notes")))
+                    else:
+                        self.match_no_new_url += 1
+                    continue
                 reported.add(field)
                 self.compare(pid, plant_name, uid, field, ev["value"], None,
                              fd, "unit")
@@ -880,6 +931,8 @@ class Assembler:
 
         for field, fd in plant_findings.items():
             fd = fd or {}
+            if is_data_source_column(field):
+                continue        # answered per unit above
             evs = {uid: self.evaluate(field, fd, self.export[uid]) for uid in order}
             if not evs:
                 continue
@@ -1338,7 +1391,9 @@ class Assembler:
                     "reverified": sum(bool(r.get("reverified")) for r in recs),
                     "match_no_new_url": self.match_no_new_url,
                     "status_downgraded": self.downgraded,
-                    "tier_promoted": self.promoted})
+                    "tier_promoted": self.promoted,
+                    "box_findings_rekeyed": self.misplaced_remapped,
+                    "box_findings_dropped": self.misplaced_dropped})
             env = {"meta": {"lane": lane, "scope": self.scope(),
                             "generated": generated, "mode": self.mode,
                             "counts": counts},
@@ -1502,6 +1557,9 @@ def main():
     print(f"  match with no new link (no record): {a.match_no_new_url}")
     print(f"  status changes lowered from high to medium: {a.downgraded}")
     print(f"  one fully validated source raised from medium to high: {a.promoted}")
+    if a.misplaced_remapped or a.misplaced_dropped:
+        print(f"  findings keyed on a Data Source box: {a.misplaced_remapped} rekeyed to the "
+              f"value column as re-verifications, {a.misplaced_dropped} dropped")
     print("  records: " + ", ".join(f"{lane}={len(r)}"
                                     for lane, r in a.lanes.items()))
     n_checks = sum(1 for lane in ("updates", "qa") for r in a.lanes[lane] if r.get("checks"))
