@@ -94,6 +94,13 @@ ALIASES = {
     "duke energy": ["duke energy"],
     "psnc": ["public service company of north carolina"],
     "dominion": ["dominion energy", "virginia electric"],
+    "og&e": ["oklahoma gas and electric", "oklahoma gas & electric"],
+    "oge": ["oklahoma gas and electric", "oklahoma gas & electric"],
+    "pso": ["public service company of oklahoma"],
+    "wfec": ["western farmers electric"],
+    "grda": ["grand river dam authority"],
+    "ompa": ["oklahoma municipal power authority"],
+    "aeci": ["associated electric cooperative"],
 }
 SUFFIXES = {"co", "corp", "inc", "llc", "lp", "ltd", "plc", "company", "corporation",
             "incorporated", "limited", "the"}
