@@ -1,10 +1,10 @@
 {
  "scope": "us-ok",
  "list": "scopes/us-ok/coverage.json",
- "checked": "2026-11-03T15:03:58",
+ "checked": "2026-11-03T16:17:14",
  "total": 26,
- "ok_count": 25,
- "human_walls": 1,
+ "ok_count": 26,
+ "human_walls": 0,
  "sources": {
   "spp-gi-active": {
    "id": "spp-gi-active",
@@ -93,7 +93,7 @@
   "occ-ecf": {
    "id": "occ-ecf",
    "url": "https://ecf.public.occ.ok.gov",
-   "checked": "2026-11-03T15:01:25",
+   "checked": "2026-11-03T16:17:10",
    "kind": "html",
    "ok": true,
    "route": "curl",
@@ -101,24 +101,23 @@
    "reason": "",
    "bytes": 27296,
    "sample": "scopes/us-ok/work/access/occ-ecf.txt",
-   "human_wall": "Baird registers a free account on the Electronic Case Filing site (it uses an OpenID sign-in; the API answers 401 without a token) and tries one 2025 case search in Chrome. No script ever signs in with his credentials. Until then the daily docket PDFs and the Laserfiche store are the record for cases since March 2022.",
+   "human_wall": "Only if a public document is missing from the WebLink store: Baird registers a free account on the Electronic Case Filing site and downloads that document by hand. No script ever signs in with his credentials.",
    "content_type": "text/html",
    "final_url": "https://ecf.public.occ.ok.gov/"
   },
   "occ-weblink": {
    "id": "occ-weblink",
-   "url": "https://public.occ.ok.gov/WebLink/CustomSearch.aspx?SearchName=ImagedCaseDocumentsfiledafter3212022&dbid=0&repo=OCC",
-   "checked": "2026-11-03T15:01:26",
-   "kind": "html",
-   "ok": false,
-   "route": "curl",
+   "url": "https://public.occ.ok.gov/WebLink/SearchService.aspx/GetSearchListing",
+   "checked": "2026-11-03T16:17:10",
+   "kind": "json",
+   "ok": true,
+   "route": "direct_post, warm_cookie",
    "status": "200",
-   "reason": "a soft error page (title 'Error')",
-   "bytes": 1910,
+   "reason": "",
+   "bytes": 16654,
    "sample": "scopes/us-ok/work/access/occ-weblink.txt",
-   "human_wall": "If the real-Chrome route cannot run a search here, Baird opens the WebLink search in Chrome for one 2025 cause number and downloads one order PDF so the DocView address form is known; a case the run still cannot open is cited from the daily docket PDF and the utility's own copy of the filing.",
-   "content_type": "text/html; charset=utf-8",
-   "final_url": "https://public.occ.ok.gov:443/WebLink/CustomSearch.aspx?SearchName=ImagedCaseDocumentsfiledafter3212022&dbid=0&repo=OCC&cr=1"
+   "content_type": "application/json; charset=utf-8",
+   "final_url": "https://public.occ.ok.gov/WebLink/SearchService.aspx/GetSearchListing"
   },
   "occ-pud-reports": {
    "id": "occ-pud-reports",

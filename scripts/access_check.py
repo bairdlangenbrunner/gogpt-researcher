@@ -26,6 +26,7 @@ Fields an entry in scopes/<tag>/coverage.json may carry, all optional:
     "proof": {
         "sample":  "https://.../one-real-document.pdf",   # read this instead of `url`
         "method":  "POST", "json": {...}, "headers": {...}, # for an API entry
+        "warm":    "https://.../Welcome.aspx",              # GET first, for the session cookie
         "kind":    "pdf" | "csv" | "json" | "table" | "html",
         "expect":  "a phrase that must appear in the text",
         "min_rows": 50,                                     # table or csv rows
@@ -130,8 +131,16 @@ def expect_missing(expect: str, text: str) -> str:
 
 # ------------------------------------------------------------------ fetch ---
 
-def _api_call(url: str, method: str, body, headers: dict | None, timeout: int, insecure: bool):
-    """One request with a method or a JSON body (the fetch ladder does GET only).
+def _session():
+    import requests
+    return requests.Session()
+
+
+def _api_call(url: str, method: str, body, headers: dict | None, timeout: int, insecure: bool,
+              warm: str = ""):
+    """One request with a method or a JSON body (the fetch ladder does GET only). `warm` is
+    an address opened first in the same session, for a site whose services answer only with
+    the cookie its welcome page sets (the OCC Laserfiche WebLink store).
     Returns (status, content_type, raw, notes)."""
     import requests
     h = {"User-Agent": fetch.CHROME_UA, "Accept": "application/json, application/pdf, */*"}
@@ -141,9 +150,13 @@ def _api_call(url: str, method: str, body, headers: dict | None, timeout: int, i
         notes.append("insecure_tls")
         import urllib3
         urllib3.disable_warnings()
+    s = _session()
     try:
-        r = requests.request(method, url, json=body if method != "GET" else None, headers=h,
-                             timeout=timeout, verify=not insecure)
+        if warm:
+            notes.append("warm_cookie")
+            s.get(warm, headers={"User-Agent": fetch.CHROME_UA}, timeout=timeout, verify=not insecure)
+        r = s.request(method, url, json=body if method != "GET" else None, headers=h,
+                      timeout=timeout, verify=not insecure)
     except requests.RequestException as e:
         return "000", "", b"", notes + [f"error: {e.__class__.__name__}"]
     return str(r.status_code), r.headers.get("content-type", ""), r.content, notes
@@ -153,9 +166,10 @@ def fetch_proof(url: str, proof: dict, timeout: int = 60):
     """(status, content_type, raw, text, is_pdf, notes, final_url) for the address the
     proof names, through the whole fetch ladder; a POST or a JSON body goes direct."""
     method = (proof.get("method") or "GET").upper()
-    if method != "GET" or proof.get("json") is not None:
+    if method != "GET" or proof.get("json") is not None or proof.get("warm"):
         status, ctype, raw, notes = _api_call(url, method, proof.get("json"), proof.get("headers"),
-                                              timeout, bool(proof.get("insecure")))
+                                              timeout, bool(proof.get("insecure")),
+                                              warm=proof.get("warm") or "")
         text = raw.decode("utf-8", "replace") if not raw.startswith(b"%PDF") else ""
         is_pdf = raw.startswith(b"%PDF")
         if is_pdf:

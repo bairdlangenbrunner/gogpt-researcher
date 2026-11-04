@@ -1,6 +1,6 @@
 # Access proof: us-ok
 
-Checked 2026-11-03T15:03:58. 25 of 26 sources proven; 1 behind a person's action.
+Checked 2026-11-03T16:17:14. 26 of 26 sources proven; 0 behind a person's action.
 
 | id | ok | route | status | kind | bytes | reason or person |
 |---|---|---|---|---|---|---|
@@ -16,7 +16,7 @@ Checked 2026-11-03T15:03:58. 25 of 26 sources proven; 1 behind a person's action
 | occ-ecf | yes | curl | 200 | html | 27296 |  |
 | occ-pud-dockets | yes | curl | 200 | pdf | 195938 |  |
 | occ-pud-reports | yes | curl | 200 | pdf | 1161279 |  |
-| occ-weblink | NO | curl | 200 | html | 1910 | PERSON: If the real-Chrome route cannot run a search here, Baird opens the WebLink search in Chrome for one 2025 cause number and downloads one order PDF so the DocView address form is known; a case the run still cannot open is cited from the daily docket PDF and the utility's own copy of the filing. |
+| occ-weblink | yes | direct_post, warm_cookie | 200 | json | 16654 |  |
 | odeq-air-pages | yes | curl | 200 | html | 386565 |  |
 | odeq-onbase | yes | direct_post | 200 | json | 1152 |  |
 | odeq-ppr | yes | insecure_tls | 200 | table | 551528 |  |

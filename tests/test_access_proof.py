@@ -241,3 +241,35 @@ def test_harvester_failures_reach_the_audit_before_briefs_exist(tmp_path, monkey
     failed = access_audit._fetch_failures([batch])          # no briefs yet: the harvest folder opens the window
     assert set(failed) == {"https://deq.example/pav/api/Document/x"}
     assert failed[rec["url"]]["reason"] == "HTTP 500"
+
+
+# ------------------------------------------------- a cookie-walled service ---
+
+def test_a_warm_address_is_opened_first_for_the_session_cookie(monkeypatch):
+    """The OCC Laserfiche WebLink store answers its JSON search only with the cookie its
+    welcome page sets. A proof with `warm` opens that page first in the same session."""
+    calls = []
+
+    class FakeResp:
+        status_code = 200
+        headers = {"content-type": "application/json"}
+        content = b'{"data": {"hitCount": 2}}'
+
+    class FakeSession:
+        def get(self, url, **kw):
+            calls.append(("GET", url))
+            return FakeResp()
+
+        def request(self, method, url, **kw):
+            calls.append((method, url))
+            return FakeResp()
+
+    monkeypatch.setattr(access_check, "_session", FakeSession)
+    proof = {"method": "POST", "json": {"repoName": "OCC"}, "kind": "json",
+             "warm": "https://wl.example/WebLink/Welcome.aspx?dbid=0&repo=OCC"}
+    status, ctype, raw, text, is_pdf, notes, final = access_check.fetch_proof(
+        "https://wl.example/WebLink/SearchService.aspx/GetSearchListing", proof, timeout=5)
+    assert calls == [("GET", "https://wl.example/WebLink/Welcome.aspx?dbid=0&repo=OCC"),
+                     ("POST", "https://wl.example/WebLink/SearchService.aspx/GetSearchListing")]
+    assert status == "200" and "warm_cookie" in notes and "direct_post" in notes
+    assert access_check.check_kind("json", raw, text, ctype) == ""

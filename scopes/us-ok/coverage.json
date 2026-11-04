@@ -81,24 +81,41 @@
     "id": "occ-ecf",
     "name": "Oklahoma Corporation Commission Electronic Case Filing (cases since 2022-03-21)",
     "url": "https://ecf.public.occ.ok.gov",
-    "what": "Open the case search for every cause number the daily dockets list and for each utility by party name, read the docket sheet and every order, application and testimony document that names a generating unit, and record the cause number, filing date and the document address for each fact used.",
-    "gap": "The API behind the site answers 401 without a sign-in token (OpenID flow; the site offers registration). On 2026-11-03 nobody had tested whether the page allows anonymous searching in a real browser. The run tests that first with Claude in Chrome on one 2025 case; if a free account is needed, Baird registers one by hand and the harvester reads the daily dockets and the Laserfiche store instead. A case the run cannot open is answered with the cause number, the daily docket entry that names it, and the words 'needs the ECF sign-in', never as blocked.",
+    "what": "The sign-in site is not needed for documents: every Electronic Case Filing document (applications, testimony, notices, orders) is in the Laserfiche WebLink store (occ-weblink) with no sign-in. Use the ECF site only as a cross-check when a cause's WebLink search returns fewer entries than the docket sheet numbers imply (entry numbers in the file names have gaps when a document is confidential).",
+    "gap": "The API behind the site answers 401 without a sign-in token (OpenID flow; the site offers registration). On 2026-11-03 the WebLink store was shown to hold the same filings, so a cause is never 'needs the ECF sign-in'; a document missing from WebLink (a confidential filing, a gap in the entry numbers) is answered with the cause number, the entry number and the words 'confidential or not in the public store'.",
     "proof": {
       "kind": "html"
     },
-    "human_wall": "Baird registers a free account on the Electronic Case Filing site (it uses an OpenID sign-in; the API answers 401 without a token) and tries one 2025 case search in Chrome. No script ever signs in with his credentials. Until then the daily docket PDFs and the Laserfiche store are the record for cases since March 2022."
+    "human_wall": "Only if a public document is missing from the WebLink store: Baird registers a free account on the Electronic Case Filing site and downloads that document by hand. No script ever signs in with his credentials."
   },
   {
     "id": "occ-weblink",
-    "name": "Oklahoma Corporation Commission Laserfiche WebLink, imaged case documents filed after 2022-03-21",
-    "url": "https://public.occ.ok.gov/WebLink/CustomSearch.aspx?SearchName=ImagedCaseDocumentsfiledafter3212022&dbid=0&repo=OCC",
-    "what": "For every cause number found, search the imaged documents (the page needs cookies and renders with script; fetch.py's real-Chrome route loads it) and download the orders and applications as PDFs; the DocView address (https://public.occ.ok.gov/WebLink/DocView.aspx?id=<n>) is the citation.",
-    "gap": "On 2026-11-03 a test search for an old case returned no results and no PDF download was proven. If a 2025 case search also returns nothing in Chrome, record it with what was tried and cite the daily docket PDF plus the utility's own copy of the filing.",
+    "name": "Oklahoma Corporation Commission Laserfiche WebLink, the public document store that holds every Electronic Case Filing document (applications, testimony, notices, orders) and the older imaged case files",
+    "url": "https://public.occ.ok.gov/WebLink/CustomSearch.aspx?SearchName=AllImagedMCCCaseDocuments&dbid=0&repo=OCC",
+    "what": "Scripted, no sign-in (proven 2026-11-03 on cause PUD2026-000073). Open https://public.occ.ok.gov/WebLink/Welcome.aspx?dbid=0&repo=OCC once to get the session cookie, then POST JSON (headers Content-Type: application/json and X-Lf-Suppress-Login-Redirect: 1) to https://public.occ.ok.gov/WebLink/SearchService.aspx/GetSearchListing with {\"repoName\":\"OCC\",\"searchSyn\":<query>,\"searchUuid\":\"\",\"sortColumn\":\"\",\"startIdx\":0,\"endIdx\":100,\"getNewListing\":true,\"sortOrder\":0,\"displayInGridView\":true}; page with startIdx and endIdx, hitCount gives the total. Queries that work: {LF:Name=\"PUD2026-000073*\"} lists every filing in a cause (the file names start with the cause number, the entry number and the document type); {[]:[Case Number]=\"PUD2026-000073\"} lists the cause's imaged orders with their order numbers and titles; {[ECF Document]:[ECF Division]=\"PUD\", [ECF Docket Date]>=\"9/1/2026\", [ECF Docket Date]<=\"9/30/2026\"} lists every Public Utility Division order in a date range, so the harvester can sweep a year of orders without a cause list. Each result carries entryId, name and the metadata fields (Case Number, ECF Document Type, Order Title, Relief Requested, ECF Docket Date). A filing (an electronic PDF, entryProperties '0 pages - N KB') downloads from https://public.occ.ok.gov/WebLink/ElectronicFile.aspx?docid=<entryId>&dbid=0&repo=OCC, which fetch.py reads without a cookie, so that address is the citation. An imaged order (entryProperties 'N pages') is read page by page from DocumentService.aspx/GetTextHtmlForPage with {\"repoName\":\"OCC\",\"documentId\":<entryId>,\"pageNum\":1,\"showAnn\":false,\"searchUuid\":\"\"}, or exported as one PDF: POST ZipEntriesHandler.aspx/StartExport with {\"vdirName\":\"WebLink\",\"repoName\":\"OCC\",\"ids\":[\"<entryId>\"],\"key\":-1,\"watermarkIdx\":-1}, poll ZipEntriesHandler.aspx/CheckExportStatus with {\"token\":<token>} until finished, then GET ExportJobHandler.aspx/GetExportJob/?token=<token> with the cookie (a real PDF with a text layer, 2.2 MB for a four-page order). The order's citation is https://public.occ.ok.gov/WebLink/DocView.aspx?id=<entryId>&dbid=0&repo=OCC. For every cause number the daily dockets name and every PUD cause in the sweep, read the application, the direct testimony and every order, and record the cause number, the entry number, the filing date and the document address for each fact used.",
+    "gap": "The folder browse (FolderListingService.aspx/GetFolderListing) answers an empty list, so causes are found by search, never by walking folders. The custom search form on the page is built for the motor carrier docket (its Case Type list holds only MCC), so the harvester posts its own search syntax instead of the form's fields. The DocView page of an imaged order is a script shell with no text, so a verifier reads the order through the page-text service or the export; the filing addresses (ElectronicFile.aspx) read as plain PDFs. Cases filed before 2022-03-21 are not in the Electronic Case Filing folders; search them by case number anyway, and when nothing comes back cite the legacy case search or the daily docket.",
     "proof": {
-      "kind": "html",
-      "expect": "search"
-    },
-    "human_wall": "If the real-Chrome route cannot run a search here, Baird opens the WebLink search in Chrome for one 2025 cause number and downloads one order PDF so the DocView address form is known; a case the run still cannot open is cited from the daily docket PDF and the utility's own copy of the filing."
+      "sample": "https://public.occ.ok.gov/WebLink/SearchService.aspx/GetSearchListing",
+      "method": "POST",
+      "warm": "https://public.occ.ok.gov/WebLink/Welcome.aspx?dbid=0&repo=OCC",
+      "headers": {
+        "Content-Type": "application/json",
+        "X-Lf-Suppress-Login-Redirect": "1"
+      },
+      "json": {
+        "repoName": "OCC",
+        "searchSyn": "{LF:Name=\"PUD2026-000073*\"}",
+        "searchUuid": "",
+        "sortColumn": "",
+        "startIdx": 0,
+        "endIdx": 20,
+        "getNewListing": true,
+        "sortOrder": 0,
+        "displayInGridView": true
+      },
+      "kind": "json",
+      "expect": "PUD2026-000073_1_Application"
+    }
   },
   {
     "id": "occ-pud-reports",
