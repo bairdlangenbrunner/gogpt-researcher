@@ -144,8 +144,9 @@ def utility_variants(utility):
         key = norm_name(p)
         if not key:
             continue
-        if key in ALIASES:
-            longs += ALIASES[key]
+        alias = {norm_name(k): v for k, v in ALIASES.items()}.get(key)
+        if alias:
+            longs += alias
         elif len(key) <= 6 and " " not in key:
             # an acronym the alias table does not know: plant names only
             pass
