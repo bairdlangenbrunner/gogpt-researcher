@@ -641,6 +641,26 @@ def gate_dates(lanes):
     return out
 
 
+UNIT_LABEL_RE = re.compile(r",|\b(generators?|engines?|turbines?|units|buildings?|backup|installed|permitted|expansion|mw|kwe?|to|and)\b", re.I)
+
+
+def gate_unit_names(lanes):
+    """A new unit's name is a plain number (1, 2, 3), or the owner's own unit
+    number, a block (1-1), a phase (Phase 1), an IRP or R suffix, or GT1/CC1
+    (September 2026 Editing Manual, Unit Naming Guidelines). A description of
+    the fleet ("49 generators, 3,000 kW", "CH5 generators", "Units 1 to 66")
+    is not a unit name: the counts belong in Number Of Engines and Capacity
+    Per Engine, and building names in Other Name(s) or Project Links."""
+    out = []
+    for lane, rid, rec in iter_records(lanes, ("newplants", "newunits")):
+        if lane == "newplants" and "/unit[" not in rid:
+            continue
+        name = ws(rec.get("unit_name") or (rec.get("fields") or {}).get("Unit name"))
+        if name and UNIT_LABEL_RE.search(name):
+            out.append((rid, f"unit name {name!r} describes the units; name them 1, 2, 3 as the manual does"))
+    return out
+
+
 def gate_milestones(lanes):
     """Every staged Status comes with a dated milestone timeline entry for that status
     (Baird 2026-11-02): status, a four-digit year, the month, quarter or half
@@ -2080,6 +2100,7 @@ def run(args):
     add("headers", True, gate_headers(lanes, header))
     add("cell-prose", True, gate_cell_prose(lanes))
     add("dates", True, gate_dates(lanes))
+    add("unit-names", True, gate_unit_names(lanes))
     add("latest-activity", True, gate_latest_activity(lanes, export))
     add("milestones", False, gate_milestones(lanes))
     add("additive", True, gate_additive(lanes))
