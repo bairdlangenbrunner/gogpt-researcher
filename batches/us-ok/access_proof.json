@@ -1,7 +1,7 @@
 {
  "scope": "us-ok",
  "list": "scopes/us-ok/coverage.json",
- "checked": "2026-11-03T16:17:14",
+ "checked": "2026-11-04T16:47:18",
  "total": 26,
  "ok_count": 26,
  "human_walls": 0,
@@ -9,13 +9,13 @@
   "spp-gi-active": {
    "id": "spp-gi-active",
    "url": "https://opsportal.spp.org/Studies/GenerateActiveCSV",
-   "checked": "2026-11-03T15:01:06",
+   "checked": "2026-11-04T16:45:07",
    "kind": "csv",
    "ok": true,
    "route": "curl",
    "status": "200",
    "reason": "",
-   "bytes": 242345,
+   "bytes": 242364,
    "sample": "scopes/us-ok/work/access/spp-gi-active.txt",
    "content_type": "text/csv; charset=utf-8",
    "final_url": "https://opsportal.spp.org/Studies/GenerateActiveCSV"
@@ -23,7 +23,7 @@
   "spp-eras": {
    "id": "spp-eras",
    "url": "https://www.spp.org/engineering/generator-interconnection/",
-   "checked": "2026-11-03T15:01:08",
+   "checked": "2026-11-04T16:45:07",
    "kind": "html",
    "ok": true,
    "route": "curl",
@@ -37,13 +37,13 @@
   "odeq-ppr": {
    "id": "odeq-ppr",
    "url": "https://applications.deq.ok.gov/PermitsPublicReview/",
-   "checked": "2026-11-03T15:03:54",
+   "checked": "2026-11-04T16:45:09",
    "kind": "table",
    "ok": true,
-   "route": "insecure_tls",
+   "route": "curl",
    "status": "200",
    "reason": "",
-   "bytes": 551528,
+   "bytes": 557309,
    "sample": "scopes/us-ok/work/access/odeq-ppr.txt",
    "content_type": "text/html; charset=utf-8",
    "final_url": "https://applications.deq.ok.gov/PermitsPublicReview/"
@@ -51,13 +51,13 @@
   "odeq-onbase": {
    "id": "odeq-onbase",
    "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/CustomQuery/KeywordSearch",
-   "checked": "2026-11-03T15:01:12",
+   "checked": "2026-11-04T16:45:10",
    "kind": "json",
    "ok": true,
    "route": "direct_post",
    "status": "200",
    "reason": "",
-   "bytes": 1152,
+   "bytes": 1153,
    "sample": "scopes/us-ok/work/access/odeq-onbase.txt",
    "content_type": "application/json; charset=utf-8",
    "final_url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/CustomQuery/KeywordSearch"
@@ -65,7 +65,7 @@
   "odeq-air-pages": {
    "id": "odeq-air-pages",
    "url": "https://oklahoma.gov/deq/divisions/air-quality.html",
-   "checked": "2026-11-03T15:01:24",
+   "checked": "2026-11-04T16:45:12",
    "kind": "html",
    "ok": true,
    "route": "curl",
@@ -79,7 +79,7 @@
   "occ-pud-dockets": {
    "id": "occ-pud-dockets",
    "url": "https://oklahoma.gov/content/dam/ok/en/occ/documents/ajls/jls-courts/court-clerk/docket-results/2026/2026-10-29-pud.pdf",
-   "checked": "2026-11-03T15:01:25",
+   "checked": "2026-11-04T16:45:12",
    "kind": "pdf",
    "ok": true,
    "route": "curl",
@@ -93,7 +93,7 @@
   "occ-ecf": {
    "id": "occ-ecf",
    "url": "https://ecf.public.occ.ok.gov",
-   "checked": "2026-11-03T16:17:10",
+   "checked": "2026-11-04T16:45:13",
    "kind": "html",
    "ok": true,
    "route": "curl",
@@ -108,13 +108,13 @@
   "occ-weblink": {
    "id": "occ-weblink",
    "url": "https://public.occ.ok.gov/WebLink/SearchService.aspx/GetSearchListing",
-   "checked": "2026-11-03T16:17:10",
+   "checked": "2026-11-04T16:45:13",
    "kind": "json",
    "ok": true,
    "route": "direct_post, warm_cookie",
    "status": "200",
    "reason": "",
-   "bytes": 16654,
+   "bytes": 16656,
    "sample": "scopes/us-ok/work/access/occ-weblink.txt",
    "content_type": "application/json; charset=utf-8",
    "final_url": "https://public.occ.ok.gov/WebLink/SearchService.aspx/GetSearchListing"
@@ -122,7 +122,7 @@
   "occ-pud-reports": {
    "id": "occ-pud-reports",
    "url": "https://oklahoma.gov/content/dam/ok/en/occ/documents/pu/pud-reports-page/2025-oge-irp.pdf",
-   "checked": "2026-11-03T15:01:26",
+   "checked": "2026-11-04T16:45:25",
    "kind": "pdf",
    "ok": true,
    "route": "curl",
@@ -136,7 +136,7 @@
   "oge-irp": {
    "id": "oge-irp",
    "url": "https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8",
-   "checked": "2026-11-03T15:03:56",
+   "checked": "2026-11-04T16:45:26",
    "kind": "pdf",
    "ok": true,
    "route": "cf_impersonate, pdf_via_ladder",
@@ -150,7 +150,7 @@
   "pso-irp": {
    "id": "pso-irp",
    "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
-   "checked": "2026-11-03T15:01:28",
+   "checked": "2026-11-04T16:45:27",
    "kind": "pdf",
    "ok": true,
    "route": "curl",
@@ -164,13 +164,13 @@
   "sec-edgar": {
    "id": "sec-edgar",
    "url": "https://efts.sec.gov/LATEST/search-index?q=%22Horseshoe%20Lake%22&forms=10-K",
-   "checked": "2026-11-03T15:01:30",
+   "checked": "2026-11-04T16:45:29",
    "kind": "json",
    "ok": true,
    "route": "sec_declared_ua",
    "status": "200",
    "reason": "",
-   "bytes": 36907,
+   "bytes": 36900,
    "sample": "scopes/us-ok/work/access/sec-edgar.txt",
    "content_type": "application/json",
    "final_url": "https://efts.sec.gov/LATEST/search-index?q=%22Horseshoe%20Lake%22&forms=10-K"
@@ -178,13 +178,13 @@
   "wfec": {
    "id": "wfec",
    "url": "https://www.wfec.com/",
-   "checked": "2026-11-03T15:01:31",
+   "checked": "2026-11-04T16:45:30",
    "kind": "html",
    "ok": true,
    "route": "curl",
    "status": "200",
    "reason": "",
-   "bytes": 442645,
+   "bytes": 390185,
    "sample": "scopes/us-ok/work/access/wfec.txt",
    "content_type": "text/html;charset=utf-8",
    "final_url": "https://www.wfec.com/"
@@ -192,7 +192,7 @@
   "aeci": {
    "id": "aeci",
    "url": "https://www.aeci.org/",
-   "checked": "2026-11-03T15:01:31",
+   "checked": "2026-11-04T16:45:30",
    "kind": "html",
    "ok": true,
    "route": "curl",
@@ -206,7 +206,7 @@
   "grda": {
    "id": "grda",
    "url": "https://www.grda.com/",
-   "checked": "2026-11-03T15:01:32",
+   "checked": "2026-11-04T16:45:31",
    "kind": "html",
    "ok": true,
    "route": "curl",
@@ -220,7 +220,7 @@
   "ompa": {
    "id": "ompa",
    "url": "https://www.ompa.com/",
-   "checked": "2026-11-03T15:01:32",
+   "checked": "2026-11-04T16:45:31",
    "kind": "html",
    "ok": true,
    "route": "curl",
@@ -234,7 +234,7 @@
   "evergy-irp": {
    "id": "evergy-irp",
    "url": "https://investors.evergy.com/2026IRPUpdate",
-   "checked": "2026-11-03T15:03:57",
+   "checked": "2026-11-04T16:45:31",
    "kind": "html",
    "ok": true,
    "route": "cf_impersonate, pdf_via_ladder",
@@ -248,7 +248,7 @@
   "tenaska-kiamichi": {
    "id": "tenaska-kiamichi",
    "url": "https://www.tenaska.com/",
-   "checked": "2026-11-03T15:01:33",
+   "checked": "2026-11-04T16:45:32",
    "kind": "html",
    "ok": true,
    "route": "curl",
@@ -262,7 +262,7 @@
   "eia-860m": {
    "id": "eia-860m",
    "url": "https://www.eia.gov/electricity/data/eia860m/",
-   "checked": "2026-11-03T15:01:33",
+   "checked": "2026-11-04T16:45:32",
    "kind": "html",
    "ok": true,
    "route": "curl",
@@ -276,7 +276,7 @@
   "eia-860": {
    "id": "eia-860",
    "url": "https://www.eia.gov/electricity/data/eia860/",
-   "checked": "2026-11-03T15:01:33",
+   "checked": "2026-11-04T16:45:32",
    "kind": "html",
    "ok": true,
    "route": "curl",
@@ -290,7 +290,7 @@
   "eip-oil-gas-watch": {
    "id": "eip-oil-gas-watch",
    "url": "https://oilandgaswatch.org/",
-   "checked": "2026-11-03T15:01:34",
+   "checked": "2026-11-04T16:45:33",
    "kind": "html",
    "ok": true,
    "route": "curl",
@@ -304,7 +304,7 @@
   "possible-updates-sheet": {
    "id": "possible-updates-sheet",
    "url": "https://docs.google.com/spreadsheets/d/1GAXwGdI0UFeW9mFSxJhhR6MRBW7VDtlWBqsooVZyUzs",
-   "checked": "2026-11-03T15:01:34",
+   "checked": "2026-11-04T16:45:33",
    "kind": "",
    "ok": true,
    "route": "gws-gem",
@@ -317,7 +317,7 @@
   "captive-lng-sheet": {
    "id": "captive-lng-sheet",
    "url": "https://docs.google.com/spreadsheets/d/19YvVT918PYHq_DkdvKWtoXYJ2Xl7l7R3",
-   "checked": "2026-11-03T15:01:35",
+   "checked": "2026-11-04T16:45:34",
    "kind": "",
    "ok": true,
    "route": "gws-gem",
@@ -330,13 +330,13 @@
   "data-centers": {
    "id": "data-centers",
    "url": "https://www.datacenterdynamics.com/en/search/?q=Oklahoma%20gas%20turbines",
-   "checked": "2026-11-03T15:01:36",
+   "checked": "2026-11-04T16:45:35",
    "kind": "html",
    "ok": true,
-   "route": "cf_clearance",
+   "route": "browser_render",
    "status": "200",
    "reason": "",
-   "bytes": 100645,
+   "bytes": 244112,
    "sample": "scopes/us-ok/work/access/data-centers.txt",
    "content_type": "text/html; charset=utf-8",
    "final_url": "https://www.datacenterdynamics.com/en/search/?q=Oklahoma%20gas%20turbines"
@@ -344,7 +344,7 @@
   "state-news": {
    "id": "state-news",
    "url": "https://oklahomavoice.com/?s=gas+plant",
-   "checked": "2026-11-03T15:01:58",
+   "checked": "2026-11-04T16:47:17",
    "kind": "html",
    "ok": true,
    "route": "cf_impersonate",
@@ -358,13 +358,13 @@
   "local-planning-records": {
    "id": "local-planning-records",
    "url": "https://www.okc.gov/",
-   "checked": "2026-11-03T15:02:00",
+   "checked": "2026-11-04T16:47:17",
    "kind": "html",
    "ok": true,
    "route": "cf_impersonate",
    "status": "200",
    "reason": "",
-   "bytes": 159482,
+   "bytes": 152178,
    "sample": "scopes/us-ok/work/access/local-planning-records.txt",
    "content_type": "text/html; charset=utf-8",
    "final_url": "https://www.okc.gov/Home"

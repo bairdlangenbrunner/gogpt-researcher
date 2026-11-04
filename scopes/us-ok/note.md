@@ -1,6 +1,6 @@
 # United States — Oklahoma
 
-Scope `us-ok`, every GOGPT plant in the state (32 plants, 78 unit rows in the 2026-11-03 export; 95 rows unfiltered, the rest coal and bioenergy). Drafted 2026-11-03 with `scopes/us-ok/plan.md` for Amalia Llano's Oklahoma assignment. The run that follows this plan finishes the note: it keeps the facts below, corrects what the documents contradict, and leaves "Still open" with only what a person must decide. The whole state sits in the Southwest Power Pool.
+Scope `us-ok`, every GOGPT plant in the state (35 plants, 87 unit rows in the 2026-11-04 export, up from 32 plants and 78 rows on 2026-11-03; the unfiltered export adds the coal and bioenergy rows). Drafted 2026-11-03 and brought up to the 2026-11-04 export with `scopes/us-ok/plan.md` for Amalia Llano's Oklahoma assignment. The run that follows this plan finishes the note: it keeps the facts below, corrects what the documents contradict, and leaves "Still open" with only what a person must decide. The whole state sits in the Southwest Power Pool.
 
 ## State context
 
@@ -13,11 +13,11 @@ Scope `us-ok`, every GOGPT plant in the state (32 plants, 78 unit rows in the 20
 
 ## Recent events 2024 to 2026
 
-- OG&E: Horseshoe Lake units 11 and 12 (224 MW gas turbines) came online in 2026 by GEM's record while the September 2026 EIA-860M file still shows them as construction complete and testing for October 2026. Units 13 and 14 (224 MW, 2029) were selected in the 2025 RFP. Unit 15 (755 MW combined cycle, 2031) is ERAS-2025-004. Horseshoe Lake steam unit 7 (220 MW) and unit 6 (163 MW) retired in 2024 by EIA. Tinker units 1 and 2 (96 MW) started in 2026 and units 5A and 5B retired. Redbud combined cycle addition of 186 MW is ERAS-2025-003.
-- PSO: Comanche combined cycle 1 and 2 (775.2 MW each, ERAS-2025-024 and ERAS-2025-026, interconnection agreement executed, 2029-04-01) are not in GEM. Northeastern gas turbine of 513 MW (ERAS-2025-023, Oologah, 2029-11-01) sits beside GEM's Northeastern Unit 3 timepoint 2 (473 MW announced, the coal unit's conversion). Green Country (795 MW) acquisition from its merchant owner. Port of Inola Power Station (PSD permit PSD000139, Rogers County) is a new site not in GEM.
+- OG&E: Horseshoe Lake units 11 and 12 (224 MW gas turbines) came online in 2026 by GEM's record while the September 2026 EIA-860M file still shows them as construction complete and testing for October 2026. Units 13 and 14 (224 MW, 2029) were selected in the 2025 RFP. Unit 15 (755 MW combined cycle, 2031) is ERAS-2025-004. Horseshoe Lake steam unit 7 (220 MW) and unit 6 (163 MW) retired in 2024 by EIA. Tinker units 1 and 2 (96 MW, owner OG&E) started in 2026 and units 5A and 5B retired in 2026. Seminole units 1, 2 and 3 planned retirements are 2031, 2033 and 2035 in GEM since 2026-11-04. Redbud combined cycle addition of 186 MW is ERAS-2025-003.
+- PSO: Comanche CC2 and CC3 (686.4 MW each in GEM, added by Amalia 2026-11-04; SPP ERAS-2025-024 and ERAS-2025-026 at 775.2 MW each, interconnection agreement executed, 2029-04-01; EIA 2G1 and 2S1, 3G1 and 3S1 for 2029). Northeastern Unit 5 and Unit 6 (225 MW each, 2028, added 2026-11-04) against one 513 MW gas turbine in ERAS-2025-023 (Oologah, 2029-11-01); Northeastern Unit 3 timepoint 2 is operating in GEM with a 2041 planned retirement. Green Country (795 MW) acquisition from its merchant owner. Port of Inola Power Station (1A and 1B, 641 MW each, 2030, PSD permit PSD000139, Rogers County), added 2026-11-04.
 - Western Farmers Electric Cooperative: Hugo Site A (73.5 MW) and Site B (342 MW), both pre-construction 2029, added by Amalia 2026-11-03; SPP GEN-2026-SR34 (75 MW, Fort Towson) and GEN-2024-323 (372 MW, ITC Hugo 7) are the queue rows. Anadarko units 1 to 3 retired December 2024 by EIA; Anadarko Roulet 12 and 13 (50.2 MW each) under construction.
 - Grand River Dam Authority: Grand River unit 4 (combined cycle, operating 2026, 426 MW in GEM, 594 MW in EIA; SPP GEN-2024-GR5 gas and storage hybrid 594 MW). Unit 3's replacement link in GEM points at a unit that does not exist.
-- Merchant and data center projects: Bristow Energy Center (420 MW, Creek County, Associated Electric operator, pre-construction 2029), Ripley Energy Center (445 MW, construction 2027; EIA says 419 MW), Cross Timbers (255 MW, Konawa, pre-construction), Chickasha industrial park (500 MW, announced), ONE Nuclear power station 1 (1,000 MW gas, announced), Muskogee Data Center (283.1 MW, Core Scientific, pre-construction).
+- Merchant and data center projects: Bristow Energy Center (420 MW, Creek County, Associated Electric operator, pre-construction 2029), Ripley Energy Center (445 MW, construction 2027; EIA says 419 MW), Cross Timbers (255 MW, Konawa, pre-construction, construction permit 2025-0397-C), Chickasha industrial park (500 MW, cancelled 2026 on a site limitation quote; EIP still says proposed), ONE Nuclear power station 1 (1,000 MW gas, announced), Muskogee Data Center (283.1 MW, Core Scientific, construction, start 2026), Citadel Facility Data Center at Sperry (99 and 198 MW of diesel backup engines, pre-construction, added 2026-11-04), Project Thunderbird Data Center at Enid (3,300 MW behind-the-meter gas, Plainsmen Holdings LLC, pre-construction, added 2026-11-04).
 - SPP queue entries with no GEM match and 50 MW or more: GEN-2024-341 (1,077.8 MW, Pittsburg County, AEP, 2030), GEN-2024-340 (1,440 MW, Creek County, AEP, 2030), GEN-2024-128 (726.9 MW, Caddo County, 2030), GEN-2024-286 (496 MW, Le Flore County, AES 5 161 kV, 2030; the River Valley coal site, where ODEQ shows an OG&E construction permit in process), GEN-2024-299 (744 MW, Oklahoma County, 2031), GEN-2024-013 (496 MW gas turbine, Norman Hills, McClain County, 2029), GEN-2024-321 (507 MW, Seminole, 2029), GEN-2024-293 (248 MW, Muskogee, 2032), GEN-2024-334 (103 MW, Kay County, 2029), the GEN-2025-SR special-study rows, three 300 MW thermal and storage hybrids (GEN-2024-252, 254, 255), Peoples Electric Cooperative Centrahoma 61.7 MW (ASGI-2016-012, with three ODEQ permits in process), Grand River Dam Authority Nowata reciprocating engines 56.4 MW (ASGI-2015-004), Ferguson 56.4 MW (ASGI-2014-014, Payne County, probably Stillwater).
 
 ## Watch items to raise with the reviewer
@@ -25,21 +25,24 @@ Scope `us-ok`, every GOGPT plant in the state (32 plants, 78 unit rows in the 20
 - Capacity conflicts between GEM and EIA: Grand River 4 (426 against 594 MW), Mustang units 6 to 12 (462 MW in GEM against a 66 MW GT1 in EIA; the GEM row may be the whole plant), Ripley (445 against 419 MW). Each is a capacity question with both sources named, not a silent edit.
 - Status conflicts: Horseshoe Lake 11 and 12 operating in GEM, testing in EIA; Anadarko unit 3 retired in GEM, under construction on EIP's page (EIP's row probably means Roulet 12 and 13).
 - Muskogee units 4 and 5 timepoint 2 carry start year 2019 (the coal-to-gas conversion) while EIA gives 1977 and 1978 (the original units). GEM's convention is the conversion year; say so rather than edit.
-- Northeastern Unit 3 timepoint 2 (473 MW announced gas) against ERAS-2025-023 (513 MW gas turbine, 2029): the same project or a second one.
+- Northeastern Unit 5 and Unit 6 (225 MW each, 2028) against ERAS-2025-023 (one 513 MW gas turbine, 2029): unit count, capacity and year.
+- Chickasha industrial park cancelled in GEM, proposed at EIP: the status change needs its public source.
 - Georgia-Pacific Muskogee mill (EIA 10362, three gas steam turbines, 114 MW, operating since 1979 to 1982) is in EIA and not in GEM: a captive industrial plant above the threshold, an add unless a document shows it is retired.
 - Tinker Air Force Base power station has no EIA code; EIA plant 63628 "Tinker" is the same site.
 - Fort Sill Energy Center (EIA 64855, four 9 MW units, cancelled) is below the threshold.
 
 ## Still open
 
-- Which OCC cause numbers cover Horseshoe Lake 13 to 15, Tinker, the Green Country acquisition and the Comanche combined cycle units. The daily docket PDFs are the way to find them.
-- Whether the OCC Laserfiche WebLink lets an anonymous browser download an order PDF for a 2025 case.
+- Which OCC cause numbers cover Horseshoe Lake 13 to 15, Tinker, the Green Country acquisition, the Comanche combined cycle units and Port of Inola. `harvest_psc.py` reads the daily docket PDFs and the WebLink orders to find them.
 - Owner of Bristow Energy Center (blank; Associated Electric is the operator).
-- The city of Hugo power station reads "Fort Townsend"; the town is Fort Towson. Seminole's city reads "Konowa"; the town is Konawa. Chickasha, ONE Nuclear, Stillwater and Tinker have a blank city, and Chickasha, ONE Nuclear and Muskogee Data Center a blank county.
+- The city of Hugo power station reads "Fort Townsend"; the town is Fort Towson. Seminole's city reads "Konowa"; the town is Konawa. ONE Nuclear has a blank city and county; Amalia filled Chickasha, Stillwater, Tinker and the Muskogee Data Center county on 2026-11-04.
 
 ## Gotchas
 
 - The ODEQ permit table host has a certificate that fails verification: fetch it with verification off (`fetch.py` records `insecure_tls`). Match company and facility names case-insensitively; the table mixes "Oklahoma" and "OKLAHOMA".
+- OnBase document addresses are citable, but the document IDs in them change with each search; cite the address the harvest saved and read it soon.
+- Only the OCC daily docket files whose names end in `-pud` matter; the others are oil and gas, transportation and consumer dockets.
+- The OCC Laserfiche WebLink answers anonymously: electronic filings are cited at ElectronicFile.aspx and imaged orders at DocView.aspx, read through the `occ_weblink` rule in `fetch.py`.
 - OnBase search results carry a document type and a date but not the facility name. Always query by permit number or by the table's object id, so every PDF is tied to the permit it belongs to.
 - Mustang Energy Center and Oneta return zero documents from the ODEQ document store; their permits predate it. Say so in the note; do not call the site blocked.
 - The OCC legacy case search only holds cases before 2022 and takes numeric case numbers. Date searches return nothing. The current system's API answers 401 without a token.
