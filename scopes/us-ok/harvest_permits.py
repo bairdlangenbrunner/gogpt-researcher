@@ -145,6 +145,7 @@ NOTICE_GAP = 150
 # the highest notice number seen (2026-11-04). The store starts sparse (first hits near 3126), so
 # a sweep from an empty index must probe every number up to here before it looks for the end.
 NOTICE_FLOOR = 9300
+DOWNLOAD_DEADLINE = 600  # seconds for one whole OnBase document
 K_OBJECT, K_PERMIT, K_FACILITY, K_COMPANY, K_COUNTY, K_DIVISION = "844", "830", "828", "827", "312", "829"
 FIRST_YEAR = 2016
 
@@ -733,13 +734,21 @@ class OnBase:
             time.sleep(self.pause)
             self.calls += 1
             try:
-                r = self.s.get(doc["url"], timeout=300)
-                if r.status_code == 200 and r.content[:5] == b"%PDF-":
+                # The read timeout is per socket read, so a server that trickles bytes never trips it
+                # (one read hung 54 minutes on 2026-11-05). Stream and enforce a whole-download deadline.
+                deadline = time.monotonic() + DOWNLOAD_DEADLINE
+                with self.s.get(doc["url"], timeout=(30, 120), stream=True) as r:
+                    body = bytearray()
+                    for chunk in r.iter_content(65536):
+                        body += chunk
+                        if time.monotonic() > deadline:
+                            raise TimeoutError("download deadline")
+                if r.status_code == 200 and body[:5] == b"%PDF-":
                     path.parent.mkdir(parents=True, exist_ok=True)
-                    path.write_bytes(r.content)
+                    path.write_bytes(bytes(body))
                     return "saved"
                 err = f"HTTP {r.status_code}" + ("" if r.status_code != 200 else ", not a PDF")
-            except requests.RequestException as e:
+            except (requests.RequestException, TimeoutError) as e:
                 err = type(e).__name__
             time.sleep(4 * (i + 1))
         report_failure(doc["url"], err, "odeq onbase document")

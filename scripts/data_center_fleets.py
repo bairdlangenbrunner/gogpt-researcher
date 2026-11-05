@@ -114,7 +114,7 @@ OPERATOR_WORDS = [
 RISKY_OPERATOR_WORDS = {"apple", "meta", "oracle", "switch", "stack", "tract", "aligned", "vantage",
                         "compass", "prime data", "amazon", "aws", "google", "microsoft"}
 DC_NAME_RX = re.compile(
-    r"data ?cent(?:er|re)s?|datacent(?:er|re)s?|data services|data campus|\bdigital\b|\bcloud\b|"
+    r"data ?cent(?:er|re)s?|datacent(?:er|re)s?|data services|data storage|data campus|\bdigital\b|\bcloud\b|"
     r"colocation|co-location|hyperscale|\bproject [A-Z][a-z]+\b.*\bdata\b|server farm|compute campus",
     re.I)
 DC_CODE_RX = re.compile(r"\b7374\b|\b518210\b|Data Processing, Web Hosting", re.I)

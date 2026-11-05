@@ -44,7 +44,7 @@ Scope `us-ok`, every GOGPT plant in the state (35 plants, 87 unit rows in the 20
 - Only the OCC daily docket files whose names end in `-pud` matter; the others are oil and gas, transportation and consumer dockets.
 - The OCC Laserfiche WebLink answers anonymously: electronic filings are cited at ElectronicFile.aspx and imaged orders at DocView.aspx, read through the `occ_weblink` rule in `fetch.py`.
 - OnBase search results carry a document type and a date but not the facility name. Always query by permit number or by the table's object id, so every PDF is tied to the permit it belongs to.
-- Mustang Energy Center and Oneta return zero documents from the ODEQ document store; their permits predate it. Say so in the note; do not call the site blocked.
+- Mustang Energy Center and Oneta return zero documents from the ODEQ document store because their permits predate it. The ODEQ public notice store has their permit memos: notice 4458 for Mustang (the 2018 renewal memo, which describes the seven gas turbines that replaced the old boilers) and notice 8041 for Oneta (the 2021 memo). Cite those.
 - The ODEQ notice store has no search. Its PDFs are numbered (about 7916 to 9270 dense in 2026, sparse below); the harvester probes every number and keeps a text copy of each. The permit memo's SUBJECT block gives permit number, company, facility, coordinates and address.
 - The oklahoma.gov permit lists are plain CSV files. Three are Latin-1 text; the PSD list is UTF-8 with a byte order mark. The county column sometimes holds the permit class (major, minor, syn-min) instead of a county.
 - The public comment PDF folder on oklahoma.gov cannot be listed and its file names are case-sensitive (title case works). A miss there proves nothing.
