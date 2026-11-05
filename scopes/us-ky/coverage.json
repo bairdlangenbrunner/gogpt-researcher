@@ -1,0 +1,506 @@
+[
+  {
+    "id": "pjm-queue",
+    "name": "PJM interconnection queue, the planning queues XML (serial, transition cycle and new rules rows, every status)",
+    "url": "https://www.pjm.com/planning/service-requests/interconnection-queues",
+    "what": "Use batches/us-ky/harvest/queues.json from pull_queues.py --state KY, which reads the PlanningQueues.xml file (23 MB, anonymous; 228 rows with State KY on 2026-11-04) and lists every gas, oil or fuel-blank request that is live, at 50 MW or of unknown size, and not an in-service request already matched to a GEM plant. Answer every one under queues: a new plant at announced, a new unit at a plant GEM has, a duplicate question, or a watch item with its case. Kentucky's PJM members are East Kentucky Power Cooperative, Kentucky Power (AEP) and Duke Energy Kentucky; the point-of-interconnection column names the substation (Baker 345 kV is Kentucky Power's Lawrence County site, Spurlock to Meldahl Dam is EKPC's Mason County site). A county-only match is never a match.",
+    "proof": {
+      "sample": "https://www.pjm.com/pjmfiles/media/planning/queues-data/PlanningQueues.xml",
+      "kind": "html",
+      "expect": "ProjectNumber"
+    }
+  },
+  {
+    "id": "pjm-cycle",
+    "name": "PJM transition cycle and cycle projects list (the C01 and AH rows, the current new-rules queue)",
+    "url": "https://www.pjm.com/planning/service-requests/interconnection-queues",
+    "what": "Read the cycle list (a POST with no body to the GenerateXMLTransitionProjectsAll address returns every transition and cycle project as XML) for the Kentucky rows the serial file lacks or shows stale: C01-1131 and C01-1325 (gas at Baker 345 kV, Lawrence County), C01-1227 (758 MW gas, Spurlock to Meldahl Dam 345 kV, Mason County), C01-1228 (Liberty Station, Casey County), AH1-721 (Cooper, Pulaski County), and any other KY gas row. Each is settled against the Public Service Commission cases and the air permits, and the queue page is cited as the lead.",
+    "proof": {
+      "sample": "https://www.pjm.com/m/ProjectTransition/GenerateXMLTransitionProjectsAll",
+      "method": "POST",
+      "kind": "html",
+      "expect": "ProjectNumber"
+    }
+  },
+  {
+    "id": "miso-queue",
+    "name": "MISO generator interconnection queue (the JSON behind the public queue page)",
+    "url": "https://www.misoenergy.org/planning/resource-utilization/interconnection-queue/",
+    "what": "Use batches/us-ky/harvest/queues.json from pull_queues.py --state KY, which reads the getprojects JSON (anonymous; 63 rows with state KY and 389 rows with the state blank on 2026-11-04, of which the Big Rivers and Owensboro Municipal Utilities rows are Kentucky's). Answer every live gas, oil or fuel-blank request at 50 MW or of unknown size under queues. Known on 2026-11-04: J3089 (696 MW, Reid EHV, withdrawn), S1073 (75 MW, fuel blank, Hopkins to Reid EHV 161 kV, Webster County, active; probably KYMEA Energy Center I through Big Rivers). The MISO rows for Big Rivers (Green Station, Reid, Wilson coal, the 2023 IRP combined cycle) and, from 2027, Owensboro Municipal Utilities (Elmer Smith) are here; LG&E and KU and TVA are in no market queue and are answered as market LGEE and market TVA.",
+    "proof": {
+      "sample": "https://www.misoenergy.org/api/giqueue/getprojects",
+      "kind": "json",
+      "expect": "projectNumber"
+    }
+  },
+  {
+    "id": "psc-case-list",
+    "name": "Kentucky Public Service Commission case list, one page per year (every case filed, all utilities)",
+    "url": "https://psc.ky.gov/Case/searchCases/2026",
+    "what": "Use batches/us-ky/harvest/psc_dockets.json from scopes/us-ky/harvest_psc.py, which reads the whole year list for 2021 through 2026 (one anonymous GET per year, every case number, company and title on one page; 318 cases for 2026 on 2026-11-04) and keeps every case whose company or title names a power plant, a certificate of public convenience and necessity, an integrated resource plan, a retirement, a fuel conversion, a data center, a merchant plant or one of the utilities (Kentucky Power, East Kentucky Power Cooperative, Big Rivers, Louisville Gas and Electric, Kentucky Utilities, Duke Energy Kentucky, Owensboro Municipal Utilities, Kentucky Municipal Energy Agency). Each case on the year list carries its filing date, service type, category and utility. The POST search form (Company, Category 8 merchant plant, CaseCode) answered a server error (500) on 2026-11-04, so the merchant plant cases come from the siting board list instead.",
+    "proof": {
+      "kind": "html",
+      "expect": "Case Number:"
+    }
+  },
+  {
+    "id": "psc-case-filings",
+    "name": "Kentucky Public Service Commission case filings pages (every document of a case, with dates and open PDF links; sibling tabs for public comments, hearings and post-case correspondence)",
+    "url": "https://psc.ky.gov/Case/ViewCaseFilings/2024-00370",
+    "what": "Use the filings, Public, Hearings and Post tabs that scopes/us-ky/harvest_psc.py reads for every kept case and every case named in scopes/us-ky/plan.md (documents under scopes/us-ky/work/psc/<case>/, extracted with pdftotext -layout, listed in batches/us-ky/harvest/psc_dockets.json). For every case the harvester keeps and every case named in scopes/us-ky/plan.md, read the filings page (the table with id tblCaseFiles: received date, filer, description, and links to psc.ky.gov/pscecf/ or /pscscf/ PDFs), the Public tab (comments), the Hearings tab and the Post tab (post-case correspondence: quarterly construction reports, a construction commencement notice, compliance filings), and download every application, testimony, response to a data request, order and post-case report that names a unit, a capacity, a schedule, a retirement or a cost. The case list page is a lead; the filing PDF is the citation. Cooper's case 2024-00370 Post tab holds the October 30, 2026 construction commencement notice; Kentucky Power's 2026-00324 holds the November 2026 combined cycle application; Big Rivers' 2026-00291 the Reid retirement and Green backup fuel application; LG&E and KU's 2025-00045 the Mill Creek 6 and Brown 12 certificate.",
+    "proof": {
+      "kind": "html",
+      "expect": "Case Filings"
+    }
+  },
+  {
+    "id": "psc-filing-pdf",
+    "name": "Kentucky Public Service Commission electronic filing PDFs (the pscecf store)",
+    "url": "https://psc.ky.gov/pscecf/2024-00370/allyson%40hloky.com/05192025050734/2024-00370_-_JI_-_Second_Supp_Response_JI_2-47.pdf",
+    "what": "Every electronically filed document downloads as a text PDF with plain fetch from an address of the form psc.ky.gov/pscecf/<case>/<filer email, percent-encoded>/<timestamp>/<file>.pdf; cite that address and the page. Read the responses to data requests (the JI and attorney general requests on Cooper and Liberty name unit models, counts and schedules) as well as the application.",
+    "proof": {
+      "kind": "pdf",
+      "expect": "2024-00370"
+    }
+  },
+  {
+    "id": "psc-order-pdf",
+    "name": "Kentucky Public Service Commission scanned case file PDFs and orders (the pscscf store)",
+    "url": "https://psc.ky.gov/pscscf/2023%20Cases/2023-00310/20240820_PSC_ORDER.pdf",
+    "what": "Orders and scanned filings sit at psc.ky.gov/pscscf/<year>%20Cases/<case>/<date>_PSC_ORDER.pdf (the folder is sometimes spelled 'cases' and some links carry a double slash before the file name; both load). Read the final order of every certificate, retirement and integrated resource plan case: the order is the second publisher on a status change and names the approved capacity, the in-service date and conditions.",
+    "proof": {
+      "kind": "pdf",
+      "expect": "Big Rivers"
+    }
+  },
+  {
+    "id": "psc-irp-filings",
+    "name": "Integrated resource plan filings at the commission (Kentucky Power 2023-00092, Big Rivers 2023-00310 and 2026-00268, Duke Energy Kentucky 2024-00197, LG&E and KU 2024-00326, East Kentucky Power Cooperative 2025-00087, 2026-00167)",
+    "url": "https://psc.ky.gov/Case/ViewCaseFilings/2026-00268",
+    "what": "Download every plan volume, every response to a data request and every order in the seven cases into scopes/us-ky/work/irp/ and extract them with pdftotext -layout, so the agents cite page numbers. Big Rivers' 2026 IRP (case 2026-00268, filed September 29, 2026) replaces the 2023 plan behind the BREC 2023 IRP power station placeholder and Green Station's 2029 retirement; Kentucky Power's next plan is due March 20, 2027 and its 2026 combined cycle case (2026-00324) supersedes the 480 MW turbine placeholder; LG&E and KU's 2024 plan (final 2025) carries Brown 12 and Mill Creek 6; EKPC's 2025 plan carries Liberty, Cooper CC1, the Cooper 2 co-firing and the Spurlock co-firing; Duke's 2024 plan carries the East Bend diesel co-firing and the 2039 combined cycle.",
+    "proof": {
+      "sample": "https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/Motion_for_CNF_BR_2026_IRP_092926.pdf",
+      "kind": "pdf",
+      "expect": "Integrated Resource Plan"
+    }
+  },
+  {
+    "id": "psc-siting-board",
+    "name": "Kentucky State Board on Electric Generation and Transmission Siting (merchant plant construction certificates)",
+    "url": "https://psc.ky.gov/Home/EGTSB",
+    "what": "Read the list of merchant power plant cases (85 on 2026-11-04, mostly solar) for every gas, oil or engine case, and the case filings of each: a merchant gas plant in Kentucky (Green River East GenCo at Elmer Smith, any data center plant that sells power, any independent peaker) needs a siting board certificate, and the application names the site, the units, the capacity and the schedule. Also run the case search with Category 8 (merchant plant, CaseCode b4a8c33d-4cd0-43e3-ae6b-4e492276e787) for cases the board page omits.",
+    "proof": {
+      "kind": "html",
+      "expect": "List of Merchant Power Plant Cases"
+    }
+  },
+  {
+    "id": "psc-ums-directory",
+    "name": "Kentucky Public Service Commission utility master directory (every jurisdictional utility with its address and contact)",
+    "url": "https://psc.ky.gov/utility_master/reports/UMSDirectory.pdf",
+    "what": "Read the directory for the exact legal name of every electric utility and generation company in the scope (for entity_lookup.py and for the case search's exact company dropdown text, which carries a trailing space), and for any generation company registered since 2024 that GEM does not know.",
+    "proof": {
+      "kind": "pdf",
+      "expect": "Kentucky Power"
+    }
+  },
+  {
+    "id": "daq-public-notices",
+    "role": "permit_notices",
+    "name": "Kentucky Division for Air Quality public notices (draft Title V and construction permits open for comment, statewide outside Jefferson County)",
+    "url": "https://eec.ky.gov/Environmental-Protection/Air/Pages/Public-Notices.aspx",
+    "what": "Use scopes/us-ky/work/permits/ from scopes/us-ky/harvest_permits.py, which reads the notices page (plain fetch; every notice links a draft permit PDF under /Environmental-Protection/Air/Draft%20Permit%20Documents/) and keeps every notice for a power plant, a cooperative, a utility, an engine fleet or a data center. On 2026-11-04 the page listed the draft revision of Bluegrass Generating Station's Title V permit V-21-048 R1 (comment period October 28 to November 27, 2026). The page lists only permits at public notice; the eSearch record below is the complete record.",
+    "proof": {
+      "kind": "html",
+      "expect": "Air Quality Public Notices"
+    }
+  },
+  {
+    "id": "daq-draft-permit-pdf",
+    "name": "Kentucky Division for Air Quality draft permit documents (the PDFs behind the public notices)",
+    "url": "https://eec.ky.gov/Environmental-Protection/Air/Draft%20Permit%20Documents/EKPC%20Bluegrass%20Gen%20Stn%20-%20Permit%20V-21-048%20R1%20Draft.pdf",
+    "what": "Each draft permit and statement of basis downloads with plain fetch; read the emission unit table (unit ids, make, model, rated heat input, and in a statement of basis the nameplate megawatts and the construction or start dates) and cite the PDF and page.",
+    "proof": {
+      "kind": "pdf",
+      "expect": "Bluegrass"
+    }
+  },
+  {
+    "id": "dep-esearch",
+    "role": "permit_record",
+    "name": "Kentucky Department for Environmental Protection eSearch, the complete air permit record outside Jefferson County (every issued and pending approval, every agency interest, with the permit documents)",
+    "url": "https://dep.gateway.ky.gov/eSearch/",
+    "what": "Use scopes/us-ky/work/permits/<plant_id>.md from scopes/us-ky/harvest_permits.py, which searches the JSON API behind the page by name for every GEM plant and every lead (POST eSearch.WebApi/api/AgencyInterest/Search with {\"AgencyName\": <words>} to find the agency interest id; POST IssuedApprovals/Search and PendingApproval/Search with {AgencyId, AgencyName, County, Municipality, Program \"Air\", ActivityType, LastIssuedDays} for the permits; GET IssuedApproval/Lookup/Counties and Municipalities for the dropdown values; GET issuedapprovals/Document/<percent-encoded JSON {AgencyId, ActivityCode, ActivityYear, ActivityNumber}> or pendingapproval/document/<same> for the document list; GET documentGenerate/getDocument/<SourceDocId> for the PDF), then by county for every county with a GEM plant or a lead, and reads every permit, statement of basis, application and notice it returns for a power facility: unit lists, megawatts, make and model, construction and start dates, engine counts. Agency interest ids known on 2026-11-04: Cooper 3808, Bluegrass 39541, Spurlock 3004, Liberty Station 183908, KYMEA Energy Center 184265. The harvester saves each PDF under scopes/us-ky/work/permits/docs/<agency id>/ and extracts it with pdftotext -layout.",
+    "gap": "Jefferson County (Louisville: Mill Creek, Cane Run, Paddy's Run, every Louisville data center) is permitted by the Louisville Metro Air Pollution Control District, not the state, so its permits are not in eSearch (Mill Creek's agency interest 2122 has no Air program there) and are read from the district's pages below. The document path takes a percent-encoded JSON object; an unencoded one answers a 400 from the web server. The API has no full-text search, so a permit is found by the facility's name, its agency interest id or its county, never by a phrase.",
+    "proof": {
+      "sample": "https://dep.gateway.ky.gov/eSearch.WebApi/api/IssuedApprovals/Search",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "json": {
+        "AgencyId": "",
+        "AgencyName": "Cooper",
+        "County": "",
+        "Municipality": "",
+        "Program": "Air",
+        "ActivityType": "",
+        "LastIssuedDays": ""
+      },
+      "kind": "json",
+      "expect": "AgencyName"
+    }
+  },
+  {
+    "id": "dep-esearch-document",
+    "name": "Kentucky Department for Environmental Protection eSearch permit document download (the PDF behind each approval)",
+    "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/13751619",
+    "what": "Each document id from the eSearch document list downloads as a PDF with plain fetch (13751619 is the KYMEA Energy Center permit V-25-010, 14277421 the Liberty Station permit V-25-006); cite the download address and the page. The harvester records the id beside the permit number so the citation is reproducible.",
+    "proof": {
+      "kind": "pdf",
+      "expect": "V-25-010"
+    }
+  },
+  {
+    "id": "louisville-apcd-proposed",
+    "role": "permit_notices",
+    "name": "Louisville Metro Air Pollution Control District proposed actions (draft permits and public notices for Jefferson County)",
+    "url": "https://louisvilleky.gov/government/air-pollution-control-district/services/proposed-actions-apcd",
+    "what": "Use scopes/us-ky/work/permits/ from scopes/us-ky/harvest_permits.py, which reads the proposed-actions page through the browser-fingerprint route (the host serves a bot challenge to plain curl) and keeps every draft permit, modification and notice for Mill Creek, Cane Run, Paddy's Run, a Louisville data center or an engine fleet. The LG&E 2026 application to run Mill Creek unit 2 past its retirement date and the Mill Creek 5 and 6 construction permits are here or in the active permit list.",
+    "proof": {
+      "kind": "html",
+      "expect": "Proposed Actions"
+    }
+  },
+  {
+    "id": "louisville-apcd-permits",
+    "role": "permit_record",
+    "name": "Louisville Metro Air Pollution Control District active Title V and operating permits (the complete permit record for Jefferson County)",
+    "url": "https://louisvilleky.gov/government/air-pollution-control-district/active-air-pollution-operating-permits-louisville",
+    "what": "Use scopes/us-ky/work/permits/<plant_id>.md from scopes/us-ky/harvest_permits.py, which reads the active permit list through the browser-fingerprint route (about 620 permit links on 2026-11-04) and searches it by name for every GEM plant and every lead in Jefferson County (Mill Creek O-0127-20-V, Cane Run O-0126-25-V, Paddy's Run O-0125-23-V, every data center and every engine fleet), downloads each permit PDF (plain fetch once the address is known, for example /sites/default/files/2025-11/20251113-permit-O-0126-25-V.pdf) and reads the emission unit tables for unit ids, make, model, rated capacity, construction and start dates.",
+    "gap": "The list holds current operating permits only; a construction permit that has not yet been folded into the Title V permit is on the proposed-actions page or in the district's permit files, and an older superseded permit is found through the Wayback Machine or an open records request to the district (apcd@louisvilleky.gov). The district's own permit search form is not scripted; the list page and the proposed-actions page are the way in.",
+    "proof": {
+      "kind": "html",
+      "expect": "Title V Operating Permits"
+    }
+  },
+  {
+    "id": "louisville-apcd-permit-pdf",
+    "name": "Louisville Metro Air Pollution Control District permit PDFs",
+    "url": "https://louisvilleky.gov/sites/default/files/2025-11/20251113-permit-O-0126-25-V.pdf",
+    "what": "Each permit PDF (Cane Run's Title V permit O-0126-25-V of November 2025 is the sample) downloads with plain fetch and has a text layer; cite the address and the page.",
+    "proof": {
+      "kind": "pdf",
+      "expect": "Cane Run"
+    }
+  },
+  {
+    "id": "epa-echo",
+    "name": "EPA Enforcement and Compliance History Online (ECHO) facility search and detailed facility reports",
+    "url": "https://echo.epa.gov/facilities/facility-search",
+    "what": "Query the REST service for every Kentucky electric power facility (get_facilities with p_st=KY, p_sic=4911, p_act=Y, then get_download with the query id for the CSV) and read the detailed facility report (dfr_rest_services.get_dfr with the registry id) for each GEM plant and each lead: the Clean Air Act permit program, the permit numbers, the inspection and compliance history and the facility's registry id, which ties the state permit record to the federal one. Cite the report address.",
+    "proof": {
+      "sample": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?output=JSON&p_id=110000378733",
+      "kind": "json",
+      "expect": "Success"
+    }
+  },
+  {
+    "id": "epa-campd",
+    "name": "EPA Clean Air Markets Program Data (CAMPD) unit-level emissions and operating data",
+    "url": "https://campd.epa.gov/",
+    "what": "Read the apportioned annual emissions for Kentucky through the streaming API (the DEMO_KEY route proves the service; a real key is a person's registration) for every unit at every GEM plant: operating hours and heat input by year show whether a mothballed or converted unit ran (Marshall CT4 to CT8, the Big Sandy, Green, Reid and Cooper conversions), and the unit ids match the EIA generator ids. A unit with no operation for two years is a mothballed candidate, raised as a question, never staged from this alone.",
+    "proof": {
+      "sample": "https://api.epa.gov/easey/streaming-services/emissions/apportioned/annual?api_key=DEMO_KEY&year=2024&stateCode=KY",
+      "kind": "json",
+      "expect": "stateCode"
+    },
+    "human_wall": "The DEMO_KEY route is rate limited; a full pull needs a free API key from https://www.epa.gov/power-sector/cam-api-portal, which Baird registers by hand and stores outside the repo. No script registers or signs in for him."
+  },
+  {
+    "id": "epa-rblc",
+    "name": "EPA RACT/BACT/LAER Clearinghouse (permit determinations for new gas turbines and engines)",
+    "url": "https://www.epa.gov/catc/rblc",
+    "what": "Search the clearinghouse for every Kentucky determination since 2020 (facility, permit number, date, process description with turbine or engine make, model and megawatts) and tie each to the state or district permit; the dashboard at cdxoarapps.epa.gov/oar-rblc/ draws its table with scripts and has no anonymous download, so the search is done by a person or through the data export a person saves.",
+    "proof": {
+      "kind": "html",
+      "expect": "RBLC"
+    },
+    "human_wall": "The determination search (https://cdxoarapps.epa.gov/oar-rblc/?tabIndex=0) runs only in a browser; Baird runs the Kentucky search by hand, exports the table and saves it under scopes/us-ky/work/rblc/. No script signs in."
+  },
+  {
+    "id": "tva-nepa",
+    "name": "Tennessee Valley Authority environmental reviews (NEPA notices, environmental assessments and impact statements)",
+    "url": "https://www.tva.com/environment/environmental-stewardship/environmental-reviews",
+    "what": "Read the environmental reviews page through the browser-fingerprint route and every assessment that names Kentucky: the Paradise and Colbert combustion turbine plants assessment (750 MW of three frame turbines at Paradise, Muhlenberg County), the Shawnee site (Project Phoenix, McCracken County), Marshall (Calvert City), and any new gas, engine or battery project. Download each PDF and cite it with the page; a TVA assessment is the primary document for a TVA project and the TVA board's decision is the second publisher.",
+    "proof": {
+      "kind": "html",
+      "expect": "Environmental Reviews"
+    }
+  },
+  {
+    "id": "tva-irp",
+    "name": "Tennessee Valley Authority 2026 integrated resource plan (and the unfinished 2025 draft)",
+    "url": "https://www.tva.com/environment/2026-integrated-resource-plan",
+    "what": "Read the 2026 plan page and documents (browser-fingerprint route) and the 2025 draft volume 1 for every gas addition, conversion or retirement at Paradise, Marshall and Shawnee, and the board presentation slides the US IRPs tab cites (slide 20 for gas additions). TVA files no plan with the Kentucky commission; the board record is the plan record.",
+    "proof": {
+      "kind": "html",
+      "expect": "Integrated Resource Plan"
+    }
+  },
+  {
+    "id": "tva-newsroom",
+    "name": "Tennessee Valley Authority newsroom and board meeting material",
+    "url": "https://www.tva.com/newsroom",
+    "what": "Read the newsroom (browser-fingerprint route) and the board meeting pages for every release since 2024 on Paradise, Marshall, Shawnee, new combustion turbines, engines, carbon capture studies and data center supply, and the quarterly filings at https://www.tva.com/about-tva/investor-relations (TVA files 10-K and 10-Q with the SEC as well) for the generation project table.",
+    "proof": {
+      "kind": "html",
+      "expect": "TVA"
+    }
+  },
+  {
+    "id": "tva-oasis",
+    "name": "Tennessee Valley Authority OASIS (transmission reservations and generator interconnection queue)",
+    "url": "https://www.oasis.oati.com/TVA/",
+    "what": "TVA's interconnection queue is posted behind the OATI OASIS sign-in; the public pages give only the site. A Kentucky request to TVA (Paradise, Marshall, Shawnee, a data center plant in the TVA area) is answered as market TVA from TVA's own documents and the environmental reviews; if a queue number is needed, a person reads it.",
+    "proof": {
+      "kind": "html",
+      "insecure": true
+    },
+    "human_wall": "The OASIS queue pages need an OATI account; Baird reads the TVA generator interconnection queue by hand if a request number matters and saves the page under scopes/us-ky/work/queues/. No script signs in."
+  },
+  {
+    "id": "lgee-oasis",
+    "name": "LG&E and KU OASIS (the LGEE balancing area's interconnection queue)",
+    "url": "https://www.oasis.oati.com/LGEE/",
+    "what": "LG&E and KU run their own balancing area outside PJM and MISO; their generator interconnection queue (the Mill Creek 5 and 6, Brown 12 and any Louisville data center plant requests) is behind the OATI sign-in. Answer every LG&E and KU project as market LGEE from the commission cases, the air permits and the company's own documents; the queue number is read by a person if it matters.",
+    "proof": {
+      "kind": "html",
+      "insecure": true
+    },
+    "human_wall": "The LGEE OASIS queue needs an OATI account; Baird reads the queue by hand if a request number matters and saves the page under scopes/us-ky/work/queues/. No script signs in."
+  },
+  {
+    "id": "lge-ku-newsroom",
+    "name": "Louisville Gas and Electric and Kentucky Utilities newsroom",
+    "url": "https://lge-ku.com/newsroom",
+    "what": "Read every release since 2024 on Mill Creek 5 and 6, Brown 12, Cane Run, Trimble County, Paddy's Run, the Mill Creek 2 retirement date, data center supply agreements and the carbon capture study at Cane Run 7; a release is the second publisher on a status change and names the turbine model and the schedule.",
+    "proof": {
+      "kind": "html",
+      "expect": "LG&E"
+    }
+  },
+  {
+    "id": "ppl-investors",
+    "name": "PPL Corporation investor site (LG&E and KU's parent: earnings decks, 10-K and 10-Q, data center pipeline)",
+    "url": "https://investors.pplweb.com/",
+    "what": "Read the quarterly earnings presentations and the 10-K and 10-Q filings for the Kentucky generation project table (Mill Creek 5 and 6, Brown 12: capital cost, in-service date, regulatory status) and the Kentucky data center pipeline figures (the 8 GW figure the possible-updates sheet cites); the SEC filing address is the citation for a figure taken from a filing.",
+    "proof": {
+      "kind": "html",
+      "expect": "PPL"
+    }
+  },
+  {
+    "id": "kentucky-power-news",
+    "name": "Kentucky Power (AEP) news and regulatory pages",
+    "url": "https://www.kentuckypower.com/company/news/",
+    "what": "Read every release since 2024 on the Lawrence County combined cycle (case 2026-00324), the Mitchell exit, Big Sandy unit 1's future and data center supply; AEP's own newsroom (https://www.aep.com/news) and 10-K and 10-Q filings carry the same project in the generation table.",
+    "proof": {
+      "kind": "html",
+      "expect": "Kentucky Power"
+    }
+  },
+  {
+    "id": "duke-energy-news",
+    "name": "Duke Energy newsroom and Kentucky pages",
+    "url": "https://news.duke-energy.com/",
+    "what": "Read every release since 2024 on East Bend (the diesel co-firing, the 2039 combined cycle, unit 2's retirement plan) and Duke Energy Kentucky's data center supply; the 10-K and 10-Q filings and the Duke Energy Kentucky commission cases carry the project table.",
+    "proof": {
+      "kind": "html",
+      "expect": "Duke Energy"
+    }
+  },
+  {
+    "id": "ekpc-new-generation",
+    "name": "East Kentucky Power Cooperative new generation page and news",
+    "url": "https://www.ekpc.coop/new-generation",
+    "what": "Read the new generation page, the news page and the 2026 releases (Liberty Station groundbreaking release of May 20, 2026 at https://ekpc.coop/sites/default/files/PDFs/2026/2026-05-20__EKPC_breaks_ground_on_Liberty_Station.pdf; the Kentucky Electric Cooperatives story of May 22, 2026) for Liberty Station, Cooper CC1 (unit 3), the Cooper 2 and Spurlock co-firing, the Mason County combined cycle behind PJM row C01-1227, Bluegrass and J K Smith; EKPC's annual report carries nameplate capacities for J K Smith's turbines.",
+    "proof": {
+      "kind": "html",
+      "expect": "EKPC"
+    }
+  },
+  {
+    "id": "big-rivers",
+    "name": "Big Rivers Electric Corporation (news, annual reports, board material)",
+    "url": "https://www.bigrivers.com/",
+    "what": "Read the home page, the news section and the annual report for the 2026 IRP, the Reid combustion turbine retirement (case 2026-00291), Green Station's backup fuel and 2029 retirement, the 2023 IRP combined cycle placeholder and the KYMEA and Owensboro Municipal Utilities supply arrangements; the press-releases path answered a server error on 2026-11-04, so read the news from the home page links and the Wayback Machine copies.",
+    "proof": {
+      "kind": "html",
+      "expect": "Big Rivers"
+    }
+  },
+  {
+    "id": "kymea",
+    "name": "Kentucky Municipal Energy Agency (news, board packets, integrated resource plan resources)",
+    "url": "https://www.kymea.org/",
+    "what": "Read the news page (https://www.kymea.org/news), the board meeting packets and the IRP resources page (https://www.kymea.org/irp/irp-resources/) for KYMEA Energy Center I (75.2 MW of engines in Madisonville, commercial operation 2027), the Big Rivers connection, MISO row S1073 and any second phase; KYMEA files no plan with the commission, so its board record is the plan record.",
+    "proof": {
+      "kind": "html",
+      "expect": "KYMEA"
+    }
+  },
+  {
+    "id": "omu-news",
+    "name": "Owensboro Municipal Utilities news and board material",
+    "url": "https://omu.org/news-information/",
+    "what": "Read the news page (browser-fingerprint route) and the utility commission board packets for the Elmer Smith site (Green River East GenCo's 545 MW plant on the retired coal site, the lease or sale, the 2027 MISO entry) and any OMU generation plan; the Owensboro Times story on the project leads to the board packet that names the developer and the schedule.",
+    "proof": {
+      "kind": "html",
+      "expect": "Owensboro"
+    }
+  },
+  {
+    "id": "paducah-power",
+    "name": "Paducah Power System (board minutes and news)",
+    "url": "https://paducahpower.com/",
+    "what": "Read the news and board minutes (the host's certificate fails verification; fetch with verification off) for PPS power plant No 1 (two 60 MW units) and any new generation or data center supply; Paducah Power is a municipal utility outside the commission's plan rules.",
+    "proof": {
+      "kind": "html",
+      "insecure": true,
+      "expect": "Paducah"
+    }
+  },
+  {
+    "id": "middle-river-power",
+    "name": "Middle River Power (Big Sandy Peaker Plant owner)",
+    "url": "https://middleriverpower.com/",
+    "what": "Read the portfolio and news pages for Big Sandy Peaker Plant's owner, capacity and any sale; the EIA-860M file lists plant 55284 in West Virginia (Kenova, Wayne County) while GEM lists it in Kentucky, so the owner's site and the EIA plant address settle which state the plant sits in.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "nrg",
+    "name": "NRG Energy (Riverside Generating owner) investor filings",
+    "url": "https://www.nrg.com/",
+    "what": "Read NRG's 10-K and 10-Q plant tables and news for Riverside Generating (Catlettsburg, 230 MW) for the current owner, capacity and any sale or retirement; the SEC filing address is the citation.",
+    "proof": {
+      "kind": "html",
+      "expect": "NRG"
+    }
+  },
+  {
+    "id": "sec-edgar",
+    "name": "SEC EDGAR full-text search for PPL, AEP, Duke Energy, NRG, TVA, TeraWulf and other filers naming Kentucky plants",
+    "url": "https://efts.sec.gov/LATEST/search-index?q=%22Mill%20Creek%22%20%22combined%20cycle%22&forms=10-K,10-Q,8-K",
+    "what": "Search 10-K, 10-Q and 8-K filings (through fetch.py or url_verifier.py, which send SEC's declared identity) for Mill Creek, E.W. Brown, Cane Run, Trimble County, Big Sandy, Riverside, East Bend, Cooper, Elmer Smith, Paradise, Marshall, Shawnee and each data center developer, and read the generation project tables for capacity, cost, expected in-service year and regulatory approval status; the filing's EDGAR address is the citation.",
+    "proof": {
+      "kind": "json"
+    }
+  },
+  {
+    "id": "eia-860m",
+    "name": "EIA-860M newest monthly generator file",
+    "url": "https://www.eia.gov/electricity/data/eia860m/",
+    "what": "Read the Operating, Planned, Retired and Canceled or Postponed sheets for Kentucky in the newest file (work/eia/), and account for every gas or oil plant of 50 MW or more that GEM does not list, every planned or canceled unit at a plant it does (Liberty Station's twelve 18.1 MW engines planned for 2028 against GEM's construction row; Cooper, Spurlock and East Bend units listed as coal only), and every retirement since 2020. Big Sandy Peaker Plant 55284 is listed in West Virginia; say which state is right.",
+    "proof": {
+      "kind": "html",
+      "expect": "860M"
+    }
+  },
+  {
+    "id": "eia-860",
+    "name": "EIA-860 annual survey, ownership and plant tables",
+    "url": "https://www.eia.gov/electricity/data/eia860/",
+    "what": "Read the newest annual Ownership, Plant and Generator tables for Kentucky to confirm owners, shares and street addresses (Trimble County's shares with IMEA and IMPA, Riverside's owner, Big Sandy Peaker's owner and state, J K Smith's nameplates against GEM's 149 and 108 MW rows) and the Proposed Generator table for anything the monthly file lacks.",
+    "proof": {
+      "kind": "html",
+      "expect": "860"
+    }
+  },
+  {
+    "id": "eip-oil-gas-watch",
+    "name": "Environmental Integrity Project Oil and Gas Watch, Kentucky power plant projects",
+    "url": "https://oilandgaswatch.org/",
+    "what": "Use work/ids_us-kentucky.md from match_ids.py (the EIP sheet join) and the public facility pages for every Kentucky power plant project EIP lists that GEM lacks, and chase each to the permit it cites; settle the Brown 12 start year (EIP 2029, GEM 2030) and the Mill Creek status (EIP under construction, GEM pre-construction for MC 6) it raises.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "possible-updates-sheet",
+    "name": "Possible updates sheet, Kentucky rows",
+    "url": "https://docs.google.com/spreadsheets/d/1GAXwGdI0UFeW9mFSxJhhR6MRBW7VDtlWBqsooVZyUzs",
+    "what": "Read the gas and oil plants tab through the work profile for every Kentucky row and answer each one in a record or a coverage note. On 2026-11-04 every Kentucky row was marked done (the PPL data center plants, the Cane Run 7 carbon capture study, the 'Kentucky utility plans new gas-fired units' story, the Paradise combined cycle carbon capture study and 750 MW addition, Mill Creek 5's 7HA.03 and the Kentucky Power 480 MW turbines); confirm that at run time and check each row's claim against the primary document."
+  },
+  {
+    "id": "captive-lng-sheet",
+    "name": "Captive LNG sheet, Kentucky rows",
+    "url": "https://docs.google.com/spreadsheets/d/19YvVT918PYHq_DkdvKWtoXYJ2Xl7l7R3",
+    "what": "Use work/captive_us-kentucky.json from captive_lng.py. Kentucky has no LNG terminals with captive generation on the sheet (zero rows on 2026-11-04); record that."
+  },
+  {
+    "id": "industrial-cogeneration",
+    "name": "Industrial cogeneration and captive plants in Kentucky (paper mills, chemical plants, refineries, aluminum)",
+    "url": "https://www.eia.gov/electricity/data/eia860m/",
+    "what": "From the EIA-860M operating sheet and the eSearch permit record, list every industrial site with gas or oil generators at 50 MW summed nameplate (Domtar Hawesville mill 52 MW cogeneration, commission case 2023-00312; the Hawesville Mill bioenergy and gas row in the unfiltered export; Marathon Catlettsburg refinery; Westlake and Ashland chemical plants at Calvert City; Century Aluminum Sebree) and settle each: in GEM, an add with electrical nameplate only, or below threshold; mechanical-drive turbines and compressor engines are out of scope.",
+    "proof": {
+      "kind": "html",
+      "expect": "860M"
+    }
+  },
+  {
+    "id": "data-centers",
+    "name": "Data center gas generation in Kentucky",
+    "url": "https://www.datacenterdynamics.com/en/search/?q=Kentucky%20gas%20generators",
+    "what": "Use scopes/us-ky/work/permits/_data_centers.md from data_center_fleets.py --state Kentucky, then search trade press, the PPL and LG&E and KU releases, the commission's data center tariff cases (EKPC 2025-00140, Kentucky Power, LG&E and KU, Big Rivers), the TeraWulf cases (2026-00115 Justified Datapower, 2026-00323 DB Long Hunts Data) and the siting board list for on-site gas generation and backup engine fleets at Kentucky campuses (the Louisville and Jefferson County sites behind LG&E's 8 GW pipeline, the TeraWulf sites, Bowling Green, Hopkinsville, Elizabethtown, northern Kentucky, Paducah). A gas-fired data center plant at 50 MW is an add like any other project, and a backup fleet at 50 MW summed nameplate is an add with Backup Power yes; capacity unknown means add with capacity blank. Every site at or above the threshold is answered under data_centers.",
+    "proof": {
+      "kind": "html",
+      "expect": "Kentucky"
+    }
+  },
+  {
+    "id": "business-registry",
+    "name": "Kentucky Secretary of State business search (the project companies behind queue rows and merchant plants)",
+    "url": "https://sosbes.sos.ky.gov/BusSearchNProfile/Search.aspx",
+    "what": "Look up every project company named in a queue row, a siting board case or a permit (Green River East GenCo LLC, the Lawrence County combined cycle company, each data center entity) for its registered name, formation date, principal office and registered agent, which ties a shell name to its parent for the owner field; the profile page is cited for the legal name only. The search is a public ASP.NET form: GET the page for its hidden fields, then POST ctl00$MainContent$ddlSearchBy (Business Name or Organization Number), txtSearch and BSearch=Search; a single hit goes straight to the profile (Profile.aspx/?ctr=<id>). Probed 2026-11-04: Green River East GenCo, LLC is organization 1541155, a Delaware company registered February 6, 2026 with a principal office at 100 Summer Street, Boston (the web.sos.ky.gov address is a 404).",
+    "proof": {
+      "kind": "html",
+      "expect": "Business"
+    }
+  },
+  {
+    "id": "state-news",
+    "name": "Kentucky news for power plant announcements (Kentucky Lantern, Louisville Public Media, Courier Journal, Lexington Herald-Leader, Owensboro Times, Messenger-Inquirer, The Lane Report, Louisville Business First, WKMS, WKYU, NKyTribune, Daily Independent, Somerset Commonwealth Journal, Casey County News, Maysville Ledger Independent, Paducah Sun, The Gleaner, The Messenger)",
+    "url": "https://kentuckylantern.com/?s=gas+plant",
+    "what": "Search each outlet for gas plant, power plant, combined cycle, peaker, generators, data center and each utility name since 2024-01-01, and chase every story to the primary document (a release, a filing, a permit, a council packet); a story is the second publisher on a status change, never the only source for a capacity. Routes probed 2026-11-04: Kentucky Lantern (plain curl 403; browser-fingerprint route; RSS at /feed/; search /?s=), Louisville Public Media (plain; /search?q=), Northern Kentucky Tribune (browser-fingerprint route; /?s=), Owensboro Times (plain; /?s=), The Lane Report (plain; /?s=), Courier Journal and Lexington Herald-Leader and The Gleaner (Gannett and McClatchy sites answer 402 to plain fetch and fetch.py does not escalate on it; use fetch.py --render; search /search/?q=), WKMS (plain; /rss.xml), WKYU (plain; /index.rss), Messenger-Inquirer, WKYT, LEX18, WDRB, Kentucky Today, Ledger Independent, Commonwealth Journal, The Messenger, Daily Independent and Paducah Sun (plain; /search/?q= or /search?q=), Louisville Business First (plain 403; the full Chrome page load), WHAS11 (search through the full Chrome page load). Casey County News no longer resolves; Casey County coverage is on chasinthebuck.com (WKDO), which posts a fiscal court report after each meeting. A paywalled story is read from its first paragraphs and the primary document it cites.",
+    "proof": {
+      "kind": "html",
+      "expect": "gas"
+    }
+  },
+  {
+    "id": "public-notices",
+    "name": "Kentucky Press Association public notice site (legal notices: permit applications, zoning hearings, siting board notices)",
+    "url": "https://kypublicnotice.com/",
+    "what": "Search the statewide legal notice site for each plant name, each utility and the words power plant, generating, turbine, generator, data center and air permit since 2024; a published notice names the applicant, the site and the hearing or comment date and leads to the permit or the council record. The search needs no sign-in: a cookie-jar GET of the home page, then POST index.php/main/search with rowsPerPage, searchTerm, counties=Any, startDate, endDate, page and submit2=Search; always set the dates because unfiltered results are not in date order, and page with the page field. Notice PDFs sit under /KYLegals/<year>/. Probed 2026-11-04: 'turbine' since September 1, 2026 gave six notices, one a Big Sandy News notice for Lawrence County dated October 7, 2026 (the Kentucky Power combined cycle), and a Ledger Independent notice of October 23, 2026 concerns a Meta data center in Mason County with a gas turbine or small reactor. The plural host kypublicnotices.com answers 405; the mirror is kypublicnotices.newzgroup.com.",
+    "proof": {
+      "kind": "html",
+      "expect": "Public and Legal Notice"
+    }
+  },
+  {
+    "id": "local-planning-records",
+    "role": "local_records",
+    "name": "City and county planning, zoning, fiscal court and council records",
+    "url": "https://louisville.legistar.com/",
+    "what": "Use batches/us-ky/harvest/local_records.json and local_records.md from scopes/us-ky/harvest_local.py, which lists every agenda, packet and minutes file since 2024-01-01 for the bodies below (Legistar and CivicClerk APIs, CivicPlus AgendaCenter, the WordPress media API and plain index pages), reads each one (OCR for scans), and records by plant the sentences that name a GEM plant, a lead developer, a power or data center project, or a rezoning, bond or tax deal. Its not_posted list is the human wall below. Open the city and county planning, zoning, fiscal court and council records for every lead and every in-development plant: agendas, staff reports, planning commission packets, minutes, rezonings, plats, conditional or special use permits, development agreements, building permits, industrial revenue bonds and tax abatements (county and the Kentucky Economic Development Finance Authority), and the developer's own posted permit application. Kentucky data center and power sites are approved by the county fiscal court or the city where they sit, and those records name backup generator fleets and turbine counts long before an air permit is filed. Record the body, the meeting date and the document address for every record read. Many county minutes are image-only scans (Henderson, Daviess, Mason, Boone, Clark, Marshall, Somerset); the agendas are text; run pdftoppm -r 150 -png and tesseract on a scanned minutes file before searching it. Bodies and routes probed 2026-11-04. Louisville Metro Council, Planning Commission, Board of Zoning Adjustment and Development Review Committee (Mill Creek, Cane Run, Paddy's Run and the Louisville data centers): Legistar, read through the open JSON API at webapi.legistar.com/v1/louisville/Events (body ids: Metro Council 138, Planning Commission 195, Board of Zoning Adjustment 196, Planning Committee 139, Land Development and Transportation 154, Development Review Committee 165), PDFs on legistar2.granicus.com; the Planning Commission posts agendas but no minutes file, and louisvilleky.gov planning pages need the browser-fingerprint route. Lawrence County (Kentucky Power combined cycle): lawrencecountyky.gov posts events only, no minutes; the record is read by a person (the fiscal court clerk, an open records request) and the Big Sandy News and The Levisa Lazer carry the meeting reports. Pulaski County (Cooper): pulaskigov.com (a Chrome User-Agent is required; a bare one answers 406), agendas at /wp-content/uploads/<year>/<month>/AGENDA-<date>.pdf, minutes combined by year (FCM-2024-combined.pdf); City of Somerset minutes at cityofsomerset.com/meeting-minutes/ are scans. Mason County (Spurlock, PJM row C01-1227, the Meta data center): masoncountykentucky.us/Minutes.php and /Agendas.php (scans); City of Maysville commission agendas at cityofmaysvilleky.gov (text PDFs under /Document Center/Agendas/). Casey County (Liberty): the county has no working site (caseycountyky.gov does not resolve; caseycountyclerk.ky.gov has no minutes); a person reads the fiscal court record or files an open records request, and chasinthebuck.com posts a fiscal court report. Boone County (East Bend): boonecountyky.org fiscal court minutes (scans) and agenda under /Documents/Government/Boone County Fiscal Court/ (never prefixed with the government path, which answers 404). Daviess County, City of Owensboro and the Owensboro Metropolitan Planning Commission (Elmer Smith, Green River East GenCo): daviessky.org fiscal court minutes (scanned order books under /wp-content/uploads/) and agendas; the planning commission is iompc.org (ompc.org is a church; wrong host), with text minutes at /Documents/Documents/Minutes/OMPC/<year>/ and public hearings at /about/public_hearings.php; the city's agendas are on the KSBA portal (portal.ksba.org, agency 4396) and its minutes on Laserfiche WebLink (laserfiche.owensboro.org). Henderson County and City of Henderson (Green Station, Reid): CivicPlus AgendaCenter at hendersoncountyky.gov (categories: fiscal court 2, land development 3, planning commission 4, zoning 6; files at /AgendaCenter/ViewFile/Agenda|Minutes/_MMDDYYYY-ID; minutes are scans) and hendersonky.gov (board of commissioners, text). Webster County (KYMEA row S1073): webstercountyky.com answers a bot challenge; use the full Chrome page load. Hopkins County and City of Madisonville (KYMEA Energy Center I): hopkinscounty.ky.gov (the minutes list stops around 2014; a person asks for current minutes) and Madisonville's CivicClerk portal (madisonvilleky.civicclerk.com), read through its open OData API at madisonvilleky.api.civicclerk.com/v1/Events (each event lists Agenda, Agenda Packet and Minutes files; download with /v1/Meetings/GetMeetingFileStream(fileId=<id>,plainText=false)). Mercer County and City of Harrodsburg (E.W. Brown): mercercounty.ky.gov lists officers and no minutes (meetings the second and last Tuesday; a person asks), harrodsburgky.gov/AgendaMinutes posts text minutes under /assets/AgendaMinutes/<hash>.pdf. Trimble County (Trimble County plant): trimblecountyky.gov posts events and an open records page, no minutes; a person asks. Marshall County (Marshall energy facility, Calvert City): marshallcountyky.gov AgendaCenter (agendas text, minutes scans); Calvert City has no found site. Muhlenberg County (Paradise): muhlenbergcounty.org has a fiscal court page and no minutes; a person asks. McCracken County and City of Paducah (Shawnee, PPS): mccrackencountyky.gov/agenda/ and /planning-zoning/ (read through fetch.py; a plain Chrome-agent GET of the PDF answers 404), paducahky.gov city commission agendas (text, /files/<n>/CCMActionForms-<date>.pdf) and Laserfiche WebLink at citydocs.paducahky.gov for minutes and packets. Oldham County (Bluegrass): oldhamcountyky.gov/fiscalcourtagendas with PDFs on irp.cdn-website.com (text). Clark County (J K Smith): clarkcoky.com AgendaCenter (minutes scans). Boyd County (Riverside, Big Sandy Peaker): boydcountyky.gov DocumentCenter fiscal court minutes (text under a watermark that scrambles extraction; read in a viewer). Hancock County (Domtar): hancockky.us has no minutes; a person asks. Data center counties: Hardin County (hardincountyky.gov AgendaCenter, text) and Elizabethtown (elizabethtownky.org, text); Warren County (warrencountyky.gov links Google Drive folders of agendas and minutes; a person opens them) and Bowling Green (bgky.org, videos only); Christian County (christiancountyky.gov, no minutes on the home page) and Hopkinsville (Laserfiche portal, a person browses); Bullitt County (site under construction; a person asks); Union County (unioncountyky.org through the browser-fingerprint route). Every body with no posted minutes is a human wall for that body alone: Baird or the reviewer asks the clerk for the minutes that name a plant, and the sweep says in the plant's note which bodies were read and which were not.",
+    "proof": {
+      "sample": "https://legistar2.granicus.com/louisville/meetings/2026/10/11396_M_Metro_Council_26-10-29_Action_Summary.pdf",
+      "kind": "pdf",
+      "expect": "Action Summary"
+    },
+    "human_wall": "Lawrence, Casey, Mercer, Trimble, Muhlenberg, Hancock, Hopkins, Bullitt and Christian counties post no current minutes online; Baird or the reviewer asks each county clerk by email for the fiscal court minutes that name the plant, and the Warren County Google Drive folders and the Owensboro, Paducah and Hopkinsville Laserfiche portals are opened by a person. No script signs in."
+  }
+]

@@ -1,0 +1,181 @@
+{
+  "*": [
+    {
+      "text": "Kentucky context: the state is split among four grids. East Kentucky Power Cooperative, Kentucky Power (an AEP company) and Duke Energy Kentucky are in PJM; Big Rivers Electric is in MISO and Owensboro Municipal Utilities joins MISO in 2027; LG&E and KU (PPL companies) run their own balancing authority outside any market; TVA's Marshall, Paradise and Shawnee plants are federal and outside any market and outside Kentucky PSC jurisdiction. The Kentucky Public Service Commission hears certificates of public convenience and necessity, IRPs and rate cases for LG&E, KU, Kentucky Power, Duke Energy Kentucky, EKPC and Big Rivers; its case filings are open PDFs (psc.ky.gov/pscecf/<case>/...) and its orders sit at psc.ky.gov/pscscf/<year> Cases/<case>/. The harvest file batches/us-ky/harvest/psc_dockets.md lists the cases found for every plant. Air permits come from two agencies: the Kentucky Division for Air Quality for most of the state and the Louisville Metro Air Pollution Control District for Jefferson County (Mill Creek, Cane Run, Paddys Run). The permit harvest is in scopes/us-ky/work/permits/<plant_id>.md. Municipal and cooperative utilities (KYMEA, Paducah Power, Owensboro Municipal Utilities, EKPC's members) do not file for a certificate at the commission; their record is the air permit, the queue, their board minutes and their own reports. This batch is staged for Baird's own review page; no colleague's edits are a baseline in Kentucky.",
+      "fields": []
+    },
+    {
+      "text": "Integrated resource plans, all on the commission's site: Kentucky Power 2022 IRP (case 2023-00092; the preferred plan adds 480 MW of gas turbines in 2029 after the Mitchell coal exit; next IRP due March 20, 2027), Duke Energy Kentucky 2024 IRP (case 2024-00197; East Bend diesel co-firing in 2030 and a new combined cycle unit in 2039) and the Duke Energy Kentucky 2026 IRP (case 2026-00167, filed 2026; it replaces the 2024 plan for East Bend), EKPC 2025 IRP (case 2025-00087; Liberty Station 214 MW engines, Cooper CC1 745/800 MW, Cooper 2 gas up to 100 percent, Spurlock 1 to 4 co-firing up to 50 percent), LG&E/KU 2024 IRP (case 2024-00326; Mill Creek 5 in 2027, Brown 12 in 2030 and Mill Creek 6 in 2031 for data center load; next IRP October 19, 2027), Big Rivers 2023 IRP (case 2023-00310; Green Station retirement 2029 and a 635 MW combined cycle in June 2029) and the Big Rivers 2026 IRP (case 2026-00268, filed September 2026, filings through October 30, 2026; it replaces the 2023 plan for every Big Rivers plant and the placeholder), KYMEA 2023 IRP (kymea.org; no gas beyond Energy Center I), and TVA's 2026 IRP (tva.com; the 2025 draft was never finalized). For every plant check the plan for a start date, a retirement year or a capacity that disagrees with the export, cite the PDF page, and give the reviewer an IRP Notes line.",
+      "fields": [
+        "Status",
+        "Start year",
+        "Planned retire",
+        "Capacity (MW)"
+      ]
+    },
+    {
+      "text": "Start years on converted units: Big Sandy 1, Green Station 1 and 2, Robert Reid 1 and the Cooper and Spurlock timepoint 2 rows carry the gas conversion year or planned conversion year, while the EIA-860M file carries the original unit's operating year (1963, 1979, 1981, 1976). GEM's convention is the conversion year on a timepoint 2 row; say so in the note rather than edit, and only stage a start year change when a document gives a different conversion date.",
+      "fields": [
+        "Start year"
+      ]
+    },
+    {
+      "text": "Commission cases filed in 2026 that the sweep must read in full, each listed on psc.ky.gov/Case/ViewCaseFilings/<case> with open PDFs: 2026-00324 (Kentucky Power, certificate for a gas combined cycle plant in Lawrence County with a site compatibility certificate, a Boyd County substation and a short-term capacity purchase; notice of intent October 30, 2026, application November 2 to 3, 2026), 2026-00103 (Kentucky Power, certificate for a new in-state generation resource, filed April 21, 2026, withdrawn by the October 29, 2026 order), 2026-00323 (Kentucky Power service agreement with DB Long Hunts Data LLC, a TeraWulf data center), 2026-00291 (Big Rivers, retirement of the Reid combustion turbine and a certificate for backup fuel capability at Green Station, filed September 24, 2026), 2026-00268 (Big Rivers 2026 IRP), 2026-00115 (Big Rivers retail service agreement with Justified Datapower LLC, a TeraWulf data center, filed May 1, 2026), 2026-00056 (Big Rivers and Kenergy joint special contract), 2026-00167 (Duke Energy Kentucky 2026 IRP), 2026-00012 (Duke Energy Kentucky economic development special contract), 2025-00415 (EKPC certificate for new generation resources, closed by the May 5, 2026 order after EKPC's motion to close), 2025-00140 (EKPC data center tariff), 2025-00313 (Mill Creek 6 monitoring). Case 2024-00370's post-case correspondence tab (ViewCaseFilings/2024-00370/Post) holds EKPC's quarterly Cooper project updates through the third quarter of 2026 and a construction commencement notice dated October 30, 2026.",
+      "fields": [
+        "Status",
+        "Start year",
+        "Planned retire",
+        "Capacity (MW)",
+        "Owner(s)"
+      ]
+    },
+    {
+      "text": "Queue rows read on 2026-11-04 that the sweep must settle (each is a lead, cited only as the queue page): PJM cycle rows C01-1131 (458 MW gas, Baker 345 kV, Lawrence County) and C01-1325 (1,046 MW gas, Baker 345 kV, Lawrence County), which fit Kentucky Power's Lawrence County combined cycle in case 2026-00324; C01-1227 (758 MW gas, Spurlock to Meldahl Dam 345 kV, Mason County), which may be a new EKPC unit at Spurlock or a merchant plant and is not in GEM; AH1-721 (786 MW, Laurel to Cooper 161 kV, active) which is Cooper Unit 3; C01-1228 (212.42 MW, Casey County to Liberty Junction 161 kV) which is Liberty Station; the withdrawn AB1-169 Mason Energy Center (1,150 MW) is history. MISO: S1073 (75 MW, fuel blank, Hopkins to Reid EHV 161 kV, Webster County, active) which is probably KYMEA Energy Center I; J3089 (696 MW gas, Reid EHV, withdrawn). LG&E/KU's own queue is behind a login; the lead sites list LGE-GIS-2022-003 (660 MW gas, Jefferson County, interconnection agreement executed, Mill Creek 5), 2024-002 (75 MW gas), 2024-006 (94 MW hybrid) and LGE-GIS-2019-002 (110 MW gas, Ballard County): the Ballard County and 75 MW rows need a primary source or a watch item. TVA's queue is behind a login; TVA's environmental reviews page lists the Paradise combustion turbine EA (three 250 MW units, the 2023 units GEM has).",
+      "fields": [
+        "Status",
+        "Capacity (MW)",
+        "Start year",
+        "Owner(s)"
+      ]
+    }
+  ],
+  "L100001062552": [
+    {
+      "text": "BREC 2023 IRP power station: a placeholder for the 635 MW combined cycle Big Rivers' 2023 IRP put in June 2029 to replace Green Station. Big Rivers' next IRP was due to the commission by September 29, 2026: find the 2026 IRP case on psc.ky.gov, read its preferred portfolio, and report whether the combined cycle survives, its capacity, year and site (Sebree, Robards, or elsewhere), and whether the placeholder should be renamed to a sited plant. The undated status-history step is a validation fix. Location is approximate with no dataset point (location ladder): a sited plant gets the site, an unsited plan keeps approximate with the plan page as the location source. The export puts Sebree in Henderson County; Sebree is in Webster County, so confirm the county from the plan or EIA and stage a county fix if wrong."
+    }
+  ],
+  "L100000402085": [
+    {
+      "text": "Big Sandy Peaker Plant: the export gives city Kenova and county Wayne, which are in West Virginia, and the EIA-860M file lists plant 55284 Big Sandy Peaker Plant in WV. GEM's State/Province says Kentucky. Settle the state from the EIA-860 plant file and the West Virginia DEP air permit, and if the plant is in West Virginia write a question for Baird that says so, with both sources, so the state can be fixed in the web UI (this moves the plant out of the Kentucky assignment). Owner is Middle River Power II under Partners Group; confirm with the owner's own page or a 2025 or 2026 filing."
+    }
+  ],
+  "L100000103930": [
+    {
+      "text": "Big Sandy Plant: Unit 1 timepoint 2 (280.5 MW gas steam, converted 2016) has planned retirement 2041. Check the Kentucky Power 2022 IRP and any 2026 Kentucky Power filing (rate case, IRP update, RFP) for the retirement year and for a new gas unit at the Big Sandy site; the 480 MW turbine placeholder (KPCO 2023 IRP power station) may be sited here. Lawrence County fiscal court records and the DAQ permit record for Big Sandy are the local checks."
+    },
+    {
+      "text": "Kentucky Power filed case 2026-00324 on November 2, 2026: a certificate of public convenience and necessity for a gas combined cycle plant in Lawrence County, where Big Sandy stands, with a site compatibility certificate and a new substation in Boyd County. Read the application and testimony: if the plant is at the Big Sandy site, stage it as a new unit of this plant (status pre-construction once the certificate application is filed per the manual's ladder, or announced if the application only states intent), with capacity, year, turbine configuration and Kentucky Power at 100 percent; if it is a new site, stage a new plant. Say whether the KPCO 2023 IRP placeholder is this project (then the placeholder is to be folded into it: a question for Baird, never a deletion by the researcher). The earlier case 2026-00103 (filed April 2026, withdrawn October 29, 2026) is the history to put in Status Detail."
+    }
+  ],
+  "L100000103935": [
+    {
+      "text": "Cooper power station: Unit 3 (745 MW combined cycle, pre-construction 2030; certificate case 2024-00370 approved July 2025; construction to begin 2027) and Unit 2 timepoint 2 (225 MW gas conversion, pre-construction 2029). Read the certificate order and the newest filings in 2024-00370, the DAQ permit record for Cooper (the construction permit application for the combined cycle unit and the modification for Unit 2 gas firing; the export says the air permit was not yet filed), the PJM queue rows at Cooper, EKPC's Cooper and news pages, and the Pulaski County fiscal court and Somerset-Pulaski planning records. Report the status ladder step reached (permit filed, permit issued, EPC award, ground broken), the turbine model, the in-service year and the capacity (745 summer, 800 winter in the IRP; stage the nameplate). Both units have an undated status-history step (validation fixes). The EIA-860M file still lists generator 2 as operating coal; the gas conversion is the timepoint 2 row, so no status change unless a document says the conversion is done or abandoned."
+    },
+    {
+      "text": "The post-case correspondence tab of case 2024-00370 holds a construction commencement notice dated October 30, 2026 and quarterly project updates through the third quarter of 2026. Read them: a notice that construction has begun plus one independent publisher (EKPC news, a county record, a photograph in a report) moves Unit 3 to construction at green; the notice alone is yellow. The EKPC certificate case 2025-00415 (new generation resources, closed May 2026 at EKPC's request) is history to record in Status Detail if it concerned Cooper or another EKPC site."
+    }
+  ],
+  "L100000103937": [
+    {
+      "text": "E.W. Brown Generating Station: Unit 12 (681 MW combined cycle, pre-construction 2030; certificate case 2025-00045 approved October 2025; EIP expects 2029). Read the certificate order, the newest 2025-00045 filings, LG&E/KU and PPL news and quarterly reports, the DAQ permit record for Brown (construction permit for Unit 12), the Mercer County fiscal court and Harrodsburg records, and report the status ladder step, start year and capacity with the page. Undated status-history step (validation fix). Coal unit 3 retirement 2035 is on the coal side; note any change without staging it."
+    }
+  ],
+  "L100000103938": [
+    {
+      "text": "East Bend Generating Station: Unit 2 timepoint 2 (600 MW, diesel co-firing from 2030, pre-construction, planned retirement 2038) and Unit 3 (664 MW combined cycle, announced 2039). The 2024 Duke Energy Kentucky IRP (case 2024-00197) is the source for both; check whether any 2025 or 2026 Duke filing, DAQ permit application or Boone County record moves either, and whether the export's note that federal funding was received has a document. Both units have an undated status-history step (validation fixes). The EIA-860M file lists generator 2 as 772 MW operating coal; the gas and diesel conversion is the timepoint 2 row, no status change."
+    }
+  ],
+  "L100000103939": [
+    {
+      "text": "Elmer Smith Station: Unit 1 (545 MW, announced, no start year, added 2026-08-06) under Green River East GenCo LLC, on the site of Owensboro Municipal Utilities' retired coal plant. Find the primary record: the Kentucky Secretary of State entry for Green River East GenCo LLC, the OMU board minutes or Owensboro city commission minutes on the site sale or lease, the MISO queue row at Elmer Smith (Owensboro joins MISO in 2027), the DAQ permit record, the Daviess County fiscal court and Owensboro Metropolitan Planning Commission records, and news. Report owner and parent (stage the LLC at 100 percent if no parent is published), technology, capacity, status ladder step, start year and the exact site coordinates. The whole plant's Location has no data source (validation fix) and Unit 1 has an undated status-history step."
+    }
+  ],
+  "L100000103943": [
+    {
+      "text": "Green Station: Units 1 and 2 timepoint 2 (293 MW gas steam, converted 2022) with planned retirement 2029 from the Big Rivers 2023 IRP. Check the Big Rivers 2026 IRP for the retirement year and for the combined cycle sited here. EIA lists 1979 and 1981 as the original years; GEM's 2022 is the conversion year, say so. Confirm the county (Webster County, Sebree, by EIA; the export may say Henderson)."
+    },
+    {
+      "text": "Big Rivers' case 2026-00291 (September 2026) also asks for a certificate for backup fuel capability at Green Station: read it for what fuel is added (oil backup for the gas units) and the cost and schedule, and stage a fuel change only if the order or application states the fuel; otherwise a Status Detail entry."
+    }
+  ],
+  "L100000401893": [
+    {
+      "text": "J K Smith power station: the EIA-860M file gives 119 MW nameplate for GT1 to GT3 (GEM 149 MW) and 87.6 MW for GT4 and GT5 (GEM 108 MW). Find EKPC's own nameplate figures (its annual report, the DAQ Title V permit, or the IRP's existing resources table) and report the nameplate with the page; a capacity question if the sources disagree. The site is near Trapp in Clark County."
+    }
+  ],
+  "L100001062558": [
+    {
+      "text": "KPCO 2023 IRP power station: a placeholder for the 480 MW gas turbines the Kentucky Power 2022 IRP puts in 2029 after the Mitchell exit. Find any 2025 or 2026 Kentucky Power filing (RFP results, certificate application, rate case testimony) or AEP report that sites or drops the turbines, and report status, site, capacity and year. Undated status-history step (validation fix); city and county are blank; location is approximate with no dataset point (location ladder: an unsited plan keeps approximate with the plan page as the source)."
+    },
+    {
+      "text": "Kentucky Power's case 2026-00324 (November 2026, combined cycle in Lawrence County) and the withdrawn case 2026-00103 (April to October 2026) are probably what this placeholder stands for. Read both and say in a question whether the placeholder should be folded into the sited project at Big Sandy; the researcher stages the sited project and leaves the placeholder's fate to Baird."
+    }
+  ],
+  "L100001026095": [
+    {
+      "text": "KYMEA Energy Center I: 75.2 MW of Wartsila engines under construction in Madisonville, Hopkins County, commercial operation summer 2027. County is blank in the export (stage Hopkins with a source). Read KYMEA's construction updates and board packets, the DAQ permit record, the Madisonville city council and Hopkins County fiscal court minutes, and the MISO queue (connects through Big Rivers). Undated status-history step (validation fix)."
+    },
+    {
+      "text": "MISO row S1073 (75 MW, fuel blank, Hopkins to Reid EHV 161 kV, Webster County, active) matches KYMEA Energy Center I's size and Big Rivers connection; say so or say why not."
+    }
+  ],
+  "L100001025720": [
+    {
+      "text": "Liberty Station Power Plant: 217.2 MW of Wartsila engines, construction since May 2026 in GEM, certificate case 2024-00310 approved May 2025. The September 2026 EIA-860M file lists plant 69726 Liberty Station as planned with regulatory approvals not initiated, which contradicts construction; the Sierra Club list says planned (reference only). Settle the status from EKPC's own news or construction update, the certificate order, the DAQ construction permit and a Casey County fiscal court or Liberty city record; two independent publishers for construction. Write the EIA plant code 69726 into a question for Baird to type into Other IDs (location). Undated status-history step (validation fix)."
+    }
+  ],
+  "L100000402323": [
+    {
+      "text": "Marshall energy facility: CT1 to CT3 operating and CT4 to CT8 mothballed (86 MW each, TVA, Calvert City). Each mothballed unit has an undated status-history step (validation fix): find the TVA document (board action, IRP, EIA-860 status code) that dates the mothballing and gives the current plan, and check the TVA 2026 IRP and board materials for a return to service, retirement or new units at Marshall. Mothballed units never get a retired year unless a document retires them."
+    }
+  ],
+  "L100000103945": [
+    {
+      "text": "Mill Creek Station: MC 5 (740 MW combined cycle, construction 2027, GE 7HA.03; the draft permit said 660 MW and the certificate application 680 MW) and MC 6 (680 MW, pre-construction 2031; certificate case 2025-00045 approved October 2025; construction permit under review at the Louisville Metro Air Pollution Control District; EIP says under construction). Read the APCD permit records for both units (draft and final construction permits, the Title V modification), the newest 2025-00045 filings, LG&E/KU and PPL quarterly reports for construction milestones and the nameplate, and the Louisville Metro Council and Planning Commission records. Report the nameplate per unit with the page (a capacity question if the permit and the certificate disagree), the status ladder step for MC 6, and start years. Both units have an undated status-history step (validation fixes). The coal unit 2 retirement moved from 2027 toward 2031 by LG&E's air permit application in 2026; that is a coal row, note it in the plant summary without staging it. A completed Assigned Comments thread (June 2026, Natalia Fretz, on a retirement year) is the baseline for the coal side."
+    }
+  ],
+  "L100000402189": [
+    {
+      "text": "PPS power plant No 1: two 60 MW units of Paducah Power System, operating since 2010. Check Paducah Power board minutes and the DAQ permit record for anything new (added units, retirement, sale) and the ownership."
+    }
+  ],
+  "L100000103946": [
+    {
+      "text": "Paradise Fossil Plant: TVA's 1,160 MW combined cycle (2017) and three 250 MW GE 7F.05 turbines (2023), Drakesboro, Muhlenberg County. Check the TVA 2026 IRP and board materials for new units at Paradise, the DAQ permit record for any new construction permit, and whether GEM's plant name should follow TVA's current name (Paradise Combined Cycle and Combustion Turbine Plant) as a question, not an edit."
+    }
+  ],
+  "L100000402250": [
+    {
+      "text": "Riverside Generating (KY): five turbines, 230 MW, Catlettsburg, Boyd County, under NRG. Confirm the current owner (NRG's 2025 and 2026 10-K and 10-Q filings, the DAQ Title V permit) and whether any sale or retirement is announced."
+    }
+  ],
+  "L100000103947": [
+    {
+      "text": "Robert Reid Power Plant: Reid 1 timepoint 2 (99 MW, converted 2015). The EIA-860M file lists generator GEN2, 98.8 MW gas turbine, operating since 1976, and no gas generator 1: write the generator id GEN2 into a question for Baird to type into Other IDs (unit). County is blank (Webster County by EIA; stage it with the source). Check the Big Rivers 2026 IRP for a retirement year."
+    },
+    {
+      "text": "Big Rivers' case 2026-00291 (filed September 24, 2026) asks to retire the Reid combustion turbine: read the application for the retirement date and reason, stage the planned retirement year (retired status only once a document says it has happened) with the filing as the source, and put the case in Status Detail."
+    }
+  ],
+  "L100000103950": [
+    {
+      "text": "Spurlock power station: Units 1 to 4 timepoint 2 (gas co-firing up to 50 percent, pre-construction 2029, from the EKPC 2025 IRP and certificate case 2024-00370). Read the certificate order, the DAQ permit record for Spurlock (a construction permit or significant modification for gas firing), EKPC news and the Mason County fiscal court and Maysville records, and report the status ladder step, the year and the gas share. All four rows have an undated status-history step (validation fixes). The EIA-860M file lists the generators as operating coal; the co-firing is the timepoint 2 row, no status change."
+    },
+    {
+      "text": "PJM cycle row C01-1227 (758 MW gas, Spurlock to Meldahl Dam 345 kV, Mason County, active) is not any GEM unit. Find who filed it (EKPC's 2025 IRP named a combined cycle option, and EKPC's withdrawn case 2025-00415 asked for new generation resources) and whether a certificate application, air permit application or Mason County record exists. On one verified source it is a newunits record at Spurlock (announced) or a new plant; on the queue row alone it is a watch item with the queue page as the source."
+    }
+  ],
+  "L100000103951": [
+    {
+      "text": "Trimble County power station: units 5 to 10 (199 MW each, LG&E/KU). Check the LG&E/KU 2024 IRP and the DAQ Title V permit for retirement years or added units, and the Trimble County fiscal court records."
+    }
+  ],
+  "L100000401892": [
+    {
+      "text": "Bluegrass generating station: CT1 to CT3 (208 MW, EKPC, Oldham County). Check the EKPC 2025 IRP existing resources table for nameplate and retirement years, and the Oldham County records for the Project Lincoln data center near LaGrange, which may add generation at or near this site."
+    },
+    {
+      "text": "The DAQ public notices page lists a draft revision of Bluegrass Generating Station's Title V permit (V-21-048 R1, comment period October 28 to November 27, 2026) with the application and statement of basis PDFs; read them for any change in units, nameplate or operating limits."
+    }
+  ],
+  "L100000103932": [
+    {
+      "text": "Cane Run Station: CR7 (731 MW combined cycle, 2015) with output limited to 691 MW pending a transmission upgrade by the export's note. Check the LG&E/KU 2024 IRP and the APCD Title V permit for the nameplate and whether the limit is lifted; nameplate stays the capacity."
+    }
+  ],
+  "L100000401571": [
+    {
+      "text": "Paddys Run power station: unit 13 (178 MW, 2001, LG&E). Check the APCD Title V permit and the LG&E/KU 2024 IRP existing resources table for nameplate and retirement years."
+    }
+  ]
+}

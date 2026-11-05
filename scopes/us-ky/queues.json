@@ -1,0 +1,92 @@
+{
+  "_about": "Queue settings for pull_queues.py --state KY. name is the State/Province value in the GEM export; markets are the queues the script reads (Kentucky is split: PJM for East Kentucky Power Cooperative, Kentucky Power (AEP) and Duke Energy Kentucky; MISO for Big Rivers Electric and, from 2027, Owensboro Municipal Utilities). LG&E and KU run their own balancing authority outside both markets and TVA (Marshall, Paradise, Shawnee) is outside both too: their queues are read by hand and answered in coverage.json as market LGEE and market TVA. owner is the transmission owners whose state-blank MISO entries are Kentucky's (kept as leads, fuel unknown); shared_owner is owners that also serve other states (Ameren, Hoosier, Duke Energy Indiana, CenterPoint/Vectren, Southern Indiana), whose blank entries are counted, not kept; pjm_states is the PJM State values kept; known is hand-checked patterns, GEM plant id to regexes that name that plant in a point of interconnection, project name or developer. Every match still says check. A county-only match is never a known match.",
+  "state": "KY",
+  "name": "Kentucky",
+  "markets": [
+    "MISO",
+    "PJM"
+  ],
+  "owner": "big rivers|^brec\\b|owensboro municipal|^omu\\b",
+  "shared_owner": "ameren|hoosier|duke energy indiana|centerpoint|vectren|southern indiana|^sigeco|midamerican|american transmission",
+  "pjm_states": [
+    "KY"
+  ],
+  "known": {
+    "L100000103935": [
+      "cooper",
+      "burnside"
+    ],
+    "L100000103950": [
+      "spurlock",
+      "maysville"
+    ],
+    "L100000401893": [
+      "j\\.? ?k\\.? ?smith",
+      "smith station",
+      "trapp"
+    ],
+    "L100000401892": [
+      "bluegrass",
+      "la ?grange"
+    ],
+    "L100001025720": [
+      "liberty station",
+      "casey county"
+    ],
+    "L100000103930": [
+      "big sandy"
+    ],
+    "L100000402085": [
+      "big sandy peaker",
+      "kenova"
+    ],
+    "L100000103938": [
+      "east bend",
+      "rabbit hash"
+    ],
+    "L100000402250": [
+      "riverside generating",
+      "catlettsburg"
+    ],
+    "L100000103943": [
+      "green station",
+      "robert d\\.? green",
+      "sebree",
+      "robards"
+    ],
+    "L100000103947": [
+      "reid"
+    ],
+    "L100001062552": [
+      "big rivers",
+      "brec"
+    ],
+    "L100000103939": [
+      "elmer smith",
+      "green river east",
+      "owensboro"
+    ],
+    "L100001062558": [
+      "kentucky power",
+      "kpco",
+      "mitchell"
+    ]
+  },
+  "known_set": "2026-11-04, from the planning probe of the PJM planning queues XML (228 rows with state KY) and the MISO getprojects JSON (63 rows with state KY, 389 with the state blank), before the first scripted run; the run that checks the patterns fills in the project numbers each one matched. Expected matches: AH1-721 (Pulaski County) is Cooper; C01-1228 is Liberty Station (Casey County); C01-1131 and C01-1325 (gas at Baker 345 kV, Lawrence County) are the Kentucky Power combined cycle behind case 2026-00324, so they belong to the KPCO 2023 IRP placeholder until that record is renamed; C01-1227 (758 MW gas, Spurlock to Meldahl Dam 345 kV, Mason County) is an EKPC request at Spurlock with no GEM record yet; S1073 (75 MW, fuel blank, Hopkins to Reid EHV 161 kV, Webster County, active) is KYMEA Energy Center I through Big Rivers; J3089 (696 MW at Reid EHV) is withdrawn and matches the BREC 2023 IRP placeholder. LG&E and KU plants (Mill Creek, Cane Run, Brown, Trimble County, Paddys Run) and TVA plants (Marshall, Paradise) are in neither market queue and are answered as market LGEE and market TVA.",
+  "known_names": {
+    "L100000103935": "Cooper power station",
+    "L100000103950": "Spurlock power station",
+    "L100000401893": "J K Smith power station",
+    "L100000401892": "Bluegrass generating station",
+    "L100001025720": "Liberty Station Power Plant",
+    "L100000103930": "Big Sandy Plant",
+    "L100000402085": "Big Sandy Peaker Plant",
+    "L100000103938": "East Bend Generating Station",
+    "L100000402250": "Riverside Generating (KY)",
+    "L100000103943": "Green Station",
+    "L100000103947": "Robert Reid Power Plant",
+    "L100001062552": "BREC 2023 IRP power station",
+    "L100000103939": "Elmer Smith Station",
+    "L100001062558": "KPCO 2023 IRP power station"
+  }
+}
