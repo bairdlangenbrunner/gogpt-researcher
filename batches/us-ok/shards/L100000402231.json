@@ -1,0 +1,448 @@
+{
+ "meta": {
+  "plant_id": "L100000402231",
+  "plant_name": "Comanche (OK) power station",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T11:03:14-05:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 6
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402193",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists plant 8059, generators 1G1 and 1G2 at 85.0 MW each and 1S at 120.0 MW, all operating, with no retirement date. I found no mothballing or change of owner."
+    },
+    "Planned retire": {
+     "value": "2035",
+     "refs": [
+      "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Public Service Company of Oklahoma's 2026 integrated resource plan refresh at https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf lists Comanche 1G1, 1G2 and 1S with a retirement date of 2035 in its table of current resources on page 18. Page 11 says the retirement happens by summer planning year 2036. The reviewer adds a new scheduled retirement event for 2035 with Source Year 2026."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://applications.deq.ok.gov/permitspublic/storedpermits/8810.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8810.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Oklahoma Department of Environmental Quality permit memorandum from September 2024 at https://applications.deq.ok.gov/permitspublic/storedpermits/8810.pdf describes Comanche as an electric utility plant that burns natural gas to generate electricity for the grid. It does not use the words backup power, so this is implied."
+    }
+   },
+   "not_found": [],
+   "notes": "The unit is still operating in the EIA table for September 2026. I found no retirement notice, mothballing or sale. The 2035 planned retirement comes from the company's 2026 resource plan refresh."
+  },
+  {
+   "gem_unit_id": "G100001101686",
+   "unit_name": "CC2",
+   "findings": {
+    "Status": {
+     "value": "pre-construction",
+     "refs": [
+      "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true",
+      "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AUaLH0lqtPpM7wIdg%C3%890yv415JmIPaJZoK9Ya%C3%89BR7tBogWWFqxsgDeUkF%C3%81wO80qH%C3%8979HjhK2Ry9yhHML12tWVu1g%3D/?ViewerMode=PDF&ForceDownload=true"
+     ],
+     "verifications": [
+      {
+       "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AUaLH0lqtPpM7wIdg%C3%890yv415JmIPaJZoK9Ya%C3%89BR7tBogWWFqxsgDeUkF%C3%81wO80qH%C3%8979HjhK2Ry9yhHML12tWVu1g%3D/?ViewerMode=PDF&ForceDownload=true",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A permit application filed for Public Service Company of Oklahoma on April 22, 2026 at https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true asks the Oklahoma Department of Environmental Quality for a construction permit for two new combined cycle turbines at Comanche. The department's letter of June 10, 2026 at https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AUaLH0lqtPpM7wIdg%C3%890yv415JmIPaJZoK9Ya%C3%89BR7tBogWWFqxsgDeUkF%C3%81wO80qH%C3%8979HjhK2Ry9yhHML12tWVu1g%3D/?ViewerMode=PDF&ForceDownload=true says the application is administratively complete and ready for public review. The status stays pre-construction.",
+     "milestones": [
+      {
+       "status": "pre-construction",
+       "year": 2026,
+       "period": "April",
+       "sources": [
+        "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true"
+       ],
+       "note": "the air construction permit application was filed on April 22, 2026"
+      }
+     ]
+    },
+    "Capacity (MW)": {
+     "value": "686.4",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists plant 8059 with unit code CC2: generator 2G1 at 408.8 MW and generator 2S1 at 277.6 MW. Together that is 686.4 MW, the same as GEM. The air permit application gives 633 MW per block and the Southwest Power Pool queue gives 775.2 MW, so a question is raised."
+    },
+    "Start year": {
+     "value": "2029",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx shows planned operation in September 2029 for generators 2G1 and 2S1. This is a projected year, so the reviewer adds a new scheduled event for 2029 with Source Year 2026 and never changes an existing event."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Mitsubishi M501JAC",
+     "refs": [
+      "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true"
+     ],
+     "verifications": [
+      {
+       "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The air permit application at https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true says the company proposes two new Mitsubishi Model M501JAC combustion turbine generators, one for each combined cycle block."
+    },
+    "Status Detail": {
+     "value": "Public Service Company of Oklahoma applied on April 22, 2026 for a major source air construction permit for two new Mitsubishi M501JAC combined cycle blocks at Comanche. The Oklahoma Department of Environmental Quality found the application complete on June 10, 2026.",
+     "refs": [
+      "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true",
+      "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AUaLH0lqtPpM7wIdg%C3%890yv415JmIPaJZoK9Ya%C3%89BR7tBogWWFqxsgDeUkF%C3%81wO80qH%C3%8979HjhK2Ry9yhHML12tWVu1g%3D/?ViewerMode=PDF&ForceDownload=true"
+     ],
+     "verifications": [
+      {
+       "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AUaLH0lqtPpM7wIdg%C3%890yv415JmIPaJZoK9Ya%C3%89BR7tBogWWFqxsgDeUkF%C3%81wO80qH%C3%8979HjhK2Ry9yhHML12tWVu1g%3D/?ViewerMode=PDF&ForceDownload=true",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The two documents are the permit application and the department's completeness letter. Both name the Comanche Power Station."
+    }
+   },
+   "not_found": [
+    "Latest Activity",
+    "Operator(s)"
+   ],
+   "notes": "Latest Activity is left alone because the project is moving: the air permit application was filed in April 2026 and found complete in June 2026. The air permit is still in technical review. The 2026 resource plan refresh does not mention the two new blocks."
+  },
+  {
+   "gem_unit_id": "G100001101687",
+   "unit_name": "CC3",
+   "findings": {
+    "Status": {
+     "value": "pre-construction",
+     "refs": [
+      "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true",
+      "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AUaLH0lqtPpM7wIdg%C3%890yv415JmIPaJZoK9Ya%C3%89BR7tBogWWFqxsgDeUkF%C3%81wO80qH%C3%8979HjhK2Ry9yhHML12tWVu1g%3D/?ViewerMode=PDF&ForceDownload=true"
+     ],
+     "verifications": [
+      {
+       "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AUaLH0lqtPpM7wIdg%C3%890yv415JmIPaJZoK9Ya%C3%89BR7tBogWWFqxsgDeUkF%C3%81wO80qH%C3%8979HjhK2Ry9yhHML12tWVu1g%3D/?ViewerMode=PDF&ForceDownload=true",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A permit application filed for Public Service Company of Oklahoma on April 22, 2026 at https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true asks the Oklahoma Department of Environmental Quality for a construction permit for two new combined cycle turbines at Comanche. The department's letter of June 10, 2026 at https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AUaLH0lqtPpM7wIdg%C3%890yv415JmIPaJZoK9Ya%C3%89BR7tBogWWFqxsgDeUkF%C3%81wO80qH%C3%8979HjhK2Ry9yhHML12tWVu1g%3D/?ViewerMode=PDF&ForceDownload=true says the application is administratively complete and ready for public review. The status stays pre-construction.",
+     "milestones": [
+      {
+       "status": "pre-construction",
+       "year": 2026,
+       "period": "April",
+       "sources": [
+        "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true"
+       ],
+       "note": "the air construction permit application was filed on April 22, 2026"
+      }
+     ]
+    },
+    "Capacity (MW)": {
+     "value": "686.4",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists plant 8059 with unit code CC3: generator 3G1 at 408.8 MW and generator 3S1 at 277.6 MW. Together that is 686.4 MW, the same as GEM. The air permit application gives 633 MW per block and the Southwest Power Pool queue gives 775.2 MW, so a question is raised."
+    },
+    "Start year": {
+     "value": "2029",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx shows planned operation in September 2029 for generators 3G1 and 3S1. This is a projected year, so the reviewer adds a new scheduled event for 2029 with Source Year 2026 and never changes an existing event."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Mitsubishi M501JAC",
+     "refs": [
+      "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true"
+     ],
+     "verifications": [
+      {
+       "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The air permit application at https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true says the company proposes two new Mitsubishi Model M501JAC combustion turbine generators, one for each combined cycle block."
+    },
+    "Status Detail": {
+     "value": "Public Service Company of Oklahoma applied on April 22, 2026 for a major source air construction permit for two new Mitsubishi M501JAC combined cycle blocks at Comanche. The Oklahoma Department of Environmental Quality found the application complete on June 10, 2026.",
+     "refs": [
+      "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true",
+      "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AUaLH0lqtPpM7wIdg%C3%890yv415JmIPaJZoK9Ya%C3%89BR7tBogWWFqxsgDeUkF%C3%81wO80qH%C3%8979HjhK2Ry9yhHML12tWVu1g%3D/?ViewerMode=PDF&ForceDownload=true"
+     ],
+     "verifications": [
+      {
+       "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AUaLH0lqtPpM7wIdg%C3%890yv415JmIPaJZoK9Ya%C3%89BR7tBogWWFqxsgDeUkF%C3%81wO80qH%C3%8979HjhK2Ry9yhHML12tWVu1g%3D/?ViewerMode=PDF&ForceDownload=true",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The two documents are the permit application and the department's completeness letter. Both name the Comanche Power Station."
+    }
+   },
+   "not_found": [
+    "Latest Activity",
+    "Operator(s)"
+   ],
+   "notes": "Latest Activity is left alone because the project is moving: the air permit application was filed in April 2026 and found complete in June 2026. The air permit is still in technical review. The 2026 resource plan refresh does not mention the two new blocks."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Public Service Company of Oklahoma [100%]",
+   "refs": [
+    "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true"
+   ],
+   "verifications": [
+    {
+     "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The air permit application at https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true was filed on behalf of Public Service Company of Oklahoma, which proposes to build the two new blocks at its Comanche Power Station. The EIA-860M table for September 2026 also lists Public Service Co of Oklahoma as the entity for plant 8059."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100001101686",
+   "concern_type": "identity",
+   "question": "Which EIA generator ids belong to Comanche CC2 and CC3?",
+   "finding": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists generators 2G1 at 408.8 MW and 2S1 at 277.6 MW with unit code CC2. It lists generators 3G1 at 408.8 MW and 3S1 at 277.6 MW with unit code CC3. Each pair is a gas turbine plus a steam turbine, so each pair is one combined cycle block.",
+   "recommendation": "Treat 2G1 and 2S1 as CC2, and 3G1 and 3S1 as CC3. Type these ids into Other IDs for the unit by hand in the web form.",
+   "note": "EIA's own unit code column names the blocks, so there is no doubt about the pairing. The generators are planned for September 2029 and EIA says regulatory approvals are not initiated, which is out of date because the air permit application was filed in April 2026.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "proposed_value": {
+    "Other IDs (unit)": "EIA: 2G1, 2S1"
+   }
+  },
+  {
+   "gem_unit_id": "G100001101686",
+   "concern_type": "Capacity (MW)",
+   "question": "What capacity should each new Comanche block carry?",
+   "finding": "GEM and the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx show 686.4 MW per block. The Southwest Power Pool queue at https://opsportal.spp.org/Studies/GIActive shows 775.2 MW for each of the two queue entries ERAS-2025-024 and ERAS-2025-026. The air permit application at https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true says each block will produce 633 MW.",
+   "recommendation": "Leave 686.4 MW, which is EIA's nameplate figure. Ask the project manager whether the larger queue figure should be used because it may include duct burner output.",
+   "note": "The queue figure may be the interconnection request and not the nameplate. The permit figure is a total output at one set of site conditions. I did not find a document that gives the nameplate in plain terms.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true",
+    "https://opsportal.spp.org/Studies/GIActive"
+   ],
+   "proposed_value": {
+    "Capacity (MW)": "686.4"
+   }
+  },
+  {
+   "gem_unit_id": "G100001101687",
+   "concern_type": "Capacity (MW)",
+   "question": "What capacity should each new Comanche block carry?",
+   "finding": "GEM and the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx show 686.4 MW per block. The Southwest Power Pool queue at https://opsportal.spp.org/Studies/GIActive shows 775.2 MW for each of the two queue entries ERAS-2025-024 and ERAS-2025-026. The air permit application at https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true says each block will produce 633 MW.",
+   "recommendation": "Leave 686.4 MW, which is EIA's nameplate figure. Ask the project manager whether the larger queue figure should be used because it may include duct burner output.",
+   "note": "The queue figure may be the interconnection request and not the nameplate. The permit figure is a total output at one set of site conditions. I did not find a document that gives the nameplate in plain terms.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true",
+    "https://opsportal.spp.org/Studies/GIActive"
+   ],
+   "proposed_value": {
+    "Capacity (MW)": "686.4"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Public Service Company of Oklahoma",
+   "role": "owner",
+   "lookup_result": "Entity exists, appears on 28 units in the United States. Reuse the existing entity."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Plant 8059 rows read in the Operating and Planned sheets."
+  },
+  {
+   "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true",
+   "used_for": [
+    "Status",
+    "Equipment Manufacturer/Model",
+    "Status Detail",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Air permit application dated April 22, 2026."
+  },
+  {
+   "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AUaLH0lqtPpM7wIdg%C3%890yv415JmIPaJZoK9Ya%C3%89BR7tBogWWFqxsgDeUkF%C3%81wO80qH%C3%8979HjhK2Ry9yhHML12tWVu1g%3D/?ViewerMode=PDF&ForceDownload=true",
+   "used_for": [
+    "Status",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Completeness letter dated June 10, 2026."
+  },
+  {
+   "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8810.pdf",
+   "used_for": [
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Permit memorandum from September 2024."
+  },
+  {
+   "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Retirement table on page 18."
+  },
+  {
+   "url": "https://opsportal.spp.org/Studies/GIActive",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Queue page loads. Entries ERAS-2025-024 and ERAS-2025-026 are cited in the capacity question."
+  }
+ ]
+}

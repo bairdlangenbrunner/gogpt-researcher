@@ -1,0 +1,201 @@
+{
+ "meta": {
+  "plant_id": "L100000402235",
+  "plant_name": "Tulsa power station",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T11:05:57-05:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403433",
+   "unit_name": "2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists Tulsa plant 2965, generator 2, as operating at 170.0 MW, operating since November 1956. No retirement notice found."
+    },
+    "Capacity (MW)": {
+     "value": "170.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Nameplate is 170.0 MW in the EIA table."
+    },
+    "Planned retire": {
+     "value": "2034",
+     "refs": [
+      "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Public Service Company of Oklahoma's 2026 integrated resource plan refresh (https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf) lists Tulsa 2 retiring in 2034. A second table in the same report gives 2033 for unit 2, so the report disagrees with itself. The human adds a new scheduled retirement event."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "Still operating per EIA. No sale, mothballing or retirement notice found. I found no document stating a Backup Power value for this steam unit, so Backup Power was not changed."
+  },
+  {
+   "gem_unit_id": "G100000403434",
+   "unit_name": "4",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists Tulsa plant 2965, generator 4, as operating at 170.0 MW, operating since April 1958. No retirement notice found."
+    },
+    "Capacity (MW)": {
+     "value": "170.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Nameplate is 170.0 MW in the EIA table."
+    },
+    "Planned retire": {
+     "value": "2034",
+     "refs": [
+      "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The 2026 integrated resource plan refresh (https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf) lists Tulsa 4 retiring in 2034 in two tables. The human adds a new scheduled retirement event."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "Still operating per EIA. No sale, mothballing or retirement notice found. I found no document stating a Backup Power value for this steam unit, so Backup Power was not changed."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000403433",
+   "concern_type": "Planned retire",
+   "question": "Does Tulsa 2 retire in 2033 or 2034?",
+   "finding": "The PSO 2026 integrated resource plan refresh (https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf) shows 2034 in one table and 2033 in another for Tulsa 2.",
+   "recommendation": "Use 2034, which matches the other table and Tulsa 4. Add a scheduled retirement event for 2034.",
+   "note": "Both tables are in the same report.",
+   "refs": [
+    "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000403433",
+   "concern_type": "existence",
+   "question": "Should the 8.2 MW diesel unit IC1 at Tulsa be added?",
+   "finding": "The EIA table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists generator IC1, 8.2 MW petroleum liquids, internal combustion, operating since 1967.",
+   "recommendation": "Leave it out. It is below the 50 MW threshold.",
+   "note": "Retired unit 3 (95 MW, retired 2012) is also in EIA and before 2020.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [
+  {
+   "gem_plant_id": "L100000402235",
+   "monitor_kind": "existing_plant",
+   "monitor_reason": "Southwest Power Pool request GEN-2025-SR21 (100 MW, fuel not shown) connects at the Tulsa Power Station 138 kV substation.",
+   "recheck_by": "2027-03",
+   "watch_case": "no_generation",
+   "capacity_mw": 100,
+   "note": "No document names a generating unit or fuel.",
+   "refs": []
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Operating sheet, plant 2965."
+  },
+  {
+   "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Resource tables."
+  },
+  {
+   "url": "https://opsportal.spp.org/Studies/GIActive",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Queue rows in the brief are leads. GEN-2005-024 (181 MW, 2007) is likely the Tulsa area gas plant at another site. GEN-2025-SR21 (100 MW, fuel not shown, pending) names a Tulsa Power Station substation. Not enough to add."
+  }
+ ]
+}

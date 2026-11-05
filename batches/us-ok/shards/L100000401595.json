@@ -1,0 +1,184 @@
+{
+ "meta": {
+  "plant_id": "L100000401595",
+  "plant_name": "Redbud power plant",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T11:05:00-05:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401931",
+   "unit_name": "G112",
+   "findings": {
+    "Equipment Manufacturer/Model": {
+     "value": "GE 7FA",
+     "refs": [
+      "https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "An Oklahoma Department of Environmental Quality permit memorandum, read in May 2025, lists four General Electric Model 7FA combustion turbines at the Redbud plant (https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf)."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "The EIA-860M table for September 2026 lists generators CT01 and ST01 as operating, so the unit is still operating. No retirement, mothballing or owner change was found. I found no document that states a Backup Power value for this unit."
+  },
+  {
+   "gem_unit_id": "G100000401932",
+   "unit_name": "G113",
+   "findings": {
+    "Equipment Manufacturer/Model": {
+     "value": "GE 7FA",
+     "refs": [
+      "https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "An Oklahoma Department of Environmental Quality permit memorandum, read in May 2025, lists four General Electric Model 7FA combustion turbines at the Redbud plant (https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf)."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "The EIA-860M table for September 2026 lists generators CT02 and ST02 as operating, so the unit is still operating. No retirement, mothballing or owner change was found. I found no document that states a Backup Power value for this unit."
+  },
+  {
+   "gem_unit_id": "G100000401933",
+   "unit_name": "G114",
+   "findings": {
+    "Equipment Manufacturer/Model": {
+     "value": "GE 7FA",
+     "refs": [
+      "https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "An Oklahoma Department of Environmental Quality permit memorandum, read in May 2025, lists four General Electric Model 7FA combustion turbines at the Redbud plant (https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf)."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "The EIA-860M table for September 2026 lists generators CT03 and ST03 as operating, so the unit is still operating. No retirement, mothballing or owner change was found. I found no document that states a Backup Power value for this unit."
+  },
+  {
+   "gem_unit_id": "G100000401934",
+   "unit_name": "G115",
+   "findings": {
+    "Equipment Manufacturer/Model": {
+     "value": "GE 7FA",
+     "refs": [
+      "https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "An Oklahoma Department of Environmental Quality permit memorandum, read in May 2025, lists four General Electric Model 7FA combustion turbines at the Redbud plant (https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf)."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "The EIA-860M table for September 2026 lists generators CT04 and ST04 as operating, so the unit is still operating. No retirement, mothballing or owner change was found. I found no document that states a Backup Power value for this unit."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "",
+   "concern_type": "duplicate",
+   "question": "Is Southwest Power Pool entry ERAS-2025-003 at Redbud a new unit or the turbine upgrade?",
+   "finding": "The Southwest Power Pool entry ERAS-2025-003 lists a 186 MW combined cycle addition at the Redbud 345 kV substation, with commercial operation in January 2027. A state air permit memorandum (https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf) says the four existing combustion turbines are being upgraded, which raises the plant from about 1,268 MW to 1,490 MW. The 2026 OG&E resource plan (https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8) lists no new unit at Redbud.",
+   "recommendation": "Do not add a new unit. Treat the entry as the capacity increase of the four existing units, and consider raising each unit from 358 MW to about 372.5 MW once the upgrade is confirmed complete.",
+   "note": "I read the OG&E 2026 resource plan. Its list of planned additions names only Horseshoe Lake and Tinker, and its footnote says OG&E owns 51 percent of Redbud, which matches the shares in the database. I read the queue entry in the Southwest Power Pool open list on 5 November 2026 (https://opsportal.spp.org/Studies/GenerateActiveCSV). It names OG&E as the owner and gives no turbine count. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) shows no planned generator at this plant. I did not find the other owners' shares in a document beyond the database values, so those stay as they are.",
+   "refs": [
+    "https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000401931",
+   "concern_type": "Capacity (MW)",
+   "question": "Should each Redbud unit's capacity move from 358 MW to 372.5 MW after the upgrade?",
+   "finding": "The permit memorandum (https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf) says each combined cycle unit goes from 317 MW to 372.5 MW. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) still shows 198.9 MW plus 159.5 MW, or 358.4 MW, per unit.",
+   "recommendation": "Leave 358 MW for now. Change all four units to 372.5 MW when EIA or the owner confirms the upgrade is finished.",
+   "note": "The memorandum describes planned work, so it does not prove the upgrade is done.",
+   "refs": [
+    "https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "proposed_value": {
+    "Capacity (MW)": "372.5"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Plant 55463 generators CT01 to CT04 and ST01 to ST04 are all operating, nameplate 198.9 MW per combustion turbine and 159.5 MW per steam turbine, started May 2004, owner listed as Oklahoma Gas and Electric. No planned retirement year. No planned or canceled generators at this plant."
+  },
+  {
+   "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Permit memorandum says plant capacity is about 1,268 MW and is being increased to 1,490 MW, with each unit going from 317 MW to 372.5 MW through a turbine upgrade."
+  },
+  {
+   "url": "https://opsportal.spp.org/Studies/GIActive",
+   "used_for": [
+    "newunits"
+   ],
+   "outcome": "not relevant",
+   "note": "Not opened. The queue entry ERAS-2025-003 was read as given in the brief, and no further detail was fetched within budget."
+  }
+ ]
+}

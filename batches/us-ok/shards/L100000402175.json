@@ -1,0 +1,154 @@
+{
+ "meta": {
+  "plant_id": "L100000402175",
+  "plant_name": "Oneta energy center",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T08:30:00-05:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401851",
+   "unit_name": "BLK1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (plant 55225, CTG1, CTG2 and STG1) lists this block as operating. It lists a planned uprate of 17 MW per turbine in 2027 or 2028, but no retirement. The Oklahoma Department of Environmental Quality permit memo from August 2021 at https://applications.deq.ok.gov/permitspublic/storedpermits/8041.pdf describes four gas turbines. The PSO 2026 resource plan at https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf lists Oneta as contracted capacity of 260 MW through 2031, which is a contract end and not a plant retirement."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://applications.deq.ok.gov/permitspublic/storedpermits/8041.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      },
+      {
+       "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8041.pdf",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists Oneta Power LLC as an independent power producer, not as backup or emergency generation, and the 2021 permit memo at https://applications.deq.ok.gov/permitspublic/storedpermits/8041.pdf describes base-load combined cycle turbines with duct burners. So the value of no stands."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year",
+    "Owner change"
+   ],
+   "notes": "No retirement, mothballing or sale was found. A web search showed an older sale to Argo Infrastructure Partners but no 2026 transaction, and GEM already shows Oneta Power LLC as owner."
+  },
+  {
+   "gem_unit_id": "G100000401852",
+   "unit_name": "BLK2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (plant 55225, CTG3, CTG4 and STG2) lists this block as operating. It lists a planned uprate of 17 MW per turbine in 2027 or 2028, but no retirement. The Oklahoma Department of Environmental Quality permit memo from August 2021 at https://applications.deq.ok.gov/permitspublic/storedpermits/8041.pdf describes four gas turbines. The PSO 2026 resource plan at https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf lists Oneta as contracted capacity of 260 MW through 2031, which is a contract end and not a plant retirement."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://applications.deq.ok.gov/permitspublic/storedpermits/8041.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      },
+      {
+       "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8041.pdf",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists Oneta Power LLC as an independent power producer, not as backup or emergency generation, and the 2021 permit memo at https://applications.deq.ok.gov/permitspublic/storedpermits/8041.pdf describes base-load combined cycle turbines with duct burners. So the value of no stands."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year",
+    "Owner change"
+   ],
+   "notes": "No retirement, mothballing or sale was found. A web search showed an older sale to Argo Infrastructure Partners but no 2026 transaction, and GEM already shows Oneta Power LLC as owner."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Generators CTG1 to CTG4, STG1, STG2 operating; uprate planned, no retirement."
+  },
+  {
+   "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8041.pdf",
+   "used_for": [
+    "Status",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "2021 permit memo, four 1,581 MMBtu per hour GE turbines."
+  },
+  {
+   "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Lists Oneta as 260 MW contracted capacity to 2031."
+  }
+ ]
+}

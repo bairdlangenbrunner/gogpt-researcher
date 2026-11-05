@@ -1,0 +1,146 @@
+{
+ "meta": {
+  "plant_id": "L100001089274",
+  "plant_name": "Bristow Energy Center",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T08:45:00-05:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001101631",
+   "unit_name": "1",
+   "findings": {
+    "Start year": {
+     "value": "2029",
+     "refs": [
+      "https://www.siemens-energy.com/global/en/home/stories/gas-turbine-peaker-oklahoma-us.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.siemens-energy.com/global/en/home/stories/gas-turbine-peaker-oklahoma-us.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Siemens Energy story from June 2026 at https://www.siemens-energy.com/global/en/home/stories/gas-turbine-peaker-oklahoma-us.html says Associated expects construction to begin in 2027 with the unit commercially available in 2029. The human adds a new scheduled event with Event Year 2029 and Source Year 2026."
+    },
+    "Status Detail": {
+     "value": "Associated Electric Cooperative says the site is going through regulatory approvals and permitting. It expects construction to start in 2027 and take about two years. https://www.aeci.org/bristow-energy-center-1",
+     "refs": [
+      "https://www.aeci.org/bristow-energy-center-1"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.aeci.org/bristow-energy-center-1",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Associated Electric Cooperative project page at https://www.aeci.org/bristow-energy-center-1 says construction is scheduled to begin in 2027. The status stays pre-construction."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.aeci.org/bristow-energy-center-1"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.aeci.org/bristow-energy-center-1",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Associated Electric Cooperative page at https://www.aeci.org/bristow-energy-center-1 describes a natural gas peaking unit serving member demand, not a backup unit. It does not use the words backup power, so this is implied."
+    }
+   },
+   "not_found": [
+    "Owner(s)",
+    "Operator(s)",
+    "Latest Activity",
+    "Turbine/Engine Technology"
+   ],
+   "notes": "Construction has not started, so status stays pre-construction. The page meta description says under construction but its text says construction begins in 2027. Latest Activity is left alone because the project is moving. I found no operator and no air permit application in the harvest."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001101631",
+   "concern_type": "Owner(s)",
+   "question": "Is the blank owner in the task right, since the database shows Associated Electric?",
+   "finding": "The database already shows Associated Electric Cooperative Inc at 100 percent. The Associated page at https://www.aeci.org/bristow-energy-center-1 says the cooperative is building the plant, and the Siemens story at https://www.siemens-energy.com/global/en/home/stories/gas-turbine-peaker-oklahoma-us.html calls it Associated's plant.",
+   "recommendation": "Leave the owner as it is. Leave the operator blank until a document names one.",
+   "note": "No project company was found.",
+   "refs": [
+    "https://www.aeci.org/bristow-energy-center-1",
+    "https://www.siemens-energy.com/global/en/home/stories/gas-turbine-peaker-oklahoma-us.html"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001101631",
+   "concern_type": "other",
+   "question": "Is SPP queue row GEN-2024-340 a different project from Bristow?",
+   "finding": "The Southwest Power Pool queue at https://opsportal.spp.org/Studies/GIActive lists GEN-2024-340 as 1,440 MW in Creek County for American Electric Power at the Riverside to Redbud line. That does not match a 420 MW Associated plant.",
+   "recommendation": "Treat it as another project. No queue row for Bristow was found.",
+   "note": "Associated may have a queue row under another county or name. The Oklahoma Department of Environmental Quality harvest found no air permit application for Bristow either. The permit records before 2016 are not online.",
+   "refs": [
+    "https://opsportal.spp.org/Studies/GIActive"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001101631",
+   "concern_type": "location",
+   "question": "Is GEM's point for Bristow close to the site Associated describes?",
+   "finding": "The Associated page at https://www.aeci.org/bristow-energy-center-1 puts the plant about 2 miles southeast of Bristow. GEM's point at 35.81000, -96.36600 is consistent with that. No address, parcel or coordinates were found.",
+   "recommendation": "Leave the point and the approximate accuracy as they are.",
+   "note": "No imagery check was done because no document gave a more exact place. An air permit application would give coordinates.",
+   "refs": [
+    "https://www.aeci.org/bristow-energy-center-1"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.aeci.org/bristow-energy-center-1",
+   "used_for": [
+    "Status Detail",
+    "Backup Power",
+    "Location"
+   ],
+   "outcome": "verified",
+   "note": "Loads and shows 420 MW and construction in 2027."
+  },
+  {
+   "url": "https://www.siemens-energy.com/global/en/home/stories/gas-turbine-peaker-oklahoma-us.html",
+   "used_for": [
+    "Start year",
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Shows SGT6-9000HL and 2029 commercial operation."
+  },
+  {
+   "url": "https://opsportal.spp.org/Studies/GIActive",
+   "used_for": [],
+   "outcome": "verified",
+   "note": "Row GEN-2024-340 is a different project."
+  }
+ ]
+}

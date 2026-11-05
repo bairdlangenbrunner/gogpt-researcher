@@ -1,0 +1,1974 @@
+{
+  "meta": {
+    "lane": "qa",
+    "scope": {
+      "country": "United States",
+      "state": "Oklahoma",
+      "postal": "ok",
+      "kind": "state",
+      "slug": "oklahoma",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-11-05T13:09:51-05:00",
+    "mode": "update",
+    "counts": {
+      "records": 77
+    }
+  },
+  "records": [
+    {
+      "gem_unit_id": "G100001055235",
+      "concern_type": "existence",
+      "question": "Should Roulet 12 and 13 have a federal EIA record yet?",
+      "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists no planned Oklahoma units at Anadarko plant 3006. The Oklahoma permit memorandum and trade press do describe the two turbines.",
+      "recommendation": "Leave both units as construction and recheck the next EIA monthly table due November 24, 2026.",
+      "refs": {
+        "links": [
+          "https://applications.deq.ok.gov/permitspublic/storedpermits/8827.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000402369",
+      "plant_name": "Anadarko power station",
+      "country": "United States",
+      "unit_name": "Roulet 12",
+      "fields": {},
+      "researcher_notes": "I read the Southwest Power Pool open queue list on 5 November 2026 (https://opsportal.spp.org/Studies/GenerateActiveCSV). Entry GEN-2023-GR1 is a replacement request of 97.488 MW of gas at the Anadarko 69 kV plant connection, owned by the cooperative, with commercial operation shown as December 2025 and a cessation date of November 2025. Its size fits the two new 50.2 MW turbines, so it is not a third project. Its dates are earlier than the late 2026 completion reported in the press, and I found no report that the turbines are running. Entries GEN-2007-052 at 150 MW and GEN-2005-022 at 177 MW are older plants already in commercial operation and match existing units.",
+      "record_id": "L100000402369:G100001055235:qa-existence-1"
+    },
+    {
+      "gem_unit_id": "G100001101631",
+      "concern_type": "Owner(s)",
+      "question": "Is the blank owner in the task right, since the database shows Associated Electric?",
+      "finding": "The database already shows Associated Electric Cooperative Inc at 100 percent. The Associated page at https://www.aeci.org/bristow-energy-center-1 says the cooperative is building the plant, and the Siemens story at https://www.siemens-energy.com/global/en/home/stories/gas-turbine-peaker-oklahoma-us.html calls it Associated's plant.",
+      "recommendation": "Leave the owner as it is. Leave the operator blank until a document names one.",
+      "refs": {
+        "links": [
+          "https://www.aeci.org/bristow-energy-center-1",
+          "https://www.siemens-energy.com/global/en/home/stories/gas-turbine-peaker-oklahoma-us.html"
+        ]
+      },
+      "gem_plant_id": "L100001089274",
+      "plant_name": "Bristow Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "No project company was found.",
+      "record_id": "L100001089274:G100001101631:qa-owner-s-1",
+      "checks": [
+        10
+      ]
+    },
+    {
+      "gem_unit_id": "G100001101631",
+      "concern_type": "other",
+      "question": "Is SPP queue row GEN-2024-340 a different project from Bristow?",
+      "finding": "The Southwest Power Pool queue at https://opsportal.spp.org/Studies/GIActive lists GEN-2024-340 as 1,440 MW in Creek County for American Electric Power at the Riverside to Redbud line. That does not match a 420 MW Associated plant.",
+      "recommendation": "Treat it as another project. No queue row for Bristow was found.",
+      "refs": {
+        "links": [
+          "https://opsportal.spp.org/Studies/GIActive"
+        ]
+      },
+      "gem_plant_id": "L100001089274",
+      "plant_name": "Bristow Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Associated may have a queue row under another county or name. The Oklahoma Department of Environmental Quality harvest found no air permit application for Bristow either. The permit records before 2016 are not online.",
+      "record_id": "L100001089274:G100001101631:qa-other-2"
+    },
+    {
+      "gem_unit_id": "G100001101631",
+      "concern_type": "location",
+      "question": "Is GEM's point for Bristow close to the site Associated describes?",
+      "finding": "The Associated page at https://www.aeci.org/bristow-energy-center-1 puts the plant about 2 miles southeast of Bristow. GEM's point at 35.81000, -96.36600 is consistent with that. No address, parcel or coordinates were found.",
+      "recommendation": "Leave the point and the approximate accuracy as they are.",
+      "refs": {
+        "links": [
+          "https://www.aeci.org/bristow-energy-center-1"
+        ]
+      },
+      "gem_plant_id": "L100001089274",
+      "plant_name": "Bristow Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "No imagery check was done because no document gave a more exact place. An air permit application would give coordinates.",
+      "record_id": "L100001089274:G100001101631:qa-location-3"
+    },
+    {
+      "gem_unit_id": "G100001101676",
+      "concern_type": "location",
+      "question": "Which point is the Citadel data center site, GEM's or the permit's?",
+      "finding": "The Oklahoma Department of Environmental Quality permit memo at https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/Citadel%20Facility-2026-0286-C.pdf gives latitude 36.27133 and longitude -95.90837. The same memo says the site is at North Yale Avenue and East 86th Street North in Sperry, which geocodes to 36.27857, -95.91994, about 100 meters from GEM's point of 36.27924, -95.91897. The permit point is about 1.3 kilometers from GEM's point.",
+      "recommendation": "Leave the point and the approximate accuracy as they are. Ask the permit engineer or check a county parcel map for the Yale and 86th Street site before making it exact.",
+      "refs": {
+        "links": [
+          "https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/Citadel%20Facility-2026-0286-C.pdf"
+        ]
+      },
+      "proposed_value": {
+        "Latitude": "36.27133",
+        "Longitude": "-95.90837"
+      },
+      "gem_plant_id": "L100001089312",
+      "plant_name": "Citadel Facility Data Center power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Satellite images show ground with no data center built at either place, and the imagery date is unknown. The permit directions start from Owasso and fit the permit point better than the street address. Pin links: https://www.google.com/maps/search/?api=1&query=36.27133,-95.90837 and https://www.google.com/maps/search/?api=1&query=36.27924,-95.91897",
+      "record_id": "L100001089312:G100001101676:qa-location-1"
+    },
+    {
+      "gem_unit_id": "G100001101676",
+      "concern_type": "Number Of Engines",
+      "question": "Should the 10 smaller backup engines at Citadel be added as a unit?",
+      "finding": "The permit at https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/Citadel%20Facility-2026-0286-C.pdf lists 6 engines of 2,584 horsepower and 4 engines of 1,340 horsepower besides the 108 engines in the two units, plus one fire pump. At about 1.75 MW for the first six, the groups sum to about 10.5 MW and about 5 MW.",
+      "recommendation": "Leave them out. They sum well under the 50 MW bar.",
+      "gem_plant_id": "L100001089312",
+      "plant_name": "Citadel Facility Data Center power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "This matches the existing database note from November 4, 2026.",
+      "record_id": "L100001089312:G100001101676:qa-number-of-engines-2",
+      "checks": [
+        39
+      ]
+    },
+    {
+      "gem_unit_id": "G100001101686",
+      "concern_type": "identity",
+      "question": "Which EIA generator ids belong to Comanche CC2 and CC3?",
+      "finding": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists generators 2G1 at 408.8 MW and 2S1 at 277.6 MW with unit code CC2. It lists generators 3G1 at 408.8 MW and 3S1 at 277.6 MW with unit code CC3. Each pair is a gas turbine plus a steam turbine, so each pair is one combined cycle block.",
+      "recommendation": "Treat 2G1 and 2S1 as CC2, and 3G1 and 3S1 as CC3. Type these ids into Other IDs for the unit by hand in the web form.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "proposed_value": {
+        "Other IDs (unit)": "EIA: 2G1, 2S1"
+      },
+      "gem_plant_id": "L100000402231",
+      "plant_name": "Comanche (OK) power station",
+      "country": "United States",
+      "unit_name": "CC2",
+      "fields": {},
+      "researcher_notes": "EIA's own unit code column names the blocks, so there is no doubt about the pairing. The generators are planned for September 2029 and EIA says regulatory approvals are not initiated, which is out of date because the air permit application was filed in April 2026.",
+      "record_id": "L100000402231:G100001101686:qa-identity-1"
+    },
+    {
+      "gem_unit_id": "G100001101686",
+      "concern_type": "Capacity (MW)",
+      "question": "What capacity should each new Comanche block carry?",
+      "finding": "GEM and the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx show 686.4 MW per block. The Southwest Power Pool queue at https://opsportal.spp.org/Studies/GIActive shows 775.2 MW for each of the two queue entries ERAS-2025-024 and ERAS-2025-026. The air permit application at https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true says each block will produce 633 MW.",
+      "recommendation": "Leave 686.4 MW, which is EIA's nameplate figure. Ask the project manager whether the larger queue figure should be used because it may include duct burner output.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true",
+          "https://opsportal.spp.org/Studies/GIActive"
+        ]
+      },
+      "proposed_value": {
+        "Capacity (MW)": "686.4"
+      },
+      "gem_plant_id": "L100000402231",
+      "plant_name": "Comanche (OK) power station",
+      "country": "United States",
+      "unit_name": "CC2",
+      "fields": {},
+      "researcher_notes": "The queue figure may be the interconnection request and not the nameplate. The permit figure is a total output at one set of site conditions. I did not find a document that gives the nameplate in plain terms.",
+      "record_id": "L100000402231:G100001101686:qa-capacity-mw-2",
+      "checks": [
+        10
+      ]
+    },
+    {
+      "gem_unit_id": "G100001101687",
+      "concern_type": "Capacity (MW)",
+      "question": "What capacity should each new Comanche block carry?",
+      "finding": "GEM and the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx show 686.4 MW per block. The Southwest Power Pool queue at https://opsportal.spp.org/Studies/GIActive shows 775.2 MW for each of the two queue entries ERAS-2025-024 and ERAS-2025-026. The air permit application at https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true says each block will produce 633 MW.",
+      "recommendation": "Leave 686.4 MW, which is EIA's nameplate figure. Ask the project manager whether the larger queue figure should be used because it may include duct burner output.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ATdpa%C3%81tiBf6AUlxodMaTf4RyyKtRvO65cbkkb3aVZbN4JAjNn88hU2pksW3d3Ngw9ZE27%C3%81UOLoThr916JdkRs9c%3D/?ViewerMode=PDF&ForceDownload=true",
+          "https://opsportal.spp.org/Studies/GIActive"
+        ]
+      },
+      "proposed_value": {
+        "Capacity (MW)": "686.4"
+      },
+      "gem_plant_id": "L100000402231",
+      "plant_name": "Comanche (OK) power station",
+      "country": "United States",
+      "unit_name": "CC3",
+      "fields": {},
+      "researcher_notes": "The queue figure may be the interconnection request and not the nameplate. The permit figure is a total output at one set of site conditions. I did not find a document that gives the nameplate in plain terms.",
+      "record_id": "L100000402231:G100001101687:qa-capacity-mw-3",
+      "checks": [
+        10
+      ]
+    },
+    {
+      "gem_unit_id": "G100001091022",
+      "concern_type": "duplicate",
+      "question": "Is SPP queue entry GEN-2024-321 the Cross Timbers plant?",
+      "finding": "The Southwest Power Pool queue at https://opsportal.spp.org/Studies/GIActive lists GEN-2024-321 as a 507 MW gas project in Seminole County, connecting at the Seminole 345 kV substation, with an OG&E owner label and a 2029 in service date. The Cross Timbers permit memorandum at https://applications.deq.ok.gov/permitspublic/storedpermits/9156.pdf describes two turbines of up to 255 MW each at Section 36, Township 6N, Range 5E near Konawa. Two times 255 MW is 510 MW, close to 507 MW.",
+      "recommendation": "Do not add a new unit for GEN-2024-321 now. Leave the queue entry linked to the Seminole station, and ask the project manager to check the queue study documents to see whether OG&E is buying Cross Timbers output.",
+      "refs": {
+        "links": [
+          "https://opsportal.spp.org/Studies/GIActive",
+          "https://applications.deq.ok.gov/permitspublic/storedpermits/9156.pdf"
+        ]
+      },
+      "gem_plant_id": "L100001080983",
+      "plant_name": "Cross Timbers Power Plant",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Nothing I found ties Cross Timbers Power LLC to the queue entry. The queue names OG&E and a substation at the Seminole plant. A web search found no news about Cross Timbers Power. The point of interconnection is the main reason I think it is a different project.",
+      "record_id": "L100001080983:G100001091022:qa-duplicate-1"
+    },
+    {
+      "gem_unit_id": "G100001091022",
+      "concern_type": "location",
+      "question": "Should the Cross Timbers point move about 500 meters?",
+      "finding": "GEM's point is 34.95195, -96.73905 and is marked exact. The permit memorandum at https://applications.deq.ok.gov/permitspublic/storedpermits/9156.pdf gives 34.95595, -96.73635 for the facility.",
+      "recommendation": "Leave the point as it is. The two points are about 500 meters apart and GEM's is already exact.",
+      "refs": {
+        "links": [
+          "https://applications.deq.ok.gov/permitspublic/storedpermits/9156.pdf"
+        ]
+      },
+      "proposed_value": {
+        "Latitude": "34.95595",
+        "Longitude": "-96.73635"
+      },
+      "gem_plant_id": "L100001080983",
+      "plant_name": "Cross Timbers Power Plant",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "I did not open a satellite image. The difference is small compared with the size of the site.",
+      "record_id": "L100001080983:G100001091022:qa-location-2"
+    },
+    {
+      "gem_unit_id": "G100001048466",
+      "concern_type": "Status",
+      "question": "Should units 11 and 12 stay operating when EIA still shows testing?",
+      "finding": "OG&E said in September 2026 that unit 11 passed its tests and would enter service in October. The October 28, 2026 earnings call at https://www.marketbeat.com/instant-alerts/transcript-oge-energy-q3-earnings-call-highlights-2026-10-28/ describes both units as added capacity. The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx still shows both as construction complete, not yet in commercial operation, planned October 2026.",
+      "recommendation": "Leave both units as operating. Check the OG&E ribbon cutting release in November 2026 for the exact date.",
+      "refs": {
+        "links": [
+          "https://www.marketbeat.com/instant-alerts/transcript-oge-energy-q3-earnings-call-highlights-2026-10-28/",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000402162",
+      "plant_name": "Horseshoe Lake power station",
+      "country": "United States",
+      "unit_name": "11",
+      "fields": {},
+      "researcher_notes": "I did not find a document that gives the commercial operation date. Sierra Club data also shows construction, but it is not cited.",
+      "record_id": "L100000402162:G100001048466:qa-status-1",
+      "checks": [
+        37,
+        38,
+        43,
+        50
+      ]
+    },
+    {
+      "gem_unit_id": "G100001092969",
+      "concern_type": "identity",
+      "question": "Which EIA generator ids belong to units 13 and 14?",
+      "finding": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists generators 13 and 14, each 224 MW, planned February 2029. The earnings call at https://www.marketbeat.com/instant-alerts/transcript-oge-energy-q3-earnings-call-highlights-2026-10-28/ gives 440 MW for both, which is 220 MW each.",
+      "recommendation": "Treat EIA generator 13 as unit 13 and generator 14 as unit 14. Both are 224 MW in EIA and in GEM, so no capacity change.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://www.marketbeat.com/instant-alerts/transcript-oge-energy-q3-earnings-call-highlights-2026-10-28/"
+        ]
+      },
+      "gem_plant_id": "L100000402162",
+      "plant_name": "Horseshoe Lake power station",
+      "country": "United States",
+      "unit_name": "13",
+      "fields": {},
+      "researcher_notes": "OG&E's own figure of 440 MW total is a rounded plant total.",
+      "record_id": "L100000402162:G100001092969:qa-identity-2"
+    },
+    {
+      "gem_unit_id": "G100001092969",
+      "concern_type": "Start year",
+      "question": "How do SPP queue dates ERAS-2025-010 and GEN-2024-GR1 fit units 13 and 14?",
+      "finding": "The Southwest Power Pool queue at https://opsportal.spp.org/Studies/GIActive lists ERAS-2025-010, a 496 MW combustion turbine at the Horseshoe Lake substation with an in-service date of April 2028, and GEN-2024-GR1, 492 MW. OG&E and EIA say units 13 and 14 start in 2029.",
+      "recommendation": "Leave the start year at 2029. The queue entries are about 496 MW, close to two 224 MW units plus margin.",
+      "refs": {},
+      "gem_plant_id": "L100000402162",
+      "plant_name": "Horseshoe Lake power station",
+      "country": "United States",
+      "unit_name": "13",
+      "fields": {},
+      "researcher_notes": "I did not open the 2025 commission docket orders to check for an earlier date, because the call summary and EIA both say 2029 or later.",
+      "record_id": "L100000402162:G100001092969:qa-start-year-3",
+      "checks": [
+        10,
+        37
+      ]
+    },
+    {
+      "gem_unit_id": "G100001101622",
+      "concern_type": "Start year",
+      "question": "Is unit 15 a 2031 start, or is queue entry ERAS-2025-004 for 2029 the same project?",
+      "finding": "The October 28, 2026 call at https://www.marketbeat.com/instant-alerts/transcript-oge-energy-q3-earnings-call-highlights-2026-10-28/ says unit 15 is 755 MW and enters service in 2031. The Southwest Power Pool queue at https://opsportal.spp.org/Studies/GIActive lists ERAS-2025-004, a 756.2 MW combined cycle at the same substation dated April 2029.",
+      "recommendation": "Keep 2031 from the owner's statement and treat the queue entry as the same project with an earlier placeholder date.",
+      "refs": {
+        "links": [
+          "https://www.marketbeat.com/instant-alerts/transcript-oge-energy-q3-earnings-call-highlights-2026-10-28/"
+        ]
+      },
+      "gem_plant_id": "L100000402162",
+      "plant_name": "Horseshoe Lake power station",
+      "country": "United States",
+      "unit_name": "15",
+      "fields": {},
+      "researcher_notes": "The queue is a lead only.",
+      "record_id": "L100000402162:G100001101622:qa-start-year-4",
+      "checks": [
+        10,
+        37
+      ]
+    },
+    {
+      "gem_unit_id": "G100000403305",
+      "concern_type": "Status",
+      "question": "Is the Energy and Policy Institute proposed record for Horseshoe Lake wrong for unit 10?",
+      "finding": "The Energy and Policy Institute Oil and Gas Watch record at https://oilandgaswatch.org/facility/rec_d4f1u5oq7easr8ra1f60 lists the plant as proposed. The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists unit 10 as operating, 60.5 MW, started 2001.",
+      "recommendation": "Leave unit 10 as operating. The proposed label most likely reflects the new units 13 to 15.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000402162",
+      "plant_name": "Horseshoe Lake power station",
+      "country": "United States",
+      "unit_name": "10",
+      "fields": {},
+      "researcher_notes": "The record page is drawn by script and its text could not be read by the page checker.",
+      "record_id": "L100000402162:G100000403305:qa-status-5",
+      "checks": [
+        37,
+        38,
+        43,
+        50
+      ]
+    },
+    {
+      "gem_unit_id": "G100001048466",
+      "concern_type": "other",
+      "question": "Is there a document that states Backup Power for the Horseshoe Lake units?",
+      "finding": "I found no document that says whether any Horseshoe Lake unit is a backup power unit. All sources describe the units as grid supply for OG&E customers.",
+      "recommendation": "Leave Backup Power as no on all ten units and leave the source box empty.",
+      "refs": {},
+      "gem_plant_id": "L100000402162",
+      "plant_name": "Horseshoe Lake power station",
+      "country": "United States",
+      "unit_name": "11",
+      "fields": {},
+      "researcher_notes": "Searched the 2026 OG&E plan, the September 2026 news release and EIA-860M. None uses the term.",
+      "record_id": "L100000402162:G100001048466:qa-backup-power-6",
+      "concern_type_raw": "Backup Power"
+    },
+    {
+      "gem_unit_id": "G100000403306",
+      "concern_type": "validation",
+      "question": "Where do units 6 and ST7 stand in GEM, and what is their source?",
+      "finding": "Both are retired in GEM with 2024 retirement years. The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists unit 6 retired January 2024 and ST7 retired December 2024.",
+      "recommendation": "Leave both as retired, and use the EIA-860M table as the source of the retirement year.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "checks": [
+        7
+      ],
+      "gem_plant_id": "L100000402162",
+      "plant_name": "Horseshoe Lake power station",
+      "country": "United States",
+      "unit_name": "6",
+      "fields": {},
+      "researcher_notes": "The September 2024 notes in the status detail say to be retired and were not changed.",
+      "record_id": "L100000402162:G100000403306:qa-validation-7"
+    },
+    {
+      "gem_unit_id": "G100001101620",
+      "concern_type": "Capacity (MW)",
+      "question": "Should Site B be 372 MW as in the Southwest Power Pool queue, not 342 MW?",
+      "finding": "The Southwest Power Pool queue entry GEN-2024-323 (https://opsportal.spp.org/Studies/GIActive) lists 372 MW for the Hugo project at the ITC Hugo 7 345 kV substation. The database has 342 MW from six SGT-800 turbines. A Construction Review article (https://constructionreviewonline.com/1b-hugo-plant-expansion-western-farmers-electric-breaks-ground-on-nine-gas-turbines-in-oklahoma/) says the nine turbines add about 400 MW, and a cooperative annual report says 404 MW.",
+      "recommendation": "Leave 342 MW as it is, since queue sizes often include extra margin. The total of 415.5 MW for both sites is close to the 404 MW to 415 MW reported.",
+      "refs": {
+        "links": [
+          "https://constructionreviewonline.com/1b-hugo-plant-expansion-western-farmers-electric-breaks-ground-on-nine-gas-turbines-in-oklahoma/"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000104123",
+      "plant_name": "Hugo power station",
+      "country": "United States",
+      "unit_name": "Site B",
+      "fields": {},
+      "researcher_notes": "I read the Southwest Power Pool open queue list on 5 November 2026 (https://opsportal.spp.org/Studies/GenerateActiveCSV). Entry GEN-2024-323 shows a nameplate of 372 MW and a capacity of 356.8 MW, with commercial operation in May 2029. Site A is 73.5 MW in the database and entry GEN-2026-SR34 shows 75 MW, owned by the cooperative, at the Hugo 138 kV substation, with commercial operation in April 2029.",
+      "record_id": "L100000104123:G100001101620:qa-capacity-mw-1",
+      "checks": [
+        10
+      ]
+    },
+    {
+      "gem_unit_id": "G100001101619",
+      "concern_type": "location",
+      "question": "Should the City for Hugo be Fort Towson, not Fort Townsend?",
+      "finding": "The Rural Utilities Service environmental assessment (https://www.rd.usda.gov/media/file/download/rus-ea-hugo-new-generation.pdf) places the site west of Fort Towson, Oklahoma. The database spells it Fort Townsend.",
+      "recommendation": "Change City to Fort Towson for both units. The pin link is https://www.google.com/maps/search/?api=1&query=34.01875,-95.32186.",
+      "refs": {
+        "links": [
+          "https://www.rd.usda.gov/media/file/download/rus-ea-hugo-new-generation.pdf"
+        ]
+      },
+      "proposed_value": {
+        "City": "Fort Towson"
+      },
+      "gem_plant_id": "L100000104123",
+      "plant_name": "Hugo power station",
+      "country": "United States",
+      "unit_name": "Site A",
+      "fields": {},
+      "researcher_notes": "Both units are shown as exact in the database, so the coordinates were not reopened.",
+      "record_id": "L100000104123:G100001101619:qa-location-2"
+    },
+    {
+      "gem_unit_id": "G100001091053",
+      "concern_type": "Capacity (MW)",
+      "question": "Should capacity be 324 MW, summed from the newest draft permit?",
+      "finding": "The database shows 283.1 MW from the earlier fleet of 102 engines. The September 2026 draft permit (https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Ae6Ctfv7oSCmhMZ%C3%89kDp%C3%89JKeyyrF%C3%897NeqHWN6Fd0wYTdl604KTTG6bsIhnFC9Sgq7vhd656jR%C3%895uQBkEpWYOBnMg%3D/?ViewerMode=PDF&ForceDownload=true) lists 105 engines, with the MTU units now at 3,250 kW each. My sum of the permit ratings is about 324 MW.",
+      "recommendation": "Change Capacity to 324.0 once the permit is final, or now if you accept a sum of the draft's ratings. The earlier figure used 3.49 MW per MTU engine, which is the engine rating, not the generator rating.",
+      "refs": {
+        "links": [
+          "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Ae6Ctfv7oSCmhMZ%C3%89kDp%C3%89JKeyyrF%C3%897NeqHWN6Fd0wYTdl604KTTG6bsIhnFC9Sgq7vhd656jR%C3%895uQBkEpWYOBnMg%3D/?ViewerMode=PDF&ForceDownload=true"
+        ]
+      },
+      "proposed_value": {
+        "Capacity (MW)": "324.0"
+      },
+      "gem_plant_id": "L100001081005",
+      "plant_name": "Muskogee Data Center power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "I read the Southwest Power Pool open queue list on 5 November 2026 (https://opsportal.spp.org/Studies/GenerateActiveCSV). Entry GEN-2025-SR9 is 400 MW with no fuel shown, owned by OG&E, at the Muskogee 345 kV substation, with commercial operation in December 2029. Entry GEN-2024-293 is 248 MW of gas at the same substation name, with commercial operation in May 2033. Both are grid interconnection requests with no site address, and neither names this data center. They are added as separate projects, not as this plant's backup fleet. The permit has not been issued yet, so numbers could still change.",
+      "record_id": "L100001081005:G100001091053:qa-capacity-mw-1",
+      "checks": [
+        10,
+        39,
+        49
+      ]
+    },
+    {
+      "gem_unit_id": "G100001101665",
+      "concern_type": "Capacity (MW)",
+      "question": "Should Units 5 and 6 be 229 MW each instead of 225 MW?",
+      "finding": "The Oklahoma Department of Environmental Quality draft permit memo from September 2026 (https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AWtoGCCMAPa3ZmzV9bv2lNVdjzgKUd4GV4oRCuMNP0goK6NykmHJHyG5WSO1mUZe7mM1J5HwOpKpJWodbQLKNmw%3D/?ViewerMode=PDF&ForceDownload=true) lists two 229 MW GE turbines. The permit application from late 2025 said 222 MW each. The AEP report says 450 MW in total.",
+      "recommendation": "Leave 225 MW on both units, since 450 MW in total matches the AEP report. Change to 229 only if you prefer the permit figure.",
+      "refs": {
+        "links": [
+          "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AWtoGCCMAPa3ZmzV9bv2lNVdjzgKUd4GV4oRCuMNP0goK6NykmHJHyG5WSO1mUZe7mM1J5HwOpKpJWodbQLKNmw%3D/?ViewerMode=PDF&ForceDownload=true",
+          "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm"
+        ]
+      },
+      "proposed_value": {
+        "Capacity (MW)": "229"
+      },
+      "gem_plant_id": "L100000104126",
+      "plant_name": "Northeastern Station",
+      "country": "United States",
+      "unit_name": "Unit 5",
+      "fields": {},
+      "researcher_notes": "The Southwest Power Pool entry ERAS-2025-023 at https://opsportal.spp.org/Studies/GIActive is a single combustion turbine of 513 MW nameplate and 510 MW capacity at the Northeastern 345 kV substation, with commercial operation in December 2029 in the open list at https://opsportal.spp.org/Studies/GenerateActiveCSV, read on 5 November 2026. It does not match two 229 MW turbines due by the end of 2028. The same Oklahoma Department of Environmental Quality permit file also describes a separate large turbine of nominal 453 MW at Northeastern (https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AS0IjaCrV1T%C3%81SEUDdXmwkZpG2VRBClzAKR911pep%C3%81uAtGhYCcgV7UJnH1xPqDg4ZbOaSJTShXSL302lcWYvl9ds%3D/?ViewerMode=PDF&ForceDownload=true). The permit and the AEP report describe two turbines for Units 5 and 6.",
+      "record_id": "L100000104126:G100001101665:qa-capacity-mw-1",
+      "checks": [
+        10
+      ]
+    },
+    {
+      "gem_unit_id": "G100001055294",
+      "concern_type": "Status",
+      "question": "Should the Oil and Gas Watch and Sierra Club entries for Unit 3 be updated to operating?",
+      "finding": "The AEP report for June 2026 (https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm) says Unit 3 has run on natural gas since January 2026.",
+      "recommendation": "Keep Unit 3 as operating in GEM. Tell the owners of the Oil and Gas Watch and Sierra Club lists that their proposed and planned labels look out of date.",
+      "refs": {
+        "links": [
+          "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm"
+        ]
+      },
+      "gem_plant_id": "L100000104126",
+      "plant_name": "Northeastern Station",
+      "country": "United States",
+      "unit_name": "Unit 3, timepoint 2",
+      "fields": {},
+      "researcher_notes": "I could not read the Oil and Gas Watch page, so I did not see its own source documents.",
+      "record_id": "L100000104126:G100001055294:qa-status-2",
+      "checks": [
+        38,
+        43,
+        50
+      ]
+    },
+    {
+      "gem_unit_id": "G100001055294",
+      "concern_type": "validation",
+      "question": "Is the SPP queue entry ERAS-2025-023 a separate project from Units 5 and 6?",
+      "finding": "The 513 MW queue entry is one turbine with commercial operation in December 2029, a year after the two 229 MW turbines of Units 5 and 6. The queue list names no developer, and no document I found ties it to either project.",
+      "recommendation": "Add no new unit now. Check the Southwest Power Pool list again in the next monthly update and the Oklahoma Corporation Commission docket for a third Northeastern turbine.",
+      "refs": {
+        "links": [
+          "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AWtoGCCMAPa3ZmzV9bv2lNVdjzgKUd4GV4oRCuMNP0goK6NykmHJHyG5WSO1mUZe7mM1J5HwOpKpJWodbQLKNmw%3D/?ViewerMode=PDF&ForceDownload=true",
+          "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm"
+        ]
+      },
+      "checks": [
+        7
+      ],
+      "gem_plant_id": "L100000104126",
+      "plant_name": "Northeastern Station",
+      "country": "United States",
+      "unit_name": "Unit 3, timepoint 2",
+      "fields": {},
+      "researcher_notes": "An Oklahoma Department of Environmental Quality permit file for Northeastern also describes a separate 453 MW turbine (https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AS0IjaCrV1T%C3%81SEUDdXmwkZpG2VRBClzAKR911pep%C3%81uAtGhYCcgV7UJnH1xPqDg4ZbOaSJTShXSL302lcWYvl9ds%3D/?ViewerMode=PDF&ForceDownload=true). The entry may be that turbine or a later one. I could not tell which from a document.",
+      "record_id": "L100000104126:G100001055294:qa-validation-3"
+    },
+    {
+      "gem_unit_id": "G100001093027",
+      "concern_type": "location",
+      "question": "Where is the ONE Nuclear Oklahoma gas site?",
+      "finding": "The filing at https://www.sec.gov/Archives/edgar/data/1846416/000149315225019001/ex99-1.htm names Oklahoma only. No ODEQ permit, commission cause or queue entry matched, and the point GEM shows could not be checked.",
+      "recommendation": "Leave the point and the blank city as they are. Search again when ONE Nuclear files an air permit or names a county.",
+      "refs": {
+        "links": [
+          "https://www.sec.gov/Archives/edgar/data/1846416/000149315225019001/ex99-1.htm"
+        ]
+      },
+      "gem_plant_id": "L100001082617",
+      "plant_name": "ONE Nuclear power station 1",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The location ladder found no address, so no imagery was checked.",
+      "record_id": "L100001082617:G100001093027:qa-location-1"
+    },
+    {
+      "gem_unit_id": "G100001101690",
+      "concern_type": "source",
+      "question": "Is the PSO 2026 resource plan line for Port of Inola still to be found?",
+      "finding": "The commission cause search (the daily docket PDFs) and the queue file matched nothing for this plant. The permit application is the only document found for the 2030 start.",
+      "recommendation": "Ask the reviewer to check PSO's 2026 resource plan refresh by hand for the Port of Inola line and the Oklahoma Corporation Commission cause number.",
+      "refs": {
+        "links": [
+          "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AUk7Pfms86Dwy6B9RtySPXY8zCMWK8b6prK%C3%81TES%C3%81ksWrcWp06P8ZaPQ3atfhjmXORD%C3%89mJf1dwQNey9skV%C3%89JMF5I%3D/?ViewerMode=PDF&ForceDownload=true"
+        ]
+      },
+      "gem_plant_id": "L100001089319",
+      "plant_name": "Port of Inola Power Station",
+      "country": "United States",
+      "unit_name": "1A",
+      "fields": {},
+      "researcher_notes": "A web search found no news article naming a combined cycle plant at the Port of Inola.",
+      "record_id": "L100001089319:G100001101690:qa-source-1"
+    },
+    {
+      "gem_unit_id": "G100001101715",
+      "concern_type": "Status",
+      "question": "Does pre-construction fit Project Thunderbird before any air permit exists?",
+      "finding": "No air permit application, commission filing or queue entry was found. The only documents are news reports of a rezoning request that was delayed in September 2026 (https://okcfox.com/news/local/project-thunderbird-data-center-proposal-promises-600-jobs-and-self-generated-power).",
+      "recommendation": "Change status to announced unless a permit application or land purchase is found. Ask the reviewer to check the Garfield County and Enid records.",
+      "refs": {
+        "links": [
+          "https://okcfox.com/news/local/project-thunderbird-data-center-proposal-promises-600-jobs-and-self-generated-power"
+        ]
+      },
+      "proposed_value": {
+        "Status": "announced"
+      },
+      "gem_plant_id": "L100001089336",
+      "plant_name": "Project Thunderbird Data Center power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The ODEQ permit harvest matched nothing. An air permit may have been requested under a different name.",
+      "record_id": "L100001089336:G100001101715:qa-status-1",
+      "checks": [
+        10,
+        39
+      ]
+    },
+    {
+      "gem_unit_id": "G100001028184",
+      "concern_type": "Capacity (MW)",
+      "question": "Should Ripley RP1 capacity change from 445 MW to 419 MW?",
+      "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) gives 419.0 MW nameplate and 444.5 MW net winter. The state permit memorandum (https://applications.deq.ok.gov/permitspublic/storedpermits/8877.pdf) gives a nominal gross output of 420 MW.",
+      "recommendation": "Change capacity to 419 MW, the nameplate figure, because the manual wants nameplate and not winter capability.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://applications.deq.ok.gov/permitspublic/storedpermits/8877.pdf"
+        ]
+      },
+      "proposed_value": {
+        "Capacity (MW)": "419.0"
+      },
+      "gem_plant_id": "L100001023579",
+      "plant_name": "Ripley Energy Center power station",
+      "country": "United States",
+      "unit_name": "RP1",
+      "fields": {},
+      "researcher_notes": "The old Associated Electric Cooperative page could not be read, so I could not see why 445 was used. It likely came from the winter figure. A second check of the plan found: GEM gives 445 MW, under construction for 2027. The federal file for September 2026 gives 419 MW, under construction, more than half complete. Look for the cooperative's own figure before changing GEM. Keep 445 MW until a document names the nameplate.",
+      "record_id": "L100001023579:G100001028184:qa-capacity-mw-1",
+      "checks": [
+        10,
+        49
+      ],
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Plant 67262 Ripley Energy Center RP1, 419 MW, planned 2027, under construction more than half complete."
+        }
+      ],
+      "merged_from": "us-ok:plant:qa-capacity-20"
+    },
+    {
+      "gem_unit_id": "G100000403319",
+      "concern_type": "City",
+      "question": "Should the city for Seminole (OK) power station read Konawa instead of Konowa?",
+      "finding": "The 2026 OG&E integrated resource plan at https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8 places the plant in Konawa, Oklahoma. The tracker shows Konowa.",
+      "recommendation": "Change City to Konawa on every unit of this plant.",
+      "refs": {
+        "links": [
+          "https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8",
+          "https://applications.deq.ok.gov/permitspublic/storedpermits/8353.pdf"
+        ]
+      },
+      "proposed_value": {
+        "City": "Konawa"
+      },
+      "gem_plant_id": "L100000402165",
+      "plant_name": "Seminole (OK) power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "An Oklahoma Department of Environmental Quality permit memo for the Seminole Generating Station at https://applications.deq.ok.gov/permitspublic/storedpermits/8353.pdf also gives the facility location as Konawa, Seminole County. Two sources agree on this spelling. I found no document that uses Konowa.",
+      "record_id": "L100000402165:G100000403319:qa-city-1"
+    },
+    {
+      "gem_unit_id": "G100000403319",
+      "concern_type": "existence",
+      "question": "Is the 507 MW gas queue entry GEN-2024-321 a new unit at Seminole?",
+      "finding": "The Southwest Power Pool queue page at https://opsportal.spp.org/Studies/GIActive lists GEN-2024-321 as a 507 MW gas project, queued March 2025, with a planned in-service date of March 2029 and a connection at the Seminole 345 kV substation. Two smaller entries, GEN-2025-SR10 at 238 MW and GEN-2025-SR13 at 125 MW, connect at the Seminole 345 kV and 138 kV substations with no fuel shown.",
+      "recommendation": "Ask the project manager whether these are expansions at the OG&E plant or separate projects near the substation. If at the plant, add a new announced unit for GEN-2024-321.",
+      "refs": {
+        "links": [
+          "https://opsportal.spp.org/Studies/GIActive"
+        ]
+      },
+      "gem_plant_id": "L100000402165",
+      "plant_name": "Seminole (OK) power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "A connection point at a substation does not prove the project sits at the plant site. The queue page gives no developer name or site address that I could read, and the 2026 OG&E plan names no new unit at Seminole. I did not find an air permit for a new unit at Seminole in the harvested permit file.",
+      "record_id": "L100000402165:G100000403319:qa-existence-2"
+    },
+    {
+      "gem_unit_id": "G100000414263",
+      "concern_type": "Capacity (MW)",
+      "question": "Should unit 4 capacity stay at 426 MW or change to 594 MW?",
+      "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) gives 594.0 MW nameplate for generator 4, and the Southwest Power Pool queue entry GEN-2024-GR5 (https://opsportal.spp.org/Studies/GIActive) lists 594 MW as a gas and storage hybrid. The owner's dedication article (https://www.publicpower.org/periodical/article/grand-river-dam-authority-formally-dedicates-unit-4-grand-river-energy-center) says 426 MW. A 2024 permit memo (https://applications.deq.ok.gov/permitspublic/storedpermits/8824.pdf) lists a 453 MW turbine.",
+      "recommendation": "Leave 426 MW for now. If the generator nameplate is 594 MW, change it to 594.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://opsportal.spp.org/Studies/GIActive",
+          "https://www.publicpower.org/periodical/article/grand-river-dam-authority-formally-dedicates-unit-4-grand-river-energy-center",
+          "https://applications.deq.ok.gov/permitspublic/storedpermits/8824.pdf"
+        ]
+      },
+      "proposed_value": {
+        "Capacity (MW)": "594"
+      },
+      "gem_plant_id": "L100000104122",
+      "plant_name": "Grand River Energy Center",
+      "country": "United States",
+      "unit_name": "4",
+      "fields": {},
+      "researcher_notes": "The three numbers describe different ratings. Queue entry GEN-2024-GR5 is a replacement request, with a cessation date of 16 September 2026 and a summer rating of 554 MW against a winter rating of 594 MW in the open list at https://opsportal.spp.org/Studies/GenerateActiveCSV, read on 5 November 2026. That points to ratings that change with the season, not to extra storage capacity. A rating of 594 MW is a winter figure.",
+      "record_id": "L100000104122:G100000414263:qa-capacity-mw-1",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100000401629",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "question": "Which older unit did unit 3 replace?",
+      "finding": "A Black and Veatch project page (https://www.bv.com/projects/power-plant-replacement-project-brings-price-certainties-cleaner-air) names the project Grand River Energy Center Units 2 and 3, which suggests the combined cycle replaced older unit 2. The EIA-860M table for September 2026 still lists a coal unit 2 as operating at 594 MW.",
+      "recommendation": "Find the GEM unit ID of the coal unit 2 at this plant and, if it exists, put it in the replacement link for unit 3. If no unit 2 record exists, ask the project manager whether to add one.",
+      "refs": {
+        "links": [
+          "https://www.bv.com/projects/power-plant-replacement-project-brings-price-certainties-cleaner-air"
+        ]
+      },
+      "gem_plant_id": "L100000104122",
+      "plant_name": "Grand River Energy Center",
+      "country": "United States",
+      "unit_name": "3",
+      "fields": {},
+      "researcher_notes": "I could not read the GEM unit ID for unit 2 from the brief. I did not find a document that says plainly which unit unit 3 replaced.",
+      "record_id": "L100000104122:G100000401629:qa-validation-2"
+    },
+    {
+      "gem_unit_id": "",
+      "concern_type": "duplicate",
+      "question": "Is Southwest Power Pool request GEN-2025-SR19 at the Maid 161 kV substation part of the Grand River Energy Center?",
+      "finding": "The request is for 100 MW, owned by the Grand River Dam Authority, with no fuel shown, near Chouteau, with commercial operation in November 2029 in the open list at https://opsportal.spp.org/Studies/GenerateActiveCSV, read on 5 November 2026. The Grand River Energy Center connects at its own 345 kV substation, which is a different connection point.",
+      "recommendation": "Keep GEN-2025-SR19 as its own new project and add no unit at the Grand River Energy Center.",
+      "refs": {
+        "links": [
+          "https://opsportal.spp.org/Studies/GIActive"
+        ]
+      },
+      "gem_plant_id": "L100000104122",
+      "plant_name": "Grand River Energy Center",
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "The queue list gives no site address or project name for this request. I found no air permit or board document that places it at the Grand River Energy Center.",
+      "record_id": "L100000104122:plant:qa-duplicate-3"
+    },
+    {
+      "gem_unit_id": "G100000401815",
+      "concern_type": "other",
+      "question": "Is there a document that states Backup Power for the Green Country units?",
+      "finding": "The EIA table and the news article do not state a Backup Power value. The plant sells to the grid.",
+      "recommendation": "Leave Backup Power as no and add the EIA table for September 2026 as its source if a source is required.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000401991",
+      "plant_name": "Green Country Energy power station",
+      "country": "United States",
+      "unit_name": "G841",
+      "fields": {},
+      "researcher_notes": "I did not search the Oklahoma Department of Environmental Quality air permit files for Green Country beyond the harvested index, which holds a water discharge permit renewal and a 2003 major source permit, neither of which states backup use.",
+      "record_id": "L100000401991:G100000401815:qa-backup-power-1",
+      "concern_type_raw": "Backup Power"
+    },
+    {
+      "gem_unit_id": "G100000401944",
+      "concern_type": "other",
+      "question": "Is there a document that states Backup Power for the Kiamichi units?",
+      "finding": "The EIA table and the Tenaska fact sheet do not state a Backup Power value. The plant sells power into the grid.",
+      "recommendation": "Leave Backup Power as no.",
+      "refs": {
+        "links": [
+          "http://www.tenaska.com/wp-content/uploads/2020/03/Kiamichi.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000401619",
+      "plant_name": "Kiamichi energy facility",
+      "country": "United States",
+      "unit_name": "STG1",
+      "fields": {},
+      "researcher_notes": "A Title V air permit renewal, number 2026-0277-ARR4, is under review at the Oklahoma Department of Environmental Quality. I did not open its documents for this check.",
+      "record_id": "L100000401619:G100000401944:qa-backup-power-1",
+      "concern_type_raw": "Backup Power"
+    },
+    {
+      "gem_unit_id": "G100000401929",
+      "concern_type": "existence",
+      "question": "Do the two Southwest Power Pool queue entries at McClain describe new units?",
+      "finding": "The Southwest Power Pool active queue lists GEN-2025-SR15 (125 MW, McClain Substation) and GEN-2024-013 (a 496 MW combustion turbine, Norman Hills 345 kV substation). The Norman Hills entry has an in-service date of April 2029. I did not find a permit or utility filing that ties either entry to the McClain site.",
+      "recommendation": "Leave GEM as it is. Ask the project manager whether to add GEN-2024-013 as an announced unit once a document names the McClain site.",
+      "refs": {},
+      "gem_plant_id": "L100000401594",
+      "plant_name": "McClain energy facility",
+      "country": "United States",
+      "unit_name": "G011",
+      "fields": {},
+      "researcher_notes": "The queue page is https://opsportal.spp.org/Studies/GIActive. It is drawn by script and I did not read the entries myself; the brief reported them from an earlier download. Not verified further because the brief task for this plant was only to recheck operation and Backup Power.",
+      "record_id": "L100000401594:G100000401929:qa-existence-1"
+    },
+    {
+      "gem_unit_id": "G100000403752",
+      "concern_type": "scope",
+      "question": "Should Mooreland unit 1 (45 MW) be listed in GEM?",
+      "finding": "The EIA-860M table for September 2026 lists three operating gas steam units at plant 3008: unit 1 at 45 MW (1964), unit 2 at 125 MW and unit 3 at 135 MW. GEM lists only units 2 and 3 here.",
+      "recommendation": "Check whether unit 1 is in GEM under another record. If not, it is below the 50 MW threshold, so leave it out.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000402370",
+      "plant_name": "Mooreland power station",
+      "country": "United States",
+      "unit_name": "2",
+      "fields": {},
+      "researcher_notes": "Source is the EIA-860M table at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx.",
+      "record_id": "L100000402370:G100000403752:qa-scope-1"
+    },
+    {
+      "gem_unit_id": "G100001017849",
+      "concern_type": "Start year",
+      "question": "Should units 4 and 5 timepoint 2 keep start year 2019 against EIA's 1977 and 1978?",
+      "finding": "The EIA-860M table for September 2026 gives operating years 1977 for unit 4 and 1978 for unit 5. Those are the original coal units. GEM records the conversion year, 2019, for the converted units.",
+      "recommendation": "Leave 2019 as it is, since GEM's convention is the conversion year. Add the conversion permit memo as the source if a reviewer wants one.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://applications.deq.ok.gov/permitspublic/storedpermits/4454.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000104124",
+      "plant_name": "Muskogee Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 4, timepoint 2",
+      "fields": {},
+      "researcher_notes": "EIA table: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx. Conversion permit memo: https://applications.deq.ok.gov/permitspublic/storedpermits/4454.pdf. I could not confirm the 2019 restart date in a document.",
+      "record_id": "L100000104124:G100001017849:qa-start-year-1",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100001017849",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "question": "Does a document state that Muskogee units 4 and 5 have no carbon capture?",
+      "finding": "No document I read mentions carbon capture at units 4 or 5. The permit memo at https://applications.deq.ok.gov/permitspublic/storedpermits/8130.pdf lists activated carbon handling for Unit 6 mercury control, which is not carbon capture.",
+      "recommendation": "Leave CCS attachment as no. No source was found, so the validation item stays open for a person to dismiss.",
+      "refs": {
+        "links": [
+          "https://applications.deq.ok.gov/permitspublic/storedpermits/8130.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000104124",
+      "plant_name": "Muskogee Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 4, timepoint 2",
+      "fields": {},
+      "researcher_notes": "Looked at the permit memos from 2018 and 2021 and the harvested permit file for this plant. Not found.",
+      "record_id": "L100000104124:G100001017849:qa-validation-2"
+    },
+    {
+      "gem_unit_id": "G100001017849",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "question": "What document supports Owner and Location for Muskogee Generating Station?",
+      "finding": "The permit memo at https://applications.deq.ok.gov/permitspublic/storedpermits/8130.pdf names Oklahoma Gas & Electric Company as the permit holder and gives coordinates 35.76054, -95.28731. GEM's point is about 160 meters away.",
+      "recommendation": "Use the permit memo as the Owner and Location source. Keep GEM's values.",
+      "refs": {
+        "links": [
+          "https://applications.deq.ok.gov/permitspublic/storedpermits/8130.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000104124",
+      "plant_name": "Muskogee Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 4, timepoint 2",
+      "fields": {},
+      "researcher_notes": "The Southwest Power Pool open queue list read on 5 November 2026 (https://opsportal.spp.org/Studies/GenerateActiveCSV) shows GEN-2025-SR9 at 400 MW, owned by OG&E, with no fuel shown, at the Muskogee 345 kV substation, with commercial operation in December 2029. It is added in this batch as a new unit at this plant. GEN-2024-293 is 248 MW of gas at the same substation name, with commercial operation in May 2033. No document ties it to this plant, so it is added as its own project.",
+      "record_id": "L100000104124:G100001017849:qa-validation-3"
+    },
+    {
+      "gem_unit_id": "G100000403312",
+      "concern_type": "existence",
+      "question": "Do the two Southwest Power Pool entries at Mustang describe new units?",
+      "finding": "The Southwest Power Pool queue lists GEN-2025-SR23, 100 MW with no fuel shown, at the Mustang 138 kV substation with an executed agreement, and GEN-2016-047, a 24 MW combustion turbine in service in December 2017 at Mustang 69 kV. The EIA table lists no unit of 24 MW at Mustang. Neither entry names a fuel or turbine for a new unit.",
+      "recommendation": "Leave GEM as is. Ask OG&E or look again at the next queue update to see whether SR23 is a gas unit, then add it as a new unit if so.",
+      "refs": {},
+      "gem_plant_id": "L100000402164",
+      "plant_name": "Mustang (OK) power station",
+      "country": "United States",
+      "unit_name": "6-12",
+      "fields": {},
+      "researcher_notes": "The queue page is https://opsportal.spp.org/Studies/GIActive . I could not load a per-project page. The Oklahoma Corporation Commission daily dockets showed no Mustang case.",
+      "record_id": "L100000402164:G100000403312:qa-existence-1"
+    },
+    {
+      "gem_unit_id": "",
+      "concern_type": "duplicate",
+      "question": "Is Southwest Power Pool entry ERAS-2025-003 at Redbud a new unit or the turbine upgrade?",
+      "finding": "The Southwest Power Pool entry ERAS-2025-003 lists a 186 MW combined cycle addition at the Redbud 345 kV substation, with commercial operation in January 2027. A state air permit memorandum (https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf) says the four existing combustion turbines are being upgraded, which raises the plant from about 1,268 MW to 1,490 MW. The 2026 OG&E resource plan (https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8) lists no new unit at Redbud.",
+      "recommendation": "Do not add a new unit. Treat the entry as the capacity increase of the four existing units, and consider raising each unit from 358 MW to about 372.5 MW once the upgrade is confirmed complete.",
+      "refs": {
+        "links": [
+          "https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8",
+          "https://opsportal.spp.org/Studies/GIActive"
+        ]
+      },
+      "gem_plant_id": "L100000401595",
+      "plant_name": "Redbud power plant",
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "I read the OG&E 2026 resource plan. Its list of planned additions names only Horseshoe Lake and Tinker, and its footnote says OG&E owns 51 percent of Redbud, which matches the shares in the database. I read the queue entry in the Southwest Power Pool open list on 5 November 2026 (https://opsportal.spp.org/Studies/GenerateActiveCSV). It names OG&E as the owner and gives no turbine count. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) shows no planned generator at this plant. I did not find the other owners' shares in a document beyond the database values, so those stay as they are. A second check of the plan found: The SPP queue lists a 186 MW combined cycle request at the Redbud 345 kilovolt substation near Luther with a fully executed agreement, an in-service date of October 24, 2025 and commercial operation on January 18, 2027. GEM has four Redbud units of 358 MW, all operating. Ask OG&E whether this is a combined cycle uprate, and if it is add a note to the Redbud record without a new unit, otherwise add a 186 MW unit with start year 2027.",
+      "record_id": "L100000401595:plant:qa-duplicate-1",
+      "verifications": [
+        {
+          "url": "https://opsportal.spp.org/Studies/GIActive",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "SPP active queue list updated November 3, 2026. Row ERAS-2025-003."
+        }
+      ],
+      "merged_from": "us-ok:plant:qa-duplicate-10"
+    },
+    {
+      "gem_unit_id": "G100000401931",
+      "concern_type": "Capacity (MW)",
+      "question": "Should each Redbud unit's capacity move from 358 MW to 372.5 MW after the upgrade?",
+      "finding": "The permit memorandum (https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf) says each combined cycle unit goes from 317 MW to 372.5 MW. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) still shows 198.9 MW plus 159.5 MW, or 358.4 MW, per unit.",
+      "recommendation": "Leave 358 MW for now. Change all four units to 372.5 MW when EIA or the owner confirms the upgrade is finished.",
+      "refs": {
+        "links": [
+          "https://applications.deq.ok.gov/permitspublic/storedpermits/9021.pdf",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "proposed_value": {
+        "Capacity (MW)": "372.5"
+      },
+      "gem_plant_id": "L100000401595",
+      "plant_name": "Redbud power plant",
+      "country": "United States",
+      "unit_name": "G112",
+      "fields": {},
+      "researcher_notes": "The memorandum describes planned work, so it does not prove the upgrade is done.",
+      "record_id": "L100000401595:G100000401931:qa-capacity-mw-2"
+    },
+    {
+      "gem_unit_id": "G100000402873",
+      "concern_type": "source",
+      "question": "Were the Oklahoma resource plans and queue entry GEN-2024-255 checked for Spring Creek?",
+      "finding": "I did not open the Evergy resource plan or the Southwest Power Pool entry GEN-2024-255. The brief calls that entry a lead that is not this plant.",
+      "recommendation": "Leave the plant as it is. Check the Evergy plan for a retirement year if a person wants it done.",
+      "refs": {},
+      "gem_plant_id": "L100000401932",
+      "plant_name": "Spring Creek energy center",
+      "country": "United States",
+      "unit_name": "CT01",
+      "fields": {},
+      "researcher_notes": "The 12 fetch budget went to the monthly EIA table only, which covers status and capacity for all four units.",
+      "record_id": "L100000401932:G100000402873:qa-source-1"
+    },
+    {
+      "gem_unit_id": "G100000414190",
+      "concern_type": "duplicate",
+      "question": "Is Southwest Power Pool entry ASGI-2014-014 Ferguson the same as this plant?",
+      "finding": "The queue entry shows 56.4 MW, Payne County, a fully executed agreement and commercial operation. The EIA-860M table for September 2026 lists Stillwater Energy Center with three engines of 18.8 MW each, which sum to 56.4 MW, in service since July 2016.",
+      "recommendation": "Treat the queue entry as this plant and add no new unit. Leave the unit as it is.",
+      "refs": {
+        "links": [
+          "https://opsportal.spp.org/Studies/GIActive",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000409256",
+      "plant_name": "Stillwater Energy Center",
+      "country": "United States",
+      "unit_name": "IC",
+      "fields": {},
+      "researcher_notes": "The queue page is https://opsportal.spp.org/Studies/GIActive. It names the entry but does not name the plant, so the match rests on matching capacity and county.",
+      "record_id": "L100000409256:G100000414190:qa-duplicate-1"
+    },
+    {
+      "gem_unit_id": "G100001072817",
+      "concern_type": "identity",
+      "question": "Is EIA plant 63628 Tinker the same site as this plant?",
+      "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 63628 Tinker in Oklahoma County at the same coordinates as GEM. Generators 1 and 2 (48.1 MW each, operating since March 2026) match unit 1-2. Generators 5A and 5B (41 MW each, out of service, since 1971) match unit 5A-5B.",
+      "recommendation": "Type EIA 63628 into Other IDs (location). Type EIA 1 and EIA 2 into Other IDs (unit) for unit 1-2, and EIA 5A and EIA 5B for unit 5A-5B.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100001063385",
+      "plant_name": "Tinker Air Force Base power station",
+      "country": "United States",
+      "unit_name": "1-2",
+      "fields": {},
+      "researcher_notes": "The codes are not added as values.",
+      "record_id": "L100001063385:G100001072817:qa-identity-1"
+    },
+    {
+      "gem_unit_id": "G100001092967",
+      "concern_type": "Status",
+      "question": "Should units 5A and 5B stay retired although EIA lists them out of service?",
+      "finding": "OG&E's 2026 plan (https://www.oge.com/documents/d/portal/oge-2026-irp-final) says they retired in early 2026. The EIA table for September 2026 still shows out of service, not retired, and gives no retirement date.",
+      "recommendation": "Leave as retired in 2026. Check the EIA table again after its next release on November 24, 2026.",
+      "refs": {
+        "links": [
+          "https://www.oge.com/documents/d/portal/oge-2026-irp-final",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100001063385",
+      "plant_name": "Tinker Air Force Base power station",
+      "country": "United States",
+      "unit_name": "5A-5B",
+      "fields": {},
+      "researcher_notes": "EIA often lags a retirement by several months.",
+      "record_id": "L100001063385:G100001092967:qa-status-2"
+    },
+    {
+      "gem_unit_id": "G100001072817",
+      "concern_type": "Capacity (MW)",
+      "question": "Is 96 MW or 102 MW the right capacity for the two new turbines?",
+      "finding": "EIA nameplate is 48.1 MW per generator. The air permit application (https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AeNgrdQLsFw5W8dEEwRTc%C3%81pApsum6Hqboy8ro%C3%81CyJ8OFtu0HRxDmnOy6W2%C3%81nwK2s%C3%81raDCV3qK%C3%8912Ie4gZNs%C3%89Vd0%3D/?ViewerMode=PDF&ForceDownload=true) raises the maximum power rating to 51.1 MW per turbine at standard test conditions.",
+      "recommendation": "Use the EIA nameplate, so 96.2 MW in total, unless a document gives a different nameplate.",
+      "refs": {
+        "links": [
+          "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AeNgrdQLsFw5W8dEEwRTc%C3%81pApsum6Hqboy8ro%C3%81CyJ8OFtu0HRxDmnOy6W2%C3%81nwK2s%C3%81raDCV3qK%C3%8912Ie4gZNs%C3%89Vd0%3D/?ViewerMode=PDF&ForceDownload=true",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100001063385",
+      "plant_name": "Tinker Air Force Base power station",
+      "country": "United States",
+      "unit_name": "1-2",
+      "fields": {},
+      "researcher_notes": "The permit figure is a site-condition rating, not a nameplate.",
+      "record_id": "L100001063385:G100001072817:qa-capacity-mw-3",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100000403433",
+      "concern_type": "Planned retire",
+      "question": "Does Tulsa 2 retire in 2033 or 2034?",
+      "finding": "The PSO 2026 integrated resource plan refresh (https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf) shows 2034 in one table and 2033 in another for Tulsa 2.",
+      "recommendation": "Use 2034, which matches the other table and Tulsa 4. Add a scheduled retirement event for 2034.",
+      "refs": {
+        "links": [
+          "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000402235",
+      "plant_name": "Tulsa power station",
+      "country": "United States",
+      "unit_name": "2",
+      "fields": {},
+      "researcher_notes": "Both tables are in the same report.",
+      "record_id": "L100000402235:G100000403433:qa-planned-retire-1",
+      "checks": [
+        43,
+        50
+      ]
+    },
+    {
+      "gem_unit_id": "G100000403433",
+      "concern_type": "existence",
+      "question": "Should the 8.2 MW diesel unit IC1 at Tulsa be added?",
+      "finding": "The EIA table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists generator IC1, 8.2 MW petroleum liquids, internal combustion, operating since 1967.",
+      "recommendation": "Leave it out. It is below the 50 MW threshold.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000402235",
+      "plant_name": "Tulsa power station",
+      "country": "United States",
+      "unit_name": "2",
+      "fields": {},
+      "researcher_notes": "Retired unit 3 (95 MW, retired 2012) is also in EIA and before 2020.",
+      "record_id": "L100000402235:G100000403433:qa-existence-2"
+    },
+    {
+      "gem_unit_id": "G100001072819",
+      "concern_type": "Status",
+      "question": "Is a second source needed for the Chickasha cancellation?",
+      "finding": "The Chickasha Economic Development Authority release page (https://chickashaedc.com/2025/06/governor-stitt-chickasha-leaders-celebrate-largest-private-investment-in-city-history-with-announcement-of-new-industrial-park) carries the note that the project was cancelled as of early 2026 due to site limitations. No second publisher was found. The Energy Infrastructure Platform still lists it as proposed.",
+      "recommendation": "Keep cancelled, as a single-source status change. Ask the Chickasha authority or search the Express-Star for a second report.",
+      "refs": {
+        "links": [
+          "https://chickashaedc.com/2025/06/governor-stitt-chickasha-leaders-celebrate-largest-private-investment-in-city-history-with-announcement-of-new-industrial-park"
+        ]
+      },
+      "gem_plant_id": "L100001063386",
+      "plant_name": "Chickasha industrial park power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The industrial park hub page (https://chickashaedc.com/chickasha-airport-industrial-park) does not mention the cancellation text.",
+      "record_id": "L100001063386:G100001072819:qa-status-1",
+      "checks": [
+        38,
+        39
+      ]
+    },
+    {
+      "gem_plant_id": "L100001081005",
+      "plant_name": "Muskogee Data Center power station",
+      "concern_type": "Captive non-industry use",
+      "question": "Should GEM raise the Muskogee Data Center power station from 283.1 megawatts to about 314 megawatts?",
+      "finding": "Core Scientific's July 2026 permit application asks for 105 diesel generators: 50 of 2.75 or 3 megawatts and one of 1 megawatt at MSK1-A, and 54 of 3.25 megawatts at MSK1-B. That sums to 314.0 megawatts with the 2.75 megawatt model, or 326.5 megawatts with the 3 megawatt model. GEM lists 283.1 megawatts, built from the earlier permit of 102 engines.",
+      "recommendation": "Update the plant to the 105 engines in the July 2026 application once the department issues the modified permit, and use 314.0 megawatts until the engine model is chosen.",
+      "researcher_notes": "The application also renames the buildings MSK1 and MSK2 as MSK1-A and MSK1-B. It changes the 50 engines at the second building to 3.25 megawatt models, adds four more, and drops the house generator there. The old total of 102 engines had 100 main generators and 2 house generators.",
+      "refs": {
+        "links": [
+          "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AXCzq%C3%89UzFvv6lAbMvp98F3wyixVRq%C3%89EeQdXeDl4C1Lwqd6ORCTsNS8N0kvwYkUSiOXX7FUOqIAMk7Z505l52EkM%3D/?ViewerMode=PDF&ForceDownload=true"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AXCzq%C3%89UzFvv6lAbMvp98F3wyixVRq%C3%89EeQdXeDl4C1Lwqd6ORCTsNS8N0kvwYkUSiOXX7FUOqIAMk7Z505l52EkM%3D/?ViewerMode=PDF&ForceDownload=true",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Permit application of July 2026 for Core Scientific MSK1-A and MSK1-B in Muskogee. Table 1 lists 50 main generators of 2.75 megawatts or 3 megawatts and one 1 megawatt house generator at MSK1-A, and 54 generators of 3.25 megawatts at MSK1-B."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-data-center-fleet-1",
+      "concern_type_raw": "data_center_fleet"
+    },
+    {
+      "gem_plant_id": "L100001089312",
+      "plant_name": "Citadel Facility Data Center power station",
+      "concern_type": "Captive non-industry use",
+      "question": "Should GEM add the 10 smaller backup engines in the Citadel Facility permit to its 297 megawatt record?",
+      "finding": "The department's comment document for permit 2026-0286-C lists 36 engines of 3,997 horsepower and 72 of 4,043 horsepower, which are the 108 engines GEM counts at 297 megawatts. It also lists 6 engines of 2,584 horsepower and 4 of 1,340 horsepower for backup, and one fire pump, that GEM does not carry.",
+      "recommendation": "Add the 10 smaller engines as one more backup unit when the permit is final, with their electrical rating taken from the application, and leave the fire pump out.",
+      "researcher_notes": "The horsepower figures are engine shaft ratings, so the electrical rating has to come from the generator data sheets in the application. The comment period was still open on November 5, 2026.",
+      "refs": {
+        "links": [
+          "https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/Citadel%20Facility-2026-0286-C.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/Citadel%20Facility-2026-0286-C.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "ODEQ comment document for permit 2026-0286-C, Citadel Facility in Tulsa County. It lists 36 engines of 3,997 horsepower and 72 engines of 4,043 horsepower, plus 6 engines of 2,584 horsepower, 4 engines of 1,340 horsepower and one fire pump."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-data-center-fleet-2",
+      "concern_type_raw": "data_center_fleet"
+    },
+    {
+      "gem_plant_id": "L100000104121",
+      "plant_name": "River Valley power station",
+      "concern_type": "Capacity (MW)",
+      "question": "Is the 496 MW Southwest Power Pool request GEN-2024-286 the first phase of the five turbine project at River Valley?",
+      "finding": "The request is for 496 MW of gas at a 161 kV substation in Le Flore County owned by OG&E. The state permit application is for about 1,124 MW of simple-cycle turbines or 1,280 MW of combined cycle.",
+      "recommendation": "Record the permit capacity on the new unit and add a note naming the request as a possible first phase.",
+      "researcher_notes": "The request lists commercial operation in May 2031. No document ties the two numbers together.",
+      "refs": {
+        "links": [
+          "https://opsportal.spp.org/Studies/GIActive",
+          "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Af6FiOuAWfwTfP7%C3%89lBObAZu2%C3%81jK627i0ruRb1YVA9ucGjOJwUUHCsEMbR%C3%81V4w%C3%819YC3Cw0VwM4maTrcJLCxoanak%3D/?ViewerMode=PDF&ForceDownload=true"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://opsportal.spp.org/Studies/GIActive",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "SPP active generator interconnection list. The row for Centrahoma shows 61.725 MW, thermal, commercial operation."
+        },
+        {
+          "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Af6FiOuAWfwTfP7%C3%89lBObAZu2%C3%81jK627i0ruRb1YVA9ucGjOJwUUHCsEMbR%C3%81V4w%C3%819YC3Cw0VwM4maTrcJLCxoanak%3D/?ViewerMode=PDF&ForceDownload=true",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Permit application figures."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-capacity-3",
+      "concern_type_raw": "capacity"
+    },
+    {
+      "gem_plant_id": "",
+      "plant_name": "Peoples Electric Cooperative Centrahoma power station",
+      "concern_type": "duplicate",
+      "question": "Should the Targa, Centrahoma and Little Dixie engine sites be one plant when each is under 50 MW alone?",
+      "finding": "The three sites are about one kilometer apart, share one owner and sum to 61.7 MW, matching one Southwest Power Pool entry of 61.725 MW. The federal monthly file lists them as three small plants.",
+      "recommendation": "Keep them as one plant with three units, and split them only if the manual treats separate permits as separate plants.",
+      "researcher_notes": "The owner name was not found in the entity list.",
+      "refs": {
+        "links": [
+          "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Aevth4xmYyMYEUksZxJwUqGnaRaWfTbuqstqjNNkWYX43sTZcmwOpZkwiQnIvBom5aPYVRnVFqOmoareNhLZSGg%3D/?ViewerMode=PDF&ForceDownload=true",
+          "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Adi%C3%81Uj4HU48j7TJinfPrZ7F99J8r2OmzRMCr78Mar5%C3%81iTb6ZjN92Z8hh1DZPsPqO7bKF3FxOM26IVudy91ABEfs%3D/?ViewerMode=PDF&ForceDownload=true",
+          "https://opsportal.spp.org/Studies/GIActive"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Aevth4xmYyMYEUksZxJwUqGnaRaWfTbuqstqjNNkWYX43sTZcmwOpZkwiQnIvBom5aPYVRnVFqOmoareNhLZSGg%3D/?ViewerMode=PDF&ForceDownload=true",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "ODEQ permit file for Peoples Electric Cooperative, Centrahoma and Targa sites. It lists ten Caterpillar G3520H natural gas engines at each site, used for power generation."
+        },
+        {
+          "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Adi%C3%81Uj4HU48j7TJinfPrZ7F99J8r2OmzRMCr78Mar5%C3%81iTb6ZjN92Z8hh1DZPsPqO7bKF3FxOM26IVudy91ABEfs%3D/?ViewerMode=PDF&ForceDownload=true",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "ODEQ permit file for the Little Dixie site. It lists five G3520H engines and the request to add two newer G3520K engines."
+        },
+        {
+          "url": "https://opsportal.spp.org/Studies/GIActive",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "SPP active generator interconnection list. The row for Centrahoma shows 61.725 MW, thermal, commercial operation."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-duplicate-4"
+    },
+    {
+      "gem_plant_id": "L100000104123",
+      "plant_name": "Hugo power station",
+      "concern_type": "duplicate",
+      "question": "Is SPP request GEN-2024-323 at the ITC Hugo 7 substation the same project as GEM's Hugo Site B?",
+      "finding": "GEM lists Hugo Site B as 342 MW, pre-construction, due in 2029, owned by Western Farmers Electric Cooperative. The SPP queue has a 372 MW gas request in Choctaw County at the ITC Hugo 7 345 kilovolt substation with commercial operation on May 1, 2029. The county, year and size are close, but the queue does not name a company.",
+      "recommendation": "Treat GEN-2024-323 as Hugo Site B unless the cooperative says otherwise, add SPP GEN-2024-323 to Other IDs on Site B, and ask the cooperative whether the 372 MW nameplate is right.",
+      "researcher_notes": "Hugo Site A at 73.5 MW matches request GEN-2026-SR34, a 75 MW thermal surplus request at the WFEC Hugo 138 kilovolt point with commercial operation on April 1, 2029. Site B being 342 MW against 372 MW in the queue is a 30 MW gap that may be a rating difference.",
+      "refs": {
+        "links": [
+          "https://opsportal.spp.org/Studies/GIActive"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://opsportal.spp.org/Studies/GIActive",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "SPP active queue list updated November 3, 2026. Row GEN-2024-323: Choctaw, ITC Hugo 7 345 kV, Gas, nameplate 372 MW, commercial operation May 1, 2029."
+        },
+        {
+          "url": "https://opsportal.spp.org/Studies/GIActive",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "SPP active queue list updated November 3, 2026. Row GEN-2026-SR34: Fort Towson, WFEC Hugo 138, Thermal, 75 MW, commercial operation April 1, 2029."
+        }
+      ],
+      "proposed_value": {},
+      "also_seen_by_other": true,
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-duplicate-5"
+    },
+    {
+      "gem_plant_id": "L100000402231",
+      "plant_name": "Comanche (OK) power station",
+      "concern_type": "Capacity (MW)",
+      "question": "Should Comanche units CC2 and CC3 be 775.2 MW each instead of 686.4 MW?",
+      "finding": "The SPP queue lists two combined cycle requests in Lawton, ERAS-2025-024 and ERAS-2025-026, at 775.2 MW nameplate each (744 MW capacity each), with commercial operation on November 30, 2029. GEM carries CC2 and CC3 at 686.4 MW each.",
+      "recommendation": "Check the Public Service Company of Oklahoma preapproval order for the unit rating, and if the order says 686.4 MW keep GEM as is and add both SPP numbers to Other IDs.",
+      "researcher_notes": "The utility helper found the plan figure; the queue figure is the interconnection customer's nameplate and may include duct firing or a different site rating. Both queue rows have fully executed agreements.",
+      "refs": {
+        "links": [
+          "https://opsportal.spp.org/Studies/GIActive"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://opsportal.spp.org/Studies/GIActive",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "SPP active queue list updated November 3, 2026. Row ERAS-2025-024."
+        },
+        {
+          "url": "https://opsportal.spp.org/Studies/GIActive",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "SPP active queue list updated November 3, 2026. Row ERAS-2025-026."
+        }
+      ],
+      "proposed_value": {},
+      "also_seen_by_other": false,
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-capacity-6",
+      "concern_type_raw": "capacity"
+    },
+    {
+      "gem_plant_id": "L100000104126",
+      "plant_name": "Northeastern power station",
+      "concern_type": "Capacity (MW)",
+      "question": "Should Northeastern units 5 and 6 be 513 MW in total instead of 450 MW, and start in 2029 instead of 2028?",
+      "finding": "SPP request ERAS-2025-023 is a 513 MW combustion turbine request at Northeastern 345 kilovolt with a fully executed agreement and commercial operation on December 15, 2029. GEM has units 5 and 6 at 225 MW each, 450 MW, due 2028.",
+      "recommendation": "Keep the two units at 225 MW each, which matches the utility's 450 MW plan figure, add SPP ERAS-2025-023 to Other IDs, and move the start year to 2029 once the start-year question on this plant is settled.",
+      "researcher_notes": "The 63 MW gap may be the queue nameplate against the plan's net rating. The AEP quarterly report text did not give a unit size. The start year question for 2029 is also raised by the utility plan review.",
+      "refs": {
+        "links": [
+          "https://opsportal.spp.org/Studies/GIActive"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://opsportal.spp.org/Studies/GIActive",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "SPP active queue list updated November 3, 2026. Row ERAS-2025-023."
+        }
+      ],
+      "proposed_value": {},
+      "also_seen_by_other": false,
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-capacity-7",
+      "concern_type_raw": "capacity"
+    },
+    {
+      "gem_plant_id": "L100000402162",
+      "plant_name": "Horseshoe Lake power station",
+      "concern_type": "Capacity (MW)",
+      "question": "Should Horseshoe Lake units 13 and 14 be 248 MW each instead of 224 MW?",
+      "finding": "SPP request ERAS-2025-010 is a 496 MW combustion turbine request at Horseshoe Lake 138 kilovolt with a fully executed agreement and commercial operation on January 1, 2029. GEM has units 13 and 14 at 224 MW each, 448 MW, pre-construction, due 2029. Request GEN-2024-GR1 is also 492 MW for units 11 and 12, which GEM carries at 448 MW.",
+      "recommendation": "Look at the OG&E turbine order or an air permit for the rated output, and if it supports 248 MW per unit change units 11 to 14 to match.",
+      "researcher_notes": "Both pairs are 44 to 48 MW above GEM, so the queue may be reporting a different rating basis than the one GEM used.",
+      "refs": {
+        "links": [
+          "https://opsportal.spp.org/Studies/GIActive"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://opsportal.spp.org/Studies/GIActive",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "SPP active queue list updated November 3, 2026. Row ERAS-2025-010."
+        },
+        {
+          "url": "https://opsportal.spp.org/Studies/GIActive",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "SPP active queue list updated November 3, 2026. Row GEN-2024-GR1."
+        }
+      ],
+      "proposed_value": {},
+      "also_seen_by_other": false,
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-capacity-8",
+      "concern_type_raw": "capacity"
+    },
+    {
+      "gem_plant_id": "L100000402162",
+      "plant_name": "Horseshoe Lake power station",
+      "concern_type": "Start year",
+      "question": "Should Horseshoe Lake unit 15 start in 2030 instead of 2031?",
+      "finding": "SPP request ERAS-2025-004 is a 756.2 MW combined cycle request at Horseshoe Lake 138 kilovolt with a fully executed agreement and commercial operation on October 3, 2030. GEM has unit 15 at 755 MW, pre-construction, due 2031.",
+      "recommendation": "Keep 2031 only if the OG&E plan or order says so, otherwise change the start year to 2030 and add SPP ERAS-2025-004 to Other IDs.",
+      "researcher_notes": "The size matches within rounding. Only the year differs.",
+      "refs": {
+        "links": [
+          "https://opsportal.spp.org/Studies/GIActive"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://opsportal.spp.org/Studies/GIActive",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "SPP active queue list updated November 3, 2026. Row ERAS-2025-004."
+        }
+      ],
+      "proposed_value": {},
+      "also_seen_by_other": false,
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-start-year-9",
+      "concern_type_raw": "start_year"
+    },
+    {
+      "gem_plant_id": "L100000104126",
+      "plant_name": "Northeastern power station",
+      "concern_type": "Start year",
+      "question": "Should Northeastern Units 5 and 6 show a 2029 start year instead of 2028?",
+      "finding": "The Public Service Company of Oklahoma 2026 refresh report lists the two new F class gas turbines at Northeastern, 450 MW in total, with a commercial operation date of 2029. GEM shows 2028 for both units.",
+      "recommendation": "Change the start year of both units to 2029 and keep 225 MW each, which matches the plan total of 450 MW.",
+      "researcher_notes": "The plan was filed in 2026 and the state commission approved the project on May 11, 2026. The plan's capacity table gives 2029 and a 2059 contract end. Another helper holds the permit side of the same plant.",
+      "refs": {
+        "Start Year Data Source": [
+          "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Public Service Company of Oklahoma 2026 refresh report resource table lists these dates, and says they are planning assumptions."
+        }
+      ],
+      "proposed_value": {
+        "Start year": "2029"
+      },
+      "irp": true,
+      "unit_name": "Unit 5 and Unit 6",
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-start-year-11",
+      "concern_type_raw": "start_year"
+    },
+    {
+      "gem_plant_id": "L100000402231",
+      "plant_name": "Comanche (OK) power station",
+      "concern_type": "Planned retire",
+      "question": "Should Comanche unit 1 get a planned retirement year of 2035?",
+      "finding": "The 2026 refresh report from the Public Service Company of Oklahoma lists the Comanche gas steam and combined cycle block 1 with a retirement or contract expiration date of 2035. GEM has no planned retirement year for it.",
+      "recommendation": "Add 2035 as the planned retirement year for unit CC1 only if you accept planning assumption dates, and cite the refresh report.",
+      "researcher_notes": "The report says retirement dates are assumptions for planning only. The plan text also says the utility plans to retire Comanche 1 by summer 2036. I used the table date of 2035.",
+      "refs": {
+        "Planned Retire Data Source": [
+          "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Public Service Company of Oklahoma 2026 refresh report resource table lists these dates, and says they are planning assumptions."
+        }
+      ],
+      "proposed_value": {
+        "Planned retire": "2035"
+      },
+      "irp": true,
+      "unit_name": "CC1",
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-planned-retire-12",
+      "concern_type_raw": "planned_retire"
+    },
+    {
+      "gem_plant_id": "L100000402234",
+      "plant_name": "Southwestern power station",
+      "concern_type": "Planned retire",
+      "question": "Should Southwestern units 1 and 2 get a planned retirement year of 2030?",
+      "finding": "The 2026 refresh report from the Public Service Company of Oklahoma lists units 1 and 2 retiring in 2030, and unit 3 in 2037. Units 4 and 5 are listed to 2056. GEM has no planned retirement years for the plant.",
+      "recommendation": "Add 2030 for units 1 and 2 and 2037 for unit 3, and leave units 4 and 5 blank because 2056 is a contract life assumption.",
+      "researcher_notes": "The report says its retirement dates are planning assumptions, not filed retirement notices.",
+      "refs": {
+        "Planned Retire Data Source": [
+          "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Public Service Company of Oklahoma 2026 refresh report resource table lists these dates, and says they are planning assumptions."
+        }
+      ],
+      "proposed_value": {
+        "Planned retire": "2030 (units 1 and 2), 2037 (unit 3)"
+      },
+      "irp": true,
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-planned-retire-13",
+      "concern_type_raw": "planned_retire"
+    },
+    {
+      "gem_plant_id": "L100000402235",
+      "plant_name": "Tulsa power station",
+      "concern_type": "Planned retire",
+      "question": "Should Tulsa units 2 and 4 get a planned retirement year of 2034?",
+      "finding": "The 2026 refresh report from the Public Service Company of Oklahoma lists Tulsa units 2 and 4 retiring in 2034. GEM has no planned retirement year for either unit.",
+      "recommendation": "Add 2034 as the planned retirement year for units 2 and 4.",
+      "researcher_notes": "The report says retirement dates are planning assumptions, not filed retirement notices.",
+      "refs": {
+        "Planned Retire Data Source": [
+          "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Public Service Company of Oklahoma 2026 refresh report resource table lists these dates, and says they are planning assumptions."
+        }
+      ],
+      "proposed_value": {
+        "Planned retire": "2034"
+      },
+      "irp": true,
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-planned-retire-14",
+      "concern_type_raw": "planned_retire"
+    },
+    {
+      "gem_plant_id": "L100000402233",
+      "plant_name": "Riverside (OK) power station",
+      "concern_type": "Planned retire",
+      "question": "Should Riverside units 1 and 2 get a planned retirement year of 2041?",
+      "finding": "The 2026 refresh report from the Public Service Company of Oklahoma lists Riverside units 1 and 2 retiring in 2041 and units 3 and 4 in 2056. GEM has no planned retirement years for the plant.",
+      "recommendation": "Add 2041 for units 1 and 2 and leave units 3 and 4 blank.",
+      "researcher_notes": "The report says retirement dates are planning assumptions. GEM also shows 473 MW for units 1 and 2 while the report lists 431 and 448 MW, so check the capacity at the same time.",
+      "refs": {
+        "Planned Retire Data Source": [
+          "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Public Service Company of Oklahoma 2026 refresh report resource table lists these dates, and says they are planning assumptions."
+        }
+      ],
+      "proposed_value": {
+        "Planned retire": "2041"
+      },
+      "irp": true,
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-planned-retire-15",
+      "concern_type_raw": "planned_retire"
+    },
+    {
+      "gem_plant_id": "L100000104126",
+      "plant_name": "Northeastern power station",
+      "concern_type": "Planned retire",
+      "question": "Should Northeastern unit 2 and the NE1S unit get a planned retirement year of 2036?",
+      "finding": "The 2026 refresh report from the Public Service Company of Oklahoma lists Northeastern unit 2 and the 1A, 1B and 1S combined cycle block retiring in 2036. GEM has no planned retirement year for them.",
+      "recommendation": "Add 2036 for unit 2 and NE1S.",
+      "researcher_notes": "Retirement dates in the report are planning assumptions. Unit 3 already shows 2041 in GEM, which matches the report. The report lists unit 3 as 420 MW after the gas conversion while GEM shows 473 MW.",
+      "refs": {
+        "Planned Retire Data Source": [
+          "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The Public Service Company of Oklahoma 2026 refresh report resource table lists these dates, and says they are planning assumptions."
+        }
+      ],
+      "proposed_value": {
+        "Planned retire": "2036"
+      },
+      "irp": true,
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-planned-retire-16",
+      "concern_type_raw": "planned_retire"
+    },
+    {
+      "gem_plant_id": "L100000104125",
+      "plant_name": "Fort James Muskogee Mill Power Plant",
+      "concern_type": "duplicate",
+      "question": "Are the Georgia-Pacific gas steam turbines in the federal file the same units as GEM's Fort James Muskogee Mill coal units 2 and 3?",
+      "finding": "GEM lists Fort James units 2 and 3 at 45.5 MW each, coal, started 1979 and 1982, retired in 2020, with a note about conversion to gas. The federal file for September 2026 lists three operating natural gas steam turbines at the same mill of 25, 44.5 and 44.5 MW from 1979, 1980 and 1982.",
+      "recommendation": "Check the mill's air permit to see whether the turbines are the same. If they are, update the Fort James units to operating on gas and drop the new plant, and if not, keep the new plant and add a Notes line on both.",
+      "researcher_notes": "The 2016 notice from the state environmental agency says the mill runs power boilers that feed steam turbines, and that one boiler would be replaced by a gas boiler. It does not give turbine sizes. The start years of 1979 and 1982 match GEM's two units closely, which points to the same machines. The federal plant code for Fort James in GEM is 362, and the new code is 10362.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://applications.deq.ok.gov/permitspublic/storedpermits/3131.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Georgia-Pacific Muskogee plant 10362 rows."
+        },
+        {
+          "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/3131.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "2016 notice for the Georgia-Pacific Muskogee mill describing power boilers feeding steam turbines."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-duplicate-17"
+    },
+    {
+      "gem_plant_id": "L100001063385",
+      "plant_name": "Tinker Air Force Base power station",
+      "concern_type": "Capacity (MW)",
+      "question": "Should the Tinker units be changed to match the federal file of 48.1 MW each for units 1 and 2 and 41 MW each for 5A and 5B?",
+      "finding": "GEM lists units 1 and 2 together at 96 MW, operating 2026, and units 5A and 5B together at 64 MW, retired. The federal file for September 2026 lists plant 63628, Tinker, with units 1 and 2 at 48.1 MW each and units 5A and 5B at 41 MW each, out of service.",
+      "recommendation": "Change units 1 and 2 to 96.2 MW in total, and units 5A and 5B to 82 MW in total, after checking the commissioning release. Keep 5A and 5B at retired only if a document says they are retired.",
+      "researcher_notes": "A February 2026 story on the OG&E and Tinker Air Force Base celebration confirms the new turbines are running. The federal file still counts 5A and 5B as out of service and not expected to return, which is not the same as retired. The plant point in the federal file is the same as GEM's point.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://www.okenergytoday.com/2026/02/oge-and-tinker-air-force-base-celebrate-new-power-generation"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Tinker plant 63628: 1 and 2 at 48.1 MW, 5A and 5B at 41 MW."
+        },
+        {
+          "url": "https://www.okenergytoday.com/2026/02/oge-and-tinker-air-force-base-celebrate-new-power-generation",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "OG&E and Tinker Air Force Base celebrate new power generation, February 2026."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-capacity-18",
+      "concern_type_raw": "capacity"
+    },
+    {
+      "gem_plant_id": "L100000104122",
+      "plant_name": "Grand River Energy Center",
+      "concern_type": "Capacity (MW)",
+      "question": "Is unit 4 at Grand River 426 MW as in GEM, or 594 MW as in the federal file?",
+      "finding": "GEM gives unit 4 as 426 MW, operating from 2026. The federal file for September 2026 gives 594 MW for generator 4. The Grand River Dam Authority describes the unit as a 426 MW J-class combustion turbine dedicated on September 9.",
+      "recommendation": "Keep 426 MW and the operating status. The federal figure of 594 MW is the old coal unit 2 size and looks like a carry-over.",
+      "researcher_notes": "The federal file lists generator 4 as operating since September 2026, so its status agrees with GEM and disagrees with EIP, which lists the plant as under construction. The 2025 annual survey still shows unit 4 as proposed. EIP's page loads only through a script, so the page could not be read as text.",
+      "refs": {
+        "links": [
+          "https://www.publicpower.org/periodical/article/grand-river-dam-authority-formally-dedicates-unit-4-grand-river-energy-center",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.publicpower.org/periodical/article/grand-river-dam-authority-formally-dedicates-unit-4-grand-river-energy-center",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Grand River Dam Authority dedicates Unit 4, a 426 MW J-class turbine."
+        },
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Plant 165 generator 4 at 594 MW, operating since September 2026."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-capacity-19",
+      "concern_type_raw": "capacity"
+    },
+    {
+      "gem_plant_id": "L100000402164",
+      "plant_name": "Mustang (OK) power station",
+      "concern_type": "Capacity (MW)",
+      "question": "Is Mustang unit 6-12 one block of 462 MW as in GEM, or seven turbines of 66 MW each as in the federal file?",
+      "finding": "GEM lists one unit named 6-12 at 462 MW. The federal file lists seven natural gas combustion turbines, GT1 to GT7, each 66 MW, all started in 2017. Seven times 66 is 462 MW.",
+      "recommendation": "Keep the total at 462 MW. Consider splitting the unit into seven turbines of 66 MW each.",
+      "researcher_notes": "The totals agree. Only the way the units are counted differs.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Plant 2953 Mustang GT1 to GT7, 66 MW each, operating 2017."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-capacity-21",
+      "concern_type_raw": "capacity"
+    },
+    {
+      "gem_plant_id": "L100000402231",
+      "plant_name": "Comanche (OK) power station",
+      "concern_type": "Status",
+      "question": "Do federal generators 2G1, 2S1, 3G1 and 3S1 belong to GEM units CC2 and CC3?",
+      "finding": "GEM lists CC2 and CC3 at 686.4 MW each, pre-construction, 2029. The federal file lists 2G1 at 408.8 MW and 2S1 at 277.6 MW, then 3G1 and 3S1 with the same sizes, planned for 2029 with approvals not started.",
+      "recommendation": "Treat 2G1 and 2S1 as CC2, and 3G1 and 3S1 as CC3, since the sums of 686.4 MW agree. Consider setting the status to announced if no permit was filed.",
+      "researcher_notes": "The federal file says regulatory approvals have not started. GEM says pre-construction. No permit filing was found in this pass.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Plant 8059 Comanche (OK) 2G1, 2S1, 3G1, 3S1 planned for 2029, approvals not initiated."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-status-22",
+      "concern_type_raw": "status"
+    },
+    {
+      "gem_plant_id": "L100000402162",
+      "plant_name": "Horseshoe Lake power station",
+      "concern_type": "Status",
+      "question": "Are Horseshoe Lake units 10, 11 and 12 operating, as in GEM, or proposed or under construction, as other sources say?",
+      "finding": "The federal file shows unit 10 as operating since 2001 at 60.5 MW, so EIP's proposed status for unit 10 is likely about the new units. Units 11 and 12 are listed as construction complete but not yet in commercial operation, planned for 2026. Units 13 and 14 at 224 MW each are approved but not under construction, planned for 2029.",
+      "recommendation": "Keep unit 10 as operating and change units 11 and 12 to construction until a document shows commercial operation. Units 13 and 14 match GEM.",
+      "researcher_notes": "A November 2025 story says the state commission approved 448 MW at Horseshoe Lake for OG&E. A status change needs two independent publishers for high confidence, and only the federal file gives the current state. Federal generator ids 13 and 14 belong to GEM units 13 and 14.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://www.okenergytoday.com/2025/11/oge-acts-promptly-on-energy-projects-approval"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Plant 2951 generators 11 and 12 construction complete, not yet commercial; 13 and 14 approved, 2029."
+        },
+        {
+          "url": "https://www.okenergytoday.com/2025/11/oge-acts-promptly-on-energy-projects-approval",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "OG&E story on approval of 448 MW of new generation at Horseshoe Lake."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-status-23",
+      "concern_type_raw": "status"
+    },
+    {
+      "gem_plant_id": "L100000402369",
+      "plant_name": "Anadarko power station",
+      "concern_type": "Status",
+      "question": "Does EIP's under construction status for Anadarko describe the new Roulet units rather than the retired unit 3?",
+      "finding": "GEM lists unit 3 as retired and units 12 and 13 as the Roulet units under construction for 2026. The federal file shows Anadarko plant units 1, 2 and 3 retired in 2024. Units 1 and 2 are 17.3 MW each and are below the threshold.",
+      "recommendation": "Keep unit 3 as retired and the Roulet units as under construction. Treat EIP's status as describing the Roulet units.",
+      "researcher_notes": "The EIP page loads only through a script and could not be read as text. The match between EIP's under construction status and the Roulet units is an inference.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Plant 3006 Anadarko units 1, 2 and 3 retired in 2024."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-status-24",
+      "concern_type_raw": "status"
+    },
+    {
+      "gem_plant_id": "L100000104126",
+      "plant_name": "Northeastern Station",
+      "concern_type": "Status",
+      "question": "Is Northeastern unit 3 operating on gas as in GEM, or still coal as in the federal file?",
+      "finding": "GEM lists unit 3 as converted to gas and operating from 2026. The federal file for September 2026 still lists generator 3 as conventional steam coal at 473 MW. Public Service Company of Oklahoma told the state in October 2025 that it would stop burning coal on December 31, 2025 and run unit 3 on gas from 2026.",
+      "recommendation": "Keep unit 3 as operating on gas if a document confirms the conversion is done. Otherwise note the planned conversion date.",
+      "researcher_notes": "The utility's annual report to the state environmental agency says coal burning would end at the end of 2025. It also says a required filing with the Southwest Power Pool was still pending. EIP lists this unit as proposed, which fits the new units 5 and 6 at 225 MW that GEM has as pre-construction for 2028.",
+      "refs": {
+        "links": [
+          "https://docs.aep.com/docs/requiredpostings/elg/NEPSB-AnnualProgressReportforthePermanentCessationofCoalCombustionby12-31-2028-10102025.pdf",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://docs.aep.com/docs/requiredpostings/elg/NEPSB-AnnualProgressReportforthePermanentCessationofCoalCombustionby12-31-2028-10102025.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "PSO October 2025 report: stop coal at Northeastern on December 31, 2025 and run Unit 3 on gas from 2026."
+        },
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Plant 2963 generator 3 still listed as conventional steam coal, 473 MW."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-status-25",
+      "concern_type_raw": "status"
+    },
+    {
+      "gem_plant_id": "L100000104124",
+      "plant_name": "Muskogee Generating Station",
+      "concern_type": "Status",
+      "question": "Should Muskogee units 4 and 5 keep the start year 2019, or change to the federal file's 1977 and 1978?",
+      "finding": "GEM uses two rows for each unit and gives the gas conversion year of 2019 for the second row. The federal file gives 1977 and 1978 for natural gas steam turbines of 572 MW.",
+      "recommendation": "Keep 2019 for the converted rows. The federal file shows the original start years, which GEM already holds in the first row of each unit.",
+      "researcher_notes": "No change is needed. This follows GEM's convention for coal-to-gas conversions.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Plant 2952 Muskogee units 4 and 5, natural gas steam turbines, 572 MW, started 1977 and 1978."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-status-26",
+      "concern_type_raw": "status"
+    },
+    {
+      "gem_plant_id": "L100000401619",
+      "plant_name": "Kiamichi energy facility",
+      "concern_type": "Owner(s)",
+      "question": "Should Kiamichi be owned by Kiowa Power Partners alone, or by the partnerships in the federal ownership table?",
+      "finding": "GEM lists Kiowa Power Partners LLC at 100 percent. The federal annual survey for 2025 lists Tenaska Oklahoma I LP at about 99 percent, with small shares for Tenaska Oklahoma Inc, TC Oklahoma GP and Tyr Oklahoma GP.",
+      "recommendation": "Keep Kiowa Power Partners at 100 percent. The listed partnerships hold under five percent each apart from the main partnership, which is the Tenaska affiliate of the same owner group.",
+      "researcher_notes": "GEM's parents, ITOCHU and Tenaska Energy, are consistent with the federal table. The entity lookup found no separate Tenaska Oklahoma entity.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "EIA-860 page for the 2025 survey, whose owner table lists the Kiamichi shares."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-owner-27",
+      "concern_type_raw": "owner"
+    },
+    {
+      "gem_plant_id": "L100000402370",
+      "plant_name": "Mooreland power station",
+      "concern_type": "Capacity (MW)",
+      "question": "Should Mooreland unit 1 be added at 45 MW?",
+      "finding": "GEM lists units 2 and 3 at 125 and 135 MW. The federal file also lists unit 1 at 45 MW, natural gas steam turbine, from 1964.",
+      "recommendation": "Do not add unit 1. It is below the 50 MW unit threshold.",
+      "researcher_notes": "The plant total in the federal file is 305 MW against GEM's 260 MW. The gap is unit 1.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Plant 3008 Mooreland units 1, 2 and 3 at 45, 125 and 135 MW."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:qa-capacity-28",
+      "concern_type_raw": "capacity"
+    }
+  ]
+}

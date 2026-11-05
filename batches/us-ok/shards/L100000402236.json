@@ -1,0 +1,141 @@
+{
+ "meta": {
+  "plant_id": "L100000402236",
+  "plant_name": "Weleetka power station",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T11:00:58-05:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403435",
+   "unit_name": "4",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists this unit as operating. Row: Plant 2966, generator 4, status operating, nameplate 53.0 MW, operating year 1975, planned retirement 2030. This confirms the status; it does not change it."
+    },
+    "Planned retire": {
+     "value": "2030",
+     "refs": [
+      "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The 2026 integrated resource plan refresh from PSO (Public Service Company of Oklahoma) lists Weleetka units 4 and 5 for retirement in 2030, and the EIA-860M table for September 2026 gives planned retirement year 2030. This matches the tracker. No new scheduled event is needed. The plan is at https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "The EIA table for September 2026 shows unit 4 operating with retirement planned for 2030, and the PSO plan agrees. I found no document that states a Backup Power value. The unit is a grid gas turbine and no source says it is backup power."
+  },
+  {
+   "gem_unit_id": "G100000403436",
+   "unit_name": "5",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists this unit as operating. Row: Plant 2966, generator 5, status operating, nameplate 53.0 MW, operating year 1976, planned retirement 2030. This confirms the status; it does not change it."
+    },
+    "Planned retire": {
+     "value": "2030",
+     "refs": [
+      "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The 2026 integrated resource plan refresh from PSO (Public Service Company of Oklahoma) lists Weleetka units 4 and 5 for retirement in 2030, and the EIA-860M table for September 2026 gives planned retirement year 2030. This matches the tracker. No new scheduled event is needed. The plan is at https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "The EIA table for September 2026 shows unit 5 operating with retirement planned for 2030, and the PSO plan agrees. I found no document that states a Backup Power value. The unit is a grid gas turbine and no source says it is backup power."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "PSO 2026 plan refresh table lists Weleetka 4 and 5, retire 2030."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet for plant 2966."
+  }
+ ]
+}

@@ -1,0 +1,139 @@
+{
+ "meta": {
+  "plant_id": "L100000402234",
+  "plant_name": "Southwestern power station",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T11:02:54-05:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403428",
+   "unit_name": "1",
+   "findings": {
+    "Planned retire": {
+     "value": "2030",
+     "refs": [
+      "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The 2026 Public Service Company of Oklahoma resource plan refresh at https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf lists Southwestern 1 (gas, in service 1952) with a retirement year of 2030. The human adds a new scheduled retirement event for 2030 and does not change an existing one."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "The EIA-860M table for September 2026 (released October 23, 2026) at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists Southwestern generator 1 as operating, 84.0 MW nameplate, natural gas, in service 1952. No planned retirement is listed there. I found no document that states whether this unit is backup power, so Backup Power stays as it is."
+  },
+  {
+   "gem_unit_id": "G100000403429",
+   "unit_name": "2",
+   "findings": {
+    "Planned retire": {
+     "value": "2030",
+     "refs": [
+      "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The 2026 Public Service Company of Oklahoma resource plan refresh at https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf lists Southwestern 2 (gas, in service 1954) with a retirement year of 2030. The human adds a new scheduled retirement event for 2030 and does not change an existing one."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "The EIA-860M table for September 2026 (released October 23, 2026) at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists Southwestern generator 2 as operating, 84.0 MW nameplate, natural gas, in service 1954. No planned retirement is listed there. I found no document that states whether this unit is backup power, so Backup Power stays as it is."
+  },
+  {
+   "gem_unit_id": "G100000403430",
+   "unit_name": "3",
+   "findings": {},
+   "not_found": [
+    "Backup Power",
+    "Planned retire"
+   ],
+   "notes": "The EIA-860M table for September 2026 (released October 23, 2026) at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists Southwestern generator 3 as operating, 315.0 MW nameplate, natural gas, in service 1967. No planned retirement is listed there. I found no document that states whether this unit is backup power, so Backup Power stays as it is. The 2026 plan lists a modeled retirement year for this unit far in the future, so I did not report it as a planned retirement."
+  },
+  {
+   "gem_unit_id": "G100000403431",
+   "unit_name": "4",
+   "findings": {},
+   "not_found": [
+    "Backup Power",
+    "Planned retire"
+   ],
+   "notes": "The EIA-860M table for September 2026 (released October 23, 2026) at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists Southwestern generator 4 as operating, 86.5 MW nameplate, natural gas, in service 2008. No planned retirement is listed there. I found no document that states whether this unit is backup power, so Backup Power stays as it is. The 2026 plan lists a modeled retirement year for this unit far in the future, so I did not report it as a planned retirement."
+  },
+  {
+   "gem_unit_id": "G100000403432",
+   "unit_name": "5",
+   "findings": {},
+   "not_found": [
+    "Backup Power",
+    "Planned retire"
+   ],
+   "notes": "The EIA-860M table for September 2026 (released October 23, 2026) at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists Southwestern generator 5 as operating, 86.5 MW nameplate, natural gas, in service 2008. No planned retirement is listed there. I found no document that states whether this unit is backup power, so Backup Power stays as it is. The 2026 plan lists a modeled retirement year for this unit far in the future, so I did not report it as a planned retirement."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Retirement year 2030 for units 1 and 2; units 3 to 5 later."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "All five units operating. Also lists a 2 MW diesel engine IC1 marked out of service, not in GEM."
+  },
+  {
+   "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2024_IRP_Report.pdf",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "The 2024 plan also gives 2030 for units 1 and 2."
+  },
+  {
+   "url": "https://opsportal.spp.org/Studies/GIActive",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "The queue entry GEN-2005-022 (177 MW, in service 2007) matches the two 2008-era gas turbines. Not fetched. It is a lead and adds nothing new."
+  }
+ ]
+}
