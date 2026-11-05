@@ -238,13 +238,23 @@ def unit_entry(uid, row, unit_name=""):
             "research_status": str(row.get("Research status") or "").strip()}
 
 
+# Characters that look like plain ones (non-breaking hyphen and space, dashes, curly quotes, zero-width
+# marks). A value that differs from the cell only by these is the same text on screen; the review card
+# (gem-review-app, app.js LOOKALIKE) names them, and the line counts as minor.
+_LOOKALIKE = str.maketrans({"\u00a0": " ", "\u202f": " ", "\u2009": " ", "\u2007": " ", "\u2002": " ", "\u2003": " ",
+                            "\u2010": "-", "\u2011": "-", "\u2012": "-", "\u2013": "-", "\u2014": "-", "\u2212": "-",
+                            "\u00ad": "", "\u200b": "", "\u200c": "", "\u200d": "", "\u2060": "", "\ufeff": "",
+                            "\u2018": "'", "\u2019": "'", "\u201c": '"', "\u201d": '"'})
+
+
 def _norm(v):
-    return re.sub(r"\s+", " ", str(v if v is not None else "")).strip().lower()
+    return re.sub(r"\s+", " ", str(v if v is not None else "").translate(_LOOKALIKE)).strip().lower()
 
 
 def severity_of(kind, reverified, column, fields, current, current_ref):
     """minor: the value stands and only a link is added (reverified; or the proposed value equals
-    the current cell, which already has a Data Source link), or the edit is to Status Detail.
+    the current cell, which already has a Data Source link; hidden characters such as a
+    non-breaking hyphen do not count as a difference), or the edit is to Status Detail.
     major: a cell value moves."""
     if reverified or column == "Status Detail":
         return "minor"

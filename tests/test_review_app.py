@@ -252,6 +252,10 @@ def test_severity_minor_for_status_detail_and_ref_only_edits():
     assert sev("change", False, "Capacity (MW)", {"Capacity (MW)": "1,300"}, {"Capacity (MW)": "1300"}, []) == "major"
     assert sev("change", False, "Capacity (MW)", {"Capacity (MW)": "1300"}, {"Capacity (MW)": "1300 "}, ["https://a"]) == "minor"
     assert sev("fill", False, "Start year", {"Start year": "1996"}, {"Start year": ""}, []) == "major"
+    # only a hidden character differs (a non-breaking hyphen in the cell): the same text, so minor
+    eq = "Equipment Manufacturer/Model"
+    assert sev("change", False, eq, {eq: "Siemens Energy: SGT6-9000HL"}, {eq: "Siemens Energy: SGT6\u20119000HL"}, ["https://a"]) == "minor"
+    assert sev("change", False, eq, {eq: "Siemens Energy: SGT6-8000H"}, {eq: "Siemens Energy: SGT6\u20119000HL"}, ["https://a"]) == "major"
     assert sev("delete", False, "Start year", {"Start year": ""}, {"Start year": "1996"}, ["https://a"]) == "major"
 
 
