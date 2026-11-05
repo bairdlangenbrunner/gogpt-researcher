@@ -141,3 +141,70 @@ def test_slim_keeps_contract_fields():
     for k in ("name", "codes", "permits", "docs", "address", "city"):
         assert k in s
     assert s["permits"][0]["number"] == "2025-0595-C M-1"
+
+
+def test_parse_list_issued_and_psd():
+    issued = ('"Date Issued","Company Name","Facility Name","Permit Number","County"\n'
+              '"2025-12-22","CROSS TIMBERS POWER LLC","CROSS TIMBERS POWER PLANT","2025-0397-C","Seminole"\n'
+              '"2025-12-18","MUSTANG GAS PRODUCTS LLC","SILVER LAKE GAS PLANT","2025-0438-AD","Major"\n')
+    rows = h.parse_list("issued in the past year", issued)
+    assert rows[0] == {"company": "CROSS TIMBERS POWER LLC", "facility": "CROSS TIMBERS POWER PLANT", "county": "Seminole",
+                       "permit": "2025-0397-C", "date": "2025-12-22", "list": "issued in the past year", "status": "issued"}
+    assert rows[1]["county"] == ""
+    psd = "﻿Permit #,County,Company,Facility Name,Issue Date\n2000-116-C PSD,Cleveland,Energetix,Thunderbird Power Plant,5/17/2001\n"
+    r = h.parse_list("final major source (PSD) permits", psd)[0]
+    assert (r["permit"], r["date"], r["county"]) == ("2000-116-C PSD", "2001-05-17", "Cleveland")
+
+
+def test_list_rows_join_table_facility_and_match():
+    facs = h.build_facilities(h.parse_ppr(row("AQD", "Seminole", "Cross Timbers Power LLC", "1", "Cross Timbers Power Plant",
+                                              "2025-0397-C", "Tier I", "Construction", "Issued", "Issued")))
+    h.add_list_rows(facs, [{"company": "CROSS TIMBERS POWER LLC", "facility": "CROSS TIMBERS POWER PLANT", "county": "Seminole",
+                            "permit": "2025-0397-C", "date": "2025-12-22", "list": "issued in the past year", "status": "issued"},
+                           {"company": "Energetix", "facility": "Thunderbird Power Plant", "county": "Cleveland",
+                            "permit": "2000-116-C PSD", "date": "2001-05-17", "list": "final major source (PSD) permits",
+                            "status": "issued"}])
+    assert len(facs) == 2
+    ct = next(f for f in facs.values() if f["source"] == "table")
+    assert ct["list_rows"][0]["list"] == "issued in the past year"
+    tb = next(f for f in facs.values() if f["source"] == "state permit list")
+    assert h.match(plant("L100001089336", "Project Thunderbird Data Center power station"), [tb]) == []
+
+
+def test_comment_url():
+    assert h.comment_url({"facility": "CITADEL FACILITY", "permit": "2026-0286-C"}).endswith(
+        "/air-quality/Citadel%20Facility-2026-0286-C.pdf")
+
+
+def test_notice_head_and_coords():
+    text = ("MEMORANDUM October 9, 2025\n\nSUBJECT:            Evaluation of Permit Application No. 2025-0466-C\n"
+            "                    Core Scientific MSK1 & MSK2\n"
+            "                    Latitude: 35.69694N, Longitude: 95.38558W\n\nSECTION I.\n")
+    assert h.notice_head(text).startswith("Evaluation of Permit Application No. 2025-0466-C Core Scientific")
+    assert h.notice_type(text) == "permit memorandum"
+    assert h.doc_facts(text)["coords"] == ["35.69694, -95.38558"]
+
+
+def test_tie_notices(tmp_path):
+    store = h.NoticeStore(tmp_path)
+    store.idx = {"9138": {"exists": True, "read": True, "power": True, "hint": "Core Scientific", "permits": ["2025-0466-C"]},
+                 "9001": {"exists": True, "read": True, "power": True, "hint": "Watts Facility", "permits": ["2026-0100-C"]},
+                 "9002": {"exists": True, "read": True, "power": False, "hint": "Water plant", "permits": []}}
+    facs = h.build_facilities(h.parse_ppr(row("AQD", "Muskogee", "Core Scientific", "2", "Core Scientific MSK1", "2025-0466-C",
+                                              "Tier I", "Construction", "Draft", "Open")))
+    tied, new = h.tie_notices(store, facs)
+    assert (tied, new) == (1, 1)
+    f = next(f for f in facs.values() if f["source"] == "table")
+    assert f["docs"][0]["url"].endswith("/storedpermits/9138.pdf")
+    assert "notice-9001" in facs
+
+
+def test_notice_sweep_from_empty_index_reaches_the_floor(tmp_path, monkeypatch):
+    monkeypatch.setattr(h, "NOTICE_FLOOR", 400)
+    monkeypatch.setattr(h, "NOTICE_GAP", 20)
+    store = h.NoticeStore(tmp_path)
+    present = {150, 390, 405}
+    monkeypatch.setattr(store, "_head", lambda n: (n, 200 if n in present else 404, ""))
+    store.sweep()
+    assert {int(k) for k, v in store.idx.items() if v.get("exists")} == present
+    assert max(int(k) for k in store.idx) >= 425

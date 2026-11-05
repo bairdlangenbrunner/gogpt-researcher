@@ -1,6 +1,6 @@
 # Access proof: us-ok
 
-Checked 2026-11-04T16:47:18. 26 of 26 sources proven; 0 behind a person's action.
+Checked 2026-11-05T00:01:23. 29 of 29 sources proven; 0 behind a person's action.
 
 | id | ok | route | status | kind | bytes | reason or person |
 |---|---|---|---|---|---|---|
@@ -18,7 +18,10 @@ Checked 2026-11-04T16:47:18. 26 of 26 sources proven; 0 behind a person's action
 | occ-pud-reports | yes | curl | 200 | pdf | 1161279 |  |
 | occ-weblink | yes | direct_post, warm_cookie | 200 | json | 16656 |  |
 | odeq-air-pages | yes | curl | 200 | html | 386565 |  |
+| odeq-comment-pdfs | yes | curl | 200 | pdf | 664890 |  |
+| odeq-notice-store | yes | curl | 200 | pdf | 816741 |  |
 | odeq-onbase | yes | direct_post | 200 | json | 1153 |  |
+| odeq-permit-lists | yes | curl | 200 | csv | 84679 |  |
 | odeq-ppr | yes | curl | 200 | table | 557309 |  |
 | oge-irp | yes | cf_impersonate, pdf_via_ladder | 200 | pdf | 92169 |  |
 | ompa | yes | curl | 200 | html | 166000 |  |

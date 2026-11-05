@@ -102,6 +102,22 @@ GEN = re.compile(r"generat|power plant|preapprov|pre-approv|certificate of (conv
                  r"turbine|combined[- ]cycle|simple[- ]cycle|peak|acqui|purchase of .{0,60}(facilit|plant|station)|"
                  r"integrated resource|\bIRP\b|resource plan|request for proposal|\bRFP\b|data cent|large load|"
                  r"retire|cogenerat|megawatt|\bMW\b|energy center|power station|\bgas[- ]fired", re.I)
+# telephone, internet, school and hospital causes: never generation, and their names (Kiamichi
+# Medical Center, Weleetka Public Schools) must not match a plant. Kept only when a power word is there too.
+NOT_POWER = re.compile(r"telephone|telecom|communicat|network|fiber|broadband|wireless|cellular|\bAT&T\b|"
+                       r"universal service|\bOUSF\b|\bOSF\b|internet|school|library|hospital|medical center|"
+                       r"\b911\b|\bE911\b|local exchange|exchange carrier|to provide local|\bTELL?\b|\bCLEC\b", re.I)
+POWER_WORD = re.compile(r"electric|generat|power plant|power station|energy center|turbine|megawatt|\bMW\b", re.I)
+
+
+def not_power(d):
+    """True for a telephone, internet, school or hospital cause. Judged on the cause title, relief
+    type and applicant only: order titles mix in unrelated filings."""
+    head = " ".join([d.get("title", ""), d.get("relief_type", ""), " ".join(d.get("relief_types", [])),
+                     d.get("utility", "")])
+    return bool(NOT_POWER.search(head)) and not POWER_WORD.search(head)
+
+
 WIRES = re.compile(r"transmission|\bkv\b|substation|\bline\b|right[- ]of[- ]way", re.I)
 WIND_SOLAR = re.compile(r"\bwind\b|solar|photovoltaic|battery|storage", re.I)
 GAS = re.compile(r"\bgas\b|turbine|combined[- ]cycle|simple[- ]cycle|peak|reciprocating|generating|"
@@ -335,6 +351,8 @@ def classify(d):
     wires_only = bool(WIRES.search(d.get("title", ""))) and not re.search(
         r"generat|plant|station|energy center|turbine|preapprov|pre-approv|resource plan", d.get("title", ""), re.I)
     ws_only = bool(WIND_SOLAR.search(d.get("title", ""))) and not re.search(r"\bgas\b|turbine|combined|peak|generating station", d.get("title", ""), re.I)
+    if not_power(d) and d["docket"] not in KNOWN_CASES:
+        return False, False, []
     relevant = bool(reasons)
     key = d["docket"] in KNOWN_CASES or (gen and bool(GAS.search(head)) and not wires_only and not ws_only)
     return relevant, key, reasons
@@ -457,6 +475,8 @@ def match_docket(plant, d, others_by_title=False):
     """How a cause matches a plant, or None: the plant's name in the relief sought, order titles or
     applicant (strong), or in the documents read three or more times (six when the relief sought
     already names another plant)."""
+    if not_power(d):
+        return None
     head = f"{head_of(d)} {d.get('utility', '')}".lower()
     pats = PSC_KNOWN.get(plant["id"])
     if not pats:
@@ -653,7 +673,7 @@ def main():
     today = dt.date.today()
     if a.match_only:
         saved = json.loads(Path(a.match_only).read_text())
-        dockets = saved["dockets"]
+        dockets = [d for d in saved["dockets"] if d["docket"] in KNOWN_CASES or not not_power(d)]
         for d in dockets:
             d["text_blob"] = " ".join(x for doc in d.get("documents", []) for v in (doc.get("facts") or {}).values() for x in v)
         by_plant, matched = match_all(plants, dockets)

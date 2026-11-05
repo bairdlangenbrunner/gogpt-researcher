@@ -39,7 +39,7 @@
     "name": "ODEQ permit documents, the OnBase Public Access document store behind the Permits for Public Review table",
     "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api",
     "what": "Use scopes/us-ok/work/permits/<plant_id>.md from the harvester, which queries the anonymous JSON API (POST /CustomQuery/KeywordSearch, QueryID 262; keyword 844 is the table's object id, 830 the permit number, 828 the facility name with wildcards, 827 the company name; GET /Document/<id>/?ViewerMode=PDF&ForceDownload=true returns the PDF) for every GEM plant and every lead by facility and company name, by permit number and by object id, and runs a date-only sweep from 2016. Read every application, draft permit, notice and permit memorandum it returns for a power facility: unit lists, megawatts, make and model, construction and start dates.",
-    "gap": "The store holds only permits that went through the public-review workflow (earliest document April 2016, most from 2018 on) and results do not carry the facility name, so a document is tied to a permit only when found by permit number or object id. Older permits (Mustang Energy Center, Oneta and every pre-2016 permit) return zero documents and exist only through a Central Records open-records request (https://oklahoma.gov/deq/about/asd/records/central-records-request-form.html), the EPA permit lists or the Wayback Machine; full-text search is not licensed on the installation. A plant whose permit record is reachable only that way is answered with the words 'open records request needed' and the plant's name, never as blocked.",
+    "gap": "The store holds only permits that went through the public-review workflow (earliest document April 2016, most from 2018 on) and results do not carry the facility name, so a document is tied to a permit only when found by permit number or object id. Older permits (Mustang Energy Center, Oneta and every pre-2016 permit) return zero documents here. For those, read the public notice store and the four permit lists below first, then the EPA permit lists and the Wayback Machine. Only when all of those come back empty is a permit named for a person to request from Central Records (https://oklahoma.gov/deq/about/asd/records/central-records-request-form.html), and that is a person's decision, never a reason to call the site blocked. Full-text search is not licensed on the installation.",
     "proof": {
       "sample": "https://okdeqonbaseexternal.databankcloud.com/pav/api/CustomQuery/KeywordSearch",
       "method": "POST",
@@ -54,6 +54,41 @@
         "QueryLimit": 0
       },
       "kind": "json"
+    }
+  },
+  {
+    "id": "odeq-notice-store",
+    "role": "permit_record",
+    "name": "ODEQ public notice store (every notice, draft permit and permit memorandum posted for public review, all divisions, numbered PDFs back to about 2020)",
+    "url": "https://applications.deq.ok.gov/permitspublic/",
+    "what": "Use scopes/us-ok/work/permits/notices/ from scopes/us-ok/harvest_permits.py, which probes every number at https://applications.deq.ok.gov/permitspublic/storedpermits/<n>.pdf (anonymous; the certificate fails verification, so read with verification off), reads the text of each document, keeps the PDF of every power-like one, reads the permit number, company, facility, coordinates and address from the memo's SUBJECT block, and ties each to a GEM plant or a lead. The index page is a table of the notices open now, with latitude and longitude. Search notices/index.json and _sweep.md by county, owner and permit number for every GEM plant and every lead. This store keeps notices after the permit is issued, so it is the history the Permits for Public Review table drops.",
+    "proof": {
+      "sample": "https://applications.deq.ok.gov/permitspublic/storedpermits/9138.pdf",
+      "kind": "pdf",
+      "insecure": true,
+      "expect": "Core Scientific"
+    }
+  },
+  {
+    "id": "odeq-permit-lists",
+    "role": "permit_record",
+    "name": "ODEQ Air Quality permit lists on oklahoma.gov (permits in active review, permits issued during the past year, permits open for petition, and every final major source PSD permit since 2001)",
+    "url": "https://oklahoma.gov/deq/permits/air-permits/pp-ip.html",
+    "what": "Use scopes/us-ok/work/permits/lists/<date>/ from the harvester, which downloads the four CSV files (https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/Permits_In_Active_Review2.csv, Permits_Issued_During_Past_Year.csv, Petition_List2.csv, Permits_issued_PSD_permits.csv), joins each row to a facility by name and county and matches it to a GEM plant. Every power company or power-like row with no GEM match is a lead to answer (on 2026-11-04: Grand River Dam Authority Watts, Woka and Beaver Mountain; Western Farmers Chimney Hill, Antlers South, Cleveland and Canadian; ATMOSS Data Center; Saint Francis Hospital Data Center; City of Anadarko generators; Solarity Power Systems; OKC2; CBRE OKC SITE; and the old PSD permits for Genova OK I, Smith Pocola and Lawton Energy Cogen).",
+    "proof": {
+      "sample": "https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/Permits_Issued_During_Past_Year.csv",
+      "kind": "csv",
+      "min_rows": 100
+    }
+  },
+  {
+    "id": "odeq-comment-pdfs",
+    "name": "ODEQ public comment PDFs on oklahoma.gov (one PDF per permit open for comment, named facility plus permit number)",
+    "url": "https://oklahoma.gov/deq/permits/air-permits/pp-ip.html",
+    "what": "The harvester tries https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/<Facility in title case>-<permit number>.pdf for every list row and saves what answers. The folder cannot be listed and the address is case-sensitive, so a miss is not evidence that no document exists; the notice store holds the same documents.",
+    "proof": {
+      "sample": "https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/Citadel%20Facility-2026-0286-C.pdf",
+      "kind": "pdf"
     }
   },
   {

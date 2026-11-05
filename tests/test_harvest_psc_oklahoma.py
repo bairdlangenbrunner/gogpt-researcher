@@ -169,3 +169,14 @@ def test_write_outputs_contract(tmp_path):
     assert data["by_plant"]["L100000402162"] == ["PUD2026-000048"]
     assert "text_blob" not in data["dockets"][0]
     assert "PUD2026-000048" in (tmp_path / "psc_dockets.md").read_text()
+
+
+def test_telephone_school_and_hospital_causes_are_dropped():
+    base = {"relief_type": "", "relief_types": [], "orders": [], "utility": ""}
+    school = {**base, "docket": "PUD2025-000276", "title": "REQUEST OF WELEETKA PUBLIC SCHOOLS FOR FUNDING FROM THE OKLAHOMA UNIVERSAL SERVICE FUND"}
+    phone = {**base, "docket": "PUD2025-000002", "title": "APPLICATION OF NEXTCITY NETWORKS OKLAHOMA, LLC FOR A CERTIFICATE OF CONVENIENCE AND NECESSITY"}
+    pso = {**base, "docket": "PUD2024-000057", "title": "APPLICATION OF PUBLIC SERVICE COMPANY OF OKLAHOMA FOR PREAPPROVAL OF THE PURCHASE OF THE GREEN COUNTRY GENERATING FACILITY"}
+    assert h.classify(school)[0] is False and h.classify(phone)[0] is False
+    assert h.classify(pso)[1] is True
+    weleetka = {"id": "L100000402236", "name": "Weleetka power station", "name_words": {"weleetka"}}
+    assert h.match_docket(weleetka, school) is None

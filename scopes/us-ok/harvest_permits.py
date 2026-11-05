@@ -1,8 +1,8 @@
 """
 Harvest Oklahoma air permits before a research sweep.
 
-The Oklahoma Department of Environmental Quality (ODEQ) publishes permits in two
-places. Both answer without a login. What was found (2026-11-03 and 2026-11-04):
+The Oklahoma Department of Environmental Quality (ODEQ) publishes air permits in
+five places. All answer without a login. What was found (2026-11-03 and 2026-11-04):
 
   1. The Permits for Public Review table,
      https://applications.deq.ok.gov/PermitsPublicReview/. One anonymous GET
@@ -32,8 +32,27 @@ places. Both answer without a login. What was found (2026-11-03 and 2026-11-04):
        GET /Document/<quoted ID>/?ViewerMode=PDF&ForceDownload=true returns the
        PDF. That address is what a note cites; fetch.py and url_verifier.py read it.
      Full-text search is not licensed (403). Documents before April 2016 are not
-     online: a plant with no document at all is recorded as needing an open
-     records request (ODEQ Central Records form), never retried as a give-up.
+     in it.
+  3. Four oklahoma.gov air permit lists, each a CSV behind a pp-ip page (LISTS):
+     in active review (about 300 rows, with the last status and its date),
+     issued in the past year (about 930), open for petition, and every final
+     major source (PSD) permit back to 2001. Issued permits leave the review
+     table but stay on these lists, so a permit such as Cross Timbers
+     2025-0397-C (issued 2025-12-22) is found here and not in the table.
+  4. The oklahoma.gov public comment PDFs, AQ_DAM + "<Facility Name in title
+     case>-<permit>.pdf" ("Citadel Facility-2026-0286-C.pdf"). The folder cannot
+     be listed, so the address is built for every list row in a comment period.
+  5. The public notice store, applications.deq.ok.gov/permitspublic/ (an index
+     of open notices) with every document at storedpermits/<number>.pdf:
+     draft permits, permit memoranda (their subject block gives the permit
+     number, facility, latitude and longitude and address) and notices of all
+     divisions, numbers about 3000 to 9300 with gaps, back to at least 2020.
+     Same certificate problem as the table. Each number is probed once, each
+     document's first pages read once (cached under notices/), and a document
+     is tied to a facility by the permit number it names.
+  A plant with no document in any of the five is not a stall: search the notice
+  store index and the sweep by county and owner, then name the missing permit as
+  one a person could request from ODEQ Central Records.
 
 Steps:
   1. Read the table, keep every row (water and land rows name data centers),
@@ -50,7 +69,11 @@ Steps:
      no search tied to a facility are listed, and the newest applications and
      draft permits among them are read (first pages) up to --sweep-read, kept
      when the text looks like a power plant or data center.
-  6. Download the documents of every matched or power-like facility into
+  6. The four lists, the comment PDFs and the notice store (sources 3 to 5):
+     list rows join the table facility of the same name, notices join the
+     facility with the same permit number, a power-like notice with no tie is
+     its own facility.
+  7. Download the documents of every matched or power-like facility into
      work/permits/docs/<permit>/, extract text with pdftotext (fetch.py's OCR
      when a scan has no text layer) and keep the lines that give the permit
      number, project, equipment, maker, sizes and location.
@@ -67,9 +90,12 @@ Usage (from the repo root):
     python scopes/us-ok/harvest_permits.py --scope us-ok --plants L100000402162
     python scopes/us-ok/harvest_permits.py --scope us-ok --match-only     # table matches only, no OnBase
     python scopes/us-ok/harvest_permits.py --scope us-ok --no-sweep       # skip the date sweep
+    python scopes/us-ok/harvest_permits.py --scope us-ok --no-notices     # skip the notice store
 """
 import argparse
+import csv
 import html
+import io
 import json
 import re
 import subprocess
@@ -93,6 +119,32 @@ SEARCH = f"{API}/CustomQuery/KeywordSearch"
 DOC = API + "/Document/{qid}/?ViewerMode=PDF&ForceDownload=true"
 QUERY_ID = 262
 RECORDS_FORM = "https://oklahoma.gov/deq/about/asd/records/central-records-request-form.html"
+# The four air permit lists on oklahoma.gov (CSV files behind the pp-ip pages): name -> (address,
+# {our field: CSV column}). Issued permits leave the review table but stay on the issued list a year.
+AQ_DAM = "https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/"
+LISTS = {
+    "active review": (AQ_DAM + "Permits_In_Active_Review2.csv",
+                      {"company": "Company Name", "facility": "Facility Name", "county": "County",
+                       "permit": "Permit Number", "status": "Last Status", "date": "Last Status Date"}),
+    "issued in the past year": (AQ_DAM + "Permits_Issued_During_Past_Year.csv",
+                                {"company": "Company Name", "facility": "Facility Name", "county": "County",
+                                 "permit": "Permit Number", "date": "Date Issued"}),
+    "open for petition": (AQ_DAM + "Petition_List2.csv",
+                          {"company": "Company Name", "facility": "Facility Name", "county": "County",
+                           "permit": "Permit Number", "date": "Petition End Date"}),
+    "final major source (PSD) permits": (AQ_DAM + "Permits_issued_PSD_permits.csv",
+                                         {"company": "Company", "facility": "Facility Name", "county": "County",
+                                          "permit": "Permit #", "date": "Issue Date"}),
+}
+# The public notice store: draft permits, permit memoranda and notices of every division, one
+# number per document, anonymous, certificate check off. Numbers run from about 3000 to 9300
+# with gaps; a run probes past the highest number seen until NOTICE_GAP misses in a row.
+NOTICE = "https://applications.deq.ok.gov/permitspublic/storedpermits/{n}.pdf"
+NOTICE_INDEX = "https://applications.deq.ok.gov/permitspublic/"
+NOTICE_GAP = 150
+# the highest notice number seen (2026-11-04). The store starts sparse (first hits near 3126), so
+# a sweep from an empty index must probe every number up to here before it looks for the end.
+NOTICE_FLOOR = 9300
 K_OBJECT, K_PERMIT, K_FACILITY, K_COMPANY, K_COUNTY, K_DIVISION = "844", "830", "828", "827", "312", "829"
 FIRST_YEAR = 2016
 
@@ -100,10 +152,13 @@ FIRST_YEAR = 2016
 # must hit fac_text() (company | facility | county, lower case). A plant missing here is matched
 # by its name words, marked for checking. "mustang" alone is a gas gatherer (Mustang Gas
 # Products), "tinker" alone a pipeline booster station, "spring creek" a compressor station.
+# The major source list (2026-11-04) adds a 2001 Thunderbird Power Plant in Cleveland County
+# (Energetix) that is not the Enid data center, and Mustang Power LLC's 2002 Horseshoe Energy
+# Project in Lincoln County that is not OG&E's Mustang station.
 KNOWN = {
     "L100000104122": [r"grand river energy center", r"grand river dam.*(energy|power|generat|chouteau)"],
     "L100000104123": [r"western farmers.*hugo", r"hugo (power|generat|station|plant)"],
-    "L100000104124": [r"muskogee generating"],
+    "L100000104124": [r"muskogee (generating|gnrtng|gnrting)"],
     "L100000104126": [r"northeastern (power )?station", r"pso northeastern"],
     "L100000401594": [r"mcclain (generat|energy|power|station)"],
     "L100000401595": [r"redbud"],
@@ -112,7 +167,7 @@ KNOWN = {
     "L100000401932": [r"spring creek (energy|power|generat)"],
     "L100000401991": [r"green country (power|energy|generat)"],
     "L100000402162": [r"horseshoe lake"],
-    "L100000402164": [r"mustang (power|generat|energy)", r"(og&e|og and e|oklahoma gas).*mustang"],
+    "L100000402164": [r"mustang (generat|energy)", r"mustang power.*mustang", r"(og&e|og and e|oklahoma gas).*mustang"],
     "L100000402165": [r"(og&e|og and e|oklahoma gas).*seminole", r"seminole (power|generat)"],
     "L100000402166": [r"lamb energy", r"charles d\.? lamb"],
     "L100000402167": [r"ponca city (power|generat|municipal|energy)", r"municipal power.*ponca"],
@@ -134,7 +189,7 @@ KNOWN = {
     "L100001089274": [r"bristow (energy|power|generat)"],
     "L100001089312": [r"citadel"],
     "L100001089319": [r"port of inola (power|station)", r"inola power"],
-    "L100001089336": [r"thunderbird", r"plainsmen"],
+    "L100001089336": [r"thunderbird.*(data|enid|garfield)", r"plainsmen"],
 }
 
 # OnBase facility (828) searches per GEM plant. Each finds documents whose facility field carries
@@ -218,7 +273,8 @@ PROJECT = re.compile(r"proposes|propose to|will consist|project (is|will|consist
                      r"to construct|new (electric|power|generat)|install(ation)? of", re.I)
 FACILITY_LINE = re.compile(r"facility( name)?:|company( name)?:|applicant:|\bre:|permit (no|number)|"
                            r"facility id|site name|county,? oklahoma", re.I)
-LATLON = re.compile(r"\b(3[3-6]\.\d{3,}|37\.0\d*)\s*[,;/ ]\s*-?\s*(9[4-9]\.\d{3,}|10[0-3]\.\d{3,})\b")
+LATLON = re.compile(r"\b(3[3-6]\.\d{3,}|37\.0\d*)\s*°?\s*N?\s*[,;/ ]\s*(?:longitude:?\s*)?-?\s*(9[4-9]\.\d{3,}|10[0-3]\.\d{3,})\s*°?\s*W?\b",
+                    re.I)
 PERMIT_NO = re.compile(r"\b(?:\d{4}-\d{3,4}-[A-Z]{1,5}\d?|(?:TV|MAC|PSD|AR|MIC|O|OK)\d{6,7})\b")
 PERMIT_BASE = re.compile(r"\d{4}-\d{3,4}|(?:TV|MAC|PSD|AR|MIC|O|OK)\d{6,7}")
 DOC_NAME = re.compile(r"^\s*(\d{5,9})\s*-\s*(.*?)\s*-\s*(\d{1,2}/\d{1,2}/\d{4})\s*$")
@@ -312,8 +368,291 @@ def build_facilities(rows):
 
 
 def new_fac(key, name, source):
-    return {"key": key, "name": name, "source": source, "company": "", "county": "", "rows": [],
+    return {"key": key, "name": name, "source": source, "company": "", "county": "", "rows": [], "list_rows": [],
             "object_ids": [], "permit_bases": [], "divisions": [], "found_by": [], "docs": [], "hint": ""}
+
+
+# ---------------------------------------------------------- the four lists ---
+
+LIST_STATUS = {"issued in the past year": "issued", "final major source (PSD) permits": "issued",
+               "open for petition": "open for petition"}
+
+
+def iso_date(s):
+    s = str(s or "").strip()
+    return s[:10] if re.match(r"\d{4}-\d{2}-\d{2}", s) else us_date(s)
+
+
+def parse_list(name, text):
+    """Rows of one oklahoma.gov air permit list as {list, company, facility, county, permit, status, date}.
+    Staff names are not kept."""
+    cols = LISTS[name][1]
+    rows = []
+    for r in csv.DictReader(io.StringIO(text.lstrip("﻿"))):
+        r = {(k or "").strip().lstrip("﻿"): (v or "").strip() for k, v in r.items()}
+        row = {k: r.get(c, "") for k, c in cols.items()}
+        if not (row.get("facility") or row.get("company")):
+            continue
+        county = norm_county(row.get("county"))
+        row.update({"list": name, "county": "" if county in ("major", "minor", "syn-min") else county.title(),
+                    "date": iso_date(row.get("date")),
+                    "status": row.get("status") or LIST_STATUS.get(name, "")})
+        rows.append(row)
+    return rows
+
+
+def read_lists(out_dir, stamp):
+    """Every list, a dated copy kept under lists/<date>/. Returns (rows, one state line per list)."""
+    rows, states = [], []
+    (out_dir / "lists" / stamp).mkdir(parents=True, exist_ok=True)
+    for name, (url, _) in LISTS.items():
+        err = ""
+        for i in range(3):
+            try:
+                r = requests.get(url, headers={"User-Agent": CHROME_UA}, timeout=120)
+                if r.status_code == 200 and b"," in r.content[:400]:
+                    try:
+                        text = r.content.decode("utf-8-sig")
+                    except UnicodeDecodeError:
+                        text = r.content.decode("latin-1")
+                    (out_dir / "lists" / stamp / f"{slug(name)}.csv").write_text(text, encoding="utf-8")
+                    got = parse_list(name, text)
+                    rows += got
+                    states.append(f"{name}: {len(got)} rows")
+                    break
+                err = f"HTTP {r.status_code}"
+            except requests.RequestException as e:
+                err = type(e).__name__
+            time.sleep(5 * (i + 1))
+        else:
+            states.append(f"{name}: not read ({err})")
+            report_failure(url, err, "odeq air permit list")
+    return rows, states
+
+
+def add_list_rows(facs, rows):
+    """Put each list row on the table facility with the same name and county, else on a new one."""
+    by_name = {}
+    for f in facs.values():
+        by_name.setdefault(slug(f"{f['name']} {f['county']}"), f)
+        by_name.setdefault(slug(f["name"]), f)
+    for r in rows:
+        f = by_name.get(slug(f"{r['facility']} {r['county']}")) or by_name.get(slug(r["facility"]))
+        if f is None:
+            key = "list-" + slug(f"{r['facility']} {r['county']}")
+            f = facs[key] = new_fac(key, r["facility"] or r["company"], "state permit list")
+            f["company"], f["county"] = r["company"], r["county"]
+            by_name[slug(f"{r['facility']} {r['county']}")] = by_name[slug(r["facility"])] = f
+        f["list_rows"].append(r)
+        b = permit_base(r["permit"])
+        if b and b not in f["permit_bases"]:
+            f["permit_bases"].append(b)
+
+
+def comment_url(row):
+    """The public comment PDF address oklahoma.gov uses: facility name in title case, a hyphen, the
+    permit number ('Citadel Facility-2026-0286-C.pdf'). The folder cannot be listed."""
+    return AQ_DAM + urllib.parse.quote(f"{row['facility'].title()}-{row['permit']}.pdf")
+
+
+def fetch_pdf(url, path, verify=True, tries=3):
+    """Save a PDF at path. Returns (ok, state)."""
+    err = ""
+    for i in range(tries):
+        try:
+            r = requests.get(url, headers={"User-Agent": CHROME_UA}, timeout=300, verify=verify)
+            if r.status_code == 200 and r.content[:5] == b"%PDF-":
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(r.content)
+                return True, "saved"
+            err = f"HTTP {r.status_code}" + ("" if r.status_code != 200 else ", not a PDF")
+            if r.status_code == 404:
+                break
+        except requests.RequestException as e:
+            err = type(e).__name__
+        time.sleep(3 * (i + 1))
+    return False, f"not saved, {err}"
+
+
+def comment_docs(out_dir, facs):
+    """For every list row in a public comment period, the oklahoma.gov comment PDF if the name
+    pattern finds it. Returns (found, tried)."""
+    found = tried = 0
+    for f in facs.values():
+        for r in f["list_rows"]:
+            if "comment" not in r["status"].lower():
+                continue
+            tried += 1
+            url = comment_url(r)
+            path = out_dir / "docs" / slug(permit_base(r["permit"]) or "no-permit-number") / f"comment_{slug(r['permit'])}.pdf"
+            ok, state = (True, "saved (from an earlier run)") if path.exists() else fetch_pdf(url, path)
+            if not ok:
+                f["found_by"].append(f"public comment PDF by name pattern: not found ({state}); the draft is in the notice store or OnBase")
+                continue
+            found += 1
+            text = pdf_text(path)
+            path.with_suffix(".txt").write_text(text, encoding="utf-8")
+            add_docs(f, [{"number": "comment", "title": f"public comment documents {r['permit']}", "type": "public comment documents",
+                          "date": r["date"], "name_permits": [r["permit"]], "url": url, "key": url, "store": "comment",
+                          "state": state, "file": str(path.relative_to(REPO)), "facts": doc_facts(text)}],
+                     "public comment PDF on oklahoma.gov")
+    return found, tried
+
+
+# ------------------------------------------------------- the notice store ---
+
+NOTICE_TYPES = [("memorandum", "permit memorandum"), ("draft", "draft permit"), ("statement of basis", "statement of basis"),
+                ("fact sheet", "fact sheet"), ("notice", "public notice"), ("permit", "permit")]
+
+
+def notice_head(text):
+    """The subject block of a permit memorandum ('SUBJECT: Evaluation of Permit Application No. ...'),
+    else the facility lines of the first pages."""
+    m = re.search(r"SUBJECT:\s*(.*?)\n\s*\n", text or "", re.S)
+    if m:
+        return clean(re.sub(r"\s+", " ", m.group(1)))[:400]
+    return hint_of(text)
+
+
+def notice_type(text):
+    low = (text or "")[:3000].lower()
+    return next((t for k, t in NOTICE_TYPES if k in low), "notice store document")
+
+
+class NoticeStore:
+    """The ODEQ public notice store (permitspublic/storedpermits/<n>.pdf). Every number is probed
+    once; each document's first pages are read once and kept as text under notices/. The PDF is
+    kept only when the document looks like a power plant or data center."""
+
+    def __init__(self, out_dir, workers=6):
+        self.dir = out_dir / "notices"
+        self.dir.mkdir(parents=True, exist_ok=True)
+        self.idx_path = self.dir / "index.json"
+        self.idx = json.loads(self.idx_path.read_text()) if self.idx_path.exists() else {}
+        self.workers = workers
+        self.errors = []
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+    def save(self):
+        self.idx_path.write_text(json.dumps(self.idx, indent=0, sort_keys=True), encoding="utf-8")
+
+    def _head(self, n):
+        for i in range(3):
+            try:
+                r = requests.head(NOTICE.format(n=n), headers={"User-Agent": CHROME_UA}, timeout=60, verify=False,
+                                  allow_redirects=True)
+                if r.status_code in (200, 404):
+                    return n, r.status_code, r.headers.get("Last-Modified", "")
+                err = f"HTTP {r.status_code}"
+            except requests.RequestException as e:
+                err = type(e).__name__
+            time.sleep(3 * (i + 1))
+        return n, err, ""
+
+    def probe(self, numbers):
+        from concurrent.futures import ThreadPoolExecutor
+        with ThreadPoolExecutor(self.workers) as ex:
+            for n, status, lm in ex.map(self._head, numbers):
+                if status == 200:
+                    self.idx.setdefault(str(n), {}).update({"exists": True, "modified": lm})
+                elif status == 404:
+                    self.idx[str(n)] = {"exists": False}
+                else:
+                    self.errors.append(f"notice {n}: {status}")
+
+    def sweep(self, recheck_gaps=False):
+        """Probe every number not yet known (and, with recheck_gaps, the known gaps), then past the
+        highest hit until NOTICE_GAP misses in a row."""
+        hits = lambda: [int(k) for k, v in self.idx.items() if v.get("exists")]  # noqa: E731
+        top = max(hits() + [NOTICE_FLOOR])
+        todo = [n for n in range(1, top + 1) if str(n) not in self.idx
+                or (recheck_gaps and not self.idx[str(n)].get("exists"))]
+        self.probe(todo)
+        start = max(hits() or [0]) + 1
+        while True:
+            self.probe(range(start, start + NOTICE_GAP))
+            new_top = max(hits() or [0])
+            if new_top < start:
+                break
+            start = new_top + 1
+        self.save()
+
+    def _read(self, n):
+        meta = self.idx[str(n)]
+        pdf = self.dir / "pdf" / f"{n}.pdf"
+        ok, state = (True, "saved") if pdf.exists() else fetch_pdf(NOTICE.format(n=n), pdf, verify=False)
+        if not ok:
+            return n, {"read": False, "state": state}
+        text = pdf_text(pdf, 3)
+        hint = notice_head(text)
+        power = bool(POWER_NAME.search(text[:6000])) and not POWER_DROP.search(hint)
+        if power:
+            full = pdf_text(pdf)
+            (self.dir / f"{n}.txt").write_text(full, encoding="utf-8")
+        else:
+            (self.dir / f"{n}.txt").write_text(text, encoding="utf-8")
+            pdf.unlink()
+        date = re.search(r"\b(January|February|March|April|May|June|July|August|September|October|November|December)"
+                         r" \d{1,2}, (19|20)\d{2}\b", text[:3000])
+        return n, {"read": True, "state": "read", "power": power, "hint": hint, "type": notice_type(text),
+                   "date": time.strftime("%Y-%m-%d", time.strptime(date.group(0), "%B %d, %Y")) if date else "",
+                   "permits": sorted({re.sub(r"\s+", "", x).upper() for x in PERMIT_NO.findall(text[:6000])})[:8],
+                   "pdf": str(pdf.relative_to(REPO)) if power else ""}
+
+    def read_all(self):
+        """Read every existing number not yet read. Returns how many were read this run."""
+        from concurrent.futures import ThreadPoolExecutor
+        todo = [int(k) for k, v in self.idx.items() if v.get("exists") and not v.get("read")]
+        done = 0
+        with ThreadPoolExecutor(self.workers) as ex:
+            for n, info in ex.map(self._read, sorted(todo)):
+                self.idx[str(n)].update(info)
+                done += 1
+                if not info["read"]:
+                    self.errors.append(f"notice {n}: {info['state']}")
+                if done % 100 == 0:
+                    log(f"  notice store: read {done}/{len(todo)}")
+                    self.save()
+        self.save()
+        return done
+
+    def doc(self, n):
+        v = self.idx[str(n)]
+        text_path = self.dir / f"{n}.txt"
+        text = text_path.read_text(encoding="utf-8") if text_path.exists() else ""
+        return {"number": f"notice {n}", "title": v.get("hint", ""), "type": v.get("type", "notice store document"),
+                "date": v.get("date") or iso_date(v.get("modified", "")) or "", "name_permits": v.get("permits", []),
+                "url": NOTICE.format(n=n), "key": f"notice|{n}", "store": "notice",
+                "state": "read" + ("" if v.get("pdf") else ", first pages only"), "file": v.get("pdf", ""),
+                "facts": doc_facts(text)}
+
+
+def tie_notices(store, facs):
+    """Tie each read notice to the facilities that share a permit number; a power-like notice that
+    ties to none becomes its own facility. Returns (tied, new)."""
+    by_base = {}
+    for f in facs.values():
+        for b in f["permit_bases"]:
+            by_base.setdefault(b, []).append(f)
+    tied = new = 0
+    for k, v in sorted(store.idx.items(), key=lambda kv: int(kv[0])):
+        if not v.get("read"):
+            continue
+        bases = {permit_base(p) for p in v.get("permits", [])} - {""}
+        owners = [f for b in bases for f in by_base.get(b, [])]
+        if owners:
+            d = store.doc(k)
+            for f in {id(f): f for f in owners}.values():
+                add_docs(f, [d], "notice store, same permit number")
+            tied += 1
+        elif v.get("power"):
+            d = store.doc(k)
+            f = facs[f"notice-{k}"] = new_fac(f"notice-{k}", v.get("hint", "")[:80] or f"notice {k}", "notice store")
+            f["hint"] = v.get("hint", "")
+            f["permit_bases"] = sorted(bases)[:1]
+            add_docs(f, [d], "notice store")
+            new += 1
+    return tied, new
 
 
 def fac_text(f):
@@ -336,7 +675,7 @@ def match(plant, facs):
     for f in facs:
         t = fac_text(f)
         if pats and any(re.search(p, t) for p in pats):
-            how = "checked by hand" if f["source"] == "table" else f"found by an ODEQ document search ({', '.join(f['found_by'])}), check it is this plant"
+            how = "checked by hand" if f["source"] in ("table", "state permit list") else f"found by an ODEQ document search ({', '.join(f['found_by'])}), check it is this plant"
             out.append((f, how))
     if pats:
         return out
@@ -501,6 +840,9 @@ def fac_block(f, how=None):
         L.append(f"    - permit in review: {r['permit']}, {r['type']} ({r['division']}, {r['tier']}), step {r['step']}"
                  + (f", comments {r['comment_begins']} to {r['comment_ends']}" if r["comment_ends"] else "")
                  + f", {r['status']}")
+    for r in f.get("list_rows", []):
+        L.append(f"    - on the oklahoma.gov list of air permits {r['list']}: {r['permit']}, {r['status']}"
+                 + (f", {r['date']}" if r["date"] else "") + f" ({LISTS[r['list']][0]})")
     if f["found_by"]:
         L.append(f"    - ODEQ document searches that found it: {'; '.join(f['found_by'])}")
     for d in f["docs"]:
@@ -519,16 +861,21 @@ def fac_block(f, how=None):
 
 def write_index(path, plant, matched, no_docs=False):
     L = [f"# Oklahoma air permit files for {plant['name']} ({plant['id']})", "",
-         "Source: the ODEQ Permits for Public Review table (" + PPR + ") and the ODEQ OnBase public document "
-         "store. A document address (pav/api/Document/...) is citable as it stands; fetch.py and url_verifier.py "
-         "read it. The PDFs and their text are saved under work/permits/docs/.", "",
+         "Sources: the ODEQ Permits for Public Review table (" + PPR + "), the four oklahoma.gov air permit lists "
+         "(in active review, issued in the past year, open for petition, final major source permits), the "
+         "oklahoma.gov public comment PDFs, the ODEQ public notice store (" + NOTICE_INDEX + "storedpermits/<number>.pdf) "
+         "and the ODEQ OnBase public document store. Every document address below is citable as it stands; "
+         "fetch.py and url_verifier.py read it. The PDFs and their text are saved under work/permits/docs/ and "
+         "work/permits/notices/.", "",
          f"Harvested: {time.strftime('%Y-%m-%d %H:%M %Z')}", "",
          f"GEM statuses: {', '.join(plant['statuses'])}. City in GEM: {plant['city'] or 'blank'}. "
          f"County in GEM: {plant['county'] or 'blank'}.", ""]
     if no_docs:
-        L += ["No ODEQ permit document for this plant is online. The OnBase store starts in April 2016 and no "
-              "search found this plant's documents. An open records request to ODEQ Central Records is needed "
-              f"for its permits ({RECORDS_FORM}). Do not retry the store.", ""]
+        L += ["No ODEQ permit document for this plant turned up in any of the five sources above. The OnBase "
+              "store starts in April 2016 and the notice store holds draft permits and notices only. Before "
+              "concluding anything, search notices/index.json and _sweep.md in this folder by the plant's county, "
+              "owner and permit numbers named in GEM's notes. If a permit is still missing after that, name it in "
+              f"the note as one a person could request from ODEQ Central Records ({RECORDS_FORM}).", ""]
     elif not matched:
         L += ["No permit facility matched this plant by name. That does not mean it has no permits: it may be "
               "filed under the owner, a contractor or another site name. Check _unmatched.md and _sweep.md in "
@@ -545,6 +892,8 @@ def slim(f):
             "object_ids": f["object_ids"], "found_by": f["found_by"],
             "permits": [{"number": r["permit"], "type": r["type"], "status": r["status"], "step": r["step"],
                          "comment_ends": r["comment_ends"]} for r in f["rows"]],
+            "lists": [{"list": r["list"], "permit": r["permit"], "status": r["status"], "date": r["date"]}
+                      for r in f.get("list_rows", [])],
             "docs": [{k: d[k] for k in ("number", "name", "type", "date", "url", "state", "file", "facts", "how")
                       if k in d} | {"name": f"{d['number']} {d['type']}"} for d in f["docs"]]}
 
@@ -579,6 +928,9 @@ def main():
     ap.add_argument("--sweep-read", type=int, default=150,
                     help="read the first pages of this many untied applications and draft permits")
     ap.add_argument("--pages", type=int, default=3, help="pages read from a document read only for its facility")
+    ap.add_argument("--no-notices", action="store_true", help="skip the public notice store sweep")
+    ap.add_argument("--notice-recheck-gaps", action="store_true",
+                    help="probe again the notice store numbers that answered 404 on an earlier run")
     args = ap.parse_args()
 
     out_dir = harvest_out(args.scope)
@@ -594,6 +946,9 @@ def main():
                                                                "url": PPR, "rows": rows}, indent=1), encoding="utf-8")
     log(f"table: {len(rows)} rows, {sum(r['division'] == 'AQD' for r in rows)} air quality")
     facs = build_facilities(rows)
+    list_rows, list_states = read_lists(out_dir, stamp)
+    add_list_rows(facs, list_rows)
+    log("lists: " + "; ".join(list_states))
 
     if args.match_only:
         for p in plants:
@@ -605,8 +960,11 @@ def main():
         return
 
     ob = OnBase()
-    # 3. every table row's documents, by object id and permit number base
+    # 3. every table row's documents, by object id and permit number base; a facility known only
+    # from a list is searched when it looks like a power site or matches a plant
     for k, f in enumerate(facs.values(), 1):
+        if f["source"] == "state permit list" and not (is_power(f) or any(match(p, [f]) for p in plants)):
+            continue
         for oid in f["object_ids"]:
             add_docs(f, ob.search([(K_OBJECT, oid)]), f"object id {oid}")
         for b in f["permit_bases"]:
@@ -669,6 +1027,21 @@ def main():
         facs[shell["key"]] = shell
         tied.add(d["key"])
 
+    # the public comment PDFs and the notice store
+    comments_found, comments_tried = comment_docs(out_dir, facs)
+    log(f"public comment PDFs: {comments_found} of {comments_tried} found by the name pattern")
+    store, notice_state = None, "skipped"
+    if not args.no_notices:
+        store = NoticeStore(out_dir)
+        store.sweep(args.notice_recheck_gaps)
+        read_now = store.read_all()
+        n_tied, n_new = tie_notices(store, facs)
+        have = [k for k, v in store.idx.items() if v.get("exists")]
+        notice_state = (f"{len(have)} documents (numbers {min(map(int, have), default=0)} to {max(map(int, have), default=0)}), "
+                        f"{read_now} read this run, {n_tied} tied to a permit facility by permit number, "
+                        f"{n_new} power-like with no tie, {len(store.errors)} errors")
+        log("notice store: " + notice_state)
+
     # 2 and 6. match, then read every matched or power-like facility's documents
     matches = {p["id"]: match(p, list(facs.values())) for p in plants}
     for pid, terms_fac in ((pid, facs.get(f"term-{pid}")) for pid in plant_ids):
@@ -681,6 +1054,8 @@ def main():
     for k, f in enumerate(power, 1):
         f["docs"] = rank_docs(f["docs"])
         for n, d in enumerate(f["docs"]):
+            if d.get("store"):
+                continue
             if n >= args.docs_per_facility:
                 d["state"] = "not read (cap)"
             elif "facts" not in d or d.get("state", "").endswith("no text layer") or f["source"] != "table":
@@ -727,8 +1102,10 @@ def main():
     index = {"harvested": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "table_rows": len(rows),
              "plants": {p["id"]: {"name": p["name"], "facilities": [{"key": f["key"], "name": f["name"], "how": how}
                                                                     for f, how in matches[p["id"]]]} for p in plants},
-             "no_documents_online": {pid: {"name": next(p["name"] for p in plants if p["id"] == pid),
-                                           "records_request": RECORDS_FORM} for pid in sorted(no_docs)},
+             "no_documents_found": {pid: {"name": next(p["name"] for p in plants if p["id"] == pid),
+                                          "records_request": RECORDS_FORM} for pid in sorted(no_docs)},
+             "lists": list_states, "public_comment_pdfs": f"{comments_found} of {comments_tried}",
+             "notice_store": notice_state, "notice_errors": store.errors if store else [],
              "unmatched": [f["key"] for f in unmatched],
              "facilities": {f["key"]: slim(f) for f in power},
              "onbase_errors": ob.errors}
@@ -742,12 +1119,19 @@ def main():
          f"Table rows: {len(rows)} ({sum(r['division'] == 'AQD' for r in rows)} air quality). Facilities: {len(facs)}. "
          f"Power-like: {len(power)}. Matched to GEM plants: {len(matched_keys)}. Unmatched: {len(unmatched)}.", "",
          f"OnBase calls: {ob.calls}. Date sweep: {len(sweep)} documents ({', '.join(sweep_state) or 'skipped'}). "
-         f"Documents with no facility tie: {len(rest)}.", ""]
+         f"Documents with no facility tie: {len(rest)}.", "",
+         "State air permit lists: " + "; ".join(list_states) + ".", "",
+         f"Public comment PDFs found by the name pattern: {comments_found} of {comments_tried}.", "",
+         f"Public notice store: {notice_state}.", ""]
+    if store and store.errors:
+        S += ["Notice store numbers that failed after three tries (rerun before concluding anything):", ""]
+        S += [f"- {e}" for e in store.errors[:40]] + [""]
     if ob.errors:
         S += ["OnBase calls that failed after three tries (retry before concluding anything):", ""]
         S += [f"- {e}" for e in ob.errors[:40]] + [""]
     if no_docs:
-        S += ["Plants with no ODEQ document online (open records request needed): "
+        S += ["Plants with no ODEQ document found in any source (search the notice store and the sweep by county "
+              "and owner before anything else): "
               + ", ".join(next(p["name"] for p in plants if p["id"] == pid) for pid in sorted(no_docs)) + ".", ""]
     S += ["## Matches per GEM plant", ""]
     for p in plants:
