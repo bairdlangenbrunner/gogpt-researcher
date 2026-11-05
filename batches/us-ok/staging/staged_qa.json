@@ -10,7 +10,7 @@
       "quarter": "q4-2026",
       "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
     },
-    "generated": "2026-11-05T13:09:51-05:00",
+    "generated": "2026-11-05T15:12:34-05:00",
     "mode": "update",
     "counts": {
       "records": 77
@@ -907,9 +907,9 @@
     {
       "gem_unit_id": "G100000403312",
       "concern_type": "existence",
-      "question": "Do the two Southwest Power Pool entries at Mustang describe new units?",
-      "finding": "The Southwest Power Pool queue lists GEN-2025-SR23, 100 MW with no fuel shown, at the Mustang 138 kV substation with an executed agreement, and GEN-2016-047, a 24 MW combustion turbine in service in December 2017 at Mustang 69 kV. The EIA table lists no unit of 24 MW at Mustang. Neither entry names a fuel or turbine for a new unit.",
-      "recommendation": "Leave GEM as is. Ask OG&E or look again at the next queue update to see whether SR23 is a gas unit, then add it as a new unit if so.",
+      "question": "Is GEN-2016-047, a 24 MW combustion turbine in service since December 2017 at the Mustang 69 kV substation, a unit GEM is missing?",
+      "finding": "The Southwest Power Pool queue lists GEN-2016-047 as a 24 MW combustion turbine in service in December 2017 at Mustang 69 kV. The EIA table lists no unit of 24 MW at Mustang. The other Mustang queue entry, GEN-2025-SR23, is now staged as its own new plant, so it is not part of this question.",
+      "recommendation": "Leave GEM as is. Ask OG&E whether the 24 MW turbine is one of the existing Mustang units under a different rating, and add it as a new unit if it is not.",
       "refs": {},
       "gem_plant_id": "L100000402164",
       "plant_name": "Mustang (OK) power station",

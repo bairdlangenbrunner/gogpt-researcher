@@ -109,25 +109,14 @@
   {
    "gem_unit_id": "G100000403312",
    "concern_type": "existence",
-   "question": "Do the two Southwest Power Pool entries at Mustang describe new units?",
-   "finding": "The Southwest Power Pool queue lists GEN-2025-SR23, 100 MW with no fuel shown, at the Mustang 138 kV substation with an executed agreement, and GEN-2016-047, a 24 MW combustion turbine in service in December 2017 at Mustang 69 kV. The EIA table lists no unit of 24 MW at Mustang. Neither entry names a fuel or turbine for a new unit.",
-   "recommendation": "Leave GEM as is. Ask OG&E or look again at the next queue update to see whether SR23 is a gas unit, then add it as a new unit if so.",
+   "question": "Is GEN-2016-047, a 24 MW combustion turbine in service since December 2017 at the Mustang 69 kV substation, a unit GEM is missing?",
+   "finding": "The Southwest Power Pool queue lists GEN-2016-047 as a 24 MW combustion turbine in service in December 2017 at Mustang 69 kV. The EIA table lists no unit of 24 MW at Mustang. The other Mustang queue entry, GEN-2025-SR23, is now staged as its own new plant, so it is not part of this question.",
+   "recommendation": "Leave GEM as is. Ask OG&E whether the 24 MW turbine is one of the existing Mustang units under a different rating, and add it as a new unit if it is not.",
    "note": "The queue page is https://opsportal.spp.org/Studies/GIActive . I could not load a per-project page. The Oklahoma Corporation Commission daily dockets showed no Mustang case.",
    "refs": []
   }
  ],
- "monitor": [
-  {
-   "gem_plant_id": "L100000402164",
-   "monitor_kind": "existing_plant",
-   "monitor_reason": "A 100 MW special study at the Mustang substation names no fuel or generator yet.",
-   "recheck_by": "2027-03",
-   "watch_case": "no_generation",
-   "capacity_mw": 100,
-   "note": "SPP GEN-2025-SR23, interconnection agreement executed, on schedule.",
-   "refs": []
-  }
- ],
+ "monitor": [],
  "newunits": [],
  "entities": [],
  "source_log": [
