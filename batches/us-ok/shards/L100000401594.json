@@ -1,0 +1,105 @@
+{
+ "meta": {
+  "plant_id": "L100000401594",
+  "plant_name": "McClain energy facility",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T11:03:22-05:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401929",
+   "unit_name": "G011",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists plant 55457, generators CT1, CT2 and ST1, as operating, all with an operating date of June 2001. No retirement, planned retirement or mothballing is shown. The Oklahoma Department of Environmental Quality permit memo at https://applications.deq.ok.gov/permitspublic/storedpermits/8740.pdf also describes the two combustion turbines and the steam turbine as the plant's combined cycle, with a Title V operating permit renewal requested.",
+     "milestones": [
+      {
+       "status": "operating",
+       "year": 2001,
+       "period": "June",
+       "sources": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "The EIA-860M table for September 2026 gives June 2001 as the operating month for all three generators."
+      }
+     ]
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://applications.deq.ok.gov/permitspublic/storedpermits/8740.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8740.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Oklahoma Department of Environmental Quality permit memo at https://applications.deq.ok.gov/permitspublic/storedpermits/8740.pdf describes a combined cycle power plant that serves the grid. Its only backup equipment is small emergency engines for the plant itself. It does not call any generating unit a backup unit. So the value no is implied, not stated outright."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire"
+   ],
+   "notes": "The unit is still operating. No retirement, mothballing or owner change was found in the EIA table or the permit memo. The queue entries named in the brief are new projects and are not this unit."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000401929",
+   "concern_type": "existence",
+   "question": "Do the two Southwest Power Pool queue entries at McClain describe new units?",
+   "finding": "The Southwest Power Pool active queue lists GEN-2025-SR15 (125 MW, McClain Substation) and GEN-2024-013 (a 496 MW combustion turbine, Norman Hills 345 kV substation). The Norman Hills entry has an in-service date of April 2029. I did not find a permit or utility filing that ties either entry to the McClain site.",
+   "recommendation": "Leave GEM as it is. Ask the project manager whether to add GEN-2024-013 as an announced unit once a document names the McClain site.",
+   "note": "The queue page is https://opsportal.spp.org/Studies/GIActive. It is drawn by script and I did not read the entries myself; the brief reported them from an earlier download. Not verified further because the brief task for this plant was only to recheck operation and Backup Power.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet for plant 55457."
+  },
+  {
+   "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8740.pdf",
+   "used_for": [
+    "Status",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Permit memo read in full."
+  }
+ ]
+}

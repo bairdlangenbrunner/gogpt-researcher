@@ -1,0 +1,181 @@
+{
+ "meta": {
+  "plant_id": "L100001023579",
+  "plant_name": "Ripley Energy Center power station",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T11:01:47-05:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001028184",
+   "unit_name": "RP1",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "419.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://applications.deq.ok.gov/permitspublic/storedpermits/8877.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8877.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists Ripley Energy Center, plant 67262, generator RP1, nameplate 419.0 MW, net winter 444.5 MW, planned operation April 2027, under construction more than 50 percent complete. The Oklahoma Department of Environmental Quality permit memorandum (https://applications.deq.ok.gov/permitspublic/storedpermits/8877.pdf) describes one combustion turbine with a nominal gross output of 420 MW. GEM's 445 MW matches the winter capability, not the nameplate."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas, fossil liquids: diesel",
+     "refs": [
+      "https://applications.deq.ok.gov/permitspublic/storedpermits/8877.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8877.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "This is a replacement source for the Associated Electric Cooperative page that no longer opens. The permit memorandum (https://applications.deq.ok.gov/permitspublic/storedpermits/8877.pdf) says the turbine burns pipeline natural gas, with distillate fuel oil as backup in emergencies. The value is left as it stands."
+    },
+    "Status": {
+     "value": "construction",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists generator RP1 as under construction, more than 50 percent complete. This is the same status GEM shows and is a replacement for the dead Associated Electric Cooperative link."
+    },
+    "Start year": {
+     "value": "2027",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 gives a planned operation date of April 2027. The human adds this as a new scheduled event only if GEM lacks one."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Siemens Energy: SGT6-9000HL",
+     "refs": [
+      "https://applications.deq.ok.gov/permitspublic/storedpermits/8877.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8877.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The permit memorandum (https://applications.deq.ok.gov/permitspublic/storedpermits/8877.pdf) names a single Siemens SGT6-9000HL simple cycle combustion turbine."
+    }
+   },
+   "not_found": [
+    "Backup Power",
+    "Latest Activity"
+   ],
+   "notes": "The unit is moving toward its April 2027 start, so Latest Activity is left alone. No document says anything about Backup Power, and this is a utility peaking plant, not a data center, so the value no is not contradicted."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001028184",
+   "concern_type": "Capacity (MW)",
+   "question": "Should Ripley RP1 capacity change from 445 MW to 419 MW?",
+   "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) gives 419.0 MW nameplate and 444.5 MW net winter. The state permit memorandum (https://applications.deq.ok.gov/permitspublic/storedpermits/8877.pdf) gives a nominal gross output of 420 MW.",
+   "recommendation": "Change capacity to 419 MW, the nameplate figure, because the manual wants nameplate and not winter capability.",
+   "note": "The old Associated Electric Cooperative page could not be read, so I could not see why 445 was used. It likely came from the winter figure.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://applications.deq.ok.gov/permitspublic/storedpermits/8877.pdf"
+   ],
+   "proposed_value": {
+    "Capacity (MW)": "419.0"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Capacity (MW)",
+    "Status",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Plant 67262 RP1 row read from the file."
+  },
+  {
+   "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8877.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "Fuel",
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Permit memorandum from December 2024."
+  },
+  {
+   "url": "https://www.aeci.org/resources/natural-gas/ripley/",
+   "used_for": [
+    "Fuel",
+    "Capacity (MW)",
+    "Status"
+   ],
+   "outcome": "dead",
+   "note": "The live page no longer opens through the full fetch ladder. Eight saved copies exist in the Web Archive; the newest, from December 2024, was read and is in the next entry."
+  },
+  {
+   "url": "https://web.archive.org/web/20241208072036/https://aeci.org/resources/natural-gas/ripley/",
+   "used_for": [
+    "Fuel",
+    "Capacity (MW)",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "A saved copy of the Associated Electric Cooperative Ripley page from December 2024. It says the plant is a natural gas simple cycle plant under development near Ripley, Oklahoma, with a net output between 420 and 445 MW."
+  }
+ ]
+}

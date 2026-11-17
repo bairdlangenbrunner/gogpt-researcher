@@ -1,0 +1,369 @@
+{
+ "meta": {
+  "plant_id": "L100000104126",
+  "plant_name": "Northeastern Station",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T06:00:00-05:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403423",
+   "unit_name": "2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists generator 2 as a natural gas steam turbine of 473.0 MW at Northeastern, plant 2963, in its Operating sheet. No retirement, planned retirement or mothballing is shown. I read the matching row in the file myself."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "Still operating in the September 2026 EIA table. No retirement or owner change found. No document states backup power."
+  },
+  {
+   "gem_unit_id": "G100000401657",
+   "unit_name": "NE1S",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists generators 1, 1A and 1B as a natural gas combined cycle at Northeastern, plant 2963, in its Operating sheet. No retirement, planned retirement or mothballing is shown. I read the matching row in the file myself."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "Still operating in the September 2026 EIA table. No retirement or owner change found. No document states backup power."
+  },
+  {
+   "gem_unit_id": "G100001055294",
+   "unit_name": "Unit 3, timepoint 2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The AEP quarterly report for June 2026 (https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm) says Public Service Company of Oklahoma began operating Northeastern Unit 3 on natural gas in January 2026. The September 2026 EIA-860M table still lists generator 3 with coal as its energy source, which is out of date. This settles the question raised by the Oil and Gas Watch listing of proposed. I could not read that Oil and Gas Watch page because it is drawn by script and the fetch showed no plant name."
+    },
+    "Planned retire": {
+     "value": "2041",
+     "refs": [
+      "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The same AEP report says the April 2025 agreement with the Oklahoma Department of Environmental Quality allows Unit 3 to run on natural gas through May 31, 2041. That agreement still needs approval by the federal Environmental Protection Agency. So the planned retirement of 2041 still holds."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The AEP report says PSO retired 325 million dollars of coal-related assets at Unit 3 in the first quarter of 2026 and began running it on gas. That describes a coal to gas conversion."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "Operating on gas since January 2026 and planned to run through May 2041. No document states backup power."
+  },
+  {
+   "gem_unit_id": "G100001101665",
+   "unit_name": "Unit 5",
+   "findings": {
+    "Status": {
+     "value": "pre-construction",
+     "refs": [
+      "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The AEP quarterly report for June 2026 (https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm) says the Oklahoma Corporation Commission approved the new combustion turbines at Northeastern in May 2026. They are not yet built, so the status stays pre-construction.",
+     "milestones": [
+      {
+       "status": "pre-construction",
+       "year": 2026,
+       "period": "May",
+       "sources": [
+        "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm"
+       ],
+       "note": "the commission approved the project in May 2026, as the AEP report states"
+      }
+     ]
+    },
+    "Start year": {
+     "value": "2028",
+     "refs": [
+      "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The AEP report says the combustion turbines are projected to be online by the end of 2028. The human adds this as a scheduled event with Event Year 2028 and Source Year 2026."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE Vernova",
+     "refs": [
+      "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AWtoGCCMAPa3ZmzV9bv2lNVdjzgKUd4GV4oRCuMNP0goK6NykmHJHyG5WSO1mUZe7mM1J5HwOpKpJWodbQLKNmw%3D/?ViewerMode=PDF&ForceDownload=true"
+     ],
+     "verifications": [
+      {
+       "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AWtoGCCMAPa3ZmzV9bv2lNVdjzgKUd4GV4oRCuMNP0goK6NykmHJHyG5WSO1mUZe7mM1J5HwOpKpJWodbQLKNmw%3D/?ViewerMode=PDF&ForceDownload=true",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Oklahoma Department of Environmental Quality draft permit memo from September 2026 (see link) says PSO proposes two 229 MW GE natural gas simple cycle combustion turbines. The memo names the maker but no model, so the model was not found."
+    }
+   },
+   "not_found": [
+    "Turbine model",
+    "Backup Power"
+   ],
+   "notes": "Approved May 2026 and projected online by the end of 2028. The project is moving, so Latest Activity is left alone. The turbine model is not in the permit memo."
+  },
+  {
+   "gem_unit_id": "G100001101666",
+   "unit_name": "Unit 6",
+   "findings": {
+    "Status": {
+     "value": "pre-construction",
+     "refs": [
+      "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The AEP quarterly report for June 2026 (https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm) says the Oklahoma Corporation Commission approved the new combustion turbines at Northeastern in May 2026. They are not yet built, so the status stays pre-construction.",
+     "milestones": [
+      {
+       "status": "pre-construction",
+       "year": 2026,
+       "period": "May",
+       "sources": [
+        "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm"
+       ],
+       "note": "the commission approved the project in May 2026, as the AEP report states"
+      }
+     ]
+    },
+    "Start year": {
+     "value": "2028",
+     "refs": [
+      "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The AEP report says the combustion turbines are projected to be online by the end of 2028. The human adds this as a scheduled event with Event Year 2028 and Source Year 2026."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE Vernova",
+     "refs": [
+      "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AWtoGCCMAPa3ZmzV9bv2lNVdjzgKUd4GV4oRCuMNP0goK6NykmHJHyG5WSO1mUZe7mM1J5HwOpKpJWodbQLKNmw%3D/?ViewerMode=PDF&ForceDownload=true"
+     ],
+     "verifications": [
+      {
+       "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AWtoGCCMAPa3ZmzV9bv2lNVdjzgKUd4GV4oRCuMNP0goK6NykmHJHyG5WSO1mUZe7mM1J5HwOpKpJWodbQLKNmw%3D/?ViewerMode=PDF&ForceDownload=true",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Oklahoma Department of Environmental Quality draft permit memo from September 2026 (see link) says PSO proposes two 229 MW GE natural gas simple cycle combustion turbines. The memo names the maker but no model, so the model was not found."
+    }
+   },
+   "not_found": [
+    "Turbine model",
+    "Backup Power"
+   ],
+   "notes": "Same as Unit 5."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001101665",
+   "concern_type": "Capacity (MW)",
+   "question": "Should Units 5 and 6 be 229 MW each instead of 225 MW?",
+   "finding": "The Oklahoma Department of Environmental Quality draft permit memo from September 2026 (https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AWtoGCCMAPa3ZmzV9bv2lNVdjzgKUd4GV4oRCuMNP0goK6NykmHJHyG5WSO1mUZe7mM1J5HwOpKpJWodbQLKNmw%3D/?ViewerMode=PDF&ForceDownload=true) lists two 229 MW GE turbines. The permit application from late 2025 said 222 MW each. The AEP report says 450 MW in total.",
+   "recommendation": "Leave 225 MW on both units, since 450 MW in total matches the AEP report. Change to 229 only if you prefer the permit figure.",
+   "note": "The Southwest Power Pool entry ERAS-2025-023 at https://opsportal.spp.org/Studies/GIActive is a single combustion turbine of 513 MW nameplate and 510 MW capacity at the Northeastern 345 kV substation, with commercial operation in December 2029 in the open list at https://opsportal.spp.org/Studies/GenerateActiveCSV, read on 5 November 2026. It does not match two 229 MW turbines due by the end of 2028. The same Oklahoma Department of Environmental Quality permit file also describes a separate large turbine of nominal 453 MW at Northeastern (https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AS0IjaCrV1T%C3%81SEUDdXmwkZpG2VRBClzAKR911pep%C3%81uAtGhYCcgV7UJnH1xPqDg4ZbOaSJTShXSL302lcWYvl9ds%3D/?ViewerMode=PDF&ForceDownload=true). The permit and the AEP report describe two turbines for Units 5 and 6.",
+   "refs": [
+    "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AWtoGCCMAPa3ZmzV9bv2lNVdjzgKUd4GV4oRCuMNP0goK6NykmHJHyG5WSO1mUZe7mM1J5HwOpKpJWodbQLKNmw%3D/?ViewerMode=PDF&ForceDownload=true",
+    "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm"
+   ],
+   "proposed_value": {
+    "Capacity (MW)": "229"
+   }
+  },
+  {
+   "gem_unit_id": "G100001055294",
+   "concern_type": "Status",
+   "question": "Should the Oil and Gas Watch and Sierra Club entries for Unit 3 be updated to operating?",
+   "finding": "The AEP report for June 2026 (https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm) says Unit 3 has run on natural gas since January 2026.",
+   "recommendation": "Keep Unit 3 as operating in GEM. Tell the owners of the Oil and Gas Watch and Sierra Club lists that their proposed and planned labels look out of date.",
+   "note": "I could not read the Oil and Gas Watch page, so I did not see its own source documents.",
+   "refs": [
+    "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001055294",
+   "concern_type": "validation",
+   "question": "Is the SPP queue entry ERAS-2025-023 a separate project from Units 5 and 6?",
+   "finding": "The 513 MW queue entry is one turbine with commercial operation in December 2029, a year after the two 229 MW turbines of Units 5 and 6. The queue list names no developer, and no document I found ties it to either project.",
+   "recommendation": "Add no new unit now. Check the Southwest Power Pool list again in the next monthly update and the Oklahoma Corporation Commission docket for a third Northeastern turbine.",
+   "note": "An Oklahoma Department of Environmental Quality permit file for Northeastern also describes a separate 453 MW turbine (https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AS0IjaCrV1T%C3%81SEUDdXmwkZpG2VRBClzAKR911pep%C3%81uAtGhYCcgV7UJnH1xPqDg4ZbOaSJTShXSL302lcWYvl9ds%3D/?ViewerMode=PDF&ForceDownload=true). The entry may be that turbine or a later one. I could not tell which from a document.",
+   "refs": [
+    "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AWtoGCCMAPa3ZmzV9bv2lNVdjzgKUd4GV4oRCuMNP0goK6NykmHJHyG5WSO1mUZe7mM1J5HwOpKpJWodbQLKNmw%3D/?ViewerMode=PDF&ForceDownload=true",
+    "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm"
+   ],
+   "checks": [
+    7
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490426000059/aep-20260630.htm",
+   "used_for": [
+    "Status",
+    "Planned retire",
+    "Start year",
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "Read through the repo fetcher."
+  },
+  {
+   "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AWtoGCCMAPa3ZmzV9bv2lNVdjzgKUd4GV4oRCuMNP0goK6NykmHJHyG5WSO1mUZe7mM1J5HwOpKpJWodbQLKNmw%3D/?ViewerMode=PDF&ForceDownload=true",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Draft permit memo, read from the saved text."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Excel file read directly."
+  },
+  {
+   "url": "https://oilandgaswatch.org/facility/rec_d4f1u60q7easr8ra1fn0",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "failed",
+   "note": "Page loads but shows no plant name to the verifier. Not read further."
+  },
+  {
+   "url": "https://opsportal.spp.org/Studies/GIActive",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "not relevant",
+   "note": "Not opened, the queue is read from the harvest file."
+  }
+ ]
+}

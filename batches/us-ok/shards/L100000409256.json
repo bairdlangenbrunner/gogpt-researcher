@@ -1,0 +1,114 @@
+{
+ "meta": {
+  "plant_id": "L100000409256",
+  "plant_name": "Stillwater Energy Center",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T11:03:22-05:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000414190",
+   "unit_name": "IC",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 59647 generator IC as operating with no retirement date. So I found no retirement, mothballing or planned retirement."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists the plant in the electric utility sector, which sells power to the grid. It does not say anything about backup power directly, so this is implied only."
+    },
+    "Capacity (MW)": {
+     "value": 56.4,
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) gives 3 engines of 18.8 MW, a total of 56.4 MW, which matches GEM."
+    }
+   },
+   "not_found": [
+    "Backup Power Data Source: no document states it directly"
+   ],
+   "notes": "Still operating in the EIA table. No change of owner, retirement or mothballing found in the EIA file. I did not search news because the brief asked only for a last check."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000414190",
+   "concern_type": "duplicate",
+   "question": "Is Southwest Power Pool entry ASGI-2014-014 Ferguson the same as this plant?",
+   "finding": "The queue entry shows 56.4 MW, Payne County, a fully executed agreement and commercial operation. The EIA-860M table for September 2026 lists Stillwater Energy Center with three engines of 18.8 MW each, which sum to 56.4 MW, in service since July 2016.",
+   "recommendation": "Treat the queue entry as this plant and add no new unit. Leave the unit as it is.",
+   "note": "The queue page is https://opsportal.spp.org/Studies/GIActive. It names the entry but does not name the plant, so the match rests on matching capacity and county.",
+   "refs": [
+    "https://opsportal.spp.org/Studies/GIActive",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Read with python. Operating sheet, plant code 59647."
+  },
+  {
+   "url": "https://opsportal.spp.org/Studies/GIActive",
+   "used_for": [
+    "identity"
+   ],
+   "outcome": "verified",
+   "note": "Page loads and contains ASGI-2014-014."
+  }
+ ]
+}

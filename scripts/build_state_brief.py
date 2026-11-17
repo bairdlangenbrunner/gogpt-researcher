@@ -867,10 +867,16 @@ def render_scope_brief(leads, coverage, batch_tag, threshold_mw=50):
               "data center lead, not only browsed: a public notice feed lists only the "
               "permits that went to notice, and a small construction permit never does. "
               "\"No permit found\" for a named site is only true once that system was "
-              "searched for the name, and the note says so.", ""]
+              "searched for the name, and the note says so. The local planning records "
+              "(marked below) are opened for every lead and every in-development plant: the "
+              "city, county or township agendas, staff reports, packets, minutes, rezonings, "
+              "plats, conditional or special use permits, building permits, development "
+              "agreements and tax abatements, and any permit application the developer posts. "
+              "They name generator fleets and sites long before a state permit is filed.", ""]
         for c in coverage:
             role = {"permit_record": " [permit record system]",
-                    "permit_notices": " [public notice feed]"}.get(c.get("role"), "")
+                    "permit_notices": " [public notice feed]",
+                    "local_records": " [city and county records]"}.get(c.get("role"), "")
             L.append(f"- {c.get('id')}{role}: {c.get('name')} ({c.get('url')}). {c.get('what')}"
                      + (f" Gap: {c['gap']}" if c.get("gap") else ""))
         L.append("")
@@ -1111,9 +1117,13 @@ def gone_links_block(rows):
          "These addresses sit in the Data Source boxes and no longer open. Never delete them. "
          "Where a saved copy already shows the value, nothing is needed. Where none does, find a "
          "live source that states the same value (search the document's title or file name, or the "
-         "same document posted by another publisher) and report it as a new link for that box.", ""]
+         "same document posted by another publisher). Report the replacement as a finding on the "
+         "VALUE column named below (for example Status or Fuel), with the value as it stands and the "
+         "new link in its sources. Never key a finding on a Data Source box: a Data Source box is "
+         "never a field name in findings.", ""]
     for r in rows:
-        box = f"{r['ds_column']}" + (f", value {r['value_column']}: {r['value']}" if r.get("value_column") and r.get("value") else "")
+        box = (f"field {r['value_column']} (value {r['value']}, link in {r['ds_column']})"
+               if r.get("value_column") and r.get("value") else f"link in {r['ds_column']}")
         if r["saved_copy"]:
             state = "a saved copy that shows the value is already staged"
         elif r["no_copy"]:

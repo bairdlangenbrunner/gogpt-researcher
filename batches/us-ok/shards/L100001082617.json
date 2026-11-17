@@ -1,0 +1,100 @@
+{
+ "meta": {
+  "plant_id": "L100001082617",
+  "plant_name": "ONE Nuclear power station 1",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T11:01:47-05:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001093027",
+   "unit_name": "1",
+   "findings": {
+    "Fuel": {
+     "value": "fossil gas: natural gas",
+     "refs": [
+      "https://www.sec.gov/Archives/edgar/data/1846416/000149315225019001/ex99-1.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/1846416/000149315225019001/ex99-1.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The ONE Nuclear press release filed with the Securities and Exchange Commission in October 2025 (https://www.sec.gov/Archives/edgar/data/1846416/000149315225019001/ex99-1.htm) describes gas generation at its first two sites, one in Oklahoma. The company's plan is gas first, with nuclear later. So the fuel is gas, not nuclear."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Rolls-Royce",
+     "refs": [
+      "https://www.sec.gov/Archives/edgar/data/1846416/000149315225019001/ex99-1.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/1846416/000149315225019001/ex99-1.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The same filing says ONE Nuclear has a non-binding relationship with Rolls-Royce Solutions America for gas generators. This implies but does not prove the engines at this site."
+    }
+   },
+   "not_found": [
+    "City",
+    "Latitude",
+    "Longitude",
+    "Backup Power",
+    "Latest Activity",
+    "Start year"
+   ],
+   "notes": "I found no address, county, permit or queue entry for this site. The filing only says Oklahoma. The 2028 date is a company goal, and GEM already shows 2028."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001093027",
+   "concern_type": "location",
+   "question": "Where is the ONE Nuclear Oklahoma gas site?",
+   "finding": "The filing at https://www.sec.gov/Archives/edgar/data/1846416/000149315225019001/ex99-1.htm names Oklahoma only. No ODEQ permit, commission cause or queue entry matched, and the point GEM shows could not be checked.",
+   "recommendation": "Leave the point and the blank city as they are. Search again when ONE Nuclear files an air permit or names a county.",
+   "note": "The location ladder found no address, so no imagery was checked.",
+   "refs": [
+    "https://www.sec.gov/Archives/edgar/data/1846416/000149315225019001/ex99-1.htm"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/1846416/000149315225019001/ex99-1.htm",
+   "used_for": [
+    "Fuel",
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Press release exhibit."
+  },
+  {
+   "url": "https://finance.yahoo.com/news/one-nuclear-energy-become-public-110000799.html",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Existing source loads and mentions Oklahoma gas."
+  }
+ ]
+}

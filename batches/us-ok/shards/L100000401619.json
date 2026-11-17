@@ -1,0 +1,163 @@
+{
+ "meta": {
+  "plant_id": "L100000401619",
+  "plant_name": "Kiamichi energy facility",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T09:30:00-05:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401944",
+   "unit_name": "STG1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (plant 55501) lists CTG1 and CTG2 and STG1 as operating, natural gas fired combined cycle. It shows no retirement."
+    },
+    "Capacity (MW)": {
+     "value": "685.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 gives two turbines of 183.9 MW and a steam turbine of 317.2 MW, which sum to 685.0 MW. This matches GEM."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "Still operating per the September 2026 EIA table. No retirement, mothballing or sale found. I found no document that states a Backup Power value."
+  },
+  {
+   "gem_unit_id": "G100000401945",
+   "unit_name": "STG2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (plant 55501) lists CTG3 and CTG4 and STG2 as operating, natural gas fired combined cycle. It shows no retirement."
+    },
+    "Capacity (MW)": {
+     "value": "685.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 gives two turbines of 183.9 MW and a steam turbine of 317.2 MW, which sum to 685.0 MW. This matches GEM."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "Still operating per the September 2026 EIA table. No retirement, mothballing or sale found. I found no document that states a Backup Power value."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Kiowa Power Partners LLC [100%]",
+   "refs": [
+    "http://www.tenaska.com/wp-content/uploads/2020/03/Kiamichi.pdf"
+   ],
+   "verifications": [
+    {
+     "url": "http://www.tenaska.com/wp-content/uploads/2020/03/Kiamichi.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "A Tenaska fact sheet for the Kiamichi station names Kiowa Power Partners, LLC as owner and gives commercial operation as April 2003. This matches GEM."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000401944",
+   "concern_type": "Backup Power",
+   "question": "Is there a document that states Backup Power for the Kiamichi units?",
+   "finding": "The EIA table and the Tenaska fact sheet do not state a Backup Power value. The plant sells power into the grid.",
+   "recommendation": "Leave Backup Power as no.",
+   "note": "A Title V air permit renewal, number 2026-0277-ARR4, is under review at the Oklahoma Department of Environmental Quality. I did not open its documents for this check.",
+   "refs": [
+    "http://www.tenaska.com/wp-content/uploads/2020/03/Kiamichi.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Kiowa Power Partners LLC",
+   "role": "owner",
+   "lookup_result": "Already the owner in GEM; no new entity named."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Read plant 55501 rows in the Operating sheet."
+  },
+  {
+   "url": "http://www.tenaska.com/wp-content/uploads/2020/03/Kiamichi.pdf",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Fact sheet loaded and names owner."
+  }
+ ]
+}

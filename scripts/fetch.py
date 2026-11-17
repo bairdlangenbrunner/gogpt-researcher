@@ -846,6 +846,51 @@ def _iepa_record(url: str, timeout: int):
     return "200", "text/plain; charset=utf-8", url, text.encode("utf-8")
 
 
+_OCC_DOCVIEW = re.compile(r"^https?://public\.occ\.ok\.gov/WebLink/DocView\.aspx\?(?:.*&)?id=(\d+)", re.I)
+OCC_WEBLINK = "https://public.occ.ok.gov/WebLink/"
+OCC_MAX_PAGES = 60
+
+
+def _occ_weblink(url: str, timeout: int):
+    """
+    Oklahoma Corporation Commission WebLink (2026-11-04): an imaged order or
+    filing at `DocView.aspx?id=<entry id>` is a viewer shell (about 3 KB of
+    HTML) with no words in it. The viewer's own JSON service gives the page
+    count (`DocumentService.aspx/GetBasicDocumentInfo`) and the text of each
+    page (`GetTextHtmlForPage`), so the body is the pages' text joined in
+    order, up to OCC_MAX_PAGES. Electronic files (`ElectronicFile.aspx`) are
+    real PDFs and take the normal ladder. None when nothing came back.
+    """
+    m = _OCC_DOCVIEW.match(url)
+    if not m:
+        return None
+    entry = int(m.group(1))
+    try:
+        import requests
+        s = requests.Session()
+        s.headers["User-Agent"] = CHROME_UA
+        hdr = {"Content-Type": "application/json", "X-Lf-Suppress-Login-Redirect": "1"}
+        s.get(OCC_WEBLINK + "Welcome.aspx?dbid=0&repo=OCC", timeout=timeout)
+        info = s.post(OCC_WEBLINK + "DocumentService.aspx/GetBasicDocumentInfo", headers=hdr,
+                      json={"repoName": "OCC", "entryId": entry}, timeout=timeout).json()
+        pages = int(((info or {}).get("data") or {}).get("pageCount") or 0)
+        texts = []
+        for p in range(1, min(pages, OCC_MAX_PAGES) + 1):
+            r = s.post(OCC_WEBLINK + "DocumentService.aspx/GetTextHtmlForPage", headers=hdr,
+                       json={"repoName": "OCC", "documentId": entry, "pageNum": p,
+                             "showAnn": False, "searchUuid": ""}, timeout=timeout).json()
+            t = ((r or {}).get("data") or {}).get("text") or ""
+            if t.strip():
+                texts.append(t.replace("\r\n", "\n"))
+    except Exception as e:
+        print(f"  [fetch] OCC WebLink error for {url}: {e}", file=sys.stderr)
+        return None
+    text = "\n\n".join(texts)
+    if not text.strip():
+        return None
+    return "200", "text/plain; charset=utf-8", url, text.encode("utf-8")
+
+
 def _clearance_cookie(url: str) -> tuple[str | None, str | None]:
     """(Cookie header value, UA it was earned with) from the cf_clearance store."""
     try:
@@ -915,7 +960,8 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
     pace_key, pace_gap = _paced(host)
     ferc = host == "elibrary.ferc.gov"      # a JS shell even when rendered; read through its API
     iepa = bool(_IEPA_RECORD.match(url))    # permit files in a DocuWare cabinet; read through its session
-    cached = _cache_get(url) if not headers and not (ferc or iepa) else None
+    occ = bool(_OCC_DOCVIEW.match(url))     # an imaged OCC order; read through the viewer's text service
+    cached = _cache_get(url) if not headers and not (ferc or iepa or occ) else None
     learned = "" if sec else _route_for(host)
     if learned == "cf_impersonate":
         _IMPERSONATE_HOSTS.add(host)
@@ -947,6 +993,9 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
         elif iepa and (got := _iepa_record(url, timeout)):
             status, content_type, final_url, raw = got
             notes.append("iepa_docuware")
+        elif occ and (got := _occ_weblink(url, timeout)):
+            status, content_type, final_url, raw = got
+            notes.append("occ_weblink")
         elif host in _IMPERSONATE_HOSTS:
             got = _impersonate(url, timeout, ua, headers, cookie)
             if got:
@@ -954,7 +1003,7 @@ def fetch_page(url: str, *, timeout: int = 30, ua: str = CHROME_UA,
                 notes.append("cf_impersonate")
             else:
                 _IMPERSONATE_HOSTS.discard(host)     # the wall changed; run the full ladder
-        if not cached and not any(n in notes for n in ("cf_impersonate", "ferc_api", "iepa_docuware")):
+        if not cached and not any(n in notes for n in ("cf_impersonate", "ferc_api", "iepa_docuware", "occ_weblink")):
             if pace_key:
                 with _host_turn(pace_key, pace_gap):
                     status, content_type, final_url, raw = _curl_attempts(

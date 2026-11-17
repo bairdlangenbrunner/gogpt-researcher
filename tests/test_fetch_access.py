@@ -54,6 +54,9 @@ def net(monkeypatch, tmp_path):
     monkeypatch.setattr(fetch, "FAIL_LOG", tmp_path / "failures.jsonl")
     monkeypatch.setattr(fetch, "_IMPERSONATE_HOSTS", set())
     monkeypatch.delenv("GEM_FETCH_NO_CACHE", raising=False)
+    # a scope harvester imported earlier in the same process tags fetches with its scope
+    # (harvest_lib.tag_batch); these tests read the log for an untagged batch
+    monkeypatch.delenv("GEM_BATCH", raising=False)
     return state
 
 
@@ -358,3 +361,36 @@ def test_only_record_pages_take_the_iepa_route():
     assert fetch._IEPA_RECORD.match(IEPA_RECORD + "?dwdocid=1465329")
     assert not fetch._IEPA_RECORD.match("https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Search")
     assert not fetch._IEPA_RECORD.match("https://docuware7.illinois.gov/DocuWare/PlatformRO/WebClient/Integration?ep=x")
+
+
+# ---- Oklahoma Corporation Commission WebLink viewer (2026-11-04) -------------
+
+OCC_DOC = "https://public.occ.ok.gov/WebLink/DocView.aspx?id=21288037&dbid=0&repo=OCC"
+
+
+def test_occ_docview_is_read_through_the_viewer_text_service(net, monkeypatch):
+    seen = []
+
+    def fake(url, timeout):
+        seen.append(url)
+        return "200", "text/plain; charset=utf-8", url, b"ORDER NO. 750123 Cause PUD2026-000048 preapproval of 450 MW"
+
+    monkeypatch.setattr(fetch, "_occ_weblink", fake)
+    page = fetch.fetch_page(OCC_DOC)
+    assert page.status == "200" and "occ_weblink" in page.notes
+    assert "450 MW" in page.text and net["calls"] == 0 and seen == [OCC_DOC]
+    assert "disk_cache" not in fetch.fetch_page(OCC_DOC).notes
+
+
+def test_occ_route_falls_back_to_curl_when_the_viewer_gives_nothing(net, monkeypatch):
+    monkeypatch.setattr(fetch, "_occ_weblink", lambda url, timeout: None)
+    net["responses"] = [("200", "text/html", OCC_DOC, b"<html><title>WebLink</title></html>")]
+    page = fetch.fetch_page(OCC_DOC)
+    assert page.status == "200" and "occ_weblink" not in page.notes and net["calls"] == 1
+
+
+def test_only_docview_addresses_take_the_occ_route():
+    assert fetch._OCC_DOCVIEW.match(OCC_DOC).group(1) == "21288037"
+    assert fetch._OCC_DOCVIEW.match("https://public.occ.ok.gov/WebLink/DocView.aspx?dbid=0&id=55&repo=OCC")
+    assert not fetch._OCC_DOCVIEW.match("https://public.occ.ok.gov/WebLink/ElectronicFile.aspx?docid=55&dbid=0&repo=OCC")
+    assert not fetch._OCC_DOCVIEW.match("https://oklahoma.gov/occ/court-dockets/docket-results.html")

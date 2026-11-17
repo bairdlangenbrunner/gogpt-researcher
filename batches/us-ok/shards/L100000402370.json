@@ -1,0 +1,163 @@
+{
+ "meta": {
+  "plant_id": "L100000402370",
+  "plant_name": "Mooreland power station",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T11:03:22-05:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403752",
+   "unit_name": "2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists plant 3008, generator 2, as operating since July 1968. No retirement or planned retirement is shown. The Oklahoma Department of Environmental Quality permit memo at https://applications.deq.ok.gov/permitspublic/storedpermits/8994.pdf says the three boilers burn natural gas and run as peaking units.",
+     "milestones": [
+      {
+       "status": "operating",
+       "year": 1968,
+       "period": "July",
+       "sources": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "The EIA-860M table for September 2026 gives July 1968 as the operating date."
+      }
+     ]
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://applications.deq.ok.gov/permitspublic/storedpermits/8994.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8994.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The permit memo at https://applications.deq.ok.gov/permitspublic/storedpermits/8994.pdf says the plant sells wholesale power over Western Farmers Electric Cooperative's system. It calls the boilers peaking units. It does not describe any unit as backup power. So the value no is implied, not stated outright."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire"
+   ],
+   "notes": "The unit is still operating. No retirement, mothballing or owner change was found."
+  },
+  {
+   "gem_unit_id": "G100000403753",
+   "unit_name": "3",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists plant 3008, generator 3, as operating since July 1975. No retirement or planned retirement is shown. The Oklahoma Department of Environmental Quality permit memo at https://applications.deq.ok.gov/permitspublic/storedpermits/8994.pdf says the three boilers burn natural gas and run as peaking units.",
+     "milestones": [
+      {
+       "status": "operating",
+       "year": 1975,
+       "period": "July",
+       "sources": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "The EIA-860M table for September 2026 gives July 1975 as the operating date."
+      }
+     ]
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://applications.deq.ok.gov/permitspublic/storedpermits/8994.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8994.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The permit memo at https://applications.deq.ok.gov/permitspublic/storedpermits/8994.pdf says the plant sells wholesale power over Western Farmers Electric Cooperative's system. It calls the boilers peaking units. It does not describe any unit as backup power. So the value no is implied, not stated outright."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire"
+   ],
+   "notes": "The unit is still operating. No retirement, mothballing or owner change was found."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000403752",
+   "concern_type": "scope",
+   "question": "Should Mooreland unit 1 (45 MW) be listed in GEM?",
+   "finding": "The EIA-860M table for September 2026 lists three operating gas steam units at plant 3008: unit 1 at 45 MW (1964), unit 2 at 125 MW and unit 3 at 135 MW. GEM lists only units 2 and 3 here.",
+   "recommendation": "Check whether unit 1 is in GEM under another record. If not, it is below the 50 MW threshold, so leave it out.",
+   "note": "Source is the EIA-860M table at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet for plant 3008."
+  },
+  {
+   "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8994.pdf",
+   "used_for": [
+    "Status",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Permit memo read."
+  }
+ ]
+}

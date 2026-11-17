@@ -15,6 +15,7 @@ Nothing here is cited; it fetches and reads.
 """
 from __future__ import annotations
 
+import os
 import re
 import time
 from pathlib import Path
@@ -22,7 +23,7 @@ from pathlib import Path
 import html
 import requests
 
-from fetch import fetch_page
+from fetch import _log_failure, fetch_page
 from paths import REPO_ROOT, gogpt_scoped_csv, scope_permits, scope_work
 
 REPO = REPO_ROOT
@@ -40,8 +41,16 @@ DOCKET_MAKER = re.compile(r"general electric|\bGE\b|siemens|mitsubishi|solar tur
 YEAR = re.compile(r"\b20[2-5]\d\b")
 
 
+def tag_batch(scope: str) -> None:
+    """Tag every give-up fetch.py logs from here on with the scope, so access_audit.py --retry
+    and state_gate.py's `access` gate see a harvester's failed reads like any sweep read
+    (they run before the briefs exist, so the audit's time window alone would skip them)."""
+    os.environ.setdefault("GEM_BATCH", scope)
+
+
 def harvest_out(scope: str) -> Path:
     """Where a permit harvester writes: scopes/<tag>/work/permits/ (never the older work/permits/)."""
+    tag_batch(scope)
     d = scope_permits(scope, legacy=False)
     d.mkdir(parents=True, exist_ok=True)
     return d
@@ -49,6 +58,7 @@ def harvest_out(scope: str) -> Path:
 
 def docket_cache(scope: str) -> Path:
     """Where a docket harvester keeps the documents it read (never committed)."""
+    tag_batch(scope)
     d = scope_work(scope) / "psc"
     d.mkdir(parents=True, exist_ok=True)
     return d
@@ -59,6 +69,13 @@ def docket_cache(scope: str) -> Path:
 def get(url, timeout=120):
     """One page through fetch.py's whole access ladder."""
     return fetch_page(url, timeout=timeout)
+
+
+def report_failure(url: str, status, reason: str = "") -> None:
+    """A harvester that talks to a portal with `requests` itself (a POST, a JSON API, a host
+    whose certificate fails) records a failed read here, so it lands in fetch.py's give-up log
+    with the batch tag and is retried and gated like any other read."""
+    _log_failure(url, str(status), ["harvester"] + ([reason] if reason else []))
 
 
 def wayback_url(url):

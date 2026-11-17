@@ -1,0 +1,344 @@
+{
+ "meta": {
+  "plant_id": "L100001063385",
+  "plant_name": "Tinker Air Force Base power station",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T11:05:57-05:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 6
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001072817",
+   "unit_name": "1-2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://www.oge.com/documents/d/portal/oge-2026-irp-final"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.oge.com/documents/d/portal/oge-2026-irp-final",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The EIA-860M table for September 2026 lists generators 1 and 2 as operating. OG&E's 2026 integrated resource plan says Tinker units 1 and 2 were placed in service in March 2026. This matches the current value.",
+     "milestones": [
+      {
+       "status": "operating",
+       "year": 2026,
+       "period": "March",
+       "sources": [
+        "https://www.oge.com/documents/d/portal/oge-2026-irp-final",
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "OG&E's 2026 integrated resource plan says the units were placed in service in March 2026"
+      }
+     ]
+    },
+    "Start year": {
+     "value": "2026",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://www.oge.com/documents/d/portal/oge-2026-irp-final"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.oge.com/documents/d/portal/oge-2026-irp-final",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Both the EIA table and OG&E's 2026 integrated resource plan give March 2026."
+    },
+    "Capacity Per Engine": {
+     "value": "48.1",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists Tinker plant 63628, generators 1 and 2, as operating, 48.1 MW each, natural gas combustion turbines, operating since March 2026."
+    },
+    "Capacity (MW)": {
+     "value": "96.2",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Two generators of 48.1 MW each in the EIA-860M table for September 2026 add up to 96.2 MW. GEM shows 96.0 MW. The air permit application lists a higher 51.1 MW rating per turbine at standard test conditions, which is not nameplate."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE Vernova: LM6000",
+     "refs": [
+      "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AeNgrdQLsFw5W8dEEwRTc%C3%81pApsum6Hqboy8ro%C3%81CyJ8OFtu0HRxDmnOy6W2%C3%81nwK2s%C3%81raDCV3qK%C3%8912Ie4gZNs%C3%89Vd0%3D/?ViewerMode=PDF&ForceDownload=true",
+      "https://www.oge.com/documents/d/portal/oge-2026-irp-final"
+     ],
+     "verifications": [
+      {
+       "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AeNgrdQLsFw5W8dEEwRTc%C3%81pApsum6Hqboy8ro%C3%81CyJ8OFtu0HRxDmnOy6W2%C3%81nwK2s%C3%81raDCV3qK%C3%8912Ie4gZNs%C3%89Vd0%3D/?ViewerMode=PDF&ForceDownload=true",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.oge.com/documents/d/portal/oge-2026-irp-final",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "An application to the Oklahoma Department of Environmental Quality names two new GE LM6000 PC Sprint gas-fired simple-cycle turbines. OG&E's 2026 plan says two identical GE LM6000 turbines. This matches GEM."
+    },
+    "Status Detail": {
+     "value": "First fire of the two new LM6000 turbines was on November 26, 2025. OG&E reports the units were placed in service in March 2026.",
+     "refs": [
+      "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AeNgrdQLsFw5W8dEEwRTc%C3%81pApsum6Hqboy8ro%C3%81CyJ8OFtu0HRxDmnOy6W2%C3%81nwK2s%C3%81raDCV3qK%C3%8912Ie4gZNs%C3%89Vd0%3D/?ViewerMode=PDF&ForceDownload=true",
+      "https://www.oge.com/documents/d/portal/oge-2026-irp-final"
+     ],
+     "verifications": [
+      {
+       "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AeNgrdQLsFw5W8dEEwRTc%C3%81pApsum6Hqboy8ro%C3%81CyJ8OFtu0HRxDmnOy6W2%C3%81nwK2s%C3%81raDCV3qK%C3%8912Ie4gZNs%C3%89Vd0%3D/?ViewerMode=PDF&ForceDownload=true",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.oge.com/documents/d/portal/oge-2026-irp-final",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Oklahoma Department of Environmental Quality application says first fire occurred on November 26, 2025. The 2026 plan gives March 2026 for service."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.oge.com/documents/d/portal/oge-2026-irp-final"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.oge.com/documents/d/portal/oge-2026-irp-final",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "OG&E's 2026 integrated resource plan says the Tinker units can be dispatched by the Southwest Power Pool to serve all customers and supply the grid at peak times. They also give islanding resilience to the base. So they are grid units, not a backup fleet. The plan does not use the words backup power, so this is implied."
+    }
+   },
+   "not_found": [],
+   "notes": "The unit is operating and no retirement, mothballing or owner change was found. The Sierra Club change flag most likely reflects the March 2026 start of service, which the EIA table and OG&E plan confirm."
+  },
+  {
+   "gem_unit_id": "G100001092967",
+   "unit_name": "5A-5B",
+   "findings": {
+    "Status": {
+     "value": "retired",
+     "refs": [
+      "https://www.oge.com/documents/d/portal/oge-2026-irp-final",
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.oge.com/documents/d/portal/oge-2026-irp-final",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "OG&E's 2026 integrated resource plan says units 5A and 5B retired in early 2026. The EIA-860M table for September 2026 still lists them as out of service and not expected to return. This matches GEM's retired status.",
+     "milestones": [
+      {
+       "status": "retired",
+       "year": 2026,
+       "period": "",
+       "period_note": "The plan says early 2026 without a month, and the EIA table gives no retirement date.",
+       "sources": [
+        "https://www.oge.com/documents/d/portal/oge-2026-irp-final"
+       ],
+       "note": "OG&E says the units retired in early 2026"
+      }
+     ]
+    },
+    "Retired year": {
+     "value": "2026",
+     "refs": [
+      "https://www.oge.com/documents/d/portal/oge-2026-irp-final"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.oge.com/documents/d/portal/oge-2026-irp-final",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "OG&E's 2026 integrated resource plan says the units retired in early 2026."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.oge.com/documents/d/portal/oge-2026-irp-final"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.oge.com/documents/d/portal/oge-2026-irp-final",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "OG&E's 2026 plan lists these units among its grid resources before their retirement. It does not call them backup. This is implied."
+    }
+   },
+   "not_found": [],
+   "notes": "The units retired in early 2026 per OG&E. No month was found."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001072817",
+   "concern_type": "identity",
+   "question": "Is EIA plant 63628 Tinker the same site as this plant?",
+   "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 63628 Tinker in Oklahoma County at the same coordinates as GEM. Generators 1 and 2 (48.1 MW each, operating since March 2026) match unit 1-2. Generators 5A and 5B (41 MW each, out of service, since 1971) match unit 5A-5B.",
+   "recommendation": "Type EIA 63628 into Other IDs (location). Type EIA 1 and EIA 2 into Other IDs (unit) for unit 1-2, and EIA 5A and EIA 5B for unit 5A-5B.",
+   "note": "The codes are not added as values.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001092967",
+   "concern_type": "Status",
+   "question": "Should units 5A and 5B stay retired although EIA lists them out of service?",
+   "finding": "OG&E's 2026 plan (https://www.oge.com/documents/d/portal/oge-2026-irp-final) says they retired in early 2026. The EIA table for September 2026 still shows out of service, not retired, and gives no retirement date.",
+   "recommendation": "Leave as retired in 2026. Check the EIA table again after its next release on November 24, 2026.",
+   "note": "EIA often lags a retirement by several months.",
+   "refs": [
+    "https://www.oge.com/documents/d/portal/oge-2026-irp-final",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001072817",
+   "concern_type": "Capacity (MW)",
+   "question": "Is 96 MW or 102 MW the right capacity for the two new turbines?",
+   "finding": "EIA nameplate is 48.1 MW per generator. The air permit application (https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AeNgrdQLsFw5W8dEEwRTc%C3%81pApsum6Hqboy8ro%C3%81CyJ8OFtu0HRxDmnOy6W2%C3%81nwK2s%C3%81raDCV3qK%C3%8912Ie4gZNs%C3%89Vd0%3D/?ViewerMode=PDF&ForceDownload=true) raises the maximum power rating to 51.1 MW per turbine at standard test conditions.",
+   "recommendation": "Use the EIA nameplate, so 96.2 MW in total, unless a document gives a different nameplate.",
+   "note": "The permit figure is a site-condition rating, not a nameplate.",
+   "refs": [
+    "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AeNgrdQLsFw5W8dEEwRTc%C3%81pApsum6Hqboy8ro%C3%81CyJ8OFtu0HRxDmnOy6W2%C3%81nwK2s%C3%81raDCV3qK%C3%8912Ie4gZNs%C3%89Vd0%3D/?ViewerMode=PDF&ForceDownload=true",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet for plant 63628."
+  },
+  {
+   "url": "https://www.oge.com/documents/d/portal/oge-2026-irp-final",
+   "used_for": [
+    "Status",
+    "Start year",
+    "Retired year",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "OG&E 2026 plan text."
+  },
+  {
+   "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AeNgrdQLsFw5W8dEEwRTc%C3%81pApsum6Hqboy8ro%C3%81CyJ8OFtu0HRxDmnOy6W2%C3%81nwK2s%C3%81raDCV3qK%C3%8912Ie4gZNs%C3%89Vd0%3D/?ViewerMode=PDF&ForceDownload=true",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Oklahoma DEQ application from the permit harvest."
+  },
+  {
+   "url": "https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/Permits_In_Active_Review2.csv",
+   "used_for": [],
+   "outcome": "verified",
+   "note": "Lists permits 2025-0595-C M-1 and TV in review."
+  },
+  {
+   "url": "https://opsportal.spp.org/Studies/GIActive",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "The queue rows in the brief are leads. GEN-2023-GR2 at 94.242 MW is the Tinker interconnection. The other two rows are at other substations."
+  }
+ ]
+}

@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "lane": "monitor",
+    "scope": {
+      "country": "United States",
+      "state": "Oklahoma",
+      "postal": "ok",
+      "kind": "state",
+      "slug": "oklahoma",
+      "quarter": "q4-2026",
+      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-11-05T15:12:34-05:00",
+    "mode": "update",
+    "counts": {
+      "records": 3
+    }
+  },
+  "records": [
+    {
+      "gem_plant_id": "L100000402235",
+      "monitor_kind": "existing_plant",
+      "monitor_reason": "Southwest Power Pool request GEN-2025-SR21 (100 MW, fuel not shown) connects at the Tulsa Power Station 138 kV substation.",
+      "recheck_by": "2027-03",
+      "watch_case": "no_generation",
+      "capacity_mw": 100,
+      "refs": {},
+      "plant_name": "Tulsa power station",
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "No document names a generating unit or fuel.",
+      "record_id": "L100000402235:plant:monitor-1"
+    },
+    {
+      "plant_name": "Public Service Company of Oklahoma 2026 all-source request for proposals",
+      "watch_case": "not_committed",
+      "recheck_by": "2027-03",
+      "monitor_kind": "new_to_tracker",
+      "irp": true,
+      "owner": "Public Service Company of Oklahoma",
+      "capacity_mw": "4000 accredited, mixed resources",
+      "refs": {
+        "links": [
+          "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The page loaded and carries the expected values."
+        }
+      ],
+      "researcher_notes": "The Public Service Company of Oklahoma issued an all-source request for proposals on January 2, 2026 for about 4,000 MW of accredited capacity, and received bids on March 16, 2026. No gas site or unit is named, and the utility has not picked winners. Recheck after the shortlist is filed with the state commission.",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:monitor-1",
+      "monitor_reason": "The Public Service Company of Oklahoma issued an all-source request for proposals on January 2, 2026 for about 4,000 MW of accredited capacity, and received bids on March 16, 2026."
+    },
+    {
+      "plant_name": "OG&E 2026 requests for proposals",
+      "watch_case": "not_committed",
+      "recheck_by": "2027-03",
+      "monitor_kind": "new_to_tracker",
+      "irp": true,
+      "owner": "Oklahoma Gas and Electric",
+      "capacity_mw": "",
+      "refs": {
+        "links": [
+          "https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "The page loaded and carries the expected values."
+        }
+      ],
+      "researcher_notes": "The OG&E 2026 plan says its 2026 requests for proposals are open to cover current capacity needs. The plan names no new gas site beyond Horseshoe Lake units 11 to 15 and the Tinker project, which GEM already lists. Recheck when OG&E files a pre-approval case for any new unit.",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-ok:plant:monitor-2",
+      "monitor_reason": "The OG&E 2026 plan says its 2026 requests for proposals are open to cover current capacity needs."
+    }
+  ]
+}

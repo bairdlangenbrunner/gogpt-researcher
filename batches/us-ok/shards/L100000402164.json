@@ -1,0 +1,166 @@
+{
+ "meta": {
+  "plant_id": "L100000402164",
+  "plant_name": "Mustang (OK) power station",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T08:30:00-05:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403312",
+   "unit_name": "6-12",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://oklahoma.gov/content/dam/ok/en/occ/documents/pu/pud-reports-page/2025-oge-irp.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      },
+      {
+       "url": "https://oklahoma.gov/content/dam/ok/en/occ/documents/pu/pud-reports-page/2025-oge-irp.pdf",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (plant 2953, generators GT1 to GT7) lists all seven turbines as operating. The 2025 resource plan at https://oklahoma.gov/content/dam/ok/en/occ/documents/pu/pud-reports-page/2025-oge-irp.pdf lists Mustang 6 to 12 as existing. No retirement, mothballing or ownership change was found.",
+     "milestones": []
+    },
+    "Capacity (MW)": {
+     "value": "462.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://applications.deq.ok.gov/permitspublic/storedpermits/4458.pdf",
+      "https://oklahoma.gov/content/dam/ok/en/occ/documents/pu/pud-reports-page/2025-oge-irp.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/4458.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://oklahoma.gov/content/dam/ok/en/occ/documents/pu/pud-reports-page/2025-oge-irp.pdf",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists seven generators, GT1 to GT7, each with a nameplate of 66.0 MW. Together that is 462 MW, so GEM's one row for units 6 to 12 matches the whole plant. The 2018 permit memo at https://applications.deq.ok.gov/permitspublic/storedpermits/4458.pdf gives 66 MW per Siemens Trent turbine. The OG&E 2025 resource plan at https://oklahoma.gov/content/dam/ok/en/occ/documents/pu/pud-reports-page/2025-oge-irp.pdf lists summer capability of 55 to 58 MW each for Mustang 6 to 12, in service 2018. Suggested line for the resource plan notes: OG&E 2025 resource plan lists Mustang 6 to 12 as existing gas turbines, 2018, 55 to 58 MW summer each, no retirement."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://applications.deq.ok.gov/permitspublic/storedpermits/4458.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      },
+      {
+       "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/4458.pdf",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists all seven turbines at Mustang under the sector Electric Utility, not as backup units, and the Oklahoma Department of Environmental Quality permit memo from June 2018 at https://applications.deq.ok.gov/permitspublic/storedpermits/4458.pdf calls the site an electric generating station that sells power. Only the small diesel generator and fire pump are emergency equipment. So the existing value of no stands."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year",
+    "Owner change"
+   ],
+   "notes": "The row stands for seven 66 MW turbines. EIA shows operating dates between September and December 2017 while GEM has 2018, which matches the resource plan year, so I left the start year alone."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000403312",
+   "concern_type": "existence",
+   "question": "Is GEN-2016-047, a 24 MW combustion turbine in service since December 2017 at the Mustang 69 kV substation, a unit GEM is missing?",
+   "finding": "The Southwest Power Pool queue lists GEN-2016-047 as a 24 MW combustion turbine in service in December 2017 at Mustang 69 kV. The EIA table lists no unit of 24 MW at Mustang. The other Mustang queue entry, GEN-2025-SR23, is now staged as its own new plant, so it is not part of this question.",
+   "recommendation": "Leave GEM as is. Ask OG&E whether the 24 MW turbine is one of the existing Mustang units under a different rating, and add it as a new unit if it is not.",
+   "note": "The queue page is https://opsportal.spp.org/Studies/GIActive . I could not load a per-project page. The Oklahoma Corporation Commission daily dockets showed no Mustang case.",
+   "refs": []
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Rows GT1 to GT7, each 66.0 MW, operating, sector Electric Utility."
+  },
+  {
+   "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/4458.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Permit memo describing seven Siemens Trent turbines of 66 MW."
+  },
+  {
+   "url": "https://oklahoma.gov/content/dam/ok/en/occ/documents/pud/reports/2025-oge-irp.pdf",
+   "used_for": [],
+   "outcome": "failed",
+   "note": "HTTP 404, wrong folder name, no snapshot."
+  },
+  {
+   "url": "https://oklahoma.gov/content/dam/ok/en/occ/documents/pu/pud-reports-page/2025-oge-irp.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Existing generation table lists Mustang 6 to 12."
+  },
+  {
+   "url": "https://ogeenergy.gcs-web.com/news-releases/news-release-details/oge-completes-mustang-energy-center",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Existing source still loads and names Mustang and 2018."
+  }
+ ]
+}

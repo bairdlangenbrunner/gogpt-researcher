@@ -175,6 +175,35 @@ ADDITIVE_TEXT_COLUMNS = ("Status Detail", "Notes")
 # name and the build never merges it into a Data Source cell.
 INLINE_SOURCE_COLUMNS = ("Status Detail",)
 
+# --- Identity columns: no Data Source column of their own ---------------------
+# The export pairs every researched value with a "... Data Source" column,
+# except the columns that name the plant and the unit (docs/reference/
+# gem_db_schema.md). A staged value for one of these carries its evidence
+# under the generic refs key EVIDENCE_KEY ("links", the key the qa and
+# monitor lanes already use) and the build never merges that into any Data
+# Source cell. Before 2026-11-03 ref_col_for invented "Unit name Data Source"
+# and "Other Name(s) Data Source" for them, the build skipped those keys with
+# a warning, and the review page showed them as boxes to fill.
+IDENTITY_COLUMNS = ("Country/Area", "Plant name", "Plant Name in Local Language / Script",
+                    "Other Name(s)", "Unit name")
+EVIDENCE_KEY = "links"
+
+# --- A finding is never keyed on a Data Source column -------------------------
+# A research finding names the VALUE column (Fuel, Status, Location accuracy)
+# and carries its link in `refs`; the assembler pairs the link with the Data
+# Source column itself. A finding keyed on "Fuel Data Source" (seen in the
+# North Dakota batch, 2026-11-03: the brief asked for "a new link for that
+# box" when a Data Source link had died, and the agent keyed the finding on
+# the box) is remapped by assemble_state to its value column as a
+# re-verification, and state_gate gate `headers` rejects one that reaches
+# staging. ref_col_for returns such a column unchanged, so nothing can build
+# "Fuel Data Source Data Source".
+DATA_SOURCE_SUFFIX = " Data Source"
+
+
+def is_data_source_column(col) -> bool:
+    return str(col).endswith(DATA_SOURCE_SUFFIX)
+
 # --- Milestone timeline entries (Baird 2026-11-02) ---------------------------
 # A staged status always comes with a dated milestone entry for that status:
 # the database's milestone_timeline row (status, eventYear,

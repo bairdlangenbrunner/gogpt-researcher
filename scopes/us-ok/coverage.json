@@ -1,0 +1,321 @@
+[
+  {
+    "id": "spp-gi-active",
+    "name": "Southwest Power Pool active generator interconnection requests",
+    "url": "https://opsportal.spp.org/Studies/GIActive",
+    "what": "Use batches/us-ok/harvest/queues.json from pull_queues.py --state OK (the CSV at https://opsportal.spp.org/Studies/GenerateActiveCSV, anonymous; the first line is a 'Last Updated On' stamp and the header is line 2). Answer every request in its needs_answer list (33 on 2026-11-03) under queues: a new plant at announced, a new unit at a plant GEM has, a duplicate question, or a watch item with its case. A county-only match is not a match: GEN-2024-340 (1,440 MW, Creek County, AEP) is not Bristow Energy Center, and the 'Nearest Town or County' column often holds a substation name (AES 5, Muskoge7).",
+    "proof": {
+      "sample": "https://opsportal.spp.org/Studies/GenerateActiveCSV",
+      "kind": "csv",
+      "min_rows": 500
+    }
+  },
+  {
+    "id": "spp-eras",
+    "name": "Southwest Power Pool expedited resource adequacy study (ERAS) material",
+    "url": "https://www.spp.org/engineering/generator-interconnection/",
+    "what": "Read the generator interconnection page and any ERAS study reports or interconnection agreement postings for the seven Oklahoma ERAS rows (ERAS-2025-003 Redbud 186 MW, -004 Horseshoe Lake 756.2 MW, -009 GREC coal, -010 Horseshoe Lake 496 MW, -023 Northeastern 513 MW, -024 and -026 Comanche 775.2 MW each), and record whether the agreement is executed (that makes a project pre-construction) and who the sponsor is.",
+    "proof": {
+      "kind": "html",
+      "expect": "interconnection"
+    }
+  },
+  {
+    "id": "odeq-ppr",
+    "role": "permit_notices",
+    "name": "Oklahoma Department of Environmental Quality, Permits for Public Review table (every permit action in process, all divisions)",
+    "url": "https://applications.deq.ok.gov/PermitsPublicReview/",
+    "what": "Use scopes/us-ok/work/permits/ from scopes/us-ok/harvest_permits.py, which reads the whole table in one anonymous GET (the host certificate fails verification; fetch with verification off) and matches the rows whose Division cell reads AQD to GEM plants by company and facility name, case-insensitively. Read every air row for a power company or a power-like facility (OG&E Tinker Turbines and River Valley, PSO Comanche, Northeastern and Port of Inola, Peoples Electric Cooperative Centrahoma, OMPA Charles D. Lamb, Grand River Energy Center, Tenaska Kiamichi, OG&E Horseshoe Lake, AECI Chouteau, WFEC Hugo and Anadarko on 2026-11-03) and every water or land row naming a data center (Artemis Data Center, Atoka County). The table is a snapshot of pending work: a permit drops off once issued, so the document store below is the history.",
+    "proof": {
+      "kind": "table",
+      "min_rows": 20,
+      "insecure": true,
+      "expect": "AQD"
+    }
+  },
+  {
+    "id": "odeq-onbase",
+    "role": "permit_record",
+    "name": "ODEQ permit documents, the OnBase Public Access document store behind the Permits for Public Review table",
+    "url": "https://okdeqonbaseexternal.databankcloud.com/pav/api",
+    "what": "Use scopes/us-ok/work/permits/<plant_id>.md from the harvester, which queries the anonymous JSON API (POST /CustomQuery/KeywordSearch, QueryID 262; keyword 844 is the table's object id, 830 the permit number, 828 the facility name with wildcards, 827 the company name; GET /Document/<id>/?ViewerMode=PDF&ForceDownload=true returns the PDF) for every GEM plant and every lead by facility and company name, by permit number and by object id, and runs a date-only sweep from 2016. Read every application, draft permit, notice and permit memorandum it returns for a power facility: unit lists, megawatts, make and model, construction and start dates.",
+    "gap": "The store holds only permits that went through the public-review workflow (earliest document April 2016, most from 2018 on) and results do not carry the facility name, so a document is tied to a permit only when found by permit number or object id. Older permits (Mustang Energy Center, Oneta and every pre-2016 permit) return zero documents here. For those, read the public notice store and the four permit lists below first, then the EPA permit lists and the Wayback Machine. Only when all of those come back empty is a permit named for a person to request from Central Records (https://oklahoma.gov/deq/about/asd/records/central-records-request-form.html), and that is a person's decision, never a reason to call the site blocked. Full-text search is not licensed on the installation.",
+    "proof": {
+      "sample": "https://okdeqonbaseexternal.databankcloud.com/pav/api/CustomQuery/KeywordSearch",
+      "method": "POST",
+      "json": {
+        "QueryID": 262,
+        "Keywords": [
+          {
+            "ID": "844",
+            "Value": "1073124"
+          }
+        ],
+        "QueryLimit": 0
+      },
+      "kind": "json"
+    }
+  },
+  {
+    "id": "odeq-notice-store",
+    "role": "permit_record",
+    "name": "ODEQ public notice store (every notice, draft permit and permit memorandum posted for public review, all divisions, numbered PDFs back to about 2020)",
+    "url": "https://applications.deq.ok.gov/permitspublic/",
+    "what": "Use scopes/us-ok/work/permits/notices/ from scopes/us-ok/harvest_permits.py, which probes every number at https://applications.deq.ok.gov/permitspublic/storedpermits/<n>.pdf (anonymous; the certificate fails verification, so read with verification off), reads the text of each document, keeps the PDF of every power-like one, reads the permit number, company, facility, coordinates and address from the memo's SUBJECT block, and ties each to a GEM plant or a lead. The index page is a table of the notices open now, with latitude and longitude. Search notices/index.json and _sweep.md by county, owner and permit number for every GEM plant and every lead. This store keeps notices after the permit is issued, so it is the history the Permits for Public Review table drops.",
+    "proof": {
+      "sample": "https://applications.deq.ok.gov/permitspublic/storedpermits/9138.pdf",
+      "kind": "pdf",
+      "insecure": true,
+      "expect": "Core Scientific"
+    }
+  },
+  {
+    "id": "odeq-permit-lists",
+    "role": "permit_record",
+    "name": "ODEQ Air Quality permit lists on oklahoma.gov (permits in active review, permits issued during the past year, permits open for petition, and every final major source PSD permit since 2001)",
+    "url": "https://oklahoma.gov/deq/permits/air-permits/pp-ip.html",
+    "what": "Use scopes/us-ok/work/permits/lists/<date>/ from the harvester, which downloads the four CSV files (https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/Permits_In_Active_Review2.csv, Permits_Issued_During_Past_Year.csv, Petition_List2.csv, Permits_issued_PSD_permits.csv), joins each row to a facility by name and county and matches it to a GEM plant. Every power company or power-like row with no GEM match is a lead to answer (on 2026-11-04: Grand River Dam Authority Watts, Woka and Beaver Mountain; Western Farmers Chimney Hill, Antlers South, Cleveland and Canadian; ATMOSS Data Center; Saint Francis Hospital Data Center; City of Anadarko generators; Solarity Power Systems; OKC2; CBRE OKC SITE; and the old PSD permits for Genova OK I, Smith Pocola and Lawton Energy Cogen).",
+    "proof": {
+      "sample": "https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/Permits_Issued_During_Past_Year.csv",
+      "kind": "csv",
+      "min_rows": 100
+    }
+  },
+  {
+    "id": "odeq-comment-pdfs",
+    "name": "ODEQ public comment PDFs on oklahoma.gov (one PDF per permit open for comment, named facility plus permit number)",
+    "url": "https://oklahoma.gov/deq/permits/air-permits/pp-ip.html",
+    "what": "The harvester tries https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/<Facility in title case>-<permit number>.pdf for every list row and saves what answers. The folder cannot be listed and the address is case-sensitive, so a miss is not evidence that no document exists; the notice store holds the same documents.",
+    "proof": {
+      "sample": "https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/Citadel%20Facility-2026-0286-C.pdf",
+      "kind": "pdf"
+    }
+  },
+  {
+    "id": "odeq-air-pages",
+    "name": "ODEQ Air Quality Division pages on oklahoma.gov (documents for public review, air permits, general permit notices)",
+    "url": "https://oklahoma.gov/deq/divisions/air-quality.html",
+    "what": "Read the division page, the documents-for-public-review page and the air-permits page for any notice, general permit action or rule change that names a power plant or a data center, and record that the old deq.ok.gov notice pages redirect here (no Wayback copies with content).",
+    "proof": {
+      "kind": "html",
+      "expect": "Air Quality"
+    }
+  },
+  {
+    "id": "occ-pud-dockets",
+    "name": "Oklahoma Corporation Commission daily Public Utility Division docket PDFs (the anonymous case list)",
+    "url": "https://oklahoma.gov/occ/court-dockets/docket-results.html",
+    "what": "Use batches/us-ok/harvest/psc_dockets.json from scopes/us-ok/harvest_psc.py, which downloads every <year>/<date>-pud.pdf linked from the index (about three years), extracts the text and lists every cause number (PUD2024-, PUD2025-, PUD2026-) whose applicant or relief text names OG&E, PSO, AEP, Horseshoe Lake, Tinker, Redbud, Comanche, Northeastern, Green Country, Muskogee or a certificate, preapproval, IRP, RFP or generation acquisition. Only matters set for hearing appear, so a case with no hearing yet is found through the utility's own documents and the ECF search below.",
+    "proof": {
+      "sample": "https://oklahoma.gov/content/dam/ok/en/occ/documents/ajls/jls-courts/court-clerk/docket-results/2026/2026-10-29-pud.pdf",
+      "kind": "pdf",
+      "expect": "PUD2026"
+    }
+  },
+  {
+    "id": "occ-ecf",
+    "name": "Oklahoma Corporation Commission Electronic Case Filing (cases since 2022-03-21)",
+    "url": "https://ecf.public.occ.ok.gov",
+    "what": "The sign-in site is not needed for documents: every Electronic Case Filing document (applications, testimony, notices, orders) is in the Laserfiche WebLink store (occ-weblink) with no sign-in. Use the ECF site only as a cross-check when a cause's WebLink search returns fewer entries than the docket sheet numbers imply (entry numbers in the file names have gaps when a document is confidential).",
+    "gap": "The API behind the site answers 401 without a sign-in token (OpenID flow; the site offers registration). On 2026-11-03 the WebLink store was shown to hold the same filings, so a cause is never 'needs the ECF sign-in'; a document missing from WebLink (a confidential filing, a gap in the entry numbers) is answered with the cause number, the entry number and the words 'confidential or not in the public store'.",
+    "proof": {
+      "kind": "html"
+    },
+    "human_wall": "Only if a public document is missing from the WebLink store: Baird registers a free account on the Electronic Case Filing site and downloads that document by hand. No script ever signs in with his credentials."
+  },
+  {
+    "id": "occ-weblink",
+    "name": "Oklahoma Corporation Commission Laserfiche WebLink, the public document store that holds every Electronic Case Filing document (applications, testimony, notices, orders) and the older imaged case files",
+    "url": "https://public.occ.ok.gov/WebLink/CustomSearch.aspx?SearchName=AllImagedMCCCaseDocuments&dbid=0&repo=OCC",
+    "what": "Scripted, no sign-in (proven 2026-11-03 on cause PUD2026-000073). Open https://public.occ.ok.gov/WebLink/Welcome.aspx?dbid=0&repo=OCC once to get the session cookie, then POST JSON (headers Content-Type: application/json and X-Lf-Suppress-Login-Redirect: 1) to https://public.occ.ok.gov/WebLink/SearchService.aspx/GetSearchListing with {\"repoName\":\"OCC\",\"searchSyn\":<query>,\"searchUuid\":\"\",\"sortColumn\":\"\",\"startIdx\":0,\"endIdx\":100,\"getNewListing\":true,\"sortOrder\":0,\"displayInGridView\":true}; page with startIdx and endIdx, hitCount gives the total. Queries that work: {LF:Name=\"PUD2026-000073*\"} lists every filing in a cause (the file names start with the cause number, the entry number and the document type); {[]:[Case Number]=\"PUD2026-000073\"} lists the cause's imaged orders with their order numbers and titles; {[ECF Document]:[ECF Division]=\"PUD\", [ECF Docket Date]>=\"9/1/2026\", [ECF Docket Date]<=\"9/30/2026\"} lists every Public Utility Division order in a date range, so the harvester can sweep a year of orders without a cause list. Each result carries entryId, name and the metadata fields (Case Number, ECF Document Type, Order Title, Relief Requested, ECF Docket Date). A filing (an electronic PDF, entryProperties '0 pages - N KB') downloads from https://public.occ.ok.gov/WebLink/ElectronicFile.aspx?docid=<entryId>&dbid=0&repo=OCC, which fetch.py reads without a cookie, so that address is the citation. An imaged order (entryProperties 'N pages') is read page by page from DocumentService.aspx/GetTextHtmlForPage with {\"repoName\":\"OCC\",\"documentId\":<entryId>,\"pageNum\":1,\"showAnn\":false,\"searchUuid\":\"\"}, or exported as one PDF: POST ZipEntriesHandler.aspx/StartExport with {\"vdirName\":\"WebLink\",\"repoName\":\"OCC\",\"ids\":[\"<entryId>\"],\"key\":-1,\"watermarkIdx\":-1}, poll ZipEntriesHandler.aspx/CheckExportStatus with {\"token\":<token>} until finished, then GET ExportJobHandler.aspx/GetExportJob/?token=<token> with the cookie (a real PDF with a text layer, 2.2 MB for a four-page order). The order's citation is https://public.occ.ok.gov/WebLink/DocView.aspx?id=<entryId>&dbid=0&repo=OCC. For every cause number the daily dockets name and every PUD cause in the sweep, read the application, the direct testimony and every order, and record the cause number, the entry number, the filing date and the document address for each fact used.",
+    "gap": "The folder browse (FolderListingService.aspx/GetFolderListing) answers an empty list, so causes are found by search, never by walking folders. The custom search form on the page is built for the motor carrier docket (its Case Type list holds only MCC), so the harvester posts its own search syntax instead of the form's fields. The DocView page of an imaged order is a script shell with no text, so a verifier reads the order through the page-text service or the export; the filing addresses (ElectronicFile.aspx) read as plain PDFs. Cases filed before 2022-03-21 are not in the Electronic Case Filing folders; search them by case number anyway, and when nothing comes back cite the legacy case search or the daily docket.",
+    "proof": {
+      "sample": "https://public.occ.ok.gov/WebLink/SearchService.aspx/GetSearchListing",
+      "method": "POST",
+      "warm": "https://public.occ.ok.gov/WebLink/Welcome.aspx?dbid=0&repo=OCC",
+      "headers": {
+        "Content-Type": "application/json",
+        "X-Lf-Suppress-Login-Redirect": "1"
+      },
+      "json": {
+        "repoName": "OCC",
+        "searchSyn": "{LF:Name=\"PUD2026-000073*\"}",
+        "searchUuid": "",
+        "sortColumn": "",
+        "startIdx": 0,
+        "endIdx": 20,
+        "getNewListing": true,
+        "sortOrder": 0,
+        "displayInGridView": true
+      },
+      "kind": "json",
+      "expect": "PUD2026-000073_1_Application"
+    }
+  },
+  {
+    "id": "occ-pud-reports",
+    "name": "Oklahoma Corporation Commission Public Utility Division reports folder (IRP copies, studies)",
+    "url": "https://oklahoma.gov/content/dam/ok/en/occ/documents/pu/pud-reports-page/2025-oge-irp.pdf",
+    "what": "Read the OCC copy of the OG&E 2025 IRP (no impersonation needed) and the March 2026 nuclear feasibility study; the folder has no index page, so also follow the Public Utility Division page (https://oklahoma.gov/occ/divisions/public-utility.html) for other files in it, including any PSO IRP copy.",
+    "proof": {
+      "kind": "pdf",
+      "expect": "Integrated Resource Plan"
+    }
+  },
+  {
+    "id": "oge-irp",
+    "name": "OG&E integrated resource plans (2024 IRP, 2025 IRP, 2026 IRP) and the 2025 request for proposals outcome",
+    "url": "https://ogeenergy.gcs-web.com/node/30186",
+    "what": "Read the 2026 IRP PDF at https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8 (needs the browser-fingerprint route) and the 2025 IRP (OCC copy above), and the US IRPs tab notes in work/irp_us-oklahoma.json. Every gas unit in the preferred portfolio with a site is an add or an update (Horseshoe Lake 13, 14 and 15, Redbud, Tinker, Mustang and River Valley additions); capacity only studied as an option is a watch item with case not_committed. The old oge.com IRP pages return 404; do not call the plan unreachable.",
+    "proof": {
+      "sample": "https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8",
+      "kind": "pdf",
+      "expect": "Integrated Resource Plan"
+    }
+  },
+  {
+    "id": "pso-irp",
+    "name": "Public Service Company of Oklahoma integrated resource plans (2024 IRP, 2026 IRP Refresh)",
+    "url": "https://www.psoklahoma.com/community/projects/irp/",
+    "what": "Read the 2024 IRP report and the 2026 IRP Refresh final report (PDFs under /lib/docs/community/projects/, plain fetch) for the Comanche combined cycle units, the Northeastern gas turbine, the Green Country acquisition, Riverside, Southwestern, Tulsa and Weleetka retirement years, and any new site such as Port of Inola; cite the PDF page.",
+    "proof": {
+      "sample": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+      "kind": "pdf",
+      "expect": "Comanche"
+    }
+  },
+  {
+    "id": "sec-edgar",
+    "name": "SEC EDGAR full-text search for OGE Energy, American Electric Power and Core Scientific filings",
+    "url": "https://efts.sec.gov/LATEST/search-index?q=%22Horseshoe%20Lake%22&forms=10-K",
+    "what": "Search 10-K and 10-Q filings (through fetch.py or url_verifier.py, which send SEC's declared identity) for Horseshoe Lake, Tinker, Redbud, Mustang, River Valley, Comanche, Northeastern, Green Country and Muskogee, and read the generation project tables for capacity, cost, expected in-service year and regulatory approval status; the filing's EDGAR address is the citation.",
+    "proof": {
+      "kind": "json"
+    }
+  },
+  {
+    "id": "wfec",
+    "name": "Western Farmers Electric Cooperative",
+    "url": "https://www.wfec.com/",
+    "what": "Read the news, generation and annual report pages for the Hugo Site A and Site B additions (73.5 and 342 MW, 2029), the Anadarko Roulet units 12 and 13 and the Anadarko unit 1 to 3 retirements, and the Mooreland plant; a cooperative files no OCC preapproval, so its own documents and the SPP queue are the record.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "aeci",
+    "name": "Associated Electric Cooperative (Chouteau owner, Bristow Energy Center operator)",
+    "url": "https://www.aeci.org/",
+    "what": "Read the news and annual report pages (the 2024 annual report is on issuu per Amalia's research note) for Bristow Energy Center's owner, capacity, turbine model and schedule and for Chouteau; the site was not probed on 2026-11-03, so run it through fetch.py first.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "grda",
+    "name": "Grand River Dam Authority",
+    "url": "https://www.grda.com/",
+    "what": "Read the news and board material for Grand River unit 4 (combined cycle, 2026; 426 MW in GEM against 594 MW in EIA and in SPP GEN-2024-GR5), the unit 3 replacement link, the Nowata reciprocating engine request ASGI-2015-004 (56.4 MW) and any Google Pryor data center supply arrangement.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "ompa",
+    "name": "Oklahoma Municipal Power Authority",
+    "url": "https://www.ompa.com/",
+    "what": "Read the generation and news pages for Charles D. Lamb (the 2020-0434-C M-1 air permit in process) and Ponca City, and any new unit announced since 2024.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "evergy-irp",
+    "name": "Evergy integrated resource plan updates (Spring Creek is Evergy Kansas Central)",
+    "url": "https://investors.evergy.com/2026IRPUpdate",
+    "what": "Read the 2026 update and the 2025 update at https://investors.evergy.com/2025IRPUpdate for Spring Creek's retirement or upgrade plans; nothing else in Oklahoma is Evergy's.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "tenaska-kiamichi",
+    "name": "Tenaska (Kiamichi energy facility owner)",
+    "url": "https://www.tenaska.com/",
+    "what": "Read the Kiamichi plant page and news for the 2026-0277-ARR4 permit renewal context and any uprate or ownership change.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "eia-860m",
+    "name": "EIA-860M newest monthly generator file",
+    "url": "https://www.eia.gov/electricity/data/eia860m/",
+    "what": "Read the Operating, Planned, Retired and Canceled or Postponed sheets for Oklahoma in the newest file (work/eia/), and account for every gas or oil plant of 50 MW or more that GEM does not list (Georgia-Pacific Muskogee 10362, 114 MW; Tinker 63628 as the Tinker Air Force Base plant; the Comanche combined cycle generators at plant 8059 for 2029), every planned or canceled unit at a plant it does (Horseshoe Lake 11 to 14, Ripley RP1, Fort Sill Energy Center cancelled below threshold), and every retirement since 2020 (Horseshoe Lake 6 and 7, Anadarko 1 to 3, Ponca 2).",
+    "proof": {
+      "kind": "html",
+      "expect": "860M"
+    }
+  },
+  {
+    "id": "eia-860",
+    "name": "EIA-860 annual survey, ownership and plant tables",
+    "url": "https://www.eia.gov/electricity/data/eia860/",
+    "what": "Read the newest annual Ownership and Plant tables for Oklahoma to confirm owners, shares and street addresses of gas and oil plants (Green Country's merchant owner, Oneta's owner, Kiamichi, Redbud's shares), and the Proposed Generator table for anything the monthly file lacks.",
+    "proof": {
+      "kind": "html",
+      "expect": "860"
+    }
+  },
+  {
+    "id": "eip-oil-gas-watch",
+    "name": "Environmental Integrity Project Oil and Gas Watch, Oklahoma power plant projects",
+    "url": "https://oilandgaswatch.org/",
+    "what": "Use work/ids_us-oklahoma.md from match_ids.py (the EIP sheet join) and the public facility pages for every Oklahoma power plant project EIP lists that GEM lacks, and chase each to the permit it cites; settle the Anadarko, Grand River and Horseshoe Lake status disagreements it raises.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "possible-updates-sheet",
+    "name": "Possible updates sheet, Oklahoma rows",
+    "url": "https://docs.google.com/spreadsheets/d/1GAXwGdI0UFeW9mFSxJhhR6MRBW7VDtlWBqsooVZyUzs",
+    "what": "Read the gas and oil plants tab through the work profile for every Oklahoma row and answer each one in a record or a coverage note. On 2026-11-03 every Oklahoma row was marked done; confirm that at run time."
+  },
+  {
+    "id": "captive-lng-sheet",
+    "name": "Captive LNG sheet, Oklahoma rows",
+    "url": "https://docs.google.com/spreadsheets/d/19YvVT918PYHq_DkdvKWtoXYJ2Xl7l7R3",
+    "what": "Use work/captive_us-oklahoma.json from captive_lng.py. Oklahoma has no LNG terminals with captive generation on the sheet (zero rows on 2026-11-03); record that."
+  },
+  {
+    "id": "data-centers",
+    "name": "Data center gas generation in Oklahoma",
+    "url": "https://www.datacenterdynamics.com/en/search/?q=Oklahoma%20gas%20turbines",
+    "what": "Use scopes/us-ok/work/permits/_data_centers.md from data_center_fleets.py --state Oklahoma, then search trade press, OG&E and PSO releases, the ODEQ table and the SPP special-study rows (GEN-2025-SR series at existing substations) for on-site gas generation and backup engine fleets at Oklahoma campuses (Google Pryor, Core Scientific Muskogee, Artemis Atoka, Stillwater, Tulsa and Oklahoma City sites). A gas-fired data center plant at 50 MW is an add like any other project, and a backup fleet at 50 MW summed nameplate is an add with Backup Power yes; capacity unknown means add with capacity blank. Every site at or above the threshold is answered under data_centers.",
+    "proof": {
+      "kind": "html",
+      "expect": "Oklahoma"
+    }
+  },
+  {
+    "id": "state-news",
+    "name": "Oklahoma news for power plant announcements (Oklahoma Voice, Tulsa World, The Journal Record, The Oklahoman)",
+    "url": "https://oklahomavoice.com/?s=gas+plant",
+    "what": "Search each outlet for gas plant, power plant, data center and each utility name since 2024-01-01, and chase every story to the primary document (a release, a filing, a permit); a story is the second publisher on a status change, never the only source for a capacity.",
+    "proof": {
+      "kind": "html",
+      "expect": "gas"
+    }
+  },
+  {
+    "id": "local-planning-records",
+    "role": "local_records",
+    "name": "City and county planning, zoning and council records",
+    "url": "https://www.okc.gov/",
+    "what": "Open the city and county planning, zoning and council records for every lead and every in-development plant: agendas, staff reports, commission packets, minutes, rezonings, plats, conditional or special use permits, development agreements, building permits, tax abatements (county and the Oklahoma Tax Commission ad valorem exemptions) and the developer's own posted permit application. Oklahoma data center and power sites are approved by the city or county where they sit (Oklahoma City, Tulsa, Pryor and Mayes County, Muskogee and the Port of Muskogee, Stillwater, Atoka County, Creek County, Rogers County, Pittsburg County), and those records name backup generator fleets and turbine counts long before an air permit is filed. Record the body, the meeting date and the document address for every record read.",
+    "proof": {
+      "kind": "html"
+    }
+  }
+]

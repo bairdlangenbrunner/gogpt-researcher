@@ -22,7 +22,12 @@ Hard guarantees enforced here:
     Activity source in Status Data Source (Baird 2026-10-27, manual M621/M637).
     A Status Detail link is keyed under
     "Status Detail" itself and written into the text, never merged into
-    Status Data Source (schema_constants.INLINE_SOURCE_COLUMNS)
+    Status Data Source (schema_constants.INLINE_SOURCE_COLUMNS). A name
+    column (schema_constants.IDENTITY_COLUMNS) has no Data Source column:
+    its evidence sits under "links" and is never merged anywhere.
+  - a `fields` key is never a Data Source column, and a `refs` key is always
+    a real Data Source column, "Status Detail" or "links" (2026-11-03, after
+    the North Dakota batch staged "Fuel Data Source Data Source")
   - blocklist: gem.wiki / globalenergymonitor / abarrelfull / wikidot /
     theodora URLs anywhere in refs are a build ERROR
   - zero-verified-ref updates/newplants/newunits records (same exceptions)
@@ -74,8 +79,9 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from schema_constants import (ADDITIVE_TEXT_COLUMNS, INLINE_SOURCE_COLUMNS,
-                              READ_ONLY_COLUMNS, milestone_label)
+from schema_constants import (ADDITIVE_TEXT_COLUMNS, EVIDENCE_KEY, IDENTITY_COLUMNS,
+                              INLINE_SOURCE_COLUMNS, READ_ONLY_COLUMNS,
+                              RESEARCH_FIELDS, is_data_source_column, milestone_label)
 from colmap import load_colmap
 import geo
 from paths import gem_export_csv
@@ -607,8 +613,15 @@ IRP_NOTES_HEADER = ["utility", "irp_year", "is_draft", "plan_links", "next_irp_d
 def ref_col_for(value_col):
     """Pair a value column with its Data Source column per the export layout.
     A column in INLINE_SOURCE_COLUMNS (Status Detail) is its own source: the
-    link is written into its text."""
+    link is written into its text. An identity column (Plant name, Unit name,
+    Other Name(s)) has no Data Source column: its evidence goes under
+    EVIDENCE_KEY. A Data Source column comes back unchanged, so this can never
+    invent "Fuel Data Source Data Source" (2026-11-03)."""
     if value_col in INLINE_SOURCE_COLUMNS:
+        return value_col
+    if value_col in IDENTITY_COLUMNS:
+        return EVIDENCE_KEY
+    if is_data_source_column(value_col):
         return value_col
     special = {
         "Status": "Status Data Source",
@@ -641,6 +654,25 @@ def ref_col_for(value_col):
         "Conversion/replacement?": "Conversion/replacement Data Source",
     }
     return special.get(value_col, f"{value_col} Data Source")
+
+
+PLACE_COLUMNS = ("City", "State/Province", "Local area (taluk, county)",
+                 "Major area (prefecture, district)")
+
+
+def value_cols_for(ds_col):
+    """The value columns a Data Source column backs, in export order:
+    "Location Data Source" -> Latitude, Longitude, Location accuracy, City...;
+    "Fuel Data Source" -> Fuel. The reverse of ref_col_for, for a finding that
+    was keyed on the box instead of the value."""
+    seen, out = set(), []
+    for col in list(RESEARCH_FIELDS) + list(PLACE_COLUMNS):
+        if col in seen:
+            continue
+        seen.add(col)
+        if ref_col_for(col) == ds_col:
+            out.append(col)
+    return out
 
 
 URL_RE = re.compile(r"https?://\S+")
@@ -815,6 +847,16 @@ def validate(lanes):
                 for col in r.get("fields", {}):
                     if col in READ_ONLY_COLUMNS:
                         errors.append(f"{ident}: staged edit to READ-ONLY column {col!r}")
+                    if is_data_source_column(col):
+                        errors.append(f"{ident}: {col!r} is a Data Source column, not a value "
+                                      "column; key the finding on the value it backs")
+                for key in (r.get("refs") or {}):
+                    if not (is_data_source_column(key) or key in INLINE_SOURCE_COLUMNS
+                            or key == EVIDENCE_KEY):
+                        errors.append(f"{ident}: refs key {key!r} is not a Data Source "
+                                      f"column (or {EVIDENCE_KEY!r} for a name change)")
+                    elif key.count(" Data Source") > 1:
+                        errors.append(f"{ident}: refs key {key!r} doubles the Data Source suffix")
                 errors += additive_errors(rec, r, ident)
                 errors += location_errors(r, ident)
                 urls = [u for us in r.get("refs", {}).values() for u in us]
@@ -968,6 +1010,8 @@ def backend_format_rows(lanes, export_csv):
         for ref_col, urls in refs.items():
             if ref_col in INLINE_SOURCE_COLUMNS:
                 continue        # the link is already in the text of the box
+            if ref_col == EVIDENCE_KEY:
+                continue        # evidence for a name change; no Data Source cell
             if ref_col not in col_idx:
                 print(f"  WARNING: {ident}: column {ref_col!r} not in export "
                       "header — skipped in edit_backend_format")

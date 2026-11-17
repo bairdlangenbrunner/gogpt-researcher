@@ -1,0 +1,205 @@
+{
+ "meta": {
+  "plant_id": "L100000104122",
+  "plant_name": "Grand River Energy Center",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T11:02:09-05:00",
+  "done": true,
+  "urls_attempted": 7,
+  "urls_verified": 7
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402963",
+   "unit_name": "1",
+   "findings": {},
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "Unit 1 is listed as retired in December 2020 in the EIA-860M table for September 2026. No document states a backup power value for this unit, so Backup Power is left as it is."
+  },
+  {
+   "gem_unit_id": "G100000401629",
+   "unit_name": "3",
+   "findings": {},
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "The EIA-860M table for September 2026 still lists generators 3CT and 3ST as operating, with no planned retirement. No retirement, mothballing or sale was found. No document states a backup power value, so Backup Power is left as it is."
+  },
+  {
+   "gem_unit_id": "G100000414263",
+   "unit_name": "4",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.publicpower.org/periodical/article/grand-river-dam-authority-formally-dedicates-unit-4-grand-river-energy-center",
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.publicpower.org/periodical/article/grand-river-dam-authority-formally-dedicates-unit-4-grand-river-energy-center",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "milestones": [
+      {
+       "status": "operating",
+       "year": 2026,
+       "period": "September",
+       "sources": [
+        "https://www.publicpower.org/periodical/article/grand-river-dam-authority-formally-dedicates-unit-4-grand-river-energy-center",
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "The EIA-860M table for September 2026 lists unit 4 as operating with an operating date of September 2026. The American Public Power Association article of September 9, 2026 says the unit was formally dedicated and reached commercial operation in 2026."
+      }
+     ],
+     "note": "The EIA-860M table for September 2026 (plant 165, generator 4) lists the unit as operating since September 2026. An American Public Power Association article from September 9, 2026 describes the formal dedication of Unit 4. The status of operating stays. The Energy Impact Partners page and the Sierra Club list that show under construction are out of date."
+    },
+    "Capacity (MW)": {
+     "value": "426",
+     "refs": [
+      "https://www.publicpower.org/periodical/article/grand-river-dam-authority-formally-dedicates-unit-4-grand-river-energy-center"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.publicpower.org/periodical/article/grand-river-dam-authority-formally-dedicates-unit-4-grand-river-energy-center",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The American Public Power Association article from September 9, 2026 says Unit 4 has a 426 megawatt Mitsubishi Power combustion turbine in simple cycle. The EIA-860M table for September 2026 gives 594 MW nameplate for generator 4. Both are in the question about capacity. GEM's 426 MW matches the owner's stated rating."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "Unit 4 is operating. The owner says 426 MW and EIA says 594 MW nameplate. No retirement, mothballing or owner change was found. The Oklahoma Department of Environmental Quality permit memo lists a 2.5 MW diesel emergency generator for the Unit 4 project, but it does not say the unit is a backup power unit."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000414263",
+   "concern_type": "Capacity (MW)",
+   "question": "Should unit 4 capacity stay at 426 MW or change to 594 MW?",
+   "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) gives 594.0 MW nameplate for generator 4, and the Southwest Power Pool queue entry GEN-2024-GR5 (https://opsportal.spp.org/Studies/GIActive) lists 594 MW as a gas and storage hybrid. The owner's dedication article (https://www.publicpower.org/periodical/article/grand-river-dam-authority-formally-dedicates-unit-4-grand-river-energy-center) says 426 MW. A 2024 permit memo (https://applications.deq.ok.gov/permitspublic/storedpermits/8824.pdf) lists a 453 MW turbine.",
+   "recommendation": "Leave 426 MW for now. If the generator nameplate is 594 MW, change it to 594.",
+   "note": "The three numbers describe different ratings. Queue entry GEN-2024-GR5 is a replacement request, with a cessation date of 16 September 2026 and a summer rating of 554 MW against a winter rating of 594 MW in the open list at https://opsportal.spp.org/Studies/GenerateActiveCSV, read on 5 November 2026. That points to ratings that change with the season, not to extra storage capacity. A rating of 594 MW is a winter figure.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://opsportal.spp.org/Studies/GIActive",
+    "https://www.publicpower.org/periodical/article/grand-river-dam-authority-formally-dedicates-unit-4-grand-river-energy-center",
+    "https://applications.deq.ok.gov/permitspublic/storedpermits/8824.pdf"
+   ],
+   "proposed_value": {
+    "Capacity (MW)": "594"
+   }
+  },
+  {
+   "gem_unit_id": "G100000401629",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "Which older unit did unit 3 replace?",
+   "finding": "A Black and Veatch project page (https://www.bv.com/projects/power-plant-replacement-project-brings-price-certainties-cleaner-air) names the project Grand River Energy Center Units 2 and 3, which suggests the combined cycle replaced older unit 2. The EIA-860M table for September 2026 still lists a coal unit 2 as operating at 594 MW.",
+   "recommendation": "Find the GEM unit ID of the coal unit 2 at this plant and, if it exists, put it in the replacement link for unit 3. If no unit 2 record exists, ask the project manager whether to add one.",
+   "note": "I could not read the GEM unit ID for unit 2 from the brief. I did not find a document that says plainly which unit unit 3 replaced.",
+   "refs": [
+    "https://www.bv.com/projects/power-plant-replacement-project-brings-price-certainties-cleaner-air"
+   ]
+  },
+  {
+   "gem_unit_id": "",
+   "concern_type": "duplicate",
+   "question": "Is Southwest Power Pool request GEN-2025-SR19 at the Maid 161 kV substation part of the Grand River Energy Center?",
+   "finding": "The request is for 100 MW, owned by the Grand River Dam Authority, with no fuel shown, near Chouteau, with commercial operation in November 2029 in the open list at https://opsportal.spp.org/Studies/GenerateActiveCSV, read on 5 November 2026. The Grand River Energy Center connects at its own 345 kV substation, which is a different connection point.",
+   "recommendation": "Keep GEN-2025-SR19 as its own new project and add no unit at the Grand River Energy Center.",
+   "note": "The queue list gives no site address or project name for this request. I found no air permit or board document that places it at the Grand River Energy Center.",
+   "refs": [
+    "https://opsportal.spp.org/Studies/GIActive"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Plant 165 rows read from the file: generator 4 operating, 594 MW, September 2026."
+  },
+  {
+   "url": "https://www.publicpower.org/periodical/article/grand-river-dam-authority-formally-dedicates-unit-4-grand-river-energy-center",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Dedication article."
+  },
+  {
+   "url": "https://www.kjrh.com/news/local-news/525m-power-plant-opens-at-grda-complex",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Existing link, loads."
+  },
+  {
+   "url": "https://opsportal.spp.org/Studies/GIActive",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Queue page loads; entry GEN-2024-GR5 is a lead only."
+  },
+  {
+   "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8824.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Permit memo lists a 453 MW turbine and a 2.5 MW emergency generator."
+  },
+  {
+   "url": "https://www.bv.com/projects/power-plant-replacement-project-brings-price-certainties-cleaner-air",
+   "used_for": [
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "Project named Units 2 and 3."
+  },
+  {
+   "url": "https://opsportal.spp.org/Studies/GIActive",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "not relevant",
+   "note": "Not needed. GEN-2025-SR19 lead was not chased."
+  }
+ ]
+}

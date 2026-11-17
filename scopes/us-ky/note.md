@@ -1,0 +1,47 @@
+# United States — Kentucky
+
+Scope tag `us-ky`. The 2026-11-04 scoped export holds 72 unit rows at 23 plants: 51 operating, 9 pre-construction, 5 mothballed, 4 announced, 3 construction. The roster (Update sheet row 47) counts 16 units in development, 7,895.9 MW. The batch is for Baird's own review page. Kentucky sits on four grids: PJM in the east and north (Kentucky Power, East Kentucky Power Cooperative, Duke Energy Kentucky), MISO in the west (Big Rivers, and Owensboro Municipal Utilities from 2027), the LG&E and KU balancing area in the center (Louisville Gas and Electric and Kentucky Utilities run their own area outside both markets), and the Tennessee Valley Authority in the far west (Paradise, Shawnee, Marshall).
+
+## State context
+
+- **Grid operators.** PJM (planning queues XML; Kentucky rows carry state KY and a point of interconnection), MISO (getprojects JSON; the Big Rivers rows), LG&E and KU (an OASIS queue behind an OATI sign-in; projects are answered from commission cases and permits), TVA (an OASIS queue behind a sign-in; projects are answered from TVA's environmental reviews and board record).
+- **Regulator.** The Kentucky Public Service Commission regulates Kentucky Power, EKPC, Big Rivers, LG&E and KU and Duke Energy Kentucky (certificates of public convenience and necessity for every new unit, retirement approvals, integrated resource plans every three years). It does not regulate TVA, the municipal utilities (Owensboro Municipal Utilities, Paducah Power, the KYMEA members) or merchant plants, which go to the State Board on Electric Generation and Transmission Siting for a construction certificate. The commission's site has a whole-year case list page per year (case number, filing date, category, utility and title for every case), a filings page per case with open PDF links, and sibling Public, Hearings and Post tabs; nothing needs a sign-in.
+- **Air permits.** The Division for Air Quality permits everything outside Jefferson County; its complete record is the DEP eSearch API (agency interest, issued and pending approvals, document download), and its public notices page lists only draft permits at comment. The API also answers statewide calls with no name: on 2026-11-04 it held 18,404 issued air approvals, 809 pending ones and 6,220 agency interests. Pending approvals have their own document path. The Louisville active permit page lists operating permits only; construction permits are found through the proposed-actions page and the permit documents. Jefferson County (Louisville: Mill Creek, Cane Run, Paddy's Run, every Louisville data center) is permitted by the Louisville Metro Air Pollution Control District, whose pages need the browser-fingerprint route; Mill Creek's agency interest in eSearch has no Air program.
+- **Utilities and owners to read.** Kentucky Power (AEP; the Lawrence County combined cycle, case 2026-00324; Big Sandy 1 to 2041; Mitchell exit). EKPC (Liberty Station under construction since May 2026; Cooper CC1 under construction notice October 30, 2026 in case 2024-00370; Cooper 2 and Spurlock 1 to 4 co-firing; PJM row C01-1227 at Spurlock to Meldahl Dam; Bluegrass; J K Smith). LG&E and KU, PPL (Mill Creek 5 under construction, Mill Creek 6 and Brown 12 certified in 2025-00045; Cane Run; Trimble County; Paddy's Run; the 8 GW data center pipeline). Big Rivers (Green Station to 2029, Reid combustion turbine retirement and Green backup fuel in 2026-00291; 2026 IRP in 2026-00268; the 2023 IRP combined cycle placeholder; MISO row J3089 withdrawn). Duke Energy Kentucky (East Bend diesel co-firing 2030, unit 3 combined cycle 2039). KYMEA (Energy Center I, 75.2 MW of engines at Madisonville, through Big Rivers; MISO row S1073). Owensboro Municipal Utilities (Elmer Smith site leased or sold to Green River East GenCo, LLC, a Delaware company registered in Kentucky February 6, 2026, for a 545 MW plant). Paducah Power (PPS No 1). Middle River Power (Big Sandy Peaker, which EIA lists in West Virginia). NRG (Riverside). TVA (Paradise, Marshall, Shawnee).
+- **Resource plans.** Commission cases 2023-00092 (Kentucky Power), 2023-00310 and 2026-00268 (Big Rivers), 2024-00197 (Duke), 2024-00326 (LG&E and KU), 2025-00087 (EKPC), 2026-00167; TVA's 2026 plan on its own site; KYMEA's plan in its board record. The US IRPs tab of the Update sheet carries the colleague's notes per utility.
+- **Data centers.** TeraWulf (commission cases 2026-00115 Justified Datapower and 2026-00323 DB Long Hunts Data), the PPL and Blackstone venture behind LG&E's pipeline, a Meta site in Mason County (a public notice of October 23, 2026 names a gas turbine or a small reactor), EKPC's data center tariff case 2025-00140, and sites talked about in Bowling Green, Hopkinsville, Elizabethtown, northern Kentucky and Paducah. Each is answered under `data_centers`.
+
+## Recent events 2024 to 2026
+
+- 2024: EKPC filed Liberty Station (2024-00310) and Cooper CC1 (2024-00370); Duke's and LG&E and KU's IRPs filed; Green Station conversion approved earlier (2021-00079) and running on gas.
+- 2025: the commission approved Mill Creek 6 and Brown 12 (2025-00045) and Liberty; EKPC's IRP (2025-00087); EKPC's 2025-00415 certificate case closed May 5, 2026; Kentucky Power announced 480 MW of turbines (added to GEM November 17, 2025 as a placeholder); air permits V-25-006 (Liberty) and V-25-010 (KYMEA) issued.
+- 2026: EKPC broke ground at Liberty (May 20); Big Rivers filed its IRP (September 29) and the Reid retirement and Green backup fuel case (2026-00291); Kentucky Power withdrew 2026-00103 and gave notice of intent (October 30) for the Lawrence County combined cycle (2026-00324); EKPC's Cooper construction commencement notice (October 30, Post tab of 2024-00370); the Bluegrass Title V revision went to notice (October 28 to November 27); Green River East GenCo registered (February 6) for the Elmer Smith site; TeraWulf's Kentucky cases.
+
+## Watch items to raise with the reviewer
+
+- Big Sandy Peaker Plant: EIA plant 55284 is in Kenova, Wayne County, West Virginia; GEM has it in Kentucky. Settle the state and the county from the owner's site and the EIA address.
+- The two IRP placeholders (BREC 2023 IRP power station, KPCO 2023 IRP power station): the 2026 Big Rivers plan and Kentucky Power's 2026-00324 application supersede the 2023 plans; each placeholder becomes a named project, a renamed record or a question.
+- Cooper 2, East Bend 2 and Spurlock 1 to 4 second-timepoint rows: EIA lists the units as operating on coal; GEM carries the gas co-firing rows as pre-construction with no date. The conversion year convention applies.
+- Marshall CT4 to CT8: mothballed, undated steps, no Latest Activity; CAMPD operating hours say whether they ran.
+- Mill Creek 2: the retirement year in GEM against the 2026 LG&E application to run it longer (Louisville APCD proposed actions).
+- J K Smith turbine nameplates: GEM 149 and 108 MW against EIA 119 and 87.6 MW.
+- Every Latest Activity is blank in the export; every in-development unit has an undated status history step (22 validation fix items).
+
+## Still open
+
+- The county minutes a person must ask for: the bodies in the not_posted list of the local records harvest (several counties post no minutes).
+- The Henderson City-County Planning Commission held a public hearing on November 3, 2026 on a proposed two-year moratorium on data centers. Read the outcome and any data center it names.
+- The access proof run and its NO lines.
+- The per-plant EDGAR full-text queries (Mill Creek, Brown, Cane Run, Cooper, Big Sandy, Riverside, Elmer Smith, Mitchell) were not run during planning; the EDGAR route is proven and the sweep runs them.
+
+## Gotchas
+
+- Louisville APCD pages, tva.com, omu.org, Kentucky Lantern, NKyTribune and Union County need the browser-fingerprint route (`cf_impersonate`); Louisville Business First and webstercountyky.com need the full Chrome page load; Gannett and McClatchy news sites (Courier Journal, Herald-Leader, The Gleaner) answer 402 and need `fetch.py --render`.
+- paducahpower.com fails certificate verification (`insecure`).
+- The eSearch document path takes percent-encoded JSON; unencoded JSON answers a 400.
+- The commission's year list has a filing date per case but no RSS; the filings page dates each filing. ViewCaseDetails redirects; the case search POST answers 500. Electronic filing links carry the filer's email address in the path; cite the link as it is.
+- pulaskigov.com, mccrackencountyky.gov and kypublicnotice.com need a Chrome User-Agent (a bare one answers 405 or 406); kypublicnotices.com (plural) is the wrong host, so is web.sos.ky.gov (404) and ompc.org (a church; the planning commission is iompc.org).
+- Scanned county minutes need OCR (`pdftoppm` then `tesseract`); ocrmypdf is not installed. `harvest_local.py` does this itself.
+- Local records readers: Louisville through the Legistar API, Madisonville through the CivicClerk API, Henderson County, City of Henderson, Clark, Marshall, Hardin and Boyd through CivicPlus AgendaCenter, Pulaski, Daviess and Somerset through the WordPress media API, the rest from their index pages. Boyd's AgendaCenter has nothing newer than 2024. Harrodsburg names its files by a hash, so the date comes from the table row. Maysville keeps one agenda and minutes page per year.
+- Mill Creek, Cane Run and Paddy's Run permits are not in DEP eSearch (Jefferson County is APCD).
+- Sierra Club's list is reference only, never cited; EIP and Cleanview are leads.

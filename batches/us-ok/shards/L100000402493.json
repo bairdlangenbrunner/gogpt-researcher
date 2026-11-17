@@ -1,0 +1,57 @@
+{
+ "meta": {
+  "plant_id": "L100000402493",
+  "plant_name": "Frontier power station",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T11:01:56-05:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401716",
+   "unit_name": "CC01",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (released October 23, 2026) lists this unit as operating with no planned retirement year. Plant 50558, generators GT01 and ST01, status OP, nameplate 87.2 and 44.2 MW, combined cycle, operating September 1989, no planned retirement year. The file shows no retirement, mothballing or change of status."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "The unit is still operating and no retirement is planned in the EIA table. I found no document that states a backup power value for this unit, so the current value was left alone."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet of the downloaded file for the plant code. This was the only source used, in line with the brief's last-check task."
+  }
+ ]
+}

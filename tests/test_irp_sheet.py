@@ -279,3 +279,11 @@ def test_build_refuses_irp_outside_the_us(tmp_path):
     assert brp.is_us(lanes) is False
     with pytest.raises(SystemExit):
         brp.load_irp(tmp_path / "missing.json")
+
+
+def test_ampersand_aliases_expand():
+    """'OG&E' normalizes to 'og & e'; the alias table is keyed the same way."""
+    for short, owner in [("OG&E", "Oklahoma Gas and Electric Co"), ("LG&E", "Louisville Gas & Electric Co"),
+                         ("PSO", "Public Service Co of Oklahoma")]:
+        longs, _ = irp_sheet.utility_variants(short)
+        assert irp_sheet.match_owner(owner, longs), short

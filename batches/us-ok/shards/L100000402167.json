@@ -1,0 +1,146 @@
+{
+ "meta": {
+  "plant_id": "L100000402167",
+  "plant_name": "Ponca City power station",
+  "state": "Oklahoma",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T08:30:00-05:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403323",
+   "unit_name": "4",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (plant 7546) lists generator 4, 60.5 MW, combustion turbine, 2003 as operating with no planned retirement. The permit memo from April 2019 at https://applications.deq.ok.gov/permitspublic/storedpermits/4608.pdf shows no retirement plan. No sale or mothballing was found in a web search."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://applications.deq.ok.gov/permitspublic/storedpermits/4608.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      },
+      {
+       "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/4608.pdf",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists the plant as an electric utility plant, and the Oklahoma Department of Environmental Quality memo from April 2019 at https://applications.deq.ok.gov/permitspublic/storedpermits/4608.pdf describes it as an electricity generation plant with diesel emergency generators as separate equipment. So the value of no stands."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year",
+    "Owner change"
+   ],
+   "notes": "No retirement, mothballing or owner change was found."
+  },
+  {
+   "gem_unit_id": "G100000402159",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (plant 7546) lists generators 1 and 3, 19.8 MW steam and 54.0 MW turbine, combined cycle, 1995 as operating with no planned retirement. The permit memo from April 2019 at https://applications.deq.ok.gov/permitspublic/storedpermits/4608.pdf shows no retirement plan. No sale or mothballing was found in a web search."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://applications.deq.ok.gov/permitspublic/storedpermits/4608.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      },
+      {
+       "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/4608.pdf",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists the plant as an electric utility plant, and the Oklahoma Department of Environmental Quality memo from April 2019 at https://applications.deq.ok.gov/permitspublic/storedpermits/4608.pdf describes it as an electricity generation plant with diesel emergency generators as separate equipment. So the value of no stands."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year",
+    "Owner change"
+   ],
+   "notes": "No retirement, mothballing or owner change was found. The permit memo says unit 3 can also burn fuel oil, which GEM does not list."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Rows for generators 1, 3 and 4 operating."
+  },
+  {
+   "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/4608.pdf",
+   "used_for": [
+    "Status",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "2019 permit memo, four primary units, GE LM6000 turbines."
+  }
+ ]
+}
