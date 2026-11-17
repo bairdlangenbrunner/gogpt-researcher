@@ -6,7 +6,7 @@ Wisconsin is a full-state update for Amalia Llano's review page, planned 2026-11
 
 Settled by the request (Baird 2026-11-17):
 
-- The batch stages into Amalia's page (`new-york-maryland` in `review_app/artifacts.json`, https://claude.ai/artifact/7bnX9RMity3Yw5mdaojNaL). Add `batches/us-wi/staging` to that page's dirs before the rebuild.
+- The batch stages into Amalia's page (`amalia` in `review_app/artifacts.json`, https://claude.ai/artifact/7bnX9RMity3Yw5mdaojNaL). Add `batches/us-wi/staging` to that page's dirs before the rebuild.
 - Mode is `update`, every plant, in the order `worklist.py` gives (28 priority-1 rows first, then French Island's 2030 retirements, then the operating rest).
 
 Confirmed by Baird 2026-11-17:
@@ -282,8 +282,8 @@ E. **Assemble and gate.**
    - `entity_lookup.py` for Invenergy's project LLCs, Dairyland, MGE, Vantage's and Meta's site LLCs, and every new owner.
 F. **Deliverables and page.**
    - `build_review_package.py --staging-dir batches/us-wi/staging --scope us-wi --mode update --irp` with a fresh stamp.
-   - Add `batches/us-wi/staging` to the `new-york-maryland` page dirs, then `review_app/build_all.py --only new-york-maryland`.
-   - Publish to https://claude.ai/artifact/7bnX9RMity3Yw5mdaojNaL from the work profile, then `build_all.py --mark-published new-york-maryland`.
+   - Add `batches/us-wi/staging` to the `amalia` page dirs, then `review_app/build_all.py --only amalia`.
+   - Publish to https://claude.ai/artifact/7bnX9RMity3Yw5mdaojNaL from the work profile, then `build_all.py --mark-published amalia`.
 G. **Drafts for a person.**
    - IDs to type: Red Oak Ridge EIA 70453, Riverside EIA 64020, South Oak Creek EIA 4041 (not Weston 4130), and the codes for Fitchburg and Elk Mound once added.
    - The IRP boxes to tick, and draft US IRPs tab rows and Notes lines for each utility beyond WEC.

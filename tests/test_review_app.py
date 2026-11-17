@@ -744,7 +744,7 @@ def test_build_all_check_reports_unmarked_and_exits_1(capsys, monkeypatch, tmp_p
         build_all.main(["--check"])
     assert e.value.code == 1
     out = capsys.readouterr().out
-    assert "unmarked" in out and "germany" in out
+    assert "unmarked" in out and "dan" in out
 
 
 def test_build_all_adapter_resolves_explicit_dirs():

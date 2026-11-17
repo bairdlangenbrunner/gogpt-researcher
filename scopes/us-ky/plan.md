@@ -4,7 +4,7 @@ Kentucky is a full-state update for Baird's own review page, planned 2026-11-04 
 
 ## Decisions (settled by Baird 2026-11-04)
 
-- The batch stages into Baird's own review page (the `illinois` page in `review_app/artifacts.json`, reviewer Baird Langenbrunner, https://claude.ai/artifact/8C7yTha7YC2eYUdWxJ5Eik); add `batches/us-ky/staging` to that page's dirs before the rebuild. Nothing goes to Amalia's New York and Maryland page.
+- The batch stages into Baird's own review page (the `baird` page in `review_app/artifacts.json`, reviewer Baird Langenbrunner, https://claude.ai/artifact/8C7yTha7YC2eYUdWxJ5Eik); add `batches/us-ky/staging` to that page's dirs before the rebuild. Nothing goes to Amalia's New York and Maryland page.
 - Mode is `update`, every plant, in-development units first (the manual's ladder through `worklist.py`), then planned retirements (Big Sandy 1 in 2041, Green 1 and 2 in 2029), then mothballed (Marshall CT4 to CT8), then the operating rest.
 - Persistence is the rule: a search form, a portal, a paged table or a bot challenge is never "blocked"; it is scripted (the harvesters below) or read through the fetch ladder, and only a sign-in wall is a human wall, written in `coverage.json` as a sentence that says what a person does.
 - Models per step follow the dispatch rule in `docs/workflows.md`: harvesters and the cheap sweep on Sonnet, the location review and the scope-wide pass on Opus or Fable, assembly and gates in the main loop.
@@ -90,7 +90,7 @@ D. **Location pass.** The two placeholders and any plant handed back with `locat
 
 E. **Assemble and gate.** `assemble_state.py --batch batches/us-ky`; `dedup_check.py --batch batches/us-ky`; `python scripts/state_gate.py --batch batches/us-ky --validation work/validation_us-kentucky.json --entity-check --strict-questions --strict-proof`; `qc_checks.py --staged` zero errors; `entity_lookup.py` before any new owner (Green River East GenCo, LLC; the Lawrence County project company; each data center entity).
 
-F. **Deliverables.** `python scripts/build_review_package.py --staging-dir batches/us-ky/staging --scope us-ky --mode update --irp` with a fresh stamp; add `batches/us-ky/staging` to the `illinois` page in `review_app/artifacts.json`; `review_app/build_all.py --only illinois`; publish to https://claude.ai/artifact/8C7yTha7YC2eYUdWxJ5Eik from the work profile; `build_all.py --mark-published illinois`.
+F. **Deliverables.** `python scripts/build_review_package.py --staging-dir batches/us-ky/staging --scope us-ky --mode update --irp` with a fresh stamp; add `batches/us-ky/staging` to the `baird` page in `review_app/artifacts.json`; `review_app/build_all.py --only baird`; publish to https://claude.ai/artifact/8C7yTha7YC2eYUdWxJ5Eik from the work profile; `build_all.py --mark-published baird`.
 
 G. **Drafts for a person.** The IDs to type into Other IDs (Liberty EIA 69726, Reid GEN2, Cooper's EIP id, the EIA codes for Cooper, East Bend, Elmer Smith and Spurlock that are coal-only today), the IRP boxes to tick and the Notes lines per utility (`irp_box`, `irp_notes_draft`), the clerk emails for the counties with no posted minutes, the RBLC export, and the `validation` close-out and `COMMENTS CLEAN` checks before the roster row moves.
 

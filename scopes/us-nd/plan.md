@@ -4,7 +4,7 @@ Planned 2026-10-29 for Amalia Llano's North Dakota assignment. Scope tag `us-nd`
 
 ## Decisions (settled by Baird 2026-10-29)
 
-Amalia asked Baird to run this batch and she is its reviewer: the staging goes onto her existing review page (`new-york-maryland` in `review_app/artifacts.json`).
+Amalia asked Baird to run this batch and she is its reviewer: the staging goes onto her existing review page (`amalia` in `review_app/artifacts.json`).
 
 - Amalia is editing North Dakota this week (Last Updated 2026-10-28 and 2026-10-29 on most rows; Base Electron, Polaris Forge, Applied Digital and Nakota were added or expanded by her). Re-pull at run time, treat her values as the baseline, and stage an edit against one of her values only when a verified source disagrees.
 - Model per step: Sonnet for the per-plant sweep and the scripted harvesting, Opus for the statewide agent and the second location look, the main loop for gate and merge calls.

@@ -1,11 +1,11 @@
 """
 Record map pictures uploaded to an artifact page, so the next build of that page shows them.
 
-    python review_app/build_all.py --assets new-york-maryland          # the files that page has not uploaded yet
+    python review_app/build_all.py --assets amalia          # the files that page has not uploaded yet
     (upload them with the Artifact tool: publish, url = the page's url, asset: true, file_paths = up to 25 of them)
-    python review_app/map_assets.py --page new-york-maryland NAME=URL ...
-    python review_app/map_assets.py --page new-york-maryland --uploads results.json     # {"<asset name>": "<url>", ...}
-    python review_app/build_all.py --only new-york-maryland               # rebuild with the urls filled in, then publish
+    python review_app/map_assets.py --page amalia NAME=URL ...
+    python review_app/map_assets.py --page amalia --uploads results.json     # {"<asset name>": "<url>", ...}
+    python review_app/build_all.py --only amalia               # rebuild with the urls filled in, then publish
 
 NAME is the uploaded file's name in work/review_assets/ (<sha256>.jpg or .png); a path to it works too. URL is
 the url the upload returned, as given. The record goes into review_app/assets.json (review_core/assets.py), which

@@ -6,7 +6,7 @@ New Mexico is a full-state update for Amalia Llano's review page, planned 2026-1
 
 Settled by the request (Baird 2026-11-17):
 
-- The batch stages into Amalia's page (`new-york-maryland` in `review_app/artifacts.json`, https://claude.ai/artifact/7bnX9RMity3Yw5mdaojNaL). Add `batches/us-nm/staging` to that page's dirs before the rebuild.
+- The batch stages into Amalia's page (`amalia` in `review_app/artifacts.json`, https://claude.ai/artifact/7bnX9RMity3Yw5mdaojNaL). Add `batches/us-nm/staging` to that page's dirs before the rebuild.
 - Mode is `update`, every plant, in the order `worklist.py` gives (25 priority-1 rows first).
 
 Defaults this plan takes unless Baird says otherwise:
@@ -185,8 +185,8 @@ E. **Assemble and gate.**
    - `entity_lookup.py` for Tri-State, Greater Kudu LLC, Zenith Volts and each project LLC.
 F. **Deliverables and page.**
    - `build_review_package.py --staging-dir batches/us-nm/staging --scope us-nm --mode update --irp` with a fresh stamp.
-   - Add `batches/us-nm/staging` to the `new-york-maryland` page dirs, then `review_app/build_all.py --only new-york-maryland`.
-   - Publish to https://claude.ai/artifact/7bnX9RMity3Yw5mdaojNaL from the work profile, then `build_all.py --mark-published new-york-maryland`.
+   - Add `batches/us-nm/staging` to the `amalia` page dirs, then `review_app/build_all.py --only amalia`.
+   - Publish to https://claude.ai/artifact/7bnX9RMity3Yw5mdaojNaL from the work profile, then `build_all.py --mark-published amalia`.
 G. **Drafts for a person.**
    - IDs to type: Lordsburg EIA 7967, Pyramid's codes once added, and the Project Jupiter EIP id.
    - The EIP sheet row to paste, the IRP boxes to tick and the Notes lines per utility.
