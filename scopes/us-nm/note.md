@@ -4,7 +4,7 @@ Scope tag `us-nm`. The scoped export pulled on 2026-11-17 holds 52 unit rows at 
 
 ## State context
 
-- **Grids.** The east of the state is in the Southwest Power Pool. That area is Lea, Eddy, Chaves, Roosevelt and Curry counties, served by Xcel's Southwestern Public Service (SPS). The SPP active queue is an open CSV. The rest of the state has no market. PNM, El Paso Electric (EPE, which serves the Las Cruces area), Tri-State and its member cooperatives, Farmington Electric Utility System and Los Alamos County each run their own interconnection. EPE posts its active queue as a PDF. PNM and Tri-State requests are read from the Lawrence Berkeley National Laboratory queue file until their own lists are found.
+- **Grids.** The east of the state is in the Southwest Power Pool. Since the 2026 western expansion the SPP queue also carries Farmington Electric's requests (FEUS-1 to FEUS-5). That area is Lea, Eddy, Chaves, Roosevelt and Curry counties, served by Xcel's Southwestern Public Service (SPS). The SPP active queue is an open CSV. The rest of the state has no market. PNM, El Paso Electric (EPE, which serves the Las Cruces area), Tri-State and its member cooperatives, Farmington Electric Utility System and Los Alamos County each run their own interconnection. EPE posts its active queue as a PDF. PNM and Tri-State requests are read from the Lawrence Berkeley National Laboratory queue file until their own lists are found.
 - **Regulator.** The New Mexico Public Regulation Commission (PRC) regulates PNM, SPS and EPE. That covers resource plans every three years, certificates for new plants, abandonment approvals for retirements and data center tariffs. Its docket system is PRCe360 (`e360.prc.nm.gov`). It is open to guests, and documents download through a token request. The old e-docket addresses are dead.
 - **Air permits.**
   - The New Mexico Environment Department Air Quality Bureau permits everything outside Bernalillo County. Its complete record is APMAP, a facility map with an open data service. Every facility has an AI number and a public document collection on `cloud.env.nm.gov`.
@@ -58,6 +58,7 @@ Scope tag `us-nm`. The scoped export pulled on 2026-11-17 holds 52 unit rows at 
 - Cunningham 1: EIA gives the retirement year as 2024, and GEM gives 2023.
 - NTEC gas plant: GEM has 18 units at 60.5 MW, which is 1,089 MW. The EPA draft permit says 742 MW. GEN13-18 is one row of 363 MW.
 - Westside: GEM and EIA list 3 units. The NMED application lists 16 engines.
+- Queue requests to answer: Farmington Electric's five gas requests in the SPP queue (60 to 180 MW at Bloomfield, Kirtland and La Plata), PNM's 172 MW gas request at the Reeves substation (IA-PNM-2025-20, 2029) and APS Q610 (250 MW at Four Corners, fuel not given).
 - Pyramid: an operating Tri-State plant of 186 MW (EIA 7975) that GEM lacks.
 - Lordsburg: the owner is recorded as "PNM Resources Inc" rather than the operating company. EIA 7967 is missing from Other IDs.
 - The PNM and SPS 2023 resource plan placeholders: the 2026 plans supersede them.

@@ -1,0 +1,68 @@
+{
+  "_about": "Queue settings for pull_queues.py --state NM. name is the State/Province value in the GEM export. markets are the queues read. The east of New Mexico (Southwestern Public Service, Xcel) is in the Southwest Power Pool, read from the SPP active CSV. The rest of the state is outside any market: PNM, El Paso Electric (EPE), Tri-State (TSGT) and Arizona Public Service (APS, the Four Corners area) each run their own queue, read here from the Berkeley Lab Queued Up file (lbnl_entities maps each market name to the file's entity code; on 2026-11-17 the file held 75 active PNM rows, 18 EPE, 3 TSGT and 1 APS in New Mexico). The file runs about a year behind, so EPE's posted active queue PDF (epelectric.com/el-paso-electric/uploads/epe-interconnection-queue-active.pdf) and any PNM or Tri-State posting found in Stage A are also read by hand for newer requests and answered as market EPE, PNM or TSGT. owner and shared_owner are only used for MISO rows and are empty. pjm_states is empty. known is hand-checked patterns, GEM plant id to regexes that name that plant in a point of interconnection, project name or developer; every match still says check, and a county-only match is never a known match.",
+  "state": "NM",
+  "name": "New Mexico",
+  "markets": [
+    "SPP",
+    "PNM",
+    "EPE",
+    "TSGT",
+    "APS"
+  ],
+  "lbnl_entities": {
+    "PNM": "PNM",
+    "EPE": "EPE",
+    "TSGT": "TSGT",
+    "APS": "APS"
+  },
+  "owner": "",
+  "shared_owner": "",
+  "pjm_states": [],
+  "known": {
+    "L100000402297": [
+      "cunningham"
+    ],
+    "L100000402299": [
+      "maddox"
+    ],
+    "L100000402045": [
+      "hobbs generating",
+      "lea power partners"
+    ],
+    "L100001083387": [
+      "eras-2025-014"
+    ],
+    "L100001043002": [
+      "ntec",
+      "navajo transitional"
+    ],
+    "L100001089610": [
+      "westside",
+      "saddle butte"
+    ],
+    "L100000401903": [
+      "rio grande"
+    ],
+    "L100000402228": [
+      "afton"
+    ],
+    "L100000401601": [
+      "luna energy"
+    ],
+    "L100000402347": [
+      "valencia energy"
+    ],
+    "L100000402229": [
+      "reeves"
+    ],
+    "L100000402230": [
+      "rio bravo"
+    ],
+    "L100001083303": [
+      "lordsburg"
+    ],
+    "L100000408054": [
+      "clean path"
+    ]
+  }
+}

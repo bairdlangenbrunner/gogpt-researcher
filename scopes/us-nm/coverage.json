@@ -1,0 +1,373 @@
+[
+ {
+  "id": "spp-queue",
+  "name": "Southwest Power Pool generator interconnection active queue (includes the ERAS rows and, since the western expansion, Farmington Electric rows)",
+  "url": "https://opsportal.spp.org/Studies/GIActive",
+  "what": "Use batches/us-nm/harvest/queues.json from pull_queues.py --state NM, which reads the open active CSV (56 New Mexico rows on 2026-11-17). Answer every live gas, oil or fuel-blank request at 50 MW or of unknown size under queues. Known on 2026-11-17: ERAS-2025-014 (234 MW combustion turbine at Hobbs, the SWPP ERAS Hobbs record); FEUS-1 to FEUS-5 (Farmington Electric gas requests of 60, 60, 180, 60 and 85 MW at Bloomfield, Kirtland and La Plata); GEN-2020-065 (1,003 MW combined cycle on the Hobbs to Andrews line in Gaines County, Texas, which belongs to the Texas scope; answer it here as other scope).",
+  "proof": {
+   "sample": "https://opsportal.spp.org/Studies/GenerateActiveCSV",
+   "kind": "csv",
+   "expect": "Generation Interconnection Number"
+  }
+ },
+ {
+  "id": "lbnl-queued-up",
+  "name": "Lawrence Berkeley National Laboratory Queued Up data file (PNM, El Paso Electric, Tri-State and Arizona Public Service queues in New Mexico)",
+  "url": "https://emp.lbl.gov/queues",
+  "what": "pull_queues.py --state NM reads tab 03 of the newest file for New Mexico rows under entity PNM, EPE, TSGT and APS. Every gas, oil or fuel-blank request that is live, at 50 MW or of unknown size, is answered under queues. Known on 2026-11-17: IA-PNM-2025-20 (172 MW gas at the Reeves substation for 2029, the same size as the PNM 2026 plan's gas placeholder); IA-PNM-2014-02, IA-PNM-2017-14 and IA-PNM-2020-05 (San Juan County gas with old dates); IA-PNM-2001-12 and IA-PNM-2007-12 (Valencia County, operational, probably the Valencia plant); APS Q610 (250 MW other generation at the Four Corners 345 kV bus, 2029). The file runs about a year behind.",
+  "proof": {
+   "kind": "html",
+   "expect": "LBNL_Ix_Queue_Data_File"
+  }
+ },
+ {
+  "id": "epe-queue",
+  "name": "El Paso Electric active interconnection queue (PDF)",
+  "url": "https://www.epelectric.com/el-paso-electric/uploads/epe-interconnection-queue-active.pdf",
+  "what": "Read every row: request number, county, fuel, MW and status. Read 2026-11-17 (saved under scopes/us-nm/work/queues/epe_active.pdf): no gas or fuel-blank request is in New Mexico. The New Mexico rows are solar, battery, wind and one 450 MW geothermal request in Socorro County. Three gas requests are in El Paso County, Texas (Q26-LG-3-26-4 3,000 MW, Q26-LG-3-30 516.8 MW, Q26-LG-3-31 1,033.6 MW) and belong to the Texas scope. Re-read the PDF each batch and answer any new New Mexico gas row as market EPE.",
+  "proof": {
+   "kind": "pdf",
+   "expect": "EPE GENERATOR INTERCONNECTION QUEUE"
+  }
+ },
+ {
+  "id": "pnm-queue",
+  "name": "PNM generator interconnection queue",
+  "url": "https://www.oasis.oati.com/PNM/",
+  "what": "Stage A: find where PNM posts its generator interconnection queue (OATI OASIS or pnm.com). If it is behind a sign-in, write the human wall. Answer requests newer than the Berkeley Lab file as market PNM. Probed 2026-11-17: the OATI OASIS page for PNM is a frame around webSmartOASIS whose content loads by script; no public queue list was found in it. Until one is found, the Berkeley Lab file is the read of this queue.",
+  "proof": {
+   "kind": "html",
+   "expect": "OASIS"
+  }
+ },
+ {
+  "id": "tristate-queue",
+  "name": "Tri-State generator interconnection queue",
+  "url": "https://www.oasis.oati.com/TSGT/",
+  "what": "Stage A: find Tri-State's queue posting (OATI OASIS, or SPP since the western expansion). Answer New Mexico gas requests as market TSGT. Probed 2026-11-17: the OATI OASIS page for TSGT is a frame around webSmartOASIS whose content loads by script; no public queue list was found in it. Until one is found, the Berkeley Lab file is the read of this queue.",
+  "proof": {
+   "kind": "html",
+   "expect": "OASIS"
+  }
+ },
+ {
+  "id": "prc-e360-cases",
+  "name": "New Mexico Public Regulation Commission PRCe360 case search (guest access)",
+  "url": "https://e360.prc.nm.gov/portal/public/",
+  "what": "Use the docket files under batches/us-nm/harvest/ from scopes/us-nm/harvest_prc.py. It searches every case since 2021 about a resource plan, a certificate for a gas or oil plant, an abandonment, a data center or large-load tariff, and every PNM, SPS, El Paso Electric and Tri-State case, through the guest JSON search, and downloads orders, applications and plans through the download token. Cases read in full: 25-00022-UT (PNM 2026 plan), 25-00076-UT (SPS 2026 plan), 24-00260-UT (El Paso Electric 2025 plan), 20-00194-UT (Rio Grande 6 abandonment), 23-00403-UT (Rio Grande 7 abandonment) and case 25-00066-UT, approved 2026-05-07 (2,088 MW of gas).",
+  "proof": {
+   "sample": "https://e360.prc.nm.gov/core/api/_q/v1/prc/nm/intake/dashboard/getAllCases",
+   "method": "POST",
+   "json": {
+    "data": {},
+    "origin": "",
+    "origin_key": "CaseX",
+    "queryParams": [
+     "screen"
+    ],
+    "gridInput": {
+     "params": {
+      "parameters": {
+       "screen": "external-Dashboard",
+       "searchTerm": "25-00076-UT"
+      }
+     },
+     "persistPrevParams": false
+    },
+    "parameters": {
+     "screen": "external-Dashboard",
+     "searchTerm": "25-00076-UT"
+    },
+    "pageNo": 0,
+    "pageSize": 10,
+    "sortBy": {}
+   },
+   "kind": "json",
+   "expect": "25-00076-UT"
+  }
+ },
+ {
+  "id": "nmed-apmap",
+  "role": "permit_record",
+  "name": "New Mexico Environment Department Air Quality Bureau APMAP facility map and data service, with each facility's public document collection on cloud.env.nm.gov (the complete air permit record outside Bernalillo County and tribal land)",
+  "url": "https://rsmt.air.net.env.nm.gov/",
+  "what": "Use scopes/us-nm/work/permits/ from scopes/us-nm/harvest_permits.py. It looks up every GEM plant, owner and lead by name and location in the APMAP data service, reads each facility's permit numbers, lists its public document collection and reads every permit, application and statement of basis. Its unmatched list names power-like facilities GEM lacks. Cunningham is AI 604 and Maddox AI 588.",
+  "proof": {
+   "sample": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-name-wildcards?facility=Cunningham",
+   "kind": "json",
+   "expect": "CUNNINGHAM STATION POWER PLANT"
+  }
+ },
+ {
+  "id": "nmed-public-notices",
+  "role": "permit_notices",
+  "name": "New Mexico Environment Department public notices (air permit drafts and hearings open for comment)",
+  "url": "https://www.env.nm.gov/public-notices/",
+  "what": "harvest_permits.py reads the page and every linked air notice and matches each to a plant or lead. A notice lists only permits open for comment, so it never replaces the APMAP record.",
+  "proof": {
+   "kind": "html",
+   "expect": "Notice"
+  }
+ },
+ {
+  "id": "nmed-comment-portal",
+  "name": "New Mexico Environment Department comment portal (hearing and comment records for contested permits)",
+  "url": "https://nmed.commentinput.com/comment/search",
+  "what": "Open for every contested permit: Project Jupiter (permit 10883), Site Layer 1, Westside, NTEC and any data center lead.",
+  "proof": {
+   "kind": "html",
+   "expect": "omment"
+  }
+ },
+ {
+  "id": "nmed-coda-pending",
+  "name": "Air Quality Bureau Coda reports: Current Permitting Actions Under Review, NSR Issued Report, Facilities Lat Long Report",
+  "url": "https://www.env.nm.gov/air-quality/permitting-section-procedures-and-guidance/",
+  "what": "harvest_permits.py reads all three tables in full (about 301 pending actions on 2026-11-17). Every pending action for a power, engine, turbine or data center facility is matched to a plant or lead. The harvester reads the tables through the Coda API when CODA_API_TOKEN is set, or from CSV files a person exports into scopes/us-nm/work/permits/coda/.",
+  "proof": {
+   "kind": "html",
+   "expect": "coda"
+  },
+  "human_wall": "The Coda pages load rows only in a browser, and the Coda API needs a sign-in token (401 without one, probed 2026-11-17). Baird opens each of the three tables, exports it as CSV and saves it under scopes/us-nm/work/permits/coda/, or sets a personal CODA_API_TOKEN outside the repo."
+ },
+ {
+  "id": "abq-air-quality",
+  "role": "permit_record",
+  "name": "City of Albuquerque Air Quality Program: pending applications, monthly notice report and issued permits (Bernalillo County: Reeves, Rio Bravo and Albuquerque data centers)",
+  "url": "https://www.cabq.gov/airquality/pending-air-permit-applications",
+  "what": "harvest_permits.py reads the pending list, the monthly notice report and the permit documents under documents.cabq.gov/environmental-health/airquality/.",
+  "proof": {
+   "kind": "html",
+   "expect": "ermit"
+  }
+ },
+ {
+  "id": "epa-r9-ntec",
+  "name": "EPA Region 9 permit docket for NTEC (EPA-R09-OAR-2024-0028)",
+  "url": "https://www.regulations.gov/docket/EPA-R09-OAR-2024-0028",
+  "what": "harvest_permits.py lists the docket documents through the regulations.gov API and reads the draft permit, the statement of basis and any final decision. The draft is a synthetic minor permit for 742 MW from 18 LM6000 turbines; comment closed 2026-05-18. The harvest on 2026-11-17 listed 22 docket documents with the DEMO_KEY.",
+  "human_wall": "The DEMO_KEY allows only a few calls an hour. If that is too slow, Baird registers a free key at https://open.gsa.gov/api/regulationsgov/ and sets REGULATIONS_GOV_KEY outside the repo. No script registers for him.",
+  "proof": {
+   "sample": "https://api.regulations.gov/v4/documents?filter%5BdocketId%5D=EPA-R09-OAR-2024-0028&api_key=DEMO_KEY",
+   "kind": "json",
+   "expect": "EPA-R09-OAR-2024-0028"
+  }
+ },
+ {
+  "id": "epa-echo",
+  "name": "EPA Enforcement and Compliance History Online (ECHO) facility search and detailed facility reports",
+  "url": "https://echo.epa.gov/facilities/facility-search",
+  "what": "Query the REST service for every New Mexico electric power facility (get_facilities with p_st=KY, p_sic=4911, p_act=Y, then get_download with the query id for the CSV) and read the detailed facility report (dfr_rest_services.get_dfr with the registry id) for each GEM plant and each lead: the Clean Air Act permit program, the permit numbers, the inspection and compliance history and the facility's registry id, which ties the state permit record to the federal one. Cite the report address.",
+  "proof": {
+   "sample": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?output=JSON&p_id=110000378733",
+   "kind": "json",
+   "expect": "Success"
+  }
+ },
+ {
+  "id": "epa-campd",
+  "name": "EPA Clean Air Markets Program Data (CAMPD) unit-level emissions and operating data",
+  "url": "https://campd.epa.gov/",
+  "what": "Read the apportioned annual emissions for New Mexico through the streaming API (the DEMO_KEY route proves the service; a real key is a person's registration) for every unit at every GEM plant: operating hours and heat input by year show whether a mothballed or converted unit ran (Marshall CT4 to CT8, the Big Sandy, Green, Reid and Cooper conversions), and the unit ids match the EIA generator ids. A unit with no operation for two years is a mothballed candidate, raised as a question, never staged from this alone.",
+  "proof": {
+   "sample": "https://api.epa.gov/easey/streaming-services/emissions/apportioned/annual?api_key=DEMO_KEY&year=2024&stateCode=KY",
+   "kind": "json",
+   "expect": "stateCode"
+  },
+  "human_wall": "The DEMO_KEY route is rate limited; a full pull needs a free API key from https://www.epa.gov/power-sector/cam-api-portal, which Baird registers by hand and stores outside the repo. No script registers or signs in for him."
+ },
+ {
+  "id": "epa-rblc",
+  "name": "EPA RACT/BACT/LAER Clearinghouse (permit determinations for new gas turbines and engines)",
+  "url": "https://www.epa.gov/catc/rblc",
+  "what": "Search the clearinghouse for every New Mexico determination since 2020 (facility, permit number, date, process description with turbine or engine make, model and megawatts) and tie each to the state or district permit; the dashboard at cdxoarapps.epa.gov/oar-rblc/ draws its table with scripts and has no anonymous download, so the search is done by a person or through the data export a person saves.",
+  "proof": {
+   "kind": "html",
+   "expect": "RBLC"
+  },
+  "human_wall": "The determination search (https://cdxoarapps.epa.gov/oar-rblc/?tabIndex=0) runs only in a browser; Baird runs the Kentucky search by hand, exports the table and saves it under scopes/us-ky/work/rblc/. No script signs in."
+ },
+ {
+  "id": "pnm-irp",
+  "name": "PNM resource plan page",
+  "url": "https://www.pnm.com/2026-irp",
+  "what": "Every volume of the 2026 plan is listed in scopes/us-nm/irp_plans.json and read in full, including every alternative portfolio.",
+  "proof": {
+   "kind": "html",
+   "expect": "IRP"
+  }
+ },
+ {
+  "id": "pnm-news",
+  "name": "PNM media center and TXNM Energy news releases (txnmenergy.com/media/news.aspx)",
+  "url": "https://www.pnm.com/media-center",
+  "what": "New gas, retirements, Reeves, Rio Bravo, Afton, Lordsburg, La Luz and data center contracts.",
+  "proof": {
+   "kind": "html",
+   "expect": "PNM"
+  }
+ },
+ {
+  "id": "xcel-sps",
+  "name": "Xcel Energy Southwestern Public Service resource plan page",
+  "url": "https://www.xcelenergy.com/company/rates_and_regulations/resource_plans/integrated_resource_plan",
+  "what": "The 2026 plan, the 2025 request for proposals selections, the Cunningham and Maddox life decisions and every new gas site named in New Mexico.",
+  "proof": {
+   "kind": "html",
+   "expect": "esource"
+  }
+ },
+ {
+  "id": "epe-news",
+  "name": "El Paso Electric resource plan, request for proposals and news",
+  "url": "https://www.epelectric.com/",
+  "what": "Rio Grande retirements and the 2026 New Mexico all-source request for proposals. Newman is in Texas.",
+  "proof": {
+   "kind": "html",
+   "expect": "El Paso Electric"
+  }
+ },
+ {
+  "id": "tristate",
+  "name": "Tri-State resource plan and news",
+  "url": "https://tristate.coop/",
+  "what": "Pyramid, any new New Mexico gas, the resource plan and the 2026 resource adequacy table.",
+  "proof": {
+   "kind": "html",
+   "expect": "Tri-State"
+  }
+ },
+ {
+  "id": "farmington-electric",
+  "name": "Farmington Electric Utility System (city utility)",
+  "url": "https://www.fmtn.org/",
+  "what": "Bluffview, Animas and the SPP gas requests FEUS-1 to FEUS-5, through the utility board packets.",
+  "proof": {
+   "kind": "html",
+   "expect": "Farmington"
+  }
+ },
+ {
+  "id": "ntec",
+  "name": "Navajo Transitional Energy Company",
+  "url": "https://www.navajo-tec.com/",
+  "what": "The gas plant's status, turbine count and schedule.",
+  "proof": {
+   "kind": "html",
+   "expect": "Navajo"
+  }
+ },
+ {
+  "id": "sec-edgar",
+  "name": "SEC EDGAR full-text search for PPL, AEP, Duke Energy, NRG, TVA, TeraWulf and other filers naming Kentucky plants",
+  "url": "https://efts.sec.gov/LATEST/search-index?q=%22Mill%20Creek%22%20%22combined%20cycle%22&forms=10-K,10-Q,8-K",
+  "what": "Search through fetch.py only. TXNM Energy, Xcel Energy and New Era Energy & Digital (Lea County data center and power plan) filings that name New Mexico gas plants.",
+  "proof": {
+   "kind": "json"
+  }
+ },
+ {
+  "id": "eia-860m",
+  "name": "EIA-860M newest monthly generator file",
+  "url": "https://www.eia.gov/electricity/data/eia860m/",
+  "what": "match_ids.py reads it. Account for every gas or oil plant of 50 MW or more in New Mexico that GEM lacks (Pyramid, EIA 7975), every planned or canceled unit, and every retirement since 2020 (Rio Grande 6 is listed retired in 2025). Each EIA plant missing from GEM is answered under ids_followup.",
+  "proof": {
+   "kind": "html",
+   "expect": "860M"
+  }
+ },
+ {
+  "id": "eia-860",
+  "name": "EIA-860 annual survey, ownership and plant tables",
+  "url": "https://www.eia.gov/electricity/data/eia860/",
+  "what": "Ownership checks for Hobbs, Luna and Lordsburg.",
+  "proof": {
+   "kind": "html",
+   "expect": "860"
+  }
+ },
+ {
+  "id": "eip-oil-gas-watch",
+  "name": "Environmental Integrity Project Oil and Gas Watch, Kentucky power plant projects",
+  "url": "https://oilandgaswatch.org/",
+  "what": "Reference for New Mexico facilities; never cited. Its YGI Microgrid entry is Project Jupiter.",
+  "proof": {
+   "kind": "html"
+  }
+ },
+ {
+  "id": "possible-updates-sheet",
+  "name": "Possible updates sheet, New Mexico rows",
+  "url": "https://docs.google.com/spreadsheets/d/1GAXwGdI0UFeW9mFSxJhhR6MRBW7VDtlWBqsooVZyUzs",
+  "what": "Read the gas and oil plants tab through the work profile for every New Mexico row and answer each one in a record or a coverage note."
+ },
+ {
+  "id": "captive-lng-sheet",
+  "name": "Captive LNG sheet, New Mexico rows",
+  "url": "https://docs.google.com/spreadsheets/d/19YvVT918PYHq_DkdvKWtoXYJ2Xl7l7R3",
+  "what": "Use work/captive_us-new-mexico.json from captive_lng.py. It found no New Mexico rows on 2026-11-17; record that."
+ },
+ {
+  "id": "industrial-cogeneration",
+  "name": "Industrial and captive plants (mines, potash, refineries, gas processing)",
+  "url": "https://www.env.nm.gov/public-notices/",
+  "what": "Chino Mines, the Carlsbad potash mines, the Artesia and Lovington refineries and the large gas processing plants: check each for electrical generation at 50 MW summed. Compressor drives never count.",
+  "proof": {
+   "kind": "html",
+   "expect": "Notice"
+  }
+ },
+ {
+  "id": "data-centers",
+  "name": "New Mexico data center leads",
+  "url": "https://www.datacenterdynamics.com/en/search/?q=New%20Mexico",
+  "what": "Use scopes/us-nm/work/permits/_data_centers.md from data_center_fleets.py --state \"New Mexico\", then trade press, the PRC large-load cases and the local records. Every site is answered under data_centers: Project Jupiter (backup engines only; the fuel cells are out of scope), Lea County Data Center, Roswell Information Park, Site Layer 1, Zenith Volts in Chaves County, Google in Lea County, Meta Los Lunas (Greater Kudu LLC) and the Santa Teresa sites.",
+  "proof": {
+   "kind": "html",
+   "expect": "data center"
+  }
+ },
+ {
+  "id": "business-registry",
+  "name": "New Mexico Secretary of State business search",
+  "url": "https://enterprise.sos.nm.gov/search/business",
+  "what": "The companies behind queue rows and data center plans: Acoma LLC, Greater Kudu LLC, Site Layer 1 LLC, Roswell Information Park LLC, Saddle Butte Energy Farmington LLC, Zenith Volts.",
+  "proof": {
+   "kind": "html",
+   "expect": "usiness"
+  },
+  "human_wall": "The search is a script page behind a Cloudflare Turnstile check (probed 2026-11-17), and no script gets past it. Baird looks up each company named in the batch's questions on https://enterprise.sos.nm.gov/search/business and pastes the registered name, formation date and principal office into the question."
+ },
+ {
+  "id": "state-news",
+  "name": "New Mexico news: Albuquerque Journal, Santa Fe New Mexican, Source NM, Searchlight New Mexico, Las Cruces Sun-News, Carlsbad Current-Argus, Hobbs News-Sun, Roswell Daily Record, Farmington Daily Times, KOB, KRQE, Albuquerque Business First",
+  "url": "https://www.abqjournal.com/search/?q=gas+plant",
+  "what": "Search each outlet for every plant, lead and data center. Source NM needs the cf_impersonate route of fetch.py; the Las Cruces Sun-News answers 402, so use --render or a Wayback copy.",
+  "proof": {
+   "kind": "html",
+   "expect": "Journal"
+  }
+ },
+ {
+  "id": "public-notices",
+  "name": "New Mexico Press Association public notice site",
+  "url": "https://www.newmexicopublicnotices.com/",
+  "what": "Search for each plant name, each utility and the words power plant, generating, turbine, generator, data center and air permit since 2024. The nmpress.org page is gone; the site is newmexicopublicnotices.com, an ASP.NET form (txtSearch and btnGo under ctl00$ContentPlaceHolder1$as1, then Search.aspx and Details.aspx). A first scripted search on 2026-11-17 did not return a result grid; the Stage B statewide agent scripts it fully (the session cookie lives in the path) and records what each search found.",
+  "proof": {
+   "kind": "html",
+   "expect": "Public Notice"
+  }
+ },
+ {
+  "id": "local-planning-records",
+  "role": "local_records",
+  "name": "City and county planning, zoning, commission and council records",
+  "url": "https://webapi.legistar.com/v1/cabq/Events",
+  "what": "Use batches/us-nm/harvest/local_records.json and .md from scopes/us-nm/harvest_local.py. It reads every agenda, packet, staff report and minutes file since 2024-01-01 for the bodies around the GEM plants and the leads, and records each sentence that names a plant, a lead, a power or data center project, an industrial revenue bond or a rezoning. Open the records for every lead and every in-development plant. Albuquerque and Los Alamos County: Legistar. Hobbs, Carlsbad and Doña Ana County: CivicClerk. Bernalillo County: IQM2. Las Cruces City Council: CivicWeb. Rio Rancho: Granicus. San Juan County: its Granicus calendar through fetch.py. Eddy County, Roswell, Farmington, Los Lunas and Grant County: CivicPlus AgendaCenter. Las Cruces boards, Valencia, Sandoval and Chaves counties: their index pages.",
+  "proof": {
+   "kind": "json",
+   "expect": "EventId"
+  },
+  "human_wall": "Lea County, Luna County and Hidalgo County post no agendas or minutes a script can list, Valencia County keeps its agendas after May 2025 in a Google Drive folder, and the Albuquerque Environmental Planning Commission is not on Legistar. For a lead or in-development plant in those places a person asks the county clerk or reads the local paper (Hobbs News-Sun, Lordsburg Liberal, Deming Headlight, Valencia County News-Bulletin); the harvester's not-posted list names each body."
+ }
+]

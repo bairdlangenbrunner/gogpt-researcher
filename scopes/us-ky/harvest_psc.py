@@ -139,7 +139,7 @@ INSERVICE = re.compile(r"in[- ]service|commercial operation|\bCOD\b|placed in se
 RETIRE = re.compile(r"retire|retirement|deactivat|mothball|cease operat|shut ?down|decommission", re.I)
 LOCATION = re.compile(r"located (at|in|on|near|approximately)|site (is|in|at)|county,? kentucky|"
                       r"latitude|longitude|acres? (site|parcel|tract)", re.I)
-LATLON = re.compile(r"\b(3[6-9]\.\d{3,})\s*[,;/ °]*\s*N?\s*[,;/ ]?\s*-?\s*(8[2-9]\.\d{3,})\b")
+LATLON = re.compile(r"\b(3[6-9]\.\d{3,})[\s,;/°N-]{1,12}(8[2-9]\.\d{3,})\b")
 DOC_PRIORITY = re.compile(r"application|testimony|order|report|settlement|stipulation|exhibit|"
                           r"resource plan|\bIRP\b|request for proposal|\bRFP\b|supplement|read.?first|"
                           r"notice of intent|construction|commencement|siting|site assessment", re.I)

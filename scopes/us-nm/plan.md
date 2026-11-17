@@ -11,7 +11,7 @@ Settled by the request (Baird 2026-11-17):
 
 Defaults this plan takes unless Baird says otherwise:
 
-- **Amalia is working New Mexico right now.** Her "ALQ42026" notes and 30-odd rows were edited 2026-11-09 and 2026-11-10 (Cunningham, Maddox, Reeves, Rio Grande 7 and 8, NTEC, Westside, Site Layer 1, Clean Path, Lea County Data Center, Roswell Information Park, Project Jupiter, the PNM and SPS IRP placeholders, SWPP ERAS Hobbs). Re-pull at run time and treat her values as the baseline. Stage an edit against one of her values only when a verified document disagrees, and say which document. If her edits are still landing on the run day, wait until her row on the assignments tab says done or ask her.
+- **Run now, alongside Amalia** (Baird 2026-11-17). Amalia is still editing New Mexico ("ALQ42026" notes; about 30 rows edited 2026-11-09 and 2026-11-10). The run does not wait for her. Every stage that reads the export re-pulls it first, and her values are the baseline: an edit against one of her values needs a verified document that disagrees, named in the note. Before the deliverable is built, re-pull once more and drop or rewrite any staged edit her later changes already made.
 - **Project Jupiter stays cancelled, and its fuel cell plant is not added** (Baird 2026-11-17). Amalia marked both units cancelled on 2026-11-10 because the developer withdrew the two gas turbine permit applications in April 2026 and switched to a gas-fed Bloom fuel cell microgrid (2.4 GW planned, capped at 1,600 MW, NMED permit 10883, hearing vacated on 2026-11-06). Gas fuel cells are out of GOGPT scope because they do not burn the gas (`docs/reference/unit_conventions.md`). The run checks that her cancellation has two independent publishers and a dated step, and opens permit 10883 for one question: does the site also have backup diesel or gas engines at 50 MW summed? If it does, that engine fleet is an add with Backup Power yes.
 - Models per step follow `docs/workflows.md`. The harvesters and the per-plant sweep run on Sonnet. The scope-wide agent, the resource plan reading and the location review run on Opus. Gates and merge calls stay in the main loop.
 
@@ -101,7 +101,7 @@ Follow the Kentucky and Oklahoma harvesters and their tests (`tests/test_harvest
    - Search PRCe360 for every case since 2021 about a resource plan, a certificate for a gas or oil plant, an abandonment, a data center tariff or a large-load contract. Also search for every utility (PNM, SPS, EPE, Tri-State, the cooperatives) and every lead name.
    - Add the cases named below.
    - List each case's documents, download the order, the application and the plan through the token flow into `scopes/us-nm/work/prc/<case>/`, and extract them.
-   - Write `batches/us-nm/harvest/prc_dockets.json` in the `build_state_brief.py --harvest` contract.
+   - Write `batches/us-nm/harvest/psc_dockets.json` and `.md`, the name `build_state_brief.py --harvest` reads. PRCe360's guest index holds only cases from about 2023 on, so 20-00194-UT and 23-00403-UT (the Rio Grande abandonments) are answered from other records.
 3. **`scopes/us-nm/harvest_local.py`**
    - Read every agenda, packet and minutes file since 2024-01-01:
      - Legistar: Albuquerque and Los Alamos.
@@ -145,7 +145,14 @@ Follow the Kentucky and Oklahoma harvesters and their tests (`tests/test_harvest
 - **Meta Los Lunas** (Greater Kudu LLC, Valencia County; 22 diesel emergency engines in an NMED notice). Sum the fleet's nameplate from the permit. At 50 MW or more it is an add with Backup Power yes.
 - **Santa Teresa data centers** (one hyperscale and one enterprise in NMED's July 2026 legislative deck). Name them and check APMAP.
 - **Project Jupiter.** Confirm the cancellation has two publishers and a dated step, and run the backup fleet check (see Decisions). The EIP "YGI Microgrid" id goes to a question.
-- **Cleanview queue leads** (Hobbs 160 MW 2029, Kirtland 180 MW 2030, Bloomfield 60 MW 2027). Each is answered from the SPP CSV or the LBNL file, never cited from Cleanview alone.
+- **Cleanview queue leads** (Hobbs 160 MW 2029, Kirtland 180 MW 2030, Bloomfield 60 MW 2027). Each is answered from the SPP CSV or the LBNL file, never cited from Cleanview alone. The 2026-11-17 queue read found their source: Farmington Electric's own gas requests in the SPP queue since the western expansion.
+- **Queue requests found 2026-11-17** (`batches/us-nm/harvest/queues.json`, 14 to answer):
+  - SPP FEUS-1 to FEUS-5: Farmington Electric gas at Bloomfield (60 MW 2027, 60 MW 2028), Kirtland (60 MW 2026 with an executed agreement, 180 MW 2030) and La Plata (85 MW 2028). Read the Farmington utility board packets for the plant behind them; Bluffview and Animas are the existing city plants.
+  - SPP ERAS-2025-014: 234 MW combustion turbine at Hobbs for 2028, the SWPP ERAS Hobbs record.
+  - SPP GEN-2020-065: 1,003 MW combined cycle on the Hobbs to Andrews line, but the row's county is Gaines County, Texas. Answer it as other scope and hand it to the Texas batch.
+  - PNM IA-PNM-2025-20: 172 MW gas at the Reeves substation for 2029. It is the same size as the PNM 2026 plan's gas placeholder, so it probably names that placeholder's site.
+  - PNM IA-PNM-2001-12 and IA-PNM-2007-12 (Valencia County, operational): probably the Valencia plant. IA-PNM-2014-02, IA-PNM-2017-14 and IA-PNM-2020-05 (San Juan County gas, old dates): find whether any is still live.
+  - APS Q610: 250 MW of other generation at the Four Corners 345 kV bus for 2029. Find the fuel.
 - **Clean Path Energy Center** (cancelled-inferred). Amalia found the site reused; confirm with two publishers or keep the inferred status.
 - **Ownership checks.** Hobbs Generating Station (Lea Power Partners or SPS; check EIA-860 schedule 4 and the commission record). Lordsburg's owner is "PNM Resources Inc"; check that the operating company, Public Service Company of New Mexico, is the right entity. Luna's three owners.
 - **Every EIA plant missing from GEM** in `work/ids_us-new-mexico.md` (gate `ids_followup`), every queue row in `needs_answer` (gate `queues`), every data center site `data_center_fleets.py` lists (gate `data-centers`), and every resource plan (gate `irp-plans`).
@@ -154,7 +161,7 @@ Follow the Kentucky and Oklahoma harvesters and their tests (`tests/test_harvest
 
 A. **Start and build.**
    - From `scripts/`: fresh pull, `pull_gem_db.py --map-only`, `scope_filter.py`, `export_to_dump.py`.
-   - Check Amalia's latest edits against the 2026-11-17 list above and record what changed in this plan.
+   - List the rows Amalia changed since 2026-11-17 and record them in this plan. The 2026-11-17 08:38 pull showed no New Mexico row changed after 2026-11-10.
    - Run `worklist.py --state "New Mexico"`, `validation_report.py --state "New Mexico"`, `assigned_comments.py`, `no_tracker.py`, `eia860m.py`, `match_ids.py`, `irp_sheet.py`, `captive_lng.py` and `location_candidates.py`.
    - Write `scopes/us-nm/note.md` updates, `coverage.json` (every source above, each probed live, with `permit_record`, `permit_notices` and `local_records` roles), `queues.json`, `irp_plans.json` and `batches/us-nm/extra_tasks.json`.
    - Settle the open probe items: PNM and Tri-State queues, the Coda export, Lea County AgendaCenter, Valencia, Bernalillo, Las Cruces and Sandoval paths, the SOS search, the nmpress search, and article routes.

@@ -159,7 +159,7 @@ PROJECT = re.compile(r"proposes|propose to|will consist|project (is|will|consist
                      r"to construct|new (electric|power|generat)|install(ation)? of", re.I)
 FACILITY_LINE = re.compile(r"facility( name)?:|company( name)?:|applicant:|source name|permittee|\bre:|"
                            r"permit (no|number)|agency interest|\bAI\b ?(#|no|number)|county,? kentucky", re.I)
-LATLON = re.compile(r"\b(3[6-9]\.\d{3,})\s*[,;/ °]*\s*N?\s*[,;/ ]?\s*-?\s*(8[2-9]\.\d{3,})\b")
+LATLON = re.compile(r"\b(3[6-9]\.\d{3,})[\s,;/°N-]{1,12}(8[2-9]\.\d{3,})\b")
 PERMIT_NO = re.compile(r"\b(?:[VFSCO]-\d{2}-\d{3}(?: ?R\d)?|O-\d{4}-\d{2}-[A-Z]|C-\d{4}-\d{2}-\d{4}-[A-Z])\b")
 READ_FIRST = re.compile(r"statement of basis|application|executive summary|draft|permit", re.I)
 SWEEP_TYPES = re.compile(r"initial|sig rev|revision|construct", re.I)

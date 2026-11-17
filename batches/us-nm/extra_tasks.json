@@ -1,0 +1,185 @@
+{
+ "*": [
+  {
+   "text": "New Mexico context: the east of the state (Lea, Eddy, Chaves, Roosevelt and Curry counties) is in the Southwest Power Pool and served by Xcel's Southwestern Public Service (SPS). Since the 2026 western expansion the SPP queue also holds Farmington Electric's requests. The rest of the state has no market: PNM, El Paso Electric, Tri-State, Farmington and Los Alamos County each run their own interconnection. The New Mexico Public Regulation Commission regulates PNM, SPS and El Paso Electric; its docket system is PRCe360, and the harvest of its cases is under batches/us-nm/harvest/. Air permits come from three agencies: the New Mexico Environment Department Air Quality Bureau for most of the state (its APMAP record, harvested into scopes/us-nm/work/permits/), the City of Albuquerque Air Quality Program for Bernalillo County (Reeves, Rio Bravo), and EPA Region 9 for the Navajo Nation (NTEC). Local planning records are in batches/us-nm/harvest/local_records.md.",
+   "fields": []
+  },
+  {
+   "text": "Baseline: Amalia Llano edited about 30 New Mexico rows on November 9 and 10, 2026, with notes tagged ALQ42026. Her values are the starting point. Change one only when a document says otherwise, and name the document. The batch goes onto her review page.",
+   "fields": []
+  },
+  {
+   "text": "Gas fuel cells are out of scope because they do not burn the gas (Baird 2026-11-17). Project Jupiter's fuel cell plant is not added. Backup diesel or gas engines at any data center, fuel cell sites included, are an add with Backup Power yes when the fleet's summed nameplate reaches 50 MW.",
+   "fields": []
+  },
+  {
+   "text": "Queue requests to answer, from batches/us-nm/harvest/queues.json: SPP FEUS-1 to FEUS-5 (Farmington Electric gas of 60, 60, 180, 60 and 85 MW at Bloomfield, Kirtland and La Plata, 2026 to 2030); SPP ERAS-2025-014 (234 MW at Hobbs, the SWPP ERAS Hobbs record); SPP GEN-2020-065 (1,003 MW combined cycle in Gaines County, Texas, which is other scope); PNM IA-PNM-2025-20 (172 MW gas at the Reeves substation, 2029); PNM IA-PNM-2001-12 and IA-PNM-2007-12 (Valencia County, operational); PNM IA-PNM-2014-02, IA-PNM-2017-14 and IA-PNM-2020-05 (San Juan County gas with old dates); APS Q610 (250 MW at Four Corners, fuel not given). Read the El Paso Electric queue PDF for newer rows. Answer each under queues in coverage.json.",
+   "fields": []
+  },
+  {
+   "text": "Leads GEM lacks: Pyramid Generating Station (Tri-State, Hidalgo County, EIA 7975, four 46.5 MW turbines, operating since 2003) is an add on the EIA record plus the NMED permit or a Tri-State page. Data centers to answer: Zenith Volts (Chaves County), Google in Lea County, Meta Los Lunas (Greater Kudu LLC, 22 diesel emergency engines in an NMED notice; sum the nameplate from the permit) and the Santa Teresa sites. Farmington's gas requests may name a new city plant; read the utility board packets.",
+   "fields": []
+  },
+  {
+   "text": "Resource plans, each read in full including every alternative portfolio: PNM 2026 plan (case 25-00022-UT; a 172 MW gas placeholder), SPS 2026 plan (case 25-00076-UT, filed 2026-10-23) and case 25-00066-UT, approved 2026-05-07 (2,088 MW of gas), El Paso Electric 2025 plan (case 24-00260-UT), Tri-State's plan in Colorado, and Farmington, Los Alamos County and Kit Carson if they publish one. The list is scopes/us-nm/irp_plans.json.",
+   "fields": []
+  },
+  {
+   "text": "Crusoe Energy Systems Gold State Facility (state air permit 10145M1, public notice https://www.env.nm.gov/public-notices/wp-content/uploads/sites/32/2024/06/Legal-Notice-10145M1.pdf, application https://www.env.nm.gov/public-notices/wp-content/uploads/sites/32/2024/06/A-10145M1-CrusoeGoldState-APA-final-2024-05-24.pdf) runs gas engines that make electricity for computing. The papers give horsepower, not electrical ratings. Find the electrical nameplate of the generator sets (the engine model's genset rating) and the location, and answer whether the site reaches 50 MW. Add it if it does, or with capacity blank if no source gives the rating.",
+   "fields": [
+    "Capacity (MW)",
+    "Status"
+   ]
+  }
+ ],
+ "L100000401903": [
+  {
+   "text": "Rio Grande (El Paso Electric): EIA lists unit 6 retired in 2025 and the abandonment was approved in case 20-00194-UT, but GEM says operating. A status change needs two independent publishers. Also settle unit 7's abandonment (case 23-00403-UT, asked for 2026-01-01) and unit 8's 2033 date. The Sierra Club list's 'Rio Grande CT G10', 87 MW, terminated: find a public source and say what it was.",
+   "fields": [
+    "Status",
+    "Planned retire"
+   ]
+  }
+ ],
+ "L100000402297": [
+  {
+   "text": "Cunningham (SPS): EIA gives unit 1's retirement year as 2024 and GEM gives 2023. Find SPS's filing or EIA's record that dates it. Read the SPS 2026 plan for the dates of units 2 to 4.",
+   "fields": [
+    "Planned retire"
+   ]
+  }
+ ],
+ "L100000402299": [
+  {
+   "text": "Maddox (SPS): read the SPS 2026 plan and the approved 2023 plan portfolio for unit 1 and 2 life extensions or retirements.",
+   "fields": [
+    "Planned retire"
+   ]
+  }
+ ],
+ "L100001043002": [
+  {
+   "text": "NTEC gas plant: GEM has 18 units at 60.5 MW, which is 1,089 MW, and one row GEN13-18 of 363 MW. The EPA Region 9 draft permit (docket EPA-R09-OAR-2024-0028) is a synthetic minor permit for 742 MW from 18 LM6000 turbines; comment closed 2026-05-18. Find the final decision, and write a question on the unit naming and the capacity difference.",
+   "fields": [
+    "Capacity (MW)",
+    "Status"
+   ]
+  }
+ ],
+ "L100001089610": [
+  {
+   "text": "Westside (Saddle Butte, Kirtland): GEM and EIA list 3 units, while the NMED application from September 2025 lists 16 engines. Get the engine count, capacity per engine and any construction evidence from the APMAP record.",
+   "fields": [
+    "Capacity (MW)",
+    "Status"
+   ]
+  }
+ ],
+ "L100001083387": [
+  {
+   "text": "SWPP ERAS Hobbs: the SPP queue row ERAS-2025-014 is a 234 MW combustion turbine at Hobbs for 2028. Find the SPS certificate filing or the 2026 plan that names the site and turbines.",
+   "fields": [
+    "Capacity (MW)",
+    "Start year"
+   ]
+  }
+ ],
+ "L100001082470": [
+  {
+   "text": "SPS IRP placeholder: the commission approved 2,088 MW of gas on 2026-05-07 and SPS filed its 2026 plan on 2026-10-23. Split the placeholder into named plants where filings name sites; Texas sites go to the Texas scope. Settle Xcel's August 2026 selection of one gas plant.",
+   "fields": [
+    "Capacity (MW)",
+    "Status"
+   ]
+  }
+ ],
+ "L100001082463": [
+  {
+   "text": "PNM IRP placeholders (three records from the 2023 plan): read the PNM 2026 plan and replace, rename or retire each. The 2026 plan has a 172 MW gas placeholder, and the PNM queue row IA-PNM-2025-20 is 172 MW of gas at the Reeves substation for 2029.",
+   "fields": [
+    "Capacity (MW)",
+    "Status"
+   ]
+  }
+ ],
+ "L100000402229": [
+  {
+   "text": "Reeves (PNM): read unit 3's 2044 date in the 2026 plan, and check whether the 172 MW gas request at the Reeves substation (IA-PNM-2025-20) is a new unit at this plant.",
+   "fields": [
+    "Planned retire"
+   ]
+  }
+ ],
+ "L100001080450": [
+  {
+   "text": "Project Jupiter: stays cancelled as a gas plant (Baird 2026-11-17). Confirm the cancellation has two independent publishers and a dated step. Open NMED permit 10883 only to check for backup diesel or gas engines at 50 MW summed; if present, that fleet is a new plant record with Backup Power yes. The EIP 'YGI Microgrid' entry goes to a question.",
+   "fields": [
+    "Status"
+   ]
+  }
+ ],
+ "L100001080449": [
+  {
+   "text": "Lea County Data Center (New Era Energy & Digital): check the APMAP record, Lea County commission records and the company's SEC filings for the power plan. A two-year-old announcement with nothing new is an inferred-status question, not a deletion.",
+   "fields": [
+    "Status"
+   ]
+  }
+ ],
+ "L100001089629": [
+  {
+   "text": "Roswell Information Park: about 700 MW of load and an offer on a 736 MW plant. Check Chaves County and Roswell records, the APMAP record and news.",
+   "fields": [
+    "Status",
+    "Capacity (MW)"
+   ]
+  }
+ ],
+ "L100001089557": [
+  {
+   "text": "Site Layer 1 (Grant County, Wärtsilä engines): Grant County passed a data center moratorium 4 to 1. Check the APMAP application, the county commission records and news for whether the project continues.",
+   "fields": [
+    "Status"
+   ]
+  },
+  {
+   "text": "The state air permit application for Site Layer I (NMED construction permit application, https://service.web.env.nm.gov/urls/GyvVdjHy) lists 64 generators adding up to 601.6 MW electrical, twice the 300.8 MW in GEM. Read it, check whether it is this project and whether the 601.6 MW is the whole site, and stage the capacity with that document as the source if so. The incompleteness letter is https://service.web.env.nm.gov/urls/WxDewWXD.",
+   "fields": [
+    "Capacity (MW)",
+    "Status"
+   ]
+  }
+ ],
+ "L100000408054": [
+  {
+   "text": "Clean Path Energy Center (cancelled-inferred): Amalia found the site reused. Confirm the cancellation with two publishers or keep the inferred status.",
+   "fields": [
+    "Status"
+   ]
+  }
+ ],
+ "L100000402045": [
+  {
+   "text": "Hobbs Generating Station: check the owner (Lea Power Partners or SPS) in EIA-860 schedule 4 and the commission record.",
+   "fields": [
+    "Owner(s)"
+   ]
+  }
+ ],
+ "L100001083303": [
+  {
+   "text": "Lordsburg: the owner is recorded as 'PNM Resources Inc'. Check whether the operating company, Public Service Company of New Mexico, is the right entity. EIA 7967 is missing from Other IDs.",
+   "fields": [
+    "Owner(s)"
+   ]
+  }
+ ],
+ "L100000401601": [
+  {
+   "text": "Luna Energy Facility: check its three owners and shares against EIA-860 schedule 4.",
+   "fields": [
+    "Owner(s)"
+   ]
+  }
+ ]
+}
