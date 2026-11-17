@@ -30,7 +30,7 @@ Scope tag `us-nm`. The scoped export pulled on 2026-11-17 holds 52 unit rows at 
   - Farmington, Los Alamos County, Kit Carson Electric and the cooperatives.
   - Every plan is listed in `scopes/us-nm/irp_plans.json` and read in full each batch.
 - **Data centers.**
-  - Already in GEM: Project Jupiter (cancelled as gas; now a fuel cell plan), Lea County Data Center, Roswell Information Park and Site Layer 1.
+  - Already in GEM: Project Jupiter (cancelled as gas; the fuel cell plant that replaced it is out of scope, but backup engines at 50 MW would be an add), Lea County Data Center, Roswell Information Park and Site Layer 1.
   - Not in GEM: Zenith Volts in Chaves County, Google in Lea County, Meta Los Lunas (Greater Kudu LLC, diesel emergency engines) and the Santa Teresa sites.
   - Each is answered under `data_centers`.
 

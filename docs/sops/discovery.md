@@ -26,7 +26,7 @@ Candidates that cannot be added yet go to the `monitor` lane with a `watch_case`
 Apply this **before** building a candidate row:
 
 - **Capacity test**: nameplate or installed electrical capacity ≥50 MW per unit (or per IC/AGT engine set, summed across engines; a data center's backup engine fleet is summed too). The **EU and UK threshold is 20 MW** (the manual's "<20MW per unit" reads as a typo; whether 20 MW applies per engine or to the summed set is asked of Dan O'Beirne, and the repo sums meanwhile).
-- **Electrical nameplate only. Never shaft/mechanical-drive MW** (M603). This is the single most common trap at industrial sites: a compressor-drive gas turbine at an LNG terminal, refinery, or pipeline compressor station is out of scope even at large mechanical ratings — only the electricity-generating capacity counts, and only if a generator is actually attached.
+- **Electrical nameplate only. Never shaft/mechanical-drive MW** (M603). This is the single most common trap at industrial sites: a compressor-drive gas turbine at an LNG terminal, refinery, or pipeline compressor station is out of scope even at large mechanical ratings — only the electricity-generating capacity counts, and only if a generator is actually attached. Gas-fed fuel cells are out of scope as well (no combustion; Baird 2026-11-17), though backup engines at the same site still count.
 - **Ranges take the high end.** Record the figure the source gives, at most one decimal; rounding to the whole MW is allowed, never required.
 - Capacity is **MWe (electrical), never MWt (thermal)**.
 
