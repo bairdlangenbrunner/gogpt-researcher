@@ -1,0 +1,113 @@
+{
+ "meta": {
+  "plant_id": "L100000402228",
+  "plant_name": "Afton generating station",
+  "state": "New Mexico",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T09:28:43-05:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401842",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 55210, generators 0001 (177.0 MW) and 0002 (110.0 MW), unit code CC1, both '(OP) Operating'. Together they equal the 287 MW GEM shows."
+    },
+    "Planned retire": {
+     "value": "2042",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf",
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Planned retirement year:\n- Open the Public Service Company of New Mexico 2026 integrated resource plan appendices at https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf and go to the Afton Generating Station description in the existing resources appendix, about page 85 of the file. It says 'Afton is assumed to be available with PNM's portfolio through its planned retirement year, 2042.'\n- The same paragraph says PNM assumed for modeling that Afton could run a couple of years longer, to the end of 2044, and that this will be re-evaluated in the next plan in 2029.\n- The plan report at https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf says in the load and resource section that retirements of Afton, Luna and Rio Bravo take effect 'by end of 2044'. So 2042 is the planned year and 2044 is the modeling limit.\n- GEM shows 2039, which no document supports. The human adds a new scheduled retirement event for 2042 and does not change an existing one."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "The September 2026 EIA table shows the unit operating. PNM's 2026 resource plan gives a planned retirement year of 2042, with 2044 used only for modeling. I found no document that states Backup Power, so the value no stays as it is."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000401842",
+   "concern_type": "Planned retire",
+   "question": "Should Afton's planned retirement change from 2039 to 2042?",
+   "finding": "The PNM 2026 resource plan appendices at https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf, in the Afton Generating Station description, say 'planned retirement year, 2042' and allow modeling to 2044. No document gives 2039.",
+   "recommendation": "Change the planned retirement year to 2042 and add a new scheduled retirement event. Ask the project manager where 2039 came from before removing it.",
+   "note": "The plan report at https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf also says retirements of Afton, Luna and Rio Bravo come by end of 2044. I found no Backup Power document for Afton.",
+   "refs": [
+    "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf",
+    "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf"
+   ],
+   "proposed_value": {
+    "Planned retire": "2042"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Excel file read for plant 55210."
+  },
+  {
+   "url": "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Afton description reads 'planned retirement year, 2042'."
+  },
+  {
+   "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Load and resource section: 'Retirements of Afton, Luna, and Rio Bravo by end of 2044'."
+  }
+ ]
+}

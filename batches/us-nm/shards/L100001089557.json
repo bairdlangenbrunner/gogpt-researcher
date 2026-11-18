@@ -1,0 +1,193 @@
+{
+ "meta": {
+  "plant_id": "L100001089557",
+  "plant_name": "Site Layer 1 Data Center power station",
+  "state": "New Mexico",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:48:09-05:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001101987",
+   "unit_name": "1",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "300.8",
+     "refs": [
+      "https://service.web.env.nm.gov/urls/GyvVdjHy"
+     ],
+     "verifications": [
+      {
+       "url": "https://service.web.env.nm.gov/urls/GyvVdjHy",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Capacity:\n\n- Open the Site Layer 1 air permit application at https://service.web.env.nm.gov/urls/GyvVdjHy and go to PDF page 36. The paragraph that starts 'The proposed gas generation equipment would consist of' says thirty-two Wärtsilä 20V34SG engines, 'each rated at approximately 9.4 MW'.\n- 32 engines at 9.4 MW is 300.8 MW. PDF page 12, the equipment list, shows ENG01 to ENG32 at 9.4 MW each.\n- The same page 36 says on-site generation is 'approximately 300 MW' for a data center of about 800 MW."
+    },
+    "Number Of Engines": {
+     "value": "32",
+     "refs": [
+      "https://service.web.env.nm.gov/urls/GyvVdjHy"
+     ],
+     "verifications": [
+      {
+       "url": "https://service.web.env.nm.gov/urls/GyvVdjHy",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open https://service.web.env.nm.gov/urls/GyvVdjHy and go to PDF page 36. It says 'thirty-two (32) Wärtsilä 20V34SG internal combustion engines'. The equipment list on PDF page 12 shows ENG01 to ENG32."
+    },
+    "Capacity Per Engine": {
+     "value": "9.4",
+     "refs": [
+      "https://service.web.env.nm.gov/urls/GyvVdjHy"
+     ],
+     "verifications": [
+      {
+       "url": "https://service.web.env.nm.gov/urls/GyvVdjHy",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open https://service.web.env.nm.gov/urls/GyvVdjHy and go to PDF page 12. Each engine row, ENG01 to ENG32, shows 9.4 MW. PDF page 36 says each is 'rated at approximately 9.4 MW'."
+    },
+    "Operator(s)": {
+     "value": "Site Layer 1 LLC",
+     "refs": [
+      "https://service.web.env.nm.gov/urls/GyvVdjHy"
+     ],
+     "verifications": [
+      {
+       "url": "https://service.web.env.nm.gov/urls/GyvVdjHy",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open https://service.web.env.nm.gov/urls/GyvVdjHy and go to PDF page 4, Section 1. Item 2 reads 'Plant Operator Company Name: Site Layer 1, LLC'."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://service.web.env.nm.gov/urls/GyvVdjHy"
+     ],
+     "verifications": [
+      {
+       "url": "https://service.web.env.nm.gov/urls/GyvVdjHy",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Backup power:\n\n- Open https://service.web.env.nm.gov/urls/GyvVdjHy and go to PDF page 137, the Acid Rain row. It says the engines 'do not sell electricity and are not interconnected to the grid'. So they are the site's own power supply.\n- PDF page 36 calls the project 'a data center powered by a natural gas-fired electrical power generation' plant. Nothing in the application describes the engines as emergency or backup units. So Backup Power is no."
+    },
+    "Status Detail": {
+     "value": "Newest entry: October 7, 2026: Site Layer 1 LLC filed an air permit application for 32 gas engines. October 22, 2026: Grant County approved a one-year moratorium on new data centers after residents objected to this project.",
+     "refs": [
+      "https://service.web.env.nm.gov/urls/GyvVdjHy",
+      "https://www.abqjournal.com/news/grant-county-enacts-new-mexicos-latest-data-center-moratorium/3147278"
+     ],
+     "verifications": [
+      {
+       "url": "https://service.web.env.nm.gov/urls/GyvVdjHy",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.abqjournal.com/news/grant-county-enacts-new-mexicos-latest-data-center-moratorium/3147278",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status:\n\n- The cover letter on PDF page 1 of the application at https://service.web.env.nm.gov/urls/GyvVdjHy is dated October 7, 2026 and submits an 'initial NSR application', which is a new air permit application.\n- The Albuquerque Journal story at https://www.abqjournal.com/news/grant-county-enacts-new-mexicos-latest-data-center-moratorium/3147278, published October 22, 2026, says Grant County approved a one-year moratorium on data center development as officials consider rules for projects near Hachita. The article is behind a paywall, and the web address loads with the words moratorium and Hachita.\n- The unit stays pre-construction. The moratorium may block it, but the county has not cancelled it. The company's lawyers argued the moratorium language is ambiguous, per the same article."
+    }
+   },
+   "not_found": [
+    "Start year"
+   ],
+   "notes": "The permit application matches this plant at 32 engines and 300.8 MW. I found no source for the 2028 start year, so it is left as is. Latest Activity is left alone because the permit was filed in October 2026."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001101987",
+   "concern_type": "Capacity (MW)",
+   "question": "Does the 601.6 MW and 64 generators figure for Site Layer I apply to this plant?",
+   "finding": "The application at https://service.web.env.nm.gov/urls/GyvVdjHy lists only 32 engines, ENG01 to ENG32, on PDF page 12, and PDF page 36 says 32. The harvest's 64 and 601.6 MW is double the real count.",
+   "recommendation": "Keep 32 engines and 300.8 MW. Do not add a second plant.",
+   "note": "The equipment list on PDF page 12 also has one extra row, SSM1, for start-up emissions. It is not a separate generator. The incompleteness letter at https://service.web.env.nm.gov/urls/WxDewWXD names no engines."
+  },
+  {
+   "gem_unit_id": "G100001101987",
+   "concern_type": "location",
+   "question": "Is GEM's exact point 4 km from the permit's point the right one?",
+   "finding": "The permit application at https://service.web.env.nm.gov/urls/GyvVdjHy, PDF page 6, gives Latitude 31.980569 and Longitude -108.511384. GEM's exact point is 31.973181, -108.470452, about 4.0 km east.",
+   "recommendation": "Check the source of GEM's point. If it is not an owner or government map, move to the permit's coordinates.",
+   "note": "The permit says the site is in Grant County, near Playas and 11.8 miles from Hachita on PDF page 6. I did not reopen the point because GEM already marks it exact."
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Site Layer 1 LLC",
+   "role": "operator",
+   "lookup_result": "Already the owner in GEM as Site Layer 1 LLC [100%]. No new entity needed."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://service.web.env.nm.gov/urls/GyvVdjHy",
+   "used_for": [
+    "Capacity (MW)",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Operator(s)",
+    "Backup Power",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Read the whole application through fetch.py."
+  },
+  {
+   "url": "https://www.abqjournal.com/news/grant-county-enacts-new-mexicos-latest-data-center-moratorium/3147278",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Paywalled article, loads with the verifier."
+  },
+  {
+   "url": "https://service.web.env.nm.gov/urls/WxDewWXD",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "not relevant",
+   "note": "Not opened again, the harvest already says it names no engine."
+  }
+ ]
+}

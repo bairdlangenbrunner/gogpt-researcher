@@ -1,0 +1,79 @@
+{
+ "meta": {
+  "plant_id": "L100000402507",
+  "plant_name": "Chino Mines power station",
+  "state": "New Mexico",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:48:09-05:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401761",
+   "unit_name": "CTG9",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Open the EIA-860M generator table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 54667 Chino Mines has generator 9 (unit code CTG9) at 37.5 MW with combined cycle technology, operating year 2001, and generator 7 at 16.5 MW, operating year 1959. Both are marked status SB, standby or backup, available for service but not normally used. EIA still shows the plant in the Operating sheet, so it has not been retired or listed with a retirement date. The standby flag was already weighed in the Status Detail text. I found no retirement, mothballing or sale news in a web search. Note that the EIA label is standby, so the reviewer may prefer to keep the existing decision."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Backup Power"
+   ],
+   "notes": "The plant is still in the EIA operating list as standby and I found no retirement or owner change. I could not find a document that names the turbine model. EIA does not list it and a web search found only plant database pages. I also found no document that states backup power."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000401761",
+   "concern_type": "Backup Power",
+   "question": "Should Chino Mines CTG9 stay at Backup Power no although EIA lists it as standby?",
+   "finding": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 54667, generators 7 and 9, shows status SB, which EIA defines as available for service but not normally used. GEM uses Backup Power for data center backup engines.",
+   "recommendation": "Leave Backup Power at no, since this is a mine power plant and not a data center backup fleet.",
+   "note": "I found no other document that states the value, so no Data Source can be added.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "proposed_value": {}
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Plant 54667 rows read."
+  },
+  {
+   "url": "https://www.miningnews.net/exploration-development/news/1191908/phelps-dodge-power-plant-online-mid",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "not relevant",
+   "note": "The page loads and mentions a turbine for the Chino mine, but its text did not give a model I could read and no date; not used."
+  }
+ ]
+}

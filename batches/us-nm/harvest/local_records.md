@@ -1,22 +1,1915 @@
 # New Mexico local planning and commission records (2026-11-17)
 
-Agendas, packets, staff reports and minutes posted since 2025-01-01 by the bodies around the GEM plants and the leads, searched for plant and developer names and for power and data center words. A record is a lead: open the document at its address and cite it there. Copies are in scopes/us-nm/work/local/ and are not committed.
+Agendas, packets, staff reports and minutes posted since 2024-01-01 by the bodies around the GEM plants and the leads, searched for plant and developer names and for power and data center words. A record is a lead: open the document at its address and cite it there. Copies are in scopes/us-nm/work/local/ and are not committed.
 
 ## Bodies read
 
-- City of Hobbs City Commission (Lea County, civicclerk): 104 documents listed since 2025-01-01, 15 read, newest 15 only
-- Grant County Board of County Commissioners (Grant County, agendacenter): 0 documents listed since 2025-01-01, 0 read; no dated documents found on the index, check the address
+- City of Albuquerque City Council (Bernalillo County, legistar): 131 documents listed since 2024-01-01, 131 read
+- City of Albuquerque Land Use, Planning, and Zoning Committee (Bernalillo County, legistar): 44 documents listed since 2024-01-01, 44 read
+- City of Albuquerque Committee of the Whole (Bernalillo County, legistar): 22 documents listed since 2024-01-01, 22 read
+- City of Albuquerque Finance and Government Operations Committee (Bernalillo County, legistar): 62 documents listed since 2024-01-01, 62 read
+- City of Albuquerque Council Study Session (Bernalillo County, legistar): 2 documents listed since 2024-01-01, 2 read
+- City of Albuquerque Development Commission (Bernalillo County, pages): 14 documents listed since 2024-01-01, 14 read
+- Los Alamos County County Council (Los Alamos County, legistar): 98 documents listed since 2024-01-01, 98 read
+- Los Alamos County Planning and Zoning Commission (Los Alamos County, legistar): 59 documents listed since 2024-01-01, 59 read
+- Los Alamos County Board of Public Utilities (Los Alamos County, legistar): 52 documents listed since 2024-01-01, 52 read
+- City of Hobbs City Commission (Lea County, civicclerk): 134 documents listed since 2024-01-01, 134 read (5 by OCR)
+- City of Carlsbad (Eddy County, civicclerk): 407 documents listed since 2024-01-01, 407 read (123 by OCR)
+- Dona Ana County Commission and Planning (Dona Ana County, civicclerk): 363 documents listed since 2024-01-01, 363 read (10 by OCR)
+- Bernalillo County Commission and planning boards (Bernalillo County, iqm2): 1244 documents listed since 2024-01-01, 1244 read (19 by OCR)
+- City of Las Cruces City Council (Dona Ana County, civicweb): 402 documents listed since 2024-01-01, 402 read
+- City of Las Cruces boards (planning and zoning, development review) (Dona Ana County, pages): 136 documents listed since 2024-01-01, 136 read (56 by OCR)
+- City of Rio Rancho Governing Body and Planning and Zoning Board (Sandoval County, granicus): 2 documents listed since 2024-01-01, 2 read
+- San Juan County Commission (San Juan County, sjcounty): 38 documents listed since 2024-01-01, 38 read (18 by OCR)
+- Eddy County Commission (Eddy County, agendacenter): 30 documents listed since 2024-01-01, 30 read (13 by OCR)
+- City of Roswell (Chaves County, agendacenter): 312 documents listed since 2024-01-01, 312 read (38 by OCR)
+- City of Farmington (San Juan County, agendacenter): 208 documents listed since 2024-01-01, 208 read (128 by OCR)
+- Village of Los Lunas (Valencia County, agendacenter): 83 documents listed since 2024-01-01, 83 read (10 by OCR)
+- Grant County Board of County Commissioners (Grant County, civicclerk): 252 documents listed since 2024-01-01, 252 read (7 by OCR)
+- Valencia County Commission (Valencia County, pages): 150 documents listed since 2024-01-01, 150 read (4 by OCR)
+- Sandoval County Commission and planning (Sandoval County, pages): 169 documents listed since 2024-01-01, 169 read (77 by OCR)
+- Chaves County Commission (Chaves County, pages): 64 documents listed since 2024-01-01, 64 read (31 by OCR)
 
 ## Records that name a GEM plant
 
+### Bluffview power station (L100000402529), San Juan County
+
+- City of Farmington, 2026-10-13, agenda: Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_10132026-2344
+  - "CLOSED MEETING A motion was made by Councilor Rodgers, seconded by Councilor Jakino to close the meeting to discuss requests for proposals for water treatment services for the Bluffview Power Plant and for a Red Apple Transit route study, pursuant to Section 10-15-1(H) (6) NMSA 1978."
+  - "REQUEST FOR PROPOSALS/WATER TREATMENT SERVICES FOR THE BLUFFVIEW POWER PLANT Chief Procurement Officer Jennifer Rowland reported that proposals for water treatment services for the Bluffview Power Plant (Electric) opened on July 28, 2026 with two offerors participating."
+  - "Thereupon, a motion was made by Councilor Rodgers, seconded by Councilor Logan to award the proposal for water treatment services for the Bluffview Power Plant to Veolia WTS USA Inc., as recommended by the Chief Procurement Officer, and upon voice vote the motion carried unanimously."
+- City of Farmington, 2026-09-22, agenda: Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_09222026-2336
+  - "Closed Meeting to discuss requests for proposals for water treatment services for the Bluffview Power Plant and for a Red Apple Transit route study, pursuant to Section 10-15-1H(6) NMSA 1978. 16."
+  - "Recommendation from the Chief Procurement Officer to award the proposal for water treatment services for the Bluffview Power Plant (Electric) to Veolia WTS USA Inc. as the top evaluated firm."
+- City of Farmington, 2026-09-22, minutes: Regular Meeting minutes, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Minutes/_09222026-2336
+  - "CLOSED MEETING A motion was made by Councilor Rodgers, seconded by Councilor Jakino to close the meeting to discuss requests for proposals for water treatment services for the Bluffview Power Plant and for a Red Apple Transit route study, pursuant to Section 10-15-1(H) (6) NMSA 1978."
+  - "REQUEST FOR PROPOSALS/WATER TREATMENT SERVICES FOR THE BLUFFVIEW POWER PLANT Chief Procurement Officer Jennifer Rowland reported that proposals for water treatment services for the Bluffview Power Plant (Electric) opened on July 28, 2026 with two offerors participating."
+  - "She recommended 로, that the proposal be awarded to Veolia WYS USA Inc. as the top evaluated firm and noted that the award is contingent upon execution of an agreement. | Thereupon, a motion was made by Councilor Rodgers, seconded by Councilor Logan to award the proposal for water treatment services "
+- City of Farmington, 2026-02-10, agenda: Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_02102026-2248
+  - "Ribbon Cutting for RICE Engines Mayor Duckett thanked all those who attended the recent ribbon cutting for the Electric Utility Department’s two new reciprocating internal combustion engines (RICE) at the Bluffview Power Plant, noting the important milestone adds 18 megawatts of additional generatio"
+- City of Farmington, 2026-01-20, minutes: Work Session and Organizational Meeting minutes, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Minutes/_01202026-2240
+  - "Ribbon Cutting for RICE Engines Mayor Duckett thanked all those who attended the recent ribbon cutting for the Electric Utility Department’s two new reciprocating internal combustion engines (RICE) at the Bluffview Power Plant, noting the important milestone adds 18 megawatts of additional generatio"
+
+### Hobbs generating station (L100000402045), Lea County
+
+- City of Hobbs City Commission, 2026-06-01, packet: City Commission Meeting June 1, 2026 - Full Agenda Packet, https://hobbsnm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=417,plainText=false)
+  - "Deloyed Landreth, Head Strength and Conditioning Coach, invited the public to support and attend Hobbs Powerlifting Program events."
+
+### Lordsburg Generating Station (L100001083303), Hidalgo County
+
+- Grant County Board of County Commissioners, 2026-10-08, packet: Board of Commissioners Regular Meeting 10.08.2026 Public Agenda Packet, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=2037,plainText=false)
+  - Leads named: Site Layer 1
+  - "Site Layer One Data Center Presentation VII."
+  - "Grant County typically has a wide range of weather conditions, with winter lows of 26 and summer highs of 87 degrees, per the National Climatic Data Center."
+  - "Higher paid workers at Deming’s recently built industrial parks and the Lordsburg Station of the U.S."
+- Grant County Board of County Commissioners, 2026-08-13, packet: Board of Commissioners Regular Meeting 2026 8.13 Grant County Board of Commissioners Regular Meeting public packet, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=1982,plainText=false)
+  - "Grant County typically has a wide range of weather conditions, with winter lows of 26 and summer highs of 87 degrees, per the National Climatic Data Center."
+  - "Higher paid workers at Deming’s recently built industrial parks and the Lordsburg Station of the U.S."
+
+### Project Jupiter Microgrid power station (L100001080450), Dona Ana County
+
+- Dona Ana County Commission and Planning, 2026-11-10, agenda: BOCC Regular Meeting November 10, 2026 Final Amended Agenda - November 10, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5504,plainText=false)
+  - Leads named: Project Jupiter
+  - "Approve budget resolution to fund via the $10 million received from the Project Jupiter community benefits agreement;"
+  - "Acting County Manager establish metrics and submission requirements; to be funded from remaining $7 million from the Project Jupiter community benefits agreement. 32."
+  - "The Board may convene in closed session regarding limited personnel matters related to the Community Monitoring Committee for Project Jupiter; the acquisition or disposal of real property or water rights; and attorney-client privilege pertaining to threatened or pending litigation in 1."
+  - "Project Jupiter IRBs; 3."
+- Dona Ana County Commission and Planning, 2026-11-10, packet: BOCC Regular Meeting November 10, 2026 BOCC Regular Meeting November 10, 2026 - Packet, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5505,plainText=false)
+  - Leads named: Project Jupiter
+  - Also mentions: industrial revenue bond, irb
+  - "Approve budget resolution to fund via the $10 million received from the Project Jupiter community benefits agreement;"
+  - "Acting County Manager establish metrics and submission requirements; to be funded from remaining $7 million from the Project Jupiter community benefits agreement. 32."
+  - "The Board may convene in closed session regarding limited personnel matters related to the Community Monitoring Committee for Project Jupiter; the acquisition or disposal of real property or water rights; and attorney-client privilege pertaining to threatened or pending litigation in 1."
+  - "Project Jupiter IRBs; 3."
+  - "For their presentation, the students examined data centers and artificial intelligence, with a particular focus on Project Jupiter in Doiia Ana County."
+- Dona Ana County Commission and Planning, 2026-10-27, agenda: BOCC Regular Meeting October 27, 2026 BOCC Amended Agenda October 27, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5476,plainText=false)
+  - Leads named: Project Jupiter
+  - "Project Jupiter IRBs; 3."
+- Dona Ana County Commission and Planning, 2026-10-27, packet: BOCC Regular Meeting October 27, 2026 Agenda Packet, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5478,plainText=false)
+  - Leads named: Project Jupiter
+  - "Project Jupiter IRBs; 3."
+  - "Presentation and Update by Project Jupiter Representatives Denisse Carter, Economic Development Time: 11:36:15 Director To listen to the Presentation go to: https://youtu.be/n53wwjbWmdk?t=10184 19."
+  - "The proposed funding includes: • Up to $100,000 toward the local match associated with SCRTD’s $500,000 solar array and microgrid grant; and • Up to $70,000 to support fare-free transit service from January 1, 2027, through June 30, 2027."
+  - "The funding consists of (1) a $100,000 County contribution identified as the 20% local match for SCRTD’s $500,000 solar array and microgrid grant, and (2) $70,000 to support fare-free transit service from January 1 through June 30, 2027, the second half of County fiscal year 2027."
+  - "The contribution is allocated as follows: $100,000 for the County’s 20% local match associated with the $500,000 solar array and microgrid grant, and $70,000 for fare-free public transit service from January 1 through June 30, 2027. 2."
+- Dona Ana County Commission and Planning, 2026-10-13, agenda: BOCC Regular Meeting October 13, 2026 BOCC Amended Agenda October 13, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5467,plainText=false)
+  - Leads named: Project Jupiter
+  - "Presentation and Update by Project Jupiter Representatives Denisse Carter, Economic Development Director 19."
+- Dona Ana County Commission and Planning, 2026-10-13, packet: BOCC Regular Meeting October 13, 2026 BOCC Amended Regular Meeting October 13, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5468,plainText=false)
+  - Leads named: Project Jupiter, Rio Grande units and El Paso Electric
+  - "Presentation and Update by Project Jupiter Representatives Denisse Carter, Economic Development Director 19."
+  - "(877) 827-7200 Doña Ana County Manager's Office October 13, 2026 Initiating Department Meeting Date 14 Contact Person Agenda Item Number TITLE OF AGENDA ITEM TO BE CONSIDERED CONFIRM APPOINTMENT OF DON BASSETT AND MARCUS WELLS AS THE DISTRICT 4 MEMBERS TO COMMUNITY MONITORING COMMITTEE RELATED TO PR"
+  - "Confirm the appointment of Don Bassett and Marcus Wells as the District 4 members to Community Monitoring Committee Related to Project Jupiter Type of Action:"
+  - "Don Bassett and Marcus Wells are designated as the members from District 4 on the Community Monitoring Committee Related to Project Jupiter."
+  - "BEING A GOOD NEIGHBOR Jobs – We hire local 11 Copyright © 2025, Oracle and/or its affiliates Page 189 of 1032 Confidential- Oracle Internal\ Employees Only Project Jupiter | Workforce Developments Constructions update 4393 construction workers 2755 construction workers July August September October "
+- Dona Ana County Commission and Planning, 2026-09-22, agenda: BOCC Regular Meeting September 22, 2026 BOCC Amended Agenda September 22, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5438,plainText=false)
+  - Leads named: Project Jupiter
+  - "Approve amendment to Resolution #2026-101 Establishing the Stephen Lopez, Community Monitoring Committee Related to Project Jupiter;"
+- Dona Ana County Commission and Planning, 2026-09-22, packet: BOCC Regular Meeting September 22, 2026 BOCC Amended Regular Meeting September 22, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5439,plainText=false)
+  - Leads named: Project Jupiter, Santa Teresa data centers
+  - "Approve amendment to Resolution #2026-101 Establishing the Stephen Lopez, Community Monitoring Committee Related to Project Jupiter;"
+  - "FACILITY NM ECONOMIC CLOSING INITIATIVE MVEDA’S ROLE ✓ Incentives Explanation ✓ Ongoing Business Support ✓ Workforce Connection ✓ Grant Opportunities Mesilla Valley Economic Development Alliance | 575.525.2852 | www.nmborderplex.com Page 337 of 981 EQUIPMENTSHARE A Construction Technology Leader & S"
+  - "FACILITY NMBorderplex INVESTMENT Closing Incentive MVEDA’S ROLE ✓ Site Selection Support ✓ Grant Opportunities ✓ Incentives Analysis ✓ Developer Connections ✓ Workforce Connection ✓ Ongoing Business Support Mesilla Valley Economic Development Alliance | 575.525.2852 | www.nmborderplex.com Page 338 o"
+  - "Presentation and Update by Project Jupiter Representatives Denisse Carter, Economic Development Time: 11:12:25 Director To listen to the Presentation go to: https://youtu.be/wALjQkS-EJA?t=8852 7."
+  - "Upgrades to buildings often include solar power and battery storage, backup generators, fiber optic internet, microgrids, and fuel to operate without grid power."
+- Dona Ana County Commission and Planning, 2026-09-08, agenda: BOCC Regular Meeting September 8, 2026 English and Spanish, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5429,plainText=false)
+  - Leads named: Project Jupiter
+  - "Presentation and Update by Project Jupiter Representatives Denisse Carter, Economic Development Director 7."
+  - "Approve amendment to Resolution #2026-101 Establishing the Stephen Lopez, Community Monitoring Committee Related to Project Jupiter;"
+- Dona Ana County Commission and Planning, 2026-09-08, packet: BOCC Regular Meeting September 8, 2026 BOCC Regular Meeting September 08, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5430,plainText=false)
+  - Leads named: Project Jupiter
+  - "Presentation and Update by Project Jupiter Representatives Denisse Carter, Economic Development Director 7."
+  - "Approve amendment to Resolution #2026-101 Establishing the Stephen Lopez, Community Monitoring Committee Related to Project Jupiter;"
+  - "Progress since July | Water Project Jupiter will save more water than it uses in New Mexico • Oracle and Arable are helping New Mexico farmers use real-time irrigation data to save Create local water benefit about 21 million gallons of water each year >20× Project • Oracle is funding sensors, grower"
+  - "Project Jupiter Launches Initiative to Save More Water Than It Uses in New Mexico Confidential- Oracle Internal\ Employees Only Page 32 of 497 ENVIRONMENT:"
+  - "BEING A GOOD NEIGHBOR | ACCOUNTABILITY ACCOUNTABILITY, MADE VISIBLE Oracle’s ongoing transparency commitment for Project Jupiter 27 Copyright © 2025, Oracle and/or its affiliates | Confidential:"
+- Dona Ana County Commission and Planning, 2026-08-11, agenda: BOCC Regular Meeting August 11, 2026 English-Spanish Amended Final Agenda, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5381,plainText=false)
+  - Leads named: Project Jupiter
+  - "Approve Resolution establishing Community Monitoring Committee Manuel Sanchez, related to Project Jupiter Commissioner, District 5, Chair 14."
+- Dona Ana County Commission and Planning, 2026-08-11, packet: BOCC Regular Meeting August 11, 2026 BOCC August 25, 2026 Final, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5382,plainText=false)
+  - Leads named: Project Jupiter
+  - Also mentions: annex
+  - "Approve Resolution establishing Community Monitoring Committee Manuel Sanchez, related to Project Jupiter Commissioner, District 5, Chair 14."
+  - "Upgrades to buildings often include solar power and battery storage, backup generators, fiber optic internet, microgrids, and fuel to operate without grid power."
+  - "Presentation and Update by Project Jupiter Representatives Denisse Carter, Economic Development Time: 11:14:20 Director To listen to the Presentation go to: https://youtu.be/GfR50epEdtw?t=8982 Break taken at 12:25:30 Back from break at 12:43:30 9."
+  - "Dona Ana County Board of Commissioners & Dona Ana County Records Custodian, D-307-CV-2026-01788the appointment of a fiscal agent by DFA, Project Jupiter, and the Sunland Park annexation matter, as authorized by the Open Meetings Act, Sections 10-15-1-(H) (2), (7), and (8) by Chair Sanchez Second by "
+  - "Community Monitoring Committee Related to Project Jupiter Denisse Carter, Economic Development Time: 10:35:40 Director To listen to Monitoring Committee go to: https://youtu.be/oD3P56ga16Y?t=6706 COMMISSION ADJOURNS Time: 11:47:00 BOARD OF COUNTY COMMISSIONERS OF DOÑA ANA COUNTY, NEW MEXICO Manuel A"
+- Dona Ana County Commission and Planning, 2026-08-11, minutes: BOCC Regular Meeting August 11, 2026 Unofficial Regular Meeting Minutes August 11, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5388,plainText=false)
+  - Leads named: Project Jupiter
+  - "Approve Resolution establishing Community Monitoring Committee Manuel Sanchez, related to Project Jupiter Time: 12:02:10 Commissioner, District 5, Chair To listen to the Resolution go to: https://youtu.be/jFzFI7NmkBQ?t=11573 Motion to approve a resolution establishing Community Monitoring Committee "
+- Dona Ana County Commission and Planning, 2026-08-04, agenda: BOCC Work Session August 4 , 2026 Final Agenda, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5364,plainText=false)
+  - Leads named: Project Jupiter
+  - "Community Monitoring Committee Related to Project Jupiter Manuel Sanchez, Commissioner, District 5, Chair THIS AGENDA IS SUBJECT TO CHANGE NOTE:"
+- Dona Ana County Commission and Planning, 2026-08-04, packet: BOCC Work Session August 4 , 2026 BOCC Amended Work Session July 28, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5365,plainText=false)
+  - Leads named: Project Jupiter
+  - "Community Monitoring Committee Related to Project Jupiter Manuel Sanchez, Commissioner, District 5, Chair THIS AGENDA IS SUBJECT TO CHANGE NOTE:"
+- Dona Ana County Commission and Planning, 2026-07-28, agenda: BOCC Regular Meeting July 28, 2026 English and Spanish, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5351,plainText=false)
+  - Leads named: Project Jupiter
+  - Also mentions: annex
+  - "Presentation and Update by Project Jupiter Representatives Denisse Carter, Economic Development Director 9."
+  - "Dona Ana County Board of Commissioners & Dona Ana County Records Custodian, D-307-CV-2026- 01788the appointment of a fiscal agent by DFA, Project Jupiter, and the Sunland Park annexation matter, as authorized by the Open Meetings Act, Sections 10-15-1-(H) (2), (7), and (8)."
+- Dona Ana County Commission and Planning, 2026-07-28, packet: BOCC Regular Meeting July 28, 2026 BOCC Regular Meeting July 28, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5352,plainText=false)
+  - Leads named: Project Jupiter, Santa Teresa data centers
+  - Also mentions: annex
+  - "Presentation and Update by Project Jupiter Representatives Denisse Carter, Economic Development Director 9."
+  - "Dona Ana County Board of Commissioners & Dona Ana County Records Custodian, D-307-CV-2026- 01788the appointment of a fiscal agent by DFA, Project Jupiter, and the Sunland Park annexation matter, as authorized by the Open Meetings Act, Sections 10-15-1-(H) (2), (7), and (8)."
+  - "Santa Teresa Solar, LLC To further economic development in Dofia Ana County, the Board of County Commissioners has issued bonds that provide capital financing to Hectate Energy Santa Teresa, LLC, a private sector entity, to acquire, construct, equip, and install solar generation equipment, supportin"
+  - "List each specific commitment made by the recipient of the NRG Solar will develop a photovoltaic solar power generating facility and provide jobs to the abatement. local community."
+  - "List each specific commitment made by the recipient of the Milagro Solar I, LLC electric generation, battery storage facility and provide jobs to the local abatement. community."
+- Dona Ana County Commission and Planning, 2026-07-14, packet: BOCC Regular Meeting July 14, 2026 BOCC Regular Meeting July 14, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5335,plainText=false)
+  - Leads named: Project Jupiter, Rio Grande units and El Paso Electric
+  - Also mentions: leda
+  - "Amended Budget Detail) FY2026 Annual 4010:Gross Receipts Tax F-223 Project Jupiter CC-001 Dona Ana RC-036 Gross $0.00 $4,082,624.21 FY26 Final Budget (FY26 DAC Revenue - GRT share County Receipts Tax Adjustments."
+  - "Amended (Countywide) Budget Detail) FY2026 Annual 4020:Other Tax Revenue F-223 Project Jupiter CC-001 Dona Ana RC-016 Compensating $0.00 $2,562.99 FY26 Final Budget (FY26 DAC - GRT share County Tax Adjustments."
+  - "Amended Budget Detail) FY2026 Annual 6420:Gross Receipts Tax F-223 Project Jupiter CC-001 Dona Ana SC-438 GRT - $4,085,187.20 $0.00 FY26 Final Budget (FY26 DAC Intercept - GRT share County LEDA Intercept Adjustments."
+  - "El Paso Electric infrastructure could not handle the facility’s electrical load at the anticipated connection point."
+  - "El Paso Electric infrastructure could not handle the facility’s electrical load at anticipated connection point."
+- Dona Ana County Commission and Planning, 2026-06-23, packet: BOCC Regular Meeting June 23, 2026 BOCC June 23, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5307,plainText=false)
+  - Leads named: Project Jupiter, Rio Grande units and El Paso Electric
+  - "El Paso Electric infrastructure could not handle the facility’s electrical load at the anticipated connection point."
+  - "Project Jupiter Proposed Community Open House & Career Fair Susana Chaparro, County Commissioner, Time: 12:29:45 District 4 3 June 9, 2026, Regular BOCC Meeting Page 109 of 483 To listen to Open House and Career Fair go to: https://youtu.be/1nJov8_XGmg?t=13064 MINUTES 11."
+  - "Axon will determine the locations of data centers for storage of Agency Content."
+  - "Sourcewell Contract # 101223-AXN | Amendment #3 Page 1 of 4 Page 272 of 483  #"  $ !         AXON ALPR APPENDIX If Axon Fleet 2, Axon Fleet 3, or any future generation of Axon Fleet (collectively, “Axon Fleet”) or Axon Outpost or Axon Lightpost (collectively all"
+  - "El Paso Electric Company Est. cost to purchaser: $1,500 Name of entity providing gas service, if available:"
+- Dona Ana County Commission and Planning, 2026-06-17, agenda: Notice of Possible Quorum June 17, 2026 Final Notice of Possible Quorum June 17, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5300,plainText=false)
+  - Leads named: Project Jupiter
+  - "NOTICE OF POSSIBLE QUORUM Notice is hereby given that a possible quorum of the Doña Ana County Board of Commissioners may be present at the Project Jupiter Community Open House and Career Fair scheduled for:"
+- Dona Ana County Commission and Planning, 2026-06-09, agenda: BOCC Regular Meeting June 9, 2026 BOCC Regular Meeting June 9, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5289,plainText=false)
+  - Leads named: Project Jupiter
+  - "Project Jupiter Proposed Community Open House & Career Fair Susana Chaparro, County Commissioner, District 4 • MINUTES 11."
+- Dona Ana County Commission and Planning, 2026-06-09, packet: BOCC Regular Meeting June 9, 2026 BOCC Regular Meeting June 9, 2026 - Packet, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5290,plainText=false)
+  - Leads named: Project Jupiter
+  - "Project Jupiter Proposed Community Open House & Career Fair Susana Chaparro, County Commissioner, District 4 • MINUTES 11."
+  - "(877) 827-7200 Doña Ana County Manager's Office June 9, 2026 Initiating Department Meeting Date Susana Chaparro, County Commissioner, District 4 10 Contact Person Agenda Item Number TITLE OF AGENDA ITEM TO BE CONSIDERED PROJECT JUPITER PROPOSED COMMUNITY OPEN HOUSE & CAREER FAIR SUMMARY OF ITEM TO B"
+- Dona Ana County Commission and Planning, 2026-06-09, minutes: BOCC Regular Meeting June 9, 2026 Unofficial Regular Meeting Minutes June 9, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5297,plainText=false)
+  - Leads named: Project Jupiter
+  - "Project Jupiter Proposed Community Open House & Career Fair Time:"
+- Dona Ana County Commission and Planning, 2026-05-26, packet: BOCC Regular Meeting May 26, 2026 BOCC Regular Meeting May 26, 2026 - Packet, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5252,plainText=false)
+  - Leads named: Project Jupiter
+  - "(503) 641-2000 [email removed] Email: [email removed] 0000177119 Data Center Warehouse 23041 Avenida De La Carlota, Suite 325 Laguna Hills, CA 92653 Contact:"
+  - "Added Project Jupiter PILT payments of approximately 10.8m."
+- Dona Ana County Commission and Planning, 2026-04-28, packet: BOCC Regular Meeting April 28, 2026 BOCC April 28, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5188,plainText=false)
+  - Leads named: Project Jupiter
+  - "A Resolution Regarding Communication on Project Jupiter Scott Andrews, County Manager Time: 11:07:35 In order to listen to the resolution go to: https://youtu.be/aVUjo2UEbeg?t=7975 Motion to approve a resolution Regarding Communication on Project Jupiter by Vice Chair Gameros Second by Chair Sanchez"
+- Dona Ana County Commission and Planning, 2026-04-14, agenda: BOCC Regular Meeting April 14, 2026 English and Spanish, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5153,plainText=false)
+  - Leads named: Project Jupiter
+  - "A Resolution Regarding Communitcation on Project Jupiter Scott Andrews, County Manager • HEARINGS and ORDINANCES 16."
+  - "Brandi Delgado, Administrative Assistant THE COMMISSION MAY CONVENE IN CLOSED SESSION, The Board will convene in closed session to discuss attorney-client privileged information regarding threatened or pending litigation including NMPRC Case No. 25-00082-UT/Application for Revision of Retail Electri"
+- Dona Ana County Commission and Planning, 2026-04-14, packet: BOCC Regular Meeting April 14, 2026 BOCC Regular Meeting April 14, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5155,plainText=false)
+  - Leads named: Project Jupiter, Rio Grande units and El Paso Electric
+  - "A Resolution Regarding Communitcation on Project Jupiter Scott Andrews, County Manager • HEARINGS and ORDINANCES 16."
+  - "Brandi Delgado, Administrative Assistant THE COMMISSION MAY CONVENE IN CLOSED SESSION, The Board will convene in closed session to discuss attorney-client privileged information regarding threatened or pending litigation including NMPRC Case No. 25-00082-UT/Application for Revision of Retail Electri"
+  - "El Paso Electric Company Est. cost to purchaser: $1,500 Name of entity providing gas service, if available:"
+- Dona Ana County Commission and Planning, 2026-04-14, minutes: BOCC Regular Meeting April 14, 2026 Regular Meeting Minutes April 14, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5194,plainText=false)
+  - Leads named: Project Jupiter
+  - "A Resolution Regarding Communication on Project Jupiter Scott Andrews, County Manager Time: 11:07:35 In order to listen to the resolution go to: https://youtu.be/aVUjo2UEbeg?t=7975 Motion to approve a resolution Regarding Communication on Project Jupiter by Vice Chair Gameros Second by Chair Sanchez"
+- Dona Ana County Commission and Planning, 2026-01-27, packet: BOCC Regular Meeting January 27, 2026 BOCC Regular Meeting January 27, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=4016,plainText=false)
+  - Leads named: Project Jupiter
+  - "Axon will determine the locations of data centers for storage of Agency Content."
+  - "Sourcewell Contract # 101223-AXN | Amendment #3 Page 1 of 4 Page 328 of 662  #"  $ !         AXON ALPR APPENDIX If Axon Fleet 2, Axon Fleet 3, or any future generation of Axon Fleet (collectively, “Axon Fleet”) or Axon Outpost or Axon Lightpost (collectively all"
+  - "Approve a resolution recognizing partial fulfillment of the community Lucio Luttrell, benefit commitment between Project Jupiter and Doña Ana County Deputy County Manager Time: 11:47:20 5 January 13, 2026, Regular BOCC Meeting Page 510 of 662 To listen to resolution go to: https://youtu.be/KPj-p0o8y"
+- Dona Ana County Commission and Planning, 2026-01-22, packet: Planning and Zoning Commission Regular Meeting, January 22, 2026 Planning & Zoning Commission Regular Meeting, January 2, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=4004,plainText=false)
+  - Leads named: Project Jupiter
+  - "Dona Ana County also approved Project Jupiter in spite of hundreds of protests."
+- Dona Ana County Commission and Planning, 2026-01-13, agenda: BOCC Regular Meeting January 13, 2026 January 13, 2025, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=4001,plainText=false)
+  - Leads named: Project Jupiter
+  - "Approve a resolution recognizing partial fulfillment of the community Lucio Luttrell, benefit commitment between Project Jupiter and Doña Ana County."
+  - "Aprobar una resolución que reconozca el cumplimiento parcial del Lucio Luttrell, compromiso de beneficios comunitarios entre Project Jupiter y el Subdirector del condado Condado de Doña Ana."
+- Dona Ana County Commission and Planning, 2026-01-13, packet: BOCC Regular Meeting January 13, 2026 BOCC January 13, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=4002,plainText=false)
+  - Leads named: Project Jupiter, Rio Grande units and El Paso Electric
+  - "Approve a resolution recognizing partial fulfillment of the community Lucio Luttrell, benefit commitment between Project Jupiter and Doña Ana County."
+  - "Aprobar una resolución que reconozca el cumplimiento parcial del Lucio Luttrell, compromiso de beneficios comunitarios entre Project Jupiter y el Subdirector del condado Condado de Doña Ana."
+  - "(877) 827-7200 Doña Ana County Manager's Office January 13, 2026 Initiating Department Meeting Date Lucio Luttrell, Deputy County Manager 18 Contact Person Agenda Item Number TITLE OF AGENDA ITEM TO BE CONSIDERED APPROVE A RESOLUTION RECOGNIZING PARTIAL FULFILLMENT OF THE COMMUNITY BENEFIT COMMITMEN"
+  - "Approve a resolution recognizing partial fulfillment of the community benefit commitment between Project Jupiter and Doña Ana County."
+  - "As part of the executed MOU between Project Jupiter and Doña Ana County, Project Jupiter made a commitment to support key and timely community priorities."
+- Dona Ana County Commission and Planning, 2025-11-25, packet: BOCC Regular Meeting November 25, 2025 BOCC November 25, 2025, Final, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3967,plainText=false)
+  - Leads named: Project Jupiter, Rio Grande units and El Paso Electric
+  - "Page 114 of 334 Key initiatives – Modernizing Storage and Servers o New storage & servers purchased to replace legacy systems. o Significantly faster systems with much smaller footprint in the data center. o New virtualization environment for all our server infrastructure. o First complete refresh i"
+  - "After the discussion regarding Memorial Medical Center, the County Commissioners also engaged in an emergency closed meeting with its attorney regarding threatened or pending litigation related to Project Jupiter, including D-307-CV-2025-02766, Saldana vs."
+  - "The project will be serviced by El Paso Electric Company for electric service, New Mexico Gas for natural gas service and the Camino Real Regional Utility Authority (CRRUA) for water and wastewater service."
+- Dona Ana County Commission and Planning, 2025-10-14, agenda: BOCC Regular Meeting October 14, 2025 Amended English-Spanish Amended Final Agenda, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3928,plainText=false)
+  - Leads named: Project Jupiter
+  - "Approve a resolution authorizing an application for Strategic Water Mireya Rascon Utilities Supply funds in the amount of $25 million for a desalination plant in the Department Assistant Santa Teresa Industrial Park, with matching funds of up to $10 million Director (40%) from the County pursuant to"
+  - "Approve resolution authorizing an application for Strategic Water Mireya Rascon Utilities Supply funds in the amount of $10 million for study and Department Assistant characterization of brackish water sources in and around the Mesilla Director Basin aquifer and the Mount Riley aquifer, with matchin"
+- Dona Ana County Commission and Planning, 2025-10-14, packet: BOCC Regular Meeting October 14, 2025 BOCC October 14, 2025, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3930,plainText=false)
+  - Leads named: Project Jupiter, Rio Grande units and El Paso Electric, Santa Teresa data centers
+  - Also mentions: leda, local economic development act
+  - "Approve a resolution authorizing an application for Strategic Water Mireya Rascon Utilities Supply funds in the amount of $25 million for a desalination plant in the Department Assistant Santa Teresa Industrial Park, with matching funds of up to $10 million Director (40%) from the County pursuant to"
+  - "Approve resolution authorizing an application for Strategic Water Mireya Rascon Utilities Supply funds in the amount of $10 million for study and Department Assistant characterization of brackish water sources in and around the Mesilla Director Basin aquifer and the Mount Riley aquifer, with matchin"
+  - "Axon will determine the locations of data centers for storage of Agency Content."
+  - "Sourcewell Contract # 101223-AXN | Amendment #3 Page 1 of 4 Page 275 of 1186  #"  $ !         AXON ALPR APPENDIX If Axon Fleet 2, Axon Fleet 3, or any future generation of Axon Fleet (collectively, “Axon Fleet”) or Axon Outpost or Axon Lightpost (collectively al"
+  - "The total audio output of these speakers shall be no less than 200 MW (14.4 ohms)."
+- Dona Ana County Commission and Planning, 2025-09-19, packet: BOCC Regular Meeting September 19, 2025 BOCC September 19, 2025 Final, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3903,plainText=false)
+  - Leads named: Project Jupiter
+  - Also mentions: industrial revenue bond, leda, payment in lieu, pilot
+  - "Award Project Contract to Lynco Electric through CES in the amount Robert Herrera, not to exceed $587,990.54 for the purchase and installation of the Facilities & Services, backup generator at the new OEM Facility."
+  - "The project would include the construction, development, and acquisition of a hyperscale, artificial intelligence (ai) data center campus, a collocated microgrid, and related infrastructure and facilities, located within the boundaries of Doña Ana County. 11."
+  - "(877) 827-7200 Facilities and Parks September 19, 2025 Initiating Department Meeting Date Robert Herrera, Facilities & Services, Director, Justin Weaver, 7 Project Manager Contact Person Agenda Item Number TITLE OF AGENDA ITEM TO BE CONSIDERED AWARD PROJECT CONTRACT TO LYNCO ELECTRIC THROUGH CES IN "
+  - "Project will consist of the purchase and installation of a 600kw back-up generator to run the entire facility."
+  - "Award Project Contract to Lynco Electric through CES in the amount not to exceed $587,990.54 for the purchase and installation of the backup generator at the new OEM Facility."
+- Dona Ana County Commission and Planning, 2025-09-09, agenda: BOCC Regular Meeting, September 09, 2025 BOCC September 09, 2025, Final, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3893,plainText=false)
+  - Leads named: Project Jupiter
+  - Also mentions: leda
+  - "Authorization to Publish Notice of Hearing, Title, and General Summary Christina Ainsworth, for a Local Development Act (LEDA) Ordinance approving Reduced Community Development Permit Fees for Project Jupiter."
+- Dona Ana County Commission and Planning, 2025-09-09, packet: BOCC Regular Meeting, September 09, 2025 BOCC September 9, 2025 Final, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3894,plainText=false)
+  - Leads named: Project Jupiter
+  - Also mentions: leda, local economic development act
+  - "Authorization to Publish Notice of Hearing, Title, and General Summary Christina Ainsworth, for a Local Development Act (LEDA) Ordinance approving Reduced Community Development Permit Fees for Project Jupiter."
+  - "Authorization to publish Notice of Hearing, Title, and General Denisse Carter, Summary, to consider an ordinance approving Project Jupiter Economic Economic Development Development Act (LEDA) Project Ordinance Administrator Time: 12:09:50 In order to listen to Authorization to Publish go to: https:/"
+  - "(877) 827-7200 Community Development September 9, 2025 Initiating Department Meeting Date Denisse Carter, Economic Development Administrator 14 Contact Person Agenda Item Number TITLE OF AGENDA ITEM TO BE CONSIDERED AUTHORIZATION TO PUBLISH NOTICE OF HEARING, TITLE, AND GENERAL SUMMARY FOR A LOCAL D"
+  - "SUMMARY OF ITEM TO BE CONSIDERED INCLUDING PRESENTATION OF OPTIONS FOR ACTION and ACTION REQUESTED Project Jupiter has requested a building permit fee reduction pursuant to Chapter 166 (Economic Development Plan) of the Doña Ana County Code."
+  - "Authorization to publish Notice of Hearing, Title, and General summary, for a Local Economic Development Act (LEDA) Ordinance approving reduced permit fees for Project Jupiter."
+- Dona Ana County Commission and Planning, 2025-08-26, agenda: BOCC Regular Meeting, August 26, 2025 English-Spanish Amended Final Agenda, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3878,plainText=false)
+  - Leads named: Project Jupiter
+  - Also mentions: leda
+  - "Authorization to publish Notice of Hearing, Title, and General Denisse Carter, Summary, to consider an ordinance approving Project Jupiter Economic Economic Development Development Act (LEDA) Project Ordinance."
+- Dona Ana County Commission and Planning, 2025-08-26, packet: BOCC Regular Meeting, August 26, 2025 BOCC August 26, 2025, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3879,plainText=false)
+  - Leads named: Project Jupiter
+  - Also mentions: industrial revenue bond, leda, local economic development act, plat
+  - "Authorization to publish Notice of Hearing, Title, and General Denisse Carter, Summary, to consider an ordinance approving Project Jupiter Economic Economic Development Development Act (LEDA) Project Ordinance."
+  - "With 2022 sales and revenues of $59.4 billion, Caterpillar Inc. is the world’s leading manufacturer of construction and mining equipment, off-highway diesel and natural gas engines, industrial gas turbines and diesel-electric locomotives."
+  - "Cat Detect for Personnel sounds an immediate, unique alert that cuts through the white noise of engines, generators, cell phones and job site chatter to protect ground workers from equipment backing incidents."
+  - "(877) 827-7200 Community Development August 26, 2025 Initiating Department Meeting Date Denisse Carter, Economic Development Administrator 17 Contact Person Agenda Item Number TITLE OF AGENDA ITEM TO BE CONSIDERED A RESOLUTION RELATING TO THE PROPOSED INDUSTRIAL REVENUE BONDS, ENTITLED DOÑA ANA COUN"
+  - "DECLARING THE INTENT OF DOÑA ANA COUNTY TO ISSUE SUCH INDUSTRIAL REVENUE BONDS IN AN AGGREGATE PRINCIPAL AMOUNT UP TO $165,000,000,000 IN CONNECTION WITH THE DEVELOPMENT OF A HYPERSCALE, ARTIFICAL INTELLIGENCE (AI) DATA CENTER CAMPUS, LOCATED WITHIN THE BOUNDARIES OF DOÑA ANA COUNTY FOR THE PURPOSE "
+- Bernalillo County Commission and planning boards, 2026-03-24, agenda: Economic Development Steering Committee Agenda 2026-03-24, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=14&ID=3735&Inline=True
+  - Leads named: Project Jupiter
+  - "DBA Capital Typing 18 1 the last box is they establish a training fund for 2 workforce development. 3 This is actually being done in Dona Ana 4 County with the Project Jupiter revenues establishing 5 workforce development."
+- Bernalillo County Commission and planning boards, 2026-03-24, packet: Economic Development Steering Committee Agenda Packet 2026-03-24, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3735&Inline=True
+  - Leads named: Project Jupiter
+  - "DBA Capital Typing 18 1 the last box is they establish a training fund for 2 workforce development. 3 This is actually being done in Dona Ana 4 County with the Project Jupiter revenues establishing 5 workforce development."
+- Bernalillo County Commission and planning boards, 2026-02-25, packet: Board of County Commissioners Agenda Packet 2026-02-25, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3705&Inline=True
+  - Leads named: Meta Los Lunas, Project Jupiter
+  - Also mentions: moratorium
+  - "I am opposed to the resolution misleadingly titled Holding Data Center Projects Attachment:"
+  - "Some nasty robber baron wants to 18 build a mine, or an oil drill, or a data center, and 19 exploit the land, and the people say “no.” 20 But then some colonial ambassador appears 21 saying, "I'll speak for the people," and starts 22 negotiating the sale of the land."
+  - "No data center. 11 Also, comments made at a previous meeting 12 about suggesting that the tribal authorities currently 13 have too much say in things."
+  - "I am here today to speak in opposition 24 to the proposed data center resolution being considered."
+  - "Second, New Mexico has been designated 12 as a federal quantum tech hub. 13 That designation is directly tied to 14 advanced computing, AI, and the data center 15 infrastructure required to support it."
+- Bernalillo County Commission and planning boards, 2026-02-10, packet: Board of County Commissioners Agenda Packet 2026-02-10, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3695&Inline=True
+  - Leads named: Google data center in Lea County, Project Jupiter
+  - Also mentions: industrial revenue bond, local economic development act, tax abatement
+  - "Holding Data Center Projects Accountable in Our Community Resolution Motion to approve Administrative Resolution AR 2026- Holding Data Center Projects Accountable in Our Community Resolution."
+  - "Corporate Headquarters UR Silver LLC Tax Abatement Agreement Name Sawmill Market Sun Lasso Energy Center LLC, an affiliate of Aypa Tempur Production USA, Inc."
+  - "Sun Lasso Energy Center LLC Tempur Production USA, Inc."
+  - "Madam Chair, Commissioners, I 14 appreciate the opportunity to discuss the data center 15 resolution being considered tonight."
+  - "I'm the CEO of InvestUS, which was co-founded with 17 some other economic developers, Mark Loutman, to focus on 18 bringing new capital and funding economic development 19 projects that benefit New Mexicans. 20 And so, our study of data centers as a 21 potential catalyst for economic growth and posi"
+- Bernalillo County Commission and planning boards, 2026-02-10, minutes: Board of County Commissioners Verbatim Minutes 2026-02-10, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=12&ID=3276&Inline=True
+  - Leads named: Meta Los Lunas, Project Jupiter
+  - Also mentions: moratorium
+  - "I am opposed to the resolution 3 misleadingly titled Holding Data Center Projects 4 Accountable."
+  - "Some nasty robber baron wants to 18 build a mine, or an oil drill, or a data center, and 19 exploit the land, and the people say “no.” 20 But then some colonial ambassador appears 21 saying, "I'll speak for the people," and starts 22 negotiating the sale of the land."
+  - "No data center. 11 Also, comments made at a previous meeting 12 about suggesting that the tribal authorities currently 13 have too much say in things."
+  - "I am here today to speak in opposition 24 to the proposed data center resolution being considered."
+  - "Second, New Mexico has been designated 12 as a federal quantum tech hub. 13 That designation is directly tied to 14 advanced computing, AI, and the data center 15 infrastructure required to support it."
+- Bernalillo County Commission and planning boards, 2026-01-27, minutes: Board of County Commissioners Verbatim Minutes 2026-01-27, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=12&ID=3271&Inline=True
+  - Leads named: Google data center in Lea County, Project Jupiter
+  - "Madam Chair, Commissioners, I 14 appreciate the opportunity to discuss the data center 15 resolution being considered tonight."
+  - "I'm the CEO of InvestUS, which was co-founded with 17 some other economic developers, Mark Loutman, to focus on 18 bringing new capital and funding economic development 19 projects that benefit New Mexicans. 20 And so, our study of data centers as a 21 potential catalyst for economic growth and posi"
+  - "I think technology has advanced 24 sufficiently that you can indeed develop data centers 25 where the power supply is 100% renewable, and it can, if Officemotive, Inc."
+  - "In 2 addition, the technology exists to generate renewable 3 energy without any use of water, and now the technology 4 exists for cooling data centers without water, so zero 5 water impact. 6 The only water needed on a site like that 7 would be for personal use, sinks and toilets."
+  - "Secondly, 21 while I would like to see in most data centers -- Sorry. 22 CHAIR BARBOA:"
+- Bernalillo County Commission and planning boards, 2026-01-07, minutes: Economic Development Steering Committee Action Report 2026-01-07, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=15&ID=3262&Inline=True
+  - Leads named: Project Jupiter
+  - Also mentions: irb
+  - "If you look at what is happening in Dona 15 Ana County, $165 billion IRB, nobody has ever seen that 16 level of IRB for a data center."
+  - "And it is probable, 17 probably even very likely that we are going to get a data 18 center proposal, right? 19 And I don't know if it is going to be at the 20 scale of a Project Jupiter, but if they had a tool like 21 this in advance to be able to evaluate a project like 22 that, they would not have"
+  - "Well, I was just, you know, I 10 think the data center point is an excellent one, Co- 11 Chair."
+- Bernalillo County Commission and planning boards, 2026-01-07, minutes: Economic Development Steering Committee Verbatim Minutes 2026-01-07, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=12&ID=3262&Inline=True
+  - Leads named: Project Jupiter
+  - Also mentions: irb
+  - "If you look at what is happening in Dona 15 Ana County, $165 billion IRB, nobody has ever seen that 16 level of IRB for a data center."
+  - "And it is probable, 17 probably even very likely that we are going to get a data 18 center proposal, right? 19 And I don't know if it is going to be at the 20 scale of a Project Jupiter, but if they had a tool like 21 this in advance to be able to evaluate a project like 22 that, they would not have"
+  - "Well, I was just, you know, I 10 think the data center point is an excellent one, Co- 11 Chair."
+- City of Las Cruces City Council, 2026-11-16, document: City Council - Nov 16 2026, https://lascruces.civicweb.net/document/220326/City%20Council%20-%20Nov%2016%202026.pdf?handle=FBB437B117C4412287DC917BAE9E8EFE
+  - Leads named: Project Jupiter, SWPP ERAS Hobbs
+  - "Data centers 7."
+  - "There has to be more than funneling bright minds into data centers, military research, and desert-based agri- culture."
+  - "Some comments focused specifcally on high-profle issues such as Flock Safety cameras and data center development, refecting a broader desire for more information about how decisions are made, what they cost, and how potential impacts are being considered."
+  - "A signifcant amount of responses men- tioned banning “Flock Safety” cameras and data centers like Project Jupiter."
+  - "Of 44 comments, 16 raised environmental issues and fve specifcally referenced data centers or Project Jupiter."
+- City of Las Cruces City Council, 2026-11-02, document: City Council - Nov 02 2026, https://lascruces.civicweb.net/document/220062/City%20Council%20-%20Nov%2002%202026.pdf?handle=40F864DDCAA7414C95ED626877742A43
+  - Leads named: Project Jupiter, SWPP ERAS Hobbs
+  - "They will keep protecting people who break our immigration laws, and they will keep playing both sides of issues like Project Jupiter, supporting it when it is politically convenient and opposing it when it becomes a political hot potato."
+  - "Integration and Automation Requirements: • Respondents must illustrate evidence that proposed billing software has electronic integration capabilities with a clearinghouse for: • Real-Time Eligibility Verification 6|Page Page 151 of 303 Agenda Item #7.2. • Claim Filing • Remittance Advice (ERAs) • P"
+  - "Integration and Automation Requirements: • Respondents must illustrate evidence that proposed billing software has electronic integration capabilities with a clearinghouse for: • Real-Time Eligibility Verification • Claim Filing • Remittance Advice (ERAs) • Patient Statements and Invoices • Billing "
+- City of Las Cruces City Council, 2026-10-19, document: City Council - Oct 19 2026, https://lascruces.civicweb.net/document/219773/City%20Council%20-%20Oct%2019%202026.pdf?handle=23475FEB86434F0A95C306658527419E
+  - Leads named: Project Jupiter
+  - "I appreciate a call back regarding the BLM land swap that you were advising or helping to advise as far as bringing data centers here."
+  - "So, you and Ikani, and the Mayor and Ifo, you were all trying to bring Meta here with a BLM land swap to put a Meta data center at the ridge above Mesilla."
+  - "NM Borderplex and Project Jupiter developers are speaking about BLM surrounding the west side of the project and not insulating it from future development."
+  - "If the BLM is willing to swap land for data center development, we have a problem."
+  - "You denounced data center development, but you took in almost 100 grand in donations to your campaign."
+- City of Las Cruces City Council, 2026-09-08, document: City Council - Sep 08 2026, https://lascruces.civicweb.net/document/218962/City%20Council%20-%20Sep%2008%202026.pdf?handle=972BD4E9613F48DD83C571DD01D87A9A
+  - Leads named: Project Jupiter
+  - "Sounds like Project Jupiter."
+  - "The last thing which I'm saving for last for a reason, is you mentioned being an extension of our voice and the voice of us and your other funding agencies and I just want to make clear that this voice at least, and you kind of danced around in the presentation, is extremely anti-hyperscalers data c"
+  - "Access to Physical Infrastructure and Data Center Facilities ...................................... 21 6.2."
+  - "Data Center Audits.....................................................................................................22 6.3."
+  - "Data Center Virtual Tours ..........................................................................................23 6.5."
+- City of Las Cruces City Council, 2026-08-03, document: City Council - Aug 03 2026, https://lascruces.civicweb.net/document/218307/City%20Council%20-%20Aug%2003%202026.pdf?handle=E7AB95EA81B54658806112462265E13E
+  - Leads named: Project Jupiter
+  - Also mentions: moratorium
+  - "His wife graduated from this dais and now is working for the Boys and Girls Club which got a huge novelty oversized check from Project Jupiter and now Bill Soules is out there saying oh no, dang these people."
+  - "This is horrible behavior, yet in secret meetings that were cancelled on the agenda at the county, but happen anyway with the Boys and Girls Club with this big giant check from Project Jupiter."
+  - "I demand we speak about a data center moratorium."
+  - "The Data Center Park I am sure is what you want to rebrand it as."
+- City of Las Cruces City Council, 2026-05-18, document: City Council - May 18 2026, https://lascruces.civicweb.net/document/216803/City%20Council%20-%20May%2018%202026.pdf?handle=D28D4BAF6C0D415293F39D3EF7595254
+  - Leads named: Project Jupiter
+  - "We have a large load credit or large load tariff that would allow for if a large load came into the city that it would be paid for by that large load."
+  - "You do receive significant line losses burning natural gas in power plants."
+  - "I was amazed just listening just a few months ago about the Project Jupiter presentation."
+  - "We are going to have to bring on several natural gas power plants just to power that project."
+  - "You have to burn three times as much in the power plant versus what you have to burn in the home in order to get the same amount of energy use."
+- City of Las Cruces City Council, 2026-05-04, document: City Council - May 04 2026, https://lascruces.civicweb.net/document/216431/City%20Council%20-%20May%2004%202026.pdf?handle=33FCB72AD0DE4272BE5388ED532B5528
+  - Leads named: Project Jupiter, Santa Teresa data centers
+  - "Sierra Admister, Member of the Public said as someone who has been an active witness to the Project Jupiter mess and to have elected folks decisions very opposed to the popular one of the public."
+  - "The proximity of Las Cruces to the Santa Teresa Port of Entry generates $31 billion in international trade and is a critical driver of the Las Cruces economy."
+- City of Las Cruces City Council, 2026-03-16, document: City Council - Mar 16 2026, https://lascruces.civicweb.net/document/215662/City%20Council%20-%20Mar%2016%202026.pdf?handle=0C44FC7035F84DEF88B5FCCE1CECD68B
+  - Leads named: Project Jupiter
+  - "In regard to the county being divided by the city and vice versa Project Jupiter comes to mind real quick."
+  - "Installation of the generator for the facility, all electrical work, a concrete pad, diesel fuel with an integral diesel tank, and an enclosure of block-walls and access gates."
+- City of Las Cruces City Council, 2026-03-02, document: City Council - Mar 02 2026, https://lascruces.civicweb.net/document/215162/City%20Council%20-%20Mar%2002%202026.pdf?handle=3DBD18F9BB4049EAA848DFB7187E25D9
+  - Leads named: Project Jupiter
+  - "Councilor Corran said I think to the idea of climate I also have to acknowledge that like hearing about this or wanting us to think about it is underminded by even more externalities, the Rio Grande Water lawsuit, Project Jupiter, I just want to name like those things are really close to us in eithe"
+  - "I haven’t thought fully through this, it is more of a policy priority I think than a budget priority but I really do think we need to start having more serious conversations about economic mobility through policy because it feels like and I have been thinking a lot about this because of Project Jupi"
+- City of Las Cruces City Council, 2025-12-15, document: City Council - Dec 15 2025, https://lascruces.civicweb.net/document/213368/City%20Council%20-%20Dec%2015%202025.pdf?handle=D6C6772E6AE44879B3F63E558D7C9EF8
+  - Leads named: Project Jupiter
+  - "They have been awakened by opposition to ICE and illegal mass deportations, MAGA and Trump, and on the local front by opposition to Project Jupiter."
+  - "Battery back-up to the food storage facility is provided from exterior ground set and natural gas fired generator."
+  - "Commercial Grade – high level of service including natural gas-powered generator back-up system to protect food storage."
+- City of Las Cruces City Council, 2025-11-17, document: City Council - Nov 17 2025, https://lascruces.civicweb.net/document/212751/City%20Council%20-%20Nov%2017%202025.pdf?handle=77494E8B3E2F4DBCA8258A128A01EB6C
+  - Leads named: Project Jupiter, SWPP ERAS Hobbs
+  - "Over the past several months citizens like myself have worked tirelessly to uncover and document serious issues surrounding Project Jupiter, the proposed data center development."
+  - "So, in this same breath that we should be protecting citizens from unlawful surveillance and honoring our heritage we should also be demanding transparency and integrity in every public project including Project Jupiter."
+  - "The protection, enhancement, and perpetuation of cultural properties that represent or reflect distinctive and important aspects and eras of human habitation and activity in Las Cruces; 3."
+  - "Data Center CLASSIFICATION A facility used to house and manage computer systems, servers, networking equipment, and other related components for the purpose of collecting, processing, storing, and disseminating large amounts of data."
+  - "Data Center CLASSIFICATION Development Code 261 Page 993 of 1179 Agenda Item #10.1."
+- City of Las Cruces City Council, 2025-11-03, document: City Council - Nov 03 2025, https://lascruces.civicweb.net/document/212381/City%20Council%20-%20Nov%2003%202025.pdf?handle=3B80EC79A2A94EEABFC62EA8991B4AAE
+  - Leads named: Project Jupiter
+  - "There are many topics we agree upon, loss of health care professionals in New Mexico, the crime, Project Jupiter, and our support for our Las Cruces Police Department."
+  - "Donna Stryker, Member of the Public said I find it interesting that when Project Jupiter was shoved down your throat you didn’t have any problem with that, did you?"
+- City of Las Cruces City Council, 2025-10-23, document: CIAC - Oct 23 2025, https://lascruces.civicweb.net/document/212262/CIAC%20-%20Oct%2023%202025.pdf?handle=A8F30A279C0B460894CDE981F8D9D011
+  - Leads named: Project Jupiter
+  - "Are you aware of the Project Jupiter going on down to Santa Teresa?"
+- City of Las Cruces City Council, 2025-10-06, document: City Council - Oct 06 2025, https://lascruces.civicweb.net/document/211923/City%20Council%20-%20Oct%2006%202025.pdf?handle=C468C446B9C5451FB90B8C88F1C72D1C
+  - Leads named: Project Jupiter, Rio Grande units and El Paso Electric
+  - Also mentions: plat
+  - "Last week the Dona Ana County Commission made moves to approve $165 billion bribe from a Texas based tech company to build a data center in the southern part of the county."
+  - "Data centers require too much water for a community like ours here in the desert."
+  - "In my role as Energy Policy Director at Progress Now New Mexico, I myself am concerned specifically about the energy use of this data center."
+  - "Because they will need interconnection with El Paso Electric to get started those power plants will be connected to El Paso Electric’s grid and as the area’s largest user of EPE electricity and the city making its own moves towards some electrification efforts where we get that electricity matters t"
+  - "Also here to talk with you all about our shared water supply which is at risk by Project Jupiter which I know that is a county jurisdiction but I am surprised of how many non-county Democrat politicians are supporting that, right?"
+
+### Reeves power station (L100000402229), Bernalillo County
+
+- Bernalillo County Commission and planning boards, 2025-10-14, packet: Board of County Commissioners Agenda Packet 2025-10-14, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3612&Inline=True
+  - Also mentions: special use
+  - "Electric System Transmission and Generation (2010-2020) is a county wide facility plan."
+  - "Pg.442 86 4.A.c 1.a COUNTY PLANNING COMMISSION August 6, 2025 SPR2025-0005 BACKGROUND Request Summary Public Service Company of New Mexico (PNM) is requesting an amendment to the Electric System Transmission and Generation (2010-2020) facility plan (“Electric :"
+  - "Relevant location and design standards are included in attachment 4 of this report. 2 County Planning Implementation and Administration of Transmission, Substation and Generation Facilities and Approval The applicant has stated that the preferred alignment presented for the proposed Rio Puerco to Pr"
+  - "Pg.449 93 4.A.c 1.a COUNTY PLANNING COMMISSION August 6, 2025 SPR2025-0005 Notification to the Public The Electric System Transmission and Generation (2010-2020) is a Rank II countywide facility plan."
+  - "August 6, 2025 2 County Planning CONCLUSION This is a request for an amendment to the Electric System Transmission and SPR2025-0005 Generation (2010-2020) facility plan (“Electric Facilities Plan” or “EFP”)."
+
+### Rio Bravo (NM) power station (L100000402230), Bernalillo County
+
+- Bernalillo County Commission and planning boards, 2025-05-06, packet: Economic Development Steering Committee Agenda Packet 2025-05-06, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3481&Inline=True
+  - "It is 22 surrounded by vacant land, the PNM Petroglyph substation and 23 a -- planned with an approved SUP, 3,500 acre solar 24 generation facility to the west. 25 The applicant provided sound justification that the SUP TR- 4 JULIAN SERNA, CCR CERTIFIED COURT REPORTERR Packet Pg. 8 a 1 meets the cri"
+  - "So we essentially operate three and a 25 half times the capacity that's operating in PNM service TR- 9 JULIAN SERNA, CCR CERTIFIED COURT REPORTERR Packet Pg. 13 a 1 territory. 2 Specifically for battery storage, in this 8.6 gigawatt 3 number, it includes solar, battery storage, and wind, but 4 withi"
+  - "And so we will have a 25 12-foot solid wall that surrounds the entire facility with TR- 11 JULIAN SERNA, CCR CERTIFIED COURT REPORTERR Packet Pg. 15 a 1 the appropriate vegetative buffer to the edge of the 2 property line. 3 This project is designed as 150 megawatts with four 4 hours of duration, an"
+  - "We do have a global 20 operations. 21 In the US we have approximately 20 gigawatts in 22 development with over 400 megawatts of operational assets, 23 and we have about 600 megawatts planned for construction 24 this year."
+  - "There is a 115 KV transmission line that 4 runs directly through the property, which is one of the 5 major reasons for siting this project. 6 This project is going to be 195 megawatts DC, 150 7 megawatts AC and is going to consist of a 150 megawatt sized Attachment:"
+
+### Rio Grande (New Mexico) power station (L100000401903), Dona Ana County
+
+- Dona Ana County Commission and Planning, 2026-04-09, packet: Planning and Zoning Commission Regular Meeting, April 9, 2026 Planning and Zoning Commission Regular Meeting, April 9, 2, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5140,plainText=false)
+  - Leads named: Rio Grande units and El Paso Electric
+  - "UTILITIES Electricity El Paso Electric Company Natural Gas PNM Water Lower Rio Grande Public Water Works Authority Telephone Qwest Liquid Waste Disposal Individual Septic Tanks Solid Waste Disposal Private Haulers/Transfer Station Option The subdivider shall provide applicable utility extensions up "
+- Dona Ana County Commission and Planning, 2024-05-14, packet: BOCC Regular Meeting May 14, 2024 BOCC Regular Meeting, MAY 14, 2024, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3427,plainText=false)
+  - Leads named: Rio Grande units and El Paso Electric
+  - "SITE DESCRIPTION Utilities Public Other Provider/Description Off-site Improvements Type Public Private Frontage Unknown Electricity El Paso Electric Street Asphalt Topography Level Gas Rio Grande Width Size Typical for development Water City of Las Cruces Surface Asphalt Shape Irregular Sanitary Sew"
+
+### Roswell Information Park Data Center power station (L100001089629), Chaves County
+
+- City of Roswell, 2026-02-03, agenda: Finance Committee Agenda agenda, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Agenda/_02032026-2981
+  - Leads named: Roswell Information Park
+  - "D Roswell Information Park is a data center campus project with numerous high wage jobs and significant capital investment."
+
+### SWPP ERAS Hobbs power station (L100001083387), Lea County
+
+- City of Carlsbad, 2026-09-22, packet: City Council Meeting 09-22-2026 CC Agenda Packet, https://carlsbadnm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5681,plainText=false)
+  - Leads named: SWPP ERAS Hobbs
+  - ""i'o see the cur1·ent status for this company please go to the Public Worlts and Apprenticeship Application (PWAA) at ilttps://www.dws.state.nm.us/pwaaJ I New MeXico Depc:rtment of Workforce SOlutions, Labor Relations Division, Public Works, 121 Tij eras Ave NE."
+  - "ProoJrement of Diesel Engine Driven Generator Sets and Medium-Voltage Metal-Clad Switchgear equipment for the Jonathan Rogers Water Treatment Plant, HasXell Street Wastewater Treatment Plant, • joel .mora Oarcadls.com Fred Hervey Reclamation Plant,. and Hickerson Water Redamatlon Fadllty."
+- Bernalillo County Commission and planning boards, 2026-04-14, packet: Board of County Commissioners Agenda Packet 2026-04-14, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3744&Inline=True
+  - Leads named: SWPP ERAS Hobbs
+  - Also mentions: plat
+  - "Utility meter removal dates were verified with all utility companies, ABCWUA meter was removed on March 1, 2017, PNM meter on September 18, 2019, and the NM Gas meter was removed in October of 2014."
+  - "Utility meter removal dates were verified with all utility companies, ABCWUA meter was removed on September 3, 1999, PNM meter on January 13, 2004, and the NM Gas meter has never been active after 2009, when utilities were separated from PNM."
+  - "The PNM & NM Gas meters were removed and the ABCWUA meter had been illegally tapped into from the main line in Rio Abajo Rd SE."
+  - "ERAS LO CHAN NEL CA TED AN NE L INVESTMENT SU-PERMIT FOR A POWER For current information visit VA https://www.bernco.gov/planning/ CH PLANT (SOLAR ENERGY A N 043 6 RS IO A FACILITY & BATTERY download-zone-atlas-.aspx ROS 100 4 M-1 VE B ENERGY STORAGE UNITS) DI WILLIAMS ST SRP-60115 PICA 5 SO UT H 5 "
+  - "The single-family dwelling continues to lack PNM electric service, New Mexico Gas service, and water utilities."
+- Bernalillo County Commission and planning boards, 2025-05-27, packet: Board of County Commissioners Agenda Packet 2025-05-27, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3501&Inline=True
+  - Leads named: SWPP ERAS Hobbs
+  - "Engine generator 4 3."
+  - "ANSI/TIA-942 Telecommunications Infrastructure Standard for Data Centers, 2005 7."
+  - "Free-standing Equipment Cabinets (CPI GF-Series GlobalFrame Gen 2 Cabinet) 1. [Cabinets] Provide freestanding equipment cabinets to store computer, data storage, networking and security equipment in the data centers, computer rooms and equipment rooms."
+  - "The manufacturer of the cabinet shall sell compatible equipment mounting hardware as an accessory. 14. [Packaging] The cabinet shall ship on a shock pallet with reusable carton so that it can be shipped to a factory integration site to be loaded with equipment, then repackaged and shipped to the dat"
+  - "This section includes the minimum requirements for rack-mounted power protection and power strips used in cabinets, racks, frames and enclosures in data centers, computer rooms, and communications equipment rooms."
+- Bernalillo County Commission and planning boards, 2024-05-14, packet: Board of County Commissioners Agenda Packet 2024-05-14, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3215&Inline=True
+  - Leads named: SWPP ERAS Hobbs
+  - "LAN, WAN, Wireless, Voice, Data, CATV, Data Centers, Routers, Switches, and other IP-based solutions.) • Audiovisual (Video, Audio, Communication and Control Systems."
+  - "Adjacent to property boundaries with coal, diesel, or natural gas power generating Formatted:"
+  - "Left: 0.63", Hanging: 0.38" 25 and electrical transmission facilities such as generating plants, substations, and 26 switching stations; or 27 b."
+  - "Adjacent to industrial facilities with backup generator capacity; and 28 (5) the required treated water discharge analytical list and the state or federally regulatorily 29 required monthly, quarterly, or annual groundwater monitoring analytical list if the 30 dewatering operation is: 31 a."
+  - "(d oct ores, enferm eras, hosp it ales, clínicas, p ersonal d e ap oyo, et c.) - ¿Qué p rog ram as y/ o servicios le p ued e ofrecer el Hosp it al d e UNM p ara m ejorar su exp eriencia en cuant o a su salud ?"
+- City of Farmington, 2026-02-12, minutes: Regular Planning & Zoning Meeting Agenda Book minutes, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Minutes/_02122026-2245
+  - Leads named: SWPP ERAS Hobbs
+  - "Telnaes tee 岁 ss | 고 SSO ee a / ME | fre | 是 ES ‘aslo % Tae 20 ia | SHEET 2 OF 3 Wim“ ao 人 TATERSECHILEY er oc 아아. 그이 ERAS Saute th em tl a EO Le ee sau rs UDC Section 8.8.4 General Provisions A."
+- City of Las Cruces City Council, 2026-11-16, document: City Council - Nov 16 2026, https://lascruces.civicweb.net/document/220326/City%20Council%20-%20Nov%2016%202026.pdf?handle=FBB437B117C4412287DC917BAE9E8EFE
+  - Leads named: Project Jupiter, SWPP ERAS Hobbs
+  - "Data centers 7."
+  - "There has to be more than funneling bright minds into data centers, military research, and desert-based agri- culture."
+  - "Some comments focused specifcally on high-profle issues such as Flock Safety cameras and data center development, refecting a broader desire for more information about how decisions are made, what they cost, and how potential impacts are being considered."
+  - "A signifcant amount of responses men- tioned banning “Flock Safety” cameras and data centers like Project Jupiter."
+  - "Of 44 comments, 16 raised environmental issues and fve specifcally referenced data centers or Project Jupiter."
+- City of Las Cruces City Council, 2026-11-02, document: City Council - Nov 02 2026, https://lascruces.civicweb.net/document/220062/City%20Council%20-%20Nov%2002%202026.pdf?handle=40F864DDCAA7414C95ED626877742A43
+  - Leads named: Project Jupiter, SWPP ERAS Hobbs
+  - "They will keep protecting people who break our immigration laws, and they will keep playing both sides of issues like Project Jupiter, supporting it when it is politically convenient and opposing it when it becomes a political hot potato."
+  - "Integration and Automation Requirements: • Respondents must illustrate evidence that proposed billing software has electronic integration capabilities with a clearinghouse for: • Real-Time Eligibility Verification 6|Page Page 151 of 303 Agenda Item #7.2. • Claim Filing • Remittance Advice (ERAs) • P"
+  - "Integration and Automation Requirements: • Respondents must illustrate evidence that proposed billing software has electronic integration capabilities with a clearinghouse for: • Real-Time Eligibility Verification • Claim Filing • Remittance Advice (ERAs) • Patient Statements and Invoices • Billing "
+- City of Las Cruces City Council, 2026-10-27, document: Planning & Zoning - Oct 27 2026, https://lascruces.civicweb.net/document/219640/Planning%20_%20Zoning%20-%20Oct%2027%202026.pdf?handle=EEAAC4383F4946099278D51A4E32DCA8
+  - Leads named: SWPP ERAS Hobbs
+  - "The protection, enhancement, and perpetuation of cultural properties that represent or reflect distinctive and important aspects and eras of human habitation and activity in Las Cruces; 3."
+  - "Data Center CLASSIFICATION A facility used to house and manage computer systems, servers, networking equipment, and other related components for the purpose of collecting, processing, storing, and disseminating large amounts of data."
+- City of Las Cruces City Council, 2026-10-05, document: City Council - Oct 05 2026, https://lascruces.civicweb.net/document/219477/City%20Council%20-%20Oct%2005%202026.pdf?handle=F69C475653424DBBBC477E1DA49A0CAA
+  - Leads named: SWPP ERAS Hobbs
+  - Also mentions: plat
+  - "With my last few seconds, I will quickly say that the topic of data centers and mass surveillance have awoken something in the average citizen where they were once not interested in the political world around them they are now taking notice."
+  - "Install backup generators at town Ensures continuity of essential facilities to maintain water system services, sustains emergency Safety and Security;"
+  - "An annual "true up" determines if additional data center licensing is required based on the City adding servers to the data center."
+  - "We have specializations in Security & Access Control, Cloud, Management & Automation, Data Center, ExtremeWireless, and ExtremeSwitching."
+  - "CDW Configuration and Integration Services make sure your new technology is ready to work on arrival, whether we are building out a data center solution with fully configured racks, facilitating a multisite deployment of pre-configured computing devices, or handling single- device provisioning."
+- City of Las Cruces City Council, 2026-08-10, document: Tax Increment Development District Board Meeting - Aug 10 2026, https://lascruces.civicweb.net/document/218379/Tax%20Increment%20Development%20District%20Board%20Meetin.pdf?handle=815BA1ECBB7C46BBBF0C1104AF4E87EA
+  - Leads named: SWPP ERAS Hobbs
+  - "The expe- ing traditions remain nected geographically, altered the historic fabric rience of Urban Renewal essential to Downtown’s these areas reflect dif- and weakened long-es- highlights a central long-term vitality . ferent development eras tablished economic, lesson for the Downtown and planning"
+- City of Las Cruces City Council, 2026-02-23, document: Work Session - Feb 23 2026, https://lascruces.civicweb.net/document/214883/Work%20Session%20-%20Feb%2023%202026.pdf?handle=01E35AECB1CD411BBBECC7F249434160
+  - Leads named: SWPP ERAS Hobbs
+  - Also mentions: plat
+  - "There was also a preference for including uses that could be potential revenue generators to offset the cost to the city of owning the facility."
+  - "The models include people in period costume, as well as carriages and cars from the eras depicted."
+  - "Dif- ferent eras in the evolution of the city are 1940s Las Cruces Postcard depicted on the walls behind corresponding period models of the Amador."
+  - "R FP Late19th Century The Amador Family Early 20th FP Las Cruces Plat Table Case with Century Las FAUX FP Amador Hotel Models from Different Eras Cruces Photo Rosa/ Exhibit Room WELCOME Carme ROOM Mid 20th Century Las THE AMADORS, Cruces Photo The Campbell THE CAMPBELLS Mid 20th Century Family & THE"
+  - "The necessarily apply to the rooms off the Lobby, however, Lobby floor, consisting of three floors from different wood sitting directly on grade does not meet current eras and two framing systems of 2x4 sleepers separated building codes unless it is pressure treated or naturally by shims (Figure 1.E"
+- City of Las Cruces City Council, 2025-12-01, document: City Council - Dec 01 2025, https://lascruces.civicweb.net/document/213115/City%20Council%20-%20Dec%2001%202025.pdf?handle=C9EF6EA789E24572ACC96E5ADC139CCA
+  - Leads named: SWPP ERAS Hobbs
+  - "The protection, enhancement, and perpetuation of cultural properties that represent or reflect distinctive and important aspects and eras of human habitation and activity in Las Cruces; 3."
+  - "Data Center CLASSIFICATION A facility used to house and manage computer systems, servers, networking equipment, and other related components for the purpose of collecting, processing, storing, and disseminating large amounts of data."
+  - "Data Center CLASSIFICATION Development Code 261 Page 969 of 1347 Agenda Item #8.5."
+  - "Battery back-up to the food storage facility is provided from exterior ground set and natural gas fired generator."
+  - "Commercial Grade – high level of service including natural gas-powered generator back-up system to protect food storage."
+- City of Las Cruces City Council, 2025-11-17, document: City Council - Nov 17 2025, https://lascruces.civicweb.net/document/212751/City%20Council%20-%20Nov%2017%202025.pdf?handle=77494E8B3E2F4DBCA8258A128A01EB6C
+  - Leads named: Project Jupiter, SWPP ERAS Hobbs
+  - "Over the past several months citizens like myself have worked tirelessly to uncover and document serious issues surrounding Project Jupiter, the proposed data center development."
+  - "So, in this same breath that we should be protecting citizens from unlawful surveillance and honoring our heritage we should also be demanding transparency and integrity in every public project including Project Jupiter."
+  - "The protection, enhancement, and perpetuation of cultural properties that represent or reflect distinctive and important aspects and eras of human habitation and activity in Las Cruces; 3."
+  - "Data Center CLASSIFICATION A facility used to house and manage computer systems, servers, networking equipment, and other related components for the purpose of collecting, processing, storing, and disseminating large amounts of data."
+  - "Data Center CLASSIFICATION Development Code 261 Page 993 of 1179 Agenda Item #10.1."
+- City of Las Cruces City Council, 2025-10-28, document: Planning & Zoning - Oct 28 2025, https://lascruces.civicweb.net/document/212090/Planning%20_%20Zoning%20-%20Oct%2028%202025.pdf?handle=3EC35371B24446478856D19D938312E2
+  - Leads named: SWPP ERAS Hobbs
+  - "The protection, enhancement, and perpetuation of cultural properties that represent or reflect distinctive and important aspects and eras of human habitation and activity in Las Cruces; 3."
+  - "Data Center CLASSIFICATION A facility used to house and manage computer systems, servers, networking equipment, and other related components for the purpose of collecting, processing, storing, and disseminating large amounts of data."
+  - "Data Center CLASSIFICATION Development Code 261 Page 768 of 954 Agenda Item #6.4."
+- City of Las Cruces City Council, 2025-02-18, document: City Council - Feb 18 2025, https://lascruces.civicweb.net/document/206366/City%20Council%20-%20Feb%2018%202025.pdf?handle=E832E275C7D24C3BB9255A70D34885A6
+  - Leads named: SWPP ERAS Hobbs
+  - "The pumps will be driven by a three-phase power system and have a redundant power source, such as another electrical grid or a backup generator capable of providing power to the pumps required to handle peak flow."
+  - "Regardless of which trip generation data source and methodology are ultimately selected, trips should always be provided by mode in person trips."
+  - "The protection, enhancement, and perpetuation of cultural properties that represent or reflect distinctive and important aspects and eras of human habitation and activity in Las Cruces; 3."
+  - "Data Center CLASSIFICATION A facility used to house and manage computer systems, servers, networking equipment, and other related components for the purpose of collecting, processing, storing, and disseminating large amounts of data."
+  - "The protection, enhancement, and perpetuation of historic architectural and cultural resources which represent or reflect distinctive and important aspects and eras of human habitation and activity in Las Cruces;"
+- City of Las Cruces City Council, 2025-02-04, document: City Council - Feb 04 2025, https://lascruces.civicweb.net/document/205954/City%20Council%20-%20Feb%2004%202025.pdf?handle=89431DAE9D814FDABFA09AF34682675D
+  - Leads named: SWPP ERAS Hobbs
+  - "The protection, enhancement, and perpetuation of cultural properties that represent or reflect distinctive and important aspects and eras of human habitation and activity in Las Cruces; 3."
+  - "Data Center CLASSIFICATION A facility used to house and manage computer systems, servers, networking equipment, and other related components for the purpose of collecting, processing, storing, and disseminating large amounts of data."
+  - "The protection, enhancement, and perpetuation of historic architectural and cultural resources which represent or reflect distinctive and important aspects and eras of human habitation and activity in Las Cruces;"
+- City of Las Cruces City Council, 2024-08-12, document: Work Session - Aug 12 2024, https://lascruces.civicweb.net/document/202621/Work%20Session%20-%20Aug%2012%202024.pdf?handle=D76A4BF8D7D4452B85A007C0F1C9BD99
+  - Leads named: SWPP ERAS Hobbs
+  - "The protection, enhancement, and perpetuation of of cultural properties which represent or reflect distinctive and important aspects and eras of human habitation and activity in Las Cruces; 1 Page 4 of 209 Agenda Item #3.2."
+  - "By 1910, Las Cruces featured a volunteer fire department, waterworks, electric light and power plant, several flour mills, a movie theatre, four hotels, and Catholic and Protestant churches."
+- City of Las Cruces City Council, 2024-05-20, document: City Council - May 20 2024, https://lascruces.civicweb.net/document/198802/City%20Council%20-%20May%2020%202024.pdf?handle=2FC65DE3B3504ACDB8D53E6588C28F32
+  - Leads named: SWPP ERAS Hobbs
+  - "Our team members have planning, design, construction, and execution of airport- filled engineering resource augmentation service (ERAS) related services."
+  - "Power systems must include an on-site power standby generator in case of power loss even though it may only last for short periods of time."
+  - "Resilient buildings today can involve standard utility sourced power as well as incorporating on-site solar photovoltaics and standby generators and we are familiar with all systems."
+  - "We are familiar with steel and polyethylene pipeline system design and the intricate aspects that dictate how these systems are to be installed on buildings or facilities such as a natural gas-fired water well."
+  - "Isaac has designed emergency backup generators for healthcare facilities, data centers, airports, booster stations, and chiller plants."
+- City of Las Cruces City Council, 2024-03-04, document: City Council - Mar 04 2024, https://lascruces.civicweb.net/document/196538/City%20Council%20-%20Mar%2004%202024.pdf?handle=E0479E64A4BE4513956740B6C13ED931
+  - Leads named: SWPP ERAS Hobbs
+  - "Keys points to keep in mind:: the enhancement and fostering of civic pride in the aesthetics and history of the built environment and in the accomplishments of earlier inhabitants in the area that became Las Cruces; the strengthening of the City’s economy through heritage tourism and real estate for"
+- City of Las Cruces City Council, 2024-02-20, document: City Council - Feb 20 2024, https://lascruces.civicweb.net/document/196219/City%20Council%20-%20Feb%2020%202024.pdf?handle=89064B68F988463EA797667D21BB63A0
+  - Leads named: SWPP ERAS Hobbs
+  - "Keys points to keep in mind:: the enhancement and fostering of civic pride in the aesthetics and history of the built environment and in the accomplishments of earlier inhabitants in the area that became Las Cruces; the strengthening of the City’s economy through heritage tourism and real estate for"
+
+### Site Layer 1 Data Center power station (L100001089557), Grant County
+
+- Grant County Board of County Commissioners, 2026-10-08, agenda: Board of Commissioners Regular Meeting 10.08.2026 Regular Meeting Agenda, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=2035,plainText=false)
+  - Leads named: Site Layer 1
+  - "Site Layer One Data Center Presentation VII."
+- Grant County Board of County Commissioners, 2026-10-08, packet: Board of Commissioners Regular Meeting 10.08.2026 Public Agenda Packet, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=2037,plainText=false)
+  - Leads named: Site Layer 1
+  - "Site Layer One Data Center Presentation VII."
+  - "Grant County typically has a wide range of weather conditions, with winter lows of 26 and summer highs of 87 degrees, per the National Climatic Data Center."
+  - "Higher paid workers at Deming’s recently built industrial parks and the Lordsburg Station of the U.S."
+
 ## Records that name a lead
 
+- City of Hobbs City Commission, 2025-10-06, packet: City Commission Meeting October 6, 2025 - Full Agenda Packet, https://hobbsnm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=291,plainText=false)
+  - Leads named: Google data center in Lea County
+  - "COBB, Mayor of the City of Hobbs, New Mexico, a municipal corporation, on behalf of said corporation. _________________________ Notary Public My Commission Expires: __________ 2/2014 Google Earth 3 - City Spurs in this area 11/2016 Google Earth 1 - City Spur in this area 2/2014 Google Earth 2 - Priv"
+- Dona Ana County Commission and Planning, 2026-07-09, packet: Planning and Zoning Commission Regular Meeting, July 9, 2026 Planning and Zoning Commission Regular Meeting, July 9, 202, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5318,plainText=false)
+  - Leads named: Rio Grande units and El Paso Electric
+  - "At Closing Electricity El Paso Electric At Closing Gas City of las Cruces At Closing Liquid Waste Disposal City of Las Cruces At Closing Solid Waste Disposal Buyer At Closing 5 Page 25 of 88 16."
+- Dona Ana County Commission and Planning, 2026-06-25, packet: Planning and Zoning Commission Regular Meeting, June 25, 2026 Planning and Zoning Commission Regular Meeting, June 25, 2, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5309,plainText=false)
+  - Leads named: Rio Grande units and El Paso Electric
+  - "At Closing Electricity El Paso Electric At Closing Gas City of las Cruces At Closing Liquid Waste Disposal City of Las Cruces At Closing Solid Waste Disposal Buyer At Closing 5 Page 29 of 50 16."
+- Dona Ana County Commission and Planning, 2026-06-11, packet: Planning and Zoning Commission Regular Meeting, June 11, 2026 Planning and Zoning Commission Regular Meeting, June 11, 2, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5282,plainText=false)
+  - Leads named: Rio Grande units and El Paso Electric
+  - "UTILITIES (name of entity providing electricity, if available) El Paso Electric (estimated cost to purchaser) Varies (name of entity providing gas service, if available) Zia Gas (estimated cost to purchaser) $22.50 + $50 / hr."
+- Dona Ana County Commission and Planning, 2026-05-28, packet: Planning and Zoning Commission Regular Meeting, May 28, 2026 Planning and Zoning Commission Regular Meeting, May 28, 202, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5244,plainText=false)
+  - Leads named: Rio Grande units and El Paso Electric
+  - "Emergency backup generators in use only during times of power outages and testing/maintenance shall comply with those standards where technical, practical and financial considerations permit."
+  - "Z22-014 and SU22-032 were submitted for a community solar generating facility, to be known as the Mesa Vista Solar, LLC."
+  - "El Paso Electric Company Est. cost to purchaser: $1,500 Name of entity providing gas service, if available:"
+- Dona Ana County Commission and Planning, 2026-04-23, packet: Planning & Zoning Commission Regular Meeting, April 23, 2026 Planning & Zoning Commission Regular Meeting, April 23, 202, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5169,plainText=false)
+  - Leads named: Rio Grande units and El Paso Electric
+  - "(Applicant) Water is provided by the City of Las Cruces, a septic system will provide sewer, El Paso Electric will provide service and natural gas is available from Zia Gas."
+- Dona Ana County Commission and Planning, 2025-12-11, packet: P&Z Regular Meeting, December 11, 2025 P&Z Regular Meeting, December 11, 2025, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3976,plainText=false)
+  - Leads named: Rio Grande units and El Paso Electric
+  - "UTILITIES Electricity El Paso Electric Company Natural Gas New Mexico Gas Company Water Camino Real Regional Utility Authority Liquid Waste Disposal Camino Real Regional Utility Authority Solid Waste Disposal Private Haulers/Transfer Station Option Telephone CenturtLink New Mexico The subdivider sha"
+- Dona Ana County Commission and Planning, 2025-11-14, packet: BOCC Regular Meeting November 14, 2025 BOCC November 14, 2025, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3958,plainText=false)
+  - Leads named: Rio Grande units and El Paso Electric
+  - Also mentions: industrial revenue bond
+  - "The new infrastructure will also enable the creation of mirrored data centers, providing greater system availability to sustain operations in the event of an equipment or site failure."
+  - "SUMMARY OF ITEM TO BE CONSIDERED INCLUDING PRESENTATION OF OPTIONS FOR ACTION and ACTION REQUESTED Rio Grande Solar, LLC submitted an application to the County for the issuance of Industrial Revenue Bonds in connection with a 6.5 MW solar power generation facility, which will constitute an industria"
+  - "(2) the proceeds of the Bonds will finance the acquisition of equipment for a solar power generation facility in Doña Ana County, New Mexico (the “Project”) for use by Rio Grande Solar LLC (the “Company”); and (3) the Project will be leased to the Company."
+  - "The project will be serviced by El Paso Electric Company for electric service, New Mexico Gas for natural gas service and the Camino Real Regional Utility Authority (CRRUA) for water and wastewater service."
+- Dona Ana County Commission and Planning, 2025-11-06, packet: DRC Regular Meeting, November 6, 2025 DRC Regular Meeting, November 6, 2025, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3944,plainText=false)
+  - Leads named: Rio Grande units and El Paso Electric
+  - "The project will be serviced by El Paso Electric Company for electric service, New Mexico Gas for natural gas service and the Camino Real Regional Utility Authority (CRRUA) for water and wastewater service."
+- Dona Ana County Commission and Planning, 2025-10-02, packet: DRC Regular Meeting, October 2, 2025 DRC Regular Meeting, October 2, 2025, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3911,plainText=false)
+  - Leads named: Rio Grande units and El Paso Electric
+  - "The Parties intend the Development to be serviced by El Paso Electric Company for electric service, New Mexico Gas for natural gas service, and CRRUA for water and wastewater service."
+  - "The project will be serviced by El Paso Electric Company for electric service, New Mexico Gas for natural gas service and the Camino Real Regional Utility Authority (CRRUA) for water and wastewater service."
+- Dona Ana County Commission and Planning, 2025-06-24, packet: BOCC Regular Meeting, June 24, 2025 Final BOCC June 24, 2025, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3789,plainText=false)
+  - Leads named: Rio Grande units and El Paso Electric
+  - "Resolution for the donation of two (2) used vehicles, a vehicle engine, Michael Perez, and a generator to the Doña Ana Community College (DACC) in Las Purchasing Manager Cruces, NM. 4."
+  - "(877) 827-7200 Financial Services Department June 24, 2025 Initiating Department Meeting Date Michael Perez, Purchasing Manager 3 Contact Person Agenda Item Number TITLE OF AGENDA ITEM TO BE CONSIDERED RESOLUTION FOR THE DONATION OF TWO (2) USED VEHICLES, A VEHICLE ENGINE, AND A GENERATOR TO THE DOÑ"
+  - "SUMMARY OF ITEM TO BE CONSIDERED INCLUDING PRESENTATION OF OPTIONS FOR ACTION and ACTION REQUESTED The Fleet Department is requesting approval to donate two (2) 2018 Chevrolet Tahoes, a Chevrolet 5.3 L vehicle engine, and a Cummings generator to the Doña Ana Community College in Las Cruces, NM."
+  - "The duly-appointed standing committee has identified and recommends vehicles, engine, and generator for donation that are no longer economical for continued use by the body in accordance with NMSA 1978, §13-6-1 et. seq."
+  - "Fleet Department is requesting the donation of two 2018 Chevy Tahoe’s (approved by the Sheriff’s Department) including an engine and a natural gas generator to Dona Aña County Community College Automotive Courses."
+- Dona Ana County Commission and Planning, 2025-06-10, packet: BOCC Regular Meeting, June 10, 2025 BOCC June 10, 2025, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3775,plainText=false)
+  - Leads named: Rio Grande units and El Paso Electric
+  - "This easement gives El Paso Electric Company, New Mexico Gas and all other utility providers the perpetual right, privilege, authority and easement to enter and erect, construct operate and maintain the underground utility systems to lots F-07, F-08 and F-09."
+- Dona Ana County Commission and Planning, 2024-02-27, packet: BOCC Regular Meeting, February 27, 2024 BOCC REGULAR MEETING, February 27, 2024, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3312,plainText=false)
+  - Leads named: Rio Grande units and El Paso Electric
+  - "ANNUAL BILLING DUE 3/1/2024 DEPLOY DATE : 11-FEB-2024 9EA-00278-ESA3 Microsoft Windows Server Datacenter Edition - 104 126.37 13,142.48 software assurance - 2 cores Coverage Dates: 01-MAR-2024 - 28-FEB-2025 STATE OF NEW MEXICO NASPO VALUEPOINT SOFTWARE VAR(# CTR060025 / 10-00000-20-00054AD) coverage"
+  - "SUMMARY OF ITEM TO BE CONSIDERED INCLUDING PRESENTATION OF OPTIONS FOR ACTION and ACTION REQUESTED The Doña Ana County Fire Station Backup Generator Project is to supply electrical power to 18 fire stations throughout Doña Ana County."
+  - "Utilities Public Other Provider/Description Off-site Improvements Type Public Private Frontage 164' Electricity El Paso Electric Street Asphalt paved Topography Level Gas Rio Grande Width 60' Size Typical for development Water City of Las Cruces Surface Asphalt Shape Rectangular Sanitary Sewer City "
+- Bernalillo County Commission and planning boards, 2026-10-07, packet: County Planning Commission Agenda Packet 2026-10-07, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3861&Inline=True
+  - Leads named: PNM IRP placeholders
+  - Also mentions: plat
+  - "By 1954, maps of Mountain View featured a new power plant and the Kirtland Rail Spur, which connected Sandia National Laboratory to Los Alamos for atomic research."
+  - "SPR2026-0003) residential and mixed-use zoning may support additional housing; therefore, APS requests continued coordination with Bernalillo County as development occurs to evaluate student generation, school capacity, and long-range facility needs."
+  - "PNM and NM Gas Company Action:"
+  - "Coordinate electric facility land use implement federal and state regulations entitlements amongst all jurisdictions for electric generation, transmission, and to ensure equitable access to electric distribution. infrastructure so that neighborhoods and 2."
+  - "Bernalillo County coordinates with the Water with new users, such as Data Centers) and ensuring supply for downstream Authority (ABCWUA) and Office of the State Engineer about water resources. users. 60 Water Need to protect water quality."
+- Bernalillo County Commission and planning boards, 2026-01-27, packet: Board of County Commissioners Agenda Packet 2026-01-27, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3684&Inline=True
+  - Leads named: Meta Los Lunas
+  - Also mentions: industrial revenue bond, irb, local economic development act, tax abatement
+  - "Holding Data Center Projects Accountable in Our Community Resolution Motion to approve Administrative Resolution AR 2026- Holding Data Center Projects Accountable in Our Community Resolution."
+  - "Minutes Approval for the January 13, 2026 BCC Admin Meeting) 4 and that the item be moved to Consent as Item 8H. 5 In addition, the Commissioners Data Centers 6 and AI Projects in Bernalillo County and Legislative 7 Priorities related to Data Centers and AI Projects be 8 added to the agenda and hear"
+  - "I would make a motion to 17 adopt the agenda with the aforementioned changes for 18 immediate action on the Clerk's item for precincts and 19 for the late add for the Data Center item. 20 COMMISSIONER B."
+  - "We work with BIPOC youth, workers, and 6 families across Bernalillo County to build pathways to 7 climate justice, economic development, and community-led 8 development. 9 We appreciate the county for leading the 10 public benefit, especially as AI and Data Center 11 developments accelerate here in "
+  - "With strong 23 implementation and community partnerships, this policy 24 can ensure that any AI or Data Center developments in Officemotive, Inc."
+- Bernalillo County Commission and planning boards, 2026-01-13, minutes: Board of County Commissioners Verbatim Minutes 2026-01-13, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=12&ID=3263&Inline=True
+  - Leads named: Meta Los Lunas
+  - Also mentions: irb, tax abatement
+  - "The item sponsor is requesting suspension of the 2 rules for final adoption consideration at introduction to 3 prepare for the March filing date and primary election, 4 and that the item be moved to Consent as Item 8H. 5 In addition, the Commissioners Data Centers 6 and AI Projects in Bernalillo Cou"
+  - "I would make a motion to 17 adopt the agenda with the aforementioned changes for 18 immediate action on the Clerk's item for precincts and 19 for the late add for the Data Center item. 20 COMMISSIONER B."
+  - "We work with BIPOC youth, workers, and 6 families across Bernalillo County to build pathways to 7 climate justice, economic development, and community-led 8 development. 9 We appreciate the county for leading the 10 public benefit, especially as AI and Data Center 11 developments accelerate here in "
+  - "With strong 23 implementation and community partnerships, this policy 24 can ensure that any AI or Data Center developments in Officemotive, Inc."
+  - "And now a threat is being added to this list, AI 6 Data Centers."
+- Bernalillo County Commission and planning boards, 2025-06-10, packet: Board of County Commissioners Agenda Packet 2025-06-10, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3514&Inline=True
+  - Leads named: Google data center in Lea County
+  - Also mentions: plat
+  - "(6) Sewage or water treatment facility, power generating plant, pump station, natural gas compressing station or similar facility;"
+  - "Envisio CIP & OEO Integrated System) Contractor course of data center operations, response to service or technical issues, as required by consent."
+  - "The Contractor shall not access Purchasing Entity user accounts or Purchasing Entity data, except (1) in the course of data center operations, (2) in response to service or technical issues, (3) as required by the express Attachment: 1476918559_Carahsoft - Master Agreement (1) (24785 :"
+  - "The Contractor shall provide its services to the Purchasing Entity and its end users solely from data centers in the U.S."
+  - "Storage of Purchasing Entity data at rest shall be located solely in data centers in the U.S."
+- Bernalillo County Commission and planning boards, 2024-02-06, packet: Board of County Commissioners Agenda Packet 2024-02-06, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3120&Inline=True
+  - Leads named: Meta Los Lunas
+  - Also mentions: industrial revenue bond
+  - "We were able to go down to 13 the Village of Los Lunas last year and have a great 14 tour of the Meta facility."
+  - "Madam Chair and Members of 22 the Commission, Marcos Gonzales, executive 23 development officer for Bernalillo County. 24 The economic development staff 25 recommends the approval of the inducement resolution Packet Pg. 191 7.B.a 48 1 authorizing the Bernalillo County Commission to 2 approve an indu"
+  - "Adjacent to property boundaries with coal, diesel, or natural gas power generating Formatted:"
+  - "Left: 0.63", Hanging: 0.38" 30 and electrical transmission facilities such as generating plants, substations, and 31 switching stations, or 32 b."
+  - "Adjacent to industrial facilities with backup generator capacity; and/or 33 (5) the required treated water discharge analytical list and the state or federally regulatorily 34 required monthly, quarterly, or annual groundwater monitoring analytical list if the 35 dewatering operation is: 36 a."
+- Bernalillo County Commission and planning boards, 2024-01-23, packet: Board of County Commissioners Agenda Packet 2024-01-23, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3110&Inline=True
+  - Leads named: Meta Los Lunas
+  - Also mentions: industrial revenue bond, irb
+  - "Industrial Revenue Bond (IRB) Notice of Intent for Sun Lasso Energy Center LLC Motion to approve Inducement Resolution AR 2024- to issue Taxable Industrial Revenue Bonds in an amount not to exceed Two Hundred and Five Million Dollars ($205,000,000) for the purpose of inducing Sun Lasso Energy Center"
+  - "We were able to go down to 13 the Village of Los Lunas last year and have a great 14 tour of the Meta facility."
+  - "Industrial Revenue Bond (IRB) Notice of Intent for Sun Lasso Energy Center LLC Action:"
+  - "Motion to approve Inducement Resolution AR 2024- to issue Taxable Industrial Revenue Bonds in an amount not to exceed Two Hundred and Five Million Dollars ($205,000,000) for the purpose of inducing Sun Lasso Energy Center, LLC to construct, acquire and install equipment and other personal property f"
+  - "Sun Lasso Energy Center LLC is an affiliate of Aypa."
+- Bernalillo County Commission and planning boards, 2024-01-09, minutes: Board of County Commissioners Verbatim Minutes 2024-01-09, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=12&ID=2817&Inline=True
+  - Leads named: Meta Los Lunas
+  - "We were able to go down to 13 the Village of Los Lunas last year and have a great 14 tour of the Meta facility."
+- City of Farmington, 2026-11-11, agenda: 11/11/2026 Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_11112026-2350
+  - Leads named: Westside power station
+  - "Electric Regulation and Control Linda Jacobson-Quinn Electric Engineering Shawn Weiss Electric Field Operations Luke Lugenbeel Electric Generation Britt Chesnut Customer Service Nicki Parks Electric Business Operations Brandon Hill Public Works Water/Wastewater Rochelle Brown Public Works Water/Wast"
+  - "Business from the Floor David Fosdeck addressed the Commission and asked for an explanation for why comments he gave during the September meeting about Saddle Butte Energy and his thoughts that this was the possibly the topic of the closed session were not included in the September minutes."
+  - "He also wondered if the commission was aware of the Saddle Butte West project."
+  - "Fosdeck discovered there is a sister project, Saddle Butte East."
+  - "Fosdeck suggested that if the Saddle Butte Energy projects are not for FEUS, they may be for a data center."
+- City of Farmington, 2026-10-14, agenda: 10/14/2026 Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_10142026-2343
+  - Leads named: Westside power station
+  - "The Generation Cost per mWh was $112.35 for July 2026."
+  - "Transmission and fiber communications for the Saddle Butte West project is underway."
+- City of Farmington, 2026-09-09, agenda: 09/09/2026 Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_09092026-2330
+  - Leads named: Westside power station
+  - "The Saddle Butte West Transmission tap construction is scheduled for September."
+  - "The Navajo Hydro Plant saw 19.3MW of production."
+- City of Farmington, 2026-08-12, minutes: 08/12/2026 Regular Meeting minutes, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Minutes/_08122026-2321
+  - Leads named: Westside power station
+  - "The Saddle Butte West Transmission tap construction is scheduled for September."
+  - "The Navajo Hydro Plant saw 19.3MW of production."
+- Village of Los Lunas, 2026-07-23, agenda: July 23, 2026 Council Meeting agenda, https://www.loslunasnm.gov/AgendaCenter/ViewFile/Agenda/_07232026-1321
+  - Leads named: Meta Los Lunas
+  - "M-1 | Data Center NEIGHBORHOOD INPUT Publication:"
+  - "Construction GRT continues to be strong, we do not anticipate a reduction in FY 2027 due to ongoing Meta, I-25 Interchange/Los Lunas Blvd, and the new Valencia County Hospital construction."
+- Village of Los Lunas, 2026-05-14, agenda: Notice of Possible Quorum: 2026 Meta Grant Ceremony agenda, https://www.loslunasnm.gov/AgendaCenter/ViewFile/Agenda/_05142026-1305
+  - Leads named: Meta Los Lunas
+  - "NOTICE OF POSSIBLE QUORUM OF THE VILLAGE OF LOS LUNAS COUNTY OF VALENCIA STATE OF NEW MEXICO NOTICE IS HEREBY GIVEN that a possible quorum of the Mayor and Council of the Village of Los Lunas may be present for the “2026 Meta Los Lunas Data Center Community Action Grant Ceremony” on Thursday, May 14"
+  - "The event will take place at the Meta Los Lunas Data Center located at 4250 Messenger Loop NW, Los Lunas, NM 87031."
+- Village of Los Lunas, 2026-05-07, agenda: May 7, 2026 Council Meeting agenda, https://www.loslunasnm.gov/AgendaCenter/ViewFile/Agenda/_05072026-1304
+  - Leads named: Meta Los Lunas
+  - "Construction GRT continues to be strong, we do not anticipate a reduction in FY 2027 due to ongoing Meta, I-25 Interchange/Los Lunas Blvd, and the new Valencia County Hospital construction."
+- Village of Los Lunas, 2026-03-26, agenda: March 26, 2026 Agenda agenda, https://www.loslunasnm.gov/AgendaCenter/ViewFile/Agenda/_03262026-1294
+  - Leads named: Meta Los Lunas
+  - Also mentions: leda, local economic development act
+  - "Consideration of Ordinance 486 approving a LEDA Project for the bene�it of Greater Kudu, LLC pursuant to the Local Economic Development Act and the Village of Los Lunas LEDA Plan, providing public support for expansion of the Company’s existing data center within the Village of Los Lunas and Valenci"
+  - "I have the pleasure of representing Valencia Bernalillo in Torrance County and I'm here this evening to support the META GRT here in Los Lunas. 1."
+  - "Consideration of Ordinance 486 approving a LEDA Project for the bene�it of Greater Kudu, LLC pursuant to the Local Economic Development Act and the Village of Los Lunas LEDA Plan, providing public support for expansion of the Company’s existing data center within the Village of Los Lunas and Valenci"
+- Village of Los Lunas, 2026-03-12, agenda: March 12, 2026 Agenda agenda, https://www.loslunasnm.gov/AgendaCenter/ViewFile/Agenda/_03122026-1292
+  - Leads named: Meta Los Lunas
+  - Also mentions: leda, local economic development act
+  - "Consideration of Ordinance 486 approving a LEDA Project for the benefit of Greater Kudu, LLC pursuant to the Local Economic Development Act and the Village of Los Lunas LEDA Plan, providing public support for expansion of the Company’s existing data center within the Village of Los Lunas and Valenci"
+  - "Consideration of Ordinance 486 approving a LEDA Project for the benefit of Greater Kudu, LLC pursuant to the Local Economic Development Act and the Village of Los Lunas LEDA Plan, providing public support for expansion of the Company’s existing data center Presenter:"
+  - "March 12, 2026 Action Requested: ☒Approval/Disapproval ☐ Informational ☐Public Hearing ☐Other OVERVIEW/ ANALYSIS Greater Kudu LLC (the “Company”) applied for and requested the Village to provide it with certain public support in connection with the expansion of its data center campus, related facili"
+  - "VALENCIA COUNTY, NEW MEXICO (the “County”); the NEW MEXICO ECONOMIC DEVELOPMENT DEPARTMENT (“EDD” and together with the Village and the County, the “Contributors”), as agent for the State of New Mexico (the “State”); and GREATER KUDU LLC, a Delaware limited liability company, a Delaware limited liab"
+  - "The Project Party currently operates a data center located in the Village, within the County (the “Facility”)."
+- Village of Los Lunas, 2026-03-12, minutes: March 12, 2026 Agenda minutes, https://www.loslunasnm.gov/AgendaCenter/ViewFile/Minutes/_03122026-1292
+  - Leads named: Meta Los Lunas
+  - Also mentions: leda, local economic development act
+  - "Consideration of Ordinance 486 approving a LEDA Project for the bene�it of Greater Kudu, LLC pursuant to the Local Economic Development Act and the Village of Los Lunas LEDA Plan, providing public support for expansion of the Company’s existing data center within the Village of Los Lunas and Valenci"
+  - "I have the pleasure of representing Valencia Bernalillo in Torrance County and I'm here this evening to support the META GRT here in Los Lunas. 1."
+  - "Consideration of Ordinance 486 approving a LEDA Project for the bene�it of Greater Kudu, LLC pursuant to the Local Economic Development Act and the Village of Los Lunas LEDA Plan, providing public support for expansion of the Company’s existing data center within the Village of Los Lunas and Valenci"
+- Chaves County Commission, 2025-01-01, agenda: Copy document link, https://www.chavescounty.gov/Documents/government/Agendas%20and%20Minutes/%20County%20Commission/2025/2025%20August%20Agenda.pdf?t=202607140754550
+  - Leads named: Zenith Volts
+  - Also mentions: special use
+  - "CASE # Z2025-04 Special Use Permit for a Utility Scale Solar Project, Data Center and Battery Energy Storage System Facility in Area I Zone A – Agricultural District."
+  - "AGENDA ITEM: 1 CASE # Z2025-04 Special Use Permit for a Utility Scale Solar Project, Data Center and Battery Energy Storage System Facility in Area I Zone A - Agricultural District MEETING DATE:"
+  - "Zenith Volts Corp. and the Berry Family are proposing a 1.265 GW solar facility project that would supply sufficient energy to operate a data center and provide excise power to a battery energy storage system (BESS) facility, all located within this project area."
+  - "The development plan indicates the solar panels would be located in and around the alluvial drainage channels to the north while the data center and BESS facility would be located near Pearson Rd to the south."
+  - "Zenith Volts Corp has accepted the Conditions of Approval that are unique to its location and development including improving Natchez Rd. and no solar panels in the drainage channels."
+- Chaves County Commission, 2025-01-01, document: Copy document link, https://www.chavescounty.gov/Documents/government/Agendas%20and%20Minutes/%20County%20Commission/2025/Commission%20Meeting%2082125.pdf?t=202607140803170
+  - Leads named: Zenith Volts
+  - Also mentions: special use
+  - "Louis Jaramillo, Planning and Zoning Director Zenith Volts Corp. and the Berry Family are proposing a 1.265 GW solar facility project that would supply sufficient energy to operate a data center and provide excise power to a battery energy storage system (BESS) facility, all located within this proj"
+  - "The development plan indicates the solar panels would be located in and around the alluvial drainage channels to the north while the data center and BESS facility would be located near Pearson Rd to the south."
+  - "Zenith Volts Corp has accepted the Conditions of Approval that are unique to its location and development, including improving Natchez Rd., and no solar panels in the drainage channels."
+  - "To permit the transfer of the special use permit to Zenith Volts, upon the sale of the properties, with the restriction and requirements stated in Conditions of Approval 1 through 17 A-E, as noted in the Staff's Report."
+  - "Nick Coleman and Kim Wales with Zenith Volts Corporation were present and gave an overview of the project."
+- City of Las Cruces City Council, 2026-01-20, document: City Council - Jan 20 2026, https://lascruces.civicweb.net/document/214053/City%20Council%20-%20Jan%2020%202026.pdf?handle=E23B668833964DFA9875AAF61CCBD9E2
+  - Leads named: Rio Grande units and El Paso Electric
+  - "Bliss  Remodel of Generator Shop Building-White Sands Missile Range  Simulator Facility Building at Holloman Air Force Base  F-16 Egress Maintenance Facility Renovation, Holloman Air Force Base (Komada)  OMA Flagship-Interior/Exterior Miscellaneous Renovations of Several Buildings  ARRA-8 Non-H"
+  - "Audiovisual, telecommunications, surveillance, security, data center/IT systems; communications distribution; convergent network technologies."
+  - "The block design utilized recyclable materials from the mine and fly ash from a coal fire power plant to increase strength and help mitigate acidic reaction to the concrete."
+  - "Engineering support for El Paso Electric and New Mexico Gas energy efficiency programs. ."
+  - "City of Las Cruces Data Center | Las Cruces, NM • On-Call:"
+- Grant County Board of County Commissioners, 2026-10-22, packet: Board of Commissioners - 2nd Regular Meeting Agenda Packet, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=2056,plainText=false)
+  - Leads named: Site Layer 1
+  - Also mentions: moratorium, plat, variance
+  - "O-26-03, An ordinance establishing a temporary one-year moratorium prohibiting data centers and direct supporting infrastructure within the unincorporated areas of Grant County. 0, Close Public Hearing e."
+  - "Consideration of Grant County Ordinance No. 0-26-03, An ordinance establishing a temporary one-year moratorium prohibiting data centers and direct supporting Office Of The Grant County Commissioners 1400 Highway 180 East, Silver City, NM 88061-7837 + P.O."
+  - "The purpose of this Ordinance is to establish a temporary, one-year moratorium prohibiting the establishment, construction, development, expansion, enlargement, operation, or commencement of any Data Center or Direct Supporting Infrastructure within the unincorporated - areas -of Grant County. : ， ，"
+  - "This Ordinance is adopted under the County's police powers to protect the health, safety, welfare, property, water resources, order, comfort, convenience, and prosperity of the County and its inhabitants, It is intended to preserve the status quo while Grant County evaluates whether to adopt regulat"
+  - "The term includes facilities commonly described as data centers, server farms, artificial intelligence computing facilities, cloud computing facilities, high-performance computing | facilities, colocation facilities, enterprise data centers, hyperscale data centers, modular data centers, containeriz"
 
 ## Other power or data center mentions (check whether they are a new project)
 
-- City of Hobbs City Commission, 2026-08-17, packet: City Commission Meeting August 17, 2026 - Full Agenda Packet, https://hobbsnm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=452,plainText=false)
-  - "Iteris personnel will install the ClearGuide SPM data engine to pull high-resolution logged data from Hobbs traffic signal controllers."
+- Los Alamos County County Council, 2026-08-25, agenda: Los Alamos County County Council agenda 2026-08-25, https://legistar.granicus.com/LosAlamos/meetings/2026/8/6124_A_County_Council_-_Regular_Session_26-08-25_Agenda.pdf
+  - "AGR26-888 with BIGBYTE.CC Corporation, for a Term of Seven (7) Years, to Increase the Not to Exceed Amount from $550,000.00 to $740,000.00, Plus Applicable Gross Receipts Tax, for the Purpose of Increasing Required Power Supply at the Remote Disaster Recovery Site and Data Center with Telecommunicat"
+- Los Alamos County County Council, 2024-12-17, agenda: Los Alamos County County Council agenda 2024-12-17, https://legistar.granicus.com/LosAlamos/meetings/2024/12/5452_A_County_Council_-_Regular_Session_24-12-17_Council_Agenda.pdf
+  - "AGR 25-13 with Renewance, Inc. in the Amount of $945,240.00, a Contingency in the Amount of $50,000.00 and Applicable GRT, for the Purpose of Removal and Proper Disposition of One (1) NGK One (1) Megawatt, Six (6) Megawatt-Hour Sodium Sulfur Battery System at the Los Alamos County Eco Station and Bu"
+- Los Alamos County County Council, 2024-12-17, packet: A - AGR 25-13, https://webapi.legistar.com/v1/losalamos/Matters/20928/Attachments/36447/File
+  - Agenda item: Approval of Contract for General Services, Agreement No. AGR 25-13 with Renewance, Inc. in the Amount of $945,240.00, a Contingency in the Amount of $50,000.00 and Applicable GRT, for the Purpose of R
+  - "Contractor shall remove, properly package, transport and properly dispose of all sodium sulfur battery modules contained in one (1) NGK one (1) megawatt, six (6) megawatt-hour sodium sulfur battery system at the Los Alamos County Eco Station, (“Services”), and provide the following services and deli"
+- Los Alamos County Board of Public Utilities, 2024-12-04, agenda: Los Alamos County Board of Public Utilities agenda 2024-12-04, https://legistar.granicus.com/LosAlamos/meetings/2024/12/5505_A_Board_of_Public_Utilities_24-12-04_Agenda.pdf
+  - "AGR 25-13 with Renewance, Inc. a in the amount of $945,240.00, a Contingency in the Amount of $50,000.00 and Applicable GRT, for the Purpose of Removal and Proper Disposition of One (1) NGK One (1) megawatt, Six (6) megawatt-hour Sodium Sulfur Battery System at the Los Alamos County Eco Station Pres"
+- Los Alamos County Board of Public Utilities, 2024-12-04, packet: A - AGR 25-13, https://webapi.legistar.com/v1/losalamos/Matters/20927/Attachments/36352/File
+  - Agenda item: Approval of Services Agreement No. AGR 25-13 with Renewance, Inc. in the amount of $945,240.00, a Contingency in the Amount of $50,000.00 and Applicable GRT, for the Purpose of Removal and Proper Disp
+  - "Contractor shall remove, properly package, transport and dispose of all sodium sulfur battery modules contained in one (1) NGK one (1) megawatt, six (6) megawatthour sodium sulfur battery system at the Los Alamos County Eco Station, and provide the following services and deliverables: 1."
+- City of Hobbs City Commission, 2026-04-20, packet: City Commission Meeting April 20, 2026 - Full Agenda Packet, https://hobbsnm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=378,plainText=false)
+  - "Todd Randall, Assistant City Manager, stated the Utilities Department is requesting approval to replace two aging emergency backup generators located at the Well 27 site and the shared Wells 11/12 site."
   - GEM plants in the same county: Hobbs generating station, Cunningham power station, Maddox power station, Lea County Data Center power station, SWPP ERAS Hobbs power station
+- City of Hobbs City Commission, 2026-04-06, packet: City Commission Meeting April 6, 2026 - Full Agenda Packet, https://hobbsnm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=373,plainText=false)
+  - "The Utilities Department requests approval to replace two aging emergency backup generators at the Well 27 site and the shared Wells 11/12 site."
+  - "Consideration and approval of the purchase of replacement emergency backup generators for Well 27 and the shared Wells 11/12 site from Kirkmeyer Electric in the total amount of $173,944.55 through CES Contract No. 2026-02-G2137-567."
+  - GEM plants in the same county: Hobbs generating station, Cunningham power station, Maddox power station, Lea County Data Center power station, SWPP ERAS Hobbs power station
+- City of Hobbs City Commission, 2025-05-19, packet: City Commission Meeting May 19, 2025 - Full Packet, https://hobbsnm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=218,plainText=false)
+  - "He raised concerns over the Energy Transition Act’s implementation, warning that energy shortages could jeopardize $500 billion in AI and data center investments due to limited infrastructure."
+  - GEM plants in the same county: Hobbs generating station, Cunningham power station, Maddox power station, Lea County Data Center power station, SWPP ERAS Hobbs power station
+- City of Hobbs City Commission, 2025-04-21, packet: City Commission Meeting April 21, 2025 - Full Agenda Packet, https://hobbsnm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=201,plainText=false)
+  - "Ideal for inside or outside of the data center:"
+  - "Precision 7960 Rack An ultra scalable 2U rack workstation Be productive from almost anywhere with a powerful, secured access rack based solution that keeps your intellectual property safely in the data center."
+  - GEM plants in the same county: Hobbs generating station, Cunningham power station, Maddox power station, Lea County Data Center power station, SWPP ERAS Hobbs power station
+- City of Hobbs City Commission, 2024-10-07, packet: City Commission Meeting October 7, 2024 - Full Packet, https://hobbsnm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=94,plainText=false)
+  - "She stated they were able to work through the issues and all signs are positive that the building is going to be used as an economic generator instead of only a large storage facility."
+  - GEM plants in the same county: Hobbs generating station, Cunningham power station, Maddox power station, Lea County Data Center power station, SWPP ERAS Hobbs power station
+- City of Hobbs City Commission, 2024-08-19, packet: City Commission Meeting August 19, 2024 Full Packet, https://hobbsnm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=74,plainText=false)
+  - "Blaine responded by stating the project is 150 megawatts which is a large number on a community scale."
+  - GEM plants in the same county: Hobbs generating station, Cunningham power station, Maddox power station, Lea County Data Center power station, SWPP ERAS Hobbs power station
+- City of Carlsbad, 2026-11-10, packet: City Council Meeting 11-10-2026 CC Agenda Packet, https://carlsbadnm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5813,plainText=false)
+  - "Additionally, the bill addresses numerous aspects of energy infrastructure permitting, including by • expanding the authority of the Federal Energy Regulatory Commission (FERC) to issue construction permits for certain interstate electricity transmission projects; • directing FERC to establish ratep"
+- City of Carlsbad, 2026-10-13, packet: City Council Meeting 10-13-2026 CC Agenda Packet, https://carlsbadnm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5735,plainText=false)
+  - "Natural gas in particular has become a go-to power source for data centers, which are projected to use a lot of it in the next decade."
+- City of Carlsbad, 2026-07-14, packet: City Council Meeting 07-14-2026 CC Agenda Packet, https://carlsbadnm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3500,plainText=false)
+  - "House appropriators adopted language in the committee report directing the department to provide recommendations for mitigating the effect of artificial intelligence data centers on the electric grid, energy costs, and water use."
+- City of Carlsbad, 2026-04-28, packet: City Council Meeting 04-28-2026 CC Agenda Packet, https://carlsbadnm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=2295,plainText=false)
+  - Also mentions: pilot
+  - "Google Earth Pro Carlsbad Long Range Transportation Plan | 44 Page 662 of 815 Current Conditions Truck Freight Generators Waste Isolation Pilot Plant (WIPP) The WIPP route attracts a large number of heavy vehicles which pass through or around Carlsbad."
+- City of Carlsbad, 2026-02-10, packet: Regular City Council Meeting 02-10-2026 CC Agenda Packet, https://carlsbadnm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=1071,plainText=false)
+  - "DOE is exploring this concept as a private-sector led initiative where campuses must support functions such as fuel Page 131 of 133 fabrication, enrichment, reprocessing used nuclear fuel and disposition of waste, and could additionally support functions such as advanced reactor deployment, power ge"
+- Dona Ana County Commission and Planning, 2026-11-12, agenda: Planning and Zoning Commission Regular Meeting, November 12, 2026 Planning and Zoning Commission Regular Meeting, Novemb, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5502,plainText=false)
+  - Also mentions: special use
+  - "Submitted by James Kondrat, DESRI, a request for a Special Use Permit to allow a 1,245-acre solar generating facility to be known as the Mesquite PV I, LLC Solar."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2026-11-12, packet: Planning and Zoning Commission Regular Meeting, November 12, 2026 Planning and Zoning Commission Regular Meeting, Novemb, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5503,plainText=false)
+  - Also mentions: special use
+  - "Submitted by James Kondrat, DESRI, a request for a Special Use Permit to allow a 1,245-acre solar generating facility to be known as the Mesquite PV I, LLC Solar."
+  - "To construct a 1,245-acre Solar Generating Facility PROPERTY OWNER:"
+  - "The applicant is requesting a Special Use Permit on 1,245-acres to construct a 75 MWac solar energy generation facility and a 75 MW/300 MWh battery energy storage project to be known as the Mesquite Solar Project."
+  - "STAFF ANALYSIS The applicant is requesting a Special Use Permit on a 1,245-acre solar generating facility to be known as the Mesquite Solar Project in a T2, T3 and D1-L zone district."
+  - "SU26-027 for a 1,245-acre solar generating facility to be known as Mesquite Solar Project with the following conditions: • Comply with all agency comments. • A six to eight (6-8) foot high perimeter fence (agricultural or chain-link) separating residential areas. • A Remediation and Decommissioning "
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2026-05-12, packet: BOCC Regular Meeting May 12, 2026 BOCC Amended Regular Meeting May 12, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5214,plainText=false)
+  - "Data centers must also be protected from the threat of fire to ensure the preservation of mission critical IT infrastructure and production data."
+  - "It is important to understand that in these times, there is a need Data centers must be protected for contextual protection in addition to minimize costly downtime to protection of the information in its and prevent data loss. entirety."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2026-03-24, packet: BOCC Regular Meeting March 24, 2026 BOCC March 24, 2026, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5131,plainText=false)
+  - Also mentions: industrial revenue bond
+  - "SUMMARY OF ITEM TO BE CONSIDERED INCLUDING PRESENTATION OF OPTIONS FOR ACTION and ACTION REQUESTED Lower Rio Grande Solar LLC, submitted an application to the County for issuance of Industrial Revenue Bonds in an aggregate amount of $4,040,000 for a project to be located in Doña Ana County for the a"
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2026-02-10, packet: BOCC Regular Meeting February 10, 2026 BOCC FEBRUARY 10,2026 PACKET, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=4038,plainText=false)
+  - Also mentions: industrial revenue bond
+  - "SUMMARY OF ITEM TO BE CONSIDERED INCLUDING PRESENTATION OF OPTIONS FOR ACTION and ACTION REQUESTED Rio Grande Solar, LLC submitted an application to the County for the issuance of Industrial Revenue Bonds in connection with a 6.5 MW solar power generation facility, which will constitute an industria"
+  - "(2) the proceeds of the Bonds will finance the acquisition of equipment for a solar power generation facility in Doña Ana County, New Mexico (the “Project”) for use by Lower Rio Grande Solar LLC (the “Company”); and (3) the Project will be leased to the Company."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2025-12-09, packet: BOCC Regular Meeting December 09, 2025 BOCC December 09, 2025, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3981,plainText=false)
+  - "SUMMARY OF ITEM TO BE CONSIDERED INCLUDING PRESENTATION OF OPTIONS FOR ACTION and ACTION REQUESTED The DAC Utility Department is requesting a cap increase in reference to the New Mexico Statewide Price Agreement for Wagner Equipment Company by $350,000 for the Backup Generator Installations Project "
+  - "DESCRIPTION OF SUPPORTING DOCUMENTATION ATTACHED Executive Summary New Mexico Statewide Price Agreement #40-00000-23-00045 Wagner San Miguel Lift Station #4 Quote 31552847 Wagner La Mesa Lift Station #1 Quote 31552789 Wagner Vado Lift Station #3 Quote 31376541 Wagner Vado Lift Station #6 Quote 31364"
+  - "The New Mexico Statewide Price Agreement for Wagner Equipment Company is used for generator installations in Lift Stations throughout Dona Ana County as part of the Backup Generator Project that is funded by SAP grant 22-G2816-GF."
+  - "The State of New Mexico wishes to establish a State-Wide price agreement to provide inspection, preventive maintenance services, repair and replacement, and emergency services as needed for generators and related equipment located at various facility sites throughout the State of New Mexico."
+  - "Rental of portable backup generator(s) or automatic transfer switch (ATS) with hookup including electrical."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2025-10-23, packet: P&Z Regular Meeting, October 23, 2025 P&Z Regular Meeting, October 23, 2025, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3934,plainText=false)
+  - "The request is to allow for Data Center Support Services such as supporting infrastructure, electrical substation."
+  - "Maintenance facility and microgrid infrastructure to support the data center."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2025-10-09, agenda: P&Z Regular Meeting, October 9, 2025 P&Z Regular Meeting, October 9, 2025, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3921,plainText=false)
+  - "The request is to allow for Data Center Support Services such as supporting infrastructure, electrical substation, maintenance facility and microgrid infrastructure to support the data center."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2025-10-09, packet: P&Z Regular Meeting, October 9, 2025 P&Z Regular Meeting, October 9, 2025, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3922,plainText=false)
+  - Also mentions: zone change
+  - "The request is to allow for Data Center Support Services such as supporting infrastructure, electrical substation, maintenance facility and microgrid infrastructure to support the data center."
+  - "To allow for Data Center Support Services PROPERTY OWNER:"
+  - "The request is for a Zone Change from those areas that are zone T2 and C2 to I2, to allow for Data Center Support Services such as supporting infrastructure, electrical substation, maintenance facility and microgrid infrastructure to support the data center."
+  - "The Zone Change will allow the applicant to operate a Data Center and Support Services such as supporting infrastructure, electrical substation, maintenance facility and microgrid infrastructure. f."
+  - "The Zone Change would allow the applicant to operate a PLANNING AND ZONING COMMISSION Page 4 of 21 Z25-016 PZ 10/9/2025 Page 8 of 47 Data Center and Support Services such as supporting infrastructure, electrical substation, maintenance facility and power generating infrastructure."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2025-09-19, agenda: BOCC Regular Meeting September 19, 2025 English Spanish Amended Final Agenda, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3901,plainText=false)
+  - "Award Project Contract to Lynco Electric through CES in the amount Robert Herrera, not to exceed $587,990.54 for the purchase and installation of the Facilities & Services, backup generator at the new OEM Facility."
+  - "The project would include the construction, development, and acquisition of a hyperscale, artificial intelligence (ai) data center campus, a collocated microgrid, and related infrastructure and facilities, located within the boundaries of Doña Ana County. 11."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2025-08-12, packet: BOCC Regular Meeting, August 12, 2025 BOCC August 12, 2025, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3863,plainText=false)
+  - "Page 4 of 11 Page 66 of 148 Allied States Cooperative by ESC 19, TX 25-7511 Conterra Ultra Broadband, LLC. • Number of served locations • Fiber route and distance • Estimated construction costs are driven in part by aerial build, underground construction, and soil/rock type, etc. • Permitting costs "
+  - "Product Name Requirements MRC Managed SDWAN Small Requires purchase of Managed Router Small $ 80.00 Branch Branch where SD-WAN License is applied Managed SDWAN Large Requires purchase of Managed Router Large $ 250.00 Branch Branch where SD-WAN License is applied Managed SDWAN Data Requires purchase "
+  - "Business Firewall - Large Branch Requires purchase of Managed Router – Enterprise where $200.00 Business Firewall Licenses are applied Data Center Business Firewall Requires purchase of Managed Router – Data Center where $300.00 Business Firewall Licenses are applied."
+  - "Data Center Business Firewall - Requires purchase of Managed Router - Large Data Center $600.00 Large where Business Firewall Licenses are applied."
+  - "Data Center Business Firewall - Requires purchase of Managed Router - XL Data Center $1,000.00 XL where Business Firewall Licenses are applied."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2025-07-08, packet: BOCC Regular Meeting, July 08, 2025 BOCC July 08, 2025, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3813,plainText=false)
+  - "Resolution for the donation of two (2) used vehicles, a vehicle engine, Michael Perez, and a generator to the Doña Ana Community College (DACC) in Las Purchasing Manager Cruces, NM Page 63 of 213 RESOLUTION NO. 2025-70 4."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2025-06-24, agenda: BOCC Regular Meeting, June 24, 2025 English-Spanish Amended Final Agenda, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3788,plainText=false)
+  - "Resolution for the donation of two (2) used vehicles, a vehicle engine, Michael Perez, and a generator to the Doña Ana Community College (DACC) in Las Purchasing Manager Cruces, NM. 4."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2025-03-13, packet: Planning & Zoning Commission Regular Meeting, March 13, 2025 Planning & Zoning Commission Regular Meeting, March 13, 202, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3694,plainText=false)
+  - "Emergency backup generators in use only during times of power outages and testing/maintenance shall comply with those standards where technical, practical and financial considerations permit. f."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2025-02-11, packet: BOCC Regular Meeting, February 11,2025 BOCC REGULAR MEETING, February 11, 2025, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3662,plainText=false)
+  - "ANNUAL BILLING DUE 3/1/2025 DEPLOY DATE : 01-MAR-2025 9EA-00278-ESA3 Microsoft Windows Server Datacenter Edition - 104 126.37 13,142.48 software assurance - 2 cores Coverage Dates: 01-MAR-2025 - 28-FEB-2026 STATE OF NEW MEXICO NASPO VALUEPOINT SOFTWARE VAR(# CTR060025 / 10-00000-20-00054AD) coverage"
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2025-01-14, packet: BOCC Regular Meeting, January 14, 2025 BOCC, JANUARY 14, 2024, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3639,plainText=false)
+  - Also mentions: industrial revenue bond
+  - "(o) The Project Property is located within the County but outside the boundaries of any incorporated municipality and the Project is an electric generation facility which does not require both location approval and a certificate of convenience and necessity prior to commencing 8 Page 562 of 795 cons"
+  - "SUMMARY OF ITEM TO BE CONSIDERED INCLUDING PRESENTATION OF OPTIONS FOR ACTION and ACTION REQUESTED Santa Teresa Storage, LLC submitted an application to the County for the issuance of Industrial Revenue Bonds in connection with a 150-megawatt solar power generation facility which will constitute an "
+  - "(o) The Project Property is located within the County but outside the boundaries of any incorporated municipality and the Project is an electric generation facility which does not require both location approval and a certificate of convenience and necessity prior to commencing 8 Page 698 of 795 cons"
+  - "AND REPEALING ALL ACTIONS INCONSISTENT WITH THIS ORDINANCE SUMMARY OF ITEM TO BE CONSIDERED INCLUDING PRESENTATION OF OPTIONS FOR ACTION and ACTION REQUESTED EDF Renewables submitted an application to the County for issuance of Industrial Revenue Bonds in connection with the construction of faciliti"
+  - "All solar generation and storage equipment including solar tracking hardware and software, photovoltaic panels and inverters, support structures, and associated electrical generation equipment used to generate electricity from solar energy and related equipment including transformers, circuit breake"
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2024-12-12, packet: Planning and Zoning Commission Regular Meeting, December 12, 2024 Planning and Zoning Commission Regular Meeting, Decemb, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3628,plainText=false)
+  - "Emergency backup generators in use only during times of power outages and testing/maintenance shall comply with those standards where technical, practical and financial considerations permit."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2024-11-26, packet: BOCC Regular Meeting, November 26, 2024 BOCC REGULAR MEETING, November 26, 2024, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3618,plainText=false)
+  - Also mentions: industrial revenue bond, irb
+  - "SUMMARY OF ITEM TO BE CONSIDERED INCLUDING PRESENTATION OF OPTIONS FOR ACTION and ACTION REQUESTED Santa Teresa Solar, LLC submitted an application to the County for the issuance of Industrial Revenue Bonds in connection with a 150-megawatt solar power generation facility which will constitute an in"
+  - "Shaw Renewable Investments, LLC; and WHEREAS, the Project Company has made a proposal to the County whereby the County will acquire from Santa Teresa equipment, improvements and other tangible personal property located in the County for a 150 megawatt solar power generation facility which will const"
+  - "The Project will consist of a solar energy project with up to 150 megawatts of generating capacity."
+  - "DESRI is also proposing to add a co-located 150 MW 4hour battery energy storage project adjacent to the Santa Teresa Solar project that will connect at the same point of interconnection and is proposed to be held under a separate IRB."
+  - "SUMMARY OF ITEM TO BE CONSIDERED INCLUDING PRESENTATION OF OPTIONS FOR ACTION and ACTION REQUESTED Santa Teresa Storage, LLC submitted an application to the County for the issuance of Industrial Revenue Bonds in connection with a 150-megawatt solar power generation facility which will constitute an "
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2024-09-24, packet: BOCC Regular Meeting, September 24, 2024 BOCC REGULAR MEETING, September 24 , 2024, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3567,plainText=false)
+  - "On Site Infrastructure Solutions Developer Attraction & • Proactively Investigating Private/Public solutions to attract Site Readiness micro-grid, and micro-water treatment facilities."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2024-09-12, packet: Planning and Zoning Commission Regular Meeting, September 12, 2024 Planning and Zoning Commission Regular Meeting, Septe, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3558,plainText=false)
+  - "SU 22-032) for a community solar generating facility, to be known as the Mesa Vista Solar, LLC."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2024-09-10, packet: BOCC Regular Meeting, September 10, 2024 BOCC REGULAR MEETING, September 10, 2024, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3556,plainText=false)
+  - "CNG, LNG, LP and Hybrid Electric power plants can be offered as options. 6."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2024-08-13, packet: BOCC Regular Meeting, August 13, 2024 BOCC REGULAR MEETING, AUGUST 13, 2024, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3522,plainText=false)
+  - ""resiliency improvement" means improvements that increase the resilience of a property, including air quality, flood mitigation, storm water management, energy storage and microgrids, alternative vehicle charging infrastructure, fire or wind resistance or inundation adaptation;"
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2024-06-25, packet: BOCC Regular Meeting, June 25, 2024 BOCC REGULAR MEETING, JUNE 25, 2024, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3469,plainText=false)
+  - "Earthwork & Grading, Storm Drain Systems, Underground Utilities, Site & Structural Concrete, and Asphalt Paving 2001 – 2005 ADVISORY BOARD MEMBER, FIRST NEW MEXICO BANK  Served on bank advisory board 1979 – 1982 STRUCTURAL DESIGNER, STONE & WEBSTER ENGINEERING CORP., DENVER, CO  Designed structura"
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2024-05-09, packet: Planning and Zoning Commission Regular Meeting, May 9, 2024 Planning and Zoning Commission Regular Meeting, May 9, 2024, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3419,plainText=false)
+  - "Emergency backup generators in use only during times of power outages and testing/maintenance shall comply with those standards where technical, practical and financial considerations permit. f."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2024-04-23, packet: BOCC Regular Meeting, April 23, 2024 BOCC REGULAR MEETING, April 23, 2024, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3412,plainText=false)
+  - "Right of Way Easement 15 feet in width to PNM Gas Services, filed for record on April 10, 1997, recorded in Book 85, Pages 1457-1460, records of Dona Ana County, New Mexico."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2024-02-22, agenda: Planning and Zoning Commission Regular Meeting, February 22, 2024 Planning and Zoning Commission Regular Meeting, Februa, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3292,plainText=false)
+  - Also mentions: special use
+  - "Submitted by Galehead Development for RP Brewster Limited Partnership, Owner and Desert Green Property, LLC., a request for a Special Use Permit to allow a 991-acre solar generating facility to be known as the Mesquite PV I, LLC Solar."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2024-02-22, packet: Planning and Zoning Commission Regular Meeting, February 22, 2024 Planning and Zoning Commission Regular Meeting, Februa, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3293,plainText=false)
+  - Also mentions: special use
+  - "Submitted by Galehead Development for RP Brewster Limited Partnership, Owner and Desert Green Property, LLC., a request for a Special Use Permit to allow a 991-acre solar generating facility to be known as the Mesquite PV I, LLC Solar."
+  - "A request submitted by Galehead Development for RP Brewster Limited Partnership, Owner and Desert Green Property, LLC, Owner, a Special Use Permit to allow a 991-acre solar generating facility to be known as the Mesquite PV I, LLC Solar."
+  - "The applicant is requesting a Special Use Permit on 991-acres to construct a 75 MW solar +37.5 MW battery system solar generating facility to be known as the Mesquite Solar Project."
+  - "The solar project will serve El Paso Electric’s growing load in Doña Ana County for reliable electricity for customers."
+  - "STAFF ANALYSIS The applicant is requesting a Special Use Permit on a 991-acre solar generating facility to be known as the Mesquite Solar Project in a T2 (Rural) and T3 (Neighborhood Edge) zone district."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2024-02-08, agenda: Planning and Zoning Commission Regular Meeting, February 8, 2024 Planning and Zoning Commission Regular Meeting, Februar, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3262,plainText=false)
+  - Also mentions: special use
+  - "Submitted by Galehead Development for RP Brewster Limited Partnership, Owner and Desert Green Property, LLC., a request for a Special Use Permit to allow a 991-acre solar generating facility to be known as the Mesquite PV I, LLC Solar."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2024-02-08, packet: Planning and Zoning Commission Regular Meeting, February 8, 2024 Planning and Zoning Commission Regular Meeting, Februar, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3263,plainText=false)
+  - Also mentions: special use
+  - "Submitted by Galehead Development for RP Brewster Limited Partnership, Owner and Desert Green Property, LLC., a request for a Special Use Permit to allow a 991-acre solar generating facility to be known as the Mesquite PV I, LLC Solar."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Dona Ana County Commission and Planning, 2024-01-23, packet: BOCC Regular Meeting, January 23, 2024 BOCC REGULAR MEETING, January 23, 2024, https://donaanaconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3241,plainText=false)
+  - Also mentions: pilot, plat
+  - "The Nutanix Hybrid Cloud Infrastructure Category Management Offering addresses requirements of the Data Center Optimization Initiative (DCOI) established in OMB Memorandum M-16-19 and fulfills the data center requirements of the Federal Information Technology Acquisition Reform (FITARA)."
+  - "Carahsoft and Nutanix are offering four types of Hybrid Cloud Infrastructure solutions and are described in detail with corresponding incentives offers for each:  Hybrid Cloud Infrastructure Pilot/Micro Agency Solution (Solution 1)  Hybrid Cloud Infrastructure Base Solutions (Solutions 2-4)  Hybr"
+  - "Hybrid Cloud Software defined datacenter Hybrid Cloud Software defined datacenter and Tactical platforms with Nutanix Hybrid Cloud Infrastructure capabilities, applicable to a strategy where it is ideal to source validated and Nutanix supported hardware infrastructure separately from the Nutanix sof"
+  - "Hybrid Cloud Software defined datacenter Solution – 4 node software only enterprise 10."
+  - "Stafford told Mark Sechrist he has a 15 kw backup generator that runs his whole house when needed."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Bernalillo County Commission and planning boards, 2026-11-10, packet: Board of County Commissioners Agenda Packet 2026-11-10, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3882&Inline=True
+  - "The third would establish 22 standards for data centers and other resource-intensive 23 developments addressing impacts on water, energy, 24 infrastructure, and communities, including requirements 25 tied to state economic development incentives."
+  - "Data centers and that -- Sorry."
+  - "Minutes Approval for the October 27, 2026 BCC Administrative Meeting) 3 development item. 4 I mean, I think everyone in this room knows 5 that there will be something done at the state level on 6 data centers this session."
+  - "It's to support establishing 21 clear standards and guardrails for data centers and other 22 natural resource-intensive developments, including 23 community benefit requirements, assessment and mitigation 24 of impacts on water and energy resources, public Officemotive, Inc."
+  - "Minutes Approval for the October 27, 2026 BCC Administrative Meeting) 3 The reason for all of that language change 4 is this is what we're hearing from legislators who are 5 moving forward on legislation relating to what are we 6 going to do about putting guardrails on data centers."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-11-04, packet: County Planning Commission Agenda Packet 2026-11-04, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3879&Inline=True
+  - "The trip generation report 20 showed that the proceed facility would not meet the 21 threshold for a traffic study at building permit, 50 trips 22 entering or exiting the a.m. or p.m. peak."
+  - "PNM and NM Gas Company Action:"
+  - "PNM Cost Per Lot Gas:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-10-27, packet: Board of County Commissioners Agenda Packet 2026-10-27, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3871&Inline=True
+  - "Completed in May 2024, Building A stands as a revenue-generating facility while laying the groundwork for future development."
+  - "Economic Development priorities support regulatory consistency for electric heavy-duty freight transportation, stronger public oversight and County participation in tax increment development districts, and appropriate standards for data centers and other resource-intensive developments, including co"
+  - "Support amendments to Section 3-21-1 NMSA 1978 and the Local Economic 116 Development Act, including Section 5-10-15 NMSA 1978, to establish clear standards 117 for data centers and other natural resource-intensive developments, including 118 assessment and mitigation of impacts on water and energy "
+  - "(a) Industrial work will be defined as all new construction work performed o the following types of facilities: electrical generation plants, co-generation plants 50 megawatts and over, refineries, natural and LP gas plants, mills, mines, and concentrators."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-10-27, minutes: Board of County Commissioners Action Report 2026-10-27, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=15&ID=3415&Inline=True
+  - "LEGISLATIVE POLICY PRIORITIES: 1.Behavioral Health •Support amendments to New Mexico’s Medicaid Section 1115 Turquoise Care demonstration tomaximize allowable reimbursement for housing related supportive services… 2.Economic Development •(newly worded 4.) Support establishing clear standards and gua"
+  - ""Support establishing clear standards and guardrails for data centers and other natural resource-intensive developments, including community benefits requirements, assessment and mitigation of impacts on water and energy resources, public infrastructure, and appropriate requirements for projects rec"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-10-27, minutes: Board of County Commissioners Verbatim Minutes 2026-10-27, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=12&ID=3415&Inline=True
+  - "The third would establish 22 standards for data centers and other resource-intensive 23 developments addressing impacts on water, energy, 24 infrastructure, and communities, including requirements 25 tied to state economic development incentives."
+  - "Data centers and that -- Sorry."
+  - "And I'll skip back to number two, the economic 3 development item. 4 I mean, I think everyone in this room knows 5 that there will be something done at the state level on 6 data centers this session."
+  - "It's to support establishing 21 clear standards and guardrails for data centers and other 22 natural resource-intensive developments, including 23 community benefit requirements, assessment and mitigation 24 of impacts on water and energy resources, public Officemotive, Inc."
+  - "DBA Capital Typing 138 1 infrastructure, and appropriate requirements for projects 2 receiving economic development incentives. 3 The reason for all of that language change 4 is this is what we're hearing from legislators who are 5 moving forward on legislation relating to what are we 6 going to do "
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-10-14, packet: Zoning Administrator Agenda Packet 2026-10-14, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3862&Inline=True
+  - "Murphy Express - Albuquerque (NM S.R. 528 / 2nd St.) Trip Generation Data (ITE Trip Generation Manual - 10th Edition) USE (ITE CODE) 24 HR VOL A."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-10-14, packet: Board of County Commissioners Agenda Packet 2026-10-14, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3863&Inline=True
+  - "Demonstrated leadership in database upgrade, datacenter migration, and database hardening projects."
+  - "Associates in Information Technology – Brigham Young University, Rexburg, Idaho (June 2018) CERTIFICATIONS:  Data Center Certified Associate – Schneider Electric (August 2023)  CompTIA A+ – CompTIA (June 2023)  CISSP – ISC2 (Studying)  CompTIA Sec+ – CompTIA (Studying)  CISA – ISACA (Studying) "
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-10-07, minutes: County Planning Commission Verbatim Minutes 2026-10-07, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=12&ID=3400&Inline=True
+  - "The trip generation report 20 showed that the proceed facility would not meet the 21 threshold for a traffic study at building permit, 50 trips 22 entering or exiting the a.m. or p.m. peak."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-09-22, packet: Board of County Commissioners Agenda Packet 2026-09-22, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3853&Inline=True
+  - "PNM and NM Gas Company Date:11-May-2026 Page 8 of 9 Packet Pg. 61 3.A.c County of Bernalillo Case Comments Report Attachment:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-09-22, packet: Board of County Commissioners Agenda Packet 2026-09-22, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3848&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - "Utility meter removal dates were verified with all utility companies, ABCWUA meter was removed on March 1, 2017, PNM meter on September 18, 2019, and the NM Gas meter was removed in October of 2014."
+  - "Utility meter removal (27201 dates were verified with all utility companies, ABCWUA meter was removed on (27117 September 3, 1999, PNM meter on January 13, 2004, and the NM Gas meter has never been active after 2009, when utilities were separated from PNM."
+  - "ENAO2026-0002) J Property Use None 341 Clinic, Clinic-Type Infirmary 539 Household Goods, Sales, Repairs Structures 342 Doctor/Dentist Office 571 Gas or Service Station 131 Church, Place of Worship 361 Prison or Jail, Not Juvenile 579 Motor Vehicle/Boat Sales/Repairs 161 Restaurant or Cafeteria 419 "
+  - "Utility meter removal (27116 dates were verified with all utility companies, ABCWUA meter was removed on March 1, 2017, PNM meter on September 18, 2019, and the NM Gas meter was 8.19.2026 removed in October of 2014."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-09-09, packet: Zoning Administrator Agenda Packet 2026-09-09, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3840&Inline=True
+  - "PNM and NM Gas Company Date:11-May-2026 Page 8 of 9 Packet Pg. 60 4.A.c County of Bernalillo Case Comments Report Attachment:"
+  - "PNM and NM Gas Company Action:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-09-02, packet: County Planning Commission Agenda Packet 2026-09-02, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3837&Inline=True
+  - "Page 8 of 20 Packet Pg. 91 a COUNTY PLANNING COMMISSION SEPTEMBER 2, 2026 CSU2026-0007 Facility Plan- Electrical System Transmission and Generation (aka Electric Facility Plan or EFP) -2010-2020 Recognizing that the electrical grid is critical infrastructure essential for the health, safety, and eco"
+  - "This project has long been identified as Project 4 in the Facility Plan- Electrical System Transmission and Generation (2010-2020) (Electrical Facility Plan), to provide substation capacity to serve the area growth and backup support to Central, St."
+  - "Implementation and Administration of Transmission, Substation and Generation Facilities and Approval Processes - V."
+  - "Electric generation technologies have remained largely the same for decades, though technologies continue to evolve."
+  - "PNM has an existing gasfired generation station facility located in the City of Albuquerque and another gasfired generation station facility in Bernalillo County."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-08-25, agenda: Board of County Commissioners Agenda 2026-08-25, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=14&ID=3829&Inline=True
+  - Also mentions: irb
+  - "Ordinance for the DESRI Solar IRB Convene a Public Hearing Motion to adopt Ordinance 2026- declaring the intent of Bernalillo County, New Mexico, subject to the satisfaction of certain conditions, to issue tax exemptions in a bond amount not to exceed $1,200,000,000 in connection with a proposed pro"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-08-25, packet: Board of County Commissioners Agenda Packet 2026-08-25, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3829&Inline=True
+  - Also mentions: irb
+  - "Ordinance for the DESRI Solar IRB Convene a Public Hearing Motion to adopt Ordinance 2026- declaring the intent of Bernalillo County, New Mexico, subject to the satisfaction of certain conditions, to issue tax exemptions in a bond amount not to exceed $1,200,000,000 in connection with a proposed pro"
+  - "PNM and NM Gas Company Action:"
+  - "While clients always have access, visitors may never access the data center without prior approval from bigbyte.cc."
+  - "Violation of the following rules can and will result in suspension of access until resolved: 1) Unauthorized visitors are never allowed. 2) Weapons are not permitted in the facility. 3) All visitors must sign in at the security desk. 4) All individuals in the Data Center must be fully clothed, inclu"
+  - "Convene a Public Hearing Motion to adopt Ordinance 2026- declaring the intent of Bernalillo County, New Mexico, subject to the satisfaction of certain conditions, to issue tax exemptions in a bond amount not to exceed $1,200,000,000 in connection with a proposed project located within Bernalillo Cou"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-08-25, minutes: Board of County Commissioners Action Report 2026-08-25, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=15&ID=3380&Inline=True
+  - Also mentions: irb
+  - "Ordinance for the DESRI Solar IRB Convene a Public Hearing Motion to adopt Ordinance 2026-17 declaring the intent of Bernalillo County, New Mexico, subject to the satisfaction of certain conditions, to issue tax exemptions in a bond amount not to exceed $1,200,000,000 in connection with a proposed p"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-08-25, minutes: Board of County Commissioners Verbatim Minutes 2026-08-25, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=12&ID=3380&Inline=True
+  - "In fact, when PNM left the 5 San Juan generating station, we saved about $10 a month 6 for all residential ratepayers for a year."
+  - "Let's make our permits easier to get, faster 22 to get. 23 Let's make it easy to coordinate between the 24 Water Authority and the city and the county and PNM and 25 the gas company and all those things that slow you down Officemotive, Inc."
+  - "This is a generating facility. 8 We have to comply with National Electric Code."
+  - "Relating to that, there's been 3 much discussion about data centers in our state."
+  - "By the time they get to make their third payment, 22 they will have a truer number as to what that spend looks 23 like because negotiations are still happening with PNM. 24 PNM might say, and I'll use the, this isn't how the 25 industry works, they're going to talk megawatts, but I'll Officemotive, "
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-08-11, packet: Board of County Commissioners Agenda Packet 2026-08-11, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3818&Inline=True
+  - "Completed in May 2024, Building A stands as a revenue-generating facility while laying the groundwork for future development."
+  - "National Plant Data Center."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-06-09, packet: Board of County Commissioners Agenda Packet 2026-06-09, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3784&Inline=True
+  - Also mentions: payment in lieu
+  - "We have about 50 operating 12 projects in the U.S., which about five are in New Mexico. 13 The Bernalillo Solar and Storage Project, which is about 14 15 miles west of downtown Albuquerque, will be 400 15 megawatts solar and storage."
+  - "The draft Amendments to the Economic Development Department Incentive Policy incorporate the Community Dialogue Resolution and Data Center Resolution and were updated, reordered and streamlined to be more reader-friendly for the public to also be able to absorb, while covering Bernalillo County's Ec"
+  - "County Manager to incorporate data center guardrails and related legislative priorities into Economic Development Department policies. • Introduction/First reading of Economic Development Department Policy Amendments was 4/28/26 2 Pg. 597 Packet 8.A.a Policy Comparison Matrix Attachment:"
+  - "(3) Added specific requirements for Data Center from AR 2026-22 (1) Ensured program objectives are aligned with the Rubric."
+  - "NARRATIVE FISCAL IMPLICATIONS Historical Information and Existing Funding (include match and in-kind funding) - The draft Amendments to the Economic Development Department Incentive Policy incorporate the Community Dialogue Resolution and Data Center Resolution and were updated, reordered and stream"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-06-09, minutes: Board of County Commissioners Verbatim Minutes 2026-06-09, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=12&ID=3339&Inline=True
+  - "As a quick reminder, we've been going through 16 the iteration of approval since 2024 and through our 17 community dialogue process and working with the Steering 18 Committee and we're here today for final adoption. 19 Again, these policy changes provide aligning 20 a simpler definition within the p"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-05-27, agenda: Board of County Commissioners Agenda 2026-05-27, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=14&ID=3771&Inline=True
+  - Also mentions: industrial revenue bond
+  - "Introduction of the DESRI Solar Industrial Revenue Bonds Notice of Intent Motion to approve Inducement Resolution AR 2026- declaring the intent of Bernalillo County, New Mexico, subject to the satisfaction of certain conditions, to issue tax exemptions in a amount not to exceed $1,200,000 in connect"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-05-27, packet: Board of County Commissioners Agenda Packet 2026-05-27, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3771&Inline=True
+  - Also mentions: industrial revenue bond, irb, payment in lieu
+  - "Introduction of the DESRI Solar Industrial Revenue Bonds Notice of Intent Motion to approve Inducement Resolution AR 2026- declaring the intent of Bernalillo County, New Mexico, subject to the satisfaction of certain conditions, to issue tax exemptions in a amount not to exceed $1,200,000 in connect"
+  - "PNM and NM Gas Company Action:"
+  - "Motion to approve Inducement Resolution AR 2026- declaring the intent of Bernalillo County, New Mexico, subject to the satisfaction of certain conditions, to issue tax exemptions in a amount not to exceed $1,200,000 in connection with a proposed project located within Bernalillo County(200 MW Storag"
+  - "The proposed project is two phases a 200 MW solar and 200 MW battery storage project (cumulative 400 MW solar and 400 MW battery) with an associated 345kV transmission line of approximately 11 miles."
+  - "I-40 • DESRI has a successful track record developing, owning, and operating high-quality, utility-scale wind, solar, and energy storage power plants across the U.S. 2 Pg. 382 Packet 9.A.a DESRI:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-05-27, minutes: Board of County Commissioners Action Report 2026-05-27, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=15&ID=3333&Inline=True
+  - Also mentions: industrial revenue bond
+  - "Introduction of the DESRI Solar Industrial Revenue Bonds Notice of Intent Motion to approve Inducement Resolution AR 2026-56 declaring the intent of Bernalillo County, New Mexico, subject to the satisfaction of certain conditions, to issue tax exemptions in a amount not to exceed $1,200,000,000 in c"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-05-27, minutes: Board of County Commissioners Verbatim Minutes 2026-05-27, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=12&ID=3333&Inline=True
+  - "We have about 50 operating 12 projects in the U.S., which about five are in New Mexico. 13 The Bernalillo Solar and Storage Project, which is about 14 15 miles west of downtown Albuquerque, will be 400 15 megawatts solar and storage."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-05-12, packet: Board of County Commissioners Agenda Packet 2026-05-12, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3762&Inline=True
+  - "So to be more transparent, 17 more friendly, and be more, business forward is a lot of 18 the changes that we did there as well. 19 In addition, a lot of all the pieces that 20 are coming out of the rubric and the data center bill is 21 also adding into our compliance section and any new 22 complian"
+  - "The PNM & NM Gas meters were removed and the ABCWUA meter had been illegally tapped into from the main line in Rio Abajo Rd SE."
+  - "The PNM & NM Gas meters were removed and the ABCWUA meter had been illegally tapped into from the main Office Information line in Rio Abajo Rd SE."
+  - "The single-family dwelling continues to lack PNM electric service, New Mexico Gas service, and water utilities."
+  - "The property has not obtained PNM electric or gas service due to outstanding balances."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-04-14, packet: Board of County Commissioners Agenda Packet 2026-04-14, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3746&Inline=True
+  - "And we'll 13 be bringing back that final report at the April 14th 14 County Commission meeting. 15 And then at the April 28th meeting, we'll 16 actually be bringing back all the policies for adoption 17 that includes the Economic Development Community Benefits 18 component as well as the data center"
+  - "ABCWUA disconnected with a lien on property, PNM meter set but not spinning along with NM Gas meter as well."
+  - "ABCWUA disconnected with a lien on property, PNM meter set but not spinning along with PacketHistory NM Gas meter as well."
+  - "Oso Negro was awarded a contract under Tri-State Generation and Transmission’s (Tri-State) Request for Proposals for Standalone Battery Storage, issued on September 13, 2024."
+  - "Since its founding in early 2018, Plus Power has originated over 10,000 MW of standalone storage projects in 25 states spanning the major domestic energy markets including WECC, Hawaii, ERCOT, NYISO, ISONE, PJM, SPP and the Southeast, with commercial operation dates (CODs) ranging from 2018 through "
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-04-14, minutes: Board of County Commissioners Verbatim Minutes 2026-04-14, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=12&ID=3311&Inline=True
+  - "And I know we're 19 going to incorporate the policy of resolution regarding 20 the data center and this as well."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-03-24, packet: Board of County Commissioners Agenda Packet 2026-03-24, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3730&Inline=True
+  - "As you're not seeing as much generating 14 projects outside of individual projects that are creating 15 their own microgrids, you're not seeing any large 16 utility-scale generation projects."
+  - "(a) Industrial work will be defined as all new construction work performed o the following types of facilities: electrical generation plants, co-generation plants 50 megawatts and over, refineries, natural and LP gas plants, mills, mines, and concentrators."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-03-11, packet: Board of County Commissioners Agenda Packet 2026-03-11, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3717&Inline=True
+  - "Over the past year North Albuquerque 20 Acres Community Association Board, together with your 21 neighborhood engineering advisors, have conducted 22 comprehensive due diligence by thoroughly researching the 23 resident -- relevant issues keeping our community informed, 24 organizing and facilitatin"
+  - "How the heck are we supposed to support a 19 three and a half acre power station? 20 PNM will decimate our neighborhood and our property 21 values and our insurance coverage."
+  - "PNM's myths are really the facts. 23 We just want data and proof, a simple solution."
+  - "So I 23 think the best option would be to bury it. 24 Wherever they want to put it, that's fine, and I -- I 25 don't have any viewpoint either way on where they put the TR- 152 JULIAN SERNA, CCR CERTIFIED COURT REPORTER Packet Pg. 338 4.A.d 1 power station, but I think the line should definitely be "
+  - "I think what they were talking about were the 20 power lines from the generating station to the substation, 21 but like I said, check it. 22 My question, did you receive my letter?"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-03-04, packet: County Planning Commission Agenda Packet 2026-03-04, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3715&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-02-18, packet: Economic Development Steering Committee Agenda Packet 2026-02-18, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3703&Inline=True
+  - "ABCWUA disconnected with a lien on property, PNM meter set but not spinning along with NM Gas meter as well."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-02-10, packet: Board of County Commissioners Agenda Packet 2026-02-10, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3694&Inline=True
+  - "I 11 believe that PNM is just trying to give us proper 12 service, reducing the load on current overloaded area 13 substations and infrastructure -- the whole network. 14 We need this power."
+  - "I have a lot of experience in some of 19 these areas and especially with this equipment, even on a 20 larger scale. 21 But I think the main thing I would just like 22 to share and get across is we were given unfettered 23 access to PNM's reliability data for the area to really 24 understand what was"
+  - "PNM and NM Gas Company Action:"
+  - "Institute of TraƯic Engineers (ITE) provides trip generation tables based on data from across the country."
+  - "This station carries a 115kV transmission line east/west toward the Delta Person generating station."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-02-10, agenda: Board of County Commissioners Agenda 2026-02-10, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=14&ID=3695&Inline=True
+  - "Holding Data Center Projects Accountable in Our Community Resolution Motion to approve Administrative Resolution AR 2026- Holding Data Center Projects Accountable in Our Community Resolution."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-02-10, minutes: Board of County Commissioners Action Report 2026-02-10, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=15&ID=3276&Inline=True
+  - "Holding Data Center Projects Accountable in Our Community Resolution Motion to approve Administrative Resolution AR 2026-22 Holding Data Center Projects Accountable in Our Community Resolution."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-02-04, packet: County Planning Commission Agenda Packet 2026-02-04, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3691&Inline=True
+  - "PNM and NM Gas Company Date:16-Jan-2026 Page 7 of 8 Packet Pg. 137 d County of Bernalillo Case Comments Report Permit:"
+  - "PNM and NM Gas Company Date:16-Jan-2026 Page 7 of 8 Packet Pg. 323 d County of Bernalillo Case Comments Report Permit:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-01-27, agenda: Board of County Commissioners Agenda 2026-01-27, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=14&ID=3684&Inline=True
+  - "Holding Data Center Projects Accountable in Our Community Resolution Motion to approve Administrative Resolution AR 2026- Holding Data Center Projects Accountable in Our Community Resolution."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-01-27, minutes: Board of County Commissioners Action Report 2026-01-27, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=15&ID=3271&Inline=True
+  - "Holding Data Center Projects Accountable in Our Community Resolution Motion to approve Administrative Resolution AR 2026- Holding Data Center Projects Accountable in Our Community Resolution."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-01-13, agenda: Board of County Commissioners Agenda 2026-01-13, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=14&ID=3669&Inline=True
+  - "Data Centers and AI Projects in Bernalillo County and Legislative Priorities related to Data Centers and AI Projects - Added Late Motion to approve for introduction an administrative resolution supporting AI and Data Center related projects, and related legislation and incentives at the state and fe"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-01-13, packet: Board of County Commissioners Agenda Packet 2026-01-13, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3669&Inline=True
+  - Also mentions: industrial revenue bond, local economic development act
+  - "Data Centers and AI Projects in Bernalillo County and Legislative Priorities related to Data Centers and AI Projects - Added Late Motion to approve for introduction an administrative resolution supporting AI and Data Center related projects, and related legislation and incentives at the state and fe"
+  - "Data Centers and AI Projects in Bernalillo County and Legislative Priorities related to Data Centers and AI Projects Action:"
+  - "Motion to approve for introduction an administrative resolution supporting AI and Data Center related projects, and related legislation and incentives at the state and federal levels."
+  - "This administrative resolution, sponsored by Commissioner Eric Olivas, outlines the strict criteria Bernalillo County will use to support or oppose data center and Artificial Intelligence (AI) projects."
+  - "Attachments: • Resolution- Data Centers and AI Projects Final (DOC) Staff Analysis Summary:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2026-01-13, minutes: Board of County Commissioners Action Report 2026-01-13, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=15&ID=3263&Inline=True
+  - "Commissioners requesting to add an item (Data Centers and AI Projects in Bernalillo County and Legislative Priorities related to Date Centers and AI projects) and heard as item 12D under Introduction of Resolutions."
+  - "Data Centers and AI Projects in Bernalillo County and Legislative Priorities related to Data Centers and AI Projects - Added Late Motion to approve for introduction an administrative resolution supporting AI and Data Center related projects, and related legislation and incentives at the state and fe"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-12-10, packet: Board of County Commissioners Agenda Packet 2025-12-10, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3657&Inline=True
+  - "Array Technologies existing footprint and relationships with Bernalillo County Economic Development Department, the City of Albuquerque, and the State of New Mexico supported the county’s pursuit of this highly competitive project that nearly landed in Phoenix, Arizona. • Plus Power (Corazon Energy "
+  - "(a) water utilities; and (b) any electric generation facility other than one for which both location approval and a certificate of convenience and necessity are required prior to commencing construction or operation of the facility, pursuant to the Public Utility Act;"
+  - "Public Schools Data Centers:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-12-03, packet: County Planning Commission Agenda Packet 2025-12-03, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3647&Inline=True
+  - "Facility Plan- Electrical System Transmission and Generation 2010-2020- (aka Electric Facility Plan or EFP) Recognizing that the electrical grid is critical infrastructure essential for the health, safety, and economic vitality of the community, the Facility Plan- Electrical System Transmission and "
+  - "This project has long been identified as Project 12 in the Facility Plan- Electrical System Transmission and Generation (2010-2020) (Electrical Facility Plan), to provide substation capacity to serve the residential and commercial growth in the area surrounding Paseo del Norte and San Pedro/Wyoming."
+  - "(9 A 41 MW 54 32 ALBUQUERQUE ALBUQUERQUE 40 A 17 39 YT 32 17 32 37 ER 38 36 RA C E 35 SAN FRANCISCO AV SAN FRANCISCO 30 34 AV 250 0 250 500 750 1,000 1 29 R-2 33 A-1 16 1 16 A-1 1 27 32 21 Feet ST !"
+  - "PNM and NM Gas Company Action:"
+  - "We signed a non disclosure agreement (NDA) with PNM to allow deep dives into the detailed load models, design details and site selection scoring methodology being used by PNM."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-12-03, minutes: County Planning Commission Verbatim Minutes 2025-12-03, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=12&ID=3253&Inline=True
+  - "How the heck are we supposed to support a 19 three and a half acre power station? 20 PNM will decimate our neighborhood and our property 21 values and our insurance coverage."
+  - "PNM's myths are really the facts. 23 We just want data and proof, a simple solution."
+  - "So I 23 think the best option would be to bury it. 24 Wherever they want to put it, that's fine, and I -- I 25 don't have any viewpoint either way on where they put the TR- 152 JULIAN SERNA, CCR CERTIFIED COURT REPORTER 1 power station, but I think the line should definitely be 2 underground."
+  - "I think what they were talking about were the 20 power lines from the generating station to the substation, 21 but like I said, check it. 22 My question, did you receive my letter?"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-11-18, packet: Board of County Commissioners Agenda Packet 2025-11-18, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3637&Inline=True
+  - "PNM and NM Gas Company Date:15-Sep-2025 Page 7 of 8 Packet Pg. 332 6.G.c County of Bernalillo Case Comments Report Permit:"
+  - "Of the 12 wells sampled in November 2021, four (MW-11R, MW-12, MW-19, and MW-20) had concentrations above New Mexico Water Quality Control Commission (NMWQCC) standards."
+  - "During the latest round of sampling in October 2023, MW-1R contained 8.5 µg/L dissolved benzene, which is above the NMWQCC standard of 5 µg/L, but has been on a decreasing trend."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-11-05, packet: County Planning Commission Agenda Packet 2025-11-05, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3631&Inline=True
+  - Also mentions: special use
+  - "PNM and NM Gas Company Date:12-Sep-2025 Page 9 of 10 Packet Pg. 183 e County of Bernalillo Case Comments Report Permit:"
+  - "PNM and NM Gas Company Action:"
+  - "CSU2025-0015) Surrounding Zoning & Land Uses Zoning Land Use Site A-1 with Special Use Permit ZCSU2013-0015 Correctional Facility North A-1 with Special Use Permit ZCSU2014-0024 Solar Generation Facility South A-1 Vacant East A-1 Vacant West A-1 with Special Use ZCSU2010-0015 Cerro Colorado Landﬁll "
+  - "To the north of the subject parcel is a large solar generation facility owned by PNM."
+  - "The SUP number is ZCSU2014-0024 and is for a “Public Utility Facility (Solar Generation Facility)”."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-10-28, packet: Board of County Commissioners Agenda Packet 2025-10-28, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3626&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-10-14, packet: Board of County Commissioners Agenda Packet 2025-10-14, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3613&Inline=True
+  - "The county will consider clarifying and expanding the definition of water waste in the ordinance update. • Consider using an EPA WaterSense-labeled water efficiency rating system (or similar tool) to estimate water use and water savings from the implementation of water conservation measures in new h"
+  - "The county will consider clarifying and expanding the definition of water waste in the ordinance update. o Considering an EPA WaterSense-labeled water efficiency rating system (or similar tool) to estimate water use and water savings from the implementation of water conservation measures in new home"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-10-09, agenda: County Development Review Authority Agenda 2025-10-09, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=14&ID=3616&Inline=True
+  - "So, our weather was a really influencing factor. 17 The access to natural resource energy such as wind, solar 18 and geothermal. 19 And believe it or not, the one data center 20 told us that they were looking for states that had strong 21 building and construction trades, which is the Union 22 Const"
+  - "And I would 4 agree with big tech companies and data center projects. 5 They are more attuned to renewable green energy and big 6 factors like that. 7 And data centers are a completely different 8 animal than just about any other type of project, whether 9 you're talking about advanced manufacturing"
+  - "We 10 don't think that's wise policy, whether it's their 11 warehouses or now their data centers. 12 In fact, we've actually seen a trend in 13 recent years of kind of -- well, how to put it?"
+  - "We've been publishing a 16 lot of studies on it as well. 17 Our latest work year has focused a lot on 18 data centers."
+  - "We're getting a lot of calls about how much 19 money may be getting lost to data center subsidies."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-10-09, packet: County Development Review Authority Agenda Packet 2025-10-09, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3616&Inline=True
+  - "So, our weather was a really influencing factor. 17 The access to natural resource energy such as wind, solar 18 and geothermal. 19 And believe it or not, the one data center 20 told us that they were looking for states that had strong 21 building and construction trades, which is the Union 22 Const"
+  - "And I would 4 agree with big tech companies and data center projects. 5 They are more attuned to renewable green energy and big 6 factors like that. 7 And data centers are a completely different 8 animal than just about any other type of project, whether 9 you're talking about advanced manufacturing"
+  - "We 10 don't think that's wise policy, whether it's their 11 warehouses or now their data centers. 12 In fact, we've actually seen a trend in 13 recent years of kind of -- well, how to put it?"
+  - "We've been publishing a 16 lot of studies on it as well. 17 Our latest work year has focused a lot on 18 data centers."
+  - "We're getting a lot of calls about how much 19 money may be getting lost to data center subsidies."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-09-26, agenda: Economic Development Steering Committee Agenda 2025-09-26, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=14&ID=3606&Inline=True
+  - "Most of the construction 19 workers are local, but the full-time people that are 20 hired there for like really high wages, like $140,000 to 21 $190,000 a year. 22 I know one person, one local person who 23 works at that data center."
+  - "Public Schools Data Centers:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-09-26, packet: Economic Development Steering Committee Agenda Packet 2025-09-26, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3606&Inline=True
+  - "Most of the construction 19 workers are local, but the full-time people that are 20 hired there for like really high wages, like $140,000 to 21 $190,000 a year. 22 I know one person, one local person who 23 works at that data center."
+  - "Public Schools Data Centers:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-09-26, packet: Economic Development Steering Committee Agenda Packet 2025-09-26, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3608&Inline=True
+  - "PNM provided technical data, analyses, and 23 information. 24 And we also met with neighbors to the south along San 25 Bernardino Avenue, the neighbors closest to the substation TR- 52 JULIAN SERNA, CCR CERTIFIED COURT REPORTER Packet Pg. 58 a 1 site; explained the situation to them."
+  - "Yet, with 20 the placement of this power station and the potential of 21 90-foot towers and power lines through my backyard, I and my 22 neighborhood are carrying the largest burden of this plan, 23 even though our loss of power is negligible and that -- and 24 that the use of -- of my neighborhood "
+  - "I ask you to 4 take a look at where you're going to place this -- this 5 power station, and it is related to the power lines, this 6 decision."
+  - "So whether or not you're just considering the 20 power station, I think it's been pretty well established 21 that it cannot function unless it has power lines going to 22 and from it, and that's part of the consideration that needs 23 to be addressed. 24 If you're considering approving, the decision"
+  - "PNM and NM Gas Company Date:15-Sep-2025 Page 7 of 8 Packet Pg. 215 d County of Bernalillo Case Comments Report Permit:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-09-23, packet: Board of County Commissioners Agenda Packet 2025-09-23, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3595&Inline=True
+  - "The 23 Public Regulation Commission requires that PNM interconnect 24 with all of these generation facilities."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-09-23, packet: Board of County Commissioners Agenda Packet 2025-09-23, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3596&Inline=True
+  - "PNM and NM Gas Company Date:17-Jul-2025 Page 8 of 9 Packet Pg. 393 6.H.c County of Bernalillo Case Comments Report Permit:"
+  - "PNM and NM Gas Company Action:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-09-09, packet: Board of County Commissioners Agenda Packet 2025-09-09, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3581&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - "SPR2025-0004) transmission line east/west toward the Delta Person generating station."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-09-03, packet: County Planning Commission Agenda Packet 2025-09-03, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3580&Inline=True
+  - "The 23 Public Regulation Commission requires that PNM interconnect 24 with all of these generation facilities."
+  - "PNM and NM Gas Company Action:"
+  - "Facility Plan- Electrical System Transmission and Generation 2010-2020- (aka Electric Facility Plan or EFP) Recognizing that the electrical grid is critical infrastructure essential for the health, safety, and economic vitality of the community, the Facility Plan- Electrical System Transmission and "
+  - "This project has long been identified as Project 12 in the Facility Plan- Electrical System Transmission and Generation (2010-2020) (Electrical Facility Plan), to Page 17 of 18 Packet Pg. 267 a COUNTY PLANNING COMMISSION September 3,2025 SPR2025-0006 provide substation capacity to serve the resident"
+  - "Facility Plan- Electrical System Transmission and Generation (aka Electric Facility Plan or EFP) -2010-2020 Recognizing that the electrical grid is critical infrastructure essential for the health, safety, and economic vitality of the community, the Facility Plan- Electrical System Transmission and "
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-09-03, minutes: County Planning Commission Verbatim Minutes 2025-09-03, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=12&ID=3191&Inline=True
+  - "PNM provided technical data, analyses, and 23 information. 24 And we also met with neighbors to the south along San 25 Bernardino Avenue, the neighbors closest to the substation TR- 52 JULIAN SERNA, CCR CERTIFIED COURT REPORTER 1 site; explained the situation to them."
+  - "Yet, with 20 the placement of this power station and the potential of 21 90-foot towers and power lines through my backyard, I and my 22 neighborhood are carrying the largest burden of this plan, 23 even though our loss of power is negligible and that -- and 24 that the use of -- of my neighborhood "
+  - "I ask you to 4 take a look at where you're going to place this -- this 5 power station, and it is related to the power lines, this 6 decision."
+  - "So whether or not you're just considering the 20 power station, I think it's been pretty well established 21 that it cannot function unless it has power lines going to 22 and from it, and that's part of the consideration that needs 23 to be addressed. 24 If you're considering approving, the decision"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-08-19, packet: Board of County Commissioners Agenda Packet 2025-08-19, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3571&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-08-19, packet: Board of County Commissioners Agenda Packet 2025-08-19, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3567&Inline=True
+  - Also mentions: irb
+  - "Plus Power, through its affiliate, Corazon Energy Storage LLC(Corazon), responded to PNM’s 2026 to 2028 Generation Resources RFP, which was focused on resources supporting PNM’s transition to a zero-carbon future by 2040 while fulfilling PNM’s obligation to serve its customers with reliable, low-cos"
+  - "The project is estimated to have a capital investment of $190 million which represents 150 MW of capacity, with additional investment made over its 20-year contract term of $35M."
+  - "BCC Powerpoint_EDD projects_Corazon IRB Ordinance 8.19.25_Final (25019 • Plus Power specializes in Battery Energy Storage Systems (BESS): • Enhances grid flexibility, capacity, and reliability. • Stores excess energy and injects it into the grid when needed. • Plus Power (via Corazon Energy Storage "
+  - "GENERAL INFORMATION FISCAL IMPLICATIONS Historical Information and Existing Funding (include match and in-kind funding) - Plus Power, through its affiliate, Corazon Energy Storage LLC(Corazon), responded to PNM’s 2026 to 2028 Generation Resources RFP, which was focused on resources supporting PNM’s "
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-07-02, packet: County Planning Commission Agenda Packet 2025-07-02, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3534&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - "This station carries a 115kV transmission line east/west toward the Delta Person generating station."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-06-24, packet: Board of County Commissioners Agenda Packet 2025-06-24, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3529&Inline=True
+  - "But is there a way to 14 narrow that -- to really specify drainage -- so that we 15 don't have, you know, we're hearing about all this fiber 16 infrastructure debacle that's going on in the city right 17 now, so that we make sure we don't have, you know, fiber 18 contractors and PNM and gas company "
+  - "PNM and NM Gas Company Action:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-06-24, packet: Board of County Commissioners Agenda Packet 2025-06-24, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3523&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - "(a) Industrial work will be defined as all new construction work performed o the following types of facilities: electrical generation plants, co-generation plants 50 megawatts and over, refineries, natural and LP gas plants, mills, mines, and concentrators."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-06-09, packet: Economic Development Steering Committee Agenda Packet 2025-06-09, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3517&Inline=True
+  - "(a) water utilities; and (b) any electric generation facility other than one for which both location approval and a certificate of convenience and necessity are required prior to commencing construction or operation of the facility, pursuant to the Public Utility Act;"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-05-28, agenda: Economic Development Steering Committee Agenda 2025-05-28, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=14&ID=3496&Inline=True
+  - "So they had the -- data centers have an O.P.U. 2 footprint that they have to do and that they have to get. 3 And so they designed a system that was super 4 environmentally friendly, right?"
+  - "And so I think as a resident of Valencia 8 County, and the state engineer said, if the county runs 9 out of water, the data center gets the water over the 10 residents."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-05-28, packet: Economic Development Steering Committee Agenda Packet 2025-05-28, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3496&Inline=True
+  - "So they had the -- data centers have an O.P.U. 2 footprint that they have to do and that they have to get. 3 And so they designed a system that was super 4 environmentally friendly, right?"
+  - "And so I think as a resident of Valencia 8 County, and the state engineer said, if the county runs 9 out of water, the data center gets the water over the 10 residents."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-04-22, packet: Board of County Commissioners Agenda Packet 2025-04-22, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3470&Inline=True
+  - "Access to Physical Infrastructure and Data Center Facilities ...................................... 21 6.2."
+  - "Data Center Audits.....................................................................................................22 6.3."
+  - "Data Center Virtual Tours ..........................................................................................23 6.5."
+  - "Data Center Security ..................................................................................................23 7."
+  - "Data Center Availability and Reliability ...................................... 26 8.2."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-04-10, packet: Board of County Commissioners Agenda Packet 2025-04-10, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3463&Inline=True
+  - "Examples include internet access and data centers. 1."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-03-25, packet: Board of County Commissioners Agenda Packet 2025-03-25, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3451&Inline=True
+  - "DBA Capital Typing Packet Pg. 26 6.A.a 18 1 The development will be completed with $190 2 million of capital investment to store and provide 150 3 megawatt grid capacity."
+  - "PNM and NM Gas Company Action:"
+  - "PNM, New Mexico Gas and ABCWUA 16 3."
+  - "PNM, New Mexico Gas and ABCWUA 3."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-03-11, packet: Board of County Commissioners Agenda Packet 2025-03-11, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3429&Inline=True
+  - "Plus Power, through its affiliate, Corazon Energy Storage LLC(Corazon), responded to PNM’s 2026 to 2028 Generation Resources RFP, which was focused on resources supporting PNM’s transition to a zero-carbon future by 2040 while fulfilling PNM’s obligation to serve its customers with reliable, low-cos"
+  - "The project is estimated to have a capital investment of $190 million which represents 150 MW of capacity, with additional investment made over its 20-year contract term of $35M."
+  - "NOI • Plus Power specializes in Battery Energy Storage Systems (BESS): • Enhances grid flexibility, capacity, and reliability. • Stores excess energy and injects it into the grid when needed. • Plus Power (via Corazon Energy Storage LLC) responded to PNM's 2026-2028 Generation Resources RFP, support"
+  - "NARRATIVE FISCAL IMPLICATIONS Historical Information and Existing Funding (include match and in-kind funding) - Plus Power, through its affiliate, Corazon Energy Storage LLC(Corazon), responded to PNM’s 2026 to 2028 Generation Resources RFP, which was focused on resources supporting PNM’s transition"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-03-11, minutes: Board of County Commissioners Verbatim Minutes 2025-03-11, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=12&ID=3051&Inline=True
+  - "DBA Capital Typing 18 1 The development will be completed with $190 2 million of capital investment to store and provide 150 3 megawatt grid capacity."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-03-05, packet: County Planning Commission Agenda Packet 2025-03-05, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3423&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - "PNM and NM Gas Company Date:18-Feb-2025 Page 7 of 9 Packet Pg. 159 a County of Bernalillo Case Comments Report Permit:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-02-26, packet: Board of County Commissioners Agenda Packet 2025-02-26, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3419&Inline=True
+  - "(a) water utilities; and (b) any electric generation facility other than one for which both location approval and a certificate of convenience and necessity are required prior to commencing construction or operation of the facility, pursuant to the Public Utility Act;"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-02-26, packet: Board of County Commissioners Agenda Packet 2025-02-26, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3417&Inline=True
+  - Also mentions: plat
+  - "ALTA/ACSM LAND TITLE SURVEY PREPARED BY SURVTEK CONSULTING SURVEYORS Disclaimer APPROVED ON THE CONDITION THAT ALL RIGHTS OF THE MIDDLE RIO GRANDE CONSERVANCY In approving this plat, Public Service Company of New Mexico (PNM), QWEST D/B/A CENTURYLINK and New Mexico Gas Company (NMGC) DATED: 12-21-20"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-02-11, packet: Board of County Commissioners Agenda Packet 2025-02-11, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3396&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-02-11, packet: Board of County Commissioners Agenda Packet 2025-02-11, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3397&Inline=True
+  - Also mentions: industrial revenue bond
+  - "Economic Economic Development Projects Casitas del Camino Sun Lasso Energy Center Project Revenue Bonds Industrial Revenue Bond • 5 Economic Development Projects • 6 Housing Projects in process* (*due to close financing in the next 6mths) • 414 new housing units • 714 refurbished units 3."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-01-28, packet: Board of County Commissioners Agenda Packet 2025-01-28, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3383&Inline=True
+  - "This microgrid project approach will allow the TMCs to produce dependable low cost, clean power in locations that are likely not to have adequate power from the local electric utility company."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2025-01-14, packet: Board of County Commissioners Agenda Packet 2025-01-14, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3374&Inline=True
+  - Also mentions: plat, zone change
+  - "PNM and NM Gas Company Action:"
+  - "PNM and NM Gas Company Date:17-Oct-2024 Page 6 of 8 Packet Pg. 591 10.J.c County of Bernalillo Case Comments Report Permit:"
+  - "Comments were provided by Bernalillo County Public Works, Natural Resources, and Transportation, AMAFCA, ABCWUA, MRGCD, PNM, NM Gas, and NMDOT. 7 Packet Pg. 662 10.K.c COUNTY PLANNING COMMISSION November 6, 2024 CA2024-0008 Analysis Summary Zoning Resolution 116-86 In accordance with Sections 1.A, 1"
+  - "COA, ABCWUA, PNM, Century Link, NM Gas Company, Comcast Cable, etc., is also required. 1.1.8 Scheduling design group meetings, including meetings for review of design submittals. 1.1.9 Preparing agendas for and minutes of all coordination and design meetings and distributing minutes to attendees and"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-12-10, packet: Board of County Commissioners Agenda Packet 2024-12-10, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3345&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-12-10, packet: Board of County Commissioners Agenda Packet 2024-12-10, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3350&Inline=True
+  - "Restrict physical access to any network or data centers that may have access to Protected Information or UC Information Resources."
+  - "Approve the purchase of data center support with AVI-SPL utilizing the Omnia Partners Contract R201201 in the amount of $766,989.00 2."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-12-04, packet: County Planning Commission Agenda Packet 2024-12-04, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3348&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-11-12, packet: Board of County Commissioners Agenda Packet 2024-11-12, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3331&Inline=True
+  - "I 13 don't believe that would happen in any part of the city. 14 That PNM did a great job but then but New 15 Mexico Gas kind of just spun their wheels."
+  - "PNM and NM Gas Company Date:16-Sep-2024 Page 7 of 8 Packet Pg. 456 5.I.c County of Bernalillo Case Comments Report Permit:"
+  - "PNM and NM Gas Company Action:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-11-06, packet: County Planning Commission Agenda Packet 2024-11-06, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3322&Inline=True
+  - Also mentions: plat, zone change
+  - "PNM and NM Gas Company Date:17-Oct-2024 Page 6 of 8 Packet Pg. 113 a County of Bernalillo Case Comments Report Permit:"
+  - "Comments were provided by Bernalillo County Public Works, Natural Resources, and Transportation, AMAFCA, ABCWUA, MRGCD, PNM, NM Gas, and NMDOT. 7 Packet Pg. 174 a COUNTY PLANNING COMMISSION November 6, 2024 CA2024-0008 Analysis Summary Zoning Resolution 116-86 In accordance with Sections 1.A, 1.C, a"
+  - "PNM and NM Gas Company Action:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-10-23, packet: Board of County Commissioners Agenda Packet 2024-10-23, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3313&Inline=True
+  - "PUBLIC SERVICE COMPANY OF NEH MEXICO (PNM) AND NEH MEXICO GAS COMPANY (NMGC) DID NOT CONDUCT A TITLE SEARCH OF THE PROPERTIES SHOHN HEREON."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-10-08, packet: Board of County Commissioners Agenda Packet 2024-10-08, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3307&Inline=True
+  - "Furnish and install fans, filters, sheet metal work, grilles, louvers, diffusers, registers, sound traps, special fan bases, fire dampers, combination fire and smoke dampers and sleeves, accessories and natural gas fired appliance flue vents."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-10-08, minutes: Board of County Commissioners Verbatim Minutes 2024-10-08, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=12&ID=2952&Inline=True
+  - "I 13 don't believe that would happen in any part of the city. 14 That PNM did a great job but then but New 15 Mexico Gas kind of just spun their wheels."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-10-02, packet: County Planning Commission Agenda Packet 2024-10-02, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3301&Inline=True
+  - "PNM and NM Gas Company Date:16-Sep-2024 Page 7 of 8 Packet Pg. 96 a County of Bernalillo Case Comments Report Permit:"
+  - "Outside agency comments are from PNM and NM Gas Company, COA Transportation, APS, AMAFCA, and ABCWUA."
+  - "PNM and NM Gas Company Action:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-09-24, packet: Board of County Commissioners Agenda Packet 2024-09-24, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3298&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - "Accela’s partnership with Microsoft delivers multi-layered security in physical datacenters, infrastructure and operations, with adherence to its numerous security certifications."
+  - "(Industry analysis, estimates up to ten indirect U.S. jobs per 1MW of solar panel production will be created.) 7."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-09-10, packet: Board of County Commissioners Agenda Packet 2024-09-10, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3287&Inline=True
+  - "Research Professor - University of New Mexico • Helped establish a national innovative desalination and water treatment and manufacturing pro- gram with Sandia, other national laboratories, and universities, and support of the UNM Resili- ence Institute to establish a national program in urban resil"
+  - "DOE national laboratory consortium on the interdependencies of energy and water, includ- ing the development of two Reports to Congress on the Energy Water Nexus and a Report to Congress on the design of a national brackish ground water desalination research center in Ala- mogordo, NM.  Starting in"
+  - "From 2008 to 2017, developed over 100 advanced microgrid conceptual designs for DOE, DoD, and municipalities."
+  - "Also developed an advanced microgrid conceptual design course that has been taught to several hundred students.  From 2003 to retirement was the program leader of Sandia’s marine energy transportation safety and security research and analysis efforts."
+  - "Packet Pg. 85 7.B.e  Computer modeling and analysis of the cooling water intake and outfall structures for the San Onofre Nuclear Generating Station in San Clemente, CA. 1971-1973:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-08-27, packet: Board of County Commissioners Agenda Packet 2024-08-27, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3281&Inline=True
+  - "Data center security operations are managed by AWS."
+  - "Data is archived and stored in two data centers: one primary on the East Coast and one backup on the West Coast."
+  - "Data is then backed up across different data centers. 7.2."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-08-13, packet: Board of County Commissioners Agenda Packet 2024-08-13, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3273&Inline=True
+  - "Security Engineer (March 2008 – February 2016) • Acted as project manager for annual PCI DSS compliance audits. • Conducted regular risk assessments of information systems. • Implemented file integrity monitoring and vulnerability scanning solutions within data center environment. • Assisted custome"
+  - "(Industry analysis, estimates up to ten indirect U.S. jobs per 1MW of solar panel production will be created.) 7."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-08-13, minutes: Board of County Commissioners Action Report 2024-08-13, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=15&ID=2930&Inline=True
+  - "Security Engineer (March 2008 – February 2016) • Acted as project manager for annual PCI DSS compliance audits. • Conducted regular risk assessments of information systems. • Implemented file integrity monitoring and vulnerability scanning solutions within data center environment. • Assisted custome"
+  - "(Industry analysis, estimates up to ten indirect U.S. jobs per 1MW of solar panel production will be created.) 7."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-06-25, packet: Board of County Commissioners Agenda Packet 2024-06-25, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3252&Inline=True
+  - "Keefe Group’s systems are located in a Tier 4 data center in St."
+  - "Physical access to datacenter is restricted to authorized personnel and access is reviewed on a semi-annual basis."
+  - "Adjacent to property boundaries with coal, diesel, or natural gas power generating Formatted:"
+  - "Left: 0.63", Hanging: 0.38" 36 and electrical transmission facilities such as generating plants, substations, and 37 switching stations; or 38 b."
+  - "Adjacent to industrial facilities with backup generator capacity; and May 14, 2024 Version A Packet Pg. 2570 10.C.a Attachment: 6 25 Well Ordinance Amendments as Published (Redline) (22597 :"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-06-25, minutes: Board of County Commissioners Action Report 2024-06-25, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=15&ID=2913&Inline=True
+  - "Adjacent to property boundaries with coal, diesel, or natural gas power generating Formatted:"
+  - "Left: 0.63", Hanging: 0.38" 36 and electrical transmission facilities such as generating plants, substations, and 37 switching stations; or 38 b."
+  - "Adjacent to industrial facilities with backup generator capacity; and May 14, 2024 Version A Packet Pg. 1741 10.C.a Attachment: 6 25 Well Ordinance Amendments as Published (Redline) (22597 :"
+  - "Keefe Group’s systems are located in a Tier 4 data center in St."
+  - "Physical access to datacenter is restricted to authorized personnel and access is reviewed on a semi-annual basis."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-06-12, packet: Air Quality Control Board Agenda Packet 2024-06-12, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3232&Inline=True
+  - Also mentions: plat
+  - "Disclaimer In approving this plat, Public Service Company of New Mexico (PNM), QWEST D/B/A CENTURYLINK and New Mexico Gas Company (NMGC) did not conduct a Title Search of the properties shown hereon."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-06-11, packet: Board of County Commissioners Agenda Packet 2024-06-11, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3233&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - "This project has been a collaborative process with utility providers, including PNM and NM GAS Company."
+  - "REGIONAL COLLABORATION: reflects the County’s coordination with jurisdictions such as the City of Albuquerque and agencies such as the ABCWUA, AMAFCA, MRCOG and MRGCD, PNM and NM GAS CO."
+  - "SPR2023-0004) ● Work with the Mortgage Finance ● We need more renewable energy Key Takeaways from Community Authority to ﬁnd ways they can especially if PNM is shutting down better support ﬁrst time generating stations; this is and will Engagement:"
+  - "Lastly, staff met with utility providers in the region, including PNM and NMGas company."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-06-11, packet: Board of County Commissioners Agenda Packet 2024-06-11, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3234&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-06-05, packet: County Planning Commission Agenda Packet 2024-06-05, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3229&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-05-14, packet: Board of County Commissioners Agenda Packet 2024-05-14, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3214&Inline=True
+  - "I 4 think there's a lot of opportunities for us to, 5 especially going forward, looking for microgrids, 6 renewable energy development on our buildings, our lands, 7 also finding other opportunities to sequester carbon in 8 our forest resources, our agricultural spaces or our open 9 spaces as well. "
+  - "PNM 6 interconnects new renewable generation and is on track to 7 meet the State's Energy Transition Act 2045 requirements. 8 PNM is also subject to other state laws and the New 9 Mexico Public Regulation Commission rules, including the 10 requirement to meet all local jurisdiction requirements. 11 "
+  - "PNM and NM Gas Company Action:"
+  - "This project has been a collaborative process with utility providers, including PNM and NM GAS Company."
+  - "REGIONAL COLLABORATION: reflects the County’s coordination with jurisdictions such as the City of Albuquerque and agencies such as the ABCWUA, AMAFCA, MRCOG and MRGCD, PNM and NM GAS CO."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-05-01, packet: County Planning Commission Agenda Packet 2024-05-01, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3207&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-04-09, packet: Board of County Commissioners Agenda Packet 2024-04-09, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3176&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - "Lastly, staff met with utility providers in the region, including PNM and NMGas company."
+  - "Lastly, staff met with utility providers in the region, including PNM and New Mexico Gas company."
+  - "This project has been a collaborative process with utility providers, including PNM and NM GAS Company."
+  - "REGIONAL COLLABORATION: reflects the County’s coordination with jurisdictions such as the City of Albuquerque and agencies such as the ABCWUA, AMAFCA, MRCOG and MRGCD, PNM and NM GAS CO."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-04-09, minutes: Board of County Commissioners Verbatim Minutes 2024-04-09, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=12&ID=2879&Inline=True
+  - "I 4 think there's a lot of opportunities for us to, 5 especially going forward, looking for microgrids, 6 renewable energy development on our buildings, our lands, 7 also finding other opportunities to sequester carbon in 8 our forest resources, our agricultural spaces or our open 9 spaces as well. "
+  - "PNM 6 interconnects new renewable generation and is on track to 7 meet the State's Energy Transition Act 2045 requirements. 8 PNM is also subject to other state laws and the New 9 Mexico Public Regulation Commission rules, including the 10 requirement to meet all local jurisdiction requirements. 11 "
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-04-09, packet: Board of County Commissioners Agenda Packet 2024-04-09, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3172&Inline=True
+  - "(the “Improvement Special Assessment Act”) authorizes counties to establish an Improvement Special Assessment program to allow free and willing owners of agricultural, commercial, and industrial properties, and of multifamily residential properties with five or more dwelling units to obtain affordab"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-04-03, packet: County Planning Commission Agenda Packet 2024-04-03, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3166&Inline=True
+  - "PNM and NM Gas Company Date:20-Feb-2024 Page 7 of 9 Packet Pg. 92 a County of Bernalillo Case Comments Report Permit:"
+  - "PNM and NM Gas Company Action:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-03-19, packet: Board of County Commissioners Agenda Packet 2024-03-19, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3154&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - "Lastly, staff met with utility providers in the region, including PNM and NMGas company."
+  - "This project has been a collaborative process with utility providers, including PNM and NM GAS Company."
+  - "REGIONAL COLLABORATION: reflects the County’s coordination with jurisdictions such as the City of Albuquerque and agencies such as the ABCWUA, AMAFCA, MRCOG and MRGCD, PNM and NM GAS CO."
+  - "SPR2023-0004-Discussion) ● Work with the Mortgage Finance ● We need more renewable energy Key Takeaways from Community Authority to ﬁnd ways they can especially if PNM is shutting down better support ﬁrst time generating stations; this is and will Engagement:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-03-06, packet: County Planning Commission Agenda Packet 2024-03-06, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3139&Inline=True
+  - "PNM and NM Gas Company Action:"
+  - "PNM and NM Gas Company Date:20-Feb-2024 Page 7 of 9 Packet Pg. 236 a County of Bernalillo Case Comments Report Permit:"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-02-06, packet: Board of County Commissioners Agenda Packet 2024-02-06, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3115&Inline=True
+  - "County Planning Commission Minutes) 8 the City of Albuquerque, once we started working outwards, 9 although, we did start our efforts with our own departments, 10 Public Works, Natural Resources, Economic Development, 11 Housing, Behavioral Health, and then working our way out like 12 an onion, City"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-01-23, agenda: Board of County Commissioners Agenda 2024-01-23, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=14&ID=3110&Inline=True
+  - Also mentions: industrial revenue bond, irb
+  - "Industrial Revenue Bond (IRB) Notice of Intent for Sun Lasso Energy Center LLC Motion to approve Inducement Resolution AR 2024- to issue Taxable Industrial Revenue Bonds in an amount not to exceed Two Hundred and Five Million Dollars ($205,000,000) for the purpose of inducing Sun Lasso Energy Center"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-01-23, minutes: Board of County Commissioners Action Report 2024-01-23, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=15&ID=2829&Inline=True
+  - Also mentions: industrial revenue bond, irb
+  - "Industrial Revenue Bond (IRB) Notice of Intent for Sun Lasso Energy Center LLC Motion to approve Inducement Resolution AR 2024-12 to issue Taxable Industrial Revenue Bonds in an amount not to exceed Two Hundred and Five Million Dollars ($205,000,000) for the purpose of inducing Sun Lasso Energy Cent"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-01-23, minutes: Board of County Commissioners Verbatim Minutes 2024-01-23, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=12&ID=2829&Inline=True
+  - Also mentions: industrial revenue bond
+  - "Madam Chair and Members of 22 the Commission, Marcos Gonzales, executive 23 development officer for Bernalillo County. 24 The economic development staff 25 recommends the approval of the inducement resolution 48 1 authorizing the Bernalillo County Commission to 2 approve an industrial revenue bond a"
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- Bernalillo County Commission and planning boards, 2024-01-03, packet: County Planning Commission Agenda Packet 2024-01-03, https://bernalillocountynm.iqm2.com/Citizens/FileOpen.aspx?Type=1&ID=3097&Inline=True
+  - "PNM and the Gas 7 Company of New Mexico do not service our area, so I just Attachment:"
+  - "PNM and NM Gas Company Action:"
+  - "This project has been a collaborative process with utility providers, including PNM and NM GAS Company."
+  - "REGIONAL COLLABORATION: reflects the County’s coordination with jurisdictions such as the City of Albuquerque and agencies such as the ABCWUA, AMAFCA, MRCOG and MRGCD, PNM and NM GAS CO."
+  - GEM plants in the same county: Reeves power station, Rio Bravo (NM) power station
+- City of Las Cruces boards (planning and zoning, development review), 2026-05-01, minutes: Download Meeting Minutes, https://lascruces.gov/wp-content/uploads/2026/05/PRAB-Minutes-202603.30_Signed-1.pdf
+  - "Working on the ponds to have treatments done. 4 Arbor and Earth Day events are set, six community organizations working with them. 5 El Paso Electric is going to plant 40 trees."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces boards (planning and zoning, development review), 2026-03-30, minutes: Download Meeting Minutes, https://lascruces.gov/wp-content/uploads/2026/06/PRAB-Minutes-2026.03.30_Signed-1.pdf
+  - "Working on the ponds to have treatments done. 4 Arbor and Earth Day events are set, six community organizations working with them. 5 El Paso Electric is going to plant 40 trees."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- San Juan County Commission, 2026-09-01, minutes: San Juan County Commission Meeting Minutes 9.1.2026, https://www.sjcounty.net/home/showpublisheddocument/10174/639269902890000000
+  - "Steven Shelby, citizen, expressed his concerns regarding the possible infringements that occur when Data Centers move into an area."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- San Juan County Commission, 2026-07-07, minutes: San Juan County Commission Meeting Minutes 7.7.2026, https://www.sjcounty.net/home/showpublisheddocument/10057/639231665880600000
+  - "Obligations established under Ordinance 121, Decommissioning Requirements for Public Service Company of NM (PNM), were met by removing above-ground generating station infrastructure, addressing associated environmental and safety concerns, and restoration of the site to prevailing grade consistent w"
+  - "Following review of PNM's completion documentation, site conditions, and demolition activities, the County's independent engineering consultant has concluded that the San Juan Generating Station has been properly decommissioned/demolished in accordance with the approved plan and the requirements."
+  - "Stark introduced Andrew Schaff, President Mountain West Consulting, who explained the work completed to meet the decommissioning/demolition requirements at the San Juan Generating Station."
+  - "Alyssa Begay, Linda Corwin, Shawn Schlafly, Rebekah Davis, Kandy Lemoine, Judith Johnson, Kyla Johnson, Tripp Gomez, Megan Shay, Isabelle Olivia, and Steven Shelby, citizens, expressed concerns of extreme water consumptions that data center developments require and the need to protect our resources."
+  - "Candy Blasingame, citizen, stated she is in support for the data centers and voiced the benefits."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- Eddy County Commission, 2026-01-13, agenda: Agenda Packet for January 13, 2026 Commission Meeting agenda, https://www.eddycountynm.gov/AgendaCenter/ViewFile/Agenda/_01132026-452
+  - "Discussion of the Planning, Assessment and Design for the Eddy County Administrative Facility – Mike Gallagher. 7. *Support Excel Energy’s Application to the Public Regulatory Commission (PRC) of New Mexico for Certificates for Convenience and Necessity (CCNs) to build eight new generation and batte"
+  - "Support Xcel Energy's application to the Public Regulatory Commission (PRC) of New Mexico for Certificates for Convenience and Necessity (CCNs) to build eight new generation and battery storage projects, to include Gaines Power Plant and Tolk Power Plant and three major transmission lines."
+  - "New Mexico law requires that, by 2045, all power plants supplying electricity in the state must be "zero carbon"-meaning they do not add carbon emissions to the atmosphere."
+  - "Southeast New Mexico faces a critical shortage of electricity due to rapid economic growth, especially in the Permian Basin, with demand projected to rise 43% from 2025 to 2030 (from 4,504 MW to 6,446 MW)."
+  - "Xcel Energy wants to build two new natural gas power plants to meet Southeast New Mexico's growing electricity needs."
+- Eddy County Commission, 2026-01-13, minutes: Agenda Packet for January 13, 2026 Commission Meeting minutes, https://www.eddycountynm.gov/AgendaCenter/ViewFile/Minutes/_01132026-452
+  - "See attached presentation. 7. *SUPPORT EXCEL ENERGY’S APPLICATION TO THE PUBLIC REGULATORY COMMISSION (PRC) OF NEW MEXICO FOR CERTIFICATES FOR CONVENIENCE AND NECESSITY (CCNS) TO BUILD EIGHT NEW_GENERATION AND BATTERY STORAGE PROJECTS, TO INCLUDE GAINES POWER PLANT AND TOLK POWER PLANT AND THREE MAJ"
+  - "Bowen stated that in the future with continued growth we will be out of power and that the 2 power plants can provide power for new growth."
+  - "Having 2 power plants run from natural gas would be a 50% reduction in the carbon footprint."
+  - "Carlson moved, seconded by Klein to approve Support for Excel Energy’s Application to the Public Regulatory Commission (PRC) of New Mexico for Certificates for Convenience and Necessity (CCNs) to build eight new generation and battery storage projects, to include Gaines Power Plant and Tolk Power Pl"
+- City of Roswell, 2026-11-16, agenda: Infrastructure Committee Agenda agenda, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Agenda/_11162026-3135
+  - "Electrical – MCC, Back-up Power, Cables 3 25% 0.75 No backup generator."
+  - "No generator Scoring Guidelines City Score: 1 New condition, no improvements recommended to maintain function 2 Good condition, minor improvements recommended to enhance performance 3 Fair condition, improvements recommended to improve performance or efficiency 4 Poor condition, improvements recomme"
+  - "Electrical – MCC, Back-up Power, Cables 4 25% 1.00 No backup generator."
+  - "No backup generator Instrumentation - SCADA, Alarms, Controls 3 15% 0.45 Structure - Hatches, Corrosion, Cracks, Interior drains are clogged and don't 4 15% 0.60 Leaking properly drain for Kerr Wells #1 - #4."
+  - "No backup generator Instrumentation - SCADA, Alarms, Controls 2 15% 0.30 Structure - Hatches, Corrosion, Cracks, Interior drains are clogged and don't 4 15% 0.60 Leaking properly drain for Kerr Wells #1 - #4."
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-11-12, agenda: Regular City Council Agenda agenda, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Agenda/_11122026-3132
+  - "Facility Rental Convention Center $700 Tent Rental/ Tables & Chairs Amy's Tents/ America's Tents $6,000 Volunteer Shirts/ MASH Shirts All Out $800 Generators Prestige Rentals $3,200 Referees Multi Parties $1,500 Facility Rentals City of Roswell $1,500 Note:"
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-11-05, agenda: Finance Committee Agenda agenda, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Agenda/_11052026-3130
+  - "With the negative concerns about data center developments, we hosted 3 sessions to educate and coach local elected officials and citizens about the truths and untruths surrounding data centers in a community."
+  - "Facility Rental Convention Center $700 Tent Rental/ Tables & Chairs Amy's Tents/ America's Tents $6,000 Volunteer Shirts/ MASH Shirts All Out $800 Generators Prestige Rentals $3,200 Referees Multi Parties $1,500 Facility Rentals City of Roswell $1,500 Note:"
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-10-20, agenda: Occupancy Tax Board Agenda agenda, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Agenda/_10202026-3120
+  - "Facility Rental Convention Center $700 Tent Rental/ Tables & Chairs Amy's Tents/ America's Tents $6,000 Volunteer Shirts/ MASH Shirts All Out $800 Generators Prestige Rentals $3,200 Referees Multi Parties $1,500 Facility Rentals City of Roswell $1,500 Note:"
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-10-19, agenda: Roswell Infrastructure Committee Agenda agenda, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Agenda/_10192026-3122
+  - "Electrical – MCC, Back-up Power, Cables 3 25% 0.75 No backup generator."
+  - "No generator Scoring Guidelines City Score: 1 New condition, no improvements recommended to maintain function 2 Good condition, minor improvements recommended to enhance performance 3 Fair condition, improvements recommended to improve performance or efficiency 4 Poor condition, improvements recomme"
+  - "Electrical – MCC, Back-up Power, Cables 4 25% 1.00 No backup generator."
+  - "No backup generator Instrumentation - SCADA, Alarms, Controls 3 15% 0.45 Structure - Hatches, Corrosion, Cracks, Interior drains are clogged and don't 4 15% 0.60 Leaking properly drain for Kerr Wells #1 - #4."
+  - "No backup generator Instrumentation - SCADA, Alarms, Controls 2 15% 0.30 Structure - Hatches, Corrosion, Cracks, Interior drains are clogged and don't 4 15% 0.60 Leaking properly drain for Kerr Wells #1 - #4."
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-08-13, agenda: Regular City Council Agenda agenda, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Agenda/_08132026-3087
+  - Also mentions: plat
+  - "Gallagher Solar LLC seeks to develop a 2.70-megawatt (AC) community solar 12 energy facility on two parcels of land (4-137-062-173-063-000000; 4-137-062-189-117-000000), 13 also known as "Lots One and Two (1 & 2) of Gallagher Summary Replat," located at 1612 E 2nd 14 St, Roswell, NM 88201 (The "Prop"
+  - "The 2.70-megawatt system is sufficient to provide credits to approximately 600 homes in 19 Xcel."
+  - "This facility will produce electric energy power generation facility under the "Community 20 Solar Act," for use by the Company, which will constitute an industrial development project."
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-07-09, agenda: Regular City Council Agenda AMENDED agenda, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Agenda/_07092026-3069
+  - Also mentions: industrial revenue bond, plat
+  - "Gallagher Solar LLC seeks to develop a 2.70-megawatt (AC) community solar 32 energy facility on two parcels of land (4-137-062-173-063-000000; 4-137-062-189-117-000000), 33 also known as "Lots One and Two (1 & 2) of Gallagher Summary Replat," located at 1612 E 2nd 34 St, Roswell, NM 88201 (The "Prop"
+  - "The 2.70-megawatt system is sufficient to provide credits to approximately 600 homes in 39 Xcel."
+  - "This facility will produce electric energy through a power generation facility under the 40 "Community Solar Act" for use by the Company, which will constitute an industrial development City Council Page 72 of 294 Roswell, NM 1 project."
+  - "Hessel Yntema IV Gallagher Solar LLC seeks to develop a 2.70-megawatt (AC) community solar energy facility on two parcels of land (4-137-062-173-063-000000; 4-137-062-189-117-000000), also known as "Lots One and Two (1 & 2) of Gallagher Summary Replat," located at 1612 E 2nd St, Roswell, NM 88201 (T"
+  - "This facility will produce an electric energy power generation facility under the "Community Solar Act," for use by the Company, which will constitute an industrial development project."
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-07-09, minutes: Regular City Council Agenda AMENDED minutes, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Minutes/_07092026-3069
+  - Also mentions: plat
+  - "Gabriel Cobos addressed the Council regarding community concerns related to a proposed data center development in Chaves County, flood mitigation and river maintenance efforts, roadway July 9, 2026, City Council Minutes 4 of 13 safety conditions along South Main Street, and the appearance and mainte"
+  - "Gallagher Solar LLC seeks to develop a 2.70-megawatt (AC) community solar energy facility on two parcels of land (4-137-062-173-063-000000; 4-137-062-189-117-000000), also known as "Lots One and Two (1 & 2) of Gallagher Summary Replat," located at 1612 E 2nd St, Roswell, NM 88201 (The "Property")."
+  - "The 2.70-megawatt system is sufficient to provide credits to approximately 600 homes in Xcel."
+  - "This facility will produce electric energy power generation facility under the "Community Solar Act," for use by the Company, which will constitute an industrial development project."
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-06-11, agenda: Regular City Council Agenda agenda, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Agenda/_06112026-3055
+  - Also mentions: industrial revenue bond, plat
+  - "Hessel Yntema IV Gallagher Solar LLC seeks to develop a 2.70-megawatt (AC) community solar energy facility on two parcels of land (4-137-062-173-063-000000; 4-137-062-189-117-000000), also known as "Lots One and Two (1 & 2) of Gallagher Summary Replat," located at 1612 E 2nd St, Roswell, NM 88201 (T"
+  - "This facility will produce an electric energy power generation facility under the "Community Solar Act," for use by the Company, which will constitute an industrial development project."
+  - "All solar generation equipment including solar tracking hardware and software, photovoltaic panels and inverters, support structures, and associated electrical generation equipment used to generate electricity from solar energy and related equipment including transformers, circuit breakers and switc"
+  - "The Company has presented to the Roswell City Council a proposal relating to the issuance of taxable industrial revenue bonds and the acquisition, construction, installation, and equipping of a solar power generation facility which will constitute an industrial development project."
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-06-11, minutes: Regular City Council Agenda minutes, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Minutes/_06112026-3055
+  - Also mentions: plat
+  - "Gallagher Solar LLC seeks to develop a 2.70-megawatt (AC) community solar energy facility on two parcels of land (4-137-062-173-063-000000; 4-137-062-189-117-000000), also known as "Lots One and Two (1 & 2) of Gallagher Summary Replat," located at 1612 E 2nd St, Roswell, NM 88201 (The "Property")."
+  - "The 2.70-megawatt system is sufficient to provide credits to approximately 600 homes in Xcel."
+  - "This facility will produce electric energy through a power generation facility under the "Community Solar Act" for use by the Company, which will constitute an industrial development June 11, 2026, City Council Minutes project."
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-06-04, agenda: Finance Committee Agenda agenda, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Agenda/_06042026-3052
+  - "Water, waste water and solid waste disposal are supplied by the City of Roswell with electricity and gas provided by Excel and PNM Gas Company, respectively."
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-05-28, agenda: Legal Committee Agenda agenda, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Agenda/_05282026-3049
+  - Also mentions: industrial revenue bond, plat
+  - "Hessel Yntema IV Gallagher Solar LLC seeks to develop a 2.70-megawatt (AC) community solar energy facility on two parces of land (4-137- 062-173-063-000000; 4-137-062-189-117-000000), also known as "Lots One and Two (1 & 2) of Gallagher Summary Replat," located at 1612 E 2nd St, Roswell, NM 88201 (T"
+  - "The 2.70-megawatt system is sufficient to provide credits to approximately 600 homes in Xcel."
+  - "This facility will produce an electric energy power generation facility under the "Community Solar Act," for use by the Company, which will constite an industrial development project."
+  - "All solar generation equipment including solar tracking hardware and software, photovoltaic panels and inverters, support structures, and associated electrical generation equipment used to generate electricity from solar energy and related equipment including transformers, circuit breakers and switc"
+  - "The Company has presented to the Roswell City Council a proposal relating to the issuance of taxable industrial revenue bonds and the acquisition, construction, installation, and equipping of a solar power generation facility which will constitute an industrial development project."
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-04-09, agenda: Regular City Council Agenda agenda, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Agenda/_04092026-3017
+  - Also mentions: plat
+  - "Gallagher Solar LLC seeks to develop a 2.70-megawatt (AC) community solar energy facility on two parcels of land (4-137-062-172-063-000000; 4-137-062-189-117-000000), also known as “Lots One and Two (1 & 2) of Gallagher Summary Replat,” located at 1612 E 2nd St, Roswell, NM 88201 (the “Property”)."
+  - "The 2.70-megawatt system is sufficient to provide credits to approximately 600 homes in Xcel."
+  - "This facility will produce electric energy through a power generation facility under the “Community Solar Act,” for use by the Company, which will constitute an industrial development project."
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-04-02, agenda: Finance Committee Agenda agenda, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Agenda/_04022026-3014
+  - "The flood resulted in the loss of critical network infrastructure located at the City’s datacenter and various City facilities."
+  - "Purchase Core switches for datacenter – $108,359.00 (Quote #ESTQ-023345 v6) Purchase wireless equipment for the entire city – $88,485.03 (Quote #ESTQ-023423 v6) Staff requested approval to purchase replacement network infrastructure equipment through a statewide contract, explaining that the equipme"
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-03-12, agenda: Regular City Council Agenda agenda, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Agenda/_03122026-3000
+  - Also mentions: plat
+  - "The flood resulted in the loss of critical network infrastructure located at the City's datacenter and various City facilities."
+  - "Purchase Core switches for datacenter -- $108,359.00 (Quote #ESTQ-023345 v6) Purchase wireless equipment for the entire city -- $88,485.03 (Quote #ESTQ-023423 v6) FINANCIAL CONSIDERATION Financial Impact (Revenue & Expense):"
+  - "Data Center, Wide Area Network (WAN) and/or Local Area Network (LAN) Equipment This amendment is to be attached to the respective Price Agreement and become a part thereof."
+  - "Data Center, Wide Area Network (WAN) and/or Local Area Network (LAN) Equipment Term:"
+  - "The State of New Mexico Department of Information Technology (DoIT), in cooperation with the General Services Department/State Purchasing Division, (“SPD”), is seeking fully certified resellers or manufacturers that will provide Data Center, Wide Area Network (WAN) and/or Local Area Network (LAN) Eq"
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-03-12, minutes: Regular City Council Agenda minutes, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Minutes/_03122026-3000
+  - Also mentions: plat
+  - "Gallagher Solar LLC seeks to develop a 2.70-megawatt (AC) community solar energy facility on two parcels of land (4-137-062-172-063-000000; 4-137-062-189-117-000000), also known as “Lots One and Two (1 & 2) of Gallagher Summary Replat,” located at 1612 E 2nd St, Roswell, NM 88201 (the “Property”)."
+  - "The 2.70-megawatt system is sufficient to provide credits to approximately 600 homes in Xcel."
+  - "This facility will produce electric energy through a power generation facility under the “Community Solar Act,” for use by the Company, which will constitute an industrial development project."
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-03-05, agenda: Finance Committee Agenda agenda, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Agenda/_03052026-2998
+  - "The flood resulted in the loss of critical network infrastructure located at the City's datacenter and various City facilities."
+  - "Purchase Core switches for datacenter -- $108,359.00 (Quote #ESTQ-023345 v6) Purchase wireless equipment for the entire city -- $88,485.03 (Quote #ESTQ-023423 v6) FINANCIAL CONSIDERATION:"
+  - "Data Center, Wide Area Network (WAN) and/or Local Area Network (LAN) Equipment This amendment is to be attached to the respective Price Agreement and become a part thereof."
+  - "Data Center, Wide Area Network (WAN) and/or Local Area Network (LAN) Equipment Term:"
+  - "The State of New Mexico Department of Information Technology (DoIT), in cooperation with the General Services Department/State Purchasing Division, (“SPD”), is seeking fully certified resellers or manufacturers that will provide Data Center, Wide Area Network (WAN) and/or Local Area Network (LAN) Eq"
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-03-05, minutes: Finance Committee Agenda minutes, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Minutes/_03052026-2998
+  - "The flood resulted in the loss of critical network infrastructure located at the City’s datacenter and various City facilities."
+  - "Purchase Core switches for datacenter – $108,359.00 (Quote #ESTQ-023345 v6) Purchase wireless equipment for the entire city – $88,485.03 (Quote #ESTQ-023423 v6) Staff requested approval to purchase replacement network infrastructure equipment through a statewide contract, explaining that the equipme"
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Roswell, 2026-02-26, agenda: Legal Committee Agenda agenda, https://www.roswell-nm.gov/AgendaCenter/ViewFile/Agenda/_02262026-2996
+  - Also mentions: plat
+  - "Hessel Yntema Gallagher Solar LLC seeks to develop a 2.70-megawatt (AC) community solar energy facility on two parcels of land (4-137- 062-172-063-000000; 4-137-062-189-117-000000), also known as "Lots One and Two (1 & 2) of Gallagher Summary Replat," located at 1612 E 2nd St, Roswell, NM 88201 (the"
+  - "The 2.70-megawatt system is sufficient to provide credits to approximately 600 homes in Xcel."
+  - "This facility will produce an electric energy power generation facility under the "Community Solar Act," for use by the Company, which will constitute an industrial development project."
+  - "The Project will consist of an 2.7 MW electric energy power generation project developed under the Community Solar Act."
+  - "(2) the proceeds of the Bonds will finance the acquisition of equipment for an electric energy power generation facility in the City of Roswell, New Mexico (the "Project") for the use by Gallagher Solar LLC, (the “Company”); and (3) the Project will be leased to the Company."
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Farmington, 2026-11-10, agenda: Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_11102026-2351
+  - "Educational Presentation regarding Data Centers Mayor Duckett announced that staff will be providing an educational presentation regarding data centers on October 21, 2026 at the Farmington Civic Center."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-10-27, agenda: CANCELLED - Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_10272026-2347
+  - "Educational Presentation regarding Data Centers Mayor Duckett announced that staff will be providing an educational presentation regarding data centers on October 21, 2026 at the Farmington Civic Center."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-10-13, minutes: Regular Meeting minutes, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Minutes/_10132026-2344
+  - "Educational Presentation regarding Data Centers Mayor Duckett announced that staff will be providing an educational presentation regarding data centers on October 21, 2026 at the Farmington Civic Center."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-09-08, agenda: Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_09082026-2332
+  - "BUSINESS FROM THE FLOOR Religious and Cultural Teachings and Data Centers Thomas Michael Hines spoke at length of various worldwide religious and cultural teachings, promoted general citizen awareness and warned against the allowance of data centers in the community."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-08-12, agenda: 08/12/2026 Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_08122026-2321
+  - "The Navajo Hydro Plant saw 20MW of production with both units in operation."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-08-11, minutes: Regular Meeting minutes, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Minutes/_08112026-2322
+  - "( Councilor Jakino led the Pledge of Allegiance. ： BUSINESS FROM THE FLOOR Religious and Cultural Teachings and Data Centers Thomas Michael Hines spoke at length of various worldwide religious and cultural teachings, promoted general citizen awareness and warned against the allowance of data centers"
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-07-28, agenda: Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_07282026-2315
+  - "BUSINESS FROM THE FLOOR Concerns with AI (Artificial Intelligence) Data Centers Kandy LeMoine requested that the Mayor and Council perform a cost benefit analysis when considering AI (artificial intelligence) data centers and she expressed her concern with their water consumption."
+  - "Paul Shapley announced that he is curious about AI (artificial intelligence) data centers and he voiced his concern regarding water consumption for the facilities."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-07-14, agenda: Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_07142026-2312
+  - "BUSINESS FROM THE FLOOR AI (Artificial Intelligence) Data Centers and Andrea Drive Concerns Steven Shelby, 5500 Rockcress Place, expressed his concern with the potential AI data centers that State Representative Rod Montoya is purported to advocate for in San Juan County."
+  - "Concerns with AI (Artificial Intelligence) Data Centers Judy Johnson requested that the Mayor and Council take a slow and deliberate approach when considering AI (artificial intelligence) data centers within San Juan County and to be transparent with the community."
+  - "Mary Rankin, 917 North Jefferson Avenue, voiced her concerns that potential AI (artificial intelligence) data centers within the county will consume large amounts of water in a drought-stricken area and generate intense heat and noise."
+  - "AI (Artificial Intelligence) Data Centers and Flock Concerns Steven Shelby, 5500 Rockcress Place, expressed his concerns with potential AI data centers being located in San Juan County and the Flock Safety cameras being utilized by the Police Department."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-07-14, minutes: Regular Meeting minutes, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Minutes/_07142026-2312
+  - "BUSINESS FROM THE FLOOR Concerns with AI (Artificial Intelligence) Data Centers 人 Kandy LeMoine requested that the Mayor and Council perform a cost benefit analysis when considering AI (artificial intelligence) data centers and she expressed her concern with their water consumption."
+  - "Paul Shapley announced that he is curious about AI (artificial intelligence) data centers and he voiced his concern regarding water consumption for the facilities."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-07-08, agenda: 07/08/2026 Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_07082026-2308
+  - "Electric Utility Director Hank Adair Electric Engineering Shawn Weiss Electric Field Operations Luke Lugenbeel Electric Generation Britt Chesnut Electric Business Operations Sheree Wilson Public Works Angelique Maldonado Public Works Water/Wastewater Rochelle Brown Public Works Water/Wastewater Bene"
+  - "The Generation Cost per mWh was $16.25 for April 2026."
+  - "Generation activities include work at the Navajo Hydro Plant where the turbines were out of service from May 26 to June 2 for Reclamation maintenance."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-06-23, minutes: Regular Meeting minutes, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Minutes/_06232026-2305
+  - "Concerns with AI (Artificial Intelligence) Data Centers Judy Johnson requested that the Mayor and Council take a slow and deliberate approach when considering AI (artificial intelligence) data centers within San Juan County and to be transparent with the community."
+  - "Mary Rankin, 917 North Jefferson Avenue, voiced her concerns that potential AI (artificial intelligence) data centers within the county will consume large amounts of water in a drought-stricken area and generate intense heat and noise. \ ' AI (Artificial Intelligence) Data Centers and Flock Concerns"
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-06-10, agenda: 06/10/2026 Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_06102026-2294
+  - "Electric Utility Director Hank Adair Electric Engineering Shawn Weiss Electric Field Operations Luke Lugenbeel Electric Generation Britt Chesnut Electric Business Operations Sheree Wilson Electric Regulation and Control Linda Jacobson-Quinn Public Works Water/Wastewater Rochelle Brown Public Works W"
+  - "Generation activities includel2 MW of production by one unit at the Navajo Hydro Plant."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-06-10, minutes: 06/10/2026 Regular Meeting minutes, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Minutes/_06102026-2294
+  - "Electric Utility Director Hank Adair ~™ Electric Engineering Shawn Weiss Electric Field Operations Luke Lugenbeel Electric Generation Britt Chesnut Electric Business Operations Sheree Wilson Public Works Angelique Maldonado Public Works Water/Wastewater Rochelle Brown Public Works Water/Wastewater B"
+  - "The Generation Cost per mWh was $16.25 for April 2026."
+  - "Generation activities include work at the Navajo Hydro Plant where the turbines were out of service from May 26 to June 2 for Reclamation maintenance."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-06-09, agenda: Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_06092026-2297
+  - "BUSINESS FROM THE FLOOR AL (Artificial Intelligence) Data Centers Brandi McAlexander, 6100 Halls Way, voiced her concerns that potential AI (artificial intelligence) data centers within the county have already been discussed outside of public forums which limits transparency and the community’s voic"
+  - "Chris Hunter, 614 East Diamond Street, spoke in favor of economic development in whatever form that might take shape including AI data centers, noting that current facilities consume less water than those from 10 years ago and he emphasized that the community needs more high paying jobs that these f"
+  - "Steven Shelby, 5500 Rockcress Place, expressed his concern with the perceived lack of transparency regarding potential AI data centers, noting that he is pro “oil and gas” industry but definitely against AI data centers."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-06-09, minutes: Regular Meeting minutes, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Minutes/_06092026-2297
+  - "BUSINESS FROM THE FLOOR AI (Artificial Intelligence) Data Centers and Andrea Drive Concerns ： Steven Shelby, 5500 Rockcress Place, expressed his concern with the potential AI data centers that State Representative Rod Montoya is 아 purported to advocate for in San Juan County."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-05-26, minutes: Regular Meeting minutes, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Minutes/_05262026-2290
+  - "BUSINESS FROM THE FLOOR Al (Artificial Intelligence) Data Centers ."
+  - "Brandi McAlexander, 6100 Halls Way, voiced her concerns that potential AI (artificial intelligence) data centers within the county i have already been discussed outside of public forums which limits transparency and the community’s voice, that the facilities will consume large amounts of water in a "
+  - "Chris Hunter, 614 East Diamond Street, spoke in favor of economic development in whatever form that might take shape including AI data centers, noting that current facilities consume less water than those from 10 years ago and he emphasized that the community needs more high paying jobs that these f"
+  - "Steven Shelby, 5500 Rockcress Place, expressed his concern with the perceived lack of transparency regarding potential AI data centers, noting that he is pro “oil and gas” industry but definitely against ATI data centers."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-05-13, agenda: 05/13/2026 Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_05132026-2283
+  - "City Manager Shafia Reeves City Manager, Retiring Rob Mayes City Attorney Jennifer Breakell Electric Utility Director Hank Adair Electric Engineering Shawn Weiss Electric Field Operations Luke Lugenbeel Electric Regulation and Control Linda Jacobson-Quinn Electric Generation Britt Chesnut Electric B"
+  - "FEUS had recouped $1.7 million via PCA, which remains at $0.012/kWh., The Generation Cost per MWh was $74.26 for February 2026."
+  - "Generation activities include the Navajo Hydro Plant where one unit is back on line at 6.2 MW."
+  - "Retiring Rob Mayes City Attomey Jennifer Breakell Electric Administration Hank Adair Electric Engineering Shawn Weiss Electric Generation Britt Chesnut Electric Field Operations Luke Lugenbeel Electric Regulation and Control Linda Jacobson-Quinn Electric Warehouse Robert Drechsel Electric Business O"
+  - "The Farmington Electric Utility System service territory covers 1,178 square miles. larger than the state of Rhode Island; 45 thousand metered locations and 36 thousand customers; 263 miles of transmission line: 2,435 miles of distribution line: 36 substations; 4 power plants with a total of six uni"
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-05-13, minutes: 05/13/2026 Regular Meeting minutes, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Minutes/_05132026-2283
+  - "Also present were: _ Electric Utility Director Hank Adair Electric Engineering Shawn Weiss Electric Field Operations Luke Lugenbeel Electric Generation Britt Chesnut Electric Business Operations Sheree Wilson Electric Regulation and Control Linda Jacobson-Quinn Public Works Water/Wastewater Rochelle"
+  - "Generation activities includel12 MW of production by one unit at the Navajo Hydro Plant."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-04-15, minutes: 04/15/2026 PUC/City Council Budget Meeting minutes, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Minutes/_04152026-2270
+  - "City Manager Shafia Reeves City Manager, Retiring Rob Mayes City Attorney Jennifer Breakell Electric Administration Hank Adair Electric Engineering Shawn Weiss Electric Generation Britt Chesnut Electric Field Operations Luke Lugenbeel Electric Regulation and Control Linda Jacobson-Quinn Electric War"
+  - "The Farmington Electric Utility System service territory covers 1,178 square miles, larger than the state of Rhode Island; 45 thousand metered locations and 36 thousand customers; 263 miles of transmission line; 2,435 miles of distribution line; 36 substations; 4 power plants with a total of six uni"
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-04-15, agenda: 04/15/2026 Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_04152026-2269
+  - "Electric Utility Director Hank Adair Electric Engineering Shawn Weiss Electric Field Operations Luke Lugenbeel Electric Generation Britt Chesnut Electric Business Operations Sheree Wilson Public Works Water/Wastewater Rochelle Brown Public Works Water/Wastewater Benedikte Webb Administrative Service"
+  - "The Generation Cost per mWh was $48.84 for January 2026."
+  - "Generation activities include the Navajo Hydro Plant Valve Outage which was completed on February 19; the Bluffview Spring Major outage is scheduled for April 17 — June 3, 2026."
+  - "Regarding the RICE units FEUS is running one unit at a time in the market, a range of 5-9MW."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-04-15, minutes: 04/15/2026 Regular Meeting minutes, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Minutes/_04152026-2269
+  - "The Generation Cost per MWh was $74.26 for February 2026."
+  - "Regarding Transmission, Hart to HH Potter 115kV maintenance was completed on 97 structures. _ Generation activities include the Navajo Hydro Plant where one unit is back on line at 6.2 MW."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-03-11, agenda: 03/11/2026 Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_03112026-2259
+  - "Electric Utility Director Hank Adair Electric Engineering Shawn Weiss Electric Generation Britt Chesnut Customer Service Nicki Parks Electric Business Operations Sheree Wilson Public Works Water/Wastewater Mark Hathcock Public Works Water/Wastewater Benedikte Webb Administrative Services Nalinee Jos"
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-03-11, minutes: 03/11/2026 Regular Meeting minutes, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Minutes/_03112026-2259
+  - "Electric Utility Director Hank Adair Electric Engineering Shawn Weiss Electric Field Operations Luke Lugenbeel Electric Generation Britt Chesnut Electric Business Operations Sheree Wilson Public Works Water/Wastewater Rochelle Brown Public Works Water/Wastewater Benedikte Webb Administrative Service"
+  - "The Generation Cost per mWh was $48.84 for January 2026."
+  - "Generation activities include the Navajo Hydro Plant Valve Outage which was completed on February 19; the Bluffview Spring Major outage is scheduled for April 17 — June 3, 2026."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-02-11, agenda: 02/11/2026 Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_02112026-2246
+  - "Electric Utility Director Hank Adair Electric Field Operations Luke Lugenbeel Electric Engineering Shawn Weiss Electric Generation Britt Chesnut Customer Service Nicki Parks Electric Business Operations Sheree Wilson Community Works Mark Hathcock Water/Wastewater O & M Manager Benedikte Webb Adminis"
+  - "He noted the vague information presented in the article lead him to think a data center may be going in."
+  - "Some FEUS transmission not participating in the RTO will still need to serve the two Rate 11 customers, city of Aztec and Tri-State Generation and Transmission Association."
+  - "Generation Cost per mWh was $42.86 per mWh for November 2025 Director’s Report — Electric Utility Director, Hank Adair Mr."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-02-11, minutes: 02/11/2026 Regular Meeting minutes, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Minutes/_02112026-2246
+  - "Also present were: ： _ Electric Utility Director Hank Adair Electric Engineering Shawn Weiss Electric Generation Britt Chesnut Customer Service Nicki Parks Electric Business Operations Sheree Wilson Public Works Water/Wastewater Mark Hathcock Public Works Water/Wastewater Benedikte Webb Administrati"
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-01-14, agenda: 01/14/2026 Regular Meeting agenda, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Agenda/_01142026-2235
+  - "Electric Utility Director Hank Adair Electric Field Operations Luke Lugenbeel Electric Engineering Shawn Weiss Electric Generation Britt Chesnut Customer Service Nicki Parks Electric Business Operations Sheree Wilson Community Works Mark Hathcock Water/Wastewater O & M Manager Benedikte Webb Adminis"
+  - "Generation Cost per mWh was $43.45 per mWh for October 2025."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- City of Farmington, 2026-01-14, minutes: 01/14/2026 Regular Meeting minutes, https://www.farmingtonnm.gov/AgendaCenter/ViewFile/Minutes/_01142026-2235
+  - "Electric Utility Director Hank Adair 人 Electric Field Operations Luke Lugenbeel Electric Engineering Shawn Weiss Electric Generation Britt Chesnut Customer Service Nicki Parks Electric Business Operations Sheree Wilson Community Works Mark Hathcock Water/Wastewater O & M Manager Benedikte Webb Admin"
+  - "He noted the vague information presented in the article lead him to think a data center may be going in."
+  - "Some FEUS transmission not participating in the RTO will still need to serve the two Rate 11 customers, city of Aztec and Tri-State Generation and Transmission Association."
+  - "Generation Cost per mWh was $42.86 per mWh for November 2025 Director’s Report — Electric Utility Director, Hank Adair Mr."
+  - GEM plants in the same county: Bluffview power station, Clean Path energy center, NTEC Gas power plant, Westside power station
+- Village of Los Lunas, 2026-10-08, agenda: October 8, 2026 Council Meeting agenda, https://www.loslunasnm.gov/AgendaCenter/ViewFile/Agenda/_10082026-1332
+  - "BN247 and BN 250 are expected to be left in place at this time, however, PNM will need to confirm clearances and structure load impacts and determine whether or not either of these structures will need to be replaced."
+  - GEM plants in the same county: Valencia energy facility
+- Valencia County Commission, 2025-06-01, agenda: Agenda: Regular Meeting (PDF), https://www.valencianm.gov/wp-content/uploads/2025/06/Regular-Meeting-Agenda-for-March-24-2015-PDF.pdf
+  - "The re-zone of this property is to allow for development of the Valencia County Solar Energy Center, asolar electric generating station and related facilities."
+  - "This property is located directly south of the Manzano Solar Energy Center on the SW corner of N."
+  - GEM plants in the same county: Valencia energy facility
+- Valencia County Commission, 2025-06-01, agenda: Agenda: Workshop Meeting (PDF), https://www.valencianm.gov/wp-content/uploads/2025/06/Workshop-Meeting-Agenda-for-March-19-2015-PDF.pdf
+  - "The re-zone of this property is to allow for development of the Valencia County Solar Energy Center, a solar electric generating station and related facilities. 6."
+  - GEM plants in the same county: Valencia energy facility
+- Sandoval County Commission and planning, 2025-07-23, minutes: July 23, 2025 Minutes (PDF), https://www.sandovalcountynm.gov/wp-content/uploads/2026/06/SCBOC20250723min.pdf
+  - Also mentions: industrial revenue bond
+  - "ADOPTION OF ORDINANCES / PUBLIC HEARINGS Request a Motion to Adopt Ordinance No. 7-23-25.10 Approving an Ordinance issuing industrial Revenue Bonds, Series 2025, for up to $497,000,000 for a new power generation and battery energy storage facility to PCR Investments SP4, LLC."
+- Sandoval County Commission and planning, 2025-05-28, minutes: May 28, 2025 Minutes (PDF), https://www.sandovalcountynm.gov/wp-content/uploads/2026/06/SCBOC20250528min.pdf
+  - Also mentions: industrial revenue bond
+  - "Request for a Motion to Adopt Resolution No. 5-28-25.12A Declaring the Intent to approve an Ordinance issuing Industrial Revenue Bonds, Series 2025, for up to $497,000,000 for a new solar power generation and battery energy storage facility to PCR Investments SP4 LLC (“PCR”) Commissioner Jones made "
+- Chaves County Commission, 2026-08-05, document: Comprehensive Plan, https://www.chavescounty.gov/Draft_Chaves%20County%20Comprehensive%20Plan_8.5.2026%20(3).pdf
+  - Also mentions: conditional use
+  - "Renewable energy projects, such as solar LAND USE and wind, and newer uses like data centers and battery energy storage systems, which remain an interest to developers in Chaves County, are considered industrial uses."
+  - "Xcel Energy In May 2026, Xcel Energy received regulatory approval for a major 3,850-megawatt energy generation expansion across New Mexico and Texas."
+  - "CHAVES COUNTY COMPREHENSIVE PLAN • 67 4 DRAFT LAND USE Chaves County Comprehensive Plan ENERGY SYSTEMS 68 • CHAVES COUNTY COMPREHENSIVE PLAN DRAFT 4 DATA CENTERS A data center is a dedicated room, structure, or large, standalone facility that houses computer servers and other associated equipment."
+  - "As data center development LAND USE accelerates, concerns regarding energy, water consumption, and land use impacts can raise concerns."
+  - "Chaves County can respond to the impacts of data centers by implementing proactive approaches such as: _ Require Conditional Use approvals for data centers requiring discretionary review of proposed plans ensuring compatibility with surrounding uses and evaluation of potential impacts on the communi"
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- Chaves County Commission, 2026-05-21, agenda: Copy document link, https://www.chavescounty.gov/Documents/government/Agendas%20and%20Minutes/%20County%20Commission/2026/05212026%20May%20Agenda.pdf?t=202607140722100
+  - "Resolution R-26-018 Consultant Fees for projects that included Solar, BESS, and/or Data Centers."
+  - "Staff is proposing a new fee for Professional Services- Consultants dealing with Utility Scale Solar and Wind projects, Battery Energy Storage System, and nuclear projects, and Data Centers In compliance with Article 1, Section 5.H.6 of the Chaves County Zoning Ordinance No.7 “The Board of Chaves Co"
+  - "Battery Energy Storage Systems $100 per Megawatt of energy stored Data Center $5,000 per data center All fees are non-refundable upon advertising, with the exception of those approved for refund by the Board of Chaves County Commissioners. 3 Agenda Item: 7 AGENDA ITEM: 6 Resolution R-26-019 Chaves C"
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- Chaves County Commission, 2026-01-01, agenda: Copy document link, https://www.chavescounty.gov/2026%20November%20Agenda.pdf?t=202611131759360
+  - "This solar facility is expected to generate approximately 350 MW of electricity, utilizing existing Xcel Energy transmission infrastructure located within the area."
+  - "In New Mexico, DESRI currently operates or has developed five solar projects representing approximately 895 megawatts (MW) of generating capacity and 600 megawatt-hours (MWh) of energy storage."
+  - "The proposed facility would be a utility-scale solar energy project with an anticipated generating capacity of approximately 350 MW."
+  - "The proposed project will be beneficial to the residents of Chaves County and southeast New Mexico as the 350 MW would provide power to approximately 130,000 homes. 5."
+  - "In the Southwest region, DESRI owns 17 projects totaling ~3,300 MW, including >1,000 MW across 5 projects in New >85 25 Contracted projects States Mexico. 2 Confidential— Not for distribution."
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- Chaves County Commission, 2026-01-01, agenda: Copy document link, https://www.chavescounty.gov/Documents/government/Agendas%20and%20Minutes/%20County%20Commission/2026/2026%20August%20Agenda.pdf?t=202608141833410
+  - Also mentions: plat
+  - "Agreement A-26-039 Decommissioning agreement between Roswell Energy Storage LLC and Chaves County for a 50 MW BESS Facility."
+  - "Agreement A-26-040 Decommissioning agreement between Chaves Energy Storage LLC and Chaves County for a 50 MW BESS Facility."
+  - "CHAVES COUNTY Cindy Fuller, Clerk Richard Taylor, Chairman AGENDA ITEM: 2 Request to approve Agreement A-26-039 Decommissioning Agreement between Roswell Energy Storage LLC and Chaves County for a 50 MW BESS facility MEETING DATE:"
+  - "This agreement is between Roswell Energy Storage LLC and Chaves County for the decommissioning of a 50 MW battery energy storage system facility located at 445 Wrangler Road and the Roswell electric substation located at 3650 W."
+  - "(c) draw on the Restoration Security and deposit the drawn funds in a bank account and, at the County’s sole discretion, apply such funds to the decommissioning of the Generating Units and Supporting Facilities; and (d) seek all remedies at law."
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- Chaves County Commission, 2025-01-01, agenda: Copy document link, https://www.chavescounty.gov/Documents/government/Agendas%20and%20Minutes/%20County%20Commission/2025/October%20Agenda%202025.pdf?t=202607140802220
+  - "(5) a 279-foot-long, 230-foot-wide, 270-foot-high underground concrete powerhouse and substation containing three 187-megawatt Pelton Wheel ternary-pump turbine generator units;"
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- Chaves County Commission, 2025-01-01, agenda: Copy document link, https://www.chavescounty.gov/Documents/government/Agendas%20and%20Minutes/%20County%20Commission/2025/2025%20December%20Agenda.pdf?t=202607140755200
+  - "Engine Regeneration Inhibit Switch 2:"
+  - "Engine Regeneration Start Switch 2:"
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- Chaves County Commission, 2025-01-01, document: Copy document link, https://www.chavescounty.gov/Documents/government/Agendas%20and%20Minutes/%20County%20Commission/2025/Special%20Commission%20Meeting%2012525.pdf?t=202607140755380
+  - "He will have more information to share with us on ‘ 고 = 0 = renewable energy and data centers when he returns."
+  - GEM plants in the same county: Roswell Information Park Data Center power station
+- City of Las Cruces City Council, 2026-08-17, document: City Council - Aug 17 2026, https://lascruces.civicweb.net/document/218539/City%20Council%20-%20Aug%2017%202026.pdf?handle=4D3F3A595D704C4D85D46ABF9E7288B0
+  - "Ikani, I saw on your resume that you brought a data center to your old town of Eagle Rock, Utah."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2026-08-12, document: Utilities - Regular Meeting - Aug 12 2026, https://lascruces.civicweb.net/document/218446/Utilities%20-%20Regular%20Meeting%20-%20Aug%2012%202026.pdf?handle=8F9010FA10D6441694CF83AB11B5E3D0
+  - "Like I said earlier different combinations, and it compares also the cost of microgrid and any connections that need to be made to the main electric grid for reliability and development timelines."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2026-07-20, document: City Council - Jul 20 2026, https://lascruces.civicweb.net/document/218024/City%20Council%20-%20Jul%2020%202026.pdf?handle=CE32F413DBE248209F5CC4B853CB05F6
+  - Also mentions: moratorium
+  - "Unfortunately, I haven’t heard anything back about my request for moratorium on data centers."
+  - "I don’t want to see a data center go up on the mesa, the Industrial Complex, because that is who you are courting right now."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2026-07-09, document: Utilities - Regular Meeting - Jul 09 2026, https://lascruces.civicweb.net/document/217666/Utilities%20-%20Regular%20Meeting%20-%20Jul%2009%202026.pdf?handle=2443FE272819427EBF5BB10D434571CD
+  - "The electric generation has allowed LCU to reduce 13,343 metric tons of CO 2 emissions which equates to 3,112 gas-powered cars off the road for an entire year or the total energy usage for 1,800 homes for an entire year."
+  - "I would note that we have, a lot of that is because El Paso Electric has very low or relatively low emissions per megawatt hour, per kilowatt hour, however you want to measure it."
+  - "WHEREAS, Seller owns and operates a natural gas distribution system in and around the City of Las Cruces, New Mexico; and WHEREAS, Buyer provides natural gas utility service to its university buildings and facilities, including a gas-fired co-generation facility; and WHEREAS, Seller and Buyer are pa"
+  - "Seller will maintain at the major point of delivery into the Buyer’s co-generation facility a regulated service pressure of not more than two hundred thirty (230) pounds per square inch gauge or less than one hundred ninety (190) pounds per square inch gauge unless otherwise mutually agreed."
+  - "Co-generation and boiler facility on Sweet Avenue;"
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2026-02-12, document: Utilities - Regular Meeting - Feb 12 2026, https://lascruces.civicweb.net/document/214631/Utilities%20-%20Regular%20Meeting%20-%20Feb%2012%202026.pdf?handle=B81F60A4AAD44C8EA0CD43182A251AD6
+  - "Pumping capacity upgrades and adding a backup generator. • North Jornada Booster Station:"
+  - "Firm capacity is selecting the minimum cycle time, the pump defined as pumping capacity with the largest manufacturer’s duty cycle recommendation will be pump out of service. uses. ▪ Emergency operation - Each lift station shall be equipped with a backup generator or has portable generator to use in"
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2026-02-02, document: City Council - Feb 02 2026, https://lascruces.civicweb.net/document/214402/City%20Council%20-%20Feb%2002%202026.pdf?handle=BD332E8EB22947FB852AA6FF821549BD
+  - "Attachment "A" 828 Studios Redevelopment Schedule. mpp ID Task Task Name Duration Start Finish Cost May 1 1 Septemtrtr,,4 January1I May 1 I Se 5/ 116/ 26I8/ 21h0/ 1d12/ 112/ 5 / 2I5/ 2817/ 2319/ Mode 33, 250. 00 v 0% 61 I Graveled area temp power plants 30 days I Tue 6/ 13/ 231 Mon 7/ 24/ 23! 1f 1 d"
+  - "Attachment "B" 828 Studios Redevelopment Schedule. mpp ID Task Task Name Duration Start Finish Cost Mode T. 0% 61 tin Graveled area temp power plants 130 days 1 Tue 6/ 13/ 231 Mon 7/ 24/ 231 33, 250. 00 1 Mon 7/ 24/ 231 0% 62 Cantina Slab 30 days Tue 6/ 13/ 231 7, 200. 00 63 ;"
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2025-11-13, document: Utilities - Work Session - Nov 13 2025, https://lascruces.civicweb.net/document/212689/Utilities%20-%20Work%20Session%20-%20Nov%2013%202025.pdf?handle=29C37B1037ED4A2C8B5928E3F57623FA
+  - "Pumping capacity upgrades and adding a backup generator. • North Jornada Booster Station:"
+  - "Firm capacity is selecting the minimum cycle time, the pump defined as pumping capacity with the largest manufacturer’s duty cycle recommendation will be pump out of service. uses.  Emergency operation - Each lift station shall be equipped with a backup generator or has portable generator to use in"
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2025-11-13, document: Utilities - Regular Meeting - Nov 13 2025, https://lascruces.civicweb.net/document/212693/Utilities%20-%20Regular%20Meeting%20-%20Nov%2013%202025.pdf?handle=8E91564705F34BBB876E7C27EC881303
+  - "Can you tell me what the total cost and also the capacity, the kilowatts or megawatts of the solar?"
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2025-08-14, document: Utilities - Regular Meeting - Aug 14 2025, https://lascruces.civicweb.net/document/210853/Utilities%20-%20Regular%20Meeting%20-%20Aug%2014%202025.pdf?handle=224E95449FA446E197CD8C7BC9E414FF
+  - "Most of our power, the majority comes from the power plant in Phoenix."
+  - "This gives a little bit more detail on some of the quantitative metrics that we'll be getting out of the analysis, things like gas and electric loads, changes in utility financials, electric generation needs, and again that overall picture for what does it cost to provide the same sort of energy ser"
+  - "Possible New services and business models • Community solar developer or program administrator and/or solar installer • Energy storage and microgrid services • Energy Service Company • Smart city technologies service provider • Energy efficiency and weatherization service providers • Small Modular R"
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2025-07-10, document: Utilities - Work Session - Jul 10 2025, https://lascruces.civicweb.net/document/210155/Utilities%20-%20Work%20Session%20-%20Jul%2010%202025.pdf?handle=2CDE4DF446E14967B9834B9AFFA02FBF
+  - "Pumping capacity upgrades and adding a backup generator. • North Jornada Booster Station:"
+  - "Firm capacity is selecting the minimum cycle time, the pump defined as pumping capacity with the largest manufacturer’s duty cycle recommendation will be pump out of service. uses.  Emergency operation - Each lift station shall be equipped with a backup generator or has portable generator to use in"
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2025-06-02, document: City Council - Jun 02 2025, https://lascruces.civicweb.net/document/209539/City%20Council%20-%20Jun%2002%202025.pdf?handle=4488F69ABB6847AC87AF4E7ED35234DF
+  - "To celebrate of Arbor Day the city staff collaborated with El Paso Electric to plant 40 trees at High Noon Soccer Complex."
+  - "Vehicles includes: • Over-the-road fleets with EGR and DPF engines • Automobiles, light and medium duty diesel trucks • Municipal service and school district bus fleets • Stationary engines powering pumps, generators and drilling rigs • Logging equipment such as skidders, feller bunchers, harvesters"
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2025-05-19, document: City Council - May 19 2025, https://lascruces.civicweb.net/document/209342/City%20Council%20-%20May%2019%202025.pdf?handle=40087BDB069A40C3B63ABC2B8AC1919C
+  - "EIVE 07 LT! ii’noam Its . lo E\§$sffr‘o ”W NiSQQA’eJ 7 MW , wrg , 30 4 0425 (17/wa 01' ”/7 3072‘@4414»,-”’74 r! ' 2W 4AM ‘ t ) ”7““ Approved as td‘form:"
+  - ""' 5 ., Lem/(6539“ 30 7% QM 0 1,, 72am m/ ”hp 270/06 MW ’ / ‘ , /A' 920? 546“g POM/’6 % ' A Approved as to form:"
+  - "I am over the age of 18 years and have personal knowledge of the matters set forth in this af?davit. 2. 1, MW (pew do hereby certify that the signatures appearing on the front hereof were signed in my presence; that to the best of my knowledge and belief each such signature is genuine; and that the "
+  - "Lou/[50m _ , M I. at ?/‘ggekjwmua L/égg to» ywk?i‘w Ch Wu ”:2MW ' 5m Mud/e4 firm r, mm {Q/VM 7K ' = 4eC/5‘NV51QL , @99’6/2/ C?i/a (/4Rd Approved as to form:"
+  - "AWIZ A‘sé ”123;!‘b '4 L5£044 Smut-L when “mm 443M346] W‘M't Ltabanero E5 l‘ [\aeWSX‘RO 0V 6842 —« M‘ Allen WM ioleélLWlalc 0:”- L06 Cruu?.AJMS¢00§ 324mgKuhn/1 6MW/1 JAM-‘74 %W K (/A Lag draws!"
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2025-05-08, document: Utilities - Regular Meeting - May 08 2025, https://lascruces.civicweb.net/document/208099/Utilities%20-%20Regular%20Meeting%20-%20May%2008%202025.pdf?handle=E4D8AA8D5D7C4EDCA52B433D43E5D6A9
+  - "Lead Mechanical Engineer (Pre-HDR) Xcel Energy, Cherokee CACJ Pipeline Project, CO Mechanical Engineer responsible for calculations, design, and quality control for 34 miles of new 24” pipeline construction, as well as 5 automated mainline valve sets and 2 facility interconnects, to serve a natural-"
+  - "Oil & Gas Coordinator New Mexico Gas Company, Inc., Cobisa 10in ML Make Piggable, NM HDR was hired by New Mexico Gas Company to replace an existing 10” gas transmission line feeding the Cobisa Power Plant."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2025-05-05, document: City Council - May 05 2025, https://lascruces.civicweb.net/document/207994/City%20Council%20-%20May%2005%202025.pdf?handle=D501055CBFE7494DBDCABD53A30828B6
+  - "By the right-of-way I mean that we already have the right-of- way so a line can be made to go up to the Industrial Park to provide more megawatts, more power, and I think if we have the power up there and we have the grids supplemented then we could attract bigger companies, better paying companies."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2025-04-21, document: City Council - Apr 21 2025, https://lascruces.civicweb.net/document/207597/City%20Council%20-%20Apr%2021%202025.pdf?handle=9B7DA211203C4C439C7A25A4C673434E
+  - "There are plans to add induction charging and a micro-grid at the existing intermodal facility as well as solar panels to the new maintenance and operations facility, but at this time these are unfunded plans. 12 March 2025 Page 290 of 541 Agenda Item #7.3."
+  - "Electric Power Utility enhanced with the installation of a 2-ft fence skirt buried Service for the Airport is provided with an excess capacity along the outside of the fence to prevent animals from of 1 MW available for new industries and aeronautical burrowing under the fence."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2025-01-21, document: City Council - Jan 21 2025, https://lascruces.civicweb.net/document/205613/City%20Council%20-%20Jan%2021%202025.pdf?handle=1BC22527B1DF4411A2AE0CEE4F8E1EE5
+  - "When I talk about working with relationships in the exterior some of the things that I’ve been doing is working with the Spaceport, I’m on the TIDD board for the spaceport and we are putting money into their infrastructure so they can get a data center there, they can get other things, that will cre"
+  - "As an ESRI Silver Partner, we have 70+ full-time GIS professionals in our data center that specialize in client information management, condition assessment program analytics, and customer reporting."
+  - "As an ESRI Silver Partner, HUSA boasts a team of 70+ full-time GIS professionals in our state-of-the-art data center in Louisville, Kentucky."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2024-12-09, document: Work Session - Dec 09 2024, https://lascruces.civicweb.net/document/204577/Work%20Session%20-%20Dec%2009%202024.pdf?handle=E2199B59AF7641DD98C7676E8A598F5A
+  - "The proposed Technical Manual already encourages the use of relevant local trip generation data. • Page 323:"
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2024-10-10, document: Utilities - Regular Meeting - Oct 10 2024, https://lascruces.civicweb.net/document/203666/Utilities%20-%20Regular%20Meeting%20-%20Oct%2010%202024.pdf?handle=25F80A625F964A26BB4FF8754E937D24
+  - "Also, we have them talk about the electric generation needs and the total cost of each of the scenarios that they will be going through."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2024-09-12, document: Utilities - Regular Meeting - Sep 12 2024, https://lascruces.civicweb.net/document/203101/Utilities%20-%20Regular%20Meeting%20-%20Sep%2012%202024.pdf?handle=BDBA7511B4AE4FD1B63FF414F239E8D9
+  - "I'm separating some of those projects only because there's stuff that the consultants locally aren't very good at, and so I'm going to go after an RFP (Request for Proposal) to try and get somebody that specializes in those areas, such as another generator, right, for the treatment plant, as well as"
+  - "Possible New services and business models • Community solar developer or program administrator and/or solar installer • Energy storage and microgrid services • Energy Service Company • Smart city technologies service provider • Energy efficiency and weatherization service providers • Small Modular R"
+  - "Options for new business models that the study team will explore include: • Community solar developer, program administrator and/or solar installer • Providing energy storage and microgrid services • Energy Service Company Energy Decarbonization Transition Plan for Las Cruces Utilities Department 5 "
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2024-08-19, document: City Council - Aug 19 2024, https://lascruces.civicweb.net/document/202784/City%20Council%20-%20Aug%2019%202024.pdf?handle=01F3FB44618649B0915218CBC56CC295
+  - "CEDO ensures a perfect match with continuity at a place using an innovative, best in class 24x7x365 recruiting and deployment engine, complemented by internal teamwork to validate candidate and background, deployment, candidate replacement, change management, and timesheet management & administratio"
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2024-08-05, document: City Council - Aug 05 2024, https://lascruces.civicweb.net/document/202500/City%20Council%20-%20Aug%2005%202024.pdf?handle=6C5E923BD61245A48E7B21C3207F2B1E
+  - "CEDO ensures a perfect match with continuity at a place using an innovative, best in class 24x7x365 recruiting and deployment engine, complemented by internal teamwork to validate candidate and background, deployment, candidate replacement, change management, and timesheet management & administratio"
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2024-07-15, document: City Council - Jul 15 2024, https://lascruces.civicweb.net/document/201006/City%20Council%20-%20Jul%2015%202024.pdf?handle=F068292160924F5EB06AA3FB5C17BFDE
+  - "We just lost a project to Texas, they were paying a minimum of $60,000 a year and up to $120,000 a year and then small data centers as we see the change in that going forward."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2024-05-23, document: CIAC - May 23 2024, https://lascruces.civicweb.net/document/198826/CIAC%20-%20May%2023%202024.pdf?handle=AA131457C5704F0C8BF7873154269858
+  - "We also want another generator out there at the treatment facility."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2024-04-01, document: City Council - Apr 01 2024, https://lascruces.civicweb.net/document/197443/City%20Council%20-%20Apr%2001%202024.pdf?handle=57635479408B4AA7AA956E384955F363
+  - "When Davin is talking about we need electricity we’re talking about the mega projects the data centers, that kind of thing."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2024-03-18, document: City Council - Mar 18 2024, https://lascruces.civicweb.net/document/196952/City%20Council%20-%20Mar%2018%202024.pdf?handle=8396E6264B194A889B1D6D8442EFDE1A
+  - "In fact I was on a phone call with a client this morning if we would have heard in terms of power about a 5 megawatt project five years ago that was a big project."
+  - "Now we’re seeing minimum talks of 50 megawatts, 100 megawatt projects."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2024-03-14, document: Utilities - Regular Meeting - Mar 14 2024, https://lascruces.civicweb.net/document/196831/Utilities%20-%20Regular%20Meeting%20-%20Mar%2014%202024.pdf?handle=24174684873D4E8884729C32D5B47032
+  - "The differences is that we would actually have a semitruck that is built to pull that large load to take it to the current landfill site."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- City of Las Cruces City Council, 2024-01-25, document: CIAC - Jan 25 2024, https://lascruces.civicweb.net/document/195629/CIAC%20-%20Jan%2025%202024.pdf?handle=35F836D2E3604080A3F0E703653A422E
+  - "This station will have a diesel- powered backup generator that meets our requirements for any kind of loss of power that we can use."
+  - GEM plants in the same county: Rio Grande (New Mexico) power station, Afton generating station, Project Jupiter Microgrid power station
+- Grant County Board of County Commissioners, 2026-10-22, agenda: Board of Commissioners - 2nd Regular Meeting 10.22.2026 Regular Meeting Agenda, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=2049,plainText=false)
+  - Also mentions: moratorium
+  - "O-26-03, An ordinance establishing a temporary one-year moratorium prohibiting data centers and direct supporting infrastructure within the unincorporated areas of Grant County. d."
+  - "O-26-03, An ordinance establishing a temporary one-year moratorium prohibiting data centers and direct supporting Office Of The Grant County Commissioners 1400 Highway 180 East, Silver City, NM 88061-7837 • P.0."
+  - GEM plants in the same county: Chino Mines power station, Site Layer 1 Data Center power station
+- Grant County Board of County Commissioners, 2026-09-24, agenda: Board of Commissioners - 2nd Regular Meeting Agenda Preview Regular Meeting 09.24.2026, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=2008,plainText=false)
+  - "Resolution R-26-54, Notice of Intent to Consider an Ordinance Regulating Data Centers and Large-Scale Infrastructure Facilities Within Grant County, New Mexico t."
+  - GEM plants in the same county: Chino Mines power station, Site Layer 1 Data Center power station
+- Grant County Board of County Commissioners, 2026-09-24, packet: Board of Commissioners - 2nd Regular Meeting 2026.09.24 Agenda Packet, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=2009,plainText=false)
+  - Also mentions: moratorium
+  - "For the avoidance of doubt, if our SaaS Services are provided using a third-party data center, the compliance report may be for that third-party provider and be subject to confidential treatment in accordance with applicable law."
+  - "Tyler SaaS Services will be provided via a third-party data center."
+  - "Data centers used to deliver SaaS Services for this Agreement have redundant telecommunications access, electrical power, and the required hardware to provide access to the SaaS Services in the event of a disaster or component failure."
+  - "In the event of a data center failure, we reserve the right to employ our disaster recovery plan for resumption of the SaaS Services."
+  - "RPO represents the maximum duration of time between the most recent recoverable copy of your hosted Data and subsequent data center failure."
+  - GEM plants in the same county: Chino Mines power station, Site Layer 1 Data Center power station
+- Grant County Board of County Commissioners, 2026-09-24, minutes: Board of Commissioners - 2nd Regular Meeting 09.24.26 Approved Minutes, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=2042,plainText=false)
+  - Also mentions: moratorium
+  - "Ponce, Medina, Stephens, Flores, Shelley Resolution R-26-54, Notice of Intent to Consider an Ordinance Establishing a Temporary One-Year Moratorium Prohibiting Data Centers and Direct Supporting Infrastructure within the Unincorporated Areas of Grant County Commissioner Stephens MOVED to pass Resolu"
+  - GEM plants in the same county: Chino Mines power station, Site Layer 1 Data Center power station
+- Grant County Board of County Commissioners, 2026-09-08, packet: Board of Commissioners Work Session Work Session of September 8, 2026 Agenda Packet, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=2006,plainText=false)
+  - "StoryMap project is 95% complete with completion education was received. by end of September. • Equipment installation at Signal Peak and Glenwood • HMPG – Contract with Southwest Solar for the generator project at conference center and public safety facility has been fully Brushy Communication Site"
+  - GEM plants in the same county: Chino Mines power station, Site Layer 1 Data Center power station
+- Grant County Board of County Commissioners, 2026-08-27, packet: Board of Commissioners - 2nd Regular Meeting 2026 8.27 Grant County Board of Commissioners 2nd Regular Meeting agenda pa, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=2001,plainText=false)
+  - "The Expanded Project will consist of a wind and/or solar energy project to inject up to 252 megawatts of energy into the grid, and a battery energy storage system to store such energy, and may be constructed in one or more phases. 5 5380787v3 Page 49 of 62 B."
+  - "The Expanded Project will consist of a wind and/or solar energy project to inject up to 252 megawatts of energy into the grid, and a battery energy storage system to store such energy, and may be constructed in one or more phases. 5 5380787v3 Page 58 of 62 B."
+  - GEM plants in the same county: Chino Mines power station, Site Layer 1 Data Center power station
+- Grant County Board of County Commissioners, 2026-07-23, packet: Board of Commissioners - 2nd Regular Meeting 2026 7.23 Grant County Board of Commissioners 2nd Regular Meeting packet, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=1953,plainText=false)
+  - "Offtake 20-year Contract Executed Procurement Vestas 4.5 MW wind turbine. 104 meter tower height. 163 diameter rotor."
+  - GEM plants in the same county: Chino Mines power station, Site Layer 1 Data Center power station
+- Grant County Board of County Commissioners, 2026-06-15, packet: Lodgers Tax Advisory Board 2nd Quarterly Meeting 2026 6.15 Grant County Lodgers Tax Advisory Board 2nd Quarterly Meeting, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=1893,plainText=false)
+  - "(5) dam, reservoir, canal, ditch, or similar facility; lin (6) sewerage or water treatment facility, power generating plant, li pump station, natural gas compressing station or similar facility; mm (7) sewerage, water, gas or other pipeline; *■ ’ i!"
+  - GEM plants in the same county: Chino Mines power station, Site Layer 1 Data Center power station
+- Grant County Board of County Commissioners, 2026-02-12, packet: Board of Commissioners Regular Meeting 2026 2.12 Grant County Board of Commissioners Regular Meeting packet, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=768,plainText=false)
+  - "The pipeline has been designed to deliver natural gas to utilities with growing populations that WHY DESERT need additional supply to meet the demands for increased power and electric generation."
+  - "Bi-directional facilities include: economic growth. • New Gila compressor station in Maricopa County, Arizona • New Desert Basin compressor station in Pinal County, Arizona • Upgrades at the New River compressor station in Maricopa County, Arizona Solidifies much-needed support The pipeline will be "
+  - GEM plants in the same county: Chino Mines power station, Site Layer 1 Data Center power station
+- Grant County Board of County Commissioners, 2025-09-25, packet: Board of Commissioners - 2nd Regular Meeting September 25, 2025, Regular Meeting packet, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=636,plainText=false)
+  - "Stafford Disaster Relief and Emergency Assistance Act (the Stafford Act}, as amended (42 U.S.C. § 5121 et seq.), and Section 662 of the Post Katrina Emergency Reform Act of 2006, as amended (6 U.S.C. § 762), Grant County has·been awarded funds to prevent loss of function to its emergency shelter and"
+  - GEM plants in the same county: Chino Mines power station, Site Layer 1 Data Center power station
+- Grant County Board of County Commissioners, 2025-08-28, packet: Board of Commissioners - 2nd Regular Meeting August 28, 2025, Board of Commissioners 2nd Regular Meeting packet, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=615,plainText=false)
+  - "Stafford Disaster Relief and Emergency Assistance Act (the Stafford Act), as amended (42 U.S.C. § 5121 et seq.), and Section 662 of the Post Katrina Emergency Reform Act of 2006, as amended (6 U.S.C. § 762), Grant County has been awarded funds to install permanent backup generators at two Grant Coun"
+  - GEM plants in the same county: Chino Mines power station, Site Layer 1 Data Center power station
+- Grant County Board of County Commissioners, 2024-11-14, packet: Board of Commissioners Regular Meeting Regular Meeting November 14, 2024, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=345,plainText=false)
+  - "Stafford Disaster Relief and Emergency Assistance Act (the Stafford Act), as amended (42 U.S.C. § 5121 et seq.), and Section 662 of the Post Katrina Emergency Reform Act of 2006, as amended (6 U.S.C. § 762), Grant County has been awarded funds to prevent loss of function to its emergency shelter and"
+  - GEM plants in the same county: Chino Mines power station, Site Layer 1 Data Center power station
+- Grant County Board of County Commissioners, 2024-03-12, packet: Board of Commissioners Work Session Work Session March 12, 2024, https://grantconm.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=185,plainText=false)
+  - "Al.) 8 “LFC Hearing Brief,” September, 28, 2023. 21 Page 25 of 135 Figure 16 Housing Cost Burden, 2017-2021 (NMCDC) Data on the housing cost burden, gathered by the NM Community Data Collaborative, CHI’s data center, indicates that Grant County has a very high housing cost burden."
+  - GEM plants in the same county: Chino Mines power station, Site Layer 1 Data Center power station
 
 ## Bodies whose records are not posted or sit behind a portal a person opens
 

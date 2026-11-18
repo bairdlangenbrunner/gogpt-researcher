@@ -1,0 +1,208 @@
+{
+ "meta": {
+  "plant_id": "L100000402529",
+  "plant_name": "Bluffview power station",
+  "state": "New Mexico",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:48:09-05:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401991",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the EIA-860M generator table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 55977 Bluffview has generator CTG1 at 40.0 MW and generator STG1 at 27.0 MW, both unit code CC1, status OP, operating year 2005. That makes 67.0 MW, matching GEM. I found no retirement, mothballing or planned retirement date for this unit in the table, and the Navajo Times article in February 2026 describes the plant as running.",
+     "milestones": [
+      {
+       "status": "operating",
+       "year": 2005,
+       "period": "May",
+       "sources": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "EIA operating month 5, year 2005 for CTG1 and STG1"
+      }
+     ]
+    },
+    "Capacity (MW)": {
+     "value": "67.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the EIA-860M generator table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 55977 Bluffview has generator CTG1 at 40.0 MW and generator STG1 at 27.0 MW, both unit code CC1, status OP, operating year 2005. The two rows add to 67.0 MW."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Backup power at a data center is what this field records. This plant is not a data center backup fleet. Plant 55977 Bluffview has generator CTG1 at 40.0 MW and generator STG1 at 27.0 MW, both unit code CC1, status OP, operating year 2005. The status column shows the unit as in regular operation, not as standby, and the sector is listed as electric utility or independent power producer. So the current value no stands. The table does not state backup power in words, so this rests on what the table implies."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year"
+   ],
+   "notes": "The combined cycle unit is still listed as operating at 67.0 MW. The Sierra Club flag of status change at 9 MW matches the two new engines added in late 2025, which are reported as a new unit below. Nothing was found that changes this unit."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [
+  {
+   "gem_plant_id": "L100000402529",
+   "plant_name": "Bluffview power station",
+   "unit_name": "ICE1",
+   "fields": {
+    "Unit name": "ICE1",
+    "Fuel": "fossil gas: natural gas",
+    "Capacity (MW)": "18.8",
+    "Status": "operating",
+    "Turbine/Engine Technology": "internal combustion",
+    "Number Of Engines": "2",
+    "Capacity Per Engine": "9.4",
+    "Start year": "2025",
+    "Equipment Manufacturer/Model": "Wärtsilä 20V34SG",
+    "Owner(s)": "City of Farmington (New Mexico) [100%]"
+   },
+   "refs": {
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://navajotimes.com/reznews/farmington-completes-bluffview-power-upgrade-after-san-juan-closure"
+    ],
+    "Capacity Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ],
+    "Fuel Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://www.power-eng.com/onsite-power/wartsila-to-supply-rice-engines-for-new-mexico-plant-expansion/",
+     "https://navajotimes.com/reznews/farmington-completes-bluffview-power-upgrade-after-san-juan-closure"
+    ],
+    "Start Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://navajotimes.com/reznews/farmington-completes-bluffview-power-upgrade-after-san-juan-closure"
+    ],
+    "Turbine/Engine Equipment Data Source": [
+     "https://navajotimes.com/reznews/farmington-completes-bluffview-power-upgrade-after-san-juan-closure",
+     "https://www.power-eng.com/onsite-power/wartsila-to-supply-rice-engines-for-new-mexico-plant-expansion/"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://navajotimes.com/reznews/farmington-completes-bluffview-power-upgrade-after-san-juan-closure",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.power-eng.com/onsite-power/wartsila-to-supply-rice-engines-for-new-mexico-plant-expansion/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "milestones": [
+    {
+     "status": "operating",
+     "year": 2026,
+     "period": "January",
+     "sources": [
+      "https://navajotimes.com/reznews/farmington-completes-bluffview-power-upgrade-after-san-juan-closure"
+     ],
+     "note": "The city held a ribbon cutting on January 14, 2026 that marked the start of commercial operation. The EIA table lists operating month 12, year 2025 for both engines."
+    }
+   ],
+   "notes": "Two new natural gas engines at the Bluffview plant.\n\nWhat the sources say:\n- EIA-860M September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 55977: generators RICE3 and RICE4, each 9.4 MW nameplate, technology Natural Gas Internal Combustion Engine, status OP, operating month 12 and year 2025.\n- A Navajo Times article from February 2026 at https://navajotimes.com/reznews/farmington-completes-bluffview-power-upgrade-after-san-juan-closure: the caption and fourth paragraph say two Wärtsilä 20V34SG engines, about 9 megawatts each, about 18 megawatts total, with a ribbon cutting on January 14, 2026 that marked the start of commercial operation.\n- A Power Engineering article at https://www.power-eng.com/onsite-power/wartsila-to-supply-rice-engines-for-new-mexico-plant-expansion/ reports the Wärtsilä contract for an 18 MW expansion at the plant.\n\nStart year: the EIA table says December 2025 and the city says commercial operation began in January 2026. Start year 2025 follows the EIA table, so check which the reviewer prefers.\n\nNot found: a separate source stating the owner for the engines. The EIA table lists the City of Farmington as the plant owner.\n\nThe plant total is 85.8 MW with the combined cycle unit, so the plant stays above the threshold.",
+   "researcher_notes": "Two new natural gas engines at the Bluffview plant.\n\nWhat the sources say:\n- EIA-860M September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 55977: generators RICE3 and RICE4, each 9.4 MW nameplate, technology Natural Gas Internal Combustion Engine, status OP, operating month 12 and year 2025.\n- A Navajo Times article from February 2026 at https://navajotimes.com/reznews/farmington-completes-bluffview-power-upgrade-after-san-juan-closure: the caption and fourth paragraph say two Wärtsilä 20V34SG engines, about 9 megawatts each, about 18 megawatts total, with a ribbon cutting on January 14, 2026 that marked the start of commercial operation.\n- A Power Engineering article at https://www.power-eng.com/onsite-power/wartsila-to-supply-rice-engines-for-new-mexico-plant-expansion/ reports the Wärtsilä contract for an 18 MW expansion at the plant.\n\nStart year: the EIA table says December 2025 and the city says commercial operation began in January 2026. Start year 2025 follows the EIA table, so check which the reviewer prefers.\n\nNot found: a separate source stating the owner for the engines. The EIA table lists the City of Farmington as the plant owner.\n\nThe plant total is 85.8 MW with the combined cycle unit, so the plant stays above the threshold."
+  }
+ ],
+ "entities": [
+  {
+   "entity_name": "City of Farmington (New Mexico)",
+   "role": "owner",
+   "lookup_result": "Already the owner on the existing unit in GEM; no new entity created."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Backup Power",
+    "newunit"
+   ],
+   "outcome": "verified",
+   "note": "Plant 55977 rows read from the downloaded file."
+  },
+  {
+   "url": "https://navajotimes.com/reznews/farmington-completes-bluffview-power-upgrade-after-san-juan-closure",
+   "used_for": [
+    "newunit"
+   ],
+   "outcome": "verified",
+   "note": "Verifier passed on Bluffview; I read the engine model and the January 14, 2026 ribbon cutting in the page text."
+  },
+  {
+   "url": "https://www.power-eng.com/onsite-power/wartsila-to-supply-rice-engines-for-new-mexico-plant-expansion/",
+   "used_for": [
+    "newunit"
+   ],
+   "outcome": "verified",
+   "note": "Wärtsilä 18 MW contract article."
+  }
+ ]
+}

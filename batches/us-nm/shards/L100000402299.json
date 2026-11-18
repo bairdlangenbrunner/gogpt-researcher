@@ -1,0 +1,258 @@
+{
+ "meta": {
+  "plant_id": "L100000402299",
+  "plant_name": "Maddox power station",
+  "state": "New Mexico",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T09:27:53-05:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403559",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 2446, generator 1, status OP, nameplate 113.6 MW, operating year 1967, planned retirement December 2028. The status column reads (OP) Operating. So the unit is still running and no retirement, mothballing or owner change shows in this file."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Open the Southwestern Public Service 2023 resource plan at https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf and find the table of existing SPS resources that lists \"Maddox 1 Gas ST 112 1967 2028\" and \"Maddox 2 Gas CT 61 1976 2025\". The plan treats both units as units that serve the utility system load. It does not use the words backup power, so this is medium."
+    }
+   },
+   "not_found": [
+    "Planned retire (new date could not be cited)",
+    "Latest Activity"
+   ],
+   "notes": "The EIA table still lists the unit as operating. The 2026 plan moves its retirement year, but that plan could not be loaded through the verifier, so the new year is raised as a question."
+  },
+  {
+   "gem_unit_id": "G100000403560",
+   "unit_name": "2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 2446, generator 2, status OP, nameplate 86.9 MW, operating year 1976, planned retirement December 2034. The status column reads (OP) Operating. So the unit is still running and no retirement, mothballing or owner change shows in this file."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Open the Southwestern Public Service 2023 resource plan at https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf and find the table of existing SPS resources that lists \"Maddox 1 Gas ST 112 1967 2028\" and \"Maddox 2 Gas CT 61 1976 2025\". The plan treats both units as units that serve the utility system load. It does not use the words backup power, so this is medium."
+    }
+   },
+   "not_found": [
+    "Planned retire (new date could not be cited)",
+    "Latest Activity"
+   ],
+   "notes": "The EIA table still lists the unit as operating. The 2026 plan moves its retirement year, but that plan could not be loaded through the verifier, so the new year is raised as a question."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000403559",
+   "concern_type": "Planned retire",
+   "question": "Should Maddox Unit 1 planned retirement move from 2028 to 2038?",
+   "finding": "The 2023 plan and the EIA table give 2028. SPS has since chosen to extend Maddox Unit 1, and its 2026 resource plan lists an expected retirement date of 2038 for a 112 MW unit.",
+   "recommendation": "Change Planned retire on unit 1 to 2038 as a new scheduled retirement event, after the reviewer opens the commission filing and confirms the table.",
+   "note": "Open the case page for 25-00076-UT at https://e360.prc.nm.gov/portal/public/#/public/nm-prc/en/CaseXscreen?screen=external-Case360&caseId=fe3141c2-1770-4ee1-90a7-f9c3a4749200 and the filing DOC-000532299-26, 2026 Integrated Resource Plan. On PDF page 47, Table 3-1 (Existing SPS-Owned Load-Serving Resources), under Conventional Load Serving Resources, Gas, the row \"Maddox Unit 1, Lea Co., NM, 112, 2038\". The same filing, Appendix P page 29, says life extensions for Nichols Units 1 and 2, Plant X Unit 4 and Maddox Unit 1, totaling 521 MW, \"were selected for the portfolio\". The older 2023 plan at https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf says \"Maddox Unit 1 retiring in 2028\". The commission portal is built with scripts, so the verifier could not read it, so no value is proposed. In the second pass I opened the Xcel Energy page for the New Mexico 2027 to 2046 plan at https://www.xcelenergy.com/company/rates_and_regulations/resource_plans/new_mexico_2027-2046_irp. Its link to the plan document, https://xcelnew.my.salesforce.com/sfc/p/1U0000011ttV/a/R300000YZWcY/_fFYXD6bn_rleQjhaRJ9XZ_GHjexUzC57fARqr3lTDc, did not load any text that names Maddox, so it could not be cited. A web search and the PRC news release found no readable copy of the table either. The saved case copy shows the same table.",
+   "refs": [
+    "https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf"
+   ],
+   "proposed_value": {
+    "Planned retire": "2038"
+   }
+  },
+  {
+   "gem_unit_id": "G100000403560",
+   "concern_type": "Planned retire",
+   "question": "Should Maddox Unit 2 planned retirement move from 2034 to 2043?",
+   "finding": "GEM shows 2034, taken from the EIA table. SPS 2026 plan Table 3-1 lists Maddox Unit 2 at 62 MW with an expected retirement date of 2043. The 2023 plan said the unit would be extended three years from 2025 to 2028.",
+   "recommendation": "Change Planned retire on unit 2 to 2043 as a new scheduled retirement event, after the reviewer opens the commission filing and confirms the table.",
+   "note": "Open case 25-00076-UT at https://e360.prc.nm.gov/portal/public/#/public/nm-prc/en/CaseXscreen?screen=external-Case360&caseId=fe3141c2-1770-4ee1-90a7-f9c3a4749200, filing DOC-000532299-26, PDF page 47, Table 3-1, under Grid Balancing Resources, Gas, the row \"Maddox Unit 2, Lea Co., NM, 62, 2043\". The 2023 plan at https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf says \"3-year extension of Maddox Unit 2 from 2025 to 2028\". The EIA table at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx still shows December 2034. The portal could not be read by the verifier, so no value is proposed. In the second pass I opened the Xcel Energy page for the New Mexico 2027 to 2046 plan at https://www.xcelenergy.com/company/rates_and_regulations/resource_plans/new_mexico_2027-2046_irp. Its link to the plan document, https://xcelnew.my.salesforce.com/sfc/p/1U0000011ttV/a/R300000YZWcY/_fFYXD6bn_rleQjhaRJ9XZ_GHjexUzC57fARqr3lTDc, did not load any text that names Maddox, so it could not be cited. A web search and the PRC news release found no readable copy of the table either. The saved case copy shows the same table.",
+   "refs": [
+    "https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "proposed_value": {
+    "Planned retire": "2043"
+   }
+  },
+  {
+   "gem_unit_id": "G100000403559",
+   "concern_type": "scope",
+   "question": "Should Maddox Unit 3, an 11.5 MW gas turbine, be added?",
+   "finding": "The EIA-860M table for September 2026 lists a third generator at Maddox plant 2446. It is an 11.5 MW natural gas combustion turbine operating since 1963 with planned retirement December 2034. The database has only units 1 and 2.",
+   "recommendation": "Add Maddox Unit 3 as an operating gas turbine of 11.5 MW with start year 1963 and planned retire 2034, since it sits at a plant already in the tracker.",
+   "note": "Open https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant ID 2446, generator 3, nameplate 11.5 MW, technology Natural Gas Fired Combustion Turbine, operating year 1963. The unit is also in the 2023 plan list as Maddox 3 in a legislature handout, but I found no 2026 plan row for it.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "proposed_value": {
+    "Capacity (MW)": "11.5"
+   }
+  }
+ ],
+ "newunits": [
+  {
+   "gem_plant_id": "L100000402299",
+   "plant_name": "Maddox power station",
+   "unit_name": "3",
+   "fields": {
+    "Unit name": "3",
+    "Fuel": "fossil gas: natural gas",
+    "Capacity (MW)": "11.5",
+    "Status": "operating",
+    "Turbine/Engine Technology": "gas turbine",
+    "Start year": "1963",
+    "Planned retire": "2034",
+    "Owner(s)": "Southwestern Public Service Co [100%]"
+   },
+   "refs": {
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ],
+    "Capacity Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ],
+    "Fuel Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ],
+    "Start Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ],
+    "Planned Retire Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "milestones": [
+    {
+     "status": "operating",
+     "year": 1963,
+     "period": "January",
+     "sources": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "note": "The EIA table gives operating month 1 and year 1963 for generator 3."
+    }
+   ],
+   "researcher_notes": "GEM lists units 1 and 2 at Maddox. A third, small gas turbine is still operating.\n\nThe EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 2446 Maddox, generator 3: nameplate 11.5 MW, Natural Gas Fired Combustion Turbine, status (OP) Operating, operating month 1 and year 1963, planned retirement month 12 and year 2034, entity Southwestern Public Service Co, Lea County.\nThe unit is under 50 MW, but the plant is above the threshold and GEM already tracks it.",
+   "notes": "GEM lists units 1 and 2 at Maddox. A third, small gas turbine is still operating.\n\nThe EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 2446 Maddox, generator 3: nameplate 11.5 MW, Natural Gas Fired Combustion Turbine, status (OP) Operating, operating month 1 and year 1963, planned retirement month 12 and year 2034, entity Southwestern Public Service Co, Lea County.\nThe unit is under 50 MW, but the plant is above the threshold and GEM already tracks it."
+  }
+ ],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Plant 2446 rows."
+  },
+  {
+   "url": "https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf",
+   "used_for": [
+    "Backup Power",
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "2023 SPS plan names Maddox 1 retiring 2028."
+  },
+  {
+   "url": "https://e360.prc.nm.gov/portal/public/#/public/nm-prc/en/CaseXscreen?screen=external-Case360&caseId=fe3141c2-1770-4ee1-90a7-f9c3a4749200",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "failed",
+   "note": "The harvest read case 25-00076-UT through the commission's own data service and saved filing DOC-000532299-26 in scopes/us-nm/work/psc/25-00076-UT. The case page has no address for a single document that the verifier can check, so it is not cited. Table 3-1 on PDF page 47 is an image, read by eye. Xcel Energy's public copy is a Salesforce file viewer that loads no text."
+  },
+  {
+   "url": "https://xcelnew.my.salesforce.com/sfc/p/1U0000011ttV/a/R300000YZWcY/_fFYXD6bn_rleQjhaRJ9XZ_GHjexUzC57fARqr3lTDc",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "failed",
+   "note": "Link to the SPS 2026 plan on the Xcel page. The verifier found no text naming Maddox or the 2038 and 2043 years. Wayback and a web search gave no readable copy."
+  },
+  {
+   "url": "https://www.xcelenergy.com/company/rates_and_regulations/resource_plans/new_mexico_2027-2046_irp",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "not relevant",
+   "note": "Landing page that lists the plan document link."
+  }
+ ],
+ "monitor": []
+}

@@ -14,22 +14,22 @@ center project. Nothing needs a sign-in. Routes (probed 2026-11-17):
                County (Council 2, Planning and Zoning 35, Board of Public Utilities 204): the open
                API at webapi.legistar.com/v1/<client>/Events, agenda and minutes PDFs, and item
                attachments whose item names a power or data center project.
-  civicclerk   Hobbs (City Commission), Carlsbad and Dona Ana County (Board of County
-               Commissioners and Planning): the open OData API at <host>.api.civicclerk.com/v1/
+  civicclerk   Hobbs (City Commission), Carlsbad, Dona Ana County (Board of County
+               Commissioners and Planning) and Grant County: the open OData API at <host>.api.civicclerk.com/v1/
                Events; GetMeetingFileStream downloads the PDFs.
   iqm2         Bernalillo County: the portal's Calendar.aspx for a year lists every meeting; each
                row links FileOpen.aspx PDFs (Agenda, Agenda Packet, Action Report, Minutes).
-  civicweb     Las Cruces City Council: lascruces.civicweb.net MeetingTypeList, one
+  civicweb     Las Cruces City Council: the portal's Services/MeetingsService.svc/meetings list, one
                MeetingInformation page per meeting, document links /document/<id>/<name>.pdf.
   granicus     Rio Rancho: riorancho.granicus.com/ViewPublisher.php?view_id=14, one page with
                every archived meeting, AgendaViewer, MinutesViewer and packet links.
   sjcounty     San Juan County: the county's calendar page (-toggle-allpast and -toggle-all lists),
                showpublisheddocument links; the page answers 403 to plain requests, so it is read
                through fetch.py.
-  agendacenter CivicPlus AgendaCenter sites (Eddy County, Roswell, Farmington, Los Lunas, Grant
-               County): /AgendaCenter/Search/?CIDs=all with a date range; files at
+  agendacenter CivicPlus AgendaCenter sites (Eddy County, Roswell, Farmington, Los Lunas): /AgendaCenter/Search/?CIDs=all with a date range; files at
                /AgendaCenter/ViewFile/Agenda|Minutes/_MMDDYYYY-ID.
-  pages        Every other body (Las Cruces boards, Valencia, Sandoval and Chaves counties): its
+  pages        Every other body (Las Cruces boards, the Albuquerque Development Commission,
+               Valencia, Sandoval and Chaves counties): its
                agendas or minutes index page, read through fetch.py's access ladder, and every
                dated document link on it.
 
@@ -41,8 +41,8 @@ Output, in batches/us-nm/harvest/: local_records.json and local_records.md.
 
 Usage (from the repo root):
     python scopes/us-nm/harvest_local.py                          # every body since 2024
-    python scopes/us-nm/harvest_local.py --bodies hobbs,grant-county --since 2025-01-01
-    python scopes/us-nm/harvest_local.py --list-only              # list documents, read nothing
+    python scopes/us-nm/harvest_local.py --bodies hobbs,grant-county   # rerun two bodies; the rest of the output is kept
+    python scopes/us-nm/harvest_local.py --list-only              # list documents, read nothing, write nothing
     python scopes/us-nm/harvest_local.py --no-ocr
 """
 import argparse
@@ -110,7 +110,12 @@ BODIES = [
        "client": "cabq", "body_id": bid, "index": "https://cabq.legistar.com/Calendar.aspx"}
       for bid, slug, name in [(1, "council", "City Council"), (6, "lupz", "Land Use, Planning, and Zoning Committee"),
                               (7, "cow", "Committee of the Whole"), (9, "finance", "Finance and Government Operations Committee"),
-                              (46, "study", "Council Study Session"), (50, "adc", "Albuquerque Development Commission")]],
+                              (46, "study", "Council Study Session")]],
+    # The Development Commission's Legistar body (50) holds no meetings; its notices, agendas and minutes are
+    # posted on the city's page and its archive page (checked 2026-11-17).
+    {"id": "albuquerque-adc", "name": "City of Albuquerque Development Commission", "county": "Bernalillo",
+     "reader": "pages", "pages": ["https://www.cabq.gov/mra/albuquerque-development-commission",
+                                  "https://www.cabq.gov/mra/albuquerque-development-commission/adc-archives"]},
     *[{"id": f"los-alamos-{slug}", "name": f"Los Alamos County {name}", "county": "Los Alamos", "reader": "legistar",
        "client": "losalamos", "body_id": bid, "index": "https://losalamos.legistar.com/Calendar.aspx"}
       for bid, slug, name in [(2, "council", "County Council"), (35, "pz", "Planning and Zoning Commission"),
@@ -140,7 +145,9 @@ BODIES = [
     _ac("roswell", "City of Roswell", "Chaves", "https://www.roswell-nm.gov"),
     _ac("farmington", "City of Farmington", "San Juan", "https://www.farmingtonnm.gov"),
     _ac("los-lunas", "Village of Los Lunas", "Valencia", "https://www.loslunasnm.gov"),
-    _ac("grant-county", "Grant County Board of County Commissioners", "Grant", "https://www.grantcountynm.gov"),
+    # Grant County's agenda center is empty; its agendas page embeds the CivicClerk portal (checked 2026-11-17).
+    {"id": "grant-county", "name": "Grant County Board of County Commissioners", "county": "Grant", "reader": "civicclerk",
+     "api": "https://grantconm.api.civicclerk.com/v1", "index": "https://grantconm.portal.civicclerk.com/"},
     {"id": "valencia-county", "name": "Valencia County Commission", "county": "Valencia", "reader": "pages",
      "pages": ["https://www.valencianm.gov/agenda-center/"]},
     {"id": "sandoval-county", "name": "Sandoval County Commission and planning", "county": "Sandoval", "reader": "pages",
@@ -438,11 +445,6 @@ def list_iqm2(net, body, since, until):
     return docs if read else None
 
 
-def parse_civicweb_types(text, site):
-    return sorted({urllib.parse.urljoin(site + "/", html.unescape(h)) for h in
-                   re.findall(r'href="([^"]*MeetingInformation\.aspx\?[^"]*type=\d+[^"]*)"', text or "", re.I)})
-
-
 def parse_civicweb_meetings(text, site, body):
     """MeetingInformation page rows: 'Title - Mon DD YYYY' with the meeting page, and its /document/ links."""
     docs = []
@@ -452,27 +454,30 @@ def parse_civicweb_meetings(text, site, body):
     return docs
 
 
+def civicweb_meetings(rows, site, since, until):
+    """Rows of the portal's meetings service: (meeting page, 'Title - Mon DD YYYY', date), in range."""
+    out = []
+    for r in rows or []:
+        date = (r.get("MeetingDate") or "")[:10]
+        if r.get("Id") and date and since <= date <= until:
+            out.append((f"{site}/Portal/MeetingInformation.aspx?Id={r['Id']}", r.get("Name") or "", date))
+    return out
+
+
 def list_civicweb(net, body, since, until):
+    """The type pages redirect to one meeting each and fill the rest in by script, so the meeting list comes
+    from the portal's own meetings service (Las Cruces, checked 2026-11-17), then each meeting page's
+    /document/ links."""
     site = body["site"]
-    types = net.page(f"{site}/Portal/MeetingTypeList.aspx")
-    if types is None:
+    rows = net.json(f"{site}/Services/MeetingsService.svc/meetings", {"from": since, "to": until})
+    if rows is None:
         return None
-    docs, seen = [], set()
-    for t_url in parse_civicweb_types(types, site):
-        page = net.page(t_url)
-        for href, label in re.findall(r'<a[^>]*href="(/Portal/MeetingInformation\.aspx\?Id=\d+)"[^>]*>(.*?)</a>', page or "", re.S):
-            label = text_of(label)
-            date = date_of(label)
-            if not date or not since <= date <= until:
-                continue
-            m_url = urllib.parse.urljoin(site, html.unescape(href))
-            if m_url in seen:
-                continue
-            seen.add(m_url)
-            meeting = net.page(m_url)
-            for url, doc_label in parse_civicweb_meetings(meeting, site, body):
-                docs.append(doc(body, url, f"{label} {doc_label}", date, kind_of(doc_label)))
-            time.sleep(0.2)
+    docs = []
+    for m_url, label, date in civicweb_meetings(rows, site, since, until):
+        meeting = net.page(m_url)
+        for url, doc_label in parse_civicweb_meetings(meeting, site, body):
+            docs.append(doc(body, url, f"{label} {doc_label}", date, kind_of(doc_label)))
+        time.sleep(0.2)
     return docs
 
 
@@ -689,6 +694,17 @@ def findings(text, pats, county_plants):
 
 # ----------------------------------------------------------------- output ---
 
+def merge_previous(path, wanted, bodies, records):
+    """A --bodies run replaces only those bodies in the existing output and keeps every other body's rows."""
+    if not path.exists():
+        return bodies, records
+    old = json.loads(path.read_text())
+    order = [b["id"] for b in BODIES]
+    kept = [b for b in old.get("bodies", []) if b["id"] not in wanted] + bodies
+    kept.sort(key=lambda b: order.index(b["id"]) if b["id"] in order else len(order))
+    return kept, [r for r in old.get("records", []) if r["body"] not in wanted] + records
+
+
 def write_outputs(out_dir, plants, bodies, records, since, today):
     out_dir.mkdir(parents=True, exist_ok=True)
     by_plant = {p["id"]: [] for p in plants}
@@ -802,6 +818,11 @@ def main():
                            + ("; no dated documents found on the index, check the address" if not docs else "")))
         bodies.append(info)
         log(f"{b['id']}: {info['state']}; {sum(1 for r in records if r['body'] == b['id'])} with findings")
+    if a.list_only:
+        log(f"listing only, outputs left as they were: {json.dumps(bodies)[:2000]}")
+        return
+    if wanted:
+        bodies, records = merge_previous(Path(a.out) / "local_records.json", wanted, bodies, records)
     write_outputs(Path(a.out), plants, bodies, records, a.since, until)
     log(f"{len(records)} records with findings; outputs in {a.out}")
 

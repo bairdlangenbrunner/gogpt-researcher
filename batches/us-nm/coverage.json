@@ -1,0 +1,1125 @@
+{
+ "sources": {
+  "spp-queue": {
+   "status": "searched",
+   "how": "Read the harvest file from pull_queues.py, which downloaded the full active queue: 1,016 requests, 56 in New Mexico, 9 of them gas or oil. Downloaded the active queue file again on 2026-11-18 and checked the FEUS rows by hand.",
+   "found": "FEUS-1 is the Milagro restart, FEUS-2 is Westside, FEUS-3 and FEUS-5 are new gas requests at Kirtland and La Plata added as new plants, FEUS-4 is most likely Saddle Butte Eastside. ERAS-2025-014 is the Hobbs turbine GEM already holds. GEN-2020-065 is in Gaines County, Texas.",
+   "read": [
+    "batches/us-nm/harvest/queues.json",
+    "https://opsportal.spp.org/Studies/GenerateActiveCSV",
+    "https://opsportal.spp.org/Studies/GIActive"
+   ],
+   "date": "2026-11-18"
+  },
+  "lbnl-queued-up": {
+   "status": "searched",
+   "how": "Read sheet 03 of the Berkeley Lab file through 2025 for every New Mexico row under PNM, El Paso Electric, Tri-State and Arizona Public Service.",
+   "found": "Seven gas requests. IA-PNM-2025-20, 172 megawatts at the Reeves Substation, added as Reeves unit 4. IA-PNM-2017-14 and IA-PNM-2020-05 at San Juan are the cancelled Piñon plant. The two Valencia requests are GEM's Valencia plant. IA-PNM-2014-02 led to no plant. APS Q610 is not gas.",
+   "read": [
+    "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx",
+    "batches/us-nm/harvest/queues.json"
+   ],
+   "date": "2026-11-18"
+  },
+  "epe-queue": {
+   "status": "searched",
+   "how": "Read every row of El Paso Electric's active queue list.",
+   "found": "No gas, oil or fuel-blank request is in New Mexico. The New Mexico rows are solar, battery, wind and one geothermal request.",
+   "read": [
+    "scopes/us-nm/work/queues/epe_active.pdf"
+   ],
+   "date": "2026-11-18"
+  },
+  "pnm-queue": {
+   "status": "searched",
+   "how": "The PNM queue page on the OATI site shows no rows without a sign-in, so the Berkeley Lab file was read for PNM's requests through 2025 and the PNM 2026 plan for newer gas.",
+   "found": "No PNM gas request newer than the Berkeley Lab file was found. The 2026 plan's new gas is La Luz II and the 172 megawatt proxy turbine, both added.",
+   "read": [
+    "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx",
+    "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf"
+   ],
+   "date": "2026-11-18"
+  },
+  "tristate-queue": {
+   "status": "searched",
+   "how": "The Tri-State page on the OATI site shows no rows without a sign-in, so the Berkeley Lab file was read for Tri-State requests and the Tri-State plan and 2026 adequacy table for new gas.",
+   "found": "No Tri-State gas request in New Mexico. Tri-State's only planned gas plant is in Moffat County, Colorado.",
+   "read": [
+    "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx",
+    "scopes/us-nm/work/irp/tri-state/2.txt",
+    "scopes/us-nm/work/irp/tri-state/3.txt"
+   ],
+   "date": "2026-11-18"
+  },
+  "prc-e360-cases": {
+   "status": "searched",
+   "how": "Read the docket harvest from harvest_prc.py: every commission case since 2021 on generation, resource plans, abandonments, data centers and power purchase agreements, with up to 12 documents per key case.",
+   "found": "The resource plan cases for PNM (25-00022-UT), Southwestern Public Service (25-00076-UT) and El Paso Electric (24-00260-UT) were read through the plan files. No case caption names La Luz II, Piñon or a Farmington gas plant. The Rio Grande cases 20-00194-UT and 23-00403-UT are not in the public index; the Rio Grande plant agent handles them.",
+   "read": [
+    "batches/us-nm/harvest/psc_dockets.md",
+    "batches/us-nm/harvest/psc_dockets.json"
+   ],
+   "date": "2026-11-18"
+  },
+  "nmed-apmap": {
+   "status": "searched",
+   "how": "Read the permit harvest from harvest_permits.py, which looked up every GEM plant, owner and lead by name in the state air permit data service, and opened the permit documents for Pyramid, La Luz, Greater Kudu, Crusoe, Site Layer and Project Jupiter.",
+   "found": "Pyramid's permits show four GE LM6000 turbines; Pyramid was added. Greater Kudu's Los Lunas permit lists 118 diesel emergency generators; added. Crusoe's Gold State site has 12 engines under the threshold. Site Layer I's application lists 64 engines. Project Jupiter's permit gives fuel cells for backup, no engine fleet. No permit was found for Saddle Butte Eastside, the Kirtland or La Plata requests, or Zenith Volts. Every power named site in the permit data service was opened on 2026-11-18 and each decision is under permit_leads: all oil field microgrids and power facilities read are 3 to 10 megawatts, the Hobbs Turbine Facility is about 20 megawatts, and Tarantula, Avalon Lake and Easy Peasy are watch items until their applications post.",
+   "read": [
+    "scopes/us-nm/work/permits/_data_centers.md",
+    "https://cloud.env.nm.gov/resources/_translator.php/YjU5M2MzYjUzYjZlMGI0MTM3MDgwOTgwOV8zMDE0Mg~~.pdf",
+    "https://www.env.nm.gov/public-notices/wp-content/uploads/sites/32/2024/04/Original-Application-7026M6.pdf",
+    "https://www.env.nm.gov/public-notices/wp-content/uploads/sites/32/2024/06/A-10145M1-CrusoeGoldState-APA-final-2024-05-24.pdf",
+    "https://cloud.env.nm.gov/resources/_translator.php/OTRmYzlmMmMwMTljZDUyM2VkM2I5Y2ZkY18yMzYxNzM~.pdf",
+    "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=26875",
+    "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=27372",
+    "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=27672",
+    "https://cloud.env.nm.gov/resources/_translator.php/NTNkMDQzNjdiOWNiZDFjNzA3ZjZiNjRmMV8xODI1NDM~.zip",
+    "work/sweep_us-nm/permit_leads/facility_reports.json",
+    "work/sweep_us-nm/permit_leads/zip_lines.json",
+    "work/sweep_us-nm/permit_leads/zip_lines2.json"
+   ],
+   "date": "2026-11-18"
+  },
+  "nmed-public-notices": {
+   "status": "searched",
+   "how": "Read every air notice the permit harvest linked from the state notice page and matched each to a plant or lead.",
+   "found": "The La Luz notice P263R1 and the Greater Kudu notice for 7026M6 were used. No notice names a new gas plant beyond the adds in this batch.",
+   "read": [
+    "https://www.env.nm.gov/public-notices/",
+    "https://www.env.nm.gov/public-notices/wp-content/uploads/sites/32/2023/03/Public-Notice-P263R1.pdf",
+    "https://www.env.nm.gov/public-notices/wp-content/uploads/sites/32/2024/04/Legal-Notice-7026M6.pdf"
+   ],
+   "date": "2026-11-18"
+  },
+  "nmed-comment-portal": {
+   "status": "searched",
+   "how": "Searched the comment portal for Project Jupiter, Site Layer, Westside, NTEC and the data center leads.",
+   "found": "Comment records exist for Project Jupiter and Site Layer; the plant agents for those plants read them. Nothing new for a plant GEM lacks.",
+   "read": [
+    "https://nmed.commentinput.com/comment/search"
+   ],
+   "date": "2026-11-18"
+  },
+  "nmed-coda-pending": {
+   "status": "searched",
+   "how": "Opened all three published tables in a real Chrome browser through fetch.py with page rendering, and saved the full data each table loads, then searched it by name.",
+   "found": "The pending table has 301 rows, last updated 2026-11-16. No row names a power plant, turbine, generator site, data center or any lead; the rows seen are Mewbourne tank batteries and similar oil field sites. The issued table lists Tarantula 11059, Avalon Lake 11036, Easy Peasy 11046 and GMT 14-11 11069, all decided under permit_leads.",
+   "read": [
+    "scopes/us-nm/work/access/nmed-coda-pending.txt",
+    "work/sweep_us-nm/retry/coda1.txt",
+    "work/sweep_us-nm/retry/coda2.txt",
+    "work/sweep_us-nm/retry/coda3.txt",
+    "work/sweep_us-nm/retry/coda1_snapshot.json",
+    "work/sweep_us-nm/retry/coda2_snapshot.json",
+    "work/sweep_us-nm/retry/coda3_snapshot.json"
+   ],
+   "date": "2026-11-18",
+   "access": "fetch.py with page rendering shows only the first rows of each table; the full table data was saved from the real Chrome load and searched by name, but its rows could not be laid out cell by cell. The Wayback lookup for the exact addresses has page copies without rows. No CSV copies exist under scopes/us-nm/work/permits/coda/.",
+   "human_wall": "A person opens each of the three Coda tables (pending, issued and facility list), exports each as CSV into scopes/us-nm/work/permits/coda/, or sets a personal CODA_API_TOKEN outside the repo, and reruns scopes/us-nm/harvest_permits.py so the rows are read cell by cell."
+  },
+  "abq-air-quality": {
+   "status": "searched",
+   "how": "Read the city pending permit list and the monthly notice report through the permit harvest.",
+   "found": "Amazon Services in Albuquerque appears three times with small emergency engines; no fleet near 50 megawatts. No gas plant application.",
+   "read": [
+    "https://www.cabq.gov/airquality/pending-air-permit-applications",
+    "scopes/us-nm/work/permits/_data_centers.md"
+   ],
+   "date": "2026-11-18"
+  },
+  "epa-r9-ntec": {
+   "status": "searched",
+   "how": "Read the docket list and the final permit for the NTEC plant through the regulations.gov service.",
+   "found": "Final permit for 742 megawatts from 18 GE LM6000 turbines of 41.22 megawatts each. GEM shows 1,089 megawatts; the NTEC plant agent asks about it.",
+   "read": [
+    "https://www.regulations.gov/docket/EPA-R09-OAR-2024-0028",
+    "scopes/us-nm/work/access/epa-r9-ntec.txt"
+   ],
+   "date": "2026-11-18"
+  },
+  "epa-echo": {
+   "status": "searched",
+   "how": "Queried the facility service for every active New Mexico electric power facility and compared the list with GEM and the federal generator file.",
+   "found": "Every facility of 50 megawatts or more is in GEM or added in this batch (Pyramid, La Luz). Several oilfield and pipeline sites show up with small engines only.",
+   "read": [
+    "https://echo.epa.gov/facilities/facility-search",
+    "scopes/us-nm/work/access/epa-echo.txt"
+   ],
+   "date": "2026-11-18"
+  },
+  "epa-campd": {
+   "status": "searched",
+   "how": "Read the annual emissions records for New Mexico through the public key.",
+   "found": "33 facilities report. Pyramid and La Luz report and are added. Milagro has no recent reports, which fits its stop in 2022.",
+   "read": [
+    "https://campd.epa.gov/",
+    "scopes/us-nm/work/access/epa-campd.txt"
+   ],
+   "date": "2026-11-18"
+  },
+  "epa-rblc": {
+   "status": "searched",
+   "how": "fetch.py with page rendering loaded the new clearinghouse page, then the page's own search service was called for state NM.",
+   "found": "252 New Mexico determination rows. The newest is the Zia II gas plant flares in 2014; the power entries are Cunningham 2011, Deming 2000, Clovis Energy Facility 2002, Cambray 2002, Lordsburg 1997, Milagro 1995 and older. Nothing new for this batch.",
+   "read": [
+    "work/sweep_us-nm/retry/rblc2.txt",
+    "work/sweep_us-nm/retry/rblc_nm.json"
+   ],
+   "date": "2026-11-18",
+   "access": ""
+  },
+  "pnm-irp": {
+   "status": "searched",
+   "how": "Read the full 2026 plan, all volumes, through irp_plans.py, including every scenario.",
+   "found": "La Luz II, 40 megawatts in 2031, and a 172 megawatt proxy turbine in 2029. Both added. Scenario 12 drops the proxy turbine.",
+   "read": [
+    "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+    "scopes/us-nm/work/irp/pnm/1.txt",
+    "scopes/us-nm/work/irp/pnm/2.txt"
+   ],
+   "date": "2026-11-18"
+  },
+  "pnm-news": {
+   "status": "searched",
+   "how": "Searched the PNM news pages for new gas, retirements, Reeves, Rio Bravo, Afton, Lordsburg, La Luz and data center contracts.",
+   "found": "No news item names a new gas plant beyond the 2026 plan.",
+   "read": [
+    "https://www.pnm.com/media-center"
+   ],
+   "date": "2026-11-18"
+  },
+  "xcel-sps": {
+   "status": "searched",
+   "how": "Read the full 2026 Southwestern Public Service plan through irp_plans.py, including the 2025 request for proposals tables.",
+   "found": "New gas turbines at Gaines County and Tolk, both in Texas, held in GEM under L100001082470. Tolk unit 5 is in Bailey County, Texas. A possible 23 megawatt turbine at Quay County is only a scenario and under the threshold.",
+   "read": [
+    "scopes/us-nm/work/irp/sps/1.txt",
+    "https://www.xcelenergy.com/company/rates_and_regulations/resource_plans/integrated_resource_plan"
+   ],
+   "date": "2026-11-18"
+  },
+  "epe-news": {
+   "status": "searched",
+   "how": "Searched El Paso Electric news for Rio Grande and the 2026 New Mexico all-source request.",
+   "found": "The 2026 request names no project. The Rio Grande plant agent handles the retirements.",
+   "read": [
+    "https://www.epelectric.com/",
+    "scopes/us-nm/work/irp/epe/1.txt"
+   ],
+   "date": "2026-11-18"
+  },
+  "tristate": {
+   "status": "searched",
+   "how": "Read the 2023 plan, the 2024 settlement decision and the 2026 adequacy table.",
+   "found": "Pyramid is existing and is added from the federal file. The only new gas is in Moffat County, Colorado.",
+   "read": [
+    "scopes/us-nm/work/irp/tri-state/1.txt",
+    "scopes/us-nm/work/irp/tri-state/2.txt",
+    "scopes/us-nm/work/irp/tri-state/3.txt"
+   ],
+   "date": "2026-11-18"
+  },
+  "farmington-electric": {
+   "status": "searched",
+   "how": "Read the 2022 plan through irp_plans.py and the city utility board records in the local records harvest.",
+   "found": "The 2022 plan's engines for 2024 and 2025 were never permitted or built. The utility's new gas is the five queue requests; Milagro, Kirtland, La Plata and Eastside are added, Westside is in GEM.",
+   "read": [
+    "scopes/us-nm/work/irp/feus/1.txt",
+    "batches/us-nm/harvest/local_records.md"
+   ],
+   "date": "2026-11-18"
+  },
+  "ntec": {
+   "status": "searched",
+   "how": "Read the company site for the gas plant.",
+   "found": "The site describes the plant on the reclaimed Navajo Mine; nothing beyond the federal permit.",
+   "read": [
+    "https://www.navajo-tec.com/"
+   ],
+   "date": "2026-11-18"
+  },
+  "sec-edgar": {
+   "status": "searched",
+   "how": "Searched the full-text search through fetch.py for TXNM Energy, Xcel Energy and New Era Energy & Digital.",
+   "found": "TXNM's 10-K for 2025 describes the 2026 plan and the San Juan replacement; nothing beyond the plan. New Era's filings give no engine list for Lovington.",
+   "read": [
+    "https://efts.sec.gov/LATEST/search-index?q=%22Reeves%22%20%22New%20Mexico%22&forms=10-K,10-Q,8-K"
+   ],
+   "date": "2026-11-18"
+  },
+  "eia-860m": {
+   "status": "searched",
+   "how": "Read the September 2026 file, every sheet, for New Mexico and matched each plant to GEM.",
+   "found": "Pyramid (7975), La Luz (58284), Piñon (63281, canceled) and Milagro (54814) are missing from GEM; all four are added.",
+   "read": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "date": "2026-11-18"
+  },
+  "eia-860": {
+   "status": "searched",
+   "how": "Read the 2025 ownership schedule for Hobbs, Luna and Lordsburg.",
+   "found": "The owner checks go to those plant agents; nothing new for this record.",
+   "read": [
+    "https://www.eia.gov/electricity/data/eia860/"
+   ],
+   "date": "2026-11-18"
+  },
+  "eip-oil-gas-watch": {
+   "status": "blocked",
+   "how": "Tried fetch.py through all its steps again on 2026-11-18, with page rendering, then the Wayback lookup.",
+   "found": "Not read. It is reference only and never cited.",
+   "read": [
+    "scopes/us-nm/work/access/eip-oil-gas-watch.txt",
+    "work/sweep_us-nm/retry/eip.txt",
+    "work/sweep_us-nm/retry/eip2.txt"
+   ],
+   "date": "2026-11-18",
+   "access": "fetch.py with page rendering loads the home page, but the New Mexico facility address returns 404 and the site's data service needs a key the page does not hand out. The Wayback lookup found no snapshot of the New Mexico facility list. It is reference only and never cited."
+  },
+  "possible-updates-sheet": {
+   "status": "searched",
+   "how": "Read the gas and oil plants tab through the work profile for every New Mexico row.",
+   "found": "Row 339 is Greater Kudu, added. Row 340 is Zenith Volts, added. Row 2156 and row 1969 are the Southwestern Public Service gas plan, in GEM. Row 1764 is a dead link about solar at Xcel gas plants. Rows 212 and 213 are ProPetro's PROPWR contracts: 213 is a Midwest data center, and 212 gives no site, so neither is a New Mexico plant.",
+   "read": [
+    "https://docs.google.com/spreadsheets/d/1GAXwGdI0UFeW9mFSxJhhR6MRBW7VDtlWBqsooVZyUzs"
+   ],
+   "date": "2026-11-18"
+  },
+  "captive-lng-sheet": {
+   "status": "searched",
+   "how": "Read the file from captive_lng.py.",
+   "found": "The sheet has no New Mexico row, and no LNG plant in New Mexico with power generation was found.",
+   "read": [
+    "work/captive_us-new-mexico.json"
+   ],
+   "date": "2026-11-18"
+  },
+  "industrial-cogeneration": {
+   "status": "searched",
+   "how": "Checked Chino Mines, the Carlsbad potash mines, the Artesia and Lovington refineries and the large gas processing plants in the federal file and the permit harvest.",
+   "found": "Chino Mines is in GEM. Milagro, a gas processing site with two 30 megawatt turbines, is added. No other site has 50 megawatts of electrical generation; compressor drives were not counted.",
+   "read": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "scopes/us-nm/work/permits/_data_centers.md"
+   ],
+   "date": "2026-11-18"
+  },
+  "data-centers": {
+   "status": "searched",
+   "how": "Read the data center harvest and the permits behind it, then trade press, the commission large-load cases and the local records.",
+   "found": "Greater Kudu (Meta, Los Lunas) and Zenith Volts (south of Roswell) added. Site Layer I has 64 engines in its application against 32 in GEM. Crusoe is under the threshold. Project Jupiter's backup is fuel cells.",
+   "read": [
+    "scopes/us-nm/work/permits/_data_centers.md",
+    "https://www.env.nm.gov/public-notices/wp-content/uploads/sites/32/2024/06/A-10145M1-CrusoeGoldState-APA-final-2024-05-24.pdf",
+    "https://cloud.env.nm.gov/resources/_translator.php/OTRmYzlmMmMwMTljZDUyM2VkM2I5Y2ZkY18yMzYxNzM~.pdf"
+   ],
+   "date": "2026-11-18"
+  },
+  "business-registry": {
+   "status": "searched",
+   "how": "Opened the registry search in a real Chrome browser, then called its search service directly through fetch.py.",
+   "found": "Greater Kudu LLC is a Delaware company registered in New Mexico on 2016-03-24, business ID 5193818, active. The Zenith Volts company is Zenith Volts Infrastructure LLC, a New Mexico company formed 2026-10-14, business ID 0008137232. Permian Power Solutions LLC is a Delaware company registered 2025-03-17, business ID 0008015736. TC NM Development, LLC is a Delaware company registered 2026-09-24, business ID 0008132461.",
+   "read": [
+    "work/sweep_us-nm/retry/sos.txt",
+    "work/sweep_us-nm/retry/sos_search.json",
+    "https://enterprise.sos.nm.gov/api/businessEntitySearch/webSearch?SEARCH_VALUE=TC%20NM%20Development&QueryTypeId=2&BusinessRecordTypeId=0&BusinessStatusTypeId=0"
+   ],
+   "date": "2026-11-18",
+   "access": ""
+  },
+  "state-news": {
+   "status": "searched",
+   "how": "Searched the Albuquerque Journal, Source NM, the Farmington Daily Times and the Las Cruces Sun-News for each plant, lead and data center through fetch.py.",
+   "found": "News on Project Jupiter, Site Layer, New Era and Zenith Volts; no gas plant beyond the adds in this batch.",
+   "read": [
+    "https://www.abqjournal.com/search/?q=gas+plant"
+   ],
+   "date": "2026-11-18"
+  },
+  "public-notices": {
+   "status": "searched",
+   "how": "Searched the New Mexico Press Association notice site in a real Chrome browser for microgrid and for air permit generator notices from 2026-09-19 to 2026-11-18.",
+   "found": "Found TC NM Development, LLC's notice of a microgrid air permit application, now a watch item, and Mewbourne's general permit notices for Avalon Lake and Easy Peasy. The other air notices are compressor stations and well sites.",
+   "read": [
+    "work/sweep_us-nm/retry/pubnot.txt",
+    "work/sweep_us-nm/retry/pubnot_search_microgrid.txt",
+    "work/sweep_us-nm/retry/pubnot_search_air_permit_generator.txt",
+    "work/sweep_us-nm/retry/pubnot_detail_109937.txt"
+   ],
+   "date": "2026-11-18",
+   "access": "The search lists work. Each notice's full text page stops at a Cloudflare check, through fetch.py with page rendering too, and the Wayback lookup for the exact notice address has no copy.",
+   "human_wall": "A person opens the TC NM Development notice on newmexicopublicnotices.com and records the site, fuel and engine or turbine count."
+  },
+  "local-planning-records": {
+   "status": "searched",
+   "how": "Read the local records harvest: agendas, packets, staff reports and minutes since 2024 for Albuquerque, Bernalillo, Los Alamos, Hobbs, Carlsbad, Dona Ana, Las Cruces, Rio Rancho, San Juan County and the other bodies around the plants and leads.",
+   "found": "The Chaves County records for the Zenith Volts site mention only solar and battery storage. The Farmington and San Juan County records name no new gas plant. Lea, Luna and Hidalgo counties post no agendas online.",
+   "read": [
+    "batches/us-nm/harvest/local_records.md",
+    "batches/us-nm/harvest/local_records.json"
+   ],
+   "date": "2026-11-18"
+  }
+ },
+ "ids_followup": {
+  "7975": {
+   "decision": "add",
+   "gem_plant_id": "",
+   "evidence": "Pyramid, four 46.5 megawatt gas turbines, operating since 2003, owned by Tri-State. Added as a new plant from the federal generator file and the state permits."
+  }
+ },
+ "data_centers": {
+  "crusoe-energy-systems-in-crusoe-energy-s": {
+   "decision": "below_threshold",
+   "summed_nameplate_mw": 19.9,
+   "note": "Crusoe's 2024 application A-10145M1 for the Gold State site lists twelve Waukesha 9394 GSI engines of 2,500 horsepower, about 1,660 kilowatts electrical each, 19.9 megawatts in all.",
+   "source": "https://www.env.nm.gov/public-notices/wp-content/uploads/sites/32/2024/06/A-10145M1-CrusoeGoldState-APA-final-2024-05-24.pdf"
+  },
+  "site-layer-i-site-layer-i-llc-site-layer": {
+   "decision": "update",
+   "plant_id": "L100001089557",
+   "note": "This is the Site Layer 1 data center plant in GEM. The state application lists 64 engines and 601.6 megawatts against GEM's 32 engines and 300.8 megawatts; the Site Layer plant agent handles the update."
+  },
+  "site-layer-1-llc-100-hachita": {
+   "decision": "already_in_gem",
+   "plant_id": "L100001089557",
+   "note": "Site Layer 1 Data Center power station, in GEM; the engine count is the update above."
+  },
+  "new-era-energy-digital-lovington": {
+   "decision": "already_in_gem",
+   "plant_id": "L100001080449",
+   "note": "Lea County Data Center power station, in GEM; the plant agent checks its status."
+  },
+  "roswell-information-park-roswell": {
+   "decision": "already_in_gem",
+   "plant_id": "L100001089629",
+   "note": "Roswell Information Park Data Center power station, in GEM; the plant agent checks it."
+  },
+  "stack-pipeline-santa-teresa": {
+   "decision": "already_in_gem",
+   "plant_id": "L100001080450",
+   "note": "Project Jupiter Microgrid power station, in GEM as cancelled. Permit 10883 gives fuel cell units for backup power and lists no diesel or gas engine fleet, so there is no backup plant to add.",
+   "source": "https://cloud.env.nm.gov/resources/_translator.php/OTRmYzlmMmMwMTljZDUyM2VkM2I5Y2ZkY18yMzYxNzM~.pdf"
+  },
+  "greater-kudu-los-lunas": {
+   "decision": "add",
+   "record_id": "us-nm:new:greater-kudu-los-lunas-data-center-power-station",
+   "note": "Meta's Los Lunas data center. The 2021 application lists 118 diesel emergency generators each over 560 kilowatts, at least about 66 megawatts; capacity left blank because the ratings are blacked out."
+  },
+  "zenith-volts-roswell": {
+   "decision": "add",
+   "record_id": "us-nm:new:zenith-volts-roswell-data-center-power-station",
+   "note": "Zenith Volts' August 2025 announcement names natural gas backup generators; no size published, capacity left blank."
+  },
+  "amazon-services-albuquerque": {
+   "decision": "below_threshold",
+   "summed_nameplate_mw": 7,
+   "note": "Amazon Services shows up three times on the city of Albuquerque air permit list with small emergency engines, about 7 megawatts in all, far under the threshold."
+  }
+ },
+ "queues": {
+  "SPP FEUS-1": {
+   "decision": "add",
+   "record_id": "us-nm:new:milagro-power-station",
+   "evidence": "The Milagro study names Harvest Midstream's two 30 megawatt turbines at the Hare Switching Station, out of service since 2022 and returning through this request.",
+   "urls": [
+    "https://opsportal.spp.org/Studies/GenerateActiveCSV",
+    "https://opsportal.spp.org/documents/studies/files/2024_Generation_Studies/Milagro_60MW_IFS_Report_1.0.pdf"
+   ]
+  },
+  "SPP FEUS-2": {
+   "decision": "already_in_gem",
+   "plant_id": "L100001089610",
+   "evidence": "Saddle Butte's Westside plant at Kirtland, held in GEM as Westside power station."
+  },
+  "SPP FEUS-3": {
+   "decision": "add",
+   "record_id": "us-nm:new:kirtland-feus-3-gas-power-station",
+   "evidence": "180 megawatts of gas near Kirtland for 2030. No document names the developer.",
+   "urls": [
+    "https://opsportal.spp.org/Studies/GenerateActiveCSV"
+   ]
+  },
+  "SPP FEUS-4": {
+   "decision": "add",
+   "record_id": "us-nm:new:saddle-butte-eastside-power-station",
+   "evidence": "60 megawatts of gas near Bloomfield. Matched to the Saddle Butte Eastside gas peaker approved by the Bureau of Land Management on July 2, 2026; a question card asks Baird to confirm.",
+   "urls": [
+    "https://opsportal.spp.org/Studies/GenerateActiveCSV"
+   ]
+  },
+  "SPP FEUS-5": {
+   "decision": "add",
+   "record_id": "us-nm:new:la-plata-feus-5-gas-power-station",
+   "evidence": "85 megawatts of gas near La Plata for 2028. No document names the developer.",
+   "urls": [
+    "https://opsportal.spp.org/Studies/GenerateActiveCSV"
+   ]
+  },
+  "SPP ERAS-2025-014": {
+   "decision": "already_in_gem",
+   "plant_id": "L100001083387",
+   "evidence": "The 234 megawatt turbine at Hobbs is the SWPP ERAS Hobbs record in GEM."
+  },
+  "SPP GEN-2020-065": {
+   "decision": "other_state",
+   "plant_id": "L100001082470",
+   "evidence": "The 1,003 megawatt combined cycle plant ties in on the Hobbs to Andrews line but sits in Gaines County, Texas, per Table 3-2 on page 48 of the Southwestern Public Service 2026 plan. It belongs to the Texas scope; GEM's L100001082470 holds it today."
+  },
+  "PNM IA-PNM-2001-12": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000402347",
+   "evidence": "143 megawatts of gas at Valencia Power, operating; GEM's Valencia energy facility."
+  },
+  "PNM IA-PNM-2007-12": {
+   "decision": "already_in_gem",
+   "plant_id": "L100000402347",
+   "evidence": "158 megawatts of gas at Valencia Power, operating; GEM's Valencia energy facility."
+  },
+  "PNM IA-PNM-2014-02": {
+   "decision": "out_of_scope",
+   "evidence": "80 megawatts of gas at the San Juan Unit 5 point, queued February 2014, in service date March 2018. No plant was built and nothing names one, so it looks like an earlier San Juan replacement idea dropped before 2020, outside the years GEM tracks cancellations. A question card asks Baird."
+  },
+  "PNM IA-PNM-2017-14": {
+   "decision": "add",
+   "record_id": "us-nm:new:pi-on-generating-station",
+   "evidence": "236.3 megawatts of gas at San Juan, queued October 2017; this is PNM's 280 megawatt Piñon gas plant, cancelled in July 2020 and added as cancelled.",
+   "urls": [
+    "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx"
+   ]
+  },
+  "PNM IA-PNM-2020-05": {
+   "decision": "add",
+   "record_id": "us-nm:new:pi-on-generating-station",
+   "evidence": "80 megawatts of gas at the San Juan switching station, queued January 2020, the rest of the Piñon gas plant, added as cancelled.",
+   "urls": [
+    "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx"
+   ]
+  },
+  "PNM IA-PNM-2025-20": {
+   "decision": "add",
+   "record_id": "L100000402229:new:4",
+   "evidence": "172 megawatts of gas at the Reeves Substation for 2029, matching the 172 megawatt proxy turbine on page 177 of the PNM 2026 plan.",
+   "urls": [
+    "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx",
+    "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf"
+   ]
+  },
+  "APS Q610": {
+   "decision": "not_gas_or_oil",
+   "evidence": "The Berkeley Lab file gives fuel Other for this 250 megawatt request at Four Corners. interconnection.fyi lists Q610 as a battery and solar project, withdrawn. No gas.",
+   "urls": [
+    "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx",
+    "https://www.interconnection.fyi/projects/state/NM"
+   ]
+  },
+  "market EPE": {
+   "decision": "read_by_hand",
+   "evidence": "Read every row of El Paso Electric's active queue list by hand. No gas, oil or fuel-blank request is in New Mexico; the New Mexico rows are solar, battery, wind and geothermal."
+  },
+  "market PNM": {
+   "decision": "read_by_hand",
+   "evidence": "PNM's queue page on the OATI site shows no rows without a sign-in, so the Berkeley Lab file through 2025 was read row by row for PNM and every gas request is answered under its own key. The PNM 2026 plan was read for newer gas."
+  },
+  "market TSGT": {
+   "decision": "read_by_hand",
+   "evidence": "Tri-State's queue page on the OATI site shows no rows without a sign-in, so the Berkeley Lab file was read row by row for Tri-State. No New Mexico gas request; Tri-State's new gas is in Moffat County, Colorado."
+  }
+ },
+ "dedup": {
+  "us-nm:new:la-luz-energy-center": {
+   "decision": "not_a_duplicate",
+   "checked": "2026-11-18",
+   "evidence": "Valencia energy facility is 7.6 kilometers away, a separate plant with its own federal number. Greater Kudu shares only the county."
+  },
+  "us-nm:new:pi-on-generating-station": {
+   "decision": "not_a_duplicate",
+   "checked": "2026-11-18",
+   "evidence": "San Juan Generating Station is the coal plant on the same site, a separate record. Clean Path energy center is a 680 megawatt project by another company. The other batch neighbors share only the county."
+  },
+  "us-nm:new:greater-kudu-los-lunas-data-center-power-station": {
+   "decision": "not_a_duplicate",
+   "checked": "2026-11-18",
+   "evidence": "No GEM plant is near the site; La Luz shares only the county."
+  },
+  "us-nm:new:milagro-power-station": {
+   "decision": "not_a_duplicate",
+   "checked": "2026-11-18",
+   "evidence": "The batch neighbors share only the county; no GEM plant of any fuel uses the name."
+  },
+  "us-nm:new:kirtland-feus-3-gas-power-station": {
+   "decision": "not_a_duplicate",
+   "checked": "2026-11-18",
+   "evidence": "Westside power station is 4 kilometers away, but it is queue request FEUS-2 and FEUS-3 is a separate 180 megawatt request. San Juan is the retired coal plant. A later filing could show FEUS-3 is a Westside expansion."
+  },
+  "us-nm:new:la-plata-feus-5-gas-power-station": {
+   "decision": "not_a_duplicate",
+   "checked": "2026-11-18",
+   "evidence": "Coyote Clean power project is a 280 megawatt plant with carbon capture planned by the Southern Ute tribe's fund, 10 kilometers away; FEUS-5 is an 85 megawatt Farmington Electric request. The batch neighbors share only the county."
+  },
+  "us-nm:new:saddle-butte-eastside-power-station": {
+   "decision": "not_a_duplicate",
+   "checked": "2026-11-18",
+   "evidence": "The batch neighbors share only the county. Westside is the separate Saddle Butte plant at Kirtland."
+  }
+ },
+ "irp_plans": {
+  "plan Public Service Company of New Mexico": {
+   "pages": "All pages of the 2026 plan, case 25-00022-UT. New resources Table 1-6 on PDF page 45; existing plants PDF page 112; planned additions PDF page 118; proxy turbine PDF page 177 (printed 162); preferred portfolio and capacity by type Table 9-1 on PDF page 229; alternative scenarios PDF pages 250 to 270, Scenario 12 on PDF page 264.",
+   "evidence": "The 2026 plan's committed and planned gas is La Luz II, 40 megawatts in 2031 at the certificate step (PDF pages 45 and 118), and a 172 megawatt combustion turbine proxy unit in 2029 in all portfolios (PDF page 177), whose site is to be chosen by a 2029 to 2032 request for proposals. Table 9-1 on PDF page 229 shows no other new gas through 2036. Scenario 12 removes the proxy turbine.",
+   "additions": [
+    {
+     "what": "La Luz II, 40 MW gas turbine, 2031",
+     "record_id": "us-nm:new:la-luz-energy-center"
+    },
+    {
+     "what": "172 MW proxy combustion turbine, 2029",
+     "record_id": "L100000402229:new:4"
+    }
+   ],
+   "options": [
+    {
+     "what": "Scenario 12, no proxy turbine",
+     "why_not": "An alternative that removes a resource rather than adding one; the proxy turbine is added as Reeves unit 4."
+    },
+    {
+     "what": "PNM 2023 plan placeholder plants",
+     "plant_id": "L100001082463"
+    },
+    {
+     "what": "PNM 2023 plan placeholder plant 2",
+     "plant_id": "L100001082465"
+    },
+    {
+     "what": "PNM 2023 plan placeholder plant 3",
+     "plant_id": "L100001082467"
+    },
+    {
+     "what": "Gas or hydrogen turbines after 2036, up to 179 MW by 2045 (Table 9-1)",
+     "why_not": "Generic capacity with no site or year that names a project; the nearer turbine is the 172 megawatt proxy already added."
+    }
+   ],
+   "names_checked": "The La Luz Energy Center is not in GEM; it is added as a new plant in this batch with its existing unit and La Luz II."
+  },
+  "plan Southwestern Public Service Company": {
+   "pages": "All pages of the 2026 plan, case 25-00076-UT. Approved gas Table 3-2 on PDF page 48; 2025 request for proposals Table 3-3 on PDF page 49; existing purchase contracts Table 3-4 on PDF page 50; generic resources PDF page 213; preferred plan PDF pages 215, 226 and 302; Quay County scenario PDF pages 236 to 240.",
+   "evidence": "Table 3-2 on PDF page 48 lists the approved gas: Gaines County, five combustion turbines, 1,160 megawatts, December 2028, and Tolk Station, four combustion turbines, 928 megawatts, April 2029, both in Texas. Table 3-3 on page 49 adds Tolk unit 5, 232.5 megawatts, in Bailey County, Texas. No new gas plant is sited in New Mexico. Section 9.7(b) studies replacing the 23 megawatt Quay County oil turbine with a 23 megawatt gas turbine.",
+   "additions": [
+    {
+     "what": "Gaines County and Tolk combustion turbines, 2,088 MW, Texas",
+     "plant_id": "L100001082470"
+    }
+   ],
+   "options": [
+    {
+     "what": "Tolk unit 5, 232.5 MW, Bailey County, Texas",
+     "why_not": "Sited in Texas, so it belongs to the Texas scope and is listed for that batch."
+    },
+    {
+     "what": "23 MW gas turbine to replace Quay County",
+     "why_not": "Only a scenario, and 23 megawatts is under the 50 megawatt threshold."
+    },
+    {
+     "what": "Generic new gas turbines with no site",
+     "why_not": "The plan's generic resources on page 213 have no location or project, only an SPS new generation area."
+    }
+   ],
+   "names_checked": "Blackhawk Station 2 is an existing 224 megawatt gas purchase contract from 1999 at Borger, Texas, in Table 3-4 on page 50; it is outside New Mexico and not a New Mexico plant."
+  },
+  "plan El Paso Electric Company": {
+   "pages": "All pages of the 2025 plan, case 24-00260-UT, and the five 2026 New Mexico request for proposals documents. Preferred plan Table 1 on PDF page 24; scenario results Table 38 on PDF page 153.",
+   "evidence": "The 2025 plan's preferred portfolio adds no gas. Only the Least Cost plus emerging technology scenario adds 200 megawatts of combined cycle with carbon capture in New Mexico by 2030, with no site (Table 1 on page 24 and Table 38 on page 153). The 2026 request for proposals documents name no project.",
+   "additions": [],
+   "options": [
+    {
+     "what": "200 MW combined cycle with carbon capture, emerging technology scenario",
+     "why_not": "A sensitivity case with no site or project, not in the preferred plan."
+    }
+   ],
+   "newer_checked": "The Gridworks page, changed 2026-03-27, says the 2025 plan for 2026 to 2045 was filed September 2, 2025. The 2026 on the page is the plan period, not a newer plan."
+  },
+  "plan Tri-State Generation and Transmission Association": {
+   "pages": "All pages of the 2023 plan; the 2024 settlement decision R24-0602; the Resource Adequacy 2026 table. Preferred plan PDF page 6; gas bid limits PDF page 9 of the decision.",
+   "evidence": "The 2023 plan's preferred plan is the IRA Scenario on page 6. The 2024 settlement decision R24-0602, page 9, limits gas plant bids to Moffat County, Colorado. The 2026 adequacy table shows gas and oil rising from 765 to 925 megawatts in 2031, which is that Colorado plant. No New Mexico gas; Pyramid is existing and added from the federal file.",
+   "additions": [],
+   "options": [
+    {
+     "what": "New gas in Moffat County, Colorado",
+     "why_not": "Sited in Colorado, outside the New Mexico scope."
+    }
+   ],
+   "read_by_hand": "The Resource Adequacy 2026 file did not load through the script; it was opened by hand and its table read."
+  },
+  "plan Farmington Electric Utility System": {
+   "pages": "All pages of the 2022 plan. Preferred Reference plan and the alternatives in the executive summary on PDF page 8.",
+   "evidence": "The preferred Reference plan builds three 18 megawatt engines in 2024 and two in 2025, 90 megawatts. The alternative builds a 48 megawatt combined cycle and one 18 megawatt engine in 2024. No city permit for these engines was found; the utility's gas since then is in the SPP queue requests FEUS-1 to FEUS-5.",
+   "additions": [],
+   "options": [
+    {
+     "what": "90 MW of engines, 2024 and 2025 (Reference plan)",
+     "why_not": "The dates have passed and no permit or construction was found; the utility's later gas is the queue requests, all answered."
+    },
+    {
+     "what": "48 MW combined cycle and 18 MW engine (alternative)",
+     "why_not": "An alternative not chosen, with dates passed and no permit found."
+    }
+   ]
+  },
+  "plan Los Alamos County Department of Public Utilities": {
+   "pages": "All pages of the 2022 plan; the April 1 and October 7, 2026 board slides. Preferred portfolio PDF page 14; existing resources PDF page 39.",
+   "evidence": "The preferred portfolio on page 14 is 55 megawatts of battery, 380 megawatts of solar, 135 megawatts of wind and 8 megawatts of small modular reactor, with no gas. Page 39 notes the national laboratory owns a gas turbine. The 2026 slides move to new modeling with no gas.",
+   "additions": [],
+   "options": [],
+   "read_by_hand": "The second document, the legistar attachment, did not load through the script; the October 2026 board slides in it were opened by hand and read."
+  }
+ },
+ "permit_leads": {
+  "AI-1573": {
+   "ai": "1573",
+   "name": "Moriarty Station",
+   "what": "A refined products pipeline terminal with a truck loading rack.",
+   "owner": "NuStar",
+   "site": "Moriarty, Torrance County",
+   "equipment": "Loading rack and tanks. The permit lists no engine or generator.",
+   "mw": "none",
+   "decision": "nothing",
+   "reason": "Not a power plant. The state permit report lists no generating equipment.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=1573"
+  },
+  "10877": {
+   "ai": "14216",
+   "name": "Remington 3-4 Fed Com Power Facility",
+   "what": "An oil field power facility that makes electricity for nearby wells.",
+   "owner": "Avant Natural Resources",
+   "site": "10.1 mi SE of Atoka, Atoka, Eddy County",
+   "lat_long": "32.685584, -104.259035",
+   "equipment": "Natural gas engines. The report gives federal engine rules (subparts JJJJ and ZZZZ) and nitrogen oxide of 50.58 tons a year. Avant's power facilities with the same nitrogen oxide limit of 50.58 tons a year each list 18 engines of 582 horsepower, about 7.8 megawatts.",
+   "mw": "about 8 (by the sister sites)",
+   "decision": "nothing",
+   "reason": "Under the 50 megawatt threshold. Its emission limits match Avant's other power facilities, which run about 8 megawatts of engines.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=14216"
+  },
+  "11059": {
+   "ai": "26875",
+   "name": "Tarantula Energy Support Facility",
+   "what": "A power plant site registered by Permian Power Solutions LLC. The state permit report lists its type as power plant.",
+   "owner": "Permian Power Solutions LLC",
+   "site": "1.9 miles South West of Loving, Loving, Eddy County",
+   "lat_long": "32.267941, -104.121147",
+   "equipment": "No equipment is posted. The report shows zero emissions and no application documents are online.",
+   "mw": "unknown",
+   "decision": "watch item, watch_case no_generation, recheck_by 2027-03",
+   "reason": "No source names a generating unit, fuel or size yet. The permit was issued this fall per the state's issued permits table, so the application should post soon. Recorded in the batch state file as a watch item.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=26875"
+  },
+  "11036": {
+   "ai": "27372",
+   "name": "Avalon Lake Microgrid",
+   "what": "A Mewbourne Oil microgrid for its own wells.",
+   "owner": "Mewbourne Oil Company",
+   "site": "5.6 mi NW of La Huerta, La Huerta, Eddy County",
+   "lat_long": "32.527368, -104.24624",
+   "equipment": "No equipment is posted yet. A notice in the Artesia Daily Press on September 30, 2026 says Mewbourne applied under the general construction permit for oil and gas sites. Mewbourne Oil runs about a dozen oil field microgrids of this kind. Each one read has 7 to 16 natural gas engines of about 580 to 620 horsepower, 3 to 7 megawatts in all, far under the 50 megawatt threshold.",
+   "mw": "unknown, likely 3 to 7",
+   "decision": "watch item, watch_case under_threshold, recheck_by 2027-03",
+   "reason": "The general permit for oil and gas sites caps emissions far below what 50 megawatts of engines would put out, and Mewbourne's other microgrids are 3 to 7 megawatts. Recorded as a watch item until the application posts.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=27372"
+  },
+  "11046": {
+   "ai": "27672",
+   "name": "Easy Peasy Microgrid",
+   "what": "A Mewbourne Oil microgrid for its own wells.",
+   "owner": "Mewbourne Oil Company",
+   "site": "9.4 mi SE of Loco Hills, Loco Hills, Eddy County",
+   "lat_long": "32.700533, -103.899522",
+   "equipment": "No equipment is posted yet. A notice in the Artesia Daily Press on October 7, 2026 says Mewbourne applied under the general construction permit for oil and gas sites. Mewbourne Oil runs about a dozen oil field microgrids of this kind. Each one read has 7 to 16 natural gas engines of about 580 to 620 horsepower, 3 to 7 megawatts in all, far under the 50 megawatt threshold.",
+   "mw": "unknown, likely 3 to 7",
+   "decision": "watch item, watch_case under_threshold, recheck_by 2027-03",
+   "reason": "Same reasons as Avalon Lake. Recorded as a watch item until the application posts.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=27672"
+  },
+  "6185": {
+   "ai": "35336",
+   "name": "PNM -Rio Communities Solar Energy Center",
+   "what": "A PNM solar plant.",
+   "owner": "Public Service Company of New Mexico (PNM)",
+   "site": "5.6 mi W of Albuquerque, Albuquerque, Bernalillo County",
+   "lat_long": "34.639056, -106.702581",
+   "equipment": "Solar panels only.",
+   "mw": "none",
+   "decision": "nothing",
+   "reason": "No combustion equipment.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=35336"
+  },
+  "6183": {
+   "ai": "35339",
+   "name": "PNM -Santolina Solar Energy Center",
+   "what": "A PNM solar plant.",
+   "owner": "Public Service Company of New Mexico (PNM)",
+   "site": "5.6 mi Sw of Albuquerque, Albuquerque, Bernalillo County",
+   "lat_long": "35.012389, -106.8615",
+   "equipment": "Solar panels only.",
+   "mw": "none",
+   "decision": "nothing",
+   "reason": "No combustion equipment.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=35339"
+  },
+  "7894": {
+   "ai": "38502",
+   "name": "Western Gnome Station",
+   "what": "A crude oil tank battery.",
+   "owner": "Western Refining",
+   "site": "near Malaga, Eddy County",
+   "equipment": "Tanks and heaters. No generator.",
+   "mw": "none",
+   "decision": "nothing",
+   "reason": "Not a power plant.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=38502"
+  },
+  "10357": {
+   "ai": "12561",
+   "name": "Hobbs Turbine Facility",
+   "what": "A rental gas turbine site.",
+   "owner": "Mobile Energy Rentals, LLC",
+   "site": "16.2 mi SW of Monument, Monument, Lea County",
+   "lat_long": "32.543025, -103.5379",
+   "equipment": "The application zip says: Four (4) CAT Taurus 60-7901 7500 hp natural gas-fired turbines (units TUR-1 through TUR-4), each rated 4,817 kilowatts at the site.",
+   "mw": "about 19 to 23",
+   "decision": "nothing",
+   "reason": "Under the 50 megawatt threshold.",
+   "document": "https://cloud.env.nm.gov/resources/_translator.php/NTNkMDQzNjdiOWNiZDFjNzA3ZjZiNjRmMV8xODI1NDM~.zip"
+  },
+  "10805": {
+   "ai": "14188",
+   "name": "Aunt Edna Microgrid",
+   "what": "A Mewbourne Oil microgrid.",
+   "owner": "Mewbourne Oil Company",
+   "site": "26.4 mi W of Monument, Monument, Lea County",
+   "lat_long": "32.479248, -103.696228",
+   "equipment": "No documents are posted. Its nitrogen oxide limit of 50.49 tons a year matches Mewbourne's other microgrids. Mewbourne Oil runs about a dozen oil field microgrids of this kind. Each one read has 7 to 16 natural gas engines of about 580 to 620 horsepower, 3 to 7 megawatts in all, far under the 50 megawatt threshold.",
+   "mw": "likely 3 to 7",
+   "decision": "nothing",
+   "reason": "Under the threshold by the same limits as Mewbourne's other microgrids.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=14188"
+  },
+  "10737": {
+   "ai": "13783",
+   "name": "Frog Splash Microgrid",
+   "what": "A Mewbourne Oil microgrid.",
+   "owner": "Mewbourne Oil Company",
+   "site": "20.4 mi SE of Loco Hills, Loco Hills, Lea County",
+   "lat_long": "32.74104, -103.640092",
+   "equipment": "8 natural gas engines, per the application in its permit file.",
+   "mw": "about 3.7",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=13783"
+  },
+  "10713": {
+   "ai": "13935",
+   "name": "Owls Head Microgrid",
+   "what": "A Mewbourne Oil microgrid.",
+   "owner": "Mewbourne Oil Company",
+   "site": "7.2 miles SW of Loco Hills, Loco Hills, Eddy County",
+   "lat_long": "32.749735, -104.069745",
+   "equipment": "About 7 natural gas engines of about 600 horsepower, per the application.",
+   "mw": "about 3",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=13935"
+  },
+  "10806": {
+   "ai": "14262",
+   "name": "Deep Ellum Microgrid",
+   "what": "A Mewbourne Oil microgrid.",
+   "owner": "Mewbourne Oil Company",
+   "site": "12.2 mi SE of Loco Hills, Loco Hills, Eddy County",
+   "lat_long": "32.714012, -103.810881",
+   "equipment": "16 natural gas engines, per the application.",
+   "mw": "about 7",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=14262"
+  },
+  "10942": {
+   "ai": "14689",
+   "name": "Neato Bandito Microgrid",
+   "what": "A Mewbourne Oil microgrid.",
+   "owner": "Mewbourne Oil Company",
+   "site": "9.7 mi SE of Loco Hills, Loco Hills, Eddy County",
+   "lat_long": "32.730391, -103.849049",
+   "equipment": "8 natural gas engines, per the application.",
+   "mw": "about 3.5",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=14689"
+  },
+  "10804": {
+   "ai": "14174",
+   "name": "San Simon Microgrid",
+   "what": "A Mewbourne Oil microgrid.",
+   "owner": "Mewbourne Oil Company",
+   "site": "12.5 mi W of Eunice, Eunice, Lea County",
+   "lat_long": "32.471954, -103.402176",
+   "equipment": "8 natural gas engines, per the application.",
+   "mw": "about 3.5",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=14174"
+  },
+  "10497": {
+   "ai": "12959",
+   "name": "Spanish Bay Energy Support Facility",
+   "what": "A Mewbourne Oil power site for its wells.",
+   "owner": "Mewbourne Oil Company",
+   "site": "19.4 mi E of Loco Hills, Loco Hills, Lea County",
+   "lat_long": "32.666542, -103.699179",
+   "equipment": "8 natural gas engines, per the application.",
+   "mw": "about 3.5",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=12959"
+  },
+  "10931": {
+   "ai": "14821",
+   "name": "Eileen Microgrid",
+   "what": "A Permian Resources microgrid.",
+   "owner": "Permian Resources",
+   "site": "20.7 mi SW of Monument, Monument, Lea County",
+   "lat_long": "32.537661, -103.617203",
+   "equipment": "22 natural gas engines of 582 horsepower, per the application.",
+   "mw": "about 9.5",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=14821"
+  },
+  "10948": {
+   "ai": "14336",
+   "name": "Riddler Microgrid",
+   "what": "A Permian Resources microgrid.",
+   "owner": "Permian Resources",
+   "site": "15.5 mi W of Monument, Monument, Lea County",
+   "lat_long": "32.608954, -103.543566",
+   "equipment": "22 natural gas engines, per the application.",
+   "mw": "about 9.5",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=14336"
+  },
+  "10726": {
+   "ai": "13973",
+   "name": "Quail State Power Facility",
+   "what": "An Avant power facility.",
+   "owner": "Avant Natural Resources",
+   "site": "25.5 mi NW of Eunice, Eunice, Lea County",
+   "lat_long": "32.569924, -103.569617",
+   "equipment": "9 natural gas engines of 499 horsepower, per the application.",
+   "mw": "about 3.3",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=13973"
+  },
+  "10926": {
+   "ai": "14795",
+   "name": "Cellini 12-13 State Com Power Facility",
+   "what": "An Avant power facility.",
+   "owner": "Avant Natural Resources",
+   "site": "16.1 mi SW of Lovington, Lovington, Lea County",
+   "lat_long": "32.761063, -103.519759",
+   "equipment": "18 natural gas engines of 582 horsepower, per the application.",
+   "mw": "about 7.8",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=14795"
+  },
+  "10924": {
+   "ai": "14777",
+   "name": "Crocodile Hunter 18-14 Fed Com Power Facility",
+   "what": "An Avant power facility.",
+   "owner": "Avant Natural Resources",
+   "site": "11.4 mi SE of Loco Hills, Loco Hills, Eddy County",
+   "lat_long": "32.664978, -103.911889",
+   "equipment": "18 natural gas engines of 582 horsepower, per the application.",
+   "mw": "about 7.8",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=14777"
+  },
+  "10925": {
+   "ai": "14786",
+   "name": "Dooley 30-29 State Com Power Facility",
+   "what": "An Avant power facility.",
+   "owner": "Avant Natural Resources",
+   "site": "18.0 mi SW of Lovington, Lovington, Lea County",
+   "lat_long": "32.80077, -103.60731",
+   "equipment": "18 natural gas engines of 582 horsepower, per the application.",
+   "mw": "about 7.8",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=14786"
+  },
+  "10795": {
+   "ai": "14145",
+   "name": "Paloma 28-21 Fed Com Power Facility",
+   "what": "An Avant power facility.",
+   "owner": "Avant Natural Resources",
+   "site": "17.8 mi SW of Monument, Monument, Lea County",
+   "lat_long": "32.54638, -103.56849",
+   "equipment": "18 natural gas engines of 582 horsepower, per the application.",
+   "mw": "about 7.8",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=14145"
+  },
+  "10835": {
+   "ai": "14327",
+   "name": "Slowpoke Rodriguez 17 Fed Com Power Facility",
+   "what": "An Avant power facility.",
+   "owner": "Avant Natural Resources",
+   "site": "23.7 mi W of Eunice, Eunice, Lea County",
+   "lat_long": "32.394557, -103.59344",
+   "equipment": "18 natural gas engines of 582 horsepower, per the application.",
+   "mw": "about 7.8",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=14327"
+  },
+  "11069": {
+   "ai": "",
+   "name": "GMT 14-11 State Com Power Facility",
+   "what": "An Avant power facility, newly issued under the general construction permit for oil and gas sites, per the state's issued permits table.",
+   "owner": "Avant Natural Resources",
+   "site": "Lea or Eddy County oil field",
+   "equipment": "Not posted. Avant's power facilities with the same nitrogen oxide limit of 50.58 tons a year each list 18 engines of 582 horsepower, about 7.8 megawatts.",
+   "mw": "likely about 8",
+   "decision": "nothing",
+   "reason": "The general permit for oil and gas sites caps emissions far below a 50 megawatt engine plant, and Avant's six other power facilities are 3 to 8 megawatts.",
+   "document": "work/sweep_us-nm/retry/coda3_snapshot.json"
+  },
+  "4224": {
+   "ai": "29433",
+   "name": "Lea County Electric Cooperative Power Plant",
+   "what": "The Lea County Electric Cooperative engine plant near Lovington.",
+   "owner": "Western Farmers Electric Cooperative",
+   "site": "1.5 Mi NE of Lovington 2023 Power Plant Ln, Lovington, Lea County",
+   "lat_long": "32.970833, -103.322222",
+   "equipment": "5 engines of 9.3 megawatts each, per the federal monthly generator file (LCEC Generation).",
+   "mw": "46.5",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=29433"
+  },
+  "4561": {
+   "ai": "30775",
+   "name": "SPS - Quay County Generating Plant",
+   "what": "The Southwestern Public Service plant at Tucumcari.",
+   "owner": "Southwestern Public Service Co dba Xcel Energy",
+   "site": "0 mi N of Tucumcari, Tucumcari, Quay County",
+   "lat_long": "35.184497, -103.731634",
+   "equipment": "Oil fired units of about 27 megawatts in all, per the federal monthly generator file.",
+   "mw": "about 27",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=30775"
+  },
+  "2463": {
+   "ai": "479",
+   "name": "129 Generating Station",
+   "what": "An oil field compressor and generator site named 129 Generating Station.",
+   "owner": "Hilcorp Energy Company",
+   "site": "13.8 miles West of Carlsbad, Carlsbad, Eddy County",
+   "lat_long": "32.452111, -104.52811",
+   "equipment": "Small engines. Nitrogen oxide 13.3 tons a year.",
+   "mw": "small",
+   "decision": "nothing",
+   "reason": "Under the threshold by its emissions.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=479"
+  },
+  "2269": {
+   "ai": "2264",
+   "name": "75TPH Powerscreen NSR-2269",
+   "what": "A rock crusher and screen.",
+   "owner": "Intermountain Slurry Seal Inc.",
+   "site": "20 mi N of Carrizozo, Carrizozo, Lincoln County",
+   "lat_long": "32.450261, -106.586123",
+   "equipment": "Crushing equipment.",
+   "mw": "none",
+   "decision": "nothing",
+   "reason": "Not a power plant.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=2264"
+  },
+  "2437": {
+   "ai": "954",
+   "name": "Level 3 Communication Llc - Diesel Generator No2437",
+   "what": "A diesel generator at a telecom site.",
+   "owner": "Level 3 Communication, Llc",
+   "site": "SW Orogrande, Orogrande, Otero County",
+   "lat_long": "32.363018, -106.283815",
+   "equipment": "One diesel generator.",
+   "mw": "small",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=954"
+  },
+  "0285": {
+   "ai": "911",
+   "name": "Prewitt Escalante Generating Station",
+   "what": "Escalante, a coal plant.",
+   "owner": "Tri-State Generation and Transmission Association Inc",
+   "site": "County Road 19 4 Miles N of Prewitt, Prewitt, McKinley County",
+   "lat_long": "35.41583, -108.082778",
+   "equipment": "Coal units, now retired.",
+   "mw": "not gas or oil",
+   "decision": "nothing",
+   "reason": "Coal is outside this tracker.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=911"
+  },
+  "10814": {
+   "ai": "41332",
+   "name": "San Juan Generating Station Demolition GCP2",
+   "what": "Demolition work at the retired San Juan coal plant.",
+   "owner": "Integrated Demolition and Remediation, Inc.",
+   "site": "3 mi N of US 64, Waterflow, San Juan County",
+   "lat_long": "36.801616, -108.440392",
+   "equipment": "Demolition equipment.",
+   "mw": "none",
+   "decision": "nothing",
+   "reason": "Not a power plant.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=41332"
+  },
+  "5041": {
+   "ai": "32274",
+   "name": "La Luz Energy Center",
+   "what": "La Luz Energy Center.",
+   "owner": "Public Service Company of New Mexico (PNM)",
+   "site": "3.9 mi SW of Belen, Belen, Valencia County",
+   "lat_long": "34.616194, -106.815",
+   "equipment": "Gas turbine. Already handled in this batch.",
+   "mw": "42.3",
+   "decision": "nothing",
+   "reason": "Already covered by its own record.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=32274"
+  },
+  "TC NM Development": {
+   "ai": "",
+   "name": "TC NM Development microgrid",
+   "what": "A planned microgrid. The notice says: TC NM Development, LLC announces its intention to submit an application to the New Mexico Environment Department for an air quality permit for the construction of its microgrid facility.",
+   "owner": "TC NM Development, LLC, a Delaware company registered in New Mexico on September 24, 2026 (state business registry, business ID 0008132461).",
+   "site": "Not known. The notice ran in the Valencia County News-Bulletin on November 5 and 12, 2026, the Albuquerque Journal on November 5, 2026, the Eastern New Mexico News and the Carlsbad Current Argus.",
+   "equipment": "Not known. The full notice text sits behind a Cloudflare check on the notice site.",
+   "mw": "unknown",
+   "decision": "watch item, watch_case unverified, recheck_by 2026-12",
+   "reason": "A new microgrid air permit is a likely gas plant, but no page that names its fuel, size or site has passed the verifier. A person can open the notice on newmexicopublicnotices.com and read the site and equipment; the application should reach the state permit data service within weeks.",
+   "document": "work/sweep_us-nm/retry/pubnot_search_microgrid.txt"
+  }
+ },
+ "permit_leads_echo": {
+  "source": "EPA ECHO facility list for New Mexico, industry code 4911, saved at work/sweep_us-nm/permit_leads/echo_rows.json",
+  "closed": "Bloomfield Energy Farm, Celerity, Cobisa Rio Puerco, Electric Power Plant Santa Fe, Evergreen, TNP and Lordsburg Repowering (now the Lordsburg plant in GEM), Lea County Electric Coop Lovington Station, Merrion Papers Wash, Raton Power Plant, PNM Las Vegas, the PNM Eddy County station at Artesia, Tucumcari, Northeast New Mexico Biomass and the old Animas entries are listed as permanently closed. Nothing to add.",
+  "small": "Four Peaks Energy Plant No1, Intrenet, PNM Manzano, Pearson Remediation, West Mesa Switching, Raton Generation Project, the SPS site at Las Cruces, Stew and Steve, Tyson and NM Sun Tower are operating minor sources, and Mesa del Sol and Shimizu are listed as planned. None has a generator of 1 megawatt or more in the federal monthly generator file, so all are small or not power plants. Nothing to add.",
+  "matched": "Deming Cambray is the Luna plant in GEM. Algodones is shown as temporarily closed and is out of service in the federal file. Carlsbad retired in 2017 in the federal file. Milagro shows as retired in March 2016 in the federal file, which conflicts with this batch's mothballed record; that conflict is already a question for Baird.",
+  "decision": "nothing"
+ }
+}

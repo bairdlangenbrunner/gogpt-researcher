@@ -1,0 +1,246 @@
+{
+ "meta": {
+  "plant_id": "L100001083303",
+  "plant_name": "Lordsburg Generating Station",
+  "state": "New Mexico",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:49:23-05:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001094076",
+   "unit_name": "GT1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 7967, generator GT1, status OP, nameplate 44.0 MW, net summer 41.3 MW, operating year 2002. The status column reads (OP) Operating. So the unit is still running and no retirement, mothballing or owner change shows in this file."
+    },
+    "Planned retire": {
+     "value": "2044",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Open the PNM 2026 resource plan appendices at https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf and go to Appendix E, the section headed Lordsburg Generating Station (printed page E-4). The text says \"PNM assumed that Lordsburg units would be capable of prolonging its planned retirement by a couple of years to reach the end of 2044 and are expected to be converted to burn hydrogen fuel by 2045.\" So the plan models the end of 2044 as the retirement year, not 2039. This is a modeling assumption in a plan that is still before the commission, so it is a medium finding. The human adds a new scheduled retirement event, and does not change the existing one."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Open the PNM 2026 resource plan appendices at https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf and go to Appendix E, section Lordsburg Generating Station. It calls the plant \"an 86 MW natural gas-fired simple-cycle peaking facility\" that provides \"peaking capacity, operating reserves, and load-following capability\". That is grid service, not backup power for one site. The document does not use the words backup power, so this is medium."
+    }
+   },
+   "not_found": [
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "notes": "Both PNM documents say the unit is a GE LM6000 simple-cycle turbine in service since 2002. I found no sign of a retirement, mothballing or sale. The 2026 plan moves the modeled retirement to the end of 2044."
+  },
+  {
+   "gem_unit_id": "G100001094077",
+   "unit_name": "GT2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 7967, generator GT2, status OP, nameplate 44.0 MW, net summer 41.3 MW, operating year 2002. The status column reads (OP) Operating. So the unit is still running and no retirement, mothballing or owner change shows in this file."
+    },
+    "Planned retire": {
+     "value": "2044",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Open the PNM 2026 resource plan appendices at https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf and go to Appendix E, the section headed Lordsburg Generating Station (printed page E-4). The text says \"PNM assumed that Lordsburg units would be capable of prolonging its planned retirement by a couple of years to reach the end of 2044 and are expected to be converted to burn hydrogen fuel by 2045.\" So the plan models the end of 2044 as the retirement year, not 2039. This is a modeling assumption in a plan that is still before the commission, so it is a medium finding. The human adds a new scheduled retirement event, and does not change the existing one."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Open the PNM 2026 resource plan appendices at https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf and go to Appendix E, section Lordsburg Generating Station. It calls the plant \"an 86 MW natural gas-fired simple-cycle peaking facility\" that provides \"peaking capacity, operating reserves, and load-following capability\". That is grid service, not backup power for one site. The document does not use the words backup power, so this is medium."
+    }
+   },
+   "not_found": [
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "notes": "Both PNM documents say the unit is a GE LM6000 simple-cycle turbine in service since 2002. I found no sign of a retirement, mothballing or sale. The 2026 plan moves the modeled retirement to the end of 2044."
+  }
+ ],
+ "plant_findings": {
+  "Operator(s)": {
+   "value": "Public Service Company of New Mexico",
+   "refs": [
+    "https://cloud.env.nm.gov/resources/_translator.php/N2Y5M2U0YjQ3NTVkNjQwNTRiYjU1ZTM4NV8yODA4Ng~~.pdf"
+   ],
+   "verifications": [
+    {
+     "url": "https://cloud.env.nm.gov/resources/_translator.php/N2Y5M2U0YjQ3NTVkNjQwNTRiYjU1ZTM4NV8yODA4Ng~~.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "Open the Acid Rain permit application at https://cloud.env.nm.gov/resources/_translator.php/N2Y5M2U0YjQ3NTVkNjQwNTRiYjU1ZTM4NV8yODA4Ng~~.pdf (PDF, first pages). Under the applicant block it reads \"Name Public Service Company of New Mexico\" and \"(Facility Owner and Operator)\". The operator column is blank in the database, so this fills it."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100001094076",
+   "concern_type": "Owner(s)",
+   "question": "Should the Lordsburg owner be Public Service Company of New Mexico, not PNM Resources Inc?",
+   "finding": "The Acid Rain permit application names Public Service Company of New Mexico as \"Facility Owner and Operator\". The EIA-860M table for September 2026 lists the owner as Public Service Co of NM. The database shows PNM Resources Inc, which is the holding company.",
+   "recommendation": "Change Owner(s) on both units to Public Service Company of New Mexico [100%], reusing the entity that already exists. Add EIA 7967 to Other IDs (location).",
+   "note": "Permit: https://cloud.env.nm.gov/resources/_translator.php/N2Y5M2U0YjQ3NTVkNjQwNTRiYjU1ZTM4NV8yODA4Ng~~.pdf (applicant block, \"Facility Owner and Operator\"). EIA table: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 7967, entity name \"Public Service Co of NM\". The entity lookup found \"Public Service Company of New Mexico\" in the entity system (entity 100000003846). No sale is involved, so this is a naming correction and not an ownership change.",
+   "refs": [
+    "https://cloud.env.nm.gov/resources/_translator.php/N2Y5M2U0YjQ3NTVkNjQwNTRiYjU1ZTM4NV8yODA4Ng~~.pdf",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "proposed_value": {
+    "Owner(s)": "Public Service Company of New Mexico [100%]"
+   }
+  },
+  {
+   "gem_unit_id": "G100001094076",
+   "concern_type": "identity",
+   "question": "Which EIA generator ID belongs to each Lordsburg unit?",
+   "finding": "The EIA-860M table for September 2026 lists plant 7967 with generators GT1 and GT2, each 44.0 MW, operating since 2002. The database units are named GT1 and GT2.",
+   "recommendation": "Record EIA generator GT1 for unit GT1 and GT2 for unit GT2 in Other IDs (unit). Add EIA 7967 to Other IDs (location).",
+   "note": "Open https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, rows for plant ID 7967: generator GT1 (44.0 MW nameplate, 41.3 MW net summer) and GT2 (same). The names match one to one. The ID fields have no Data Source, so the person editing types them in by hand.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001094076",
+   "concern_type": "Capacity (MW)",
+   "question": "Should Lordsburg capacity be the 44.0 MW nameplate and not the 41.3 MW summer figure?",
+   "finding": "The database shows 41.3 MW for each unit. That equals the EIA net summer capability. The EIA nameplate is 44.0 MW, and the air permit application rates each GE LM6000 Sprint turbine at 41.1 MW.",
+   "recommendation": "Leave 41.3 MW if the team accepts it, or change both units to 44.0 MW, the EIA nameplate. Ask the project manager which figure to keep, since the permit gives a third value.",
+   "note": "EIA table: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 7967, columns Nameplate Capacity (MW) 44.0 and Net Summer Capacity (MW) 41.3. Permit: https://cloud.env.nm.gov/resources/_translator.php/N2Y5M2U0YjQ3NTVkNjQwNTRiYjU1ZTM4NV8yODA4Ng~~.pdf, the line \"Unit 1: General Electric LM6000 Sprint Natural Gas Combustion Turbine rated at 41.1 MW\".",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://cloud.env.nm.gov/resources/_translator.php/N2Y5M2U0YjQ3NTVkNjQwNTRiYjU1ZTM4NV8yODA4Ng~~.pdf"
+   ],
+   "proposed_value": {
+    "Capacity (MW)": "44.0"
+   }
+  }
+ ],
+ "entities": [
+  {
+   "entity_name": "Public Service Company of New Mexico",
+   "role": "owner",
+   "lookup_result": "Bare lookup found nothing locally. The --pg run found the entity in the entity system (entity_id 100000003846, 2 matches). Reuse it."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "EIA-860M September 2026 Operating sheet, plant 7967."
+  },
+  {
+   "url": "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf",
+   "used_for": [
+    "Planned retire",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Appendix E Lordsburg section."
+  },
+  {
+   "url": "https://cloud.env.nm.gov/resources/_translator.php/N2Y5M2U0YjQ3NTVkNjQwNTRiYjU1ZTM4NV8yODA4Ng~~.pdf",
+   "used_for": [
+    "Operator(s)",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Acid Rain application naming PNM as owner and operator."
+  },
+  {
+   "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "not relevant",
+   "note": "Read from the saved text; the report says all other existing gas units stay in service through 2044 and Lordsburg is converted to hydrogen from 2045."
+  }
+ ],
+ "monitor": [],
+ "newunits": []
+}

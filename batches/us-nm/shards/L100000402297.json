@@ -1,0 +1,322 @@
+{
+ "meta": {
+  "plant_id": "L100000402297",
+  "plant_name": "Cunningham power station",
+  "state": "New Mexico",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T09:28:43-05:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403551",
+   "unit_name": "1",
+   "findings": {
+    "Retired year": {
+     "value": "2023",
+     "refs": [
+      "https://interchange.puc.texas.gov/Documents/55255_289_1377398.PDF"
+     ],
+     "verifications": [
+      {
+       "url": "https://interchange.puc.texas.gov/Documents/55255_289_1377398.PDF",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Retired year:\n- Open the Texas Public Utility Commission order at https://interchange.puc.texas.gov/Documents/55255_289_1377398.PDF and read finding of fact 90. It says 'SPS retired its existing Cunningham Unit 1, Plant X Unit 1, and Plant X Unit 2 generation resources in 2023, which had been in forced outage since mid-2022.' Finding 114 says Cunningham Unit 1 went into forced outage on July 13, 2022.\n- The EIA-860M workbook for September 2026, sheet Retired, plant 2454, generator 1, gives retirement month 1 and year 2024. That is the January 2024 date on EIA's books. The company's sworn order is the better evidence for the year the unit was retired, so GEM's 2023 stays."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Backup Power:\n- Open the EIA-860M workbook for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and the sheet named Retired. The row for Cunningham, plant 2454, generator 1 is listed under the Electric Utility sector as a grid unit of Southwestern Public Service Co.\n- The workbook has no column that says whether a unit is backup power. The unit is a utility-owned grid generator, so the value stays no. This is an inference, not a stated value."
+    }
+   },
+   "not_found": [
+    "Latest Activity"
+   ],
+   "notes": "Retirement year 2023 is confirmed by the company's own statement to the Texas commission. EIA shows January 2024, so a question is raised."
+  },
+  {
+   "gem_unit_id": "G100000403552",
+   "unit_name": "2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status:\n- Open the EIA-860M workbook for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating, plant 2454, generator 2. Status reads '(OP) Operating', operating year 1965.\n- No retirement, mothballing or owner change is shown."
+    },
+    "Planned retire": {
+     "value": "2027",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Planned retire:\n- In the same sheet and row, Planned Retirement Year is 2027 and Planned Retirement Month is 12. So the plan still holds in EIA's September 2026 data.\n- The human adds a new scheduled event only if none exists for this year."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Backup Power:\n- Open the EIA-860M workbook for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and the sheet named Operating. The row for Cunningham, plant 2454, generator 2 is listed under the Electric Utility sector as a grid unit of Southwestern Public Service Co.\n- The workbook has no column that says whether a unit is backup power. The unit is a utility-owned grid generator, so the value stays no. This is an inference, not a stated value."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating in the September 2026 EIA table with planned retirement in 2027. The 2026 Southwestern Public Service resource plan does not date unit 2's retirement, so only EIA supports 2027."
+  },
+  {
+   "gem_unit_id": "G100000403553",
+   "unit_name": "3",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status:\n- Open the EIA-860M workbook for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating, plant 2454, generator 3. Status reads '(OP) Operating', operating year 1998.\n- No retirement, mothballing or owner change is shown."
+    },
+    "Planned retire": {
+     "value": "2040",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Planned retire:\n- In the same sheet and row, Planned Retirement Year is 2040 and Planned Retirement Month is 12. So the plan still holds in EIA's September 2026 data.\n- The human adds a new scheduled event only if none exists for this year."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Backup Power:\n- Open the EIA-860M workbook for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and the sheet named Operating. The row for Cunningham, plant 2454, generator 3 is listed under the Electric Utility sector as a grid unit of Southwestern Public Service Co.\n- The workbook has no column that says whether a unit is backup power. The unit is a utility-owned grid generator, so the value stays no. This is an inference, not a stated value."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating in the September 2026 EIA table with planned retirement in 2040. The 2026 resource plan slide on retiring gas units lists Cunningham 3 and 4, 207 MW, retirement 2040."
+  },
+  {
+   "gem_unit_id": "G100000403554",
+   "unit_name": "4",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status:\n- Open the EIA-860M workbook for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating, plant 2454, generator 4. Status reads '(OP) Operating', operating year 1998.\n- No retirement, mothballing or owner change is shown."
+    },
+    "Planned retire": {
+     "value": "2040",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Planned retire:\n- In the same sheet and row, Planned Retirement Year is 2040 and Planned Retirement Month is 12. So the plan still holds in EIA's September 2026 data.\n- The human adds a new scheduled event only if none exists for this year."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Backup Power:\n- Open the EIA-860M workbook for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and the sheet named Operating. The row for Cunningham, plant 2454, generator 4 is listed under the Electric Utility sector as a grid unit of Southwestern Public Service Co.\n- The workbook has no column that says whether a unit is backup power. The unit is a utility-owned grid generator, so the value stays no. This is an inference, not a stated value."
+    }
+   },
+   "not_found": [],
+   "notes": "Still operating in the September 2026 EIA table with planned retirement in 2040. The 2026 resource plan slide on retiring gas units lists Cunningham 3 and 4, 207 MW, retirement 2040."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000403551",
+   "concern_type": "Retired year",
+   "question": "Is 2023 or 2024 the right retired year for Cunningham unit 1?",
+   "finding": "The Texas commission order says Southwestern Public Service retired the unit in 2023 after a forced outage from July 13, 2022. The EIA-860M table for September 2026 gives January 2024.",
+   "recommendation": "Leave the retired year at 2023, since it comes from the owner's own statement. Mention the EIA date of January 2024 in Notes.",
+   "note": "The order is at https://interchange.puc.texas.gov/Documents/55255_289_1377398.PDF, findings 90 and 114. The EIA row is in the Retired sheet of https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, plant 2454, generator 1.",
+   "refs": [
+    "https://interchange.puc.texas.gov/Documents/55255_289_1377398.PDF",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "proposed_value": {
+    "Retired year": "2023"
+   }
+  },
+  {
+   "gem_unit_id": "G100000403552",
+   "concern_type": "Planned retire",
+   "question": "Does Cunningham unit 2 really retire in 2027?",
+   "finding": "Only the EIA-860M table for September 2026 gives 2027. The 2026 Southwestern Public Service resource plan filed in case 25-00076-UT lists only Cunningham 3 and 4, 207 MW, retiring in 2040, and says nothing on unit 2.",
+   "recommendation": "Leave 2027 as the planned retirement year and recheck after the plan's retirement tables are reviewed by a person.",
+   "note": "The plan is on the commission case page https://e360.prc.nm.gov/portal/public/#/public/nm-prc/en/CaseXscreen?screen=external-Case360&caseId=fe3141c2-1770-4ee1-90a7-f9c3a4749200 as document DOC-000532299-26. That portal page is drawn by scripts, so I read the saved copy and could not run the link check. The retirement slide is at about PDF page 1529.",
+   "refs": [],
+   "proposed_value": {}
+  },
+  {
+   "gem_unit_id": "G100000403553",
+   "concern_type": "Planned retire",
+   "question": "Can the 2040 retirement of Cunningham units 3 and 4 be cited to the plan?",
+   "finding": "The Southwestern Public Service 2026 plan filed in case 25-00076-UT, document DOC-000532299-26 '2026 Integrated Resource Plan', says in its section 9.7 (a) that it replaces 'the planned retiring combined 207 MW Cunningham Units 3 and 4' in 2041. A workshop slide in the same filing lists Cunningham 3 and 4, 207 MW, retirement 2040.",
+   "recommendation": "Keep 2040 on the strength of the EIA table. Cite the plan only after a person opens the commission case page or Xcel Energy's plan page and confirms the PDF.",
+   "note": "The company's plan page at https://www.xcelenergy.com/company/rates_and_regulations/resource_plans/new_mexico_2027-2046_irp links the plan to a Salesforce address (https://xcelnew.my.salesforce.com/sfc/p/1U0000011ttV/a/R300000YZWcY/_fFYXD6bn_rleQjhaRJ9XZ_GHjexUzC57fARqr3lTDc). That address shows only a download page with no file text, so the verifier cannot read it. I tried the repo fetcher and a form post with cookies. The plan has no retirement year for unit 2. Only the EIA table gives 2027.",
+   "refs": [],
+   "proposed_value": {
+    "Planned retire": "2040"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Planned retire",
+    "Backup Power",
+    "Retired year"
+   ],
+   "outcome": "verified",
+   "note": "Read plant 2454 rows in the Operating and Retired sheets."
+  },
+  {
+   "url": "https://interchange.puc.texas.gov/Documents/55255_289_1377398.PDF",
+   "used_for": [
+    "Retired year"
+   ],
+   "outcome": "verified",
+   "note": "Findings 90 and 114."
+  },
+  {
+   "url": "https://e360.prc.nm.gov/portal/public/#/public/nm-prc/en/CaseXscreen?screen=external-Case360&caseId=fe3141c2-1770-4ee1-90a7-f9c3a4749200",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "failed",
+   "note": "Page is script drawn; read the saved PDF text from the harvest instead."
+  },
+  {
+   "url": "https://opsportal.spp.org/Studies/GIActive",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Queue lead GEN-2006-026 is an in-service 2008 interconnection; not needed for these tasks."
+  },
+  {
+   "url": "https://xcelnew.my.salesforce.com/sfc/p/1U0000011ttV/a/R300000YZWcY/_fFYXD6bn_rleQjhaRJ9XZ_GHjexUzC57fARqr3lTDc",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "failed",
+   "note": "Xcel Energy's public link to the 2026 plan is a Salesforce delivery page with no file text. Fetcher and form post both returned only the page shell."
+  }
+ ]
+}

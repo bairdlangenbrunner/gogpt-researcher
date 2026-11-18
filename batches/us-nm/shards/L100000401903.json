@@ -1,0 +1,325 @@
+{
+ "meta": {
+  "plant_id": "L100000401903",
+  "plant_name": "Rio Grande (New Mexico) power station",
+  "state": "New Mexico",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T09:28:36-05:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 6
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402823",
+   "unit_name": "6",
+   "findings": {
+    "Status": {
+     "value": "retired",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://www.epelectric.com/el-paso-electric/uploads/2026_epe_system_expansion_plan_2027-2036.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.epelectric.com/el-paso-electric/uploads/2026_epe_system_expansion_plan_2027-2036.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "Retirement of unit 6.\n\nEIA:\n- Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx. On the Retired sheet, plant 2444, generator 6, nameplate 50.0 MW, retirement month 9, retirement year 2025.\n\nEl Paso Electric plan:\n- Open the El Paso Electric 2026 system expansion plan at https://www.epelectric.com/el-paso-electric/uploads/2026_epe_system_expansion_plan_2027-2036.pdf and go to PDF page 17. The table row 'Rio Grande G6' has note 2, and the notes list says '2. Classified as Retired.'\n- The two sources are separate publications, the federal table and the utility's own plan.\n\nAbandonment case:\n- A notice at https://epelectric.com/el-paso-electric/uploads/20-00194-ut_approved-notice-to-customers.pdf shows El Paso Electric asked the state commission on October 6, 2020 to abandon unit 6 in case 20-00194-UT. I did not find the commission's final order.",
+     "milestones": [
+      {
+       "status": "retired",
+       "year": 2025,
+       "period": "September",
+       "sources": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "EIA lists retirement month 9, year 2025"
+      }
+     ]
+    },
+    "Retired year": {
+     "value": "2025",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the sheet named in the row. On the Retired sheet, plant 2444, generator 6 shows retirement year 2025, month 9."
+    },
+    "Status Detail": {
+     "value": "El Paso Electric's 2026 system expansion plan classifies Rio Grande unit 6 as retired, and the EIA table for September 2026 lists its retirement in September 2025.",
+     "refs": [
+      "https://www.epelectric.com/el-paso-electric/uploads/2026_epe_system_expansion_plan_2027-2036.pdf",
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.epelectric.com/el-paso-electric/uploads/2026_epe_system_expansion_plan_2027-2036.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The plan table is on PDF page 17 at https://www.epelectric.com/el-paso-electric/uploads/2026_epe_system_expansion_plan_2027-2036.pdf, row 'Rio Grande G6', note 2 'Classified as Retired'. The EIA row is on the Retired sheet of https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx."
+    }
+   },
+   "not_found": [
+    "Operator(s)",
+    "Backup Power"
+   ],
+   "notes": "Checked against the EIA-860M table for September 2026 and El Paso Electric's 2026 system expansion plan. I found no document that states Backup Power for this unit. The EIA table and El Paso Electric's plan do not say. The existing Planned retire value of 2026 on unit 6 is now out of date because the unit is shown as retired. I did not find the commission's final order in case 20-00194-UT; El Paso Electric's SEC filings stopped after the company was taken private, and no news story I found reports the outcome. The status change rests on the federal table and the utility's own plan."
+  },
+  {
+   "gem_unit_id": "G100000402824",
+   "unit_name": "7",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 2444, generator 7, status '(OP) Operating', nameplate 50.0 MW. The unit is still listed as running."
+    },
+    "Planned retire": {
+     "value": "2027",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 2444, generator 7. Planned retirement month 12, year 2027. The Human adds a new scheduled event if needed, never changes an existing one.\n\nConflict:\n- The El Paso Electric 2026 plan at https://www.epelectric.com/el-paso-electric/uploads/2026_epe_system_expansion_plan_2027-2036.pdf, PDF page 17, row 'Rio Grande G7', shows no planned retirement date. See the question raised on this unit."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Backup Power"
+   ],
+   "notes": "Checked against the EIA-860M table for September 2026 and El Paso Electric's 2026 system expansion plan. I found no document that states Backup Power for this unit. The EIA table and El Paso Electric's plan do not say."
+  },
+  {
+   "gem_unit_id": "G100000402825",
+   "unit_name": "8",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 2444, generator 8, status '(OP) Operating', nameplate 166.5 MW."
+    },
+    "Planned retire": {
+     "value": "2033",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://www.epelectric.com/el-paso-electric/uploads/2026_epe_system_expansion_plan_2027-2036.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.epelectric.com/el-paso-electric/uploads/2026_epe_system_expansion_plan_2027-2036.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The 2033 date holds.\n\n- EIA: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 2444, generator 8, planned retirement month 12, year 2033.\n- El Paso Electric: https://www.epelectric.com/el-paso-electric/uploads/2026_epe_system_expansion_plan_2027-2036.pdf, PDF page 17, row 'Rio Grande G8', planned retirement 'Dec.33'.\n- These are two separate publications."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Backup Power"
+   ],
+   "notes": "Checked against the EIA-860M table for September 2026 and El Paso Electric's 2026 system expansion plan. I found no document that states Backup Power for this unit. The EIA table and El Paso Electric's plan do not say."
+  },
+  {
+   "gem_unit_id": "G100000402826",
+   "unit_name": "9",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 2444, generator 9, status '(OP) Operating', nameplate 131.8 MW, operating year 2013. No planned retirement is listed."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Backup Power"
+   ],
+   "notes": "Checked against the EIA-860M table for September 2026 and El Paso Electric's 2026 system expansion plan. I found no document that states Backup Power for this unit. The EIA table and El Paso Electric's plan do not say."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000402824",
+   "concern_type": "Planned retire",
+   "question": "Is Rio Grande unit 7 still due to retire in 2027?",
+   "finding": "The commission's final order of April 4, 2025 allows El Paso Electric to abandon unit 7 and hold it in contingency reserve until it is retired. The EIA table for September 2026 still lists unit 7 as operating with a planned retirement in December 2027.",
+   "recommendation": "Leave the status as operating and the planned retirement as 2027. Ask the project manager whether the unit should be marked mothballed once El Paso Electric reports it in contingency reserve.",
+   "note": "Opened the case notice at https://epelectric.com/el-paso-electric/uploads/notice-for-23-00403-ut.pdf (page 1, paragraph 1, asks to abandon Rio Grande unit 7 and Newman unit 1 by January 1, 2026) and a New Mexico Political Report article at https://nmpoliticalreport.com/2025/03/06/el-paso-electric-wants-to-replace-aging-natural-gas-generation-with-renewables/ (says the commission did not vote and the chairman said it will likely be approved). I could not find the commission's final order; the commission's case guest index did not show the case in the earlier harvest.\n\nFinal order:\n- Open El Paso Electric's 2025 resource plan at https://www.epelectric.com/files/24-00260-UT-2025-09-02-EPE-Integrated-Resource-Plan-Report.pdf and go to the footnote 11 under Table 34 at the page printed as 114. It says 'Per the Commission's Final Order, EPE may abandon RG7 and Newman 1 according to the plan submitted in its Application' and cites 'Final Order Granting Abandonment, Ordering Paragraph B (Apr. 4, 2025)'.\n- The same plan's Table 34 lists Rio Grande 7 with accredited capacity of 0 MW.\n- I could not open the order itself because the commission's case pages are drawn by scripts and the order has no address of its own.",
+   "refs": [
+    "https://epelectric.com/el-paso-electric/uploads/notice-for-23-00403-ut.pdf",
+    "https://www.epelectric.com/el-paso-electric/uploads/2026_epe_system_expansion_plan_2027-2036.pdf",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://www.epelectric.com/files/24-00260-UT-2025-09-02-EPE-Integrated-Resource-Plan-Report.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000402823",
+   "concern_type": "Planned retire",
+   "question": "Should the 2026 planned retirement on Rio Grande unit 6 be cleared?",
+   "finding": "Unit 6 is shown as retired in September 2025 by both the EIA table and El Paso Electric's plan, so the 2026 planned retirement no longer applies.",
+   "recommendation": "After the status change to retired is accepted, ask the project manager to clear the Planned retire value of 2026 and set Retired year to 2025.",
+   "note": "Sources are the EIA table at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx (Retired sheet, plant 2444, generator 6) and the plan at https://www.epelectric.com/el-paso-electric/uploads/2026_epe_system_expansion_plan_2027-2036.pdf (PDF page 17, note 2).",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://www.epelectric.com/el-paso-electric/uploads/2026_epe_system_expansion_plan_2027-2036.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000402823",
+   "concern_type": "existence",
+   "question": "What was the 'Rio Grande CT G10' of 87 MW that was terminated?",
+   "finding": "I found no public document that names a Rio Grande unit 10. The EIA table for September 2026 lists only generators 6, 7, 8 and 9 at plant 2444, and El Paso Electric's 2026 plan lists only G6 to G9.",
+   "recommendation": "Do not add a unit. Leave GEM as is unless the project manager finds a document naming a unit 10.",
+   "note": "I checked https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx (all sheets, plant 2444) and https://www.epelectric.com/el-paso-electric/uploads/2026_epe_system_expansion_plan_2027-2036.pdf (PDF page 17). The 87 MW size is close to the 88 MW shown for unit 9 in the plan, so it may be an early name for unit 9. I could not confirm that.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://www.epelectric.com/el-paso-electric/uploads/2026_epe_system_expansion_plan_2027-2036.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Retired year",
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Excel file read for plant 2444."
+  },
+  {
+   "url": "https://www.epelectric.com/el-paso-electric/uploads/2026_epe_system_expansion_plan_2027-2036.pdf",
+   "used_for": [
+    "Status",
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "PDF page 17 table."
+  },
+  {
+   "url": "https://epelectric.com/el-paso-electric/uploads/notice-for-23-00403-ut.pdf",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Case notice for unit 7 abandonment."
+  },
+  {
+   "url": "https://epelectric.com/el-paso-electric/uploads/20-00194-ut_approved-notice-to-customers.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Case notice for unit 6 abandonment."
+  },
+  {
+   "url": "https://nmpoliticalreport.com/2025/03/06/el-paso-electric-wants-to-replace-aging-natural-gas-generation-with-renewables/",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "News on commission discussion."
+  },
+  {
+   "url": "https://www.epelectric.com/files/24-00260-UT-2025-09-02-EPE-Integrated-Resource-Plan-Report.pdf",
+   "used_for": [
+    "Planned retire",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Footnote 11 under Table 34 cites the April 4, 2025 final order for unit 7. Saved text at scopes/us-nm/work/irp/epe/1.txt."
+  }
+ ]
+}

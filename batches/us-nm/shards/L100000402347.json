@@ -1,0 +1,151 @@
+{
+ "meta": {
+  "plant_id": "L100000402347",
+  "plant_name": "Valencia energy facility",
+  "state": "New Mexico",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:47:06-05:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000414180",
+   "unit_name": "CC_set",
+   "findings": {},
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "I found no document that states whether this unit has a backup power role. The EIA table lists the plant as an independent power producer without combined heat and power, and PNM describes it as peaking capacity under a power purchase agreement."
+  },
+  {
+   "gem_unit_id": "G100000403710",
+   "unit_name": "CTG1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "milestones": [],
+     "note": "Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 55802, generator CTG1, status '(OP) Operating', nameplate 159.5 MW, operating year 2008, month 5. No planned retirement year is listed there."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "I found no document that states whether this unit has a backup power role. The EIA table lists the plant as an independent power producer without combined heat and power, and PNM describes it as peaking capacity under a power purchase agreement. The EIA table shows CTG1 still operating and shows no planned retirement date."
+  },
+  {
+   "gem_unit_id": "G100000414183",
+   "unit_name": "CTG2",
+   "findings": {},
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "I found no document that states whether this unit has a backup power role. The EIA table lists the plant as an independent power producer without combined heat and power, and PNM describes it as peaking capacity under a power purchase agreement."
+  },
+  {
+   "gem_unit_id": "G100000414182",
+   "unit_name": "CTG3",
+   "findings": {},
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "I found no document that states whether this unit has a backup power role. The EIA table lists the plant as an independent power producer without combined heat and power, and PNM describes it as peaking capacity under a power purchase agreement."
+  },
+  {
+   "gem_unit_id": "G100000414181",
+   "unit_name": "CTG4",
+   "findings": {},
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "I found no document that states whether this unit has a backup power role. The EIA table lists the plant as an independent power producer without combined heat and power, and PNM describes it as peaking capacity under a power purchase agreement."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000403710",
+   "concern_type": "Planned retire",
+   "question": "Should the 2028 planned retirement for CTG1 stay, given the approved extension of the Valencia power purchase agreement?",
+   "finding": "PNM's 2023 resource plan says the Valencia power purchase agreement expires in 2028. A PNM press release from 2024 says PNM asked the state commission to extend it for 167 MW through 2039. A TXNM Energy news item says the commission approved an unopposed stipulation on this application on June 26, 2025.",
+   "recommendation": "Remove the planned retirement year of 2028 or change it to 2039, and add a note that the plant is expected to keep operating under the extended agreement. Check the commission order in case 24-00271-UT first.",
+   "note": "Sources:\n- PNM 2023 resource plan, https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf , section 4.1.3, Valencia Energy Facility: 'The PPA expires in 2028.'\n- PNM press release, https://www.prnewswire.com/news-releases/pnm-files-application-for-new-resources-in-2028-302314788.html : 'extension of a Valencia Purchase Power Agreement (PPA) for 167 MW through 2039 (current agreement expires in 2028)'.\n- News item on the approval, https://www.gurufocus.com/news/2951980/approval-of-unopposed-stipulation-in-pnm-2028-resource-application : approval of the unopposed stipulation, which includes the Valencia agreement through 2039.\n- A power purchase agreement ending is not a plant retirement. EIA lists no planned retirement. I did not find the commission's final order text.",
+   "refs": [
+    "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+    "https://www.prnewswire.com/news-releases/pnm-files-application-for-new-resources-in-2028-302314788.html",
+    "https://www.gurufocus.com/news/2951980/approval-of-unopposed-stipulation-in-pnm-2028-resource-application"
+   ],
+   "proposed_value": {
+    "Planned retire": "2039"
+   }
+  },
+  {
+   "gem_unit_id": "G100000414180",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "Is there any document that states the Backup Power value for the Valencia units?",
+   "finding": "I searched the September 2026 EIA-860M table, the PNM 2023 resource plan and the PNM 2024 press release. None states a backup power role. All describe the plant as grid peaking capacity.",
+   "recommendation": "Leave Backup Power as no for all five units. No document was found that states it, so the Data Source box stays empty.",
+   "note": "Opened https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx , https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf and https://www.prnewswire.com/news-releases/pnm-files-application-for-new-resources-in-2028-302314788.html . Backup power is a data center concept and this plant serves PNM's grid.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+    "https://www.prnewswire.com/news-releases/pnm-files-application-for-new-resources-in-2028-302314788.html"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Excel file loaded and read; plant 55802 rows checked."
+  },
+  {
+   "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Text mentions Valencia PPA expiring 2028."
+  },
+  {
+   "url": "https://www.prnewswire.com/news-releases/pnm-files-application-for-new-resources-in-2028-302314788.html",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Valencia extension through 2039."
+  },
+  {
+   "url": "https://www.gurufocus.com/news/2951980/approval-of-unopposed-stipulation-in-pnm-2028-resource-application",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Commission approval of stipulation."
+  }
+ ]
+}

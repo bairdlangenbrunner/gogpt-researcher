@@ -1,6 +1,6 @@
 # Access proof: us-nm
 
-Checked 2026-11-17T08:53:53. 32 of 34 sources proven; 2 behind a person's action.
+Checked 2026-11-18T08:42:52. 32 of 34 sources proven; 2 behind a person's action.
 
 | id | ok | route | status | kind | bytes | reason or person |
 |---|---|---|---|---|---|---|
@@ -11,7 +11,7 @@ Checked 2026-11-17T08:53:53. 32 of 34 sources proven; 2 behind a person's action
 | eia-860 | yes | curl | 200 | html | 67578 |  |
 | eia-860m | yes | curl | 200 | html | 93652 |  |
 | eip-oil-gas-watch | yes | curl | 200 | html | 1946 |  |
-| epa-campd | yes | curl | 200 | json | 56585 |  |
+| epa-campd | yes | curl | 200 | json | 16871 |  |
 | epa-echo | yes | curl | 200 | json | 157942 |  |
 | epa-r9-ntec | yes | curl | 200 | json | 16776 |  |
 | epa-rblc | yes | curl | 200 | html | 62335 |  |

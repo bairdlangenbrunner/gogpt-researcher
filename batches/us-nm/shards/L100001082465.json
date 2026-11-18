@@ -1,0 +1,342 @@
+{
+ "meta": {
+  "plant_id": "L100001082465",
+  "plant_name": "PNM 2023 IRP power station 2",
+  "state": "New Mexico",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:46:58-05:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001092792",
+   "unit_name": "1, timepoint 1 IRP",
+   "findings": {
+    "Status": {
+     "value": "cancelled",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "irp": true,
+     "note": "This placeholder comes from the 2023 resource plan of Public Service Company of New Mexico. The newer 2026 plan no longer carries it.\n\n2023 plan:\n- Open https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf and go to PDF page 218, which is printed page 210. Table 69, Most-Cost Effective Portfolio, shows the Natural Gas row rising to 996 MW in 2038, from 832 MW the year before. That is the 164 MW in 2038.\n- The same table shows Natural Gas at zero in 2040 and a Hydrogen CT row of 586 MW in 2040. These are the timepoint 2 conversion units.\n\n2026 plan:\n- Open https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf and go to PDF page 177, printed page 162, in the table of modeling assumptions. The New Resources Pending Approval row says 'A new 172 MW combustion turbine is included as a proxy unit in 2029 in all portfolios.' That is the only new gas unit in the plan before 2036.\n- PDF page 229, Table 9-1 continued, lists Combustion Turbines Gas/H2 as 0 MW through 2036 and 179 MW at most through 2045. No 2037, 2038 or 2039 gas unit of this size appears.\n- PDF page 177 also says 'Operating life of Reeves (146 MW) is extended through 2044' and that other existing gas units stay in service through 2044. So the 2040 retirement date no longer holds either.\n\nWhy cancelled and not renamed:\n- The 2026 plan filed on September 1, 2026 replaces the 2023 plan. Its new gas placeholder is 172 MW in 2029, not this size or year. The queue row IA-PNM-2025-20 at the Reeves substation matches that 172 MW unit, not this one.\n- This is one document, so the status change is medium confidence.",
+     "milestones": [
+      {
+       "status": "cancelled",
+       "year": 2026,
+       "period": "September",
+       "sources": [
+        "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf"
+       ],
+       "note": "PNM filed its 2026 resource plan on September 1, 2026 and the plan drops the 2023 placeholder gas units."
+      }
+     ]
+    },
+    "Cancellation year": {
+     "value": "2026",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "irp": true,
+     "note": "The 2026 resource plan filed September 1, 2026 replaces the 2023 plan and carries no gas unit of this size or year. So 2026 is the year the placeholder dropped out. Open https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf and go to PDF page 177 for the one new gas proxy unit of 172 MW in 2029 and PDF page 229 for the table with no gas added through 2036."
+    },
+    "Status Detail": {
+     "value": "September 2026: PNM filed its 2026 integrated resource plan, which no longer includes this 164 MW in 2038 placeholder from the 2023 plan. Its only new gas placeholder is 172 MW in 2029. The 2023 plan is at https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf and the 2026 plan is at https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf.",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "irp": true,
+     "note": "This is the new line for the top of Status Detail. It is based on PDF page 177 of the 2026 plan at https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf, where the row New Resources Pending Approval gives the 172 MW proxy unit in 2029, and on Table 69 on PDF page 218 of the 2023 plan at https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "irp": true,
+     "note": "Open https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf and go to PDF page 151, printed page 143, section 6.4.1. The plan treats new combustion turbines as firm grid peaking capacity and models them as grid resources, with no backup role. Table 69 on PDF page 218 counts them under Firm Generating Resources. No page says backup power in those words, so this is implied and medium."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "CHP",
+    "Operator(s)",
+    "City",
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use",
+    "Latest Activity",
+    "Conversion/replacement?"
+   ],
+   "notes": "Timepoint 1 unit of the 2023 plan placeholder, the natural gas phase. The 2026 plan drops the placeholder, so the status is reported as cancelled. The 2023 plan only says its cost assumptions rest on a GE LM6000 combustion turbine, on PDF page 151, and gives no site or model for this unit."
+  },
+  {
+   "gem_unit_id": "G100001092803",
+   "unit_name": "1, timepoint 2 IRP",
+   "findings": {
+    "Status": {
+     "value": "cancelled",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "irp": true,
+     "note": "This placeholder comes from the 2023 resource plan of Public Service Company of New Mexico. The newer 2026 plan no longer carries it.\n\n2023 plan:\n- Open https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf and go to PDF page 218, which is printed page 210. Table 69, Most-Cost Effective Portfolio, shows the Natural Gas row rising to 996 MW in 2038, from 832 MW the year before. That is the 164 MW in 2038.\n- The same table shows Natural Gas at zero in 2040 and a Hydrogen CT row of 586 MW in 2040. These are the timepoint 2 conversion units.\n\n2026 plan:\n- Open https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf and go to PDF page 177, printed page 162, in the table of modeling assumptions. The New Resources Pending Approval row says 'A new 172 MW combustion turbine is included as a proxy unit in 2029 in all portfolios.' That is the only new gas unit in the plan before 2036.\n- PDF page 229, Table 9-1 continued, lists Combustion Turbines Gas/H2 as 0 MW through 2036 and 179 MW at most through 2045. No 2037, 2038 or 2039 gas unit of this size appears.\n- PDF page 177 also says 'Operating life of Reeves (146 MW) is extended through 2044' and that other existing gas units stay in service through 2044. So the 2040 retirement date no longer holds either.\n\nWhy cancelled and not renamed:\n- The 2026 plan filed on September 1, 2026 replaces the 2023 plan. Its new gas placeholder is 172 MW in 2029, not this size or year. The queue row IA-PNM-2025-20 at the Reeves substation matches that 172 MW unit, not this one.\n- This is one document, so the status change is medium confidence.",
+     "milestones": [
+      {
+       "status": "cancelled",
+       "year": 2026,
+       "period": "September",
+       "sources": [
+        "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf"
+       ],
+       "note": "PNM filed its 2026 resource plan on September 1, 2026 and the plan drops the 2023 placeholder gas units."
+      }
+     ]
+    },
+    "Cancellation year": {
+     "value": "2026",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "irp": true,
+     "note": "The 2026 resource plan filed September 1, 2026 replaces the 2023 plan and carries no gas unit of this size or year. So 2026 is the year the placeholder dropped out. Open https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf and go to PDF page 177 for the one new gas proxy unit of 172 MW in 2029 and PDF page 229 for the table with no gas added through 2036."
+    },
+    "Status Detail": {
+     "value": "September 2026: PNM filed its 2026 integrated resource plan, which no longer includes this 164 MW in 2038 placeholder from the 2023 plan. Its only new gas placeholder is 172 MW in 2029. The 2023 plan is at https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf and the 2026 plan is at https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf.",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "irp": true,
+     "note": "This is the new line for the top of Status Detail. It is based on PDF page 177 of the 2026 plan at https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf, where the row New Resources Pending Approval gives the 172 MW proxy unit in 2029, and on Table 69 on PDF page 218 of the 2023 plan at https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "irp": true,
+     "note": "Open https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf and go to PDF page 151, printed page 143, section 6.4.1. The plan treats new combustion turbines as firm grid peaking capacity and models them as grid resources, with no backup role. Table 69 on PDF page 218 counts them under Firm Generating Resources. No page says backup power in those words, so this is implied and medium."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "irp": true,
+     "note": "Open https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf and go to PDF page 151, printed page 143. Table 45 note A says 'a nominal one-time conversion cost of $585/kW is assumed for all new combustion turbines, treated as an expense in 2040, to allow combustion of 100% hydrogen.' The paragraph above Table 45 says new turbines 'are assumed to convert to hydrogen in 2040.' So this unit is the same turbine after conversion. The plan does not name this unit, so the match is implied."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "CHP",
+    "Operator(s)",
+    "City",
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use",
+    "Latest Activity"
+   ],
+   "notes": "Timepoint 2 unit of the 2023 plan placeholder. It is the hydrogen conversion of the unit with timepoint 1. The 2026 plan drops the placeholder, so the status is reported as cancelled. A plan turbine model is not given for this site; the 2023 plan only says its cost assumptions rest on a GE LM6000 combustion turbine, on PDF page 151. No owner change, start date or site was found."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001092792",
+   "concern_type": "Status",
+   "question": "Should this 2023 plan placeholder be cancelled now that the 2026 plan drops it?",
+   "finding": "The 2023 plan at https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf adds 164 MW in 2038 on PDF page 218, Table 69. The 2026 plan at https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf has no gas unit of that size or year and adds only a 172 MW proxy unit in 2029 on PDF page 177.",
+   "recommendation": "Accept the cancelled status and the cancellation year of 2026 for both units of this plant. If you accept it, also remove the start year and the planned retirement year by hand, since a cancelled unit carries neither.",
+   "note": "Open https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf, PDF page 177, row New Resources Pending Approval, and PDF page 229, the table of resource additions. The queue row IA-PNM-2025-20 for 172 MW of gas at the Reeves substation in 2029 is in the Lawrence Berkeley National Laboratory queue file at https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx. It matches the 172 MW proxy unit, so it should be handled as one new unit with the Reeves plant, not by renaming this record.",
+   "refs": [
+    "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+    "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf"
+   ],
+   "proposed_value": {
+    "Status": "cancelled"
+   }
+  },
+  {
+   "gem_unit_id": "G100001092792",
+   "concern_type": "Unit name",
+   "question": "What should the unit name 1, timepoint 1 IRP be changed to?",
+   "finding": "The name 1, timepoint 1 IRP does not follow the timepoint form of a name, a comma, a space and the word timepoint with a number. The extra word IRP is the only part that breaks the form.",
+   "recommendation": "Rename it to 1, timepoint 1 so it follows the form. If the unit is cancelled, the name can still be fixed the same way.",
+   "note": "This is a naming rule from the batch brief. No outside document is needed.",
+   "refs": [],
+   "proposed_value": {
+    "Unit name": "1, timepoint 1"
+   }
+  },
+  {
+   "gem_unit_id": "G100001092803",
+   "concern_type": "Unit name",
+   "question": "What should the unit name 1, timepoint 2 IRP be changed to?",
+   "finding": "The name 1, timepoint 2 IRP does not follow the timepoint form of a name, a comma, a space and the word timepoint with a number. The extra word IRP is the only part that breaks the form.",
+   "recommendation": "Rename it to 1, timepoint 2 so it follows the form. If the unit is cancelled, the name can still be fixed the same way.",
+   "note": "This is a naming rule from the batch brief. No outside document is needed.",
+   "refs": [],
+   "proposed_value": {
+    "Unit name": "1, timepoint 2"
+   }
+  },
+  {
+   "gem_unit_id": "G100001092792",
+   "concern_type": "Conversion/replacement?",
+   "question": "Should the timepoint 1 unit keep a blank conversion field?",
+   "finding": "The 2023 plan at https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf, PDF page 151, says new turbines run on natural gas and are assumed to convert to hydrogen in 2040. Timepoint 1 is the gas phase, so it replaces and converts nothing.",
+   "recommendation": "Leave the conversion fields blank on the timepoint 1 unit, because no earlier unit is named. The conversion is recorded on the timepoint 2 unit, which already points back to G100001092792.",
+   "note": "Open the plan and read the paragraph above Table 45 on PDF page 151, printed page 143.",
+   "refs": [
+    "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001092792",
+   "concern_type": "location",
+   "question": "Where is this placeholder plant, and should its point stay at the current spot?",
+   "finding": "No document places this plant. The 2023 plan at https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf, PDF page 151, says 'Siting combustion turbines are generally not constrained to specific locations' and models the turbines as options across all local areas. GEM's point is 33.34112, -105.66613, which is only a stand-in.",
+   "recommendation": "Leave the point, the approximate accuracy and the blank City as they are.",
+   "note": "I searched the 2023 plan at https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf and the 2026 plan at https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf for a site, a county or a substation for these units and found none. The satellite step was skipped because there is no stated parcel or neighbor to look at. No address or parcel exists, so the geocoder had nothing to resolve.",
+   "refs": [
+    "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+    "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+   "used_for": [
+    "Backup Power",
+    "Conversion/replacement?",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "The 2023 plan loads. Table 69 on PDF page 218 and the text on PDF page 151 were read from a downloaded copy."
+  },
+  {
+   "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+   "used_for": [
+    "Status",
+    "Cancellation year",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "The 2026 plan loads. PDF pages 107, 177, 229 and 264 were read from the saved text."
+  },
+  {
+   "url": "https://www.pnm.com/2023-IRP",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "The 2023 plan landing page loads. It is the existing source and it links the full plan."
+  }
+ ]
+}

@@ -1,0 +1,168 @@
+{
+ "meta": {
+  "plant_id": "L100001082470",
+  "plant_name": "SPS 2023 IRP power plants",
+  "state": "New Mexico",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:50:16-05:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001092804",
+   "unit_name": "1 IRP",
+   "findings": {
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://www.siemens-energy.com/us/en/home/press-releases/Siemens-Energy-to-supply-ten-gas-turbines-to-Xcel-Energy.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.siemens-energy.com/us/en/home/press-releases/Siemens-Energy-to-supply-ten-gas-turbines-to-Xcel-Energy.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Technology:\n\n- Open the Siemens Energy press release from October 1, 2025 at https://www.siemens-energy.com/us/en/home/press-releases/Siemens-Energy-to-supply-ten-gas-turbines-to-Xcel-Energy.html. It says Xcel Energy bought 10 large gas turbines for two plants. At Tolk Station, 'five Siemens Energy SGT6-5000F gas turbines' deliver 928 megawatts. In Gaines County, 'a new peaker plant' has 'five additional F-class turbines' for 1,160 megawatts.\n- 928 plus 1,160 is 2,088 MW, the figure in GEM. So this GEM unit is those two Texas plants. Both are gas turbines.\n- Neither plant is in New Mexico. See the questions on this unit."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Siemens Energy: SGT6-5000F",
+     "refs": [
+      "https://www.siemens-energy.com/us/en/home/press-releases/Siemens-Energy-to-supply-ten-gas-turbines-to-Xcel-Energy.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.siemens-energy.com/us/en/home/press-releases/Siemens-Energy-to-supply-ten-gas-turbines-to-Xcel-Energy.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Open https://www.siemens-energy.com/us/en/home/press-releases/Siemens-Energy-to-supply-ten-gas-turbines-to-Xcel-Energy.html. The Tolk Station paragraph names 'five Siemens Energy SGT6-5000F gas turbines'. The Gaines County paragraph says 'five additional F-class turbines', which Siemens does not name further. The same model is likely, but only Tolk states it."
+    },
+    "Status Detail": {
+     "value": "Newest entry: The 2,088 MW is two Texas gas plants, not one New Mexico site. The commission approved them on May 7, 2026. The Gaines County plant of 1,160 MW is due in December 2028 and the Tolk Station plant of 928 MW in April 2029.",
+     "refs": [
+      "https://www.siemens-energy.com/us/en/home/press-releases/Siemens-Energy-to-supply-ten-gas-turbines-to-Xcel-Energy.html",
+      "https://www.utilitydive.com/news/new-mexico-regulators-approve-spss-9b-gas-heavy-resource-plan/820978"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.siemens-energy.com/us/en/home/press-releases/Siemens-Energy-to-supply-ten-gas-turbines-to-Xcel-Energy.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.utilitydive.com/news/new-mexico-regulators-approve-spss-9b-gas-heavy-resource-plan/820978",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Status:\n\n- The Utility Dive story from May 26, 2026 at https://www.utilitydive.com/news/new-mexico-regulators-approve-spss-9b-gas-heavy-resource-plan/820978 says the New Mexico commission, on a 2-1 vote, 'approved SPS' plan to add 2,088 MW of gas-fired generation'. It also mentions the Tolk coal plant retiring and replacement resources expected by March 31, 2029.\n- The 2026 Southwestern Public Service resource plan, case 25-00076-UT, filed October 23, 2026, is at https://e360.prc.nm.gov/portal/public/#/public/nm-prc/en/CaseXscreen?screen=external-Case360&caseId=fe3141c2-1770-4ee1-90a7-f9c3a4749200. Open its PDF pages 47 and 48, Table 3-2, 'Approved But Pending Commercial Operation Date'. It lists 'Gaines County 1,160 MW, 5 Combustion Turbines, Dec 2028, Gaines County, Texas' and 'Tolk Station 928 MW, 4 Combustion Turbines, Apr 2029, Lamb County, Texas'. That web page is drawn by scripts and the verifier cannot read it, so I read the saved text of the plan.\n- The Siemens release at https://www.siemens-energy.com/us/en/home/press-releases/Siemens-Energy-to-supply-ten-gas-turbines-to-Xcel-Energy.html says Tolk gets five turbines, while the plan says four. The unit count does not change the 928 MW figure.\n- The plan's Table 3-3 on PDF page 49 adds 'Dispatchable Gas Thermal - Tolk Unit 5', 232.5 MW, Bailey County, Texas, December 2029. That is the 233 MW seen in the Sierra Club list.",
+     "irp": true
+    }
+   },
+   "not_found": [
+    "Backup Power",
+    "City",
+    "Number Of Engines",
+    "Capacity Per Engine"
+   ],
+   "notes": "This unit is not a New Mexico plant. The 2,088 MW matches two Texas gas plants, Gaines County at 1,160 MW and Tolk Station at 928 MW. The point, city and county in GEM are placeholders in New Mexico and should not be filled."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001092804",
+   "concern_type": "scope",
+   "question": "Should this 2,088 MW placeholder become two Texas plants?",
+   "finding": "The Siemens Energy release at https://www.siemens-energy.com/us/en/home/press-releases/Siemens-Energy-to-supply-ten-gas-turbines-to-Xcel-Energy.html and Table 3-2 on PDF pages 47 and 48 of the 2026 plan at https://e360.prc.nm.gov/portal/public/#/public/nm-prc/en/CaseXscreen?screen=external-Case360&caseId=fe3141c2-1770-4ee1-90a7-f9c3a4749200 give Gaines County, Texas at 1,160 MW and Tolk Station, Texas at 928 MW. Together they equal 2,088 MW.",
+   "recommendation": "Send both plants to the Texas scope as two adds, then cancel or remove this New Mexico placeholder. Keep this unit as it is until Texas has them.",
+   "note": "The Utility Dive story at https://www.utilitydive.com/news/new-mexico-regulators-approve-spss-9b-gas-heavy-resource-plan/820978 confirms the New Mexico commission approved 2,088 MW of gas on May 7, 2026. The New Mexico case 25-00066-UT is not in the commission's public case index, so I could not read the order itself. Neither plant is in New Mexico, so no New Mexico point or city applies."
+  },
+  {
+   "gem_unit_id": "G100001092804",
+   "concern_type": "Capacity (MW)",
+   "question": "What is the 233 MW planned gas unit on the Sierra Club list?",
+   "finding": "Table 3-3 on PDF page 49 of the 2026 plan at https://e360.prc.nm.gov/portal/public/#/public/nm-prc/en/CaseXscreen?screen=external-Case360&caseId=fe3141c2-1770-4ee1-90a7-f9c3a4749200 lists 'Dispatchable Gas Thermal - Tolk Unit 5' at 232.5 MW in Bailey County, Texas, for December 2029. That matches the 233 MW.",
+   "recommendation": "Give it to the Texas scope as a separate planned unit at Tolk Station. Do not add it to this New Mexico unit.",
+   "note": "I did not cite the Sierra Club list. This is the August 2026 gas plant selection the brief asks about. It is in Texas."
+  },
+  {
+   "gem_unit_id": "G100001092804",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "Does any document state Backup Power for this placeholder?",
+   "finding": "I read the Siemens release at https://www.siemens-energy.com/us/en/home/press-releases/Siemens-Energy-to-supply-ten-gas-turbines-to-Xcel-Energy.html, the Utility Dive story at https://www.utilitydive.com/news/new-mexico-regulators-approve-spss-9b-gas-heavy-resource-plan/820978 and the 2026 plan's resource tables. The Siemens release uses the words 'backup energy' for Tolk in a loose grid sense, and calls Gaines County a 'peaker plant'. No document describes an emergency backup role.",
+   "recommendation": "Leave Backup Power at no. Re-check when the Texas scope adds the two plants.",
+   "note": "I found no document that states the value either way.",
+   "refs": [
+    "https://www.siemens-energy.com/us/en/home/press-releases/Siemens-Energy-to-supply-ten-gas-turbines-to-Xcel-Energy.html",
+    "https://www.utilitydive.com/news/new-mexico-regulators-approve-spss-9b-gas-heavy-resource-plan/820978"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.siemens-energy.com/us/en/home/press-releases/Siemens-Energy-to-supply-ten-gas-turbines-to-Xcel-Energy.html",
+   "used_for": [
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Passes with 1,160, 928, SGT6-5000F, Gaines County and Tolk."
+  },
+  {
+   "url": "https://www.utilitydive.com/news/new-mexico-regulators-approve-spss-9b-gas-heavy-resource-plan/820978",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Passes for 2,088 and Tolk. Does not name Gaines County."
+  },
+  {
+   "url": "https://e360.prc.nm.gov/portal/public/#/public/nm-prc/en/CaseXscreen?screen=external-Case360&caseId=fe3141c2-1770-4ee1-90a7-f9c3a4749200",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "failed",
+   "note": "The commission case page is built by scripts, so the verifier cannot read it. I read the saved plan text from the harvest instead. Not in refs."
+  },
+  {
+   "url": "https://www.prc.nm.gov/?p=32787",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "failed",
+   "note": "Loads but does not contain 2,088."
+  },
+  {
+   "url": "https://www.xcelenergy.com/company/rates_and_regulations/resource_plans/integrated_resource_plan",
+   "used_for": [
+    "links"
+   ],
+   "outcome": "verified",
+   "note": "Index page only, plan is on the commission site."
+  }
+ ]
+}

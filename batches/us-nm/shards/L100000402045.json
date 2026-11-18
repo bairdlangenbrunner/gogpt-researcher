@@ -1,0 +1,86 @@
+{
+ "meta": {
+  "plant_id": "L100000402045",
+  "plant_name": "Hobbs generating station",
+  "state": "New Mexico",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:48:09-05:00",
+  "done": true,
+  "urls_attempted": 1,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402023",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the EIA-860M generator table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 56458 Hobbs Generating Station has CHW-T 7.2 MW, GT1 196.9 MW, GT2 196.9 MW and ST3 280.5 MW, all unit code CC1, status OP, operating year 2008, owner entity Lea Power Partners LLC. The total is 681.5 MW, which matches GEM's 682. No retirement date is listed.",
+     "milestones": [
+      {
+       "status": "operating",
+       "year": 2008,
+       "period": "September",
+       "sources": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "EIA operating month 9, year 2008"
+      }
+     ]
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Backup power at a data center is what this field records. This plant is not a data center backup fleet. Plant 56458 Hobbs Generating Station has CHW-T 7.2 MW, GT1 196.9 MW, GT2 196.9 MW and ST3 280.5 MW, all unit code CC1, status OP, operating year 2008, owner entity Lea Power Partners LLC. The status column shows the unit as in regular operation, not as standby, and the sector is listed as electric utility or independent power producer. So the current value no stands. The table does not state backup power in words, so this rests on what the table implies."
+    }
+   },
+   "not_found": [
+    "Planned retire"
+   ],
+   "notes": "The combined cycle block is still listed as operating at about 682 MW and no retirement or owner change was found in the table."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Plant 56458 rows read."
+  }
+ ]
+}

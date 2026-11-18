@@ -1,0 +1,156 @@
+{
+ "meta": {
+  "plant_id": "L100001089610",
+  "plant_name": "Westside power station",
+  "state": "New Mexico",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:45:48-05:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001102061",
+   "unit_name": "1",
+   "findings": {
+    "Number Of Engines": {
+     "value": "16",
+     "refs": [
+      "https://cloud.env.nm.gov/resources/_translator.php/NWFjY2UwMjdjMmQwODZiNzdjZjc0OTYzNF8yMzgzOTA~.pdf",
+      "https://cloud.env.nm.gov/resources/_translator.php/YWJiZTRjNjliM2IwY2NkNGQ1YzM0NWU4Yl8yMzgzODc~.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://cloud.env.nm.gov/resources/_translator.php/NWFjY2UwMjdjMmQwODZiNzdjZjc0OTYzNF8yMzgzOTA~.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://cloud.env.nm.gov/resources/_translator.php/YWJiZTRjNjliM2IwY2NkNGQ1YzM0NWU4Yl8yMzgzODc~.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Count of engines.\n\nNumber of engines:\n- Open the final New Mexico Environment Department air permit 10681 at https://cloud.env.nm.gov/resources/_translator.php/NWFjY2UwMjdjMmQwODZiNzdjZjc0OTYzNF8yMzgzOTA~.pdf and find Section A603, Engines. It says Westside Station has 'six (6) Jenbacher JGC620 4-Stroke Lean Burn engines' and 'ten (10) Jenbacher JGC624 4-Stroke Lean Burn engines', which is 16 engines.\n- The department's completion letter of the application at https://cloud.env.nm.gov/resources/_translator.php/YWJiZTRjNjliM2IwY2NkNGQ1YzM0NWU4Yl8yMzgzODc~.pdf says the same in its project description.\n- The permit was issued January 22, 2026. The Statement of Basis at https://cloud.env.nm.gov/resources/_translator.php/ZjIxMzI5OGU3OWMxZTliZGY4YmJlZThmNV8yMzgzODU~.pdf lists the engines as units E-1 to E-16."
+    },
+    "Status": {
+     "value": "construction",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": false,
+       "name_found": false
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "milestones": [
+      {
+       "status": "pre-construction",
+       "year": 2025,
+       "period": "September",
+       "sources": [
+        "https://cloud.env.nm.gov/resources/_translator.php/YWJiZTRjNjliM2IwY2NkNGQ1YzM0NWU4Yl8yMzgzODc~.pdf"
+       ],
+       "note": "The air permit application is dated September 10, 2025.",
+       "period_note": ""
+      }
+     ],
+     "note": "This re-checks the status and adds a source.\n\nStatus:\n- The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Planned, plant 70261 Westside, generators WS01, WS02 and WS03, shows status 'Under construction, less than or equal to 50 percent complete'. That matches the current status construction.\n- I did not find a dated start of work, so no construction milestone is given. The earliest dated step found is the application of September 10, 2025."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://cloud.env.nm.gov/resources/_translator.php/NWFjY2UwMjdjMmQwODZiNzdjZjc0OTYzNF8yMzgzOTA~.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://cloud.env.nm.gov/resources/_translator.php/NWFjY2UwMjdjMmQwODZiNzdjZjc0OTYzNF8yMzgzOTA~.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Backup Power stays no.\n\nWhere to find it:\n- Open the air permit at https://cloud.env.nm.gov/resources/_translator.php/NWFjY2UwMjdjMmQwODZiNzdjZjc0OTYzNF8yMzgzOTA~.pdf and go to Section A103 or A600, the facility description. It says the engines 'supply electricity to the power grid during peak demand periods'. So this is a grid peaking plant and not a backup supply."
+    }
+   },
+   "not_found": [
+    "Capacity (MW)",
+    "Start year",
+    "Operator(s)",
+    "Latest Activity",
+    "Capacity Per Engine"
+   ],
+   "notes": "The permit confirms 16 engines, six J620 and ten J624. I found no dated start of construction, and no source names an operator. Latest Activity is left alone because the project is moving: permit issued January 22, 2026 and EIA shows it under construction. The engines have two different sizes, so one capacity per engine is not given."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001102061",
+   "concern_type": "Capacity (MW)",
+   "question": "Should Westside capacity stay at 63 MW when EIA lists 60 MW?",
+   "finding": "The EIA-860M table for September 2026 lists three generators of 16, 24 and 20 MW, which is 60 MW. GEM has 63 MW, which is six 3 MW engines plus ten 4.5 MW engines. The permit gives engine power only in horsepower.",
+   "recommendation": "Leave 63 MW as is unless a document gives the electrical rating of the generator sets. Ask the PM whether to use the EIA 60 MW.",
+   "note": "EIA file: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Planned, plant 70261, rows WS01 16.0, WS02 24.0, WS03 20.0 MW, planned operation March 2027, January 2028 and May 2028. The permit https://cloud.env.nm.gov/resources/_translator.php/NWFjY2UwMjdjMmQwODZiNzdjZjc0OTYzNF8yMzgzOTA~.pdf shows the J620 at 3,713 horsepower and the J624 at 5,771 horsepower in the original table, and 4,581 and 6,161 horsepower in the Statement of Basis at https://cloud.env.nm.gov/resources/_translator.php/ZjIxMzI5OGU3OWMxZTliZGY4YmJlZThmNV8yMzgzODU~.pdf. Neither states electrical MW as a clear figure. I did not find a Jenbacher data sheet in the budget.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://cloud.env.nm.gov/resources/_translator.php/NWFjY2UwMjdjMmQwODZiNzdjZjc0OTYzNF8yMzgzOTA~.pdf"
+   ],
+   "proposed_value": {
+    "Capacity (MW)": "60"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://cloud.env.nm.gov/resources/_translator.php/NWFjY2UwMjdjMmQwODZiNzdjZjc0OTYzNF8yMzgzOTA~.pdf",
+   "used_for": [
+    "Number Of Engines",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Final permit 10681 PDF."
+  },
+  {
+   "url": "https://cloud.env.nm.gov/resources/_translator.php/YWJiZTRjNjliM2IwY2NkNGQ1YzM0NWU4Yl8yMzgzODc~.pdf",
+   "used_for": [
+    "Number Of Engines"
+   ],
+   "outcome": "verified",
+   "note": "Completion letter."
+  },
+  {
+   "url": "https://cloud.env.nm.gov/resources/_translator.php/ZjIxMzI5OGU3OWMxZTliZGY4YmJlZThmNV8yMzgzODU~.pdf",
+   "used_for": [
+    "Number Of Engines"
+   ],
+   "outcome": "verified",
+   "note": "Statement of Basis, 16 engines."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Read from the downloaded file."
+  }
+ ]
+}

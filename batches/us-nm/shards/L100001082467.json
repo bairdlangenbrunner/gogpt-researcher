@@ -1,0 +1,280 @@
+{
+ "meta": {
+  "plant_id": "L100001082467",
+  "plant_name": "PNM 2023 IRP power station 3",
+  "state": "New Mexico",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:47:49-05:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001092795",
+   "unit_name": "1, timepoint 1 IRP",
+   "findings": {
+    "Status Detail": {
+     "value": "Newest entry: The 2026 PNM resource plan (case 25-00022-UT) adds only 40 MW of new gas and does not list the 2039 gas placeholder from the 2023 plan.",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "PNM 2026 plan and the 2023 plan, what each says about this unit:\n\n- Open the December 2023 PNM resource plan at https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf and go to PDF page 218 (printed page 210), Table 69, titled 'Most-Cost Effective Portfolio'. The row 'Natural Gas' rises from 700 MW in 2036 to 832 MW in 2037, 996 MW in 2038 and 1160 MW in 2039. The 2039 step of 164 MW is this unit.\n- Open the 2026 resource plan at https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf and go to PDF page 242, section 9.4, 'Most Cost-Effective Portfolio'. It says the expansion 'primarily adds energy efficiency and solar resources'. The only new gas in the 2026 plan is 40 MW at La Luz, listed on PDF page 107 as '40 MW of new gas'.\n- So the 2026 plan no longer lists this unit. The 2023 plan modeled it as a placeholder, not a named site.\n\nThe status stays announced until the commission acts on the 2026 plan. See the question on this unit.",
+     "irp": true
+    },
+    "Latest Activity": {
+     "value": "Year: 2023, Month: 12",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The newest report that names this unit is the December 2023 PNM resource plan, Table 69 on PDF page 218 at https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf. The cover and safe harbor pages give the date as December 2023. The 2026 plan at https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf does not name it. That is more than one year old, so the unit has gone quiet.",
+     "irp": true
+    },
+    "Planned retire": {
+     "value": "2040",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf and go to PDF page 218, Table 69. The 'Natural Gas' row falls to zero in 2040 and the 'Hydrogen CT' row appears at 586 MW. The gas unit therefore stops burning gas in 2040. PDF page 151 says new combustion turbines 'are assumed to convert to hydrogen in 2040'.",
+     "irp": true
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf and go to PDF page 151. The plan models new combustion turbines on 'a GE LM6000 combustion turbine'. The value already in the database matches, and now has a source.",
+     "irp": true
+    }
+   },
+   "not_found": [
+    "Start year",
+    "Equipment Manufacturer/Model",
+    "City",
+    "Owner(s)",
+    "Operator(s)",
+    "Backup Power",
+    "Conversion/replacement?"
+   ],
+   "notes": "This unit is the 164 MW gas placeholder for 2039 in the 2023 PNM plan. It is not in the 2026 plan."
+  },
+  {
+   "gem_unit_id": "G100001092797",
+   "unit_name": "1, timepoint 2 IRP",
+   "findings": {
+    "Status Detail": {
+     "value": "Newest entry: The 2026 PNM resource plan (case 25-00022-UT) adds only 40 MW of new gas and does not list the 2039 gas placeholder from the 2023 plan.",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "PNM 2026 plan and the 2023 plan, what each says about this unit:\n\n- Open the December 2023 PNM resource plan at https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf and go to PDF page 218 (printed page 210), Table 69, titled 'Most-Cost Effective Portfolio'. The row 'Natural Gas' rises from 700 MW in 2036 to 832 MW in 2037, 996 MW in 2038 and 1160 MW in 2039. The 2039 step of 164 MW is this unit.\n- Open the 2026 resource plan at https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf and go to PDF page 242, section 9.4, 'Most Cost-Effective Portfolio'. It says the expansion 'primarily adds energy efficiency and solar resources'. The only new gas in the 2026 plan is 40 MW at La Luz, listed on PDF page 107 as '40 MW of new gas'.\n- So the 2026 plan no longer lists this unit. The 2023 plan modeled it as a placeholder, not a named site.\n\nThe status stays announced until the commission acts on the 2026 plan. See the question on this unit.",
+     "irp": true
+    },
+    "Latest Activity": {
+     "value": "Year: 2023, Month: 12",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The newest report that names this unit is the December 2023 PNM resource plan, Table 69 on PDF page 218 at https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf. The cover and safe harbor pages give the date as December 2023. The 2026 plan at https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf does not name it. That is more than one year old, so the unit has gone quiet.",
+     "irp": true
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Technology:\n\n- Open https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf and go to PDF page 151, under 'Assumed Technology Characteristics'. It says the cost and performance assumptions 'are based on a GE LM6000 combustion turbine'. It also says new combustion turbines 'operate using natural gas and are assumed to convert to hydrogen in 2040'.\n- A combustion turbine is a gas turbine in the web form. The plan models it as a generic placeholder, not a bought machine.",
+     "irp": true
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Conversion:\n\n- Open https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf and go to PDF page 151. It says new combustion turbines 'are assumed to convert to hydrogen in 2040 (incurring a one-time capital upgrade cost)'.\n- Table 69 on PDF page 218 shows the 'Natural Gas' row dropping to zero in 2040 while the 'Hydrogen CT' row shows 586 MW. That matches this unit as the hydrogen version of the 2039 gas unit.",
+     "irp": true
+    }
+   },
+   "not_found": [
+    "Start year",
+    "Equipment Manufacturer/Model",
+    "City",
+    "Backup Power"
+   ],
+   "notes": "This unit is the hydrogen version of the 2039 placeholder, converted in 2040. I found no plan text on a turbine maker choice, a start year beyond the 2040 conversion, or backup use."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001092795",
+   "concern_type": "Status",
+   "question": "Is this 2039 gas placeholder still a live proposal after the 2026 plan?",
+   "finding": "The 2023 plan at https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf lists it on PDF page 218, Table 69. The 2026 plan at https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf adds only 40 MW of new gas, on PDF page 107, and does not list it.",
+   "recommendation": "Leave the status announced for now. Ask the project manager whether placeholder resources from a replaced plan should become cancelled.",
+   "note": "I did not find a commission order that rejects the 2023 placeholders. The 2026 plan is case 25-00022-UT and is still before the commission.",
+   "refs": [
+    "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+    "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001092795",
+   "concern_type": "identity",
+   "question": "What should the unit names '1, timepoint 1 IRP' and '1, timepoint 2 IRP' be?",
+   "finding": "The timepoint form is '<name>, timepoint N'. The plant is named for a plan placeholder with no real site, so no better name exists in the plan at https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf.",
+   "recommendation": "Rename them '1, timepoint 1' and '1, timepoint 2', and keep 'IRP' in the plant name only.",
+   "note": "Table 69 on PDF page 218 lists the placeholder only by year and megawatts."
+  },
+  {
+   "gem_unit_id": "G100001092797",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "Does any document state Backup Power for these placeholder turbines?",
+   "finding": "I read PDF pages 94 to 95 and 149 to 152 of the 2023 plan at https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf. New turbines are modeled as firm capacity for the grid, with no backup role.",
+   "recommendation": "Leave Backup Power at no on both units. I found no document that states the value either way.",
+   "note": "I searched the 2023 plan and the 2026 plan for backup power wording on these units and found none.",
+   "refs": [
+    "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001092797",
+   "concern_type": "location",
+   "question": "Is there a site for these placeholder turbines to place them on a map?",
+   "finding": "Page 151 of the PDF at https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf says 'Siting combustion turbines are generally not constrained to specific locations'. No address, parcel or site is named in either plan.",
+   "recommendation": "Leave the point at 32.24714, -107.73159 as an approximate placeholder and leave City blank.",
+   "note": "I did not run a satellite look because no document names a site, so the picture would prove nothing. No air permit or queue entry exists for these placeholders."
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2023-irp-final-pdf",
+   "used_for": [
+    "Planned retire",
+    "Turbine/Engine Technology",
+    "Conversion/replacement?",
+    "Latest Activity",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Read the full text with pdftotext. Table 69 on PDF page 218 and page 151 are the key pages."
+  },
+  {
+   "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Read the local text from the harvest. Pages 107 and 242."
+  },
+  {
+   "url": "https://www.pnm.com/2023-IRP",
+   "used_for": [
+    "links"
+   ],
+   "outcome": "verified",
+   "note": "The index page that links the 2023 plan PDF."
+  }
+ ]
+}

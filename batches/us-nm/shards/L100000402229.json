@@ -1,0 +1,272 @@
+{
+ "meta": {
+  "plant_id": "L100000402229",
+  "plant_name": "Reeves power station",
+  "state": "New Mexico",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:49:23-05:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403421",
+   "unit_name": "3",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 2450, generator 3, status OP, nameplate 66.0 MW, operating year 1962. The status column reads (OP) Operating. So the unit is still running and no retirement, mothballing or owner change shows in this file."
+    },
+    "Planned retire": {
+     "value": "2044",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+      "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the PNM 2026 resource plan report at https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf and go to section 1.5.1, Reeves Generating Station Retirement. PNM \"intends to continue operation of Reeves Generating Station through the end of 2044 (previously planned to retire at the end of its depreciable life in 2030)\". The appendices at https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf repeat it in Appendix E under Reeves Generating Station. The database already shows 2044, so this adds the plan as a source and keeps the value."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Open the PNM 2026 resource plan appendices at https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf and go to Appendix E, section Reeves Generating Station. It says the plant provides \"dispatchable generation, voltage support, and operational flexibility\" in the Albuquerque load pocket. That is grid service and not backup power for one site. It does not use the words backup power, so this is medium."
+    }
+   },
+   "not_found": [
+    "Latest Activity"
+   ],
+   "notes": "Unit 3 is operating and the 2026 plan keeps it to the end of 2044. I found no retirement, mothballing or sale."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000403421",
+   "concern_type": "existence",
+   "question": "Is the 172 MW gas request at the Reeves substation a new unit at Reeves?",
+   "finding": "PNM queue request IA-PNM-2025-20 is a 172 MW gas generator with in-service date January 2029 and point of interconnection \"Reeves Substation\". The 2026 PNM plan carries a 172 MW combustion turbine in 2029 only as a proxy unit with no site named.",
+   "recommendation": "Accept the new unit 4 record in this batch as announced, since one verified queue entry is enough to add. Move it to its own plant if a later PNM filing places the turbine at another site.",
+   "note": "Queue row: Berkeley Lab queue file https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx, request IA-PNM-2025-20, which I read from the saved harvest and could not run through the verifier. Plan: https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf, the table of modeling assumptions, New Resources Pending Approval: \"A new 172 MW combustion turbine is included as a proxy unit in 2029 in all portfolios. Actual resource selection will be determined though a 2029-2032 All-Source RFP Supplement\". Scenario 12 in the same report removes this unit.",
+   "refs": [
+    "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000403421",
+   "concern_type": "scope",
+   "question": "Should Reeves Units 1 and 2 be added to the tracker?",
+   "finding": "The EIA-860M table for September 2026 lists Reeves plant 2450 with three operating steam units. Unit 3 is in the database. Units 1 and 2 are 44.0 MW each, built in 1960, and are not.",
+   "recommendation": "Accept the new unit records for Units 1 and 2 in this batch, each 44 MW, operating since 1960.",
+   "note": "Open https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant ID 2450, generators 1 and 2, nameplate 44.0 MW, operating year 1960, technology Natural Gas Steam Turbine. The PNM appendices at https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf, Appendix E, Reeves Generating Station, say the plant has \"three steam turbine units, Units 1, 2, and 3, that are 42, 41, and 63 MW\" and that Units 1 and 2 were upgraded in 2010 and 2011.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf"
+   ]
+  }
+ ],
+ "newunits": [
+  {
+   "gem_plant_id": "L100000402229",
+   "plant_name": "Reeves power station",
+   "unit_name": "1",
+   "fields": {
+    "Unit name": "1",
+    "Fuel": "fossil gas: natural gas",
+    "Capacity (MW)": "44",
+    "Status": "operating",
+    "Turbine/Engine Technology": "steam turbine",
+    "Start year": "1960",
+    "Owner(s)": "Public Service Company of New Mexico Corp [100%]"
+   },
+   "refs": {
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf"
+    ],
+    "Capacity Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ],
+    "Fuel Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf"
+    ],
+    "Start Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "milestones": [
+    {
+     "status": "operating",
+     "year": 1960,
+     "period": "August",
+     "sources": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "note": "The EIA table gives operating month 8 and year 1960 for generator 1."
+    }
+   ],
+   "researcher_notes": "GEM lists only unit 3 at Reeves. Units 1 and 2 are still operating.\n\nThe EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 2450 Reeves, generator 1: nameplate 44 MW, Natural Gas Steam Turbine, status (OP) Operating, operating month 8 and year 1960, entity Public Service Co of NM, Bernalillo County.\nPNM's 2026 resource plan appendices at https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf, PDF page 86, section 'Reeves Generating Station', say the plant 'consists of three steam turbine units, Units 1, 2, and 3, that are 42, 41, and 63 MW', that the units entered commercial operation between 1960 and 1962, that Units 1 and 2 were upgraded in 2010 and 2011, and that the plan keeps Reeves as a resource until 2044.\nCapacity is the EIA nameplate of 44 MW, not PNM's lower operating figure.",
+   "notes": "GEM lists only unit 3 at Reeves. Units 1 and 2 are still operating.\n\nThe EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 2450 Reeves, generator 1: nameplate 44 MW, Natural Gas Steam Turbine, status (OP) Operating, operating month 8 and year 1960, entity Public Service Co of NM, Bernalillo County.\nPNM's 2026 resource plan appendices at https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf, PDF page 86, section 'Reeves Generating Station', say the plant 'consists of three steam turbine units, Units 1, 2, and 3, that are 42, 41, and 63 MW', that the units entered commercial operation between 1960 and 1962, that Units 1 and 2 were upgraded in 2010 and 2011, and that the plan keeps Reeves as a resource until 2044.\nCapacity is the EIA nameplate of 44 MW, not PNM's lower operating figure."
+  },
+  {
+   "gem_plant_id": "L100000402229",
+   "plant_name": "Reeves power station",
+   "unit_name": "2",
+   "fields": {
+    "Unit name": "2",
+    "Fuel": "fossil gas: natural gas",
+    "Capacity (MW)": "44",
+    "Status": "operating",
+    "Turbine/Engine Technology": "steam turbine",
+    "Start year": "1960",
+    "Owner(s)": "Public Service Company of New Mexico Corp [100%]"
+   },
+   "refs": {
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf"
+    ],
+    "Capacity Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ],
+    "Fuel Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf"
+    ],
+    "Start Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "milestones": [
+    {
+     "status": "operating",
+     "year": 1960,
+     "period": "March",
+     "sources": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "note": "The EIA table gives operating month 3 and year 1960 for generator 2."
+    }
+   ],
+   "researcher_notes": "GEM lists only unit 3 at Reeves. Units 1 and 2 are still operating.\n\nThe EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 2450 Reeves, generator 2: nameplate 44 MW, Natural Gas Steam Turbine, status (OP) Operating, operating month 3 and year 1960, entity Public Service Co of NM, Bernalillo County.\nPNM's 2026 resource plan appendices at https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf, PDF page 86, section 'Reeves Generating Station', say the plant 'consists of three steam turbine units, Units 1, 2, and 3, that are 42, 41, and 63 MW', that the units entered commercial operation between 1960 and 1962, that Units 1 and 2 were upgraded in 2010 and 2011, and that the plan keeps Reeves as a resource until 2044.\nCapacity is the EIA nameplate of 44 MW, not PNM's lower operating figure.",
+   "notes": "GEM lists only unit 3 at Reeves. Units 1 and 2 are still operating.\n\nThe EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 2450 Reeves, generator 2: nameplate 44 MW, Natural Gas Steam Turbine, status (OP) Operating, operating month 3 and year 1960, entity Public Service Co of NM, Bernalillo County.\nPNM's 2026 resource plan appendices at https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf, PDF page 86, section 'Reeves Generating Station', say the plant 'consists of three steam turbine units, Units 1, 2, and 3, that are 42, 41, and 63 MW', that the units entered commercial operation between 1960 and 1962, that Units 1 and 2 were upgraded in 2010 and 2011, and that the plan keeps Reeves as a resource until 2044.\nCapacity is the EIA nameplate of 44 MW, not PNM's lower operating figure."
+  }
+ ],
+ "entities": [],
+ "monitor": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Plant 2450 rows."
+  },
+  {
+   "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Section 1.5.1."
+  },
+  {
+   "url": "https://www.pnm.com/documents/d/pnm.com/2026-irp-appendices_only_sc-pdf",
+   "used_for": [
+    "Planned retire",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Appendix E."
+  }
+ ]
+}

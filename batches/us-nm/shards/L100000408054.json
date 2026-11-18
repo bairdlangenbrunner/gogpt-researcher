@@ -1,0 +1,99 @@
+{
+ "meta": {
+  "plant_id": "L100000408054",
+  "plant_name": "Clean Path energy center",
+  "state": "New Mexico",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:48:09-05:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000411213",
+   "unit_name": "CPEC1",
+   "findings": {
+    "Latest Activity": {
+     "value": "Year: 2020, Month: 7, Day: 25",
+     "refs": [
+      "https://www.lcsun-news.com/story/news/local/2020/07/25/photosol-us-plans-three-solar-projects-san-juan-county/5503886002/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.lcsun-news.com/story/news/local/2020/07/25/photosol-us-plans-three-solar-projects-san-juan-county/5503886002/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "This is the newest dated report I found. The Las Cruces Sun-News article of July 25, 2020 at https://www.lcsun-news.com/story/news/local/2020/07/25/photosol-us-plans-three-solar-projects-san-juan-county/5503886002/ is the source already cited for this unit, and the verifier found the words Clean Path in it. I could not read the passage cleanly from the page text, so check the article.\n\nWhat else I looked at:\n- The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Canceled or Postponed sheet, still lists the plant: Plant 60289 Clean Path Energy Center, sheet Canceled or Postponed: generator CPEC1, 680 MW, Natural Gas Fired Combined Cycle, state NM, county San Juan; generator PVGEN, 55 MW solar. It gives no date.\n- A Power Engineering article from April 2015 at https://www.power-eng.com/renewables/solar-energy/western-energy-partners-to-develop-gas-solar-project-in-new-mexico/ announced the 680 MW gas plant near Waterflow.\n- Web searches for 2021 to 2026 news found nothing that shows revival. The project does not look revived."
+    },
+    "Status": {
+     "value": "cancelled - inferred 4 y",
+     "refs": [
+      "https://www.lcsun-news.com/story/news/local/2020/07/25/photosol-us-plans-three-solar-projects-san-juan-county/5503886002/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.lcsun-news.com/story/news/local/2020/07/25/photosol-us-plans-three-solar-projects-san-juan-county/5503886002/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "low",
+     "independent": false,
+     "note": "No newer report was found, so the status is left as it is. The EIA table lists the unit as canceled or postponed with no date."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Backup Power"
+   ],
+   "notes": "Nothing newer than July 2020 was found, so the project does not look revived. No turbine maker or model was found in the 2015 announcement or in the EIA table. No document states backup power."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.lcsun-news.com/story/news/local/2020/07/25/photosol-us-plans-three-solar-projects-san-juan-county/5503886002/",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "verified",
+   "note": "Verifier passed on Clean Path."
+  },
+  {
+   "url": "https://www.power-eng.com/renewables/solar-energy/western-energy-partners-to-develop-gas-solar-project-in-new-mexico/",
+   "used_for": [
+    "context"
+   ],
+   "outcome": "verified",
+   "note": "2015 announcement of the 680 MW plant; names no turbine."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Plant 60289 listed under canceled or postponed."
+  },
+  {
+   "url": "https://www.ksjd.org/news/2016-11-03/company-drops-plans-for-natural-gas-power-plant-in-northern-new-mexico",
+   "used_for": [
+    "Latest Activity"
+   ],
+   "outcome": "not relevant",
+   "note": "The page does not name Clean Path."
+  }
+ ]
+}
