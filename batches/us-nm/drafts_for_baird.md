@@ -16,57 +16,22 @@ On the EIP tab "EIP 07/28/26 data filtered", the YGI Microgrid row (facility id 
 
 ## IRP boxes and Notes lines
 
-Both are in the actions workbook, [gogpt_batch_20261118_1017_ET_us-nm_update_actions.xlsx](file:///Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/batches/us-nm/deliverables/gogpt_batch_20261118_1017_ET_us-nm_update_actions.xlsx).
+Both are in the actions workbook, [gogpt_batch_20261119_1947_ET_us-nm_update_actions.xlsx](deliverables/gogpt_batch_20261119_1947_ET_us-nm_update_actions.xlsx).
 
 - The `irp_box` sheet lists each unit whose box to tick. The units not yet ticked are Afton CC1, Lordsburg GT1 and GT2, Reeves 3, Rio Bravo GT1 and Rio Grande 7. Every new row from a plan also gets the box when it is created: La Luz Energy Center and Reeves units 1, 2 and 4.
 - The `irp_notes_draft` sheet has one Notes line per utility for the "US IRPs" tab. The tab still shows the 2023 plans for PNM and Southwestern Public Service. PNM filed its 2026 plan on 2026-09-01 in case 25-00022-UT, and Southwestern Public Service filed its 2026 plan on 2026-10-23 in case 25-00076-UT. Three utilities are not on the tab at all: Tri-State (2023 Electric Resource Plan), the Farmington Electric Utility System (2022) and Los Alamos County (2022). El Paso Electric's 2025 plan is already there.
 - Southwestern Public Service's 2026 plan has no public copy a link can point to. Xcel's plan page sends the file through a Salesforce viewer that gives no text. Only the commission case copy exists, so the plan link on the tab is the case number.
 
-## Company lookups on the Secretary of State site
+## Done by script on 2026-11-19
 
-The business search at https://enterprise.sos.nm.gov/search/business is behind a Cloudflare check no script passes. For each company below, paste the registered name, formation date and principal office into its question on the review page.
+These were on this list before. Nothing is left for a person.
 
-- Greater Kudu LLC (Greater Kudu Los Lunas data center, Valencia County).
-- Zenith Volts Infrastructure LLC (Zenith Volts Roswell data center, Chaves County).
-- TC NM Development (the November 2026 microgrid notice).
-- Site Layer 1 LLC (Site Layer 1 data center, Grant County).
-
-## Pages a person opens
-
-- The TC NM Development microgrid notice on https://www.newmexicopublicnotices.com/. The full text opens only after a Cloudflare check. Copy the site, the fuel, and the engine or turbine count into the watch item for that microgrid.
-- The three Air Quality Bureau tables on Coda: Current Permitting Actions Under Review, the NSR Issued Report, and the Facilities Lat Long Report. Export each as CSV into `scopes/us-nm/work/permits/coda/`, then rerun `scopes/us-nm/harvest_permits.py` so every row is read.
-- The EPA RACT/BACT/LAER Clearinghouse at https://cdxoarapps.epa.gov/oar-rblc/?tabIndex=0. Run the New Mexico search, export the table, and save it under `scopes/us-nm/work/rblc/`.
-- The Albuquerque Development Commission's records before July 2026, in the city's OnBase portal at https://onbase.cabq.gov/publicaccess/?CQID=136.
-
-## Emails to county clerks
-
-Lea, Luna and Hidalgo counties post no agendas or minutes online, and Valencia County keeps its agendas after May 2025 in a Google Drive folder that no script can list. Lea and Valencia hold projects in development, so those two emails are drafted. Send them from your own address.
-
-**To the Lea County Clerk**
-
-Subject: request for commission records on two power projects near Hobbs
-
-Hello,
-
-I research power plants for Global Energy Monitor, a nonprofit that tracks energy infrastructure. Could you send me, or point me to, any county commission or planning records from 2025 and 2026 on these two projects?
-
-- A data center in Lea County with its own gas-fired generation, which may appear under a developer or project company name.
-- A 234 MW gas combustion turbine that Southwestern Public Service plans near Hobbs, tied to a Hobbs to Andrews 345 kV line.
-
-Agendas, minutes, zoning or special use permits, industrial revenue bond resolutions and development agreements would all help. Thank you.
-
-**To the Valencia County Clerk**
-
-Subject: request for commission records on power projects near Belen and Los Lunas
-
-Hello,
-
-I research power plants for Global Energy Monitor, a nonprofit that tracks energy infrastructure. Could you send me the county commission and planning commission agendas and minutes from June 2025 to now, or a link to the folder that holds them? I am looking for records on these projects:
-
-- The Greater Kudu data center near Los Lunas and any gas-fired generation planned for it.
-- PNM's La Luz Energy Center near Belen, including a second gas unit.
-
-Zoning or special use permits, industrial revenue bond resolutions and development agreements would all help. Thank you.
+- The three Air Quality Bureau tables on Coda were read in full in Chrome by `scopes/us-nm/coda_browser.py` and the permit harvester reread them. The 11 oil field power sites they added were checked against their permit files. All are under 50 megawatts. The two Devon Todd pads, 600 meters apart and about 75 megawatts together, are a watch item.
+- The EPA RACT/BACT/LAER Clearinghouse was read through its own data service: 252 New Mexico entries, none newer than 2014.
+- The Albuquerque Development Commission's older records were read through the OnBase search service: 168 documents, no power project.
+- The TC NM Development microgrid notice is described in two Valencia County News-Bulletin articles, which the watch item now cites. It is a fuel cell plant, which is out of scope.
+- Valencia County's agenda packets were read from its public Google Drive folder, so no email to the clerk is needed. Lea County has no plant in development or add in this batch, so that email is dropped too.
+- The Secretary of State company lookups are not needed. Every owner staged is named in a primary document.
 
 ## Close-out checks, after the edits are in the database
 

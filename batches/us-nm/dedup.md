@@ -1,6 +1,6 @@
 # Duplicate check, us-nm
 
-Run 2026-11-18 09:58 against every combustion plant in the export, any fuel. A plant with any line below needs an answer in coverage.json under dedup.
+Run 2026-11-19 09:08 against every combustion plant in the export, any fuel. A plant with any line below needs an answer in coverage.json under dedup.
 
 ## Pyramid Generating Station
 
@@ -10,6 +10,8 @@ No GEM plant of any fuel shares its name or sits within 10 kilometers of its poi
 
 - Nearby: Valencia energy facility (fossil gas, cancelled, operating, 7.6 km away), GEM location L100000402347.
 - In this batch, same county: Greater Kudu Los Lunas Data Center power station (us-nm:new:greater-kudu-los-lunas-data-center-power-station).
+- In this batch, same county: Belen IA-PNM-2026-15 gas power station (us-nm:new:belen-ia-pnm-2026-15-gas-power-station).
+- In this batch, same county: Belen IA-PNM-2026-19 hybrid power station (us-nm:new:belen-ia-pnm-2026-19-hybrid-power-station).
 
 ## Piñon Generating Station
 
@@ -23,6 +25,8 @@ No GEM plant of any fuel shares its name or sits within 10 kilometers of its poi
 ## Greater Kudu Los Lunas Data Center power station
 
 - In this batch, same county: La Luz Energy Center (us-nm:new:la-luz-energy-center).
+- In this batch, same county: Belen IA-PNM-2026-15 gas power station (us-nm:new:belen-ia-pnm-2026-15-gas-power-station).
+- In this batch, same county: Belen IA-PNM-2026-19 hybrid power station (us-nm:new:belen-ia-pnm-2026-19-hybrid-power-station).
 
 ## Milagro power station
 
@@ -58,3 +62,17 @@ No GEM plant of any fuel shares its name or sits within 10 kilometers of its poi
 ## Zenith Volts Roswell Data Center power station
 
 No GEM plant of any fuel shares its name or sits within 10 kilometers of its point. No other record in this batch overlaps it. gem.wiki shows no page with its name.
+
+## Belen IA-PNM-2026-15 gas power station
+
+- Nearby: Valencia energy facility (fossil gas, cancelled, operating, 7.0 km away), GEM location L100000402347.
+- In this batch, same county: La Luz Energy Center (us-nm:new:la-luz-energy-center).
+- In this batch, same county: Greater Kudu Los Lunas Data Center power station (us-nm:new:greater-kudu-los-lunas-data-center-power-station).
+- In this batch, same county: Belen IA-PNM-2026-19 hybrid power station (us-nm:new:belen-ia-pnm-2026-19-hybrid-power-station).
+
+## Belen IA-PNM-2026-19 hybrid power station
+
+- Nearby: Valencia energy facility (fossil gas, cancelled, operating, 7.0 km away), GEM location L100000402347.
+- In this batch, same county: La Luz Energy Center (us-nm:new:la-luz-energy-center).
+- In this batch, same county: Greater Kudu Los Lunas Data Center power station (us-nm:new:greater-kudu-los-lunas-data-center-power-station).
+- In this batch, same county: Belen IA-PNM-2026-15 gas power station (us-nm:new:belen-ia-pnm-2026-15-gas-power-station).

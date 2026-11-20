@@ -48,6 +48,23 @@
      "tier": "medium",
      "independent": false,
      "note": "Open the Southwestern Public Service 2023 resource plan at https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf and find the table of existing SPS resources that lists \"Maddox 1 Gas ST 112 1967 2028\" and \"Maddox 2 Gas CT 61 1976 2025\". The plan treats both units as units that serve the utility system load. It does not use the words backup power, so this is medium."
+    },
+    "Planned retire": {
+     "value": "2038",
+     "refs": [
+      "https://interchange.puc.texas.gov/Documents/58664_13_1542660.PDF"
+     ],
+     "verifications": [
+      {
+       "url": "https://interchange.puc.texas.gov/Documents/58664_13_1542660.PDF",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Planned retire:\n- Southwestern Public Service now plans to keep Maddox Unit 1 running to March 2038. The current value, 2028, came from the 2023 resource plan.\n- Open the direct testimony of Eric Tucker, filed with the Texas Public Utility Commission in docket 58664 in 2025, at https://interchange.puc.texas.gov/Documents/58664_13_1542660.PDF. On page 24 it says \"The service life of Maddox Unit 1 will be extended from 2027 to March 2038\". Attachment ET-1, the Gas Unit Extensions table on the last page, has the row \"Maddox Unit 1, 118, Hobbs, NM, 1967\" with a new retirement date of 2038.\n- The company's 2026 New Mexico resource plan, filed in case 25-00076-UT, gives the same year in Table 3-1 on PDF page 47. That copy sits only on the commission portal, which the link checker cannot read.\n- Add 2038 as a new scheduled retirement event."
     }
    },
    "not_found": [
@@ -105,26 +122,12 @@
  "plant_findings": {},
  "qa": [
   {
-   "gem_unit_id": "G100000403559",
-   "concern_type": "Planned retire",
-   "question": "Should Maddox Unit 1 planned retirement move from 2028 to 2038?",
-   "finding": "The 2023 plan and the EIA table give 2028. SPS has since chosen to extend Maddox Unit 1, and its 2026 resource plan lists an expected retirement date of 2038 for a 112 MW unit.",
-   "recommendation": "Change Planned retire on unit 1 to 2038 as a new scheduled retirement event, after the reviewer opens the commission filing and confirms the table.",
-   "note": "Open the case page for 25-00076-UT at https://e360.prc.nm.gov/portal/public/#/public/nm-prc/en/CaseXscreen?screen=external-Case360&caseId=fe3141c2-1770-4ee1-90a7-f9c3a4749200 and the filing DOC-000532299-26, 2026 Integrated Resource Plan. On PDF page 47, Table 3-1 (Existing SPS-Owned Load-Serving Resources), under Conventional Load Serving Resources, Gas, the row \"Maddox Unit 1, Lea Co., NM, 112, 2038\". The same filing, Appendix P page 29, says life extensions for Nichols Units 1 and 2, Plant X Unit 4 and Maddox Unit 1, totaling 521 MW, \"were selected for the portfolio\". The older 2023 plan at https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf says \"Maddox Unit 1 retiring in 2028\". The commission portal is built with scripts, so the verifier could not read it, so no value is proposed. In the second pass I opened the Xcel Energy page for the New Mexico 2027 to 2046 plan at https://www.xcelenergy.com/company/rates_and_regulations/resource_plans/new_mexico_2027-2046_irp. Its link to the plan document, https://xcelnew.my.salesforce.com/sfc/p/1U0000011ttV/a/R300000YZWcY/_fFYXD6bn_rleQjhaRJ9XZ_GHjexUzC57fARqr3lTDc, did not load any text that names Maddox, so it could not be cited. A web search and the PRC news release found no readable copy of the table either. The saved case copy shows the same table.",
-   "refs": [
-    "https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf"
-   ],
-   "proposed_value": {
-    "Planned retire": "2038"
-   }
-  },
-  {
    "gem_unit_id": "G100000403560",
    "concern_type": "Planned retire",
    "question": "Should Maddox Unit 2 planned retirement move from 2034 to 2043?",
    "finding": "GEM shows 2034, taken from the EIA table. SPS 2026 plan Table 3-1 lists Maddox Unit 2 at 62 MW with an expected retirement date of 2043. The 2023 plan said the unit would be extended three years from 2025 to 2028.",
    "recommendation": "Change Planned retire on unit 2 to 2043 as a new scheduled retirement event, after the reviewer opens the commission filing and confirms the table.",
-   "note": "Open case 25-00076-UT at https://e360.prc.nm.gov/portal/public/#/public/nm-prc/en/CaseXscreen?screen=external-Case360&caseId=fe3141c2-1770-4ee1-90a7-f9c3a4749200, filing DOC-000532299-26, PDF page 47, Table 3-1, under Grid Balancing Resources, Gas, the row \"Maddox Unit 2, Lea Co., NM, 62, 2043\". The 2023 plan at https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf says \"3-year extension of Maddox Unit 2 from 2025 to 2028\". The EIA table at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx still shows December 2034. The portal could not be read by the verifier, so no value is proposed. In the second pass I opened the Xcel Energy page for the New Mexico 2027 to 2046 plan at https://www.xcelenergy.com/company/rates_and_regulations/resource_plans/new_mexico_2027-2046_irp. Its link to the plan document, https://xcelnew.my.salesforce.com/sfc/p/1U0000011ttV/a/R300000YZWcY/_fFYXD6bn_rleQjhaRJ9XZ_GHjexUzC57fARqr3lTDc, did not load any text that names Maddox, so it could not be cited. A web search and the PRC news release found no readable copy of the table either. The saved case copy shows the same table.",
+   "note": "Open case 25-00076-UT at https://e360.prc.nm.gov/portal/public/#/public/nm-prc/en/CaseXscreen?screen=external-Case360&caseId=fe3141c2-1770-4ee1-90a7-f9c3a4749200, filing DOC-000532299-26, PDF page 47, Table 3-1, under Grid Balancing Resources, Gas, the row \"Maddox Unit 2, Lea Co., NM, 62, 2043\". The 2023 plan at https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf says \"3-year extension of Maddox Unit 2 from 2025 to 2028\". The EIA table at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx still shows December 2034. The portal could not be read by the verifier, so no value is proposed. In the second pass I opened the Xcel Energy page for the New Mexico 2027 to 2046 plan at https://www.xcelenergy.com/company/rates_and_regulations/resource_plans/new_mexico_2027-2046_irp. Its link to the plan document, https://xcelnew.my.salesforce.com/sfc/p/1U0000011ttV/a/R300000YZWcY/_fFYXD6bn_rleQjhaRJ9XZ_GHjexUzC57fARqr3lTDc, did not load any text that names Maddox, so it could not be cited. A web search and the PRC news release found no readable copy of the table either. The saved case copy shows the same table. The Texas filing that confirms the Maddox Unit 1 extension, docket 58664 (Eric Tucker's direct testimony at https://interchange.puc.texas.gov/Documents/58664_13_1542660.PDF), covers only unit 1, so it does not settle unit 2.",
    "refs": [
     "https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf",
     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"

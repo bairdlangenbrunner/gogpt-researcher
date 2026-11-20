@@ -484,11 +484,11 @@ def list_civicweb(net, body, since, until):
 def parse_granicus(text, body, since="0000", until="9999"):
     docs = []
     for row in re.split(r'<tr class="listingRow"', text or "")[1:]:
-        name = re.search(r'headers="Name"[^>]*>(.*?)</td>', row, re.S)
+        name = re.search(r'headers="Name[^"]*"[^>]*>(.*?)</td>', row, re.S)
         name = text_of(name.group(1)) if name else ""
         if body.get("boards") and not re.search(body["boards"], name, re.I):
             continue
-        d = re.search(r'headers="Date"[^>]*>(.*?)</td>', row, re.S)
+        d = re.search(r'headers="Date[^"]*"[^>]*>(.*?)</td>', row, re.S)
         dtext = text_of(d.group(1)).replace("\xa0", " ") if d else ""
         date = date_of(dtext)
         if not date or not since <= date <= until:

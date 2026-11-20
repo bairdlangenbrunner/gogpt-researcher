@@ -10,13 +10,13 @@
       "quarter": "q4-2026",
       "csv": "scripts/gem_export_gogpt_scoped.csv"
     },
-    "generated": "2026-11-18T10:16:59-05:00",
+    "generated": "2026-11-19T19:46:52-05:00",
     "mode": "update",
     "counts": {
-      "records": 175,
+      "records": 172,
       "fill": 33,
-      "change": 13,
-      "reverified": 129,
+      "change": 14,
+      "reverified": 125,
       "match_no_new_url": 3,
       "status_downgraded": 0,
       "tier_promoted": 9,
@@ -4676,163 +4676,6 @@
       "irp": true
     },
     {
-      "gem_unit_id": "G100001094233",
-      "gem_plant_id": "L100001083387",
-      "plant_name": "SWPP ERAS Hobbs power station",
-      "unit_name": "1",
-      "country": "United States",
-      "record_id": "L100001083387:G100001094233:capacity-mw",
-      "cluster": "G100001094233",
-      "verdict": "match",
-      "reverified": true,
-      "fields": {
-        "Capacity (MW)": "234.0"
-      },
-      "current": {
-        "Capacity (MW)": "234.0"
-      },
-      "refs": {
-        "Capacity Data Source": [
-          "https://opsportal.spp.org/Studies/GenerateActiveCSV"
-        ]
-      },
-      "verifications": [
-        {
-          "url": "https://opsportal.spp.org/Studies/GenerateActiveCSV",
-          "ok": true,
-          "contains_value": true,
-          "name_found": true
-        }
-      ],
-      "tier": "high",
-      "independent": false,
-      "source_language": "en",
-      "researcher_notes": "Capacity from the open Southwest Power Pool active queue file. Where to find it: - Open the file at https://opsportal.spp.org/Studies/GenerateActiveCSV and find the row with queue ID ERAS-2025-014. The row reads: Queue ID ERAS-2025-014, county column 'Hobbs', fuel column 'Combustion Turbine', facility type 'Thermal', owner column 'SPS', point of interconnection 'Hobbs-Andrews 345kV Line', status 'IA PENDING'. Its note column says 'Nameplate 234 MW, capacity 159.5 MW'. - The 234 MW is the nameplate. The 159.5 MW is the capacity the grid operator credits, so we keep 234 MW. The open queue file confirms the 234 MW and 2029 values. I did not find the turbine make, a commission document naming this unit, a site address or a Backup Power statement. The status stays announced because no document I could read says construction started.",
-      "action": "Leave Capacity (MW) of unit 1 (G100001094233) as 234.0. It is still correct. Add the link below to the Capacity Data Source box. Keep the links already there.",
-      "checks": [
-        10,
-        37
-      ]
-    },
-    {
-      "gem_unit_id": "G100001094233",
-      "gem_plant_id": "L100001083387",
-      "plant_name": "SWPP ERAS Hobbs power station",
-      "unit_name": "1",
-      "country": "United States",
-      "record_id": "L100001083387:G100001094233:start-year",
-      "cluster": "G100001094233",
-      "verdict": "match",
-      "reverified": true,
-      "fields": {
-        "Start year": "2029"
-      },
-      "current": {
-        "Start year": "2029"
-      },
-      "refs": {
-        "Start Year Data Source": [
-          "https://opsportal.spp.org/Studies/GenerateActiveCSV"
-        ]
-      },
-      "verifications": [
-        {
-          "url": "https://opsportal.spp.org/Studies/GenerateActiveCSV",
-          "ok": true,
-          "contains_value": true,
-          "name_found": true
-        }
-      ],
-      "tier": "high",
-      "independent": false,
-      "source_language": "en",
-      "researcher_notes": "Start year from the same queue file. Where to find it: - Open https://opsportal.spp.org/Studies/GenerateActiveCSV and find queue ID ERAS-2025-014. The note column says 'Commercial operation date 2029-06-01'. The in-service date column shows 2028-05-31, which is the earlier date for grid connection. - This is a projected year. The human adds a new scheduled event with Event Year 2029 and Source Year 2026, never by changing an existing one.",
-      "action": "Leave Start year of unit 1 (G100001094233) as 2029. It is still correct. Add the link below to the Start Year Data Source box. Keep the links already there.",
-      "checks": [
-        10,
-        37
-      ]
-    },
-    {
-      "gem_unit_id": "G100001094233",
-      "gem_plant_id": "L100001083387",
-      "plant_name": "SWPP ERAS Hobbs power station",
-      "unit_name": "1",
-      "country": "United States",
-      "record_id": "L100001083387:G100001094233:turbine-engine-technology",
-      "cluster": "G100001094233",
-      "verdict": "match",
-      "reverified": true,
-      "fields": {
-        "Turbine/Engine Technology": "gas turbine"
-      },
-      "current": {
-        "Turbine/Engine Technology": "gas turbine"
-      },
-      "refs": {
-        "Turbine/Engine Technology Data Source": [
-          "https://opsportal.spp.org/Studies/GenerateActiveCSV"
-        ]
-      },
-      "verifications": [
-        {
-          "url": "https://opsportal.spp.org/Studies/GenerateActiveCSV",
-          "ok": true,
-          "contains_value": true,
-          "name_found": true
-        }
-      ],
-      "tier": "medium",
-      "independent": false,
-      "source_language": "en",
-      "researcher_notes": "The queue row calls the unit a combustion turbine. Where to find it: - Open https://opsportal.spp.org/Studies/GenerateActiveCSV and find queue ID ERAS-2025-014. The fuel column reads 'Combustion Turbine' and the facility type reads 'Thermal'. - The queue does not give a make or model. I did not find one in the Southwestern Public Service 2026 resource plan or in the independent monitor's report.",
-      "action": "Leave Turbine/Engine Technology of unit 1 (G100001094233) as gas turbine. It is still correct. Add the link below to the Turbine/Engine Technology Data Source box. Keep the links already there.",
-      "checks": [
-        10
-      ]
-    },
-    {
-      "gem_unit_id": "G100001094233",
-      "gem_plant_id": "L100001083387",
-      "plant_name": "SWPP ERAS Hobbs power station",
-      "unit_name": "1",
-      "country": "United States",
-      "record_id": "L100001083387:plant:owner-s",
-      "cluster": "G100001094233",
-      "verdict": "match",
-      "reverified": true,
-      "fields": {
-        "Owner(s)": "Southwestern Public Service Co [100%]"
-      },
-      "current": {
-        "Owner(s)": "Southwestern Public Service Co [100%]"
-      },
-      "refs": {
-        "Owners Data Source": [
-          "https://opsportal.spp.org/Studies/GenerateActiveCSV"
-        ]
-      },
-      "verifications": [
-        {
-          "url": "https://opsportal.spp.org/Studies/GenerateActiveCSV",
-          "ok": true,
-          "contains_value": true,
-          "name_found": true
-        }
-      ],
-      "tier": "medium",
-      "independent": false,
-      "source_language": "en",
-      "researcher_notes": "The queue file names SPS as owner of this request. Where to find it: - Open https://opsportal.spp.org/Studies/GenerateActiveCSV and find queue ID ERAS-2025-014. The owner column reads 'SPS'. That matches GEM's current owner of Southwestern Public Service Co, so only the link is new.",
-      "action": "Leave Owner(s) of unit 1 (G100001094233) as Southwestern Public Service Co [100%]. It is still correct. Add the link below to the Owners Data Source box. Keep the links already there.",
-      "checks": [
-        10
-      ],
-      "applies_to_all_units": true,
-      "sibling_unit_ids": [],
-      "sibling_current": {}
-    },
-    {
       "gem_unit_id": "G100001102061",
       "gem_plant_id": "L100001089610",
       "plant_name": "Westside power station",
@@ -6102,6 +5945,45 @@
       "source_language": "en",
       "researcher_notes": "Open the Southwestern Public Service 2023 resource plan at https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20&%20Regulations/Resource%20Plans/2023%20SPS-IRP%20Plan.pdf and find the table of existing SPS resources that lists \"Maddox 1 Gas ST 112 1967 2028\" and \"Maddox 2 Gas CT 61 1976 2025\". The plan treats both units as units that serve the utility system load. It does not use the words backup power, so this is medium.",
       "action": "Leave Backup Power of unit 1 (G100000403559) as no. It is still correct. Add the link below to the Backup Power Data Source box. Keep the links already there."
+    },
+    {
+      "gem_unit_id": "G100000403559",
+      "gem_plant_id": "L100000402299",
+      "plant_name": "Maddox power station",
+      "unit_name": "1",
+      "country": "United States",
+      "record_id": "L100000402299:G100000403559:planned-retire",
+      "cluster": "G100000403559",
+      "verdict": "change",
+      "fields": {
+        "Planned retire": "2038"
+      },
+      "current": {
+        "Planned retire": "2028"
+      },
+      "refs": {
+        "Planned Retire Data Source": [
+          "https://interchange.puc.texas.gov/Documents/58664_13_1542660.PDF"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://interchange.puc.texas.gov/Documents/58664_13_1542660.PDF",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "Planned retire: - Southwestern Public Service now plans to keep Maddox Unit 1 running to March 2038. The current value, 2028, came from the 2023 resource plan. - Open the direct testimony of Eric Tucker, filed with the Texas Public Utility Commission in docket 58664 in 2025, at https://interchange.puc.texas.gov/Documents/58664_13_1542660.PDF. On page 24 it says \"The service life of Maddox Unit 1 will be extended from 2027 to March 2038\". Attachment ET-1, the Gas Unit Extensions table on the last page, has the row \"Maddox Unit 1, 118, Hobbs, NM, 1967\" with a new retirement date of 2038. - The company's 2026 New Mexico resource plan, filed in case 25-00076-UT, gives the same year in Table 3-1 on PDF page 47. That copy sits only on the commission portal, which the link checker cannot read. - Add 2038 as a new scheduled retirement event.",
+      "action": "Set Planned retire of unit 1 (G100000403559) to 2038. It now says 2028. Add the link below to the Planned Retire Data Source box. Keep the links already there.",
+      "checks": [
+        21,
+        43,
+        50
+      ]
     },
     {
       "gem_unit_id": "G100000403560",

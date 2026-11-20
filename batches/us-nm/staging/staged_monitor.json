@@ -10,10 +10,10 @@
       "quarter": "q4-2026",
       "csv": "scripts/gem_export_gogpt_scoped.csv"
     },
-    "generated": "2026-11-18T10:16:59-05:00",
+    "generated": "2026-11-19T19:46:52-05:00",
     "mode": "update",
     "counts": {
-      "records": 4
+      "records": 5
     }
   },
   "records": [
@@ -110,17 +110,55 @@
     {
       "record_id": "us-nm:plant:monitor-4",
       "gem_plant_id": "",
-      "plant_name": "TC NM Development microgrid",
+      "plant_name": "TC NM Development Project Rails microgrid",
       "country": "United States",
       "monitor_kind": "new_to_tracker",
       "watch_case": "unverified",
-      "monitor_reason": "A newspaper notice of a planned microgrid air permit; its full text, site, fuel and size have not been read.",
-      "recheck_by": "2026-12",
+      "monitor_reason": "A planned natural gas fuel cell plant, and GOGPT does not track fuel cells (Baird, 2026-11). Its diesel backup engines were searched for in two News-Bulletin articles, the Valencia County agenda packets and the state permit lists; none gives their size.",
+      "recheck_by": "2027-03",
       "checks": [],
       "capacity_mw": "",
       "researcher_notes": "Notices in the Valencia County News-Bulletin on November 5 and 12, 2026, the Albuquerque Journal on November 5, 2026, the Eastern New Mexico News and the Carlsbad Current Argus begin: TC NM Development, LLC announces its intention to submit an application to the New Mexico Environment Department for an air quality permit for the construction of its microgrid facility. The full notice on newmexicopublicnotices.com sits behind a Cloudflare check, so the site and equipment are not known. The state business registry shows TC NM Development, LLC as a Delaware company registered in New Mexico on September 24, 2026. The state permit data service has no site under that name yet. The Valencia County Commission and Village of Los Lunas agendas and packets, the Eddy County Commission records and the City of Carlsbad council records were read and do not name it. A person can open the notice and read the site, fuel and engine or turbine count; recheck the permit data service in December.",
       "refs": {},
       "verifications": [],
+      "status": "",
+      "irp": false,
+      "fields": {}
+    },
+    {
+      "record_id": "us-nm:plant:monitor-5",
+      "gem_plant_id": "",
+      "plant_name": "Todd CPG Pads 1 and 2",
+      "country": "United States",
+      "monitor_kind": "new_to_tracker",
+      "watch_case": "under_threshold",
+      "monitor_reason": "Two Devon oil field turbine pads 600 meters apart, each about 38 megawatts; together about 75.",
+      "recheck_by": "2027-03",
+      "checks": [],
+      "capacity_mw": "",
+      "researcher_notes": "Devon Power New Mexico, LLC holds two state air permits for oil field power pads 600 meters apart in Lea County, 23.9 miles east-northeast of Malaga: Todd CPG Pad 1 (site 13016, permit 10513, approved March 26, 2025) and Todd CPG Pad 2 (site 13062, permit 10514, approved March 27, 2025). The equipment table in each application lists two Solar SMT130 trailer-mounted gas turbines of 21,024 horsepower and one Solar SMT60 of 7,402 horsepower. Both applications say the turbines make power only for Devon's own oil and gas sites. Solar's mobile power page rates the SMT130 at about 16 megawatts, so each pad is about 38 megawatts, under the 50 megawatt threshold, and the two together are about 75. These are rented trailer units under the general permit for oil and gas sites, and the permits treat the pads as two sites, so this is held as two pads under the threshold rather than one plant. If GEM counts neighboring pads as one plant, this becomes an add of about 75 megawatts. No document says the turbines are running. Devon's other pads, Cotton Draw (about 38 megawatts) and Rattlesnake East (about 28), are 23 kilometers or more away. Recheck in March 2027 for added turbines. Lea County posts no commission or planning agendas online. The City of Hobbs commission agendas and packets since 2024 (134 documents) and the Eddy County Commission agendas and minutes since 2024 were read; none names Devon Power or the Todd pads.",
+      "refs": {
+        "links": [
+          "https://cloud.env.nm.gov/resources/_translator.php/OThiMzI3YTA2OGM4MTEyOTQ1MjZkMjdlMF8xOTcxMTM~.pdf",
+          "https://cloud.env.nm.gov/resources/_translator.php/ZWE5ZTk0Mzg3OWI1NDVmMzBiOGRlMGZiNF8xOTcxMTY~.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://cloud.env.nm.gov/resources/_translator.php/OThiMzI3YTA2OGM4MTEyOTQ1MjZkMjdlMF8xOTcxMTM~.pdf",
+          "ok": true,
+          "contains_value": false,
+          "name_found": true,
+          "note": "State air permit approval letter for Todd CPG Pad 1, Devon Power New Mexico, LLC, dated March 26, 2025. It gives the site and permit number. The turbine list is in the application in the same permit file."
+        },
+        {
+          "url": "https://cloud.env.nm.gov/resources/_translator.php/ZWE5ZTk0Mzg3OWI1NDVmMzBiOGRlMGZiNF8xOTcxMTY~.pdf",
+          "ok": true,
+          "contains_value": false,
+          "name_found": true,
+          "note": "State air permit approval letter for Todd CPG Pad 2, Devon Power New Mexico, LLC, dated March 27, 2025. It gives the site and permit number. The turbine list is in the application in the same permit file."
+        }
+      ],
       "status": "",
       "irp": false,
       "fields": {}

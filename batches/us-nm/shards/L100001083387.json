@@ -14,59 +14,7 @@
   {
    "gem_unit_id": "G100001094233",
    "unit_name": "1",
-   "findings": {
-    "Capacity (MW)": {
-     "value": "234.0",
-     "refs": [
-      "https://opsportal.spp.org/Studies/GenerateActiveCSV"
-     ],
-     "verifications": [
-      {
-       "url": "https://opsportal.spp.org/Studies/GenerateActiveCSV",
-       "ok": true,
-       "contains_value": true,
-       "name_found": true
-      }
-     ],
-     "tier": "high",
-     "independent": false,
-     "note": "Capacity from the open Southwest Power Pool active queue file.\n\nWhere to find it:\n- Open the file at https://opsportal.spp.org/Studies/GenerateActiveCSV and find the row with queue ID ERAS-2025-014. The row reads: Queue ID ERAS-2025-014, county column 'Hobbs', fuel column 'Combustion Turbine', facility type 'Thermal', owner column 'SPS', point of interconnection 'Hobbs-Andrews 345kV Line', status 'IA PENDING'. Its note column says 'Nameplate 234 MW, capacity 159.5 MW'.\n- The 234 MW is the nameplate. The 159.5 MW is the capacity the grid operator credits, so we keep 234 MW."
-    },
-    "Start year": {
-     "value": "2029",
-     "refs": [
-      "https://opsportal.spp.org/Studies/GenerateActiveCSV"
-     ],
-     "verifications": [
-      {
-       "url": "https://opsportal.spp.org/Studies/GenerateActiveCSV",
-       "ok": true,
-       "contains_value": true,
-       "name_found": true
-      }
-     ],
-     "tier": "high",
-     "independent": false,
-     "note": "Start year from the same queue file.\n\nWhere to find it:\n- Open https://opsportal.spp.org/Studies/GenerateActiveCSV and find queue ID ERAS-2025-014. The note column says 'Commercial operation date 2029-06-01'. The in-service date column shows 2028-05-31, which is the earlier date for grid connection.\n- This is a projected year. The human adds a new scheduled event with Event Year 2029 and Source Year 2026, never by changing an existing one."
-    },
-    "Turbine/Engine Technology": {
-     "value": "gas turbine",
-     "refs": [
-      "https://opsportal.spp.org/Studies/GenerateActiveCSV"
-     ],
-     "verifications": [
-      {
-       "url": "https://opsportal.spp.org/Studies/GenerateActiveCSV",
-       "ok": true,
-       "contains_value": true,
-       "name_found": true
-      }
-     ],
-     "tier": "medium",
-     "independent": false,
-     "note": "The queue row calls the unit a combustion turbine.\n\nWhere to find it:\n- Open https://opsportal.spp.org/Studies/GenerateActiveCSV and find queue ID ERAS-2025-014. The fuel column reads 'Combustion Turbine' and the facility type reads 'Thermal'.\n- The queue does not give a make or model. I did not find one in the Southwestern Public Service 2026 resource plan or in the independent monitor's report."
-    }
-   },
+   "findings": {},
    "not_found": [
     "Status",
     "Equipment Manufacturer/Model",
@@ -80,36 +28,19 @@
    "notes": "The open queue file confirms the 234 MW and 2029 values. I did not find the turbine make, a commission document naming this unit, a site address or a Backup Power statement. The status stays announced because no document I could read says construction started."
   }
  ],
- "plant_findings": {
-  "Owner(s)": {
-   "value": "Southwestern Public Service Co [100%]",
-   "refs": [
-    "https://opsportal.spp.org/Studies/GenerateActiveCSV"
-   ],
-   "verifications": [
-    {
-     "url": "https://opsportal.spp.org/Studies/GenerateActiveCSV",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
-    }
-   ],
-   "tier": "medium",
-   "independent": false,
-   "note": "The queue file names SPS as owner of this request.\n\nWhere to find it:\n- Open https://opsportal.spp.org/Studies/GenerateActiveCSV and find queue ID ERAS-2025-014. The owner column reads 'SPS'. That matches GEM's current owner of Southwestern Public Service Co, so only the link is new."
-  }
- },
+ "plant_findings": {},
  "qa": [
   {
    "gem_unit_id": "G100001094233",
-   "concern_type": "source",
-   "question": "Can a person open the commission documents for the Hobbs gas turbine in case 25-00066-UT?",
-   "finding": "The commission approved Southwestern Public Service's gas additions on May 7, 2026, but no readable public document I found names the Hobbs turbine, its model or its site. A Utility Dive article from May 2026 at https://www.utilitydive.com/news/new-mexico-regulators-approve-sps-9b-gas-heavy-resource-plan/820978/ says 2,088 MW of gas was approved and does not name Hobbs.",
-   "recommendation": "Leave the unit as announced at 234 MW and 2029. Ask the project manager to open case 25-00066-UT in the commission's PRCe360 system and look for the turbine model and site.",
-   "note": "What I read:\n- The saved 2026 resource plan text for Southwestern Public Service (case 25-00076-UT) names the Hobbs Generating Station of 604 MW, a different plant, in its table of existing resources on its resource list, and the ERAS process on its page 51. It does not name a 234 MW unit.\n- The independent monitor's final report on the 2025 request for proposals (case 23-00073-UT) discusses ERAS projects in general and gives no site.\n- The New Mexico Environment Department permit harvest for this plant only lists the existing Hobbs Generating Station of Lea Power Partners, not a new turbine application.\n- A lead site at https://www.infrasure.ai/project/spp-eras-2025-014 lists the entry at 160 MW, which matches the 159.5 MW credited capacity rather than the nameplate.\n- Location was not worked because no document gives an address. The point stays approximate at 32.58532, -103.13716.",
+   "concern_type": "duplicate",
+   "question": "Is this Hobbs turbine really the fifth turbine of the Gaines County Power Plant in Texas, which the database already has?",
+   "finding": "The grid operator's file for queue request ERAS-2025-014 holds an email from Southwestern Public Service saying the request is \"utilizing the extra capacity available from the SPS Gaines County Power Plant thermal units\". The Gaines plant has five gas turbines of 1,160 MW in total, four of them due by December 2028, and the 234 MW request is due June 2029 on the same Hobbs to Andrews 345 kV line. The database already lists Gaines County Power Plant at 1,160 MW.",
+   "recommendation": "Delete the SWPP ERAS Hobbs power station record and leave the Gaines County Power Plant as it is, since its 1,160 MW already counts this turbine.",
+   "note": "Where to find each piece:\n- The Southwest Power Pool study file for ERAS-2025-014 at https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/ERAS-2025-014%20FS%20Draft%20-%20Combined.pdf. Page 1 is an email from SPS Transmission Planning. It says SPS will not submit a facility study for ERAS-2025-014 because it \"is utilizing the extra capacity available from the SPS Gaines County Power Plant thermal units (GEN-2020-065)\" and needs no new upgrades at the Sidewinder 345 kV substation.\n- The open queue file at https://opsportal.spp.org/Studies/GenerateActiveCSV. Row ERAS-2025-014: nearest town Hobbs, combustion turbine, nameplate 234 MW, 159.5 MW of service, commercial operation 6/1/2029, Hobbs-Andrews 345kV Line. Row GEN-2020-065: nearest town Gaines, combined cycle, 1,003 MW, commercial operation 7/2/2028, the same Hobbs-Andrews 345 kV line.\n- The Southwestern Public Service application to the Texas Public Utility Commission in docket 58664, filed in 2025, at https://interchange.puc.texas.gov/Documents/58664_2_1542635.PDF. The table on page 3 lists Gaines County at 1,160 MW and 1,003 MW of accredited capacity. Page 15 says the project should meet \"an estimated December 1, 2028, in-service date for four of its five units\". Five turbines at 232 MW each make the 1,160 MW the database already shows for Gaines.\n- The match of the 234 MW request to the fifth Gaines turbine is my reading of these three documents. No document says it in one sentence.\n- The Gaines plant is in Gaines County, Texas, south of Hobbs. The queue calls the place Hobbs because that is the nearest town.\n- This record was created in the database on 2026-11-10 and is marked in progress, so check with the researcher working New Mexico before deleting it.\n- Earlier I looked for New Mexico commission case 25-00066-UT. It is not in the commission's public index, and its public summary in a Utility Dive article from May 2026 at https://www.utilitydive.com/news/new-mexico-regulators-approve-sps-9b-gas-heavy-resource-plan/820978/ does not name Hobbs.\n- I dropped the capacity, start year, technology and owner edits I had proposed for this record, since they would only fill out a likely duplicate.",
    "refs": [
+    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/ERAS-2025-014%20FS%20Draft%20-%20Combined.pdf",
     "https://opsportal.spp.org/Studies/GenerateActiveCSV",
-    "https://www.utilitydive.com/news/new-mexico-regulators-approve-sps-9b-gas-heavy-resource-plan/820978/"
+    "https://interchange.puc.texas.gov/Documents/58664_2_1542635.PDF"
    ]
   }
  ],

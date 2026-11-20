@@ -10,10 +10,10 @@
       "quarter": "q4-2026",
       "csv": "scripts/gem_export_gogpt_scoped.csv"
     },
-    "generated": "2026-11-18T10:16:59-05:00",
+    "generated": "2026-11-19T19:46:52-05:00",
     "mode": "update",
     "counts": {
-      "records": 9
+      "records": 11
     }
   },
   "records": [
@@ -1161,7 +1161,7 @@
         }
       ],
       "tier": "medium",
-      "researcher_notes": "GEM does not list this plant. Greater Kudu LLC holds state air permit 7026 for its data center at 4250 Messenger Loop, Los Lunas, Valencia County. Greater Kudu is the company name used for Meta's Los Lunas data center. The 2021 application 7026M5, section 4.3.5.1, lists 118 total stationary diesel-fired emergency generators, each greater than 560 kW, so the fleet is at least about 66 megawatts and over the 50 megawatt threshold. The 2024 application 7026M6 names the same 118 engines, but the engine ratings are blacked out, so the exact total is not published. The legal notice for 7026M6 gives the point used here. It stays approximate until checked on a satellite image. Greater Kudu is not in the entity list and needs to be created. This answers row 339 of the possible updates sheet.",
+      "researcher_notes": "GEM does not list this plant. Greater Kudu LLC holds state air permit 7026 for its data center at 4250 Messenger Loop, Los Lunas, Valencia County. Greater Kudu is the company name used for Meta's Los Lunas data center. The 2021 application 7026M5, section 4.3.5.1, lists 118 total stationary diesel-fired emergency generators, each greater than 560 kW, so the fleet is at least about 66 megawatts and over the 50 megawatt threshold. The 2024 application 7026M6 names the same 118 engines, but the engine ratings are blacked out, so the exact total is not published. The legal notice for 7026M6 gives the point used here. It stays approximate until checked on a satellite image. Greater Kudu is not in the entity list and needs to be created. The Valencia County Commission packet for March 4, 2026, item 16, an ordinance approving a local economic development project for Greater Kudu, LLC, calls it a Delaware limited liability company expanding its existing Los Lunas data center campus. The March 18, 2026 minutes in the same county folder (https://drive.google.com/drive/folders/1zJvPK9y6_ADAXB5GdiUNY1R5H1z51kjY) refer to it as Greater KUDU/META. Create it with Meta Platforms as its parent. This answers row 339 of the possible updates sheet.",
       "action": "Create Greater Kudu Los Lunas Data Center power station at 4250 Messenger Loop, Los Lunas, Valencia County, owned by Greater Kudu LLC as a new entity, then add the backup engine unit below. Name the Meta Los Lunas data center in Project Links.",
       "irp": false,
       "checks": [
@@ -1782,6 +1782,184 @@
                 "https://www.newswire.ca/news-releases/zenith-volts-corp-secures-county-approval-for-scalable-data-center-20-miles-south-of-roswell-nm-targeting-operation-by-november-2027-822035978.html"
               ],
               "note": "Zenith Volts announced the county approval in August 2025."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "us-nm:new:belen-ia-pnm-2026-15-gas-power-station",
+      "plant_name": "Belen IA-PNM-2026-15 gas power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "New Mexico",
+        "Local area (taluk, county)": "Valencia",
+        "City": "Belen",
+        "Latitude": "34.6628",
+        "Longitude": "-106.7764",
+        "Location accuracy": "approximate",
+        "Other Name(s)": "IA-PNM-2026-15"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "PNM's interconnection request list of October 31, 2026, posted October 30, 2026 in PNM's public OASIS folder. Page 2 lists IA-PNM-2026-15, 172 MW s/w of gas at the Belen 115 kV Substation, Valencia County, in service 12/29, and IA-PNM-2026-19, 100.50 MW s/w of solar, battery and gas at the same substation, in service 12/30. Both are in the cluster study due by March 23, 2027."
+        }
+      ],
+      "tier": "medium",
+      "not_found": {
+        "Owner(s)": "PNM's list names no applicant for this request. A web search found only queue copies on interconnection.fyi, and no commission filing, city or county record, air permit or press story names the company.",
+        "Turbine/Engine Technology": "PNM's list gives the fuel only, and no permit or filing for the site was found, so whether the machines are turbines or engines is unknown."
+      },
+      "researcher_notes": "GEM does not list this plant. PNM's interconnection request list of October 31, 2026 (https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf), page 2, row IA-PNM-2026-15: 172 megawatts of gas at the Belen 115 kV Substation in Valencia County, planned in service December 2029, application received in August 2026, cluster study due by March 23, 2027. It is not PNM's La Luz unit 2, which the 2026 PNM plan gives as 40 megawatts for 2031, and not the 172 megawatt Reeves request. No document names the developer. The point is placed at Belen and is approximate. A question card asks whether this belongs to the La Luz or Valencia plants near Belen.",
+      "action": "Create Belen IA-PNM-2026-15 gas power station near Belen, Valencia County, with the owner blank, then add the unit below.",
+      "irp": false,
+      "checks": [],
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Fuel": "fossil gas: natural gas",
+            "Status": "announced",
+            "Start year": "2029",
+            "Turbine/Engine Technology": "unknown",
+            "Capacity (MW)": "172"
+          },
+          "refs": {
+            "Fuel Data Source": [
+              "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+            ],
+            "Status Data Source": [
+              "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+            ],
+            "Start Year Data Source": [
+              "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+            ],
+            "Capacity Data Source": [
+              "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "PNM's interconnection request list of October 31, 2026, posted October 30, 2026 in PNM's public OASIS folder. Page 2 lists IA-PNM-2026-15, 172 MW s/w of gas at the Belen 115 kV Substation, Valencia County, in service 12/29, and IA-PNM-2026-19, 100.50 MW s/w of solar, battery and gas at the same substation, in service 12/30. Both are in the cluster study due by March 23, 2027."
+            }
+          ],
+          "action": "Add unit 1: 172 MW natural gas, announced, planned for 2029.",
+          "researcher_notes": "PNM's interconnection request list of October 31, 2026, page 2, row IA-PNM-2026-15: 172 megawatts of gas, in service December 2029. The list does not say whether the machines are turbines or engines.",
+          "milestones": [
+            {
+              "status": "announced",
+              "year": "2026",
+              "period": "August",
+              "sources": [
+                "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+              ],
+              "note": "PNM received the application for IA-PNM-2026-15 in August 2026, per its October 31, 2026 request list."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "us-nm:new:belen-ia-pnm-2026-19-hybrid-power-station",
+      "plant_name": "Belen IA-PNM-2026-19 hybrid power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "New Mexico",
+        "Local area (taluk, county)": "Valencia",
+        "City": "Belen",
+        "Latitude": "34.6628",
+        "Longitude": "-106.7764",
+        "Location accuracy": "approximate",
+        "Other Name(s)": "IA-PNM-2026-19"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "PNM's interconnection request list of October 31, 2026, posted October 30, 2026 in PNM's public OASIS folder. Page 2 lists IA-PNM-2026-15, 172 MW s/w of gas at the Belen 115 kV Substation, Valencia County, in service 12/29, and IA-PNM-2026-19, 100.50 MW s/w of solar, battery and gas at the same substation, in service 12/30. Both are in the cluster study due by March 23, 2027."
+        }
+      ],
+      "tier": "medium",
+      "not_found": {
+        "Owner(s)": "PNM's list names no applicant for this request. A web search found only queue copies on interconnection.fyi, and no commission filing, city or county record, air permit or press story names the company.",
+        "Turbine/Engine Technology": "PNM's list gives the fuel only, and no permit or filing for the site was found, so whether the machines are turbines or engines is unknown."
+      },
+      "researcher_notes": "GEM does not list this plant. PNM's interconnection request list of October 31, 2026 (https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf), page 2, row IA-PNM-2026-19: 100.50 megawatts of solar, battery and gas together at the Belen 115 kV Substation in Valencia County, planned in service December 2030, application received in August 2026, cluster study due by March 23, 2027. It is not PNM's La Luz unit 2, which the 2026 PNM plan gives as 40 megawatts for 2031, and not the 172 megawatt Reeves request. No document names the developer. The point is placed at Belen and is approximate. A question card asks whether this belongs to the La Luz or Valencia plants near Belen.",
+      "action": "Create Belen IA-PNM-2026-19 hybrid power station near Belen, Valencia County, with the owner blank, then add the unit below.",
+      "irp": false,
+      "checks": [],
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Fuel": "fossil gas: natural gas",
+            "Status": "announced",
+            "Start year": "2030",
+            "Turbine/Engine Technology": "unknown",
+            "Capacity (MW)": ""
+          },
+          "refs": {
+            "Fuel Data Source": [
+              "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+            ],
+            "Status Data Source": [
+              "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+            ],
+            "Start Year Data Source": [
+              "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "PNM's interconnection request list of October 31, 2026, posted October 30, 2026 in PNM's public OASIS folder. Page 2 lists IA-PNM-2026-15, 172 MW s/w of gas at the Belen 115 kV Substation, Valencia County, in service 12/29, and IA-PNM-2026-19, 100.50 MW s/w of solar, battery and gas at the same substation, in service 12/30. Both are in the cluster study due by March 23, 2027."
+            }
+          ],
+          "action": "Add unit 1: natural gas part of a 100.50 MW solar, battery and gas request, capacity blank, announced, planned for 2030.",
+          "researcher_notes": "PNM's interconnection request list of October 31, 2026, page 2, row IA-PNM-2026-19: 100.50 megawatts of solar, battery and gas together, in service December 2030. The gas share is not given, so the capacity is blank.",
+          "not_found": {
+            "Capacity (MW)": "The request is 100.50 megawatts for solar, battery and gas together. PNM's list does not say how much of it is gas, and no other document for this request was found."
+          },
+          "milestones": [
+            {
+              "status": "announced",
+              "year": "2026",
+              "period": "August",
+              "sources": [
+                "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+              ],
+              "note": "PNM received the application for IA-PNM-2026-19 in August 2026, per its October 31, 2026 request list."
             }
           ]
         }

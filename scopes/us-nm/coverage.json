@@ -33,21 +33,21 @@
  {
   "id": "pnm-queue",
   "name": "PNM generator interconnection queue",
-  "url": "https://www.oasis.oati.com/PNM/",
-  "what": "Stage A: find where PNM posts its generator interconnection queue (OATI OASIS or pnm.com). If it is behind a sign-in, write the human wall. Answer requests newer than the Berkeley Lab file as market PNM. Probed 2026-11-17: the OATI OASIS page for PNM is a frame around webSmartOASIS whose content loads by script; no public queue list was found in it. Until one is found, the Berkeley Lab file is the read of this queue.",
+  "url": "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf",
+  "what": "The OATI OASIS page is a frame whose folders load by script, but the documents in it are public. Load https://www.oasis.oati.com/webSmartOASIS/HomePage?ProviderName=PNM&Homepage=1, then post to /webSmartOASIS/HomePage/GetData to list the folders (docs/reference/site_access.md, OATI OASIS); files download from https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/<file>. The monthly list is in the folder Generation Interconnection-Transmission Delivery, Status of Interconnection Studies; its file name changes every month, so take the newest. Answer requests newer than the Berkeley Lab file as market PNM. Read 2026-11-19.",
   "proof": {
-   "kind": "html",
-   "expect": "OASIS"
+   "kind": "pdf",
+   "expect": "Status of PNM"
   }
  },
  {
   "id": "tristate-queue",
   "name": "Tri-State generator interconnection queue",
-  "url": "https://www.oasis.oati.com/TSGT/",
-  "what": "Stage A: find Tri-State's queue posting (OATI OASIS, or SPP since the western expansion). Answer New Mexico gas requests as market TSGT. Probed 2026-11-17: the OATI OASIS page for TSGT is a frame around webSmartOASIS whose content loads by script; no public queue list was found in it. Until one is found, the Berkeley Lab file is the read of this queue.",
+  "url": "https://www.oasis.oati.com/woa/docs/TSGT/TSGTdocs/Active_Interconnection_Request_Queue.pdf",
+  "what": "The OATI OASIS page is a frame whose folders load by script, but the documents in it are public. Load https://www.oasis.oati.com/webSmartOASIS/HomePage?ProviderName=TSGT&Homepage=1, then post to /webSmartOASIS/HomePage/GetData to list the folders (docs/reference/site_access.md, OATI OASIS); files download from https://www.oasis.oati.com/woa/docs/TSGT/TSGTdocs/<file>. The lists are in Open Access Transmission Tariff, OATT Queues: Active_Interconnection_Request_Queue.pdf and LGIA_Interconnection_Request_Queue.pdf. Answer New Mexico gas requests as market TSGT. Read 2026-11-19.",
   "proof": {
-   "kind": "html",
-   "expect": "OASIS"
+   "kind": "pdf",
+   "expect": "Interconnection (LGIP) Request Active Queue"
   }
  },
  {
@@ -128,7 +128,7 @@
    "kind": "html",
    "expect": "coda"
   },
-  "human_wall": "The Coda pages load rows only in a browser, and the Coda API needs a sign-in token (401 without one, probed 2026-11-17). Baird opens each of the three tables, exports it as CSV and saves it under scopes/us-nm/work/permits/coda/, or sets a personal CODA_API_TOKEN outside the repo."
+  "human_wall": "Plain fetches get only the first rows and the Coda API needs a token, so the plain check cannot prove this page. Nothing is left for a person: scopes/us-nm/coda_browser.py reads each table in full in the installed Chrome (2026-11-19: 276 pending rows, 9,764 facilities, and an empty issued table at the source), and harvest_permits.py read the saved CSV files."
  },
  {
   "id": "abq-air-quality",
@@ -185,7 +185,7 @@
    "kind": "html",
    "expect": "RBLC"
   },
-  "human_wall": "The determination search (https://cdxoarapps.epa.gov/oar-rblc/?tabIndex=0) runs only in a browser; Baird runs the New Mexico search by hand, exports the table and saves it under scopes/us-nm/work/rblc/. No script signs in."
+  "human_wall": "The search page runs only in a browser, so the plain check cannot prove it. Nothing is left for a person: the page's own data service at https://cdxoarapps.epa.gov/oar-rblc/api/ answers without a sign-in, and on 2026-11-19 it returned all 252 New Mexico entries (saved in scopes/us-nm/work/rblc/rblc_nm.csv). The newest is from April 2014 and none is a new power plant."
  },
  {
   "id": "pnm-irp",
@@ -337,7 +337,7 @@
    "kind": "html",
    "expect": "usiness"
   },
-  "human_wall": "The search is a script page behind a Cloudflare Turnstile check (probed 2026-11-17), and no script gets past it. Baird looks up each company named in the batch's questions on https://enterprise.sos.nm.gov/search/business and pastes the registered name, formation date and principal office into the question."
+  "human_wall": "The search sits behind a Cloudflare check no script passes. It is not needed for this batch: every owner staged is named in a primary document (a permit, a press release, or the database itself), so no lookup is required. A person uses it only if a later question asks for a formation date."
  },
  {
   "id": "state-news",
@@ -358,7 +358,7 @@
    "kind": "html",
    "expect": "Public Notice"
   },
-  "human_wall": "A notice's full text opens only after a Cloudflare check that no script passes (2026-11-18). A person opens each notice the batch names, such as the November 2026 TC NM Development microgrid notice, and pastes the site, fuel and size into its watch item."
+  "human_wall": "A notice's full text opens only after a Cloudflare check that no script passes. Nothing is left for a person in this batch: the TC NM Development microgrid is described in Valencia County News-Bulletin articles of November 11 and 18, 2026, which the watch item cites."
  },
  {
   "id": "local-planning-records",
@@ -370,6 +370,6 @@
    "kind": "json",
    "expect": "EventId"
   },
-  "human_wall": "Lea County, Luna County and Hidalgo County post no agendas or minutes a script can list, Valencia County keeps its agendas after May 2025 in a Google Drive folder, the Albuquerque Environmental Planning Commission is not on Legistar, and the Albuquerque Development Commission posts only its documents from July 2026 on its page; the earlier ones are in the city's OnBase portal (onbase.cabq.gov/publicaccess/?CQID=136), which a person opens. City Council approves industrial revenue bonds by ordinance, and its records since 2024 are harvested. For a lead or in-development plant in those places a person asks the county clerk or reads the local paper (Hobbs News-Sun, Lordsburg Liberal, Deming Headlight, Valencia County News-Bulletin); the harvester's not-posted list names each body."
+  "human_wall": "Lea, Luna and Hidalgo counties post no agendas or minutes a script can list. None of the three has a plant in development or an add in this batch (Pyramid in Hidalgo is operating, and the Lea County oil field microgrids are under the threshold), so no records request is needed now. When a lead appears there, a person asks the county clerk or reads the local paper (Hobbs News-Sun, Lordsburg Liberal, Deming Headlight). The rest are read by script: Valencia County's agenda packets in its public Google Drive folder (14 packets from 2026, listed with the work Google account read-only), the Albuquerque Development Commission's older records in the city's OnBase portal through its search service (168 documents read 2026-11-19), and Rio Rancho's records (424 documents)."
  }
 ]

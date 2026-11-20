@@ -116,7 +116,7 @@
    ],
    "date": "2026-11-18",
    "access": "fetch.py with page rendering shows only the first rows of each table; the full table data was saved from the real Chrome load and searched by name, but its rows could not be laid out cell by cell. The Wayback lookup for the exact addresses has page copies without rows. No CSV copies exist under scopes/us-nm/work/permits/coda/.",
-   "human_wall": "A person opens each of the three Coda tables (pending, issued and facility list), exports each as CSV into scopes/us-nm/work/permits/coda/, or sets a personal CODA_API_TOKEN outside the repo, and reruns scopes/us-nm/harvest_permits.py so the rows are read cell by cell."
+   "human_wall": "Plain fetches get only the first rows and the Coda API needs a token, so the plain check cannot prove this page. Nothing is left for a person: scopes/us-nm/coda_browser.py reads each table in full in the installed Chrome (2026-11-19: 276 pending rows, 9,764 facilities, and an empty issued table at the source), and harvest_permits.py read the saved CSV files."
   },
   "abq-air-quality": {
    "status": "searched",
@@ -350,17 +350,19 @@
    ],
    "date": "2026-11-18",
    "access": "The search lists work. Each notice's full text page stops at a Cloudflare check, through fetch.py with page rendering too, and the Wayback lookup for the exact notice address has no copy.",
-   "human_wall": "A person opens the TC NM Development notice on newmexicopublicnotices.com and records the site, fuel and engine or turbine count."
+   "human_wall": "A notice's full text opens only after a Cloudflare check that no script passes. Nothing is left for a person in this batch: the TC NM Development microgrid is described in Valencia County News-Bulletin articles of November 11 and 18, 2026, which the watch item cites."
   },
   "local-planning-records": {
    "status": "searched",
    "how": "Read the local records harvest: agendas, packets, staff reports and minutes since 2024 for Albuquerque, Bernalillo, Los Alamos, Hobbs, Carlsbad, Dona Ana, Las Cruces, Rio Rancho, San Juan County and the other bodies around the plants and leads.",
-   "found": "The Chaves County records for the Zenith Volts site mention only solar and battery storage. The Farmington and San Juan County records name no new gas plant. Lea, Luna and Hidalgo counties post no agendas online.",
+   "found": "The Chaves County records for the Zenith Volts site mention only solar and battery storage. The Farmington and San Juan County records name no new gas plant. Lea, Luna and Hidalgo counties post no agendas online, and no project in development in the batch sits in those counties. Rio Rancho was read again on 2026-11-19 after a fix to the agenda reader: 425 documents since January 2024, 424 read. They name no gas plant, data center or generator project. The power items are community solar, gas line easements and the city's standard bond policy. Valencia County's current agenda packets were read on 2026-11-19 from the county's Google Drive folder linked on its agendas page (https://drive.google.com/drive/folders/1zJvPK9y6_ADAXB5GdiUNY1R5H1z51kjY). It holds 14 packets from February to September 2026; its 2023, 2024 and 2025 folders are empty. The March 4 and March 18, 2026 packets carry a local economic development ordinance for Greater Kudu LLC, a Delaware company, to expand its existing Los Lunas data center campus, and the minutes name it as Meta's. None of the packets names gas-fired generation, La Luz, or the two Belen gas requests. The other power items are community solar gardens and a 176 kW portable diesel generator for the fire department.",
    "read": [
     "batches/us-nm/harvest/local_records.md",
-    "batches/us-nm/harvest/local_records.json"
+    "batches/us-nm/harvest/local_records.json",
+    "scopes/us-nm/work/rio_rancho_relist",
+    "scopes/us-nm/work/local/valencia-drive"
    ],
-   "date": "2026-11-18"
+   "date": "2026-11-19"
   }
  },
  "ids_followup": {
@@ -521,18 +523,64 @@
   },
   "market PNM": {
    "decision": "read_by_hand",
-   "evidence": "PNM's queue page on the OATI site shows no rows without a sign-in, so the Berkeley Lab file through 2025 was read row by row for PNM and every gas request is answered under its own key. The PNM 2026 plan was read for newer gas."
+   "evidence": "Read every row of PNM's interconnection request list of October 31, 2026, from PNM's public OASIS folder, including the 2026 request window that the Berkeley Lab file does not cover. Every gas request is answered under its own key. Withdrawn requests IA-PNM-2018-07, IA-PNM-2020-03, IA-PNM-2023-10 (hydrogen) and IA-PNM-2025-17 are not live.",
+   "urls": [
+    "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+   ]
   },
   "market TSGT": {
    "decision": "read_by_hand",
-   "evidence": "Tri-State's queue page on the OATI site shows no rows without a sign-in, so the Berkeley Lab file was read row by row for Tri-State. No New Mexico gas request; Tri-State's new gas is in Moffat County, Colorado."
+   "evidence": "Read every row of Tri-State's active request list of November 18, 2026 and its signed agreements list, from Tri-State's public OASIS folder. No New Mexico request is gas or oil; the New Mexico rows are solar, battery, wind and geothermal. The only gas request, GI-CS-2025-27 in Delta County, Colorado, is withdrawn.",
+   "urls": [
+    "https://www.oasis.oati.com/woa/docs/TSGT/TSGTdocs/Active_Interconnection_Request_Queue.pdf",
+    "https://www.oasis.oati.com/woa/docs/TSGT/TSGTdocs/LGIA_Interconnection_Request_Queue.pdf"
+   ]
+  },
+  "PNM IA-PNM-2026-15": {
+   "decision": "add",
+   "record_id": "us-nm:new:belen-ia-pnm-2026-15-gas-power-station",
+   "evidence": "172 megawatts of gas at the Belen 115 kV Substation for December 2029, in PNM's October 31, 2026 request list. No applicant is named.",
+   "urls": [
+    "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+   ]
+  },
+  "PNM IA-PNM-2026-19": {
+   "decision": "add",
+   "record_id": "us-nm:new:belen-ia-pnm-2026-19-hybrid-power-station",
+   "evidence": "100.50 megawatts of solar, battery and gas at the Belen 115 kV Substation for December 2030, in PNM's October 31, 2026 request list. The gas share is not given, so the capacity is blank.",
+   "urls": [
+    "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+   ]
+  },
+  "PNM IA-PNM-2012-02": {
+   "decision": "add",
+   "record_id": "us-nm:new:la-luz-energy-center",
+   "evidence": "The La Luz Energy Center turbine, in service, which this batch adds.",
+   "urls": [
+    "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+   ]
+  },
+  "PNM IA-PNM-2013-01": {
+   "decision": "add",
+   "record_id": "us-nm:new:la-luz-energy-center",
+   "evidence": "La Luz Energy Center number 2, 42.3 megawatts, agreement signed in 2014. The federal generator file lists this second unit as cancelled or postponed; the batch adds La Luz with unit 2 as the 40 megawatt unit in PNM's 2026 plan.",
+   "urls": [
+    "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+   ]
+  },
+  "PNM IA-PNM-2007-02": {
+   "decision": "already_in_gem",
+   "evidence": "PNM's Rio Bravo turbine at Bernalillo County, 148 megawatts, in service; GEM's Rio Bravo plant.",
+   "urls": [
+    "https://www.oasis.oati.com/woa/docs/PNM/PNMdocs/10_October_2026_Interconnection_Matrix_Posted_10-30-26.pdf"
+   ]
   }
  },
  "dedup": {
   "us-nm:new:la-luz-energy-center": {
    "decision": "not_a_duplicate",
    "checked": "2026-11-18",
-   "evidence": "Valencia energy facility is 7.6 kilometers away, a separate plant with its own federal number. Greater Kudu shares only the county."
+   "evidence": "Valencia energy facility is 7.6 kilometers away, a separate plant with its own federal number. Greater Kudu shares only the county. The two Belen requests in PNM's October 2026 list are separate requests, covered by a question card."
   },
   "us-nm:new:pi-on-generating-station": {
    "decision": "not_a_duplicate",
@@ -542,7 +590,7 @@
   "us-nm:new:greater-kudu-los-lunas-data-center-power-station": {
    "decision": "not_a_duplicate",
    "checked": "2026-11-18",
-   "evidence": "No GEM plant is near the site; La Luz shares only the county."
+   "evidence": "No GEM plant is near the site; La Luz and the two Belen gas requests share only the county."
   },
   "us-nm:new:milagro-power-station": {
    "decision": "not_a_duplicate",
@@ -563,6 +611,16 @@
    "decision": "not_a_duplicate",
    "checked": "2026-11-18",
    "evidence": "The batch neighbors share only the county. Westside is the separate Saddle Butte plant at Kirtland."
+  },
+  "us-nm:new:belen-ia-pnm-2026-15-gas-power-station": {
+   "decision": "not_a_duplicate",
+   "checked": "2026-11-19",
+   "evidence": "Valencia energy facility is 7 kilometers away and its own requests in PNM's list are in service. La Luz unit 2 is 40 megawatts for 2031, not 172 megawatts for 2029. The 2026-19 request is a separate solar, battery and gas request. Greater Kudu shares only the county. A question card asks whether either Belen request belongs to La Luz or Valencia."
+  },
+  "us-nm:new:belen-ia-pnm-2026-19-hybrid-power-station": {
+   "decision": "not_a_duplicate",
+   "checked": "2026-11-19",
+   "evidence": "A separate 100.50 megawatt solar, battery and gas request in PNM's list, with its own number and date. Valencia energy facility is 7 kilometers away and fully in service. Greater Kudu and La Luz share only the county. The same question card covers it."
   }
  },
  "irp_plans": {
@@ -1113,6 +1171,149 @@
    "decision": "watch item, watch_case unverified, recheck_by 2026-12",
    "reason": "A new microgrid air permit is a likely gas plant, but no page that names its fuel, size or site has passed the verifier. A person can open the notice on newmexicopublicnotices.com and read the site and equipment; the application should reach the state permit data service within weeks.",
    "document": "work/sweep_us-nm/retry/pubnot_search_microgrid.txt"
+  },
+  "10445": {
+   "ai": "11262",
+   "name": "Cotton Draw CPG Pad",
+   "what": "A Devon oil field power site. The application says it makes power only for Devon's own oil and gas sites.",
+   "owner": "Devon Power New Mexico, LLC",
+   "site": "24.3 mi ESE of Malaga, Lea County",
+   "lat_long": "32.092486, -103.679055",
+   "equipment": "Two Solar SMT130 trailer turbines of 21,024 horsepower and one Solar SMT60 trailer turbine of 7,402 horsepower, per the equipment table in the application in its permit file. Solar rates the SMT130 at about 16 megawatts and the SMT60 at about 5.7.",
+   "mw": "about 38",
+   "decision": "nothing",
+   "reason": "Under the threshold. The nearest other Devon power pad, Todd, is 23 kilometers away.",
+   "document": "https://cloud.env.nm.gov/resources/collection/14581"
+  },
+  "10398": {
+   "ai": "12621",
+   "name": "Rattlesnake CPG East Pad",
+   "what": "A Devon oil field power site for its own oil and gas sites.",
+   "owner": "Devon Power New Mexico, LLC",
+   "site": "Lea County",
+   "lat_long": "32.060692, -103.335966",
+   "equipment": "Five Solar SMT60 trailer turbines of 7,402 horsepower and two small Volvo Penta diesel black start generators, per the November 2025 application update in its permit file (permit 10398M1).",
+   "mw": "about 28",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://cloud.env.nm.gov/resources/collection/14118"
+  },
+  "10513": {
+   "ai": "13016",
+   "name": "Todd CPG Pad 1",
+   "what": "A Devon oil field power site for its own oil and gas sites. Permit approved March 26, 2025.",
+   "owner": "Devon Power New Mexico, LLC",
+   "site": "23.9 mi ENE of Malaga, Lea County",
+   "lat_long": "32.299925, -103.669011",
+   "equipment": "Two Solar SMT130 trailer turbines and one Solar SMT60, per the application in its permit file.",
+   "mw": "about 38",
+   "decision": "watch item, watch_case under_threshold, recheck_by 2027-03",
+   "reason": "Each pad is under the threshold. Pad 2 is 600 meters away and the two together are about 75 megawatts. See the watch item Todd CPG Pads 1 and 2.",
+   "document": "https://cloud.env.nm.gov/resources/collection/15187"
+  },
+  "10514": {
+   "ai": "13062",
+   "name": "Todd CPG Pad 2",
+   "what": "A Devon oil field power site for its own oil and gas sites. Permit approved March 27, 2025.",
+   "owner": "Devon Power New Mexico, LLC",
+   "site": "24.2 mi ENE of Malaga, Lea County",
+   "lat_long": "32.300927, -103.662783",
+   "equipment": "Two Solar SMT130 trailer turbines and one Solar SMT60, per the application in its permit file.",
+   "mw": "about 38",
+   "decision": "watch item, watch_case under_threshold, recheck_by 2027-03",
+   "reason": "See Todd CPG Pad 1.",
+   "document": "https://cloud.env.nm.gov/resources/collection/15188"
+  },
+  "10538": {
+   "ai": "13163",
+   "name": "Red Hills North Micro Grid",
+   "what": "An EOG microgrid for its own wells.",
+   "owner": "EOG Resources",
+   "site": "Lea County",
+   "lat_long": "32.16331, -103.505562",
+   "equipment": "One Solar SMT60 trailer turbine (Taurus 60), per the application in its permit file.",
+   "mw": "about 5.7",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://cloud.env.nm.gov/resources/collection/15331"
+  },
+  "10677": {
+   "ai": "13813",
+   "name": "Red Tank Micro Grid",
+   "what": "An EOG microgrid for its own wells.",
+   "owner": "EOG Resources",
+   "site": "Lea County",
+   "lat_long": "32.379172, -103.706803",
+   "equipment": "One Solar SMT60 trailer turbine and one 400 kilowatt Perkins diesel generator, per the application in its permit file.",
+   "mw": "about 6",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://cloud.env.nm.gov/resources/collection/20198"
+  },
+  "9436": {
+   "ai": "40232",
+   "name": "Beta Bertha Micro Grid (Bertha Compressor Station)",
+   "what": "An EOG compressor station that also powers nearby tank batteries.",
+   "owner": "EOG Resources",
+   "site": "Lea County",
+   "lat_long": "32.0331, -103.8029",
+   "equipment": "Eight Caterpillar G3608 gas engines of 2,500 horsepower that drive gas compressors, which is mechanical drive and not counted, and one Solar Taurus 60 turbine of 6,373 horsepower for power, per the 2025 application (permit 9436M1) in its permit file.",
+   "mw": "about 5",
+   "decision": "nothing",
+   "reason": "Under the threshold. The compressor engines are not power generation.",
+   "document": "https://cloud.env.nm.gov/resources/collection/6728"
+  },
+  "10658": {
+   "ai": "13761",
+   "name": "Artesia West Power",
+   "what": "A gas engine power site.",
+   "owner": "RPC Toll, LLC",
+   "site": "4.1 mi SE of Atoka, Eddy County",
+   "lat_long": "32.741501, -104.339027",
+   "equipment": "Eight Jenbacher JGS 620 gas engine generators of 3,143 kilowatts each, per the facility description in the application in its permit file.",
+   "mw": "25.1",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": "https://cloud.env.nm.gov/resources/collection/16627"
+  },
+  "AI-27374": {
+   "ai": "27374",
+   "name": "East Microgrid Pad 1",
+   "what": "A Matador microgrid for its own wells.",
+   "owner": "Matador Production Company",
+   "site": "24.9 mi SE of Loco Hills, Lea County",
+   "lat_long": "32.543369, -103.704608",
+   "equipment": "No documents are posted. Its nitrogen oxide limit is 77.45 tons a year. At the federal limit for new gas engines, that is at most about 9,000 horsepower of engines, about 6.6 megawatts.",
+   "mw": "likely under 10",
+   "decision": "nothing",
+   "reason": "Under the threshold. Pad 2 is 670 meters away, and the two together are still under 20 megawatts.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=27374"
+  },
+  "AI-28332": {
+   "ai": "28332",
+   "name": "East Microgrid Pad 2",
+   "what": "A Matador microgrid for its own wells.",
+   "owner": "Matador Production Company",
+   "site": "25.2 mi SE of Loco Hills, Lea County",
+   "lat_long": "32.53737, -103.70455",
+   "equipment": "No documents are posted. Same nitrogen oxide limit as Pad 1, 77.45 tons a year.",
+   "mw": "likely under 10",
+   "decision": "nothing",
+   "reason": "Under the threshold, alone or with Pad 1.",
+   "document": "https://rsmt-api-c4cwg2h3a2ewdjf4.westus2-01.azurewebsites.net/get-facility-report?ai=28332"
+  },
+  "AI-41140": {
+   "ai": "41140",
+   "name": "Sun State Facility",
+   "what": "A NYDIG emergency generator site, filed as a notice of intent, the smallest permit class.",
+   "owner": "NYDIG DFM LLC",
+   "site": "16 mi SW of Eunice, Lea County",
+   "lat_long": "32.644764, -103.410898",
+   "equipment": "No documents are posted and the state report page gives an error. The facility list gives a nitrogen oxide total of 9.39 tons a year and the type emergency generation, which fits a few megawatts of standby engines.",
+   "mw": "likely under 5",
+   "decision": "nothing",
+   "reason": "Under the threshold.",
+   "document": ""
   }
  },
  "permit_leads_echo": {
