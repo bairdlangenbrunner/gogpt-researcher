@@ -1,0 +1,303 @@
+{
+ "meta": {
+  "plant_id": "L100000104280",
+  "plant_name": "Weston Power Plant",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:59:16-05:00",
+  "done": true,
+  "urls_attempted": 14,
+  "urls_verified": 7
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403777",
+   "unit_name": "2",
+   "findings": {},
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "EIA lists this unit as retired in the September 2026 table. I found no document that states whether it served as backup power."
+  },
+  {
+   "gem_unit_id": "G100000403778",
+   "unit_name": "32",
+   "findings": {},
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "EIA lists this unit as retired in the September 2026 table. I found no document that states whether it served as backup power."
+  },
+  {
+   "gem_unit_id": "G100001018444",
+   "unit_name": "Unit 4, timepoint 2",
+   "findings": {
+    "Start year": {
+     "value": "2030",
+     "refs": [
+      "https://web.archive.org/web/2025/https://s22.q4cdn.com/994559668/files/doc_presentations/2025/May/16/05-2025-May-Final.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/2025/https://s22.q4cdn.com/994559668/files/doc_presentations/2025/May/16/05-2025-May-Final.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Weston 4 start year of the gas conversion.\n\nSource:\n- A WEC Energy Group investor update from May 2025, saved copy at https://web.archive.org/web/2025/https://s22.q4cdn.com/994559668/files/doc_presentations/2025/May/16/05-2025-May-Final.pdf. On PDF page 18 the line under Weston Unit 3 reads 'By end of 2030, we expect to use coal only as a backup fuel.' It sits under 'Enhancing fuel flexibility (gas blending) at Oak Creek Power the Future units and Weston Unit 4.' This is the saved copy of the dead link already in the database.\n\nOpen question:\n- The September 2026 investor update at https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf (PDF page 28) still lists 'gas blending' at Weston Unit 4 but gives no conversion year. The EIA-860M table for September 2026 gives 'Planned Repower Year 2029, month 6' for generator 4. The two sources differ by one year. The company document is the one we keep, so 2030 stands."
+    },
+    "Status": {
+     "value": "announced",
+     "refs": [
+      "https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status of Weston 4 stays announced as a gas conversion.\n\nSource:\n- The September 2026 WEC Energy Group investor update at https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf lists 'Enhancing fuel flexibility (gas blending) at Oak Creek Power the Future units and Weston Unit 4' on PDF page 28, with no completion date.\n\nEIA question:\n- The task said EIA plant 4130 shows generator 4 retired. That is the wrong plant, New Lisbon. Weston is EIA plant 4078. In the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating, plant 4078, generator 4 is '(OP) Operating', 595.0 MW, Conventional Steam Coal, operating July 2008. So it is not retired. The status is unchanged.",
+     "milestones": [
+      {
+       "status": "announced",
+       "year": 2025,
+       "period": "May",
+       "sources": [
+        "https://web.archive.org/web/2025/https://s22.q4cdn.com/994559668/files/doc_presentations/2025/May/16/05-2025-May-Final.pdf"
+       ],
+       "note": "the May 2025 investor update describes gas blending at Weston Unit 4 and coal only as backup fuel by end of 2030"
+      }
+     ]
+    },
+    "Owner(s)": {
+     "value": "Dairyland Power Cooperative [30%]; Wisconsin Public Service Corp [70%]",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566895"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566895",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Owners of Weston 4 as they stand today.\n\nSource:\n- The joint application in Public Service Commission of Wisconsin docket 5-BS-293, at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566895. On the first pages, the text says 'DPC currently owns a 30% (178.5 MW) interest in Weston 4' and 'Wisconsin Public Service Corporation owns the other 70%'.\n\nPending change:\n- Wisconsin Electric Power Company has applied to buy Dairyland's 30 percent. The September 2026 investor update at https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf on PDF page 28 says the purchase is 'Pending regulatory approval'. It is not closed, so the owner is not changed. Please add it to the possible-updates sheet and to Notes."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://web.archive.org/web/2025/https://s22.q4cdn.com/994559668/files/doc_presentations/2025/May/16/05-2025-May-Final.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/2025/https://s22.q4cdn.com/994559668/files/doc_presentations/2025/May/16/05-2025-May-Final.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Weston 4 is a coal unit being converted to gas.\n\nSource:\n- The saved copy of the May 2025 WEC Energy Group investor update at https://web.archive.org/web/2025/https://s22.q4cdn.com/994559668/files/doc_presentations/2025/May/16/05-2025-May-Final.pdf, PDF page 18, says 'Enhancing fuel flexibility (gas blending) at Oak Creek Power the Future units and Weston Unit 4' and 'we expect to use coal only as a backup fuel'. The unit stays in service on a new fuel mix, so it is a conversion."
+    },
+    "Capacity (MW)": {
+     "value": "595.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566895"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566895",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating, plant 4078 Weston, generator 4. The row reads status OP, nameplate 595.0 MW, Conventional Steam Coal, operating year 2008.\n\nThe Public Service Commission application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566895 also says 'nameplate generating capacity of 595 MW'."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Backup Power",
+    "Operator(s)",
+    "Latest Activity (not needed, project moving)"
+   ],
+   "notes": "Weston 4 is still an announced gas conversion. The newest report is the September 2026 investor update, so Latest Activity is left alone. No turbine make applies because it is a boiler conversion, and no document states Backup Power."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000403777",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "Is Backup Power for Weston unit 2 really no?",
+   "finding": "I searched the EIA-860M table for September 2026 and the Wisconsin air permit index for Weston. Neither says whether unit 2 was backup power.",
+   "recommendation": "Leave Backup Power as no. No source was found to cite for it.",
+   "note": "Looked at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and the harvested permit index for the Weston plant. Nothing states a backup role.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "proposed_value": {}
+  },
+  {
+   "gem_unit_id": "G100000403778",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "Is Backup Power for Weston unit 32 really no?",
+   "finding": "I searched the EIA-860M table for September 2026 and the air permit index. Neither says whether unit 32 was backup power.",
+   "recommendation": "Leave Backup Power as no. No source was found to cite for it.",
+   "note": "Looked at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and the harvested permit index for the Weston plant. Nothing states a backup role.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "proposed_value": {}
+  },
+  {
+   "gem_unit_id": "G100001018444",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "Is Backup Power for Weston unit 4 really no?",
+   "finding": "I read the Public Service Commission application in docket 5-BS-293 and the 2025 and 2026 WEC investor updates. None says the unit is backup power.",
+   "recommendation": "Leave Backup Power as no. Coal becomes a backup fuel, but the unit itself is not backup power.",
+   "note": "Opened https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566895, https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf and the saved May 2025 update.",
+   "refs": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566895",
+    "https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf"
+   ],
+   "proposed_value": {}
+  },
+  {
+   "gem_unit_id": "G100001018444",
+   "concern_type": "Start year",
+   "question": "Should Weston 4 start year be 2029 or 2030?",
+   "finding": "The EIA-860M table for September 2026 gives a planned repower in June 2029. The WEC May 2025 update says coal only as backup fuel by end of 2030. The September 2026 WEC update gives no year.",
+   "recommendation": "Keep 2030, the owner's own statement. Close Natalia Fretz's comment thread on Weston 4 after checking the next WEC update.",
+   "note": "EIA: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx. WEC: https://web.archive.org/web/2025/https://s22.q4cdn.com/994559668/files/doc_presentations/2025/May/16/05-2025-May-Final.pdf PDF page 18. The EIP Oil and Gas Watch page at https://oilandgaswatch.org/facility/rec_d4f1u68q7easr8ra1gc0 once gave 2029. It now shows a 404 page in a browser and has no saved copy, so I could not check it.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://web.archive.org/web/2025/https://s22.q4cdn.com/994559668/files/doc_presentations/2025/May/16/05-2025-May-Final.pdf"
+   ],
+   "proposed_value": {
+    "Start year": "2030"
+   }
+  },
+  {
+   "gem_unit_id": "G100001018444",
+   "concern_type": "Retired year",
+   "question": "Is the Weston 4 retirement year in the comment thread still 2030?",
+   "finding": "The WEC documents do not retire Weston 4. They keep coal only as backup fuel to end of 2030 and plan gas blending. Weston 3 retires at the end of 2031 per the September 2026 update.",
+   "recommendation": "Do not add a retirement year for Weston 4. Close the thread.",
+   "note": "Sept 2026 update: https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf page 28. Rothschild village packet from October 2026 says Weston 3 retires in 2031 and Weston 4 converts to gas.",
+   "refs": [
+    "https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf"
+   ],
+   "proposed_value": {}
+  },
+  {
+   "gem_unit_id": "G100001018444",
+   "concern_type": "Owner(s)",
+   "question": "Should Weston 4 be 100% Wisconsin Electric once the Dairyland purchase closes?",
+   "finding": "Docket 5-BS-293 asks to move Dairyland's 30 percent to Wisconsin Electric. It was still pending in the September 2026 update.",
+   "recommendation": "Do not change the owner now. Add the pending sale to Notes and the possible-updates sheet.",
+   "note": "Docket https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566895. Update: https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf page 28.",
+   "refs": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566895",
+    "https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf"
+   ],
+   "proposed_value": {}
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Plant 4078 generator 4 operating, 595.0 MW, planned repower 2029."
+  },
+  {
+   "url": "https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf",
+   "used_for": [
+    "Status",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Weston Unit 4 gas blending; 165 MW acquisition pending."
+  },
+  {
+   "url": "https://s22.q4cdn.com/994559668/files/doc_presentations/2026/Jan/05/01-2026-January-Final.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Same wording as September."
+  },
+  {
+   "url": "https://web.archive.org/web/2025/https://s22.q4cdn.com/994559668/files/doc_presentations/2025/May/16/05-2025-May-Final.pdf",
+   "used_for": [
+    "Start year",
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "Saved copy of May 2025 update; the original q4live link is dead, the s22.q4cdn address and this snapshot work."
+  },
+  {
+   "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566895",
+   "used_for": [
+    "Owner(s)",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Read via the repo fetcher."
+  },
+  {
+   "url": "https://oilandgaswatch.org/facility/rec_d4f1u68q7easr8ra1gc0",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "failed",
+   "note": "Opened in a real browser on November 19, 2026. The site now shows its \"404 Not Found\" page for this address, and the Wayback Machine has no saved copy. Nothing on it could be used, so it is not cited."
+  },
+  {
+   "url": "https://www.rothschildwi.com/10-26-2026%20Village%20Board%20Packet.pdf?t=202610231715120",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "failed",
+   "note": "Verifier run timed out; not cited."
+  }
+ ]
+}

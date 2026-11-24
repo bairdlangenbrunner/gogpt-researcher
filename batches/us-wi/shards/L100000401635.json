@@ -1,0 +1,245 @@
+{
+ "meta": {
+  "plant_id": "L100000401635",
+  "plant_name": "Sheboygan Falls power station",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T09:00:04-05:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402365",
+   "unit_name": "1",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "173.4",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA monthly generator table for September 2026 gives the nameplate capacity of unit 1 as 173.4 MW. GEM shows 220 MW.\n\nCapacity:\n- Open https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant ID 56166, Generator ID 1, column Nameplate Capacity (MW) reads 173.4.\n- The 220 MW figure matches neither the EIA nameplate nor the permit figures, so the EIA nameplate is the value to record, as for Neenah.\n- The EIA table lists no planned uprate for this unit yet.\n\nWhy other numbers appear:\n- The Public Service Commission application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=469672 says the upgrade lets each unit reach a nominal output of about 218 MW in winter and 200 MW in spring, summer and fall. See the paragraph that starts with the interconnection limit of 300 MW, in the Project description near the start of the document.\n- The Department of Natural Resources permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1278655 lists each turbine at a nominal output of 218 MW. That is a rating after the 2025 and 2026 upgrades, not the generator nameplate.\n\nEIA row: Plant 56166, generator 1, status OP, nameplate 173.4 MW, net summer 197.6 or 198.5 MW, Natural Gas Fired Combustion Turbine, operating year 2005, month 6"
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1272499"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1272499",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Department of Natural Resources preliminary determination for permit 26-PSD-023 describes this plant as a peaking station that serves the grid, so unit 1 is not a backup unit.\n\nBackup Power:\n- Open https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1272499. In the project description, the paragraph that starts with the facility being an electric generating facility of two simple-cycle combustion turbines says the facility serves as a peaking station.\n- The document does not use the words backup power. The value no is an inference from the peaking role.\n- No data center is served by this plant."
+    },
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1272499"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1272499",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Still operating, with no retirement, mothballing or owner change found.\n\nStatus:\n- The EIA table for September 2026 lists unit 1 as operating (OP) with no planned retirement year or month.\n- The Department of Natural Resources document at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1272499 says both turbines became operational in 2005 and the plant continues as a peaking station. The permit was issued in 2026 for upgrades to the running units."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE 7FA.03",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=469672"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=469672",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Public Service Commission application from June 2023 names the turbine model.\n\nEquipment:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=469672. The paragraph that starts 'The Facility currently consists of two GE model 7FA.03 CTs in simple-cycle' gives the model."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Operator(s)"
+   ],
+   "notes": "Operating peaker with GE 7FA.03 turbines. EIA nameplate is 173.4 MW, against 220 MW in GEM. No retirement or mothballing found in the EIA table, the Public Service Commission docket or the 2026 air permit."
+  },
+  {
+   "gem_unit_id": "G100000402366",
+   "unit_name": "2",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "173.4",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA monthly generator table for September 2026 gives the nameplate capacity of unit 2 as 173.4 MW. GEM shows 220 MW.\n\nCapacity:\n- Open https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant ID 56166, Generator ID 2, column Nameplate Capacity (MW) reads 173.4.\n- The 220 MW figure matches neither the EIA nameplate nor the permit figures, so the EIA nameplate is the value to record, as for Neenah.\n- The EIA table lists no planned uprate for this unit yet.\n\nWhy other numbers appear:\n- The Public Service Commission application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=469672 says the upgrade lets each unit reach a nominal output of about 218 MW in winter and 200 MW in spring, summer and fall. See the paragraph that starts with the interconnection limit of 300 MW, in the Project description near the start of the document.\n- The Department of Natural Resources permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1278655 lists each turbine at a nominal output of 218 MW. That is a rating after the 2025 and 2026 upgrades, not the generator nameplate.\n\nEIA row: Plant 56166, generator 2, status OP, nameplate 173.4 MW, net summer 197.6 or 198.5 MW, Natural Gas Fired Combustion Turbine, operating year 2005, month 6"
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1272499"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1272499",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Department of Natural Resources preliminary determination for permit 26-PSD-023 describes this plant as a peaking station that serves the grid, so unit 2 is not a backup unit.\n\nBackup Power:\n- Open https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1272499. In the project description, the paragraph that starts with the facility being an electric generating facility of two simple-cycle combustion turbines says the facility serves as a peaking station.\n- The document does not use the words backup power. The value no is an inference from the peaking role.\n- No data center is served by this plant."
+    },
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1272499"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1272499",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Still operating, with no retirement, mothballing or owner change found.\n\nStatus:\n- The EIA table for September 2026 lists unit 2 as operating (OP) with no planned retirement year or month.\n- The Department of Natural Resources document at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1272499 says both turbines became operational in 2005 and the plant continues as a peaking station. The permit was issued in 2026 for upgrades to the running units."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE 7FA.03",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=469672"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=469672",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Public Service Commission application from June 2023 names the turbine model.\n\nEquipment:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=469672. The paragraph that starts 'The Facility currently consists of two GE model 7FA.03 CTs in simple-cycle' gives the model."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Operator(s)"
+   ],
+   "notes": "Operating peaker with GE 7FA.03 turbines. EIA nameplate is 173.4 MW, against 220 MW in GEM. No retirement or mothballing found in the EIA table, the Public Service Commission docket or the 2026 air permit."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000402365",
+   "concern_type": "Capacity (MW)",
+   "question": "Should capacity be updated to the roughly 218 MW per unit rating after the upgrade?",
+   "finding": "EIA still lists 173.4 MW nameplate per unit. The 2026 air permit and the 2023 Public Service Commission application give a nominal output of 218 MW per unit in winter after the gas path upgrades.",
+   "recommendation": "Record 173.4 MW per unit for now. Check the EIA table again after the next release, and move to the new nameplate if EIA raises it.",
+   "note": "The air permit is at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1278655. Find 'Maximum specifications: Output: 218 MW, each' in the project description. The application is at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=469672. The paragraph that starts 'Upon completion of the Project, each unit will be capable of a nominal output of approximately 218 MW' gives the figure. Amalia Llano's note on both units quotes about 440 MW for the whole facility, which is the two units at the winter rating. I did not find a document that states the generator nameplate changed.",
+   "refs": [
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1278655",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=469672"
+   ],
+   "proposed_value": {
+    "Capacity (MW)": "218"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Read the Operating sheet rows for plant 56166."
+  },
+  {
+   "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=469672",
+   "used_for": [
+    "Capacity (MW)",
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Saved copy read in full text under work/sweep_wi."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1272499",
+   "used_for": [
+    "Status",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Preliminary determination for permit 26-PSD-023."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1278655",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Final permit 26-PSD-023, 218 MW nominal output per turbine."
+  }
+ ]
+}

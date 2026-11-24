@@ -1,0 +1,278 @@
+{
+ "meta": {
+  "plant_id": "L100001089674",
+  "plant_name": "Microsoft Mount Pleasant Data Centers power station",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:55:00-05:00",
+  "done": true,
+  "urls_attempted": 8,
+  "urls_verified": 8
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001102182",
+   "unit_name": "Area 2 (MKE07-15)",
+   "findings": {
+    "Equipment Manufacturer/Model": {
+     "value": "CAT: C175-16",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1287957"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1287957",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Re-verified.\n\nEquipment:\n- Open the August 2026 permit modification application at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1287957 and read Section 1.2, item 1. It says 'Change the generator manufacturer from Cummins to Caterpillar for the generators planned for Area 2.'\n- Table 1 in the same application lists 'Twenty-four (24) Caterpillar C175-16 Emergency Generators' for each of MKE09 to MKE14. GEM already shows this model."
+    },
+    "Number Of Engines": {
+     "value": "146",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1287957"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1287957",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Re-verified.\n\nEngine count:\n- Open the application at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1287957 and go to Appendix B, the Form 4530-129 table headed 'Mount Pleasant Area Designations'. The row 'MKE Area 2 (MKE07-MKE15 + CAB)' shows 146 in the 3MW column. GEM already shows 146."
+    }
+   },
+   "not_found": [
+    "Status",
+    "Start year",
+    "Latest Activity",
+    "Capacity (MW)"
+   ],
+   "notes": "Area 2 stays pre-construction. The permit record shows a construction permit but I found no report that work on Area 2 has started or a dated start year. The Microsoft release of June 2026 only describes the first and second facilities, so no Latest Activity is needed."
+  },
+  {
+   "gem_unit_id": "G100001102176",
+   "unit_name": "MKE03-04",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://news.microsoft.com/source/2026/06/23/microsoft-completes-construction-on-first-datacenter-facility-in-mount-pleasant-wisconsin/"
+     ],
+     "verifications": [
+      {
+       "url": "https://news.microsoft.com/source/2026/06/23/microsoft-completes-construction-on-first-datacenter-facility-in-mount-pleasant-wisconsin/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Re-verified, unchanged.\n\nStatus:\n- Open the Microsoft press release from June 23, 2026 at https://news.microsoft.com/source/2026/06/23/microsoft-completes-construction-on-first-datacenter-facility-in-mount-pleasant-wisconsin/. The first paragraph says Microsoft completed the first datacenter facility 'after bringing equipment online and conducting startup activities in April' and that it 'is now fully operational'. This is the MKE03/04 facility.\n- Nothing found about a retirement, mothballing or sale.",
+     "milestones": [
+      {
+       "status": "operating",
+       "year": 2026,
+       "period": "April",
+       "sources": [
+        "https://news.microsoft.com/source/2026/06/23/microsoft-completes-construction-on-first-datacenter-facility-in-mount-pleasant-wisconsin/"
+       ],
+       "note": "equipment brought online and startup activities in April 2026, announced fully operational June 23, 2026"
+      }
+     ]
+    },
+    "Number Of Engines": {
+     "value": "39",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Re-verified.\n\nEngine count:\n- Open the DNR preliminary determination for permit 25-MIN-113 at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690 and go to the Source Description table. Process IDs 'P01-P39' for data center MKE03/04 are Cummins C3000 D6e engines, which is 39 engines. GEM shows 39."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Cummins: C3000 D6e",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Re-verified.\n\nEquipment:\n- Same table at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690: 'MKE03/04 P01-P39 Cummins C3000 D6e'. GEM already shows this."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire"
+   ],
+   "notes": "MKE03-04 is operating and no retirement was found. The permit lists 3,213 kW per core engine, higher than the 3 MW in GEM, which is raised as a question."
+  },
+  {
+   "gem_unit_id": "G100001102179",
+   "unit_name": "MKE16-17",
+   "findings": {
+    "Start year": {
+     "value": "2028",
+     "refs": [
+      "https://news.microsoft.com/source/2026/06/23/microsoft-completes-construction-on-first-datacenter-facility-in-mount-pleasant-wisconsin/"
+     ],
+     "verifications": [
+      {
+       "url": "https://news.microsoft.com/source/2026/06/23/microsoft-completes-construction-on-first-datacenter-facility-in-mount-pleasant-wisconsin/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Re-verified.\n\nStart year:\n- Open the Microsoft press release at https://news.microsoft.com/source/2026/06/23/microsoft-completes-construction-on-first-datacenter-facility-in-mount-pleasant-wisconsin/ and read the paragraph that starts 'Construction of Microsoft's second facility in Mount Pleasant immediately adjacent to the first is ongoing.' It says the facility 'is scheduled to be completed in 2028'.\n- The human adds a scheduled event with Event Year 2028 and Source Year 2026 only if one is not already there."
+    },
+    "Status": {
+     "value": "construction",
+     "refs": [
+      "https://news.microsoft.com/source/2026/06/23/microsoft-completes-construction-on-first-datacenter-facility-in-mount-pleasant-wisconsin/"
+     ],
+     "verifications": [
+      {
+       "url": "https://news.microsoft.com/source/2026/06/23/microsoft-completes-construction-on-first-datacenter-facility-in-mount-pleasant-wisconsin/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Re-verified, unchanged.\n\nStatus:\n- Same press release at https://news.microsoft.com/source/2026/06/23/microsoft-completes-construction-on-first-datacenter-facility-in-mount-pleasant-wisconsin/: \"Current work includes foundation installation, steel erection and underground utility placement.\" This describes the second facility, which matches MKE16/17.",
+     "milestones": [
+      {
+       "status": "construction",
+       "year": 2026,
+       "period": "",
+       "period_note": "The release of June 23, 2026 says work is under way but gives no start date. I did not find the earliest report of work starting.",
+       "sources": [
+        "https://news.microsoft.com/source/2026/06/23/microsoft-completes-construction-on-first-datacenter-facility-in-mount-pleasant-wisconsin/"
+       ],
+       "note": "earliest report found of work under way, June 2026"
+      }
+     ]
+    },
+    "Number Of Engines": {
+     "value": "39",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Re-verified.\n\nEngine count:\n- Open https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690 and see the Source Description table: 'MKE16/17 P43-P81 Cummins C3000 D6e', which is 39 engines. GEM shows 39."
+    }
+   },
+   "not_found": [
+    "Latest Activity (not needed, project is moving)"
+   ],
+   "notes": "MKE16-17 is under construction with completion scheduled for 2028 per Microsoft. The permit also lists one 1.105 MW Cummins engine and three fire pumps here that GEM does not carry."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001102182",
+   "concern_type": "Capacity (MW)",
+   "question": "Should the Mount Pleasant fleet be raised from 672 MW to the permit's 722.5 MW?",
+   "finding": "GEM carries 146 + 39 + 39 engines at 3 MW each, 672 MW. The DNR preliminary determination for permit 25-MIN-113 lists 244 engines that sum to 722.5 MW, and the Aug 2026 application adds 6 half-megawatt and 9 one-megawatt Caterpillar units for Area 2.",
+   "recommendation": "Leave GEM's three rows as they are for now. Ask the project manager whether the one-megawatt, half-megawatt and Clarke fire pump units (which GEM does not carry) should be added as extra rows.",
+   "note": "Where to look:\n- Preliminary determination at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690, Source Description table. It lists Cummins C3000 D6e at 'up to 3,213' kW for each of 39 + 39 + 146 core engines, plus smaller Cummins 500DFEK, 1000DQFAD and Clarke fire pump units.\n- Application at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1287957, Section 1.2 and Table 1, and Appendix B table 'Mount Pleasant Area Designations'. It lists Area 2 as 146 three-megawatt units, 9 one-megawatt units and 9 half-megawatt units.\n- 39 x 3.213 MW is 125.3 MW against 117 MW in GEM. The permit figure is the largest rating allowed, so I made no change.\n- The application also names Area East (136 acres) and a 150-acre parcel Microsoft is acquiring, which would be further fleets. Amalia Llano's note and the Mount Pleasant village agendas were not read separately.",
+   "refs": [
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690",
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1287957"
+   ],
+   "proposed_value": {
+    "Capacity (MW)": "722.5"
+   }
+  },
+  {
+   "gem_unit_id": "G100001102176",
+   "concern_type": "Capacity Per Engine",
+   "question": "Is 3 MW or 3.213 MW the right capacity per core engine at Mount Pleasant?",
+   "finding": "The permit table gives 3,213 kW for each Cummins C3000 D6e. GEM uses 3 MW.",
+   "recommendation": "Keep 3 MW unless the manual says to use the permit's maximum rating; if it does, change Capacity Per Engine to 3.213 and recompute unit capacity.",
+   "note": "Open https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690 and the Source Description table, column 'Capacity (kW)': '\u2264 3,213' for Cummins C3000 D6e. No document I found gives the nameplate electrical rating directly.",
+   "refs": [
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690"
+   ],
+   "proposed_value": {
+    "Capacity Per Engine": "3.213"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1287957",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Number Of Engines"
+   ],
+   "outcome": "verified",
+   "note": "read via cf_clearance"
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690",
+   "used_for": [
+    "Number Of Engines",
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": ""
+  },
+  {
+   "url": "https://news.microsoft.com/source/2026/06/23/microsoft-completes-construction-on-first-datacenter-facility-in-mount-pleasant-wisconsin/",
+   "used_for": [
+    "Status",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": ""
+  },
+  {
+   "url": "https://baxtel.com/news/microsoft-trims-mount-pleasant-data-center-plan-to-seven-buildings-from-nine",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "loaded but not read in detail; a trade report that the plan was trimmed to seven buildings; lead only"
+  }
+ ]
+}

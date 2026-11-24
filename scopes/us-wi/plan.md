@@ -299,3 +299,29 @@ G. **Drafts for a person.**
 - Every queue request, missing EIA plant, data center site, resource plan and dedup hit is answered.
 - The gates pass with `--strict-proof`, and `qc_checks.py --staged` is clean.
 - The deliverable pair is built with a fresh stamp, and Amalia's page is rebuilt and published with Wisconsin on it.
+
+## Stage A status (run 2026-11-17, stopped at the access-check checkpoint)
+
+- Pull chain, worklist (76 rows), validation report (14 fix items), comments (3 open), no-tracker (0), ID join (43 tasks), IRP sheet, captive LNG (0 rows) and location (2 candidates) all ran. Amalia's 27 "ALQ42026" rows are unchanged from the list above; Port Washington, Neenah, Sheboygan Falls and Union Depot also carry her notes.
+- `queues.json` is written (MISO, 44 requests to answer). `extra_tasks.json`, `coverage.json` (30 sources, all proven by `access_check.py`) and `irp_plans.json` are written.
+- Harvesters built with offline tests (36 pass): `harvest_permits.py`, `harvest_psc.py`, `harvest_local.py`. None has run in full.
+- Corrections to the plan: docket 6630-CE-318 is a combustion turbine upgrade at the existing Port Washington plant and 6630-CE-315 an overhaul of Concord units 1 to 4, so neither is a new plant. The Strategic Energy Assessment docket is 5-ES-113 (draft filing 595734, 2026-06-29). The RBLC moved to `cdxoarapps.epa.gov/oar-rblc/` and has an open JSON search, so there is no RBLC human wall. SIC 4911 with inactive permits shown returns 141 facilities.
+- `fetch.py` now treats HTTP 402 as a bot wall (Gannett).
+- Gaps fixed 2026-11-17: the facts filter in `harvest_psc.py` now keeps only plant facts. `harvest_local.py` lists Racine County (864), Brillion (633), Somers (64), Town of Paris (7), Menomonee Falls (102) and Dodge County (2, yearly proceedings books only), has a `boards` filter for Rock County, Green Bay and Beaver Dam (`--all-boards` turns it off), and reads the City of Racine through a new calendar reader. All five Legistar bodies list. Still open: Kronenwetter, Madison CARPC and Waukesha Committee of the Whole list zero; Janesville, Beloit, Caledonia and Darien are `not_posted`. `irp_plans.json` has no file for Xcel's Minnesota plan (a person opens docket 24-67 on the Minnesota eFiling site and downloads it), Dairyland's plan, WEC's November 2026 deck or Alliant's Q3 slides. The DFI detail page is not proven. MGE's RockGen closing is expected late 2027, so stage the one-third share only after closing.
+
+## Stage B status (run 2026-11-17, stopped before the briefs and sweep)
+
+- All of stage B ran: the three harvesters, `pull_queues.py`, `data_center_fleets.py`, `irp_plans.py`, `check_existing_links.py` and the access audit. Outputs are in `batches/us-wi/harvest/` and `batches/us-wi/existing_links.md`; the data center list is `scopes/us-wi/work/permits/_data_centers.md`.
+- The local records harvest read 49 bodies and kept 1,440 records with findings (`batches/us-wi/harvest/local_records.md`). Biggest finders: Dane County Public Works, Dane County Board, Port Washington, Milwaukee zoning, Dane data center files.
+- Local gaps still open: Madison CARPC, Waukesha Committee of the Whole and Kronenwetter list zero documents. Brown County listed 297 documents but read only 25. Janesville, Beloit, Caledonia and Darien are `not_posted` and need clerk emails.
+- Plan files still missing: Dairyland, WEC's November 2026 deck, Alliant's Q3 slides. Xcel's Minnesota plan is read from the downloaded PDF. The DFI detail page is not proven. The PSC harvest has 22 key dockets not matched to a plant.
+- Next: stage C (briefs and sweep) only on Baird's go-ahead.
+
+## Stages C to G status (run 2026-11-19)
+
+- Briefs and the plant sweep ran (39 plant shards plus `_state.json`), then the location pass, assemble, access-audit retries, dedup check and gate fixes. `state_gate.py` prints GATE CLEAN. Advisory flags remain: milestones (51) and location-notes (Forest Junction about 7 km, Union Depot about 6.6 km).
+- Deliverables built with stamp `20261119_1324_ET` (391 records: 314 updates, 53 questions, 14 entity, 3 monitor, 6 new plants, 1 new unit). Amalia's page is published with Wisconsin (version 193).
+- `batches/us-wi/briefs/_index.json` points at the unfiltered export (`scripts/gem_export_gogpt.csv`) so the Elm Road coal-only units stay in the validation check. Assemble with that file, not the scoped one.
+- `qc_checks.py --staged` crashes on the `_state.json` format; run it per lane file (0 errors).
+- Still open: Brown County retry (status 000 on the rerun), zero-listing bodies, missing plan files, DFI detail page, the Potawatomi expansion generator figure, a dedicated location pass for Red Oak Ridge (Paris or Somers), and MGE's RockGen share (stage only after the late-2027 closing).
+- Stage G drafts for a person are in `batches/us-wi/drafts_for_baird.md`. Close-outs print BLOCKED (14 validation errors) and OPEN (3 comment threads) until the edits are applied and the threads answered.

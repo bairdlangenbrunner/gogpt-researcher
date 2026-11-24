@@ -1,0 +1,98 @@
+{
+ "meta": {
+  "plant_id": "L100000402379",
+  "plant_name": "Fox energy center",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:58:30-05:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401994",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "milestones": [
+      {
+       "status": "operating",
+       "year": 2006,
+       "period": "June",
+       "sources": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "The EIA table lists operating month 6 and operating year 2006 for generator CTG1, and 2005 for CTG2 and STG."
+      }
+     ],
+     "note": "This confirms the unit is still operating.\n\nStatus:\n- Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant ID 56031, Fox Energy Center, has three rows, CTG1, CTG2 and STG, all with Unit Code CC1 and status '(OP) Operating'.\n- The Planned Retirement Year column is blank for all three rows. The Planned, Retired and Canceled or Postponed sheets have no rows for this plant.\n- The nameplate figures are 198.9, 198.9 and 221.0 MW, which add to 618.8 MW and match the 619 MW GEM shows.\n- The We Energies engineering plan filed in October 2026 for Fox North at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=614115 says in section 2.1 on the Proposed Project Location page that 'Fox Energy Center currently consists of a 593 MW two-on-one (2x1) combined cycle facility'. That is a second document that shows the plant running. It gives 593 MW, which differs from the nameplate sum, so I did not use it for capacity.\n- No retirement, mothballing or owner change was found in either document."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=614115"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=614115",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "No document says in so many words that this plant is not a backup plant. The value no is implied.\n\nBackup Power:\n- Open the We Energies engineering plan for Fox North at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=614115 and go to section 2.1, Proposed Project Location. It describes Fox Energy Center as a 593 MW two-on-one combined cycle facility on 234 acres of Wisconsin Public Service Corporation property, with two F-class combustion turbines 'designed to consume natural gas'.\n- It describes a utility power plant that sells to the grid. It does not describe a backup or standby role, and the plant serves no data center.\n- The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists the plant's sector as Electric Utility.\n- Section 2.3.15 of the same plan mentions backup generators, but those belong to the proposed Fox North project, not to the existing plant."
+    }
+   },
+   "not_found": [],
+   "notes": "The unit is still operating with no retirement, mothballing or owner change announced. Backup Power no is only implied by the documents."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "EIA-860M September 2026, Operating sheet, plant 56031, three rows all operating, no planned retirement."
+  },
+  {
+   "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=614115",
+   "used_for": [
+    "Status",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "PSC filing 614115 for docket 6630-CE-319, read in full for the Fox Energy Center description. The older viewdoc.htm address only redirects, so the ERFview address is cited."
+  },
+  {
+   "url": "https://apps.psc.wi.gov/pages/viewdoc.htm?docid=614115",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "This address is a redirect page and failed the text check, so the ERFview address was used instead."
+  }
+ ]
+}

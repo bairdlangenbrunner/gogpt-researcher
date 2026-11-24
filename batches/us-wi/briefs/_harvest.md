@@ -1,0 +1,173 @@
+# Pre-sweep harvest: items that match no GEM plant
+
+These are leads for new plants, uprates or retirements. A queue entry or a docket title is not proof. Read the source, then stage a new plant, a monitor item or nothing, and say which.
+
+## Public Service Commission dockets
+
+- Docket 2800-TE-111, applicant not shown, filed 2025-01-13: Compliance Filing of the City of Kaukauna, as an Electric Public Utility, Outagamie and Calumet Counties, Wisconsin, of the Wholesale Delivery Service Agreement between Kaukauna Utilities and Appleton Property Ventures, LLC
+- Docket 3270-CE-128, Madison Gas and Electric Company, filed 2019-12-11: Application of Madison Gas and Electric Company for a Certificate of Authority to Construct the Dane County Airport Solar Electric Generating Facility, in Dane County, Wisconsin and for Approval of a Renewable Energy Rider Services Agreement
+- Docket 3270-CE-129, Madison Gas and Electric Company, filed 2020-05-15: Application of Madison Gas and Electric Company for a Certificate of Authority to Construct the O’Brien Solar Electric Generating Facility in the City of Fitchburg, Dane County, Wisconsin, for Approval of Renewable Energy Rider Services Agreements, and for Approval to Allow Participation in its Rene
+- Docket 3270-CE-130, Madison Gas and Electric Company, filed 2020-12-30: Application of Madison Gas and Electric Company for a Certificate of Authority to Construct the 8 Megawatt Hermsdorf Farm Solar Electric Generating Facility in the City of Madison, Dane County, Wisconsin, and for Approval of Renewable Energy Rider Services Agreements
+- Docket 3270-CE-131, Madison Gas and Electric Company, filed 2024-05-10: Application of Madison Gas and Electric Company for a Certificate of Authority to Construct and Operate the Sunnyside Project, Consisting of Solar Generating Facilities Capable of Generating up to 20 MW and a 40 MW/160 MWh Battery Energy Storage System in the City of Fitchburg, Dane County, Wisconsi
+- Docket 3270-TE-111, Madison Gas and Electric Company, as an Electric Public Utility, Dane County, Wisconsin, filed 2020-12-17: Application of Madison Gas and Electric Company, as an Electric Public Utility, Dane County, Wisconsin, for Approval of Proposed Annual Change to Parallel Generation Buyback Rates
+- Docket 3270-TE-117, Madison Gas and Electric Company, filed 2023-12-05: Application of Madison Gas and Electric Company for Approval of Proposed 2024 Updates to its Parallel Generation Tariffs
+- Docket 4220-TE-119, Northern States Power Company-Wisconsin, filed 2026-06-19: Application of Northern States Power Company-Wisconsin for Approval of a Large Load Customer General Time of Day Service Tariff
+- Docket 5-AE-261, Wisconsin Public Service Corporation and Wisconsin Electric Power Company, filed 2024-11-15: Joint Application of Wisconsin Public Service Corporation and Wisconsin Electric Power Company for Blanket Approval of Affiliated Interest Agreements Related to Capacity-Only Transactions
+- Docket 5-BS-253, City of Wauwatosa, as a Water Public Utility, filed 2021-01-15: Application of the City of Wauwatosa, as a Water Public Utility, for Authority to Acquire Existing Water Facilities from Milwaukee County, in the City of Wauwatosa, Milwaukee County, Wisconsin
+- Docket 5-BS-256, Wisconsin Public Service Corporation and Madison Gas and Electric Company, filed 2021-03-29: Joint Application of Wisconsin Public Service Corporation and Madison Gas and Electric Company for a Certificate of Authority to Purchase the Red Barn Wind Energy Center Generation Facility in the Towns of Wingville and Clifton, Grant County, Wisconsin
+- Docket 5-BS-286, Northern States Power Company-Wisconsin and Midwest Natural Gas, Inc., filed 2025-09-11: Joint Application of Northern States Power Company-Wisconsin and Midwest Natural Gas, Inc., for Approval of a Limited Territorial Agreement in the Town of Somerset, St. Croix County, Wisconsin
+- Docket 5-BS-300, Midwest Natural Gas, Inc. and Northern States Power Company-Wisconsin, filed 2026-07-07: Joint Application of Midwest Natural Gas, Inc. and Northern States Power Company-Wisconsin for Approval of a Limited Territorial Agreement in the Town of Shelby, La Crosse County, Wisconsin
+- Docket 5-BS-301, Midwest Natural Gas, Inc. and Wisconsin Gas LLC, filed 2026-07-23: Joint Application of Midwest Natural Gas, Inc. and Wisconsin Gas LLC, for Approval to Amend an Existing General Territorial Agreement in the Town of Hamilton, La Crosse County, Wisconsin
+- Docket 5-CE-150, Wisconsin Power and Light Company, Wisconsin Public Service Corporation, and Madison Gas and Electric Company, filed 2021-02-02: Joint Application of Wisconsin Power and Light Company, Wisconsin Public Service Corporation, and Madison Gas and Electric Company for a Certificate of Authority to Install a New Bottom Ash Handling System at the Columbia Energy Center Units 1 and 2
+- Docket 5-CE-156, Wisconsin Power and Light Company, Wisconsin Public Service Corporation, and Madison Gas and Electric Company, filed 2024-08-07: Joint Application of Wisconsin Power and Light Company, Wisconsin Public Service Corporation, and Madison Gas and Electric Company for a Certificate of Authority to Construct, Own, and Operate a 20 MW/200 MWh CO2-Based Energy Storage System, Known as the Columbia Energy Storage Project, in Columbia 
+- Docket 5-CE-160, Wisconsin Public Service Corporation, Wisconsin Power and Light Company, and Madison Gas and Electric Company, filed 2025-01-15: Joint Application of Wisconsin Public Service Corporation, Wisconsin Power and Light Company, and Madison Gas and Electric Company for a Certificate of Authority to Make Improvement Investments to the Forward Wind Energy Center
+- Docket 6220-CE-104, City of Waterloo, as an Electric Public Utility, filed 2016-08-04: Amended Application of the City of Waterloo, as an Electric Public Utility, for a Certificate of Authority to Increase Load Serving Capacity and Reliability by Replacing Substation Equipment and Underground Cables, located in the City of Waterloo, Jefferson County, Wisconsin
+- Docket 6630-CE-313, Wisconsin Electric Power Company, filed 2017-11-20: Application of Wisconsin Electric Power Company for Authority to Replace Medium Voltage Switchgear at its Oak Creek Power Plant, in the City of Oak Creek, Milwaukee County, Wisconsin
+- Docket 6630-TE-112, Wisconsin Electric Power Company, filed 2024-04-24: Application of Wisconsin Electric Power Company for Approval of Proposed 2024 Updates to Avoided Capacity Cost Rates in its Parallel Generation Tariffs
+- Docket 6680-TE-116, Wisconsin Power and Light Company, filed 2025-11-26: Application of Wisconsin Power and Light Company for Approval of an Individual Contract Rate Service Agreement for a Large Load Customer in Northern Dane County
+- Docket 6690-TE-120, Wisconsin Public Service Corporation, filed 2024-04-24: Application of Wisconsin Public Service Corporation for Approval of Proposed 2024 Updates to Avoided Capacity Cost Rates in its Parallel Generation Tariffs
+
+## Interconnection queue entries, gas and oil
+
+- MISO J2944: no project name; Gas; 350.0 MW; Withdrawn; Portage; point of interconnection Rocky Run - Gardner Park 345.0kV; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J3152: no project name; Gas; 160.0 MW; Withdrawn; Green; point of interconnection North Monroe; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4144: no project name; Gas; 525.0 MW; Withdrawn; Columbia; point of interconnection Columbia; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4179: no project name; (not shown); 735.0 MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4184: no project name; (not shown); 755.0 MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4177: no project name; (not shown); 735.0 MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4507: no project name; (not shown); 105.0 MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4330: no project name; (not shown); 163.0 MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4452: no project name; (not shown); 250.0 MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4451: no project name; (not shown); 145.0 MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4318: no project name; (not shown); 150.0 MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4341: no project name; (not shown); 150.0 MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4485: no project name; (not shown); 400.0 MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4483: no project name; (not shown); 200.0 MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4505: no project name; (not shown); 200.0 MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO S1006: no project name; (not shown); 75.0 MW; Withdrawn; county not shown; point of interconnection REC Bradford - W. Darien 138kV Line; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO S1005: no project name; (not shown); 60.0 MW; Done; county not shown; point of interconnection not shown; . Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO S1016: no project name; (not shown); 25.0 MW; Done; county not shown; point of interconnection Lone Rock 69kV; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO S1033: no project name; (not shown); 25.0 MW; Active; Green; point of interconnection Bass Creek – Albany – North Monroe 138 kV; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO S1017: no project name; (not shown); 100.0 MW; Done; county not shown; point of interconnection Tennyson 138kV; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO S1024: no project name; (not shown); 50.0 MW; Active; Waushara; point of interconnection Wautoma 138kV; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO S1025: no project name; (not shown); 25.0 MW; Done; Rock; point of interconnection Sheepskin 69kV; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO S1034: no project name; (not shown); 25.0 MW; Active; Dodge; point of interconnection North Beaver Dam 69kV - Bus 698222; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO S1039: no project name; (not shown); 100.0 MW; Done; Polk; point of interconnection Apple River 161kV; . Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO R1002: no project name; (not shown); 11.4 MW; Withdrawn; Manitowoc; point of interconnection Lake Front 69KV; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO S1023: no project name; (not shown); 25.0 MW; Active; Grant; point of interconnection Nelson Dewey - Lancaster 138kV; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO S1035: no project name; (not shown); 33.0 MW; Active; Rock; point of interconnection Townline Rd. - Paddock 138kV; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO R1010: no project name; (not shown); size not shown MW; Done; Marathon; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO R1014: no project name; (not shown); size not shown MW; Done; county not shown; point of interconnection Edgewater 345kV; Alliant Energy East. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO R1015: no project name; (not shown); 423.1 MW; Done; county not shown; point of interconnection Edgewater 345kV; Alliant Energy East. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO R5085: no project name; (not shown); size not shown MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO S1188: no project name; (not shown); size not shown MW; Active; county not shown; point of interconnection Rockdale 345kV; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO S1165: no project name; (not shown); 75.0 MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO S1158: no project name; (not shown); size not shown MW; Active; Story; point of interconnection Story County; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4249: no project name; (not shown); 100.0 MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO S1159: no project name; (not shown); 100.0 MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4226: no project name; (not shown); 150.0 MW; Active; Story; point of interconnection Story County; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4227: no project name; (not shown); 150.0 MW; Active; Story; point of interconnection Story County; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4229: no project name; (not shown); 350.0 MW; Active; county not shown; point of interconnection not shown; DAIRYLAND POWER COOPERATIVE DPC. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4261: no project name; (not shown); 200.0 MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO R1049: no project name; (not shown); 303.5 MW; Done; Sheboygan; point of interconnection Edgewater 345kV; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO J4274: no project name; (not shown); 200.0 MW; Active; county not shown; point of interconnection not shown; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO R1060: no project name; (not shown); size not shown MW; Withdrawn; Green; point of interconnection North Monroe 138 kV; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO R5061: no project name; (not shown); size not shown MW; Done; Sheboygan; point of interconnection Edgewater 5 - 345kV; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+- MISO S1056: no project name; (not shown); 20.0 MW; Withdrawn; Columbia; point of interconnection Columbia 345kV; AMERICAN TRANSMISSION COMPANY. Citation page: https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/
+
+## Local planning and fiscal court records
+
+Read local_records.md in the harvest folder in full. Each lead it names, and each power or data center project it mentions with no GEM plant, is answered: a new plant, a monitor item or nothing, with the reason. Bodies with no posted minutes are listed there too; say what a person must do to read them.
+- 2026-10-13, milwaukee-council: leads Meta Beaver Dam. https://webapi.legistar.com/v1/milwaukee/Matters/73359/Attachments/248478/File
+- 2026-10-13, milwaukee-council: leads Microsoft Mount Pleasant, Port Washington gas generation (docket 6630-CE-318). https://webapi.legistar.com/v1/milwaukee/Matters/73359/Attachments/250589/File
+- 2026-07-31, milwaukee-council: leads We Energies generation. https://webapi.legistar.com/v1/milwaukee/Matters/74488/Attachments/248568/File
+- 2024-07-30, milwaukee-council: leads We Energies generation. https://milwaukee.legistar1.com/milwaukee/meetings/2024/7/12462_A_COMMON_COUNCIL_24-07-30_Council_Agenda.pdf
+- 2026-10-06, milwaukee-znd: leads Meta Beaver Dam. https://webapi.legistar.com/v1/milwaukee/Matters/73359/Attachments/248478/File
+- 2026-10-06, milwaukee-znd: leads Microsoft Mount Pleasant, Port Washington gas generation (docket 6630-CE-318). https://webapi.legistar.com/v1/milwaukee/Matters/73359/Attachments/250589/File
+- 2026-10-06, milwaukee-znd: leads Meta Beaver Dam. https://webapi.legistar.com/v1/milwaukee/Matters/73359/Attachments/248478/File
+- 2026-10-06, milwaukee-znd: leads Microsoft Mount Pleasant, Port Washington gas generation (docket 6630-CE-318). https://webapi.legistar.com/v1/milwaukee/Matters/73359/Attachments/250589/File
+- 2026-07-28, milwaukee-znd: leads Meta Beaver Dam. https://webapi.legistar.com/v1/milwaukee/Matters/73359/Attachments/248478/File
+- 2026-07-28, milwaukee-znd: leads Microsoft Mount Pleasant, Port Washington gas generation (docket 6630-CE-318). https://webapi.legistar.com/v1/milwaukee/Matters/73359/Attachments/250589/File
+- 2026-09-28, milwaukee-plan: leads Meta Beaver Dam. https://webapi.legistar.com/v1/milwaukee/Matters/73359/Attachments/248478/File
+- 2026-09-28, milwaukee-plan: leads Microsoft Mount Pleasant, Port Washington gas generation (docket 6630-CE-318). https://webapi.legistar.com/v1/milwaukee/Matters/73359/Attachments/250589/File
+- 2026-09-28, milwaukee-plan: leads Meta Beaver Dam. https://webapi.legistar.com/v1/milwaukee/Matters/73359/Attachments/248478/File
+- 2026-09-28, milwaukee-plan: leads Microsoft Mount Pleasant, Port Washington gas generation (docket 6630-CE-318). https://webapi.legistar.com/v1/milwaukee/Matters/73359/Attachments/250589/File
+- 2026-09-08, madison-council: leads Madison Gas and Electric. https://madison.legistar1.com/madison/meetings/2026/9/28486_M_COMMON_COUNCIL_26-09-08_Meeting_Minutes.pdf
+- 2026-09-08, madison-council: leads Madison Gas and Electric. https://webapi.legistar.com/v1/madison/Matters/102167/Attachments/184317/File
+- 2026-09-08, madison-council: leads Madison Gas and Electric. https://webapi.legistar.com/v1/madison/Matters/102167/Attachments/184623/File
+- 2026-08-04, madison-council: leads Madison Gas and Electric. https://madison.legistar1.com/madison/meetings/2026/8/28485_A_COMMON_COUNCIL_26-08-04_Agenda.pdf
+- 2026-08-04, madison-council: leads Madison Gas and Electric. https://madison.legistar1.com/madison/meetings/2026/8/28485_M_COMMON_COUNCIL_26-08-04_Meeting_Minutes.pdf
+- 2026-08-04, madison-council: leads Madison Gas and Electric. https://webapi.legistar.com/v1/madison/Matters/102167/Attachments/184317/File
+- 2026-08-04, madison-council: leads Madison Gas and Electric. https://webapi.legistar.com/v1/madison/Matters/102167/Attachments/184623/File
+- 2025-08-12, dane-zlr: leads Madison Gas and Electric. https://webapi.legistar.com/v1/dane/Matters/29676/Attachments/60740/File
+- 2025-06-24, dane-zlr: leads Madison Gas and Electric. https://webapi.legistar.com/v1/dane/Matters/29676/Attachments/60740/File
+- 2025-05-27, dane-zlr: leads Alliant gas generation. https://webapi.legistar.com/v1/dane/Matters/29474/Attachments/60207/File
+- 2025-05-27, dane-zlr: leads Alliant gas generation. https://webapi.legistar.com/v1/dane/Matters/29474/Attachments/61050/File
+- 2025-05-27, dane-zlr: leads Alliant gas generation. https://webapi.legistar.com/v1/dane/Matters/29474/Attachments/60207/File
+- 2025-05-27, dane-zlr: leads Alliant gas generation. https://webapi.legistar.com/v1/dane/Matters/29474/Attachments/61050/File
+- 2026-09-08, dane-datacenters: leads Meta Beaver Dam, QTS, Cloverleaf, Greater Kudu data centers. https://webapi.legistar.com/v1/dane/Matters/33043/Attachments/68081/File
+- 2026-08-04, dane-datacenters: leads Meta Beaver Dam, QTS, Cloverleaf, Greater Kudu data centers. https://legistar2.granicus.com/dane/meetings/2026/8/12313_M_Advisory_Committee_on_Data_Centers_26-08-04_Minutes.pdf
+- 2026-08-04, dane-datacenters: leads Meta Beaver Dam. https://webapi.legistar.com/v1/dane/Matters/32803/Attachments/67626/File
+- 2026-07-14, dane-datacenters: leads Microsoft Mount Pleasant. https://webapi.legistar.com/v1/dane/Matters/32639/Attachments/67226/File
+- 2025-03-26, waukesha-plan: leads We Energies generation. https://webapi.legistar.com/v1/waukesha/Matters/21571/Attachments/37665/File
+- 2025-09-16, rock-county: leads Alliant gas generation. https://rockcowi.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=9161,plainText=false)
+- 2024-02-27, rock-county: leads Alliant gas generation. https://rockcowi.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=6523,plainText=false)
+- 2026-11-16, beaver-dam: leads Meta Beaver Dam. https://beaverdamwi.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3662,plainText=false)
+- 2026-11-09, beaver-dam: leads Meta Beaver Dam. https://beaverdamwi.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3647,plainText=false)
+- 2026-10-19, beaver-dam: leads Meta Beaver Dam. https://beaverdamwi.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3614,plainText=false)
+- 2026-10-05, beaver-dam: leads Meta Beaver Dam. https://beaverdamwi.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3588,plainText=false)
+- 2026-09-23, beaver-dam: leads Meta Beaver Dam. https://beaverdamwi.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3578,plainText=false)
+- 2026-06-15, beaver-dam: leads Meta Beaver Dam. https://beaverdamwi.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=2404,plainText=false)
+- 2026-05-18, beaver-dam: leads Meta Beaver Dam. https://beaverdamwi.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=2344,plainText=false)
+- 2026-04-06, beaver-dam: leads Meta Beaver Dam. https://beaverdamwi.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=2246,plainText=false)
+- 2026-03-30, beaver-dam: leads Meta Beaver Dam. https://beaverdamwi.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=2227,plainText=false)
+- 2026-03-02, beaver-dam: leads Meta Beaver Dam. https://beaverdamwi.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=2199,plainText=false)
+- 2026-02-16, beaver-dam: leads Meta Beaver Dam. https://beaverdamwi.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=1174,plainText=false)
+- 2026-02-02, beaver-dam: leads Meta Beaver Dam. https://beaverdamwi.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=1158,plainText=false)
+- 2025-12-15, beaver-dam: leads Meta Beaver Dam. https://beaverdamwi.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=1102,plainText=false)
+- 2026-03-18, mount-pleasant: leads Microsoft Mount Pleasant. https://www.mtpleasantwi.gov/AgendaCenter/ViewFile/Agenda/_03182026-1315
+- 2026-02-09, mount-pleasant: leads Microsoft Kenosha and Caledonia, Microsoft Mount Pleasant. https://www.mtpleasantwi.gov/AgendaCenter/ViewFile/Agenda/_02092026-1300
+- 2025-03-06, ozaukee-county: leads We Energies generation. https://www.ozaukeecounty.gov/AgendaCenter/ViewFile/Agenda/_03062025-3544
+- 2025-02-06, ozaukee-county: leads We Energies generation. https://www.ozaukeecounty.gov/AgendaCenter/ViewFile/Agenda/_02062025-3531
+- 2026-08-06, superior: leads Alliant gas generation. https://www.superiorwi.gov/AgendaCenter/ViewFile/Minutes/_08062026-1364
+- 2026-02-23, kenosha-county: leads We Energies generation. https://www.kenoshacountywi.gov/AgendaCenter/ViewFile/Agenda/_02232026-4378?packet=true
+- 2026-01-26, kenosha-county: leads We Energies generation. https://www.kenoshacountywi.gov/AgendaCenter/ViewFile/Agenda/_01262026-4364?packet=true
+- 2026-11-17, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_11172026-283
+- 2026-11-10, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_11102026-277
+- 2026-11-02, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_11022026-275
+- 2026-10-20, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_10202026-271
+- 2026-10-13, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_10132026-269
+- 2026-10-06, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_10062026-265
+- 2026-09-15, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_09152026-258
+- 2026-09-01, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_09012026-214
+- 2026-08-18, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_08182026-228
+- 2026-08-11, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_08112026-224
+- 2026-07-14, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_07142026-222
+- 2026-05-19, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_05192026-145
+- 2026-05-12, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_05122026-97
+- 2026-05-05, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_05052026-148
+- 2026-04-21, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_04212026-147
+- 2026-04-06, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_04062026-231
+- 2026-03-17, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Minutes/_03172026-230
+- 2026-03-03, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_03032026-143?packet=true
+- 2026-02-16, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_02162026-144?packet=true
+- 2026-02-10, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_02102026-96
+- 2026-02-03, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_02032026-151
+- 2026-01-20, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_01202026-149
+- 2026-01-13, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_01132026-95
+- 2026-01-06, oak-creek: leads We Energies generation. https://www.oakcreekwi.gov/AgendaCenter/ViewFile/Agenda/_01062026-150
+- 2026-02-17, port-washington: leads We Energies generation. https://www.portwashingtonwi.gov/home/showpublisheddocument/6848/639068327539800000
+- 2026-01-01, port-washington: leads Port Washington gas generation (docket 6630-CE-318), We Energies generation. https://www.portwashingtonwi.gov/home/showpublisheddocument/6310/638959468688070000
+- 2026-01-01, port-washington: leads We Energies generation. https://www.portwashingtonwi.gov/home/showpublisheddocument/6862/639068338488830000
+- 2025-06-17, port-washington: leads Microsoft Mount Pleasant. https://www.portwashingtonwi.gov/home/showpublisheddocument/5803/638854032576370000
+- 2025-06-03, port-washington: leads Microsoft Mount Pleasant. https://www.portwashingtonwi.gov/home/showpublisheddocument/5825/638863715406600000
+- 2025-03-04, port-washington: leads Port Washington gas generation (docket 6630-CE-318), We Energies generation. https://www.portwashingtonwi.gov/home/showpublisheddocument/5407/638763376580530000
+- 2025-02-20, port-washington: leads We Energies generation. https://www.portwashingtonwi.gov/home/showpublisheddocument/5371/638751448218630000
+- 2024-09-03, port-washington: leads Port Washington gas generation (docket 6630-CE-318). https://www.portwashingtonwi.gov/home/showpublisheddocument/4669/638627008736030000
+- 2026-08-13, racine-county: leads We Energies generation. https://www.racinecounty.gov/home/showpublisheddocument/54888/639221452794300000
+- 2026-08-13, racine-county: leads We Energies generation. https://www.racinecounty.gov/home/showpublisheddocument/54864/639221306504270000
+- 2026-05-12, racine-county: leads We Energies generation. https://www.racinecounty.gov/home/showpublisheddocument/54184/639141887588270000
+- 2025-05-19, racine-county: leads We Energies generation. https://www.racinecounty.gov/home/showpublisheddocument/51287/638857627836430000
+- 2025-05-19, racine-county: leads We Energies generation. https://www.racinecounty.gov/home/showpublisheddocument/51269/638857536751000000
+- 2024-11-18, racine-county: leads Microsoft Mount Pleasant. https://www.racinecounty.gov/home/showpublisheddocument/49650/638709038132500000
+- 2029-09-08, somers: leads We Energies generation. https://www.somerswi.gov/wp-content/uploads/2026/09/20290908-Village-Board-Packet.pdf

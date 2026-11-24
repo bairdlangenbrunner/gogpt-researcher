@@ -1,0 +1,699 @@
+{
+  "meta": {
+    "lane": "newplants",
+    "scope": {
+      "country": "United States",
+      "state": "Wisconsin",
+      "postal": "wi",
+      "kind": "state",
+      "slug": "wisconsin",
+      "quarter": "q4-2026",
+      "csv": "scripts/gem_export_gogpt.csv"
+    },
+    "generated": "2026-11-19T09:20:51-05:00",
+    "mode": "update",
+    "counts": {
+      "records": 6
+    }
+  },
+  "records": [
+    {
+      "record_id": "us-wi:new:fitchburg-power-station",
+      "plant_name": "Fitchburg power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Wisconsin",
+        "Local area (taluk, county)": "Dane",
+        "City": "Fitchburg",
+        "Latitude": "43.0147",
+        "Longitude": "-89.4603",
+        "Location accuracy": "approximate",
+        "Owner(s)": "Madison Gas & Electric Co [100%]"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090"
+        ],
+        "Owners Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Federal monthly generator file for September 2026, Operating sheet, plant 3991 Fitchburg in Dane County: generators 1 and 2, each 28.8 MW, natural gas combustion turbines, operating since May 1973, owner Madison Gas & Electric Co, latitude 43.0147 and longitude -89.4603."
+        },
+        {
+          "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "State air permit document for the Madison Gas and Electric Fitchburg combustion turbine site at 5701 McKee Road in Dane County. It describes simple cycle combustion turbines that burn natural gas with distillate oil as the backup fuel, each with a design rating of 24.25 MWe."
+        }
+      ],
+      "tier": "high",
+      "researcher_notes": "GEM does not list this plant. The federal monthly generator file for September 2026 (Operating sheet, plant 3991) lists two natural gas combustion turbines at Fitchburg in Dane County, generators 1 and 2, each 28.8 MW, 57.6 MW in all. Both have run since May 1973 and are owned by Madison Gas & Electric Co. The state air permit for the site at 5701 McKee Road says the turbines burn natural gas with distillate oil as the backup fuel. The coordinates come from the federal file and are left approximate, because nobody has checked the point on a satellite image.",
+      "action": "Add a new plant, Fitchburg power station, with two operating gas turbine units of 28.8 MW each. Put EIA: 3991 in Other IDs.",
+      "irp": false,
+      "checks": [],
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Unit name": "1",
+            "Fuel": "fossil gas: natural gas, fossil liquids: fuel oil",
+            "Capacity (MW)": "28.8",
+            "Status": "operating",
+            "Start year": "1973",
+            "Turbine/Engine Technology": "gas turbine"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Fuel Data Source": [
+              "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090"
+            ],
+            "Status Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Start Year Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Federal monthly generator file for September 2026, Operating sheet, plant 3991 Fitchburg in Dane County: generators 1 and 2, each 28.8 MW, natural gas combustion turbines, operating since May 1973, owner Madison Gas & Electric Co, latitude 43.0147 and longitude -89.4603."
+            },
+            {
+              "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "State air permit document for the Madison Gas and Electric Fitchburg combustion turbine site at 5701 McKee Road in Dane County. It describes simple cycle combustion turbines that burn natural gas with distillate oil as the backup fuel, each with a design rating of 24.25 MWe."
+            }
+          ],
+          "milestones": [
+            {
+              "status": "operating",
+              "year": "1973",
+              "period": "May",
+              "sources": [
+                "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+              ],
+              "note": "The federal monthly generator file gives operating month 5 and year 1973 for this generator."
+            }
+          ],
+          "action": "Add unit 1: 28.8 MW, operating since 1973, natural gas with fuel oil backup, gas turbine.",
+          "researcher_notes": "Federal monthly generator file for September 2026, Operating sheet, plant 3991, generator 1: 28.8 MW, natural gas combustion turbine, operating month 5 of 1973. The fuel oil backup is in the state air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090."
+        },
+        {
+          "unit_name": "2",
+          "fields": {
+            "Unit name": "2",
+            "Fuel": "fossil gas: natural gas, fossil liquids: fuel oil",
+            "Capacity (MW)": "28.8",
+            "Status": "operating",
+            "Start year": "1973",
+            "Turbine/Engine Technology": "gas turbine"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Fuel Data Source": [
+              "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090"
+            ],
+            "Status Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Start Year Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Federal monthly generator file for September 2026, Operating sheet, plant 3991 Fitchburg in Dane County: generators 1 and 2, each 28.8 MW, natural gas combustion turbines, operating since May 1973, owner Madison Gas & Electric Co, latitude 43.0147 and longitude -89.4603."
+            },
+            {
+              "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "State air permit document for the Madison Gas and Electric Fitchburg combustion turbine site at 5701 McKee Road in Dane County. It describes simple cycle combustion turbines that burn natural gas with distillate oil as the backup fuel, each with a design rating of 24.25 MWe."
+            }
+          ],
+          "milestones": [
+            {
+              "status": "operating",
+              "year": "1973",
+              "period": "May",
+              "sources": [
+                "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+              ],
+              "note": "The federal monthly generator file gives operating month 5 and year 1973 for this generator."
+            }
+          ],
+          "action": "Add unit 2: 28.8 MW, operating since 1973, natural gas with fuel oil backup, gas turbine.",
+          "researcher_notes": "Federal monthly generator file for September 2026, Operating sheet, plant 3991, generator 2: 28.8 MW, natural gas combustion turbine, operating month 5 of 1973. The fuel oil backup is in the state air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090."
+        }
+      ]
+    },
+    {
+      "record_id": "us-wi:new:elk-mound-power-station",
+      "plant_name": "Elk Mound power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Wisconsin",
+        "Local area (taluk, county)": "Chippewa",
+        "City": "Elk Mound",
+        "Latitude": "44.902814",
+        "Longitude": "-91.5681",
+        "Location accuracy": "approximate",
+        "Owner(s)": "Dairyland Power Cooperative [100%]"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127"
+        ],
+        "Owners Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Federal monthly generator file for September 2026, Operating sheet, plant 7863 Elk Mound in Chippewa County: generators 1 and 2, each 35.5 MW, natural gas combustion turbines, operating since June 2001, owner Dairyland Power Coop, latitude 44.902814 and longitude -91.5681."
+        },
+        {
+          "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "State air permit document for the Dairyland Power Cooperative Elk Mound generation facility at 4101 50th Street in Chippewa County. It lists the simple cycle combustion turbines, which burn natural gas with distillate oil as the backup fuel."
+        },
+        {
+          "url": "https://dairylandpower.com/sites/default/files/PDFs/Annual%20Reports/DPC_AnnualReport2025-WEB.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Dairyland Power Cooperative 2025 annual report. Its list of generating resources names the Elk Mound station."
+        }
+      ],
+      "tier": "high",
+      "researcher_notes": "GEM does not list this plant. The federal monthly generator file for September 2026 (Operating sheet, plant 7863) lists two natural gas combustion turbines at Elk Mound in Chippewa County, generators 1 and 2, each 35.5 MW, 71 MW in all, running since June 2001 and owned by Dairyland Power Cooperative. The state air permit for the site at 4101 50th Street says the turbines burn natural gas with distillate oil as the backup fuel. Dairyland's 2025 annual report also lists Elk Mound among its stations. The same federal file lists generators 3 and 4 at Elk Mound on its canceled or postponed sheet, so they are left out. The coordinates come from the federal file and are left approximate.",
+      "action": "Add a new plant, Elk Mound power station, with two operating gas turbine units of 35.5 MW each. Put EIA: 7863 in Other IDs.",
+      "irp": false,
+      "checks": [],
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Unit name": "1",
+            "Fuel": "fossil gas: natural gas, fossil liquids: fuel oil",
+            "Capacity (MW)": "35.5",
+            "Status": "operating",
+            "Start year": "2001",
+            "Turbine/Engine Technology": "gas turbine"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Fuel Data Source": [
+              "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127"
+            ],
+            "Status Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Start Year Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Federal monthly generator file for September 2026, Operating sheet, plant 7863 Elk Mound in Chippewa County: generators 1 and 2, each 35.5 MW, natural gas combustion turbines, operating since June 2001, owner Dairyland Power Coop, latitude 44.902814 and longitude -91.5681."
+            },
+            {
+              "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "State air permit document for the Dairyland Power Cooperative Elk Mound generation facility at 4101 50th Street in Chippewa County. It lists the simple cycle combustion turbines, which burn natural gas with distillate oil as the backup fuel."
+            }
+          ],
+          "milestones": [
+            {
+              "status": "operating",
+              "year": "2001",
+              "period": "June",
+              "sources": [
+                "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+              ],
+              "note": "The federal monthly generator file gives operating month 6 and year 2001 for this generator."
+            }
+          ],
+          "action": "Add unit 1: 35.5 MW, operating since 2001, natural gas with fuel oil backup, gas turbine.",
+          "researcher_notes": "Federal monthly generator file for September 2026, Operating sheet, plant 7863, generator 1: 35.5 MW, natural gas combustion turbine, operating month 6 of 2001. The fuel oil backup is in the state air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127."
+        },
+        {
+          "unit_name": "2",
+          "fields": {
+            "Unit name": "2",
+            "Fuel": "fossil gas: natural gas, fossil liquids: fuel oil",
+            "Capacity (MW)": "35.5",
+            "Status": "operating",
+            "Start year": "2001",
+            "Turbine/Engine Technology": "gas turbine"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Fuel Data Source": [
+              "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127"
+            ],
+            "Status Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Start Year Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Federal monthly generator file for September 2026, Operating sheet, plant 7863 Elk Mound in Chippewa County: generators 1 and 2, each 35.5 MW, natural gas combustion turbines, operating since June 2001, owner Dairyland Power Coop, latitude 44.902814 and longitude -91.5681."
+            },
+            {
+              "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "State air permit document for the Dairyland Power Cooperative Elk Mound generation facility at 4101 50th Street in Chippewa County. It lists the simple cycle combustion turbines, which burn natural gas with distillate oil as the backup fuel."
+            }
+          ],
+          "milestones": [
+            {
+              "status": "operating",
+              "year": "2001",
+              "period": "June",
+              "sources": [
+                "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+              ],
+              "note": "The federal monthly generator file gives operating month 6 and year 2001 for this generator."
+            }
+          ],
+          "action": "Add unit 2: 35.5 MW, operating since 2001, natural gas with fuel oil backup, gas turbine.",
+          "researcher_notes": "Federal monthly generator file for September 2026, Operating sheet, plant 7863, generator 2: 35.5 MW, natural gas combustion turbine, operating month 6 of 2001. The fuel oil backup is in the state air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127."
+        }
+      ]
+    },
+    {
+      "record_id": "us-wi:new:miso-j4164-north-madison-345-kilovolt-gas-power-station",
+      "plant_name": "MISO J4164 North Madison 345 kilovolt gas power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Wisconsin",
+        "Local area (taluk, county)": "Dane"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.misoenergy.org/api/giqueue/getprojects"
+        ]
+      },
+      "not_found": {
+        "Latitude": "The MISO queue file gives only the county and the substation for request J4164. No permit, docket or news item gives a site, so no point can be placed.",
+        "Longitude": "The MISO queue file gives only the county and the substation for request J4164. No permit, docket or news item gives a site, so no point can be placed.",
+        "Location accuracy": "No coordinates are given for request J4164, because no source gives a site beyond the county in the MISO queue file.",
+        "Owner(s)": "The MISO queue file hides the applicant for request J4164. The state utility commission filing system, the state air permit system, the state business registry and news name no company for it."
+      },
+      "verifications": [
+        {
+          "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "MISO interconnection queue file read on 2026-11-18, request J4164: Dane County, fuel Gas, simple cycle combustion turbine, 1,203 MW, point of interconnection North Madison 345/138 kV, queued September 29, 2025, requested in service date May 1, 2030, active in the 2025 study cycle."
+        }
+      ],
+      "tier": "medium",
+      "researcher_notes": "GEM does not list this project. The MISO interconnection queue file read on 2026-11-18 shows request J4164: Dane County, fuel Gas, simple cycle combustion turbine, 1,203 MW, point of interconnection North Madison 345/138 kV, queued September 29, 2025, requested in service date May 1, 2030, active in the 2025 study cycle. No developer is named in the queue file. Searches of the state utility commission filing system, the state air permit system and news found no project at the North Madison substation. Neither We Energies nor Alliant nor Madison Gas and Electric names a plant this size in Dane County in its 2026 plans. The plant name is made from the queue number and the substation until a developer names it.",
+      "action": "Add a new plant from MISO request J4164 with one announced unit of 1203 MW. Put MISO J4164 in Other IDs.",
+      "irp": false,
+      "checks": [],
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Unit name": "1",
+            "Fuel": "fossil gas: natural gas",
+            "Capacity (MW)": "1203",
+            "Status": "announced",
+            "Start year": "2030",
+            "Turbine/Engine Technology": "gas turbine"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ],
+            "Fuel Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ],
+            "Status Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ],
+            "Start Year Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "MISO interconnection queue file read on 2026-11-18, request J4164: Dane County, fuel Gas, simple cycle combustion turbine, 1,203 MW, point of interconnection North Madison 345/138 kV, queued September 29, 2025, requested in service date May 1, 2030, active in the 2025 study cycle."
+            }
+          ],
+          "milestones": [
+            {
+              "status": "announced",
+              "year": "2025",
+              "period": "September",
+              "sources": [
+                "https://www.misoenergy.org/api/giqueue/getprojects"
+              ],
+              "note": "MISO request J4164 entered the queue in September 2025."
+            }
+          ],
+          "action": "Add unit 1: 1203 MW, announced, natural gas, simple cycle combustion turbine, start year 2030.",
+          "researcher_notes": "MISO interconnection queue file, request J4164: fuel Gas, simple cycle combustion turbine, 1203 MW, requested in service date in 2030. A queue entry sets the status to announced."
+        }
+      ]
+    },
+    {
+      "record_id": "us-wi:new:miso-j4165-kenosha-county-gas-power-station",
+      "plant_name": "MISO J4165 Kenosha County gas power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Wisconsin",
+        "Local area (taluk, county)": "Kenosha"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.misoenergy.org/api/giqueue/getprojects"
+        ]
+      },
+      "not_found": {
+        "Latitude": "The MISO queue file gives only the county and the substation for request J4165. No permit, docket or news item gives a site, so no point can be placed.",
+        "Longitude": "The MISO queue file gives only the county and the substation for request J4165. No permit, docket or news item gives a site, so no point can be placed.",
+        "Location accuracy": "No coordinates are given for request J4165, because no source gives a site beyond the county in the MISO queue file.",
+        "Owner(s)": "The MISO queue file hides the applicant for request J4165. The state utility commission filing system, the state air permit system, the state business registry and news name no company for it."
+      },
+      "verifications": [
+        {
+          "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "MISO interconnection queue file read on 2026-11-18, request J4165: Kenosha County, fuel Gas, simple cycle combustion turbine, 1,203 MW, point of interconnection shown only as Other, queued September 29, 2025, requested in service date May 1, 2030, active."
+        }
+      ],
+      "tier": "medium",
+      "researcher_notes": "GEM does not list this project. The MISO interconnection queue file read on 2026-11-18 shows request J4165: Kenosha County, fuel Gas, simple cycle combustion turbine, 1,203 MW, point of interconnection shown only as Other, queued September 29, 2025, requested in service date May 1, 2030, active. No developer is named in the queue file. It is not Red Oak Ridge, which has its own requests and is in GEM, and not the Paris engines, which are request S1090 and J3936. Searches of the state utility commission filing system, the state air permit system, the Kenosha County and Village of Pleasant Prairie and Town of Paris meeting records and news found no other project of this size. The plant name is made from the queue number and the substation until a developer names it.",
+      "action": "Add a new plant from MISO request J4165 with one announced unit of 1203 MW. Put MISO J4165 in Other IDs.",
+      "irp": false,
+      "checks": [],
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Unit name": "1",
+            "Fuel": "fossil gas: natural gas",
+            "Capacity (MW)": "1203",
+            "Status": "announced",
+            "Start year": "2030",
+            "Turbine/Engine Technology": "gas turbine"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ],
+            "Fuel Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ],
+            "Status Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ],
+            "Start Year Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "MISO interconnection queue file read on 2026-11-18, request J4165: Kenosha County, fuel Gas, simple cycle combustion turbine, 1,203 MW, point of interconnection shown only as Other, queued September 29, 2025, requested in service date May 1, 2030, active."
+            }
+          ],
+          "milestones": [
+            {
+              "status": "announced",
+              "year": "2025",
+              "period": "September",
+              "sources": [
+                "https://www.misoenergy.org/api/giqueue/getprojects"
+              ],
+              "note": "MISO request J4165 entered the queue in September 2025."
+            }
+          ],
+          "action": "Add unit 1: 1203 MW, announced, natural gas, simple cycle combustion turbine, start year 2030.",
+          "researcher_notes": "MISO interconnection queue file, request J4165: fuel Gas, simple cycle combustion turbine, 1203 MW, requested in service date in 2030. A queue entry sets the status to announced."
+        }
+      ]
+    },
+    {
+      "record_id": "us-wi:new:miso-j4115-south-fond-du-lac-fitzgerald-345-kilovolt-gas-power-station",
+      "plant_name": "MISO J4115 South Fond du Lac Fitzgerald 345 kilovolt gas power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Wisconsin",
+        "Local area (taluk, county)": "Fond du Lac"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.misoenergy.org/api/giqueue/getprojects"
+        ]
+      },
+      "not_found": {
+        "Latitude": "The MISO queue file gives only the county and the substation for request J4115. No permit, docket or news item gives a site, so no point can be placed.",
+        "Longitude": "The MISO queue file gives only the county and the substation for request J4115. No permit, docket or news item gives a site, so no point can be placed.",
+        "Location accuracy": "No coordinates are given for request J4115, because no source gives a site beyond the county in the MISO queue file.",
+        "Owner(s)": "The MISO queue file hides the applicant for request J4115. The state utility commission filing system, the state air permit system, the state business registry and news name no company for it."
+      },
+      "verifications": [
+        {
+          "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "MISO interconnection queue file read on 2026-11-18, request J4115: Fond du Lac County, fuel Gas, simple cycle combustion turbine, 525 MW, point of interconnection South Fond du Lac to Fitzgerald 345 kV line, queued October 6, 2025, requested in service date June 30, 2028, active."
+        }
+      ],
+      "tier": "medium",
+      "researcher_notes": "GEM does not list this project. The MISO interconnection queue file read on 2026-11-18 shows request J4115: Fond du Lac County, fuel Gas, simple cycle combustion turbine, 525 MW, point of interconnection South Fond du Lac to Fitzgerald 345 kV line, queued October 6, 2025, requested in service date June 30, 2028, active. No developer is named in the queue file. GEM's South Fond du Lac plant has four older turbines of about 350 MW in all, and no source ties a 525 MW addition to it. Searches of the state utility commission filing system, the state air permit system and news found no project. The plant name is made from the queue number and the substation until a developer names it.",
+      "action": "Add a new plant from MISO request J4115 with one announced unit of 525 MW. Put MISO J4115 in Other IDs.",
+      "irp": false,
+      "checks": [],
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Unit name": "1",
+            "Fuel": "fossil gas: natural gas",
+            "Capacity (MW)": "525",
+            "Status": "announced",
+            "Start year": "2028",
+            "Turbine/Engine Technology": "gas turbine"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ],
+            "Fuel Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ],
+            "Status Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ],
+            "Start Year Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "MISO interconnection queue file read on 2026-11-18, request J4115: Fond du Lac County, fuel Gas, simple cycle combustion turbine, 525 MW, point of interconnection South Fond du Lac to Fitzgerald 345 kV line, queued October 6, 2025, requested in service date June 30, 2028, active."
+            }
+          ],
+          "milestones": [
+            {
+              "status": "announced",
+              "year": "2025",
+              "period": "October",
+              "sources": [
+                "https://www.misoenergy.org/api/giqueue/getprojects"
+              ],
+              "note": "MISO request J4115 entered the queue in October 2025."
+            }
+          ],
+          "action": "Add unit 1: 525 MW, announced, natural gas, simple cycle combustion turbine, start year 2028.",
+          "researcher_notes": "MISO interconnection queue file, request J4115: fuel Gas, simple cycle combustion turbine, 525 MW, requested in service date in 2028. A queue entry sets the status to announced."
+        }
+      ]
+    },
+    {
+      "record_id": "us-wi:new:miso-j4116-sugar-creek-345-kilovolt-gas-power-station",
+      "plant_name": "MISO J4116 Sugar Creek 345 kilovolt gas power station",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {
+        "State/Province": "Wisconsin",
+        "Local area (taluk, county)": "Walworth"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.misoenergy.org/api/giqueue/getprojects"
+        ]
+      },
+      "not_found": {
+        "Latitude": "The MISO queue file gives only the county and the substation for request J4116. No permit, docket or news item gives a site, so no point can be placed.",
+        "Longitude": "The MISO queue file gives only the county and the substation for request J4116. No permit, docket or news item gives a site, so no point can be placed.",
+        "Location accuracy": "No coordinates are given for request J4116, because no source gives a site beyond the county in the MISO queue file.",
+        "Owner(s)": "The MISO queue file hides the applicant for request J4116. The state utility commission filing system, the state air permit system, the state business registry and news name no company for it."
+      },
+      "verifications": [
+        {
+          "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "MISO interconnection queue file read on 2026-11-18, request J4116: Walworth County, fuel Gas, combined cycle, 950 MW, point of interconnection Sugar Creek 345 kV, queued October 6, 2025, requested in service date December 31, 2030, active."
+        }
+      ],
+      "tier": "medium",
+      "researcher_notes": "GEM does not list this project. The MISO interconnection queue file read on 2026-11-18 shows request J4116: Walworth County, fuel Gas, combined cycle, 950 MW, point of interconnection Sugar Creek 345 kV, queued October 6, 2025, requested in service date December 31, 2030, active. No developer is named in the queue file. It is not Foundry Ridge, a 270 MW turbine plant at the North Creek substation that is in GEM, and not Fox North, a 750 MW combined cycle in Outagamie County. Searches of the state utility commission filing system, the state air permit system, the Walworth County meeting records and news found no project at Sugar Creek. The plant name is made from the queue number and the substation until a developer names it.",
+      "action": "Add a new plant from MISO request J4116 with one announced unit of 950 MW. Put MISO J4116 in Other IDs.",
+      "irp": false,
+      "checks": [],
+      "units": [
+        {
+          "unit_name": "1",
+          "fields": {
+            "Unit name": "1",
+            "Fuel": "fossil gas: natural gas",
+            "Capacity (MW)": "950",
+            "Status": "announced",
+            "Start year": "2030",
+            "Turbine/Engine Technology": "combined cycle"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ],
+            "Fuel Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ],
+            "Status Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ],
+            "Start Year Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.misoenergy.org/api/giqueue/getprojects"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "MISO interconnection queue file read on 2026-11-18, request J4116: Walworth County, fuel Gas, combined cycle, 950 MW, point of interconnection Sugar Creek 345 kV, queued October 6, 2025, requested in service date December 31, 2030, active."
+            }
+          ],
+          "milestones": [
+            {
+              "status": "announced",
+              "year": "2025",
+              "period": "October",
+              "sources": [
+                "https://www.misoenergy.org/api/giqueue/getprojects"
+              ],
+              "note": "MISO request J4116 entered the queue in October 2025."
+            }
+          ],
+          "action": "Add unit 1: 950 MW, announced, natural gas, combined cycle, start year 2030.",
+          "researcher_notes": "MISO interconnection queue file, request J4116: fuel Gas, combined cycle, 950 MW, requested in service date in 2030. A queue entry sets the status to announced."
+        }
+      ]
+    }
+  ]
+}

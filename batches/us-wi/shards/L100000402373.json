@@ -1,0 +1,367 @@
+{
+ "meta": {
+  "plant_id": "L100000402373",
+  "plant_name": "Germantown power station",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:58:17-05:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000414268",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status:\n- The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating, lists Plant 6253 Germantown, generator 1, status OP Operating, with no planned retirement date.\n- I found no retirement, mothballing or sale notice. The 2019 Wisconsin DNR operation permit, still the active permit, also describes the unit as part of a working peak electrical generation facility."
+    },
+    "Capacity (MW)": {
+     "value": "71.2",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Capacity:\n- Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating. Plant 6253, generator 1, column Nameplate Capacity (MW) reads 71.2.\n- GEM shows 61.2. The EIA figure is the nameplate rating, so use it.\n- The Wisconsin DNR permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072 lists lower figures, 224 MW total for Units 1 to 4 and 85 MW for Unit 5. Those are permit ratings, not nameplate. See the separate question."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Backup Power:\n- Open the Wisconsin DNR final operation permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072. The first page says the company 'is authorized to operate a peak electrical generation facility'.\n- The permit describes a peaking plant that sells power to the grid, not a backup engine set for a single site. So Backup Power stays no.\n- No document uses the words backup power for this plant, so this rests on the peaking description."
+    }
+   },
+   "not_found": [],
+   "notes": "I confirmed the unit is still operating in the EIA-860M table for September 2026. The nameplate is higher than GEM's figure. I found no retirement or ownership change."
+  },
+  {
+   "gem_unit_id": "G100000414267",
+   "unit_name": "2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status:\n- The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating, lists Plant 6253 Germantown, generator 2, status OP Operating, with no planned retirement date.\n- I found no retirement, mothballing or sale notice. The 2019 Wisconsin DNR operation permit, still the active permit, also describes the unit as part of a working peak electrical generation facility."
+    },
+    "Capacity (MW)": {
+     "value": "71.2",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Capacity:\n- Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating. Plant 6253, generator 2, column Nameplate Capacity (MW) reads 71.2.\n- GEM shows 61.2. The EIA figure is the nameplate rating, so use it.\n- The Wisconsin DNR permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072 lists lower figures, 224 MW total for Units 1 to 4 and 85 MW for Unit 5. Those are permit ratings, not nameplate. See the separate question."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Backup Power:\n- Open the Wisconsin DNR final operation permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072. The first page says the company 'is authorized to operate a peak electrical generation facility'.\n- The permit describes a peaking plant that sells power to the grid, not a backup engine set for a single site. So Backup Power stays no.\n- No document uses the words backup power for this plant, so this rests on the peaking description."
+    }
+   },
+   "not_found": [],
+   "notes": "I confirmed the unit is still operating in the EIA-860M table for September 2026. The nameplate is higher than GEM's figure. I found no retirement or ownership change."
+  },
+  {
+   "gem_unit_id": "G100000414266",
+   "unit_name": "3",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status:\n- The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating, lists Plant 6253 Germantown, generator 3, status OP Operating, with no planned retirement date.\n- I found no retirement, mothballing or sale notice. The 2019 Wisconsin DNR operation permit, still the active permit, also describes the unit as part of a working peak electrical generation facility."
+    },
+    "Capacity (MW)": {
+     "value": "71.2",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Capacity:\n- Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating. Plant 6253, generator 3, column Nameplate Capacity (MW) reads 71.2.\n- GEM shows 61.2. The EIA figure is the nameplate rating, so use it.\n- The Wisconsin DNR permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072 lists lower figures, 224 MW total for Units 1 to 4 and 85 MW for Unit 5. Those are permit ratings, not nameplate. See the separate question."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Backup Power:\n- Open the Wisconsin DNR final operation permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072. The first page says the company 'is authorized to operate a peak electrical generation facility'.\n- The permit describes a peaking plant that sells power to the grid, not a backup engine set for a single site. So Backup Power stays no.\n- No document uses the words backup power for this plant, so this rests on the peaking description."
+    }
+   },
+   "not_found": [],
+   "notes": "I confirmed the unit is still operating in the EIA-860M table for September 2026. The nameplate is higher than GEM's figure. I found no retirement or ownership change."
+  },
+  {
+   "gem_unit_id": "G100000414265",
+   "unit_name": "4",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status:\n- The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating, lists Plant 6253 Germantown, generator 4, status OP Operating, with no planned retirement date.\n- I found no retirement, mothballing or sale notice. The 2019 Wisconsin DNR operation permit, still the active permit, also describes the unit as part of a working peak electrical generation facility."
+    },
+    "Capacity (MW)": {
+     "value": "71.2",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Capacity:\n- Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating. Plant 6253, generator 4, column Nameplate Capacity (MW) reads 71.2.\n- GEM shows 61.2. The EIA figure is the nameplate rating, so use it.\n- The Wisconsin DNR permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072 lists lower figures, 224 MW total for Units 1 to 4 and 85 MW for Unit 5. Those are permit ratings, not nameplate. See the separate question."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Backup Power:\n- Open the Wisconsin DNR final operation permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072. The first page says the company 'is authorized to operate a peak electrical generation facility'.\n- The permit describes a peaking plant that sells power to the grid, not a backup engine set for a single site. So Backup Power stays no.\n- No document uses the words backup power for this plant, so this rests on the peaking description."
+    }
+   },
+   "not_found": [],
+   "notes": "I confirmed the unit is still operating in the EIA-860M table for September 2026. The nameplate is higher than GEM's figure. I found no retirement or ownership change."
+  },
+  {
+   "gem_unit_id": "G100000403761",
+   "unit_name": "5",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status:\n- The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating, lists Plant 6253 Germantown, generator 5, status OP Operating, with no planned retirement date.\n- I found no retirement, mothballing or sale notice. The 2019 Wisconsin DNR operation permit, still the active permit, also describes the unit as part of a working peak electrical generation facility."
+    },
+    "Capacity (MW)": {
+     "value": "105.9",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Capacity:\n- Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating. Plant 6253, generator 5, column Nameplate Capacity (MW) reads 105.9.\n- GEM shows 91. The EIA figure is the nameplate rating, so use it.\n- The Wisconsin DNR permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072 lists lower figures, 224 MW total for Units 1 to 4 and 85 MW for Unit 5. Those are permit ratings, not nameplate. See the separate question."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Backup Power:\n- Open the Wisconsin DNR final operation permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072. The first page says the company 'is authorized to operate a peak electrical generation facility'.\n- The permit describes a peaking plant that sells power to the grid, not a backup engine set for a single site. So Backup Power stays no.\n- No document uses the words backup power for this plant, so this rests on the peaking description."
+    }
+   },
+   "not_found": [],
+   "notes": "I confirmed the unit is still operating in the EIA-860M table for September 2026. The nameplate is higher than GEM's figure. I found no retirement or ownership change."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000414268",
+   "concern_type": "Capacity (MW)",
+   "question": "Should Germantown capacities follow the EIA nameplate or the DNR permit ratings?",
+   "finding": "The EIA-860M table for September 2026 gives 71.2 MW for Units 1 to 4 and 105.9 MW for Unit 5. The 2019 Wisconsin DNR permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072 says Units 1 to 4 total 224 MW and Unit 5 is 85 MW.",
+   "recommendation": "Use the EIA nameplate figures, 71.2 MW for each of Units 1 to 4 and 105.9 MW for Unit 5, because GEM records nameplate capacity.",
+   "note": "In the permit, go to the equipment list near the start of the permit. The line starts 'Eight Simple Cycle Combustion Turbines arranged in pairs' and ends 'total electrical capacity of 224 MW'. The Unit 5 line ends 'total electric capacity of 85 MW'. The permit ratings are lower than EIA's nameplate, which is likely a site rating at permit conditions. Each of Units 1 to 4 is a pair of Pratt and Whitney turbines, per a 2024 DNR application, but I could not verify that page with the link checker because its text is spaced out, so I did not report it.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072"
+   ],
+   "proposed_value": {
+    "Capacity (MW)": "71.2"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Read plant 6253 rows for generators 1 to 5 in the Operating sheet."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072",
+   "used_for": [
+    "Backup Power",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "2019 final operation permit, checked with the link checker for peak, 224, 85 and Germantown."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1144171",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "failed",
+   "note": "Text is spaced out letter by letter, so the link checker could not match words. Read by hand only; not cited."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1217461",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "failed",
+   "note": "Same spaced-out text problem; not cited."
+  }
+ ]
+}

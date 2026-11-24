@@ -1,0 +1,50 @@
+{
+  "repo": ".",
+  "batch": "batches/us-wi",
+  "where": {
+    "kind": "state",
+    "name": "Wisconsin",
+    "slug": "wisconsin",
+    "country": "United States",
+    "postal": "wi"
+  },
+  "state": "Wisconsin",
+  "postal": "wi",
+  "mode": "update",
+  "model": "opus",
+  "csv": "scripts/gem_export_gogpt_scoped.csv",
+  "plants": [
+    {
+      "plant_id": "L100001083378",
+      "plant_name": "Forest Junction Energy Center",
+      "brief_path": "batches/us-wi/briefs/L100001083378.md",
+      "unit_ids": [
+        "G100001094209",
+        "G100001102101",
+        "G100001102102",
+        "G100001102103",
+        "G100001102104"
+      ],
+      "shard_path": "batches/us-wi/shards/L100001083378.review.json"
+    },
+    {
+      "plant_id": "L100001089647",
+      "plant_name": "Union Depot Energy Center",
+      "brief_path": "batches/us-wi/briefs/L100001089647.md",
+      "unit_ids": [
+        "G100001102105"
+      ],
+      "shard_path": "batches/us-wi/shards/L100001089647.review.json"
+    }
+  ],
+  "groups": [
+    [
+      "L100001083378"
+    ],
+    [
+      "L100001089647"
+    ]
+  ],
+  "extra_brief": "This pass is a second look at the location only. The first agent asked for it. Research nothing but the three location fields, and write the shard to a new path so the first shard is kept.\n\n- Forest Junction Energy Center (L100001083378): The move is over 2 km. The point is a section reference with sample points, not an address, so a second look at the Detailed Site Layout Map Book, filing 617761 in docket 5-CE-162, is worth doing.\n  The first agent wrote: This is one of five 240.6 MW GE 7F.05 simple cycle turbines proposed at Forest Junction. The filing names no operator, and Latest Activity is left alone because the project filed its application on November 6, 2026.\n- Union Depot Energy Center (L100001089647): The move is over 2 km and rests on survey points, not a published plant coordinate. The map book (Appendix A, docid 617752) has no text layer and should be read by eye to place the parcel.\n  The first agent wrote: The project is still pre-construction, with construction planned to start in Q4 2027 and finish in Q4 2031. The plan names a GE 7HA.03 turbine and 750 MW, matching GEM. No operator or combined heat and power statement was found in the plan.",
+  "review": "location"
+}

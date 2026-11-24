@@ -1,0 +1,80 @@
+{
+ "meta": {
+  "plant_id": "L100000401798",
+  "plant_name": "Marshfield Utilities Gas Plant",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:57:57-05:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402587",
+   "unit_name": "M1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status of the existing unit.\n\nStatus:\n- Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 56480, generator M1, reads status '(OP) Operating', nameplate 60.4 MW, operating year 2011, operating month 6. No planned retirement year is listed.\n- This matches the current value, so nothing changes. The unit is still operating. I found no retirement, mothballing or owner change."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1095448"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1095448",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Backup Power is no.\n\nWhere to find it:\n- Open the Department of Natural Resources air permit 77214005A-P10 from June 2022 at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1095448 . The permit lists processes P01A and P01B as 'Simple Cycle Combustion Turbine [P&W Swiftpac 60 unit], 30.25 MWe' that serve the city's electric system. These turbines are the unit M1.\n- The same permit lists a separate 1502 horsepower diesel engine as an emergency engine, process P10. That engine is not part of unit M1 and is not a unit in GEM.\n- The EIA-860M table lists the sector as Electric Utility, so the turbines sell power to the grid and are not a backup fleet for a data center. The value no stands."
+    }
+   },
+   "not_found": [],
+   "notes": "The unit is still operating per the September 2026 EIA-860M table. No retirement, mothballing or owner change was found. Backup Power no is now backed by the 2022 air permit."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "EIA-860M September 2026, Operating sheet, plant 56480 generator M1 status OP, 60.4 MW, 2011."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1095448",
+   "used_for": [
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Final air permit 77214005A-P10 from June 2022 lists the two simple cycle turbines and a separate emergency diesel engine."
+  }
+ ]
+}

@@ -1,0 +1,287 @@
+[
+  {
+    "id": "miso-queue",
+    "name": "MISO generator interconnection queue (open JSON, every row in the state and the state-blank rows of Wisconsin's own owners)",
+    "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+    "what": "Use batches/us-wi/harvest/queues.json from pull_queues.py --state WI (44 requests to answer on 2026-11-17). Answer every request in needs_answer under queues: a match to a GEM plant, an add at announced, a duplicate question, or a watch item with its case. Blank-state rows of American Transmission Company (J4179 735 MW and J4184 755 MW, 2030) are caught by the owner setting. A county-only match is never a match.",
+    "proof": {
+      "kind": "json"
+    }
+  },
+  {
+    "id": "psc-erf-docket",
+    "name": "Public Service Commission of Wisconsin Electronic Regulatory Filing, docket search (every CE, CA, TE, AE and BS docket and its filings)",
+    "url": "https://apps.psc.wi.gov/ERF/ERFsearch/content/searchResult.aspx?UTIL=6630&CASE=CE&SEQ=316&START=none&END=none&TYPE=none&SERVICE=none&KEY=none&NON=N&EXM=N",
+    "what": "Use batches/us-wi/harvest/psc_dockets.json and scopes/us-wi/work/psc/<docket>/ from scopes/us-wi/harvest_psc.py. Open the title and filings of every docket about a gas or oil plant, a conversion, a retirement, a data center service agreement, an acquisition or the Strategic Energy Assessment: 6630-CE-315 to 319, 5-CE-161, 5-CE-162, 9837-CE-100, 9835-CE-100, 9698-CE-100 and 101, 6680-TE-115 and 5-ES-113 (Strategic Energy Assessment). Statewide lists are 70 to 110 MB with no titles, so the harvester takes docket numbers and fetches titles one at a time.",
+    "proof": {
+      "kind": "html",
+      "expect": "6630"
+    }
+  },
+  {
+    "id": "psc-erf-document",
+    "name": "Public Service Commission of Wisconsin filing download (viewdoc.aspx, PDFs with a text layer)",
+    "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031",
+    "what": "Download the application, engineering plan, final decision and data request answers that name a unit. Proof sample is the Elm Road filing in docket 5-CE-161 that Natalia Fretz cited.",
+    "proof": {
+      "kind": "pdf"
+    }
+  },
+  {
+    "id": "psc-case-pages",
+    "name": "Public Service Commission of Wisconsin commission case pages (Red Oak Ridge, Foundry Ridge, Nemadji Trail)",
+    "url": "https://psc.wi.gov/Pages/CommissionActions/CasePages/RedOakRidge.aspx",
+    "what": "Read each case page for the project description, capacity, location and decision dates. Red Oak Ridge says up to 1,186 MW and the Town of Paris.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "dnr-warp",
+    "role": "permit_record",
+    "name": "Department of Natural Resources WARP air permit tracking, the complete Wisconsin air permit record (facility pages, every permit, every document)",
+    "url": "https://apps.dnr.wi.gov/warp_ext/AM_PermitTrackingSearch.aspx",
+    "what": "Use scopes/us-wi/work/permits/<plant_id>.md from scopes/us-wi/harvest_permits.py: search by facility name and by SIC 4911, 2211 NAICS and 7374 for every GEM plant, owner and lead, open every permit and document through the two postbacks (Select$n on gvPermits, then gvDocuments; AM_DownloadObject.aspx?id=N downloads with a plain GET). Read unit lists, megawatts, make and model, engine counts and dates. Facility ids: Oak Creek 241007690 and 241219440, Paris 230094810, Paris RICE 252304470, Weston 737009020, Port Washington 246004000, Microsoft Mount Pleasant 252302490, Vantage WI-1 246185280, Foundry Ridge 265200320 and 265200430, Riverside 13490124, Elk Mound 13798522. Old scans have weak text and are OCR'd.",
+    "proof": {
+      "kind": "html",
+      "expect": "Facility"
+    },
+    "gap": "The facility page address uses the DNR's own sequence number, not the facility id (id=<FID> answers 500), so the harvester searches by facility id and follows the postback. Inactive and withdrawn permits show only after the inactive checkbox is turned on. Proven end to end on 2026-11-17: Paris RICE (252304470) search, facility page, permits and two downloaded PDFs (draft permit 1212656 and the summary of changes 1219945). SIC 4911 with inactive on returns 141 facilities."
+  },
+  {
+    "id": "dnr-notices",
+    "role": "permit_notices",
+    "name": "Department of Natural Resources public notices, applications received and final permit decisions (the notice feed)",
+    "url": "https://apps.dnr.wi.gov/warp_ext/public_notice.aspx",
+    "what": "Read the pubstring script variable (every live notice), apps_received.aspx and final_permit_decisions.aspx (180 days). The notice feed lists only permits that went to public notice, so it never replaces the permit record above.",
+    "proof": {
+      "kind": "html",
+      "expect": "pubstring"
+    }
+  },
+  {
+    "id": "dnr-eia-pages",
+    "name": "Department of Natural Resources environmental analysis pages",
+    "url": "https://dnr.wisconsin.gov/topic/EIA/PortWashington.html",
+    "what": "Read the environmental analysis page for Port Washington (Vantage and Oracle campus) and any other power or data center project the DNR lists under topic/EIA.",
+    "proof": {
+      "kind": "html",
+      "expect": "Port Washington"
+    }
+  },
+  {
+    "id": "epa-echo",
+    "name": "EPA ECHO air facility services for Wisconsin (SIC 4911)",
+    "url": "https://echodata.epa.gov/echo/air_rest_services.get_facilities?output=JSON&p_st=WI&p_sic=4911&p_act=Y",
+    "what": "Cross-check the 45 active Wisconsin SIC 4911 air facilities against the harvest's unmatched list. Limit 300 calls an hour.",
+    "proof": {
+      "kind": "json"
+    }
+  },
+  {
+    "id": "epa-rblc",
+    "name": "EPA RACT/BACT/LAER Clearinghouse, Wisconsin determinations",
+    "url": "https://cdxoarapps.epa.gov/oar-rblc/",
+    "what": "The clearinghouse moved to https://cdxoarapps.epa.gov/oar-rblc/ (the old cfpub.epa.gov address answers 404). Its open JSON service answers POST /oar-rblc/api/rblc/keyword-search with {\"keywords\":\"turbine\",\"state\":\"WI\"} and returns 25 Wisconsin permits. Read the combustion turbine and engine determinations.",
+    "proof": {
+      "sample": "https://cdxoarapps.epa.gov/oar-rblc/api/rblc/keyword-search",
+      "method": "POST",
+      "json": {
+        "keywords": "turbine",
+        "state": "WI"
+      },
+      "kind": "json"
+    }
+  },
+  {
+    "id": "dfi-corp-search",
+    "name": "Wisconsin Department of Financial Institutions business entity search",
+    "url": "https://apps.dfi.wi.gov/apps/CorpSearch/Search.aspx",
+    "what": "Look up project companies (Invenergy's Red Oak Ridge, Foundry Ridge, Forest Junction and Union Depot LLCs, Vantage's and Meta's site LLCs, Port Washington Generating Station LLC) for registered agent and officers. Behind Cloudflare; the results page loads only through fetch.py --render.",
+    "proof": {
+      "kind": "html",
+      "expect": "Search"
+    },
+    "human_wall": "If the browser render cannot reach a detail page: Baird looks up the named LLCs by hand and sends the names and registered agents. No script signs in."
+  },
+  {
+    "id": "legistar-wi",
+    "name": "Legistar open API for Milwaukee, Madison, Racine, Dane and Waukesha",
+    "url": "https://webapi.legistar.com/v1/milwaukee/matters?$top=1",
+    "what": "Search matters by title (substringof('data center',MatterTitle) and the plant and utility names) for every record since 2024-01-01 and read the attachments. Kenosha, Ozaukee, Eau Claire, Sheboygan, Dodge, Brown, Walworth, Rock, Green Bay and Mount Pleasant answered 500 here, so they are read through the agenda center entry below.",
+    "proof": {
+      "kind": "json"
+    }
+  },
+  {
+    "id": "agendacenter-wi",
+    "name": "CivicPlus AgendaCenter sites (Mount Pleasant, Ozaukee County, Calumet County, Superior, Douglas County, Menomonie, Walworth County)",
+    "url": "https://www.mtpleasantwi.gov/AgendaCenter/Search/?term=data+center&CIDs=all&startDate=&endDate=&dateRange=&dateSelector=",
+    "what": "Search is a GET (a POST answers 411). Download is /AgendaCenter/ViewFile/Agenda/_MMDDYYYY-ID. Search each for the plant names, the leads, data center, generator, power plant, tax incremental financing and rezoning.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "local-planning-records",
+    "role": "local_records",
+    "name": "City, village, town and county planning, zoning and council records",
+    "url": "https://www.mtpleasantwi.gov/",
+    "what": "Open the planning, zoning and council records for every lead and every in-development plant: agendas, staff reports, packets, minutes, rezonings, plats, conditional or special use permits, building permits, development agreements, tax incremental financing and the developer's posted permit application. Bodies: Mount Pleasant, Kenosha and Kenosha County, Somers, Caledonia, Racine County, Port Washington, Ozaukee County, Brillion and Calumet County, Wrightstown, the Village and Town of Paris, Darien and Walworth County, Beaver Dam and Dodge County, Beloit, Janesville and Rock County, Superior and Douglas County, Menomonie, Oak Creek, Rothschild, Kronenwetter, Menomonee Falls, Green Bay and Brown County, DeForest and Dane County. Record the body, the meeting date and the document address for every record read. A body with nothing posted online goes under not_posted and a clerk email is drafted for Baird.",
+    "proof": {
+      "kind": "html"
+    },
+    "human_wall": "Towns with nothing posted online (Brillion, Paris, Somers, Darien, Wrightstown if nothing is found): an email to the clerk, drafted for Baird to send."
+  },
+  {
+    "id": "wec-investor",
+    "name": "WEC Energy Group investor updates and rate case generation spreadsheet",
+    "url": "https://investor.wecenergygroup.com/investors/presentations/default.aspx",
+    "what": "Read the Q3 2026 update (the 2027 to 2031 plan of $47.5 billion and $6.8 billion more for gas generation), the May 2025 and September 2025 updates for Weston, and the rate case generation spreadsheet (Forest Junction December 2031). The host answers 403 to plain requests; use the fetch ladder.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "we-energies",
+    "name": "We Energies and Wisconsin Public Service project and news pages",
+    "url": "https://www.we-energies.com/",
+    "what": "Read the South Oak Creek, Paris RICE, Fox North, Port Washington, Red Oak Ridge and Foundry Ridge project pages and news for construction progress and in-service dates.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "alliant",
+    "name": "Alliant Energy and Wisconsin Power and Light news and filings",
+    "url": "https://www.alliantenergy.com/",
+    "what": "Read the Edgewater 5 conversion, Columbia, Neenah, Sheboygan Falls, Riverside and Rock River material, the Rock County LNG storage approval and the Meta Beaver Dam service agreement.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "mge",
+    "name": "Madison Gas and Electric",
+    "url": "https://www.mge.com/",
+    "what": "Read Fitchburg, West Campus, Blount Street, the diesel generators and the RockGen one-third purchase, and the Energy 2050 plan.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "dairyland",
+    "name": "Dairyland Power Cooperative",
+    "url": "https://www.dairylandpower.com/",
+    "what": "Read Elk Mound, John Madgett, Genoa and Nemadji Trail material and the resource plan.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "wppi",
+    "name": "WPPI Energy",
+    "url": "https://www.wppienergy.org/",
+    "what": "Read South Fond du Lac, Island Street, the Elm Road share and the power supply plan.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "xcel-nsp-w",
+    "name": "Xcel Energy, Northern States Power-Wisconsin (French Island, Wheaton) and the Upper Midwest resource plan",
+    "url": "https://www.xcelenergy.com/",
+    "what": "Read French Island 3 and 4 retirement, the Wheaton repowering and the Upper Midwest resource plan filed in Minnesota.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "psc-sea",
+    "name": "Public Service Commission of Wisconsin Strategic Energy Assessment (2026 draft, final if issued)",
+    "url": "https://psc.wi.gov/Pages/Footer/ReferenceCenter/BiennialReportsOther.aspx",
+    "what": "Read the 2026 draft (5.4 GW of planned new or upgraded gas) and the final if issued; it plays the role of a resource plan. The reports page lists each edition; the August 17, 2026 press release (psc.wi.gov/Documents/PressReleases/08.17.26PressRelease.PDF) says the draft opened for comment with a hearing on August 20, 2026, and the filing docket is 5-ES-113 (draft filed 2026-06-29, filing 595734) on the filing system. Data submissions are at apps.psc.wi.gov/APPS/SEAreport/SEAQuery.aspx.",
+    "proof": {
+      "kind": "html",
+      "expect": "Strategic Energy Assessment"
+    }
+  },
+  {
+    "id": "sec-edgar",
+    "name": "SEC EDGAR full-text search for WEC Energy Group, Alliant, Xcel and MGE Energy filings",
+    "url": "https://efts.sec.gov/LATEST/search-index?q=%22Oak%20Creek%22&forms=10-K",
+    "what": "Search 10-K and 10-Q filings through fetch.py or url_verifier.py (SEC's declared identity) for South Oak Creek, Paris, Fox North, Edgewater, Weston, Elm Road and RockGen and read the generation project tables.",
+    "proof": {
+      "kind": "json"
+    }
+  },
+  {
+    "id": "eia-860m",
+    "name": "EIA-860M newest monthly generator file",
+    "url": "https://www.eia.gov/electricity/data/eia860m/",
+    "what": "Read the Operating, Planned, Retired and Canceled or Postponed sheets for Wisconsin in the newest file (work/eia/) and account for every gas or oil plant GEM lacks (Fitchburg 3991, Elk Mound 7863, Superior Generation Energy Center 8057 as Nemadji Trail), every planned unit at a plant it has, and every retirement since 2020.",
+    "proof": {
+      "kind": "html",
+      "expect": "860M"
+    }
+  },
+  {
+    "id": "eia-860",
+    "name": "EIA-860 annual generator file",
+    "url": "https://www.eia.gov/electricity/data/eia860/",
+    "what": "Use for the owner shares and the conversion years (Weston 4 says 2029 in the 2025 file).",
+    "proof": {
+      "kind": "html",
+      "expect": "860"
+    }
+  },
+  {
+    "id": "eip-oil-gas-watch",
+    "name": "Environmental Integrity Project Oil and Gas Watch, Wisconsin projects",
+    "url": "https://oilandgaswatch.org/",
+    "what": "Use work/ids_us-wisconsin.md (the EIP sheet join) and the public facility pages for every Wisconsin project EIP lists that GEM lacks, and chase each to the permit it cites. EIP's 'proposed' Nemadji Trail row is stale; never cite it.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "possible-updates-sheet",
+    "name": "Possible updates sheet, Wisconsin rows",
+    "url": "https://docs.google.com/spreadsheets/d/1GAXwGdI0UFeW9mFSxJhhR6MRBW7VDtlWBqsooVZyUzs",
+    "what": "Read the gas and oil plants tab through the work profile for every Wisconsin row and answer each in a record or a coverage note."
+  },
+  {
+    "id": "captive-lng-sheet",
+    "name": "Captive LNG sheet, Wisconsin rows",
+    "url": "https://docs.google.com/spreadsheets/d/19YvVT918PYHq_DkdvKWtoXYJ2Xl7l7R3",
+    "what": "Use work/captive_us-wisconsin.json from captive_lng.py. Zero Wisconsin rows on 2026-11-17; record that. The 2 Bcf LNG storage at Oak Creek is storage, not a captive plant."
+  },
+  {
+    "id": "data-centers",
+    "name": "Data center gas generation in Wisconsin",
+    "url": "https://www.datacenterdynamics.com/en/search/?q=Wisconsin%20data%20center%20generators",
+    "what": "Use scopes/us-wi/work/permits/_data_centers.md from data_center_fleets.py --state Wisconsin, then trade press, utility releases, the DNR record and the MISO rows for on-site gas generation and backup engine fleets at Wisconsin campuses (Microsoft Mount Pleasant, Kenosha and Caledonia, Vantage Port Washington, Meta Beaver Dam, QTS, Cloverleaf). A gas-fired data center plant is an add like any other, and a backup fleet at 50 MW summed nameplate is an add with Backup Power yes; capacity unknown means add with capacity blank. Every site is answered under data_centers.",
+    "proof": {
+      "kind": "html",
+      "expect": "Wisconsin"
+    }
+  },
+  {
+    "id": "state-news-gannett",
+    "name": "Gannett Wisconsin news (Milwaukee Journal Sentinel, Sheboygan Press, Green Bay Press-Gazette)",
+    "url": "https://www.jsonline.com/news-sitemap.xml",
+    "what": "Plain requests answer 402; curl_cffi with chrome impersonation or fetch.py --render reads the articles. The sitemap lists them (strip whitespace in loc). Search for gas plant, power plant, data center and each utility name since 2024-01-01 and chase every story to the primary document.",
+    "proof": {
+      "kind": "html"
+    }
+  },
+  {
+    "id": "state-news-open",
+    "name": "Wisconsin news open to plain requests (Wisconsin State Journal and madison.com, WPR, Urban Milwaukee, Racine Journal Times, Kenosha News, Ozaukee Press, Wisconsin Examiner)",
+    "url": "https://www.wpr.org/search?search_api_fulltext=gas+plant",
+    "what": "Search each since 2024-01-01 for gas plant, power plant, data center and each utility name, and chase each story to the primary document. The Wisconsin Examiner needs cf_impersonate.",
+    "proof": {
+      "kind": "html"
+    }
+  }
+]

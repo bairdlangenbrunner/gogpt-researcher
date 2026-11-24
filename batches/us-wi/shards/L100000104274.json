@@ -1,0 +1,269 @@
+{
+ "meta": {
+  "plant_id": "L100000104274",
+  "plant_name": "Elm Road power station",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:54:52-05:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001017956",
+   "unit_name": "Unit 1, timepoint 2",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "701.3",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 56068, generator 1 reads 'Nameplate Capacity (MW)' 701.3. This matches the value GEM already holds. The Public Service Commission application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031 gives 650 megawatts net and 697 megawatts gross at full load in Table 4-1, which are net and gross output figures and not nameplate."
+    },
+    "Turbine/Engine Technology": {
+     "value": "steam turbine",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "In the same Operating sheet, plant 56068 generator 1 has Prime Mover Code 'ST'. The Public Service Commission application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031 says in section 4.0.8.4 'Gas firing will not change the steam turbine heat balances.' So the unit stays a steam turbine."
+    },
+    "Start year": {
+     "value": "2028",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031 and go to section 2.4.3, Major Construction Activities. The table says 'Commercial Operation Date 1st Unit Spring 2028 - 2nd Unit Fall 2028'. The EIA-860M table for September 2026 shows Unit 1 'Other Modification Year' 2028, month 7. So 2028 stays. The human adds a new scheduled event with Event Year 2028 and Source Year 2025."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Section 1.1.4 of the application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031 says 'The Project will add gas firing capability to fire Unit 1 and 2 boilers up to 100% heat input on natural gas while maintaining the ability to co-fire with heat input from coal.' The existing coal boilers are kept and fitted with dual fuel burners, so this is a conversion."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Latest Activity",
+    "Backup Power",
+    "CCS attachment?",
+    "Operator(s)"
+   ],
+   "notes": "Status stays pre-construction. The EIA table lists the coal generator as operating, which describes the existing coal unit and does not conflict with the planned conversion row. The Public Service Commission docket 5-CE-161 shows filings as recent as 12 November 2026, so the project is moving and Latest Activity is left alone. The application names no burner maker, and no source was found stating backup power or carbon capture."
+  },
+  {
+   "gem_unit_id": "G100001017955",
+   "unit_name": "Unit 2, timepoint 2",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "701.3",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 56068, generator 2 reads 'Nameplate Capacity (MW)' 701.3. This matches the value GEM already holds. The Public Service Commission application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031 gives 650 megawatts net and 697 megawatts gross at full load in Table 4-1, which are net and gross output figures and not nameplate."
+    },
+    "Turbine/Engine Technology": {
+     "value": "steam turbine",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "In the same Operating sheet, plant 56068 generator 2 has Prime Mover Code 'ST'. The Public Service Commission application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031 says in section 4.0.8.4 'Gas firing will not change the steam turbine heat balances.' So the unit stays a steam turbine."
+    },
+    "Start year": {
+     "value": "2029",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx (Operating sheet, plant 56068, generator 2) shows 'Other Modification Year' 2029, month 1. This is newer than the October 2025 application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031, which says in section 2.4.3 'Commercial Operation Date 1st Unit Spring 2028 - 2nd Unit Fall 2028'. The Status Detail box already records a 2029 start from a GE Vernova press release. I could not find that release, so I rely on EIA for 2029. The human adds a new scheduled event with Event Year 2029 and Source Year 2026."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Section 1.1.4 of the application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031 says 'The Project will add gas firing capability to fire Unit 1 and 2 boilers up to 100% heat input on natural gas while maintaining the ability to co-fire with heat input from coal.' The existing coal boilers are kept and fitted with dual fuel burners, so this is a conversion."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Latest Activity",
+    "Backup Power",
+    "CCS attachment?",
+    "Operator(s)"
+   ],
+   "notes": "Status stays pre-construction. The EIA table lists the coal generator as operating, which describes the existing coal unit and does not conflict with the planned conversion row. The Public Service Commission docket 5-CE-161 shows filings as recent as 12 November 2026, so the project is moving and Latest Activity is left alone. The application names no burner maker, and no source was found stating backup power or carbon capture."
+  },
+  {
+   "gem_unit_id": "G100000107593",
+   "unit_name": "Unit 1, timepoint 1",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "701.3",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "This is the older coal unit that the gas conversion will replace, listed in the database as Unit 1, timepoint 1.\n\nCapacity:\n- Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 56068, generator 1 reads 701.3 under Nameplate Capacity (MW). This matches the value the database already holds, so the source is added and the value stays.\n- The application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031 gives 650 MW net and 697 MW gross in Table 4-1. Those are output figures and not nameplate."
+    }
+   },
+   "not_found": [],
+   "notes": "The database's checks asked for a source for this unit's capacity. The EIA table for September 2026 gives 701.3 MW for generator 1 at plant 56068."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001017956",
+   "concern_type": "Owner(s)",
+   "question": "Should the majority owner be Elm Road Generating Station Supercritical LLC?",
+   "finding": "The application says the units are majority-owned by Elm Road Generating Station Supercritical, LLC, with MGE and WPPI at 8.33% each. The WEC Energy Group 2025 annual report says its We Power subsidiary owns the rest and leases it to Wisconsin Electric, so Wisconsin Electric is the lessee and operator.",
+   "recommendation": "Change the 83% owner from Wisconsin Electric Power Co to Elm Road Generating Station Supercritical LLC, and name We Power as its parent if the entity list has it.",
+   "note": "Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031 and read section 6.2.1, Previous and Current Land Use and Ownership. In the WEC Energy Group 2025 annual report at https://www.sec.gov/Archives/edgar/data/783325/000078332526000018/wec-20251231.htm, the We Power section says two unaffiliated entities own about 17% of Elm Road units 1 and 2, and We Power's share is leased to Wisconsin Electric under 30-year leases. The report does not name the LLC, so the link between We Power and the LLC is inferred from the application.",
+   "refs": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031",
+    "https://www.sec.gov/Archives/edgar/data/783325/000078332526000018/wec-20251231.htm"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001017956",
+   "concern_type": "Planned retire",
+   "question": "Can the retirement year thread be closed, and what is the coal end date?",
+   "finding": "The October 2025 application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031 says in sections 5.1.3 and 7.9.6 that no property is retired and no retirements are planned, and it keeps full coal firing capability. It does not state 2030 for backup coal or 2032 for the end of coal. A search result for a We Energies wastewater permit filing mentions ending coal combustion by 31 December 2034.",
+   "recommendation": "Do not add a retirement year from this filing. Keep the thread open until a filing or utility statement states the coal end date for Elm Road.",
+   "note": "The docket also holds later filings, such as data request responses from November 2026, that I did not read.",
+   "refs": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000107594",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "Is there a document that says whether Elm Road unit 2, timepoint 1 has carbon capture?",
+   "finding": "The database flags the carbon capture answer of no for this unit because it has no source. I found no document that states whether the unit has carbon capture, so there is no source to add.",
+   "recommendation": "Leave carbon capture as no and keep the validation item open until a document states it.",
+   "note": "Where I looked:\n- I read the full text of the We Energies application to the Public Service Commission of Wisconsin at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031 and searched it for 'carbon capture' and 'CCS'. The only hits are on pages 3-22 and 3-23, in a summary of the federal power plant carbon rule. Nothing says Elm Road has or plans carbon capture.\n- The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx has no carbon capture column for plant 56068.\n- The same finding applies to unit 1, timepoint 1, which the database does not flag.",
+   "refs": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Capacity (MW)",
+    "Turbine/Engine Technology",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Plant 56068 generators 1 and 2, status OP, nameplate 701.3 MW, prime mover ST, other modification 2028 and 2029."
+  },
+  {
+   "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031",
+   "used_for": [
+    "Start year",
+    "Conversion/replacement?",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Read via fetch.py; the October 2025 application text, section 2.4.3 schedule and section 6.2.1 ownership."
+  }
+ ]
+}

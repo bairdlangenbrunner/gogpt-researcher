@@ -1,0 +1,130 @@
+{
+ "meta": {
+  "plant_id": "L100000401676",
+  "plant_name": "LSP-Whitewater power station",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T09:00:00-05:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401778",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx has plant 55011, generators CTG1 and STG1 (unit code CC1), status OP (operating), nameplate 177.3 MW and 106.2 MW, operating September 1997. No planned retirement is listed. The We Energies fact sheet at https://www.we-energies.com/company/pdf/whitewater-generating-station.pdf also describes the plant as in service. I found no retirement, mothballing or planned retirement."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Siemens Westinghouse 501FC+",
+     "refs": [
+      "https://www.we-energies.com/company/pdf/whitewater-generating-station.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.we-energies.com/company/pdf/whitewater-generating-station.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The We Energies fact sheet at https://www.we-energies.com/company/pdf/whitewater-generating-station.pdf says on page 1, under 'Units', '501FC+ combustion turbine and Siemens Frame SC32.4B steam turbine', and 'Turbine manufacturer: Siemens-Westinghouse'."
+    }
+   },
+   "not_found": [
+    "Backup Power",
+    "Operator(s)"
+   ],
+   "notes": "Operating status re-checked against the EIA table for September 2026. I found no document that states whether the plant has backup power, so Backup Power Data Source stays empty. The 2023 change of owner is raised as a question."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000401778",
+   "concern_type": "Owner(s)",
+   "question": "Should the owners of LSP-Whitewater change to the We Energies companies?",
+   "finding": "A 2022 commission decision approved a 50-50 purchase by Wisconsin Electric Power Company and Wisconsin Public Service Corporation, and a We Energies fact sheet says the plant was bought in 2023. EIA lists Wisconsin Electric Power Co.",
+   "recommendation": "Confirm the closing and the shares in the 2023 utility filings, then replace the four former owners with the buyers. Until then leave the owner list as it is.",
+   "note": "The owner list for this plant may be out of date.\n\nWhat the sources say:\n- The Public Service Commission of Wisconsin final decision at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=455168 (docket 5-BS-264, decision dated November 2022, page 1) says it grants Wisconsin Electric Power Company and Wisconsin Public Service Corporation authority to buy the LSP-Whitewater facility. The paragraph under 'Introduction' says 'each applicant would acquire 50 percent of the Whitewater facility's capacity'. I read the full decision at that address.\n- A We Energies fact sheet at https://www.we-energies.com/company/pdf/whitewater-generating-station.pdf says on page 1, under 'Initial cost', that 'We Energies purchased the power plant from LSP Whitewater in 2023 for $75 million'. It does not name Wisconsin Public Service Corporation.\n- The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists plant 55011, generators CTG1 and STG1, under the entity Wisconsin Electric Power Co.\n\nWhat was not found: a document that states the closing date or the final shares. The owner list in GEM still shows the former LSP-Whitewater partners.",
+   "refs": [
+    "https://www.we-energies.com/company/pdf/whitewater-generating-station.pdf",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=455168"
+   ],
+   "proposed_value": {
+    "Owner(s)": "Wisconsin Electric Power Company [50%]; Wisconsin Public Service Corporation [50%]"
+   }
+  },
+  {
+   "gem_unit_id": "G100000401778",
+   "concern_type": "Capacity (MW)",
+   "question": "Is 284 MW the right capacity when the commission decision says 236.5 MW?",
+   "finding": "The EIA-860M table for September 2026 gives nameplate 177.3 MW plus 106.2 MW, which is 283.5 MW. The commission decision at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=455168 gives 236.5 MW AC for the facility, and the We Energies fact sheet gives 280 MW net.",
+   "recommendation": "Leave 284 MW, which matches EIA nameplate. The lower figures are net or alternating current ratings.",
+   "note": "EIA table: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx plant 55011 rows CTG1 and STG1. Commission decision: https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=455168 Findings of Fact item 2.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=455168"
+   ],
+   "proposed_value": {}
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Wisconsin Electric Power Company",
+   "role": "owner",
+   "lookup_result": "Bare local lookup and the --pg lookup both found nothing under this exact name; not staged because the owner change is only a question."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.we-energies.com/company/pdf/whitewater-generating-station.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Loads and names the plant."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Excel file loads; row read by hand."
+  },
+  {
+   "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=455168",
+   "used_for": [
+    "Owner(s)",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "The final decision in docket 5-BS-264 opens at this address and names the Whitewater facility, the 236.5 MW nameplate and the 50 percent shares."
+  }
+ ]
+}

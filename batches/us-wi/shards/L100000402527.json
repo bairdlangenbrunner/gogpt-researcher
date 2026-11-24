@@ -1,0 +1,132 @@
+{
+ "meta": {
+  "plant_id": "L100000402527",
+  "plant_name": "Combined Locks energy center",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:58:00-05:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401956",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx), sheet Operating, lists plant 55558, generators GEN1 and GEN2, both with status '(OP) Operating', operating year 2002. No planned retirement date is listed and the plant is not on the Retired sheet. The status is unchanged."
+    }
+   },
+   "not_found": [
+    "Backup Power",
+    "Planned retire",
+    "Retired year",
+    "Operator(s)"
+   ],
+   "notes": "The unit is still listed as operating in the newest EIA table. I found no retirement, mothballing or planned retirement. I found no document that states the Backup Power value."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000401956",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "Is there any document stating Backup Power for Combined Locks CC1?",
+   "finding": "The EIA-860M table for September 2026 has no backup power field. The Wisconsin Department of Natural Resources permit fact sheet describes the cogeneration turbine as burning natural gas for the mill, which points to routine rather than backup use.",
+   "recommendation": "Leave Backup Power as no. No document that states it was found, so it stays without a source.",
+   "note": "Where I looked: the EIA-860M table at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, a web search for the plant, and the Department of Natural Resources fact sheet https://dnr.wisconsin.gov/sites/default/files/topic/Wastewater/pn/McKinleyPaper-FS.pdf, which is gone from its live address but saved at https://web.archive.org/web/20250915050421/https://dnr.wisconsin.gov/sites/default/files/topic/Wastewater/pn/McKinleyPaper-FS.pdf. The WARP permit harvest found no facility matched to this plant.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000401956",
+   "concern_type": "Owner(s)",
+   "question": "Should the owner of Combined Locks CC1 be McKinley Paper rather than Midwest Paper Group?",
+   "finding": "The EIA-860M table for September 2026 shows the entity name McKinley Paper for plant 55558. A PaperAge article from February 2022 says McKinley Paper bought Midwest Paper Group.",
+   "recommendation": "Ask the project manager to confirm which company legally holds the plant. Do not change the owner until a second independent publisher confirms the buyer entity.",
+   "note": "Open https://www.paperage.com/2022news/02-07-2022mckinley-acquires-midwest-paper.html for the sale story. The EIA row is in sheet Operating, entity ID 744, entity name McKinley Paper. The purchase may have been of the parent company, so the plant could still sit in a Midwest Paper Group subsidiary.",
+   "refs": [
+    "https://www.paperage.com/2022news/02-07-2022mckinley-acquires-midwest-paper.html",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "proposed_value": {
+    "Owner(s)": "McKinley Paper Company [100%]"
+   }
+  },
+  {
+   "gem_unit_id": "G100000401956",
+   "concern_type": "Capacity (MW)",
+   "question": "Should Combined Locks CC1 capacity be 66.5 MW instead of 67.0 MW?",
+   "finding": "The EIA-860M table for September 2026 gives GEN1 nameplate 60.5 MW and GEN2 nameplate 6.0 MW, a total of 66.5 MW. GEM shows 67.0 MW.",
+   "recommendation": "Leave as is. The difference is under 1 MW and rounding is optional.",
+   "note": "The rows are in sheet Operating, plant 55558, column Nameplate Capacity (MW).",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "McKinley Paper Company",
+   "role": "owner",
+   "lookup_result": "Not looked up for staging; raised as a question only. Midwest Paper Group local lookup found nothing."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Loads; plant 55558 rows read directly."
+  },
+  {
+   "url": "https://www.paperage.com/2022news/02-07-2022mckinley-acquires-midwest-paper.html",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Names McKinley and Midwest Paper."
+  },
+  {
+   "url": "https://dnr.wisconsin.gov/sites/default/files/topic/Wastewater/pn/McKinleyPaper-FS.pdf",
+   "used_for": [
+    "Backup Power"
+   ],
+   "outcome": "dead",
+   "note": "The live address returns 404. A saved copy is cited instead."
+  },
+  {
+   "url": "https://web.archive.org/web/20250915050421/https://dnr.wisconsin.gov/sites/default/files/topic/Wastewater/pn/McKinleyPaper-FS.pdf",
+   "used_for": [
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Saved copy of the DNR fact sheet from September 15, 2025. It names McKinley Paper and the co-generation equipment."
+  }
+ ]
+}

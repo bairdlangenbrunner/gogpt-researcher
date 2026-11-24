@@ -1,0 +1,172 @@
+{
+ "meta": {
+  "plant_id": "L100000104693",
+  "plant_name": "Port Washington power station",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:58:42-05:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401689",
+   "unit_name": "PWG1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 4040, generators 1CT1, 1CT2 and ST1 (unit PWG1) and 2CT1, 2CT2 and ST2 (unit PWG2), all status OP operating, nameplate 173.1, 173.1 and 268.6 MW per unit set, so 614.8 MW each, natural gas, combined cycle."
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet.\n\nStatus:\n- Plant 4040 rows 1CT1, 1CT2 and ST1 all read '(OP) Operating'.\n- The Planned Retirement Year column is blank for every row, so no retirement is announced.\n- The only change listed is a planned uprate in 2028, which matches the docket 6630-CE-318 application. No mothballing or sale was found."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=565256"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=565256",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Read on PDF page 17, section 1.1.7 Estimated Capacity Factors."
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Open the Wisconsin Electric application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=565256 and go to PDF page 17, section 1.1.7, titled Estimated Capacity Factors. It says 'the annual dispatch profile of the existing CTs is not expected to materially change' and discusses their annual capacity factor. Page 34 says the turbines 'currently operate solely on natural gas'.\n\nWhat this means:\n- The turbines run as normal grid supply, not as an emergency fleet.\n- The document never uses the words backup power, so this supports 'no' by implication only."
+    }
+   },
+   "not_found": [],
+   "notes": "The EIA table for September 2026 lists the unit as operating with no planned retirement. The 2025 application for docket 6630-CE-318 plans a turbine upgrade in 2028 and no retirement. Status Detail already records the 2028 upgrade, so it is not restated."
+  },
+  {
+   "gem_unit_id": "G100000401690",
+   "unit_name": "PWG2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 4040, generators 1CT1, 1CT2 and ST1 (unit PWG1) and 2CT1, 2CT2 and ST2 (unit PWG2), all status OP operating, nameplate 173.1, 173.1 and 268.6 MW per unit set, so 614.8 MW each, natural gas, combined cycle."
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet.\n\nStatus:\n- Plant 4040 rows 2CT1, 2CT2 and ST2 all read '(OP) Operating'.\n- The Planned Retirement Year column is blank for every row, so no retirement is announced.\n- The only change listed is a planned uprate in 2028, which matches the docket 6630-CE-318 application. No mothballing or sale was found."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=565256"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=565256",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Read on PDF page 17, section 1.1.7 Estimated Capacity Factors."
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Open the Wisconsin Electric application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=565256 and go to PDF page 17, section 1.1.7, titled Estimated Capacity Factors. It says 'the annual dispatch profile of the existing CTs is not expected to materially change' and discusses their annual capacity factor. Page 34 says the turbines 'currently operate solely on natural gas'.\n\nWhat this means:\n- The turbines run as normal grid supply, not as an emergency fleet.\n- The document never uses the words backup power, so this supports 'no' by implication only."
+    }
+   },
+   "not_found": [],
+   "notes": "The EIA table for September 2026 lists the unit as operating with no planned retirement. The 2025 application for docket 6630-CE-318 plans a turbine upgrade in 2028 and no retirement. Status Detail already records the 2028 upgrade, so it is not restated."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Port Washington Generating Station LLC [100%]",
+   "refs": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=565256"
+   ],
+   "verifications": [
+    {
+     "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=565256",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "PDF page 14, section 1.1.1"
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "Open the Wisconsin Electric application for docket 6630-CE-318 at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=565256 and go to PDF page 14, section 1.1.1, Owner and Operator of Proposed Facility.\n\nOwner:\n- The text reads 'Port Washington Generating Station LLC owns 100 percent of the Facility'.\n- This matches the value already in the database, so the report only adds the source.\n- Wisconsin Electric leases the plant from that company. The WEC Energy Group parent is a computed field, so it is not reported here."
+  },
+  "Operator(s)": {
+   "value": "Wisconsin Electric Power",
+   "refs": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=565256"
+   ],
+   "verifications": [
+    {
+     "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=565256",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "PDF page 14, section 1.1.1"
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The same section 1.1.1 on PDF page 14 of https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=565256 reads 'Wisconsin Electric currently leases and operates PWGS, and will continue to lease and operate it'. This matches the database value, so only the source is added."
+  }
+ },
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Port Washington Generating Station LLC",
+   "role": "owner",
+   "lookup_result": "Already the owner in the database for both units; no new entity named, so the lookup was not run."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=565256",
+   "used_for": [
+    "Owner(s)",
+    "Operator(s)",
+    "Backup Power",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Wisconsin Electric application for docket 6630-CE-318, read in full text via fetch.py."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "EIA-860M September 2026, Operating sheet, plant 4040. Loaded and read; Excel so no text match."
+  }
+ ]
+}

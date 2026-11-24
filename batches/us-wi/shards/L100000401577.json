@@ -1,0 +1,99 @@
+{
+ "meta": {
+  "plant_id": "L100000401577",
+  "plant_name": "West Campus cogeneration facility",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T09:00:25-05:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402189",
+   "unit_name": "CC1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1231692"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1231692",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "milestones": [
+      {
+       "status": "operating",
+       "year": 2005,
+       "period": "April",
+       "sources": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "The EIA table gives operating month 4 and operating year 2005 for all three generators."
+      }
+     ],
+     "note": "Is the unit still operating?\n\nEIA table:\n- Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 7991, generators 1, CT2 and STG1 all show status '(OP) Operating', unit code CC1, operating year 2005. The planned retirement columns are empty.\n\nAir permit record:\n- Open the Wisconsin Department of Natural Resources permit application at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1231692 (filed July 2025 under permit 11315150A-P30). It still describes the two combustion turbines, and an operating permit renewal is pending, so the plant is running.\n\nChange of owner:\n- The EIA table still lists Madison Gas and Electric as the entity. The same application lists the Board of Regents of the University of Wisconsin System as additional owner, which matches GEM. I found no retirement, mothball or sale notice."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1231692"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1231692",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Backup Power for this unit.\n\nWhat the document says:\n- Open the Wisconsin Department of Natural Resources permit application at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1231692 and search for 'Diesel Engine Backup Generator (Cummins Model QSK60-G6)'. It is one of two small emergency sources at the plant, with a Clarke fire pump, listed in the engine maintenance plan.\n- The same application describes the combined cycle unit as serving Madison Gas and Electric customers and supplying steam to the University of Wisconsin. So the combined cycle unit itself is not a backup source, and 'no' is right.\n\nWhat I could not confirm:\n- No document says in words that this unit is not backup power. The diesel generator is a separate small emergency engine and is not a GEM unit."
+    }
+   },
+   "not_found": [],
+   "notes": "EIA still lists all three generators as operating with no planned retirement, and no change of owner was found. The EIA nameplate figures are 54.0, 54.0 and 61.3 MW, a total of 169.3 MW, which matches GEM's 169.0 MW."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Excel file loaded; plant 7991 rows read directly."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1231692",
+   "used_for": [
+    "Status",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Permit application text read; Cummins backup generator and joint ownership found."
+  }
+ ]
+}

@@ -1,0 +1,282 @@
+{
+ "meta": {
+  "plant_id": "L100001089647",
+  "plant_name": "Union Depot Energy Center",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:56:27-05:00",
+  "done": true,
+  "urls_attempted": 7,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001102105",
+   "unit_name": "1",
+   "findings": {
+    "Start year": {
+     "value": "2031",
+     "refs": [
+      "https://www.wpr.org/wp-content/uploads/2026/09/Natural-Gas-Engineering-Plan.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.wpr.org/wp-content/uploads/2026/09/Natural-Gas-Engineering-Plan.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Start year:\n- Open https://www.wpr.org/wp-content/uploads/2026/09/Natural-Gas-Engineering-Plan.pdf and go to Section 7, Schedule. It says construction is expected to begin in Q4 2027 and be completed in Q4 2031. So the projected start year is 2031.\n- This matches the current value. The human adds a scheduled event with Event Year 2031 and Source Year 2026 only if one is not already there."
+    },
+    "Status Detail": {
+     "value": "Invenergy's engineering plan for the two projects, filed with the Public Service Commission of Wisconsin and stamped received on August 20, 2026 (open https://www.wpr.org/wp-content/uploads/2026/09/Natural-Gas-Engineering-Plan.pdf and go to Section 7, Schedule, near the end), says: 'Construction of the Projects is expected to begin in Q4 2027 and be completed in Q4 2031'. The company filed the full application appendices in docket 5-CE-162 on November 6, 2026 (for example the wetland forms at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855, stamped received 11/6/2026). The status stays pre-construction.",
+     "refs": [
+      "https://www.wpr.org/wp-content/uploads/2026/09/Natural-Gas-Engineering-Plan.pdf",
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.wpr.org/wp-content/uploads/2026/09/Natural-Gas-Engineering-Plan.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status Detail:\n- The engineering plan at https://www.wpr.org/wp-content/uploads/2026/09/Natural-Gas-Engineering-Plan.pdf gives the schedule in Section 7, Schedule. The wetland forms at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855 carry a PSC received stamp of 11/6/2026.\n- Latest Activity is left alone because the project is moving."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.wpr.org/wp-content/uploads/2026/09/Natural-Gas-Engineering-Plan.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.wpr.org/wp-content/uploads/2026/09/Natural-Gas-Engineering-Plan.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Backup Power:\n- Open https://www.wpr.org/wp-content/uploads/2026/09/Natural-Gas-Engineering-Plan.pdf and go to Section 2.2.5, Standby Backup Generator. It says each facility will have one to two generators of about 2,500 kW that provide backup power to essential plant systems.\n- These are small plant auxiliary units, not a data center backup fleet, and this plant sells power to the grid. So Backup Power stays no. The plan also says there will be no backup fuel."
+    }
+   },
+   "not_found": [
+    "Operator(s)",
+    "CHP",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use",
+    "Turbine/Engine Technology re-verified with new source",
+    "Conversion/replacement?"
+   ],
+   "notes": "The project is still pre-construction, with construction planned to start in Q4 2027 and finish in Q4 2031. The plan names a GE 7HA.03 turbine and 750 MW, matching GEM. No operator or combined heat and power statement was found in the plan."
+  }
+ ],
+ "plant_findings": {
+  "Latitude": {
+   "value": "44.22950",
+   "refs": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617816",
+    "https://www.google.com/maps/search/?api=1&query=44.22950,-88.12100"
+   ],
+   "verifications": [
+    {
+     "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617816",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=44.22950,-88.12100",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "Location:\n- The air permit and utility records give no point for this plant, and the current point 44.19000, -88.05800 is about 7.5 km from the proposed site.\n- The noise analysis at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617816 says in Section 3, Measurement Locations, that the proposed facilities have US Highway 10 to the south, State Highways 32/57 to the west and County Highway K to the south, and that monitor MP1 sits 'along the eastern fence line of the Proposed Facilities'. It places the site in the Town of Brillion.\n- The wetland survey forms at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855 cover the proposed site area in sections 4 and 5 of Township 20 North, Range 20 East. Their sampling points run from 44.2268 to 44.2329 north and from -88.1269 to -88.1149 east, for example 'Lat: 44.226777 Long: -88.126853' on the first form.\n- I used the middle of that area, 44.22950, -88.12100. The satellite picture shows open farm fields with a road along the southern edge. The imagery date is unknown.\n- This is a survey area, not a published plant coordinate, so the accuracy stays approximate. The exact parcel is shown only in the map book, which has no text layer. Appendix A is at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617752."
+  },
+  "Longitude": {
+   "value": "-88.12100",
+   "refs": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617816",
+    "https://www.google.com/maps/search/?api=1&query=44.22950,-88.12100"
+   ],
+   "verifications": [
+    {
+     "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617816",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=44.22950,-88.12100",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "Location:\n- The air permit and utility records give no point for this plant, and the current point 44.19000, -88.05800 is about 7.5 km from the proposed site.\n- The noise analysis at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617816 says in Section 3, Measurement Locations, that the proposed facilities have US Highway 10 to the south, State Highways 32/57 to the west and County Highway K to the south, and that monitor MP1 sits 'along the eastern fence line of the Proposed Facilities'. It places the site in the Town of Brillion.\n- The wetland survey forms at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855 cover the proposed site area in sections 4 and 5 of Township 20 North, Range 20 East. Their sampling points run from 44.2268 to 44.2329 north and from -88.1269 to -88.1149 east, for example 'Lat: 44.226777 Long: -88.126853' on the first form.\n- I used the middle of that area, 44.22950, -88.12100. The satellite picture shows open farm fields with a road along the southern edge. The imagery date is unknown.\n- This is a survey area, not a published plant coordinate, so the accuracy stays approximate. The exact parcel is shown only in the map book, which has no text layer. Appendix A is at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617752."
+  },
+  "Location accuracy": {
+   "value": "approximate",
+   "refs": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617816",
+    "https://www.google.com/maps/search/?api=1&query=44.22950,-88.12100"
+   ],
+   "verifications": [
+    {
+     "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617816",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=44.22950,-88.12100",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "Location:\n- The air permit and utility records give no point for this plant, and the current point 44.19000, -88.05800 is about 7.5 km from the proposed site.\n- The noise analysis at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617816 says in Section 3, Measurement Locations, that the proposed facilities have US Highway 10 to the south, State Highways 32/57 to the west and County Highway K to the south, and that monitor MP1 sits 'along the eastern fence line of the Proposed Facilities'. It places the site in the Town of Brillion.\n- The wetland survey forms at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855 cover the proposed site area in sections 4 and 5 of Township 20 North, Range 20 East. Their sampling points run from 44.2268 to 44.2329 north and from -88.1269 to -88.1149 east, for example 'Lat: 44.226777 Long: -88.126853' on the first form.\n- I used the middle of that area, 44.22950, -88.12100. The satellite picture shows open farm fields with a road along the southern edge. The imagery date is unknown.\n- This is a survey area, not a published plant coordinate, so the accuracy stays approximate. The exact parcel is shown only in the map book, which has no text layer. Appendix A is at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617752."
+  }
+ },
+ "location": {
+  "method": "address",
+  "location_route": "The point is the middle of the wetland survey area that the application documents place at the proposed site north of County Highway K in the Town of Brillion.",
+  "moved_m": 7500,
+  "control_points": [],
+  "fit_m": null,
+  "image": "work/sweep_WI/maps/L100001089647_1.png",
+  "needs_review": true,
+  "review_note": "The move is over 2 km and rests on survey points, not a published plant coordinate. The map book (Appendix A, docid 617752) has no text layer and should be read by eye to place the parcel."
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100001102105",
+   "concern_type": "Owner(s)",
+   "question": "Should the owner be Union Depot Energy Center LLC instead of Invenergy LLC?",
+   "finding": "The joint application in docket 5-CE-162 is filed by Forest Junction Energy Center LLC and Union Depot Energy Center LLC, and the engineering plan at https://www.wpr.org/wp-content/uploads/2026/09/Natural-Gas-Engineering-Plan.pdf says the applicants are these two companies. GEM lists Invenergy LLC at 100 percent.",
+   "recommendation": "Change the owner to Union Depot Energy Center LLC [100%] if the entity exists in the entity system. Otherwise add it as a new entity.",
+   "note": "The entity lookup for Union Depot Energy Center LLC found nothing locally, and Invenergy is an existing entity used on 7 units. I did not run the database lookup. The engineering plan names Invenergy as the developer in Section 1.",
+   "refs": [
+    "https://www.wpr.org/wp-content/uploads/2026/09/Natural-Gas-Engineering-Plan.pdf"
+   ],
+   "proposed_value": {
+    "Owner(s)": "Union Depot Energy Center LLC [100%]"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Union Depot Energy Center LLC",
+   "role": "owner",
+   "lookup_result": "Local lookup found nothing; database lookup not run."
+  },
+  {
+   "entity_name": "Invenergy",
+   "role": "owner",
+   "lookup_result": "Exists as 'invenergy' on 7 units in the United States."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.wpr.org/wp-content/uploads/2026/09/Natural-Gas-Engineering-Plan.pdf",
+   "used_for": [
+    "Start year",
+    "Status Detail",
+    "Backup Power",
+    "Capacity (MW)",
+    "Turbine/Engine Technology"
+   ],
+   "outcome": "verified",
+   "note": "Engineering plan read in full text; 750 MW, one GE 7HA.03, Q4 2031 completion."
+  },
+  {
+   "url": "https://wtaq.com/2026/09/02/proposed-energy-centers-in-calumet-county-could-power-2m-homes/",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Existing start year source; loads and names Union Depot."
+  },
+  {
+   "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855",
+   "used_for": [
+    "Latitude",
+    "Longitude",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Fetched through the download address with the real-Chrome route."
+  },
+  {
+   "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617816",
+   "used_for": [
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Noise analysis places the site relative to County Highway K."
+  },
+  {
+   "url": "https://apps.psc.wi.gov/pages/viewdoc.htm?docid=617855",
+   "used_for": [
+    "Latitude"
+   ],
+   "outcome": "failed",
+   "note": "The viewer page address returns a page shell, not the PDF. The download address works."
+  },
+  {
+   "url": "https://www.google.com/maps/search/?api=1&query=44.22950,-88.12100",
+   "used_for": [
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Pin link."
+  }
+ ]
+}

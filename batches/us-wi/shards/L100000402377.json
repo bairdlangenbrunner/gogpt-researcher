@@ -1,0 +1,96 @@
+{
+ "meta": {
+  "plant_id": "L100000402377",
+  "plant_name": "Rock River power station",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T09:05:00-05:00",
+  "done": true,
+  "urls_attempted": 3,
+  "urls_verified": 3
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403770",
+   "unit_name": "5",
+   "findings": {
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=626768"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=626768",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "This is the final Wisconsin Department of Natural Resources air operation permit 154003740-P30, issued November 2016, at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=626768. In the equipment list on the first pages, the line 'Stack S14, Turbine P32 - 50 MW Combustion Turbine (CT5) - Installed 1972, natural gas/#2 fuel oil' describes this unit as an ordinary generating turbine that runs on natural gas and fuel oil.\n\nBackup Power:\n- The permit never calls this turbine a backup or standby unit.\n- The only units it calls emergency are separate diesel engines, P36 (black start engine) and P37 (emergency generator), both tied to Unit 3.\n- So the value stays no. The permit implies it and does not use the words 'backup power', which is why this is medium confidence."
+    }
+   },
+   "not_found": [],
+   "notes": "Backup Power stays no, per the 2016 air permit. EIA-860M for September 2026 lists generator 5 at plant 4057 as retired in June 2020, matching GEM."
+  },
+  {
+   "gem_unit_id": "G100000403771",
+   "unit_name": "6",
+   "findings": {
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=626768"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=626768",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "This is the final Wisconsin Department of Natural Resources air operation permit 154003740-P30, issued November 2016, at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=626768. In the equipment list on the first pages, the line 'Stack S15, Turbine P33 - 50 MW Combustion Turbine (CT6) - Installed 1972, natural gas/#2 fuel oil' describes this unit as an ordinary generating turbine that runs on natural gas and fuel oil.\n\nBackup Power:\n- The permit never calls this turbine a backup or standby unit.\n- The only units it calls emergency are separate diesel engines, P36 (black start engine) and P37 (emergency generator), both tied to Unit 3.\n- So the value stays no. The permit implies it and does not use the words 'backup power', which is why this is medium confidence."
+    }
+   },
+   "not_found": [],
+   "notes": "Backup Power stays no, per the 2016 air permit. EIA-860M for September 2026 lists generator 6 at plant 4057 as retired in June 2020, matching GEM."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=626768",
+   "used_for": [
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Final air permit 154003740-P30 lists CT5 and CT6 as 50 MW combustion turbines, no backup role."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1052709",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "June 2021 revocation of the plant's air permits; read for context, not cited."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "Read from disk; confirms retired June 2020. Not cited."
+  }
+ ]
+}

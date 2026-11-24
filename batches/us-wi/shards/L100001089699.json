@@ -1,0 +1,180 @@
+{
+ "meta": {
+  "plant_id": "L100001089699",
+  "plant_name": "Vantage Lighthouse (WI-1) Data Center power station",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:56:00-05:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001102201",
+   "unit_name": "1",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "87.0",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275115"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275115",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Capacity:\n- Open the final air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275115 and find the equipment table. It lists three groups of diesel emergency engines. Processes P01 to P15 are 15 engines with maximum ratings of 1,500 kW. Processes P16 to P33 are 18 engines at 1,750 kW. Processes P34 to P45 are 12 engines at 2,750 kW.\n- That sums to 22.5 plus 31.5 plus 33.0, which is 87.0 MW. It matches the 87 MW GEM already shows.\n\nWhy the permit harvest showed 46 engines and 97.5 MW:\n- The harvest counted from the application. The application at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1235892 says 'up to forty-five (45) diesel emergency generators' in its project description. The 46 and 97.5 MW figures are a reading error in the harvest, not a different fleet."
+    },
+    "Number Of Engines": {
+     "value": "45",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275115"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275115",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Engine count:\n- The final permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275115 says the facility may have 'up to forty-five (45) diesel-fired emergency engines' and lists them as processes P01 to P45.\n- The permit harvest listed 46. That is wrong. The application at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1235892 also says 45."
+    },
+    "Capacity Per Engine": {
+     "value": "1.75",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275115"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275115",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Capacity per engine:\n- The engines differ in size. The permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275115 lists 15 engines at 1,500 kW, 18 at 1,750 kW and 12 at 2,750 kW.\n- The most common size is 1.75 MW, so that is the value recorded. The total of 87.0 MW is the figure that counts."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "CAT: 3512C, CAT: 3516E",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1235892"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1235892",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Engine models:\n- Open the application at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1235892 and find the equipment table for processes P01 to P45. Processes P01 to P15 and P16 to P33 are 'Caterpillar 3512C' at 1,500 kW and 1,750 kW. Processes P34 to P45 are 'Caterpillar 3516E' at 2,750 kW.\n- GEM shows 3512G. The summary paragraph of the application once writes 3512G for the 1.5 MW engines, but the equipment table and every other mention say 3512C. I used 3512C."
+    },
+    "Status Detail": {
+     "value": "June 12, 2026: the Wisconsin Department of Natural Resources issued final air permit 25-MIN-094 and operation permit 24618528A-F01 for up to 45 diesel emergency engines.",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275115",
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275129"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275115",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275129",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status Detail:\n- The final permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275115 is dated June 12, 2026 and authorizes construction and initial operation of the data center with up to 45 diesel emergency engines.\n- The summary of comments at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275129 records a comment that Vantage 'unlawfully commenced construction' before the permit. The department's response is in the same file. I did not find a court filing, so the lawsuit named in the brief is not confirmed here.\n- The status stays construction. Work is under way and a city packet from October 2026 still discusses the site."
+    },
+    "Fuel": {
+     "value": "fossil liquids: diesel",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275115"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275115",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Fuel:\n- The final permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275115 describes 'forty-five (45) diesel-fired engines' under processes P01 to P45. This confirms diesel."
+    }
+   },
+   "not_found": [
+    "Operator(s)",
+    "Start year (no new source)",
+    "Backup Power change (none needed)"
+   ],
+   "notes": "The final permit confirms 45 diesel engines and 87.0 MW, matching GEM. The harvest's 46 engines and 97.5 MW is a reading error. The permit record lists no permit for another phase. No new owner or operator document was found beyond the applicant name Vantage Data Centers Management Company, LLC."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275115",
+   "used_for": [
+    "Capacity (MW)",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Fuel",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Final permit, read in full text."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1235892",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Number Of Engines"
+   ],
+   "outcome": "verified",
+   "note": "Application equipment table."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275129",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Summary of changes and comments."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1258422",
+   "used_for": [
+    "context"
+   ],
+   "outcome": "verified",
+   "note": "Preliminary determination, loads and names Vantage."
+  }
+ ]
+}

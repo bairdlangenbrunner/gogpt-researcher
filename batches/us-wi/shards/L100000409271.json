@@ -1,0 +1,211 @@
+{
+ "meta": {
+  "plant_id": "L100000409271",
+  "plant_name": "French Island power station",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:58:00-05:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000414139",
+   "unit_name": "3",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating. The row reads: Plant 4005, generator 3, status OP, nameplate 78.8 MW, technology Petroleum Liquids, energy source DFO, prime mover GT, operating September 1974, planned retirement June 2030. The unit is still listed as operating, with no mothballing or owner change."
+    },
+    "Planned retire": {
+     "value": "2030",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The same EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating, gives Planned Retirement Year 2030 and Planned Retirement Month 6 for generator 3. The plan still holds in this table. The human adds no new scheduled event because the year is unchanged."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=747260"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=747260",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the Wisconsin Department of Natural Resources air operation permit from June 27, 2018 at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=747260. It authorizes the plant to operate as an 'Electrical Generating Peaking' plant, not as emergency or backup power. Part II of the same permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=747259 lists the two oil-fired simple cycle turbines as normal process units. So the value no stays."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Westinghouse 501B2",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=747259"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=747259",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Part II of the 2018 air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=747259 lists Process P30 and Process P31 as '834 mmBtu/hr Westinghouse Model 501B2 Simple Cycle Combustion Turbine with Inlet Fogging System. Combusts No. 2 fuel oil.' The permit does not say which process is unit 3 and which is unit 4, but it lists exactly two turbines and the plant has two. So both units get this model."
+    }
+   },
+   "not_found": [],
+   "notes": "The EIA table still shows this unit operating with a planned retirement in June 2030. Xcel's Upper Midwest plan from February 2024 only covers the waste-to-energy units at French Island and does not mention these oil turbines."
+  },
+  {
+   "gem_unit_id": "G100000414138",
+   "unit_name": "4",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating. The row reads: Plant 4005, generator 4, status OP, nameplate 78.8 MW, technology Petroleum Liquids, energy source DFO, prime mover GT, operating November 1974, planned retirement June 2030. The unit is still listed as operating, with no mothballing or owner change."
+    },
+    "Planned retire": {
+     "value": "2030",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The same EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Operating, gives Planned Retirement Year 2030 and Planned Retirement Month 6 for generator 4. The plan still holds in this table. The human adds no new scheduled event because the year is unchanged."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=747260"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=747260",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the Wisconsin Department of Natural Resources air operation permit from June 27, 2018 at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=747260. It authorizes the plant to operate as an 'Electrical Generating Peaking' plant, not as emergency or backup power. Part II of the same permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=747259 lists the two oil-fired simple cycle turbines as normal process units. So the value no stays."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Westinghouse 501B2",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=747259"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=747259",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Part II of the 2018 air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=747259 lists Process P30 and Process P31 as '834 mmBtu/hr Westinghouse Model 501B2 Simple Cycle Combustion Turbine with Inlet Fogging System. Combusts No. 2 fuel oil.' The permit does not say which process is unit 3 and which is unit 4, but it lists exactly two turbines and the plant has two. So both units get this model."
+    }
+   },
+   "not_found": [],
+   "notes": "The EIA table still shows this unit operating with a planned retirement in June 2030. Xcel's Upper Midwest plan from February 2024 only covers the waste-to-energy units at French Island and does not mention these oil turbines."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000414139",
+   "concern_type": "Planned retire",
+   "question": "Does Xcel's plan to run French Island waste-to-energy units to 2040 change the 2030 retirement date?",
+   "finding": "Xcel's 2024 Minnesota resource plan says the French Island waste-to-energy plant will run to 2040, while EIA lists all four generators at the site, including the oil turbines, retiring in June 2030. The plan does not mention the oil turbines.",
+   "recommendation": "Leave units 3 and 4 at 2030. Check the waste-to-energy units separately if GEM tracks them.",
+   "note": "The plan is the filing 20242-203027-01 in Minnesota docket E002/RP-24-67, saved in scopes/us-wi/work/irp/xcel. On the PDF, the paragraph that starts 'Finally, all three of our renewable Refuse Derived Fuel' says French Island runs to 2040. I could not cite a public web address for it.",
+   "refs": [],
+   "proposed_value": {}
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Loads; row read from the downloaded file."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=747260",
+   "used_for": [
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Peaking plant permit text."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=747259",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Part II lists two Westinghouse 501B2 turbines."
+  }
+ ]
+}

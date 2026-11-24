@@ -70,4 +70,4 @@ Scope tag `us-wi`. The scoped export pulled on 2026-11-17 holds 82 unit rows at 
 
 ## Still open
 
-See `scopes/us-wi/plan.md`, Stage A. Still to find: the RBLC address, the DFI detail page, the meeting record paths for Beaver Dam, Dodge and Brown counties, Caledonia, Beloit and the host towns (Brillion, Paris, Somers, Darien, Wrightstown), and the titles of dockets 6630-CE-315 and 6630-CE-318.
+Status after the 2026-11-19 run is in `scopes/us-wi/plan.md`, "Stages C to G status". The batch stages Fitchburg and Elk Mound as new plants and answers Natalia Fretz's three threads in `batches/us-wi/drafts_for_baird.md`. Still to find: the DFI detail page, the meeting records for Janesville, Beloit, Caledonia, Darien and Brown County (clerk emails drafted), and the missing plan files (Dairyland, WEC's November 2026 deck, Alliant's Q3 slides). The RBLC now has an open search at `cdxoarapps.epa.gov/oar-rblc/`.

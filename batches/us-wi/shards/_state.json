@@ -1,0 +1,1099 @@
+{
+ "meta": {
+  "state": "Wisconsin",
+  "kind": "statewide",
+  "generated": "2026-11-18",
+  "done": true,
+  "urls_attempted": 24,
+  "urls_verified": 22,
+  "searched": [
+   "Read the federal monthly generator file for September 2026 for every Wisconsin gas and oil generator and matched each plant to GEM, which turned up Fitchburg and Elk Mound as operating plants GEM lacks and the missing 2004 block at Riverside.",
+   "Read the MISO queue file in full and answered all 44 Wisconsin requests that need an answer, adding four gas requests that no GEM plant covers.",
+   "Read the state draft Strategic Energy Assessment of June 2026 in full, including Table 2-2 on fuel switches and Table B-8 on planned gas additions, and tied every row to a GEM plant or a batch record.",
+   "Read WEC Energy Group's September and November 2026 investor presentations, Alliant's 2025 annual report and third quarter 2026 report, Madison Gas and Electric's 2025 annual report, Dairyland's 2025 annual report, WPPI Energy's Powering Ahead page and State of WPPI 2025 report, and Xcel's 2024 Upper Midwest plan.",
+   "Read the state utility commission dockets harvested for the scope and answered the 22 that matched no GEM plant; none is new gas generation. The Custer engine docket 2345-CE-100 was withdrawn in January 2022 and the Custer turbine is 24.5 MW, below the threshold.",
+   "Read the state air permits for the data center campuses at Mount Pleasant, Port Washington, Beaver Dam and Madison, and the city, village and county meeting records harvested for Kenosha, Caledonia, Racine, Beaver Dam, Port Washington and Milwaukee.",
+   "Checked the 45 active Wisconsin power plant air facilities in the federal enforcement database and the 46 Wisconsin turbine and engine permits in the federal control technology clearinghouse against GEM; every one not in GEM is below 50 MW, never built or not a power plant.",
+   "Searched the state business registry for the project companies of Red Oak Ridge, Foundry Ridge, Forest Junction, Union Depot and Port Washington, and for names tied to the new queue requests.",
+   "Searched the Milwaukee Journal Sentinel and the Wisconsin Examiner for gas plant, power plant, combustion turbine and data center stories since 2024 and tied each project they name to GEM."
+  ],
+  "irp_summary": [
+   "State draft Strategic Energy Assessment 2026: 5,400 MW of new or upgraded gas by 2032; every named row is in GEM or this batch, and the Gas TBD rows are on the watch list.",
+   "WEC Energy Group: South Oak Creek, Paris engines, Port Washington upgrade, Foundry Ridge, Red Oak Ridge, Elm Road and Weston gas switches and Fox North are in GEM; about 917 MW of unnamed turbines and engines is on the watch list.",
+   "Alliant: Neenah and Sheboygan Falls upgrades finished in June 2026, Edgewater 5 gas switch is in GEM, the Riverside 2004 block is added, and the Columbia gas switch is on the watch list.",
+   "Madison Gas and Electric: its shares of Elm Road, West Riverside and RockGen are in GEM, Fitchburg is added, and the Columbia gas switch is on the watch list.",
+   "Xcel Northern States Power Wisconsin: Wheaton is the only Wisconsin gas item; the firm gas resources in the 2024 Upper Midwest plan are in Minnesota.",
+   "Dairyland: Elk Mound is added; Nemadji Trail is cancelled in GEM; no other gas project is named.",
+   "WPPI Energy: about 400 MW of gas with no site is on the watch list."
+  ]
+ },
+ "qa": [
+  {
+   "gem_plant_id": "L100000401640",
+   "plant_name": "Riverside Energy Center",
+   "concern_type": "scope",
+   "question": "Should the 2004 Riverside combined cycle block become its own plant, apart from the West Riverside block that GEM now holds under this plant?",
+   "finding": "The federal generator file lists two plants at the Beloit site: plant 55641 Riverside Energy Center (CTG1, CTG2 and STG1, 674.9 MW from 2004, owned only by Wisconsin Power and Light) and plant 64020 West Riverside Energy Center (CTG3, CTG4 and STG2, 723.2 MW from 2020, shared by six owners). GEM's plant carries the West Riverside unit, its shared owners and the EIA code 55641 of the older plant.",
+   "recommendation": "Keep the 2004 block as unit CC1 at this plant for now with Wisconsin Power and Light as its owner, and ask the GOGPT team lead whether the two blocks should be split into Riverside and West Riverside plants with their own owners and EIA codes.",
+   "researcher_notes": "Open the federal file at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Filter Plant ID to 55641 for the 2004 block and to 64020 for West Riverside. The plant-level owner list in GEM gives the West Riverside shares, which do not fit the older block. Alliant's 2025 annual report lists the Riverside Energy Center as a Wisconsin Power and Light station.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Federal monthly generator file for September 2026, Operating sheet, plant 55641 Riverside Energy Center in Rock County: CTG1 198.9 MW, CTG2 198.9 MW and STG1 277.1 MW, a natural gas combined cycle, operating since June 2004, owner Wisconsin Power & Light Co. Plant 64020 West Riverside Energy Center is listed apart, with CTG3, CTG4 and STG2."
+    },
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Alliant Energy annual report for 2025. Its list of Wisconsin Power and Light generating stations names the Riverside Energy Center and gives 17.5 MW for the engines there."
+    }
+   ],
+   "proposed_value": {}
+  }
+ ],
+ "monitor": [
+  {
+   "record_id": "us-wi:plant:monitor-1",
+   "gem_plant_id": "L100000104268",
+   "plant_name": "Columbia Energy Center",
+   "watch_case": "not_committed",
+   "recheck_by": "2027-06",
+   "monitor_kind": "existing_plant",
+   "monitor_reason": "The state's draft energy assessment lists a gas conversion of both Columbia coal units in 2030, but Alliant says coal continues at least through 2030 and Madison Gas and Electric says it is only exploring the switch. No docket, permit or engineering plan exists yet.",
+   "irp": true,
+   "owner": "Wisconsin Power and Light Co; Wisconsin Public Service Corp; Madison Gas & Electric Co",
+   "capacity_mw": "1131",
+   "refs": {
+    "links": [
+     "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=595734",
+     "https://www.sec.gov/Archives/edgar/data/0000352541/000035254126000047/lnt-20260930.htm"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=595734",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Public Service Commission of Wisconsin draft Strategic Energy Assessment, June 2026. Table 2-2 lists fuel switch retrofits including Columbia 1 and 2 at 566 and 565 MW in 2030. Table B-8 lists planned gas additions and upgrades, including Gas TBD rows for Wisconsin Electric (28 MW in 2031 and 1,138 MW in 2032) and Wisconsin Public Service (28 MW in 2031)."
+    },
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/0000352541/000035254126000047/lnt-20260930.htm",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Alliant Energy quarterly report for the third quarter of 2026. It says Wisconsin Power and Light plans to continue coal operations at Edgewater Unit 5 (414 MW) and Columbia Units 1 and 2 (595 MW in aggregate) at least through 2030, and names the Riverside Energy Center."
+    }
+   ],
+   "researcher_notes": "The Public Service Commission draft Strategic Energy Assessment of June 2026, Table 2-2, lists fuel switch retrofits for Columbia 1 and 2 at 566 and 565 MW in 2030. Alliant's quarterly report for the third quarter of 2026 says Wisconsin Power and Light plans to keep coal operations at Columbia Units 1 and 2 at least through 2030. Madison Gas and Electric's 2025 annual report says it is exploring converting the Columbia Energy Center from coal to natural gas. GEM has Columbia only as a coal plant. Recheck for a construction or conversion docket at the state utility commission and a state air permit application."
+  },
+  {
+   "record_id": "us-wi:plant:monitor-2",
+   "plant_name": "We Energies and Wisconsin Public Service unnamed gas additions 2031 to 2032",
+   "watch_case": "not_committed",
+   "recheck_by": "2027-03",
+   "monitor_kind": "new_to_tracker",
+   "monitor_reason": "WEC Energy Group's capital plan counts more combustion turbine and engine capacity than its named projects add up to, and the state energy assessment lists Gas TBD rows with no site. No project or site is described.",
+   "irp": true,
+   "owner": "Wisconsin Electric Power Co; Wisconsin Public Service Corp",
+   "capacity_mw": "917",
+   "refs": {
+    "links": [
+     "https://www.sec.gov/Archives/edgar/data/783325/000078332526000109/a112026november.htm",
+     "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=595734"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/783325/000078332526000109/a112026november.htm",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "WEC Energy Group investor presentation filed with the SEC in November 2026. The capital plan slide lists combined cycle gas of 750 MW and combustion turbines and engines of 3,540 MW."
+    },
+    {
+     "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=595734",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Public Service Commission of Wisconsin draft Strategic Energy Assessment, June 2026. Table 2-2 lists fuel switch retrofits including Columbia 1 and 2 at 566 and 565 MW in 2030. Table B-8 lists planned gas additions and upgrades, including Gas TBD rows for Wisconsin Electric (28 MW in 2031 and 1,138 MW in 2032) and Wisconsin Public Service (28 MW in 2031)."
+    }
+   ],
+   "researcher_notes": "WEC Energy Group's November 2026 investor presentation lists 3,540 MW of combustion turbines and engines in its capital plan. The named projects add to 2,623 MW: South Oak Creek 1,100 MW, Red Oak Ridge 1,125 MW, Foundry Ridge 270 MW and the Paris engines 128 MW. That leaves about 917 MW unnamed. The Public Service Commission draft Strategic Energy Assessment, Table B-8, lists Gas TBD rows of 28 MW in 2031 for Wisconsin Electric, 28 MW in 2031 for Wisconsin Public Service and 1,138 MW in 2032 for Wisconsin Electric, with no site. Recheck the commission filing system for new construction dockets under utility numbers 6630 and 6690 and the next investor update."
+  },
+  {
+   "record_id": "us-wi:plant:monitor-3",
+   "plant_name": "WPPI Energy planned gas capacity",
+   "watch_case": "not_committed",
+   "recheck_by": "2027-06",
+   "monitor_kind": "new_to_tracker",
+   "monitor_reason": "WPPI Energy says it plans about 400 MW of new gas-fired capacity but names no site, unit or date beyond its planning horizon.",
+   "irp": true,
+   "owner": "WPPI Energy",
+   "capacity_mw": "400",
+   "refs": {
+    "links": [
+     "https://wppienergy.org/powering-ahead/"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://wppienergy.org/powering-ahead/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "WPPI Energy page Powering Ahead. It says WPPI plans about 400 MW of new gas-fired capacity and names no site."
+    }
+   ],
+   "researcher_notes": "WPPI Energy's Powering Ahead page says it plans about 400 MW of new gas-fired capacity. Its State of WPPI 2025 report, 27 pages, shows a chart of peak demand and capacity for 2026 to 2035 and names no gas unit. Searches of the state utility commission filing system, the state air permit system and the queue file found no WPPI gas project. Recheck WPPI's next annual report and the commission filing system."
+  }
+ ],
+ "newplants": [
+  {
+   "record_id": "us-wi:new:fitchburg-power-station",
+   "plant_name": "Fitchburg power station",
+   "gem_plant_id": "",
+   "country": "United States",
+   "fields": {
+    "State/Province": "Wisconsin",
+    "Local area (taluk, county)": "Dane",
+    "City": "Fitchburg",
+    "Latitude": "43.0147",
+    "Longitude": "-89.4603",
+    "Location accuracy": "approximate",
+    "Owner(s)": "Madison Gas & Electric Co [100%]"
+   },
+   "refs": {
+    "Location Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Federal monthly generator file for September 2026, Operating sheet, plant 3991 Fitchburg in Dane County: generators 1 and 2, each 28.8 MW, natural gas combustion turbines, operating since May 1973, owner Madison Gas & Electric Co, latitude 43.0147 and longitude -89.4603."
+    },
+    {
+     "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "State air permit document for the Madison Gas and Electric Fitchburg combustion turbine site at 5701 McKee Road in Dane County. It describes simple cycle combustion turbines that burn natural gas with distillate oil as the backup fuel, each with a design rating of 24.25 MWe."
+    }
+   ],
+   "tier": "high",
+   "researcher_notes": "GEM does not list this plant. The federal monthly generator file for September 2026 (Operating sheet, plant 3991) lists two natural gas combustion turbines at Fitchburg in Dane County, generators 1 and 2, each 28.8 MW, 57.6 MW in all. Both have run since May 1973 and are owned by Madison Gas & Electric Co. The state air permit for the site at 5701 McKee Road says the turbines burn natural gas with distillate oil as the backup fuel. The coordinates come from the federal file and are left approximate, because nobody has checked the point on a satellite image.",
+   "action": "Add a new plant, Fitchburg power station, with two operating gas turbine units of 28.8 MW each. Put EIA: 3991 in Other IDs.",
+   "irp": false,
+   "checks": [],
+   "units": [
+    {
+     "unit_name": "1",
+     "fields": {
+      "Unit name": "1",
+      "Fuel": "fossil gas: natural gas, fossil liquids: fuel oil",
+      "Capacity (MW)": "28.8",
+      "Status": "operating",
+      "Start year": "1973",
+      "Turbine/Engine Technology": "gas turbine"
+     },
+     "refs": {
+      "Capacity Data Source": [
+       "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+      ],
+      "Fuel Data Source": [
+       "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090"
+      ],
+      "Status Data Source": [
+       "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+      ],
+      "Start Year Data Source": [
+       "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+      ],
+      "Turbine/Engine Technology Data Source": [
+       "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+      ]
+     },
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Federal monthly generator file for September 2026, Operating sheet, plant 3991 Fitchburg in Dane County: generators 1 and 2, each 28.8 MW, natural gas combustion turbines, operating since May 1973, owner Madison Gas & Electric Co, latitude 43.0147 and longitude -89.4603."
+      },
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "State air permit document for the Madison Gas and Electric Fitchburg combustion turbine site at 5701 McKee Road in Dane County. It describes simple cycle combustion turbines that burn natural gas with distillate oil as the backup fuel, each with a design rating of 24.25 MWe."
+      }
+     ],
+     "milestones": [
+      {
+       "status": "operating",
+       "year": "1973",
+       "period": "May",
+       "sources": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "The federal monthly generator file gives operating month 5 and year 1973 for this generator."
+      }
+     ],
+     "action": "Add unit 1: 28.8 MW, operating since 1973, natural gas with fuel oil backup, gas turbine.",
+     "researcher_notes": "Federal monthly generator file for September 2026, Operating sheet, plant 3991, generator 1: 28.8 MW, natural gas combustion turbine, operating month 5 of 1973. The fuel oil backup is in the state air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090."
+    },
+    {
+     "unit_name": "2",
+     "fields": {
+      "Unit name": "2",
+      "Fuel": "fossil gas: natural gas, fossil liquids: fuel oil",
+      "Capacity (MW)": "28.8",
+      "Status": "operating",
+      "Start year": "1973",
+      "Turbine/Engine Technology": "gas turbine"
+     },
+     "refs": {
+      "Capacity Data Source": [
+       "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+      ],
+      "Fuel Data Source": [
+       "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090"
+      ],
+      "Status Data Source": [
+       "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+      ],
+      "Start Year Data Source": [
+       "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+      ],
+      "Turbine/Engine Technology Data Source": [
+       "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+      ]
+     },
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Federal monthly generator file for September 2026, Operating sheet, plant 3991 Fitchburg in Dane County: generators 1 and 2, each 28.8 MW, natural gas combustion turbines, operating since May 1973, owner Madison Gas & Electric Co, latitude 43.0147 and longitude -89.4603."
+      },
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "State air permit document for the Madison Gas and Electric Fitchburg combustion turbine site at 5701 McKee Road in Dane County. It describes simple cycle combustion turbines that burn natural gas with distillate oil as the backup fuel, each with a design rating of 24.25 MWe."
+      }
+     ],
+     "milestones": [
+      {
+       "status": "operating",
+       "year": "1973",
+       "period": "May",
+       "sources": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "The federal monthly generator file gives operating month 5 and year 1973 for this generator."
+      }
+     ],
+     "action": "Add unit 2: 28.8 MW, operating since 1973, natural gas with fuel oil backup, gas turbine.",
+     "researcher_notes": "Federal monthly generator file for September 2026, Operating sheet, plant 3991, generator 2: 28.8 MW, natural gas combustion turbine, operating month 5 of 1973. The fuel oil backup is in the state air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090."
+    }
+   ]
+  },
+  {
+   "record_id": "us-wi:new:elk-mound-power-station",
+   "plant_name": "Elk Mound power station",
+   "gem_plant_id": "",
+   "country": "United States",
+   "fields": {
+    "State/Province": "Wisconsin",
+    "Local area (taluk, county)": "Chippewa",
+    "City": "Elk Mound",
+    "Latitude": "44.902814",
+    "Longitude": "-91.5681",
+    "Location accuracy": "approximate",
+    "Owner(s)": "Dairyland Power Cooperative [100%]"
+   },
+   "refs": {
+    "Location Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Federal monthly generator file for September 2026, Operating sheet, plant 7863 Elk Mound in Chippewa County: generators 1 and 2, each 35.5 MW, natural gas combustion turbines, operating since June 2001, owner Dairyland Power Coop, latitude 44.902814 and longitude -91.5681."
+    },
+    {
+     "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "State air permit document for the Dairyland Power Cooperative Elk Mound generation facility at 4101 50th Street in Chippewa County. It lists the simple cycle combustion turbines, which burn natural gas with distillate oil as the backup fuel."
+    },
+    {
+     "url": "https://dairylandpower.com/sites/default/files/PDFs/Annual%20Reports/DPC_AnnualReport2025-WEB.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Dairyland Power Cooperative 2025 annual report. Its list of generating resources names the Elk Mound station."
+    }
+   ],
+   "tier": "high",
+   "researcher_notes": "GEM does not list this plant. The federal monthly generator file for September 2026 (Operating sheet, plant 7863) lists two natural gas combustion turbines at Elk Mound in Chippewa County, generators 1 and 2, each 35.5 MW, 71 MW in all, running since June 2001 and owned by Dairyland Power Cooperative. The state air permit for the site at 4101 50th Street says the turbines burn natural gas with distillate oil as the backup fuel. Dairyland's 2025 annual report also lists Elk Mound among its stations. The same federal file lists generators 3 and 4 at Elk Mound on its canceled or postponed sheet, so they are left out. The coordinates come from the federal file and are left approximate.",
+   "action": "Add a new plant, Elk Mound power station, with two operating gas turbine units of 35.5 MW each. Put EIA: 7863 in Other IDs.",
+   "irp": false,
+   "checks": [],
+   "units": [
+    {
+     "unit_name": "1",
+     "fields": {
+      "Unit name": "1",
+      "Fuel": "fossil gas: natural gas, fossil liquids: fuel oil",
+      "Capacity (MW)": "35.5",
+      "Status": "operating",
+      "Start year": "2001",
+      "Turbine/Engine Technology": "gas turbine"
+     },
+     "refs": {
+      "Capacity Data Source": [
+       "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+      ],
+      "Fuel Data Source": [
+       "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127"
+      ],
+      "Status Data Source": [
+       "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+      ],
+      "Start Year Data Source": [
+       "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+      ],
+      "Turbine/Engine Technology Data Source": [
+       "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+      ]
+     },
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Federal monthly generator file for September 2026, Operating sheet, plant 7863 Elk Mound in Chippewa County: generators 1 and 2, each 35.5 MW, natural gas combustion turbines, operating since June 2001, owner Dairyland Power Coop, latitude 44.902814 and longitude -91.5681."
+      },
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "State air permit document for the Dairyland Power Cooperative Elk Mound generation facility at 4101 50th Street in Chippewa County. It lists the simple cycle combustion turbines, which burn natural gas with distillate oil as the backup fuel."
+      }
+     ],
+     "milestones": [
+      {
+       "status": "operating",
+       "year": "2001",
+       "period": "June",
+       "sources": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "The federal monthly generator file gives operating month 6 and year 2001 for this generator."
+      }
+     ],
+     "action": "Add unit 1: 35.5 MW, operating since 2001, natural gas with fuel oil backup, gas turbine.",
+     "researcher_notes": "Federal monthly generator file for September 2026, Operating sheet, plant 7863, generator 1: 35.5 MW, natural gas combustion turbine, operating month 6 of 2001. The fuel oil backup is in the state air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127."
+    },
+    {
+     "unit_name": "2",
+     "fields": {
+      "Unit name": "2",
+      "Fuel": "fossil gas: natural gas, fossil liquids: fuel oil",
+      "Capacity (MW)": "35.5",
+      "Status": "operating",
+      "Start year": "2001",
+      "Turbine/Engine Technology": "gas turbine"
+     },
+     "refs": {
+      "Capacity Data Source": [
+       "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+      ],
+      "Fuel Data Source": [
+       "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127"
+      ],
+      "Status Data Source": [
+       "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+      ],
+      "Start Year Data Source": [
+       "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+      ],
+      "Turbine/Engine Technology Data Source": [
+       "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+      ]
+     },
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Federal monthly generator file for September 2026, Operating sheet, plant 7863 Elk Mound in Chippewa County: generators 1 and 2, each 35.5 MW, natural gas combustion turbines, operating since June 2001, owner Dairyland Power Coop, latitude 44.902814 and longitude -91.5681."
+      },
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "State air permit document for the Dairyland Power Cooperative Elk Mound generation facility at 4101 50th Street in Chippewa County. It lists the simple cycle combustion turbines, which burn natural gas with distillate oil as the backup fuel."
+      }
+     ],
+     "milestones": [
+      {
+       "status": "operating",
+       "year": "2001",
+       "period": "June",
+       "sources": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "The federal monthly generator file gives operating month 6 and year 2001 for this generator."
+      }
+     ],
+     "action": "Add unit 2: 35.5 MW, operating since 2001, natural gas with fuel oil backup, gas turbine.",
+     "researcher_notes": "Federal monthly generator file for September 2026, Operating sheet, plant 7863, generator 2: 35.5 MW, natural gas combustion turbine, operating month 6 of 2001. The fuel oil backup is in the state air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127."
+    }
+   ]
+  },
+  {
+   "record_id": "us-wi:new:miso-j4164-north-madison-345-kilovolt-gas-power-station",
+   "plant_name": "MISO J4164 North Madison 345 kilovolt gas power station",
+   "gem_plant_id": "",
+   "country": "United States",
+   "fields": {
+    "State/Province": "Wisconsin",
+    "Local area (taluk, county)": "Dane"
+   },
+   "refs": {
+    "Location Data Source": [
+     "https://www.misoenergy.org/api/giqueue/getprojects"
+    ]
+   },
+   "not_found": {
+    "Latitude": "The MISO queue file gives only the county and the substation for request J4164. No permit, docket or news item gives a site, so no point can be placed.",
+    "Longitude": "The MISO queue file gives only the county and the substation for request J4164. No permit, docket or news item gives a site, so no point can be placed.",
+    "Location accuracy": "No coordinates are given for request J4164, because no source gives a site beyond the county in the MISO queue file.",
+    "Owner(s)": "The MISO queue file hides the applicant for request J4164. The state utility commission filing system, the state air permit system, the state business registry and news name no company for it."
+   },
+   "verifications": [
+    {
+     "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "MISO interconnection queue file read on 2026-11-18, request J4164: Dane County, fuel Gas, simple cycle combustion turbine, 1,203 MW, point of interconnection North Madison 345/138 kV, queued September 29, 2025, requested in service date May 1, 2030, active in the 2025 study cycle."
+    }
+   ],
+   "tier": "medium",
+   "researcher_notes": "GEM does not list this project. The MISO interconnection queue file read on 2026-11-18 shows request J4164: Dane County, fuel Gas, simple cycle combustion turbine, 1,203 MW, point of interconnection North Madison 345/138 kV, queued September 29, 2025, requested in service date May 1, 2030, active in the 2025 study cycle. No developer is named in the queue file. Searches of the state utility commission filing system, the state air permit system and news found no project at the North Madison substation. Neither We Energies nor Alliant nor Madison Gas and Electric names a plant this size in Dane County in its 2026 plans. The plant name is made from the queue number and the substation until a developer names it.",
+   "action": "Add a new plant from MISO request J4164 with one announced unit of 1203 MW. Put MISO J4164 in Other IDs.",
+   "irp": false,
+   "checks": [],
+   "units": [
+    {
+     "unit_name": "1",
+     "fields": {
+      "Unit name": "1",
+      "Fuel": "fossil gas: natural gas",
+      "Capacity (MW)": "1203",
+      "Status": "announced",
+      "Start year": "2030",
+      "Turbine/Engine Technology": "gas turbine"
+     },
+     "refs": {
+      "Capacity Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ],
+      "Fuel Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ],
+      "Status Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ],
+      "Start Year Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ],
+      "Turbine/Engine Technology Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+     },
+     "verifications": [
+      {
+       "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "MISO interconnection queue file read on 2026-11-18, request J4164: Dane County, fuel Gas, simple cycle combustion turbine, 1,203 MW, point of interconnection North Madison 345/138 kV, queued September 29, 2025, requested in service date May 1, 2030, active in the 2025 study cycle."
+      }
+     ],
+     "milestones": [
+      {
+       "status": "announced",
+       "year": "2025",
+       "period": "September",
+       "sources": [
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+       ],
+       "note": "MISO request J4164 entered the queue in September 2025."
+      }
+     ],
+     "action": "Add unit 1: 1203 MW, announced, natural gas, simple cycle combustion turbine, start year 2030.",
+     "researcher_notes": "MISO interconnection queue file, request J4164: fuel Gas, simple cycle combustion turbine, 1203 MW, requested in service date in 2030. A queue entry sets the status to announced."
+    }
+   ]
+  },
+  {
+   "record_id": "us-wi:new:miso-j4165-kenosha-county-gas-power-station",
+   "plant_name": "MISO J4165 Kenosha County gas power station",
+   "gem_plant_id": "",
+   "country": "United States",
+   "fields": {
+    "State/Province": "Wisconsin",
+    "Local area (taluk, county)": "Kenosha"
+   },
+   "refs": {
+    "Location Data Source": [
+     "https://www.misoenergy.org/api/giqueue/getprojects"
+    ]
+   },
+   "not_found": {
+    "Latitude": "The MISO queue file gives only the county and the substation for request J4165. No permit, docket or news item gives a site, so no point can be placed.",
+    "Longitude": "The MISO queue file gives only the county and the substation for request J4165. No permit, docket or news item gives a site, so no point can be placed.",
+    "Location accuracy": "No coordinates are given for request J4165, because no source gives a site beyond the county in the MISO queue file.",
+    "Owner(s)": "The MISO queue file hides the applicant for request J4165. The state utility commission filing system, the state air permit system, the state business registry and news name no company for it."
+   },
+   "verifications": [
+    {
+     "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "MISO interconnection queue file read on 2026-11-18, request J4165: Kenosha County, fuel Gas, simple cycle combustion turbine, 1,203 MW, point of interconnection shown only as Other, queued September 29, 2025, requested in service date May 1, 2030, active."
+    }
+   ],
+   "tier": "medium",
+   "researcher_notes": "GEM does not list this project. The MISO interconnection queue file read on 2026-11-18 shows request J4165: Kenosha County, fuel Gas, simple cycle combustion turbine, 1,203 MW, point of interconnection shown only as Other, queued September 29, 2025, requested in service date May 1, 2030, active. No developer is named in the queue file. It is not Red Oak Ridge, which has its own requests and is in GEM, and not the Paris engines, which are request S1090 and J3936. Searches of the state utility commission filing system, the state air permit system, the Kenosha County and Village of Pleasant Prairie and Town of Paris meeting records and news found no other project of this size. The plant name is made from the queue number and the substation until a developer names it.",
+   "action": "Add a new plant from MISO request J4165 with one announced unit of 1203 MW. Put MISO J4165 in Other IDs.",
+   "irp": false,
+   "checks": [],
+   "units": [
+    {
+     "unit_name": "1",
+     "fields": {
+      "Unit name": "1",
+      "Fuel": "fossil gas: natural gas",
+      "Capacity (MW)": "1203",
+      "Status": "announced",
+      "Start year": "2030",
+      "Turbine/Engine Technology": "gas turbine"
+     },
+     "refs": {
+      "Capacity Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ],
+      "Fuel Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ],
+      "Status Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ],
+      "Start Year Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ],
+      "Turbine/Engine Technology Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+     },
+     "verifications": [
+      {
+       "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "MISO interconnection queue file read on 2026-11-18, request J4165: Kenosha County, fuel Gas, simple cycle combustion turbine, 1,203 MW, point of interconnection shown only as Other, queued September 29, 2025, requested in service date May 1, 2030, active."
+      }
+     ],
+     "milestones": [
+      {
+       "status": "announced",
+       "year": "2025",
+       "period": "September",
+       "sources": [
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+       ],
+       "note": "MISO request J4165 entered the queue in September 2025."
+      }
+     ],
+     "action": "Add unit 1: 1203 MW, announced, natural gas, simple cycle combustion turbine, start year 2030.",
+     "researcher_notes": "MISO interconnection queue file, request J4165: fuel Gas, simple cycle combustion turbine, 1203 MW, requested in service date in 2030. A queue entry sets the status to announced."
+    }
+   ]
+  },
+  {
+   "record_id": "us-wi:new:miso-j4115-south-fond-du-lac-fitzgerald-345-kilovolt-gas-power-station",
+   "plant_name": "MISO J4115 South Fond du Lac Fitzgerald 345 kilovolt gas power station",
+   "gem_plant_id": "",
+   "country": "United States",
+   "fields": {
+    "State/Province": "Wisconsin",
+    "Local area (taluk, county)": "Fond du Lac"
+   },
+   "refs": {
+    "Location Data Source": [
+     "https://www.misoenergy.org/api/giqueue/getprojects"
+    ]
+   },
+   "not_found": {
+    "Latitude": "The MISO queue file gives only the county and the substation for request J4115. No permit, docket or news item gives a site, so no point can be placed.",
+    "Longitude": "The MISO queue file gives only the county and the substation for request J4115. No permit, docket or news item gives a site, so no point can be placed.",
+    "Location accuracy": "No coordinates are given for request J4115, because no source gives a site beyond the county in the MISO queue file.",
+    "Owner(s)": "The MISO queue file hides the applicant for request J4115. The state utility commission filing system, the state air permit system, the state business registry and news name no company for it."
+   },
+   "verifications": [
+    {
+     "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "MISO interconnection queue file read on 2026-11-18, request J4115: Fond du Lac County, fuel Gas, simple cycle combustion turbine, 525 MW, point of interconnection South Fond du Lac to Fitzgerald 345 kV line, queued October 6, 2025, requested in service date June 30, 2028, active."
+    }
+   ],
+   "tier": "medium",
+   "researcher_notes": "GEM does not list this project. The MISO interconnection queue file read on 2026-11-18 shows request J4115: Fond du Lac County, fuel Gas, simple cycle combustion turbine, 525 MW, point of interconnection South Fond du Lac to Fitzgerald 345 kV line, queued October 6, 2025, requested in service date June 30, 2028, active. No developer is named in the queue file. GEM's South Fond du Lac plant has four older turbines of about 350 MW in all, and no source ties a 525 MW addition to it. Searches of the state utility commission filing system, the state air permit system and news found no project. The plant name is made from the queue number and the substation until a developer names it.",
+   "action": "Add a new plant from MISO request J4115 with one announced unit of 525 MW. Put MISO J4115 in Other IDs.",
+   "irp": false,
+   "checks": [],
+   "units": [
+    {
+     "unit_name": "1",
+     "fields": {
+      "Unit name": "1",
+      "Fuel": "fossil gas: natural gas",
+      "Capacity (MW)": "525",
+      "Status": "announced",
+      "Start year": "2028",
+      "Turbine/Engine Technology": "gas turbine"
+     },
+     "refs": {
+      "Capacity Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ],
+      "Fuel Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ],
+      "Status Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ],
+      "Start Year Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ],
+      "Turbine/Engine Technology Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+     },
+     "verifications": [
+      {
+       "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "MISO interconnection queue file read on 2026-11-18, request J4115: Fond du Lac County, fuel Gas, simple cycle combustion turbine, 525 MW, point of interconnection South Fond du Lac to Fitzgerald 345 kV line, queued October 6, 2025, requested in service date June 30, 2028, active."
+      }
+     ],
+     "milestones": [
+      {
+       "status": "announced",
+       "year": "2025",
+       "period": "October",
+       "sources": [
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+       ],
+       "note": "MISO request J4115 entered the queue in October 2025."
+      }
+     ],
+     "action": "Add unit 1: 525 MW, announced, natural gas, simple cycle combustion turbine, start year 2028.",
+     "researcher_notes": "MISO interconnection queue file, request J4115: fuel Gas, simple cycle combustion turbine, 525 MW, requested in service date in 2028. A queue entry sets the status to announced."
+    }
+   ]
+  },
+  {
+   "record_id": "us-wi:new:miso-j4116-sugar-creek-345-kilovolt-gas-power-station",
+   "plant_name": "MISO J4116 Sugar Creek 345 kilovolt gas power station",
+   "gem_plant_id": "",
+   "country": "United States",
+   "fields": {
+    "State/Province": "Wisconsin",
+    "Local area (taluk, county)": "Walworth"
+   },
+   "refs": {
+    "Location Data Source": [
+     "https://www.misoenergy.org/api/giqueue/getprojects"
+    ]
+   },
+   "not_found": {
+    "Latitude": "The MISO queue file gives only the county and the substation for request J4116. No permit, docket or news item gives a site, so no point can be placed.",
+    "Longitude": "The MISO queue file gives only the county and the substation for request J4116. No permit, docket or news item gives a site, so no point can be placed.",
+    "Location accuracy": "No coordinates are given for request J4116, because no source gives a site beyond the county in the MISO queue file.",
+    "Owner(s)": "The MISO queue file hides the applicant for request J4116. The state utility commission filing system, the state air permit system, the state business registry and news name no company for it."
+   },
+   "verifications": [
+    {
+     "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "MISO interconnection queue file read on 2026-11-18, request J4116: Walworth County, fuel Gas, combined cycle, 950 MW, point of interconnection Sugar Creek 345 kV, queued October 6, 2025, requested in service date December 31, 2030, active."
+    }
+   ],
+   "tier": "medium",
+   "researcher_notes": "GEM does not list this project. The MISO interconnection queue file read on 2026-11-18 shows request J4116: Walworth County, fuel Gas, combined cycle, 950 MW, point of interconnection Sugar Creek 345 kV, queued October 6, 2025, requested in service date December 31, 2030, active. No developer is named in the queue file. It is not Foundry Ridge, a 270 MW turbine plant at the North Creek substation that is in GEM, and not Fox North, a 750 MW combined cycle in Outagamie County. Searches of the state utility commission filing system, the state air permit system, the Walworth County meeting records and news found no project at Sugar Creek. The plant name is made from the queue number and the substation until a developer names it.",
+   "action": "Add a new plant from MISO request J4116 with one announced unit of 950 MW. Put MISO J4116 in Other IDs.",
+   "irp": false,
+   "checks": [],
+   "units": [
+    {
+     "unit_name": "1",
+     "fields": {
+      "Unit name": "1",
+      "Fuel": "fossil gas: natural gas",
+      "Capacity (MW)": "950",
+      "Status": "announced",
+      "Start year": "2030",
+      "Turbine/Engine Technology": "combined cycle"
+     },
+     "refs": {
+      "Capacity Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ],
+      "Fuel Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ],
+      "Status Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ],
+      "Start Year Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ],
+      "Turbine/Engine Technology Data Source": [
+       "https://www.misoenergy.org/api/giqueue/getprojects"
+      ]
+     },
+     "verifications": [
+      {
+       "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "MISO interconnection queue file read on 2026-11-18, request J4116: Walworth County, fuel Gas, combined cycle, 950 MW, point of interconnection Sugar Creek 345 kV, queued October 6, 2025, requested in service date December 31, 2030, active."
+      }
+     ],
+     "milestones": [
+      {
+       "status": "announced",
+       "year": "2025",
+       "period": "October",
+       "sources": [
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+       ],
+       "note": "MISO request J4116 entered the queue in October 2025."
+      }
+     ],
+     "action": "Add unit 1: 950 MW, announced, natural gas, combined cycle, start year 2030.",
+     "researcher_notes": "MISO interconnection queue file, request J4116: fuel Gas, combined cycle, 950 MW, requested in service date in 2030. A queue entry sets the status to announced."
+    }
+   ]
+  }
+ ],
+ "newunits": [
+  {
+   "gem_plant_id": "L100000401640",
+   "plant_name": "Riverside Energy Center",
+   "unit_name": "CC1",
+   "record_id": "L100000401640:new:cc1",
+   "fields": {
+    "Unit name": "CC1",
+    "Fuel": "fossil gas: natural gas",
+    "Capacity (MW)": "674.9",
+    "Status": "operating",
+    "Turbine/Engine Technology": "combined cycle",
+    "Owner(s)": "Wisconsin Power and Light Co [100%]",
+    "Start year": "2004"
+   },
+   "refs": {
+    "Capacity Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ],
+    "Fuel Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1293067"
+    ],
+    "Status Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ],
+    "Turbine/Engine Technology Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1293067"
+    ],
+    "Owners Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm"
+    ],
+    "Start Year Data Source": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Federal monthly generator file for September 2026, Operating sheet, plant 55641 Riverside Energy Center in Rock County: CTG1 198.9 MW, CTG2 198.9 MW and STG1 277.1 MW, a natural gas combined cycle, operating since June 2004, owner Wisconsin Power & Light Co. Plant 64020 West Riverside Energy Center is listed apart, with CTG3, CTG4 and STG2."
+    },
+    {
+     "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1293067",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "State air permit document for the Riverside Energy Center in Beloit, Rock County. It covers the four natural gas-fired combined cycle turbines at the site and the project to raise the output of the 2004 block from 625 MW."
+    },
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Alliant Energy annual report for 2025. Its list of Wisconsin Power and Light generating stations names the Riverside Energy Center and gives 17.5 MW for the engines there."
+    }
+   ],
+   "tier": "high",
+   "irp": false,
+   "checks": [],
+   "milestones": [
+    {
+     "status": "operating",
+     "year": "2004",
+     "period": "June",
+     "sources": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "note": "The federal monthly generator file gives operating month 6 and year 2004 for CTG1, CTG2 and STG1 at plant 55641."
+    }
+   ],
+   "action": "Add the 2004 combined cycle block at Riverside as a new unit CC1: 674.9 MW, operating since 2004, natural gas, owned by Wisconsin Power and Light.",
+   "researcher_notes": "GEM's only gas unit at Riverside is CC_set, 723 MW from 2020, which is the newer West Riverside block (federal plant 64020, shared owners). The older block is missing. The federal monthly generator file for September 2026 (Operating sheet, plant 55641 Riverside Energy Center) lists CTG1 198.9 MW, CTG2 198.9 MW and STG1 277.1 MW, operating since June 2004 and owned by Wisconsin Power & Light Co, 674.9 MW in all. The state air permit for the site describes four gas-fired combined cycle turbines in all and a project to raise the 2004 block's output from 625 MW by replacing its turbine parts. The Public Service Commission draft Strategic Energy Assessment, Table B-8, counts that as 156 MW of Riverside upgrades in 2028, and MISO request J3156 (100 MW, Townline Road, Rock County) is its grid request. Seven 2,500 kilowatt Caterpillar black start engines (17.5 MW in Alliant's 2025 annual report) also sit at the site and are below the unit threshold."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "newplants",
+    "newunits",
+    "ids_followup",
+    "qa"
+   ],
+   "outcome": "verified",
+   "note": "federal monthly generator file, Fitchburg, Elk Mound and Riverside rows"
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090",
+   "used_for": [
+    "newplants"
+   ],
+   "outcome": "verified",
+   "note": "Fitchburg air permit"
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127",
+   "used_for": [
+    "newplants"
+   ],
+   "outcome": "verified",
+   "note": "Elk Mound air permit"
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1293067",
+   "used_for": [
+    "newunits"
+   ],
+   "outcome": "verified",
+   "note": "Riverside air permit"
+  },
+  {
+   "url": "https://dairylandpower.com/sites/default/files/PDFs/Annual%20Reports/DPC_AnnualReport2025-WEB.pdf",
+   "used_for": [
+    "newplants",
+    "irp_plans"
+   ],
+   "outcome": "verified",
+   "note": "Dairyland 2025 annual report"
+  },
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm",
+   "used_for": [
+    "newunits",
+    "qa",
+    "irp_plans"
+   ],
+   "outcome": "verified",
+   "note": "Alliant 2025 annual report"
+  },
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/0000352541/000035254126000047/lnt-20260930.htm",
+   "used_for": [
+    "monitor",
+    "irp_plans"
+   ],
+   "outcome": "verified",
+   "note": "Alliant third quarter 2026 report"
+  },
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/783325/000078332526000109/a112026november.htm",
+   "used_for": [
+    "monitor",
+    "irp_plans"
+   ],
+   "outcome": "verified",
+   "note": "WEC November 2026 investor presentation"
+  },
+  {
+   "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=595734",
+   "used_for": [
+    "monitor",
+    "irp_plans"
+   ],
+   "outcome": "verified",
+   "note": "state draft energy assessment"
+  },
+  {
+   "url": "https://wppienergy.org/powering-ahead/",
+   "used_for": [
+    "monitor",
+    "irp_plans"
+   ],
+   "outcome": "verified",
+   "note": "WPPI Powering Ahead page"
+  },
+  {
+   "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+   "used_for": [
+    "newplants",
+    "queues"
+   ],
+   "outcome": "verified",
+   "note": "MISO queue file"
+  },
+  {
+   "url": "https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/",
+   "used_for": [
+    "queues"
+   ],
+   "outcome": "verified",
+   "note": "MISO queue page"
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1292621",
+   "used_for": [
+    "data_centers"
+   ],
+   "outcome": "verified",
+   "note": "CLOP Madison generator permit"
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1246318",
+   "used_for": [
+    "data_centers"
+   ],
+   "outcome": "verified",
+   "note": "Degas Beaver Dam generator permit"
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1287957",
+   "used_for": [
+    "data_centers"
+   ],
+   "outcome": "verified",
+   "note": "Microsoft Mount Pleasant permit"
+  },
+  {
+   "url": "https://www.wpr.org/news/kenosha-area-residents-data-center-moratorium-pause-microsoft-development",
+   "used_for": [
+    "data_centers"
+   ],
+   "outcome": "verified",
+   "note": "Kenosha data center news"
+  },
+  {
+   "url": "https://biztimes.com/microsoft-drops-plans-for-caledonia-data-center-but-is-looking-for-a-new-site/",
+   "used_for": [
+    "data_centers"
+   ],
+   "outcome": "verified",
+   "note": "Caledonia data center news"
+  },
+  {
+   "url": "https://dnr.wisconsin.gov/topic/EIA/PortWashington.html",
+   "used_for": [
+    "data_centers"
+   ],
+   "outcome": "verified",
+   "note": "Port Washington environmental analysis page"
+  },
+  {
+   "url": "https://www.cleanwisconsin.org/psc-approves-plan-to-power-ai-data-center-with-gas-plants-bringing-1200-mw-of-new-dirty-power-to-southeast-wisconsin/",
+   "used_for": [
+    "data_centers"
+   ],
+   "outcome": "verified",
+   "note": "South Oak Creek approval release"
+  },
+  {
+   "url": "https://www.powermag.com/regulators-approve-plans-for-two-new-gas-fired-plants-in-wisconsin",
+   "used_for": [
+    "data_centers"
+   ],
+   "outcome": "failed",
+   "note": "the article does not name Microsoft, so it is not used"
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1225740",
+   "used_for": [
+    "newunits"
+   ],
+   "outcome": "failed",
+   "note": "this permit document does not state the engine size; the Alliant annual report is used instead"
+  }
+ ]
+}

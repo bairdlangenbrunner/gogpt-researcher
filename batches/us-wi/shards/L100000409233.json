@@ -1,0 +1,248 @@
+{
+ "meta": {
+  "plant_id": "L100000409233",
+  "plant_name": "Wheaton power station",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T09:01:08-05:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000414077",
+   "unit_name": "6",
+   "findings": {
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1175629"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1175629",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Backup Power:\n- Open the Wisconsin Department of Natural Resources final operation permit https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1175629 . The permit record describes the plant as an 'Electrical generation peaking plant' and lists the new units as dual fuel engines of 9.37 MW and a dual fuel combustion turbine, which supply routine grid power.\n- The permit lists separate 750 kW emergency engines. Those are not the units in this record.\n- So Backup Power stays no for unit 6."
+    },
+    "Status": {
+     "value": "retired",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status:\n- Open the EIA-860M table for September 2026 https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx , sheet Retired. Plant 4014, generator 6, nameplate 53.1 MW, petroleum liquids, operating year 1973, retirement January 2024.\n- This agrees with GEM's retired status. The Environmental Integrity Project page lists the plant as under construction. That is the new repowering at units 7 to 13, not unit 6, and the page did not load for me to read its source.",
+     "milestones": [
+      {
+       "status": "retired",
+       "year": 2024,
+       "period": "January",
+       "sources": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "EIA lists generator 6 as retired in January 2024"
+      }
+     ]
+    }
+   },
+   "not_found": [],
+   "notes": "Unit 6 is retired. EIA shows retirement in January 2024, matching GEM. The EIP under construction row refers to the repowering project, not this unit."
+  },
+  {
+   "gem_unit_id": "G100001054518",
+   "unit_name": "7",
+   "findings": {
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1175629"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1175629",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Backup Power:\n- Open the Wisconsin Department of Natural Resources final operation permit https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1175629 . The permit record describes the plant as an 'Electrical generation peaking plant' and lists the new units as dual fuel engines of 9.37 MW and a dual fuel combustion turbine, which supply routine grid power.\n- The permit lists separate 750 kW emergency engines. Those are not the units in this record.\n- So Backup Power stays no for unit 7."
+    },
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status:\n- Open the EIA-860M table for September 2026 https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx , sheet Operating. Plant 4014, generator WHT08, natural gas fired combustion turbine, nameplate 249.1 MW, status OP, operating February 2026, no planned retirement.\n- The table shows no retirement, mothballing or owner change. The Sierra Club under construction label is out of date.",
+     "milestones": [
+      {
+       "status": "operating",
+       "year": 2026,
+       "period": "February",
+       "sources": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "EIA operating month 2 of 2026"
+      }
+     ]
+    }
+   },
+   "not_found": [],
+   "notes": "Unit 7 is operating per EIA since February 2026 at 249.1 MW. No retirement or owner change found."
+  },
+  {
+   "gem_unit_id": "G100001054520",
+   "unit_name": "8",
+   "findings": {
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1175629"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1175629",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Backup Power:\n- Open the Wisconsin Department of Natural Resources final operation permit https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1175629 . The permit record describes the plant as an 'Electrical generation peaking plant' and lists the new units as dual fuel engines of 9.37 MW and a dual fuel combustion turbine, which supply routine grid power.\n- The permit lists separate 750 kW emergency engines. Those are not the units in this record.\n- So Backup Power stays no for unit 8."
+    },
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status:\n- Open the EIA-860M table for September 2026 https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx , sheet Operating. Plant 4014, generators WHT09 to WHT13, natural gas internal combustion engines, 9.8 MW each, status OP, operating October 2025, no planned retirement.\n- The table shows no retirement, mothballing or owner change.",
+     "milestones": [
+      {
+       "status": "operating",
+       "year": 2025,
+       "period": "October",
+       "sources": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "EIA operating month 10 of 2025"
+      }
+     ]
+    }
+   },
+   "not_found": [],
+   "notes": "Unit 8 is the five engine set, operating since October 2025 per EIA. No change found."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001054520",
+   "concern_type": "identity",
+   "question": "Which EIA generator ids belong to Wheaton unit 8?",
+   "finding": "The EIA-860M table for September 2026 https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx , sheet Operating, lists generators WHT09, WHT10, WHT11, WHT12 and WHT13 at plant 4014. Each is a 9.8 MW natural gas internal combustion engine, operating October 2025. Together they are 49 MW, matching unit 8's five engines of 9.8 MW.",
+   "recommendation": "Record EIA ids WHT09 to WHT13 under Other IDs (unit) for unit 8, and WHT08 for unit 7. Generators 1 to 4 are the retired 1973 gas turbines of 48.5 MW, not unit 8.",
+   "note": "Generator 1, 2, 3 and 4 show retirement in May 2025. They are older units not in this record. The state utility filing on the Wisconsin Public Service Commission case page https://psc.wi.gov/Pages/CommissionActions/CasePages/WheatonRICEProject.aspx describes the repowering of the plant.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://psc.wi.gov/Pages/CommissionActions/CasePages/WheatonRICEProject.aspx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000414077",
+   "concern_type": "Status",
+   "question": "Should the Environmental Integrity Project under construction row for Wheaton be ignored?",
+   "finding": "The EIA-860M table for September 2026 https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx shows unit 6 retired in January 2024 and the repowering units 7 to 13 operating. So the under construction label is stale.",
+   "recommendation": "Leave unit 6 as retired and unit 7 and 8 as operating.",
+   "note": "The Environmental Integrity Project page https://oilandgaswatch.org/facility/rec_d4f1u68q7easr8ra1gcg did not load text I could check, so I did not read its source documents. I did not look for a link to older units 1 to 4, which EIA shows retired in May 2025 and which GEM has no record of.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001054518",
+   "concern_type": "existence",
+   "question": "Should retired Wheaton units 1 to 4 be added to GEM?",
+   "finding": "The EIA-860M table for September 2026 https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists generators 1 to 4 as natural gas combustion turbines of 48.5 MW, operating 1973, retired May 2025. GEM has no units for them.",
+   "recommendation": "Check whether they were earlier removed on purpose; they retired after 2020 so adding them as retired is allowed.",
+   "note": "Utility filings say the new plant replaces units 1 to 6. I found no filing that gives start years or owners for units 1 to 4 beyond the EIA table.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read plant 4014 rows with pandas."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1175629",
+   "used_for": [
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Permit text has peaking plant and 9.37 MW engines."
+  },
+  {
+   "url": "https://psc.wi.gov/Pages/CommissionActions/CasePages/WheatonRICEProject.aspx",
+   "used_for": [
+    "context"
+   ],
+   "outcome": "verified",
+   "note": "Case page loads."
+  },
+  {
+   "url": "https://oilandgaswatch.org/facility/rec_d4f1u68q7easr8ra1gcg",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "failed",
+   "note": "Verifier could not find the plant name; page is script drawn. Not retried through real Chrome beyond the verifier ladder."
+  }
+ ]
+}

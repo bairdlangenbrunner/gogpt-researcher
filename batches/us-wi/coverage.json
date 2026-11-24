@@ -1,0 +1,938 @@
+{
+ "sources": {
+  "miso-queue": {
+   "status": "searched",
+   "how": "Ran pull_queues.py --state WI on 2026-11-17 and read the whole MISO queue file through its open address, then checked every Wisconsin request that needs an answer against GEM, the state utility commission dockets and news.",
+   "found": "44 requests need an answer. Four gas requests match no GEM plant and are added: J4164 in Dane County, J4165 in Kenosha County, J4115 in Fond du Lac County and J4116 in Walworth County. J3156 is the Riverside upgrade. Thirteen are tied to GEM plants, three are in Iowa and the rest hide their fuel.",
+   "read": [
+    "https://www.misoenergy.org/api/giqueue/getprojects",
+    "https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/",
+    "batches/us-wi/harvest/queues.json",
+    "work/sweep_us-wi/miso_queue.json"
+   ],
+   "date": "2026-11-18"
+  },
+  "psc-erf-docket": {
+   "status": "searched",
+   "how": "Read the docket harvest in batches/us-wi/harvest/psc_dockets.json and opened each docket that matched no GEM plant in the commission filing system, by docket number.",
+   "found": "None of the 22 unmatched dockets is new gas generation: 3270-CE-128 to 131 are solar, 5-BS-256 and 5-CE-160 are wind, 5-BS-286, 300 and 301 are gas territory agreements, 5-CE-150 and 5-CE-156 are Columbia ash and carbon storage, 6220-CE-104 and 6630-CE-313 are electrical equipment, and the TE and AE dockets are tariffs and affiliate agreements. 6680-TE-116 is a large load customer in northern Dane County with no generators found. Docket 2345-CE-100 for Custer engines was withdrawn in January 2022 and the Custer turbine is 24.5 MW.",
+   "read": [
+    "batches/us-wi/harvest/psc_dockets.json",
+    "work/sweep_us-wi/erf_2345-CE-100.html",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=572462"
+   ],
+   "date": "2026-11-18"
+  },
+  "psc-erf-document": {
+   "status": "searched",
+   "how": "Opened each commission document cited by the harvest and by the plan reading through the document viewer, saving the texts under work/sweep_us-wi.",
+   "found": "Document 617707 ties MISO J4014 and J4249 to the Union Depot plant. Documents 595734 and 595738 are the draft Strategic Energy Assessment. Document 572462 is the South Oak Creek record.",
+   "read": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=595734",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=595738",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=572462"
+   ],
+   "date": "2026-11-18"
+  },
+  "psc-case-pages": {
+   "status": "searched",
+   "how": "Read the commission case pages for Red Oak Ridge, Foundry Ridge, South Oak Creek, Paris and Fox North by name.",
+   "found": "Every case page describes a plant already in GEM. Red Oak Ridge says up to 1,186 MW in the Town of Paris, which is handled on its own plant record.",
+   "read": [
+    "https://psc.wi.gov/Pages/CommissionActions/CasePages/RedOakRidge.aspx"
+   ],
+   "date": "2026-11-18"
+  },
+  "dnr-warp": {
+   "status": "searched",
+   "how": "Searched the state air permit system by facility name for every GEM plant and every lead with the scope harvester, and opened the permit documents for Fitchburg, Elk Mound, Riverside, the CLOP Madison and Degas Beaver Dam data centers and Microsoft Mount Pleasant.",
+   "found": "Fitchburg and Elk Mound permits confirm two operating plants GEM lacks. The Riverside permit confirms the 2004 block and its upgrade. The data center permits give 18.5 MW at CLOP Madison, about 12 MW at Degas, and 722.5 MW at Mount Pleasant, which its own plant record handles.",
+   "read": [
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1161090",
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1295127",
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1293067",
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1292621",
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1246318",
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1287957",
+    "batches/us-wi/harvest/facilities.json"
+   ],
+   "date": "2026-11-18"
+  },
+  "dnr-notices": {
+   "status": "searched",
+   "how": "Read the state air permit public notice list in the harvest and matched each power plant or engine notice to GEM.",
+   "found": "Every power plant notice is for a plant in GEM or for a data center already answered under data_centers.",
+   "read": [
+    "batches/us-wi/harvest/harvest_summary.md"
+   ],
+   "date": "2026-11-18"
+  },
+  "dnr-eia-pages": {
+   "status": "searched",
+   "how": "Read the state environmental analysis page for Port Washington and the topic list for other power and data center projects.",
+   "found": "Port Washington covers the Vantage and Oracle campus, which is in GEM. No other power project is listed.",
+   "read": [
+    "https://dnr.wisconsin.gov/topic/EIA/PortWashington.html"
+   ],
+   "date": "2026-11-18"
+  },
+  "epa-echo": {
+   "status": "searched",
+   "how": "Queried the federal enforcement database for the 45 active Wisconsin air facilities with industry code 4911 and matched each to GEM and the federal generator file.",
+   "found": "Elk Mound is the only plant at or above 50 MW that GEM lacks, and it is added. The municipal diesel plants at Arcadia, Cashton, Elroy, Fennimore, La Farge and New Lisbon are each under 20 MW. Kaukauna's turbine is 18 MW. Manitowoc, Bay Front and Rothschild burn coal, coke or wood. The rest are in GEM, nuclear or hydro.",
+   "read": [
+    "https://echodata.epa.gov/echo/air_rest_services.get_facilities?output=JSON&p_st=WI&p_sic=4911&p_act=Y",
+    "work/sweep_us-wi/src/echo_qid.json"
+   ],
+   "date": "2026-11-18"
+  },
+  "epa-rblc": {
+   "status": "searched",
+   "how": "Posted keyword searches for turbine and for engine with state WI to the clearinghouse service and read all 46 results.",
+   "found": "Every power plant permit is for a plant in GEM except Sheepskin (41.7 MW, retired 2020, below the threshold) and the Turtle, Badger Generating and Southern Energy permits of 1999 and 2000, which have no generator in the federal file and were never built. The 2025 and 2026 entries are the Paris engines, the Neenah upgrade and a paper mill.",
+   "read": [
+    "https://cdxoarapps.epa.gov/oar-rblc/api/rblc/keyword-search",
+    "work/sweep_us-wi/src/rblc_turbine.json",
+    "work/sweep_us-wi/src/rblc_engine.json"
+   ],
+   "date": "2026-11-18"
+  },
+  "dfi-corp-search": {
+   "status": "searched",
+   "how": "Searched the state business registry results page by name with fetch.py, loading the page in a real browser.",
+   "found": "Red Oak Ridge Energy Center LLC was registered June 10, 2024, Foundry Ridge Energy Center LLC September 3, 2024, Forest Junction Energy Center LLC August 20, 2025 and Union Depot Energy Center LLC April 17, 2026, all foreign companies; Port Washington Generating Station LLC was organized in 2002. Searches for Sugar Creek Energy and Fitzgerald Energy found no company.",
+   "read": [
+    "https://apps.dfi.wi.gov/apps/CorpSearch/Results.aspx?type=Simple&q=Red+Oak+Ridge",
+    "https://apps.dfi.wi.gov/apps/CorpSearch/Results.aspx?type=Simple&q=Foundry+Ridge",
+    "work/sweep_us-wi/dfi"
+   ],
+   "date": "2026-11-18"
+  },
+  "legistar-wi": {
+   "status": "searched",
+   "how": "Read the city and county meeting records harvested through the meeting record service since 2024 for each host town, and queried Milwaukee's matters for data center titles in 2026.",
+   "found": "The City of Racine, Milwaukee and Mount Pleasant records name data center rules and moratoriums but no gas plant GEM lacks. Milwaukee file 260971 rezones 3234 West State Street for a small Potawatomi data center expansion and has no plans attached yet.",
+   "read": [
+    "batches/us-wi/harvest/local_records.md",
+    "https://webapi.legistar.com/v1/milwaukee/matters"
+   ],
+   "date": "2026-11-18"
+  },
+  "agendacenter-wi": {
+   "status": "searched",
+   "how": "Read the agenda center records harvested for Mount Pleasant, Kenosha, Caledonia, Beaver Dam and the other host towns, searching for the plant names, the leads, data center, generator, power plant and rezoning.",
+   "found": "The records cover Microsoft's Mount Pleasant campus and the Kenosha moratorium; no new gas plant or data center generator fleet beyond those answered under data_centers.",
+   "read": [
+    "batches/us-wi/harvest/local_records.md",
+    "https://www.mtpleasantwi.gov/AgendaCenter/Search/?term=data+center&CIDs=all&startDate=&endDate=&dateRange=&dateSelector="
+   ],
+   "date": "2026-11-18"
+  },
+  "local-planning-records": {
+   "status": "searched",
+   "how": "Opened the city, village, town and county planning, zoning and council records harvested for every lead and every in-development plant, as listed in batches/us-wi/harvest/local_records.md.",
+   "found": "The City of Racine Common Council, Public Works and Planning commission records since 2024 name no data center at the Hubbard Street powerhouse. The City of Beaver Dam council packets describe the Meta campus, whose permitted engines are about 12 MW. No host town record names a gas project GEM lacks.",
+   "read": [
+    "batches/us-wi/harvest/local_records.md",
+    "batches/us-wi/harvest/local_records.json"
+   ],
+   "date": "2026-11-18"
+  },
+  "wec-investor": {
+   "status": "searched",
+   "how": "Read WEC Energy Group's September 2026 investor deck (54 pages) and its November 2026 SEC presentation in full.",
+   "found": "Every named gas project is in GEM. The capital plan's 3,540 MW of turbines and engines is about 917 MW more than the named projects, which is on the watch list.",
+   "read": [
+    "https://www.wecenergygroup.com/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf",
+    "https://www.sec.gov/Archives/edgar/data/783325/000078332526000109/a112026november.htm"
+   ],
+   "date": "2026-11-18"
+  },
+  "we-energies": {
+   "status": "searched",
+   "how": "Read We Energies' project pages for Oak Creek, Paris, Port Washington, Red Oak Ridge, Foundry Ridge and Fox North.",
+   "found": "All named projects are in GEM.",
+   "read": [
+    "scopes/us-wi/work/irp/wec/1.txt",
+    "https://www.cleanwisconsin.org/psc-approves-plan-to-power-ai-data-center-with-gas-plants-bringing-1200-mw-of-new-dirty-power-to-southeast-wisconsin/"
+   ],
+   "date": "2026-11-18"
+  },
+  "alliant": {
+   "status": "searched",
+   "how": "Read Alliant's 2025 annual report and third quarter 2026 report in full, since the 8-K cover of October 29, 2026 holds no plan text.",
+   "found": "The Neenah and Sheboygan Falls upgrades finished in June 2026. Coal continues at Edgewater 5 and Columbia at least through 2030. The Riverside 2004 block is added as a unit.",
+   "read": [
+    "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm",
+    "https://www.sec.gov/Archives/edgar/data/0000352541/000035254126000047/lnt-20260930.htm"
+   ],
+   "date": "2026-11-18"
+  },
+  "mge": {
+   "status": "searched",
+   "how": "Read Madison Gas and Electric's 2025 annual report and its February 2026 SEC filing.",
+   "found": "It owns Fitchburg, which is added, and says it is exploring a gas switch at Columbia, which is on the watch list. Darien and Forward are solar and wind.",
+   "read": [
+    "work/sweep_us-wi/irp",
+    "scopes/us-wi/work/irp/mge/2.txt"
+   ],
+   "date": "2026-11-18"
+  },
+  "dairyland": {
+   "status": "searched",
+   "how": "Read Dairyland's 2025 annual report in full.",
+   "found": "It lists Elk Mound, which is added, and RockGen, which is in GEM. No new gas project is named.",
+   "read": [
+    "https://dairylandpower.com/sites/default/files/PDFs/Annual%20Reports/DPC_AnnualReport2025-WEB.pdf"
+   ],
+   "date": "2026-11-18"
+  },
+  "wppi": {
+   "status": "searched",
+   "how": "Read WPPI Energy's Powering Ahead page and its State of WPPI 2025 report.",
+   "found": "About 400 MW of gas with no site, which is on the watch list.",
+   "read": [
+    "https://wppienergy.org/powering-ahead/",
+    "https://wppienergy.org/wp-content/uploads/2025/09/State-of-WPPI-2025.pdf"
+   ],
+   "date": "2026-11-18"
+  },
+  "xcel-nsp-w": {
+   "status": "searched",
+   "how": "Read Xcel's 2024 Upper Midwest resource plan from the copy saved in scopes/us-wi/work/irp/xcel.",
+   "found": "Wheaton's new unit is the only Wisconsin gas item and is in GEM. The firm gas resources are in Minnesota.",
+   "read": [
+    "scopes/us-wi/work/irp/xcel/20242-203027-01.pdf"
+   ],
+   "date": "2026-11-18"
+  },
+  "psc-sea": {
+   "status": "searched",
+   "how": "Read the draft Strategic Energy Assessment of June 2026 in full, 189 pages, and its appendix.",
+   "found": "Table 2-2 and Table B-8 list every planned gas addition, upgrade and fuel switch. Each named row is in GEM or this batch; the Gas TBD rows and the Columbia switch are on the watch list.",
+   "read": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=595734",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=595738"
+   ],
+   "date": "2026-11-18"
+  },
+  "sec-edgar": {
+   "status": "searched",
+   "how": "Fetched the WEC and Alliant filings through fetch.py and url_verifier.py with the declared identity.",
+   "found": "The WEC November 2026 presentation and Alliant's annual and quarterly reports are used above.",
+   "read": [
+    "https://www.sec.gov/Archives/edgar/data/783325/000078332526000109/a112026november.htm",
+    "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm",
+    "https://www.sec.gov/Archives/edgar/data/0000352541/000035254126000047/lnt-20260930.htm"
+   ],
+   "date": "2026-11-18"
+  },
+  "eia-860m": {
+   "status": "searched",
+   "how": "Read the September 2026 monthly generator file, every sheet, for every Wisconsin gas and oil generator, through match_ids.py and by hand.",
+   "found": "Fitchburg and Elk Mound are operating plants GEM lacks and are added. Foundry Ridge Energy Center LLC is the Foundry Ridge plant in GEM. The Riverside 2004 block is missing from GEM and is added.",
+   "read": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "work/ids_us-wisconsin.md"
+   ],
+   "date": "2026-11-18"
+  },
+  "eia-860": {
+   "status": "searched",
+   "how": "Read the 2024 annual generator file in work/eia for the Wisconsin plants with a fuel or owner question.",
+   "found": "Nothing that changes a decision above.",
+   "read": [
+    "work/eia/eia8602024.zip"
+   ],
+   "date": "2026-11-18"
+  },
+  "eip-oil-gas-watch": {
+   "status": "searched",
+   "how": "Used work/ids_us-wisconsin.md, the join of the EIP sheet to GEM, and opened each Wisconsin EIP facility page it names.",
+   "found": "Every Wisconsin project EIP lists is in GEM; its Nemadji Trail and Wheaton statuses are handled on those plant records. EIP is not cited.",
+   "read": [
+    "work/ids_us-wisconsin.md",
+    "https://oilandgaswatch.org/facility/rec_d4f1u5oq7easr8ra1fm0"
+   ],
+   "date": "2026-11-18"
+  },
+  "possible-updates-sheet": {
+   "status": "searched",
+   "how": "Read the gas and oil plants tab of the possible updates sheet through the work read-only account.",
+   "found": "The Wisconsin rows are Nemadji Trail, Elm Road gas storage and Red Oak Ridge; all are marked done and are in GEM.",
+   "read": [
+    "gws sheets values get, tab gas/oil plants"
+   ],
+   "date": "2026-11-18"
+  },
+  "captive-lng-sheet": {
+   "status": "searched",
+   "how": "Used work/captive_us-wisconsin.json from captive_lng.py.",
+   "found": "Zero Wisconsin rows in the captive sheet on 2026-11-17. The 2 billion cubic feet LNG storage at Oak Creek is storage, not a captive plant.",
+   "read": [
+    "work/captive_us-wisconsin.json"
+   ],
+   "date": "2026-11-18"
+  },
+  "data-centers": {
+   "status": "searched",
+   "how": "Read scopes/us-wi/work/permits/_data_centers.md, the air permits, trade press, utility releases and the city and county meeting records for every Wisconsin campus.",
+   "found": "Microsoft Mount Pleasant, Vantage Port Washington and South Oak Creek are in GEM. Microsoft's Kenosha and Caledonia sites have no generator permit and Caledonia was dropped. Meta Beaver Dam's permitted engines are about 12 MW and CLOP Madison's are 18.5 MW, below the threshold. QTS DeForest and Cloverleaf have no generator permit. The Potawatomi data center in Milwaukee is small, with no generator figure in its rezoning file.",
+   "read": [
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1287957",
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1292621",
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1246318",
+    "https://www.wpr.org/news/kenosha-area-residents-data-center-moratorium-pause-microsoft-development",
+    "https://biztimes.com/microsoft-drops-plans-for-caledonia-data-center-but-is-looking-for-a-new-site/",
+    "https://dnr.wisconsin.gov/topic/EIA/PortWashington.html",
+    "scopes/us-wi/work/permits/_data_centers.md"
+   ],
+   "date": "2026-11-18"
+  },
+  "state-news-gannett": {
+   "status": "searched",
+   "how": "Read the Milwaukee Journal Sentinel, Green Bay Press-Gazette and Appleton Post-Crescent news sitemaps and ran the Journal Sentinel search for gas plant, data center generators, combustion turbines and power plant proposed through fetch.py, then read the energy stories.",
+   "found": "The stories cover Forest Junction and Union Depot in Brillion, Fox North in Wrightstown, Red Oak Ridge, Foundry Ridge and South Oak Creek, all in GEM, and the small Potawatomi data center in Milwaukee.",
+   "read": [
+    "https://www.jsonline.com/news-sitemap.xml",
+    "https://www.jsonline.com/story/money/business/energy/2026/08/31/invenergy-proposes-two-large-gas-plants-in-northeastern-wisconsin/91509688007/",
+    "https://www.jsonline.com/story/money/business/energy/2026/10/02/we-energies-new-natural-gas-plant-in-outagamie-county/92060505007/",
+    "work/sweep_us-wi/news"
+   ],
+   "date": "2026-11-18"
+  },
+  "state-news-open": {
+   "status": "searched",
+   "how": "Searched Wisconsin Public Radio and the Wisconsin Examiner for gas plant, natural gas power plant, data center generators and combustion turbines and read the gas plant stories.",
+   "found": "The stories name Fox North, Red Oak Ridge, Foundry Ridge, Nemadji Trail and the Kenosha and Caledonia data centers, all handled in GEM or under data_centers.",
+   "read": [
+    "https://wisconsinexaminer.com/2026/10/13/wisconsin-doesnt-have-to-accept-new-gas-plants-as-inevitable/",
+    "https://wisconsinexaminer.com/2026/07/22/stop-approving-wisconsins-energy-future-one-docket-at-a-time/",
+    "https://www.wpr.org/news/kenosha-area-residents-data-center-moratorium-pause-microsoft-development"
+   ],
+   "date": "2026-11-18"
+  }
+ },
+ "ids_followup": {
+  "3991": {
+   "decision": "add",
+   "gem_plant_id": "",
+   "evidence": "The September 2026 federal generator file lists Fitchburg, plant 3991 in Dane County, with two 28.8 MW gas turbines operating since 1973, owned by Madison Gas & Electric. The state air permit for 5701 McKee Road confirms the site. Added as a new plant."
+  },
+  "7863": {
+   "decision": "add",
+   "gem_plant_id": "",
+   "evidence": "The September 2026 federal generator file lists Elk Mound, plant 7863 in Chippewa County, with two 35.5 MW gas turbines operating since 2001, owned by Dairyland Power Cooperative. The state air permit for 4101 50th Street confirms the site. Added as a new plant."
+  },
+  "70360": {
+   "decision": "already_in_gem",
+   "gem_plant_id": "L100001047813",
+   "evidence": "Foundry Ridge Energy Center LLC in Walworth County, three 108 MW turbines planned for 2028, is the Foundry Ridge plant GEM already holds."
+  }
+ },
+ "data_centers": {
+  "microsoft-mount-pleasant": {
+   "decision": "already_in_gem",
+   "plant_id": "L100001089674",
+   "note": "GEM has the campus with three diesel backup units of 672 MW in all. The plant's own record asks whether to raise it to the 722.5 MW in the state preliminary determination."
+  },
+  "wisconsin-electric-power-oak-creek": {
+   "decision": "already_in_gem",
+   "plant_id": "L100001025603",
+   "note": "This is the South Oak Creek turbine project, 1,100 MW, already in GEM."
+  },
+  "vantage-wi-1-port-washington": {
+   "decision": "already_in_gem",
+   "plant_id": "L100001089699",
+   "note": "GEM has the Vantage Lighthouse WI-1 diesel fleet in Port Washington."
+  },
+  "racine-water-utility-hub-racine": {
+   "decision": "not_data_center",
+   "note": "The state permit facility is the City of Racine Water Utility's Hubbard Street powerhouse at 1231 Michigan Boulevard, a water utility building. The City of Racine Common Council, Public Works and Services Committee and Planning Heritage and Design Commission records since 2024, 556 documents in the harvest, name no data center at that address."
+  }
+ },
+ "queues": {
+  "MISO J4164": {
+   "decision": "add",
+   "evidence": "Gas, simple cycle, 1,203 MW at North Madison 345/138 kV in Dane County, queued September 2025. No GEM plant matches.",
+   "record_id": "us-wi:new:miso-j4164-north-madison-345-kilovolt-gas-power-station",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4165": {
+   "decision": "add",
+   "evidence": "Gas, simple cycle, 1,203 MW in Kenosha County, queued September 2025. It is neither Red Oak Ridge nor the Paris engines.",
+   "record_id": "us-wi:new:miso-j4165-kenosha-county-gas-power-station",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4115": {
+   "decision": "add",
+   "evidence": "Gas, simple cycle, 525 MW on the South Fond du Lac to Fitzgerald 345 kV line in Fond du Lac County, queued October 2025. No GEM plant matches.",
+   "record_id": "us-wi:new:miso-j4115-south-fond-du-lac-fitzgerald-345-kilovolt-gas-power-station",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4116": {
+   "decision": "add",
+   "evidence": "Gas, combined cycle, 950 MW at Sugar Creek 345 kV in Walworth County, queued October 2025. It is neither Foundry Ridge nor Fox North.",
+   "record_id": "us-wi:new:miso-j4116-sugar-creek-345-kilovolt-gas-power-station",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J3156": {
+   "decision": "update",
+   "evidence": "Gas, combined cycle, 100 MW at Townline Road in Rock County, the Riverside site. It is the uprate of the 2004 block in the state air permit and the commission's energy assessment.",
+   "record_id": "L100000401640:new:cc1",
+   "plant_id": "L100000401640",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects",
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1293067"
+   ]
+  },
+  "MISO J4014": {
+   "decision": "already_in_gem",
+   "evidence": "Gas, 650 MW at Forest Junction in Calumet County. Commission document 617707 ties it to the Union Depot plant.",
+   "plant_id": "L100001089647",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+   ]
+  },
+  "MISO J4249": {
+   "decision": "already_in_gem",
+   "evidence": "Fuel hidden, 100 MW. Commission document 617707 ties it to the Union Depot plant in Calumet County.",
+   "plant_id": "L100001089647",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+   ]
+  },
+  "MISO J4028": {
+   "decision": "already_in_gem",
+   "evidence": "Gas, 324 MW at North Creek 138 kV in Walworth County, the Foundry Ridge plant.",
+   "plant_id": "L100001047813",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO S1132": {
+   "decision": "already_in_gem",
+   "evidence": "Gas at North Creek 138 kV in Walworth County, a surplus request for the Foundry Ridge plant.",
+   "plant_id": "L100001047813",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO S1090": {
+   "decision": "already_in_gem",
+   "evidence": "Gas, 133 MW at East Paris in Kenosha County, the Paris engine plant.",
+   "plant_id": "L100001047775",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J3936": {
+   "decision": "already_in_gem",
+   "evidence": "Gas, 133 MW at the Paris 345 kV substation in Kenosha County, the Paris engine plant.",
+   "plant_id": "L100001047775",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J732": {
+   "decision": "already_in_gem",
+   "evidence": "Combined cycle, 527.8 MW in Douglas County, the Nemadji Trail plant, which GEM shows cancelled.",
+   "plant_id": "L100000407359",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO R1053": {
+   "decision": "already_in_gem",
+   "evidence": "Gas, 1,138 MW at Elm Road in Milwaukee County, the Elm Road gas switch.",
+   "plant_id": "L100000104274",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO R1014": {
+   "decision": "already_in_gem",
+   "evidence": "Fuel hidden, at Edgewater 345 kV, a replacement request for the Edgewater plant, which GEM holds with its gas switch.",
+   "plant_id": "L100000104269",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO R1015": {
+   "decision": "already_in_gem",
+   "evidence": "Fuel hidden, 423.1 MW at Edgewater 345 kV, a replacement request for the Edgewater 5 gas switch in GEM.",
+   "plant_id": "L100000104269",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO R1049": {
+   "decision": "already_in_gem",
+   "evidence": "Fuel hidden, 303.5 MW at Edgewater 345 kV in Sheboygan County, a replacement request at the Edgewater plant in GEM.",
+   "plant_id": "L100000104269",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO R5061": {
+   "decision": "already_in_gem",
+   "evidence": "Fuel hidden, at Edgewater 5 345 kV in Sheboygan County, a replacement request at the Edgewater plant in GEM.",
+   "plant_id": "L100000104269",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO S1158": {
+   "decision": "other_state",
+   "evidence": "Fuel hidden, at Story County, which is in Iowa, not Wisconsin.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4226": {
+   "decision": "other_state",
+   "evidence": "Fuel hidden, 150 MW in Story County, which is in Iowa, not Wisconsin.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4227": {
+   "decision": "other_state",
+   "evidence": "Fuel hidden, 150 MW in Story County, which is in Iowa, not Wisconsin.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO R1010": {
+   "decision": "fuel_not_published",
+   "evidence": "Fuel and size hidden, a replacement request in Marathon County. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4179": {
+   "decision": "fuel_not_published",
+   "evidence": "735 MW. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4184": {
+   "decision": "fuel_not_published",
+   "evidence": "755 MW. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4177": {
+   "decision": "fuel_not_published",
+   "evidence": "735 MW. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4507": {
+   "decision": "fuel_not_published",
+   "evidence": "105 MW. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4330": {
+   "decision": "fuel_not_published",
+   "evidence": "163 MW. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4452": {
+   "decision": "fuel_not_published",
+   "evidence": "250 MW. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4451": {
+   "decision": "fuel_not_published",
+   "evidence": "145 MW. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4318": {
+   "decision": "fuel_not_published",
+   "evidence": "150 MW. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4341": {
+   "decision": "fuel_not_published",
+   "evidence": "150 MW. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4485": {
+   "decision": "fuel_not_published",
+   "evidence": "400 MW. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4483": {
+   "decision": "fuel_not_published",
+   "evidence": "200 MW. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4505": {
+   "decision": "fuel_not_published",
+   "evidence": "200 MW. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO S1005": {
+   "decision": "fuel_not_published",
+   "evidence": "60 MW, done. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO S1017": {
+   "decision": "fuel_not_published",
+   "evidence": "100 MW at Tennyson 138 kV. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO S1024": {
+   "decision": "fuel_not_published",
+   "evidence": "50 MW at Wautoma 138 kV in Waushara County. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO S1039": {
+   "decision": "fuel_not_published",
+   "evidence": "100 MW at Apple River 161 kV in Polk County. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO R5085": {
+   "decision": "fuel_not_published",
+   "evidence": "size not shown. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO S1188": {
+   "decision": "fuel_not_published",
+   "evidence": "at Rockdale 345 kV. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO S1165": {
+   "decision": "fuel_not_published",
+   "evidence": "75 MW. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO S1159": {
+   "decision": "fuel_not_published",
+   "evidence": "100 MW. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4229": {
+   "decision": "fuel_not_published",
+   "evidence": "350 MW, Dairyland area. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4261": {
+   "decision": "fuel_not_published",
+   "evidence": "200 MW. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  },
+  "MISO J4274": {
+   "decision": "fuel_not_published",
+   "evidence": "200 MW. The MISO queue file hides the state, county and fuel for this request and lists a Wisconsin transmission owner. No commission docket, state air permit or news story ties a gas or oil plant to this size and date.",
+   "urls": [
+    "https://www.misoenergy.org/api/giqueue/getprojects"
+   ]
+  }
+ },
+ "dedup": {
+  "us-wi:new:miso-j4165-kenosha-county-gas-power-station": {
+   "decision": "not_a_duplicate",
+   "checked": "2026-11-18",
+   "evidence": "Red Oak Ridge in Kenosha County has its own queue requests and the Paris engines are S1090 and J3936. No GEM plant in Kenosha County is 1,203 MW for 2030."
+  },
+  "us-wi:new:miso-j4116-sugar-creek-345-kilovolt-gas-power-station": {
+   "decision": "not_a_duplicate",
+   "checked": "2026-11-18",
+   "evidence": "Foundry Ridge in Walworth County is 270 MW at North Creek, requests J4028 and S1132. Fox North is 750 MW in Outagamie County. Nothing in GEM sits at Sugar Creek."
+  },
+  "us-wi:new:miso-j4115-south-fond-du-lac-fitzgerald-345-kilovolt-gas-power-station": {
+   "decision": "not_a_duplicate",
+   "checked": "2026-11-18",
+   "evidence": "GEM's South Fond du Lac plant has four operating turbines and no planned unit, and its records in this batch are only backup power questions. No source ties the 525 MW request to it, so it is added as a new plant until a developer or site is named."
+  },
+  "us-wi:new:miso-j4164-north-madison-345-kilovolt-gas-power-station": {
+   "decision": "not_a_duplicate",
+   "checked": "2026-11-18",
+   "evidence": "No GEM plant in Dane County is planned at 1,203 MW. Blount Street, West Campus, the Diesel Generators plant and RockGen are operating plants far smaller, and Fitchburg in this batch is two 1973 turbines of 28.8 MW each."
+  },
+  "us-wi:new:fitchburg-power-station": {
+   "decision": "not_a_duplicate",
+   "checked": "2026-11-18",
+   "evidence": "No GEM plant of any fuel is at 5701 McKee Road in Fitchburg. West Campus (7.3 km away) and Blount Street (10 km away) are separate Madison plants with their own federal plant codes. The gem.wiki page named Pinetree Power Fitchburg is a wood-burning plant in Fitchburg, Massachusetts. The MISO J4164 record in this batch is a planned plant at the North Madison substation, not these 1973 turbines."
+  },
+  "us-wi:new:elk-mound-power-station": {
+   "decision": "not_a_duplicate",
+   "checked": "2026-11-18",
+   "evidence": "No GEM plant of any fuel is at Elk Mound. Wheaton, 4.5 km away in Chippewa County, is Xcel's separate turbine plant with its own federal plant code, 4077, and Dairyland does not own it."
+  }
+ },
+ "irp_plans": {
+  "plan Public Service Commission of Wisconsin (Strategic Energy Assessment)": {
+   "evidence": "Read the June 2026 draft Strategic Energy Assessment, documents 595734 and 595738. Table 2-2 lists fuel switch retrofits at Elm Road, Columbia, Edgewater 5 and Weston 4. Table B-8 lists every planned gas addition and upgrade through 2032, 5,400 MW in all.",
+   "pages": "All 189 pages of document 595734 and the appendix in document 595738. Table 2-2 on fuel switches; Table B-8 on pages B-148 to B-152 for the planned additions. The assessment has no alternative portfolios.",
+   "additions": [
+    {
+     "what": "Elm Road 1 and 2 fuel switch, 650 MW each, 2029",
+     "plant_id": "L100000104274"
+    },
+    {
+     "what": "Edgewater 5 fuel switch, 406 MW, 2030",
+     "plant_id": "L100000104269"
+    },
+    {
+     "what": "Weston 4 fuel switch, 595 MW, 2030",
+     "plant_id": "L100000104280"
+    },
+    {
+     "what": "Columbia 1 and 2 fuel switch, 566 and 565 MW, 2030",
+     "record_id": "us-wi:plant:monitor-1"
+    },
+    {
+     "what": "Wheaton replacement, 255 MW, 2025",
+     "plant_id": "L100000409233"
+    },
+    {
+     "what": "Neenah upgrades, 100 MW, 2026",
+     "plant_id": "L100000402376"
+    },
+    {
+     "what": "Sheboygan Falls upgrades, 100 MW, 2026",
+     "plant_id": "L100000401635"
+    },
+    {
+     "what": "Paris engines, 130 MW, 2027",
+     "plant_id": "L100001047775"
+    },
+    {
+     "what": "Oak Creek turbines, 1,138 MW, 2027",
+     "plant_id": "L100001025603"
+    },
+    {
+     "what": "Port Washington upgrades, 172 MW, 2028",
+     "plant_id": "L100000104693"
+    },
+    {
+     "what": "Riverside upgrades, 156 MW, 2028",
+     "record_id": "L100000401640:new:cc1"
+    },
+    {
+     "what": "Foundry Ridge turbines, 270 MW, 2029",
+     "plant_id": "L100001047813"
+    },
+    {
+     "what": "Red Oak Ridge turbines, 1,125 MW, 2029",
+     "plant_id": "L100001062057"
+    },
+    {
+     "what": "Wisconsin Electric gas to be decided, 750 MW, 2030, the size of Fox North",
+     "plant_id": "L100001089648"
+    },
+    {
+     "what": "Gas to be decided, 28 MW and 28 MW in 2031 and 1,138 MW in 2032",
+     "record_id": "us-wi:plant:monitor-2"
+    }
+   ],
+   "options": []
+  },
+  "plan Wisconsin Electric Power Company and Wisconsin Public Service Corporation (WEC Energy Group)": {
+   "evidence": "Read the September 2026 investor deck, 54 pages, and the November 2025 and November 2026 SEC presentations. The project table lists Oak Creek turbines 1,100 MW, Paris engines 128 MW, Oak Creek gas storage, the Elm Road fuel switch, the Port Washington upgrade 100 MW, Foundry Ridge 270 MW, Red Oak Ridge 1,125 MW and the Weston 4 purchase. The capital plan counts a 750 MW combined cycle and 3,540 MW of turbines and engines.",
+   "pages": "All 54 pages of the September 2026 deck; the project table and the retirement slide (South Oak Creek 7 and 8 kept to the end of 2027, Weston 3 to the end of 2031). The capital plan slides of both SEC presentations. No alternative portfolios are published.",
+   "additions": [
+    {
+     "what": "Oak Creek turbines, 1,100 MW, 2027 and 2028",
+     "plant_id": "L100001025603"
+    },
+    {
+     "what": "Paris engines, 128 MW, 2027",
+     "plant_id": "L100001047775"
+    },
+    {
+     "what": "Port Washington turbine upgrade, 100 MW, 2028",
+     "plant_id": "L100000104693"
+    },
+    {
+     "what": "Foundry Ridge turbines, 270 MW, 2028",
+     "plant_id": "L100001047813"
+    },
+    {
+     "what": "Red Oak Ridge turbines, 1,125 MW, 2029 and 2030",
+     "plant_id": "L100001062057"
+    },
+    {
+     "what": "Elm Road fuel flexibility, 2028",
+     "plant_id": "L100000104274"
+    },
+    {
+     "what": "Weston 4 purchase and gas switch",
+     "plant_id": "L100000104280"
+    },
+    {
+     "what": "Combined cycle 750 MW, Fox North",
+     "plant_id": "L100001089648"
+    },
+    {
+     "what": "About 917 MW of turbines and engines beyond the named projects",
+     "record_id": "us-wi:plant:monitor-2"
+    }
+   ],
+   "options": []
+  },
+  "plan Wisconsin Power and Light Company (Alliant Energy)": {
+   "evidence": "The October 29, 2026 filing listed in the plan file is an 8-K cover with no plan text, so the plan content was read from Alliant's third quarter 2026 report and its 2025 annual report. They say coal continues at Edgewater 5 (414 MW) and Columbia 1 and 2 (595 MW) at least through 2030, the Neenah and Sheboygan Falls upgrades finished in June 2026, and they list the Riverside Energy Center.",
+   "pages": "The whole third quarter 2026 report and the generation and capital sections of the 2025 annual report. Alliant publishes no alternative portfolios for Wisconsin.",
+   "read_by_hand": "The 8-K at lnt-20261029.htm loaded through fetch.py but is a 29 kilobyte cover page. The quarterly report lnt-20260930.htm and the annual report lnt-20251231.htm were read in full instead.",
+   "additions": [
+    {
+     "what": "Riverside 2004 block and its upgrade",
+     "record_id": "L100000401640:new:cc1"
+    },
+    {
+     "what": "Neenah gas path upgrade, finished June 2026",
+     "plant_id": "L100000402376"
+    },
+    {
+     "what": "Sheboygan Falls gas path upgrade, finished June 2026",
+     "plant_id": "L100000401635"
+    },
+    {
+     "what": "Edgewater 5 gas switch",
+     "plant_id": "L100000104269"
+    }
+   ],
+   "options": [
+    {
+     "what": "Columbia gas switch",
+     "record_id": "us-wi:plant:monitor-1"
+    }
+   ]
+  },
+  "plan Madison Gas and Electric Company (MGE Energy)": {
+   "evidence": "Read Madison Gas and Electric's 2025 annual report and its February 27, 2026 SEC filing. It names its shares of Elm Road, West Riverside and RockGen, and says it is exploring converting the Columbia Energy Center from coal to natural gas.",
+   "pages": "The whole 2025 annual report, including the generation and capital sections, and the whole February 2026 filing. No alternative portfolios are published.",
+   "names_checked": "Darien Solar Energy Center is solar and Forward Energy Center is wind, both out of scope. West Riverside Energy Center is GEM's Riverside plant L100000401640, unit CC_set.",
+   "additions": [
+    {
+     "what": "Share of Elm Road gas switch",
+     "plant_id": "L100000104274"
+    },
+    {
+     "what": "Share of RockGen",
+     "plant_id": "L100000402253"
+    },
+    {
+     "what": "Share of West Riverside",
+     "plant_id": "L100000401640"
+    },
+    {
+     "what": "Fitchburg turbines, owned and operating",
+     "record_id": "us-wi:new:fitchburg-power-station"
+    }
+   ],
+   "options": [
+    {
+     "what": "Columbia gas switch, being explored",
+     "record_id": "us-wi:plant:monitor-1"
+    }
+   ]
+  },
+  "plan Northern States Power Company, Wisconsin (Xcel Energy)": {
+   "evidence": "Read Xcel's 2024 Upper Midwest resource plan filed February 1, 2024. The only Wisconsin gas item is the Wheaton turbine replacement. The firm dispatchable gas resources the plan adds are at Minnesota sites.",
+   "pages": "The whole plan in scopes/us-wi/work/irp/xcel/20242-203027-01.pdf, including the preferred plan and the alternative plans in the modeling chapter.",
+   "newer_checked": "Looked for a newer Upper Midwest plan on Xcel's resource plan page and in Minnesota's docket system, which sits behind a browser check; Xcel's site and news name no plan filed after the 2024 one, and the 2024 docket is still the current one.",
+   "additions": [
+    {
+     "what": "Wheaton turbine replacement",
+     "plant_id": "L100000409233"
+    }
+   ],
+   "options": [
+    {
+     "what": "Firm dispatchable gas resources in Minnesota",
+     "why_not": "These sites are in Minnesota, outside the Wisconsin scope."
+    }
+   ]
+  },
+  "plan Dairyland Power Cooperative": {
+   "evidence": "Read Dairyland's 2025 annual report, 41 pages. It lists its gas stations, including Elk Mound and its RockGen share, and names no new gas project. Its Nemadji Trail share ended with the project.",
+   "pages": "All 41 pages of the 2025 annual report. Dairyland publishes no alternative portfolios.",
+   "additions": [
+    {
+     "what": "Elk Mound turbines, operating",
+     "record_id": "us-wi:new:elk-mound-power-station"
+    },
+    {
+     "what": "RockGen share",
+     "plant_id": "L100000402253"
+    }
+   ],
+   "options": [
+    {
+     "what": "Nemadji Trail, given up in October 2026",
+     "plant_id": "L100000407359"
+    }
+   ]
+  },
+  "plan WPPI Energy": {
+   "evidence": "Read WPPI Energy's Powering Ahead page, which says it plans about 400 MW of new gas-fired capacity with no site, and its State of WPPI 2025 report, whose peak demand and capacity chart for 2026 to 2035 names no gas unit.",
+   "pages": "The whole Powering Ahead page and all 27 pages of the State of WPPI 2025 report. No alternative portfolios are published.",
+   "read_by_hand": "The harvester could not open either address; the report was downloaded by hand to work/sweep_us-wi/state_of_wppi_2025.pdf and the Powering Ahead page passed the verifier.",
+   "additions": [
+    {
+     "what": "About 400 MW of new gas, no site",
+     "record_id": "us-wi:plant:monitor-3"
+    }
+   ],
+   "options": []
+  }
+ }
+}

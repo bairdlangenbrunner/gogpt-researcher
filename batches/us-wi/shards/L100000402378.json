@@ -1,0 +1,85 @@
+{
+ "meta": {
+  "plant_id": "L100000402378",
+  "plant_name": "De Pere energy center",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T12:10:00-05:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403774",
+   "unit_name": "CT01",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx), sheet Operating, lists plant 55029 De Pere Energy Center, generator CT01, status OP, nameplate 192.3 MW, operating June 1999. The Planned Retirement columns are blank.\n\nThe Wisconsin Department of Natural Resources renewed the unit's air operation permit on September 3, 2026 (https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1290611). The permit says the turbine was installed in 1999. I found no retirement, mothballing or ownership change."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1290611"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1290611",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Document and value:\n- Open the Wisconsin Department of Natural Resources air operation permit 40517092A-P40 from September 3, 2026 at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1290611.\n- Condition I.A.7 says 'The operating hours for the single simple-cycle combustion turbine (B01) may not exceed 1,990 hours in any consecutive 12-month period.' That is a limit on a peaking turbine that sells to the grid.\n- The permit never calls the turbine a backup unit and there is no data center at this plant, so Backup Power stays no. The document only implies the value, so confidence is medium."
+    }
+   },
+   "not_found": [
+    "Owner(s) change",
+    "Planned retire"
+   ],
+   "notes": "CT01 is still operating. EIA lists it as operating with no planned retirement, and the state renewed its air permit in September 2026. The permit also covers construction permit 25-MIN-035 for a change to how the turbine is operated, which does not change the status."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Row for plant 55029, CT01, OP, 192.3 MW, operating 1999."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1290611",
+   "used_for": [
+    "Backup Power",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Permit text reads cleanly; contains 1,990 hour limit and plant name."
+  }
+ ]
+}

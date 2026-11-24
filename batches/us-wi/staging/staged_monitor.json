@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "lane": "monitor",
+    "scope": {
+      "country": "United States",
+      "state": "Wisconsin",
+      "postal": "wi",
+      "kind": "state",
+      "slug": "wisconsin",
+      "quarter": "q4-2026",
+      "csv": "scripts/gem_export_gogpt.csv"
+    },
+    "generated": "2026-11-19T09:20:51-05:00",
+    "mode": "update",
+    "counts": {
+      "records": 3
+    }
+  },
+  "records": [
+    {
+      "record_id": "us-wi:plant:monitor-1",
+      "gem_plant_id": "L100000104268",
+      "plant_name": "Columbia Energy Center",
+      "watch_case": "not_committed",
+      "recheck_by": "2027-06",
+      "monitor_kind": "existing_plant",
+      "monitor_reason": "The state's draft energy assessment lists a gas conversion of both Columbia coal units in 2030, but Alliant says coal continues at least through 2030 and Madison Gas and Electric says it is only exploring the switch. No docket, permit or engineering plan exists yet.",
+      "irp": true,
+      "owner": "Wisconsin Power and Light Co; Wisconsin Public Service Corp; Madison Gas & Electric Co",
+      "capacity_mw": "1131",
+      "refs": {
+        "links": [
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=595734",
+          "https://www.sec.gov/Archives/edgar/data/0000352541/000035254126000047/lnt-20260930.htm"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=595734",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Public Service Commission of Wisconsin draft Strategic Energy Assessment, June 2026. Table 2-2 lists fuel switch retrofits including Columbia 1 and 2 at 566 and 565 MW in 2030. Table B-8 lists planned gas additions and upgrades, including Gas TBD rows for Wisconsin Electric (28 MW in 2031 and 1,138 MW in 2032) and Wisconsin Public Service (28 MW in 2031)."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/0000352541/000035254126000047/lnt-20260930.htm",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Alliant Energy quarterly report for the third quarter of 2026. It says Wisconsin Power and Light plans to continue coal operations at Edgewater Unit 5 (414 MW) and Columbia Units 1 and 2 (595 MW in aggregate) at least through 2030, and names the Riverside Energy Center."
+        }
+      ],
+      "researcher_notes": "The Public Service Commission draft Strategic Energy Assessment of June 2026, Table 2-2, lists fuel switch retrofits for Columbia 1 and 2 at 566 and 565 MW in 2030. Alliant's quarterly report for the third quarter of 2026 says Wisconsin Power and Light plans to keep coal operations at Columbia Units 1 and 2 at least through 2030. Madison Gas and Electric's 2025 annual report says it is exploring converting the Columbia Energy Center from coal to natural gas. GEM has Columbia only as a coal plant. Recheck for a construction or conversion docket at the state utility commission and a state air permit application.",
+      "country": "United States",
+      "fields": {}
+    },
+    {
+      "record_id": "us-wi:plant:monitor-2",
+      "plant_name": "We Energies and Wisconsin Public Service unnamed gas additions 2031 to 2032",
+      "watch_case": "not_committed",
+      "recheck_by": "2027-03",
+      "monitor_kind": "new_to_tracker",
+      "monitor_reason": "WEC Energy Group's capital plan counts more combustion turbine and engine capacity than its named projects add up to, and the state energy assessment lists Gas TBD rows with no site. No project or site is described.",
+      "irp": true,
+      "owner": "Wisconsin Electric Power Co; Wisconsin Public Service Corp",
+      "capacity_mw": "917",
+      "refs": {
+        "links": [
+          "https://www.sec.gov/Archives/edgar/data/783325/000078332526000109/a112026november.htm",
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=595734"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/783325/000078332526000109/a112026november.htm",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "WEC Energy Group investor presentation filed with the SEC in November 2026. The capital plan slide lists combined cycle gas of 750 MW and combustion turbines and engines of 3,540 MW."
+        },
+        {
+          "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=595734",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Public Service Commission of Wisconsin draft Strategic Energy Assessment, June 2026. Table 2-2 lists fuel switch retrofits including Columbia 1 and 2 at 566 and 565 MW in 2030. Table B-8 lists planned gas additions and upgrades, including Gas TBD rows for Wisconsin Electric (28 MW in 2031 and 1,138 MW in 2032) and Wisconsin Public Service (28 MW in 2031)."
+        }
+      ],
+      "researcher_notes": "WEC Energy Group's November 2026 investor presentation lists 3,540 MW of combustion turbines and engines in its capital plan. The named projects add to 2,623 MW: South Oak Creek 1,100 MW, Red Oak Ridge 1,125 MW, Foundry Ridge 270 MW and the Paris engines 128 MW. That leaves about 917 MW unnamed. The Public Service Commission draft Strategic Energy Assessment, Table B-8, lists Gas TBD rows of 28 MW in 2031 for Wisconsin Electric, 28 MW in 2031 for Wisconsin Public Service and 1,138 MW in 2032 for Wisconsin Electric, with no site. Recheck the commission filing system for new construction dockets under utility numbers 6630 and 6690 and the next investor update.",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {}
+    },
+    {
+      "record_id": "us-wi:plant:monitor-3",
+      "plant_name": "WPPI Energy planned gas capacity",
+      "watch_case": "not_committed",
+      "recheck_by": "2027-06",
+      "monitor_kind": "new_to_tracker",
+      "monitor_reason": "WPPI Energy says it plans about 400 MW of new gas-fired capacity but names no site, unit or date beyond its planning horizon.",
+      "irp": true,
+      "owner": "WPPI Energy",
+      "capacity_mw": "400",
+      "refs": {
+        "links": [
+          "https://wppienergy.org/powering-ahead/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://wppienergy.org/powering-ahead/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "WPPI Energy page Powering Ahead. It says WPPI plans about 400 MW of new gas-fired capacity and names no site."
+        }
+      ],
+      "researcher_notes": "WPPI Energy's Powering Ahead page says it plans about 400 MW of new gas-fired capacity. Its State of WPPI 2025 report, 27 pages, shows a chart of peak demand and capacity for 2026 to 2035 and names no gas unit. Searches of the state utility commission filing system, the state air permit system and the queue file found no WPPI gas project. Recheck WPPI's next annual report and the commission filing system.",
+      "gem_plant_id": "",
+      "country": "United States",
+      "fields": {}
+    }
+  ]
+}

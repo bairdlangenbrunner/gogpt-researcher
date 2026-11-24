@@ -1,0 +1,80 @@
+{
+ "meta": {
+  "plant_id": "L100000402381",
+  "plant_name": "West Marinette power station",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T09:00:19-05:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403776",
+   "unit_name": "33",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status:\n- The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx), sheet Operating, plant 4076, generator 33, reads status OP Operating, nameplate 103.5 MW, operating year 1993, with the planned retirement year blank.\n- The unit is not on the Planned, Retired or Canceled sheets.\n\nWhat was not found:\n- I found no retirement notice, planned retirement date, mothballing or sale for this unit. The owner is still Wisconsin Public Service Corp in the same table."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://wisconsinpublicservice.com/company/peaking"
+     ],
+     "verifications": [
+      {
+       "url": "https://wisconsinpublicservice.com/company/peaking",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Backup Power:\n- The Wisconsin Public Service peaking plants page (https://wisconsinpublicservice.com/company/peaking) lists West Marinette with 'Gas Turbine - WM33' in its table of peaking units. The page says peaking plants provide electricity when customers' needs are highest, so the unit supplies the grid and is not a backup unit for one site.\n- The value no stays as it is. The page does not use the words backup power."
+    }
+   },
+   "not_found": [],
+   "notes": "Unit 33 is still listed as operating by EIA with no retirement planned. Backup Power no is supported by the owner's peaking plant page."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read plant 4076 generator 33 in the Operating sheet."
+  },
+  {
+   "url": "https://wisconsinpublicservice.com/company/peaking",
+   "used_for": [
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Page lists WM33 as a peaking gas turbine."
+  }
+ ]
+}

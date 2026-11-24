@@ -1,0 +1,164 @@
+{
+ "meta": {
+  "plant_id": "L100000401640",
+  "plant_name": "Riverside energy center (WI)",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:59:50-05:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401958",
+   "unit_name": "CC_set",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status:\n- Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 64020, West Riverside Energy Center, lists generators CTG3, CTG4 and STG2 as '(OP) Operating', all with operating month 5 and year 2020. No planned retirement year is shown, and the plant does not appear on the Planned, Retired or Canceled or Postponed sheets.\n- I found no retirement, mothballing or change of status. The owners' 2023 filing at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=481060 also calls the plant in service since May 14, 2020.\n- The Public Service Commission docket 6680-CE-192 filed in March 2026 is about the older Riverside Energy Center Units 1 and 2 (EIA plant 55641, generators CTG1 and CTG2), not this combined cycle unit.",
+     "milestones": [
+      {
+       "status": "operating",
+       "year": 2020,
+       "period": "May",
+       "sources": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "EIA-860M Operating sheet shows operating month 5, year 2020 for CTG3, CTG4 and STG2"
+      }
+     ]
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://www.globenewswire.com/en/news-release/2020/05/15/2034386/0/en/Alliant-Energy-s-West-Riverside-Energy-Center-goes-into-service.html"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.globenewswire.com/en/news-release/2020/05/15/2034386/0/en/Alliant-Energy-s-West-Riverside-Energy-Center-goes-into-service.html",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Backup Power:\n- Open the Alliant Energy press release from May 15, 2020 at https://www.globenewswire.com/en/news-release/2020/05/15/2034386/0/en/Alliant-Energy-s-West-Riverside-Energy-Center-goes-into-service.html. The sub-headline reads 'New natural gas generating station is now providing power to Wisconsin customers'. That describes routine power for the grid, not a backup engine set.\n- No document uses the words backup power for this plant. So the value stays no. The release implies it rather than stating it."
+    }
+   },
+   "not_found": [],
+   "notes": "The unit is still operating in the EIA table for September 2026. No retirement or ownership change was found. Backup Power stays no, supported only by an implied source."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Wisconsin Power and Light Co [57%]; Wisconsin Electric Power Co [27%]; MGE Energy Inc [7%]; small shareholder(s) [9%]",
+   "refs": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=481060",
+    "https://web.archive.org/web/20250307014442/https://energycentral.com/news/alliant-energy-corporation-quarterly-report-quarter-ending-september-30-2024-form-10-q"
+   ],
+   "verifications": [
+    {
+     "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=481060",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://web.archive.org/web/20250307014442/https://energycentral.com/news/alliant-energy-corporation-quarterly-report-quarter-ending-september-30-2024-form-10-q",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "Owners:\n- The database lists six owners. Our rules record the four largest and fold the rest into one line, and owners under 5 percent are grouped as small shareholders. So I shortened the list to Wisconsin Power and Light, Wisconsin Electric Power, MGE Energy and small shareholders.\n- Open the joint application to the Public Service Commission of Wisconsin filed October 2, 2023 (docket 5-AE-245) at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=481060. On page 7, the table just below the paragraph that starts 'Together, the units have a nameplate capacity of 727.2 MW' lists current ownership: Wisconsin Power and Light 412.2 MW at 56.6 percent, Wisconsin Electric 200 MW at 27.5 percent, MGE 50 MW at 6.9 percent, Adams-Columbia Electric Cooperative 32.6 MW at 4.5 percent, Rock Energy Cooperative 26.9 MW at 3.7 percent and Central Wisconsin Electric Cooperative 5.5 MW at 0.8 percent.\n- The three cooperatives are each under 5 percent and add up to 9.0 percent, which is the small shareholder line. I rounded 27.5 percent down to 27 so the shares total 100.\n- The Alliant Energy quarterly report for September 30, 2024 is gone from its old address at energycentral.com. A saved copy is cited instead at https://web.archive.org/web/20250307014442/https://energycentral.com/news/alliant-energy-corporation-quarterly-report-quarter-ending-september-30-2024-form-10-q . In its notes to the financial statements it says 'WPL's undivided current ownership interest in West Riverside is 56.6%', which matches. The old address is kept in the source box, because sources are never removed.\n- The 2023 transfer in that docket was a proposal, so I did not change any share for it."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000401958",
+   "concern_type": "Other IDs (location)",
+   "question": "Should EIA plant 64020 be typed into Other IDs (location) next to 55641?",
+   "finding": "The EIA-860M table for September 2026 lists this combined cycle unit (CTG3, CTG4, STG2) under plant 64020, West Riverside Energy Center. The database shows only 55641, which is the older Riverside units 1 and 2.",
+   "recommendation": "Add EIA: 64020 to Other IDs (location) by hand in the web form, keeping EIA: 55641.",
+   "note": "Open https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and the Operating sheet. Rows for plant 64020 show generators CTG3, CTG4 and STG2 at 232.9, 232.9 and 257.4 MW, which add up to 723.2 MW. That matches the 723.0 MW in the database. The IDs have no data source box, so I did not propose them as an edit.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "proposed_value": {
+    "Other IDs (location)": "EIA: 55641, EIA: 64020"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "EIA-860M September 2026, read with python, plant 64020 rows."
+  },
+  {
+   "url": "https://www.globenewswire.com/en/news-release/2020/05/15/2034386/0/en/Alliant-Energy-s-West-Riverside-Energy-Center-goes-into-service.html",
+   "used_for": [
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Press release says the plant provides power to customers."
+  },
+  {
+   "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=481060",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Public Service Commission filing with the ownership table."
+  },
+  {
+   "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=%20479990",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Existing owner link still opens."
+  },
+  {
+   "url": "https://energycentral.com/news/alliant-energy-corporation-quarterly-report-quarter-ending-september-30-2024-form-10-q",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "dead",
+   "note": "Gone from its live address (404). A saved copy exists and is cited as the next entry."
+  },
+  {
+   "url": "https://web.archive.org/web/20250307014442/https://energycentral.com/news/alliant-energy-corporation-quarterly-report-quarter-ending-september-30-2024-form-10-q",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Saved copy of the Alliant Energy quarterly report. The notes to the financial statements say WPL's ownership interest in West Riverside is 56.6%."
+  }
+ ]
+}

@@ -1,0 +1,313 @@
+{
+ "meta": {
+  "plant_id": "L100000104279",
+  "plant_name": "Valley Power Plant",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T09:00:16-05:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001017851",
+   "unit_name": "Unit 1, timepoint 2",
+   "findings": {
+    "Owner(s)": {
+     "value": "Wisconsin Electric Power Co [100%]",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1248468"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1248468",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the We Energies air permit revision application at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1248468 and go to page 21. The sentence 'We Energies - Valley Station is owned by Wisconsin Electric Power Company (dba We Energies)' states the owner. This matches the value GEM already has."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Open the permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244. The boilers are listed as 900 MMBtu per hour natural gas boilers that run as normal plant equipment. Nothing in the equipment list marks them as backup units. This is implied by the equipment list, not stated."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the final Wisconsin air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244. The permit history table, row 13-RSG-067 dated 11/11/2013, reads 'Conversion of B21, B22, B23, B24 to NG'. That is the conversion of the boilers from coal to natural gas."
+    },
+    "CCS attachment?": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Open the Wisconsin air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244. Its list of emission units for boilers B21 to B24 names only flue gas recirculation as the control device and no carbon capture equipment. No document says 'no carbon capture' in words, so this rests on the equipment list."
+    },
+    "Start year": {
+     "value": "2014",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244 and go to the emission unit list, page 20 of the application at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1248468. Boilers B21 and B22 read 'Natural Gas-Fired Boiler - Installed 1968, modified 2014'. So 2014 is the year the boiler was modified for gas, which is the conversion year GEM records. EIA lists 1968, the year the original coal unit began operating, in the file at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx.",
+     "milestones": [
+      {
+       "status": "operating",
+       "year": 2014,
+       "period": "",
+       "sources": [
+        "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244"
+       ],
+       "period_note": "The permit gives only the year of modification, not a month.",
+       "note": "boiler modified 2014 per permit"
+      }
+     ]
+    },
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "EIA-860M September 2026, plant 4042, generator 1, status OP, nameplate 136.0 MW, no planned retirement year."
+    }
+   },
+   "not_found": [],
+   "notes": "Unit still operating in the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx: plant 4042, generator 1, status OP, nameplate 136.0 MW, no planned retirement. The EIA years 1968 are the original coal start. No retirement, mothballing or owner change found."
+  },
+  {
+   "gem_unit_id": "G100001017962",
+   "unit_name": "Unit 2, timepoint 2",
+   "findings": {
+    "Owner(s)": {
+     "value": "Wisconsin Electric Power Co [100%]",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1248468"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1248468",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the We Energies air permit revision application at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1248468 and go to page 21. The sentence 'We Energies - Valley Station is owned by Wisconsin Electric Power Company (dba We Energies)' states the owner. This matches the value GEM already has."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Open the permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244. The boilers are listed as 900 MMBtu per hour natural gas boilers that run as normal plant equipment. Nothing in the equipment list marks them as backup units. This is implied by the equipment list, not stated."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the final Wisconsin air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244. The permit history table, row 13-RSG-067 dated 11/11/2013, reads 'Conversion of B21, B22, B23, B24 to NG'. That is the conversion of the boilers from coal to natural gas."
+    },
+    "CCS attachment?": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Open the Wisconsin air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244. Its list of emission units for boilers B21 to B24 names only flue gas recirculation as the control device and no carbon capture equipment. No document says 'no carbon capture' in words, so this rests on the equipment list."
+    },
+    "Start year": {
+     "value": "2015",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Open the permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244 and go to the emission unit list, page 20 of the application at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1248468. Boilers B23 and B24 read 'Natural Gas-Fired Boiler - Installed 1969, modified 2015'. So 2015 is the year the boiler was modified for gas, which is the conversion year GEM records. EIA lists 1969, the year the original coal unit began operating, in the file at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx.",
+     "milestones": [
+      {
+       "status": "operating",
+       "year": 2015,
+       "period": "",
+       "sources": [
+        "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244"
+       ],
+       "period_note": "The permit gives only the year of modification, not a month.",
+       "note": "boiler modified 2015 per permit"
+      }
+     ]
+    },
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "EIA-860M September 2026, plant 4042, generator 2, status OP, nameplate 136.0 MW, no planned retirement year."
+    }
+   },
+   "not_found": [],
+   "notes": "Unit still operating in the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx: plant 4042, generator 2, status OP, nameplate 136.0 MW, no planned retirement. The EIA years 1969 are the original coal start. No retirement, mothballing or owner change found."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001017851",
+   "concern_type": "Start year",
+   "question": "Is unit 1's conversion year 2014 or November 2015?",
+   "finding": "The air permit lists boilers B21 and B22 as 'modified 2014'. A 2025 We Energies application at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1248468 says on page 4 'the conversion of VAPP's primary fuel source from coal to natural gas in November 2015'.",
+   "recommendation": "Leave the start year at 2014 for unit 1 and 2015 for unit 2, since the permit gives those modification years per boiler.",
+   "note": "The permit history row 13-RSG-067 at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244 shows the gas conversion permit was issued in November 2013.",
+   "refs": [
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1248468",
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Wisconsin Electric Power Co",
+   "role": "owner",
+   "lookup_result": "Existing owner in the export; no new entity named."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1248468",
+   "used_for": [
+    "Owner(s)",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Read through the repo fetcher."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244",
+   "used_for": [
+    "Conversion/replacement?",
+    "CCS attachment?",
+    "Backup Power",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Final permit 24100780A-P40."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Excel file read locally; row matched."
+  }
+ ]
+}

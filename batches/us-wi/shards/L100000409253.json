@@ -1,0 +1,78 @@
+{
+ "meta": {
+  "plant_id": "L100000409253",
+  "plant_name": "Weston RICE power station",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T09:00:17-05:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000414178",
+   "unit_name": "W11",
+   "findings": {
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://news.wisconsinpublicservice.com/wps-strengthens-reliability-with-state-of-the-art-generation-facility-near-wausau/",
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1083233"
+     ],
+     "verifications": [
+      {
+       "url": "https://news.wisconsinpublicservice.com/wps-strengthens-reliability-with-state-of-the-art-generation-facility-near-wausau/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1083233",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "Backup power:\n- Open the Wisconsin Public Service news release from August 2023 at https://news.wisconsinpublicservice.com/wps-strengthens-reliability-with-state-of-the-art-generation-facility-near-wausau/. The second paragraph says the units at the natural gas facility 'have begun full operations, sending energy to the electric grid'.\n- The Department of Natural Resources final air permit 21-RAB-082 at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1083233 authorizes seven natural gas engines as 'electric generating units' and lists a separate emergency generator. So the seven engines are grid units, not backup power.\n\nResult:\n- The current value of no is correct."
+    }
+   },
+   "not_found": [],
+   "notes": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists Plant 66059, generators W11 to W17, status OP, nameplate 18.8 MW each, operating year 2023, with no planned retirement. The export shows no change of owner, retirement or mothballing found in this check."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Plant 66059 generators W11 to W17 all status OP, operating 2023, no planned retirement."
+  },
+  {
+   "url": "https://news.wisconsinpublicservice.com/wps-strengthens-reliability-with-state-of-the-art-generation-facility-near-wausau/",
+   "used_for": [
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Says the units send energy to the electric grid."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1083233",
+   "used_for": [
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Final permit 21-RAB-082 for seven engines as electric generating units."
+  }
+ ]
+}

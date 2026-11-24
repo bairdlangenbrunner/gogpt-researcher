@@ -1,0 +1,224 @@
+{
+ "meta": {
+  "plant_id": "L100000104269",
+  "plant_name": "Edgewater Generating Station",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:54:24-05:00",
+  "done": true,
+  "urls_attempted": 8,
+  "urls_verified": 6
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001028183",
+   "unit_name": "Unit 5, timepoint 2",
+   "findings": {
+    "Start year": {
+     "value": "2030",
+     "refs": [
+      "https://www.sec.gov/Archives/edgar/data/52485/000035254126000047/lnt-20260930.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/52485/000035254126000047/lnt-20260930.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Start year of the gas conversion.\n\nNewest Alliant statement:\n- Open the Alliant Energy quarterly report for the period ended September 30, 2026 at https://www.sec.gov/Archives/edgar/data/52485/000035254126000047/lnt-20260930.htm and search for 'Edgewater Unit 5'. The bullet that starts 'WPL currently plans to continue coal operations at Edgewater Unit 5 (414 MW)' says coal operations continue 'at least through 2030'. WPL is Wisconsin Power and Light Company.\n- The unit therefore cannot be on gas before 2030, so 2030 stays. The human adds this as a new scheduled event with Event Year 2030 and Source Year 2026, and does not change an existing one.\n\nOlder dates:\n- The Alliant press release from May 23, 2024 at https://s201.q4cdn.com/991130938/files/doc_news/2024/May/23/2024-5-23-nr-edgewater-fuel-switch.pdf set the conversion for 2028.\n- An Urban Milwaukee article from June 5, 2026 at https://urbanmilwaukee.com/2026/06/05/trumps-425-million-coal-push-could-impact-wisconsin/ says Edgewater is 'slated to transition to natural gas generation by 2029'. It is a news story, not an Alliant filing, and is older than the November 2026 report.\n\nThe open comment thread on the start year can be closed with 2030."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://s201.q4cdn.com/991130938/files/doc_news/2024/May/23/2024-5-23-nr-edgewater-fuel-switch.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://s201.q4cdn.com/991130938/files/doc_news/2024/May/23/2024-5-23-nr-edgewater-fuel-switch.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Alliant Energy press release from May 23, 2024 at https://s201.q4cdn.com/991130938/files/doc_news/2024/May/23/2024-5-23-nr-edgewater-fuel-switch.pdf says on page 1, in the first paragraph, that Alliant plans 'to convert its coal-fueled Edgewater Generating Station to natural gas'. That is a conversion."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas",
+     "refs": [
+      "https://s201.q4cdn.com/991130938/files/doc_news/2024/May/23/2024-5-23-nr-edgewater-fuel-switch.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://s201.q4cdn.com/991130938/files/doc_news/2024/May/23/2024-5-23-nr-edgewater-fuel-switch.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The same press release at https://s201.q4cdn.com/991130938/files/doc_news/2024/May/23/2024-5-23-nr-edgewater-fuel-switch.pdf names natural gas as the new fuel. It is a replacement for the Alliant news page that no longer opens."
+    },
+    "Status": {
+     "value": "announced",
+     "refs": [
+      "https://www.sec.gov/Archives/edgar/data/52485/000035254126000047/lnt-20260930.htm",
+      "https://s201.q4cdn.com/991130938/files/doc_news/2024/May/23/2024-5-23-nr-edgewater-fuel-switch.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/52485/000035254126000047/lnt-20260930.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://s201.q4cdn.com/991130938/files/doc_news/2024/May/23/2024-5-23-nr-edgewater-fuel-switch.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Status stays announced for the gas conversion row.\n\nWhy:\n- The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx (sheet Operating, plant 4050, generator 5) lists 413.7 MW of conventional steam coal, operating since 1985, with Planned Repower Year 2028 and month 12. That row is the existing coal unit. This GEM row is the future gas conversion, so operating coal is not a conflict.\n- The Alliant report at https://www.sec.gov/Archives/edgar/data/52485/000035254126000047/lnt-20260930.htm says coal operations continue at least through 2030, so the conversion has not started.\n\nNo status change is proposed."
+    },
+    "Status Detail": {
+     "value": "Alliant Energy's quarterly report for the period ended September 30, 2026 says Wisconsin Power and Light plans to continue coal operations at Edgewater Unit 5 (414 MW) at least through 2030.",
+     "refs": [
+      "https://www.sec.gov/Archives/edgar/data/52485/000035254126000047/lnt-20260930.htm"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.sec.gov/Archives/edgar/data/52485/000035254126000047/lnt-20260930.htm",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The existing Status Detail already quotes this sentence. Opening https://www.sec.gov/Archives/edgar/data/52485/000035254126000047/lnt-20260930.htm and searching for 'Edgewater Unit 5' finds it in the bullet list on conditions affecting the company. Only the link is new, so leave the text as it is."
+    }
+   },
+   "not_found": [
+    "Backup Power: no document states it either way",
+    "Equipment Manufacturer/Model",
+    "Latest Activity: not filled, project moving as of November 2026"
+   ],
+   "notes": "The unit is still the planned gas conversion. Alliant's November 2026 report keeps coal running through at least 2030, so start year 2030 stands. Latest Activity is left alone because the newest report is from November 2026. No turbine make or model was found, and no document gave a Backup Power value."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Wisconsin Power and Light Co [100%]",
+   "refs": [
+    "https://www.sec.gov/Archives/edgar/data/52485/000035254126000047/lnt-20260930.htm"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/52485/000035254126000047/lnt-20260930.htm",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "Owner.\n\n- The Alliant report at https://www.sec.gov/Archives/edgar/data/52485/000035254126000047/lnt-20260930.htm speaks of 'WPL' (Wisconsin Power and Light Company) as the party planning coal operations at Edgewater Unit 5 (414 MW). That shows WPL runs and answers for the unit but does not use the word owns.\n- The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists the entity as Wisconsin Power & Light Co for plant 4050. No other owner was found, and no share split was found."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100001028183",
+   "concern_type": "Backup Power",
+   "question": "Is Backup Power 'no' at Edgewater 5 supported by any document?",
+   "finding": "I searched the Alliant press release, the Alliant November 2026 report and the EIA-860M file. None says anything about backup power at this unit.",
+   "recommendation": "Leave Backup Power as no. The Data Source box stays empty until a document is found.",
+   "note": "Searched: https://s201.q4cdn.com/991130938/files/doc_news/2024/May/23/2024-5-23-nr-edgewater-fuel-switch.pdf, https://www.sec.gov/Archives/edgar/data/52485/000035254126000047/lnt-20260930.htm and https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx. The unit is a grid utility unit and not a data center, so no is expected.",
+   "refs": [],
+   "proposed_value": {}
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Wisconsin Power and Light Co",
+   "role": "owner",
+   "lookup_result": "not run, existing GEM owner kept unchanged"
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.sec.gov/Archives/edgar/data/52485/000035254126000047/lnt-20260930.htm",
+   "used_for": [
+    "Start year",
+    "Status",
+    "Status Detail",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Read through fetch.py with the SEC declared identity."
+  },
+  {
+   "url": "https://s201.q4cdn.com/991130938/files/doc_news/2024/May/23/2024-5-23-nr-edgewater-fuel-switch.pdf",
+   "used_for": [
+    "Fuel",
+    "Conversion/replacement?",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Replacement for dead Alliant news link; same release."
+  },
+  {
+   "url": "https://www.alliantenergy.com/news/news-center/2024/05/052324-generationupdate",
+   "used_for": [
+    "Fuel",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Newer address of the dead news link opens and passes."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Plant 4050, generator 5, status OP, 413.7 MW, conventional steam coal, operating year 1985, planned repower 2028-12. Loads; values read from file."
+  },
+  {
+   "url": "https://urbanmilwaukee.com/2026/06/05/trumps-425-million-coal-push-could-impact-wisconsin/",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Says 2029; older than the SEC report."
+  },
+  {
+   "url": "https://oilandgaswatch.org/facility/rec_d4f1u5gq7easr8ra1etg",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "failed",
+   "note": "Page is script-drawn and the plant name was not found in the fetched text. EIP's 2028 figure was not confirmed."
+  },
+  {
+   "url": "https://ibmadison.com/alliant-pushes-back-conversion-of-sheboygan-county-coal-burning-plant/",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "failed",
+   "note": "Did not contain the expected text."
+  }
+ ]
+}

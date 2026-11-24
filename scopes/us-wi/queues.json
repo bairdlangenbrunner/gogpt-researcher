@@ -1,0 +1,53 @@
+{
+  "_about": "Queue settings for pull_queues.py --state WI. Every Wisconsin transmission owner sits in MISO (American Transmission Company in the east and center, Xcel's Northern States Power-Wisconsin and Dairyland in the west), so MISO is the one market. owner catches MISO's blank-state rows of Wisconsin's own owners (ATC, the We Energies, Alliant East, MGE, Dairyland, WPPI and Xcel Wisconsin names); shared_owner holds owners that serve other states and are not kept (Northern States Power Company of Minnesota, ITC, Great River Energy, Alliant West). known is hand-checked patterns, GEM plant id to regexes that name that plant in a point of interconnection or project name. Every match still says check; a county-only match is never a known match. Set 2026-11-17 from the MISO list itself.",
+  "state": "WI",
+  "name": "Wisconsin",
+  "markets": [
+    "MISO"
+  ],
+  "owner": "american transmission|\\batc\\b|wisconsin electric|we energies|wisconsin public service|wisconsin power (and|&) light|alliant energy east|madison gas|dairyland|wppi|northern states power.{0,6}wisconsin|xcel.{0,12}wisconsin",
+  "shared_owner": "northern states power company|^itc|great river|alliant energy west",
+  "pjm_states": [],
+  "known": {
+    "L100001083378": [
+      "forest junction",
+      "woodville"
+    ],
+    "L100001089647": [
+      "union depot"
+    ],
+    "L100001062057": [
+      "red oak ridge"
+    ],
+    "L100001047813": [
+      "foundry ridge"
+    ],
+    "L100001089648": [
+      "fox north"
+    ],
+    "L100001025603": [
+      "south oak creek",
+      "oak creek"
+    ],
+    "L100001047775": [
+      "paris rice",
+      "paris ice"
+    ],
+    "L100000104693": [
+      "port washington"
+    ],
+    "L100000104274": [
+      "elm road"
+    ],
+    "L100000401640": [
+      "riverside"
+    ],
+    "L100000409233": [
+      "wheaton"
+    ],
+    "L100000407359": [
+      "nemadji",
+      "superior generation"
+    ]
+  }
+}

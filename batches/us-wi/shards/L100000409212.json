@@ -1,0 +1,80 @@
+{
+ "meta": {
+  "plant_id": "L100000409212",
+  "plant_name": "Diesel Generators power station",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:57:40-05:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 1
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000414276",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "milestones": [],
+     "note": "Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 56070, Diesel Generators, generator 1, status OP (Operating), nameplate 54.0 MW, fuel DFO, prime mover IC, operating year 2001, owner Madison Gas & Electric Co. The planned retirement columns are blank. So the unit is still operating with no retirement announced in that table. I did not find any news of a retirement, mothballing or owner change."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "The EIA-860M table for September 2026 still lists this unit as operating at 54.0 MW with no planned retirement. I found no document that states whether it is backup power."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000414276",
+   "concern_type": "Backup Power",
+   "question": "Is the Diesel Generators unit in Madison a backup power unit?",
+   "finding": "No document I found states the Backup Power value for this unit. The Madison Gas and Electric page at https://mge.com/about-mge/power-plants/power-sources did not contain the words backup generators when checked, so it could not be cited. EIA lists the unit as an operating internal combustion engine with very low output.",
+   "recommendation": "Leave Backup Power as no and leave its source empty. Ask the Madison Gas and Electric contact whether the units serve customer backup or utility peaking.",
+   "note": "I searched the web for Madison Gas and Electric diesel generators and read the EIA-860M table for September 2026. A search summary said the company owns about 60 MW of backup generators at business customer sites, but I could not find that sentence on the company page, so it is not a source.",
+   "refs": [],
+   "checks": [
+    7
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Loads; row read from downloaded file."
+  },
+  {
+   "url": "https://mge.com/about-mge/power-plants/power-sources",
+   "used_for": [
+    "Backup Power"
+   ],
+   "outcome": "failed",
+   "note": "Page loads but the expected backup generator text was not on it after fetch.py text extraction."
+  }
+ ]
+}

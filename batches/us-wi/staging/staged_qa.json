@@ -1,0 +1,1209 @@
+{
+  "meta": {
+    "lane": "qa",
+    "scope": {
+      "country": "United States",
+      "state": "Wisconsin",
+      "postal": "wi",
+      "kind": "state",
+      "slug": "wisconsin",
+      "quarter": "q4-2026",
+      "csv": "scripts/gem_export_gogpt.csv"
+    },
+    "generated": "2026-11-19T09:20:51-05:00",
+    "mode": "update",
+    "counts": {
+      "records": 53
+    }
+  },
+  "records": [
+    {
+      "gem_unit_id": "G100001028183",
+      "concern_type": "other",
+      "question": "Is Backup Power 'no' at Edgewater 5 supported by any document?",
+      "finding": "I searched the Alliant press release, the Alliant November 2026 report and the EIA-860M file. None says anything about backup power at this unit.",
+      "recommendation": "Leave Backup Power as no. The Data Source box stays empty until a document is found.",
+      "refs": {},
+      "proposed_value": {},
+      "gem_plant_id": "L100000104269",
+      "plant_name": "Edgewater Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 5, timepoint 2",
+      "fields": {},
+      "researcher_notes": "Searched: https://s201.q4cdn.com/991130938/files/doc_news/2024/May/23/2024-5-23-nr-edgewater-fuel-switch.pdf, https://www.sec.gov/Archives/edgar/data/52485/000035254126000047/lnt-20260930.htm and https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx. The unit is a grid utility unit and not a data center, so no is expected.",
+      "record_id": "L100000104269:G100001028183:qa-backup-power-1",
+      "concern_type_raw": "Backup Power"
+    },
+    {
+      "gem_unit_id": "G100001017956",
+      "concern_type": "Owner(s)",
+      "question": "Should the majority owner be Elm Road Generating Station Supercritical LLC?",
+      "finding": "The application says the units are majority-owned by Elm Road Generating Station Supercritical, LLC, with MGE and WPPI at 8.33% each. The WEC Energy Group 2025 annual report says its We Power subsidiary owns the rest and leases it to Wisconsin Electric, so Wisconsin Electric is the lessee and operator.",
+      "recommendation": "Change the 83% owner from Wisconsin Electric Power Co to Elm Road Generating Station Supercritical LLC, and name We Power as its parent if the entity list has it.",
+      "refs": {
+        "links": [
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031",
+          "https://www.sec.gov/Archives/edgar/data/783325/000078332526000018/wec-20251231.htm"
+        ]
+      },
+      "gem_plant_id": "L100000104274",
+      "plant_name": "Elm Road power station",
+      "country": "United States",
+      "unit_name": "Unit 1, timepoint 2",
+      "fields": {},
+      "researcher_notes": "Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031 and read section 6.2.1, Previous and Current Land Use and Ownership. In the WEC Energy Group 2025 annual report at https://www.sec.gov/Archives/edgar/data/783325/000078332526000018/wec-20251231.htm, the We Power section says two unaffiliated entities own about 17% of Elm Road units 1 and 2, and We Power's share is leased to Wisconsin Electric under 30-year leases. The report does not name the LLC, so the link between We Power and the LLC is inferred from the application.",
+      "record_id": "L100000104274:G100001017956:qa-owner-s-1",
+      "checks": [
+        10
+      ]
+    },
+    {
+      "gem_unit_id": "G100001017956",
+      "concern_type": "Planned retire",
+      "question": "Can the retirement year thread be closed, and what is the coal end date?",
+      "finding": "The October 2025 application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031 says in sections 5.1.3 and 7.9.6 that no property is retired and no retirements are planned, and it keeps full coal firing capability. It does not state 2030 for backup coal or 2032 for the end of coal. A search result for a We Energies wastewater permit filing mentions ending coal combustion by 31 December 2034.",
+      "recommendation": "Do not add a retirement year from this filing. Keep the thread open until a filing or utility statement states the coal end date for Elm Road.",
+      "refs": {
+        "links": [
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031"
+        ]
+      },
+      "gem_plant_id": "L100000104274",
+      "plant_name": "Elm Road power station",
+      "country": "United States",
+      "unit_name": "Unit 1, timepoint 2",
+      "fields": {},
+      "researcher_notes": "The docket also holds later filings, such as data request responses from November 2026, that I did not read.",
+      "record_id": "L100000104274:G100001017956:qa-planned-retire-2",
+      "checks": [
+        37
+      ]
+    },
+    {
+      "gem_unit_id": "G100000107594",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "question": "Is there a document that says whether Elm Road unit 2, timepoint 1 has carbon capture?",
+      "finding": "The database flags the carbon capture answer of no for this unit because it has no source. I found no document that states whether the unit has carbon capture, so there is no source to add.",
+      "recommendation": "Leave carbon capture as no and keep the validation item open until a document states it.",
+      "refs": {
+        "links": [
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031"
+        ]
+      },
+      "gem_plant_id": "L100000104274",
+      "plant_name": "Elm Road power station",
+      "country": "United States",
+      "fields": {},
+      "researcher_notes": "Where I looked:\n- I read the full text of the We Energies application to the Public Service Commission of Wisconsin at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566031 and searched it for 'carbon capture' and 'CCS'. The only hits are on pages 3-22 and 3-23, in a summary of the federal power plant carbon rule. Nothing says Elm Road has or plans carbon capture.\n- The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx has no carbon capture column for plant 56068.\n- The same finding applies to unit 1, timepoint 1, which the database does not flag.",
+      "record_id": "L100000104274:G100000107594:qa-validation-3"
+    },
+    {
+      "gem_unit_id": "G100001094209",
+      "concern_type": "Owner(s)",
+      "question": "Should the owner be Forest Junction Energy Center LLC instead of Invenergy LLC?",
+      "finding": "The application says Forest Junction Energy Center LLC is a subsidiary of Invenergy Thermal Development Holdings LLC. The database shows Invenergy LLC at 100 percent.",
+      "recommendation": "Change the owner on all five units to Forest Junction Energy Center LLC [100%] if the reviewer agrees that the project company is the holder. Leave it as is if Invenergy LLC is the entity the tracker uses for Invenergy projects.",
+      "refs": {
+        "links": [
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+        ]
+      },
+      "proposed_value": {
+        "Owner(s)": "Forest Junction Energy Center LLC [100%]"
+      },
+      "gem_plant_id": "L100001083378",
+      "plant_name": "Forest Junction Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14. The first paragraph of the application says the two applicants are 'subsidiaries of Invenergy Thermal Development Holdings LLC'. Page 14 also says the project company's affiliate signed a procurement agreement with Wisconsin Electric Power Company, but no sale of the plant is announced. We Energies has not filed to buy the plant, so no pending acquisition is recorded. The entity lookup for Forest Junction Energy Center LLC found nothing in the local list. The name Invenergy exists already as an entity.",
+      "record_id": "L100001083378:G100001094209:qa-owner-s-1",
+      "checks": [
+        10
+      ]
+    },
+    {
+      "gem_unit_id": "G100001094209",
+      "concern_type": "duplicate",
+      "question": "Is MISO queue entry J4014 at 650 MW part of Union Depot rather than Forest Junction?",
+      "finding": "The application says J4014 at 650 MW is the Union Depot queue position at the Forest Junction Substation. Forest Junction itself has a signed interconnection agreement for 1,203 MW.",
+      "recommendation": "Match J4014 to Union Depot and do not count it against the five Forest Junction units. Leave Forest Junction at five units of 240.6 MW.",
+      "refs": {
+        "links": [
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+        ]
+      },
+      "gem_plant_id": "L100001083378",
+      "plant_name": "Forest Junction Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 18. It says 'Forest Junction has signed a Generator Interconnection Agreement with ATC and MISO for 1,203 MW' and 'Union Depot filed a MISO generator interconnection queue position (J4014)' for 650 MW. A second Union Depot entry, J4249 at 100 MW, is also named there. Union Depot Energy Center is its own plant record in this Wisconsin batch, so J4014 belongs there.",
+      "record_id": "L100001083378:G100001094209:qa-duplicate-2"
+    },
+    {
+      "gem_unit_id": "G100001054548",
+      "concern_type": "identity",
+      "question": "Is EIA plant 70360 the same project as Foundry Ridge Energy Center?",
+      "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 70360, Foundry Ridge Energy Center LLC, Walworth County, with three 108 MW gas combustion turbines planned for 2028. That matches the 324 MW approved at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=615911.",
+      "recommendation": "Treat it as a match and do not add a new plant. Type EIA 70360 into Other IDs for the location, and generators FNDRD, FNRD2 and FNRD3 into Other IDs for units 1, 2 and 3.",
+      "refs": {
+        "links": [
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=615911"
+        ]
+      },
+      "gem_plant_id": "L100001047813",
+      "plant_name": "Foundry Ridge Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Generator IDs are in the Planned sheet of the file. The plant is 3.6 km from GEM's point, which fits the commission's proposed site on the Darien Solar land.",
+      "record_id": "L100001047813:G100001054548:qa-identity-1"
+    },
+    {
+      "gem_unit_id": "G100001054548",
+      "concern_type": "Capacity (MW)",
+      "question": "Should capacity stay at 108 MW per unit when We Energies says 270 MW in total?",
+      "finding": "The commission approved up to 324 MW at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=615911. The We Energies application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=568288, Description of Facilities, says up to 270 MW nameplate for the three GE 7E.03 turbines.",
+      "recommendation": "Leave 108 MW per unit, because 324 MW is the installed size the commission approved and EIA lists 108 MW each. Ask the project manager if the 270 MW figure should be tracked.",
+      "proposed_value": {
+        "Capacity (MW)": "108.0"
+      },
+      "refs": {
+        "links": [
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=568288",
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=615911"
+        ]
+      },
+      "gem_plant_id": "L100001047813",
+      "plant_name": "Foundry Ridge Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The 270 MW may be a derated or summer figure. I did not find a table that explains it.",
+      "record_id": "L100001047813:G100001054548:qa-capacity-mw-2",
+      "checks": [
+        10
+      ]
+    },
+    {
+      "gem_unit_id": "G100001054548",
+      "concern_type": "attribution",
+      "question": "Should We Energies be added as owner of Foundry Ridge before its purchase is approved?",
+      "finding": "We Energies filed docket 6630-BS-103 in November 2025 to acquire the project, and planned to close on October 31, 2026 if approved (https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=568288, schedule near page 23). I found no closing.",
+      "recommendation": "Leave the owner as Foundry Ridge Energy Center LLC. Add a note about the pending purchase and recheck after the commission rules on docket 6630-BS-103.",
+      "refs": {
+        "links": [
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=568288"
+        ]
+      },
+      "gem_plant_id": "L100001047813",
+      "plant_name": "Foundry Ridge Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The October 15, 2026 decision covers the certificate only, not the purchase.",
+      "record_id": "L100001047813:G100001054548:qa-attribution-3"
+    },
+    {
+      "gem_unit_id": "G100001102106",
+      "concern_type": "other",
+      "question": "Does the WEC Energy Group investor plan say anything different about Fox North?",
+      "finding": "The WEC Energy Group investor presentations page at https://investor.wecenergygroup.com/investors/presentations/default.aspx loaded but I did not find the slide deck that holds the plan, and the page text had no mention of Fox.",
+      "recommendation": "Leave the unit as is. Open the September 2026 investor update slides by hand if a check against the plan is wanted.",
+      "refs": {},
+      "gem_plant_id": "L100001089648",
+      "plant_name": "Fox North Energy Center",
+      "country": "United States",
+      "unit_name": "CC1",
+      "fields": {},
+      "researcher_notes": "The page loads through the repo fetcher and lists a latest presentation only through a script viewer. The earnings release from October 29, 2026 points to slides that the plan reader marked unread.",
+      "record_id": "L100001089648:G100001102106:qa-other-1"
+    },
+    {
+      "gem_unit_id": "G100001102182",
+      "concern_type": "Capacity (MW)",
+      "question": "Should the Mount Pleasant fleet be raised from 672 MW to the permit's 722.5 MW?",
+      "finding": "GEM carries 146 + 39 + 39 engines at 3 MW each, 672 MW. The DNR preliminary determination for permit 25-MIN-113 lists 244 engines that sum to 722.5 MW, and the Aug 2026 application adds 6 half-megawatt and 9 one-megawatt Caterpillar units for Area 2.",
+      "recommendation": "Leave GEM's three rows as they are for now. Ask the project manager whether the one-megawatt, half-megawatt and Clarke fire pump units (which GEM does not carry) should be added as extra rows.",
+      "refs": {
+        "links": [
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690",
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1287957"
+        ]
+      },
+      "proposed_value": {
+        "Capacity (MW)": "722.5"
+      },
+      "gem_plant_id": "L100001089674",
+      "plant_name": "Microsoft Mount Pleasant Data Centers power station",
+      "country": "United States",
+      "unit_name": "Area 2 (MKE07-15)",
+      "fields": {},
+      "researcher_notes": "Where to look:\n- Preliminary determination at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690, Source Description table. It lists Cummins C3000 D6e at 'up to 3,213' kW for each of 39 + 39 + 146 core engines, plus smaller Cummins 500DFEK, 1000DQFAD and Clarke fire pump units.\n- Application at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1287957, Section 1.2 and Table 1, and Appendix B table 'Mount Pleasant Area Designations'. It lists Area 2 as 146 three-megawatt units, 9 one-megawatt units and 9 half-megawatt units.\n- 39 x 3.213 MW is 125.3 MW against 117 MW in GEM. The permit figure is the largest rating allowed, so I made no change.\n- The application also names Area East (136 acres) and a 150-acre parcel Microsoft is acquiring, which would be further fleets. Amalia Llano's note and the Mount Pleasant village agendas were not read separately.",
+      "record_id": "L100001089674:G100001102182:qa-capacity-mw-1",
+      "checks": [
+        10,
+        39
+      ]
+    },
+    {
+      "gem_unit_id": "G100001102176",
+      "concern_type": "Capacity Per Engine",
+      "question": "Is 3 MW or 3.213 MW the right capacity per core engine at Mount Pleasant?",
+      "finding": "The permit table gives 3,213 kW for each Cummins C3000 D6e. GEM uses 3 MW.",
+      "recommendation": "Keep 3 MW unless the manual says to use the permit's maximum rating; if it does, change Capacity Per Engine to 3.213 and recompute unit capacity.",
+      "refs": {
+        "links": [
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690"
+        ]
+      },
+      "proposed_value": {
+        "Capacity Per Engine": "3.213"
+      },
+      "gem_plant_id": "L100001089674",
+      "plant_name": "Microsoft Mount Pleasant Data Centers power station",
+      "country": "United States",
+      "unit_name": "MKE03-04",
+      "fields": {},
+      "researcher_notes": "Open https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1262690 and the Source Description table, column 'Capacity (kW)': '≤ 3,213' for Cummins C3000 D6e. No document I found gives the nameplate electrical rating directly.",
+      "record_id": "L100001089674:G100001102176:qa-capacity-per-engine-2",
+      "checks": [
+        39
+      ]
+    },
+    {
+      "gem_unit_id": "G100001054490",
+      "concern_type": "identity",
+      "question": "Are Sierra Club units 5 to 11 the seven Paris RICE engines in docket 6630-CE-316?",
+      "finding": "The air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1212654 authorizes seven 18.8 MW natural gas engines at Paris, 'Seven (7) natural gas-fired RICE each rated at 18.8 MW gross power output'. That matches seven units of about 19 MW. GEM holds them as one unit of 131.6 MW.",
+      "recommendation": "Treat the Sierra Club 'Paris Internal Combustion Project' units 5 to 11 as this plant's seven engines and keep GEM's single unit of 131.6 MW. Add no new units.",
+      "refs": {
+        "links": [
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1212654",
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=552621"
+        ]
+      },
+      "gem_plant_id": "L100001047775",
+      "plant_name": "Paris RICE power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The Public Service Commission docket 6630-CE-316 final decision at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=552621 describes seven engines 'generating up to 128 MW Total'. The Sierra Club list itself was not cited, since it is only a lead.",
+      "record_id": "L100001047775:G100001054490:qa-identity-1"
+    },
+    {
+      "gem_unit_id": "G100001054490",
+      "concern_type": "Capacity (MW)",
+      "question": "Should capacity stay at 131.6 MW when WEC and the PSC say 128 MW?",
+      "finding": "The WEC Energy Group investor update from September 2026 at https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf lists Paris RICE generation at 128 MW in the table headed Thermal Generation and Other Projects. The Public Service Commission final decision at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=552621 says 'approximately 128 MW'. The air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1212654 says seven engines of 18.8 MW and 'a total nominal electric output of 132 megawatts'.",
+      "recommendation": "Leave capacity at 131.6 MW, because the permit gives the installed nameplate per engine. Tick the IRP box only if the reviewer counts investor updates as a plan.",
+      "refs": {
+        "links": [
+          "https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf",
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=552621",
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1212654"
+        ]
+      },
+      "irp": true,
+      "proposed_value": {
+        "Capacity (MW)": "128"
+      },
+      "gem_plant_id": "L100001047775",
+      "plant_name": "Paris RICE power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "This finding comes from the investor update, so it is a plan-sourced value with irp true. It differs from GEM only by rounding and the permit's gross rating.",
+      "record_id": "L100001047775:G100001054490:qa-capacity-mw-2",
+      "checks": [
+        10,
+        37,
+        49
+      ]
+    },
+    {
+      "gem_unit_id": "G100001071185",
+      "concern_type": "identity",
+      "question": "Which EIA generator ids belong to the five Red Oak Ridge units?",
+      "finding": "The EIA-860M table for September 2026 lists five generators at plant 70453, named CT4, CT5, RDOR1, RDOR2 and RDOR3, each 242 MW and planned for December 2029. CT4 and CT5 are marked as pending regulatory approval and not under construction, and the other three as planned with approvals not yet started.",
+      "recommendation": "Type EIA plant 70453 into Other IDs for the plant. Map the five generators to units 1 to 5 in order, since the units are identical, and add each generator id to Other IDs for its unit.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100001062057",
+      "plant_name": "Red Oak Ridge Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Open the EIA-860M workbook at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, sheet Planned, and filter Plant ID 70453. Rows list Entity Name 'Invenergy Services LLC' and Plant Name 'Red Oak Ridge Energy Center LLC'. Technology reads 'Natural Gas Fired Combustion Turbine' and Planned Operation Year reads 2029. No document found ties a particular generator id to a particular GEM unit. EIA shows a planned operating year of 2029, while GEM shows a start year of 2030.\n\nThe exact wording in the table is 'Regulatory approvals pending. Not under construction' for CT4 and CT5, and 'Planned for installation, but regulatory approvals not initiated' for the other three.",
+      "record_id": "L100001062057:G100001071185:qa-identity-1"
+    },
+    {
+      "gem_unit_id": "G100001071185",
+      "concern_type": "Capacity (MW)",
+      "question": "Should capacity stay 242 MW per unit given a We Energies filing that says 1,125 MW total?",
+      "finding": "The project application and the Commission decision use five GE 7F.05 turbines at 242 MW each, 1,210 MW total. The We Energies purchase application says 'up to 1,125 MW (nameplate capacity) using five GE 7E.05 gas turbines', which is 225 MW each.",
+      "recommendation": "Leave capacity at 242 MW and the model at 7F.05 for now. Ask the project manager to check whether We Energies has received a changed turbine plan, and revisit when the written Commission order is posted.",
+      "refs": {
+        "links": [
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=568295",
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=572462",
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=614384",
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=615912"
+        ]
+      },
+      "proposed_value": {
+        "Capacity (MW)": "225.0"
+      },
+      "gem_plant_id": "L100001062057",
+      "plant_name": "Red Oak Ridge Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Open the We Energies application filed on November 20, 2025 at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=568295 and read the first page of the introduction. It says 'a high quality, natural gas- fueled 1,125 MW (nameplate capacity) simple-cycle combustion turbine'. Page 2 repeats it with 'five GE 7E.05 gas turbines'. The developer's own application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=572462, section 1.1.6, says 'five GE 7F.05 gas turbines' at about 242 MW each. The Commission minutes at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=615912 and decision matrix at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=614384 both name 1,210 MW. The 1,186 MW figure on the Commission case page is the grid delivery limit in the application. The We Energies document is the older record of the purchase deal, and the gap may simply be an old or incorrect model name.",
+      "record_id": "L100001062057:G100001071185:qa-capacity-mw-2",
+      "checks": [
+        10
+      ]
+    },
+    {
+      "gem_unit_id": "G100001071185",
+      "concern_type": "attribution",
+      "question": "Should We Energies be added as the owner, or noted as a pending buyer?",
+      "finding": "Wisconsin Electric Power Company, doing business as We Energies, has applied to buy 100 percent of the project, docket 6630-BS-104. The Commission has not approved it and no sale has closed.",
+      "recommendation": "Keep Red Oak Ridge Energy Center LLC as the owner. Add a line at the top of Notes about the pending sale and put it on the possible updates sheet.",
+      "refs": {
+        "links": [
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=568295",
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=618277"
+        ]
+      },
+      "gem_plant_id": "L100001062057",
+      "plant_name": "Red Oak Ridge Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Open the application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=568295 and read the first page. It says the company applies 'to acquire the Red Oak Ridge Energy Center'. The company's letter of November 12, 2026 at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=618277 says the cost estimate rose from $1,769,801,000 to $2,311,427,000, that the application is still pending, and that '100% of ROREC Project is being subscribed to by the VLC', meaning a very large customer. Its name is not given in the public record. No source says the plant serves one site, so the captive fields stay blank.",
+      "record_id": "L100001062057:G100001071185:qa-attribution-3"
+    },
+    {
+      "gem_unit_id": "G100001071185",
+      "concern_type": "location",
+      "question": "Is the existing point and the Somers city value right for the approved site?",
+      "finding": "The approved site is the Proposed Site, about 25 acres of farm field in Section 13, Township 2 North, Range 21 East, in the Town of Paris. GEM's point sits on a farm field beside Interstate 94, with a logistics warehouse to the north and an asphalt plant to the south, which matches the application.",
+      "recommendation": "Leave the point as it is and leave City as Somers, since the parcels sit in the Village of Somers growth area. The EIA point is about 870 meters to the west and is less accurate.",
+      "refs": {
+        "links": [
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=572462",
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=615912",
+          "https://www.google.com/maps/search/?api=1&query=42.63143,-87.95560"
+        ]
+      },
+      "gem_plant_id": "L100001062057",
+      "plant_name": "Red Oak Ridge Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=572462 and search for 'The Proposed Site is located in Section 13'. It says the Proposed Project Area consists of three parcels, and that 'Parcel 134-0101 is located in the Village of Somers Growth Area', while the other two sit in the City of Kenosha Growth Area. It also says the site is 'adjacent to an asphalt manufacturing plant, a logistics warehouse, and U.S. Interstate 41 / U.S. Interstate 94'. I looked at a satellite picture of GEM's point at 42.63143, -87.95560 and saw all three features. The imagery date is unknown. The air permit application at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1252907 is for the Alternative Site near Union Grove, which the Commission did not choose. The Commission minutes at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=615912 say it 'approved the applicant's proposed site and route'. The Commission page says Town of Paris, which is the township.",
+      "record_id": "L100001062057:G100001071185:qa-location-4"
+    },
+    {
+      "gem_unit_id": "G100001030310",
+      "concern_type": "Fuel",
+      "question": "Should the LNG fuel entry be removed from these five units?",
+      "finding": "The We Energies page at https://www.we-energies.com/company/oak-creek-combustion-turbine-project says the turbines 'will run on natural gas'. I found no document saying they burn regasified liquefied natural gas. The LNG storage at Oak Creek is a separate project.",
+      "recommendation": "Remove 'fossil gas: LNG' and keep 'fossil gas: natural gas' on all five units unless a reviewer knows of a document that says otherwise.",
+      "refs": {
+        "links": [
+          "https://www.we-energies.com/company/oak-creek-combustion-turbine-project"
+        ]
+      },
+      "proposed_value": {
+        "Fuel": "fossil gas: natural gas"
+      },
+      "gem_plant_id": "L100001025603",
+      "plant_name": "South Oak Creek Combustion Turbine Project",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The existing fuel source is the commission document at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=505447. I did not reread it in full for this question.",
+      "record_id": "L100001025603:G100001030310:qa-fuel-1"
+    },
+    {
+      "gem_unit_id": "G100001030310",
+      "concern_type": "identity",
+      "question": "Which EIA generator IDs belong to units 1 to 5?",
+      "finding": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists plant 4041 with five planned generators, IDs 11, 12, 13, 14 and 15. Each is 236.3 MW nameplate, natural gas combustion turbine, planned February 2028, status 'Regulatory approvals pending. Not under construction'.",
+      "recommendation": "Treat IDs 11 to 15 as the five units in order and type them in Other IDs by hand. The brief named only 11 to 14, but the table also has 15.",
+      "refs": {},
+      "gem_plant_id": "L100001025603",
+      "plant_name": "South Oak Creek Combustion Turbine Project",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "EIA's status and 236.3 MW differ from the 220 MW and construction status found in the Department of Energy letter. EIA appears out of date and the 220 MW figure is kept. Plant 4041 goes in as the location ID.",
+      "record_id": "L100001025603:G100001030310:qa-identity-2"
+    },
+    {
+      "gem_unit_id": "G100001030310",
+      "concern_type": "Captive industry type",
+      "question": "Does any document tie these turbines to a data center?",
+      "finding": "GEM lists the use as power for a data center. The Department of Energy letter at https://www.energy.gov/sites/default/files/2026-08/20260831_OakCreekCT_EnvRevCompletionLetter.pdf and the We Energies page describe grid generation. The permit harvest found no data center permit at this site.",
+      "recommendation": "Ask the researcher who set this value for the source. If none exists, clear the three captive fields and treat the plant as a utility plant.",
+      "refs": {},
+      "gem_plant_id": "L100001025603",
+      "plant_name": "South Oak Creek Combustion Turbine Project",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The existing source is a BizTimes article at https://biztimes.com/psc-approves-natural-gas-power-plants-planned-in-oak-creek-and-kenosha-county/. I did not reread it.",
+      "record_id": "L100001025603:G100001030310:qa-captive-industry-type-3",
+      "checks": [
+        39
+      ]
+    },
+    {
+      "gem_unit_id": "G100001102105",
+      "concern_type": "Owner(s)",
+      "question": "Should the owner be Union Depot Energy Center LLC instead of Invenergy LLC?",
+      "finding": "The joint application in docket 5-CE-162 is filed by Forest Junction Energy Center LLC and Union Depot Energy Center LLC, and the engineering plan at https://www.wpr.org/wp-content/uploads/2026/09/Natural-Gas-Engineering-Plan.pdf says the applicants are these two companies. GEM lists Invenergy LLC at 100 percent.",
+      "recommendation": "Change the owner to Union Depot Energy Center LLC [100%] if the entity exists in the entity system. Otherwise add it as a new entity.",
+      "refs": {
+        "links": [
+          "https://www.wpr.org/wp-content/uploads/2026/09/Natural-Gas-Engineering-Plan.pdf"
+        ]
+      },
+      "proposed_value": {
+        "Owner(s)": "Union Depot Energy Center LLC [100%]"
+      },
+      "gem_plant_id": "L100001089647",
+      "plant_name": "Union Depot Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The entity lookup for Union Depot Energy Center LLC found nothing locally, and Invenergy is an existing entity used on 7 units. I did not run the database lookup. The engineering plan names Invenergy as the developer in Section 1.",
+      "record_id": "L100001089647:G100001102105:qa-owner-s-1",
+      "checks": [
+        10
+      ]
+    },
+    {
+      "gem_unit_id": "G100000403777",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "question": "Is Backup Power for Weston unit 2 really no?",
+      "finding": "I searched the EIA-860M table for September 2026 and the Wisconsin air permit index for Weston. Neither says whether unit 2 was backup power.",
+      "recommendation": "Leave Backup Power as no. No source was found to cite for it.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000104280",
+      "plant_name": "Weston Power Plant",
+      "country": "United States",
+      "unit_name": "2",
+      "fields": {},
+      "researcher_notes": "Looked at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and the harvested permit index for the Weston plant. Nothing states a backup role.",
+      "record_id": "L100000104280:G100000403777:qa-validation-1"
+    },
+    {
+      "gem_unit_id": "G100000403778",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "question": "Is Backup Power for Weston unit 32 really no?",
+      "finding": "I searched the EIA-860M table for September 2026 and the air permit index. Neither says whether unit 32 was backup power.",
+      "recommendation": "Leave Backup Power as no. No source was found to cite for it.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000104280",
+      "plant_name": "Weston Power Plant",
+      "country": "United States",
+      "unit_name": "32",
+      "fields": {},
+      "researcher_notes": "Looked at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and the harvested permit index for the Weston plant. Nothing states a backup role.",
+      "record_id": "L100000104280:G100000403778:qa-validation-2"
+    },
+    {
+      "gem_unit_id": "G100001018444",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "question": "Is Backup Power for Weston unit 4 really no?",
+      "finding": "I read the Public Service Commission application in docket 5-BS-293 and the 2025 and 2026 WEC investor updates. None says the unit is backup power.",
+      "recommendation": "Leave Backup Power as no. Coal becomes a backup fuel, but the unit itself is not backup power.",
+      "refs": {
+        "links": [
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566895",
+          "https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000104280",
+      "plant_name": "Weston Power Plant",
+      "country": "United States",
+      "unit_name": "Unit 4, timepoint 2",
+      "fields": {},
+      "researcher_notes": "Opened https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566895, https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf and the saved May 2025 update.",
+      "record_id": "L100000104280:G100001018444:qa-validation-3",
+      "irp": true
+    },
+    {
+      "gem_unit_id": "G100001018444",
+      "concern_type": "Start year",
+      "question": "Should Weston 4 start year be 2029 or 2030?",
+      "finding": "The EIA-860M table for September 2026 gives a planned repower in June 2029. The WEC May 2025 update says coal only as backup fuel by end of 2030. The September 2026 WEC update gives no year.",
+      "recommendation": "Keep 2030, the owner's own statement. Close Natalia Fretz's comment thread on Weston 4 after checking the next WEC update.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://web.archive.org/web/2025/https://s22.q4cdn.com/994559668/files/doc_presentations/2025/May/16/05-2025-May-Final.pdf"
+        ]
+      },
+      "proposed_value": {
+        "Start year": "2030"
+      },
+      "gem_plant_id": "L100000104280",
+      "plant_name": "Weston Power Plant",
+      "country": "United States",
+      "unit_name": "Unit 4, timepoint 2",
+      "fields": {},
+      "researcher_notes": "EIA: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx. WEC: https://web.archive.org/web/2025/https://s22.q4cdn.com/994559668/files/doc_presentations/2025/May/16/05-2025-May-Final.pdf PDF page 18. The EIP Oil and Gas Watch page at https://oilandgaswatch.org/facility/rec_d4f1u68q7easr8ra1gc0 once gave 2029. It now shows a 404 page in a browser and has no saved copy, so I could not check it.",
+      "record_id": "L100000104280:G100001018444:qa-start-year-4",
+      "checks": [
+        10,
+        37,
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100001018444",
+      "concern_type": "Retired year",
+      "question": "Is the Weston 4 retirement year in the comment thread still 2030?",
+      "finding": "The WEC documents do not retire Weston 4. They keep coal only as backup fuel to end of 2030 and plan gas blending. Weston 3 retires at the end of 2031 per the September 2026 update.",
+      "recommendation": "Do not add a retirement year for Weston 4. Close the thread.",
+      "refs": {
+        "links": [
+          "https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000104280",
+      "plant_name": "Weston Power Plant",
+      "country": "United States",
+      "unit_name": "Unit 4, timepoint 2",
+      "fields": {},
+      "researcher_notes": "Sept 2026 update: https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf page 28. Rothschild village packet from October 2026 says Weston 3 retires in 2031 and Weston 4 converts to gas.",
+      "record_id": "L100000104280:G100001018444:qa-retired-year-5",
+      "checks": [
+        37,
+        38
+      ],
+      "irp": true
+    },
+    {
+      "gem_unit_id": "G100001018444",
+      "concern_type": "Owner(s)",
+      "question": "Should Weston 4 be 100% Wisconsin Electric once the Dairyland purchase closes?",
+      "finding": "Docket 5-BS-293 asks to move Dairyland's 30 percent to Wisconsin Electric. It was still pending in the September 2026 update.",
+      "recommendation": "Do not change the owner now. Add the pending sale to Notes and the possible-updates sheet.",
+      "refs": {
+        "links": [
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566895",
+          "https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000104280",
+      "plant_name": "Weston Power Plant",
+      "country": "United States",
+      "unit_name": "Unit 4, timepoint 2",
+      "fields": {},
+      "researcher_notes": "Docket https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=566895. Update: https://www.wpr.org/wp-content/uploads/2026/09/09-2026-September-Final-1.pdf page 28.",
+      "record_id": "L100000104280:G100001018444:qa-owner-s-6",
+      "checks": [
+        10
+      ],
+      "irp": true
+    },
+    {
+      "gem_unit_id": "G100000414139",
+      "concern_type": "Planned retire",
+      "question": "Does Xcel's plan to run French Island waste-to-energy units to 2040 change the 2030 retirement date?",
+      "finding": "Xcel's 2024 Minnesota resource plan says the French Island waste-to-energy plant will run to 2040, while EIA lists all four generators at the site, including the oil turbines, retiring in June 2030. The plan does not mention the oil turbines.",
+      "recommendation": "Leave units 3 and 4 at 2030. Check the waste-to-energy units separately if GEM tracks them.",
+      "refs": {},
+      "proposed_value": {},
+      "gem_plant_id": "L100000409271",
+      "plant_name": "French Island power station",
+      "country": "United States",
+      "unit_name": "3",
+      "fields": {},
+      "researcher_notes": "The plan is the filing 20242-203027-01 in Minnesota docket E002/RP-24-67, saved in scopes/us-wi/work/irp/xcel. On the PDF, the paragraph that starts 'Finally, all three of our renewable Refuse Derived Fuel' says French Island runs to 2040. I could not cite a public web address for it.",
+      "record_id": "L100000409271:G100000414139:qa-planned-retire-1",
+      "checks": [
+        21,
+        43,
+        50
+      ]
+    },
+    {
+      "gem_unit_id": "G100000403768",
+      "concern_type": "Capacity (MW)",
+      "question": "Should Neenah units stay at 220 MW when EIA shows 185.5 MW nameplate?",
+      "finding": "Alliant's page at https://www.alliantenergy.com/our-energy/natural-gas/neenah says the 2025 upgrades raised the two turbines from about 300 to 440 MW, so 220 MW each. The air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1280163 says up to 218 MW each. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) still shows the old 185.5 MW nameplate.",
+      "recommendation": "Leave 220 MW on both units. Recheck when EIA publishes its next annual survey.",
+      "refs": {
+        "links": [
+          "https://www.alliantenergy.com/our-energy/natural-gas/neenah",
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1280163",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000402376",
+      "plant_name": "Alliant Energy Neenah power station",
+      "country": "United States",
+      "unit_name": "CT01",
+      "fields": {},
+      "researcher_notes": "EIA net winter capacity is 218.9 MW for CT01 and 218.4 MW for CT02, which agrees with the permit.",
+      "record_id": "L100000402376:G100000403768:qa-capacity-mw-1",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100001017859",
+      "concern_type": "Start year",
+      "question": "Should the start year for units 6 and 7 be the 2010 gas switch instead of 2011?",
+      "finding": "A January 2010 Wisconsin State Journal article says gas becomes the primary fuel at Blount Street in March 2010. EIA gives 1957 and 1961, the original coal years.",
+      "recommendation": "Look for an MGE or Public Service Commission document that dates the gas conversion of units 6 and 7. Leave 2011 until one is found.",
+      "refs": {
+        "links": [
+          "https://madison.com/wsj/business/article_28618898-0489-11df-8a48-001cc4c002e0.html",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1286845"
+        ]
+      },
+      "proposed_value": {
+        "Start year": "2010"
+      },
+      "gem_plant_id": "L100000104267",
+      "plant_name": "Blount Street Station",
+      "country": "United States",
+      "unit_name": "Unit 6, timepoint 2",
+      "fields": {},
+      "researcher_notes": "Article: https://madison.com/wsj/business/article_28618898-0489-11df-8a48-001cc4c002e0.html. EIA file: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, plant 3992. The permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1286845 says boilers B28 and B29 were installed 1957 and 1961. No MGE press release or commission filing was opened in this pass.",
+      "record_id": "L100000104267:G100001017859:qa-start-year-1",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100000401956",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "question": "Is there any document stating Backup Power for Combined Locks CC1?",
+      "finding": "The EIA-860M table for September 2026 has no backup power field. The Wisconsin Department of Natural Resources permit fact sheet describes the cogeneration turbine as burning natural gas for the mill, which points to routine rather than backup use.",
+      "recommendation": "Leave Backup Power as no. No document that states it was found, so it stays without a source.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000402527",
+      "plant_name": "Combined Locks energy center",
+      "country": "United States",
+      "unit_name": "CC1",
+      "fields": {},
+      "researcher_notes": "Where I looked: the EIA-860M table at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, a web search for the plant, and the Department of Natural Resources fact sheet https://dnr.wisconsin.gov/sites/default/files/topic/Wastewater/pn/McKinleyPaper-FS.pdf, which is gone from its live address but saved at https://web.archive.org/web/20250915050421/https://dnr.wisconsin.gov/sites/default/files/topic/Wastewater/pn/McKinleyPaper-FS.pdf. The WARP permit harvest found no facility matched to this plant.",
+      "record_id": "L100000402527:G100000401956:qa-validation-1"
+    },
+    {
+      "gem_unit_id": "G100000401956",
+      "concern_type": "Owner(s)",
+      "question": "Should the owner of Combined Locks CC1 be McKinley Paper rather than Midwest Paper Group?",
+      "finding": "The EIA-860M table for September 2026 shows the entity name McKinley Paper for plant 55558. A PaperAge article from February 2022 says McKinley Paper bought Midwest Paper Group.",
+      "recommendation": "Ask the project manager to confirm which company legally holds the plant. Do not change the owner until a second independent publisher confirms the buyer entity.",
+      "refs": {
+        "links": [
+          "https://www.paperage.com/2022news/02-07-2022mckinley-acquires-midwest-paper.html",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "proposed_value": {
+        "Owner(s)": "McKinley Paper Company [100%]"
+      },
+      "gem_plant_id": "L100000402527",
+      "plant_name": "Combined Locks energy center",
+      "country": "United States",
+      "unit_name": "CC1",
+      "fields": {},
+      "researcher_notes": "Open https://www.paperage.com/2022news/02-07-2022mckinley-acquires-midwest-paper.html for the sale story. The EIA row is in sheet Operating, entity ID 744, entity name McKinley Paper. The purchase may have been of the parent company, so the plant could still sit in a Midwest Paper Group subsidiary.",
+      "record_id": "L100000402527:G100000401956:qa-owner-s-2",
+      "checks": [
+        43,
+        50
+      ]
+    },
+    {
+      "gem_unit_id": "G100000401956",
+      "concern_type": "Capacity (MW)",
+      "question": "Should Combined Locks CC1 capacity be 66.5 MW instead of 67.0 MW?",
+      "finding": "The EIA-860M table for September 2026 gives GEN1 nameplate 60.5 MW and GEN2 nameplate 6.0 MW, a total of 66.5 MW. GEM shows 67.0 MW.",
+      "recommendation": "Leave as is. The difference is under 1 MW and rounding is optional.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000402527",
+      "plant_name": "Combined Locks energy center",
+      "country": "United States",
+      "unit_name": "CC1",
+      "fields": {},
+      "researcher_notes": "The rows are in sheet Operating, plant 55558, column Nameplate Capacity (MW).",
+      "record_id": "L100000402527:G100000401956:qa-capacity-mw-3"
+    },
+    {
+      "gem_unit_id": "G100000403757",
+      "concern_type": "Capacity (MW)",
+      "question": "Should Concord unit capacity change from 95.0 MW to 95.4 MW?",
+      "finding": "The EIA monthly inventory for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx), Operating sheet, plant 7159, generators 1 to 4, shows a nameplate of 95.4 MW each. GEM shows 95.0 MW for each unit.",
+      "recommendation": "Leave as is, since the difference is rounding. Change to 95.4 only if you want to match EIA exactly.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "proposed_value": {
+        "Capacity (MW)": "95.4"
+      },
+      "gem_plant_id": "L100000402372",
+      "plant_name": "Concord power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The air permit for the station (https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1282221) says four turbines give 312 MW in total, a lower operating figure. I did not use it.",
+      "record_id": "L100000402372:G100000403757:qa-capacity-mw-1"
+    },
+    {
+      "gem_unit_id": "G100000414276",
+      "concern_type": "other",
+      "question": "Is the Diesel Generators unit in Madison a backup power unit?",
+      "finding": "No document I found states the Backup Power value for this unit. The Madison Gas and Electric page at https://mge.com/about-mge/power-plants/power-sources did not contain the words backup generators when checked, so it could not be cited. EIA lists the unit as an operating internal combustion engine with very low output.",
+      "recommendation": "Leave Backup Power as no and leave its source empty. Ask the Madison Gas and Electric contact whether the units serve customer backup or utility peaking.",
+      "refs": {},
+      "checks": [
+        7
+      ],
+      "gem_plant_id": "L100000409212",
+      "plant_name": "Diesel Generators power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "I searched the web for Madison Gas and Electric diesel generators and read the EIA-860M table for September 2026. A search summary said the company owns about 60 MW of backup generators at business customer sites, but I could not find that sentence on the company page, so it is not a source.",
+      "record_id": "L100000409212:G100000414276:qa-backup-power-1",
+      "concern_type_raw": "Backup Power"
+    },
+    {
+      "gem_unit_id": "G100000414268",
+      "concern_type": "Capacity (MW)",
+      "question": "Should Germantown capacities follow the EIA nameplate or the DNR permit ratings?",
+      "finding": "The EIA-860M table for September 2026 gives 71.2 MW for Units 1 to 4 and 105.9 MW for Unit 5. The 2019 Wisconsin DNR permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072 says Units 1 to 4 total 224 MW and Unit 5 is 85 MW.",
+      "recommendation": "Use the EIA nameplate figures, 71.2 MW for each of Units 1 to 4 and 105.9 MW for Unit 5, because GEM records nameplate capacity.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=859072"
+        ]
+      },
+      "proposed_value": {
+        "Capacity (MW)": "71.2"
+      },
+      "gem_plant_id": "L100000402373",
+      "plant_name": "Germantown power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "In the permit, go to the equipment list near the start of the permit. The line starts 'Eight Simple Cycle Combustion Turbines arranged in pairs' and ends 'total electrical capacity of 224 MW'. The Unit 5 line ends 'total electric capacity of 85 MW'. The permit ratings are lower than EIA's nameplate, which is likely a site rating at permit conditions. Each of Units 1 to 4 is a pair of Pratt and Whitney turbines, per a 2024 DNR application, but I could not verify that page with the link checker because its text is spaced out, so I did not report it.",
+      "record_id": "L100000402373:G100000414268:qa-capacity-mw-1",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100000403785",
+      "concern_type": "other",
+      "question": "Is there any document that states Backup Power for Island Street unit FT81?",
+      "finding": "The EIA table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx does not carry a backup power field. WPPI Energy's power supply page at https://wppienergy.org/power-supply/ lists the plant as a gas peaking plant of 52 MW but does not use the words backup power.",
+      "recommendation": "Leave Backup Power as no. The plant is a utility peaking plant on the grid, not a data center backup unit.",
+      "refs": {},
+      "gem_plant_id": "L100000402388",
+      "plant_name": "Island Street Peaking Plant",
+      "country": "United States",
+      "unit_name": "FT81",
+      "fields": {},
+      "researcher_notes": "I searched the web for the plant name and WPPI Energy and found only plant directories that repeat EIA data. I did not open the WPPI page to confirm its figure.",
+      "record_id": "L100000402388:G100000403785:qa-backup-power-1",
+      "concern_type_raw": "Backup Power"
+    },
+    {
+      "gem_unit_id": "G100000401778",
+      "concern_type": "Owner(s)",
+      "question": "Should the owners of LSP-Whitewater change to the We Energies companies?",
+      "finding": "A 2022 commission decision approved a 50-50 purchase by Wisconsin Electric Power Company and Wisconsin Public Service Corporation, and a We Energies fact sheet says the plant was bought in 2023. EIA lists Wisconsin Electric Power Co.",
+      "recommendation": "Confirm the closing and the shares in the 2023 utility filings, then replace the four former owners with the buyers. Until then leave the owner list as it is.",
+      "refs": {
+        "links": [
+          "https://www.we-energies.com/company/pdf/whitewater-generating-station.pdf",
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=455168"
+        ]
+      },
+      "proposed_value": {
+        "Owner(s)": "Wisconsin Electric Power Company [50%]; Wisconsin Public Service Corporation [50%]"
+      },
+      "gem_plant_id": "L100000401676",
+      "plant_name": "LSP-Whitewater power station",
+      "country": "United States",
+      "unit_name": "CC1",
+      "fields": {},
+      "researcher_notes": "The owner list for this plant may be out of date.\n\nWhat the sources say:\n- The Public Service Commission of Wisconsin final decision at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=455168 (docket 5-BS-264, decision dated November 2022, page 1) says it grants Wisconsin Electric Power Company and Wisconsin Public Service Corporation authority to buy the LSP-Whitewater facility. The paragraph under 'Introduction' says 'each applicant would acquire 50 percent of the Whitewater facility's capacity'. I read the full decision at that address.\n- A We Energies fact sheet at https://www.we-energies.com/company/pdf/whitewater-generating-station.pdf says on page 1, under 'Initial cost', that 'We Energies purchased the power plant from LSP Whitewater in 2023 for $75 million'. It does not name Wisconsin Public Service Corporation.\n- The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists plant 55011, generators CTG1 and STG1, under the entity Wisconsin Electric Power Co.\n\nWhat was not found: a document that states the closing date or the final shares. The owner list in GEM still shows the former LSP-Whitewater partners.",
+      "record_id": "L100000401676:G100000401778:qa-owner-s-1",
+      "checks": [
+        43,
+        50
+      ]
+    },
+    {
+      "gem_unit_id": "G100000401778",
+      "concern_type": "Capacity (MW)",
+      "question": "Is 284 MW the right capacity when the commission decision says 236.5 MW?",
+      "finding": "The EIA-860M table for September 2026 gives nameplate 177.3 MW plus 106.2 MW, which is 283.5 MW. The commission decision at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=455168 gives 236.5 MW AC for the facility, and the We Energies fact sheet gives 280 MW net.",
+      "recommendation": "Leave 284 MW, which matches EIA nameplate. The lower figures are net or alternating current ratings.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=455168"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000401676",
+      "plant_name": "LSP-Whitewater power station",
+      "country": "United States",
+      "unit_name": "CC1",
+      "fields": {},
+      "researcher_notes": "EIA table: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx plant 55011 rows CTG1 and STG1. Commission decision: https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=455168 Findings of Fact item 2.",
+      "record_id": "L100000401676:G100000401778:qa-capacity-mw-2"
+    },
+    {
+      "gem_unit_id": "G100000403762",
+      "concern_type": "duplicate",
+      "question": "Are the Sierra Club Paris Internal Combustion rows already held as the Paris RICE power station?",
+      "finding": "The Sierra Club rows for units 5 to 11 describe the seven natural gas engines that We Energies is building in Kenosha County. GEM already holds them as the plant Paris RICE power station, in construction at 131.6 MW.",
+      "recommendation": "Add no units to Paris (WI) power station. Leave the existing Paris RICE power station record as the home of these engines.",
+      "refs": {
+        "links": [
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1279873"
+        ]
+      },
+      "gem_plant_id": "L100000402374",
+      "plant_name": "Paris (WI) power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Source:\n- The Public Service Commission of Wisconsin docket 6630-CE-316 is titled 'Application of Wisconsin Electric Power Company for a Certificate of Public Convenience and Necessity to Construct and Operate the Paris Reciprocating Internal Combustion Engines Project, Consisting of Seven Natural Gas-Fired Reciprocating Internal Combustion Engines Generating up to 128 MW Total'. The title is on the docket search page for 6630-CE-316 on the commission's filing system at https://apps.psc.wi.gov/ERF/ERFsearch/.\n- The engines sit at the Lakeshore Capacity Improvement Project regulator station in the Town of Paris, not on the grounds of the four turbines.\n\nWhat I checked:\n- The GEM export has a separate plant called Paris RICE power station with one unit, status construction, 131.6 MW.\n- The 2026 state air permits 25-PSD-061 and 26-PSD-057 for the Paris Generating Station, read at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1279873, cover heaters and similar equipment, not new generating units.\n\nI did not open the large engineering documents in the docket, so I did not compare the 128 MW title figure with the 131.6 MW in GEM. That figure belongs to the Paris RICE record, not to this plant.",
+      "record_id": "L100000402374:G100000403762:qa-duplicate-1"
+    },
+    {
+      "gem_unit_id": "G100000401958",
+      "concern_type": "Other IDs (location)",
+      "question": "Should EIA plant 64020 be typed into Other IDs (location) next to 55641?",
+      "finding": "The EIA-860M table for September 2026 lists this combined cycle unit (CTG3, CTG4, STG2) under plant 64020, West Riverside Energy Center. The database shows only 55641, which is the older Riverside units 1 and 2.",
+      "recommendation": "Add EIA: 64020 to Other IDs (location) by hand in the web form, keeping EIA: 55641.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "proposed_value": {
+        "Other IDs (location)": "EIA: 55641, EIA: 64020"
+      },
+      "gem_plant_id": "L100000401640",
+      "plant_name": "Riverside energy center (WI)",
+      "country": "United States",
+      "unit_name": "CC_set",
+      "fields": {},
+      "researcher_notes": "Open https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and the Operating sheet. Rows for plant 64020 show generators CTG3, CTG4 and STG2 at 232.9, 232.9 and 257.4 MW, which add up to 723.2 MW. That matches the 723.0 MW in the database. The IDs have no data source box, so I did not propose them as an edit.",
+      "record_id": "L100000401640:G100000401958:qa-other-ids-location-1"
+    },
+    {
+      "gem_unit_id": "G100000403460",
+      "concern_type": "Owner(s)",
+      "question": "Should the RockGen owner stay Rockgen Energy LLC at 100 percent?",
+      "finding": "The 2026 Madison Gas and Electric application says Dairyland Power Cooperative has owned 100 percent since 2021 and operates it. A 2025 state air permit document says RockGen Energy, LLC owns the station. The LLC is probably Dairyland's holding company, but no document says so.",
+      "recommendation": "Leave the owner as Rockgen Energy LLC [100%]. Do not add Madison Gas and Electric's one-third share, because the deal is not closed.",
+      "refs": {
+        "links": [
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=582939",
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1194627",
+          "https://www.mgeenergy.com/MGEEnergy/media/Library/documents/sec-reports/sec-filings/20260805-8k_1.pdf"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000402253",
+      "plant_name": "RockGen energy center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Pending acquisition, for the possible-updates sheet and a Notes line.\n\nOwnership:\n- Open the Madison Gas and Electric application at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=582939 (docket 3270-BS-100). It seeks a Certificate of Authority to buy one-third of RockGen under an Asset Sale Agreement with Dairyland.\n- A Madison Gas and Electric filing from August 5, 2026 at https://www.mgeenergy.com/MGEEnergy/media/Library/documents/sec-reports/sec-filings/20260805-8k_1.pdf says the deal is expected to close in late 2027 and needs commission approval. I found no approval or closing.\n- Add a Notes line saying the purchase is pending.\n- The EIA table lists the entity as Dairyland Power Coop. The permit text at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1194627 says 'RockGen Energy, LLC owns'.",
+      "record_id": "L100000402253:G100000403460:qa-owner-s-1",
+      "checks": [
+        43,
+        50
+      ]
+    },
+    {
+      "gem_unit_id": "G100000402365",
+      "concern_type": "Capacity (MW)",
+      "question": "Should capacity be updated to the roughly 218 MW per unit rating after the upgrade?",
+      "finding": "EIA still lists 173.4 MW nameplate per unit. The 2026 air permit and the 2023 Public Service Commission application give a nominal output of 218 MW per unit in winter after the gas path upgrades.",
+      "recommendation": "Record 173.4 MW per unit for now. Check the EIA table again after the next release, and move to the new nameplate if EIA raises it.",
+      "refs": {
+        "links": [
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1278655",
+          "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=469672"
+        ]
+      },
+      "proposed_value": {
+        "Capacity (MW)": "218"
+      },
+      "gem_plant_id": "L100000401635",
+      "plant_name": "Sheboygan Falls power station",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The air permit is at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1278655. Find 'Maximum specifications: Output: 218 MW, each' in the project description. The application is at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=469672. The paragraph that starts 'Upon completion of the Project, each unit will be capable of a nominal output of approximately 218 MW' gives the figure. Amalia Llano's note on both units quotes about 440 MW for the whole facility, which is the two units at the winter rating. I did not find a document that states the generator nameplate changed.",
+      "record_id": "L100000401635:G100000402365:qa-capacity-mw-1",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100001017851",
+      "concern_type": "Start year",
+      "question": "Is unit 1's conversion year 2014 or November 2015?",
+      "finding": "The air permit lists boilers B21 and B22 as 'modified 2014'. A 2025 We Energies application at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1248468 says on page 4 'the conversion of VAPP's primary fuel source from coal to natural gas in November 2015'.",
+      "recommendation": "Leave the start year at 2014 for unit 1 and 2015 for unit 2, since the permit gives those modification years per boiler.",
+      "refs": {
+        "links": [
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1248468",
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244"
+        ]
+      },
+      "gem_plant_id": "L100000104279",
+      "plant_name": "Valley Power Plant",
+      "country": "United States",
+      "unit_name": "Unit 1, timepoint 2",
+      "fields": {},
+      "researcher_notes": "The permit history row 13-RSG-067 at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1170244 shows the gas conversion permit was issued in November 2013.",
+      "record_id": "L100000104279:G100001017851:qa-start-year-1",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100001054520",
+      "concern_type": "identity",
+      "question": "Which EIA generator ids belong to Wheaton unit 8?",
+      "finding": "The EIA-860M table for September 2026 https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx , sheet Operating, lists generators WHT09, WHT10, WHT11, WHT12 and WHT13 at plant 4014. Each is a 9.8 MW natural gas internal combustion engine, operating October 2025. Together they are 49 MW, matching unit 8's five engines of 9.8 MW.",
+      "recommendation": "Record EIA ids WHT09 to WHT13 under Other IDs (unit) for unit 8, and WHT08 for unit 7. Generators 1 to 4 are the retired 1973 gas turbines of 48.5 MW, not unit 8.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://psc.wi.gov/Pages/CommissionActions/CasePages/WheatonRICEProject.aspx"
+        ]
+      },
+      "gem_plant_id": "L100000409233",
+      "plant_name": "Wheaton power station",
+      "country": "United States",
+      "unit_name": "8",
+      "fields": {},
+      "researcher_notes": "Generator 1, 2, 3 and 4 show retirement in May 2025. They are older units not in this record. The state utility filing on the Wisconsin Public Service Commission case page https://psc.wi.gov/Pages/CommissionActions/CasePages/WheatonRICEProject.aspx describes the repowering of the plant.",
+      "record_id": "L100000409233:G100001054520:qa-identity-1"
+    },
+    {
+      "gem_unit_id": "G100000414077",
+      "concern_type": "Status",
+      "question": "Should the Environmental Integrity Project under construction row for Wheaton be ignored?",
+      "finding": "The EIA-860M table for September 2026 https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx shows unit 6 retired in January 2024 and the repowering units 7 to 13 operating. So the under construction label is stale.",
+      "recommendation": "Leave unit 6 as retired and unit 7 and 8 as operating.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000409233",
+      "plant_name": "Wheaton power station",
+      "country": "United States",
+      "unit_name": "6",
+      "fields": {},
+      "researcher_notes": "The Environmental Integrity Project page https://oilandgaswatch.org/facility/rec_d4f1u68q7easr8ra1gcg did not load text I could check, so I did not read its source documents. I did not look for a link to older units 1 to 4, which EIA shows retired in May 2025 and which GEM has no record of.",
+      "record_id": "L100000409233:G100000414077:qa-status-2",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100001054518",
+      "concern_type": "existence",
+      "question": "Should retired Wheaton units 1 to 4 be added to GEM?",
+      "finding": "The EIA-860M table for September 2026 https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists generators 1 to 4 as natural gas combustion turbines of 48.5 MW, operating 1973, retired May 2025. GEM has no units for them.",
+      "recommendation": "Check whether they were earlier removed on purpose; they retired after 2020 so adding them as retired is allowed.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000409233",
+      "plant_name": "Wheaton power station",
+      "country": "United States",
+      "unit_name": "7",
+      "fields": {},
+      "researcher_notes": "Utility filings say the new plant replaces units 1 to 6. I found no filing that gives start years or owners for units 1 to 4 beyond the EIA table.",
+      "record_id": "L100000409233:G100001054518:qa-existence-3"
+    },
+    {
+      "gem_unit_id": "G100000409403",
+      "concern_type": "Start year",
+      "question": "Should the 2027 start year be cleared on the cancelled Nemadji Trail unit?",
+      "finding": "The owners cancelled the project on October 28, 2026 with no construction done. The unit is cancelled but still shows a start year of 2027.",
+      "recommendation": "Clear the start year, because the manual says cancelled units never carry one.",
+      "refs": {
+        "links": [
+          "https://www.wpr.org/wp-content/uploads/2026/10/viewdoc.pdf"
+        ]
+      },
+      "proposed_value": {
+        "Start year": ""
+      },
+      "gem_plant_id": "L100000407359",
+      "plant_name": "Nemadji Trail energy center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Open the owners' letter at https://www.wpr.org/wp-content/uploads/2026/10/viewdoc.pdf, page 1, headed 'Cancellation of Project'.",
+      "record_id": "L100000407359:G100000409403:qa-start-year-1"
+    },
+    {
+      "gem_unit_id": "G100000409403",
+      "concern_type": "identity",
+      "question": "Is EIA plant 8057 Superior Generation Energy Center the same project as Nemadji Trail?",
+      "finding": "The EIA-860M table for September 2026, sheet 'Canceled or Postponed', has plant code 8057, 'Superior Generation Energy Center', Douglas County, owner entity ALLETE, Inc., generator GEN1, 170 MW, natural gas fired combustion turbine, about 0.9 km from GEM's point. The 170 MW and single combustion turbine do not match the 625 MW combined cycle unit.",
+      "recommendation": "Do not link plant 8057 to this unit, since it looks like an older ALLETE proposal on the same site. Ask the project manager before typing any EIA code.",
+      "refs": {},
+      "gem_plant_id": "L100000407359",
+      "plant_name": "Nemadji Trail energy center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Plant code 8057, generator ID GEN1. Nemadji Trail has no EIA code. The file is https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx.",
+      "record_id": "L100000407359:G100000409403:qa-identity-2"
+    },
+    {
+      "gem_unit_id": "G100000409403",
+      "concern_type": "validation",
+      "checks": [
+        7
+      ],
+      "question": "Is there a document that states Backup Power for the Nemadji Trail unit?",
+      "finding": "I searched the owners' cancellation letter, the news reports and the power-technology.com profile. None says anything about backup power. The plant was a grid power station, not a data center.",
+      "recommendation": "Leave Backup Power as no. I looked in the owners' letter and news coverage and found no statement either way.",
+      "refs": {
+        "links": [
+          "https://www.wpr.org/wp-content/uploads/2026/10/viewdoc.pdf",
+          "https://www.powermag.com/groups-cancel-1-billion-gas-fired-power-plant-project-in-wisconsin/"
+        ]
+      },
+      "gem_plant_id": "L100000407359",
+      "plant_name": "Nemadji Trail energy center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "Sources opened: https://www.wpr.org/wp-content/uploads/2026/10/viewdoc.pdf and https://www.powermag.com/groups-cancel-1-billion-gas-fired-power-plant-project-in-wisconsin/.",
+      "record_id": "L100000407359:G100000409403:qa-validation-3"
+    },
+    {
+      "gem_unit_id": "G100000409403",
+      "concern_type": "source",
+      "question": "Should the Environmental Integrity Project and Sierra Club proposed listings be treated as stale?",
+      "finding": "Both list the plant as proposed or planned, but the owners' letter of October 28, 2026 cancels it.",
+      "recommendation": "Leave the status as cancelled. Neither listing is cited.",
+      "refs": {
+        "links": [
+          "https://www.wpr.org/wp-content/uploads/2026/10/viewdoc.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000407359",
+      "plant_name": "Nemadji Trail energy center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The Environmental Integrity Project page is drawn by scripts and its text did not load.",
+      "record_id": "L100000407359:G100000409403:qa-source-4"
+    },
+    {
+      "gem_plant_id": "L100000401640",
+      "plant_name": "Riverside Energy Center",
+      "concern_type": "scope",
+      "question": "Should the 2004 Riverside combined cycle block become its own plant, apart from the West Riverside block that GEM now holds under this plant?",
+      "finding": "The federal generator file lists two plants at the Beloit site: plant 55641 Riverside Energy Center (CTG1, CTG2 and STG1, 674.9 MW from 2004, owned only by Wisconsin Power and Light) and plant 64020 West Riverside Energy Center (CTG3, CTG4 and STG2, 723.2 MW from 2020, shared by six owners). GEM's plant carries the West Riverside unit, its shared owners and the EIA code 55641 of the older plant.",
+      "recommendation": "Keep the 2004 block as unit CC1 at this plant for now with Wisconsin Power and Light as its owner, and ask the GOGPT team lead whether the two blocks should be split into Riverside and West Riverside plants with their own owners and EIA codes.",
+      "researcher_notes": "Open the federal file at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Filter Plant ID to 55641 for the 2004 block and to 64020 for West Riverside. The plant-level owner list in GEM gives the West Riverside shares, which do not fit the older block. Alliant's 2025 annual report lists the Riverside Energy Center as a Wisconsin Power and Light station.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Federal monthly generator file for September 2026, Operating sheet, plant 55641 Riverside Energy Center in Rock County: CTG1 198.9 MW, CTG2 198.9 MW and STG1 277.1 MW, a natural gas combined cycle, operating since June 2004, owner Wisconsin Power & Light Co. Plant 64020 West Riverside Energy Center is listed apart, with CTG3, CTG4 and STG2."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Alliant Energy annual report for 2025. Its list of Wisconsin Power and Light generating stations names the Riverside Energy Center and gives 17.5 MW for the engines there."
+        }
+      ],
+      "proposed_value": {},
+      "country": "United States",
+      "fields": {},
+      "record_id": "us-wi:plant:qa-scope-1"
+    }
+  ]
+}

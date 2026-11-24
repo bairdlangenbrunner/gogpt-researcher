@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "lane": "newunits",
+    "scope": {
+      "country": "United States",
+      "state": "Wisconsin",
+      "postal": "wi",
+      "kind": "state",
+      "slug": "wisconsin",
+      "quarter": "q4-2026",
+      "csv": "scripts/gem_export_gogpt.csv"
+    },
+    "generated": "2026-11-19T09:20:51-05:00",
+    "mode": "update",
+    "counts": {
+      "records": 1
+    }
+  },
+  "records": [
+    {
+      "gem_plant_id": "L100000401640",
+      "plant_name": "Riverside Energy Center",
+      "unit_name": "CC1",
+      "record_id": "L100000401640:new:cc1",
+      "fields": {
+        "Unit name": "CC1",
+        "Fuel": "fossil gas: natural gas",
+        "Capacity (MW)": "674.9",
+        "Status": "operating",
+        "Turbine/Engine Technology": "combined cycle",
+        "Owner(s)": "Wisconsin Power and Light Co [100%]",
+        "Start year": "2004"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ],
+        "Fuel Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1293067"
+        ],
+        "Status Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ],
+        "Turbine/Engine Technology Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1293067"
+        ],
+        "Owners Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm"
+        ],
+        "Start Year Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Federal monthly generator file for September 2026, Operating sheet, plant 55641 Riverside Energy Center in Rock County: CTG1 198.9 MW, CTG2 198.9 MW and STG1 277.1 MW, a natural gas combined cycle, operating since June 2004, owner Wisconsin Power & Light Co. Plant 64020 West Riverside Energy Center is listed apart, with CTG3, CTG4 and STG2."
+        },
+        {
+          "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1293067",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "State air permit document for the Riverside Energy Center in Beloit, Rock County. It covers the four natural gas-fired combined cycle turbines at the site and the project to raise the output of the 2004 block from 625 MW."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/352541/000035254126000007/lnt-20251231.htm",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Alliant Energy annual report for 2025. Its list of Wisconsin Power and Light generating stations names the Riverside Energy Center and gives 17.5 MW for the engines there."
+        }
+      ],
+      "tier": "high",
+      "irp": false,
+      "checks": [],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": "2004",
+          "period": "June",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+          ],
+          "note": "The federal monthly generator file gives operating month 6 and year 2004 for CTG1, CTG2 and STG1 at plant 55641."
+        }
+      ],
+      "action": "Add the 2004 combined cycle block at Riverside as a new unit CC1: 674.9 MW, operating since 2004, natural gas, owned by Wisconsin Power and Light.",
+      "researcher_notes": "GEM's only gas unit at Riverside is CC_set, 723 MW from 2020, which is the newer West Riverside block (federal plant 64020, shared owners). The older block is missing. The federal monthly generator file for September 2026 (Operating sheet, plant 55641 Riverside Energy Center) lists CTG1 198.9 MW, CTG2 198.9 MW and STG1 277.1 MW, operating since June 2004 and owned by Wisconsin Power & Light Co, 674.9 MW in all. The state air permit for the site describes four gas-fired combined cycle turbines in all and a project to raise the 2004 block's output from 625 MW by replacing its turbine parts. The Public Service Commission draft Strategic Energy Assessment, Table B-8, counts that as 156 MW of Riverside upgrades in 2028, and MISO request J3156 (100 MW, Townline Road, Rock County) is its grid request. Seven 2,500 kilowatt Caterpillar black start engines (17.5 MW in Alliant's 2025 annual report) also sit at the site and are below the unit threshold.",
+      "country": "United States"
+    }
+  ]
+}

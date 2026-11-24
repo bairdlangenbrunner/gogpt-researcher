@@ -1,0 +1,202 @@
+{
+ "meta": {
+  "plant_id": "L100000104276",
+  "plant_name": "Pulliam Power Plant",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:59:20-05:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403775",
+   "unit_name": "31",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Status:\n- The EIA monthly generator table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, Operating sheet, lists Plant 4072, generator 31, status OP, nameplate 91.0 MW, operating year 2003, technology Natural Gas Fired Combustion Turbine, entity Wisconsin Public Service Corp, latitude 44.54, longitude -88.0086. No planned retirement year is shown.\n- A web search found no 2026 retirement, mothball or sale notice for this unit. I did not open the MISO retirement list or utility filings beyond that search."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1214924"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1214924",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Backup power:\n- The air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1214924 lists 'Stack S32, Process P32 - 83 MW simple cycle combustion turbine. Constructed in 2003.' as an electric power generation process. It does not call the unit an emergency or backup unit. The only emergency unit it names is a separate 25 kW natural gas generator, Process P91.\n- This supports no backup power, but the permit does not say the word 'no'. So this is a weaker support."
+    }
+   },
+   "not_found": [
+    "Latest Activity",
+    "Status Detail",
+    "Operator(s)",
+    "Equipment Manufacturer/Model"
+   ],
+   "notes": "The unit still shows as operating in the September 2026 EIA table with no planned retirement. I did not look for the turbine maker or an operator, since the brief did not ask for them."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Wisconsin Public Service Corp [100%]",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1214924"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1214924",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "Owner:\n- Open the EIA monthly generator table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 4072, generator 31, status OP, nameplate 91.0 MW, operating year 2003, technology Natural Gas Fired Combustion Turbine, entity Wisconsin Public Service Corp, latitude 44.54, longitude -88.0086.\n- The Wisconsin Department of Natural Resources air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1214924 is issued to 'WI Public Service Corp - JP Pulliam Plant' at 1501 Bylsby Ave, Green Bay.\n- Both documents agree with the value already in the database. EIA names the entity that reports the plant, which is a utility name, and the permit names the permit holder. Neither is a sale record, so the value is unchanged."
+  },
+  "Latitude": {
+   "value": "44.53987",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1214924"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1214924",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "Location:\n- Open the EIA monthly generator table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 4072, generator 31 shows latitude 44.54 and longitude -88.0086. That is within about 40 meters of the database point 44.53987, -88.00823.\n- The air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1214924 gives the street address 1501 Bylsby Avenue, Green Bay, Brown County, and describes an 83 MW simple cycle combustion turbine constructed in 2003 at this facility.\n- The point and the exact accuracy are unchanged. I did not move the point."
+  },
+  "Longitude": {
+   "value": "-88.00823",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1214924"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1214924",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "Location:\n- Open the EIA monthly generator table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 4072, generator 31 shows latitude 44.54 and longitude -88.0086. That is within about 40 meters of the database point 44.53987, -88.00823.\n- The air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1214924 gives the street address 1501 Bylsby Avenue, Green Bay, Brown County, and describes an 83 MW simple cycle combustion turbine constructed in 2003 at this facility.\n- The point and the exact accuracy are unchanged. I did not move the point."
+  },
+  "Location accuracy": {
+   "value": "exact",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1214924"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1214924",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "Location:\n- Open the EIA monthly generator table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 4072, generator 31 shows latitude 44.54 and longitude -88.0086. That is within about 40 meters of the database point 44.53987, -88.00823.\n- The air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1214924 gives the street address 1501 Bylsby Avenue, Green Bay, Brown County, and describes an 83 MW simple cycle combustion turbine constructed in 2003 at this facility.\n- The point and the exact accuracy are unchanged. I did not move the point."
+  }
+ },
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Wisconsin Public Service Corp",
+   "role": "owner",
+   "lookup_result": "Name already in the database as the owner of this unit; no new entity proposed."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Owner(s)",
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Excel file, loads; row read by python."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1214924",
+   "used_for": [
+    "Owner(s)",
+    "Backup Power",
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Final air permit 40503199A-P50, March 26, 2025."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_PermitTracking2.aspx?id=3001288",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "DNR facility page."
+  }
+ ]
+}

@@ -1,0 +1,983 @@
+{
+ "meta": {
+  "plant_id": "L100001083378",
+  "plant_name": "Forest Junction Energy Center",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T08:56:00-05:00",
+  "done": true,
+  "urls_attempted": 5,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001094209",
+   "unit_name": "1",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "240.6",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "This is the joint application for a Certificate of Public Convenience and Necessity that Forest Junction Energy Center LLC and Union Depot Energy Center LLC filed with the Public Service Commission of Wisconsin on November 6, 2026.\n\nCapacity:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, section 1.1.6.\n- The paragraph that starts 'The Simple Cycle Facility will include five GE 7F.05 gas turbines' says 'Each GTG will have an individual electrical generating capacity of approximately 240.6 MW, for a total installed capacity of approximately 1,203 MW AC.'\n- This matches the 240.6 MW already in the database and adds a second source."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The same application confirms the fuel.\n\nFuel:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, section 1.1.6.\n- The text says 'The Facilities will be fueled by natural gas and will not include backup fuel capability.'\n- So there is no oil backup fuel to add."
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application describes a simple cycle plant of frame gas turbines.\n\nTechnology:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 11, section 1.1.4.\n- The text says 'FJEC includes a Simple Cycle Facility' with 'five General Electric 7F.05 gas turbines'.\n- Simple cycle frame turbines are recorded as gas turbine. The combined cycle unit in the same application belongs to Union Depot, a separate project."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE Vernova: 7F.05",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application names the turbine and generator models.\n\nEquipment:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, section 1.1.6.\n- It says five GE 7F.05 gas turbines with H35 hydrogen-cooled generators.\n- The document uses the older name General Electric. We record the maker's current name, GE Vernova, as the tracker rules say."
+    },
+    "Start year": {
+     "value": "2030",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application puts the start of commercial operation for Forest Junction at the end of 2030, one year earlier than the 2031 in the database.\n\nStart year:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 33, section 2.4.\n- Table 5, Preliminary Forest Junction Construction Schedule, ends with the row 'Commercial Operations 12/31/2030'. The text above it says construction 'is planned to begin in Q2 2028 and be completed in Q4 2030'.\n- The 2031 now in the database comes from a WTAQ news story from September 2, 2026 at https://wtaq.com/2026/09/02/proposed-energy-centers-in-calumet-county-could-power-2m-homes/. It says the 'energy centers' open in the fourth quarter of 2031, which covers both projects. The combined cycle project, Union Depot, is the one scheduled for Q4 2031 on page 34.\n\nTimeline:\n- The projected year 2030 is a scheduled event. The person entering it adds a new scheduled event with Event Year 2030 and Source Year 2026. Do not change the existing event."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application says the plant will not supply heat to anyone.\n\nCHP:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, item 1.1.5.\n- The answer reads 'The Facilities will not produce excess heat or steam which could be collected for secondary use.'\n- This is a direct statement, so combined heat and power is no."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The units are grid generators, not backup engines, so Backup Power stays no.\n\nBackup Power:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 16.\n- The text says 'FJEC will include three standby backup generators' that give 'auto-start and backup power to essential systems of the Facilities'. They run on natural gas and are not part of the five turbines.\n- The five 240.6 MW turbines are expected to 'primarily operate during periods of peak electrical demand' on page 14. They do not serve as backup for a customer. The three small standby generators have no stated size and are not added as units."
+    },
+    "Status Detail": {
+     "value": "Forest Junction Energy Center LLC and Union Depot Energy Center LLC filed a joint application for a Certificate of Public Convenience and Necessity with the Public Service Commission of Wisconsin on November 6, 2026, in docket 5-CE-162. Construction is planned to start in Q2 2028, with commercial operation planned for December 31, 2030.",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "This is a new dated line for the top of the Status Detail box.\n\nStatus detail:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707. The first pages are the application, received November 6, 2026 in docket 5-CE-162.\n- The schedule is on PDF page 33, Table 5. The generator interconnection agreement with American Transmission Company and MISO is on page 18, with an effective date of August 17, 2026.\n- The status stays pre-construction. A permit application is filed and no work has started, so there is no status change."
+    }
+   },
+   "not_found": [
+    "Operator(s)",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Conversion/replacement?",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use"
+   ],
+   "notes": "This is one of five 240.6 MW GE 7F.05 simple cycle turbines proposed at Forest Junction. The filing names no operator, and Latest Activity is left alone because the project filed its application on November 6, 2026."
+  },
+  {
+   "gem_unit_id": "G100001102101",
+   "unit_name": "2",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "240.6",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "This is the joint application for a Certificate of Public Convenience and Necessity that Forest Junction Energy Center LLC and Union Depot Energy Center LLC filed with the Public Service Commission of Wisconsin on November 6, 2026.\n\nCapacity:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, section 1.1.6.\n- The paragraph that starts 'The Simple Cycle Facility will include five GE 7F.05 gas turbines' says 'Each GTG will have an individual electrical generating capacity of approximately 240.6 MW, for a total installed capacity of approximately 1,203 MW AC.'\n- This matches the 240.6 MW already in the database and adds a second source."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The same application confirms the fuel.\n\nFuel:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, section 1.1.6.\n- The text says 'The Facilities will be fueled by natural gas and will not include backup fuel capability.'\n- So there is no oil backup fuel to add."
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application describes a simple cycle plant of frame gas turbines.\n\nTechnology:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 11, section 1.1.4.\n- The text says 'FJEC includes a Simple Cycle Facility' with 'five General Electric 7F.05 gas turbines'.\n- Simple cycle frame turbines are recorded as gas turbine. The combined cycle unit in the same application belongs to Union Depot, a separate project."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE Vernova: 7F.05",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application names the turbine and generator models.\n\nEquipment:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, section 1.1.6.\n- It says five GE 7F.05 gas turbines with H35 hydrogen-cooled generators.\n- The document uses the older name General Electric. We record the maker's current name, GE Vernova, as the tracker rules say."
+    },
+    "Start year": {
+     "value": "2030",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application puts the start of commercial operation for Forest Junction at the end of 2030, one year earlier than the 2031 in the database.\n\nStart year:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 33, section 2.4.\n- Table 5, Preliminary Forest Junction Construction Schedule, ends with the row 'Commercial Operations 12/31/2030'. The text above it says construction 'is planned to begin in Q2 2028 and be completed in Q4 2030'.\n- The 2031 now in the database comes from a WTAQ news story from September 2, 2026 at https://wtaq.com/2026/09/02/proposed-energy-centers-in-calumet-county-could-power-2m-homes/. It says the 'energy centers' open in the fourth quarter of 2031, which covers both projects. The combined cycle project, Union Depot, is the one scheduled for Q4 2031 on page 34.\n\nTimeline:\n- The projected year 2030 is a scheduled event. The person entering it adds a new scheduled event with Event Year 2030 and Source Year 2026. Do not change the existing event."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application says the plant will not supply heat to anyone.\n\nCHP:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, item 1.1.5.\n- The answer reads 'The Facilities will not produce excess heat or steam which could be collected for secondary use.'\n- This is a direct statement, so combined heat and power is no."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The units are grid generators, not backup engines, so Backup Power stays no.\n\nBackup Power:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 16.\n- The text says 'FJEC will include three standby backup generators' that give 'auto-start and backup power to essential systems of the Facilities'. They run on natural gas and are not part of the five turbines.\n- The five 240.6 MW turbines are expected to 'primarily operate during periods of peak electrical demand' on page 14. They do not serve as backup for a customer. The three small standby generators have no stated size and are not added as units."
+    },
+    "Status Detail": {
+     "value": "Forest Junction Energy Center LLC and Union Depot Energy Center LLC filed a joint application for a Certificate of Public Convenience and Necessity with the Public Service Commission of Wisconsin on November 6, 2026, in docket 5-CE-162. Construction is planned to start in Q2 2028, with commercial operation planned for December 31, 2030.",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "This is a new dated line for the top of the Status Detail box.\n\nStatus detail:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707. The first pages are the application, received November 6, 2026 in docket 5-CE-162.\n- The schedule is on PDF page 33, Table 5. The generator interconnection agreement with American Transmission Company and MISO is on page 18, with an effective date of August 17, 2026.\n- The status stays pre-construction. A permit application is filed and no work has started, so there is no status change."
+    }
+   },
+   "not_found": [
+    "Operator(s)",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Conversion/replacement?",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use"
+   ],
+   "notes": "This is one of five 240.6 MW GE 7F.05 simple cycle turbines proposed at Forest Junction. The filing names no operator, and Latest Activity is left alone because the project filed its application on November 6, 2026."
+  },
+  {
+   "gem_unit_id": "G100001102102",
+   "unit_name": "3",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "240.6",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "This is the joint application for a Certificate of Public Convenience and Necessity that Forest Junction Energy Center LLC and Union Depot Energy Center LLC filed with the Public Service Commission of Wisconsin on November 6, 2026.\n\nCapacity:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, section 1.1.6.\n- The paragraph that starts 'The Simple Cycle Facility will include five GE 7F.05 gas turbines' says 'Each GTG will have an individual electrical generating capacity of approximately 240.6 MW, for a total installed capacity of approximately 1,203 MW AC.'\n- This matches the 240.6 MW already in the database and adds a second source."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The same application confirms the fuel.\n\nFuel:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, section 1.1.6.\n- The text says 'The Facilities will be fueled by natural gas and will not include backup fuel capability.'\n- So there is no oil backup fuel to add."
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application describes a simple cycle plant of frame gas turbines.\n\nTechnology:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 11, section 1.1.4.\n- The text says 'FJEC includes a Simple Cycle Facility' with 'five General Electric 7F.05 gas turbines'.\n- Simple cycle frame turbines are recorded as gas turbine. The combined cycle unit in the same application belongs to Union Depot, a separate project."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE Vernova: 7F.05",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application names the turbine and generator models.\n\nEquipment:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, section 1.1.6.\n- It says five GE 7F.05 gas turbines with H35 hydrogen-cooled generators.\n- The document uses the older name General Electric. We record the maker's current name, GE Vernova, as the tracker rules say."
+    },
+    "Start year": {
+     "value": "2030",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application puts the start of commercial operation for Forest Junction at the end of 2030, one year earlier than the 2031 in the database.\n\nStart year:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 33, section 2.4.\n- Table 5, Preliminary Forest Junction Construction Schedule, ends with the row 'Commercial Operations 12/31/2030'. The text above it says construction 'is planned to begin in Q2 2028 and be completed in Q4 2030'.\n- The 2031 now in the database comes from a WTAQ news story from September 2, 2026 at https://wtaq.com/2026/09/02/proposed-energy-centers-in-calumet-county-could-power-2m-homes/. It says the 'energy centers' open in the fourth quarter of 2031, which covers both projects. The combined cycle project, Union Depot, is the one scheduled for Q4 2031 on page 34.\n\nTimeline:\n- The projected year 2030 is a scheduled event. The person entering it adds a new scheduled event with Event Year 2030 and Source Year 2026. Do not change the existing event."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application says the plant will not supply heat to anyone.\n\nCHP:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, item 1.1.5.\n- The answer reads 'The Facilities will not produce excess heat or steam which could be collected for secondary use.'\n- This is a direct statement, so combined heat and power is no."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The units are grid generators, not backup engines, so Backup Power stays no.\n\nBackup Power:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 16.\n- The text says 'FJEC will include three standby backup generators' that give 'auto-start and backup power to essential systems of the Facilities'. They run on natural gas and are not part of the five turbines.\n- The five 240.6 MW turbines are expected to 'primarily operate during periods of peak electrical demand' on page 14. They do not serve as backup for a customer. The three small standby generators have no stated size and are not added as units."
+    },
+    "Status Detail": {
+     "value": "Forest Junction Energy Center LLC and Union Depot Energy Center LLC filed a joint application for a Certificate of Public Convenience and Necessity with the Public Service Commission of Wisconsin on November 6, 2026, in docket 5-CE-162. Construction is planned to start in Q2 2028, with commercial operation planned for December 31, 2030.",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "This is a new dated line for the top of the Status Detail box.\n\nStatus detail:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707. The first pages are the application, received November 6, 2026 in docket 5-CE-162.\n- The schedule is on PDF page 33, Table 5. The generator interconnection agreement with American Transmission Company and MISO is on page 18, with an effective date of August 17, 2026.\n- The status stays pre-construction. A permit application is filed and no work has started, so there is no status change."
+    }
+   },
+   "not_found": [
+    "Operator(s)",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Conversion/replacement?",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use"
+   ],
+   "notes": "This is one of five 240.6 MW GE 7F.05 simple cycle turbines proposed at Forest Junction. The filing names no operator, and Latest Activity is left alone because the project filed its application on November 6, 2026."
+  },
+  {
+   "gem_unit_id": "G100001102103",
+   "unit_name": "4",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "240.6",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "This is the joint application for a Certificate of Public Convenience and Necessity that Forest Junction Energy Center LLC and Union Depot Energy Center LLC filed with the Public Service Commission of Wisconsin on November 6, 2026.\n\nCapacity:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, section 1.1.6.\n- The paragraph that starts 'The Simple Cycle Facility will include five GE 7F.05 gas turbines' says 'Each GTG will have an individual electrical generating capacity of approximately 240.6 MW, for a total installed capacity of approximately 1,203 MW AC.'\n- This matches the 240.6 MW already in the database and adds a second source."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The same application confirms the fuel.\n\nFuel:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, section 1.1.6.\n- The text says 'The Facilities will be fueled by natural gas and will not include backup fuel capability.'\n- So there is no oil backup fuel to add."
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application describes a simple cycle plant of frame gas turbines.\n\nTechnology:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 11, section 1.1.4.\n- The text says 'FJEC includes a Simple Cycle Facility' with 'five General Electric 7F.05 gas turbines'.\n- Simple cycle frame turbines are recorded as gas turbine. The combined cycle unit in the same application belongs to Union Depot, a separate project."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE Vernova: 7F.05",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application names the turbine and generator models.\n\nEquipment:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, section 1.1.6.\n- It says five GE 7F.05 gas turbines with H35 hydrogen-cooled generators.\n- The document uses the older name General Electric. We record the maker's current name, GE Vernova, as the tracker rules say."
+    },
+    "Start year": {
+     "value": "2030",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application puts the start of commercial operation for Forest Junction at the end of 2030, one year earlier than the 2031 in the database.\n\nStart year:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 33, section 2.4.\n- Table 5, Preliminary Forest Junction Construction Schedule, ends with the row 'Commercial Operations 12/31/2030'. The text above it says construction 'is planned to begin in Q2 2028 and be completed in Q4 2030'.\n- The 2031 now in the database comes from a WTAQ news story from September 2, 2026 at https://wtaq.com/2026/09/02/proposed-energy-centers-in-calumet-county-could-power-2m-homes/. It says the 'energy centers' open in the fourth quarter of 2031, which covers both projects. The combined cycle project, Union Depot, is the one scheduled for Q4 2031 on page 34.\n\nTimeline:\n- The projected year 2030 is a scheduled event. The person entering it adds a new scheduled event with Event Year 2030 and Source Year 2026. Do not change the existing event."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application says the plant will not supply heat to anyone.\n\nCHP:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, item 1.1.5.\n- The answer reads 'The Facilities will not produce excess heat or steam which could be collected for secondary use.'\n- This is a direct statement, so combined heat and power is no."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The units are grid generators, not backup engines, so Backup Power stays no.\n\nBackup Power:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 16.\n- The text says 'FJEC will include three standby backup generators' that give 'auto-start and backup power to essential systems of the Facilities'. They run on natural gas and are not part of the five turbines.\n- The five 240.6 MW turbines are expected to 'primarily operate during periods of peak electrical demand' on page 14. They do not serve as backup for a customer. The three small standby generators have no stated size and are not added as units."
+    },
+    "Status Detail": {
+     "value": "Forest Junction Energy Center LLC and Union Depot Energy Center LLC filed a joint application for a Certificate of Public Convenience and Necessity with the Public Service Commission of Wisconsin on November 6, 2026, in docket 5-CE-162. Construction is planned to start in Q2 2028, with commercial operation planned for December 31, 2030.",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "This is a new dated line for the top of the Status Detail box.\n\nStatus detail:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707. The first pages are the application, received November 6, 2026 in docket 5-CE-162.\n- The schedule is on PDF page 33, Table 5. The generator interconnection agreement with American Transmission Company and MISO is on page 18, with an effective date of August 17, 2026.\n- The status stays pre-construction. A permit application is filed and no work has started, so there is no status change."
+    }
+   },
+   "not_found": [
+    "Operator(s)",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Conversion/replacement?",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use"
+   ],
+   "notes": "This is one of five 240.6 MW GE 7F.05 simple cycle turbines proposed at Forest Junction. The filing names no operator, and Latest Activity is left alone because the project filed its application on November 6, 2026."
+  },
+  {
+   "gem_unit_id": "G100001102104",
+   "unit_name": "5",
+   "findings": {
+    "Capacity (MW)": {
+     "value": "240.6",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "This is the joint application for a Certificate of Public Convenience and Necessity that Forest Junction Energy Center LLC and Union Depot Energy Center LLC filed with the Public Service Commission of Wisconsin on November 6, 2026.\n\nCapacity:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, section 1.1.6.\n- The paragraph that starts 'The Simple Cycle Facility will include five GE 7F.05 gas turbines' says 'Each GTG will have an individual electrical generating capacity of approximately 240.6 MW, for a total installed capacity of approximately 1,203 MW AC.'\n- This matches the 240.6 MW already in the database and adds a second source."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The same application confirms the fuel.\n\nFuel:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, section 1.1.6.\n- The text says 'The Facilities will be fueled by natural gas and will not include backup fuel capability.'\n- So there is no oil backup fuel to add."
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application describes a simple cycle plant of frame gas turbines.\n\nTechnology:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 11, section 1.1.4.\n- The text says 'FJEC includes a Simple Cycle Facility' with 'five General Electric 7F.05 gas turbines'.\n- Simple cycle frame turbines are recorded as gas turbine. The combined cycle unit in the same application belongs to Union Depot, a separate project."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE Vernova: 7F.05",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application names the turbine and generator models.\n\nEquipment:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, section 1.1.6.\n- It says five GE 7F.05 gas turbines with H35 hydrogen-cooled generators.\n- The document uses the older name General Electric. We record the maker's current name, GE Vernova, as the tracker rules say."
+    },
+    "Start year": {
+     "value": "2030",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application puts the start of commercial operation for Forest Junction at the end of 2030, one year earlier than the 2031 in the database.\n\nStart year:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 33, section 2.4.\n- Table 5, Preliminary Forest Junction Construction Schedule, ends with the row 'Commercial Operations 12/31/2030'. The text above it says construction 'is planned to begin in Q2 2028 and be completed in Q4 2030'.\n- The 2031 now in the database comes from a WTAQ news story from September 2, 2026 at https://wtaq.com/2026/09/02/proposed-energy-centers-in-calumet-county-could-power-2m-homes/. It says the 'energy centers' open in the fourth quarter of 2031, which covers both projects. The combined cycle project, Union Depot, is the one scheduled for Q4 2031 on page 34.\n\nTimeline:\n- The projected year 2030 is a scheduled event. The person entering it adds a new scheduled event with Event Year 2030 and Source Year 2026. Do not change the existing event."
+    },
+    "CHP": {
+     "value": "no",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The application says the plant will not supply heat to anyone.\n\nCHP:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14, item 1.1.5.\n- The answer reads 'The Facilities will not produce excess heat or steam which could be collected for secondary use.'\n- This is a direct statement, so combined heat and power is no."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The units are grid generators, not backup engines, so Backup Power stays no.\n\nBackup Power:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 16.\n- The text says 'FJEC will include three standby backup generators' that give 'auto-start and backup power to essential systems of the Facilities'. They run on natural gas and are not part of the five turbines.\n- The five 240.6 MW turbines are expected to 'primarily operate during periods of peak electrical demand' on page 14. They do not serve as backup for a customer. The three small standby generators have no stated size and are not added as units."
+    },
+    "Status Detail": {
+     "value": "Forest Junction Energy Center LLC and Union Depot Energy Center LLC filed a joint application for a Certificate of Public Convenience and Necessity with the Public Service Commission of Wisconsin on November 6, 2026, in docket 5-CE-162. Construction is planned to start in Q2 2028, with commercial operation planned for December 31, 2030.",
+     "refs": [
+      "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+     ],
+     "verifications": [
+      {
+       "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "This is a new dated line for the top of the Status Detail box.\n\nStatus detail:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707. The first pages are the application, received November 6, 2026 in docket 5-CE-162.\n- The schedule is on PDF page 33, Table 5. The generator interconnection agreement with American Transmission Company and MISO is on page 18, with an effective date of August 17, 2026.\n- The status stays pre-construction. A permit application is filed and no work has started, so there is no status change."
+    }
+   },
+   "not_found": [
+    "Operator(s)",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Conversion/replacement?",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use"
+   ],
+   "notes": "This is one of five 240.6 MW GE 7F.05 simple cycle turbines proposed at Forest Junction. The filing names no operator, and Latest Activity is left alone because the project filed its application on November 6, 2026."
+  }
+ ],
+ "plant_findings": {
+  "Latitude": {
+   "value": "44.22950",
+   "refs": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855",
+    "https://www.google.com/maps/search/?api=1&query=44.22950,-88.11800"
+   ],
+   "verifications": [
+    {
+     "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=44.22950,-88.11800",
+     "ok": true,
+     "contains_value": false,
+     "name_found": false
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "Location:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 20, section 2.1.1. It says 'The Proposed Site is located in Section 04, Township 20 North, Range 20 East' in the Town of Brillion, Calumet County, with a permanent footprint of about 85 acres. Page 14 of the same file says the Proposed Site is in the Town of Brillion and the Alternative Site is in the Town of Woodville.\n- The wetland data forms at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855 give sampling points marked 'sec 04 T020N R020E' at latitudes 44.2268 to 44.2329 and longitudes minus 88.1215 to minus 88.1149. The middle of those points is 44.22950, -88.11800.\n- The satellite picture at that point shows open farm fields with no buildings. This fits a site that is not yet built. The imagery date is unknown.\n- The point is about 7 km north and west of the point in the database at 44.18800, -88.05200. The application gives no street address and no coordinate for the plant, so the point stays approximate and is a good-faith estimate inside Section 4.\n- The Alternative Site is in Section 14, Township 20 North, Range 19 East, on page 21."
+  },
+  "Longitude": {
+   "value": "-88.11800",
+   "refs": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855",
+    "https://www.google.com/maps/search/?api=1&query=44.22950,-88.11800"
+   ],
+   "verifications": [
+    {
+     "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=44.22950,-88.11800",
+     "ok": true,
+     "contains_value": false,
+     "name_found": false
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "Location:\n- Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 20, section 2.1.1. It says 'The Proposed Site is located in Section 04, Township 20 North, Range 20 East' in the Town of Brillion, Calumet County, with a permanent footprint of about 85 acres. Page 14 of the same file says the Proposed Site is in the Town of Brillion and the Alternative Site is in the Town of Woodville.\n- The wetland data forms at https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855 give sampling points marked 'sec 04 T020N R020E' at latitudes 44.2268 to 44.2329 and longitudes minus 88.1215 to minus 88.1149. The middle of those points is 44.22950, -88.11800.\n- The satellite picture at that point shows open farm fields with no buildings. This fits a site that is not yet built. The imagery date is unknown.\n- The point is about 7 km north and west of the point in the database at 44.18800, -88.05200. The application gives no street address and no coordinate for the plant, so the point stays approximate and is a good-faith estimate inside Section 4.\n- The Alternative Site is in Section 14, Township 20 North, Range 19 East, on page 21."
+  },
+  "Location accuracy": {
+   "value": "approximate",
+   "refs": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855",
+    "https://www.google.com/maps/search/?api=1&query=44.22950,-88.11800"
+   ],
+   "verifications": [
+    {
+     "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    },
+    {
+     "url": "https://www.google.com/maps/search/?api=1&query=44.22950,-88.11800",
+     "ok": true,
+     "contains_value": false,
+     "name_found": false
+    }
+   ],
+   "tier": "medium",
+   "independent": false,
+   "note": "The plant is placed inside Section 4 by a primary document, but no coordinate or parcel for the buildings was found, so the accuracy stays approximate. See the Latitude note for where each fact is."
+  }
+ },
+ "location": {
+  "method": "site_reference",
+  "location_route": "The application places the Proposed Site in Section 04, Township 20 North, Range 20 East, and wetland sampling points in that section give a point inside it.",
+  "moved_m": 7000,
+  "control_points": [],
+  "fit_m": null,
+  "image": "work/sweep_WI/maps/L100001083378_1.png",
+  "needs_review": true,
+  "review_note": "The move is over 2 km. The point is a section reference with sample points, not an address, so a second look at the Detailed Site Layout Map Book, filing 617761 in docket 5-CE-162, is worth doing."
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100001094209",
+   "concern_type": "Owner(s)",
+   "question": "Should the owner be Forest Junction Energy Center LLC instead of Invenergy LLC?",
+   "finding": "The application says Forest Junction Energy Center LLC is a subsidiary of Invenergy Thermal Development Holdings LLC. The database shows Invenergy LLC at 100 percent.",
+   "recommendation": "Change the owner on all five units to Forest Junction Energy Center LLC [100%] if the reviewer agrees that the project company is the holder. Leave it as is if Invenergy LLC is the entity the tracker uses for Invenergy projects.",
+   "note": "Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 14. The first paragraph of the application says the two applicants are 'subsidiaries of Invenergy Thermal Development Holdings LLC'. Page 14 also says the project company's affiliate signed a procurement agreement with Wisconsin Electric Power Company, but no sale of the plant is announced. We Energies has not filed to buy the plant, so no pending acquisition is recorded. The entity lookup for Forest Junction Energy Center LLC found nothing in the local list. The name Invenergy exists already as an entity.",
+   "refs": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+   ],
+   "proposed_value": {
+    "Owner(s)": "Forest Junction Energy Center LLC [100%]"
+   }
+  },
+  {
+   "gem_unit_id": "G100001094209",
+   "concern_type": "duplicate",
+   "question": "Is MISO queue entry J4014 at 650 MW part of Union Depot rather than Forest Junction?",
+   "finding": "The application says J4014 at 650 MW is the Union Depot queue position at the Forest Junction Substation. Forest Junction itself has a signed interconnection agreement for 1,203 MW.",
+   "recommendation": "Match J4014 to Union Depot and do not count it against the five Forest Junction units. Leave Forest Junction at five units of 240.6 MW.",
+   "note": "Open https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707 and go to PDF page 18. It says 'Forest Junction has signed a Generator Interconnection Agreement with ATC and MISO for 1,203 MW' and 'Union Depot filed a MISO generator interconnection queue position (J4014)' for 650 MW. A second Union Depot entry, J4249 at 100 MW, is also named there. Union Depot Energy Center is its own plant record in this Wisconsin batch, so J4014 belongs there.",
+   "refs": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Forest Junction Energy Center LLC",
+   "role": "owner",
+   "lookup_result": "Local lookup found nothing for Forest Junction Energy Center LLC. The name Invenergy exists as an entity on 7 units in the United States and should be reused if the owner stays Invenergy."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617707",
+   "used_for": [
+    "Capacity (MW)",
+    "Fuel",
+    "Turbine/Engine Technology",
+    "Equipment Manufacturer/Model",
+    "Start year",
+    "CHP",
+    "Backup Power",
+    "Status Detail",
+    "Latitude",
+    "Longitude",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Full application in docket 5-CE-162, read from the downloaded PDF and checked with the repo verifier."
+  },
+  {
+   "url": "https://apps.psc.wi.gov/pages/viewdoc.htm?docid=617707",
+   "used_for": [],
+   "outcome": "failed",
+   "note": "This public address returns a short redirect page, so the verifier found no text. The download address with ERF/ERFview in it works and is the one cited."
+  },
+  {
+   "url": "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=617855",
+   "used_for": [
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Wetland data forms with sampling point coordinates in Section 4."
+  },
+  {
+   "url": "https://wtaq.com/2026/09/02/proposed-energy-centers-in-calumet-county-could-power-2m-homes/",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Existing source for 2031. It covers both projects and is older than the application."
+  },
+  {
+   "url": "https://www.google.com/maps/search/?api=1&query=44.22950,-88.11800",
+   "used_for": [
+    "Latitude",
+    "Longitude"
+   ],
+   "outcome": "verified",
+   "note": "Pin link for the proposed point."
+  }
+ ]
+}

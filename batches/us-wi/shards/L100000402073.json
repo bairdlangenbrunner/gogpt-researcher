@@ -1,0 +1,96 @@
+{
+ "meta": {
+  "plant_id": "L100000402073",
+  "plant_name": "West Marinette 34 power station",
+  "state": "Wisconsin",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-18T09:00:04-05:00",
+  "done": true,
+  "urls_attempted": 2,
+  "urls_verified": 2
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403146",
+   "unit_name": "34",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275530"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275530",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "This unit is still operating.\n\nStatus:\n- Open the EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx and go to the Operating sheet. Plant 7799, generator 34, reads 'Status (OP) Operating', nameplate 83.0 MW, operating June 2000, owner Madison Gas & Electric Co. The planned retirement columns are blank.\n- Open the Wisconsin Department of Natural Resources air permit 43802242A-P40, issued June 15, 2026, at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275530. Section A lists 'Stack S04; Process P04 - 102 MW simple cycle combustion turbine generator (unit M34)'. A new five-year permit was issued, so the owner plans to keep running it.\n- I found no retirement, mothballing or owner change. The 102 MW in the permit is a permit rating, so the 83.0 MW nameplate stays."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275530",
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275530",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": true,
+     "note": "Backup Power:\n- No document uses the words 'backup power' for this unit, so the value of no is inferred.\n- Open the air permit at https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275530. Process P04 is a simple cycle combustion turbine at an 'electric generation facility' that tracks hours 'in peak power mode'. It is a grid peaking unit, not a standby set for a single site.\n- The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists the sector as Electric Utility. No data center or site load is named. So the value stays no."
+    }
+   },
+   "not_found": [],
+   "notes": "Operating check done. No retirement, mothballing or owner change found in the EIA table for September 2026 or the June 2026 air permit. Backup Power has no explicit statement, so no is inferred from the permit and EIA sector."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Read plant 7799 generator 34 on the Operating sheet."
+  },
+  {
+   "url": "https://apps.dnr.wi.gov/warp_ext/AM_DownloadObject.aspx?id=1275530",
+   "used_for": [
+    "Status",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Final air permit 43802242A-P40 issued June 15, 2026; read with fetch.py."
+  }
+ ]
+}
