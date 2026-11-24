@@ -1,0 +1,167 @@
+{
+ "meta": {
+  "lane": "monitor",
+  "scope": {
+   "country": "United States",
+   "state": "Kentucky",
+   "postal": "ky",
+   "kind": "state",
+   "slug": "kentucky",
+   "quarter": "q4-2026",
+   "csv": "scripts/gem_export_gogpt_scoped.csv"
+  },
+  "generated": "2026-11-06T09:35:24-05:00",
+  "mode": "update",
+  "counts": {
+   "records": 6
+  }
+ },
+ "records": [
+  {
+   "gem_plant_id": "L100000103950",
+   "monitor_kind": "existing_plant",
+   "monitor_reason": "PJM cycle row C01-1227 shows East Kentucky Power Cooperative requesting 758 MW of gas at Spurlock, but no certificate, air permit or county record names it, and the row cannot be fetched by a plain address.",
+   "recheck_by": "2027-03",
+   "watch_case": "unverified",
+   "capacity_mw": 758,
+   "refs": {},
+   "plant_name": "Spurlock power station",
+   "country": "United States",
+   "fields": {},
+   "researcher_notes": "I read the row from the file behind https://www.pjm.com/planning/m/cycle-service-request-status. The developer is East Kentucky Power Cooperative, Inc., it was submitted April 27, 2026, and it asks for service by December 31, 2031. The verifier cannot load that file because it needs a form post, so no source passed. Add it as a new announced unit once a document that loads names it.",
+   "record_id": "L100000103950:plant:monitor-1"
+  },
+  {
+   "plant_name": "Letcher County Gateway park off-grid data center power",
+   "watch_case": "no_generation",
+   "recheck_by": "2027-05",
+   "monitor_kind": "new_to_tracker",
+   "irp": false,
+   "owner": "Diversified Gas and Oil Corporation",
+   "capacity_mw": "",
+   "refs": {
+    "links": [
+     "https://www.wkyt.com/2026/07/17/proposed-off-grid-data-center-eyeing-letcher-co-industrial-park/",
+     "https://www.datacenterdynamics.com/en/news/off-grid-data-center-proposed-for-letcher-county-kentucky-report/"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.wkyt.com/2026/07/17/proposed-off-grid-data-center-eyeing-letcher-co-industrial-park/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "WKYT story of July 17, 2026. It says the regional development authority signed an agreement with Diversified Gas and Oil Corporation and Maverick Holdings for about 100 acres at the Gateway park in Letcher County. It names no power plant."
+    },
+    {
+     "url": "https://www.datacenterdynamics.com/en/news/off-grid-data-center-proposed-for-letcher-county-kentucky-report/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Data Center Dynamics story. It calls the Letcher County project off-grid, names Diversified Gas and Oil Corporation, and says the site is tied to the gas network of Kentucky Frontier Gas. It names no generator size."
+    }
+   ],
+   "researcher_notes": "In July 2026 the regional development authority signed an agreement with Diversified Gas and Oil Corporation and Maverick Holdings to buy about 100 acres at the Gateway park in Letcher County for an off-grid data center. The site is tied to a local gas network. No story names a power plant, a size or an engine count, and no air permit application was found in the state permit system. Local records opened: none, because Letcher County Fiscal Court posts no minutes online and is not in the local records harvest. Recheck for an air permit application or a county agreement.",
+   "gem_plant_id": "",
+   "country": "United States",
+   "fields": {},
+   "record_id": "us-ky:plant:monitor-2",
+   "monitor_reason": "In July 2026 the regional development authority signed an agreement with Diversified Gas and Oil Corporation and Maverick Holdings to buy about 100 acres at the Gateway park in Letcher County for an o"
+  },
+  {
+   "plant_name": "Meta Mason County data center on-site power (Crisham LLC)",
+   "watch_case": "not_committed",
+   "recheck_by": "2027-05",
+   "monitor_kind": "new_to_tracker",
+   "irp": false,
+   "owner": "Crisham LLC",
+   "capacity_mw": "",
+   "refs": {
+    "links": [
+     "https://kypublicnotice.com/KYLegals/2026/70190-2026-10-23_1002.pdf",
+     "https://kypublicnotice.com/KYLegals/2026/70190-2026-10-16_1002.pdf"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://kypublicnotice.com/KYLegals/2026/70190-2026-10-23_1002.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Ledger Independent opinion page of October 23, 2026. A reader letter asks whether Mason County's agreement with Crisham LLC, which is Meta, allows a gas turbine or a small reactor on the 2,900 acre site."
+    },
+    {
+     "url": "https://kypublicnotice.com/KYLegals/2026/70190-2026-10-16_1002.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Ledger Independent legal page of October 16, 2026. A notice from Mason County approves industrial building revenue bonds for a facility leased to Crisham LLC."
+    }
+   ],
+   "researcher_notes": "Meta is planning a data center campus in Mason County under the name Crisham LLC. A reader letter in the Ledger Independent of October 23, 2026 asks whether the county's revenue agreement with Crisham LLC allows a gas turbine plant or a small reactor on the 2,900 acre site. That is a question, not a plan. On October 16, 2026 the county gave notice of revenue bonds for the Crisham project. No permit, plan or company statement names on-site gas generation. Local records opened: Mason County Fiscal Court and City of Maysville agendas and minutes, and the Ledger Independent legal notice pages from October 15 to November 5, 2026. East Kentucky Power Cooperative's 780 MW queue request in the same county is added as its own plant. Recheck for an air permit application at the site.",
+   "gem_plant_id": "",
+   "country": "United States",
+   "fields": {},
+   "record_id": "us-ky:plant:monitor-3",
+   "monitor_reason": "Meta is planning a data center campus in Mason County under the name Crisham LLC."
+  },
+  {
+   "plant_name": "KYMEA Energy Center II (plan option)",
+   "watch_case": "not_committed",
+   "recheck_by": "2027-06",
+   "monitor_kind": "new_to_tracker",
+   "irp": true,
+   "owner": "Kentucky Municipal Energy Agency",
+   "capacity_mw": 92,
+   "gem_plant_id": "",
+   "country": "United States",
+   "fields": {},
+   "refs": {
+    "links": [
+     "https://s3.amazonaws.com/kymea-twill/4031257f-39bb-4be9-99b8-87cfeaf6cff8/2025_06_IRP2023-Report-Draft-v.24_6_05_25.pdf"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://s3.amazonaws.com/kymea-twill/4031257f-39bb-4be9-99b8-87cfeaf6cff8/2025_06_IRP2023-Report-Draft-v.24_6_05_25.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Kentucky Municipal Energy Agency 2023 resource plan, approved by its board in January 2025. Page 14 of the executive summary (PDF page 36) and Section 15, Plan 4 (PDF page 435) describe a 92 MW engine plant called KYMEA Energy Center II and a second option that grows KYMEA Energy Center I from 75 MW to 129 MW."
+    }
+   ],
+   "monitor_reason": "The agency's 2023 resource plan studies two gas engine options for after June 2029, when its coal and peaker contracts end: a new 92 MW plant called KYMEA Energy Center II, or growing KYMEA Energy Center I from 75 MW to 129 MW. The board has not picked either one.",
+   "researcher_notes": "The Kentucky Municipal Energy Agency 2023 resource plan is at https://s3.amazonaws.com/kymea-twill/4031257f-39bb-4be9-99b8-87cfeaf6cff8/2025_06_IRP2023-Report-Draft-v.24_6_05_25.pdf. The board approved it in January 2025. Page 14 of the executive summary (PDF page 36) lists five long-term plans. It says: \"The RICE Plan calls for KYMEA to build KYMEA Energy Center II. A 92 MW greenfield RICE Plant.\" It also says: \"The RICE | BESS Plan calls for KYMEA to expand KYMEA Energy Center I from 75 MW to 129 MW.\" That would add about 54 MW of engines at the Madisonville site. Section 15, Plan 4 (PDF page 435) repeats the 92 MW figure. Section 16.2 (PDF pages 452 to 455) says the board has only chosen the near-term step, KYMEA Energy Center I with four 18.8 MW engines. GEM already has that plant as unit G100001031363 under construction for 2027. No site, permit or board vote was found for either long-term option. Both are options in a study, so neither is added yet. Recheck at the agency's next resource plan or any board vote on the post-2029 supply. If the expansion is chosen, it becomes a new unit at plant L100001026095.",
+   "record_id": "us-ky:plant:monitor-4"
+  },
+  {
+   "plant_name": "Henderson Municipal Power & Light engine plant (plan option)",
+   "watch_case": "under_threshold",
+   "recheck_by": "2027-06",
+   "monitor_kind": "new_to_tracker",
+   "irp": true,
+   "owner": "Henderson Municipal Power & Light",
+   "capacity_mw": 36,
+   "gem_plant_id": "",
+   "country": "United States",
+   "fields": {},
+   "refs": {
+    "links": [
+     "https://the-hendersonian.com/wp-content/uploads/2026/05/HMPL-2026-IRP-Report.pdf"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://the-hendersonian.com/wp-content/uploads/2026/05/HMPL-2026-IRP-Report.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Henderson Municipal Power & Light 2026 resource plan, written by 1898 & Co. and dated March 31, 2026, posted by the Hendersonian news site. Table 5 (PDF page 23) shows a 36 MW engine plant in 2030 in four of five cases. Section 6 (PDF page 29) recommends starting development work now."
+    }
+   ],
+   "monitor_reason": "Henderson's 2026 resource plan recommends a 36 MW gas engine plant for about 2030, under the 50 MW add threshold. The plan says more engines could later be added at the same site, and it also studies buying a 79 MW share of a larger combustion turbine plant around 2036.",
+   "researcher_notes": "The Henderson Municipal Power & Light 2026 resource plan is at https://the-hendersonian.com/wp-content/uploads/2026/05/HMPL-2026-IRP-Report.pdf. It was written by 1898 & Co. and is dated March 31, 2026. Table 5 on PDF page 23 shows \"RICE (36MW)\" in 2030 in four of the five cases. The same table shows a 79 MW share of an F-class simple cycle gas turbine in 2036, and more 36 MW engines in 2036 to 2045 in the high load case. Section 6 on PDF page 29 says: \"the recommended near-term action plan is for HMP&L to begin development work now on dispatchable thermal resource options targeted for the 2030 timeframe.\" It also says engines could later be expanded \"at the same site\". No site, permit or city vote was found. At 36 MW the engine plant is under the 50 MW add threshold. Recheck at the next plan update or any city utility board vote. Add it if the site reaches 50 MW, or add the 79 MW share as an owner on the larger plant once that plant is named. The copy found is posted by a local news site. A web search on November 6, 2026 found no copy on the utility's own site.",
+   "record_id": "us-ky:plant:monitor-5"
+  }
+ ]
+}

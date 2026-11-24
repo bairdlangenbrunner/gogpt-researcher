@@ -1,0 +1,773 @@
+{
+ "meta": {
+  "plant_id": "L100000402085",
+  "plant_name": "Big Sandy Peaker Plant",
+  "state": "Kentucky",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T20:12:21-05:00",
+  "done": true,
+  "urls_attempted": 7,
+  "urls_verified": 7
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403163",
+   "unit_name": "BSG1",
+   "findings": {
+    "Equipment Manufacturer/Model": {
+     "value": "Pratt & Whitney FT8 Twin Pac",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The West Virginia Division of Air Quality Title V permit R30-09900080 from October 2024 (https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) lists emission unit GS-01 as a Pratt & Whitney FT8 Twin Pac turbine, 599.02 million Btu per hour, installed 2000. The live address now returns an error, so this is a saved copy from the Wayback Machine."
+    },
+    "Turbine/Engine Technology": {
+     "value": "aeroderivative gas turbine",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The permit names a Pratt & Whitney FT8 Twin Pac. The FT8 is an aeroderivative turbine, but the permit does not use that word, so this rests on the model name. GEM now says gas turbine."
+    },
+    "Number Of Engines": {
+     "value": "2",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The West Virginia Division of Air Quality Title V permit R30-09900080 from October 2024 (https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) lists emission unit GS-01 with two emission points, GS-01-1 and GS-01-2, described as natural gas turbine GS-01-1 and GS-01-2 on one Pratt & Whitney FT8 Twin Pac. A Twin Pac is two gas generators on one set. This is a saved copy from the Wayback Machine."
+    },
+    "Capacity Per Engine": {
+     "value": "29.5",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The figure is the EIA-860M nameplate of 58.9 MW for the unit divided by the two engines the permit lists. No document states a per-engine rating directly, so this is a calculated value."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The only emergency equipment in the permit (https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) is one 750 kilowatt Cummins QSK23-G3 diesel black-start generator, which is plant-level and not one of the six units. The six turbines supply routine power, so Backup Power stays no."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Operator(s)",
+    "Latest Activity",
+    "Status Detail",
+    "Conversion/replacement?"
+   ],
+   "notes": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) shows plant 55284, generator BSG1, operating, 58.9 MW nameplate, natural gas, combustion turbine, operating July 2001, no planned retirement. This confirms the current status, capacity, fuel and start year. The permit lists two engines per unit, so engine count and capacity per engine are now filled. No retirement, mothballing or planned retirement was found: the EIA-860M table shows no planned retirement, and the September 2026 Indiana order describes the plant as operating since 2001. Operator, Latest Activity, Status Detail and Conversion/replacement were not filled because no document gave a new value and the unit is operating and not converted."
+  },
+  {
+   "gem_unit_id": "G100000403164",
+   "unit_name": "BSG2",
+   "findings": {
+    "Equipment Manufacturer/Model": {
+     "value": "Pratt & Whitney FT8 Twin Pac",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The West Virginia Division of Air Quality Title V permit R30-09900080 from October 2024 (https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) lists emission unit GS-02 as a Pratt & Whitney FT8 Twin Pac turbine, 599.02 million Btu per hour, installed 2000. The live address now returns an error, so this is a saved copy from the Wayback Machine."
+    },
+    "Turbine/Engine Technology": {
+     "value": "aeroderivative gas turbine",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The permit names a Pratt & Whitney FT8 Twin Pac. The FT8 is an aeroderivative turbine, but the permit does not use that word, so this rests on the model name. GEM now says gas turbine."
+    },
+    "Number Of Engines": {
+     "value": "2",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The West Virginia Division of Air Quality Title V permit R30-09900080 from October 2024 (https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) lists emission unit GS-02 with two emission points, GS-02-1 and GS-02-2, described as natural gas turbine GS-02-1 and GS-02-2 on one Pratt & Whitney FT8 Twin Pac. A Twin Pac is two gas generators on one set. This is a saved copy from the Wayback Machine."
+    },
+    "Capacity Per Engine": {
+     "value": "29.5",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The figure is the EIA-860M nameplate of 58.9 MW for the unit divided by the two engines the permit lists. No document states a per-engine rating directly, so this is a calculated value."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The only emergency equipment in the permit (https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) is one 750 kilowatt Cummins QSK23-G3 diesel black-start generator, which is plant-level and not one of the six units. The six turbines supply routine power, so Backup Power stays no."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Operator(s)",
+    "Latest Activity",
+    "Status Detail",
+    "Conversion/replacement?"
+   ],
+   "notes": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) shows plant 55284, generator BSG2, operating, 58.9 MW nameplate, natural gas, combustion turbine, operating July 2001, no planned retirement. This confirms the current status, capacity, fuel and start year. The permit lists two engines per unit, so engine count and capacity per engine are now filled. No retirement, mothballing or planned retirement was found: the EIA-860M table shows no planned retirement, and the September 2026 Indiana order describes the plant as operating since 2001. Operator, Latest Activity, Status Detail and Conversion/replacement were not filled because no document gave a new value and the unit is operating and not converted."
+  },
+  {
+   "gem_unit_id": "G100000403165",
+   "unit_name": "BSG3",
+   "findings": {
+    "Equipment Manufacturer/Model": {
+     "value": "Pratt & Whitney FT8 Twin Pac",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The West Virginia Division of Air Quality Title V permit R30-09900080 from October 2024 (https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) lists emission unit GS-03 as a Pratt & Whitney FT8 Twin Pac turbine, 599.02 million Btu per hour, installed 2000. The live address now returns an error, so this is a saved copy from the Wayback Machine."
+    },
+    "Turbine/Engine Technology": {
+     "value": "aeroderivative gas turbine",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The permit names a Pratt & Whitney FT8 Twin Pac. The FT8 is an aeroderivative turbine, but the permit does not use that word, so this rests on the model name. GEM now says gas turbine."
+    },
+    "Number Of Engines": {
+     "value": "2",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The West Virginia Division of Air Quality Title V permit R30-09900080 from October 2024 (https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) lists emission unit GS-03 with two emission points, GS-03-1 and GS-03-2, described as natural gas turbine GS-03-1 and GS-03-2 on one Pratt & Whitney FT8 Twin Pac. A Twin Pac is two gas generators on one set. This is a saved copy from the Wayback Machine."
+    },
+    "Capacity Per Engine": {
+     "value": "29.5",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The figure is the EIA-860M nameplate of 58.9 MW for the unit divided by the two engines the permit lists. No document states a per-engine rating directly, so this is a calculated value."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The only emergency equipment in the permit (https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) is one 750 kilowatt Cummins QSK23-G3 diesel black-start generator, which is plant-level and not one of the six units. The six turbines supply routine power, so Backup Power stays no."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Operator(s)",
+    "Latest Activity",
+    "Status Detail",
+    "Conversion/replacement?"
+   ],
+   "notes": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) shows plant 55284, generator BSG3, operating, 58.9 MW nameplate, natural gas, combustion turbine, operating July 2001, no planned retirement. This confirms the current status, capacity, fuel and start year. The permit lists two engines per unit, so engine count and capacity per engine are now filled. No retirement, mothballing or planned retirement was found: the EIA-860M table shows no planned retirement, and the September 2026 Indiana order describes the plant as operating since 2001. Operator, Latest Activity, Status Detail and Conversion/replacement were not filled because no document gave a new value and the unit is operating and not converted."
+  },
+  {
+   "gem_unit_id": "G100000403166",
+   "unit_name": "BSG4",
+   "findings": {
+    "Equipment Manufacturer/Model": {
+     "value": "Pratt & Whitney FT8 Twin Pac",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The West Virginia Division of Air Quality Title V permit R30-09900080 from October 2024 (https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) lists emission unit GS-04 as a Pratt & Whitney FT8 Twin Pac turbine, 599.02 million Btu per hour, installed 2000. The live address now returns an error, so this is a saved copy from the Wayback Machine."
+    },
+    "Turbine/Engine Technology": {
+     "value": "aeroderivative gas turbine",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The permit names a Pratt & Whitney FT8 Twin Pac. The FT8 is an aeroderivative turbine, but the permit does not use that word, so this rests on the model name. GEM now says gas turbine."
+    },
+    "Number Of Engines": {
+     "value": "2",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The West Virginia Division of Air Quality Title V permit R30-09900080 from October 2024 (https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) lists emission unit GS-04 with two emission points, GS-04-1 and GS-04-2, described as natural gas turbine GS-04-1 and GS-04-2 on one Pratt & Whitney FT8 Twin Pac. A Twin Pac is two gas generators on one set. This is a saved copy from the Wayback Machine."
+    },
+    "Capacity Per Engine": {
+     "value": "29.5",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The figure is the EIA-860M nameplate of 58.9 MW for the unit divided by the two engines the permit lists. No document states a per-engine rating directly, so this is a calculated value."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The only emergency equipment in the permit (https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) is one 750 kilowatt Cummins QSK23-G3 diesel black-start generator, which is plant-level and not one of the six units. The six turbines supply routine power, so Backup Power stays no."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Operator(s)",
+    "Latest Activity",
+    "Status Detail",
+    "Conversion/replacement?"
+   ],
+   "notes": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) shows plant 55284, generator BSG4, operating, 58.9 MW nameplate, natural gas, combustion turbine, operating July 2001, no planned retirement. This confirms the current status, capacity, fuel and start year. The permit lists two engines per unit, so engine count and capacity per engine are now filled. No retirement, mothballing or planned retirement was found: the EIA-860M table shows no planned retirement, and the September 2026 Indiana order describes the plant as operating since 2001. Operator, Latest Activity, Status Detail and Conversion/replacement were not filled because no document gave a new value and the unit is operating and not converted."
+  },
+  {
+   "gem_unit_id": "G100000403167",
+   "unit_name": "BSG5",
+   "findings": {
+    "Equipment Manufacturer/Model": {
+     "value": "Pratt & Whitney FT8 Twin Pac",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The West Virginia Division of Air Quality Title V permit R30-09900080 from October 2024 (https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) lists emission unit GS-05 as a Pratt & Whitney FT8 Twin Pac turbine, 599.02 million Btu per hour, installed 2000. The live address now returns an error, so this is a saved copy from the Wayback Machine."
+    },
+    "Turbine/Engine Technology": {
+     "value": "aeroderivative gas turbine",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The permit names a Pratt & Whitney FT8 Twin Pac. The FT8 is an aeroderivative turbine, but the permit does not use that word, so this rests on the model name. GEM now says gas turbine."
+    },
+    "Number Of Engines": {
+     "value": "2",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The West Virginia Division of Air Quality Title V permit R30-09900080 from October 2024 (https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) lists emission unit GS-05 with two emission points, GS-05-1 and GS-05-2, described as natural gas turbine GS-05-1 and GS-05-2 on one Pratt & Whitney FT8 Twin Pac. A Twin Pac is two gas generators on one set. This is a saved copy from the Wayback Machine."
+    },
+    "Capacity Per Engine": {
+     "value": "29.5",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The figure is the EIA-860M nameplate of 58.9 MW for the unit divided by the two engines the permit lists. No document states a per-engine rating directly, so this is a calculated value."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The only emergency equipment in the permit (https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) is one 750 kilowatt Cummins QSK23-G3 diesel black-start generator, which is plant-level and not one of the six units. The six turbines supply routine power, so Backup Power stays no."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Operator(s)",
+    "Latest Activity",
+    "Status Detail",
+    "Conversion/replacement?"
+   ],
+   "notes": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) shows plant 55284, generator BSG5, operating, 58.9 MW nameplate, natural gas, combustion turbine, operating July 2001, no planned retirement. This confirms the current status, capacity, fuel and start year. The permit lists two engines per unit, so engine count and capacity per engine are now filled. No retirement, mothballing or planned retirement was found: the EIA-860M table shows no planned retirement, and the September 2026 Indiana order describes the plant as operating since 2001. Operator, Latest Activity, Status Detail and Conversion/replacement were not filled because no document gave a new value and the unit is operating and not converted."
+  },
+  {
+   "gem_unit_id": "G100000403168",
+   "unit_name": "BSG6",
+   "findings": {
+    "Equipment Manufacturer/Model": {
+     "value": "Pratt & Whitney FT8 Twin Pac",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The West Virginia Division of Air Quality Title V permit R30-09900080 from October 2024 (https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) lists emission unit GS-06 as a Pratt & Whitney FT8 Twin Pac turbine, 599.02 million Btu per hour, installed 2000. The live address now returns an error, so this is a saved copy from the Wayback Machine."
+    },
+    "Turbine/Engine Technology": {
+     "value": "aeroderivative gas turbine",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The permit names a Pratt & Whitney FT8 Twin Pac. The FT8 is an aeroderivative turbine, but the permit does not use that word, so this rests on the model name. GEM now says gas turbine."
+    },
+    "Number Of Engines": {
+     "value": "2",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The West Virginia Division of Air Quality Title V permit R30-09900080 from October 2024 (https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) lists emission unit GS-06 with two emission points, GS-06-1 and GS-06-2, described as natural gas turbine GS-06-1 and GS-06-2 on one Pratt & Whitney FT8 Twin Pac. A Twin Pac is two gas generators on one set. This is a saved copy from the Wayback Machine."
+    },
+    "Capacity Per Engine": {
+     "value": "29.5",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The figure is the EIA-860M nameplate of 58.9 MW for the unit divided by the two engines the permit lists. No document states a per-engine rating directly, so this is a calculated value."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": ""
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The only emergency equipment in the permit (https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) is one 750 kilowatt Cummins QSK23-G3 diesel black-start generator, which is plant-level and not one of the six units. The six turbines supply routine power, so Backup Power stays no."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Operator(s)",
+    "Latest Activity",
+    "Status Detail",
+    "Conversion/replacement?"
+   ],
+   "notes": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) shows plant 55284, generator BSG6, operating, 58.9 MW nameplate, natural gas, combustion turbine, operating August 2001, no planned retirement. This confirms the current status, capacity, fuel and start year. The permit lists two engines per unit, so engine count and capacity per engine are now filled. No retirement, mothballing or planned retirement was found: the EIA-860M table shows no planned retirement, and the September 2026 Indiana order describes the plant as operating since 2001. Operator, Latest Activity, Status Detail and Conversion/replacement were not filled because no document gave a new value and the unit is operating and not converted."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000403163",
+   "concern_type": "identity",
+   "question": "Is the Big Sandy Peaker Plant in West Virginia, not Kentucky?",
+   "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 55284 in Wayne County, West Virginia. The West Virginia air permit R30-09900080 from October 2024 (https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) gives the facility location as Kenova, Wayne County, West Virginia. GEM shows the state as Kentucky.",
+   "recommendation": "Change State/Province to West Virginia for all six units in the web form. This moves the plant out of the Kentucky assignment.",
+   "note": "The permit address is a saved copy from the Wayback Machine because the live address returns an error. Coordinates 38.3441, -82.5938 sit at Kenova on the Ohio River, which fits West Virginia. I did not change Latitude or Longitude.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+   ],
+   "proposed_value": {
+    "State/Province": "West Virginia"
+   }
+  },
+  {
+   "gem_unit_id": "G100000403163",
+   "concern_type": "Owner(s)",
+   "question": "Has Indiana Michigan Power bought the Big Sandy Peaker Plant from Middle River Power II?",
+   "finding": "The Indiana Utility Regulatory Commission order of September 2, 2026 (https://secure.in.gov/iurc/files/ord_46301GRS1_090226.pdf) approves Indiana Michigan Power's request to buy the Big Sandy Peaker Plant in Kenova, West Virginia, for $299,525,000. The same order says closing still needs federal approvals from FERC and under the Hart-Scott-Rodino Act. The EIA-860M table for September 2026 already names Indiana Michigan Power Co, but I found no closing notice.",
+   "recommendation": "Leave Owner(s) as Middle River Power II LLC [100%] for now. Add the approved but not yet closed purchase to Notes and the possible-updates sheet, then look for a closing notice.",
+   "note": "An owner change needs a closed sale from two independent publishers. I found neither. The permit lists Big Sandy Peaker Plant, LLC as the permittee but I could not read its parent. The owner's own page and a 2025 or 2026 filing naming Middle River Power II as owner were not found in the budget I had. The order names the seller only as the seller, so Middle River Power II and Partners Group are not confirmed by it.",
+   "refs": [
+    "https://secure.in.gov/iurc/files/ord_46301GRS1_090226.pdf",
+    "https://www.journalgazette.net/local/indiana-michigan-power-seeks-permission-to-buy-west-virginia-natural-gas-plant/article_a6f2d661-c888-46b0-a052-94c8259c0170.html",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "proposed_value": {}
+  },
+  {
+   "gem_unit_id": "G100000403163",
+   "concern_type": "Capacity (MW)",
+   "question": "Should the 59.0 MW capacity on each unit stay as it is?",
+   "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) gives 58.9 MW nameplate for each of the six units. GEM shows 59.0 MW.",
+   "recommendation": "Leave as is. The difference is rounding and optional.",
+   "note": "No other change needed.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "proposed_value": {}
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Middle River Power II",
+   "role": "owner",
+   "lookup_result": "Ran python scripts/entity_lookup.py bare earlier and found nothing; no new entity proposed because the owner is unchanged."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Fuel",
+    "Start year",
+    "State"
+   ],
+   "outcome": "verified",
+   "note": "Plant 55284, generators BSG1 to BSG6, status OP, nameplate 58.9 MW each, energy source NG, prime mover GT, operating year 2001, plant state WV, county Wayne. Loads; Excel file read directly."
+  },
+  {
+   "url": "https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "dead",
+   "note": "Live address returned 404. Wayback copy shows the value."
+  },
+  {
+   "url": "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Turbine/Engine Technology",
+    "State"
+   ],
+   "outcome": "verified",
+   "note": "Saved copy of the permit; names FT8 Twin Pac and Wayne County, West Virginia."
+  },
+  {
+   "url": "https://www.journalgazette.net/local/indiana-michigan-power-seeks-permission-to-buy-west-virginia-natural-gas-plant/article_a6f2d661-c888-46b0-a052-94c8259c0170.html",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Article dated April 30, 2026 on a pending purchase by Indiana Michigan Power."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860/",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Annual page loaded; files not read."
+  },
+  {
+   "url": "https://secure.in.gov/iurc/files/ord_46301GRS1_090226.pdf",
+   "used_for": [
+    "Owner(s)",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Indiana order of September 2, 2026 approving the purchase; closing conditional on FERC 203 and Hart-Scott-Rodino; plant described as operating since 2001."
+  },
+  {
+   "url": "https://www.journalgazette.net/local/indiana-michigan-power-seeks-permission-to-buy-west-virginia-natural-gas-plant/article_a6f2d661-c888-46b0-a052-94c8259c0170.html",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Read the page text; it says the plant is in Kenova, West Virginia, and cites Partners Group as owner according to GEM, which is not an independent source."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2021-00334",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "The Kentucky dockets listed for this plant concern Big Sandy Rural Electric Cooperative customer accounts and rate cases, not the Kenova, West Virginia peaker plant."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2024-00287",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Same reason: a rate case of Big Sandy Rural Electric Cooperative, unrelated to the plant. The other listed dockets 2021-00104, 2023-00285 and 2025-00222 are of the same kind."
+  }
+ ]
+}

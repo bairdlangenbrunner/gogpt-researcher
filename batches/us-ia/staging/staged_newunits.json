@@ -8,7 +8,7 @@
       "kind": "state",
       "slug": "iowa",
       "quarter": "q4-2026",
-      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+      "csv": "scripts/gem_export_gogpt_scoped.csv"
     },
     "generated": "2026-10-19T18:40:50-04:00",
     "mode": "update",
@@ -255,7 +255,8 @@
         ],
         "Status Data Source": [
           "https://idnraqrr.iowadnr.gov/ConPermitSearch/ConstructionPermit?id=11491",
-          "https://www.midamericanenergy.com/media/pdf/orient_energy_center_fact_sheet.pdf"
+          "https://www.midamericanenergy.com/media/pdf/orient_energy_center_fact_sheet.pdf",
+          "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Application&SUBMISSION_RID=68477"
         ],
         "Start Year Data Source": [
           "https://www.midamericanenergy.com/media/pdf/orient_energy_center_fact_sheet.pdf"
@@ -276,24 +277,33 @@
           "ok": true,
           "contains_value": true,
           "name_found": true
+        },
+        {
+          "url": "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Application&SUBMISSION_RID=68477",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Iowa DNR EasyAir submitted application for the Orient Energy Center turbine project, signed 4/27/2026."
         }
       ],
       "note": "The state issued air permit 26-A-246 on June 11, 2026 for a third combustion turbine at Orient, with the same heat input as units 1 and 2. MidAmerican's fact sheet says the plant will have up to 700 MW with unit 3 in service in spring 2029. The capacity of 232.5 MW is worked out, not stated: the turbines are the same size, and 700 MW less the 465 MW of units 1 and 2 leaves about 235 MW. The status is pre-construction because the permit is issued but the turbine is not yet installed. The owner is MidAmerican Energy, the same as the other units; please copy it from them.",
-      "researcher_notes": "The state issued an air permit on June 11, 2026 for a third turbine at Orient. MidAmerican's fact sheet says unit 3 enters service in spring 2029 and the plant totals up to 700 MW. The 232.5 MW size is worked out from the matching units 1 and 2. Copy the owner from the other units.",
+      "researcher_notes": "MidAmerican applied for an air permit for a third turbine at Orient in April 2026 (application signed April 27, 2026), and the state issued it on June 11, 2026. MidAmerican's fact sheet says unit 3 enters service in spring 2029 and the plant totals up to 700 MW. The 232.5 MW size is worked out from the matching units 1 and 2. Copy the owner from the other units.",
       "country": "United States",
       "record_id": "L100001047779:new:3",
       "milestones": [
         {
           "status": "pre-construction",
           "year": 2026,
-          "period": "June",
+          "period": "April",
           "sources": [
+            "https://programs.iowadnr.gov/easyair/Public/EnSuite/Shared/Pages/Util/ServerRptViewer.aspx?sr=%2fIDNR%2fReports%2fEASY%2fRPT_Construction_Application&SUBMISSION_RID=68477",
             "https://idnraqrr.iowadnr.gov/ConPermitSearch/ConstructionPermit?id=11491"
           ],
-          "note": "The state air construction permit for the third turbine (permit 26-A-246) was issued June 11, 2026. MidAmerican's fact sheet gives a spring 2029 in-service date, which is a plan only."
+          "note": "MidAmerican applied to the state for the air construction permit for the third turbine in April 2026. The application was signed April 27, 2026. The state issued permit 26-A-246 on June 11, 2026. MidAmerican's fact sheet gives a spring 2029 in-service date, which is a plan only.",
+          "period_note": "The date is the signature date on the submitted application in the state EasyAir system, not the day the state received it."
         }
       ],
-      "action": "Milestone timeline: add a pre-construction milestone for June 2026, when the state issued the air construction permit for the third turbine, with the state permit record as the source."
+      "action": "Milestone timeline: add a pre-construction milestone for April 2026, when MidAmerican applied for the state air construction permit for the third turbine, with the submitted application as the source. The state issued the permit on June 11, 2026."
     },
     {
       "gem_plant_id": "L100000409203",
@@ -360,7 +370,8 @@
         "Status": "pre-construction",
         "Start year": "2030",
         "Turbine/Engine Technology": "internal combustion",
-        "Equipment Manufacturer/Model": "Wärtsilä"
+        "Equipment Manufacturer/Model": "Wärtsilä",
+        "Capacity (MW)": "54.4"
       },
       "refs": {
         "Fuel Data Source": [
@@ -423,7 +434,7 @@
       ],
       "tier": "high",
       "independent": true,
-      "note": "The City of Ames is building a new gas plant, the Ames Municipal Energy Center, in the coal yard of this power plant. On July 28, 2026 the city council bought three Wärtsilä engines for about 76.8 million dollars. A summary of that council meeting gives 18.13 MW for each engine. Ames Voice says the three engines give more than 54 MW together, and the Iowa State Daily says 54 MW. The engines burn natural gas or fuel oil, according to the city's project page and Ames Voice. The city's page says the project is in engineering and pre-construction. No air permit application for the engines is on file with the state yet. The engines arrive in October 2029. Ames Voice and the Iowa State Daily expect them to run in spring or early 2030. The city's page says operational by 2031. I used 2030. The site has room for three more engines later, so this set is named Phase 1. An Ames Tribune story says the new engines make 108 MW. That figure does not match the three engines bought, so I did not use it. Please copy the owner, City of Ames, and the location from the other units. The city calls the whole site the Ames Municipal Energy Center, so that name could go in Other Name(s).",
+      "note": "The City of Ames is building a new gas plant, the Ames Municipal Energy Center, in the coal yard of this power plant. On July 28, 2026 the city council bought three Wärtsilä engines for about 76.8 million dollars. A summary of that council meeting (Citizen Portal) describes the award as three dual-fuel 18.13 MW engines. That is the rating of each engine unit, and three of them match the 54 MW the news reports give for the plant, so I treat it as electrical output. Ames Voice says the three engines give more than 54 MW together, and the Iowa State Daily says 54 MW. The engines burn natural gas or fuel oil, according to the city's project page and Ames Voice. The city's page says the project is in engineering and pre-construction. No air permit application for the engines is on file with the state yet. The engines arrive in October 2029. Ames Voice and the Iowa State Daily expect them to run in spring or early 2030. The city's page says operational by 2031. I used 2030. The site has room for three more engines later, so this set is named Phase 1. An Ames Tribune story says the new engines make 108 MW. That figure does not match the three engines bought, so I did not use it. Please copy the owner, City of Ames, and the location from the other units. The city calls the whole site the Ames Municipal Energy Center, so that name could go in Other Name(s).",
       "plant_name": "Ames Municipal Power Plant",
       "country": "United States",
       "record_id": "L100000103902:new:phase-1",
@@ -436,7 +447,7 @@
             "https://www.cityofames.org/Resident-Services/Whats-Happening-in-Ames/Major-Projects/Ames-Municipal-Energy-Center",
             "https://amesvoice.com/2026/07/29/ames-approves-millions-in-energy-center-contracts/"
           ],
-          "note": "The city project page lists the project as in pre-construction, and the city council bought the three engines on July 28, 2026. The city hired its design engineer earlier, in October 2025, according to a city document I found in a search but did not verify."
+          "note": "The city project page lists the project as in pre-construction, and the city council bought the three engines on July 28, 2026."
         }
       ],
       "action": "Milestone timeline: add a pre-construction milestone for July 2026, when the city council bought the three engines, with the city project page and an Ames Voice report as the sources."

@@ -19,7 +19,7 @@ data center project. Nothing needs a sign-in. Routes (probed 2026-11-04):
   agendacenter CivicPlus AgendaCenter sites (Henderson County, City of Henderson, Clark,
                Marshall, Hardin): /AgendaCenter/Search/?CIDs=all with a date range; files at
                /AgendaCenter/ViewFile/Agenda|Minutes/_MMDDYYYY-ID.
-  wpmedia      WordPress sites (Pulaski County, Daviess County, City of Somerset): the open
+  wpmedia      WordPress sites (Pulaski County, Daviess County, City of Somerset, Simpson County): the open
                media API /wp-json/wp/v2/media, PDFs uploaded since --since whose titles are
                agendas, minutes, orders or packets.
   pages        Every other body: its agendas or minutes index page, read through fetch.py's
@@ -113,6 +113,12 @@ BODIES = [
     {"id": "maysville", "name": "City of Maysville", "county": "Mason", "reader": "pages",
      "pages": [f"https://www.cityofmaysvilleky.gov/government/maysville_city_commission/{y}_agendas___minutes.php"
                for y in (2026, 2025, 2024)]},
+    {"id": "franklin", "name": "City of Franklin, city commission and Franklin-Simpson Planning and Zoning",
+     "county": "Simpson", "reader": "pages",
+     "pages": ["https://www.franklinky.gov/government/meetings_agendas_minutes.php",
+               "https://www.franklinky.gov/departments/planning_zoning/agendas_and_minutes.php"]},
+    {"id": "simpson-county", "name": "Simpson County Fiscal Court", "county": "Simpson", "reader": "wpmedia",
+     "site": "https://simpsoncountyky.gov"},
 ]
 
 # Bodies that post no current minutes, or whose records sit behind a portal a person opens.
@@ -134,6 +140,8 @@ NOT_POSTED = [
     {"name": "City of Paducah", "county": "McCracken", "why": "minutes and packets in Laserfiche WebLink (citydocs.paducahky.gov); action forms at paducahky.gov/files/<n>/; a person browses them"},
     {"name": "City of Hopkinsville", "county": "Christian", "why": "Laserfiche portal; a person browses it"},
     {"name": "Webster County Fiscal Court", "county": "Webster", "why": "webstercountyky.com answers a bot challenge; the sweep opens it with fetch.py --render"},
+    {"name": "Todd County Fiscal Court", "county": "Todd",
+     "why": "toddcountyky.com, the old county address, now serves an unrelated foreign site; no county site posts minutes; ask the fiscal court clerk in Elkton; the Todd County Standard reports meetings"},
     {"name": "Union County Fiscal Court", "county": "Union", "why": "unioncountyky.org needs the browser-fingerprint route; the sweep opens it through fetch.py"},
 ]
 
@@ -145,6 +153,7 @@ LEADS = {
     "Flexential": r"flexential", "Middle Mile Infrastructure": r"middle mile", "PPL and Blackstone": r"blackstone",
     "Bluegrass Cellular data center": r"bluegrass cellular", "Lynn Bark Energy Center": r"lynn bark",
     "Kentucky Power Lawrence County combined cycle": r"lawrence county.{0,60}(combined cycle|generat|power plant)",
+    "TenKey LandCo": r"ten ?key", "TVA queue 628 in Todd County": r"todd county.{0,80}(gas|generat|power plant|TVA)",
 }
 
 STRONG = re.compile(r"data ?cent(er|re)s?|power plant|generating (station|facility|plant|unit)|power station|"
@@ -233,11 +242,14 @@ class Net:
         return None
 
     def page(self, url):
-        p = get(url, timeout=120)
-        if p.status != "200":
-            report_failure(url, p.status, "local records index page")
-            return None
-        return p.text
+        for attempt in range(3):
+            p = get(url, timeout=120)
+            if p.status == "200":
+                return p.text
+            log(f"  {url}: {p.status}")
+            time.sleep(5 * (attempt + 1))
+        report_failure(url, p.status, "local records index page failed three times")
+        return None
 
 
 def list_legistar(net, body, since, until):
@@ -260,9 +272,15 @@ def list_legistar(net, body, since, until):
             if not (STRONG.search(label + " " + names) or any(re.search(p, label, re.I) for p in LEADS.values())):
                 continue
             for a in it.get("EventItemMatterAttachments") or []:
-                if a.get("MatterAttachmentHyperlink"):
-                    docs.append(doc(body, a["MatterAttachmentHyperlink"], a.get("MatterAttachmentName") or "attachment",
-                                    date, "packet", item=label))
+                # The attachment's own hyperlink (louisville.legistar1.com/model/attachments/...) answers
+                # 404 since 2026; the API's file endpoint serves the same PDF (checked 2026-11-05).
+                if it.get("EventItemMatterId") and a.get("MatterAttachmentId"):
+                    url = f"{base}/Matters/{it['EventItemMatterId']}/Attachments/{a['MatterAttachmentId']}/File"
+                elif a.get("MatterAttachmentHyperlink"):
+                    url = a["MatterAttachmentHyperlink"]
+                else:
+                    continue
+                docs.append(doc(body, url, a.get("MatterAttachmentName") or "attachment", date, "packet", item=label))
         time.sleep(0.2)
     return docs
 
@@ -340,6 +358,9 @@ def parse_links(text, base, body, since):
     """Every dated document link on an index page."""
     docs, seen = [], set()
     text = text or ""
+    tag = re.search(r'<base\b[^>]*href=["\']([^"\']+)["\']', text, re.I)
+    if tag:   # a page's <base> tag sets where its relative links point, as in a browser
+        base = urllib.parse.urljoin(base, html.unescape(tag.group(1)).strip())
     for m in re.finditer(r'<a\b[^>]*href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', text, re.S | re.I):
         href, label = m.groups()
         href = html.unescape(href).strip()
@@ -402,6 +423,9 @@ def doc_file(folder, d):
     m = re.search(r"fileId=(\d+)", d["url"])
     if m:
         tail = f"file{m.group(1)}"
+    m = re.search(r"/Matters/(\d+)/Attachments/(\d+)/File", d["url"])
+    if m:
+        tail = f"matter{m.group(1)}_attachment{m.group(2)}"
     return folder / f"{d['date'] or 'nodate'}_{d['kind']}_{tail}.pdf"
 
 
@@ -442,10 +466,28 @@ def read(net, d, folder, ocr, max_bytes):
 
 # ---------------------------------------------------------------- finding ---
 
+# Plant names that are also surnames, rivers, roads or county names. In council minutes a bare
+# "Brown", "Reid" or "Trimble County" is a person or a place, so these need a plant word next
+# to them. They replace the commission's patterns for the local records only.
+PLANT_WORD = r"(station|generating|generation|power|plant|unit|units|cc|ct|combined|combustion|peaker|fossil|energy)"
+LOCAL_KNOWN = {
+    "L100000402085": [r"big sandy peak"],
+    "L100000103930": [r"big sandy " + PLANT_WORD, r"kentucky power.{0,40}big sandy"],
+    "L100000103932": [r"cane run " + PLANT_WORD],
+    "L100000103935": [r"\bcooper " + PLANT_WORD, r"ekpc.{0,40}cooper", r"john sherman cooper"],
+    "L100000103937": [r"\bbrown " + PLANT_WORD, r"\be\.? ?w\.? brown", r"\bku brown"],
+    "L100000103945": [r"mill creek " + PLANT_WORD, r"mill creek [1-6]\b"],
+    "L100000103946": [r"paradise " + PLANT_WORD, r"tva.{0,40}paradise"],
+    "L100000103947": [r"\breid " + PLANT_WORD, r"robert (a\.? )?reid"],
+    "L100000103950": [r"spurlock " + PLANT_WORD, r"\bh\.? ?l\.? spurlock", r"ekpc.{0,40}spurlock"],
+    "L100000103951": [r"trimble county " + PLANT_WORD],
+}
+
+
 def plant_patterns(plants):
     pats = {}
     for p in plants:
-        rx = list(_psc.PSC_KNOWN.get(p["id"], []))
+        rx = list(LOCAL_KNOWN.get(p["id"]) or _psc.PSC_KNOWN.get(p["id"], []))
         if not rx and p["name_words"]:
             rx = [r"\b" + r"\W+".join(map(re.escape, sorted(p["name_words"]))) + r"\b"] if len(p["name_words"]) == 1 else []
         if rx:

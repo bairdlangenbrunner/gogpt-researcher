@@ -1,0 +1,264 @@
+{
+ "meta": {
+  "plant_id": "L100000103938",
+  "plant_name": "East Bend Generating Station",
+  "state": "Kentucky",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T19:32:37-05:00",
+  "done": true,
+  "urls_attempted": 7,
+  "urls_verified": 7
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001055335",
+   "unit_name": "3",
+   "findings": {
+    "Conversion/replacement?": {
+     "value": "replacement",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "irp": true,
+     "note": "The same 2024 plan (https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf) names a one-by-one combined cycle unit of 664 MW at East Bend from 2039 as the replacement for East Bend."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Backup Power",
+    "Start year confirmation beyond the 2024 plan"
+   ],
+   "notes": "The 2024 Duke Energy Kentucky plan still shows the 664 MW combined cycle from 2039. No 2025 or 2026 filing, air permit application or Boone County record that moves it was found. No turbine make or model is named anywhere. The air permit lists only the existing emergency diesel generator and fire pump for the coal boiler, so no backup power finding was made for this row."
+  },
+  {
+   "gem_unit_id": "G100001055334",
+   "unit_name": "Unit 2, timepoint 2",
+   "findings": {
+    "Status Detail": {
+     "value": "NF 6/22/26: The project has received federal funding. NF 11/14/25: 2024 IRP Preferred Portfolio proposes conversion of East Bend from 100% coal generation to dual fuel operation (coal and DFO). Not clear which fuel will be the primary one - TBC.",
+     "refs": [
+      "https://www.energy.gov/hgeo/defense-production-act-title-iii-project-selections-coal-fleet-projects-and-west-gateway",
+      "https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.energy.gov/hgeo/defense-production-act-title-iii-project-selections-coal-fleet-projects-and-west-gateway",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "irp": true,
+     "note": "The text is left unchanged so the links are added. The US Department of Energy Defense Production Act Title III selections page (https://www.energy.gov/hgeo/defense-production-act-title-iii-project-selections-coal-fleet-projects-and-west-gateway) lists the East Bend Coal Reliability Assurance Initiative for Duke Energy Kentucky with 33,400,000 dollars of federal funding. That money is for steam turbine and boiler economizer work on the coal unit, not for the diesel conversion. See the question on this unit."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "irp": true,
+     "note": "The 2024 Duke Energy Kentucky integrated resource plan (https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf) describes converting East Bend from 100 percent coal to dual fuel operation on diesel fuel oil in 2030, so this unit is a conversion."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Backup Power",
+    "Planned retire confirmation of 2038"
+   ],
+   "notes": "The September 2026 EIA-860M table lists generator 2 as 772 MW coal and operating since 1981. That is the existing coal unit, so no status change is made for this conversion row. No air permit application for the diesel conversion was found in the harvested Kentucky air permit index. The Duke 2026 integrated resource plan case 2026-00167 has no plan filed yet. The air permit lists only the existing emergency diesel generator and fire pump for the coal boiler, so no backup power finding was made for this row."
+  }
+ ],
+ "plant_findings": {
+  "Operator(s)": {
+   "value": "Duke Energy Kentucky",
+   "refs": [
+    "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/8128108"
+   ],
+   "verifications": [
+    {
+     "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/8128108",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The Kentucky Division for Air Quality Title V permit V-12-023 R1 (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/8128108) names Duke Energy Kentucky Inc., East Bend Station as the permittee and source. That is the company that runs the plant."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100001055334",
+   "concern_type": "Planned retire",
+   "question": "Should East Bend unit 2 planned retirement be 2039 instead of 2038?",
+   "finding": "The 2024 Duke Energy Kentucky plan (https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf) says dual fuel operation from 2030 and a combined cycle replacement by 2039. A table in the plan reads retire in 2039 for the co-firing option. I found no document that says 2038.",
+   "recommendation": "Check the source of 2038. If none exists, change Planned retire to 2039 and cite the 2024 plan.",
+   "note": "The plan also studies retiring in 2032 or 2036 in other cases, but the preferred portfolio keeps the unit to 2039.",
+   "refs": [
+    "https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf"
+   ],
+   "proposed_value": {
+    "Planned retire": "2039"
+   }
+  },
+  {
+   "gem_unit_id": "G100001055334",
+   "concern_type": "Status Detail",
+   "question": "Does the federal funding note for East Bend unit 2 apply to the conversion?",
+   "finding": "The Department of Energy page (https://www.energy.gov/hgeo/defense-production-act-title-iii-project-selections-coal-fleet-projects-and-west-gateway) lists 33,400,000 dollars for the East Bend Coal Reliability Assurance Initiative. It covers steam turbine and boiler economizer work to keep the coal unit running. It does not mention diesel or gas.",
+   "recommendation": "Keep the note but add that the funding is for coal reliability work, not the conversion.",
+   "note": "The note is a running log, so a person adds the clarifying line above the old text.",
+   "refs": [
+    "https://www.energy.gov/hgeo/defense-production-act-title-iii-project-selections-coal-fleet-projects-and-west-gateway"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001055334",
+   "concern_type": "validation",
+   "question": "When did East Bend unit 2 reach the pre-construction step?",
+   "finding": "I found no permit application or construction filing for the diesel conversion. The earliest document is the 2024 Duke Energy Kentucky plan filed in June 2024 (https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf), which only proposes the conversion.",
+   "recommendation": "Not found. The plan alone supports announced, so consider whether pre-construction is right; leave the step undated.",
+   "note": "I looked at the Kentucky Public Service Commission cases for Duke, the harvested air permit index and Boone County minutes.",
+   "refs": [
+    "https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf"
+   ],
+   "checks": [
+    7
+   ]
+  },
+  {
+   "gem_unit_id": "G100001055335",
+   "concern_type": "validation",
+   "question": "When did East Bend unit 3 reach the announced step?",
+   "finding": "The unit first appears in the 2024 Duke Energy Kentucky plan filed on June 21, 2024 (https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf).",
+   "recommendation": "Date the announced step June 2024.",
+   "note": "The 2026 plan case 2026-00167 (https://psc.ky.gov/Case/ViewCaseFilings/2026-00167) has no plan filed yet.",
+   "refs": [
+    "https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf"
+   ],
+   "checks": [
+    7
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Start year",
+    "Planned retire",
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "Read in full as text."
+  },
+  {
+   "url": "https://www.energy.gov/hgeo/defense-production-act-title-iii-project-selections-coal-fleet-projects-and-west-gateway",
+   "used_for": [
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "East Bend entry names Duke Energy Kentucky and 33.4 million dollars."
+  },
+  {
+   "url": "https://psc.ky.gov/pscecf/2026-00167/charlene.barlow%40duke-energy.com/06302026032715/DEK_MOTION_063026.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Case 2026-00167 filings: only waiver and intervention motions, no plan yet."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Plant 6018, generator 2, 772.0 MW, conventional steam coal, operating since March 1981."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2026-00167",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Filings list read through fetch.py; not run through the verifier."
+  },
+  {
+   "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/8128108",
+   "used_for": [
+    "Operator(s)",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Title V permit from 2017. It lists emission unit 13, an emergency diesel generator, and unit 16, an emergency diesel fire pump, both built in 1976 for the coal boiler. They do not serve the planned diesel conversion or the combined cycle, so Backup Power is left alone."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2025-00002",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "not relevant",
+   "note": "The Public Service Commission case on the flue gas desulfurization lime conversion only states a net rating of 600 MW for East Bend. It gives no turbine model, start year or retirement date for the new units."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2021-00290",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "This 2021 case is about closing the East Landfill. It does not bear on the new units."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2024-00152",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "This case converts the flue gas desulfurization reagent. It only repeats the 2024 plan's modeling cases and gives no new date for the units."
+  },
+  {
+   "url": "https://www.boonecountyky.org/Documents/Government/Boone%20County%20Fiscal%20Court/Fiscal%20Court%20Meeting%20Minutes/2026/July%2028,%202026%20Minutes.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "The Boone County Fiscal Court minutes from 2024 to 2026 that matched were a zoning change for a 5-acre lot and road resurfacing on East Bend Road. None mentions the power plant."
+  }
+ ]
+}

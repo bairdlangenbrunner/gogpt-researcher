@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head id="ctl00_head1"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+	Permit Tracking Search
+</title><link href="https://apps.dnr.wi.gov/dnrexternalbranding/V01/css/sitePrint-f20.css" type="text/css" rel="stylesheet" media="print" /><link href="https://apps.dnr.wi.gov/dnrexternalbranding/V01/css/globalSiteAll_v2.14.3-f20.css" type="text/css" rel="stylesheet" media="screen" /><link href="https://apps.dnr.wi.gov/dnrexternalbranding/V01/css/DNRtopic.css" type="text/css" rel="stylesheet" media="screen" /><link href="https://apps.dnr.wi.gov/dnrexternalbranding/V01/css/DNRtopic_mobile-f20.css" type="text/css" rel="stylesheet" media="screen" /><link href="https://apps.dnr.wi.gov/dnrexternalbranding/V01/css/DNRtopic_HeadFootMods.css" type="text/css" rel="stylesheet" media="screen" />
+
+    
+    <script type="text/javascript" src="https://apps.dnr.wi.gov/dnrexternalbranding/V01/js/activetabs.js"></script>
+
+    
+
+<script type="text/javascript">
+    function FreezeHeader(gvId, gvHeight) {
+        var GridId = gvId
+        var ScrollHeight = gvHeight;
+        var grid = document.getElementById(GridId);
+        var gridWidth = grid.offsetWidth;
+        var gridHeight = grid.offsetHeight;
+        var headerCellWidths = new Array();
+        for (var i = 0; i < grid.getElementsByTagName("th").length; i++) {
+            headerCellWidths[i] = grid.getElementsByTagName("th")[i].offsetWidth;
+        }
+        grid.parentNode.appendChild(document.createElement("div"));
+        var parentDiv = grid.parentNode;
+
+        var table = document.createElement("table");
+        for (i = 0; i < grid.attributes.length; i++) {
+            if (grid.attributes[i].specified && grid.attributes[i].name != "id") {
+                table.setAttribute(grid.attributes[i].name, grid.attributes[i].value);
+            }
+        }
+        table.style.cssText = grid.style.cssText;
+        table.style.width = gridWidth + "px";
+        table.appendChild(document.createElement("tbody"));
+        table.getElementsByTagName("tbody")[0].appendChild(grid.getElementsByTagName("tr")[0]);
+        var cells = table.getElementsByTagName("th");
+
+        var gridRow = grid.getElementsByTagName("tr")[0];
+        for (var i = 0; i < cells.length; i++) {
+            var width;
+            if (headerCellWidths[i] > gridRow.getElementsByTagName("td")[i].offsetWidth) {
+                width = headerCellWidths[i]-48; // added '-48', which helped a bit.  SRB, 2/24/14.
+            }
+            else {
+                width = gridRow.getElementsByTagName("td")[i].offsetWidth;
+            }
+            cells[i].style.width = parseInt(width - 3) + "px";
+            gridRow.getElementsByTagName("td")[i].style.width = parseInt(width - 3) + "px";
+        }
+        parentDiv.removeChild(grid);
+
+        var dummyHeader = document.createElement("div");
+        dummyHeader.appendChild(table);
+        parentDiv.appendChild(dummyHeader);
+        var scrollableDiv = document.createElement("div");
+        if (parseInt(gridHeight) > ScrollHeight) {
+            gridWidth = parseInt(gridWidth) + 17;
+        }
+        scrollableDiv.style.cssText = "overflow:auto;height:" + ScrollHeight + "px;width:" + gridWidth + "px";
+        scrollableDiv.appendChild(grid);
+        parentDiv.appendChild(scrollableDiv);
+    }
+</script><!-- Google tag (gtag.js) --> 
+<script async src=https://www.googletagmanager.com/gtag/js?id=G-EHDMSRCYK1></script> 
+<script> 
+window.dataLayer = window.dataLayer || []; 
+function gtag(){dataLayer.push(arguments);} 
+gtag('js', new Date()); 
+gtag('config', 'G-EHDMSRCYK1'); 
+</script>
+    <style>
+    body {
+        margin: 0px;
+        display: block;
+    }
+    #dnrAppHead{
+	    font-size: .875em;
+	    visibility: visible;
+	    background: #0076A5;
+	    text-align: left;
+	    padding: 0 8px 2px;
+	    height:85px;
+    }
+    #headerLogo{
+	    font-size: .875em;
+	    visibility: visible;
+	    text-align: left;
+	    padding: 0;
+	    width: 180px;
+	    height: auto;
+	    margin: 12px;
+	    margin-left: 20px;
+	    margin-top: 17px;
+    }
+    #dnrAppFoot{
+	    font-size: .875em;
+	    color: #FFFFFF;
+	    visibility: visible;
+	    background: #003349;
+	    text-align: left;
+	    padding: 18px;
+	    padding-bottom: 20px;
+	    height: auto;
+        font-family: Arial;
+        line-height: 25px;
+    }
+    #dnrAppFoot > a{
+	    color: #FFFFFF;
+    }
+    .underline-on-hover:hover {
+    text-decoration: underline;
+    }
+    #wiGovLogo{
+	    margin-top: -75px;
+	    float:right;
+	    height: 40px;
+	    width: auto;
+	    margin-right: 20px;
+    }
+
+    @media only screen and (max-width: 1024px) {
+        #wiGovLogo {
+            display: none;
+        }
+    }
+</style>
+    <div id="dnrAppHead">
+		<a style="text-decoration: none;" href="https://dnr.wisconsin.gov"><img alt="Wisconsin Department of Natural Resources logo" id="headerLogo" src="Images/dnr-circle-logo-txt.svg" title="Wisconsin Department of Natural Resources"></a>
+	</div>
+
+<link href="App_Themes/AMInternal/AMInternal.css" type="text/css" rel="stylesheet" /><link href="App_Themes/AMInternal/DNRInt.css" type="text/css" rel="stylesheet" /><link href="App_Themes/AMInternal/DnrInt2.css" type="text/css" rel="stylesheet" /><link href="App_Themes/AMInternal/GridView.css" type="text/css" rel="stylesheet" /></head>
+
+<body id="minimal">
+    <div style="text-align:center; color:white; background-color:#003349;">
+        
+    </div>
+
+<!-- application banner/header -->
+<div style="text-align:center;">
+   Air Management Program
+</div>
+
+<!-- horizontal navigation banner -->
+
+
+
+
+<div id="contentWrapper">
+
+
+<!-- MAIN CONTENT BEGIN -->
+    <form name="aspnetForm" method="post" action="./AM_PermitTrackingSearch.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="VS" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/warp_ext/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZKJC4MQQbeSY67AS1bleTgrwmwXZY9wiJ-WsMdflOxGcECnK9dEtp_0CTDuoyQQJrg2&amp;t=639190653332169432" type="text/javascript"></script>
+
+
+<script src="/warp_ext/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvoUvjrVbWtIjLKWwDajWYyiwhNKj75q2VYrWL2XNHR8ZH74-bCh8ZnvMaTVOqZCa6x-KC2yjT1AEQLna28Y4G6M2chvBGkfFhSzRb53zYf8bzOLX3RVPVd-1Go5pVT0hRBLzcQO2Bi0FtGA9PS8zSec1&amp;t=ffffffffbec1863d" type="text/javascript"></script>
+<script src="/warp_ext/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8ODuaEMBqqazEQyXqsiI_dCt5Nh5wp9Bn5itvZ7QxfdA342KgBtPkso4gFbaXnkdKZGZeOZ37Fp87iUTMCjVSXbzpXFNl-CL4FGZ68bza6ahXqKlIrky3tC_ksLP6xUfQ9Gp3c0rzKKNIb6lWQrgkYL81&amp;t=ffffffffbec1863d" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A5292906" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="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" />
+</div>
+    <div>
+        
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ContentPlaceHolder1$sm1', 'aspnetForm', ['tctl00$ContentPlaceHolder1$upCount','','tctl00$ContentPlaceHolder1$upResult',''], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+    <table cellpadding="0" cellspacing="0" border="0" style="margin-left:10px">
+        <tr>
+            <td valign="top" style="height: 357px; width:50%;">
+                <br />
+                
+<table id="ctl00_ContentPlaceHolder1_tbl1" width="100%" style="border:solid 2px; border-collapse:collapse;" bordercolor="#4682B4">
+	<tr>
+		<th id="ctl00_ContentPlaceHolder1_thHead1" align="left" style="background:#4682B4;color:White;">
+   
+   <a id="ctl00_ContentPlaceHolder1_lnkSearch" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$lnkSearch&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))" style="color:White;">[ Search Again ]</a>
+ </th>
+	</tr>
+	<tr>
+		<td>
+                
+                
+                
+  </td>
+	</tr>
+</table>
+
+                
+                <div id="ctl00_ContentPlaceHolder1_upCount">
+	
+                    <br />
+                    <span id="ctl00_ContentPlaceHolder1_lblCount" class="SectionText" style="color:Green;font-size:Medium;font-weight:bold;">(141) Records found</span>
+                
+</div>
+                
+                <hr style="width:99%; text-align:left;" />
+                
+                <span id="ctl00_ContentPlaceHolder1_lblMess" style="display:inline-block;font-size:Small;font-weight:bold;width:90%;">The table below displays all the facilities that meet, or have permits that meet, the criteria in your query.  If you do not see the results you expected, try minimizing or eliminating some search criteria.  You may also try including the Show Inactive Facilities box.  To view facility data, just click the 'Go' link to the left of the facility, and wait for the facility page to open</span>                                
+                
+                <div style="overflow:auto; height:200px;">
+                <div id="ctl00_ContentPlaceHolder1_pnlResult" style="border-width:0px;height:300px;width:99%;">
+	
+                <div id="ctl00_ContentPlaceHolder1_upResult">
+		
+                    <div>
+			<table cellspacing="0" rules="all" border="1" id="ctl00_ContentPlaceHolder1_gvResult" style="width:100%;border-collapse:collapse;">
+				<tr style="border-color:White;">
+					<th scope="col">&nbsp;</th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvResult&#39;,&#39;Sort$fid&#39;)">FID</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvResult&#39;,&#39;Sort$facility_name&#39;)">Facility Name</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvResult&#39;,&#39;Sort$address&#39;)">Address</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvResult&#39;,&#39;Sort$city&#39;)">City</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvResult&#39;,&#39;Sort$county&#39;)">County</a></th>
+				</tr><tr style="font-size:Small;">
+					<td align="center" style="width:5px;">
+                                <a id="ctl00_ContentPlaceHolder1_gvResult_ctl02_lnkSelect" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$gvResult$ctl02$lnkSelect&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Go</a>
+                            </td><td align="center" style="width:5px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl02_lblFid">111003090</span>
+                            </td><td style="width:300px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl02_lblName" title="ALLIANT ENERGY - WPL - COLUMBIA ENERGY CENTER" style="display:inline-block;border-style:None;width:300px;">ALLIANT ENERGY - WPL - COLUMBIA ENERGY CENTER</span>
+                            </td><td style="width:200px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl02_lblAddress" title="W8375 Murray Rd" style="display:inline-block;width:200px;">W8375 Murray Rd</span>
+                            </td><td style="width:80px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl02_lblCity" title="Pardeeville" style="display:inline-block;width:80px;">Pardeeville</span>
+                            </td><td style="width:65px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl02_lblCounty" title="COLUMBIA" style="display:inline-block;width:65px;">COLUMBIA</span>
+                            </td>
+				</tr><tr style="font-size:Small;">
+					<td align="center" style="width:5px;">
+                                <a id="ctl00_ContentPlaceHolder1_gvResult_ctl03_lnkSelect" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$gvResult$ctl03$lnkSelect&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Go</a>
+                            </td><td align="center" style="width:5px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl03_lblFid">113016200</span>
+                            </td><td style="width:300px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl03_lblName" title="MADISON GAS &amp; ELEC FITCHBURG GENERATING STAT" style="display:inline-block;border-style:None;width:300px;">MADISON GAS & ELEC FITCHBURG GENERATING STAT</span>
+                            </td><td style="width:200px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl03_lblAddress" title="5701 McKee Rd" style="display:inline-block;width:200px;">5701 McKee Rd</span>
+                            </td><td style="width:80px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl03_lblCity" title="Fitchburg" style="display:inline-block;width:80px;">Fitchburg</span>
+                            </td><td style="width:65px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl03_lblCounty" title="DANE" style="display:inline-block;width:65px;">DANE</span>
+                            </td>
+				</tr><tr style="font-size:Small;">
+					<td align="center" style="width:5px;">
+                                <a id="ctl00_ContentPlaceHolder1_gvResult_ctl04_lnkSelect" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$gvResult$ctl04$lnkSelect&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Go</a>
+                            </td><td align="center" style="width:5px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl04_lblFid">113017850</span>
+                            </td><td style="width:300px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl04_lblName" title="MADISON GAS &amp; ELECTRIC CO SYCAMORE STATION" style="display:inline-block;border-style:None;width:300px;">MADISON GAS & ELECTRIC CO SYCAMORE STATION</span>
+                            </td><td style="width:200px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl04_lblAddress" title="4111 Sycamore Ave" style="display:inline-block;width:200px;">4111 Sycamore Ave</span>
+                            </td><td style="width:80px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl04_lblCity" title="Madison" style="display:inline-block;width:80px;">Madison</span>
+                            </td><td style="width:65px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl04_lblCounty" title="DANE" style="display:inline-block;width:65px;">DANE</span>
+                            </td>
+				</tr><tr style="font-size:Small;">
+					<td align="center" style="width:5px;">
+                                <a id="ctl00_ContentPlaceHolder1_gvResult_ctl28_lnkSelect" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$gvResult$ctl28$lnkSelect&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Go</a>
+                            </td><td align="center" style="width:5px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl28_lblFid">252304470</span>
+                            </td><td style="width:300px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl28_lblName" title="WE ENERGIES PARIS RICE GENERATING STATION" style="display:inline-block;border-style:None;width:300px;">WE ENERGIES PARIS RICE GENERATING STATION</span>
+                            </td><td style="width:200px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl28_lblAddress" title="13605 1St St" style="display:inline-block;width:200px;">13605 1St St</span>
+                            </td><td style="width:80px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl28_lblCity" title="Paris" style="display:inline-block;width:80px;">Paris</span>
+                            </td><td style="width:65px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl28_lblCounty" title="KENOSHA" style="display:inline-block;width:65px;">KENOSHA</span>
+                            </td>
+				</tr><tr style="font-size:Small;">
+					<td align="center" style="width:5px;">
+                                <a id="ctl00_ContentPlaceHolder1_gvResult_ctl29_lnkSelect" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$gvResult$ctl29$lnkSelect&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Go</a>
+                            </td><td align="center" style="width:5px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl29_lblFid">265200320</span>
+                            </td><td style="width:300px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl29_lblName" title="FOUNDRY RIDGE ENERGY CENTER LLC" style="display:inline-block;border-style:None;width:300px;">FOUNDRY RIDGE ENERGY CENTER LLC</span>
+                            </td><td style="width:200px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl29_lblAddress" title="N42618220 W88769754" style="display:inline-block;width:200px;">N42618220 W88769754</span>
+                            </td><td style="width:80px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl29_lblCity" title="Darien" style="display:inline-block;width:80px;">Darien</span>
+                            </td><td style="width:65px;">
+                                <span id="ctl00_ContentPlaceHolder1_gvResult_ctl29_lblCounty" title="WALWORTH" style="display:inline-block;width:65px;">WALWORTH</span>
+                            </td>
+				</tr></table>
+		</div>
+                    
+                
+	</div>
+                
+</div>
+                </div>
+                <input type="submit" name="ctl00$ContentPlaceHolder1$btnTest" value=".." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$btnTest&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl00_ContentPlaceHolder1_btnTest" class="btnCtrl" style="background-color:Transparent;border-color:LightGrey;border-width:1px;border-style:Solid;font-size:X-Small;font-weight:bold;" />
+        
+            </td>
+        </tr>
+    </table>
+
+    </div>
+    </form>
+<!-- MAIN CONTENT END -->
+</div>
+<!-- end of div#contentWrapper -->
+    <div id="dnrAppFoot">
+		<a style="text-decoration: none"; href="https://dnr.wisconsin.gov/"><span class="underline-on-hover">Wisconsin Department of Natural Resources</span></a><br/>
+		101 S. Webster Street PO Box 7921<br/>
+		Madison, WI 53707-7921<br/>
+		Call 1-888-936-7463 (TTY via relay: 711) from 7AM to 10PM<br/>
+		Email Customer Service: <a style="text-decoration: none"; href="mailto:redacted@example.org" title="Email DNR customer service"><span class="underline-on-hover">redacted@example.org</span></a><br/>
+		<a href="https://wisconsin.gov/"><img alt="wi.gov logo" class="d-none d-sm-none d-md-block" id="wiGovLogo" src="Images/WI.Gov_Symbol.png" title="wisconsin.gov"></a> 
+	</div>
+    
+
+</body>
+</html>

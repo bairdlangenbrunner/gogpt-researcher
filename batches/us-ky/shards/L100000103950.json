@@ -1,0 +1,905 @@
+{
+ "meta": {
+  "plant_id": "L100000103950",
+  "plant_name": "Spurlock power station",
+  "state": "Kentucky",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T20:12:34-05:00",
+  "done": true,
+  "urls_attempted": 13,
+  "urls_verified": 10
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001048352",
+   "unit_name": "Unit 1, timepoint 2",
+   "findings": {
+    "Status": {
+     "value": "pre-construction",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+      "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Kentucky Public Service Commission final order of July 3, 2025 in case 2024-00370 grants East Kentucky Power Cooperative a certificate to retrofit Spurlock Units 1 to 4 for natural gas co-firing. The cooperative's project report filed October 30, 2026 shows detailed engineering under way and construction starting in January 2028. So the unit is still pre-construction and the status does not change. The EIA-860M table for September 2026 lists generator 1 at plant 6041 as operating coal because it describes the existing coal unit, not the co-firing project.",
+     "milestones": [
+      {
+       "status": "pre-construction",
+       "year": 2024,
+       "period": "November",
+       "sources": [
+        "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf"
+       ],
+       "note": "The Commission's final order says East Kentucky Power Cooperative filed its certificate application on November 25, 2024. The air permit application followed in February 2026."
+      }
+     ]
+    },
+    "Capacity (MW)": {
+     "value": "357.6",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists plant 6041, generator 1, as operating, nameplate 357.6 MW, net summer 300 MW, conventional steam coal. This matches the capacity GEM shows. The Commission order gives only the net figure."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas, coal: bituminous",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The Commission order of July 3, 2025 says Spurlock Units 1 to 4 will run on 100 percent coal or co-fire up to 50 percent natural gas by heat input. The EIA-860M table for September 2026 lists bituminous coal as the unit's energy source."
+    },
+    "Turbine/Engine Technology": {
+     "value": "steam turbine",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists generator 1 at plant 6041 as conventional steam with prime mover ST."
+    },
+    "Start year": {
+     "value": "2029",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The project report filed with the Commission on October 30, 2026 gives December 2029 as the construction end and commercial operation date for the Spurlock Units 1 to 4 co-fire project. This is a scheduled event. The reviewer should add it as a new scheduled event with Event Year 2029 and Source Year 2026, and should not change an existing one."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Commission order of July 3, 2025 describes the project as a retrofit of Spurlock Units 1 to 4 for co-fire generation, so it is a conversion."
+    },
+    "Status Detail": {
+     "value": "November 2024: East Kentucky Power Cooperative applied to the Kentucky Public Service Commission on November 25, 2024 for a certificate to retrofit Spurlock Units 1 to 4 for natural gas co-firing. The Commission granted it on July 3, 2025. https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf\n\nThe cooperative's October 30, 2026 project report to the Kentucky Public Service Commission shows detailed engineering under way, the gas firing systems for units 1 and 2 ordered, a general contractor to be picked in June 2027, construction start in January 2028 and commercial operation in December 2029. The Commission granted the certificate on July 3, 2025.",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+      "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The final order at https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf says East Kentucky Power Cooperative filed its certificate application on November 25, 2024. That is the date of the pre-construction step. The later entries in this text come from the project report at https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf.",
+     "milestones": [
+      {
+       "status": "pre-construction",
+       "year": 2024,
+       "period": "November",
+       "sources": [
+        "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf"
+       ],
+       "note": "The Commission's final order says East Kentucky Power Cooperative filed its certificate application on November 25, 2024. The air permit application followed in February 2026."
+      }
+     ]
+    },
+    "CHP": {
+     "value": "yes",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The 2025 integrated resource plan says steam for the International Paper facility comes from Unit 2 normally and from Unit 1 when needed. So Unit 1 is a backup steam source."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Operator(s)",
+    "Backup Power",
+    "Owner(s)",
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use"
+   ],
+   "notes": "The project is moving, so Latest Activity is left alone. The gas burner maker and model were not named in the documents I read. The documents do not state a Backup Power value for this unit."
+  },
+  {
+   "gem_unit_id": "G100001048353",
+   "unit_name": "Unit 2, timepoint 2",
+   "findings": {
+    "Status": {
+     "value": "pre-construction",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+      "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Kentucky Public Service Commission final order of July 3, 2025 in case 2024-00370 grants East Kentucky Power Cooperative a certificate to retrofit Spurlock Units 1 to 4 for natural gas co-firing. The cooperative's project report filed October 30, 2026 shows detailed engineering under way and construction starting in January 2028. So the unit is still pre-construction and the status does not change. The EIA-860M table for September 2026 lists generator 2 at plant 6041 as operating coal because it describes the existing coal unit, not the co-firing project.",
+     "milestones": [
+      {
+       "status": "pre-construction",
+       "year": 2024,
+       "period": "November",
+       "sources": [
+        "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf"
+       ],
+       "note": "The Commission's final order says East Kentucky Power Cooperative filed its certificate application on November 25, 2024. The air permit application followed in February 2026."
+      }
+     ]
+    },
+    "Capacity (MW)": {
+     "value": "592.1",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists plant 6041, generator 2, as operating, nameplate 592.1 MW, net summer 510 MW, conventional steam coal. This matches the capacity GEM shows. The Commission order gives only the net figure."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas, coal: bituminous",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The Commission order of July 3, 2025 says Spurlock Units 1 to 4 will run on 100 percent coal or co-fire up to 50 percent natural gas by heat input. The EIA-860M table for September 2026 lists bituminous coal as the unit's energy source."
+    },
+    "Turbine/Engine Technology": {
+     "value": "steam turbine",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists generator 2 at plant 6041 as conventional steam with prime mover ST."
+    },
+    "Start year": {
+     "value": "2029",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The project report filed with the Commission on October 30, 2026 gives December 2029 as the construction end and commercial operation date for the Spurlock Units 1 to 4 co-fire project. This is a scheduled event. The reviewer should add it as a new scheduled event with Event Year 2029 and Source Year 2026, and should not change an existing one."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Commission order of July 3, 2025 describes the project as a retrofit of Spurlock Units 1 to 4 for co-fire generation, so it is a conversion."
+    },
+    "Status Detail": {
+     "value": "November 2024: East Kentucky Power Cooperative applied to the Kentucky Public Service Commission on November 25, 2024 for a certificate to retrofit Spurlock Units 1 to 4 for natural gas co-firing. The Commission granted it on July 3, 2025. https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf\n\nThe cooperative's October 30, 2026 project report to the Kentucky Public Service Commission shows detailed engineering under way, the gas firing systems for units 1 and 2 ordered, a general contractor to be picked in June 2027, construction start in January 2028 and commercial operation in December 2029. The Commission granted the certificate on July 3, 2025.",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+      "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The final order at https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf says East Kentucky Power Cooperative filed its certificate application on November 25, 2024. That is the date of the pre-construction step. The later entries in this text come from the project report at https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf.",
+     "milestones": [
+      {
+       "status": "pre-construction",
+       "year": 2024,
+       "period": "November",
+       "sources": [
+        "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf"
+       ],
+       "note": "The Commission's final order says East Kentucky Power Cooperative filed its certificate application on November 25, 2024. The air permit application followed in February 2026."
+      }
+     ]
+    },
+    "CHP": {
+     "value": "yes",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The East Kentucky Power Cooperative 2025 integrated resource plan says steam for the International Paper recycling facility next to the plant is supplied from Spurlock Unit 2 on a normal basis, about 29 MW of steam."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Operator(s)",
+    "Backup Power",
+    "Owner(s)",
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use"
+   ],
+   "notes": "The project is moving, so Latest Activity is left alone. The gas burner maker and model were not named in the documents I read. The documents do not state a Backup Power value for this unit."
+  },
+  {
+   "gem_unit_id": "G100001048354",
+   "unit_name": "Unit 3, timepoint 2",
+   "findings": {
+    "Status": {
+     "value": "pre-construction",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+      "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Kentucky Public Service Commission final order of July 3, 2025 in case 2024-00370 grants East Kentucky Power Cooperative a certificate to retrofit Spurlock Units 1 to 4 for natural gas co-firing. The cooperative's project report filed October 30, 2026 shows detailed engineering under way and construction starting in January 2028. So the unit is still pre-construction and the status does not change. The EIA-860M table for September 2026 lists generator 3 at plant 6041 as operating coal because it describes the existing coal unit, not the co-firing project.",
+     "milestones": [
+      {
+       "status": "pre-construction",
+       "year": 2024,
+       "period": "November",
+       "sources": [
+        "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf"
+       ],
+       "note": "The Commission's final order says East Kentucky Power Cooperative filed its certificate application on November 25, 2024. The air permit application followed in February 2026."
+      }
+     ]
+    },
+    "Capacity (MW)": {
+     "value": "329.4",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists plant 6041, generator 3, as operating, nameplate 329.4 MW, net summer 268 MW, conventional steam coal. This matches the capacity GEM shows. The Commission order gives only the net figure."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas, coal: bituminous",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The Commission order of July 3, 2025 says Spurlock Units 1 to 4 will run on 100 percent coal or co-fire up to 50 percent natural gas by heat input. The EIA-860M table for September 2026 lists bituminous coal as the unit's energy source."
+    },
+    "Turbine/Engine Technology": {
+     "value": "steam turbine",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists generator 3 at plant 6041 as conventional steam with prime mover ST."
+    },
+    "Start year": {
+     "value": "2029",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The project report filed with the Commission on October 30, 2026 gives December 2029 as the construction end and commercial operation date for the Spurlock Units 1 to 4 co-fire project. This is a scheduled event. The reviewer should add it as a new scheduled event with Event Year 2029 and Source Year 2026, and should not change an existing one."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Commission order of July 3, 2025 describes the project as a retrofit of Spurlock Units 1 to 4 for co-fire generation, so it is a conversion."
+    },
+    "Status Detail": {
+     "value": "November 2024: East Kentucky Power Cooperative applied to the Kentucky Public Service Commission on November 25, 2024 for a certificate to retrofit Spurlock Units 1 to 4 for natural gas co-firing. The Commission granted it on July 3, 2025. https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf\n\nThe cooperative's October 30, 2026 project report to the Kentucky Public Service Commission shows detailed engineering under way, the gas firing systems for units 1 and 2 ordered, a general contractor to be picked in June 2027, construction start in January 2028 and commercial operation in December 2029. The Commission granted the certificate on July 3, 2025.",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+      "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The final order at https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf says East Kentucky Power Cooperative filed its certificate application on November 25, 2024. That is the date of the pre-construction step. The later entries in this text come from the project report at https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf.",
+     "milestones": [
+      {
+       "status": "pre-construction",
+       "year": 2024,
+       "period": "November",
+       "sources": [
+        "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf"
+       ],
+       "note": "The Commission's final order says East Kentucky Power Cooperative filed its certificate application on November 25, 2024. The air permit application followed in February 2026."
+      }
+     ]
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Operator(s)",
+    "Backup Power",
+    "CHP",
+    "Owner(s)",
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use"
+   ],
+   "notes": "The project is moving, so Latest Activity is left alone. The gas burner maker and model were not named in the documents I read. The documents do not state a Backup Power value for this unit."
+  },
+  {
+   "gem_unit_id": "G100001048355",
+   "unit_name": "Unit 4, timepoint 2",
+   "findings": {
+    "Status": {
+     "value": "pre-construction",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+      "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Kentucky Public Service Commission final order of July 3, 2025 in case 2024-00370 grants East Kentucky Power Cooperative a certificate to retrofit Spurlock Units 1 to 4 for natural gas co-firing. The cooperative's project report filed October 30, 2026 shows detailed engineering under way and construction starting in January 2028. So the unit is still pre-construction and the status does not change. The EIA-860M table for September 2026 lists generator 4 at plant 6041 as operating coal because it describes the existing coal unit, not the co-firing project.",
+     "milestones": [
+      {
+       "status": "pre-construction",
+       "year": 2024,
+       "period": "November",
+       "sources": [
+        "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf"
+       ],
+       "note": "The Commission's final order says East Kentucky Power Cooperative filed its certificate application on November 25, 2024. The air permit application followed in February 2026."
+      }
+     ]
+    },
+    "Capacity (MW)": {
+     "value": "329.4",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists plant 6041, generator 4, as operating, nameplate 329.4 MW, net summer 268 MW, conventional steam coal. This matches the capacity GEM shows. The Commission order gives only the net figure."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas, coal: bituminous",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The Commission order of July 3, 2025 says Spurlock Units 1 to 4 will run on 100 percent coal or co-fire up to 50 percent natural gas by heat input. The EIA-860M table for September 2026 lists bituminous coal as the unit's energy source."
+    },
+    "Turbine/Engine Technology": {
+     "value": "steam turbine",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists generator 4 at plant 6041 as conventional steam with prime mover ST."
+    },
+    "Start year": {
+     "value": "2029",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The project report filed with the Commission on October 30, 2026 gives December 2029 as the construction end and commercial operation date for the Spurlock Units 1 to 4 co-fire project. This is a scheduled event. The reviewer should add it as a new scheduled event with Event Year 2029 and Source Year 2026, and should not change an existing one."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Commission order of July 3, 2025 describes the project as a retrofit of Spurlock Units 1 to 4 for co-fire generation, so it is a conversion."
+    },
+    "Status Detail": {
+     "value": "November 2024: East Kentucky Power Cooperative applied to the Kentucky Public Service Commission on November 25, 2024 for a certificate to retrofit Spurlock Units 1 to 4 for natural gas co-firing. The Commission granted it on July 3, 2025. https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf\n\nThe cooperative's October 30, 2026 project report to the Kentucky Public Service Commission shows detailed engineering under way, the gas firing systems for units 1 and 2 ordered, a general contractor to be picked in June 2027, construction start in January 2028 and commercial operation in December 2029. The Commission granted the certificate on July 3, 2025.",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+      "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The final order at https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf says East Kentucky Power Cooperative filed its certificate application on November 25, 2024. That is the date of the pre-construction step. The later entries in this text come from the project report at https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf.",
+     "milestones": [
+      {
+       "status": "pre-construction",
+       "year": 2024,
+       "period": "November",
+       "sources": [
+        "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf"
+       ],
+       "note": "The Commission's final order says East Kentucky Power Cooperative filed its certificate application on November 25, 2024. The air permit application followed in February 2026."
+      }
+     ]
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Latest Activity",
+    "Operator(s)",
+    "Backup Power",
+    "CHP",
+    "Owner(s)",
+    "Latitude",
+    "Longitude",
+    "Location accuracy",
+    "Captive industry use",
+    "Captive industry type",
+    "Captive non-industry use"
+   ],
+   "notes": "The project is moving, so Latest Activity is left alone. The gas burner maker and model were not named in the documents I read. The documents do not state a Backup Power value for this unit."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001048353",
+   "concern_type": "CHP",
+   "question": "Should CHP be yes for Spurlock Units 3 and 4?",
+   "finding": "The 2025 integrated resource plan at https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf names only Units 2 and 1 as the steam sources for the International Paper facility. It does not mention Units 3 and 4.",
+   "recommendation": "Ask the project manager whether Units 3 and 4 should be changed to no, since no source in this sweep says they supply steam.",
+   "note": "GEM shows CHP yes on all four units. Only a document that says no would justify a change.",
+   "refs": [
+    "https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf"
+   ],
+   "proposed_value": {
+    "CHP": "no"
+   }
+  },
+  {
+   "gem_unit_id": "G100001048352",
+   "concern_type": "existence",
+   "question": "Is PJM request C01-1227 at Spurlock a new gas plant?",
+   "finding": "The PJM cycle request C01-1227 was filed by East Kentucky Power Cooperative, Inc. on April 27, 2026 for 758 MW of natural gas at Spurlock, with service requested by December 31, 2031. It is not any of the four co-firing units, which are existing coal units.",
+   "recommendation": "Add a new announced gas unit at Spurlock with 758 MW and owner East Kentucky Power Cooperative, citing the PJM cycle request page, unless the project manager knows it duplicates something.",
+   "note": "The Commission order of July 3, 2025 grants a certificate only for the Cooper combined cycle unit and the co-firing retrofits. The 2025 integrated resource plan names no Spurlock combined cycle. The Spurlock permit record on the Kentucky eSearch site shows pending change APE 2026-7 received September 4, 2026 with no documents online. On the second pass I read the request from the page's own download file, which only answers to a form post. The address https://www.pjm.com/m/ProjectTransition/GenerateXMLTransitionProjectsAll returned 404 to the verifier, so the page could not be verified by a plain fetch.",
+   "refs": [
+    "https://www.pjm.com/planning/m/cycle-service-request-status"
+   ]
+  }
+ ],
+ "monitor": [
+  {
+   "gem_plant_id": "L100000103950",
+   "monitor_kind": "existing_plant",
+   "monitor_reason": "PJM cycle row C01-1227 shows East Kentucky Power Cooperative requesting 758 MW of gas at Spurlock, but no certificate, air permit or county record names it, and the row cannot be fetched by a plain address.",
+   "recheck_by": "2027-03",
+   "watch_case": "unverified",
+   "capacity_mw": 758,
+   "note": "I read the row from the file behind https://www.pjm.com/planning/m/cycle-service-request-status. The developer is East Kentucky Power Cooperative, Inc., it was submitted April 27, 2026, and it asks for service by December 31, 2031. The verifier cannot load that file because it needs a form post, so no source passed. Add it as a new announced unit once a document that loads names it.",
+   "refs": []
+  }
+ ],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf",
+   "used_for": [
+    "CHP",
+    "Fuel"
+   ],
+   "outcome": "verified",
+   "note": "2025 integrated resource plan; page 12 names the Spurlock Units 1 to 4 co-fire request and page 82 describes the steam supply."
+  },
+  {
+   "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+   "used_for": [
+    "Status",
+    "Fuel",
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "Final order granting the retrofit certificate."
+  },
+  {
+   "url": "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+   "used_for": [
+    "Start year",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Quarterly project report filed October 30, 2026."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Capacity (MW)",
+    "Turbine/Engine Technology"
+   ],
+   "outcome": "verified",
+   "note": "Plant 6041 generators 1 to 4, operating, nameplate 357.6, 592.1, 329.4 and 329.4 MW."
+  },
+  {
+   "url": "https://www.pjm.com/planning/m/cycle-service-request-status",
+   "used_for": [
+    "watch item"
+   ],
+   "outcome": "verified",
+   "note": "The visible page only lists the older transition requests. The cycle requests come from the page's own download address, https://www.pjm.com/m/ProjectTransition/GenerateXMLTransitionProjectsAll, which answers only to a form post. I posted the same request the page makes and read the file. Row C01-1227 reads: developer East Kentucky Power Cooperative, Inc.; Spurlock to Meldahl Dam 345 kV; Mason County, Kentucky; natural gas; 758 MW capacity and 780 MW output; submitted April 27, 2026; requested in-service date December 31, 2031; status active, Phase 1 study in process. A plain fetch of the download address returns 404, so the verifier cannot check it. The older queue file https://www.pjm.com/pub/planning/downloads/xml/PlanningQueues.xml was also read and has no row for this request."
+  },
+  {
+   "url": "https://www.ekpc.coop/sites/default/files/New%20Generation/Spurlock%20Station%20co-firing%20with%20coal%20and%20natural%20gas_0.pdf",
+   "used_for": [
+    "replacement link"
+   ],
+   "outcome": "not relevant",
+   "note": "Existing dead link, not retried in this budget. Replacement sources are the Commission order and project report."
+  },
+  {
+   "url": "https://dep.gateway.ky.gov/eSearch/",
+   "used_for": [
+    "Latitude",
+    "Operator(s)"
+   ],
+   "outcome": "verified",
+   "note": "The harvested Kentucky air permit index for Spurlock lists a pending Title V off-permit change, application 2026-7 received September 4, 2026, with no documents online. No construction permit for gas firing is posted. The quarterly project report says the gas co-firing air permit was submitted in February 2026 with approval targeted for September 2027."
+  }
+ ]
+}

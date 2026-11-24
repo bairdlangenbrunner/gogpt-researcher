@@ -1,866 +1,1116 @@
 {
- "meta": {
-  "lane": "updates",
-  "scope": {
-   "country": "United States",
-   "state": "Illinois",
-   "postal": "il",
-   "kind": "state",
-   "slug": "illinois",
-   "quarter": "q4-2026",
-   "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+  "meta": {
+    "lane": "updates",
+    "scope": {
+      "country": "United States",
+      "state": "Illinois",
+      "postal": "il",
+      "kind": "state",
+      "slug": "illinois",
+      "quarter": "q4-2026",
+      "csv": "scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-09T18:15:23-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 21,
+      "fill": 7,
+      "change": 4,
+      "reverified": 13,
+      "match_no_new_url": 0,
+      "status_downgraded": 0,
+      "tier_promoted": 9
+    },
+    "annotated": "2026-10-21: planned retire 2031 added for Rockford, University Park North and South; status detail added for University Park North (PJM extension to May 31, 2031); 2026-10-22: discovery audit addendum. Broadwing final permit of October 14, 2026 (Status Detail and capacity 400 to 452 MW); Lincoln Land permit dates, the January 21, 2027 construction deadline and the lost Eagle Rock offtaker; Zion revised permit of July 28, 2026 for fuel oil in grid emergencies. Three Status Detail entries Baird had already typed in by hand (Broadwing, Lincoln Land GEN1 and GEN2) moved to applied_in_db.json.; 2026-10-22: 60 more edits found already typed into the database by hand (Grand Tower, Marion, Aurora, Rockford I and II, University Park North and South Status Detail and planned retire lines, CPV Three Rivers employment notes) moved to applied_in_db.json; 2026-10-30: Elwood units GT1 to GT4 owner changed to MPH Elwood with parent Hull Street Energy on the company's June 2026 letter to the Illinois EPA; the four Status Detail entries now give the June 1, 2025 sale and the June 1, 2026 shutdown from that letter; 2026-11-07: web form validation pass. Technology set to unknown on Prairie Pulse, Will County and Marquis Solar (no document names a turbine type); Will County fuel and location links added for its own request C01-1569. The three adds Baird typed in moved to applied_in_db.json"
   },
-  "generated": "2026-10-09T18:15:23-04:00",
-  "mode": "update",
-  "counts": {
-   "records": 21,
-   "fill": 7,
-   "change": 4,
-   "reverified": 13,
-   "match_no_new_url": 0,
-   "status_downgraded": 0,
-   "tier_promoted": 9
-  },
-  "annotated": "2026-10-21: planned retire 2031 added for Rockford, University Park North and South; status detail added for University Park North (PJM extension to May 31, 2031); 2026-10-22: discovery audit addendum. Broadwing final permit of October 14, 2026 (Status Detail and capacity 400 to 452 MW); Lincoln Land permit dates, the January 21, 2027 construction deadline and the lost Eagle Rock offtaker; Zion revised permit of July 28, 2026 for fuel oil in grid emergencies. Three Status Detail entries Baird had already typed in by hand (Broadwing, Lincoln Land GEN1 and GEN2) moved to applied_in_db.json.; 2026-10-22: 60 more edits found already typed into the database by hand (Grand Tower, Marion, Aurora, Rockford I and II, University Park North and South Status Detail and planned retire lines, CPV Three Rivers employment notes) moved to applied_in_db.json; 2026-10-30: Elwood units GT1 to GT4 owner changed to MPH Elwood with parent Hull Street Energy on the company's June 2026 letter to the Illinois EPA; the four Status Detail entries now give the June 1, 2025 sale and the June 1, 2026 shutdown from that letter"
- },
- "records": [
-  {
-   "gem_unit_id": "G100000403820",
-   "gem_plant_id": "L100000402416",
-   "plant_name": "Lincoln Land energy center",
-   "unit_name": "GEN1",
-   "country": "United States",
-   "record_id": "L100000402416:G100000403820:capacity-mw",
-   "cluster": "G100000403820",
-   "verdict": "match",
-   "reverified": true,
-   "fields": {
-    "Capacity (MW)": "638.0"
-   },
-   "current": {
-    "Capacity (MW)": "638.0"
-   },
-   "refs": {
-    "Capacity Data Source": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "verifications": [
+  "records": [
     {
-     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
-    }
-   ],
-   "tier": "high",
-   "independent": false,
-   "source_language": "en",
-   "researcher_notes": "The EIA-860M table for August 2026 lists plant 62022, generator GEN1, planned, natural gas fired combined cycle, nameplate 638.4 MW, planned operation June 2030. Status stays pre-construction. No construction start, financing close or cancellation was found. The turbine maker and model are still not found. Latest Activity is left alone because the newest report is from summer 2026.",
-   "action": "Leave Capacity (MW) of unit GEN1 (G100000403820) as 638.0. It is still correct. Add the link below to the Capacity Data Source box. Keep the links already there.",
-   "checks": [
-    10
-   ]
-  },
-  {
-   "gem_unit_id": "G100000403820",
-   "gem_plant_id": "L100000402416",
-   "plant_name": "Lincoln Land energy center",
-   "unit_name": "GEN1",
-   "country": "United States",
-   "record_id": "L100000402416:G100000403820:start-year",
-   "cluster": "G100000403820",
-   "verdict": "match",
-   "reverified": true,
-   "fields": {
-    "Start year": "2030"
-   },
-   "current": {
-    "Start year": "2030"
-   },
-   "refs": {
-    "Start Year Data Source": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
-    }
-   ],
-   "tier": "high",
-   "independent": false,
-   "source_language": "en",
-   "researcher_notes": "The EIA-860M table for August 2026 gives planned operation in June 2030 for generator GEN1.",
-   "action": "Leave Start year of unit GEN1 (G100000403820) as 2030. It is still correct. Add the link below to the Start Year Data Source box. Keep the links already there.",
-   "checks": [
-    10
-   ]
-  },
-  {
-   "gem_unit_id": "G100000403821",
-   "gem_plant_id": "L100000402416",
-   "plant_name": "Lincoln Land energy center",
-   "unit_name": "GEN2",
-   "country": "United States",
-   "record_id": "L100000402416:G100000403821:capacity-mw",
-   "cluster": "G100000403821",
-   "verdict": "match",
-   "reverified": true,
-   "fields": {
-    "Capacity (MW)": "638.0"
-   },
-   "current": {
-    "Capacity (MW)": "638.0"
-   },
-   "refs": {
-    "Capacity Data Source": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
-    }
-   ],
-   "tier": "high",
-   "independent": false,
-   "source_language": "en",
-   "researcher_notes": "The EIA-860M table for August 2026 lists plant 62022, generator GEN2, planned, natural gas fired combined cycle, nameplate 638.4 MW, planned operation June 2030. Status stays pre-construction. No construction start, financing close or cancellation was found. The turbine maker and model are still not found. Latest Activity is left alone because the newest report is from summer 2026.",
-   "action": "Leave Capacity (MW) of unit GEN2 (G100000403821) as 638.0. It is still correct. Add the link below to the Capacity Data Source box. Keep the links already there.",
-   "checks": [
-    10
-   ]
-  },
-  {
-   "gem_unit_id": "G100000403821",
-   "gem_plant_id": "L100000402416",
-   "plant_name": "Lincoln Land energy center",
-   "unit_name": "GEN2",
-   "country": "United States",
-   "record_id": "L100000402416:G100000403821:start-year",
-   "cluster": "G100000403821",
-   "verdict": "match",
-   "reverified": true,
-   "fields": {
-    "Start year": "2030"
-   },
-   "current": {
-    "Start year": "2030"
-   },
-   "refs": {
-    "Start Year Data Source": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
-    }
-   ],
-   "tier": "high",
-   "independent": false,
-   "source_language": "en",
-   "researcher_notes": "The EIA-860M table for August 2026 gives planned operation in June 2030 for generator GEN2.",
-   "action": "Leave Start year of unit GEN2 (G100000403821) as 2030. It is still correct. Add the link below to the Start Year Data Source box. Keep the links already there.",
-   "checks": [
-    10
-   ]
-  },
-  {
-   "gem_unit_id": "G100000403513",
-   "gem_plant_id": "L100000103868",
-   "plant_name": "Marion Plant",
-   "unit_name": "5",
-   "country": "United States",
-   "record_id": "L100000103868:G100000403513:capacity-mw",
-   "cluster": "G100000403513",
-   "verdict": "match",
-   "reverified": true,
-   "fields": {
-    "Capacity (MW)": "75.0"
-   },
-   "current": {
-    "Capacity (MW)": "75.0"
-   },
-   "refs": {
-    "Capacity Data Source": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
-    }
-   ],
-   "tier": "high",
-   "independent": false,
-   "source_language": "en",
-   "researcher_notes": "The EIA-860M table for August 2026 lists generator 5 at 75.0 MW nameplate.",
-   "action": "Leave Capacity (MW) of unit 5 (G100000403513) as 75.0. It is still correct. Add the link below to the Capacity Data Source box. Keep the links already there."
-  },
-  {
-   "gem_unit_id": "G100000403514",
-   "gem_plant_id": "L100000103868",
-   "plant_name": "Marion Plant",
-   "unit_name": "6",
-   "country": "United States",
-   "record_id": "L100000103868:G100000403514:capacity-mw",
-   "cluster": "G100000403514",
-   "verdict": "match",
-   "reverified": true,
-   "fields": {
-    "Capacity (MW)": "75.0"
-   },
-   "current": {
-    "Capacity (MW)": "75.0"
-   },
-   "refs": {
-    "Capacity Data Source": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
-    }
-   ],
-   "tier": "high",
-   "independent": false,
-   "source_language": "en",
-   "researcher_notes": "The EIA-860M table for August 2026 lists generator 6 at 75.0 MW nameplate.",
-   "action": "Leave Capacity (MW) of unit 6 (G100000403514) as 75.0. It is still correct. Add the link below to the Capacity Data Source box. Keep the links already there."
-  },
-  {
-   "gem_unit_id": "G100000403513",
-   "gem_plant_id": "L100000103868",
-   "plant_name": "Marion Plant",
-   "unit_name": "5",
-   "country": "United States",
-   "record_id": "L100000103868:plant:owner-s",
-   "cluster": "G100000403513",
-   "verdict": "match",
-   "reverified": true,
-   "fields": {
-    "Owner(s)": "Southern Illinois Power Cooperative Inc [100%]"
-   },
-   "current": {
-    "Owner(s)": "Southern Illinois Power Cooperative Inc [100%]"
-   },
-   "refs": {
-    "Owners Data Source": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
-    }
-   ],
-   "tier": "medium",
-   "independent": false,
-   "source_language": "en",
-   "researcher_notes": "The EIA-860M table for August 2026 names Southern Illinois Power Coop as the entity for plant 976. This matches GEM's owner. The table does not give a share, so the share is not independently shown.",
-   "action": "Leave Owner(s) of all 2 units of Marion Plant as Southern Illinois Power Cooperative Inc [100%]. It is still correct. Add the link below to the Owners Data Source box on each unit. Keep the links already there.",
-   "applies_to_all_units": true,
-   "sibling_unit_ids": [
-    "G100000403514"
-   ],
-   "sibling_current": {
-    "G100000403514": "Southern Illinois Power Cooperative Inc [100%]"
-   }
-  },
-  {
-   "gem_unit_id": "G100000402256",
-   "gem_plant_id": "L100000401554",
-   "plant_name": "Elwood Energy power station",
-   "unit_name": "GT1",
-   "country": "United States",
-   "record_id": "L100000401554:G100000402256:status-detail",
-   "cluster": "G100000402256",
-   "verdict": "fill",
-   "fields": {
-    "Status Detail": "Elwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. PJM letters in 2025 said Hull Street Energy would buy units 1 to 4, 8 and 9. The sale that closed on June 1, 2025 covered units 1 to 4 only, to MPH Elwood LLC, a Hull Street Energy company, which told the Illinois EPA in June 2026 that the four units permanently ceased operation on June 1, 2026. The EIA-860M table for August 2026 lists this unit as retired in June 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf\nhttps://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
-   },
-   "current": {
-    "Status Detail": ""
-   },
-   "refs": {
-    "Status Detail": [
-     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf",
-     "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
+      "gem_unit_id": "G100000403820",
+      "gem_plant_id": "L100000402416",
+      "plant_name": "Lincoln Land energy center",
+      "unit_name": "GEN1",
+      "country": "United States",
+      "record_id": "L100000402416:G100000403820:capacity-mw",
+      "cluster": "G100000403820",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Capacity (MW)": "638.0"
+      },
+      "current": {
+        "Capacity (MW)": "638.0"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The EIA-860M table for August 2026 lists plant 62022, generator GEN1, planned, natural gas fired combined cycle, nameplate 638.4 MW, planned operation June 2030. Status stays pre-construction. No construction start, financing close or cancellation was found. The turbine maker and model are still not found. Latest Activity is left alone because the newest report is from summer 2026.",
+      "action": "Leave Capacity (MW) of unit GEN1 (G100000403820) as 638.0. It is still correct. Add the link below to the Capacity Data Source box. Keep the links already there.",
+      "checks": [
+        10
+      ]
     },
     {
-     "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true,
-     "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
-    }
-   ],
-   "tier": "high",
-   "independent": true,
-   "source_language": "en",
-   "researcher_notes": "The PJM extension letter from March 2025 asks for a new deactivation date of June 1, 2026 for all nine units. The retirement month comes from the EIA table, which is cited under the status. The June 2026 letter from MPH Elwood LLC to the Illinois EPA gives the purchase date, June 1, 2025, and the date the four units permanently ceased operation, June 1, 2026.",
-   "action": "Set Status Detail of unit GT1 (G100000402256) to the entry below. The box is empty now. The source links are part of the entry, one per line. Do not add them to the Status Data Source box.\n\nElwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. PJM letters in 2025 said Hull Street Energy would buy units 1 to 4, 8 and 9. The sale that closed on June 1, 2025 covered units 1 to 4 only, to MPH Elwood LLC, a Hull Street Energy company, which told the Illinois EPA in June 2026 that the four units permanently ceased operation on June 1, 2026. The EIA-860M table for August 2026 lists this unit as retired in June 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf\nhttps://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
-   "checks": [
-    38
-   ]
-  },
-  {
-   "gem_unit_id": "G100000402257",
-   "gem_plant_id": "L100000401554",
-   "plant_name": "Elwood Energy power station",
-   "unit_name": "GT2",
-   "country": "United States",
-   "record_id": "L100000401554:G100000402257:status-detail",
-   "cluster": "G100000402257",
-   "verdict": "fill",
-   "fields": {
-    "Status Detail": "Elwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. PJM letters in 2025 said Hull Street Energy would buy units 1 to 4, 8 and 9. The sale that closed on June 1, 2025 covered units 1 to 4 only, to MPH Elwood LLC, a Hull Street Energy company, which told the Illinois EPA in June 2026 that the four units permanently ceased operation on June 1, 2026. The EIA-860M table for August 2026 lists this unit as retired in June 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf\nhttps://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
-   },
-   "current": {
-    "Status Detail": ""
-   },
-   "refs": {
-    "Status Detail": [
-     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf",
-     "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
+      "gem_unit_id": "G100000403820",
+      "gem_plant_id": "L100000402416",
+      "plant_name": "Lincoln Land energy center",
+      "unit_name": "GEN1",
+      "country": "United States",
+      "record_id": "L100000402416:G100000403820:start-year",
+      "cluster": "G100000403820",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Start year": "2030"
+      },
+      "current": {
+        "Start year": "2030"
+      },
+      "refs": {
+        "Start Year Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The EIA-860M table for August 2026 gives planned operation in June 2030 for generator GEN1.",
+      "action": "Leave Start year of unit GEN1 (G100000403820) as 2030. It is still correct. Add the link below to the Start Year Data Source box. Keep the links already there.",
+      "checks": [
+        10
+      ]
     },
     {
-     "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true,
-     "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
-    }
-   ],
-   "tier": "high",
-   "independent": true,
-   "source_language": "en",
-   "researcher_notes": "The PJM extension letter from March 2025 asks for a new deactivation date of June 1, 2026 for all nine units. The retirement month comes from the EIA table, which is cited under the status. The June 2026 letter from MPH Elwood LLC to the Illinois EPA gives the purchase date, June 1, 2025, and the date the four units permanently ceased operation, June 1, 2026.",
-   "action": "Set Status Detail of unit GT2 (G100000402257) to the entry below. The box is empty now. The source links are part of the entry, one per line. Do not add them to the Status Data Source box.\n\nElwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. PJM letters in 2025 said Hull Street Energy would buy units 1 to 4, 8 and 9. The sale that closed on June 1, 2025 covered units 1 to 4 only, to MPH Elwood LLC, a Hull Street Energy company, which told the Illinois EPA in June 2026 that the four units permanently ceased operation on June 1, 2026. The EIA-860M table for August 2026 lists this unit as retired in June 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf\nhttps://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
-   "checks": [
-    38
-   ]
-  },
-  {
-   "gem_unit_id": "G100000402258",
-   "gem_plant_id": "L100000401554",
-   "plant_name": "Elwood Energy power station",
-   "unit_name": "GT3",
-   "country": "United States",
-   "record_id": "L100000401554:G100000402258:status-detail",
-   "cluster": "G100000402258",
-   "verdict": "fill",
-   "fields": {
-    "Status Detail": "Elwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. PJM letters in 2025 said Hull Street Energy would buy units 1 to 4, 8 and 9. The sale that closed on June 1, 2025 covered units 1 to 4 only, to MPH Elwood LLC, a Hull Street Energy company, which told the Illinois EPA in June 2026 that the four units permanently ceased operation on June 1, 2026. The EIA-860M table for August 2026 lists this unit as retired in May 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf\nhttps://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
-   },
-   "current": {
-    "Status Detail": ""
-   },
-   "refs": {
-    "Status Detail": [
-     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf",
-     "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
+      "gem_unit_id": "G100000403821",
+      "gem_plant_id": "L100000402416",
+      "plant_name": "Lincoln Land energy center",
+      "unit_name": "GEN2",
+      "country": "United States",
+      "record_id": "L100000402416:G100000403821:capacity-mw",
+      "cluster": "G100000403821",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Capacity (MW)": "638.0"
+      },
+      "current": {
+        "Capacity (MW)": "638.0"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The EIA-860M table for August 2026 lists plant 62022, generator GEN2, planned, natural gas fired combined cycle, nameplate 638.4 MW, planned operation June 2030. Status stays pre-construction. No construction start, financing close or cancellation was found. The turbine maker and model are still not found. Latest Activity is left alone because the newest report is from summer 2026.",
+      "action": "Leave Capacity (MW) of unit GEN2 (G100000403821) as 638.0. It is still correct. Add the link below to the Capacity Data Source box. Keep the links already there.",
+      "checks": [
+        10
+      ]
     },
     {
-     "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true,
-     "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
-    }
-   ],
-   "tier": "high",
-   "independent": true,
-   "source_language": "en",
-   "researcher_notes": "The PJM extension letter from March 2025 asks for a new deactivation date of June 1, 2026 for all nine units. The retirement month comes from the EIA table, which is cited under the status. The June 2026 letter from MPH Elwood LLC to the Illinois EPA gives the purchase date, June 1, 2025, and the date the four units permanently ceased operation, June 1, 2026.",
-   "action": "Set Status Detail of unit GT3 (G100000402258) to the entry below. The box is empty now. The source links are part of the entry, one per line. Do not add them to the Status Data Source box.\n\nElwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. PJM letters in 2025 said Hull Street Energy would buy units 1 to 4, 8 and 9. The sale that closed on June 1, 2025 covered units 1 to 4 only, to MPH Elwood LLC, a Hull Street Energy company, which told the Illinois EPA in June 2026 that the four units permanently ceased operation on June 1, 2026. The EIA-860M table for August 2026 lists this unit as retired in May 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf\nhttps://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
-   "checks": [
-    38
-   ]
-  },
-  {
-   "gem_unit_id": "G100000402259",
-   "gem_plant_id": "L100000401554",
-   "plant_name": "Elwood Energy power station",
-   "unit_name": "GT4",
-   "country": "United States",
-   "record_id": "L100000401554:G100000402259:status-detail",
-   "cluster": "G100000402259",
-   "verdict": "fill",
-   "fields": {
-    "Status Detail": "Elwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. PJM letters in 2025 said Hull Street Energy would buy units 1 to 4, 8 and 9. The sale that closed on June 1, 2025 covered units 1 to 4 only, to MPH Elwood LLC, a Hull Street Energy company, which told the Illinois EPA in June 2026 that the four units permanently ceased operation on June 1, 2026. The EIA-860M table for August 2026 lists this unit as retired in May 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf\nhttps://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
-   },
-   "current": {
-    "Status Detail": ""
-   },
-   "refs": {
-    "Status Detail": [
-     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf",
-     "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
+      "gem_unit_id": "G100000403821",
+      "gem_plant_id": "L100000402416",
+      "plant_name": "Lincoln Land energy center",
+      "unit_name": "GEN2",
+      "country": "United States",
+      "record_id": "L100000402416:G100000403821:start-year",
+      "cluster": "G100000403821",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Start year": "2030"
+      },
+      "current": {
+        "Start year": "2030"
+      },
+      "refs": {
+        "Start Year Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The EIA-860M table for August 2026 gives planned operation in June 2030 for generator GEN2.",
+      "action": "Leave Start year of unit GEN2 (G100000403821) as 2030. It is still correct. Add the link below to the Start Year Data Source box. Keep the links already there.",
+      "checks": [
+        10
+      ]
     },
     {
-     "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true,
-     "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
-    }
-   ],
-   "tier": "high",
-   "independent": true,
-   "source_language": "en",
-   "researcher_notes": "The PJM extension letter from March 2025 asks for a new deactivation date of June 1, 2026 for all nine units. The retirement month comes from the EIA table, which is cited under the status. The June 2026 letter from MPH Elwood LLC to the Illinois EPA gives the purchase date, June 1, 2025, and the date the four units permanently ceased operation, June 1, 2026.",
-   "action": "Set Status Detail of unit GT4 (G100000402259) to the entry below. The box is empty now. The source links are part of the entry, one per line. Do not add them to the Status Data Source box.\n\nElwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. PJM letters in 2025 said Hull Street Energy would buy units 1 to 4, 8 and 9. The sale that closed on June 1, 2025 covered units 1 to 4 only, to MPH Elwood LLC, a Hull Street Energy company, which told the Illinois EPA in June 2026 that the four units permanently ceased operation on June 1, 2026. The EIA-860M table for August 2026 lists this unit as retired in May 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf\nhttps://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
-   "checks": [
-    38
-   ]
-  },
-  {
-   "gem_unit_id": "G100001017993",
-   "gem_plant_id": "L100000103864",
-   "plant_name": "Joliet 29 Generating Station",
-   "unit_name": "Unit 7, timepoint 2",
-   "country": "United States",
-   "record_id": "L100000103864:G100001017993:owner-s",
-   "cluster": "G100001017993",
-   "verdict": "match",
-   "reverified": true,
-   "fields": {
-    "Owner(s)": "Midwest Generation EME LLC [100%]"
-   },
-   "current": {
-    "Owner(s)": "Midwest Generation EME LLC [100%]"
-   },
-   "refs": {
-    "Owners Data Source": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
-     "ok": true,
-     "contains_value": false,
-     "name_found": true
-    }
-   ],
-   "tier": "medium",
-   "independent": false,
-   "source_language": "en",
-   "researcher_notes": "The EIA table for August 2026 lists plant 384, Joliet 29, generator 7, under the owner name Midwest Generations EME LLC. That is a spelling variant of GEM's owner name. The table does not give a share. I could not find a document that states the coordinates or says whether carbon capture is attached. See the questions for details.",
-   "action": "Leave Owner(s) of unit Unit 7, timepoint 2 (G100001017993) as Midwest Generation EME LLC [100%]. It is still correct. Add the link below to the Owners Data Source box. Keep the links already there."
-  },
-  {
-   "gem_unit_id": "G100001017993",
-   "gem_plant_id": "L100000103864",
-   "plant_name": "Joliet 29 Generating Station",
-   "unit_name": "Unit 7, timepoint 2",
-   "country": "United States",
-   "record_id": "L100000103864:G100001017993:conversion-replacement",
-   "cluster": "G100001017993",
-   "verdict": "match",
-   "reverified": true,
-   "fields": {
-    "Conversion/replacement?": "conversion"
-   },
-   "current": {
-    "Conversion/replacement?": "conversion"
-   },
-   "refs": {
-    "Conversion/replacement Data Source": [
-     "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
-    }
-   ],
-   "tier": "medium",
-   "independent": false,
-   "source_language": "en",
-   "researcher_notes": "A Power Engineering article from October 2015 says the Illinois EPA issued a permit for NRG to convert Units 6 to 8 at the Joliet plant from coal to natural gas, and that Units 7 and 8 are part of Joliet 29. It describes the plan, not the finished conversion. The EIA table for August 2026 shows both units burning natural gas.",
-   "action": "Leave Conversion/replacement? of unit Unit 7, timepoint 2 (G100001017993) as conversion. It is still correct. Add the link below to the Conversion/replacement Data Source box. Keep the links already there."
-  },
-  {
-   "gem_unit_id": "G100001017949",
-   "gem_plant_id": "L100000103864",
-   "plant_name": "Joliet 29 Generating Station",
-   "unit_name": "Unit 8, timepoint 2",
-   "country": "United States",
-   "record_id": "L100000103864:G100001017949:owner-s",
-   "cluster": "G100001017949",
-   "verdict": "match",
-   "reverified": true,
-   "fields": {
-    "Owner(s)": "Midwest Generation EME LLC [100%]"
-   },
-   "current": {
-    "Owner(s)": "Midwest Generation EME LLC [100%]"
-   },
-   "refs": {
-    "Owners Data Source": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
-     "ok": true,
-     "contains_value": false,
-     "name_found": true
-    }
-   ],
-   "tier": "medium",
-   "independent": false,
-   "source_language": "en",
-   "researcher_notes": "The EIA table for August 2026 lists plant 384, Joliet 29, generator 8, under the owner name Midwest Generations EME LLC. That is a spelling variant of GEM's owner name. The table does not give a share. I could not find a document that states the coordinates or says whether carbon capture is attached. See the questions for details.",
-   "action": "Leave Owner(s) of unit Unit 8, timepoint 2 (G100001017949) as Midwest Generation EME LLC [100%]. It is still correct. Add the link below to the Owners Data Source box. Keep the links already there."
-  },
-  {
-   "gem_unit_id": "G100001017949",
-   "gem_plant_id": "L100000103864",
-   "plant_name": "Joliet 29 Generating Station",
-   "unit_name": "Unit 8, timepoint 2",
-   "country": "United States",
-   "record_id": "L100000103864:G100001017949:conversion-replacement",
-   "cluster": "G100001017949",
-   "verdict": "match",
-   "reverified": true,
-   "fields": {
-    "Conversion/replacement?": "conversion"
-   },
-   "current": {
-    "Conversion/replacement?": "conversion"
-   },
-   "refs": {
-    "Conversion/replacement Data Source": [
-     "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
-    }
-   ],
-   "tier": "medium",
-   "independent": false,
-   "source_language": "en",
-   "researcher_notes": "A Power Engineering article from October 2015 says the Illinois EPA issued a permit for NRG to convert Units 6 to 8 at the Joliet plant from coal to natural gas, and that Units 7 and 8 are part of Joliet 29. It describes the plan, not the finished conversion. The EIA table for August 2026 shows both units burning natural gas.",
-   "action": "Leave Conversion/replacement? of unit Unit 8, timepoint 2 (G100001017949) as conversion. It is still correct. Add the link below to the Conversion/replacement Data Source box. Keep the links already there."
-  },
-  {
-   "gem_unit_id": "G100001017847",
-   "gem_plant_id": "L100000103865",
-   "plant_name": "Joliet 9 Generating Station",
-   "unit_name": "Unit 6, timepoint 2",
-   "country": "United States",
-   "record_id": "L100000103865:G100001017847:owner-s",
-   "cluster": "G100001017847",
-   "verdict": "match",
-   "reverified": true,
-   "fields": {
-    "Owner(s)": "Midwest Generation EME LLC [100%]"
-   },
-   "current": {
-    "Owner(s)": "Midwest Generation EME LLC [100%]"
-   },
-   "refs": {
-    "Owners Data Source": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
-    }
-   ],
-   "tier": "medium",
-   "independent": false,
-   "source_language": "en",
-   "researcher_notes": "The EIA-860M table for August 2026 lists the owner of Joliet 9, generator 6, as Midwest Generations EME LLC. The spelling has an extra s, but it is clearly the same company. The table names one owner and gives no share, so the 100 percent is implied. I read the name in the downloaded file. The EIA-860M table for August 2026 lists generator 6 as retired in June 2023, 360.4 MW, natural gas steam turbine, operating since June 1959. That matches GEM's status, capacity and retired year. I found no document that states a carbon capture value for this unit.",
-   "action": "Leave Owner(s) of unit Unit 6, timepoint 2 (G100001017847) as Midwest Generation EME LLC [100%]. It is still correct. Add the link below to the Owners Data Source box. Keep the links already there."
-  },
-  {
-   "gem_unit_id": "G100001017847",
-   "gem_plant_id": "L100000103865",
-   "plant_name": "Joliet 9 Generating Station",
-   "unit_name": "Unit 6, timepoint 2",
-   "country": "United States",
-   "record_id": "L100000103865:G100001017847:conversion-replacement",
-   "cluster": "G100001017847",
-   "verdict": "match",
-   "reverified": true,
-   "fields": {
-    "Conversion/replacement?": "conversion"
-   },
-   "current": {
-    "Conversion/replacement?": "conversion"
-   },
-   "refs": {
-    "Conversion/replacement Data Source": [
-     "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
-    }
-   ],
-   "tier": "high",
-   "independent": false,
-   "source_language": "en",
-   "researcher_notes": "A Power Engineering article from October 2015 says the Illinois EPA issued a final air construction permit for NRG Energy to convert the three coal-fired units 6 to 8 at the Joliet plant to burn natural gas. So unit 6 is a conversion.",
-   "action": "Leave Conversion/replacement? of unit Unit 6, timepoint 2 (G100001017847) as conversion. It is still correct. Add the link below to the Conversion/replacement Data Source box. Keep the links already there."
-  },
-  {
-   "gem_unit_id": "G100000402256",
-   "gem_plant_id": "L100000401554",
-   "plant_name": "Elwood Energy power station",
-   "unit_name": "GT1",
-   "country": "United States",
-   "record_id": "L100000401554:G100000402256:owner-s",
-   "cluster": "G100000402256",
-   "verdict": "change",
-   "fields": {
-    "Owner(s)": "MPH Elwood [100%]"
-   },
-   "current": {
-    "Owner(s)": "J-POWER USA Development Co Ltd [100%]"
-   },
-   "refs": {
-    "Owners Data Source": [
-     "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
-     "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true,
-     "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
+      "gem_unit_id": "G100000403513",
+      "gem_plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "unit_name": "5",
+      "country": "United States",
+      "record_id": "L100000103868:G100000403513:capacity-mw",
+      "cluster": "G100000403513",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Capacity (MW)": "75.0"
+      },
+      "current": {
+        "Capacity (MW)": "75.0"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The EIA-860M table for August 2026 lists generator 5 at 75.0 MW nameplate.",
+      "action": "Leave Capacity (MW) of unit 5 (G100000403513) as 75.0. It is still correct. Add the link below to the Capacity Data Source box. Keep the links already there."
     },
     {
-     "url": "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true,
-     "note": "A Utility Dive article from April 2026 says Hull Street Energy owns the Elwood plant and planned to retire it by June 1, 2026."
-    }
-   ],
-   "tier": "high",
-   "independent": true,
-   "source_language": "en",
-   "researcher_notes": "A letter of June 15, 2026 from MPH Elwood LLC to the Illinois EPA, kept in the agency's document library, says MPH Elwood bought four of the nine Elwood turbines, units 1 to 4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, and that the Illinois EPA gave the company its own operating permit, number 25070017, on December 15, 2025. The letter is signed by a Hull Street Energy officer, and a Utility Dive article from April 2026 says Hull Street Energy owns the Elwood plant. GEM already lists Hull Street Energy as an entity, and its other project companies appear under names such as MPH Bastrop Peakers, so the owner is entered as MPH Elwood, a new entity whose parent is Hull Street Energy. The Parent(s) column is filled by the database from the entity record and is not edited here. The EIA-860M table for August 2026 also lists plant 69979 as MPH Elwood, LLC with these four units, but the spreadsheet cannot be read by the link checker, so it is not added as a source here. Units 5 to 9 stayed with Elwood Energy LLC and are not changed by this record. The same letter says the four units permanently ceased operation on June 1, 2026, which matches the retired status already in the database.",
-   "action": "Change Owner(s) of unit GT1 (G100000402256) from J-POWER USA Development Co Ltd [100%] to MPH Elwood [100%]. MPH Elwood is a new entity; create it with Hull Street Energy (entity 100000001233) as its parent, so the Parent(s) column, which the database fills from the entity record, changes from Electric Power Development Co Ltd to Hull Street Energy. Add the 2 links below to the Owners Data Source box. Keep the 2018 EIA link already there.",
-   "checks": [
-    25
-   ]
-  },
-  {
-   "gem_unit_id": "G100000402257",
-   "gem_plant_id": "L100000401554",
-   "plant_name": "Elwood Energy power station",
-   "unit_name": "GT2",
-   "country": "United States",
-   "record_id": "L100000401554:G100000402257:owner-s",
-   "cluster": "G100000402257",
-   "verdict": "change",
-   "fields": {
-    "Owner(s)": "MPH Elwood [100%]"
-   },
-   "current": {
-    "Owner(s)": "J-POWER USA Development Co Ltd [100%]"
-   },
-   "refs": {
-    "Owners Data Source": [
-     "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
-     "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true,
-     "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
+      "gem_unit_id": "G100000403514",
+      "gem_plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "unit_name": "6",
+      "country": "United States",
+      "record_id": "L100000103868:G100000403514:capacity-mw",
+      "cluster": "G100000403514",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Capacity (MW)": "75.0"
+      },
+      "current": {
+        "Capacity (MW)": "75.0"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The EIA-860M table for August 2026 lists generator 6 at 75.0 MW nameplate.",
+      "action": "Leave Capacity (MW) of unit 6 (G100000403514) as 75.0. It is still correct. Add the link below to the Capacity Data Source box. Keep the links already there."
     },
     {
-     "url": "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true,
-     "note": "A Utility Dive article from April 2026 says Hull Street Energy owns the Elwood plant and planned to retire it by June 1, 2026."
-    }
-   ],
-   "tier": "high",
-   "independent": true,
-   "source_language": "en",
-   "researcher_notes": "A letter of June 15, 2026 from MPH Elwood LLC to the Illinois EPA, kept in the agency's document library, says MPH Elwood bought four of the nine Elwood turbines, units 1 to 4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, and that the Illinois EPA gave the company its own operating permit, number 25070017, on December 15, 2025. The letter is signed by a Hull Street Energy officer, and a Utility Dive article from April 2026 says Hull Street Energy owns the Elwood plant. GEM already lists Hull Street Energy as an entity, and its other project companies appear under names such as MPH Bastrop Peakers, so the owner is entered as MPH Elwood, a new entity whose parent is Hull Street Energy. The Parent(s) column is filled by the database from the entity record and is not edited here. The EIA-860M table for August 2026 also lists plant 69979 as MPH Elwood, LLC with these four units, but the spreadsheet cannot be read by the link checker, so it is not added as a source here. Units 5 to 9 stayed with Elwood Energy LLC and are not changed by this record. The same letter says the four units permanently ceased operation on June 1, 2026, which matches the retired status already in the database.",
-   "action": "Change Owner(s) of unit GT2 (G100000402257) from J-POWER USA Development Co Ltd [100%] to MPH Elwood [100%]. MPH Elwood is a new entity; create it with Hull Street Energy (entity 100000001233) as its parent, so the Parent(s) column, which the database fills from the entity record, changes from Electric Power Development Co Ltd to Hull Street Energy. Add the 2 links below to the Owners Data Source box. Keep the 2018 EIA link already there.",
-   "checks": [
-    25
-   ]
-  },
-  {
-   "gem_unit_id": "G100000402258",
-   "gem_plant_id": "L100000401554",
-   "plant_name": "Elwood Energy power station",
-   "unit_name": "GT3",
-   "country": "United States",
-   "record_id": "L100000401554:G100000402258:owner-s",
-   "cluster": "G100000402258",
-   "verdict": "change",
-   "fields": {
-    "Owner(s)": "MPH Elwood [100%]"
-   },
-   "current": {
-    "Owner(s)": "J-POWER USA Development Co Ltd [100%]"
-   },
-   "refs": {
-    "Owners Data Source": [
-     "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
-     "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true,
-     "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
+      "gem_unit_id": "G100000403513",
+      "gem_plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "unit_name": "5",
+      "country": "United States",
+      "record_id": "L100000103868:plant:owner-s",
+      "cluster": "G100000403513",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Owner(s)": "Southern Illinois Power Cooperative Inc [100%]"
+      },
+      "current": {
+        "Owner(s)": "Southern Illinois Power Cooperative Inc [100%]"
+      },
+      "refs": {
+        "Owners Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "medium",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The EIA-860M table for August 2026 names Southern Illinois Power Coop as the entity for plant 976. This matches GEM's owner. The table does not give a share, so the share is not independently shown.",
+      "action": "Leave Owner(s) of all 2 units of Marion Plant as Southern Illinois Power Cooperative Inc [100%]. It is still correct. Add the link below to the Owners Data Source box on each unit. Keep the links already there.",
+      "applies_to_all_units": true,
+      "sibling_unit_ids": [
+        "G100000403514"
+      ],
+      "sibling_current": {
+        "G100000403514": "Southern Illinois Power Cooperative Inc [100%]"
+      }
     },
     {
-     "url": "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true,
-     "note": "A Utility Dive article from April 2026 says Hull Street Energy owns the Elwood plant and planned to retire it by June 1, 2026."
-    }
-   ],
-   "tier": "high",
-   "independent": true,
-   "source_language": "en",
-   "researcher_notes": "A letter of June 15, 2026 from MPH Elwood LLC to the Illinois EPA, kept in the agency's document library, says MPH Elwood bought four of the nine Elwood turbines, units 1 to 4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, and that the Illinois EPA gave the company its own operating permit, number 25070017, on December 15, 2025. The letter is signed by a Hull Street Energy officer, and a Utility Dive article from April 2026 says Hull Street Energy owns the Elwood plant. GEM already lists Hull Street Energy as an entity, and its other project companies appear under names such as MPH Bastrop Peakers, so the owner is entered as MPH Elwood, a new entity whose parent is Hull Street Energy. The Parent(s) column is filled by the database from the entity record and is not edited here. The EIA-860M table for August 2026 also lists plant 69979 as MPH Elwood, LLC with these four units, but the spreadsheet cannot be read by the link checker, so it is not added as a source here. Units 5 to 9 stayed with Elwood Energy LLC and are not changed by this record. The same letter says the four units permanently ceased operation on June 1, 2026, which matches the retired status already in the database.",
-   "action": "Change Owner(s) of unit GT3 (G100000402258) from J-POWER USA Development Co Ltd [100%] to MPH Elwood [100%]. MPH Elwood is a new entity; create it with Hull Street Energy (entity 100000001233) as its parent, so the Parent(s) column, which the database fills from the entity record, changes from Electric Power Development Co Ltd to Hull Street Energy. Add the 2 links below to the Owners Data Source box. Keep the 2018 EIA link already there.",
-   "checks": [
-    25
-   ]
-  },
-  {
-   "gem_unit_id": "G100000402259",
-   "gem_plant_id": "L100000401554",
-   "plant_name": "Elwood Energy power station",
-   "unit_name": "GT4",
-   "country": "United States",
-   "record_id": "L100000401554:G100000402259:owner-s",
-   "cluster": "G100000402259",
-   "verdict": "change",
-   "fields": {
-    "Owner(s)": "MPH Elwood [100%]"
-   },
-   "current": {
-    "Owner(s)": "J-POWER USA Development Co Ltd [100%]"
-   },
-   "refs": {
-    "Owners Data Source": [
-     "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
-     "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true,
-     "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
+      "gem_unit_id": "G100000402256",
+      "gem_plant_id": "L100000401554",
+      "plant_name": "Elwood Energy power station",
+      "unit_name": "GT1",
+      "country": "United States",
+      "record_id": "L100000401554:G100000402256:status-detail",
+      "cluster": "G100000402256",
+      "verdict": "fill",
+      "fields": {
+        "Status Detail": "Elwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. PJM letters in 2025 said Hull Street Energy would buy units 1 to 4, 8 and 9. The sale that closed on June 1, 2025 covered units 1 to 4 only, to MPH Elwood LLC, a Hull Street Energy company, which told the Illinois EPA in June 2026 that the four units permanently ceased operation on June 1, 2026. The EIA-860M table for August 2026 lists this unit as retired in June 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf\nhttps://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
+      },
+      "current": {
+        "Status Detail": ""
+      },
+      "refs": {
+        "Status Detail": [
+          "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf",
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
+        }
+      ],
+      "tier": "high",
+      "independent": true,
+      "source_language": "en",
+      "researcher_notes": "The PJM extension letter from March 2025 asks for a new deactivation date of June 1, 2026 for all nine units. The retirement month comes from the EIA table, which is cited under the status. The June 2026 letter from MPH Elwood LLC to the Illinois EPA gives the purchase date, June 1, 2025, and the date the four units permanently ceased operation, June 1, 2026.",
+      "action": "Set Status Detail of unit GT1 (G100000402256) to the entry below. The box is empty now. The source links are part of the entry, one per line. Do not add them to the Status Data Source box.\n\nElwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. PJM letters in 2025 said Hull Street Energy would buy units 1 to 4, 8 and 9. The sale that closed on June 1, 2025 covered units 1 to 4 only, to MPH Elwood LLC, a Hull Street Energy company, which told the Illinois EPA in June 2026 that the four units permanently ceased operation on June 1, 2026. The EIA-860M table for August 2026 lists this unit as retired in June 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf\nhttps://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+      "checks": [
+        38
+      ]
     },
     {
-     "url": "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true,
-     "note": "A Utility Dive article from April 2026 says Hull Street Energy owns the Elwood plant and planned to retire it by June 1, 2026."
+      "gem_unit_id": "G100000402257",
+      "gem_plant_id": "L100000401554",
+      "plant_name": "Elwood Energy power station",
+      "unit_name": "GT2",
+      "country": "United States",
+      "record_id": "L100000401554:G100000402257:status-detail",
+      "cluster": "G100000402257",
+      "verdict": "fill",
+      "fields": {
+        "Status Detail": "Elwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. PJM letters in 2025 said Hull Street Energy would buy units 1 to 4, 8 and 9. The sale that closed on June 1, 2025 covered units 1 to 4 only, to MPH Elwood LLC, a Hull Street Energy company, which told the Illinois EPA in June 2026 that the four units permanently ceased operation on June 1, 2026. The EIA-860M table for August 2026 lists this unit as retired in June 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf\nhttps://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
+      },
+      "current": {
+        "Status Detail": ""
+      },
+      "refs": {
+        "Status Detail": [
+          "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf",
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
+        }
+      ],
+      "tier": "high",
+      "independent": true,
+      "source_language": "en",
+      "researcher_notes": "The PJM extension letter from March 2025 asks for a new deactivation date of June 1, 2026 for all nine units. The retirement month comes from the EIA table, which is cited under the status. The June 2026 letter from MPH Elwood LLC to the Illinois EPA gives the purchase date, June 1, 2025, and the date the four units permanently ceased operation, June 1, 2026.",
+      "action": "Set Status Detail of unit GT2 (G100000402257) to the entry below. The box is empty now. The source links are part of the entry, one per line. Do not add them to the Status Data Source box.\n\nElwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. PJM letters in 2025 said Hull Street Energy would buy units 1 to 4, 8 and 9. The sale that closed on June 1, 2025 covered units 1 to 4 only, to MPH Elwood LLC, a Hull Street Energy company, which told the Illinois EPA in June 2026 that the four units permanently ceased operation on June 1, 2026. The EIA-860M table for August 2026 lists this unit as retired in June 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf\nhttps://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100000402258",
+      "gem_plant_id": "L100000401554",
+      "plant_name": "Elwood Energy power station",
+      "unit_name": "GT3",
+      "country": "United States",
+      "record_id": "L100000401554:G100000402258:status-detail",
+      "cluster": "G100000402258",
+      "verdict": "fill",
+      "fields": {
+        "Status Detail": "Elwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. PJM letters in 2025 said Hull Street Energy would buy units 1 to 4, 8 and 9. The sale that closed on June 1, 2025 covered units 1 to 4 only, to MPH Elwood LLC, a Hull Street Energy company, which told the Illinois EPA in June 2026 that the four units permanently ceased operation on June 1, 2026. The EIA-860M table for August 2026 lists this unit as retired in May 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf\nhttps://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
+      },
+      "current": {
+        "Status Detail": ""
+      },
+      "refs": {
+        "Status Detail": [
+          "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf",
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
+        }
+      ],
+      "tier": "high",
+      "independent": true,
+      "source_language": "en",
+      "researcher_notes": "The PJM extension letter from March 2025 asks for a new deactivation date of June 1, 2026 for all nine units. The retirement month comes from the EIA table, which is cited under the status. The June 2026 letter from MPH Elwood LLC to the Illinois EPA gives the purchase date, June 1, 2025, and the date the four units permanently ceased operation, June 1, 2026.",
+      "action": "Set Status Detail of unit GT3 (G100000402258) to the entry below. The box is empty now. The source links are part of the entry, one per line. Do not add them to the Status Data Source box.\n\nElwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. PJM letters in 2025 said Hull Street Energy would buy units 1 to 4, 8 and 9. The sale that closed on June 1, 2025 covered units 1 to 4 only, to MPH Elwood LLC, a Hull Street Energy company, which told the Illinois EPA in June 2026 that the four units permanently ceased operation on June 1, 2026. The EIA-860M table for August 2026 lists this unit as retired in May 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf\nhttps://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100000402259",
+      "gem_plant_id": "L100000401554",
+      "plant_name": "Elwood Energy power station",
+      "unit_name": "GT4",
+      "country": "United States",
+      "record_id": "L100000401554:G100000402259:status-detail",
+      "cluster": "G100000402259",
+      "verdict": "fill",
+      "fields": {
+        "Status Detail": "Elwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. PJM letters in 2025 said Hull Street Energy would buy units 1 to 4, 8 and 9. The sale that closed on June 1, 2025 covered units 1 to 4 only, to MPH Elwood LLC, a Hull Street Energy company, which told the Illinois EPA in June 2026 that the four units permanently ceased operation on June 1, 2026. The EIA-860M table for August 2026 lists this unit as retired in May 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf\nhttps://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
+      },
+      "current": {
+        "Status Detail": ""
+      },
+      "refs": {
+        "Status Detail": [
+          "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf",
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
+        }
+      ],
+      "tier": "high",
+      "independent": true,
+      "source_language": "en",
+      "researcher_notes": "The PJM extension letter from March 2025 asks for a new deactivation date of June 1, 2026 for all nine units. The retirement month comes from the EIA table, which is cited under the status. The June 2026 letter from MPH Elwood LLC to the Illinois EPA gives the purchase date, June 1, 2025, and the date the four units permanently ceased operation, June 1, 2026.",
+      "action": "Set Status Detail of unit GT4 (G100000402259) to the entry below. The box is empty now. The source links are part of the entry, one per line. Do not add them to the Status Data Source box.\n\nElwood Energy told PJM in May 2024 that it would retire all nine units by June 1, 2025, and in March 2025 asked to extend that to June 1, 2026. PJM letters in 2025 said Hull Street Energy would buy units 1 to 4, 8 and 9. The sale that closed on June 1, 2025 covered units 1 to 4 only, to MPH Elwood LLC, a Hull Street Energy company, which told the Illinois EPA in June 2026 that the four units permanently ceased operation on June 1, 2026. The EIA-860M table for August 2026 lists this unit as retired in May 2026.\n\nhttps://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-extension.pdf\nhttps://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100001017993",
+      "gem_plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "unit_name": "Unit 7, timepoint 2",
+      "country": "United States",
+      "record_id": "L100000103864:G100001017993:owner-s",
+      "cluster": "G100001017993",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Owner(s)": "Midwest Generation EME LLC [100%]"
+      },
+      "current": {
+        "Owner(s)": "Midwest Generation EME LLC [100%]"
+      },
+      "refs": {
+        "Owners Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": false,
+          "name_found": true
+        }
+      ],
+      "tier": "medium",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The EIA table for August 2026 lists plant 384, Joliet 29, generator 7, under the owner name Midwest Generations EME LLC. That is a spelling variant of GEM's owner name. The table does not give a share. I could not find a document that states the coordinates or says whether carbon capture is attached. See the questions for details.",
+      "action": "Leave Owner(s) of unit Unit 7, timepoint 2 (G100001017993) as Midwest Generation EME LLC [100%]. It is still correct. Add the link below to the Owners Data Source box. Keep the links already there."
+    },
+    {
+      "gem_unit_id": "G100001017993",
+      "gem_plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "unit_name": "Unit 7, timepoint 2",
+      "country": "United States",
+      "record_id": "L100000103864:G100001017993:conversion-replacement",
+      "cluster": "G100001017993",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Conversion/replacement?": "conversion"
+      },
+      "current": {
+        "Conversion/replacement?": "conversion"
+      },
+      "refs": {
+        "Conversion/replacement Data Source": [
+          "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "medium",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "A Power Engineering article from October 2015 says the Illinois EPA issued a permit for NRG to convert Units 6 to 8 at the Joliet plant from coal to natural gas, and that Units 7 and 8 are part of Joliet 29. It describes the plan, not the finished conversion. The EIA table for August 2026 shows both units burning natural gas.",
+      "action": "Leave Conversion/replacement? of unit Unit 7, timepoint 2 (G100001017993) as conversion. It is still correct. Add the link below to the Conversion/replacement Data Source box. Keep the links already there."
+    },
+    {
+      "gem_unit_id": "G100001017949",
+      "gem_plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "unit_name": "Unit 8, timepoint 2",
+      "country": "United States",
+      "record_id": "L100000103864:G100001017949:owner-s",
+      "cluster": "G100001017949",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Owner(s)": "Midwest Generation EME LLC [100%]"
+      },
+      "current": {
+        "Owner(s)": "Midwest Generation EME LLC [100%]"
+      },
+      "refs": {
+        "Owners Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": false,
+          "name_found": true
+        }
+      ],
+      "tier": "medium",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The EIA table for August 2026 lists plant 384, Joliet 29, generator 8, under the owner name Midwest Generations EME LLC. That is a spelling variant of GEM's owner name. The table does not give a share. I could not find a document that states the coordinates or says whether carbon capture is attached. See the questions for details.",
+      "action": "Leave Owner(s) of unit Unit 8, timepoint 2 (G100001017949) as Midwest Generation EME LLC [100%]. It is still correct. Add the link below to the Owners Data Source box. Keep the links already there."
+    },
+    {
+      "gem_unit_id": "G100001017949",
+      "gem_plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "unit_name": "Unit 8, timepoint 2",
+      "country": "United States",
+      "record_id": "L100000103864:G100001017949:conversion-replacement",
+      "cluster": "G100001017949",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Conversion/replacement?": "conversion"
+      },
+      "current": {
+        "Conversion/replacement?": "conversion"
+      },
+      "refs": {
+        "Conversion/replacement Data Source": [
+          "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "medium",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "A Power Engineering article from October 2015 says the Illinois EPA issued a permit for NRG to convert Units 6 to 8 at the Joliet plant from coal to natural gas, and that Units 7 and 8 are part of Joliet 29. It describes the plan, not the finished conversion. The EIA table for August 2026 shows both units burning natural gas.",
+      "action": "Leave Conversion/replacement? of unit Unit 8, timepoint 2 (G100001017949) as conversion. It is still correct. Add the link below to the Conversion/replacement Data Source box. Keep the links already there."
+    },
+    {
+      "gem_unit_id": "G100001017847",
+      "gem_plant_id": "L100000103865",
+      "plant_name": "Joliet 9 Generating Station",
+      "unit_name": "Unit 6, timepoint 2",
+      "country": "United States",
+      "record_id": "L100000103865:G100001017847:owner-s",
+      "cluster": "G100001017847",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Owner(s)": "Midwest Generation EME LLC [100%]"
+      },
+      "current": {
+        "Owner(s)": "Midwest Generation EME LLC [100%]"
+      },
+      "refs": {
+        "Owners Data Source": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "medium",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "The EIA-860M table for August 2026 lists the owner of Joliet 9, generator 6, as Midwest Generations EME LLC. The spelling has an extra s, but it is clearly the same company. The table names one owner and gives no share, so the 100 percent is implied. I read the name in the downloaded file. The EIA-860M table for August 2026 lists generator 6 as retired in June 2023, 360.4 MW, natural gas steam turbine, operating since June 1959. That matches GEM's status, capacity and retired year. I found no document that states a carbon capture value for this unit.",
+      "action": "Leave Owner(s) of unit Unit 6, timepoint 2 (G100001017847) as Midwest Generation EME LLC [100%]. It is still correct. Add the link below to the Owners Data Source box. Keep the links already there."
+    },
+    {
+      "gem_unit_id": "G100001017847",
+      "gem_plant_id": "L100000103865",
+      "plant_name": "Joliet 9 Generating Station",
+      "unit_name": "Unit 6, timepoint 2",
+      "country": "United States",
+      "record_id": "L100000103865:G100001017847:conversion-replacement",
+      "cluster": "G100001017847",
+      "verdict": "match",
+      "reverified": true,
+      "fields": {
+        "Conversion/replacement?": "conversion"
+      },
+      "current": {
+        "Conversion/replacement?": "conversion"
+      },
+      "refs": {
+        "Conversion/replacement Data Source": [
+          "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.power-eng.com/coal/illinois-epa-oks-air-permit-for-joliet-coal-to-gas-conversion/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "researcher_notes": "A Power Engineering article from October 2015 says the Illinois EPA issued a final air construction permit for NRG Energy to convert the three coal-fired units 6 to 8 at the Joliet plant to burn natural gas. So unit 6 is a conversion.",
+      "action": "Leave Conversion/replacement? of unit Unit 6, timepoint 2 (G100001017847) as conversion. It is still correct. Add the link below to the Conversion/replacement Data Source box. Keep the links already there."
+    },
+    {
+      "gem_unit_id": "G100000402256",
+      "gem_plant_id": "L100000401554",
+      "plant_name": "Elwood Energy power station",
+      "unit_name": "GT1",
+      "country": "United States",
+      "record_id": "L100000401554:G100000402256:owner-s",
+      "cluster": "G100000402256",
+      "verdict": "change",
+      "fields": {
+        "Owner(s)": "MPH Elwood [100%]"
+      },
+      "current": {
+        "Owner(s)": "J-POWER USA Development Co Ltd [100%]"
+      },
+      "refs": {
+        "Owners Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+          "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
+        },
+        {
+          "url": "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A Utility Dive article from April 2026 says Hull Street Energy owns the Elwood plant and planned to retire it by June 1, 2026."
+        }
+      ],
+      "tier": "high",
+      "independent": true,
+      "source_language": "en",
+      "researcher_notes": "A letter of June 15, 2026 from MPH Elwood LLC to the Illinois EPA, kept in the agency's document library, says MPH Elwood bought four of the nine Elwood turbines, units 1 to 4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, and that the Illinois EPA gave the company its own operating permit, number 25070017, on December 15, 2025. The letter is signed by a Hull Street Energy officer, and a Utility Dive article from April 2026 says Hull Street Energy owns the Elwood plant. GEM already lists Hull Street Energy as an entity, and its other project companies appear under names such as MPH Bastrop Peakers, so the owner is entered as MPH Elwood, a new entity whose parent is Hull Street Energy. The Parent(s) column is filled by the database from the entity record and is not edited here. The EIA-860M table for August 2026 also lists plant 69979 as MPH Elwood, LLC with these four units, but the spreadsheet cannot be read by the link checker, so it is not added as a source here. Units 5 to 9 stayed with Elwood Energy LLC and are not changed by this record. The same letter says the four units permanently ceased operation on June 1, 2026, which matches the retired status already in the database.",
+      "action": "Change Owner(s) of unit GT1 (G100000402256) from J-POWER USA Development Co Ltd [100%] to MPH Elwood [100%]. MPH Elwood is a new entity; create it with Hull Street Energy (entity 100000001233) as its parent, so the Parent(s) column, which the database fills from the entity record, changes from Electric Power Development Co Ltd to Hull Street Energy. Add the 2 links below to the Owners Data Source box. Keep the 2018 EIA link already there.",
+      "checks": [
+        25
+      ]
+    },
+    {
+      "gem_unit_id": "G100000402257",
+      "gem_plant_id": "L100000401554",
+      "plant_name": "Elwood Energy power station",
+      "unit_name": "GT2",
+      "country": "United States",
+      "record_id": "L100000401554:G100000402257:owner-s",
+      "cluster": "G100000402257",
+      "verdict": "change",
+      "fields": {
+        "Owner(s)": "MPH Elwood [100%]"
+      },
+      "current": {
+        "Owner(s)": "J-POWER USA Development Co Ltd [100%]"
+      },
+      "refs": {
+        "Owners Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+          "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
+        },
+        {
+          "url": "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A Utility Dive article from April 2026 says Hull Street Energy owns the Elwood plant and planned to retire it by June 1, 2026."
+        }
+      ],
+      "tier": "high",
+      "independent": true,
+      "source_language": "en",
+      "researcher_notes": "A letter of June 15, 2026 from MPH Elwood LLC to the Illinois EPA, kept in the agency's document library, says MPH Elwood bought four of the nine Elwood turbines, units 1 to 4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, and that the Illinois EPA gave the company its own operating permit, number 25070017, on December 15, 2025. The letter is signed by a Hull Street Energy officer, and a Utility Dive article from April 2026 says Hull Street Energy owns the Elwood plant. GEM already lists Hull Street Energy as an entity, and its other project companies appear under names such as MPH Bastrop Peakers, so the owner is entered as MPH Elwood, a new entity whose parent is Hull Street Energy. The Parent(s) column is filled by the database from the entity record and is not edited here. The EIA-860M table for August 2026 also lists plant 69979 as MPH Elwood, LLC with these four units, but the spreadsheet cannot be read by the link checker, so it is not added as a source here. Units 5 to 9 stayed with Elwood Energy LLC and are not changed by this record. The same letter says the four units permanently ceased operation on June 1, 2026, which matches the retired status already in the database.",
+      "action": "Change Owner(s) of unit GT2 (G100000402257) from J-POWER USA Development Co Ltd [100%] to MPH Elwood [100%]. MPH Elwood is a new entity; create it with Hull Street Energy (entity 100000001233) as its parent, so the Parent(s) column, which the database fills from the entity record, changes from Electric Power Development Co Ltd to Hull Street Energy. Add the 2 links below to the Owners Data Source box. Keep the 2018 EIA link already there.",
+      "checks": [
+        25
+      ]
+    },
+    {
+      "gem_unit_id": "G100000402258",
+      "gem_plant_id": "L100000401554",
+      "plant_name": "Elwood Energy power station",
+      "unit_name": "GT3",
+      "country": "United States",
+      "record_id": "L100000401554:G100000402258:owner-s",
+      "cluster": "G100000402258",
+      "verdict": "change",
+      "fields": {
+        "Owner(s)": "MPH Elwood [100%]"
+      },
+      "current": {
+        "Owner(s)": "J-POWER USA Development Co Ltd [100%]"
+      },
+      "refs": {
+        "Owners Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+          "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
+        },
+        {
+          "url": "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A Utility Dive article from April 2026 says Hull Street Energy owns the Elwood plant and planned to retire it by June 1, 2026."
+        }
+      ],
+      "tier": "high",
+      "independent": true,
+      "source_language": "en",
+      "researcher_notes": "A letter of June 15, 2026 from MPH Elwood LLC to the Illinois EPA, kept in the agency's document library, says MPH Elwood bought four of the nine Elwood turbines, units 1 to 4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, and that the Illinois EPA gave the company its own operating permit, number 25070017, on December 15, 2025. The letter is signed by a Hull Street Energy officer, and a Utility Dive article from April 2026 says Hull Street Energy owns the Elwood plant. GEM already lists Hull Street Energy as an entity, and its other project companies appear under names such as MPH Bastrop Peakers, so the owner is entered as MPH Elwood, a new entity whose parent is Hull Street Energy. The Parent(s) column is filled by the database from the entity record and is not edited here. The EIA-860M table for August 2026 also lists plant 69979 as MPH Elwood, LLC with these four units, but the spreadsheet cannot be read by the link checker, so it is not added as a source here. Units 5 to 9 stayed with Elwood Energy LLC and are not changed by this record. The same letter says the four units permanently ceased operation on June 1, 2026, which matches the retired status already in the database.",
+      "action": "Change Owner(s) of unit GT3 (G100000402258) from J-POWER USA Development Co Ltd [100%] to MPH Elwood [100%]. MPH Elwood is a new entity; create it with Hull Street Energy (entity 100000001233) as its parent, so the Parent(s) column, which the database fills from the entity record, changes from Electric Power Development Co Ltd to Hull Street Energy. Add the 2 links below to the Owners Data Source box. Keep the 2018 EIA link already there.",
+      "checks": [
+        25
+      ]
+    },
+    {
+      "gem_unit_id": "G100000402259",
+      "gem_plant_id": "L100000401554",
+      "plant_name": "Elwood Energy power station",
+      "unit_name": "GT4",
+      "country": "United States",
+      "record_id": "L100000401554:G100000402259:owner-s",
+      "cluster": "G100000402259",
+      "verdict": "change",
+      "fields": {
+        "Owner(s)": "MPH Elwood [100%]"
+      },
+      "current": {
+        "Owner(s)": "J-POWER USA Development Co Ltd [100%]"
+      },
+      "refs": {
+        "Owners Data Source": [
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+          "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
+        },
+        {
+          "url": "https://www.utilitydive.com/news/pjm-market-monitor-hull-street-rockland-data-centers/818520/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A Utility Dive article from April 2026 says Hull Street Energy owns the Elwood plant and planned to retire it by June 1, 2026."
+        }
+      ],
+      "tier": "high",
+      "independent": true,
+      "source_language": "en",
+      "researcher_notes": "A letter of June 15, 2026 from MPH Elwood LLC to the Illinois EPA, kept in the agency's document library, says MPH Elwood bought four of the nine Elwood turbines, units 1 to 4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, and that the Illinois EPA gave the company its own operating permit, number 25070017, on December 15, 2025. The letter is signed by a Hull Street Energy officer, and a Utility Dive article from April 2026 says Hull Street Energy owns the Elwood plant. GEM already lists Hull Street Energy as an entity, and its other project companies appear under names such as MPH Bastrop Peakers, so the owner is entered as MPH Elwood, a new entity whose parent is Hull Street Energy. The Parent(s) column is filled by the database from the entity record and is not edited here. The EIA-860M table for August 2026 also lists plant 69979 as MPH Elwood, LLC with these four units, but the spreadsheet cannot be read by the link checker, so it is not added as a source here. Units 5 to 9 stayed with Elwood Energy LLC and are not changed by this record. The same letter says the four units permanently ceased operation on June 1, 2026, which matches the retired status already in the database.",
+      "action": "Change Owner(s) of unit GT4 (G100000402259) from J-POWER USA Development Co Ltd [100%] to MPH Elwood [100%]. MPH Elwood is a new entity; create it with Hull Street Energy (entity 100000001233) as its parent, so the Parent(s) column, which the database fills from the entity record, changes from Electric Power Development Co Ltd to Hull Street Energy. Add the 2 links below to the Owners Data Source box. Keep the 2018 EIA link already there.",
+      "checks": [
+        25
+      ]
+    },
+    {
+      "gem_unit_id": "G100001101467",
+      "gem_plant_id": "L100001089148",
+      "plant_name": "Prairie Pulse power station",
+      "unit_name": "1",
+      "country": "United States",
+      "cluster": "G100001101467",
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "checks": [
+        39
+      ],
+      "record_id": "L100001089148:G100001101467:turbine-engine-technology",
+      "verdict": "fill",
+      "fields": {
+        "Turbine/Engine Technology": "unknown"
+      },
+      "current": {
+        "Turbine/Engine Technology": ""
+      },
+      "refs": {
+        "Turbine/Engine Technology Data Source": [
+          "https://www.interconnection.fyi/project/pjm-c01-1571"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.interconnection.fyi/project/pjm-c01-1571",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "gives Generation Type Gas and no turbine type for request C01-1571; checked November 7, 2026"
+        }
+      ],
+      "action": "Set Technology of unit 1 (G100001101467) to unknown. It is now blank. Add the link below to the Technology Data Source box; it shows the request lists gas with no turbine type.",
+      "researcher_notes": "PJM's full queue file, downloaded October 21, 2026, lists request C01-1571 with fuel Natural Gas and no turbine type, and the interconnection.fyi page at https://www.interconnection.fyi/project/pjm-c01-1571 gives only Gas. I searched for the turbine or engine design on November 7, 2026, and found none. Places searched: PJM's full queue file for request C01-1571, which gives only Natural Gas; PJM's own page for the request; the interconnection.fyi page for C01-1571, which gives only Gas; the Illinois EPA air permit records, which hold no permit or application for this project; and web and news searches for Prairie Pulse, for Prairie Pulse Project LLC and for gas plant proposals in LaSalle County, which found nothing about this project. The county board records were not opened for this check. The Technology box is blank, and the web form reports a blank Technology as required for a gas unit. Unknown is the honest value until a filing names the turbines."
+    },
+    {
+      "gem_unit_id": "G100001101587",
+      "gem_plant_id": "L100001089151",
+      "plant_name": "Will County Facility power station",
+      "unit_name": "1",
+      "country": "United States",
+      "cluster": "G100001101587",
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "checks": [
+        39
+      ],
+      "record_id": "L100001089151:G100001101587:turbine-engine-technology",
+      "verdict": "change",
+      "fields": {
+        "Turbine/Engine Technology": "unknown"
+      },
+      "current": {
+        "Turbine/Engine Technology": "gas turbine"
+      },
+      "refs": {
+        "Turbine/Engine Technology Data Source": [
+          "https://www.interconnection.fyi/project/pjm-c01-1569"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.interconnection.fyi/project/pjm-c01-1569",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "gives Generation Type Gas and no turbine type for request C01-1569; checked November 7, 2026"
+        }
+      ],
+      "action": "Set Technology of unit 1 (G100001101587) to unknown. It now says gas turbine. Add the link below to the Technology Data Source box; it shows the request lists gas with no turbine type.",
+      "researcher_notes": "PJM's full queue file, downloaded October 21, 2026, lists request C01-1569 with fuel Natural Gas and no turbine type, and the interconnection.fyi page at https://www.interconnection.fyi/project/pjm-c01-1569 gives only Gas. I searched for the turbine or engine design on November 7, 2026, and found none. Places searched: PJM's full queue file for request C01-1569, which gives only Natural Gas; PJM's own page for the request; the interconnection.fyi page for C01-1569, which gives only Gas; the Illinois EPA air permit records, which hold no permit or application for this project; and web and news searches for Will County Facility, for Will County Facility LLC and for gas plant proposals in Will County, which found nothing about this project. The county board records were not opened for this check. The database has gas turbine with no Technology Data Source, so the web form flags it. Unknown is the honest value until a filing names the turbines."
+    },
+    {
+      "gem_unit_id": "G100001101466",
+      "gem_plant_id": "L100001089146",
+      "plant_name": "Marquis Solar Putnam County gas power station",
+      "unit_name": "1",
+      "country": "United States",
+      "cluster": "G100001101466",
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "checks": [
+        39
+      ],
+      "record_id": "L100001089146:G100001101466:turbine-engine-technology",
+      "verdict": "change",
+      "fields": {
+        "Turbine/Engine Technology": "unknown"
+      },
+      "current": {
+        "Turbine/Engine Technology": "gas turbine"
+      },
+      "refs": {
+        "Turbine/Engine Technology Data Source": [
+          "https://www.interconnection.fyi/project/pjm-c01-2036"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.interconnection.fyi/project/pjm-c01-2036",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "gives Generation Type Gas and no turbine type for request C01-2036; checked November 7, 2026"
+        }
+      ],
+      "action": "Set Technology of unit 1 (G100001101466) to unknown. It now says gas turbine. Add the link below to the Technology Data Source box; it shows the request lists gas with no turbine type.",
+      "researcher_notes": "PJM's full queue file, downloaded October 21, 2026, lists request C01-2036 with fuel Natural Gas and no turbine type, and the interconnection.fyi page at https://www.interconnection.fyi/project/pjm-c01-2036 gives only Gas. I searched for the turbine or engine design on November 7, 2026, and found none. Places searched: PJM's full queue file for request C01-2036, which gives only Natural Gas; PJM's own page for the request; the interconnection.fyi page for C01-2036, which gives only Gas; the Illinois EPA air permit records, which hold no permit or application for this project; and web and news searches for Marquis Solar, for Marquis Solar LLC and for gas plant proposals in Putnam County, which found nothing about this project. The county board records were not opened for this check. The Illinois EPA records do hold a 2021 permit for Marquis Power LLC at the same Hennepin site, but it covers a small combined heat and power plant with two gas boilers and a steam turbine for the ethanol complex, not this 1,150 megawatt project. The database has gas turbine, and its Technology Data Source is PJM's page for the request at https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-2036, which gives no turbine type, so nothing supports gas turbine. Unknown is the honest value until a filing names the turbines."
+    },
+    {
+      "gem_unit_id": "G100001101587",
+      "gem_plant_id": "L100001089151",
+      "plant_name": "Will County Facility power station",
+      "unit_name": "1",
+      "country": "United States",
+      "cluster": "G100001101587",
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "checks": [
+        39
+      ],
+      "record_id": "L100001089151:G100001101587:fuel-link",
+      "verdict": "reverified",
+      "fields": {
+        "Fuel": "fossil gas: natural gas"
+      },
+      "current": {
+        "Fuel": "fossil gas: natural gas"
+      },
+      "refs": {
+        "Fuel Data Source": [
+          "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1569",
+          "https://www.interconnection.fyi/project/pjm-c01-1569"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.interconnection.fyi/project/pjm-c01-1569",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "gives 346 MW, gas, Will County and the Braidwood 345 kV switchyard for request C01-1569; checked November 7, 2026"
+        },
+        {
+          "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1569",
+          "ok": true,
+          "contains_value": false,
+          "name_found": true,
+          "note": "PJM's page for request C01-1569, Braidwood 345 kV Switchyard, Will County Facility LLC"
+        }
+      ],
+      "action": "Keep the fuel as it is. Add the 2 links below to the Fuel Data Source box of unit 1 (G100001101587). The box now holds PJM's page for request C01-2036, which is the Marquis Solar plant in Putnam County, not this one.",
+      "researcher_notes": "The Fuel Data Source box of Will County cites PJM's page for request C01-2036. That request is Marquis Solar LLC in Putnam County. Will County's own request is C01-1569 at the Braidwood 345 kV switchyard, which PJM's full queue file, downloaded October 21, 2026, lists as 346 MW of Natural Gas from Will County Facility LLC. The interconnection.fyi page for C01-1569 gives the same. Links are never removed by the researcher, so the wrong link stays until a person takes it out; a question asks for that."
+    },
+    {
+      "gem_unit_id": "G100001101587",
+      "gem_plant_id": "L100001089151",
+      "plant_name": "Will County Facility power station",
+      "unit_name": "1",
+      "country": "United States",
+      "cluster": "G100001101587",
+      "tier": "high",
+      "independent": false,
+      "source_language": "en",
+      "checks": [
+        39
+      ],
+      "record_id": "L100001089151:G100001101587:location-link",
+      "verdict": "reverified",
+      "fields": {
+        "Latitude": "41.24770",
+        "Longitude": "-88.22800",
+        "Location accuracy": "approximate"
+      },
+      "current": {
+        "Latitude": "41.24770",
+        "Longitude": "-88.22800",
+        "Location accuracy": "approximate"
+      },
+      "refs": {
+        "Location Data Source": [
+          "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1569",
+          "https://www.interconnection.fyi/project/pjm-c01-1569"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.interconnection.fyi/project/pjm-c01-1569",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "gives 346 MW, gas, Will County and the Braidwood 345 kV switchyard for request C01-1569; checked November 7, 2026"
+        },
+        {
+          "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1569",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "PJM's page for request C01-1569, Braidwood 345 kV Switchyard, Will County Facility LLC"
+        }
+      ],
+      "action": "Keep the location as it is. Add the 2 links below to the Location Data Source box of unit 1 (G100001101587). The box now holds PJM's page for request C01-2036, which is the Marquis Solar plant in Putnam County, not this one.",
+      "researcher_notes": "The Location Data Source box of Will County cites PJM's page for request C01-2036. That request is Marquis Solar LLC in Putnam County. Will County's own request is C01-1569 at the Braidwood 345 kV switchyard, which PJM's full queue file, downloaded October 21, 2026, lists as 346 MW of Natural Gas from Will County Facility LLC. The interconnection.fyi page for C01-1569 gives the same. Links are never removed by the researcher, so the wrong link stays until a person takes it out; a question asks for that.",
+      "location_method": "dataset",
+      "applies_to_all_units": true
+    },
+    {
+      "gem_unit_id": "G100000409601",
+      "gem_plant_id": "L100000407386",
+      "plant_name": "Tate & Lyle Decatur cogeneration power station",
+      "unit_name": "GEN1",
+      "country": "United States",
+      "record_id": "L100000407386:G100000409601:conversion-replacement",
+      "cluster": "G100000409601",
+      "verdict": "change",
+      "fields": {
+        "Conversion/replacement?": ""
+      },
+      "current": {
+        "Conversion/replacement?": "replacement"
+      },
+      "refs": {
+        "Conversion/replacement Data Source": [
+          "https://www.tateandlyle.com/news/tate-lyle-delivers-its-commitment-eliminate-use-coal-all-its-operations"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.tateandlyle.com/news/tate-lyle-delivers-its-commitment-eliminate-use-coal-all-its-operations",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A Tate and Lyle press release from November 2021 says the last coal system at Decatur was decommissioned in October 2021 and coal was replaced with natural gas combined heat and power. It names no coal unit that GEM tracks."
+        }
+      ],
+      "tier": "medium",
+      "independent": false,
+      "source_language": "en",
+      "checks": [
+        7
+      ],
+      "action": "Clear the Conversion/replacement box of unit GEN1 (G100000409601), which now says replacement but links to a unit that does not exist. Keep the press release in the Conversion/replacement Data Source box. If a coal unit for this mill is later added to the coal tracker, set the box back to replacement and link it.",
+      "researcher_notes": "The database's validation report of November 7, 2026 says the replacement link of unit GEN1 points at a unit that does not exist. I searched the full export, which includes coal and bioenergy units, for a Tate and Lyle or Decatur corn mill coal unit and found none. The Archer Daniels Midland coal units in Decatur belong to a different plant. A Tate and Lyle press release from November 2021 says the coal systems at Decatur were replaced with gas combined heat and power, but GEM never tracked those coal boilers, so there is no unit to link. Clearing the box removes the broken link; the release stays as the record of the change."
     }
-   ],
-   "tier": "high",
-   "independent": true,
-   "source_language": "en",
-   "researcher_notes": "A letter of June 15, 2026 from MPH Elwood LLC to the Illinois EPA, kept in the agency's document library, says MPH Elwood bought four of the nine Elwood turbines, units 1 to 4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, and that the Illinois EPA gave the company its own operating permit, number 25070017, on December 15, 2025. The letter is signed by a Hull Street Energy officer, and a Utility Dive article from April 2026 says Hull Street Energy owns the Elwood plant. GEM already lists Hull Street Energy as an entity, and its other project companies appear under names such as MPH Bastrop Peakers, so the owner is entered as MPH Elwood, a new entity whose parent is Hull Street Energy. The Parent(s) column is filled by the database from the entity record and is not edited here. The EIA-860M table for August 2026 also lists plant 69979 as MPH Elwood, LLC with these four units, but the spreadsheet cannot be read by the link checker, so it is not added as a source here. Units 5 to 9 stayed with Elwood Energy LLC and are not changed by this record. The same letter says the four units permanently ceased operation on June 1, 2026, which matches the retired status already in the database.",
-   "action": "Change Owner(s) of unit GT4 (G100000402259) from J-POWER USA Development Co Ltd [100%] to MPH Elwood [100%]. MPH Elwood is a new entity; create it with Hull Street Energy (entity 100000001233) as its parent, so the Parent(s) column, which the database fills from the entity record, changes from Electric Power Development Co Ltd to Hull Street Energy. Add the 2 links below to the Owners Data Source box. Keep the 2018 EIA link already there.",
-   "checks": [
-    25
-   ]
-  }
- ]
+  ]
 }

@@ -1,0 +1,1535 @@
+{
+ "meta": {
+  "lane": "qa",
+  "scope": {
+   "country": "United States",
+   "state": "Kentucky",
+   "postal": "ky",
+   "kind": "state",
+   "slug": "kentucky",
+   "quarter": "q4-2026",
+   "csv": "scripts/gem_export_gogpt_scoped.csv"
+  },
+  "generated": "2026-11-06T09:35:24-05:00",
+  "mode": "update",
+  "counts": {
+   "records": 65
+  }
+ },
+ "records": [
+  {
+   "gem_unit_id": "G100001071840",
+   "concern_type": "Status",
+   "question": "Should this 635 MW placeholder be cancelled now that the 2026 plan drops it?",
+   "finding": "Big Rivers filed its 2026 integrated resource plan on September 29, 2026 (https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf). Its preferred portfolio on pages 281 to 283 keeps the Sebree coal units running and adds no combined cycle plant. The plan says capacity additions are only considered after 2031.",
+   "recommendation": "Change Status to cancelled and add Cancellation year 2026, with the 2026 plan as the source. Add a Status Detail line above the existing text saying the 2026 plan dropped the project.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf",
+     "https://psc.ky.gov/pscscf/2023%20Cases/2023-00310/20240820_PSC_ORDER.pdf"
+    ]
+   },
+   "proposed_value": {
+    "Status": "cancelled",
+    "Cancellation year": "2026"
+   },
+   "checks": [
+    10,
+    37
+   ],
+   "irp": true,
+   "gem_plant_id": "L100001062552",
+   "plant_name": "BREC 2023 IRP power station",
+   "country": "United States",
+   "unit_name": "1 IRP",
+   "fields": {},
+   "researcher_notes": "This is a single-source status change, so a second source would confirm it, for example a Big Rivers press release or board materials. The 2023 plan, as summarized in the Commission staff report of August 20, 2024 (https://psc.ky.gov/pscscf/2023%20Cases/2023-00310/20240820_PSC_ORDER.pdf), had the Sebree units retiring in 2029 and a 635 MW combined cycle added that year. The Start year of 2029 should be cleared once the status is cancelled. The 2026 action plan also seeks approval to retire the small Reid combustion turbine and add fuel oil backup at the Sebree station. Latest Activity is left alone because the newest report is under a year old.",
+   "record_id": "L100001062552:G100001071840:qa-status-1"
+  },
+  {
+   "gem_unit_id": "G100001071840",
+   "concern_type": "other",
+   "question": "Is the county for this plant Webster rather than Henderson?",
+   "finding": "Table 1.2.3(c) of the Big Rivers 2026 plan (https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf) lists R.D. Green units 1 and 2 in Webster County. The plan's text also says a related facility spans Henderson and Webster counties.",
+   "recommendation": "Change Local area from Henderson to Webster and keep City as Sebree. Leave the coordinates alone because the point is within about 300 m of the existing station and the plant stays approximate.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf"
+    ]
+   },
+   "proposed_value": {
+    "Local area (taluk, county)": "Webster"
+   },
+   "gem_plant_id": "L100001062552",
+   "plant_name": "BREC 2023 IRP power station",
+   "country": "United States",
+   "unit_name": "1 IRP",
+   "fields": {},
+   "researcher_notes": "No sited plant exists, since neither plan names a parcel. The 2023 staff report says the combined cycle would be built near the current station. I did not run satellite imagery or geocoding because the point does not move. Location accuracy stays approximate.",
+   "record_id": "L100001062552:G100001071840:qa-local-area-taluk-county-2",
+   "concern_type_raw": "Local area (taluk, county)"
+  },
+  {
+   "gem_unit_id": "G100001071840",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "When did this unit reach the announced step?",
+   "finding": "Big Rivers submitted its 2023 integrated resource plan to the Commission on September 29, 2023. The Commission staff report dated August 20, 2024 (https://psc.ky.gov/pscscf/2023%20Cases/2023-00310/20240820_PSC_ORDER.pdf) says so and describes the 635 MW combined cycle for 2029 in that plan.",
+   "recommendation": "Date the announced step September 2023, with the staff report as the document.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscscf/2023%20Cases/2023-00310/20240820_PSC_ORDER.pdf"
+    ]
+   },
+   "gem_plant_id": "L100001062552",
+   "plant_name": "BREC 2023 IRP power station",
+   "country": "United States",
+   "unit_name": "1 IRP",
+   "fields": {},
+   "researcher_notes": "The plan itself is case 2023-00310 on psc.ky.gov. The staff report is the document that I read and checked.",
+   "record_id": "L100001062552:G100001071840:qa-validation-3",
+   "irp": true
+  },
+  {
+   "gem_unit_id": "G100001048351",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "When did Unit 2 gas co-firing reach the pre-construction step?",
+   "finding": "The Division for Air Quality received the application that includes the Unit 2 gas co-firing change on January 27, 2025, per the statement of basis for permit V-26-012.",
+   "recommendation": "Date the pre-construction step January 2025 using the statement of basis.",
+   "refs": {
+    "links": [
+     "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293",
+     "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf"
+    ]
+   },
+   "gem_plant_id": "L100000103935",
+   "plant_name": "Cooper power station",
+   "country": "United States",
+   "unit_name": "Unit 2, timepoint 2",
+   "fields": {},
+   "researcher_notes": "The Commission approved the certificate in July 2025 as well.",
+   "record_id": "L100000103935:G100001048351:qa-validation-1"
+  },
+  {
+   "gem_unit_id": "G100001048350",
+   "concern_type": "Equipment Manufacturer/Model",
+   "question": "Should Unit 3's turbine maker be Siemens Energy, not GE Vernova?",
+   "finding": "The air permit statement of basis lists the combustion turbines as Siemens 5000F. GEM shows GE Vernova: SGT6-5000F, and SGT6-5000F is a Siemens Energy model.",
+   "recommendation": "Change the maker to Siemens Energy and keep SGT6-5000F as the model.",
+   "refs": {
+    "links": [
+     "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293"
+    ]
+   },
+   "proposed_value": {
+    "Equipment Manufacturer/Model": "Siemens Energy: SGT6-5000F"
+   },
+   "gem_plant_id": "L100000103935",
+   "plant_name": "Cooper power station",
+   "country": "United States",
+   "unit_name": "Unit 3",
+   "fields": {},
+   "researcher_notes": "I could not find a document that says SGT6-5000F in so many words.",
+   "record_id": "L100000103935:G100001048350:qa-equipment-manufacturer-model-2",
+   "checks": [
+    10
+   ]
+  },
+  {
+   "gem_unit_id": "G100000413046",
+   "concern_type": "Start year",
+   "question": "Is Brown 12 start year 2030 or 2029?",
+   "finding": "The commission order of October 28, 2025 says the unit is to be in service by 2030. The Oil and Gas Watch page lists an expected operating year of 2029 or 2030.",
+   "recommendation": "Leave the start year at 2030, which a commission order supports.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscscf/2025%20Cases/2025-00045//20251028_PSC_ORDER.pdf",
+     "https://oilandgaswatch.org/facility/rec_d4f1u5gq7easr8ra1evg"
+    ]
+   },
+   "proposed_value": {
+    "Start year": "2030"
+   },
+   "gem_plant_id": "L100000103937",
+   "plant_name": "E.W. Brown Generating Station",
+   "country": "United States",
+   "unit_name": "12",
+   "fields": {},
+   "researcher_notes": "I read the page at https://oilandgaswatch.org/facility/rec_d4f1u5gq7easr8ra1evg with a full browser load after the plain fetch returned only an empty shell. The page data comes from a protected interface, so the browser load was the way in.",
+   "record_id": "L100000103937:G100000413046:qa-start-year-1",
+   "checks": [
+    10,
+    37,
+    38
+   ]
+  },
+  {
+   "gem_unit_id": "G100000413046",
+   "concern_type": "other",
+   "question": "Does the 2024 LG&E/KU resource plan name Brown 12?",
+   "finding": "The plan at https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf adds combined cycle units without naming Brown 12 in the text I searched, and it retires Brown 3 in 2035 on the coal side.",
+   "recommendation": "Make no change from the plan. Brown 3 retirement in 2035 belongs on the coal tracker.",
+   "refs": {},
+   "irp": true,
+   "gem_plant_id": "L100000103937",
+   "plant_name": "E.W. Brown Generating Station",
+   "country": "United States",
+   "unit_name": "12",
+   "fields": {},
+   "researcher_notes": "I searched the plan text for Brown 12 and Brown combined cycle and found only Brown 3 mentions. The commission order of October 2025 is the better source for Brown 12.",
+   "record_id": "L100000103937:G100000413046:qa-other-2"
+  },
+  {
+   "gem_unit_id": "G100000413046",
+   "concern_type": "other",
+   "question": "Was the Brown data center fleet check answered?",
+   "finding": "No permit in the harvest matched a data center engine fleet at Brown. The Brown Title V draft lists the combined cycle project, not a backup engine fleet.",
+   "recommendation": "Leave Backup Power as no on all units.",
+   "refs": {
+    "links": [
+     "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14473287"
+    ]
+   },
+   "gem_plant_id": "L100000103937",
+   "plant_name": "E.W. Brown Generating Station",
+   "country": "United States",
+   "unit_name": "12",
+   "fields": {},
+   "researcher_notes": "The draft permit lists only small existing emergency diesel engines and a fire pump, not a data center fleet. Its emergency generator engines total about 3,400 horsepower, roughly 2.6 MW, far below the 50 MW threshold for a backup generator fleet. See https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14473287",
+   "record_id": "L100000103937:G100000413046:qa-other-3"
+  },
+  {
+   "gem_unit_id": "G100001055334",
+   "concern_type": "Planned retire",
+   "question": "Should East Bend unit 2 planned retirement be 2039 instead of 2038?",
+   "finding": "The 2024 Duke Energy Kentucky plan (https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf) says dual fuel operation from 2030 and a combined cycle replacement by 2039. A table in the plan reads retire in 2039 for the co-firing option. I found no document that says 2038.",
+   "recommendation": "Check the source of 2038. If none exists, change Planned retire to 2039 and cite the 2024 plan.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf"
+    ]
+   },
+   "proposed_value": {
+    "Planned retire": "2039"
+   },
+   "gem_plant_id": "L100000103938",
+   "plant_name": "East Bend Generating Station",
+   "country": "United States",
+   "unit_name": "Unit 2, timepoint 2",
+   "fields": {},
+   "researcher_notes": "The plan also studies retiring in 2032 or 2036 in other cases, but the preferred portfolio keeps the unit to 2039.",
+   "record_id": "L100000103938:G100001055334:qa-planned-retire-1",
+   "checks": [
+    21,
+    37
+   ],
+   "irp": true
+  },
+  {
+   "gem_unit_id": "G100001055334",
+   "concern_type": "Status Detail",
+   "question": "Does the federal funding note for East Bend unit 2 apply to the conversion?",
+   "finding": "The Department of Energy page (https://www.energy.gov/hgeo/defense-production-act-title-iii-project-selections-coal-fleet-projects-and-west-gateway) lists 33,400,000 dollars for the East Bend Coal Reliability Assurance Initiative. It covers steam turbine and boiler economizer work to keep the coal unit running. It does not mention diesel or gas.",
+   "recommendation": "Keep the note but add that the funding is for coal reliability work, not the conversion.",
+   "refs": {
+    "links": [
+     "https://www.energy.gov/hgeo/defense-production-act-title-iii-project-selections-coal-fleet-projects-and-west-gateway"
+    ]
+   },
+   "gem_plant_id": "L100000103938",
+   "plant_name": "East Bend Generating Station",
+   "country": "United States",
+   "unit_name": "Unit 2, timepoint 2",
+   "fields": {},
+   "researcher_notes": "The note is a running log, so a person adds the clarifying line above the old text.",
+   "record_id": "L100000103938:G100001055334:qa-status-detail-2",
+   "checks": [
+    7,
+    10,
+    37,
+    38
+   ]
+  },
+  {
+   "gem_unit_id": "G100001055334",
+   "concern_type": "validation",
+   "question": "When did East Bend unit 2 reach the pre-construction step?",
+   "finding": "I found no permit application or construction filing for the diesel conversion. The earliest document is the 2024 Duke Energy Kentucky plan filed in June 2024 (https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf), which only proposes the conversion.",
+   "recommendation": "Not found. The plan alone supports announced, so consider whether pre-construction is right; leave the step undated.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf"
+    ]
+   },
+   "checks": [
+    7
+   ],
+   "gem_plant_id": "L100000103938",
+   "plant_name": "East Bend Generating Station",
+   "country": "United States",
+   "unit_name": "Unit 2, timepoint 2",
+   "fields": {},
+   "researcher_notes": "I looked at the Kentucky Public Service Commission cases for Duke, the harvested air permit index and Boone County minutes. Pass three: the step is now dated as an edit to Status Detail with a June 2024 milestone from the same plan.",
+   "record_id": "L100000103938:G100001055334:qa-validation-3",
+   "irp": true
+  },
+  {
+   "gem_unit_id": "G100001055335",
+   "concern_type": "validation",
+   "question": "When did East Bend unit 3 reach the announced step?",
+   "finding": "The unit first appears in the 2024 Duke Energy Kentucky plan filed on June 21, 2024 (https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf).",
+   "recommendation": "Date the announced step June 2024.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf"
+    ]
+   },
+   "checks": [
+    7
+   ],
+   "gem_plant_id": "L100000103938",
+   "plant_name": "East Bend Generating Station",
+   "country": "United States",
+   "unit_name": "3",
+   "fields": {},
+   "researcher_notes": "The 2026 plan case 2026-00167 (https://psc.ky.gov/Case/ViewCaseFilings/2026-00167) has no plan filed yet. Pass three: the step is now dated as an edit to Status Detail with a June 2024 milestone from the same plan.",
+   "record_id": "L100000103938:G100001055335:qa-validation-4",
+   "irp": true
+  },
+  {
+   "gem_unit_id": "G100001096399",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "When did Unit 1 reach the announced step?",
+   "finding": "The first report I found is The Owensboro Times article of June 17, 2026. It says Green River East GenCo LLC has applied to connect a 545 MW plant and that the utility had earlier approved an option to lease.",
+   "recommendation": "Date the announced step June 2026. The option-to-lease vote has no published date, so June 2026 is the earliest date found; it is proposed as a Status Detail edit with a dated milestone.",
+   "refs": {
+    "links": [
+     "https://www.owensborotimes.com/news/2026/06/omu-exploring-545-megawatt-natural-gas-power-plant-at-former-elmer-smith-site/",
+     "https://www.daviessky.org/wp-content/uploads/2026/08/OB-43-08-13-2026-Minutes.pdf"
+    ]
+   },
+   "gem_plant_id": "L100000103939",
+   "plant_name": "Elmer Smith Station",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "I searched the Midcontinent Independent System Operator queue file at https://www.misoenergy.org/api/giqueue/getprojects. It has no row for Elmer Smith or Green River East, which fits the article saying the interconnection study is run by Owensboro Municipal Utilities and not yet by the grid operator. The Daviess County Fiscal Court minutes of August 13, 2026 at https://www.daviessky.org/wp-content/uploads/2026/08/OB-43-08-13-2026-Minutes.pdf mention the proposed 545 MW plant in public comment but give no date for the announcement. I could not find the date of the option-to-lease vote or a Kentucky Secretary of State record. Third pass: the date is now also proposed as a milestone on the Status Detail finding.",
+   "record_id": "L100000103939:G100001096399:qa-validation-1"
+  },
+  {
+   "gem_unit_id": "G100001096399",
+   "concern_type": "Turbine/Engine Technology",
+   "question": "What technology will the Elmer Smith plant use?",
+   "finding": "No article, permit or queue row found names a turbine type, model or maker. No air permit application exists in the state eSearch record, which only holds the old coal plant permits.",
+   "recommendation": "Leave technology as unknown until an air permit application or interconnection record names it.",
+   "refs": {
+    "links": [
+     "https://www.owensborotimes.com/news/2026/06/omu-exploring-545-megawatt-natural-gas-power-plant-at-former-elmer-smith-site/"
+    ]
+   },
+   "gem_plant_id": "L100000103939",
+   "plant_name": "Elmer Smith Station",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "The Kentucky eSearch air permit record at https://dep.gateway.ky.gov/eSearch/ holds only the old coal plant permits. The Midcontinent queue file has no row for this project. No turbine maker or type is named in the June 2026 articles or the August 2026 county minutes.",
+   "record_id": "L100000103939:G100001096399:qa-turbine-engine-technology-2",
+   "checks": [
+    10,
+    17
+   ]
+  },
+  {
+   "gem_unit_id": "G100001096399",
+   "concern_type": "Location accuracy",
+   "question": "Should the Elmer Smith point stay exact?",
+   "finding": "The permit address and a satellite look both put GEM's point on the former Elmer Smith plant pad. The leased 30 acre parcel is not published.",
+   "recommendation": "Leave the point and accuracy as they are.",
+   "refs": {
+    "links": [
+     "https://www.owensborotimes.com/news/2026/06/omu-exploring-545-megawatt-natural-gas-power-plant-at-former-elmer-smith-site/"
+    ]
+   },
+   "gem_plant_id": "L100000103939",
+   "plant_name": "Elmer Smith Station",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "I did not run a satellite look. No document gives coordinates, and the Owensboro Times article at https://www.owensborotimes.com/news/2026/06/omu-exploring-545-megawatt-natural-gas-power-plant-at-former-elmer-smith-site/ names only the former plant site and about 30 acres.",
+   "record_id": "L100000103939:G100001096399:qa-location-accuracy-3",
+   "checks": [
+    7
+   ]
+  },
+  {
+   "gem_unit_id": "G100001096399",
+   "concern_type": "other",
+   "question": "Is Backup Power no correct for Unit 1?",
+   "finding": "The articles describe a plant for the grid and say nothing about backup service.",
+   "recommendation": "Leave it as no. No document states it either way.",
+   "refs": {
+    "links": [
+     "https://www.owensborotimes.com/news/2026/06/omu-exploring-545-megawatt-natural-gas-power-plant-at-former-elmer-smith-site/"
+    ]
+   },
+   "gem_plant_id": "L100000103939",
+   "plant_name": "Elmer Smith Station",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "No air permit application, queue row or county record names backup generators for this project. The Daviess County Fiscal Court minutes at https://www.daviessky.org/wp-content/uploads/2026/08/OB-43-08-13-2026-Minutes.pdf do not mention them.",
+   "record_id": "L100000103939:G100001096399:qa-backup-power-4",
+   "concern_type_raw": "Backup Power"
+  },
+  {
+   "gem_unit_id": "G100001071845",
+   "concern_type": "duplicate",
+   "question": "Should this placeholder be folded into Kentucky Power's Lawrence County combined cycle project?",
+   "finding": "The 2022 resource plan (https://psc.ky.gov/pscecf/2023-00092/sebishop@aep.com/03202023030104/KPCO_2022_IRP_Volume_A-Public.pdf) adds 480 MW of gas turbines in 2029. Kentucky Power later planned a 450 MW turbine (case 2026-00103), withdrew it (https://psc.ky.gov/pscscf/2026%20Cases/2026-00103//20261029_PSC_ORDER.pdf), and told commission staff it will file for a 760 MW combined cycle plant with a planned in-service date of March 31, 2031 (https://psc.ky.gov/pscscf/2026%20cases/2026-00103//20261012_PSC%20Letter%20Filing%20Informal%20Conference%20Memorandum%20and%20Attendance%20List%20into%20the%20Record.pdf). Case 2026-00324 (https://psc.ky.gov/pscscf/2026%20cases/2026-00324//20261030_Kentucky%20Power%20Company%20Notice%20of%20Intent%20and%20Election.pdf) is the notice of intent for a natural gas-fired combined cycle plant in Lawrence County.",
+   "recommendation": "Keep this record as announced for now. Once Kentucky Power files the application, rename or merge it into the sited Lawrence County project and change capacity to 760 MW and start year to 2031, or ask the project manager whether to do that now.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscecf/2023-00092/sebishop@aep.com/03202023030104/KPCO_2022_IRP_Volume_A-Public.pdf",
+     "https://psc.ky.gov/pscscf/2026%20Cases/2026-00103//20261029_PSC_ORDER.pdf",
+     "https://psc.ky.gov/pscscf/2026%20cases/2026-00103//20261012_PSC%20Letter%20Filing%20Informal%20Conference%20Memorandum%20and%20Attendance%20List%20into%20the%20Record.pdf",
+     "https://psc.ky.gov/pscscf/2026%20cases/2026-00324//20261030_Kentucky%20Power%20Company%20Notice%20of%20Intent%20and%20Election.pdf"
+    ]
+   },
+   "proposed_value": {
+    "Capacity (MW)": "760",
+    "Start year": "2031"
+   },
+   "gem_plant_id": "L100001062558",
+   "plant_name": "KPCO 2023 IRP power station",
+   "country": "United States",
+   "unit_name": "1 IRP",
+   "fields": {},
+   "researcher_notes": "The 2026-00324 application itself was not yet posted on the commission site when I looked. Only the notice of intent, the acknowledgment letter and a motion to intervene were. The site within Lawrence County is not named in what I could read. The brief suggests Big Sandy, but I found no document that says so. The 760 MW figure and the 2031 date come from commission staff's memorandum of what Kentucky Power said, not from an application. A new record for the sited plant is left for the reviewer because no site, owner entity or turbine model is yet documented.",
+   "record_id": "L100001062558:G100001071845:qa-duplicate-1",
+   "irp": true
+  },
+  {
+   "gem_unit_id": "G100001071845",
+   "concern_type": "location",
+   "question": "Should the placeholder's point near Pikeville be moved to Lawrence County?",
+   "finding": "GEM's point is 37.46994, -82.53118, which is at Pikeville in Pike County, and no document sites this unit. Kentucky Power's 2026 notice of intent places the combined cycle plant in Lawrence County, and the brief points to Big Sandy, but no source I read gives an address or coordinates.",
+   "recommendation": "Leave the point and the approximate accuracy as they are until Kentucky Power's application names the site.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscscf/2026%20cases/2026-00324//20261030_Kentucky%20Power%20Company%20Notice%20of%20Intent%20and%20Election.pdf"
+    ]
+   },
+   "gem_plant_id": "L100001062558",
+   "plant_name": "KPCO 2023 IRP power station",
+   "country": "United States",
+   "unit_name": "1 IRP",
+   "fields": {},
+   "researcher_notes": "No address, parcel or coordinates were published in the documents I could read, so the geocoding and satellite steps could not be run. City and county stay blank for the same reason.",
+   "record_id": "L100001062558:G100001071845:qa-location-2"
+  },
+  {
+   "gem_unit_id": "G100001071845",
+   "concern_type": "Equipment Manufacturer/Model",
+   "question": "Is any turbine model or backup power use stated for this unit?",
+   "finding": "The 2022 plan and the 2026 commission documents do not name a turbine make or model, and none describes the unit as backup power.",
+   "recommendation": "Leave the turbine model as not found and Backup Power as no until the certificate application is posted.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscecf/2023-00092/sebishop@aep.com/03202023030104/KPCO_2022_IRP_Volume_A-Public.pdf"
+    ]
+   },
+   "gem_plant_id": "L100001062558",
+   "plant_name": "KPCO 2023 IRP power station",
+   "country": "United States",
+   "unit_name": "1 IRP",
+   "fields": {},
+   "researcher_notes": "I read the commission order, the staff memorandum and the notice of intent. I did not read the full 2022 plan beyond the capacity and year.",
+   "record_id": "L100001062558:G100001071845:qa-equipment-manufacturer-model-3",
+   "checks": [
+    10
+   ],
+   "irp": true
+  },
+  {
+   "gem_unit_id": "G100001031363",
+   "concern_type": "location",
+   "question": "Should Hopkins be entered as the county for KYMEA Energy Center I?",
+   "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) gives Hopkins County. The air permit (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/13751619) gives the address 1757 AC Slaton Road, Madisonville, and the commission order (https://psc.ky.gov/pscscf/2024%20Cases/2024-00290//20250402_PSC_ORDER.pdf) names Hopkins County.",
+   "recommendation": "Enter Hopkins in the Local area field, with the EIA table and the commission order as sources.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://psc.ky.gov/pscscf/2024%20Cases/2024-00290//20250402_PSC_ORDER.pdf"
+    ]
+   },
+   "proposed_value": {
+    "Local area": "Hopkins"
+   },
+   "gem_plant_id": "L100001026095",
+   "plant_name": "KYMEA Energy Center I",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "The current point is already marked exact and was not reopened.",
+   "record_id": "L100001026095:G100001031363:qa-location-1"
+  },
+  {
+   "gem_unit_id": "G100001031363",
+   "concern_type": "identity",
+   "question": "Is MISO queue row S1073 the interconnection request for KYMEA Energy Center I?",
+   "finding": "Row S1073 is 75 MW with no fuel shown, queued February 19, 2025, at the Hopkins to Reid 161 kV line owned by Big Rivers, with Webster County listed. The size and the Big Rivers connection fit the plant. The queue does not name KYMEA, and the KYMEA page says its switching station was transferred to LG&E and KU, whose area EIA lists as the balancing authority.",
+   "recommendation": "Treat S1073 as a probable match but do not cite it for any value. Ask KYMEA or check the interconnection agreement if a firm link is needed.",
+   "refs": {},
+   "gem_plant_id": "L100001026095",
+   "plant_name": "KYMEA Energy Center I",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "I read the MISO project list file on November 5, 2026. Row J3089 is a withdrawn 696 MW Reid combined cycle and is unrelated. The queue page itself is a lead and was not run through the verifier.",
+   "record_id": "L100001026095:G100001031363:qa-identity-2"
+  },
+  {
+   "gem_unit_id": "G100001031363",
+   "concern_type": "Owner(s)",
+   "question": "Is Kentucky Municipal Power Agency the same company as Kentucky Municipal Energy Agency?",
+   "finding": "GEM spells the owner Kentucky Municipal Power Agency. EIA, the air permit and the commission case all say Kentucky Municipal Energy Agency, and the KYMEA website uses KYMEA.",
+   "recommendation": "Leave the owner as is, or rename the entity to the spelling EIA and the commission use if the entity record allows it.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://psc.ky.gov/pscscf/2024%20Cases/2024-00290//20250402_PSC_ORDER.pdf"
+    ]
+   },
+   "gem_plant_id": "L100001026095",
+   "plant_name": "KYMEA Energy Center I",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "No owner change is proposed, so the entity lookup was not needed.",
+   "record_id": "L100001026095:G100001031363:qa-owner-s-3",
+   "checks": [
+    10,
+    49
+   ]
+  },
+  {
+   "gem_unit_id": "G100001031363",
+   "concern_type": "other",
+   "question": "Does the 2023 IRP of KYMEA differ from GEM for Energy Center I?",
+   "finding": "The KYMEA 2023 integrated resource plan at https://s3.amazonaws.com/kymea-twill/4031257f-39bb-4be9-99b8-87cfeaf6cff8/2025_06_IRP2023-Report-Draft-v.24_6_05_25.pdf says the 75 MW Energy Center I, four Wartsila engines in Hopkins County, is expected to reach commercial operation by June 2027. This matches GEM's capacity and start year.",
+   "recommendation": "Leave GEM as is and add an integrated resource plan note that the 2023 plan lists Energy Center I and no other new gas.",
+   "refs": {
+    "links": [
+     "https://s3.amazonaws.com/kymea-twill/4031257f-39bb-4be9-99b8-87cfeaf6cff8/2025_06_IRP2023-Report-Draft-v.24_6_05_25.pdf",
+     "https://www.kymea.org/irp/irp-resources/"
+    ]
+   },
+   "gem_plant_id": "L100001026095",
+   "plant_name": "KYMEA Energy Center I",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "The plan was read in full text on November 5, 2026. It is the draft dated June 2025 that the board approved in January 2025 per the resources page at https://www.kymea.org/irp/irp-resources/.",
+   "record_id": "L100001026095:G100001031363:qa-other-4",
+   "irp": true
+  },
+  {
+   "gem_unit_id": "G100001030601",
+   "concern_type": "Status",
+   "question": "Should Liberty Station stay at construction when EIA lists it as planned?",
+   "finding": "The EIA-860M table for September 2026 lists all 12 engines as planned with regulatory approvals not initiated, though the commission certificate was granted May 20, 2025 and the air permit was issued March 6, 2026. EKPC's own filings give planned dates for site work and a May 20, 2026 groundbreaking, and the June 2026 report shows construction start at 0 percent.",
+   "recommendation": "Leave the status as construction. Check EKPC's next semi-annual report, due about December 2026, for the actual construction start.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/03202026030536/Closed/Letter_Liberty_RICE__construction_commencement.pdf",
+     "https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/06052026074625/Closed/PSC_semi-annual_Report_June_2026_-_Liberty_RICE.pdf",
+     "https://psc.ky.gov/pscscf/2024%20Cases/2024-00310//20250520_PSC_ORDER.pdf",
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ]
+   },
+   "proposed_value": {
+    "Status": "construction"
+   },
+   "gem_plant_id": "L100001025720",
+   "plant_name": "Liberty Station Power Plant",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "I found a May 2026 press report of the groundbreaking at https://marcellusdrilling.com/?p=119142 and a trade piece at https://www.electric.coop/ekpcs-new-gas-plant-shows-strong-investment-in-rural-kentucky-community but no independent dated report of work under way. EIA is likely just behind the permits.",
+   "record_id": "L100001025720:G100001030601:qa-status-1",
+   "checks": [
+    10,
+    37,
+    38,
+    49
+   ]
+  },
+  {
+   "gem_unit_id": "G100001030601",
+   "concern_type": "Other IDs (location)",
+   "question": "Can EIA plant code 69726 be typed into Other IDs (location)?",
+   "finding": "The EIA-860M table for September 2026 lists Liberty Station, Casey County, Kentucky as plant 69726, generators L1 to L12.",
+   "recommendation": "Type EIA: 69726 into Other IDs (location) in the web form, next to the existing EIP code.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ]
+   },
+   "gem_plant_id": "L100001025720",
+   "plant_name": "Liberty Station Power Plant",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "The ID has no data source of its own.",
+   "record_id": "L100001025720:G100001030601:qa-other-ids-location-2"
+  },
+  {
+   "gem_unit_id": "G100001030601",
+   "concern_type": "other",
+   "question": "Should Backup Power stay no for Liberty Station?",
+   "finding": "The application describes a dual fuel peaking facility that sells to the grid, with diesel as an alternate fuel. No document calls the engines backup for another site.",
+   "recommendation": "Leave Backup Power as no. Backup Power applies to data center sites, and none was found here.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscecf/2024-00310/allyson%40hloky.com/09202024100053/Application_with_Exhibits.pdf"
+    ]
+   },
+   "gem_plant_id": "L100001025720",
+   "plant_name": "Liberty Station Power Plant",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "Searched the application at https://psc.ky.gov/pscecf/2024-00310/allyson%40hloky.com/09202024100053/Application_with_Exhibits.pdf and the air permit. Nothing states the value either way. The air permit lists an emergency generator and a fire pump engine, but these support the plant itself and are not generating units sold to the grid.",
+   "record_id": "L100001025720:G100001030601:qa-backup-power-3",
+   "concern_type_raw": "Backup Power"
+  },
+  {
+   "gem_unit_id": "G100001030601",
+   "concern_type": "IRP",
+   "question": "Does EKPC's 2025 plan list a different size for Liberty Station?",
+   "finding": "The US IRPs tab note says the plan lists 214 MW of engines at Liberty Station, which matches the net figure in the commission order and not GEM's 217.2 MW nameplate.",
+   "recommendation": "Leave capacity at 217.2 MW and add the plan to the IRP Notes line.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf"
+    ]
+   },
+   "gem_plant_id": "L100001025720",
+   "plant_name": "Liberty Station Power Plant",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "I did not open the plan PDF itself, so no finding is marked as from the plan. Table 4-7 on PDF page 106 of the plan at https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf lists 12 units at 18.132 MW net each, planned, commercial operation 2028, which agrees with GEM's start year.",
+   "record_id": "L100001025720:G100001030601:qa-irp-4",
+   "irp": true
+  },
+  {
+   "gem_unit_id": "G100001053541",
+   "concern_type": "other",
+   "question": "Should Backup Power stay no for Mill Creek unit 6?",
+   "finding": "The saved copy of the Louisville draft air permit lists one 2,180 kilowatt diesel emergency generator and one diesel fire pump for unit 6. The main unit is a combined cycle block and not a backup engine fleet.",
+   "recommendation": "Leave Backup Power as no for the unit. The small emergency generator is too small to add as its own unit.",
+   "refs": {
+    "links": [
+     "https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf",
+     "https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf"
+    ]
+   },
+   "gem_plant_id": "L100000103945",
+   "plant_name": "Mill Creek Station",
+   "country": "United States",
+   "unit_name": "MC 6",
+   "fields": {},
+   "researcher_notes": "I read the saved copy of the permit at https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf. It lists only emergency equipment for the plant itself. The permit for unit 5 at https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf lists a 2000 kilowatt emergency generator and a fire pump in the same way. Neither permit names a data center or a backup fleet.",
+   "record_id": "L100000103945:G100001053541:qa-backup-power-1",
+   "concern_type_raw": "Backup Power"
+  },
+  {
+   "gem_unit_id": "G100000413034",
+   "concern_type": "Capacity (MW)",
+   "question": "Is 740 MW or 660 MW the right nameplate for Mill Creek unit 5?",
+   "finding": "The EIA table for September 2026 gives 740 MW nameplate and 660 MW net winter. The draft city permit said 660 MW and the certificate application said 680 MW.",
+   "recommendation": "Keep 740 MW, which is the nameplate. Do not use the lower permit figure.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ]
+   },
+   "gem_plant_id": "L100000103945",
+   "plant_name": "Mill Creek Station",
+   "country": "United States",
+   "unit_name": "MC 5",
+   "fields": {},
+   "researcher_notes": "Source: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx. I could not open the dead city permit page to read the permit wording.",
+   "record_id": "L100000103945:G100000413034:qa-capacity-mw-2",
+   "checks": [
+    10,
+    37,
+    39,
+    49
+   ]
+  },
+  {
+   "gem_unit_id": "G100000413034",
+   "concern_type": "other",
+   "question": "Do the coal unit 2 retirement notes need a human update?",
+   "finding": "The Status Detail text says coal unit 2 may run until at least 2031. EIA still lists unit 2 as operating with no planned retirement year. I made no change to the coal rows.",
+   "recommendation": "Leave the coal rows to the coal reviewer and add a note in the plant summary that unit 2 may run until at least 2031.",
+   "refs": {},
+   "gem_plant_id": "L100000103945",
+   "plant_name": "Mill Creek Station",
+   "country": "United States",
+   "unit_name": "MC 5",
+   "fields": {},
+   "researcher_notes": "The 2025-00313 filing from June 2026 titled for not retiring Mill Creek 2 is at https://psc.ky.gov/pscecf/2025-00313/rick.lovekamp%40lge-ku.com/06052026025205/09-2025-00313_JI_DR1_LGE_KU_Attach_to_Q8_-_Att_1_MC5_NGCC_Amendment_Not_Retire_MC2.pdf. It is a June 2026 filing in the same case.",
+   "record_id": "L100000103945:G100000413034:qa-other-3"
+  },
+  {
+   "gem_unit_id": "G100000413034",
+   "concern_type": "Fuel",
+   "question": "Should diesel stay in the fuel entry for Mill Creek units 5 and 6?",
+   "finding": "The EIA-860M table for September 2026 lists natural gas only for unit 5. The air permits show diesel only in emergency generators and fire pumps, not in the turbines.",
+   "recommendation": "Ask the project manager whether diesel belongs in the fuel entry. If the turbines have no diesel backup, change the fuel to natural gas only.",
+   "refs": {
+    "links": [
+     "https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf",
+     "https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf"
+    ]
+   },
+   "proposed_value": {
+    "Fuel": "fossil gas: natural gas"
+   },
+   "gem_plant_id": "L100000103945",
+   "plant_name": "Mill Creek Station",
+   "country": "United States",
+   "unit_name": "MC 5",
+   "fields": {},
+   "researcher_notes": "Sources: https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf and https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf. I found no document that says the turbines can burn diesel.",
+   "record_id": "L100000103945:G100000413034:qa-fuel-4"
+  },
+  {
+   "gem_unit_id": "G100001048353",
+   "concern_type": "CHP",
+   "question": "Should CHP be yes for Spurlock Units 3 and 4?",
+   "finding": "The 2025 integrated resource plan at https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf names only Units 2 and 1 as the steam sources for the International Paper facility. It does not mention Units 3 and 4.",
+   "recommendation": "Ask the project manager whether Units 3 and 4 should be changed to no, since no source in this sweep says they supply steam.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf"
+    ]
+   },
+   "proposed_value": {
+    "CHP": "no"
+   },
+   "gem_plant_id": "L100000103950",
+   "plant_name": "Spurlock power station",
+   "country": "United States",
+   "unit_name": "Unit 2, timepoint 2",
+   "fields": {},
+   "researcher_notes": "GEM shows CHP yes on all four units. Only a document that says no would justify a change.",
+   "record_id": "L100000103950:G100001048353:qa-chp-1",
+   "irp": true
+  },
+  {
+   "gem_unit_id": "G100001048352",
+   "concern_type": "existence",
+   "question": "Is PJM request C01-1227 at Spurlock a new gas plant?",
+   "finding": "The PJM cycle request C01-1227 was filed by East Kentucky Power Cooperative, Inc. on April 27, 2026 for 758 MW of natural gas at Spurlock, with service requested by December 31, 2031. It is not any of the four co-firing units, which are existing coal units.",
+   "recommendation": "Add a new announced gas unit at Spurlock with 758 MW and owner East Kentucky Power Cooperative, citing the PJM cycle request page, unless the project manager knows it duplicates something.",
+   "refs": {
+    "links": [
+     "https://www.pjm.com/planning/m/cycle-service-request-status"
+    ]
+   },
+   "gem_plant_id": "L100000103950",
+   "plant_name": "Spurlock power station",
+   "country": "United States",
+   "unit_name": "Unit 1, timepoint 2",
+   "fields": {},
+   "researcher_notes": "The Commission order of July 3, 2025 grants a certificate only for the Cooper combined cycle unit and the co-firing retrofits. The 2025 integrated resource plan names no Spurlock combined cycle. The Spurlock permit record on the Kentucky eSearch site shows pending change APE 2026-7 received September 4, 2026 with no documents online. On the second pass I read the request from the page's own download file, which only answers to a form post. The address https://www.pjm.com/m/ProjectTransition/GenerateXMLTransitionProjectsAll returned 404 to the verifier, so the page could not be verified by a plain fetch.",
+   "record_id": "L100000103950:G100001048352:qa-existence-2"
+  },
+  {
+   "gem_unit_id": "G100001017861",
+   "concern_type": "existence",
+   "question": "Is Kentucky Power's new Lawrence County combined cycle plant at the Big Sandy site?",
+   "finding": "Kentucky Power gave notice on October 30, 2026 in case 2026-00324 that it will apply by December 31, 2026 for a certificate to build a gas combined cycle plant in Lawrence County (https://psc.ky.gov/pscscf/2026%20cases/2026-00324//20261030_Kentucky%20Power%20Company%20Notice%20of%20Intent%20and%20Election.pdf). A commission staff memo of October 9, 2026 in the withdrawn case 2026-00103 (https://psc.ky.gov/pscscf/2026%20cases/2026-00103//20261012_PSC%20Letter%20Filing%20Informal%20Conference%20Memorandum%20and%20Attendance%20List%20into%20the%20Record.pdf) says the company plans a 760 MW combined cycle unit with an in-service date of March 31, 2031, tied to a TeraWulf data center agreement. Neither document names the site, and the application itself is not yet filed.",
+   "recommendation": "Do not add a unit yet. When the application is filed, read it for the site, then add it as a new unit here if it is at Big Sandy, or as a new plant if not, and ask Baird whether the 480 MW Kentucky Power placeholder is this project.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscscf/2026%20cases/2026-00324//20261030_Kentucky%20Power%20Company%20Notice%20of%20Intent%20and%20Election.pdf",
+     "https://psc.ky.gov/pscscf/2026%20cases/2026-00103//20261012_PSC%20Letter%20Filing%20Informal%20Conference%20Memorandum%20and%20Attendance%20List%20into%20the%20Record.pdf",
+     "https://psc.ky.gov/pscscf/2026%20Cases/2026-00103//20261029_PSC_ORDER.pdf"
+    ]
+   },
+   "gem_plant_id": "L100000103930",
+   "plant_name": "Big Sandy Plant",
+   "country": "United States",
+   "unit_name": "Unit 1, timepoint 2",
+   "fields": {},
+   "researcher_notes": "Kentucky Power's PJM queue row C01-1131 connects at Baker 345 kV, which is about half a mile north of Big Sandy, but the queue page is only a lead. Row C01-1325 at the same substation is Appalachian Power's and is answered on its own card. I opened the case page for 2026-00324 on November 5, 2026 (https://psc.ky.gov/Case/ViewCaseFilings/2026-00324). It lists only the notice of intent, a commission acknowledgment letter and a motion to intervene. The application and testimony are not posted, so no document ties the queue rows to this project yet. The case page lists only the notice of intent and a motion to intervene as of November 3, 2026. The order of October 29, 2026 (https://psc.ky.gov/pscscf/2026%20Cases/2026-00103//20261029_PSC_ORDER.pdf) closed case 2026-00103 after Kentucky Power withdrew its notice, which is the history for Status Detail of the new project.",
+   "record_id": "L100000103930:G100001017861:qa-existence-1"
+  },
+  {
+   "gem_unit_id": "G100001018034",
+   "concern_type": "Planned retire",
+   "question": "Should the 2029 planned retirement of Sebree units 1 and 2 be removed?",
+   "finding": "Big Rivers' 2026 integrated resource plan keeps both Sebree units in service through 2050 in the base case. Its only retirement case for the plant is a test case in 2039. The 2023 plan's 2029 retirement and 635 MW combined cycle replacement is not in the 2026 plan.",
+   "recommendation": "Clear Planned retire on both units, and add a Status Detail entry saying the 2026 plan keeps the plant running. Do not add the combined cycle at the Sebree station.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf"
+    ]
+   },
+   "proposed_value": {
+    "Planned retire": ""
+   },
+   "gem_plant_id": "L100000103943",
+   "plant_name": "Green Station",
+   "country": "United States",
+   "unit_name": "Unit 1, timepoint 2",
+   "fields": {},
+   "researcher_notes": "Source is the 2026 plan at https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf. I found no combined cycle sited at the Sebree station in it. Same applies to unit G100001018035. A person should remove the old scheduled retirement event. Both units are covered by this question.",
+   "record_id": "L100000103943:G100001018034:qa-planned-retire-1",
+   "checks": [
+    21,
+    43,
+    50
+   ]
+  },
+  {
+   "gem_unit_id": "G100001018034",
+   "concern_type": "Start year",
+   "question": "Is 2022 the right start year when EIA lists 1979 and 1981?",
+   "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx, plant 6639) gives operating years 1979 for unit 1 and 1981 for unit 2. The 2026 plan at https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf says the units were converted to natural gas in 2022.",
+   "recommendation": "Leave 2022 as the start year, since it is the conversion year on a timepoint 2 row.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf"
+    ]
+   },
+   "gem_plant_id": "L100000103943",
+   "plant_name": "Green Station",
+   "country": "United States",
+   "unit_name": "Unit 1, timepoint 2",
+   "fields": {},
+   "researcher_notes": "EIA carries the original coal unit years. Same applies to unit 2.",
+   "record_id": "L100000103943:G100001018034:qa-start-year-2",
+   "checks": [
+    38
+   ]
+  },
+  {
+   "gem_unit_id": "G100001018034",
+   "concern_type": "location",
+   "question": "Should the county for the Sebree station be Webster rather than Henderson?",
+   "finding": "The EIA-860M table and the Kentucky air permit file place the plant in Webster County, at Robards. GEM shows Henderson with city Sebree.",
+   "recommendation": "Change Local area to Webster and keep the city as Sebree, or leave as is if Sebree mailing address is preferred.",
+   "refs": {},
+   "gem_plant_id": "L100000103943",
+   "plant_name": "Green Station",
+   "country": "United States",
+   "unit_name": "Unit 1, timepoint 2",
+   "fields": {},
+   "researcher_notes": "Air permit index at https://dep.gateway.ky.gov/eSearch/ lists agency interest 44411 in Webster County.",
+   "record_id": "L100000103943:G100001018034:qa-location-3"
+  },
+  {
+   "gem_unit_id": "G100001018034",
+   "concern_type": "Fuel",
+   "question": "Should fuel oil be added to the Sebree units once the backup fuel case is decided?",
+   "finding": "Big Rivers' 2026 plan proposes fuel oil backup for Sebree units 1 and 2, in service January 2029. Case 2026-00291 at https://psc.ky.gov/Case/ViewCaseFilings/2026-00291 has only a notice of intent so far, with no application or order.",
+   "recommendation": "Leave Fuel as fossil gas for now and recheck when the commission rules on case 2026-00291.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf",
+     "https://psc.ky.gov/Case/ViewCaseFilings/2026-00291"
+    ]
+   },
+   "gem_plant_id": "L100000103943",
+   "plant_name": "Green Station",
+   "country": "United States",
+   "unit_name": "Unit 1, timepoint 2",
+   "fields": {},
+   "researcher_notes": "Same applies to unit G100001018035. The cost is redacted in the public plan.",
+   "record_id": "L100000103943:G100001018034:qa-fuel-4"
+  },
+  {
+   "gem_unit_id": "G100000403163",
+   "concern_type": "identity",
+   "question": "Is the Big Sandy Peaker Plant in West Virginia, not Kentucky?",
+   "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 55284 in Wayne County, West Virginia. The West Virginia air permit R30-09900080 from October 2024 (https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf) gives the facility location as Kenova, Wayne County, West Virginia. GEM shows the state as Kentucky.",
+   "recommendation": "Change State/Province to West Virginia for all six units in the web form. This moves the plant out of the Kentucky assignment.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://web.archive.org/web/20250307233856/https://dep.wv.gov/daq/permitting/titlevpermits/Documents/October%202024/099-00080/Final%20Pemit%20R30-09900080-2024.pdf"
+    ]
+   },
+   "proposed_value": {
+    "State/Province": "West Virginia"
+   },
+   "gem_plant_id": "L100000402085",
+   "plant_name": "Big Sandy Peaker Plant",
+   "country": "United States",
+   "unit_name": "BSG1",
+   "fields": {},
+   "researcher_notes": "The permit address is a saved copy from the Wayback Machine because the live address returns an error. Coordinates 38.3441, -82.5938 sit at Kenova on the Ohio River, which fits West Virginia. I did not change Latitude or Longitude.",
+   "record_id": "L100000402085:G100000403163:qa-identity-1"
+  },
+  {
+   "gem_unit_id": "G100000403163",
+   "concern_type": "Owner(s)",
+   "question": "Has Indiana Michigan Power bought the Big Sandy Peaker Plant from Middle River Power II?",
+   "finding": "The Indiana Utility Regulatory Commission order of September 2, 2026 (https://secure.in.gov/iurc/files/ord_46301GRS1_090226.pdf) approves Indiana Michigan Power's request to buy the Big Sandy Peaker Plant in Kenova, West Virginia, for $299,525,000. The same order says closing still needs federal approvals from FERC and under the Hart-Scott-Rodino Act. The EIA-860M table for September 2026 already names Indiana Michigan Power Co, but I found no closing notice.",
+   "recommendation": "Leave Owner(s) as Middle River Power II LLC [100%] for now. Add the approved but not yet closed purchase to Notes and the possible-updates sheet, then look for a closing notice.",
+   "refs": {
+    "links": [
+     "https://secure.in.gov/iurc/files/ord_46301GRS1_090226.pdf",
+     "https://www.journalgazette.net/local/indiana-michigan-power-seeks-permission-to-buy-west-virginia-natural-gas-plant/article_a6f2d661-c888-46b0-a052-94c8259c0170.html",
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ]
+   },
+   "proposed_value": {},
+   "gem_plant_id": "L100000402085",
+   "plant_name": "Big Sandy Peaker Plant",
+   "country": "United States",
+   "unit_name": "BSG1",
+   "fields": {},
+   "researcher_notes": "An owner change needs a closed sale from two independent publishers. I found neither. The permit lists Big Sandy Peaker Plant, LLC as the permittee but I could not read its parent. The owner's own page and a 2025 or 2026 filing naming Middle River Power II as owner were not found in the budget I had. The order names the seller only as the seller, so Middle River Power II and Partners Group are not confirmed by it.",
+   "record_id": "L100000402085:G100000403163:qa-owner-s-2",
+   "checks": [
+    43,
+    50
+   ]
+  },
+  {
+   "gem_unit_id": "G100000403163",
+   "concern_type": "Capacity (MW)",
+   "question": "Should the 59.0 MW capacity on each unit stay as it is?",
+   "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) gives 58.9 MW nameplate for each of the six units. GEM shows 59.0 MW.",
+   "recommendation": "Leave as is. The difference is rounding and optional.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ]
+   },
+   "proposed_value": {},
+   "gem_plant_id": "L100000402085",
+   "plant_name": "Big Sandy Peaker Plant",
+   "country": "United States",
+   "unit_name": "BSG1",
+   "fields": {},
+   "researcher_notes": "No other change needed.",
+   "record_id": "L100000402085:G100000403163:qa-capacity-mw-3"
+  },
+  {
+   "gem_unit_id": "G100000402793",
+   "concern_type": "Capacity (MW)",
+   "question": "Should Bluegrass capacity stay at 208 MW per unit or follow EIA at 193.8 MW?",
+   "finding": "The draft Title V permit (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14642064) says each turbine can generate 208 MW. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists 193.8 MW nameplate for each of CT1, CT2 and CT3.",
+   "recommendation": "Change Capacity (MW) to 193.8 for each of the three units, since the EIA figure is the only one labeled as nameplate. If the reviewer prefers the permit rating, leave 208 MW as is.",
+   "refs": {
+    "links": [
+     "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14642064",
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://psc.ky.gov/pscscf/2025%20Cases/2025-00087//20260601_PSC_ORDER.pdf"
+    ]
+   },
+   "proposed_value": {
+    "Capacity (MW)": "193.8"
+   },
+   "gem_plant_id": "L100000401892",
+   "plant_name": "Bluegrass generating station",
+   "country": "United States",
+   "unit_name": "CT1",
+   "fields": {},
+   "researcher_notes": "I searched for the reason for the gap. The Kentucky Division for Air Quality draft Title V permit (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14642064) gives a maximum continuous rating of 208 MW per turbine at the permit's rated heat input. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) gives a nameplate of 193.8 MW, a summer net of 165 MW and a winter net of 192 MW per unit. The Kentucky Public Service Commission staff report on the East Kentucky Power Cooperative 2025 resource plan (https://psc.ky.gov/pscscf/2025%20Cases/2025-00087//20260601_PSC_ORDER.pdf) gives 167 MW summer and 189 MW winter per turbine. No document I found gives a generator nameplate plate figure of 208 MW. The 208 MW figure is a permit rating, so it may be a maximum rather than the nameplate. EIA is the only source that labels its figure as nameplate.",
+   "record_id": "L100000401892:G100000402793:qa-capacity-mw-1"
+  },
+  {
+   "gem_unit_id": "G100000401618",
+   "concern_type": "Capacity (MW)",
+   "question": "Should CR7 capacity stay at 731 MW when EIA lists 807 MW?",
+   "finding": "The Louisville Air Pollution Control District statement of basis from November 2025 (https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf) rates the combined cycle unit at 731 MW. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists nameplate figures of 260, 260 and 287 MW, which add to 807 MW.",
+   "recommendation": "Leave the capacity at 731 MW, which matches the permit and the existing note. Ask the project manager whether the 2024 turbine uprate should raise it toward the EIA total.",
+   "refs": {
+    "links": [
+     "https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf",
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf"
+    ]
+   },
+   "proposed_value": {
+    "Capacity (MW)": "807"
+   },
+   "gem_plant_id": "L100000103932",
+   "plant_name": "Cane Run Station",
+   "country": "United States",
+   "unit_name": "CR7",
+   "fields": {},
+   "researcher_notes": "The 2024 integrated resource plan (https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf) says output is limited to 691 MW until a transmission study and network upgrades allow 697 MW in summer and 759 MW in winter, assumed for 2026. I found no document saying the limit has been lifted. The EIA table shows no planned uprate.",
+   "record_id": "L100000103932:G100000401618:qa-capacity-mw-1",
+   "irp": true
+  },
+  {
+   "gem_unit_id": "G100000402796",
+   "concern_type": "Capacity (MW)",
+   "question": "Should GT1 to GT3 be 119 MW each instead of 149 MW?",
+   "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) gives 119.0 MW for GT1 to GT3 and 87.6 MW for GT4 and GT5, where GEM has 149 MW and 108 MW. The Title V air permit (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125517) rates each ABB GT 11N2 turbine at 115 MW at ISO conditions, which is a different measure and not EKPC's nameplate. I found no EKPC nameplate document.",
+   "recommendation": "Change GT1 to GT3 to 119.0 MW and GT4 and GT5 to 87.6 MW on the strength of the EIA table, unless a person can get EKPC's nameplate sheet. Ask the project manager whether EIA is acceptable here.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125517"
+    ]
+   },
+   "proposed_value": {
+    "Capacity (MW)": "119.0"
+   },
+   "gem_plant_id": "L100000401893",
+   "plant_name": "J K Smith power station",
+   "country": "United States",
+   "unit_name": "GT1",
+   "fields": {},
+   "researcher_notes": "I looked in the harvested permit index, the Title V permit and the EKPC 2025 integrated resource plan docket summary at https://psc.ky.gov/Case/ViewCaseFilings/2025-00087. The existing resources table of the plan itself was not opened because it was not in the harvested files. EIA also gives GT6 and GT7 as 94.9 MW and GT9 and GT10 as 108.2 MW, where GEM has 98 MW for each. Those values are reported as capacity findings on those units. The EKPC 2025 plan itself was searched through the commission case page and its existing resources table could not be matched to unit names. The permit lists GT-ratings under different unit numbers, so it cannot confirm nameplates. The Kentucky Division for Air Quality Title V permit text and the commission order were read in the first pass.",
+   "record_id": "L100000401893:G100000402796:qa-capacity-mw-1",
+   "checks": [
+    38
+   ]
+  },
+  {
+   "gem_unit_id": "G100000403648",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "What year did CT4 at Marshall reach mothballed status?",
+   "finding": "I found no TVA board action, plan or filing that dates a mothballing of CT4. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists CT4 with status standby, available for service but not normally used, and an operating date in 2002. The 2026 TVA integrated resource plan, volume 2 (https://tva-azr-eastus-cdn-ep-tvawcm-prd.azureedge.net/cdn-tvawcma/docs/default-source/environment/environmental-stewardship/integrated-resource-plan/2026-irp/prelimfinal-2026-irp-vol-2-eis_20260618_r1.pdf?sfvrsn=208e1a89_3), lists Marshall as an existing plant of 8 units with no retirement or new unit.",
+   "recommendation": "Leave the mothball date blank and add no retired year. Ask TVA for the date if the database needs one.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://tva-azr-eastus-cdn-ep-tvawcm-prd.azureedge.net/cdn-tvawcma/docs/default-source/environment/environmental-stewardship/integrated-resource-plan/2026-irp/prelimfinal-2026-irp-vol-2-eis_20260618_r1.pdf?sfvrsn=208e1a89_3"
+    ]
+   },
+   "proposed_value": {},
+   "gem_plant_id": "L100000402323",
+   "plant_name": "Marshall energy facility",
+   "country": "United States",
+   "unit_name": "CT4",
+   "fields": {},
+   "researcher_notes": "I searched the EIA table, the TVA 2026 integrated resource plan volumes 1 and 2, the Kentucky air permit from February 2023 and a web search. The TVA plan page is at https://www.tva.com/environment/2026-integrated-resource-plan. TVA is outside Kentucky Public Service Commission jurisdiction, and no commission case matched. In the third pass I also read the TVA Marshall plant page at https://www.tva.com/energy/our-power-system/natural-gas/marshall-combustion-turbine-plant and a January 2018 WCBL article at https://www.marshallcountydaily.com/2018/01/10/combustion-turbine-plant-keeps-tva-power-going-strong/. Neither says when any unit was mothballed. A web search for the mothballing date also found nothing from TVA. Board minutes were not searched.",
+   "record_id": "L100000402323:G100000403648:qa-validation-1"
+  },
+  {
+   "gem_unit_id": "G100000403649",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "What year did CT5 at Marshall reach mothballed status?",
+   "finding": "I found no TVA board action, plan or filing that dates a mothballing of CT5. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists CT5 with status standby, available for service but not normally used, and an operating date in 2002. The 2026 TVA integrated resource plan, volume 2 (https://tva-azr-eastus-cdn-ep-tvawcm-prd.azureedge.net/cdn-tvawcma/docs/default-source/environment/environmental-stewardship/integrated-resource-plan/2026-irp/prelimfinal-2026-irp-vol-2-eis_20260618_r1.pdf?sfvrsn=208e1a89_3), lists Marshall as an existing plant of 8 units with no retirement or new unit.",
+   "recommendation": "Leave the mothball date blank and add no retired year. Ask TVA for the date if the database needs one.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://tva-azr-eastus-cdn-ep-tvawcm-prd.azureedge.net/cdn-tvawcma/docs/default-source/environment/environmental-stewardship/integrated-resource-plan/2026-irp/prelimfinal-2026-irp-vol-2-eis_20260618_r1.pdf?sfvrsn=208e1a89_3"
+    ]
+   },
+   "proposed_value": {},
+   "gem_plant_id": "L100000402323",
+   "plant_name": "Marshall energy facility",
+   "country": "United States",
+   "unit_name": "CT5",
+   "fields": {},
+   "researcher_notes": "I searched the EIA table, the TVA 2026 integrated resource plan volumes 1 and 2, the Kentucky air permit from February 2023 and a web search. The TVA plan page is at https://www.tva.com/environment/2026-integrated-resource-plan. TVA is outside Kentucky Public Service Commission jurisdiction, and no commission case matched. In the third pass I also read the TVA Marshall plant page at https://www.tva.com/energy/our-power-system/natural-gas/marshall-combustion-turbine-plant and a January 2018 WCBL article at https://www.marshallcountydaily.com/2018/01/10/combustion-turbine-plant-keeps-tva-power-going-strong/. Neither says when any unit was mothballed. A web search for the mothballing date also found nothing from TVA. Board minutes were not searched.",
+   "record_id": "L100000402323:G100000403649:qa-validation-2"
+  },
+  {
+   "gem_unit_id": "G100000403650",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "What year did CT6 at Marshall reach mothballed status?",
+   "finding": "I found no TVA board action, plan or filing that dates a mothballing of CT6. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists CT6 with status standby, available for service but not normally used, and an operating date in 2002. The 2026 TVA integrated resource plan, volume 2 (https://tva-azr-eastus-cdn-ep-tvawcm-prd.azureedge.net/cdn-tvawcma/docs/default-source/environment/environmental-stewardship/integrated-resource-plan/2026-irp/prelimfinal-2026-irp-vol-2-eis_20260618_r1.pdf?sfvrsn=208e1a89_3), lists Marshall as an existing plant of 8 units with no retirement or new unit.",
+   "recommendation": "Leave the mothball date blank and add no retired year. Ask TVA for the date if the database needs one.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://tva-azr-eastus-cdn-ep-tvawcm-prd.azureedge.net/cdn-tvawcma/docs/default-source/environment/environmental-stewardship/integrated-resource-plan/2026-irp/prelimfinal-2026-irp-vol-2-eis_20260618_r1.pdf?sfvrsn=208e1a89_3"
+    ]
+   },
+   "proposed_value": {},
+   "gem_plant_id": "L100000402323",
+   "plant_name": "Marshall energy facility",
+   "country": "United States",
+   "unit_name": "CT6",
+   "fields": {},
+   "researcher_notes": "I searched the EIA table, the TVA 2026 integrated resource plan volumes 1 and 2, the Kentucky air permit from February 2023 and a web search. The TVA plan page is at https://www.tva.com/environment/2026-integrated-resource-plan. TVA is outside Kentucky Public Service Commission jurisdiction, and no commission case matched. In the third pass I also read the TVA Marshall plant page at https://www.tva.com/energy/our-power-system/natural-gas/marshall-combustion-turbine-plant and a January 2018 WCBL article at https://www.marshallcountydaily.com/2018/01/10/combustion-turbine-plant-keeps-tva-power-going-strong/. Neither says when any unit was mothballed. A web search for the mothballing date also found nothing from TVA. Board minutes were not searched.",
+   "record_id": "L100000402323:G100000403650:qa-validation-3"
+  },
+  {
+   "gem_unit_id": "G100000403651",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "What year did CT7 at Marshall reach mothballed status?",
+   "finding": "I found no TVA board action, plan or filing that dates a mothballing of CT7. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists CT7 with status standby, available for service but not normally used, and an operating date in 2002. The 2026 TVA integrated resource plan, volume 2 (https://tva-azr-eastus-cdn-ep-tvawcm-prd.azureedge.net/cdn-tvawcma/docs/default-source/environment/environmental-stewardship/integrated-resource-plan/2026-irp/prelimfinal-2026-irp-vol-2-eis_20260618_r1.pdf?sfvrsn=208e1a89_3), lists Marshall as an existing plant of 8 units with no retirement or new unit.",
+   "recommendation": "Leave the mothball date blank and add no retired year. Ask TVA for the date if the database needs one.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://tva-azr-eastus-cdn-ep-tvawcm-prd.azureedge.net/cdn-tvawcma/docs/default-source/environment/environmental-stewardship/integrated-resource-plan/2026-irp/prelimfinal-2026-irp-vol-2-eis_20260618_r1.pdf?sfvrsn=208e1a89_3"
+    ]
+   },
+   "proposed_value": {},
+   "gem_plant_id": "L100000402323",
+   "plant_name": "Marshall energy facility",
+   "country": "United States",
+   "unit_name": "CT7",
+   "fields": {},
+   "researcher_notes": "I searched the EIA table, the TVA 2026 integrated resource plan volumes 1 and 2, the Kentucky air permit from February 2023 and a web search. The TVA plan page is at https://www.tva.com/environment/2026-integrated-resource-plan. TVA is outside Kentucky Public Service Commission jurisdiction, and no commission case matched. In the third pass I also read the TVA Marshall plant page at https://www.tva.com/energy/our-power-system/natural-gas/marshall-combustion-turbine-plant and a January 2018 WCBL article at https://www.marshallcountydaily.com/2018/01/10/combustion-turbine-plant-keeps-tva-power-going-strong/. Neither says when any unit was mothballed. A web search for the mothballing date also found nothing from TVA. Board minutes were not searched.",
+   "record_id": "L100000402323:G100000403651:qa-validation-4"
+  },
+  {
+   "gem_unit_id": "G100000403652",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "What year did CT8 at Marshall reach mothballed status?",
+   "finding": "I found no TVA board action, plan or filing that dates a mothballing of CT8. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists CT8 with status standby, available for service but not normally used, and an operating date in 2002. The 2026 TVA integrated resource plan, volume 2 (https://tva-azr-eastus-cdn-ep-tvawcm-prd.azureedge.net/cdn-tvawcma/docs/default-source/environment/environmental-stewardship/integrated-resource-plan/2026-irp/prelimfinal-2026-irp-vol-2-eis_20260618_r1.pdf?sfvrsn=208e1a89_3), lists Marshall as an existing plant of 8 units with no retirement or new unit.",
+   "recommendation": "Leave the mothball date blank and add no retired year. Ask TVA for the date if the database needs one.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://tva-azr-eastus-cdn-ep-tvawcm-prd.azureedge.net/cdn-tvawcma/docs/default-source/environment/environmental-stewardship/integrated-resource-plan/2026-irp/prelimfinal-2026-irp-vol-2-eis_20260618_r1.pdf?sfvrsn=208e1a89_3"
+    ]
+   },
+   "proposed_value": {},
+   "gem_plant_id": "L100000402323",
+   "plant_name": "Marshall energy facility",
+   "country": "United States",
+   "unit_name": "CT8",
+   "fields": {},
+   "researcher_notes": "I searched the EIA table, the TVA 2026 integrated resource plan volumes 1 and 2, the Kentucky air permit from February 2023 and a web search. The TVA plan page is at https://www.tva.com/environment/2026-integrated-resource-plan. TVA is outside Kentucky Public Service Commission jurisdiction, and no commission case matched. In the third pass I also read the TVA Marshall plant page at https://www.tva.com/energy/our-power-system/natural-gas/marshall-combustion-turbine-plant and a January 2018 WCBL article at https://www.marshallcountydaily.com/2018/01/10/combustion-turbine-plant-keeps-tva-power-going-strong/. Neither says when any unit was mothballed. A web search for the mothballing date also found nothing from TVA. Board minutes were not searched.",
+   "record_id": "L100000402323:G100000403652:qa-validation-5"
+  },
+  {
+   "gem_unit_id": "G100000403645",
+   "concern_type": "other",
+   "question": "Should Backup Power stay no for the Marshall units?",
+   "finding": "The Kentucky air permit V-22-014 from February 2023 (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/11585453) lists eight combustion turbines and one emergency diesel fire pump engine of 221 horsepower, about 0.16 MW, and no backup generator fleet. The plant is a TVA peaking plant, not a data center.",
+   "recommendation": "Leave Backup Power as no on all eight units, now sourced to the air permit.",
+   "refs": {
+    "links": [
+     "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/11585453"
+    ]
+   },
+   "proposed_value": {},
+   "gem_plant_id": "L100000402323",
+   "plant_name": "Marshall energy facility",
+   "country": "United States",
+   "unit_name": "CT1",
+   "fields": {},
+   "researcher_notes": "The TVA plant page https://www.tva.com/energy/our-power-system/natural-gas/marshall-combustion-turbine-plant describes the plant as a peaking facility.",
+   "record_id": "L100000402323:G100000403645:qa-backup-power-6",
+   "concern_type_raw": "Backup Power"
+  },
+  {
+   "gem_unit_id": "G100000402285",
+   "concern_type": "existence",
+   "question": "Should Paddys Run unit 12 (32.6 MW, 1968) be tracked?",
+   "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) still lists generator 12 as operating at 32.6 MW. The 2024 LG&E and KU resource plan (https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf) says it would retire in 2025. GEM has no record for it.",
+   "recommendation": "Leave unit 12 out, because 32.6 MW is under the 50 MW threshold. Ask the project manager only if the threshold should not apply here.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf"
+    ]
+   },
+   "proposed_value": {},
+   "gem_plant_id": "L100000401571",
+   "plant_name": "Paddys Run power station",
+   "country": "United States",
+   "unit_name": "13",
+   "fields": {},
+   "researcher_notes": "The EIA-860M table for September 2026 still shows generator 12 as operating with no planned retirement date, so the 2025 retirement in the resource plan table 8-4 (https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf) has not been confirmed by EIA. The air permit (https://louisvilleky.gov/sites/default/files/2024-02/20210506-permit-o-0125-23-v.pdf) covers unit 12 as turbine GT12 and its 2024 version still lists it. The permit also lists emergency generators, which serve the station itself and not a data center.",
+   "record_id": "L100000401571:G100000402285:qa-existence-1",
+   "irp": true
+  },
+  {
+   "gem_unit_id": "G100000410525",
+   "concern_type": "Capacity (MW)",
+   "question": "Should the three Paradise gas turbines be 231.2 MW instead of 250 MW?",
+   "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) gives 231.2 MW nameplate for each of the three simple cycle turbines CT5, CT6 and CT7. GEM shows 250 MW each, which matches the TVA environmental review figure. The Kentucky air permit record lists 229 MW at 59 degrees for these turbines.",
+   "recommendation": "Check the Tennessee Valley Authority nameplate or the generator data sheet. If it confirms 231.2 MW, change units 4, 5 and 6 to 231.2 MW.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14331535",
+     "https://www.tva.com/energy/our-power-system/natural-gas/paradise-combined-cycle-plant"
+    ]
+   },
+   "proposed_value": {
+    "Capacity (MW)": "231.2"
+   },
+   "gem_plant_id": "L100000103946",
+   "plant_name": "Paradise Fossil Plant",
+   "country": "United States",
+   "unit_name": "4",
+   "fields": {},
+   "researcher_notes": "The Kentucky draft Title V air permit V-26-011 (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14331535) rates each of these turbines at 229 MW at 59 degrees Fahrenheit and the Tennessee Valley Authority plant page (https://www.tva.com/energy/our-power-system/natural-gas/paradise-combined-cycle-plant) says three turbines add 681 MW, which is 227 MW each. The 250 MW figure in GEM matches the environmental review. The combined cycle block matches the EIA total of 1,160 MW.",
+   "record_id": "L100000103946:G100000410525:qa-capacity-mw-1"
+  },
+  {
+   "gem_unit_id": "G100000401620",
+   "concern_type": "other",
+   "question": "Should the plant name follow TVA's current name, Paradise Combined Cycle and Combustion Turbine Plant?",
+   "finding": "GEM already lists that name as an other name. The EIA table calls the plant Paradise.",
+   "recommendation": "Leave the plant name as it is, since the other name already carries TVA's current name.",
+   "refs": {
+    "links": [
+     "https://www.tva.com/energy/our-power-system/natural-gas/paradise-combined-cycle-plant",
+     "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14331535"
+    ]
+   },
+   "gem_plant_id": "L100000103946",
+   "plant_name": "Paradise Fossil Plant",
+   "country": "United States",
+   "unit_name": "CC1",
+   "fields": {},
+   "researcher_notes": "The Tennessee Valley Authority plant page (https://www.tva.com/energy/our-power-system/natural-gas/paradise-combined-cycle-plant) names the plant Paradise Combined Cycle and Combustion Turbine Plant and lists four units, so it shows no new units. The air permit record (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14331535) shows a Title V renewal in progress and no new construction. I did not find a TVA 2026 integrated resource plan or board document naming new Paradise units.",
+   "record_id": "L100000103946:G100000401620:qa-other-2"
+  },
+  {
+   "gem_unit_id": "G100000403359",
+   "concern_type": "Turbine/Engine Technology",
+   "question": "Should the turbine type for both units be aeroderivative gas turbine?",
+   "finding": "The 2024 Kentucky air permit (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679) names Pratt and Whitney FT8-3 SwiftPac 60 packages. The permit counts four turbines in two pairs, one pair for each tracker unit. The tracker shows gas turbine.",
+   "recommendation": "Change the technology to aeroderivative gas turbine for both units, and consider setting Number Of Engines to 2 and Capacity Per Engine to about 30 MW.",
+   "refs": {
+    "links": [
+     "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679"
+    ]
+   },
+   "proposed_value": {
+    "Turbine/Engine Technology": "aeroderivative gas turbine"
+   },
+   "gem_plant_id": "L100000402189",
+   "plant_name": "PPS power plant No 1",
+   "country": "United States",
+   "unit_name": "1",
+   "fields": {},
+   "researcher_notes": "I did not change the technology because the brief did not ask for a technology check. The per-turbine rating is not stated in the permit. Only the pair output of 60.3 MW is.",
+   "record_id": "L100000402189:G100000403359:qa-turbine-engine-technology-1"
+  },
+  {
+   "gem_unit_id": "G100000403452",
+   "concern_type": "Owner(s)",
+   "question": "Should the brief's mention of NRG as owner be dropped for Riverside?",
+   "finding": "The EIA-860M table for September 2026 lists Riverside Generating Co LLC as the entity. Web results point to LS Power Development as parent, and a Kentucky Public Service Commission brief says LS Power bought it from Dynegy. I found no document naming NRG.",
+   "recommendation": "Leave the owner as Riverside Generating Co LLC [100%]. No sale or retirement was found.",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "https://psc.ky.gov/pscecf/2017-00472/lmscott%40aep.com/11052018032612/KPCO_Post_Hearing_Brief_11052018.PDF"
+    ]
+   },
+   "gem_plant_id": "L100000402250",
+   "plant_name": "Riverside Generating (KY) power station",
+   "country": "United States",
+   "unit_name": "GTG1",
+   "fields": {},
+   "researcher_notes": "I could not open a document that states the current parent directly. Gridinfo did not show the text LS Power in the verifier run. NRG filings were not searched beyond one web search that returned nothing naming NRG. In pass two I searched the SEC full-text index for Catlettsburg in 10-K filings from 2025 on and found no NRG filing naming Riverside.",
+   "record_id": "L100000402250:G100000403452:qa-owner-s-1",
+   "checks": [
+    43,
+    50
+   ]
+  },
+  {
+   "gem_unit_id": "G100000403452",
+   "concern_type": "Capacity (MW)",
+   "question": "Do the PJM Riverside uprate requests W3-162 and Y2-045 change any unit capacity?",
+   "finding": "The PJM queue file at https://www.pjm.com/pub/planning/downloads/xml/PlanningQueues.xml lists request W3-162 for 20 MW, in service September 2011, and Y2-045 for 6 MW, in service January 2016. Both name Riverside Generating at Baker 345 kV and show a facility output of 993 and 999 MW. The EIA-860M table for September 2026 still lists 230 MW for each of the five units.",
+   "recommendation": "Leave unit capacity at 230 MW. Ask the project manager whether the 26 MW of added output should be recorded.",
+   "refs": {
+    "links": [
+     "https://www.pjm.com/pub/planning/downloads/xml/PlanningQueues.xml"
+    ]
+   },
+   "gem_plant_id": "L100000402250",
+   "plant_name": "Riverside Generating (KY) power station",
+   "country": "United States",
+   "unit_name": "GTG1",
+   "fields": {},
+   "researcher_notes": "The queue file does not say which turbine each uprate belongs to. Requests W1-035 (750 MW, withdrawn) and X2-006 (no capacity) are earlier Riverside expansion requests that never entered service.",
+   "record_id": "L100000402250:G100000403452:qa-capacity-mw-2"
+  },
+  {
+   "gem_unit_id": "G100000403452",
+   "concern_type": "existence",
+   "question": "Are the new PJM requests C01-1131 and C01-1325 at Baker 345 kV new gas units at Riverside?",
+   "finding": "PJM's 2026 cycle file lists C01-1131 for 458 MW from Kentucky Power Company, requested in service September 2030, and C01-1325 for 1,046 MW from Appalachian Power Company, requested September 2031. Both are gas, in Lawrence County, at the same 345 kV substation Riverside uses, and neither names Riverside. C01-1325 belongs to Appalachian Power, not Kentucky Power, and fits the gas need in Appalachian Power's 2025 resource plan; it is answered on its own card.",
+   "recommendation": "Do not add a unit at Riverside. Ask the project manager whether C01-1131 is the Kentucky Power gas plant in its integrated resource plan, and add it as a separate plant if so.",
+   "refs": {
+    "links": [
+     "https://www.pjm.com/planning/m/cycle-service-request-status"
+    ]
+   },
+   "gem_plant_id": "L100000402250",
+   "plant_name": "Riverside Generating (KY) power station",
+   "country": "United States",
+   "unit_name": "GTG1",
+   "fields": {},
+   "researcher_notes": "The cycle file is at https://www.pjm.com/planning/m/cycle-service-request-status. Developer names are from that file; no owner site or air permit application naming a Riverside expansion was found. The Division for Air Quality shows only a pending permit change from October 2026 with no documents online.",
+   "record_id": "L100000402250:G100000403452:qa-existence-3"
+  },
+  {
+   "gem_unit_id": "G100000402523",
+   "concern_type": "Status",
+   "question": "Should Reid 1 still be marked operating when it has been out since August 2024?",
+   "finding": "Big Rivers' 2026 resource plan at https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf says the Reid combustion turbine has been unavailable since a catastrophic failure on August 24, 2024. The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx still lists it as operating. Big Rivers filed notice on September 24, 2026 that it will ask to retire the unit.",
+   "recommendation": "Leave the status as operating for now. Re-check when the commission rules on case 2026-00291 and move the unit to retired once a document gives the retirement date.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscecf/2026-00291/senthia.santana%40bigrivers.com/09242026042139/Notice_of_Intent_to_File_Application.pdf",
+     "https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf",
+     "https://psc.ky.gov/pscscf/2026%20cases/2026-00291//20260924_Big%20Rivers%20Electric%20Corporation%20Notice%20of%20Intent%20and%20Election.pdf"
+    ]
+   },
+   "gem_plant_id": "L100000103947",
+   "plant_name": "Robert Reid Power Plant",
+   "country": "United States",
+   "unit_name": "Reid 1, timepoint 2",
+   "fields": {},
+   "researcher_notes": "The notice at https://psc.ky.gov/pscecf/2026-00291/senthia.santana%40bigrivers.com/09242026042139/Notice_of_Intent_to_File_Application.pdf gives no retirement date. A second filing, the notice of election at https://psc.ky.gov/pscscf/2026%20cases/2026-00291//20260924_Big%20Rivers%20Electric%20Corporation%20Notice%20of%20Intent%20and%20Election.pdf, says Big Rivers will file the application no later than November 20, 2026. The case page https://psc.ky.gov/Case/ViewCaseFilings/2026-00291 listed no application on November 5, 2026. So I did not propose a planned retirement year. Neither the notice nor the 2026 resource plan states a year. No mothballed status was found in any document.",
+   "record_id": "L100000103947:G100000402523:qa-status-1",
+   "checks": [
+    43,
+    50
+   ]
+  },
+  {
+   "gem_unit_id": "G100000402523",
+   "concern_type": "Conversion/replacement?",
+   "question": "Is Reid 1 timepoint 2 really a coal-to-gas conversion started in 2015?",
+   "finding": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx shows no gas generator 1. It shows the old coal unit 1, 96 MW, retired in September 2020, and a separate gas combustion turbine, generator GEN2, 98.8 MW, operating since March 1976. GEM's 99 MW gas unit matches GEN2.",
+   "recommendation": "Ask the person who marked it a conversion for their source. If none exists, treat this unit as the 1976 combustion turbine, clear the conversion label and the 2015 start year, and use GEN2 as the unit ID in Other IDs (unit).",
+   "refs": {
+    "links": [
+     "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+    ]
+   },
+   "proposed_value": {
+    "Start year": "1976"
+   },
+   "gem_plant_id": "L100000103947",
+   "plant_name": "Robert Reid Power Plant",
+   "country": "United States",
+   "unit_name": "Reid 1, timepoint 2",
+   "fields": {},
+   "researcher_notes": "I found no document that states a gas conversion of Reid in 2015, so I could not fill Conversion/replacement Data Source, Backup Power Data Source or a start year source. The existing start year source is a news article about the implosion of idled units at Sebree. The county should also be filled as Webster, which the EIA table gives for plant 1383. County and the generator ID are values for a person to type into the web form.",
+   "record_id": "L100000103947:G100000402523:qa-conversion-replacement-2"
+  },
+  {
+   "gem_unit_id": "G100000402523",
+   "concern_type": "Notes",
+   "question": "Is the Big Rivers 2026 plan silent on a retirement year for the Reid turbine?",
+   "finding": "The 2026 Big Rivers resource plan at https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf says Big Rivers will request commission approval to retire the Reid combustion turbine, and gives no year.",
+   "recommendation": "Leave Planned retire blank. For the IRP Notes line, write that the 2026 plan seeks approval to retire the 65 MW Reid combustion turbine, out since August 2024, with no date given.",
+   "refs": {
+    "links": [
+     "https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf"
+    ]
+   },
+   "gem_plant_id": "L100000103947",
+   "plant_name": "Robert Reid Power Plant",
+   "country": "United States",
+   "unit_name": "Reid 1, timepoint 2",
+   "fields": {},
+   "researcher_notes": "Searched the plan text for Reid and found only the retirement request, the August 2024 outage and the fuel oil backup project at Green Station that offsets its capacity.",
+   "record_id": "L100000103947:G100000402523:qa-notes-3"
+  },
+  {
+   "gem_plant_id": "",
+   "plant_name": "Paducah American Energy Hub power station",
+   "concern_type": "location",
+   "question": "Should the Paducah American Energy Hub power station stay at the former Paducah Gaseous Diffusion Plant point?",
+   "finding": "NextEra's fact sheet and the Kentucky Lantern say the gas plants will be built at or near the former Paducah plant in McCracken County. No permit or site plan gives a final point yet.",
+   "recommendation": "Keep the point as approximate at the former plant site and move it when an air permit application gives the site.",
+   "researcher_notes": "The fact sheet also lists up to 2.6 gigawatts of battery storage, which is not in scope. The fact sheet says the data center could reach 8 gigawatts.",
+   "refs": {
+    "links": [
+     "https://www.project.nexteraenergyresources.com/hubfs/paducah-american-energy-hub-fact-sheet.pdf?hsLang=en",
+     "https://kentuckylantern.com/2026/07/29/hyperscale-data-center-natural-gas-fired-project-planned-for-paducahs-former-nuclear-plant/"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.project.nexteraenergyresources.com/hubfs/paducah-american-energy-hub-fact-sheet.pdf?hsLang=en",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "NextEra fact sheet for the Paducah American Energy Hub. It says McCracken County, natural gas generation of up to 2,000 MW, and commercial operation as early as 2032."
+    },
+    {
+     "url": "https://kentuckylantern.com/2026/07/29/hyperscale-data-center-natural-gas-fired-project-planned-for-paducahs-former-nuclear-plant/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Kentucky Lantern story of July 29, 2026. It says NextEra will install two gigawatts of natural gas-fired generation at or near the former Paducah plant in McCracken County."
+    }
+   ],
+   "proposed_value": {},
+   "country": "United States",
+   "fields": {},
+   "record_id": "us-ky:plant:qa-location-1"
+  },
+  {
+   "gem_plant_id": "",
+   "plant_name": "East Kentucky Power Cooperative Mason County power station",
+   "concern_type": "existence",
+   "question": "Should East Kentucky Power Cooperative's PJM request C01-1227 be a new plant, or a new unit at Spurlock power station?",
+   "finding": "The request connects to the Spurlock to Meldahl Dam 345 kV line in Mason County, which starts at Spurlock. No filing names a site, and the cooperative's 2025 plan names no new Spurlock unit.",
+   "recommendation": "Add it as a new plant now, and move it to Spurlock as a new unit if a commission case puts it at the Spurlock site.",
+   "researcher_notes": "Meta's Crisham LLC campus is planned in the same county, so the request may serve it. The Spurlock plant's own research wrote a watch item for the same row; drop that one if this add is accepted.",
+   "refs": {
+    "links": [
+     "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1227",
+     "https://interconnection.fyi/project/pjm-c01-1227"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1227",
+     "ok": true,
+     "contains_value": false,
+     "name_found": true,
+     "note": "PJM project page for request C01-1227. It names the Spurlock to Meldahl Dam 345 kV line, the developer East Kentucky Power Cooperative, Inc., and status C01 Phase 1 Active. It does not show the megawatts."
+    },
+    {
+     "url": "https://interconnection.fyi/project/pjm-c01-1227",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Interconnection.fyi page for PJM request C01-1227. It shows gas, 780 MW, Mason County, Kentucky, East Kentucky Power Cooperative, and a planned completion date in 2031. This site is a lead only."
+    }
+   ],
+   "proposed_value": {},
+   "country": "United States",
+   "fields": {},
+   "record_id": "us-ky:plant:qa-existence-2"
+  },
+  {
+   "gem_plant_id": "",
+   "plant_name": "Appalachian Power gas plant at Baker 345 kV (PJM C01-1325)",
+   "concern_type": "duplicate",
+   "question": "Is Appalachian Power's PJM request C01-1325 in Lawrence County, Kentucky one of GEM's two Appalachian Power plan placeholders in West Virginia?",
+   "finding": "Yes, treat it as the same need. Appalachian Power's 2025 resource plan, filed October 1, 2025 in West Virginia case 25-0859-E-IRP, models a generic combined cycle plant of about 1,227 MW on PDF page 74 and adds about 1,200 MW of it in 2032, growing to about 2,500 MW by 2035, on PDF page 103. The plan names no site, so the West Virginia points of GEM's two placeholders are guesses, and requests C01-1325 and C01-1326 are how Appalachian Power is now trying to fill that need.",
+   "recommendation": "Do not add C01-1325 as a new Kentucky plant. Keep the two West Virginia placeholders and update their site, county, capacity and start year when Appalachian Power picks a site through its 2026 request for proposals or a certificate case.",
+   "researcher_notes": "GEM's placeholders are Appalachian Power 2025 IRP power station 1 and 2, L100001083287 and L100001083288, both 1,227 MW, approximate location, no county. The plan is the October 1, 2025 filing in West Virginia Public Service Commission case 25-0859-E-IRP. PDF page 74 describes the H-class 1,200 MW combined cycle option with a net capacity of approximately 1,227 MW. PDF page 98 says the plan does not pick a single preferred portfolio. PDF page 103 says about 1,200 MW of combined cycle is added after the coal units retire in 2032, expanding to around 2,500 MW by 2035. The plan names no site for any new plant. Appalachian Power then filed PJM request C01-1325 on April 24, 2026 for 1,046 MW of gas at Baker 345 kV in Lawrence County, Kentucky, and C01-1326 three days later for 1,045 MW of gas in Wayne County, West Virginia. Both list September 2031. The PJM project page names Appalachian Power, the Baker 345 kV point and status Active, but not the megawatts. The megawatts and county come from interconnection.fyi, a lead site. Appalachian Power's request for proposals dated August 14, 2026 seeks up to 1,500 MW of gas combined cycle in service by March 31, 2031, in section 2.1 and section 3.2. Section 7.2.2 gives preference to projects in West Virginia on Appalachian Power's own lines. The commission's order of September 14, 2026 in the same case names no site. Two requests near 1,045 MW fit either one plant with two site options or two plants matching the two placeholders. That decides which placeholder each request fits, not whether it is a new plant. Kentucky Power's 760 MW Lawrence County plant in Kentucky case 2026-00324 is a different utility and a different project.",
+   "refs": {
+    "links": [
+     "https://www.psc.state.wv.us/scripts/WebDocket/ViewDocument.cfm?CaseActivityID=649716&NotType=WebDocket",
+     "https://www.appalachianpower.com/lib/docs/business/b2b/rfp/APCO/2026-CombinedCycleRFP/APCo_CC_RFP_2026_8_14_26.pdf",
+     "https://www.psc.state.wv.us/scripts/WebDocket/ViewDocument.cfm?CaseActivityID=670437&NotType=WebDocket",
+     "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1325",
+     "https://interconnection.fyi/project/pjm-c01-1325"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.psc.state.wv.us/scripts/WebDocket/ViewDocument.cfm?CaseActivityID=649716&NotType=WebDocket",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Appalachian Power's 2025 resource plan in West Virginia case 25-0859-E-IRP. PDF page 74 gives the 1,227 MW combined cycle option, and PDF page 103 adds about 1,200 MW in 2032. Checked November 10, 2026."
+    },
+    {
+     "url": "https://www.appalachianpower.com/lib/docs/business/b2b/rfp/APCO/2026-CombinedCycleRFP/APCo_CC_RFP_2026_8_14_26.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Appalachian Power's request for proposals of August 14, 2026 for up to 1,500 MW of gas combined cycle by March 31, 2031, with a preference for West Virginia sites in section 7.2.2. Checked November 10, 2026."
+    },
+    {
+     "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1325",
+     "ok": true,
+     "contains_value": false,
+     "name_found": true,
+     "note": "PJM project page for request C01-1325. It names the Baker 345 kV point, the developer Appalachian Power, and status Active. It does not show the megawatts."
+    },
+    {
+     "url": "https://interconnection.fyi/project/pjm-c01-1325",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Interconnection.fyi page for PJM request C01-1325. It shows gas, 1,046 MW, Lawrence County, Kentucky, and Appalachian Power. This site is a lead only."
+    }
+   ],
+   "proposed_value": {},
+   "country": "United States",
+   "fields": {},
+   "record_id": "us-ky:plant:qa-duplicate-3"
+  },
+  {
+   "gem_unit_id": "G100000401620",
+   "concern_type": "Capacity (MW)",
+   "question": "Should Paradise CC1 note the 60 MW upgrade TVA has filed for 2030?",
+   "finding": "TVA's queue list of January 2025 (https://wpln.org/wp-content/uploads/sites/7/2025/05/TVA-Transmission-Queue-January-2025.pdf, page 2, Kentucky table) shows request 657 (cluster TC25-054), type Increase, at the Paradise CC Plant, 60 MW in summer, due February 1, 2030. The Berkeley Lab queue file (https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx, tab 03) marks it as an active Upgrade at the end of 2025. It adds capacity to the existing combined cycle plant; it is not a new unit.",
+   "recommendation": "Leave Capacity at 1,160 MW until the upgrade is built. Add a Status Detail line above the existing text saying TVA filed queue request 657 in October 2024 for a 60 MW increase at the Paradise combined cycle plant, due in 2030, with the TVA queue list as the link.",
+   "refs": {
+    "links": [
+     "https://wpln.org/wp-content/uploads/sites/7/2025/05/TVA-Transmission-Queue-January-2025.pdf",
+     "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx"
+    ]
+   },
+   "proposed_value": {},
+   "checks": [],
+   "irp": false,
+   "gem_plant_id": "L100000103946",
+   "plant_name": "Paradise Fossil Plant",
+   "country": "United States",
+   "unit_name": "CC1",
+   "fields": {},
+   "researcher_notes": "Found on November 7, 2026 in the final check of the Kentucky batch. A lead site, infrasure.ai, lists the same request as TVA-657, 60 MW gas. No TVA news release or air permit names the upgrade. GEM records nameplate capacity, so the figure changes only once the upgrade is in service.",
+   "record_id": "L100000103946:G100000401620:qa-capacity-tva-657"
+  },
+  {
+   "gem_unit_id": "G100000401618",
+   "concern_type": "existence",
+   "question": "What is the 94 MW gas and oil request at the Cane Run combustion turbine substation that LG&E and KU signed in 2024?",
+   "finding": "The Berkeley Lab queue file (https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx, tab 03, the row for LGE-GIS-2024-006) shows a 94 MW gas and oil request at the Cane Run CT Substation 138 kV in Jefferson County, filed May 3, 2024, with its interconnection agreement signed and an in-service date of May 4, 2026. The Louisville air permit statement of basis of November 2025 (https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf, page 2, the unit table) lists only the 731 MW combined cycle unit and emergency diesel engines. No news story, commission case or EIA-860M entry of September 2026 names a new turbine at Cane Run.",
+   "recommendation": "Check the LG&E and KU queue on the OATI site, after signing in, for what request LGE-GIS-2024-006 is. Add it as a new unit at Cane Run Station if it is a new turbine of 50 MW or more, or add a Status Detail line on Cane Run 7 if it raises that unit's output.",
+   "refs": {
+    "links": [
+     "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx",
+     "https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf"
+    ]
+   },
+   "proposed_value": {},
+   "checks": [],
+   "irp": false,
+   "gem_plant_id": "L100000103932",
+   "plant_name": "Cane Run Station",
+   "country": "United States",
+   "unit_name": "CR7",
+   "fields": {},
+   "researcher_notes": "Found on November 7, 2026 in the final check of the Kentucky batch. The Berkeley Lab file marks it as project type Generation, not Upgrade. EIA-860M of September 2026 lists Cane Run 7 at 807 MW across its three generators (7A, 7B, 7S), which is 76 MW above GEM's 731 MW, so the request may be a capacity increase on the combined cycle unit. The same file shows six LG&E and KU requests of 17 to 19 MW at the Trimble County combustion turbines 5 to 10, filed in December 2025, which look like upgrades of the existing turbines.",
+   "record_id": "L100000103932:G100000401618:qa-capacity-lge-gis-2024-006"
+  }
+ ]
+}

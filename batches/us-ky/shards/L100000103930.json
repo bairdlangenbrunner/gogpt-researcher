@@ -1,0 +1,286 @@
+{
+ "meta": {
+  "plant_id": "L100000103930",
+  "plant_name": "Big Sandy Plant",
+  "state": "Kentucky",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T20:30:00-05:00",
+  "done": true,
+  "urls_attempted": 11,
+  "urls_verified": 11
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001017861",
+   "unit_name": "Unit 1, timepoint 2",
+   "findings": {
+    "Start year": {
+     "value": "2016",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2025-00175/mmcaldwell@aep.com/06302025034730/02_KPCO_Application.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2025-00175/mmcaldwell@aep.com/06302025034730/02_KPCO_Application.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A Kentucky Power application to the Kentucky Public Service Commission from June 2025 in case 2025-00175 (https://psc.ky.gov/pscecf/2025-00175/mmcaldwell@aep.com/06302025034730/02_KPCO_Application.pdf) says Big Sandy Unit 1 was converted to natural gas and returned to service on May 31, 2016. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) shows 1963, which is the year the original coal unit started. GEM's 2016 is the conversion year and is right for this row."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2025-00175/mmcaldwell@aep.com/06302025034730/02_KPCO_Application.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2025-00175/mmcaldwell@aep.com/06302025034730/02_KPCO_Application.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The same June 2025 Kentucky Power application (https://psc.ky.gov/pscecf/2025-00175/mmcaldwell@aep.com/06302025034730/02_KPCO_Application.pdf) says the coal unit was converted to a natural gas-fired unit in 2016. So conversion is right."
+    },
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://psc.ky.gov/pscecf/2025-00175/mmcaldwell@aep.com/06302025034730/02_KPCO_Application.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscecf/2025-00175/mmcaldwell@aep.com/06302025034730/02_KPCO_Application.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists plant 1353, generator 1, status OP, nameplate 280.5 MW, operating year 1963, planned retirement blank. The June 2025 Kentucky Power application says the plant has a single operating unit. The status is unchanged.",
+     "milestones": [
+      {
+       "status": "operating",
+       "year": 2016,
+       "period": "May",
+       "sources": [
+        "https://psc.ky.gov/pscecf/2025-00175/mmcaldwell@aep.com/06302025034730/02_KPCO_Application.pdf"
+       ],
+       "note": "Kentucky Power's June 2025 application says the converted unit returned to service on May 31, 2016."
+      }
+     ]
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10852822"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10852822",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Kentucky Division for Air Quality executive summary for the Title V renewal permit V-20-018 (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10852822) describes Big Sandy as one natural gas-fired steam generator. It lists only small diesel engines, eleven 50 horsepower dewatering pump engines and four small generators rated up to 50.5 kilowatts. None is a backup fleet for the main unit, so the unit is not a backup power unit. The document does not use the words backup power, so the value is implied."
+    }
+   },
+   "not_found": [],
+   "notes": "The unit is still operating. EIA lists no planned retirement date, so the 2041 date in GEM rests on the Kentucky Power integrated resource plan already cited, and I did not find a newer filing that changes it. The Kentucky air permit summary shows the unit is the plant's main steam generator and not a backup unit, so Backup Power stays no."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001017861",
+   "concern_type": "existence",
+   "question": "Is Kentucky Power's new Lawrence County combined cycle plant at the Big Sandy site?",
+   "finding": "Kentucky Power gave notice on October 30, 2026 in case 2026-00324 that it will apply by December 31, 2026 for a certificate to build a gas combined cycle plant in Lawrence County (https://psc.ky.gov/pscscf/2026%20cases/2026-00324//20261030_Kentucky%20Power%20Company%20Notice%20of%20Intent%20and%20Election.pdf). A commission staff memo of October 9, 2026 in the withdrawn case 2026-00103 (https://psc.ky.gov/pscscf/2026%20cases/2026-00103//20261012_PSC%20Letter%20Filing%20Informal%20Conference%20Memorandum%20and%20Attendance%20List%20into%20the%20Record.pdf) says the company plans a 760 MW combined cycle unit with an in-service date of March 31, 2031, tied to a TeraWulf data center agreement. Neither document names the site, and the application itself is not yet filed.",
+   "recommendation": "Do not add a unit yet. When the application is filed, read it for the site, then add it as a new unit here if it is at Big Sandy, or as a new plant if not, and ask Baird whether the 480 MW Kentucky Power placeholder is this project.",
+   "note": "Kentucky Power's PJM queue row C01-1131 connects at Baker 345 kV, which is about half a mile north of Big Sandy, but the queue page is only a lead. Row C01-1325 at the same substation is Appalachian Power's and is answered on its own card. I opened the case page for 2026-00324 on November 5, 2026 (https://psc.ky.gov/Case/ViewCaseFilings/2026-00324). It lists only the notice of intent, a commission acknowledgment letter and a motion to intervene. The application and testimony are not posted, so no document ties the queue rows to this project yet. The case page lists only the notice of intent and a motion to intervene as of November 3, 2026. The order of October 29, 2026 (https://psc.ky.gov/pscscf/2026%20Cases/2026-00103//20261029_PSC_ORDER.pdf) closed case 2026-00103 after Kentucky Power withdrew its notice, which is the history for Status Detail of the new project.",
+   "refs": [
+    "https://psc.ky.gov/pscscf/2026%20cases/2026-00324//20261030_Kentucky%20Power%20Company%20Notice%20of%20Intent%20and%20Election.pdf",
+    "https://psc.ky.gov/pscscf/2026%20cases/2026-00103//20261012_PSC%20Letter%20Filing%20Informal%20Conference%20Memorandum%20and%20Attendance%20List%20into%20the%20Record.pdf",
+    "https://psc.ky.gov/pscscf/2026%20Cases/2026-00103//20261029_PSC_ORDER.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Plant 1353 generator 1 row read in the file."
+  },
+  {
+   "url": "https://psc.ky.gov/pscecf/2025-00175/mmcaldwell@aep.com/06302025034730/02_KPCO_Application.pdf",
+   "used_for": [
+    "Start year",
+    "Conversion/replacement?"
+   ],
+   "outcome": "verified",
+   "note": "Says conversion and return to service May 31, 2016."
+  },
+  {
+   "url": "https://psc.ky.gov/pscscf/2026%20cases/2026-00324//20261030_Kentucky%20Power%20Company%20Notice%20of%20Intent%20and%20Election.pdf",
+   "used_for": [
+    "qa"
+   ],
+   "outcome": "verified",
+   "note": "Notice of intent only."
+  },
+  {
+   "url": "https://psc.ky.gov/pscscf/2026%20cases/2026-00103//20261012_PSC%20Letter%20Filing%20Informal%20Conference%20Memorandum%20and%20Attendance%20List%20into%20the%20Record.pdf",
+   "used_for": [
+    "qa"
+   ],
+   "outcome": "verified",
+   "note": "760 MW combined cycle plan."
+  },
+  {
+   "url": "https://psc.ky.gov/pscscf/2026%20Cases/2026-00103//20261029_PSC_ORDER.pdf",
+   "used_for": [
+    "qa"
+   ],
+   "outcome": "verified",
+   "note": "Withdrawal order."
+  },
+  {
+   "url": "https://www.kentuckypower.com/lib/docs/ratesandtariffs/Kentucky/KYPowerIntegratedResourcePlan-final.pdf",
+   "used_for": [
+    "Planned retire"
+   ],
+   "outcome": "verified",
+   "note": "Existing source, mentions 2041."
+  },
+  {
+   "url": "https://www.wymt.com/content/news/Coal-to-gas-conversion-completed-at-Big-Sandy-Power-Plant-384545181.html",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Existing source still loads."
+  },
+  {
+   "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10852822",
+   "used_for": [
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Title V renewal executive summary: one steam generator plus small diesel pump and generator engines."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2026-00324",
+   "used_for": [
+    "qa"
+   ],
+   "outcome": "verified",
+   "note": "Case page read November 5, 2026. Application not yet posted, only notice, acknowledgment letter and intervention motion."
+  },
+  {
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "used_for": [
+    "qa"
+   ],
+   "outcome": "not relevant",
+   "note": "PJM queue rows R62, AC1-038 and AC2-172 are in-service entries from 2016 at Big Sandy 138 kV, the unit's own conversion and small additions. Row W1-035 is withdrawn. They add nothing new."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2025-00175",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Kentucky Power's June 2025 application gives the May 31, 2016 return to service."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2021-00334",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "A transfer of four retail customer accounts between utilities. It says nothing about the generating unit."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2021-00104",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "A wholesale rate pass-through for Big Sandy Rural Electric Cooperative, a different company from the Big Sandy Plant."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2023-00285",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "A rate case for Big Sandy Rural Electric Cooperative, not the plant."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2024-00287",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "A rate case for Big Sandy Rural Electric Cooperative, not the plant."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2025-00222",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "A rate pass-through for Big Sandy Rural Electric Cooperative, not the plant."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2021-00004",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Environmental project at the Mitchell station, a different plant."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2026-00001",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "A cooling tower at the Mitchell plant, a different plant."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2022-00387",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "A special contract with a customer. No generating unit change at Big Sandy."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2023-00092",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "The 2022 resource plan, already cited for the 2041 retirement date and the 480 MW placeholder."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2025-00335",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Baker substation upgrade, a transmission project with no generating unit."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2026-00096",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "A solar project transmission line in Martin County, not this plant."
+  }
+ ]
+}

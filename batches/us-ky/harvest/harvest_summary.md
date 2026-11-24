@@ -1,14 +1,34 @@
-# Kentucky air permit harvest, 2026-11-04
+# Kentucky air permit harvest, 2026-11-05
 
-eSearch: 18404 issued and 809 pending air approvals. DAQ notices: 11 facilities. Louisville APCD: 460 active permit entries, 8 proposed actions. Facilities: 6471. Power-like: 77. Matched to GEM plants: 4. Unmatched: 73. Sweep: 0 read, 0 kept.
+eSearch: 18405 issued and 810 pending air approvals. DAQ notices: 11 facilities. Louisville APCD: 460 active permit entries, 7 proposed actions. Facilities: 6470. Power-like: 79. Matched to GEM plants: 23. Unmatched: 56. Sweep: 150 read, 1 kept.
 
-eSearch calls: 14.
+eSearch calls: 485.
 
 ## Matches per GEM plant
 
+- BREC 2023 IRP power station (L100001062552): no facility matched
+- Big Sandy Peaker Plant (L100000402085): no facility matched
+- Big Sandy Plant (L100000103930): KY Power Co - Big Sandy Plant (ai-2610, checked by hand)
 - Bluegrass generating station (L100000401892): East KY Power Cooperative - Bluegrass Generating Station (ai-39541, checked by hand); EKPC Bluegrass Gen Stn (daq-notice-ekpc-bluegrass-gen-stn, matched by a hand-checked name, check it is this plant)
+- Cane Run Station (L100000103932): Louisville Gas & Electric Company - Cane Run Station (apcd-o-0126-25-v, checked by hand)
+- Cooper power station (L100000103935): East KY Power Cooperative - Cooper Station (ai-3808, checked by hand)
+- E.W. Brown Generating Station (L100000103937): KY Utilities Co - Brown Station (ai-3148, checked by hand); Fluor Enterprises Inc - KU Brown Project (ai-83749, a related agency interest, check it is this plant)
+- East Bend Generating Station (L100000103938): Duke Energy KY East Bend (ai-176, checked by hand); Duke Energy (ai-77286, a related agency interest, check it is this plant)
+- Elmer Smith Station (L100000103939): Owensboro Municipal Utilities - Elmer Smith Station (ai-942, checked by hand)
+- Green Station (L100000103943): Big Rivers Electric Corp - RD Green Station (ai-44411, checked by hand)
+- J K Smith power station (L100000401893): East KY Power Cooperative - J K Smith Station (ai-808, checked by hand)
+- KPCO 2023 IRP power station (L100001062558): no facility matched
+- KYMEA Energy Center I (L100001026095): Kentucky Municipal Energy Agency (KYMEA) Energy Center I (ai-184265, checked by hand)
 - Liberty Station Power Plant (L100001025720): East Kentucky Power Cooperative Inc - Liberty Station (ai-183908, checked by hand)
+- Marshall energy facility (L100000402323): TVA - KGen Marshall LLC (ai-39146, checked by hand)
 - Mill Creek Station (L100000103945): Louisville Gas & Electric Company - Mill Creek Station (apcd-o-0127-20-v, checked by hand)
+- PPS power plant No 1 (L100000402189): Paducah Power System - PPS Power Plant # 1 (ai-84744, checked by hand)
+- Paddys Run power station (L100000401571): Louisville Gas & Electric Company - Paddy's Run Station (apcd-o-0125-23-v, checked by hand)
+- Paradise Fossil Plant (L100000103946): Tennessee Valley Authority (TVA) - Paradise Combined Cycle Plant (ai-127687, checked by hand)
+- Riverside Generating (KY) power station (L100000402250): Riverside Generating Co LLC (ai-4392, checked by hand)
+- Robert Reid Power Plant (L100000103947): Big Rivers Electric Corp - RD Green Station (ai-44411, a related agency interest, check it is this plant); Big Rivers Electric Corp - Reid HMP&L Station 2 - Green Station (ai-4196, checked by hand)
+- Spurlock power station (L100000103950): East KY Power Coop - H L Spurlock Power Station (ai-3004, checked by hand)
+- Trimble County power station (L100000103951): Louisville Gas & Electric - Trimble Co Generating Station (ai-4054, checked by hand)
 
 ## Unmatched power-like facilities
 
@@ -19,29 +39,19 @@ eSearch calls: 14.
 - American Electric Power Co - Hazard Service Ctr (Hazard, Perry County; eSearch)
 - American Municipal Power (Hawesville, Hancock County; eSearch)
 - Big Rivers Electric Corp - Coleman Station (Hawesville, Hancock County; eSearch)
-- Big Rivers Electric Corp - RD Green Station (Robards, Webster County; eSearch)
-- Big Rivers Electric Corp - Reid HMP&L Station 2 - Green Station (Robards, Webster County; eSearch)
 - Big Rivers Electric Corp - Wilson Station (Centertown, Ohio County; eSearch)
 - Big Run Power Producers LLC (Ashland, Boyd County; eSearch)
 - Bluegrass Cellular LLC - Elizabethtown Data Center (Elizabethtown, Hardin County; eSearch)
 - Columbia Gas - Irvine POD Emergency Generator (Irvine, Estill County; eSearch)
 - CyrusOne LLC - Florence Data Center (Florence, Boone County; eSearch)
-- Duke Energy (Florence, Boone County; eSearch)
-- Duke Energy KY East Bend (Union, Boone County; eSearch)
 - East KY Power Coop - Dale Station (Winchester, Clark County; eSearch)
-- East KY Power Coop - H L Spurlock Power Station (Maysville, Mason County; eSearch)
 - East KY Power Coop - Hardin Co Landfill Gas to Electric Plant (Elizabethtown, Hardin County; eSearch)
-- East KY Power Cooperative - Cooper Station (Somerset, Pulaski County; eSearch)
-- East KY Power Cooperative - J K Smith Station (Winchester, Clark County; eSearch)
 - ecoPower Generation - Hazard LLC (Chavies, Perry County; eSearch)
 - Flexential Louisville Downtown (?, Jefferson County; Louisville APCD active permits)
-- Fluor Enterprises Inc - KU Brown Project (Harrodsburg, Mercer County; eSearch)
 - Henderson Municipal Power & Light (Henderson, Henderson County; eSearch)
 - Inez Power LLC (Debord, Martin County; eSearch)
 - Justified DataPower LLC (Hawesville, Hancock County; eSearch)
-- Kentucky Municipal Energy Agency (KYMEA) Energy Center I (Madisonville, Hopkins County; eSearch)
 - KY Mountain Power LLC (Talcum, Knott County; eSearch)
-- KY Power Co - Big Sandy Plant (Louisa, Lawrence County; eSearch)
 - KY Utilities Co - Booger Mountain Emergency Generator (Barbourville, Knox County; eSearch)
 - KY Utilities Co - Bromley Emergency Generator (Bromley, Kenton County; eSearch)
 - KY Utilities Co - Dix Dam Transmission Control Center Emergency Generator (Burgin, Mercer County; eSearch)
@@ -54,7 +64,6 @@ eSearch calls: 14.
 - LG&E KU Energy LLC Ops Center (Kevil, Ballard County; eSearch)
 - LG&E, Auburndale Operating Station (?, Jefferson County; Louisville APCD active permits)
 - LG&E-KU System Control & Data Center (Simpsonville, Shelby County; eSearch)
-- Louisville Gas & Electric - Trimble Co Generating Station (Bedford, Trimble County; eSearch)
 - Louisville Gas & Electric Center Storage (Hardyville, Hart County; eSearch)
 - Louisville Gas & Electric Co - Ballardsville (La Grange, Oldham County; eSearch)
 - Louisville Gas & Electric Co - Bedford (Bedford, Trimble County; eSearch)
@@ -68,20 +77,14 @@ eSearch calls: 14.
 - Louisville Gas & Electric Co - Monroe City (Hardyville, Hart County; eSearch)
 - Louisville Gas & Electric Co - Mt Washington (Mount Washington, Bullitt County; eSearch)
 - Louisville Gas & Electric Co Emergency Generators (Radcliff, Hardin County; eSearch)
-- Louisville Gas & Electric Company - Cane Run Station (?, Jefferson County; Louisville APCD active permits)
-- Louisville Gas & Electric Company - Paddy's Run Station (?, Jefferson County; Louisville APCD active permits)
 - Madisonville Municipal Utilities (Madisonville, Hopkins County; eSearch)
 - MarkWest Ranger Pipline Company LLC - Daniels Creek Emergency Generator (Ivel, Floyd County; eSearch)
 - Middle Mile Infrastructure LLC - Emergency Generator (Clinton, Hickman County; eSearch)
 - Morehead Electric (Morehead, Rowan County; eSearch)
 - North American BioFuels LLC - Morehead Generation Station (Morehead, Rowan County; eSearch)
 - North American Power Systems - Southern LLC (Russellville, Logan County; eSearch)
-- Owensboro Municipal Utilities - Elmer Smith Station (Owensboro, Daviess County; eSearch)
-- Paducah Power System - PPS Power Plant # 1 (Paducah, McCracken County; eSearch)
 - Princeton Electric Plant Brd - Princeton Peaking Plant (Princeton, Caldwell County; eSearch)
-- Riverside Generating Co LLC (Catlettsburg, Lawrence County; eSearch)
-- Tennessee Valley Authority (TVA) - Paradise Combined Cycle Plant (Drakesboro, Muhlenberg County; eSearch)
 - Tennessee Valley Authority (TVA) - Shawnee Fossil Plant (West Paducah, McCracken County; eSearch)
 - Trans Ash - KU Green River Engine (Central City, Muhlenberg County; eSearch)
-- TVA - KGen Marshall LLC (Calvert City, Marshall County; eSearch)
 - Warren Rural Electric (Leitchfield, Grayson County; eSearch)
+- World Class Distribution Inc (Franklin, Simpson County; eSearch)

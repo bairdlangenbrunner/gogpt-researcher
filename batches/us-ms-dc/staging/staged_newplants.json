@@ -8,7 +8,7 @@
       "kind": "state",
       "slug": "mississippi",
       "quarter": "q4-2026",
-      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+      "csv": "scripts/gem_export_gogpt_scoped.csv"
     },
     "generated": "2026-10-27T11:46:30-04:00",
     "mode": "update",
@@ -68,7 +68,7 @@
         "needs_review": false
       },
       "researcher_notes": "The Mississippi Department of Environmental Quality posted a public notice dated September 9, 2026. The JAN250 Site at 1001 Industrial Park Drive in Clinton, Hinds County, asked for an optional pre-permit construction approval for a data center. The data center would have emergency back-up generators with a total power capacity of approximately 250 megawatts and diesel fuel storage tanks. The notice does not name the company. The state air permit database page for the same address lists the facility as Amazon Data Services, with air construction permit file 1080-00275 and a comment period that ended on September 21, 2026. I did not find the draft permit itself. Guessed document addresses failed, and the saved copies of the public notice page on the Wayback Machine do not include this notice. The point is a street search result for Industrial Park Drive in Clinton and is approximate. The Census geocoder placed a different road name about 2 kilometers away, so I did not use it. Not found: the number of generators, the size of each, the start year and the exact site.",
-      "action": "Create the plant in Hinds County, Mississippi, with owner Amazon Data Services Inc, then add the unit below. Move the point onto the site if a person can see it on the map.",
+      "action": "Create the plant in Hinds County, Mississippi, with owner Amazon Data Services Inc, then add the unit below. Move the point onto the site if a person can see it on the map. The unit total of 250 MW is the figure in the public notice and could not be checked against an engine table.",
       "irp": false,
       "units": [
         {
@@ -124,8 +124,8 @@
               "note": "Mississippi air permit database page for the facility at 1001 Industrial Park Drive in Clinton, Hinds County. It shows the owner as Amazon Data Services and air construction permit 1080-00275 in the draft public comment stage."
             }
           ],
-          "action": "Add unit 1 as announced, 250 MW of diesel back-up generators, Backup Power yes, captive power for a data center. Leave the engine count, capacity per engine and start year blank. Milestone timeline: add a announced milestone for September 2026, when the state posted public notice of the permit request, with the Mississippi Department of Environmental Quality public notice of September 2026 as the source.",
-          "researcher_notes": "The public notice says the emergency back-up generators have a total power capacity of approximately 250 Megawatts. It does not give the number of generators or the size of each one, so those are blank. The notice names diesel fuel storage tanks, so the fuel is diesel.",
+          "action": "Add unit 1 as announced, 250 MW of diesel back-up generators, Backup Power yes, captive power for a data center. Leave the engine count, capacity per engine and start year blank. Milestone timeline: add a announced milestone for September 2026, when the state posted public notice of the permit request, with the Mississippi Department of Environmental Quality public notice of September 2026 as the source. The 250 MW is the notice total. No engine count or size was found, so the capacity per engine stays blank.",
+          "researcher_notes": "The public notice says the emergency back-up generators have a total power capacity of approximately 250 Megawatts. It does not give the number of generators or the size of each one, so those are blank. The notice names diesel fuel storage tanks, so the fuel is diesel. Searched again on November 5, 2026: the state air permit page for the facility (it lists the draft permit comment period but no document), the state notice list, and a web search for the permit number 1080-00275. No draft permit, engine table or maker page was found.",
           "milestones": [
             {
               "status": "announced",

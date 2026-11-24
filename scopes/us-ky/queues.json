@@ -1,11 +1,17 @@
 {
-  "_about": "Queue settings for pull_queues.py --state KY. name is the State/Province value in the GEM export; markets are the queues the script reads (Kentucky is split: PJM for East Kentucky Power Cooperative, Kentucky Power (AEP) and Duke Energy Kentucky; MISO for Big Rivers Electric and, from 2027, Owensboro Municipal Utilities). LG&E and KU run their own balancing authority outside both markets and TVA (Marshall, Paradise, Shawnee) is outside both too: their queues are read by hand and answered in coverage.json as market LGEE and market TVA. owner is the transmission owners whose state-blank MISO entries are Kentucky's (kept as leads, fuel unknown); shared_owner is owners that also serve other states (Ameren, Hoosier, Duke Energy Indiana, CenterPoint/Vectren, Southern Indiana), whose blank entries are counted, not kept; pjm_states is the PJM State values kept; known is hand-checked patterns, GEM plant id to regexes that name that plant in a point of interconnection, project name or developer. Every match still says check. A county-only match is never a known match.",
+  "_about": "Queue settings for pull_queues.py --state KY. name is the State/Province value in the GEM export; markets are the queues the script reads (Kentucky is split: PJM for East Kentucky Power Cooperative, Kentucky Power (AEP) and Duke Energy Kentucky; MISO for Big Rivers Electric and, from 2027, Owensboro Municipal Utilities). LG&E and KU run their own balancing authority outside both markets and TVA (Marshall, Paradise, Shawnee) is outside both too: both queues sit behind an OATI sign-in, so the script reads them from the Berkeley Lab Queued Up file (lbnl_entities maps market TVA to entity TVA and market LGEE to entity LGE-KU; the file runs about a year behind, so the posted TVA queue PDF and LG&E and KU OASIS postings are still checked by hand for newer requests). owner is the transmission owners whose state-blank MISO entries are Kentucky's (kept as leads, fuel unknown); shared_owner is owners that also serve other states (Ameren, Hoosier, Duke Energy Indiana, CenterPoint/Vectren, Southern Indiana), whose blank entries are counted, not kept; pjm_states is the PJM State values kept; known is hand-checked patterns, GEM plant id to regexes that name that plant in a point of interconnection, project name or developer. Every match still says check. A county-only match is never a known match.",
   "state": "KY",
   "name": "Kentucky",
   "markets": [
     "MISO",
-    "PJM"
+    "PJM",
+    "TVA",
+    "LGEE"
   ],
+  "lbnl_entities": {
+    "TVA": "TVA",
+    "LGEE": "LGE-KU"
+  },
   "owner": "big rivers|^brec\\b|owensboro municipal|^omu\\b",
   "shared_owner": "ameren|hoosier|duke energy indiana|centerpoint|vectren|southern indiana|^sigeco|midamerican|american transmission",
   "pjm_states": [

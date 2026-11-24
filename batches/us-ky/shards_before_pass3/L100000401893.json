@@ -1,0 +1,477 @@
+{
+ "meta": {
+  "plant_id": "L100000401893",
+  "plant_name": "J K Smith power station",
+  "state": "Kentucky",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T20:12:31-05:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402796",
+   "unit_name": "GT1",
+   "findings": {
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The summary of the Kentucky Division for Air Quality Title V permit V-18-028 from May 2020 at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515 describes the station as natural gas fired peaking units for electricity generation. So the turbines supply routine power to the grid and are not backup units for a data center. The document does not use the words backup power, so this is implied."
+    },
+    "Capacity (MW)": {
+     "value": "119.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists plant 54, generator GT1, status OP, nameplate 119.0 MW, operating year 1999. GEM shows 149.0 MW. I could not find EKPC's own nameplate figure. The air permit at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125517 gives only maximum ratings, not nameplate. The permit gives 115 MW for each ABB GT 11N2 turbine, measured at standard ISO conditions, which is a rating and not a nameplate."
+    }
+   },
+   "not_found": [],
+   "notes": "The EIA-860M table for September 2026 lists this unit as operating with no planned retirement. I found no retirement, mothballing or owner change. EKPC's own nameplate figure was not found."
+  },
+  {
+   "gem_unit_id": "G100000402797",
+   "unit_name": "GT10",
+   "findings": {
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The summary of the Kentucky Division for Air Quality Title V permit V-18-028 from May 2020 at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515 describes the station as natural gas fired peaking units for electricity generation. So the turbines supply routine power to the grid and are not backup units for a data center. The document does not use the words backup power, so this is implied."
+    },
+    "Capacity (MW)": {
+     "value": "108.2",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists plant 54, generator GT10, status OP, nameplate 108.2 MW, operating year 2010. GEM shows 98.0 MW. I could not find EKPC's own nameplate figure, and the Title V permit at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125517 gives only maximum ratings."
+    }
+   },
+   "not_found": [],
+   "notes": "The EIA-860M table for September 2026 lists this unit as operating with no planned retirement. I found no retirement, mothballing or owner change. EKPC's own nameplate figure was not found."
+  },
+  {
+   "gem_unit_id": "G100000402798",
+   "unit_name": "GT2",
+   "findings": {
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The summary of the Kentucky Division for Air Quality Title V permit V-18-028 from May 2020 at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515 describes the station as natural gas fired peaking units for electricity generation. So the turbines supply routine power to the grid and are not backup units for a data center. The document does not use the words backup power, so this is implied."
+    },
+    "Capacity (MW)": {
+     "value": "119.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists plant 54, generator GT2, status OP, nameplate 119.0 MW, operating year 1999. GEM shows 149.0 MW. I could not find EKPC's own nameplate figure. The air permit at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125517 gives only maximum ratings, not nameplate. The permit gives 115 MW for each ABB GT 11N2 turbine, measured at standard ISO conditions, which is a rating and not a nameplate."
+    }
+   },
+   "not_found": [],
+   "notes": "The EIA-860M table for September 2026 lists this unit as operating with no planned retirement. I found no retirement, mothballing or owner change. EKPC's own nameplate figure was not found."
+  },
+  {
+   "gem_unit_id": "G100000402799",
+   "unit_name": "GT3",
+   "findings": {
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The summary of the Kentucky Division for Air Quality Title V permit V-18-028 from May 2020 at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515 describes the station as natural gas fired peaking units for electricity generation. So the turbines supply routine power to the grid and are not backup units for a data center. The document does not use the words backup power, so this is implied."
+    },
+    "Capacity (MW)": {
+     "value": "119.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists plant 54, generator GT3, status OP, nameplate 119.0 MW, operating year 1999. GEM shows 149.0 MW. I could not find EKPC's own nameplate figure. The air permit at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125517 gives only maximum ratings, not nameplate. The permit gives 115 MW for each ABB GT 11N2 turbine, measured at standard ISO conditions, which is a rating and not a nameplate."
+    }
+   },
+   "not_found": [],
+   "notes": "The EIA-860M table for September 2026 lists this unit as operating with no planned retirement. I found no retirement, mothballing or owner change. EKPC's own nameplate figure was not found."
+  },
+  {
+   "gem_unit_id": "G100000402800",
+   "unit_name": "GT4",
+   "findings": {
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The summary of the Kentucky Division for Air Quality Title V permit V-18-028 from May 2020 at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515 describes the station as natural gas fired peaking units for electricity generation. So the turbines supply routine power to the grid and are not backup units for a data center. The document does not use the words backup power, so this is implied."
+    },
+    "Capacity (MW)": {
+     "value": "87.6",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists plant 54, generator GT4, status OP, nameplate 87.6 MW, operating year 2001. GEM shows 108.0 MW. I could not find EKPC's own nameplate figure. The air permit at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125517 gives only maximum ratings, not nameplate. The permit lists its turbines under different unit numbers and sizes, so I could not match this unit to a permit line."
+    }
+   },
+   "not_found": [],
+   "notes": "The EIA-860M table for September 2026 lists this unit as operating with no planned retirement. I found no retirement, mothballing or owner change. EKPC's own nameplate figure was not found."
+  },
+  {
+   "gem_unit_id": "G100000402801",
+   "unit_name": "GT5",
+   "findings": {
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The summary of the Kentucky Division for Air Quality Title V permit V-18-028 from May 2020 at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515 describes the station as natural gas fired peaking units for electricity generation. So the turbines supply routine power to the grid and are not backup units for a data center. The document does not use the words backup power, so this is implied."
+    },
+    "Capacity (MW)": {
+     "value": "87.6",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists plant 54, generator GT5, status OP, nameplate 87.6 MW, operating year 2001. GEM shows 108.0 MW. I could not find EKPC's own nameplate figure. The air permit at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125517 gives only maximum ratings, not nameplate. The permit lists its turbines under different unit numbers and sizes, so I could not match this unit to a permit line."
+    }
+   },
+   "not_found": [],
+   "notes": "The EIA-860M table for September 2026 lists this unit as operating with no planned retirement. I found no retirement, mothballing or owner change. EKPC's own nameplate figure was not found."
+  },
+  {
+   "gem_unit_id": "G100000402802",
+   "unit_name": "GT6",
+   "findings": {
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The summary of the Kentucky Division for Air Quality Title V permit V-18-028 from May 2020 at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515 describes the station as natural gas fired peaking units for electricity generation. So the turbines supply routine power to the grid and are not backup units for a data center. The document does not use the words backup power, so this is implied."
+    },
+    "Capacity (MW)": {
+     "value": "94.9",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists plant 54, generator GT6, status OP, nameplate 94.9 MW, operating year 2005. GEM shows 98.0 MW. I could not find EKPC's own nameplate figure, and the Title V permit at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125517 gives only maximum ratings."
+    }
+   },
+   "not_found": [],
+   "notes": "The EIA-860M table for September 2026 lists this unit as operating with no planned retirement. I found no retirement, mothballing or owner change. EKPC's own nameplate figure was not found."
+  },
+  {
+   "gem_unit_id": "G100000402803",
+   "unit_name": "GT7",
+   "findings": {
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The summary of the Kentucky Division for Air Quality Title V permit V-18-028 from May 2020 at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515 describes the station as natural gas fired peaking units for electricity generation. So the turbines supply routine power to the grid and are not backup units for a data center. The document does not use the words backup power, so this is implied."
+    },
+    "Capacity (MW)": {
+     "value": "94.9",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists plant 54, generator GT7, status OP, nameplate 94.9 MW, operating year 2005. GEM shows 98.0 MW. I could not find EKPC's own nameplate figure, and the Title V permit at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125517 gives only maximum ratings."
+    }
+   },
+   "not_found": [],
+   "notes": "The EIA-860M table for September 2026 lists this unit as operating with no planned retirement. I found no retirement, mothballing or owner change. EKPC's own nameplate figure was not found."
+  },
+  {
+   "gem_unit_id": "G100000402804",
+   "unit_name": "GT9",
+   "findings": {
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The summary of the Kentucky Division for Air Quality Title V permit V-18-028 from May 2020 at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515 describes the station as natural gas fired peaking units for electricity generation. So the turbines supply routine power to the grid and are not backup units for a data center. The document does not use the words backup power, so this is implied."
+    },
+    "Capacity (MW)": {
+     "value": "108.2",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 at https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx lists plant 54, generator GT9, status OP, nameplate 108.2 MW, operating year 2010. GEM shows 98.0 MW. I could not find EKPC's own nameplate figure, and the Title V permit at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125517 gives only maximum ratings."
+    }
+   },
+   "not_found": [],
+   "notes": "The EIA-860M table for September 2026 lists this unit as operating with no planned retirement. I found no retirement, mothballing or owner change. EKPC's own nameplate figure was not found."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000402796",
+   "concern_type": "Capacity (MW)",
+   "question": "Should GT1 to GT3 be 119 MW each instead of 149 MW?",
+   "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) gives 119.0 MW for GT1 to GT3 and 87.6 MW for GT4 and GT5, where GEM has 149 MW and 108 MW. The Title V air permit (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125517) rates each ABB GT 11N2 turbine at 115 MW at ISO conditions, which is a different measure and not EKPC's nameplate. I found no EKPC nameplate document.",
+   "recommendation": "Change GT1 to GT3 to 119.0 MW and GT4 and GT5 to 87.6 MW on the strength of the EIA table, unless a person can get EKPC's nameplate sheet. Ask the project manager whether EIA is acceptable here.",
+   "note": "I looked in the harvested permit index, the Title V permit and the EKPC 2025 integrated resource plan docket summary at https://psc.ky.gov/Case/ViewCaseFilings/2025-00087. The existing resources table of the plan itself was not opened because it was not in the harvested files. EIA also gives GT6 and GT7 as 94.9 MW and GT9 and GT10 as 108.2 MW, where GEM has 98 MW for each. Those values are reported as capacity findings on those units. The EKPC 2025 plan itself was searched through the commission case page and its existing resources table could not be matched to unit names. The permit lists GT-ratings under different unit numbers, so it cannot confirm nameplates. The Kentucky Division for Air Quality Title V permit text and the commission order were read in the first pass.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125517"
+   ],
+   "proposed_value": {
+    "Capacity (MW)": "119.0"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Capacity (MW)",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Plant 54 rows read directly from the workbook."
+  },
+  {
+   "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125515",
+   "used_for": [
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Permit summary read as text."
+  },
+  {
+   "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10125517",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Full Title V permit read as text."
+  },
+  {
+   "url": "https://psc.ky.gov/pscscf/2025%20Cases/2025-00087//20260706_PSC_ORDER.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Final order on the 2025 plan. It names EKPC and states no Smith retirement was read."
+  },
+  {
+   "url": "https://www.pjm.com/pub/planning/downloads/xml/PlanningQueues.xml",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "The PJM queue file lists four natural gas requests at the J K Smith 138 and 345 kilovolt points, numbered Y1-039A_EKPC1 (170 MW), Z2-084 (207.8 MW), AB2-054 (504 MW) and AD1-134 (72.9 MW). All four were withdrawn between 2013 and 2019 and none is an active new unit, so they do not change any listed unit and are history only."
+  },
+  {
+   "url": "https://www.pjm.com/planning/service-requests/serial-service-request-status",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "not relevant",
+   "note": "This is the queue page the brief named. The queue file above holds the same four withdrawn requests, so the page adds nothing for this plant."
+  },
+  {
+   "url": "https://www.hendersonky.gov/AgendaCenter/ViewFile/Agenda/_06092026-524",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "This City of Henderson agenda from June 2026 was opened and does not mention J K Smith or East Kentucky Power. Henderson is in western Kentucky, far from this Clark County plant. The brief's match was on the word Smith or data center only."
+  },
+  {
+   "url": "https://www.hendersonky.gov/AgendaCenter/ViewFile/Agenda/_05262026-523",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "This City of Henderson agenda from May 2026 was opened and does not mention J K Smith, Trapp or East Kentucky Power. The match was a commissioner named Smith."
+  }
+ ]
+}

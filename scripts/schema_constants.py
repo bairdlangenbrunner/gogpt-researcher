@@ -64,7 +64,7 @@ STATUSES_NO_START_YEAR = {"shelved", "shelved - inferred 2 y",
 TECHNOLOGIES = {
     "CC": "combined cycle",
     "GT": "gas turbine (frame-type, simple cycle)",
-    "AGT": "aeroderivative gas turbine",
+    "AGT": "aeroderivative gas turbine (entered as gas turbine: the web form has no AGT option)",
     "ST": "steam turbine",
     "IC": "internal combustion (reciprocating engines)",
     "ICCC": "internal combustion in combined cycle",
@@ -75,9 +75,12 @@ TECHNOLOGIES = {
 # The live export stores the LONG form for the common technologies and the
 # abbreviation only for the rare ones (observed 2026-07-27: "combined cycle",
 # "gas turbine", "steam turbine", "internal combustion", "unknown", plus
-# ICCC/ISCC/AFC). Accept both forms everywhere.
+# ICCC/ISCC/AFC). Accept both forms everywhere. The web form's Technology
+# dropdown has no aeroderivative option, so an aeroderivative set is staged as
+# "gas turbine" and that long form is not accepted. Interim choice pending the
+# GOGPT leads (2026-11-07); see docs/reference/controlled_vocab.md.
 TECHNOLOGY_LONG_FORMS = {
-    "combined cycle", "gas turbine", "aeroderivative gas turbine",
+    "combined cycle", "gas turbine",
     "steam turbine", "internal combustion",
     "internal combustion combined cycle", "integrated solar combined cycle",
     "allam-fetvedt cycle", "unknown",

@@ -8,7 +8,7 @@
       "kind": "state",
       "slug": "michigan",
       "quarter": "q4-2026",
-      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+      "csv": "scripts/gem_export_gogpt_scoped.csv"
     },
     "generated": "2026-10-27T09:03:23-04:00",
     "mode": "update",
@@ -55,12 +55,12 @@
         }
       ],
       "tier": "high",
-      "researcher_notes": "GEM does not list the Hancock peaking plant. EIA's monthly generator file for September 2026 lists EIA plant 1730, Hancock, owned by DTE Electric Company, in Oakland County. Its Operating sheet rows read: \"Hancock | 5 | 41.8 | Natural Gas Fired Combustion Turbine | 1970\" and \"Hancock | 6 | 41.8 | Natural Gas Fired Combustion Turbine | 1966\". Generators 1 and 3 are 19 MW each. The point given is latitude 42.5497 and longitude -83.4425. The state air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/3438450417378425065 says the site at 1781 Haggerty Highway in Commerce Township has two Westinghouse combustion turbine generators of 18.5 MW each and two jet turbine generators of 41.27 MW each. The two jet units are Pratt and Whitney FT4 twin pack sets, which are aeroderivative turbines. The report also says one 18.5 MW unit and one 21.5 MW unit were retired on December 22, 2019. The two jet units together make an aeroderivative set of 83.6 MW, which is above the 50 MW threshold, so the plant is an add. The two 19 MW Westinghouse frame units are each under 50 MW and are left out. The staff report says the units were installed between April 1966 and May 1970.",
-      "action": "Create the Hancock plant in Commerce Township, Oakland County, Michigan, owned by DTE Electric Co, then add the one unit below. Leave the two small frame turbines out.",
+      "researcher_notes": "GEM does not list the Hancock peaking plant. EIA's monthly generator file for September 2026 lists EIA plant 1730, Hancock, owned by DTE Electric Company, in Oakland County. Its Operating sheet rows read: \"Hancock | 5 | 41.8 | Natural Gas Fired Combustion Turbine | 1970\" and \"Hancock | 6 | 41.8 | Natural Gas Fired Combustion Turbine | 1966\". Generators 1 and 3 are 19 MW each. The point given is latitude 42.5497 and longitude -83.4425. The state air permit staff report at https://mienviro.michigan.gov/ncore/downloadpdf/3438450417378425065 says the site at 1781 Haggerty Highway in Commerce Township has two Westinghouse combustion turbine generators of 18.5 MW each and two jet turbine generators of 41.27 MW each. The two jet units are Pratt and Whitney FT4 twin pack sets, which are aeroderivative turbines. The report also says one 18.5 MW unit and one 21.5 MW unit were retired on December 22, 2019. The two jet units together make an aeroderivative set of 83.6 MW, which is above the 50 MW threshold, so the plant is an add. The two 19 MW Westinghouse frame units are each under 50 MW and are left out. The staff report says the units were installed between April 1966 and May 1970. The jet turbine unit is named 5-6 because EIA numbers the two turbines 5 and 6. The state staff report calls them EUJTG12-1 and EUJTG12-2. The size used is the EIA figure of 41.8 MW per turbine, so the unit is 83.6 MW. The state staff report gives 41.27 MW per turbine, which would make 82.54 MW. Both are above the 50 MW threshold.",
+      "action": "Create the Hancock plant in Commerce Township, Oakland County, Michigan, owned by DTE Electric Co, then add the one unit below, named 5-6 after the two EIA generator numbers. Leave the two small frame turbines out.",
       "irp": false,
       "units": [
         {
-          "unit_name": "Jet turbines 5 and 6",
+          "unit_name": "5-6",
           "fields": {
             "Fuel": "fossil gas: natural gas",
             "Status": "operating",
@@ -68,7 +68,8 @@
             "Turbine/Engine Technology": "AGT",
             "Number Of Engines": "2",
             "Capacity Per Engine": "41.8",
-            "Equipment Manufacturer/Model": "Pratt & Whitney FT4 Twin-Pack"
+            "Equipment Manufacturer/Model": "Pratt & Whitney FT4 Twin-Pack",
+            "Capacity (MW)": "83.6"
           },
           "refs": {
             "Capacity Data Source": [
@@ -107,8 +108,8 @@
               "note": "Names the two Pratt and Whitney FT4 twin pack jet turbine generators of 41.27 MW each."
             }
           ],
-          "action": "Add one aeroderivative unit with 2 turbines of 41.8 MW each, 83.6 MW in all, natural gas, operating, first unit in service in 1966. Milestone timeline: add an operating milestone for May 1970, when the second of the two Hancock jet turbines entered service, with the federal electricity data table (EIA-860M) for September 2026 as the source.",
-          "researcher_notes": "EIA monthly generator file for September 2026, Operating sheet, plant 1730. The rows read \"Hancock | 5 | 41.8 | Natural Gas Fired Combustion Turbine | 1970 | Operating | DTE Electric Company | Oakland\" and \"Hancock | 6 | 41.8 | Natural Gas Fired Combustion Turbine | 1966 | Operating | DTE Electric Company | Oakland\". The two jet turbines make one unit of 83.6 MW. The start year is the older of the two, 1966. The 19 MW generators 1 and 3 on the same sheet are left out because each is under 50 MW.",
+          "action": "Add one aeroderivative unit with 2 turbines of 41.8 MW each, 83.6 MW in all, natural gas, operating, first unit in service in 1966. Milestone timeline: add an operating milestone for May 1970, when the second of the two Hancock jet turbines entered service, with the federal electricity data table (EIA-860M) for September 2026 as the source. The two turbines are EIA generators 5 and 6, and the state calls them EUJTG12-1 and EUJTG12-2. The unit total of 83.6 MW is 2 times 41.8 MW. The state staff report gives 41.27 MW each instead.",
+          "researcher_notes": "EIA monthly generator file for September 2026, Operating sheet, plant 1730. The rows read \"Hancock | 5 | 41.8 | Natural Gas Fired Combustion Turbine | 1970 | Operating | DTE Electric Company | Oakland\" and \"Hancock | 6 | 41.8 | Natural Gas Fired Combustion Turbine | 1966 | Operating | DTE Electric Company | Oakland\". The two jet turbines make one unit of 83.6 MW. The start year is the older of the two, 1966. The 19 MW generators 1 and 3 on the same sheet are left out because each is under 50 MW. The unit is named 5-6 after the EIA generator numbers. The state staff report names the same two turbines EUJTG12-1 and EUJTG12-2 at 41.27 MW each. The EIA nameplate of 41.8 MW is used.",
           "milestones": [
             {
               "status": "operating",
@@ -162,20 +163,21 @@
         }
       ],
       "tier": "high",
-      "researcher_notes": "GEM does not list the Livingston peaking plant near Gaylord. EIA's monthly generator file for September 2026 lists EIA plant 55102, Livingston Generating Station, owned by CMS Generation MI Power LLC, in Otsego County. Its Operating sheet rows read: \"Livingston Generating Station | 001 | 42.9 | Natural Gas Fired Combustion Turbine | 1999\" and three more rows for generators 002, 003 and 004 at 42.4 MW each, all from 1999. That is 170.1 MW in all. The point given is latitude 45.030397 and longitude -84.7308. The state air permit staff report dated September 21, 2026 at https://mienviro.michigan.gov/ncore/downloadpdf/-6094188335970412935 covers the site at 155 North Townline Road in Gaylord. It describes four Worthington twin pack natural gas turbine units, each with two engines, rated 39 MW each, with water injection. Twin pack units are aeroderivative sets, so the four units are one set of 170.1 MW, above the 50 MW threshold. CMS Generation Michigan Power LLC is already a GEM owner, entity E100000002589.",
-      "action": "Create the Livingston plant in Gaylord, Otsego County, Michigan, owned by CMS Generation Michigan Power LLC, then add the one unit below.",
+      "researcher_notes": "GEM does not list the Livingston peaking plant near Gaylord. EIA's monthly generator file for September 2026 lists EIA plant 55102, Livingston Generating Station, owned by CMS Generation MI Power LLC, in Otsego County. Its Operating sheet rows read: \"Livingston Generating Station | 001 | 42.9 | Natural Gas Fired Combustion Turbine | 1999\" and three more rows for generators 002, 003 and 004 at 42.4 MW each, all from 1999. That is 170.1 MW in all. The point given is latitude 45.030397 and longitude -84.7308. The state air permit staff report dated September 21, 2026 at https://mienviro.michigan.gov/ncore/downloadpdf/-6094188335970412935 covers the site at 155 North Townline Road in Gaylord. It describes four Worthington twin pack natural gas turbine units, each with two engines, rated 39 MW each, with water injection. Twin pack units are aeroderivative sets, so the four units are one set of 170.1 MW, above the 50 MW threshold. CMS Generation Michigan Power LLC is already a GEM owner, entity E100000002589. The plant is split into one row for generator 001 and one row for generators 002 to 004 because EIA lists them at different sizes, so no average is used. The state staff report names the four units EUCOMBTURB01 to EUCOMBTURB04 at 39 MW each.",
+      "action": "Create the Livingston plant in Gaylord, Otsego County, Michigan, owned by CMS Generation Michigan Power LLC, then add the one unit below. The two rows add up to 170.1 MW (42.9 plus 3 times 42.4), the same total EIA gives. The state staff report counts four units of 39 MW, which is 156 MW, so it does not match.",
       "irp": false,
       "units": [
         {
-          "unit_name": "1-4",
+          "unit_name": "1",
           "fields": {
             "Fuel": "fossil gas: natural gas",
             "Status": "operating",
             "Start year": "1999",
             "Turbine/Engine Technology": "AGT",
-            "Number Of Engines": "4",
-            "Capacity Per Engine": "42.5",
-            "Equipment Manufacturer/Model": "Worthington Twin Pack"
+            "Number Of Engines": "1",
+            "Capacity Per Engine": "42.9",
+            "Equipment Manufacturer/Model": "Worthington Twin Pack",
+            "Capacity (MW)": "42.9"
           },
           "refs": {
             "Capacity Data Source": [
@@ -214,8 +216,71 @@
               "note": "Names four Worthington twin pack gas turbine units."
             }
           ],
-          "action": "Add one aeroderivative unit with 4 twin pack turbine sets of about 42.5 MW each, 170.1 MW in all, natural gas, operating since 1999. EIA gives one set at 42.9 MW and three at 42.4 MW, so 42.5 MW is the average. Milestone timeline: add an operating milestone for June 1999, when the four Livingston gas turbines entered service, with the federal electricity data table (EIA-860M) for September 2026 as the source.",
-          "researcher_notes": "EIA monthly generator file for September 2026, Operating sheet, plant 55102. The rows read \"Livingston Generating Station | 001 | 42.9\", \"| 002 | 42.4\", \"| 003 | 42.4\" and \"| 004 | 42.4\", each \"Natural Gas Fired Combustion Turbine | 1999 | Operating | CMS Generation MI Power LLC | Otsego\". The four add to 170.1 MW, which is 42.5 MW per turbine on average.",
+          "action": "Add unit 1 as one aeroderivative twin pack turbine set of 42.9 MW, natural gas, operating since 1999. This is EIA generator 001 and state unit EUCOMBTURB01. Milestone timeline: add an operating milestone for June 1999 with the federal electricity data table (EIA-860M) for September 2026 as the source.",
+          "researcher_notes": "EIA monthly generator file for September 2026, Operating sheet, plant 55102. The rows read \"Livingston Generating Station | 001 | 42.9\", \"| 002 | 42.4\", \"| 003 | 42.4\" and \"| 004 | 42.4\", each \"Natural Gas Fired Combustion Turbine | 1999 | Operating | CMS Generation MI Power LLC | Otsego\". This row is generator 001 alone, at 42.9 MW. The state staff report rates every unit at 39 MW, which is lower than the EIA nameplate. The EIA nameplate is used.",
+          "milestones": [
+            {
+              "status": "operating",
+              "year": 1999,
+              "period": "June",
+              "sources": [
+                "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+              ],
+              "note": "the electricity data table for September 2026 lists all four Livingston generators as running from June 1999."
+            }
+          ]
+        },
+        {
+          "unit_name": "2-4",
+          "fields": {
+            "Fuel": "fossil gas: natural gas",
+            "Status": "operating",
+            "Start year": "1999",
+            "Turbine/Engine Technology": "AGT",
+            "Number Of Engines": "3",
+            "Capacity Per Engine": "42.4",
+            "Equipment Manufacturer/Model": "Worthington Twin Pack",
+            "Capacity (MW)": "127.2"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Fuel Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Status Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "https://mienviro.michigan.gov/ncore/downloadpdf/-6094188335970412935"
+            ],
+            "Start Year Data Source": [
+              "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://mienviro.michigan.gov/ncore/downloadpdf/-6094188335970412935"
+            ],
+            "Turbine/Engine Equipment Data Source": [
+              "https://mienviro.michigan.gov/ncore/downloadpdf/-6094188335970412935"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Four generator rows, 42.9, 42.4, 42.4 and 42.4 MW."
+            },
+            {
+              "url": "https://mienviro.michigan.gov/ncore/downloadpdf/-6094188335970412935",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Names four Worthington twin pack gas turbine units."
+            }
+          ],
+          "action": "Add unit 2-4 as three aeroderivative twin pack turbine sets of 42.4 MW each, 127.2 MW in all, natural gas, operating since 1999. These are EIA generators 002, 003 and 004 and state units EUCOMBTURB02 to EUCOMBTURB04. Milestone timeline: add an operating milestone for June 1999 with the federal electricity data table (EIA-860M) for September 2026 as the source.",
+          "researcher_notes": "EIA monthly generator file for September 2026, Operating sheet, plant 55102. The rows read \"Livingston Generating Station | 001 | 42.9\", \"| 002 | 42.4\", \"| 003 | 42.4\" and \"| 004 | 42.4\", each \"Natural Gas Fired Combustion Turbine | 1999 | Operating | CMS Generation MI Power LLC | Otsego\". This row is generators 002 to 004, at 42.4 MW each. The state staff report rates every unit at 39 MW, which is lower than the EIA nameplate. The EIA nameplate is used.",
           "milestones": [
             {
               "status": "operating",
@@ -278,7 +343,7 @@
       ],
       "tier": "high",
       "researcher_notes": "GEM does not list the George Johnson peaking plant at Hersey. EIA's monthly generator file for September 2026 lists EIA plant 1877, George Johnson, owned by Wolverine Power Supply Coop, in Osceola County. Its Operating sheet rows read: \"George Johnson | 9 | 25 | Natural Gas Fired Combustion Turbine | 2000\" and \"George Johnson | 10 | 25 | Natural Gas Fired Combustion Turbine | 2000\". Generator 11 is a 1 MW diesel engine and is left out. The point given is latitude 43.8393 and longitude -85.426. The state air inspection report of November 8, 2023 at https://www.egle.state.mi.us/aps/downloads/SRN/N5760/N5760_SAR_20231108.pdf describes two identical Rolls-Royce RB211 simple cycle combustion turbines of 25,000 kW each at 1529 170th Avenue, Hersey. The RB211 is an aeroderivative turbine, so the two make one set of 50 MW. The state permit to install 133-09 at https://mienviro.michigan.gov/ncore/downloadpdf/-4754499885014064448 lists both turbines at 25,000 kW. The set sits exactly at the 50 MW threshold, so a reviewer may want to confirm the add.",
-      "action": "Create the George Johnson plant in Hersey, Osceola County, Michigan, owned by Wolverine Power Supply Cooperative Inc, then add the one unit below. The set is exactly 50 MW.",
+      "action": "Create the George Johnson plant in Hersey, Osceola County, Michigan, owned by Wolverine Power Supply Cooperative Inc, then add the one unit below. The set is exactly 50 MW. The unit total of 50 MW matches the state permit, which lists two turbines of 25,000 kilowatts.",
       "irp": false,
       "units": [
         {
@@ -290,7 +355,8 @@
             "Turbine/Engine Technology": "AGT",
             "Number Of Engines": "2",
             "Capacity Per Engine": "25",
-            "Equipment Manufacturer/Model": "Rolls-Royce RB211"
+            "Equipment Manufacturer/Model": "Rolls-Royce RB211",
+            "Capacity (MW)": "50"
           },
           "refs": {
             "Capacity Data Source": [
@@ -330,7 +396,7 @@
               "note": "Two Rolls-Royce RB211 turbines of 25,000 kW each."
             }
           ],
-          "action": "Add one aeroderivative unit with 2 turbines of 25 MW each, 50 MW in all, natural gas, operating since 2000. Milestone timeline: add an operating milestone for June 2000, when the two George Johnson turbines entered service, with the federal electricity data table (EIA-860M) for September 2026 as the source.",
+          "action": "Add one aeroderivative unit with 2 turbines of 25 MW each, 50 MW in all, natural gas, operating since 2000. Milestone timeline: add an operating milestone for June 2000, when the two George Johnson turbines entered service, with the federal electricity data table (EIA-860M) for September 2026 as the source. The two turbines are EIA generators 9 and 10. The unit total of 50 MW matches the state permit.",
           "researcher_notes": "EIA monthly generator file for September 2026, Operating sheet, plant 1877. The rows read \"George Johnson | 9 | 25.0 | Natural Gas Fired Combustion Turbine | 2000 | Operating | Wolverine Power Supply Coop | Osceola\" and \"George Johnson | 10 | 25.0 | Natural Gas Fired Combustion Turbine | 2000 | Operating | Wolverine Power Supply Coop | Osceola\". Together they are exactly 50 MW. Generator 11 is a 1 MW oil standby unit and is left out.",
           "milestones": [
             {

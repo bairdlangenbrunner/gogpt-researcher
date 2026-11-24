@@ -8,7 +8,7 @@
       "kind": "state",
       "slug": "michigan",
       "quarter": "q4-2026",
-      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+      "csv": "scripts/gem_export_gogpt_scoped.csv"
     },
     "generated": "2026-10-27T12:13:54-04:00",
     "mode": "update",
@@ -73,8 +73,8 @@
         }
       ],
       "tier": "high",
-      "researcher_notes": "Switch runs the Pyramid campus data center at 6100 East Paris Avenue in Gaines Township, Grand Rapids, Kent County. The state air permit 112-16A, version 4.0, was issued on September 29, 2026 to MI GRR, LLC for that address. It lists 39 diesel emergency engines, numbered EUEG4 through EUEG42, of 2,740 kilowatts each. That is 106.86 MW. The permit repeats the same 39 engines under two groups of engines, so the earlier permit harvest total of 78 engines and 213.7 MW counted them twice. A separate 90 kilowatt fire pump is left out. The engines were installed from 2017 through April 2026. The permit says the building will be taken off the grid for a planned outage in October 2026. Not found: the coordinates, which the location step still has to place. Location: the permit gives 6100 East Paris Avenue. The Census geocoder puts that address on the road at 42.85254, -85.56538. In satellite imagery the Switch pyramid data center building and its engine yard sit about 400 meters east of that point on the same side of the road, so the point is placed on the pyramid building. The owner is MI GRR, LLC, the holder of the state air permit issued September 29, 2026 for the engines at this address. It is not in the GEM entity list. No source was found that names Switch as the owner of MI GRR, LLC, so no parent is entered.",
-      "action": "Create the plant Switch Grand Rapids Data Center power station in Grand Rapids, Kent County, Michigan, then add the one unit below. Owner: create a new entity, MI GRR, LLC, at 100 percent. No parent is entered.",
+      "researcher_notes": "Switch runs the Pyramid campus data center at 6100 East Paris Avenue in Gaines Township, Grand Rapids, Kent County. The state air permit 112-16A, version 4.0, was issued on September 29, 2026 to MI GRR, LLC for that address. It lists 39 diesel emergency engines, numbered EUEG4 through EUEG42, of 2,740 kilowatts each. That is 106.86 MW. The permit repeats the same 39 engines under two groups of engines, so the earlier permit harvest total of 78 engines and 213.7 MW counted them twice. A separate 90 kilowatt fire pump is left out. The engines were installed from 2017 through April 2026. The permit says the building will be taken off the grid for a planned outage in October 2026. Not found: the coordinates, which the location step still has to place. Location: the permit gives 6100 East Paris Avenue. The Census geocoder puts that address on the road at 42.85254, -85.56538. In satellite imagery the Switch pyramid data center building and its engine yard sit about 400 meters east of that point on the same side of the road, so the point is placed on the pyramid building. The owner is MI GRR, LLC, the holder of the state air permit issued September 29, 2026 for the engines at this address. It is not in the GEM entity list. No source was found that names Switch as the owner of MI GRR, LLC, so no parent is entered. Unit 1 uses the electrical size of 2.5 MW instead of the permit figure of 2.74 MW, which is engine shaft power.",
+      "action": "Create the plant Switch Grand Rapids Data Center power station in Grand Rapids, Kent County, Michigan, then add the one unit below. Owner: create a new entity, MI GRR, LLC, at 100 percent. No parent is entered. The two units add up to 102.75 MW (97.5 plus 5.25). The permit prints 106.86 MW for the 39 engines, but that uses the engine shaft figure of 2.74 MW, so the electrical total is lower and does not match the permit. The earlier total of 78 engines and 213.7 MW counted the same engines twice.",
       "irp": false,
       "checks": [
         39
@@ -88,21 +88,25 @@
             "Start year": "2017",
             "Turbine/Engine Technology": "internal combustion",
             "Number Of Engines": "39",
-            "Capacity Per Engine": "2.74",
-            "Backup Power": "yes"
+            "Capacity Per Engine": "2.5",
+            "Backup Power": "yes",
+            "Capacity (MW)": "97.5"
           },
           "refs": {
             "Capacity Data Source": [
-              "https://mienviro.michigan.gov/ncore/downloadpdf/-1202005711889361747"
+              "https://mienviro.michigan.gov/ncore/downloadpdf/-1202005711889361747",
+              "https://www.globalpwr.com/wp-content/uploads/cut-sheets/gps-mtu-20v4000-2500kw-diesel-genset-sku-6530.pdf"
             ],
             "Fuel Data Source": [
               "https://mienviro.michigan.gov/ncore/downloadpdf/-1202005711889361747"
             ],
             "Status Data Source": [
-              "https://mienviro.michigan.gov/ncore/downloadpdf/-1202005711889361747"
+              "https://mienviro.michigan.gov/ncore/downloadpdf/-1202005711889361747",
+              "https://www.deq.state.mi.us/Aps/downloads/SRN/P0709/P0709_SAR_20220803.pdf"
             ],
             "Start Year Data Source": [
-              "https://mienviro.michigan.gov/ncore/downloadpdf/-1202005711889361747"
+              "https://mienviro.michigan.gov/ncore/downloadpdf/-1202005711889361747",
+              "https://www.deq.state.mi.us/Aps/downloads/SRN/P0709/P0709_SAR_20170531.pdf"
             ],
             "Turbine/Engine Technology Data Source": [
               "https://mienviro.michigan.gov/ncore/downloadpdf/-1202005711889361747"
@@ -118,19 +122,108 @@
               "contains_value": true,
               "name_found": true,
               "note": "Permit lists engines EUEG4 to EUEG42 of 2,740 kilowatts, install dates 2017 to April 2026."
+            },
+            {
+              "url": "https://www.globalpwr.com/wp-content/uploads/cut-sheets/gps-mtu-20v4000-2500kw-diesel-genset-sku-6530.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Maker cut sheet for the MTU 20V4000 DS2500 generator set. It gives 2,500 kWe standby electrical output and a maximum engine power of 2,740 kWm (3,673 bhp)."
+            },
+            {
+              "url": "https://www.deq.state.mi.us/Aps/downloads/SRN/P0709/P0709_SAR_20170531.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "State inspection report of May 31, 2017. Three of the new engines were installed and in trial operation."
+            },
+            {
+              "url": "https://www.deq.state.mi.us/Aps/downloads/SRN/P0709/P0709_SAR_20220803.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "State inspection report of August 3, 2022. Six engines installed so far, three in 2017 and three in 2020, each rated 2,740 kW."
             }
           ],
-          "action": "Add one unit of 39 diesel engines at 2.74 MW each, 106.86 MW in all, operating, backup power yes, first engine installed in 2017. Milestone timeline: add an operating milestone for April 2017, when the first backup engines were installed at the Switch Grand Rapids site, with the Michigan air permit approved in September 2026 as the source.",
-          "researcher_notes": "The state air permit 112-16A version 4.0 lists 39 emergency engines of 2,740 kilowatts each. The start year is the earliest install date in the permit. The permit's flexible groups repeat the same engines and are not added again. The 90 kilowatt fire pump is left out.",
+          "action": "Add unit 1 as 39 diesel engines at 2.5 MW each, 97.5 MW in all, operating, backup power yes, first engines installed in 2017. The engines are permit units EUEG4 to EUEG42. All 39 have install dates from April 2017 to April 2026, so all are installed and none is only permitted. Milestone timeline: add an operating milestone for April 2017, when the first three engines were installed, with the Michigan air permit approved in September 2026 as the source.",
+          "researcher_notes": "The state air permit 112-16A version 4.0 lists 39 emergency engines, EUEG4 to EUEG42, each printed as 2,740 kilowatts with a displacement of 4.77 liters per cylinder. The permit prints no electrical rating, and the 2022 inspection report calls them 2,740 kW engines. The maker's cut sheet for the MTU 20V4000 DS2500 gives 2,740 kilowatts of engine shaft power (3,673 horsepower) and 2,500 kilowatts of electrical output for the generator set. The engine size in the permit matches that model. No Switch document names the maker, so the maker and the 2.5 megawatt electrical size come from matching the engine size and power. The start year is the earliest install date in the permit. Install dates in the permit: 3 in April 2017, 3 in May 2020, 3 in March 2024, then 30 more from March 2025 to April 2026. The permit lists the same engines again under two groups of engines, so they are counted once. The 90 kilowatt fire pump is left out.",
           "milestones": [
             {
               "status": "operating",
               "year": 2017,
               "period": "April",
               "sources": [
-                "https://mienviro.michigan.gov/ncore/downloadpdf/-1202005711889361747"
+                "https://mienviro.michigan.gov/ncore/downloadpdf/-1202005711889361747",
+                "https://www.deq.state.mi.us/Aps/downloads/SRN/P0709/P0709_SAR_20170531.pdf"
               ],
-              "note": "a Michigan air permit approved in September 2026 lists the first diesel engines at the site as installed on April 17, 2017. later engines were installed through April 2026."
+              "note": "A Michigan air permit approved in September 2026 gives April 17, 2017 as the install date of engines EUEG4, EUEG6 and EUEG8. A state inspection report of May 31, 2017 says three engines were installed and in trial operation. Later engines were installed through April 2026."
+            }
+          ]
+        },
+        {
+          "unit_name": "2",
+          "fields": {
+            "Unit name": "2",
+            "Fuel": "fossil liquids: diesel",
+            "Status": "operating",
+            "Start year": "1989",
+            "Turbine/Engine Technology": "internal combustion",
+            "Number Of Engines": "3",
+            "Capacity Per Engine": "1.75",
+            "Capacity (MW)": "5.25",
+            "Equipment Manufacturer/Model": "CAT: 3516",
+            "Captive industry use": "power",
+            "Captive industry type": "data center",
+            "Captive non-industry use": "none",
+            "Backup Power": "yes"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://www.deq.state.mi.us/Aps/downloads/SRN/P0709/P0709_SAR_20160921.pdf"
+            ],
+            "Fuel Data Source": [
+              "https://www.deq.state.mi.us/Aps/downloads/SRN/P0709/P0709_SAR_20160921.pdf"
+            ],
+            "Status Data Source": [
+              "https://www.deq.state.mi.us/Aps/downloads/SRN/P0709/P0709_SAR_20160921.pdf"
+            ],
+            "Start Year Data Source": [
+              "https://www.deq.state.mi.us/Aps/downloads/SRN/P0709/P0709_SAR_20160921.pdf"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://www.deq.state.mi.us/Aps/downloads/SRN/P0709/P0709_SAR_20160921.pdf"
+            ],
+            "Backup Power Data Source": [
+              "https://www.deq.state.mi.us/Aps/downloads/SRN/P0709/P0709_SAR_20160921.pdf"
+            ],
+            "Turbine/Engine Equipment Data Source": [
+              "https://www.deq.state.mi.us/Aps/downloads/SRN/P0709/P0709_SAR_20160921.pdf"
+            ],
+            "Captive Data Source": [
+              "https://www.deq.state.mi.us/Aps/downloads/SRN/P0709/P0709_SAR_20160921.pdf"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://www.deq.state.mi.us/Aps/downloads/SRN/P0709/P0709_SAR_20160921.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "State inspection report of September 21, 2016. Three Caterpillar 3516 STD engines serving 1,750 kW generators, installed in 1989."
+            }
+          ],
+          "action": "Add unit 2 as 3 diesel engines at 1.75 MW each, 5.25 MW in all, operating, backup power yes, installed in 1989. These are the older Caterpillar engines covered by state permit 91-16, separate from the 39 engines of unit 1. Milestone timeline: add an operating milestone for 1989 with the state inspection report of September 21, 2016 as the source.",
+          "researcher_notes": "The state inspection report of September 21, 2016 says each engine is a Caterpillar 3516 STD serving a 1,750 kilowatt generator, that the generator nameplates were seen and are rated 1,750 kilowatts, and that the engines were installed in 1989. The inspection reports of 2017 and 2022 still list the three engines. The permit 112-16A does not list them. The month of installation was not found. A reviewer may leave this unit out.",
+          "milestones": [
+            {
+              "status": "operating",
+              "year": 1989,
+              "period": "",
+              "sources": [
+                "https://www.deq.state.mi.us/Aps/downloads/SRN/P0709/P0709_SAR_20160921.pdf"
+              ],
+              "note": "A state inspection report of September 21, 2016 says the three Caterpillar engines were installed in 1989.",
+              "period_note": "The report gives only the year. The month was not found in the four inspection reports from 2016 to 2022."
             }
           ]
         }
@@ -204,7 +297,7 @@
       ],
       "tier": "high",
       "researcher_notes": "The state air permit to install PTI0000209, version 1.0, was issued on July 30, 2026 to Panattoni Development Company at 10385 Haggerty Road, Van Buren Charter Township, Wayne County. It lists 24 emergency engines of 2,750 kilowatts each that burn diesel or renewable diesel. That is 66.0 MW. Two 170 horsepower fire pumps are left out. Panattoni's application response letter of June 5, 2026 says it cut the proposed engines from 155 to 24. A Planet Detroit story from February 2026 quoted Panattoni as saying 156 diesel generators. CBS Detroit reported in March 2026 that Google is behind the project and that the land is under agreement with Panattoni, so the plant is named for Google. The township approved the final site plan in October 2026 and reports say site work began in August. The permit alone fits pre-construction, so that is the status here. A reviewer may choose construction if site work is confirmed. Not found: the start year and the coordinates. Location: the permit gives 10385 Haggerty Road. The Census geocoder puts that address on the road at 42.22707, -83.44481. Satellite imagery shows open farmland east of the road with no buildings yet, so the point is placed in the field just east of the address and stays approximate because the parcel lines were not seen. The owner is Google. CBS Detroit reported in March 2026 that Google is the company behind this data center. The state air permit was issued to the developer Panattoni Development Company, which has the land under agreement, so Panattoni is not entered as owner. Google is not in the GEM entity list. Alphabet is, with ID 100000001137.",
-      "action": "Create the plant Google Van Buren Township Data Center power station in Van Buren Township, Wayne County, Michigan, then add the one unit below. Owner: create a new entity, Google, at 100 percent, with parent Alphabet, ID 100000001137, once you have checked that entity is Google's parent company.",
+      "action": "Create the plant Google Van Buren Township Data Center power station in Van Buren Township, Wayne County, Michigan, then add the one unit below. Owner: create a new entity, Google, at 100 percent, with parent Alphabet, ID 100000001137, once you have checked that entity is Google's parent company. The 24 engines add up to 66.0 MW, which matches the permit.",
       "irp": false,
       "checks": [
         39
@@ -218,7 +311,8 @@
             "Turbine/Engine Technology": "internal combustion",
             "Number Of Engines": "24",
             "Capacity Per Engine": "2.75",
-            "Backup Power": "yes"
+            "Backup Power": "yes",
+            "Capacity (MW)": "66.0"
           },
           "refs": {
             "Capacity Data Source": [
@@ -228,7 +322,8 @@
               "https://mienviro.michigan.gov/ncore/downloadpdf/-2294603731756421535"
             ],
             "Status Data Source": [
-              "https://mienviro.michigan.gov/ncore/downloadpdf/-2294603731756421535"
+              "https://mienviro.michigan.gov/ncore/downloadpdf/-2294603731756421535",
+              "https://cms9files.revize.com/vanburentwp/Document_Center/Agendas%20%26%20Minutes/Planning%20Commission/2024/Packets/P%20C%20Packet%202%2011%2026%20.pdf"
             ],
             "Turbine/Engine Technology Data Source": [
               "https://mienviro.michigan.gov/ncore/downloadpdf/-2294603731756421535"
@@ -244,19 +339,28 @@
               "contains_value": true,
               "name_found": true,
               "note": "Permit lists 24 emergency engines of 2,750 kilowatts."
+            },
+            {
+              "url": "https://cms9files.revize.com/vanburentwp/Document_Center/Agendas%20%26%20Minutes/Planning%20Commission/2024/Packets/P%20C%20Packet%202%2011%2026%20.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Van Buren Township Planning Commission packet for February 11, 2026, case 25-041, Project Cannoli. Panattoni's preliminary site plan application. The township engineer reviewed plans dated December 23, 2025, and the packet says the plans were submitted in December 2025."
             }
           ],
-          "action": "Add one unit of 24 engines at 2.75 MW each, 66.0 MW in all, pre-construction, backup power yes. Leave the start year blank. Milestone timeline: add a pre-construction milestone for July 2026, when Michigan approved the air permit to install for the Van Buren Township engines, with that permit as the source.",
-          "researcher_notes": "The state air permit PTI0000209 version 1.0 lists 24 emergency engines of 2,750 kilowatts each. Panattoni's application response letter says the count was cut from 155 to 24. The two fire pumps are left out.",
+          "action": "Add one unit of 24 engines at 2.75 MW each, 66.0 MW in all, pre-construction, backup power yes. Leave the start year blank. Milestone timeline: add a pre-construction milestone for December 2025, when Panattoni applied to Van Buren Township for site plan approval, with the township planning commission packet of February 11, 2026 as the source. The state air permit to install was approved July 30, 2026. The engines are permit units EU2750-1 to EU2750-24. The unit total of 66.0 MW (24 times 2.75) matches the permit.",
+          "researcher_notes": "The state air permit PTI0000209 version 1.0 lists 24 emergency engines of 2,750 kilowatts each. Panattoni's application response letter says the count was cut from 155 to 24. The two fire pumps are left out. The permit prints the engine power as 4,049 brake horsepower (2,750 kW). 4,049 horsepower is about 3,019 kilowatts of shaft power, which is more than 2,750, so 2,750 is the generator output and is used as the size. The pre-construction date is the township site plan application of December 2025, case 25-041, not the July 2026 permit approval. The exact filing day was not found, so December 2025 is used.",
           "milestones": [
             {
               "status": "pre-construction",
-              "year": 2026,
-              "period": "July",
+              "year": 2025,
+              "period": "December",
               "sources": [
+                "https://cms9files.revize.com/vanburentwp/Document_Center/Agendas%20%26%20Minutes/Planning%20Commission/2024/Packets/P%20C%20Packet%202%2011%2026%20.pdf",
                 "https://mienviro.michigan.gov/ncore/downloadpdf/-2294603731756421535"
               ],
-              "note": "a Michigan air permit to install for the site was approved on July 30, 2026, with all information received on July 21, 2026."
+              "note": "Panattoni Development Company applied to Van Buren Township for preliminary site plan approval of the Project Cannoli data center in December 2025, township case 25-041. The state air permit to install came later. Michigan approved it on July 30, 2026, with all information received on July 21, 2026.",
+              "period_note": "The township packet does not print the day the application was filed. The earliest dated plans it names are from December 23, 2025. Searched for the day: the state air permit to install, the township planning commission packet of February 11, 2026, the township board follow-up answers of December 2025 and news coverage. The state air permit application date was not found."
             }
           ]
         }
@@ -315,7 +419,7 @@
       ],
       "tier": "high",
       "researcher_notes": "Planet Detroit reported on March 12, 2026 that the developer Raeden plans a 100 megawatt data center on the former McLouth Steel site in Gibraltar, Wayne County. Its chief operating officer said it would have 30 to 35 backup diesel generators. The city passed a one year moratorium on data centers on March 9, 2026, and the developer may ask for a waiver. No air permit application, generator size or coordinates were found. The capacity is left blank. The engine count is the high end of the range. Location: the Planet Detroit report gives the address, an existing building at 27800 W. Jefferson Ave. on the former McLouth Steel property in Gibraltar, with the Humbug Marsh across the road. The Census address search places 27800 W. Jefferson Ave. at 42.10629, -83.19680. A satellite look shows the former McLouth mill buildings on the west side of West Jefferson Avenue at that point, with marsh and woods on the east side, which matches the report. The point stays approximate because the report also names an adjacent Superfund lot at 28000 W. Jefferson, and the line between the two lots was not found. The report says that lot could host natural gas generation; no plan for it was found. The owner is Raeden. Planet Detroit reported on March 12, 2026 that Raeden is the developer. No air permit or other filing naming a project company was found. Raeden is not in the GEM entity list.",
-      "action": "Create the plant Raeden Gibraltar Data Center power station in Gibraltar, Wayne County, Michigan, then add the one unit below. Leave the capacity blank. Owner: create a new entity, Raeden, at 100 percent.",
+      "action": "Create the plant Raeden Gibraltar Data Center power station in Gibraltar, Wayne County, Michigan, then add the one unit below. Leave the capacity blank. Owner: create a new entity, Raeden, at 100 percent. No total is stated because the engine size is unknown.",
       "irp": false,
       "checks": [
         39
@@ -356,8 +460,8 @@
               "note": "States 30 to 35 backup diesel generators."
             }
           ],
-          "action": "Add one unit with 35 diesel engines, announced, backup power yes. Leave the capacity and start year blank. Milestone timeline: add an announced milestone for March 2026, when the developer first publicly described the Gibraltar data center backup generators, with a Planet Detroit report from March 2026 as the source.",
-          "researcher_notes": "The only source is a news report of a town hall. It gives 30 to 35 generators and no size. A permit application would give the size.",
+          "action": "Add one unit with 35 diesel engines, announced, backup power yes. Leave the capacity and start year blank. Milestone timeline: add an announced milestone for March 2026, when the developer first publicly described the Gibraltar data center backup generators, with a Planet Detroit report from March 2026 as the source. The total capacity stays blank because no engine size was found.",
+          "researcher_notes": "The only source is a news report of a town hall. It gives 30 to 35 generators and no size. A permit application would give the size. Searched and not found: the City of Gibraltar frequently asked questions document on the data center, the Planet Detroit report, and any air permit application by Raeden for the Gibraltar address. None gave a generator size.",
           "milestones": [
             {
               "status": "announced",

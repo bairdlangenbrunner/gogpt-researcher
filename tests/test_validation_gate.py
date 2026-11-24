@@ -47,9 +47,29 @@ def answered(*recs):
 
 
 def qa(pid, uid, checks=(7,), siblings=()):
+    """A validation question that says it searched and found nothing (the only kind of
+    question that answers an item, Baird 2026-11-06)."""
     return {"record_id": f"{pid}:{uid or 'plant'}:qa-validation-1", "gem_plant_id": pid,
             "gem_unit_id": uid, "concern_type": "validation", "checks": list(checks),
-            "sibling_unit_ids": list(siblings)}
+            "sibling_unit_ids": list(siblings),
+            "recommendation": "Searched the commission docket and the air permit file; nothing found."}
+
+
+def edit(pid, uid, checks=(7,), siblings=(), lane="updates"):
+    return {"record_id": f"{pid}:{uid or 'plant'}:{lane}-1", "gem_plant_id": pid,
+            "gem_unit_id": uid, "checks": list(checks), "sibling_unit_ids": list(siblings),
+            "fields": {"Status Detail": "x"}}
+
+
+def test_question_without_a_search_does_not_answer(tmp_path):
+    vp = report(tmp_path, [{"kind": "fix", "plant_id": "L1", "unit_id": "G1", "item": "Milestone"}])
+    q = dict(qa("L1", "G1"), recommendation="Date the step January 2025.")
+    out, _ = gate_validation(index(), answered(q, qa("L2", None)), vp, now=NOW,
+                             unfiltered_csv=tmp_path / "none.csv")
+    assert out and "answered only by a question" in out[0][1]
+    lanes = {"qa": [qa("L2", None)], "updates": [edit("L1", "G1")]}
+    out, _ = gate_validation(index(), lanes, vp, now=NOW, unfiltered_csv=tmp_path / "none.csv")
+    assert out == []
 
 
 def test_passes_when_every_item_has_a_check_7_record(tmp_path):

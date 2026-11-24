@@ -305,7 +305,11 @@ def retry(failures: dict[str, dict], render_missing: bool) -> dict[str, tuple[bo
         expected = rec.get("expected") or []
         print(f"  [{n}/{len(failures)}] {url[:100]}", file=sys.stderr)
         if rec.get("source") == "fetch":         # a page read, no value to check
-            page = fetch.fetch_page(url)
+            try:
+                page = fetch.fetch_page(url)
+            except Exception as e:      # one bad page must not stop the audit
+                out[url] = (False, f"error: {e}")
+                continue
             bad_title = soft_error_title(page.text) if page.status == "200" else None
             ok = page.status == "200" and "empty_answer" not in page.notes and not bad_title
             out[url] = (ok, "OK" if ok else (

@@ -350,6 +350,9 @@ def _unzip_text(path: str) -> str:
                         continue
                     if head == b"%PDF-":
                         text = _pdftotext(fpath)
+                    elif name.lower().endswith((".xlsx", ".xlsm", ".docx")) and head[:2] == b"PK":
+                        # an Office file is itself a zip of XML (EIA-860's annual zip of workbooks)
+                        text = _unzip_text(fpath)
                     elif name.lower().endswith((".txt", ".csv", ".xml", ".html", ".htm")):
                         try:
                             text = Path(fpath).read_bytes().decode("utf-8", errors="replace")
@@ -464,7 +467,7 @@ def _curl(url: str, tmp: str, timeout: int, ua: str | None, insecure: bool,
 _CF_WALL_STATUSES = {"403", "503", "429"}
 # Refusals that earn a TLS-impersonation retry even without wall markers
 # (Akamai "Access Denied", bare nginx 403). One retry per fingerprint is cheap.
-_BLOCK_STATUSES = {"401", "403", "406", "429"}
+_BLOCK_STATUSES = {"401", "402", "403", "406", "429"}   # 402: Gannett's "Access Restricted" wall (2026-11-17)
 _IMPERSONATE_AS = ("chrome", "firefox")
 _CF_WALL_MARKERS = (b"just a moment", b"attention required", b"cf-mitigated",
                     b"challenge-platform", b"cf_chl_", b"cf-chl", b"cloudflare",
@@ -696,6 +699,9 @@ def _render(url: str, timeout: int, tmp: str, notes: list[str]):
         r = render(url, wait=max(timeout, 45))
     except ClearanceError as e:
         print(f"  [fetch] {host}: browser render failed: {e}", file=sys.stderr)
+        return None
+    except Exception as e:      # a Chrome connection timeout must not stop the caller
+        print(f"  [fetch] {host}: browser render failed: {type(e).__name__}: {e}", file=sys.stderr)
         return None
     if r["challenge"]:
         print(f"  [fetch] {host}: the bot check did not clear in Chrome either", file=sys.stderr)

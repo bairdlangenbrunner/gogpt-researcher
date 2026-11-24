@@ -24,11 +24,11 @@ Every error is sorted into one of three kinds:
              value that is blank, a status step with no date, a replacement
              link to a unit that does not exist, a fuel or owner share problem,
              a unit named "--" on a plant with several units.
-  exception  the manual's optional, low-priority cases: an error on a coal unit
+  exception  ignored (Baird 2026-11-06): an error on a coal unit
              with no oil or gas fuel (the coal side of a shared plant, or a coal
-             phase before a conversion). A plant-level error is never an
-             exception: a plant in the tracker is in scope even when it also has
-             coal units (Baird 2026-10-21).
+             phase before a conversion). Nobody researches these. A plant-level
+             error is never an exception, and neither is an error on a gas or
+             oil unit at a coal plant or on a coal conversion: those are fixes.
   person     needs a click in the web UI, not research: plant-name rules,
              hydrogen data sources (hydrogen columns are never researched here),
              and any error on a unit with no fuel at all (usually a blank unit
@@ -190,11 +190,14 @@ def classify(sec, key, warning, unit, plant_fuels, undated, replaced, current):
                            f"date. Find the year it reached that step and report it "
                            f"as {col}, with the document that says so.")
             else:
+                cols.append("Status Detail")
                 out.append(f"The unit's status history has {art} \"{step}\" step with no "
                            "date. Find the year, and the month if a document gives it, "
-                           "when the unit reached that step. Give it as a question, "
-                           "not a value, with the document that says so.")
-        return "fix", " ".join(out), cols
+                           "when the unit reached that step. Stage it as an edit to Status "
+                           "Detail (a new line on top that gives the date and says what "
+                           "happened, with the document's link), and put the same date in "
+                           "the finding's milestones list with its source.")
+        return "fix", " ".join(out), sorted(set(cols))
     if sec == "Milestone Timeline":
         return "fix", ("The database's validation report says of the status history: "
                        f"\"{warning}\" Check the status steps and their dates against a "
@@ -397,9 +400,9 @@ def errors_for(rec, errors, tasks=None):
 
 def why_exception(e):
     if e["unit_id"]:
-        return ("Optional: this unit burns no oil or gas. It is the coal side of the "
+        return ("Ignored: this unit burns no oil or gas. It is the coal side of the "
                 "plant or a coal phase before a conversion.")
-    return "Optional: a plant-wide data source on a plant that also has coal units."
+    return "Ignored: coal side of the plant."
 
 
 def memo(scope, plants, errors, stamp):
@@ -412,10 +415,10 @@ def memo(scope, plants, errors, stamp):
          f"- Plants with errors: {len(flagged)}",
          f"- To fix by research: {kinds['fix']}",
          f"- To fix by hand in the web UI: {kinds['person']}",
-         f"- Optional under the manual's coal exception: {kinds['exception']}", ""]
+         f"- Ignored, coal-only units: {kinds['exception']}", ""]
     titles = {"fix": "To fix by research",
               "person": "To fix by hand in the web UI",
-              "exception": "Optional: the manual's coal exception"}
+              "exception": "Ignored: coal-only units"}
     for kind in ("fix", "person", "exception"):
         rows = [e for e in errors if e["kind"] == kind]
         if not rows:
@@ -472,7 +475,7 @@ def main():
     print(f"{scope['kind']}: {scope['name']}  plants: {len(plants)}  "
           f"with errors: {len({e['plant_id'] for e in errors})}")
     print(f"fix: {kinds['fix']}  person: {kinds['person']}  "
-          f"exception (optional): {kinds['exception']}")
+          f"exception (ignored, coal-only): {kinds['exception']}")
     print(f"wrote {jpath}\nwrote {mpath}")
     if a.closeout:
         blocking = kinds["fix"] + kinds["person"]

@@ -1,0 +1,431 @@
+{
+ "meta": {
+  "plant_id": "L100000103935",
+  "plant_name": "Cooper power station",
+  "state": "Kentucky",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-06T09:32:36-05:00",
+  "done": true,
+  "urls_attempted": 12,
+  "urls_verified": 12
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001048351",
+   "unit_name": "Unit 2, timepoint 2",
+   "findings": {
+    "Status Detail": {
+     "value": "The Public Service Commission quarterly report filed October 30, 2026 shows engineering is under way, the gas firing system is ordered, the general contractor is to be chosen in early 2027, construction starts in January 2028, and completion is December 2029. The Department of Energy awarded $19,326,832 for this co-firing project, agreement signed September 17, 2026.\n\nhttps://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Construction has not started. The report lists construction start for January 2028."
+    },
+    "Status": {
+     "value": "pre-construction",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Division for Air Quality statement of basis lists the Unit 2 gas co-firing change as part of the application received January 27, 2025. The quarterly report shows construction start in January 2028. The EIA-860M table for September 2026 still lists generator 2 as operating coal, which describes the existing coal unit and not the planned co-firing row. No status change.",
+     "milestones": [
+      {
+       "status": "pre-construction",
+       "year": 2025,
+       "period": "January",
+       "sources": [
+        "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293"
+       ],
+       "note": "The Division for Air Quality statement of basis says the construction permit application for the combined cycle plant and the gas co-firing change to Unit 2 was received on January 27, 2025."
+      }
+     ]
+    },
+    "Start year": {
+     "value": "2029",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The quarterly report filed October 30, 2026 lists construction end and commercial operation as December 2029. GEM shows 2029. This is a projected year, so a person adds a new scheduled event and does not change an existing one."
+    },
+    "Conversion/replacement?": {
+     "value": "conversion",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The statement of basis describes modifying the existing Unit 02 coal boiler to co-fire natural gas, which is a conversion."
+    },
+    "Turbine/Engine Technology": {
+     "value": "steam turbine",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The statement of basis describes Unit 02 as a co-fired boiler, so the unit remains a steam turbine unit. This replaces the dead EKPC link."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas, coal: unknown",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The statement of basis says the boiler will be modified to co-fire natural gas. The Commission filing for the first quarter says any mix of coal and gas is possible. This replaces the dead EKPC link."
+    },
+    "Capacity (MW)": {
+     "value": "230.4",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists plant 1384, generator 2, nameplate 230.4 MW, net summer 225 MW, operating since 1969. GEM shows 225, which equals the net summer figure, not nameplate. Nameplate is the rule, so 230.4 is proposed. Please confirm that the row is meant to carry the existing boiler's nameplate."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "CHP",
+    "Latest Activity",
+    "Backup Power"
+   ],
+   "notes": "The project is moving, so Latest Activity is left alone. No document stating Backup Power was found. The air permit does not list the gas co-firing as backup. Operator is filled at plant level from the air permit statement of basis. The statement of basis lists a diesel emergency generator engine and a diesel fire pump engine as separate support equipment for the combined cycle project, so the units themselves do not supply backup power and no Backup Power change is proposed. I found no mention of cogeneration or steam sales in the statement of basis, so CHP stays unfilled."
+  },
+  {
+   "gem_unit_id": "G100001048350",
+   "unit_name": "Unit 3",
+   "findings": {
+    "Status Detail": {
+     "value": "The Division for Air Quality received the construction permit application for the combined cycle plant on January 27, 2025, which began the pre-construction step. Kentucky Division for Air Quality issued proposed Title V and construction permit V-26-012 on October 30, 2026, which authorizes the combined cycle plant. East Kentucky Power Cooperative told the Public Service Commission the same day that it will begin construction on or after December 1, 2026.\n\nhttps://psc.ky.gov/pscecf/2024-00370/heather@hloky.com/10302026034102/Closed/2024-00370_Read_First_Construction_Notification.pdf\nhttps://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2024-00370/heather@hloky.com/10302026034102/Closed/2024-00370_Read_First_Construction_Notification.pdf",
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00370/heather@hloky.com/10302026034102/Closed/2024-00370_Read_First_Construction_Notification.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Commission filing says construction begins on or after December 1, 2026, so no construction start has happened yet and the unit stays pre-construction. The permit is a proposed permit, issued for public comment and final approval. The first sentence dates the pre-construction step. Open the statement of basis at https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293 and find the paragraph on the application history, which says the application was received January 27, 2025.",
+     "milestones": [
+      {
+       "status": "pre-construction",
+       "year": 2025,
+       "period": "January",
+       "sources": [
+        "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293"
+       ],
+       "note": "The Division for Air Quality statement of basis says the construction permit application for the combined cycle plant and the gas co-firing change to Unit 2 was received on January 27, 2025."
+      }
+     ]
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Siemens Energy: SGT6-5000F",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Division for Air Quality statement of basis for permit V-26-012 lists the combustion turbines for the combined cycle unit as Siemens 5000F, two turbines with one steam turbine. GEM shows GE Vernova. The 5000F is a Siemens Energy model, so the maker should be Siemens Energy. The document gives Siemens 5000F, and the SGT6 prefix is the maker's current model name."
+    },
+    "Capacity (MW)": {
+     "value": "745.0",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293",
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The statement of basis gives the steam turbine generator as 745 MWh net and 785 MWh gross for the combined cycle unit, and says the site will have an additional 745 MW. The Commission order from July 2025 also uses 745 MW. This is the net figure, so GEM's 745 stands. The project's nameplate figure was not found."
+    },
+    "Status": {
+     "value": "pre-construction",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2024-00370/heather@hloky.com/10302026034102/Closed/2024-00370_Read_First_Construction_Notification.pdf",
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00370/heather@hloky.com/10302026034102/Closed/2024-00370_Read_First_Construction_Notification.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The permit application was received January 27, 2025 and construction starts no earlier than December 1, 2026. No change from GEM.",
+     "milestones": [
+      {
+       "status": "pre-construction",
+       "year": 2025,
+       "period": "January",
+       "sources": [
+        "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293"
+       ],
+       "note": "The Division for Air Quality statement of basis says the construction permit application for the combined cycle plant and the gas co-firing change to Unit 2 was received on January 27, 2025."
+      }
+     ]
+    },
+    "Start year": {
+     "value": "2030",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Commission order from July 2025 says EKPC estimated an in-service date for the combined cycle unit of December 2030. GEM already shows 2030."
+    }
+   },
+   "not_found": [
+    "CHP",
+    "Latest Activity",
+    "Backup Power"
+   ],
+   "notes": "The project is moving, so Latest Activity is left alone. No document stating Backup Power was found. Operator is filled at plant level from the air permit statement of basis. The statement of basis lists a diesel emergency generator engine and a diesel fire pump engine as separate support equipment for the combined cycle project, so the units themselves do not supply backup power and no Backup Power change is proposed. I found no mention of cogeneration or steam sales in the statement of basis, so CHP stays unfilled."
+  }
+ ],
+ "plant_findings": {
+  "Operator(s)": {
+   "value": "East Kentucky Power Cooperative Inc",
+   "refs": [
+    "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293"
+   ],
+   "verifications": [
+    {
+     "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The Division for Air Quality statement of basis for permit V-26-012 says East Kentucky Power Cooperative operates the John Sherman Cooper Power Station in Pulaski County. GEM's operator box is blank."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100001048351",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "When did Unit 2 gas co-firing reach the pre-construction step?",
+   "finding": "The Division for Air Quality received the application that includes the Unit 2 gas co-firing change on January 27, 2025, per the statement of basis for permit V-26-012.",
+   "recommendation": "Date the pre-construction step January 2025 using the statement of basis.",
+   "note": "The Commission approved the certificate in July 2025 as well.",
+   "refs": [
+    "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293",
+    "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001048350",
+   "concern_type": "Equipment Manufacturer/Model",
+   "question": "Should Unit 3's turbine maker be Siemens Energy, not GE Vernova?",
+   "finding": "The air permit statement of basis lists the combustion turbines as Siemens 5000F. GEM shows GE Vernova: SGT6-5000F, and SGT6-5000F is a Siemens Energy model.",
+   "recommendation": "Change the maker to Siemens Energy and keep SGT6-5000F as the model.",
+   "note": "I could not find a document that says SGT6-5000F in so many words.",
+   "refs": [
+    "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293"
+   ],
+   "proposed_value": {
+    "Equipment Manufacturer/Model": "Siemens Energy: SGT6-5000F"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "East Kentucky Power Cooperative Inc",
+   "role": "operator",
+   "lookup_result": "Already GEM's owner for this plant; same entity as the operator, no new entity needed."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://psc.ky.gov/pscecf/2024-00370/heather@hloky.com/10302026034102/Closed/2024-00370_Read_First_Construction_Notification.pdf",
+   "used_for": [
+    "Status",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "EKPC letter of October 30, 2026 says construction begins on or after December 1, 2026."
+  },
+  {
+   "url": "https://psc.ky.gov/pscecf/2024-00370/greg.cecil@ekpc.coop/10302026125535/Closed/Read_1st_2026_Q3_Report.pdf",
+   "used_for": [
+    "Start year",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Quarterly report with the Cooper Unit 2 co-fire milestones."
+  },
+  {
+   "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293",
+   "used_for": [
+    "Status",
+    "Equipment Manufacturer/Model",
+    "Capacity (MW)",
+    "Conversion/replacement?",
+    "Fuel",
+    "Turbine/Engine Technology"
+   ],
+   "outcome": "verified",
+   "note": "Statement of basis for proposed permit V-26-012."
+  },
+  {
+   "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00370//20250703_PSC_ORDER.pdf",
+   "used_for": [
+    "Start year",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Commission order of July 3, 2025."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Capacity (MW)",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "EIA-860M September 2026 file read in python, plant 1384 generator 2 row."
+  },
+  {
+   "url": "https://www.ekpc.coop/sites/default/files/New%20Generation/Cooper%20Station%20co-firing%20with%20coal%20and%20natural%20gas_1.pdf",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Existing dead link, not retried and never dropped. Replacement sources are on the findings. Not rechecked through the Wayback lookup in this pass."
+  },
+  {
+   "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14648293",
+   "used_for": [
+    "Operator(s)",
+    "Backup Power",
+    "CHP"
+   ],
+   "outcome": "verified",
+   "note": "Read the full statement of basis text. Operator named. Emergency engines EU 21 and EU 22 are support equipment. No cogeneration language found."
+  }
+ ]
+}

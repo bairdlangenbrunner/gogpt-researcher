@@ -8,7 +8,7 @@
       "kind": "state",
       "slug": "maryland",
       "quarter": "q4-2026",
-      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+      "csv": "scripts/gem_export_gogpt_scoped.csv"
     },
     "generated": "2026-10-27T12:03:35-04:00",
     "mode": "update",
@@ -48,8 +48,8 @@
         }
       ],
       "tier": "high",
-      "researcher_notes": "GEM does not list this data center. The Maryland Department of the Environment issued an air permit to construct, effective January 30, 2025, to Aligned Data Centers (MD) Propco, LLC for the data center at 5601 Manor Woods Road, Frederick, on the former Eastalco aluminum site that is now the Quantum campus. The permit covers 168 diesel emergency generators of 3,000 kilowatts each and 4 of 1,000 kilowatts each, 508 MW in all. That is far above the 50 MW threshold, so the plant is an add. The state Public Service Commission denied a first exemption request in August 2023 and Aligned withdrew it in October 2023. A 2024 state law then exempted backup generators and Aligned went ahead. A Frederick News-Post report of February 15, 2025 says Aligned held a ceremonial groundbreaking in December 2024 and the data center is under construction. The point shown is a street address match, so the location accuracy is approximate. The owner company has no entry in the entity system, so a new entity is needed.",
-      "action": "Create the Aligned Frederick plant in Frederick County, Maryland, with the two units below. The owner needs a new entity.",
+      "researcher_notes": "GEM does not list this data center. The Maryland Department of the Environment issued an air permit to construct, effective January 30, 2025, to Aligned Data Centers (MD) Propco, LLC for the data center at 5601 Manor Woods Road, Frederick, on the former Eastalco aluminum site that is now the Quantum campus. The permit covers 168 diesel emergency generators of 3,000 kilowatts each and 4 of 1,000 kilowatts each, 508 MW in all. That is far above the 50 MW threshold, so the plant is an add. The state Public Service Commission denied a first exemption request in August 2023 and Aligned withdrew it in October 2023. A 2024 state law then exempted backup generators and Aligned went ahead. A Frederick News-Post report of February 15, 2025 says Aligned held a ceremonial groundbreaking in December and a Data Center Dynamics report of February 5, 2025 says it has broken ground on the first building. The point shown is a street address match, so the location accuracy is approximate. The owner company has no entry in the entity system, so a new entity is needed. The state notice, Aligned's own application and the 2023 state Public Service Commission order all confirm the engine sizes as electrical ratings. The Commission order of October 10, 2023 shows Aligned first filed its exemption request on May 12, 2023 for 168 generators of 3 MW, so the project was first on public record in May 2023. That filing was dropped in October 2023 and the project restarted in 2024, so the milestone dates run from the July 2024 application. The state's 508 MW total is 504 MW from the large generators and 4 MW from the house generators. A groundbreaking was reported for the first building, but it was a ceremony and no report was found of physical work on the Building 1 generators or building, so all four buildings are pre-construction. The Aligned application is the source for the four-building split.",
+      "action": "Create the Aligned Frederick plant in Frederick County, Maryland, with the four unit rows below. Rows 1 and 2 are the generators of Building 1, pre-construction, 127 MW. Rows 3 and 4 are the generators of Buildings 2 to 4, pre-construction, 381 MW. The rows add up to 508 MW, which matches the state permit's 168 generators of 3,000 kW and 4 of 1,000 kW. The owner needs a new entity.",
       "irp": false,
       "checks": [
         39
@@ -59,32 +59,38 @@
           "unit_name": "1",
           "fields": {
             "Fuel": "fossil liquids: diesel",
-            "Status": "construction",
+            "Status": "pre-construction",
             "Turbine/Engine Technology": "internal combustion",
-            "Number Of Engines": "168",
-            "Capacity Per Engine": "3",
+            "Number Of Engines": "42",
+            "Capacity Per Engine": "3.0",
             "Equipment Manufacturer/Model": "Caterpillar: C175-16 or 3516E",
             "Captive industry use": "power",
             "Captive industry type": "data center",
-            "Backup Power": "yes"
+            "Backup Power": "yes",
+            "Capacity (MW)": "126.0"
           },
           "refs": {
             "Capacity Data Source": [
               "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf",
-              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf"
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf"
             ],
             "Fuel Data Source": [
               "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
             ],
             "Status Data Source": [
               "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf",
-              "https://www.yahoo.com/news/aligned-breaks-ground-data-center-045900532.html"
+              "https://www.yahoo.com/news/aligned-breaks-ground-data-center-045900532.html",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf",
+              "https://www.datacenterdynamics.com/en/news/aligned-breaks-ground-on-72mw-maryland-data-center-in-quantum-frederick-park/"
             ],
             "Turbine/Engine Technology Data Source": [
               "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
             ],
             "Turbine/Engine Equipment Data Source": [
-              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf"
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf"
             ],
             "Captive Data Source": [
               "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
@@ -114,29 +120,35 @@
               "contains_value": true,
               "name_found": true,
               "note": "News report that Aligned broke ground on the Frederick data center."
+            },
+            {
+              "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "The Aligned permit to construct application of July 1, 2024 says the 168 generators are rated 3,000 kW and the four house generators 1,000 kW, and gives the electrical output rating of each. It lists four buildings, each with 42 generators of 3 MW and one of 1 MW, with a targeted construction start for each building."
+            },
+            {
+              "url": "https://www.datacenterdynamics.com/en/news/aligned-breaks-ground-on-72mw-maryland-data-center-in-quantum-frederick-park/",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Data Center Dynamics report of February 5, 2025 says Aligned has broken ground on its IAD-04 data center in Frederick County, a future 72 MW facility, the first of four buildings."
             }
           ],
-          "action": "Add one unit of 168 diesel engines of 3 MW each, 504 MW, backup power yes, status construction. Milestone timeline: add a pre-construction milestone for January 2025, when the state air permit to construct took effect, with the department's final determination as the source. Add a construction milestone for February 2025, with the Frederick News-Post report that the data center is under construction as the source.",
-          "researcher_notes": "The state air permit to construct, effective January 30, 2025, lists 168 diesel emergency generators of 3,000 kilowatts each. That is 504 MW. The application lists Caterpillar C175-16 or 3516E engines for these. A news report says Aligned broke ground on the building. The status is construction because the permit is issued and work has started.",
+          "action": "Add one unit of 42 diesel engines of 3.0 MW each, 126.0 MW, backup power yes, status pre-construction. These are the Building 1 large generators. Milestone timeline: add a pre-construction milestone for July 2024, when the state received the air permit application. Do not add a construction milestone.",
+          "researcher_notes": "The Aligned permit application of July 1, 2024 says each generator is rated at its electrical output, 3,000 kW for the large engines and 1,000 kW for the house engines, so no shaft figure is involved. This row is the 42 large generators of Building 1, also called IAD04, which had a ceremonial groundbreaking in December 2024. No report was found of physical work on the building or its generators, so the status is pre-construction. The application lists the buildings as Building 1 to Building 4 and gives each 42 large generators and one house generator. The permit does not number the generators by building, so the row cannot name engine IDs. The application targeted a construction start in the third quarter of 2024, first turnover in the first quarter of 2026 and full operation in the fourth quarter of 2026. The engine models are the ones the application allows.",
           "milestones": [
             {
               "status": "pre-construction",
-              "year": 2025,
-              "period": "January",
+              "year": 2024,
+              "period": "July",
               "sources": [
+                "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf",
+                "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf",
                 "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
               ],
-              "note": "The Maryland Department of the Environment made its final decision to issue the air permit to construct, effective January 30, 2025."
-            },
-            {
-              "status": "construction",
-              "year": 2025,
-              "period": "February",
-              "sources": [
-                "https://www.yahoo.com/news/aligned-breaks-ground-data-center-045900532.html"
-              ],
-              "note": "A Frederick News-Post report of February 15, 2025 says Aligned held a ceremonial groundbreaking in December 2024 and the data center is under construction.",
-              "period_note": "This is the earliest report of work under way that I found. The ceremony in December 2024 came before the permit took effect, so it is not used as the start of work."
+              "note": "The Maryland Department of the Environment received Aligned's air permit to construct application on July 1, 2024 and made its final decision to issue the permit, effective January 30, 2025. The application covers all four buildings."
             }
           ]
         },
@@ -144,31 +156,37 @@
           "unit_name": "2",
           "fields": {
             "Fuel": "fossil liquids: diesel",
-            "Status": "construction",
+            "Status": "pre-construction",
             "Turbine/Engine Technology": "internal combustion",
-            "Number Of Engines": "4",
-            "Capacity Per Engine": "1",
+            "Number Of Engines": "1",
+            "Capacity Per Engine": "1.0",
             "Equipment Manufacturer/Model": "Caterpillar: C32 or MTU: 16V2000",
             "Captive industry use": "power",
             "Captive industry type": "data center",
-            "Backup Power": "yes"
+            "Backup Power": "yes",
+            "Capacity (MW)": "1.0"
           },
           "refs": {
             "Capacity Data Source": [
-              "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
+              "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf"
             ],
             "Fuel Data Source": [
               "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
             ],
             "Status Data Source": [
               "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf",
-              "https://www.yahoo.com/news/aligned-breaks-ground-data-center-045900532.html"
+              "https://www.yahoo.com/news/aligned-breaks-ground-data-center-045900532.html",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf",
+              "https://www.datacenterdynamics.com/en/news/aligned-breaks-ground-on-72mw-maryland-data-center-in-quantum-frederick-park/"
             ],
             "Turbine/Engine Technology Data Source": [
               "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
             ],
             "Turbine/Engine Equipment Data Source": [
-              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf"
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf"
             ],
             "Captive Data Source": [
               "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
@@ -198,29 +216,228 @@
               "contains_value": true,
               "name_found": true,
               "note": "News report of the groundbreaking."
+            },
+            {
+              "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "The Aligned permit to construct application of July 1, 2024 says the 168 generators are rated 3,000 kW and the four house generators 1,000 kW, and gives the electrical output rating of each. It lists four buildings, each with 42 generators of 3 MW and one of 1 MW, with a targeted construction start for each building."
+            },
+            {
+              "url": "https://www.datacenterdynamics.com/en/news/aligned-breaks-ground-on-72mw-maryland-data-center-in-quantum-frederick-park/",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Data Center Dynamics report of February 5, 2025 says Aligned has broken ground on its IAD-04 data center in Frederick County, a future 72 MW facility, the first of four buildings."
             }
           ],
-          "action": "Add one unit of 4 diesel engines of 1 MW each, 4 MW, backup power yes, status construction. Milestone timeline: add a pre-construction milestone for January 2025, when the state air permit to construct took effect, with the department's final determination as the source. Add a construction milestone for February 2025, with the Frederick News-Post report that the data center is under construction as the source.",
-          "researcher_notes": "The same permit lists 4 smaller diesel generators of 1,000 kilowatts each, 4 MW in all. The whole fleet is 508 MW.",
+          "action": "Add one unit of 1 diesel engines of 1.0 MW each, 1.0 MW, backup power yes, status pre-construction. These are the Building 1 house generator. Milestone timeline: add a pre-construction milestone for July 2024, when the state received the air permit application. Do not add a construction milestone.",
+          "researcher_notes": "The Aligned permit application of July 1, 2024 says each generator is rated at its electrical output, 3,000 kW for the large engines and 1,000 kW for the house engines, so no shaft figure is involved. This row is the one 1,000 kW house generator of Building 1.",
           "milestones": [
             {
               "status": "pre-construction",
-              "year": 2025,
-              "period": "January",
+              "year": 2024,
+              "period": "July",
               "sources": [
+                "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf",
+                "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf",
                 "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
               ],
-              "note": "The Maryland Department of the Environment made its final decision to issue the air permit to construct, effective January 30, 2025."
+              "note": "The Maryland Department of the Environment received Aligned's air permit to construct application on July 1, 2024 and made its final decision to issue the permit, effective January 30, 2025. The application covers all four buildings."
+            }
+          ]
+        },
+        {
+          "unit_name": "3",
+          "fields": {
+            "Fuel": "fossil liquids: diesel",
+            "Status": "pre-construction",
+            "Turbine/Engine Technology": "internal combustion",
+            "Number Of Engines": "126",
+            "Capacity Per Engine": "3.0",
+            "Equipment Manufacturer/Model": "Caterpillar: C175-16 or 3516E",
+            "Captive industry use": "power",
+            "Captive industry type": "data center",
+            "Backup Power": "yes",
+            "Capacity (MW)": "378.0"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf"
+            ],
+            "Fuel Data Source": [
+              "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
+            ],
+            "Status Data Source": [
+              "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf",
+              "https://www.yahoo.com/news/aligned-breaks-ground-data-center-045900532.html",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf",
+              "https://www.datacenterdynamics.com/en/news/aligned-looks-to-develop-three-more-data-centers-at-quantum-frederick-park-in-maryland/"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
+            ],
+            "Turbine/Engine Equipment Data Source": [
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf"
+            ],
+            "Captive Data Source": [
+              "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
+            ],
+            "Backup Power Data Source": [
+              "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Maryland Department of the Environment final determination names 168 diesel emergency generators of 3,000 kilowatts each."
             },
             {
-              "status": "construction",
-              "year": 2025,
-              "period": "February",
+              "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "MDE public notice for the Aligned permit to construct."
+            },
+            {
+              "url": "https://www.yahoo.com/news/aligned-breaks-ground-data-center-045900532.html",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "News report that Aligned broke ground on the Frederick data center."
+            },
+            {
+              "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "The Aligned permit to construct application of July 1, 2024 says the 168 generators are rated 3,000 kW and the four house generators 1,000 kW, and gives the electrical output rating of each. It lists four buildings, each with 42 generators of 3 MW and one of 1 MW, with a targeted construction start for each building."
+            },
+            {
+              "url": "https://www.datacenterdynamics.com/en/news/aligned-looks-to-develop-three-more-data-centers-at-quantum-frederick-park-in-maryland/",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Data Center Dynamics report of May 23, 2025 says the county planning commission recommended approval of the site plan for three more buildings at 5601 Manor Woods Road, and that the company has one facility in development, Building 1."
+            }
+          ],
+          "action": "Add one unit of 126 diesel engines of 3.0 MW each, 378.0 MW, backup power yes, status pre-construction. These are the Building 2, 3 and 4 large generators. Milestone timeline: add a pre-construction milestone for July 2024, when the state received the air permit application that covers all four buildings.",
+          "researcher_notes": "The Aligned permit application of July 1, 2024 says each generator is rated at its electrical output, 3,000 kW for the large engines and 1,000 kW for the house engines, so no shaft figure is involved. This row is the 126 large generators of Buildings 2, 3 and 4, 42 for each building. The application targets construction starts in the second quarter of 2025 for Building 2, the first quarter of 2026 for Building 3 and the first quarter of 2027 for Building 4, and says the real schedule follows customer demand. A news report of May 23, 2025 says the county planning commission recommended the site plan for three more buildings and that Aligned then had one facility in development. No report of work on these three buildings was found, so they are pre-construction. The application lists Building 4 as up to 42 generators. The permit total of 168 means 42.",
+          "milestones": [
+            {
+              "status": "pre-construction",
+              "year": 2024,
+              "period": "July",
               "sources": [
-                "https://www.yahoo.com/news/aligned-breaks-ground-data-center-045900532.html"
+                "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf",
+                "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf",
+                "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
               ],
-              "note": "A Frederick News-Post report of February 15, 2025 says Aligned held a ceremonial groundbreaking in December 2024 and the data center is under construction.",
-              "period_note": "This is the earliest report of work under way that I found. The ceremony in December 2024 came before the permit took effect, so it is not used as the start of work."
+              "note": "The Maryland Department of the Environment received Aligned's air permit to construct application on July 1, 2024 and made its final decision to issue the permit, effective January 30, 2025. The application covers all four buildings."
+            }
+          ]
+        },
+        {
+          "unit_name": "4",
+          "fields": {
+            "Fuel": "fossil liquids: diesel",
+            "Status": "pre-construction",
+            "Turbine/Engine Technology": "internal combustion",
+            "Number Of Engines": "3",
+            "Capacity Per Engine": "1.0",
+            "Equipment Manufacturer/Model": "Caterpillar: C32 or MTU: 16V2000",
+            "Captive industry use": "power",
+            "Captive industry type": "data center",
+            "Backup Power": "yes",
+            "Capacity (MW)": "3.0"
+          },
+          "refs": {
+            "Capacity Data Source": [
+              "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf"
+            ],
+            "Fuel Data Source": [
+              "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
+            ],
+            "Status Data Source": [
+              "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf",
+              "https://www.yahoo.com/news/aligned-breaks-ground-data-center-045900532.html",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf",
+              "https://www.datacenterdynamics.com/en/news/aligned-looks-to-develop-three-more-data-centers-at-quantum-frederick-park-in-maryland/"
+            ],
+            "Turbine/Engine Technology Data Source": [
+              "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
+            ],
+            "Turbine/Engine Equipment Data Source": [
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf"
+            ],
+            "Captive Data Source": [
+              "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
+            ],
+            "Backup Power Data Source": [
+              "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
+            ]
+          },
+          "verifications": [
+            {
+              "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "MDE notice lists the engine models."
+            },
+            {
+              "url": "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Final determination names 4 diesel generators of 1,000 kilowatts each."
+            },
+            {
+              "url": "https://www.yahoo.com/news/aligned-breaks-ground-data-center-045900532.html",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "News report of the groundbreaking."
+            },
+            {
+              "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "The Aligned permit to construct application of July 1, 2024 says the 168 generators are rated 3,000 kW and the four house generators 1,000 kW, and gives the electrical output rating of each. It lists four buildings, each with 42 generators of 3 MW and one of 1 MW, with a targeted construction start for each building."
+            },
+            {
+              "url": "https://www.datacenterdynamics.com/en/news/aligned-looks-to-develop-three-more-data-centers-at-quantum-frederick-park-in-maryland/",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "Data Center Dynamics report of May 23, 2025 says the county planning commission recommended approval of the site plan for three more buildings at 5601 Manor Woods Road, and that the company has one facility in development, Building 1."
+            }
+          ],
+          "action": "Add one unit of 3 diesel engines of 1.0 MW each, 3.0 MW, backup power yes, status pre-construction. These are the Building 2, 3 and 4 house generators. Milestone timeline: add a pre-construction milestone for July 2024, when the state received the air permit application that covers all four buildings.",
+          "researcher_notes": "The Aligned permit application of July 1, 2024 says each generator is rated at its electrical output, 3,000 kW for the large engines and 1,000 kW for the house engines, so no shaft figure is involved. This row is the three 1,000 kW house generators of Buildings 2, 3 and 4, one for each building. No report of work on these buildings was found.",
+          "milestones": [
+            {
+              "status": "pre-construction",
+              "year": 2024,
+              "period": "July",
+              "sources": [
+                "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Aligned%20NSPSWebandEmailNoticeComment.pdf",
+                "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/AlignedDataCentersAirPermittoConstructApplication.pdf",
+                "https://mde.maryland.gov/programs/land/MarylandBrownfieldVCP/Documents/FinalDetermination-Aligned.pdf"
+              ],
+              "note": "The Maryland Department of the Environment received Aligned's air permit to construct application on July 1, 2024 and made its final decision to issue the permit, effective January 30, 2025. The application covers all four buildings."
             }
           ]
         }
@@ -274,8 +491,8 @@
         }
       ],
       "tier": "high",
-      "researcher_notes": "GEM does not list this data center. The Maryland Department of the Environment approved an air permit to construct on March 25, 2026 for Amazon Data Services at 3250 Digital Drive, Frederick. It covers 92 Caterpillar 3516E diesel generators of 2,750 kilowatts, 6 of 750 kilowatts and 1 of 250 kilowatts, 257.75 MW in all. That is far above the 50 MW threshold, so the plant is an add. The four buildings are BWI-150 to BWI-153. Press reports say Amazon is the tenant of Rowan Digital Infrastructure's Bauxite I campus on the Quantum site, and a trade report on the Rowan plan counts 92 generators of 2.75 MW, which matches this permit. So the Rowan site and this permit are the same campus. County documents and Rowan give 253 MW and 231 MW. The permit sum is used here. Amazon has filed a second application for a separate campus, which has its own record. I found no exact point for 3250 Digital Drive, so the point shown is the Quantum campus area and the accuracy is approximate. The permit was approved in March 2026 and the generators were due to be built in 2026 and 2027. I found no report from Amazon, Rowan, the county or the press that work has started, so the status is pre-construction.",
-      "action": "Create the Amazon Frederick plant in Frederick County, Maryland, owned by Amazon Data Services, with the three units below.",
+      "researcher_notes": "GEM does not list this data center. The Maryland Department of the Environment approved an air permit to construct on March 25, 2026 for Amazon Data Services at 3250 Digital Drive, Frederick. It covers 92 Caterpillar 3516E diesel generators of 2,750 kilowatts, 6 of 750 kilowatts and 1 of 250 kilowatts, 257.75 MW in all. That is far above the 50 MW threshold, so the plant is an add. The four buildings are BWI-150 to BWI-153. Press reports say Amazon is the tenant of Rowan Digital Infrastructure's Bauxite I campus on the Quantum site, and a trade report on the Rowan plan counts 92 generators of 2.75 MW, which matches this permit. So the Rowan site and this permit are the same campus. County documents and Rowan give 253 MW and 231 MW. The permit sum is used here. Amazon has filed a second application for a separate campus, which has its own record. I found no exact point for 3250 Digital Drive, so the point shown is the Quantum campus area and the accuracy is approximate. The permit was approved in March 2026. Amazon applied on October 29, 2024, and the permit gives a start to expected operation window of 2025 to 2026. I found no report from Amazon, Rowan, the county or the press that work has started, so the status is pre-construction.",
+      "action": "Create the Amazon Frederick plant in Frederick County, Maryland, owned by Amazon Data Services, with the three units below. The units add up to 92 x 2.75 MW plus 6 x 0.75 MW plus 1 x 0.25 MW, 257.75 MW, which matches the permit's 99 generators.",
       "irp": false,
       "checks": [
         39
@@ -292,7 +509,8 @@
             "Equipment Manufacturer/Model": "Caterpillar: 3516E",
             "Captive industry use": "power",
             "Captive industry type": "data center",
-            "Backup Power": "yes"
+            "Backup Power": "yes",
+            "Capacity (MW)": "253.0"
           },
           "refs": {
             "Capacity Data Source": [
@@ -303,7 +521,8 @@
             ],
             "Status Data Source": [
               "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20PTC%202025.pdf",
-              "https://news.maryland.gov/mde/2026/03/25/maryland-department-of-environment-approves-air-permit-for-frederick-data-center/"
+              "https://news.maryland.gov/mde/2026/03/25/maryland-department-of-environment-approves-air-permit-for-frederick-data-center/",
+              "https://mde.maryland.gov/datacenters/Documents/2026_FinalDeterminationandResponsetoComments.pdf"
             ],
             "Turbine/Engine Technology Data Source": [
               "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20PTC%202025.pdf"
@@ -332,19 +551,27 @@
               "contains_value": true,
               "name_found": true,
               "note": "MDE news release of March 25, 2026 announcing the approved permit for Amazon Data Services at 3250 Digital Drive."
+            },
+            {
+              "url": "https://mde.maryland.gov/datacenters/Documents/2026_FinalDeterminationandResponsetoComments.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "The state's final determination of March 2026 says it received Amazon's permit to construct application on October 29, 2024 for 92 generators of 2,750 kilowatts, 6 of 750 kilowatts and 1 of 250 kilowatts at 3250 Digital Drive. A public meeting was held on December 8, 2025."
             }
           ],
-          "action": "Add one unit of 92 diesel engines of 2.75 MW each, 253 MW, backup power yes, status pre-construction. Milestone timeline: add a pre-construction milestone for March 2026, when the Maryland Department of the Environment approved the air permit to construct, with the department's news release as the source.",
-          "researcher_notes": "The state air permit to construct, issued March 25, 2026, lists 92 Caterpillar 3516E diesel generators of 2,750 kilowatts each. That is 253 MW. The permit bars their use as primary power or for demand response. Generator construction is set for 2026 and 2027, with a planned start in May 2026.",
+          "action": "Add one unit of 92 diesel engines of 2.75 MW each, 253.0 MW, backup power yes, status pre-construction. Milestone timeline: add a pre-construction milestone for October 2024, when the state received Amazon's air permit application. The permit was approved in March 2026.",
+          "researcher_notes": "The permit lists these engines as EG1 to EG92 in Buildings BWI-150 to BWI-153, 26, 14, 26 and 26 generators. The ratings are electrical. Amazon's separate application for the IAD-534 campus uses the same engines and says each 3516E powers a generator with an electrical output rating of 2,750 kW, each C18  750 kW and the C9 250 kW. The 3516E engine's own rating in that application is 4,043 horsepower, about 3,015 kW at the shaft, which is more than 2,750, so the printed figure is the generator and not the engine. The permit gives a start to expected operation window of 2025 to 2026 for every building. No report that work has started was found, so the status stays pre-construction.",
           "milestones": [
             {
               "status": "pre-construction",
-              "year": 2026,
-              "period": "March",
+              "year": 2024,
+              "period": "October",
               "sources": [
-                "https://news.maryland.gov/mde/2026/03/25/maryland-department-of-environment-approves-air-permit-for-frederick-data-center/"
+                "https://mde.maryland.gov/datacenters/Documents/2026_FinalDeterminationandResponsetoComments.pdf",
+                "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20PTC%202025.pdf"
               ],
-              "note": "The Maryland Department of the Environment news release of March 25, 2026 says it approved the air permit to construct for the Amazon data center at 3250 Digital Drive."
+              "note": "The Maryland Department of the Environment received Amazon's air permit to construct application on October 29, 2024. The department approved the permit on March 25, 2026. The permit covers all four buildings."
             }
           ]
         },
@@ -359,7 +586,8 @@
             "Equipment Manufacturer/Model": "Caterpillar: C18",
             "Captive industry use": "power",
             "Captive industry type": "data center",
-            "Backup Power": "yes"
+            "Backup Power": "yes",
+            "Capacity (MW)": "4.5"
           },
           "refs": {
             "Capacity Data Source": [
@@ -370,7 +598,8 @@
             ],
             "Status Data Source": [
               "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20PTC%202025.pdf",
-              "https://news.maryland.gov/mde/2026/03/25/maryland-department-of-environment-approves-air-permit-for-frederick-data-center/"
+              "https://news.maryland.gov/mde/2026/03/25/maryland-department-of-environment-approves-air-permit-for-frederick-data-center/",
+              "https://mde.maryland.gov/datacenters/Documents/2026_FinalDeterminationandResponsetoComments.pdf"
             ],
             "Turbine/Engine Technology Data Source": [
               "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20PTC%202025.pdf"
@@ -399,19 +628,27 @@
               "contains_value": true,
               "name_found": true,
               "note": "Permit lists 6 Caterpillar C18 diesel generators of 750 kilowatts."
+            },
+            {
+              "url": "https://mde.maryland.gov/datacenters/Documents/2026_FinalDeterminationandResponsetoComments.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "The state's final determination of March 2026 says it received Amazon's permit to construct application on October 29, 2024 for 92 generators of 2,750 kilowatts, 6 of 750 kilowatts and 1 of 250 kilowatts at 3250 Digital Drive. A public meeting was held on December 8, 2025."
             }
           ],
-          "action": "Add one unit of 6 diesel engines of 0.75 MW each, 4.5 MW, backup power yes, status pre-construction. Milestone timeline: add a pre-construction milestone for March 2026, when the Maryland Department of the Environment approved the air permit to construct, with the department's news release as the source.",
-          "researcher_notes": "The permit lists 6 smaller Caterpillar C18 generators of 750 kilowatts each, 4.5 MW in all.",
+          "action": "Add one unit of 6 diesel engines of 0.75 MW each, 4.5 MW, backup power yes, status pre-construction. Milestone timeline: add a pre-construction milestone for October 2024, when the state received Amazon's air permit application. The permit was approved in March 2026.",
+          "researcher_notes": "The permit lists these engines as EG93 to EG98: one in each of the four buildings and two in the water building. The ratings are electrical. Amazon's separate application for the IAD-534 campus uses the same engines and says each 3516E powers a generator with an electrical output rating of 2,750 kW, each C18  750 kW and the C9 250 kW. The 3516E engine's own rating in that application is 4,043 horsepower, about 3,015 kW at the shaft, which is more than 2,750, so the printed figure is the generator and not the engine. The permit gives a start to expected operation window of 2025 to 2026 for every building. No report that work has started was found, so the status stays pre-construction.",
           "milestones": [
             {
               "status": "pre-construction",
-              "year": 2026,
-              "period": "March",
+              "year": 2024,
+              "period": "October",
               "sources": [
-                "https://news.maryland.gov/mde/2026/03/25/maryland-department-of-environment-approves-air-permit-for-frederick-data-center/"
+                "https://mde.maryland.gov/datacenters/Documents/2026_FinalDeterminationandResponsetoComments.pdf",
+                "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20PTC%202025.pdf"
               ],
-              "note": "The Maryland Department of the Environment news release of March 25, 2026 says it approved the air permit to construct for the Amazon data center at 3250 Digital Drive."
+              "note": "The Maryland Department of the Environment received Amazon's air permit to construct application on October 29, 2024. The department approved the permit on March 25, 2026. The permit covers all four buildings."
             }
           ]
         },
@@ -426,7 +663,8 @@
             "Equipment Manufacturer/Model": "Caterpillar: C9",
             "Captive industry use": "power",
             "Captive industry type": "data center",
-            "Backup Power": "yes"
+            "Backup Power": "yes",
+            "Capacity (MW)": "0.25"
           },
           "refs": {
             "Capacity Data Source": [
@@ -437,7 +675,8 @@
             ],
             "Status Data Source": [
               "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20PTC%202025.pdf",
-              "https://news.maryland.gov/mde/2026/03/25/maryland-department-of-environment-approves-air-permit-for-frederick-data-center/"
+              "https://news.maryland.gov/mde/2026/03/25/maryland-department-of-environment-approves-air-permit-for-frederick-data-center/",
+              "https://mde.maryland.gov/datacenters/Documents/2026_FinalDeterminationandResponsetoComments.pdf"
             ],
             "Turbine/Engine Technology Data Source": [
               "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20PTC%202025.pdf"
@@ -466,19 +705,27 @@
               "contains_value": true,
               "name_found": true,
               "note": "Permit lists 1 Caterpillar C9 diesel generator of 250 kilowatts."
+            },
+            {
+              "url": "https://mde.maryland.gov/datacenters/Documents/2026_FinalDeterminationandResponsetoComments.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "The state's final determination of March 2026 says it received Amazon's permit to construct application on October 29, 2024 for 92 generators of 2,750 kilowatts, 6 of 750 kilowatts and 1 of 250 kilowatts at 3250 Digital Drive. A public meeting was held on December 8, 2025."
             }
           ],
-          "action": "Add one unit of 1 diesel engine of 0.25 MW, backup power yes, status pre-construction. Milestone timeline: add a pre-construction milestone for March 2026, when the Maryland Department of the Environment approved the air permit to construct, with the department's news release as the source.",
-          "researcher_notes": "The permit lists one Caterpillar C9 generator of 250 kilowatts. The whole fleet is 257.75 MW.",
+          "action": "Add one unit of 1 diesel engines of 0.25 MW each, 0.25 MW, backup power yes, status pre-construction. Milestone timeline: add a pre-construction milestone for October 2024, when the state received Amazon's air permit application. The permit was approved in March 2026.",
+          "researcher_notes": "The permit lists these engines as EG99, the one generator in the security building. The ratings are electrical. Amazon's separate application for the IAD-534 campus uses the same engines and says each 3516E powers a generator with an electrical output rating of 2,750 kW, each C18  750 kW and the C9 250 kW. The 3516E engine's own rating in that application is 4,043 horsepower, about 3,015 kW at the shaft, which is more than 2,750, so the printed figure is the generator and not the engine. The permit gives a start to expected operation window of 2025 to 2026 for every building. No report that work has started was found, so the status stays pre-construction.",
           "milestones": [
             {
               "status": "pre-construction",
-              "year": 2026,
-              "period": "March",
+              "year": 2024,
+              "period": "October",
               "sources": [
-                "https://news.maryland.gov/mde/2026/03/25/maryland-department-of-environment-approves-air-permit-for-frederick-data-center/"
+                "https://mde.maryland.gov/datacenters/Documents/2026_FinalDeterminationandResponsetoComments.pdf",
+                "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20PTC%202025.pdf"
               ],
-              "note": "The Maryland Department of the Environment news release of March 25, 2026 says it approved the air permit to construct for the Amazon data center at 3250 Digital Drive."
+              "note": "The Maryland Department of the Environment received Amazon's air permit to construct application on October 29, 2024. The department approved the permit on March 25, 2026. The permit covers all four buildings."
             }
           ]
         }
@@ -516,8 +763,8 @@
         }
       ],
       "tier": "high",
-      "researcher_notes": "GEM does not list this data center. Amazon Data Services applied to the Maryland Department of the Environment for an air permit to construct for four data centers called IAD-534 to IAD-537 in Frederick County. The state's March 25, 2026 release says Amazon has applied for an additional Frederick facility, and a public meeting on the IAD-534 campus was held on May 28, 2026. The application and the state's slides list 99 diesel emergency generators, 92 of 2,750 kilowatts, 6 of 750 kilowatts and 1 of 250 kilowatts, 257.75 MW in all. That is far above the 50 MW threshold, so the plant is an add. The application says it is a separate source from Amazon's BWI-150 campus, which is the 3250 Digital Drive plant in the other new record, and the slides place it 0.59 miles away. A tracker site links the application to Rowan's Bauxite II at 3300 Radiant Way, but I did not find that in a state document. No permit has been issued, so the status is announced. I found no exact point, so the point shown is the Quantum campus area and the accuracy is approximate. I found no Public Service Commission exemption case for it.",
-      "action": "Create the Amazon Frederick IAD-534 plant in Frederick County, Maryland, owned by Amazon Data Services, with the three units below.",
+      "researcher_notes": "GEM does not list this data center. Amazon Data Services applied to the Maryland Department of the Environment for an air permit to construct for four data centers called IAD-534 to IAD-537 in Frederick County. The state's March 25, 2026 release says Amazon has applied for an additional Frederick facility, and a public meeting on the IAD-534 campus was held on May 28, 2026. The application and the state's slides list 99 diesel emergency generators, 92 of 2,750 kilowatts, 6 of 750 kilowatts and 1 of 250 kilowatts, 257.75 MW in all. That is far above the 50 MW threshold, so the plant is an add. The application says it is a separate source from Amazon's BWI-150 campus, which is the 3250 Digital Drive plant in the other new record, and the slides place it 0.59 miles away. The state notice names the site as 3300 Radiant Way. A tracker site links that address to Rowan's Bauxite II, but I did not find that in a state document. No permit has been issued, but the application is filed and under review, so the status is pre-construction. The state notice says it received the application on February 23, 2026. I found no exact point, so the point shown is the Quantum campus area and the accuracy is approximate. I found no Public Service Commission exemption case for it.",
+      "action": "Create the Amazon Frederick IAD-534 plant in Frederick County, Maryland, owned by Amazon Data Services, with the three units below. The units add up to 253 MW plus 4.5 MW plus 0.25 MW, 257.75 MW, which matches the application's 99 generators.",
       "irp": false,
       "checks": [
         39
@@ -527,14 +774,15 @@
           "unit_name": "1",
           "fields": {
             "Fuel": "fossil liquids: diesel",
-            "Status": "announced",
+            "Status": "pre-construction",
             "Turbine/Engine Technology": "internal combustion",
             "Number Of Engines": "92",
             "Capacity Per Engine": "2.75",
             "Equipment Manufacturer/Model": "Caterpillar: 3516E",
             "Captive industry use": "power",
             "Captive industry type": "data center",
-            "Backup Power": "yes"
+            "Backup Power": "yes",
+            "Capacity (MW)": "253.0"
           },
           "refs": {
             "Capacity Data Source": [
@@ -545,7 +793,8 @@
             ],
             "Status Data Source": [
               "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Final_IAD534%20Air%20Permit%20to%20Construct%20Application_Signed.pdf",
-              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20Presentation-handouts-FAQ%20Bauxite%20II.pdf"
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20Presentation-handouts-FAQ%20Bauxite%20II.pdf",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%202026%20NSPS%20Web%20and%20Email%20Notice.pdf"
             ],
             "Turbine/Engine Technology Data Source": [
               "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Final_IAD534%20Air%20Permit%20to%20Construct%20Application_Signed.pdf"
@@ -566,7 +815,7 @@
               "ok": true,
               "contains_value": true,
               "name_found": true,
-              "note": "Application lists the engines by building. 92 Caterpillar 3516E generators of 2,750 kilowatts, 253 MW."
+              "note": "Application lists the engines by building. 92 Caterpillar 3516E generators of 2,750 kilowatts, 253 MW. The application, signed February 20, 2026, says each 3516E powers a generator with an electrical output rating of 2,750 kW, each C18 750 kW and the C9 250 kW. It lists a projected construction start of May 2026 and end of May 2027."
             },
             {
               "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20Presentation-handouts-FAQ%20Bauxite%20II.pdf",
@@ -574,19 +823,27 @@
               "contains_value": true,
               "name_found": true,
               "note": "MDE public meeting slides of May 28, 2026 list 99 emergency generators."
+            },
+            {
+              "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%202026%20NSPS%20Web%20and%20Email%20Notice.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "The state notice says it received Amazon's permit to construct application for IAD-534 to IAD-537 on February 23, 2026, for 92 generators of 2,750 kilowatts, 6 of 750 kilowatts and 1 of 250 kilowatts at 3300 Radiant Way, Frederick."
             }
           ],
-          "action": "Add one unit, 92 diesel engines of 2.75 MW each, backup power yes, status announced. Milestone timeline: add an announced milestone for February 2026, when Amazon's air permit application for the IAD-534 campus was prepared, with the application as the source.",
-          "researcher_notes": "The application lists 92 Caterpillar 3516E generators of 2,750 kilowatts, 253 MW. The status is announced because the application is filed and no permit has been issued.",
+          "action": "Add one unit of 92 diesel engines of 2.75 MW each, 253.0 MW, backup power yes, status pre-construction. Milestone timeline: add a pre-construction milestone for February 2026, when the state received Amazon's air permit application for the IAD-534 campus.",
+          "researcher_notes": "The application lists these engines as EG1 to EG92: 26 in IAD-534, 22 each in IAD-535, IAD-536 and IAD-537. The ratings are electrical. The application says each engine powers a generator with an electrical output rating of that size. The 3516E engine's own rating is 4,043 horsepower, about 3,015 kW at the shaft, so 2,750 kW is the generator. The application projects construction from May 2026 to May 2027. The status is pre-construction because the permit application is filed and under review, and no permit has been issued.",
           "milestones": [
             {
-              "status": "announced",
+              "status": "pre-construction",
               "year": 2026,
               "period": "February",
               "sources": [
+                "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%202026%20NSPS%20Web%20and%20Email%20Notice.pdf",
                 "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Final_IAD534%20Air%20Permit%20to%20Construct%20Application_Signed.pdf"
               ],
-              "note": "the air permit to construct application for the four IAD-534 to IAD-537 data centers is dated February 2026. it is the first document found for this campus, and no earlier public notice was found."
+              "note": "The Maryland Department of the Environment received Amazon's air permit to construct application for the IAD-534 to IAD-537 campus on February 23, 2026. The application is signed February 20, 2026. No earlier public record was found."
             }
           ]
         },
@@ -594,14 +851,15 @@
           "unit_name": "2",
           "fields": {
             "Fuel": "fossil liquids: diesel",
-            "Status": "announced",
+            "Status": "pre-construction",
             "Turbine/Engine Technology": "internal combustion",
             "Number Of Engines": "6",
             "Capacity Per Engine": "0.75",
             "Equipment Manufacturer/Model": "Caterpillar: C18",
             "Captive industry use": "power",
             "Captive industry type": "data center",
-            "Backup Power": "yes"
+            "Backup Power": "yes",
+            "Capacity (MW)": "4.5"
           },
           "refs": {
             "Capacity Data Source": [
@@ -612,7 +870,8 @@
             ],
             "Status Data Source": [
               "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Final_IAD534%20Air%20Permit%20to%20Construct%20Application_Signed.pdf",
-              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20Presentation-handouts-FAQ%20Bauxite%20II.pdf"
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20Presentation-handouts-FAQ%20Bauxite%20II.pdf",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%202026%20NSPS%20Web%20and%20Email%20Notice.pdf"
             ],
             "Turbine/Engine Technology Data Source": [
               "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Final_IAD534%20Air%20Permit%20to%20Construct%20Application_Signed.pdf"
@@ -633,7 +892,7 @@
               "ok": true,
               "contains_value": true,
               "name_found": true,
-              "note": "Application lists the engines by building. 6 Caterpillar C18 generators of 750 kilowatts, 4.5 MW."
+              "note": "Application lists the engines by building. 6 Caterpillar C18 generators of 750 kilowatts, 4.5 MW. The application, signed February 20, 2026, says each 3516E powers a generator with an electrical output rating of 2,750 kW, each C18 750 kW and the C9 250 kW. It lists a projected construction start of May 2026 and end of May 2027."
             },
             {
               "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20Presentation-handouts-FAQ%20Bauxite%20II.pdf",
@@ -641,19 +900,27 @@
               "contains_value": true,
               "name_found": true,
               "note": "MDE public meeting slides of May 28, 2026 list 99 emergency generators."
+            },
+            {
+              "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%202026%20NSPS%20Web%20and%20Email%20Notice.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "The state notice says it received Amazon's permit to construct application for IAD-534 to IAD-537 on February 23, 2026, for 92 generators of 2,750 kilowatts, 6 of 750 kilowatts and 1 of 250 kilowatts at 3300 Radiant Way, Frederick."
             }
           ],
-          "action": "Add one unit, 6 diesel engines of 0.75 MW each, backup power yes, status announced. Milestone timeline: add an announced milestone for February 2026, when Amazon's air permit application for the IAD-534 campus was prepared, with the application as the source.",
-          "researcher_notes": "The application lists 6 Caterpillar C18 generators of 750 kilowatts, 4.5 MW. The status is announced because the application is filed and no permit has been issued.",
+          "action": "Add one unit of 6 diesel engines of 0.75 MW each, 4.5 MW, backup power yes, status pre-construction. Milestone timeline: add a pre-construction milestone for February 2026, when the state received Amazon's air permit application for the IAD-534 campus.",
+          "researcher_notes": "The application lists these engines as EG93 to EG98: one in each of the four buildings and two in the water building. The ratings are electrical. The application says each engine powers a generator with an electrical output rating of that size. The 3516E engine's own rating is 4,043 horsepower, about 3,015 kW at the shaft, so 2,750 kW is the generator. The application projects construction from May 2026 to May 2027. The status is pre-construction because the permit application is filed and under review, and no permit has been issued.",
           "milestones": [
             {
-              "status": "announced",
+              "status": "pre-construction",
               "year": 2026,
               "period": "February",
               "sources": [
+                "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%202026%20NSPS%20Web%20and%20Email%20Notice.pdf",
                 "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Final_IAD534%20Air%20Permit%20to%20Construct%20Application_Signed.pdf"
               ],
-              "note": "the air permit to construct application for the four IAD-534 to IAD-537 data centers is dated February 2026. it is the first document found for this campus, and no earlier public notice was found."
+              "note": "The Maryland Department of the Environment received Amazon's air permit to construct application for the IAD-534 to IAD-537 campus on February 23, 2026. The application is signed February 20, 2026. No earlier public record was found."
             }
           ]
         },
@@ -661,14 +928,15 @@
           "unit_name": "3",
           "fields": {
             "Fuel": "fossil liquids: diesel",
-            "Status": "announced",
+            "Status": "pre-construction",
             "Turbine/Engine Technology": "internal combustion",
             "Number Of Engines": "1",
             "Capacity Per Engine": "0.25",
             "Equipment Manufacturer/Model": "Caterpillar: C9",
             "Captive industry use": "power",
             "Captive industry type": "data center",
-            "Backup Power": "yes"
+            "Backup Power": "yes",
+            "Capacity (MW)": "0.25"
           },
           "refs": {
             "Capacity Data Source": [
@@ -679,7 +947,8 @@
             ],
             "Status Data Source": [
               "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Final_IAD534%20Air%20Permit%20to%20Construct%20Application_Signed.pdf",
-              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20Presentation-handouts-FAQ%20Bauxite%20II.pdf"
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20Presentation-handouts-FAQ%20Bauxite%20II.pdf",
+              "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%202026%20NSPS%20Web%20and%20Email%20Notice.pdf"
             ],
             "Turbine/Engine Technology Data Source": [
               "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Final_IAD534%20Air%20Permit%20to%20Construct%20Application_Signed.pdf"
@@ -700,7 +969,7 @@
               "ok": true,
               "contains_value": true,
               "name_found": true,
-              "note": "Application lists the engines by building. 1 Caterpillar C9 generator of 250 kilowatts."
+              "note": "Application lists the engines by building. 1 Caterpillar C9 generator of 250 kilowatts. The application, signed February 20, 2026, says each 3516E powers a generator with an electrical output rating of 2,750 kW, each C18 750 kW and the C9 250 kW. It lists a projected construction start of May 2026 and end of May 2027."
             },
             {
               "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%20Presentation-handouts-FAQ%20Bauxite%20II.pdf",
@@ -708,19 +977,27 @@
               "contains_value": true,
               "name_found": true,
               "note": "MDE public meeting slides of May 28, 2026 list 99 emergency generators."
+            },
+            {
+              "url": "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%202026%20NSPS%20Web%20and%20Email%20Notice.pdf",
+              "ok": true,
+              "contains_value": true,
+              "name_found": true,
+              "note": "The state notice says it received Amazon's permit to construct application for IAD-534 to IAD-537 on February 23, 2026, for 92 generators of 2,750 kilowatts, 6 of 750 kilowatts and 1 of 250 kilowatts at 3300 Radiant Way, Frederick."
             }
           ],
-          "action": "Add one unit, 1 diesel engines of 0.25 MW each, backup power yes, status announced. Milestone timeline: add an announced milestone for February 2026, when Amazon's air permit application for the IAD-534 campus was prepared, with the application as the source.",
-          "researcher_notes": "The application lists 1 Caterpillar C9 generator of 250 kilowatts. The status is announced because the application is filed and no permit has been issued.",
+          "action": "Add one unit of 1 diesel engines of 0.25 MW each, 0.25 MW, backup power yes, status pre-construction. Milestone timeline: add a pre-construction milestone for February 2026, when the state received Amazon's air permit application for the IAD-534 campus.",
+          "researcher_notes": "The application lists these engines as EG99, the one generator in the security building. The ratings are electrical. The application says each engine powers a generator with an electrical output rating of that size. The 3516E engine's own rating is 4,043 horsepower, about 3,015 kW at the shaft, so 2,750 kW is the generator. The application projects construction from May 2026 to May 2027. The status is pre-construction because the permit application is filed and under review, and no permit has been issued.",
           "milestones": [
             {
-              "status": "announced",
+              "status": "pre-construction",
               "year": 2026,
               "period": "February",
               "sources": [
+                "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Amazon%202026%20NSPS%20Web%20and%20Email%20Notice.pdf",
                 "https://mde.maryland.gov/programs/permits/AirManagementPermits/Documents/Public-Review/Alt%20NSPS/Final_IAD534%20Air%20Permit%20to%20Construct%20Application_Signed.pdf"
               ],
-              "note": "the air permit to construct application for the four IAD-534 to IAD-537 data centers is dated February 2026. it is the first document found for this campus, and no earlier public notice was found."
+              "note": "The Maryland Department of the Environment received Amazon's air permit to construct application for the IAD-534 to IAD-537 campus on February 23, 2026. The application is signed February 20, 2026. No earlier public record was found."
             }
           ]
         }

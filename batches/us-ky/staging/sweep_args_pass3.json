@@ -1,0 +1,162 @@
+{
+ "repo": ".",
+ "batch": "batches/us-ky",
+ "where": {
+  "kind": "state",
+  "name": "Kentucky",
+  "slug": "kentucky",
+  "country": "United States",
+  "postal": "ky"
+ },
+ "state": "Kentucky",
+ "postal": "ky",
+ "mode": "update",
+ "model": "sonnet",
+ "csv": "scripts/gem_export_gogpt_scoped.csv",
+ "plants": [
+  {
+   "plant_id": "L100000103935",
+   "plant_name": "Cooper power station",
+   "brief_path": "batches/us-ky/briefs_pass3/L100000103935.md",
+   "unit_ids": [
+    "G100001048351",
+    "G100001048350"
+   ],
+   "shard_path": "batches/us-ky/shards/L100000103935.json"
+  },
+  {
+   "plant_id": "L100000103937",
+   "plant_name": "E.W. Brown Generating Station",
+   "brief_path": "batches/us-ky/briefs_pass3/L100000103937.md",
+   "unit_ids": [
+    "G100000403045",
+    "G100000403046",
+    "G100000413046",
+    "G100000402274",
+    "G100000402275",
+    "G100000402276",
+    "G100000403047",
+    "G100000403048"
+   ],
+   "shard_path": "batches/us-ky/shards/L100000103937.json"
+  },
+  {
+   "plant_id": "L100000103938",
+   "plant_name": "East Bend Generating Station",
+   "brief_path": "batches/us-ky/briefs_pass3/L100000103938.md",
+   "unit_ids": [
+    "G100001055335",
+    "G100001055334"
+   ],
+   "shard_path": "batches/us-ky/shards/L100000103938.json"
+  },
+  {
+   "plant_id": "L100000103939",
+   "plant_name": "Elmer Smith Station",
+   "brief_path": "batches/us-ky/briefs_pass3/L100000103939.md",
+   "unit_ids": [
+    "G100001096399"
+   ],
+   "shard_path": "batches/us-ky/shards/L100000103939.json"
+  },
+  {
+   "plant_id": "L100001062558",
+   "plant_name": "KPCO 2023 IRP power station",
+   "brief_path": "batches/us-ky/briefs_pass3/L100001062558.md",
+   "unit_ids": [
+    "G100001071845"
+   ],
+   "shard_path": "batches/us-ky/shards/L100001062558.json"
+  },
+  {
+   "plant_id": "L100001026095",
+   "plant_name": "KYMEA Energy Center I",
+   "brief_path": "batches/us-ky/briefs_pass3/L100001026095.md",
+   "unit_ids": [
+    "G100001031363"
+   ],
+   "shard_path": "batches/us-ky/shards/L100001026095.json"
+  },
+  {
+   "plant_id": "L100001025720",
+   "plant_name": "Liberty Station Power Plant",
+   "brief_path": "batches/us-ky/briefs_pass3/L100001025720.md",
+   "unit_ids": [
+    "G100001030601"
+   ],
+   "shard_path": "batches/us-ky/shards/L100001025720.json"
+  },
+  {
+   "plant_id": "L100000103945",
+   "plant_name": "Mill Creek Station",
+   "brief_path": "batches/us-ky/briefs_pass3/L100000103945.md",
+   "unit_ids": [
+    "G100000413034",
+    "G100001053541"
+   ],
+   "shard_path": "batches/us-ky/shards/L100000103945.json"
+  },
+  {
+   "plant_id": "L100000103950",
+   "plant_name": "Spurlock power station",
+   "brief_path": "batches/us-ky/briefs_pass3/L100000103950.md",
+   "unit_ids": [
+    "G100001048352",
+    "G100001048353",
+    "G100001048354",
+    "G100001048355"
+   ],
+   "shard_path": "batches/us-ky/shards/L100000103950.json"
+  },
+  {
+   "plant_id": "L100000402323",
+   "plant_name": "Marshall energy facility",
+   "brief_path": "batches/us-ky/briefs_pass3/L100000402323.md",
+   "unit_ids": [
+    "G100000403645",
+    "G100000403646",
+    "G100000403647",
+    "G100000403648",
+    "G100000403649",
+    "G100000403650",
+    "G100000403651",
+    "G100000403652"
+   ],
+   "shard_path": "batches/us-ky/shards/L100000402323.json"
+  }
+ ],
+ "groups": [
+  [
+   "L100000103935"
+  ],
+  [
+   "L100000103937"
+  ],
+  [
+   "L100000103938"
+  ],
+  [
+   "L100000103939"
+  ],
+  [
+   "L100001062558"
+  ],
+  [
+   "L100001026095"
+  ],
+  [
+   "L100001025720"
+  ],
+  [
+   "L100000103945"
+  ],
+  [
+   "L100000103950"
+  ],
+  [
+   "L100000402323"
+  ]
+ ],
+ "extra_brief": "### Third pass: read your existing shard first\n\nYour brief opens with a \"Third pass\" section. It lists the validation report items for your plant. Do those and nothing else. Every item is cleared by an edit (a finding with its source), never by a question that only proposes the value.\n\n1. Before any research, run `cat` on your shard_path. A shard from the earlier passes is already there.\n2. Keep every finding, qa item, monitor item, newunits item, entity and source_log entry. Change an item only to clear a listed item, or when new evidence makes it better. Then say so in its note.\n3. Write the merged shard back to the same shard_path, in the same shape, and check that it parses with python. Your verifier calls add to the existing urls.jsonl file. Never delete that file.\n",
+ "review": ""
+}

@@ -101,19 +101,17 @@ def test_dc_already_in_gem_needs_a_plant_id(tmp_path):
 
 # ---- optional validation items ----
 
-def test_coal_plant_item_is_optional_but_must_be_answered_in_words(tmp_path):
+def test_coal_plant_item_has_no_optional_exemption(tmp_path):
     csv_path = tmp_path / "export.csv"
     csv_path.write_text("GEM location ID,Fuel\nL1,coal\nL1,gas\n", encoding="utf-8")
     vp = report(tmp_path, [{"kind": "fix", "plant_id": "L1", "unit_id": "G2", "item": "Status"}])
     base = [qa("L1", "G1"), qa("L2", None)]
-    # G2 is not covered by a check 7 record
     out, info = gate_validation(index(), answered(*base), vp, now=NOW, unfiltered_csv=csv_path)
-    assert out and "optional under the manual" in out[0][1]
+    assert out and "no record with check 7" in out[0][1]
     note = dict(qa("L1", "G1", checks=[12]), researcher_notes="This error is optional under the manual.")
     out, info = gate_validation(index(), answered(note, *base[1:]), vp, now=NOW,
                                 unfiltered_csv=csv_path)
-    assert out == []
-    assert any("unanswered but optional" in i and "(0 " not in i for i in info)
+    assert out and "no record with check 7" in out[0][1]
 
 
 def test_non_optional_item_still_fails(tmp_path):
@@ -123,13 +121,13 @@ def test_non_optional_item_still_fails(tmp_path):
     assert out and "no record with check 7" in out[0][1]
 
 
-def test_coal_conversion_unit_is_optional(tmp_path):
+def test_coal_conversion_unit_is_required_too(tmp_path):
     vp = report(tmp_path, [{"kind": "fix", "plant_id": "L1", "unit_id": "G2", "item": "Fuel"}])
     export = {"G2": {"Conversion/replacement?": "conversion",
                      "Conversion from/replacement of (fuel)": "coal"}}
     out, _ = gate_validation(index(), answered(qa("L1", "G1"), qa("L2", None)), vp, now=NOW,
                              export=export, unfiltered_csv=tmp_path / "none.csv")
-    assert out and "optional under the manual" in out[0][1]
+    assert out and "no record with check 7" in out[0][1]
 
 
 # ---- worklist ----

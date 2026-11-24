@@ -1,797 +1,820 @@
 {
- "meta": {
-  "lane": "qa",
-  "scope": {
-   "country": "United States",
-   "state": "Illinois",
-   "postal": "il",
-   "kind": "state",
-   "slug": "illinois",
-   "quarter": "q4-2026",
-   "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+  "meta": {
+    "lane": "qa",
+    "scope": {
+      "country": "United States",
+      "state": "Illinois",
+      "postal": "il",
+      "kind": "state",
+      "slug": "illinois",
+      "quarter": "q4-2026",
+      "csv": "scripts/gem_export_gogpt_scoped.csv"
+    },
+    "generated": "2026-10-09T18:15:23-04:00",
+    "mode": "update",
+    "counts": {
+      "records": 33
+    },
+    "validation_answered": "2026-10-16: validation report items answered in place, checks [7]",
+    "annotated": "2026-10-21: five planned-retire qa records (Aurora, Rockford I and II, University Park North and South) dropped, superseded by a 2031 planned retire decision; 2026-10-22: discovery audit addendum, one Lincoln Land capacity question (1,276 MW against about 1,100 MW nominal); 2026-10-30: Broadwing duplicate question on MISO J1839, moved from the watch list; 2026-10-30: the Elwood owner question dropped, answered by the GT1 to GT4 owner edits; the GT8 and GT9 status question rewritten with the MPH Elwood letter, which says those two units were not sold"
   },
-  "generated": "2026-10-09T18:15:23-04:00",
-  "mode": "update",
-  "counts": {
-   "records": 33
-  },
-  "validation_answered": "2026-10-16: validation report items answered in place, checks [7]",
-  "annotated": "2026-10-21: five planned-retire qa records (Aurora, Rockford I and II, University Park North and South) dropped, superseded by a 2031 planned retire decision; 2026-10-22: discovery audit addendum, one Lincoln Land capacity question (1,276 MW against about 1,100 MW nominal); 2026-10-30: Broadwing duplicate question on MISO J1839, moved from the watch list; 2026-10-30: the Elwood owner question dropped, answered by the GT1 to GT4 owner edits; the GT8 and GT9 status question rewritten with the MPH Elwood letter, which says those two units were not sold"
- },
- "records": [
-  {
-   "gem_unit_id": "G100000410074",
-   "concern_type": "Start year",
-   "recommendation": "Please check whether the start year should move from 2029 to 2030.",
-   "refs": {
-    "links": [
-     "https://www.powermag.com/google-backs-first-u-s-gas-fired-power-plant-with-integrated-ccs-for-data-centers/"
-    ]
-   },
-   "proposed_value": {
-    "Start year": "2030"
-   },
-   "gem_plant_id": "L100000407695",
-   "plant_name": "Broadwing Energy Center",
-   "country": "United States",
-   "unit_name": "1",
-   "fields": {},
-   "researcher_notes": "The Power magazine article from October 23, 2025 says commercial operation is targeted for 2030. Earlier company statements said steam and power by the end of 2029 and carbon capture by early 2030. GEM shows 2029.",
-   "record_id": "L100000407695:G100000410074:qa-start-year-1",
-   "checks": [
-    10
-   ]
-  },
-  {
-   "gem_unit_id": "G100000410074",
-   "concern_type": "validation",
-   "recommendation": "Date the pre-construction step as October 2023, when Broadwing Energy announced signed agreements to build the plant.",
-   "refs": {
-    "links": [
-     "https://decarbonfuse.com/posts/warwick-carbon-solutions-announces-construction-of-first-of-its-kind-lower-emission-power-facility-in-decatur",
-     "https://wsgr.com/en/insights/firm-advises-warwick-carbon-solutions-on-its-first-of-its-kind-industrial-decarbonization-project.html"
-    ]
-   },
-   "gem_plant_id": "L100000407695",
-   "plant_name": "Broadwing Energy Center",
-   "country": "United States",
-   "unit_name": "1",
-   "fields": {},
-   "researcher_notes": "The database's validation report says the pre-construction step has no date. A Broadwing Energy press release from October 2023 says formal agreements were signed to build the Decatur plant. A law firm announcement says those agreements covered real estate, interconnection and regulatory work. The month is firm. The exact day did not match on the page. The date the Illinois Environmental Protection Agency received the air permit application was not found. The February 2022 interconnection request in the old notes has no source, and no grid queue entry was found. An April 2021 trade story on an earlier, smaller design only announced intent, so it is not used.",
-   "record_id": "L100000407695:G100000410074:qa-other-2",
-   "concern_type_raw": "other",
-   "checks": [
-    7
-   ],
-   "proposed_value": {
-    "Milestone: pre-construction": "2023, October"
-   },
-   "verifications": [
+  "records": [
     {
-     "url": "https://decarbonfuse.com/posts/warwick-carbon-solutions-announces-construction-of-first-of-its-kind-lower-emission-power-facility-in-decatur",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
+      "gem_unit_id": "G100000410074",
+      "concern_type": "Start year",
+      "recommendation": "Please check whether the start year should move from 2029 to 2030.",
+      "refs": {
+        "links": [
+          "https://www.powermag.com/google-backs-first-u-s-gas-fired-power-plant-with-integrated-ccs-for-data-centers/"
+        ]
+      },
+      "proposed_value": {
+        "Start year": "2030"
+      },
+      "gem_plant_id": "L100000407695",
+      "plant_name": "Broadwing Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The Power magazine article from October 23, 2025 says commercial operation is targeted for 2030. Earlier company statements said steam and power by the end of 2029 and carbon capture by early 2030. GEM shows 2029.",
+      "record_id": "L100000407695:G100000410074:qa-start-year-1",
+      "checks": [
+        10
+      ]
     },
     {
-     "url": "https://wsgr.com/en/insights/firm-advises-warwick-carbon-solutions-on-its-first-of-its-kind-industrial-decarbonization-project.html",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
-    }
-   ]
-  },
-  {
-   "gem_unit_id": "G100000403820",
-   "concern_type": "attribution",
-   "recommendation": "Please check who holds the project. The article says Kindle Energy is the owner and developer, but development control has moved back to EmberClear.",
-   "refs": {
-    "links": [
-     "https://www.springfieldbusinessjournal.com/news/data-center-development-linked-to-power-plant-construction/"
-    ]
-   },
-   "gem_plant_id": "L100000402416",
-   "plant_name": "Lincoln Land energy center",
-   "country": "United States",
-   "unit_name": "GEN1",
-   "fields": {},
-   "researcher_notes": "GEM shows Lincoln Land Energy Center LLC as the owner. I did not find a closed sale document. The owner does not change.",
-   "record_id": "L100000402416:G100000403820:qa-attribution-1"
-  },
-  {
-   "gem_unit_id": "G100000403820",
-   "concern_type": "Status",
-   "recommendation": "EIA lists both generators as planned with regulatory approvals not initiated, while GEM has pre-construction because the state permit exists. I left the status alone.",
-   "refs": {
-    "links": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "gem_plant_id": "L100000402416",
-   "plant_name": "Lincoln Land energy center",
-   "country": "United States",
-   "unit_name": "GEN1",
-   "fields": {},
-   "researcher_notes": "The state permit is from July 2022 per the existing text and was extended twice.",
-   "record_id": "L100000402416:G100000403820:qa-status-2",
-   "checks": [
-    10
-   ]
-  },
-  {
-   "gem_unit_id": "G100000403820",
-   "concern_type": "validation",
-   "recommendation": "Date the pre-construction step of units GEN1 and GEN2 as April 2018, when the Illinois Environmental Protection Agency received the air permit application. If you prefer the date the permit was issued, use July 2022.",
-   "refs": {
-    "links": [
-     "https://s3.documentcloud.org/documents/21169241/2021-10-1-draft-air-permit-for-lincoln-land-gas-plant.pdf",
-     "https://www.powermag.com/illinois-epa-issues-permit-for-new-1-1-gw-gas-fired-facility/"
-    ]
-   },
-   "gem_plant_id": "L100000402416",
-   "plant_name": "Lincoln Land energy center",
-   "country": "United States",
-   "unit_name": "GEN1",
-   "fields": {},
-   "researcher_notes": "The database's validation report says the pre-construction step has no date. The Illinois Environmental Protection Agency draft construction permit from October 2021 says the application was received on April 6, 2018. Seeking a permit is what pre-construction means, so the project was at that step by April 2018. A POWER magazine article says the permit was issued on July 29, 2022. No earlier interconnection or zoning filing was found.",
-   "record_id": "L100000402416:G100000403820:qa-other-3",
-   "concern_type_raw": "other",
-   "checks": [
-    7
-   ],
-   "sibling_unit_ids": [
-    "G100000403821"
-   ],
-   "proposed_value": {
-    "Milestone: pre-construction": "2018, April"
-   },
-   "verifications": [
-    {
-     "url": "https://s3.documentcloud.org/documents/21169241/2021-10-1-draft-air-permit-for-lincoln-land-gas-plant.pdf",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
+      "gem_unit_id": "G100000410074",
+      "concern_type": "validation",
+      "recommendation": "Date the pre-construction step as October 2023, when Broadwing Energy announced signed agreements to build the plant.",
+      "refs": {
+        "links": [
+          "https://decarbonfuse.com/posts/warwick-carbon-solutions-announces-construction-of-first-of-its-kind-lower-emission-power-facility-in-decatur",
+          "https://wsgr.com/en/insights/firm-advises-warwick-carbon-solutions-on-its-first-of-its-kind-industrial-decarbonization-project.html"
+        ]
+      },
+      "gem_plant_id": "L100000407695",
+      "plant_name": "Broadwing Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "The database's validation report says the pre-construction step has no date. A Broadwing Energy press release from October 2023 says formal agreements were signed to build the Decatur plant. A law firm announcement says those agreements covered real estate, interconnection and regulatory work. The month is firm. The exact day did not match on the page. The date the Illinois Environmental Protection Agency received the air permit application was not found. The February 2022 interconnection request in the old notes has no source, and no grid queue entry was found. An April 2021 trade story on an earlier, smaller design only announced intent, so it is not used.",
+      "record_id": "L100000407695:G100000410074:qa-other-2",
+      "concern_type_raw": "other",
+      "checks": [
+        7
+      ],
+      "proposed_value": {
+        "Milestone: pre-construction": "2023, October"
+      },
+      "verifications": [
+        {
+          "url": "https://decarbonfuse.com/posts/warwick-carbon-solutions-announces-construction-of-first-of-its-kind-lower-emission-power-facility-in-decatur",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://wsgr.com/en/insights/firm-advises-warwick-carbon-solutions-on-its-first-of-its-kind-industrial-decarbonization-project.html",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ]
     },
     {
-     "url": "https://www.powermag.com/illinois-epa-issues-permit-for-new-1-1-gw-gas-fired-facility/",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
-    }
-   ]
-  },
-  {
-   "gem_unit_id": "G100000402197",
-   "concern_type": "Status",
-   "recommendation": "Please review the change from mothballed to retired. EIA gives April 2024. A second article shows demolition but gives no retirement year.",
-   "refs": {
-    "links": [
-     "https://dailyegyptian.com/123274/uncategorized/grand-tower-power-plant-under-redevelopment-many-expect-it-to-become-a-data-center/",
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "proposed_value": {
-    "Status": "retired",
-    "Retired year": "2024"
-   },
-   "gem_plant_id": "L100000402075",
-   "plant_name": "Grand Tower energy center",
-   "country": "United States",
-   "unit_name": "CC01",
-   "fields": {},
-   "researcher_notes": "Owner changed to Perdomo Worldwide per the Daily Egyptian. The sale date and closing were not found, so the owner is not changed.",
-   "record_id": "L100000402075:G100000402197:qa-status-1",
-   "checks": [
-    38
-   ]
-  },
-  {
-   "gem_unit_id": "G100000402197",
-   "concern_type": "Capacity (MW)",
-   "recommendation": "EIA lists a 223.2 MW gas turbine and an 80.9 MW steam unit for generator set 1 and 3, and 223.2 plus 113.6 MW for set 2 and 4. GEM shows 304 and 337 MW. This matches within rounding.",
-   "refs": {
-    "links": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "gem_plant_id": "L100000402075",
-   "plant_name": "Grand Tower energy center",
-   "country": "United States",
-   "unit_name": "CC01",
-   "fields": {},
-   "researcher_notes": "No change needed.",
-   "record_id": "L100000402075:G100000402197:qa-capacity-mw-2"
-  },
-  {
-   "gem_unit_id": "G100000402197",
-   "concern_type": "validation",
-   "recommendation": "Date the mothballed step in the status history of units CC01 and CC02 as 2021. A SIL News story from January 5, 2021 already reports that operations had ceased, so January 2021 is the earliest month a document supports.",
-   "refs": {
-    "links": [
-     "https://silnews.com/stories/569938995-grand-tower-energy-center-shuts-down-operations",
-     "https://dailyegyptian.com/123274/uncategorized/grand-tower-power-plant-under-redevelopment-many-expect-it-to-become-a-data-center/"
-    ]
-   },
-   "gem_plant_id": "L100000402075",
-   "plant_name": "Grand Tower energy center",
-   "country": "United States",
-   "unit_name": "CC01",
-   "fields": {},
-   "researcher_notes": "The database's validation report says the mothballed step has no date. A SIL News story from January 5, 2021 says operations at the gas plant had ceased for an extended outage. A Daily Egyptian article from February 2026 says the plant ceased operations in February 2021. The two sources differ by a month, so the year is firm and the month is not. This is a date for the status history in the web form, not a cell in the export.",
-   "record_id": "L100000402075:G100000402197:qa-other-3",
-   "concern_type_raw": "other",
-   "checks": [
-    7
-   ],
-   "sibling_unit_ids": [
-    "G100000402198"
-   ],
-   "proposed_value": {
-    "Milestone: mothballed": "2021, January"
-   },
-   "verifications": [
-    {
-     "url": "https://silnews.com/stories/569938995-grand-tower-energy-center-shuts-down-operations",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
+      "gem_unit_id": "G100000403820",
+      "concern_type": "attribution",
+      "recommendation": "Please check who holds the project. The article says Kindle Energy is the owner and developer, but development control has moved back to EmberClear.",
+      "refs": {
+        "links": [
+          "https://www.springfieldbusinessjournal.com/news/data-center-development-linked-to-power-plant-construction/"
+        ]
+      },
+      "gem_plant_id": "L100000402416",
+      "plant_name": "Lincoln Land energy center",
+      "country": "United States",
+      "unit_name": "GEN1",
+      "fields": {},
+      "researcher_notes": "GEM shows Lincoln Land Energy Center LLC as the owner. I did not find a closed sale document. The owner does not change.",
+      "record_id": "L100000402416:G100000403820:qa-attribution-1"
     },
     {
-     "url": "https://dailyegyptian.com/123274/uncategorized/grand-tower-power-plant-under-redevelopment-many-expect-it-to-become-a-data-center/",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
-    }
-   ]
-  },
-  {
-   "gem_unit_id": "G100000402197",
-   "concern_type": "attribution",
-   "recommendation": "Perdomo Worldwide now owns the site according to the Daily Egyptian. Please check the sale record.",
-   "refs": {
-    "links": [
-     "https://dailyegyptian.com/123274/uncategorized/grand-tower-power-plant-under-redevelopment-many-expect-it-to-become-a-data-center/"
-    ]
-   },
-   "gem_plant_id": "L100000402075",
-   "plant_name": "Grand Tower energy center",
-   "country": "United States",
-   "unit_name": "CC01",
-   "fields": {},
-   "researcher_notes": "Mainline Generation LLC is still the owner in the EIA table.",
-   "record_id": "L100000402075:G100000402197:qa-attribution-4"
-  },
-  {
-   "gem_unit_id": "G100000403513",
-   "concern_type": "location",
-   "recommendation": "The EIA table gives slightly different coordinates from GEM. Keep GEM's values unless a reviewer prefers the EIA point.",
-   "refs": {
-    "links": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "proposed_value": {},
-   "gem_plant_id": "L100000103868",
-   "plant_name": "Marion Plant",
-   "country": "United States",
-   "unit_name": "5",
-   "fields": {},
-   "researcher_notes": "The August 2026 EIA-860M table places plant 976 at 37.619747, -88.95311. GEM has 37.6196810, -88.9529190. The two are about 15 meters apart, so the location is the same.",
-   "record_id": "L100000103868:G100000403513:qa-location-1"
-  },
-  {
-   "gem_unit_id": "G100000403514",
-   "concern_type": "Status",
-   "recommendation": "Ask the owner or check a second public source before accepting operating. Also ask when the mothballed step happened.",
-   "refs": {},
-   "proposed_value": {
-    "Status": "operating"
-   },
-   "gem_plant_id": "L100000103868",
-   "plant_name": "Marion Plant",
-   "country": "United States",
-   "unit_name": "6",
-   "fields": {},
-   "researcher_notes": "A mothballed status needs a dated source. None was found for units 5 and 6. The 2020 retirement of coal unit 4 is documented, but that is a different unit. A search found no 2021 or later article on mothballing the gas units.",
-   "record_id": "L100000103868:G100000403514:qa-status-2",
-   "checks": [
-    7,
-    38
-   ]
-  },
-  {
-   "gem_unit_id": "G100000403513",
-   "concern_type": "Planned retire",
-   "recommendation": "No deactivation notice found.",
-   "refs": {},
-   "proposed_value": {},
-   "gem_plant_id": "L100000103868",
-   "plant_name": "Marion Plant",
-   "country": "United States",
-   "unit_name": "5",
-   "fields": {},
-   "researcher_notes": "I did not find a PJM deactivation notice, and Marion is in the grid operator MISO, not PJM. No planned retirement is proposed. The 2021 Illinois law deadline is not a retirement date.",
-   "record_id": "L100000103868:G100000403513:qa-planned-retire-3"
-  },
-  {
-   "gem_unit_id": "G100000402260",
-   "concern_type": "Planned retire",
-   "recommendation": "Clear the planned retirement year of 2025 for units 5, 6 and 7.",
-   "refs": {
-    "links": [
-     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf"
-    ]
-   },
-   "proposed_value": {
-    "Planned retire": ""
-   },
-   "gem_plant_id": "L100000401554",
-   "plant_name": "Elwood Energy power station",
-   "country": "United States",
-   "unit_name": "GT5",
-   "fields": {},
-   "researcher_notes": "Dairyland withdrew the retirement notice on May 6, 2026, and the EIA-860M table for August 2026 still lists these units as operating.",
-   "record_id": "L100000401554:G100000402260:qa-planned-retire-1",
-   "checks": [
-    21,
-    23
-   ]
-  },
-  {
-   "gem_unit_id": "G100000402263",
-   "concern_type": "Status",
-   "recommendation": "Check units 8 and 9 against the next EIA-860M table and PJM's deactivation list, and set them back to operating if they are still running. Do not give them the MPH Elwood owner; they stayed with Elwood Energy LLC, whose units 5 to 7 GEM lists under Dairyland Power Cooperative, so confirm and apply that owner instead.",
-   "refs": {
-    "links": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
-     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-revision-8-9.pdf",
-     "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
-    ]
-   },
-   "proposed_value": {},
-   "gem_plant_id": "L100000401554",
-   "plant_name": "Elwood Energy power station",
-   "country": "United States",
-   "unit_name": "GT8",
-   "fields": {},
-   "researcher_notes": "GEM shows GT8 and GT9 as retired with J-POWER USA Development Co Ltd as owner. PJM's May 2025 letter said they would retire on June 1, 2025 if the Hull Street sale closed. The June 2026 letter from MPH Elwood LLC to the Illinois EPA, found in the agency's document library on October 30, 2026, says the sale covered units 1 to 4 only and that units 5 to 9 remained with Elwood Energy LLC. The EIA-860M table for August 2026 lists GT8 and GT9 under plant 69979 as operating, 192 MW each. Dairyland Power Cooperative withdrew the retirement notice for units 5 to 7 on May 6, 2026. No source read for this batch says whether units 8 and 9 were shut down or kept running after June 2025, so both the status and the owner of these two units stay open questions.",
-   "record_id": "L100000401554:G100000402263:qa-status-2",
-   "question": "Are units GT8 and GT9 really retired, and who owns them now?",
-   "finding": "A June 2026 letter from MPH Elwood LLC to the Illinois EPA says the company bought units 1 to 4 only, on June 1, 2025, and that units 5 to 9 at 24391 South Patterson Road stayed with Elwood Energy LLC. PJM's May 2025 letter said units 8 and 9 would retire on June 1, 2025 if the Hull Street sale closed, but the sale that closed did not include them. The EIA-860M table for August 2026 still lists both as operating, 192 MW each.",
-   "verifications": [
-    {
-     "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true,
-     "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
-    }
-   ]
-  },
-  {
-   "gem_unit_id": "G100000402256",
-   "concern_type": "identity",
-   "recommendation": "Note which units carry which EIA plant code.",
-   "refs": {
-    "links": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "proposed_value": {},
-   "gem_plant_id": "L100000401554",
-   "plant_name": "Elwood Energy power station",
-   "country": "United States",
-   "unit_name": "GT1",
-   "fields": {},
-   "researcher_notes": "EIA plant code 69979, MPH Elwood, carries GT1 to GT4 on the retired sheet and GT8 and GT9 on the operating sheet. Plant code 55199 stays with GT5 to GT7. The ID columns were left alone.",
-   "record_id": "L100000401554:G100000402256:qa-identity-4"
-  },
-  {
-   "gem_unit_id": "G100000402277",
-   "concern_type": "Owner(s)",
-   "recommendation": "The sale appears to have closed, so the owner likely needs to change from Rockland Capital to Hull Street Energy. Please confirm the exact company that holds the plant before changing it.",
-   "refs": {
-    "links": [
-     "https://www.powermag.com/hull-street-acquires-two-pjm-based-power-stations-from-rockland-capital/",
-     "https://www.energymonitor.ai/news/hull-street-energy-acquires-plants-pjm/"
-    ]
-   },
-   "proposed_value": {
-    "Owner(s)": "Hull Street Energy [100%]"
-   },
-   "gem_plant_id": "L100000401569",
-   "plant_name": "Lee energy facility",
-   "country": "United States",
-   "unit_name": "CT1",
-   "fields": {},
-   "researcher_notes": "A POWER magazine article says Hull Street Energy announced on August 26, 2026 that it had completed the purchase of the Lee County Generating Station from Rockland Capital. An Energy Monitor article from August 27, 2026 says the same. Both appear to rest on one Hull Street press release, so I count them as one source. Neither names the specific company that holds the plant, only Hull Street Energy and its managed funds. The PJM deactivation notices page was checked and has no notice for this plant. The one Lee entry there is Lee DeKalb, a different plant.",
-   "record_id": "L100000401569:G100000402277:qa-owner-s-1"
-  },
-  {
-   "gem_unit_id": "G100000409601",
-   "concern_type": "Conversion/replacement?",
-   "recommendation": "The database's validation report says this unit's replacement link points at a unit that does not exist. GEM has no coal unit for this Decatur corn mill, so there is no unit to link. The Archer Daniels Midland Decatur coal units in GEM belong to a different plant. Either clear the link or mark this as a conversion of the same unit.",
-   "refs": {
-    "links": [
-     "https://www.tateandlyle.com/news/tate-lyle-delivers-its-commitment-eliminate-use-coal-all-its-operations"
-    ]
-   },
-   "proposed_value": {},
-   "gem_plant_id": "L100000407386",
-   "plant_name": "Tate & Lyle Decatur cogeneration power station",
-   "country": "United States",
-   "unit_name": "GEN1",
-   "fields": {},
-   "researcher_notes": "A Tate and Lyle press release from November 2021 says the final coal system at the Decatur plant was decommissioned in October 2021 and that coal systems were replaced with natural gas combined heat and power. The only generator at this EIA plant is the 1989 steam turbine, so the coal boilers may have been replaced while the turbine stayed.",
-   "record_id": "L100000407386:G100000409601:qa-conversion-replacement-1",
-   "checks": [
-    7
-   ],
-   "verifications": [
-    {
-     "url": "https://www.tateandlyle.com/news/tate-lyle-delivers-its-commitment-eliminate-use-coal-all-its-operations",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
-    }
-   ]
-  },
-  {
-   "gem_unit_id": "G100000409601",
-   "concern_type": "Start year",
-   "recommendation": "Decide whether 2021 is kept as the year the unit began running on gas, or changed to 1989 to match the EIA table.",
-   "refs": {
-    "links": [
-     "https://www.tateandlyle.com/news/tate-lyle-delivers-its-commitment-eliminate-use-coal-all-its-operations",
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "proposed_value": {
-    "Start year": "1989"
-   },
-   "gem_plant_id": "L100000407386",
-   "plant_name": "Tate & Lyle Decatur cogeneration power station",
-   "country": "United States",
-   "unit_name": "GEN1",
-   "fields": {},
-   "researcher_notes": "The August 2026 EIA-860M table gives operating year 1989 for generator GEN1. The Tate and Lyle press release from November 2021 gives October 2021 as the end of coal at the plant. GEM's 2021 matches the fuel change, not the turbine's first operation.",
-   "record_id": "L100000407386:G100000409601:qa-start-year-2",
-   "checks": [
-    38
-   ]
-  },
-  {
-   "gem_unit_id": "G100000409601",
-   "concern_type": "Fuel",
-   "recommendation": "Consider removing coal from the fuel list.",
-   "refs": {
-    "links": [
-     "https://www.tateandlyle.com/news/tate-lyle-delivers-its-commitment-eliminate-use-coal-all-its-operations",
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "proposed_value": {
-    "Fuel": "fossil gas: natural gas"
-   },
-   "gem_plant_id": "L100000407386",
-   "plant_name": "Tate & Lyle Decatur cogeneration power station",
-   "country": "United States",
-   "unit_name": "GEN1",
-   "fields": {},
-   "researcher_notes": "The EIA table lists only natural gas for this generator, and the 2021 press release says the last coal system at Decatur was decommissioned. The EIA table is the source here, so I left Fuel unchanged.",
-   "record_id": "L100000407386:G100000409601:qa-fuel-3"
-  },
-  {
-   "gem_unit_id": "G100000403786",
-   "concern_type": "Planned retire",
-   "recommendation": "Do not enter a planned retirement year for units 1, 2 and 3 at this time.",
-   "refs": {
-    "links": [
-     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/zion-ct1-ct2-ct3-deactivation-notice.pdf",
-     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/zion-ct1-ct2-ct3-withdrawal.pdf"
-    ]
-   },
-   "gem_plant_id": "L100000402389",
-   "plant_name": "Zion energy center",
-   "country": "United States",
-   "unit_name": "CTG1",
-   "fields": {},
-   "researcher_notes": "Constellation sent PJM a deactivation notice on June 22, 2026 for Zion units 1, 2 and 3, effective December 31, 2029, to meet the Illinois Climate and Equitable Jobs Act. PJM replied that the plant is needed and asked for operation through May 2031. On July 2, 2026 Constellation wrote that it intends to withdraw the notice and take part in the capacity auctions for those years. The letter says a formal withdrawal will follow, and I did not find it. So the 2029 date is no longer the owner's plan. Please recheck the PJM page for the formal withdrawal.",
-   "record_id": "L100000402389:G100000403786:qa-planned-retire-1"
-  },
-  {
-   "gem_unit_id": "G100000403786",
-   "concern_type": "Owner(s)",
-   "recommendation": "Keep Zion Energy LLC as owner at 100 percent. Consider adding Constellation Energy Generation LLC as the parent.",
-   "refs": {
-    "links": [
-     "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/zion-ct1-ct2-ct3-deactivation-notice.pdf"
-    ]
-   },
-   "gem_plant_id": "L100000402389",
-   "plant_name": "Zion energy center",
-   "country": "United States",
-   "unit_name": "CTG1",
-   "fields": {},
-   "researcher_notes": "Constellation's June 2026 letter to PJM says Constellation Energy Generation, LLC is the upstream owner of Zion Energy LLC, which owns and operates the plant. The EIA table for August 2026 still lists Zion Energy LLC as the owner. So the owning entity did not change. Only the parent changed after the Calpine purchase closed on January 7, 2026. The parent is a computed field, so I did not report it as a value. The entity lookup found no entity named Constellation Energy or Constellation Energy Generation in the local export, so the parent entity may need to be checked in the entity system.",
-   "record_id": "L100000402389:G100000403786:qa-owner-s-2"
-  },
-  {
-   "gem_unit_id": "G100001017993",
-   "concern_type": "location",
-   "recommendation": "Leave the coordinates as they are. The EIA coordinates are about 30 meters away.",
-   "refs": {
-    "links": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "gem_plant_id": "L100000103864",
-   "plant_name": "Joliet 29 Generating Station",
-   "country": "United States",
-   "unit_name": "Unit 7, timepoint 2",
-   "fields": {},
-   "researcher_notes": "The EIA table for August 2026 gives 41.494636 and -88.12383 for Joliet 29. GEM shows 41.494919 and -88.124342. The two points are very close, but no document I found states GEM's exact numbers, so the location source stays empty. A researcher may choose to cite the EIA table for the location.",
-   "record_id": "L100000103864:G100001017993:qa-location-1"
-  },
-  {
-   "gem_unit_id": "G100001017993",
-   "concern_type": "CCS attachment?",
-   "recommendation": "Leave the value as no. No document states it. Please decide whether the EIA-860M file already cited for the unit's other fields can stand as the source, as it does for the combined heat and power value.",
-   "refs": {},
-   "gem_plant_id": "L100000103864",
-   "plant_name": "Joliet 29 Generating Station",
-   "country": "United States",
-   "unit_name": "Unit 7, timepoint 2",
-   "fields": {},
-   "researcher_notes": "The database's validation report says the carbon capture value has no data source. No document states that these units have no carbon capture. The EIA-860 annual generator files for 2021 to 2024 have a carbon capture column, but the cell is blank for these generators, not N, so it is not a statement either way. The value no is believable because the units were coal boilers converted to gas and are now retired.",
-   "record_id": "L100000103864:G100001017993:qa-ccs-attachment-2",
-   "checks": [
-    7
-   ],
-   "sibling_unit_ids": [
-    "G100001017949"
-   ]
-  },
-  {
-   "gem_unit_id": "G100001017993",
-   "concern_type": "identity",
-   "recommendation": "Match GEM Unit 7 to EIA generator 7, and GEM Unit 8 to EIA generator 8, at plant 384.",
-   "refs": {
-    "links": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "gem_plant_id": "L100000103864",
-   "plant_name": "Joliet 29 Generating Station",
-   "country": "United States",
-   "unit_name": "Unit 7, timepoint 2",
-   "fields": {},
-   "researcher_notes": "The EIA table for August 2026 lists generator 7 (660 MW, natural gas steam turbine, operating April 1965, retired September 2023) and generator 8 (660 MW, same type, operating March 1966, retired September 2023). The names and capacities line up one to one. GEM shows start year 2018 for both because they restarted on gas then. Generator 8 is the match for Unit 8 and not another candidate for Unit 7.",
-   "record_id": "L100000103864:G100001017993:qa-identity-3"
-  },
-  {
-   "gem_unit_id": "G100001017949",
-   "concern_type": "identity",
-   "recommendation": "Add EIA generator id 8 for Unit 8 and 7 for Unit 7 in Other IDs.",
-   "refs": {
-    "links": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "gem_plant_id": "L100000103864",
-   "plant_name": "Joliet 29 Generating Station",
-   "country": "United States",
-   "unit_name": "Unit 8, timepoint 2",
-   "fields": {},
-   "researcher_notes": "See the question on Unit 7. The two units map to generators 7 and 8.",
-   "record_id": "L100000103864:G100001017949:qa-identity-4"
-  },
-  {
-   "gem_unit_id": "G100001017847",
-   "concern_type": "location",
-   "recommendation": "Keep GEM's coordinates unless a reviewer prefers the EIA point.",
-   "refs": {
-    "links": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "gem_plant_id": "L100000103865",
-   "plant_name": "Joliet 9 Generating Station",
-   "country": "United States",
-   "unit_name": "Unit 6, timepoint 2",
-   "fields": {},
-   "researcher_notes": "The EIA-860M table for August 2026 puts the plant at 41.4931, -88.1153. GEM has 41.4949190, -88.1243420, about 0.8 km away. I did not find a document that states GEM's exact point, so Location Data Source stays empty.",
-   "record_id": "L100000103865:G100001017847:qa-location-1"
-  },
-  {
-   "gem_unit_id": "G100001017847",
-   "concern_type": "Start year",
-   "recommendation": "Check that 2018 is the intended start year.",
-   "refs": {
-    "links": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "gem_plant_id": "L100000103865",
-   "plant_name": "Joliet 9 Generating Station",
-   "country": "United States",
-   "unit_name": "Unit 6, timepoint 2",
-   "fields": {},
-   "researcher_notes": "The EIA-860M table gives an operating year of 1959 for this generator. GEM's 2018 is the year of the gas conversion, which fits the conversion naming. No change proposed.",
-   "record_id": "L100000103865:G100001017847:qa-start-year-2"
-  },
-  {
-   "gem_unit_id": "G100001017847",
-   "concern_type": "existence",
-   "recommendation": "Check whether the old Joliet 9 gas combustion turbines are in GEM.",
-   "refs": {
-    "links": [
-     "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
-    ]
-   },
-   "gem_plant_id": "L100000103865",
-   "plant_name": "Joliet 9 Generating Station",
-   "country": "United States",
-   "unit_name": "Unit 6, timepoint 2",
-   "fields": {},
-   "researcher_notes": "EIA also lists eight small gas combustion turbines of 18.4 MW each at this plant, generators 311 to 314 and 321 to 324, retired in December 2004. That is before the 2020 cutoff, so no new unit is proposed.",
-   "record_id": "L100000103865:G100001017847:qa-existence-3"
-  },
-  {
-   "gem_unit_id": "G100000403513",
-   "sibling_unit_ids": [
-    "G100000403514"
-   ],
-   "concern_type": "validation",
-   "recommendation": "Remove the undated mothballed step from the status history of units 5 and 6 instead of dating it. The plant's gas turbines generated power every year from 2020 to 2025.",
-   "refs": {
-    "links": [
-     "https://www.eia.gov/electricity/data/eia923/archive/xls/f923_2025.zip",
-     "https://sipower.org/power-supply/",
-     "https://siec.org/power-supplier"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://www.eia.gov/electricity/data/eia923/archive/xls/f923_2025.zip",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
+      "gem_unit_id": "G100000403820",
+      "concern_type": "Status",
+      "recommendation": "EIA lists both generators as planned with regulatory approvals not initiated, while GEM has pre-construction because the state permit exists. I left the status alone.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000402416",
+      "plant_name": "Lincoln Land energy center",
+      "country": "United States",
+      "unit_name": "GEN1",
+      "fields": {},
+      "researcher_notes": "The state permit is from July 2022 per the existing text and was extended twice.",
+      "record_id": "L100000402416:G100000403820:qa-status-2",
+      "checks": [
+        10
+      ]
     },
     {
-     "url": "https://sipower.org/power-supply/",
-     "ok": true,
-     "contains_value": false,
-     "name_found": true
+      "gem_unit_id": "G100000403820",
+      "concern_type": "validation",
+      "recommendation": "Date the pre-construction step of units GEN1 and GEN2 as April 2018, when the Illinois Environmental Protection Agency received the air permit application. If you prefer the date the permit was issued, use July 2022.",
+      "refs": {
+        "links": [
+          "https://s3.documentcloud.org/documents/21169241/2021-10-1-draft-air-permit-for-lincoln-land-gas-plant.pdf",
+          "https://www.powermag.com/illinois-epa-issues-permit-for-new-1-1-gw-gas-fired-facility/"
+        ]
+      },
+      "gem_plant_id": "L100000402416",
+      "plant_name": "Lincoln Land energy center",
+      "country": "United States",
+      "unit_name": "GEN1",
+      "fields": {},
+      "researcher_notes": "The database's validation report says the pre-construction step has no date. The Illinois Environmental Protection Agency draft construction permit from October 2021 says the application was received on April 6, 2018. Seeking a permit is what pre-construction means, so the project was at that step by April 2018. A POWER magazine article says the permit was issued on July 29, 2022. No earlier interconnection or zoning filing was found.",
+      "record_id": "L100000402416:G100000403820:qa-other-3",
+      "concern_type_raw": "other",
+      "checks": [
+        7
+      ],
+      "sibling_unit_ids": [
+        "G100000403821"
+      ],
+      "proposed_value": {
+        "Milestone: pre-construction": "2018, April"
+      },
+      "verifications": [
+        {
+          "url": "https://s3.documentcloud.org/documents/21169241/2021-10-1-draft-air-permit-for-lincoln-land-gas-plant.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://www.powermag.com/illinois-epa-issues-permit-for-new-1-1-gw-gas-fired-facility/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ]
     },
     {
-     "url": "https://siec.org/power-supplier",
-     "ok": true,
-     "contains_value": false,
-     "name_found": true
-    }
-   ],
-   "proposed_value": {},
-   "gem_plant_id": "L100000103868",
-   "plant_name": "Marion Plant",
-   "country": "United States",
-   "unit_name": "5",
-   "fields": {},
-   "researcher_notes": "The database's validation report says the mothballed step has no date. No document says units 5 or 6 were idled or mothballed. The EIA-923 annual generation files for plant 976 show the gas turbines produced power every year: about 4,300 MWh in 2020, 43,700 in 2021, 103,400 in 2022, 71,900 in 2023, 113,600 in 2024 and 93,100 in 2025. Those files report both turbines together, so they cannot show each unit on its own. The Southern Illinois Power Cooperative website and a member cooperative's website still list two 70 megawatt combustion turbines at Marion as part of the supply. A unit that ran every year was never inactive for a full year, so the step looks like a mistake.",
-   "record_id": "L100000103868:G100000403513:qa-validation-1",
-   "checks": [
-    7
-   ]
-  },
-  {
-   "gem_unit_id": "G100001017847",
-   "concern_type": "CCS attachment?",
-   "recommendation": "Leave the value as no. No document states it. Please decide whether the EIA-860M file already cited for the unit's other fields can stand as the source, as it does for the combined heat and power value.",
-   "refs": {},
-   "proposed_value": {},
-   "gem_plant_id": "L100000103865",
-   "plant_name": "Joliet 9 Generating Station",
-   "country": "United States",
-   "unit_name": "Unit 6, timepoint 2",
-   "fields": {},
-   "researcher_notes": "The database's validation report says the carbon capture value has no data source. No document states that these units have no carbon capture. The EIA-860 annual generator files for 2021 to 2024 have a carbon capture column, but the cell is blank for these generators, not N, so it is not a statement either way. The value no is believable because the units were coal boilers converted to gas and are now retired.",
-   "record_id": "L100000103865:G100001017847:qa-validation-1",
-   "checks": [
-    7
-   ]
-  },
-  {
-   "gem_unit_id": "G100001100702",
-   "concern_type": "existence",
-   "recommendation": "In the web form, delete the unit named \"--\" at Aurora power station, or fill it in if it is a real unit. It has no fuel, no capacity and no status history, and the name \"--\" is not allowed on a plant with more than one unit.",
-   "refs": {},
-   "proposed_value": {},
-   "gem_plant_id": "L100000401731",
-   "plant_name": "Aurora power station",
-   "country": "United States",
-   "unit_name": "--",
-   "fields": {},
-   "researcher_notes": "The database's validation report lists four problems on this unit: fuel, capacity and the status history are required but blank, and the name is \"--\". It also shows up on the list of units with no tracker, because it has no fuel. The ten real Aurora units are all present. This looks like an empty unit added by mistake. Nothing to research: this is a fix by hand.",
-   "record_id": "L100000401731:G100001100702:qa-validation-1",
-   "checks": [
-    7,
-    56
-   ]
-  },
-  {
-   "gem_unit_id": "G100000403820",
-   "gem_plant_id": "L100000402416",
-   "plant_name": "Lincoln Land energy center",
-   "country": "United States",
-   "unit_name": "GEN1",
-   "concern_type": "Capacity (MW)",
-   "recommendation": "Please check whether the two 638 MW units, 1,276 MW together, should instead match the about 1,100 MW nominal rating in the 2021 permit application.",
-   "proposed_value": {},
-   "fields": {},
-   "refs": {
-    "links": [
-     "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/7738"
-    ]
-   },
-   "verifications": [
-    {
-     "url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/7738",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true
-    }
-   ],
-   "researcher_notes": "The 2021 project summary on the Illinois Environmental Protection Agency public notice site describes a nominal 1,100 MW combined cycle plant. GEM carries two units of 638 MW each from the EIA-860M table, which is 1,276 MW. The difference could be gross against net, or duct firing, and no newer document settles it. Capacity is left unchanged.",
-   "record_id": "L100000402416:G100000403820:qa-capacity-mw-1",
-   "checks": [
-    10
-   ]
-  },
-  {
-   "gem_unit_id": "G100000410074",
-   "concern_type": "duplicate",
-   "question": "Is MISO interconnection request J1839 at the Decatur ADM North substation the Broadwing Energy Center, or a separate plant?",
-   "finding": "J1839 is a 325 MW summer, 340 MW winter gas request at the ADM North 138 kV substation in Decatur, queued in June 2020. In August 2026 MISO moved its in-service date to December 2029, which matches Broadwing's target. Broadwing's net output of about 418 to 467 MW, less the power ADM takes on site, fits the 325 to 340 MW the request sends to the grid.",
-   "recommendation": "Treat J1839 as Broadwing's grid connection and do not add it as a new plant or unit.",
-   "refs": {
-    "links": [
-     "https://www.misoenergy.org/api/giqueue/getprojects",
-     "https://cdn.misoenergy.org/20260903%20CSPM%20Item%2004b%20Illinois779204.pdf",
-     "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/10283"
-    ]
-   },
-   "gem_plant_id": "L100000407695",
-   "plant_name": "Broadwing Energy Center",
-   "country": "United States",
-   "unit_name": "1",
-   "fields": {},
-   "researcher_notes": "MISO's live queue lists J1839 as a simple cycle combustion turbine, while Broadwing is one turbine with a heat recovery steam generator and a duct burner. The request dates from 2020, when the project at ADM was an earlier 280 MW design by 8 Rivers, so the technology label was probably never updated. No public document names the company behind J1839. I found no signed interconnection agreement for it on MISO's site or at the Federal Energy Regulatory Commission, and the Illinois air permit papers do not give a queue number. The match rests on the same substation, the same schedule and a fitting size. This also answers the older note that no grid queue entry was found for Broadwing.",
-   "record_id": "L100000407695:G100000410074:qa-duplicate-3",
-   "checks": [],
-   "proposed_value": {},
-   "verifications": [
-    {
-     "url": "https://www.misoenergy.org/api/giqueue/getprojects",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true,
-     "note": "J1839, Decatur ADM North 138 kV, queued 2020-06-25, 325 MW summer, 340.3 MW winter, gas"
+      "gem_unit_id": "G100000402197",
+      "concern_type": "Status",
+      "recommendation": "Please review the change from mothballed to retired. EIA gives April 2024. A second article shows demolition but gives no retirement year.",
+      "refs": {
+        "links": [
+          "https://dailyegyptian.com/123274/uncategorized/grand-tower-power-plant-under-redevelopment-many-expect-it-to-become-a-data-center/",
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "proposed_value": {
+        "Status": "retired",
+        "Retired year": "2024"
+      },
+      "gem_plant_id": "L100000402075",
+      "plant_name": "Grand Tower energy center",
+      "country": "United States",
+      "unit_name": "CC01",
+      "fields": {},
+      "researcher_notes": "Owner changed to Perdomo Worldwide per the Daily Egyptian. The sale date and closing were not found, so the owner is not changed.",
+      "record_id": "L100000402075:G100000402197:qa-status-1",
+      "checks": [
+        38
+      ]
     },
     {
-     "url": "https://cdn.misoenergy.org/20260903%20CSPM%20Item%2004b%20Illinois779204.pdf",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true,
-     "note": "New ADM North (J1839) 138 kV Interconnection, in-service date changed from 12/1/2027 to 12/1/2029, information as of 8/19/26"
+      "gem_unit_id": "G100000402197",
+      "concern_type": "Capacity (MW)",
+      "recommendation": "EIA lists a 223.2 MW gas turbine and an 80.9 MW steam unit for generator set 1 and 3, and 223.2 plus 113.6 MW for set 2 and 4. GEM shows 304 and 337 MW. This matches within rounding.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000402075",
+      "plant_name": "Grand Tower energy center",
+      "country": "United States",
+      "unit_name": "CC01",
+      "fields": {},
+      "researcher_notes": "No change needed.",
+      "record_id": "L100000402075:G100000402197:qa-capacity-mw-2"
     },
     {
-     "url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/10283",
-     "ok": true,
-     "contains_value": true,
-     "name_found": true,
-     "note": "Broadwing project summary: 452 MW gross, about 418 MW net at 102 F and 467 MW at 18 F, power not sold to ADM goes to MISO"
+      "gem_unit_id": "G100000402197",
+      "concern_type": "validation",
+      "recommendation": "Date the mothballed step in the status history of units CC01 and CC02 as 2021. A SIL News story from January 5, 2021 already reports that operations had ceased, so January 2021 is the earliest month a document supports.",
+      "refs": {
+        "links": [
+          "https://silnews.com/stories/569938995-grand-tower-energy-center-shuts-down-operations",
+          "https://dailyegyptian.com/123274/uncategorized/grand-tower-power-plant-under-redevelopment-many-expect-it-to-become-a-data-center/"
+        ]
+      },
+      "gem_plant_id": "L100000402075",
+      "plant_name": "Grand Tower energy center",
+      "country": "United States",
+      "unit_name": "CC01",
+      "fields": {},
+      "researcher_notes": "The database's validation report says the mothballed step has no date. A SIL News story from January 5, 2021 says operations at the gas plant had ceased for an extended outage. A Daily Egyptian article from February 2026 says the plant ceased operations in February 2021. The two sources differ by a month, so the year is firm and the month is not. This is a date for the status history in the web form, not a cell in the export.",
+      "record_id": "L100000402075:G100000402197:qa-other-3",
+      "concern_type_raw": "other",
+      "checks": [
+        7
+      ],
+      "sibling_unit_ids": [
+        "G100000402198"
+      ],
+      "proposed_value": {
+        "Milestone: mothballed": "2021, January"
+      },
+      "verifications": [
+        {
+          "url": "https://silnews.com/stories/569938995-grand-tower-energy-center-shuts-down-operations",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://dailyegyptian.com/123274/uncategorized/grand-tower-power-plant-under-redevelopment-many-expect-it-to-become-a-data-center/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ]
+    },
+    {
+      "gem_unit_id": "G100000402197",
+      "concern_type": "attribution",
+      "recommendation": "Perdomo Worldwide now owns the site according to the Daily Egyptian. Please check the sale record.",
+      "refs": {
+        "links": [
+          "https://dailyegyptian.com/123274/uncategorized/grand-tower-power-plant-under-redevelopment-many-expect-it-to-become-a-data-center/"
+        ]
+      },
+      "gem_plant_id": "L100000402075",
+      "plant_name": "Grand Tower energy center",
+      "country": "United States",
+      "unit_name": "CC01",
+      "fields": {},
+      "researcher_notes": "Mainline Generation LLC is still the owner in the EIA table.",
+      "record_id": "L100000402075:G100000402197:qa-attribution-4"
+    },
+    {
+      "gem_unit_id": "G100000403513",
+      "concern_type": "location",
+      "recommendation": "The EIA table gives slightly different coordinates from GEM. Keep GEM's values unless a reviewer prefers the EIA point.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "country": "United States",
+      "unit_name": "5",
+      "fields": {},
+      "researcher_notes": "The August 2026 EIA-860M table places plant 976 at 37.619747, -88.95311. GEM has 37.6196810, -88.9529190. The two are about 15 meters apart, so the location is the same.",
+      "record_id": "L100000103868:G100000403513:qa-location-1"
+    },
+    {
+      "gem_unit_id": "G100000403514",
+      "concern_type": "Status",
+      "recommendation": "Ask the owner or check a second public source before accepting operating. Also ask when the mothballed step happened.",
+      "refs": {},
+      "proposed_value": {
+        "Status": "operating"
+      },
+      "gem_plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "country": "United States",
+      "unit_name": "6",
+      "fields": {},
+      "researcher_notes": "A mothballed status needs a dated source. None was found for units 5 and 6. The 2020 retirement of coal unit 4 is documented, but that is a different unit. A search found no 2021 or later article on mothballing the gas units.",
+      "record_id": "L100000103868:G100000403514:qa-status-2",
+      "checks": [
+        7,
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100000403513",
+      "concern_type": "Planned retire",
+      "recommendation": "No deactivation notice found.",
+      "refs": {},
+      "proposed_value": {},
+      "gem_plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "country": "United States",
+      "unit_name": "5",
+      "fields": {},
+      "researcher_notes": "I did not find a PJM deactivation notice, and Marion is in the grid operator MISO, not PJM. No planned retirement is proposed. The 2021 Illinois law deadline is not a retirement date.",
+      "record_id": "L100000103868:G100000403513:qa-planned-retire-3"
+    },
+    {
+      "gem_unit_id": "G100000402260",
+      "concern_type": "Planned retire",
+      "recommendation": "Clear the planned retirement year of 2025 for units 5, 6 and 7.",
+      "refs": {
+        "links": [
+          "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-deactivation-withdraw-letter.pdf"
+        ]
+      },
+      "proposed_value": {
+        "Planned retire": ""
+      },
+      "gem_plant_id": "L100000401554",
+      "plant_name": "Elwood Energy power station",
+      "country": "United States",
+      "unit_name": "GT5",
+      "fields": {},
+      "researcher_notes": "Dairyland withdrew the retirement notice on May 6, 2026, and the EIA-860M table for August 2026 still lists these units as operating.",
+      "record_id": "L100000401554:G100000402260:qa-planned-retire-1",
+      "checks": [
+        21,
+        23
+      ]
+    },
+    {
+      "gem_unit_id": "G100000402263",
+      "concern_type": "Status",
+      "recommendation": "Check units 8 and 9 against the next EIA-860M table and PJM's deactivation list, and set them back to operating if they are still running. Do not give them the MPH Elwood owner; they stayed with Elwood Energy LLC, whose units 5 to 7 GEM lists under Dairyland Power Cooperative, so confirm and apply that owner instead.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+          "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/elwood-revision-8-9.pdf",
+          "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000401554",
+      "plant_name": "Elwood Energy power station",
+      "country": "United States",
+      "unit_name": "GT8",
+      "fields": {},
+      "researcher_notes": "GEM shows GT8 and GT9 as retired with J-POWER USA Development Co Ltd as owner. PJM's May 2025 letter said they would retire on June 1, 2025 if the Hull Street sale closed. The June 2026 letter from MPH Elwood LLC to the Illinois EPA, found in the agency's document library on October 30, 2026, says the sale covered units 1 to 4 only and that units 5 to 9 remained with Elwood Energy LLC. The EIA-860M table for August 2026 lists GT8 and GT9 under plant 69979 as operating, 192 MW each. Dairyland Power Cooperative withdrew the retirement notice for units 5 to 7 on May 6, 2026. No source read for this batch says whether units 8 and 9 were shut down or kept running after June 2025, so both the status and the owner of these two units stay open questions.",
+      "record_id": "L100000401554:G100000402263:qa-status-2",
+      "question": "Are units GT8 and GT9 really retired, and who owns them now?",
+      "finding": "A June 2026 letter from MPH Elwood LLC to the Illinois EPA says the company bought units 1 to 4 only, on June 1, 2025, and that units 5 to 9 at 24391 South Patterson Road stayed with Elwood Energy LLC. PJM's May 2025 letter said units 8 and 9 would retire on June 1, 2025 if the Hull Street sale closed, but the sale that closed did not include them. The EIA-860M table for August 2026 still lists both as operating, 192 MW each.",
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/DocumentExplorer/Documents/Index/170002721348?dwdocid=1518071",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "A letter of June 15, 2026 from MPH Elwood, LLC to the Illinois EPA, filed in the agency's document library under permit 25070017 and received July 16, 2026. It says MPH Elwood bought four of the nine Elwood turbines, CT-1 through CT-4 at 21100 Noel Road, from Elwood Energy LLC on June 1, 2025, that the Illinois EPA issued MPH Elwood its own operating permit on December 15, 2025, that units CT-5 through CT-9 at 24391 South Patterson Road stayed with Elwood Energy, and that CT-1 through CT-4 permanently ceased operation on June 1, 2026. Signed by a Hull Street Energy officer. Scanned pages read by OCR."
+        }
+      ]
+    },
+    {
+      "gem_unit_id": "G100000402256",
+      "concern_type": "identity",
+      "recommendation": "Note which units carry which EIA plant code.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000401554",
+      "plant_name": "Elwood Energy power station",
+      "country": "United States",
+      "unit_name": "GT1",
+      "fields": {},
+      "researcher_notes": "EIA plant code 69979, MPH Elwood, carries GT1 to GT4 on the retired sheet and GT8 and GT9 on the operating sheet. Plant code 55199 stays with GT5 to GT7. The ID columns were left alone.",
+      "record_id": "L100000401554:G100000402256:qa-identity-4"
+    },
+    {
+      "gem_unit_id": "G100000402277",
+      "concern_type": "Owner(s)",
+      "recommendation": "The sale appears to have closed, so the owner likely needs to change from Rockland Capital to Hull Street Energy. Please confirm the exact company that holds the plant before changing it.",
+      "refs": {
+        "links": [
+          "https://www.powermag.com/hull-street-acquires-two-pjm-based-power-stations-from-rockland-capital/",
+          "https://www.energymonitor.ai/news/hull-street-energy-acquires-plants-pjm/"
+        ]
+      },
+      "proposed_value": {
+        "Owner(s)": "Hull Street Energy [100%]"
+      },
+      "gem_plant_id": "L100000401569",
+      "plant_name": "Lee energy facility",
+      "country": "United States",
+      "unit_name": "CT1",
+      "fields": {},
+      "researcher_notes": "A POWER magazine article says Hull Street Energy announced on August 26, 2026 that it had completed the purchase of the Lee County Generating Station from Rockland Capital. An Energy Monitor article from August 27, 2026 says the same. Both appear to rest on one Hull Street press release, so I count them as one source. Neither names the specific company that holds the plant, only Hull Street Energy and its managed funds. The PJM deactivation notices page was checked and has no notice for this plant. The one Lee entry there is Lee DeKalb, a different plant.",
+      "record_id": "L100000401569:G100000402277:qa-owner-s-1"
+    },
+    {
+      "gem_unit_id": "G100000409601",
+      "concern_type": "Conversion/replacement?",
+      "recommendation": "The database's validation report says this unit's replacement link points at a unit that does not exist. GEM has no coal unit for this Decatur corn mill, so there is no unit to link. The Archer Daniels Midland Decatur coal units in GEM belong to a different plant. Either clear the link or mark this as a conversion of the same unit.",
+      "refs": {
+        "links": [
+          "https://www.tateandlyle.com/news/tate-lyle-delivers-its-commitment-eliminate-use-coal-all-its-operations"
+        ]
+      },
+      "proposed_value": {},
+      "gem_plant_id": "L100000407386",
+      "plant_name": "Tate & Lyle Decatur cogeneration power station",
+      "country": "United States",
+      "unit_name": "GEN1",
+      "fields": {},
+      "researcher_notes": "A Tate and Lyle press release from November 2021 says the final coal system at the Decatur plant was decommissioned in October 2021 and that coal systems were replaced with natural gas combined heat and power. The only generator at this EIA plant is the 1989 steam turbine, so the coal boilers may have been replaced while the turbine stayed.",
+      "record_id": "L100000407386:G100000409601:qa-conversion-replacement-1",
+      "checks": [
+        7
+      ],
+      "verifications": [
+        {
+          "url": "https://www.tateandlyle.com/news/tate-lyle-delivers-its-commitment-eliminate-use-coal-all-its-operations",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ]
+    },
+    {
+      "gem_unit_id": "G100000409601",
+      "concern_type": "Start year",
+      "recommendation": "Decide whether 2021 is kept as the year the unit began running on gas, or changed to 1989 to match the EIA table.",
+      "refs": {
+        "links": [
+          "https://www.tateandlyle.com/news/tate-lyle-delivers-its-commitment-eliminate-use-coal-all-its-operations",
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "proposed_value": {
+        "Start year": "1989"
+      },
+      "gem_plant_id": "L100000407386",
+      "plant_name": "Tate & Lyle Decatur cogeneration power station",
+      "country": "United States",
+      "unit_name": "GEN1",
+      "fields": {},
+      "researcher_notes": "The August 2026 EIA-860M table gives operating year 1989 for generator GEN1. The Tate and Lyle press release from November 2021 gives October 2021 as the end of coal at the plant. GEM's 2021 matches the fuel change, not the turbine's first operation.",
+      "record_id": "L100000407386:G100000409601:qa-start-year-2",
+      "checks": [
+        38
+      ]
+    },
+    {
+      "gem_unit_id": "G100000409601",
+      "concern_type": "Fuel",
+      "recommendation": "Consider removing coal from the fuel list.",
+      "refs": {
+        "links": [
+          "https://www.tateandlyle.com/news/tate-lyle-delivers-its-commitment-eliminate-use-coal-all-its-operations",
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "proposed_value": {
+        "Fuel": "fossil gas: natural gas"
+      },
+      "gem_plant_id": "L100000407386",
+      "plant_name": "Tate & Lyle Decatur cogeneration power station",
+      "country": "United States",
+      "unit_name": "GEN1",
+      "fields": {},
+      "researcher_notes": "The EIA table lists only natural gas for this generator, and the 2021 press release says the last coal system at Decatur was decommissioned. The EIA table is the source here, so I left Fuel unchanged.",
+      "record_id": "L100000407386:G100000409601:qa-fuel-3"
+    },
+    {
+      "gem_unit_id": "G100000403786",
+      "concern_type": "Planned retire",
+      "recommendation": "Do not enter a planned retirement year for units 1, 2 and 3 at this time.",
+      "refs": {
+        "links": [
+          "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/zion-ct1-ct2-ct3-deactivation-notice.pdf",
+          "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/zion-ct1-ct2-ct3-withdrawal.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000402389",
+      "plant_name": "Zion energy center",
+      "country": "United States",
+      "unit_name": "CTG1",
+      "fields": {},
+      "researcher_notes": "Constellation sent PJM a deactivation notice on June 22, 2026 for Zion units 1, 2 and 3, effective December 31, 2029, to meet the Illinois Climate and Equitable Jobs Act. PJM replied that the plant is needed and asked for operation through May 2031. On July 2, 2026 Constellation wrote that it intends to withdraw the notice and take part in the capacity auctions for those years. The letter says a formal withdrawal will follow, and I did not find it. So the 2029 date is no longer the owner's plan. Please recheck the PJM page for the formal withdrawal.",
+      "record_id": "L100000402389:G100000403786:qa-planned-retire-1"
+    },
+    {
+      "gem_unit_id": "G100000403786",
+      "concern_type": "Owner(s)",
+      "recommendation": "Keep Zion Energy LLC as owner at 100 percent. Consider adding Constellation Energy Generation LLC as the parent.",
+      "refs": {
+        "links": [
+          "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/zion-ct1-ct2-ct3-deactivation-notice.pdf"
+        ]
+      },
+      "gem_plant_id": "L100000402389",
+      "plant_name": "Zion energy center",
+      "country": "United States",
+      "unit_name": "CTG1",
+      "fields": {},
+      "researcher_notes": "Constellation's June 2026 letter to PJM says Constellation Energy Generation, LLC is the upstream owner of Zion Energy LLC, which owns and operates the plant. The EIA table for August 2026 still lists Zion Energy LLC as the owner. So the owning entity did not change. Only the parent changed after the Calpine purchase closed on January 7, 2026. The parent is a computed field, so I did not report it as a value. The entity lookup found no entity named Constellation Energy or Constellation Energy Generation in the local export, so the parent entity may need to be checked in the entity system.",
+      "record_id": "L100000402389:G100000403786:qa-owner-s-2"
+    },
+    {
+      "gem_unit_id": "G100001017993",
+      "concern_type": "location",
+      "recommendation": "Leave the coordinates as they are. The EIA coordinates are about 30 meters away.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 7, timepoint 2",
+      "fields": {},
+      "researcher_notes": "The EIA table for August 2026 gives 41.494636 and -88.12383 for Joliet 29. GEM shows 41.494919 and -88.124342. The two points are very close, but no document I found states GEM's exact numbers, so the location source stays empty. A researcher may choose to cite the EIA table for the location.",
+      "record_id": "L100000103864:G100001017993:qa-location-1"
+    },
+    {
+      "gem_unit_id": "G100001017993",
+      "concern_type": "CCS attachment?",
+      "recommendation": "Leave the value as no. No document states it. Please decide whether the EIA-860M file already cited for the unit's other fields can stand as the source, as it does for the combined heat and power value.",
+      "refs": {},
+      "gem_plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 7, timepoint 2",
+      "fields": {},
+      "researcher_notes": "The database's validation report says the carbon capture value has no data source. No document states that these units have no carbon capture. The EIA-860 annual generator files for 2021 to 2024 have a carbon capture column, but the cell is blank for these generators, not N, so it is not a statement either way. The value no is believable because the units were coal boilers converted to gas and are now retired.",
+      "record_id": "L100000103864:G100001017993:qa-ccs-attachment-2",
+      "checks": [
+        7
+      ],
+      "sibling_unit_ids": [
+        "G100001017949"
+      ]
+    },
+    {
+      "gem_unit_id": "G100001017993",
+      "concern_type": "identity",
+      "recommendation": "Match GEM Unit 7 to EIA generator 7, and GEM Unit 8 to EIA generator 8, at plant 384.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 7, timepoint 2",
+      "fields": {},
+      "researcher_notes": "The EIA table for August 2026 lists generator 7 (660 MW, natural gas steam turbine, operating April 1965, retired September 2023) and generator 8 (660 MW, same type, operating March 1966, retired September 2023). The names and capacities line up one to one. GEM shows start year 2018 for both because they restarted on gas then. Generator 8 is the match for Unit 8 and not another candidate for Unit 7.",
+      "record_id": "L100000103864:G100001017993:qa-identity-3"
+    },
+    {
+      "gem_unit_id": "G100001017949",
+      "concern_type": "identity",
+      "recommendation": "Add EIA generator id 8 for Unit 8 and 7 for Unit 7 in Other IDs.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000103864",
+      "plant_name": "Joliet 29 Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 8, timepoint 2",
+      "fields": {},
+      "researcher_notes": "See the question on Unit 7. The two units map to generators 7 and 8.",
+      "record_id": "L100000103864:G100001017949:qa-identity-4"
+    },
+    {
+      "gem_unit_id": "G100001017847",
+      "concern_type": "location",
+      "recommendation": "Keep GEM's coordinates unless a reviewer prefers the EIA point.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000103865",
+      "plant_name": "Joliet 9 Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 6, timepoint 2",
+      "fields": {},
+      "researcher_notes": "The EIA-860M table for August 2026 puts the plant at 41.4931, -88.1153. GEM has 41.4949190, -88.1243420, about 0.8 km away. I did not find a document that states GEM's exact point, so Location Data Source stays empty.",
+      "record_id": "L100000103865:G100001017847:qa-location-1"
+    },
+    {
+      "gem_unit_id": "G100001017847",
+      "concern_type": "Start year",
+      "recommendation": "Check that 2018 is the intended start year.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000103865",
+      "plant_name": "Joliet 9 Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 6, timepoint 2",
+      "fields": {},
+      "researcher_notes": "The EIA-860M table gives an operating year of 1959 for this generator. GEM's 2018 is the year of the gas conversion, which fits the conversion naming. No change proposed.",
+      "record_id": "L100000103865:G100001017847:qa-start-year-2"
+    },
+    {
+      "gem_unit_id": "G100001017847",
+      "concern_type": "existence",
+      "recommendation": "Check whether the old Joliet 9 gas combustion turbines are in GEM.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+        ]
+      },
+      "gem_plant_id": "L100000103865",
+      "plant_name": "Joliet 9 Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 6, timepoint 2",
+      "fields": {},
+      "researcher_notes": "EIA also lists eight small gas combustion turbines of 18.4 MW each at this plant, generators 311 to 314 and 321 to 324, retired in December 2004. That is before the 2020 cutoff, so no new unit is proposed.",
+      "record_id": "L100000103865:G100001017847:qa-existence-3"
+    },
+    {
+      "gem_unit_id": "G100000403513",
+      "sibling_unit_ids": [
+        "G100000403514"
+      ],
+      "concern_type": "validation",
+      "recommendation": "Remove the undated mothballed step from the status history of units 5 and 6 instead of dating it. The plant's gas turbines generated power every year from 2020 to 2025.",
+      "refs": {
+        "links": [
+          "https://www.eia.gov/electricity/data/eia923/archive/xls/f923_2025.zip",
+          "https://sipower.org/power-supply/",
+          "https://siec.org/power-supplier"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://www.eia.gov/electricity/data/eia923/archive/xls/f923_2025.zip",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        },
+        {
+          "url": "https://sipower.org/power-supply/",
+          "ok": true,
+          "contains_value": false,
+          "name_found": true
+        },
+        {
+          "url": "https://siec.org/power-supplier",
+          "ok": true,
+          "contains_value": false,
+          "name_found": true
+        }
+      ],
+      "proposed_value": {},
+      "gem_plant_id": "L100000103868",
+      "plant_name": "Marion Plant",
+      "country": "United States",
+      "unit_name": "5",
+      "fields": {},
+      "researcher_notes": "The database's validation report says the mothballed step has no date. No document says units 5 or 6 were idled or mothballed. The EIA-923 annual generation files for plant 976 show the gas turbines produced power every year: about 4,300 MWh in 2020, 43,700 in 2021, 103,400 in 2022, 71,900 in 2023, 113,600 in 2024 and 93,100 in 2025. Those files report both turbines together, so they cannot show each unit on its own. The Southern Illinois Power Cooperative website and a member cooperative's website still list two 70 megawatt combustion turbines at Marion as part of the supply. A unit that ran every year was never inactive for a full year, so the step looks like a mistake.",
+      "record_id": "L100000103868:G100000403513:qa-validation-1",
+      "checks": [
+        7
+      ]
+    },
+    {
+      "gem_unit_id": "G100001017847",
+      "concern_type": "CCS attachment?",
+      "recommendation": "Leave the value as no. No document states it. Please decide whether the EIA-860M file already cited for the unit's other fields can stand as the source, as it does for the combined heat and power value.",
+      "refs": {},
+      "proposed_value": {},
+      "gem_plant_id": "L100000103865",
+      "plant_name": "Joliet 9 Generating Station",
+      "country": "United States",
+      "unit_name": "Unit 6, timepoint 2",
+      "fields": {},
+      "researcher_notes": "The database's validation report says the carbon capture value has no data source. No document states that these units have no carbon capture. The EIA-860 annual generator files for 2021 to 2024 have a carbon capture column, but the cell is blank for these generators, not N, so it is not a statement either way. The value no is believable because the units were coal boilers converted to gas and are now retired.",
+      "record_id": "L100000103865:G100001017847:qa-validation-1",
+      "checks": [
+        7
+      ]
+    },
+    {
+      "gem_unit_id": "G100001100702",
+      "concern_type": "existence",
+      "recommendation": "In the web form, delete the unit named \"--\" at Aurora power station, or fill it in if it is a real unit. It has no fuel, no capacity and no status history, and the name \"--\" is not allowed on a plant with more than one unit.",
+      "refs": {},
+      "proposed_value": {},
+      "gem_plant_id": "L100000401731",
+      "plant_name": "Aurora power station",
+      "country": "United States",
+      "unit_name": "--",
+      "fields": {},
+      "researcher_notes": "The database's validation report lists four problems on this unit: fuel, capacity and the status history are required but blank, and the name is \"--\". It also shows up on the list of units with no tracker, because it has no fuel. The ten real Aurora units are all present. This looks like an empty unit added by mistake. Nothing to research: this is a fix by hand.",
+      "record_id": "L100000401731:G100001100702:qa-validation-1",
+      "checks": [
+        7,
+        56
+      ]
+    },
+    {
+      "gem_unit_id": "G100000403820",
+      "gem_plant_id": "L100000402416",
+      "plant_name": "Lincoln Land energy center",
+      "country": "United States",
+      "unit_name": "GEN1",
+      "concern_type": "Capacity (MW)",
+      "recommendation": "Please check whether the two 638 MW units, 1,276 MW together, should instead match the about 1,100 MW nominal rating in the 2021 permit application.",
+      "proposed_value": {},
+      "fields": {},
+      "refs": {
+        "links": [
+          "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/7738"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/7738",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true
+        }
+      ],
+      "researcher_notes": "The 2021 project summary on the Illinois Environmental Protection Agency public notice site describes a nominal 1,100 MW combined cycle plant. GEM carries two units of 638 MW each from the EIA-860M table, which is 1,276 MW. The difference could be gross against net, or duct firing, and no newer document settles it. Capacity is left unchanged.",
+      "record_id": "L100000402416:G100000403820:qa-capacity-mw-1",
+      "checks": [
+        10
+      ]
+    },
+    {
+      "gem_unit_id": "G100000410074",
+      "concern_type": "duplicate",
+      "question": "Is MISO interconnection request J1839 at the Decatur ADM North substation the Broadwing Energy Center, or a separate plant?",
+      "finding": "J1839 is a 325 MW summer, 340 MW winter gas request at the ADM North 138 kV substation in Decatur, queued in June 2020. In August 2026 MISO moved its in-service date to December 2029, which matches Broadwing's target. Broadwing's net output of about 418 to 467 MW, less the power ADM takes on site, fits the 325 to 340 MW the request sends to the grid.",
+      "recommendation": "Treat J1839 as Broadwing's grid connection and do not add it as a new plant or unit.",
+      "refs": {
+        "links": [
+          "https://www.misoenergy.org/api/giqueue/getprojects",
+          "https://cdn.misoenergy.org/20260903%20CSPM%20Item%2004b%20Illinois779204.pdf",
+          "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/10283"
+        ]
+      },
+      "gem_plant_id": "L100000407695",
+      "plant_name": "Broadwing Energy Center",
+      "country": "United States",
+      "unit_name": "1",
+      "fields": {},
+      "researcher_notes": "MISO's live queue lists J1839 as a simple cycle combustion turbine, while Broadwing is one turbine with a heat recovery steam generator and a duct burner. The request dates from 2020, when the project at ADM was an earlier 280 MW design by 8 Rivers, so the technology label was probably never updated. No public document names the company behind J1839. I found no signed interconnection agreement for it on MISO's site or at the Federal Energy Regulatory Commission, and the Illinois air permit papers do not give a queue number. The match rests on the same substation, the same schedule and a fitting size. This also answers the older note that no grid queue entry was found for Broadwing.",
+      "record_id": "L100000407695:G100000410074:qa-duplicate-3",
+      "checks": [],
+      "proposed_value": {},
+      "verifications": [
+        {
+          "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "J1839, Decatur ADM North 138 kV, queued 2020-06-25, 325 MW summer, 340.3 MW winter, gas"
+        },
+        {
+          "url": "https://cdn.misoenergy.org/20260903%20CSPM%20Item%2004b%20Illinois779204.pdf",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "New ADM North (J1839) 138 kV Interconnection, in-service date changed from 12/1/2027 to 12/1/2029, information as of 8/19/26"
+        },
+        {
+          "url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetAirPermitDocument/10283",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Broadwing project summary: 452 MW gross, about 418 MW net at 102 F and 467 MW at 18 F, power not sold to ADM goes to MISO"
+        }
+      ]
+    },
+    {
+      "gem_unit_id": "G100001101587",
+      "gem_plant_id": "L100001089151",
+      "plant_name": "Will County Facility power station",
+      "country": "United States",
+      "unit_name": "1",
+      "concern_type": "source",
+      "fields": {},
+      "question": "Should the link to PJM request C01-2036 come out of the Fuel and Location Data Source boxes of Will County Facility?",
+      "finding": "Both boxes cite PJM's page for request C01-2036, which is the Marquis Solar plant in Putnam County. Will County's own request is C01-1569 at the Braidwood 345 kV switchyard, and links to that request are proposed as additions.",
+      "recommendation": "Remove the C01-2036 link from the Fuel Data Source and Location Data Source boxes of unit 1 once the C01-1569 links are in.",
+      "researcher_notes": "PJM's full queue file, downloaded October 21, 2026, lists C01-2036 as 1150 MW of Natural Gas from Marquis Solar LLC in Putnam County, and C01-1569 as 346 MW of Natural Gas from Will County Facility LLC in Will County. The researcher never removes a link, so a person has to take this one out.",
+      "refs": {
+        "links": [
+          "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-2036",
+          "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1569"
+        ]
+      },
+      "record_id": "L100001089151:G100001101587:qa-source-wrong-request",
+      "checks": [
+        39
+      ]
     }
-   ]
-  }
- ]
+  ]
 }

@@ -36,7 +36,7 @@ python qc_checks.py
 Checks, per the manual:
 - **Capacity thresholds** — ≥50 MW electrical nameplate (20 MW in the EU and UK)
 - **Status–year consistency** — Start Year blank on `shelved`/`cancelled` (and their inferred variants); no Retired Year on `mothballed`; a projected start or retirement year is a scheduled event with an Event Year and a Source Year, never a Planned checkbox
-- **Controlled vocabulary** — Technology (CC, GT, AGT, ST, IC, ICCC, ISCC, AFC) and Fuel category/detail values inside the manual's enums; hydrogen fields untouched (do-not-research)
+- **Controlled vocabulary** — Technology (the web form's dropdown: combined cycle, gas turbine, steam turbine, ICCC, ISCC, AFC, internal combustion, unknown; an aeroderivative set is gas turbine) and Fuel category/detail values inside the manual's enums; hydrogen fields untouched (do-not-research)
 - **Ownership shares** — stakes ≥5% only (smaller aggregate as "small shareholder(s)"), shares sum sensibly, four-largest-plus-other structure, sole owner explicit 100%, no national government listed directly as an owner
 
 Fix every failure before building. A deliberate exception (e.g. a genuinely ambiguous ownership share) gets a `qa` record explaining it — `qc_checks.py` failing silently or being skipped is never acceptable.
@@ -70,7 +70,7 @@ Once the human has applied the batch (or at the natural end of the country's res
   - *USA only* (each US state): **IRP checkbox** ticked on every unit that appears in an Integrated Resource Plan (and the "IRP" unit-name suffix rule applied); **US IRPs** tab and **United States research** tab rows updated; GEM IDs matched to **EIA-860M** (plant ID → Other IDs location, generator ID → Other IDs unit), **EIP** and the **Sierra Club** sheet (reference only — never cited); **data center power** searched (backup engine fleets included, `data_center_fleets.py`) and each plant marked captive with the data center industry type; US Data/Research Guide consulted
   - *Optional*: wiki Background text, entity clean-up beyond the batch's own edits
   - *End of update* (cycle close, 2026-12-18 → 12-24): the validation report and year-end rollover pass below
-- The **GOGPT Validation Report** is clean for the country (checklist rows 7 and 54). `python validation_report.py --country <name> --closeout` (or `--state <State>`) reads the same stored errors the web UI's "GOGPT Validation Report" tab lists (`plant.validation`, live from the read-only DB), writes `work/validation_<tag>.md`, and exits 1 while any *fix* or *person* item remains; attach the memo to the close-out. Errors found at close-out route to a follow-on Update batch through `build_state_brief.py --validation`. **Exception** (M198, M220): validation errors on project-level fields for a plant that also has coal units, or unit-level fields for coal-to-gas-conversion units (e.g. missing datasource for CCS), are **optional / low priority**; the gate accepts "optional under the manual" as the answer
+- The **GOGPT Validation Report** is clean for the country (checklist rows 7 and 54). `python validation_report.py --country <name> --closeout` (or `--state <State>`) reads the same stored errors the web UI's "GOGPT Validation Report" tab lists (`plant.validation`, live from the read-only DB), writes `work/validation_<tag>.md`, and exits 1 while any *fix* or *person* item remains; attach the memo to the close-out. Errors found at close-out route to a follow-on Update batch through `build_state_brief.py --validation`. **Coal-only units** (the report's `exception` kind) are ignored and never researched (Baird 2026-11-06); every error on a gas or oil unit, or a plant-level error, is a fix, coal plants and coal conversions included.
 - A time estimate for the next cycle is logged in the roster's notes (`campaigns/<quarter>/roster.csv`)
 - The roster row moves to `done`; the PM reviews and may flag fields needing revisit — process flags as a small follow-up batch
 
@@ -89,7 +89,7 @@ Once the human has applied the batch (or at the natural end of the country's res
 3. Confirm the possible-updates backlog is cleared for the country
 4. Update Country Tips / `docs/country_notes/<country>.md`
 5. Complete the GC/Country Checklist
-6. `python validation_report.py --country <name> --closeout` → CLOSE-OUT CLEAN (co-located/coal-conversion exceptions per §6 may remain)
+6. `python validation_report.py --country <name> --closeout` → CLOSE-OUT CLEAN (only coal-only-unit errors may remain)
 7. Log the next-cycle time estimate in the roster
 8. Move the roster row to `done`; hand off for PM review
 
@@ -98,7 +98,7 @@ Once the human has applied the batch (or at the natural end of the country's res
 - **`qc_checks.py` passes before every build** — no exceptions, no silent skips (§3).
 - **Every URL re-verified before build**, including previously-verified ones (§4).
 - **Reference edits merge, never replace; no orphan citations; URLs only in reference columns** (§5).
-- **Co-located coal/gas and coal-conversion validation-error exceptions are the ONLY validation errors allowed to ship unresolved** — everything else blocks close-out (§6).
+- **Errors on coal-only units are the ONLY validation errors allowed to ship unresolved** (ignored, Baird 2026-11-06); everything else blocks close-out (§6).
 - **QC never writes to the live database and never stages edits** — failures route back into the batch already in progress.
 - **The roster row only moves to `done` after every §6 item is confirmed.**
 

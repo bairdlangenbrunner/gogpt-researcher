@@ -8,7 +8,7 @@
       "kind": "state",
       "slug": "mississippi",
       "quarter": "q4-2026",
-      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+      "csv": "scripts/gem_export_gogpt_scoped.csv"
     },
     "generated": "2026-10-23T14:40:07-04:00",
     "mode": "update",
@@ -815,7 +815,8 @@
       "refs": {
         "Status Data Source": [
           "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1877274",
-          "https://www.mdeq.ms.gov/wp-content/uploads/2026/10/Agenda-for-the-October-13-2026-PBM.pdf"
+          "https://www.mdeq.ms.gov/wp-content/uploads/2026/10/Agenda-for-the-October-13-2026-PBM.pdf",
+          "https://opcgis.deq.state.ms.us/ensearchonline/ai_info.aspx?ai=89056"
         ]
       },
       "verifications": [
@@ -830,13 +831,20 @@
           "ok": true,
           "contains_value": true,
           "name_found": true
+        },
+        {
+          "url": "https://opcgis.deq.state.ms.us/ensearchonline/ai_info.aspx?ai=89056",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Mississippi Department of Environmental Quality facility page for the Traceview site. It shows the permit file start date of 06/11/2025 and lists air construction permit 1720-00100."
         }
       ],
       "tier": "medium",
       "independent": false,
       "source_language": "en",
-      "researcher_notes": "The Mississippi Department of Environmental Quality issued an air construction permit for the Traceview Advanced Power Station on October 14, 2026, permit number 1720-00100 (https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1877274). The Permit Board agenda of October 13, 2026 lists the same permit (https://www.mdeq.ms.gov/wp-content/uploads/2026/10/Agenda-for-the-October-13-2026-PBM.pdf). A permit issued and land work under way fit pre-construction. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists the plant as under construction, less than 50 percent complete. I did not find a source that says physical construction has begun, so I used one step below that. Only the state permit and the EIA table support a change, so this is a single-step call. Status moved from announced to pre-construction on the strength of the October 2026 air permit. I did not find the turbine make and model in the permit, the hearing notice or Entergy pages. Capacity is raised as a question because sources differ. Latest Activity is left alone because the project is moving.",
-      "action": "Set Status of unit Unit 1 (G100001074418) to pre-construction. It now says announced. Add the 2 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add a pre-construction milestone for October 2026, when the state issued the air construction permit, with the Mississippi air construction permit as the source.",
+      "researcher_notes": "The Mississippi Department of Environmental Quality issued an air construction permit for the Traceview Advanced Power Station on October 14, 2026, permit number 1720-00100 (https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1877274). The Permit Board agenda of October 13, 2026 lists the same permit (https://www.mdeq.ms.gov/wp-content/uploads/2026/10/Agenda-for-the-October-13-2026-PBM.pdf). A permit issued and land work under way fit pre-construction. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists the plant as under construction, less than 50 percent complete. I did not find a source that says physical construction has begun, so I used one step below that. Only the state permit and the EIA table support a change, so this is a single-step call. Status moved from announced to pre-construction on the strength of the air permit application of June 2025 and the permit issued in October 2026. The state facility page shows the permit file opened June 11, 2025. I did not find the turbine make and model in the permit, the hearing notice or Entergy pages. Capacity is raised as a question because sources differ. Latest Activity is left alone because the project is moving.",
+      "action": "Set Status of unit Unit 1 (G100001074418) to pre-construction. It now says announced. Add the 3 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add a pre-construction milestone for June 2025, when the air construction permit application was received, with the Mississippi facility record as the source.",
       "checks": [
         10,
         37
@@ -844,12 +852,14 @@
       "milestones": [
         {
           "status": "pre-construction",
-          "year": 2026,
-          "period": "October",
+          "year": 2025,
+          "period": "June",
           "sources": [
+            "https://opcgis.deq.state.ms.us/ensearchonline/ai_info.aspx?ai=89056",
             "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1877274"
           ],
-          "note": "The Mississippi Department of Environmental Quality air construction permit 1720-00100 for the Traceview plant says it was issued October 14, 2026."
+          "note": "The Mississippi Department of Environmental Quality facility page for the Traceview site shows the permit file started June 11, 2025. Air construction permit 1720-00100 was issued October 14, 2026.",
+          "period_note": "The permit itself does not print the application date. The date is the start date on the state facility page, which matches the first air permit activity in the state's search."
         }
       ]
     },
@@ -1052,10 +1062,9 @@
       "country": "United States",
       "record_id": "L100001080981:G100001091020:status",
       "cluster": "G100001091020",
-      "verdict": "match",
-      "reverified": true,
+      "verdict": "change",
       "fields": {
-        "Status": "construction"
+        "Status": "pre-construction"
       },
       "current": {
         "Status": "construction"
@@ -1063,7 +1072,8 @@
       "refs": {
         "Status Data Source": [
           "https://www.wlbt.com/2025/10/22/leaders-attend-new-vicksburg-advanced-power-station-groundbreaking-ceremony",
-          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+          "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+          "https://web.archive.org/web/20250113174520/https://opcgis.deq.state.ms.us/ensearchonline/ai_info.aspx?ai=1074"
         ]
       },
       "verifications": [
@@ -1078,13 +1088,20 @@
           "ok": true,
           "contains_value": true,
           "name_found": true
+        },
+        {
+          "url": "https://web.archive.org/web/20250113174520/https://opcgis.deq.state.ms.us/ensearchonline/ai_info.aspx?ai=1074",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Saved copy of the Mississippi Department of Environmental Quality facility page for the Vicksburg site, taken January 13, 2025. It shows an air construction PSD permit application received December 27, 2024."
         }
       ],
-      "tier": "high",
-      "independent": true,
+      "tier": "medium",
+      "independent": false,
       "source_language": "en",
-      "researcher_notes": "A WLBT article from October 22, 2025 (https://www.wlbt.com/2025/10/22/leaders-attend-new-vicksburg-advanced-power-station-groundbreaking-ceremony) reports the groundbreaking at the Baxter Wilson site. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 69223 as under construction, less than 50 percent complete. Status stays construction. Status and start year re-verified. Latest Activity is left alone because the project is moving. I did not find a turbine model in the permit or Entergy pages, and GEM's existing model comes from a source already cited.",
-      "action": "Leave Status of unit 1A (G100001091020) as construction. It is still correct. Add the 2 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add a construction milestone for October 2025, when a groundbreaking ceremony marked the start of construction, with a WLBT news article from October 2025 as the source.",
+      "researcher_notes": "A WLBT article from October 22, 2025 reports a groundbreaking ceremony at the Baxter Wilson site, which is a ceremony and not proof that work on the new plant began. The EIA-860M table for September 2026 lists the plant as under construction, less than 50 percent complete, but gives no start date. No report was found that dates physical work on the new generating units. Demolition of the old plant on the site is not work on the new units. Status is therefore pre-construction, dated by the air construction permit application the state received on December 27, 2024 (saved copy of the state facility page, taken January 13, 2025). The existing construction label had only the ceremony behind it, so this is a single-step call. Latest Activity is left alone because the project is moving. I did not find a turbine model in the permit or Entergy pages, and GEM's existing model comes from a source already cited.",
+      "action": "Set Status of unit 1A (G100001091020) to pre-construction. It now says construction. Add the 3 links below to the Status Data Source box. Keep the links already there. Milestone timeline: add a pre-construction milestone for December 2024, when the air construction permit application was received, with the saved copy of the Mississippi facility record as the source. Do not add a construction milestone.",
       "checks": [
         10,
         37,
@@ -1093,13 +1110,14 @@
       ],
       "milestones": [
         {
-          "status": "construction",
-          "year": 2025,
-          "period": "October",
+          "status": "pre-construction",
+          "year": 2024,
+          "period": "December",
           "sources": [
-            "https://www.wlbt.com/2025/10/22/leaders-attend-new-vicksburg-advanced-power-station-groundbreaking-ceremony"
+            "https://web.archive.org/web/20250113174520/https://opcgis.deq.state.ms.us/ensearchonline/ai_info.aspx?ai=1074"
           ],
-          "note": "A WLBT article from October 22, 2025 reports the groundbreaking ceremony for the Vicksburg Advanced Power Station."
+          "note": "The Mississippi Department of Environmental Quality facility page for the Vicksburg site, saved January 13, 2025, shows an air construction PSD permit application received December 27, 2024.",
+          "period_note": "This is the permit application date. A groundbreaking ceremony in October 2025 was reported, but no report was found that dates physical work on the new units."
         }
       ]
     },

@@ -37,7 +37,7 @@ import geo
 from paths import work_dir
 
 UA = ("Global Energy Monitor research (GOGPT location step; "
-      "baird.langenbrunner@globalenergymonitor.org)")
+      "researcher@globalenergymonitor.org)")
 CENSUS = ("https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?"
           "address={q}&benchmark=Public_AR_Current&format=json")
 NOMINATIM = "https://nominatim.openstreetmap.org/search?q={q}&format=jsonv2&limit=5&addressdetails=1"

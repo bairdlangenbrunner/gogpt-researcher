@@ -1,0 +1,177 @@
+{
+ "meta": {
+  "plant_id": "L100001062552",
+  "plant_name": "BREC 2023 IRP power station",
+  "state": "Kentucky",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T20:30:00-05:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001071840",
+   "unit_name": "1 IRP",
+   "findings": {
+    "Start year": {
+     "value": "2029",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2023%20Cases/2023-00310/20240820_PSC_ORDER.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscscf/2023%20Cases/2023-00310/20240820_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "milestones": [],
+     "note": "The Commission staff report of August 20, 2024 (https://psc.ky.gov/pscscf/2023%20Cases/2023-00310/20240820_PSC_ORDER.pdf) says the best plan in the base case had both Sebree coal units retiring in 2029 and a 635 MW natural gas combined cycle plant added that same year. The 2029 year was reported in 2023, so the human adds it as a new scheduled event with Source Year 2023 and never changes an existing one. The newer 2026 plan drops this plant, so see the status question."
+    }
+   },
+   "not_found": [
+    "Equipment Manufacturer/Model",
+    "Backup Power",
+    "Latest Activity"
+   ],
+   "notes": "The 2023 plan and the 2024 staff report name no turbine model for the 635 MW plant. The only models named are 7FA combustion turbines of 237 MW, and those are an alternative portfolio, not this plant. Neither plan says anything about backup power. Latest Activity is left alone because the newest report, the 2026 plan filed in September 2026, is under a year old."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001071840",
+   "concern_type": "Status",
+   "question": "Should this 635 MW placeholder be cancelled now that the 2026 plan drops it?",
+   "finding": "Big Rivers filed its 2026 integrated resource plan on September 29, 2026 (https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf). Its preferred portfolio on pages 281 to 283 keeps the Sebree coal units running and adds no combined cycle plant. The plan says capacity additions are only considered after 2031.",
+   "recommendation": "Change Status to cancelled and add Cancellation year 2026, with the 2026 plan as the source. Add a Status Detail line above the existing text saying the 2026 plan dropped the project.",
+   "note": "This is a single-source status change, so a second source would confirm it, for example a Big Rivers press release or board materials. The 2023 plan, as summarized in the Commission staff report of August 20, 2024 (https://psc.ky.gov/pscscf/2023%20Cases/2023-00310/20240820_PSC_ORDER.pdf), had the Sebree units retiring in 2029 and a 635 MW combined cycle added that year. The Start year of 2029 should be cleared once the status is cancelled. The 2026 action plan also seeks approval to retire the small Reid combustion turbine and add fuel oil backup at the Sebree station. Latest Activity is left alone because the newest report is under a year old.",
+   "refs": [
+    "https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf",
+    "https://psc.ky.gov/pscscf/2023%20Cases/2023-00310/20240820_PSC_ORDER.pdf"
+   ],
+   "proposed_value": {
+    "Status": "cancelled",
+    "Cancellation year": "2026"
+   },
+   "checks": [],
+   "irp": true
+  },
+  {
+   "gem_unit_id": "G100001071840",
+   "concern_type": "Local area (taluk, county)",
+   "question": "Is the county for this plant Webster rather than Henderson?",
+   "finding": "Table 1.2.3(c) of the Big Rivers 2026 plan (https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf) lists R.D. Green units 1 and 2 in Webster County. The plan's text also says a related facility spans Henderson and Webster counties.",
+   "recommendation": "Change Local area from Henderson to Webster and keep City as Sebree. Leave the coordinates alone because the point is within about 300 m of the existing station and the plant stays approximate.",
+   "note": "No sited plant exists, since neither plan names a parcel. The 2023 staff report says the combined cycle would be built near the current station. I did not run satellite imagery or geocoding because the point does not move. Location accuracy stays approximate.",
+   "refs": [
+    "https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf"
+   ],
+   "proposed_value": {
+    "Local area (taluk, county)": "Webster"
+   }
+  },
+  {
+   "gem_unit_id": "G100001071840",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "When did this unit reach the announced step?",
+   "finding": "Big Rivers submitted its 2023 integrated resource plan to the Commission on September 29, 2023. The Commission staff report dated August 20, 2024 (https://psc.ky.gov/pscscf/2023%20Cases/2023-00310/20240820_PSC_ORDER.pdf) says so and describes the 635 MW combined cycle for 2029 in that plan.",
+   "recommendation": "Date the announced step September 2023, with the staff report as the document.",
+   "note": "The plan itself is case 2023-00310 on psc.ky.gov. The staff report is the document that I read and checked.",
+   "refs": [
+    "https://psc.ky.gov/pscscf/2023%20Cases/2023-00310/20240820_PSC_ORDER.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf",
+   "used_for": [
+    "Status",
+    "Local area"
+   ],
+   "outcome": "verified",
+   "note": "Big Rivers 2026 integrated resource plan, case 2026-00268, read in full text."
+  },
+  {
+   "url": "https://psc.ky.gov/pscscf/2023%20Cases/2023-00310/20240820_PSC_ORDER.pdf",
+   "used_for": [
+    "announced date"
+   ],
+   "outcome": "verified",
+   "note": "Commission staff report of August 20, 2024 on the 2023 plan."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2026-00268",
+   "used_for": [
+    "case filings list"
+   ],
+   "outcome": "verified",
+   "note": "Fetched to find the plan PDF."
+  },
+  {
+   "url": "https://psc.ky.gov/pscscf/2023%20Cases/2023-00310/20240820_PSC_ORDER.pdf",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Re-run with 2029 and 635 MW NGCC; both found. Also read for turbine models, none named for this plant."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2021-00314",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "This docket is about a new Big Rivers headquarters and does not bear on this plant."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2021-00079",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "This 2021 docket covers converting the existing Sebree units to gas, not the planned combined cycle."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2023-00312",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "A standby tariff for industrial customers; it does not mention this plant."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2023-00102",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "A tariff for small cogeneration purchases; it does not mention this plant."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2025-00314",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "A retirement application for a different existing unit, not this planned plant."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2026-00115",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "A retail service agreement for a data center load at a former smelter; it names no generating unit at this plant."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2023-00310",
+   "used_for": [
+    "Status",
+    "announced date"
+   ],
+   "outcome": "verified",
+   "note": "The 2023 plan case; its staff report is cited above."
+  }
+ ]
+}

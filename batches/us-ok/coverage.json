@@ -1,795 +1,1447 @@
 {
- "sources": {
-  "data-centers": {
-   "status": "searched",
-   "how": "Read the harvested permit documents for OKC2, CBRE, PRY, Core Scientific and Citadel, summed the engine tables by hand, searched the department permit lists for ATMOSS and Saint Francis, and searched trade press for each GEM data center plant.",
-   "found": "One add with a sum, OKC2 at 161.82 megawatts. One add with capacity blank, the Myall site in Pryor. Core Scientific is larger than GEM shows and Citadel has ten extra small engines. No generators were found at CBRE Mustang. ATMOSS and Saint Francis have no public engine documents.",
-   "read": [
-    "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ASCsZfZJOr8EbvF%C3%81Ggb4d5pgBB8P%C3%893SavzfBq06GG90H9bIu884yqy5xtHsV9LFXKJVMOhq8Jt7BeOnZ7nXm4%C3%89E%3D/?ViewerMode=PDF&ForceDownload=true",
-    "https://applications.deq.ok.gov/permitspublic/storedpermits/9149.pdf",
-    "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AXCzq%C3%89UzFvv6lAbMvp98F3wyixVRq%C3%89EeQdXeDl4C1Lwqd6ORCTsNS8N0kvwYkUSiOXX7FUOqIAMk7Z505l52EkM%3D/?ViewerMode=PDF&ForceDownload=true",
-    "https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/Citadel%20Facility-2026-0286-C.pdf",
-    "https://applications.deq.ok.gov/PermitsPublicReview/permitinformation.aspx?id=1062119",
-    "scopes/us-ok/work/permits/_data_centers.json",
-    "scopes/us-ok/work/permits/lists/2026-11-05/issued-in-the-past-year.csv",
-    "https://www.datacenterknowledge.com/hyperscalers/google-planning-oklahoma-data-center",
-    "https://www.okenergytoday.com/2026/04/google-pushes-data-center-growth-with-natural-gas",
-    "https://baxtel.com/data-centers/atmoss-llc",
-    "https://baxtel.com/data-center/project-anthem-phase-2"
-   ],
-   "date": "2026-11-05"
+  "sources": {
+    "data-centers": {
+      "status": "searched",
+      "how": "Read the harvested permit documents for OKC2, CBRE, PRY, Core Scientific and Citadel, summed the engine tables by hand, searched the department permit lists for ATMOSS and Saint Francis, and searched trade press for each GEM data center plant.",
+      "found": "One add with a sum, OKC2 at 161.82 megawatts. One add with capacity blank, the Myall site in Pryor. Core Scientific is larger than GEM shows and Citadel has ten extra small engines. No generators were found at CBRE Mustang. ATMOSS and Saint Francis have no public engine documents.",
+      "read": [
+        "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/ASCsZfZJOr8EbvF%C3%81Ggb4d5pgBB8P%C3%893SavzfBq06GG90H9bIu884yqy5xtHsV9LFXKJVMOhq8Jt7BeOnZ7nXm4%C3%89E%3D/?ViewerMode=PDF&ForceDownload=true",
+        "https://applications.deq.ok.gov/permitspublic/storedpermits/9149.pdf",
+        "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/AXCzq%C3%89UzFvv6lAbMvp98F3wyixVRq%C3%89EeQdXeDl4C1Lwqd6ORCTsNS8N0kvwYkUSiOXX7FUOqIAMk7Z505l52EkM%3D/?ViewerMode=PDF&ForceDownload=true",
+        "https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/Citadel%20Facility-2026-0286-C.pdf",
+        "https://applications.deq.ok.gov/PermitsPublicReview/permitinformation.aspx?id=1062119",
+        "scopes/us-ok/work/permits/_data_centers.json",
+        "scopes/us-ok/work/permits/lists/2026-11-05/issued-in-the-past-year.csv",
+        "https://www.datacenterknowledge.com/hyperscalers/google-planning-oklahoma-data-center",
+        "https://www.okenergytoday.com/2026/04/google-pushes-data-center-growth-with-natural-gas",
+        "https://baxtel.com/data-centers/atmoss-llc",
+        "https://baxtel.com/data-center/project-anthem-phase-2"
+      ],
+      "date": "2026-11-05"
+    },
+    "local-planning-records": {
+      "status": "searched",
+      "how": "Searched the Enid planning pages and news for Project Thunderbird, the Chickasha park announcements, the Mustang and Canadian County records for the CBRE site, Pryor and Mayes County records for Google's campus, and Tulsa records for Atmoss.",
+      "found": "Read in full: the City of Mustang's 203 city council and planning commission agenda packets from January 2025 to November 2026, from the city's new records site, which name no power plant, generator fleet or data center. Also Stillwater's City Council, Economic Development Authority and Planning Commission papers from October 22 to November 3, 2026, which are the only ones the city's clerk system had published for that window. None names a data center, generator or gas plant. Reached but not read to the item level: Enid (the Project Thunderbird page and agenda addresses on enid.org return not found, the old agenda system returns an empty shell, and the Wayback Machine has no snapshot), Oklahoma City (agenda addresses on okc.gov return not found), Muskogee (agenda address returns not found), Pryor and Atoka (the usual city addresses gave no response, but the agenda centers on pryorcreek.org and atokaok.org were found and opened), Mayes County (a treasurer page only). News coverage says Enid held a special planning meeting on October 27, 2026 on three rezoning requests for Project Thunderbird and that Oklahoma City's council voted 6 to 3 to rezone land for a data center. Neither packet could be opened. A request to each clerk for the meeting packets is a decision for Baird. A state radio report of October 6, 2026 quotes Scale Datacenter describing a 100 megawatt plant in Oklahoma City and a second facility in southeast Oklahoma, but no document or location for that facility was found. Opened and read on November 5, 2026: the City of Atoka agenda center for March through November 2, 2026 (no data center, Artemis, generator or rezoning item, one unnamed land sale in the Heavy Industrial Park on the June 25, 2026 authority agenda), about fifty City of Pryor Creek agendas and minutes for 2026 (no Google, Myall or data center item in the searchable ones), and the five City of Tulsa council agendas for November 4, 2026 (no data center item).",
+      "read": [
+        "Stillwater City Council meeting of November 2, 2026, agenda and agenda packet: https://stillwaterok.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7577,plainText=false) and https://stillwaterok.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7578,plainText=false)",
+        "Stillwater Economic Development Authority meeting of November 2, 2026, agenda and packet: https://stillwaterok.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7581,plainText=false) and https://stillwaterok.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7582,plainText=false)",
+        "Stillwater Planning Commission agenda for November 3, 2026, cancelled: https://stillwaterok.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7560,plainText=false)",
+        "Stillwater Sister Cities Council agenda of October 22, 2026: https://stillwaterok.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7546,plainText=false)",
+        "https://www.canadiancounty.org/ (reached, no agenda list for the CBRE site)",
+        "https://oklahoma.gov/deq/deq-information-on-data-centers.html",
+        "https://www.okenergytoday.com/2025/06/more-details-about-the-proposed-chickasha-data-center",
+        "https://www.okenergytoday.com/2026/04/google-pushes-data-center-growth-with-natural-gas",
+        "https://www.kgou.org/energy/2026-08-06/some-data-centers-are-building-their-own-power-plants-in-oklahoma-most-want-to-plug-into-the-grid",
+        "https://www.kgou.org/energy/2026-10-06/oklahoma-city-data-center-campus-invests-in-off-grid-power-plant",
+        "https://www.atokaok.org/AgendaCenter",
+        "https://www.pryorcreek.org/AgendaCenter",
+        "https://www.cityoftulsa.org/apps/COTDisplayDocument/?DocumentType=Agenda&DocumentIdentifiers=32884",
+        "https://www.cityoftulsa.org/apps/COTDisplayDocument/?DocumentType=Agenda&DocumentIdentifiers=32885",
+        "https://www.cityoftulsa.org/apps/COTDisplayDocument/?DocumentType=Agenda&DocumentIdentifiers=32886",
+        "https://www.cityoftulsa.org/apps/COTDisplayDocument/?DocumentType=Agenda&DocumentIdentifiers=32887",
+        "https://www.cityoftulsa.org/apps/COTDisplayDocument/?DocumentType=Agenda&DocumentIdentifiers=32888",
+        "https://www.cityofmustang.org/documents/agendas%2Fminutes/408704 (203 council and planning commission packets, January 2025 to November 2026)"
+      ],
+      "date": "2026-11-05"
+    },
+    "odeq-ppr": {
+      "status": "searched",
+      "how": "Read the public review table entries and the saved permit files for each unmatched power-like facility.",
+      "found": "Peoples Electric engine fleets at three sites in Coal County and the OG&E River Valley construction permit are adds. Operating permits for Western Farmers, Grand River Dam Authority and city sites are not in the public document system.",
+      "read": [
+        "https://applications.deq.ok.gov/PermitsPublicReview/permitinformation.aspx?id=1062088",
+        "scopes/us-ok/work/permits/_unmatched.md"
+      ],
+      "date": "2026-11-05"
+    },
+    "odeq-onbase": {
+      "status": "searched",
+      "how": "Searched the document system by permit number, facility, company and county, and downloaded the Peoples Electric, River Valley and Hugo files.",
+      "found": "The system holds only public-participation documents from 2016 on. Operating permits for the Western Farmers sites, Grand River Dam Authority sites and old 2001 plants are not in it, so the issued list is their only record.",
+      "read": [
+        "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Af6FiOuAWfwTfP7%C3%89lBObAZu2%C3%81jK627i0ruRb1YVA9ucGjOJwUUHCsEMbR%C3%81V4w%C3%819YC3Cw0VwM4maTrcJLCxoanak%3D/?ViewerMode=PDF&ForceDownload=true",
+        "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Aevth4xmYyMYEUksZxJwUqGnaRaWfTbuqstqjNNkWYX43sTZcmwOpZkwiQnIvBom5aPYVRnVFqOmoareNhLZSGg%3D/?ViewerMode=PDF&ForceDownload=true",
+        "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Adi%C3%81Uj4HU48j7TJinfPrZ7F99J8r2OmzRMCr78Mar5%C3%81iTb6ZjN92Z8hh1DZPsPqO7bKF3FxOM26IVudy91ABEfs%3D/?ViewerMode=PDF&ForceDownload=true"
+      ],
+      "date": "2026-11-05"
+    },
+    "odeq-notice-store": {
+      "status": "searched",
+      "how": "Read the stored notice evaluations for Oklahoma Cogeneration, Cushing, University of Oklahoma, Peoples Electric Marietta and Buzzard and the OG&E and PSO renewals.",
+      "found": "Read memos for Cushing, the University of Oklahoma, Oklahoma Cogeneration, the Western Farmers Anadarko turbines and two small Peoples sites. Cushing and the University are under 50 MW.",
+      "read": [
+        "https://applications.deq.ok.gov/permitspublic/storedpermits/4318.pdf"
+      ],
+      "date": "2026-11-05"
+    },
+    "odeq-permit-lists": {
+      "status": "searched",
+      "how": "Read the four oklahoma.gov permit lists saved on 2026-11-05.",
+      "found": "Antlers South MW, Chimney Hill MW, Cleveland SW and Canadian SW are Western Farmers operating permits. Beaver Mountain, Watts and Woka are Grand River Dam Authority sites. Arnett is a MarkWest compressor station. The Anadarko generators are four City of Anadarko emergency generators. Solarity is a solar firm. None of the lists gives a generator size above a few megawatts.",
+      "read": [
+        "https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/Permits_Issued_During_Past_Year.csv"
+      ],
+      "date": "2026-11-05"
+    },
+    "odeq-comment-pdfs": {
+      "status": "searched",
+      "how": "Read the saved public comment PDFs listed in the permit harvest.",
+      "found": "They repeat the permits already read. No power plant or data center beyond those named appeared.",
+      "read": [
+        "scopes/us-ok/work/permits/_unmatched.md"
+      ],
+      "date": "2026-11-05"
+    },
+    "odeq-air-pages": {
+      "status": "searched",
+      "how": "Opened the air permit list page. The old deq.ok.gov notice pages now redirect to oklahoma.gov/deq.html.",
+      "found": "The old deq.ok.gov air quality address redirects to the agency home page, the public review page on oklahoma.gov returns not found, and the Wayback Machine has no saved copy of the permit pages I tried.",
+      "read": [
+        "https://oklahoma.gov/deq.html",
+        "https://oklahoma.gov/deq/divisions/air-quality/air-permits.html"
+      ],
+      "date": "2026-11-05"
+    },
+    "spp-gi-active": {
+      "status": "searched",
+      "how": "Downloaded the active queue list as a spreadsheet file from the SPP generator interconnection page, and read every Oklahoma row. Then pulled SPP's posted surplus study reports for the SR requests from the studies page.",
+      "found": "31 gas or fuel-not-shown rows needed answers. Nine surplus requests at existing plants have posted study reports that name the equipment. DISIS rows carry no company name.",
+      "read": [
+        "https://opsportal.spp.org/Studies/GIActive",
+        "https://opsportal.spp.org/Studies/GenerateActiveCSV",
+        "https://opsportal.spp.org/Studies/Gen",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/FINAL_SPP_Report_GEN-2025-SR9_06112026.pdf",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/FINAL_SPP_Report_GEN-2025-SR10_06-19-2026.pdf",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/FINAL_SPP_Report_GEN-2025-SR13_07-16-2026.pdf",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/FINAL_SPP_Report_GEN-2025-SR15.pdf",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2271_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR19_TechnicalReport_r1.pdf",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2279_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR21_TechnicalReport_r1.pdf",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2255_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR22_TechnicalReport_r1.pdf",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2297_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR23_TechnicalReport_r2.pdf",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2266_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR25_TechnicalReport_r1.pdf"
+      ],
+      "date": "2026-11-05"
+    },
+    "spp-eras": {
+      "status": "searched",
+      "how": "Read the ERAS rows in the active queue list and the SPP resource adequacy and generator interconnection pages.",
+      "found": "Seven ERAS rows in Oklahoma, all with fully executed agreements. Sponsors are not published. Five match GEM units in place and year, with size gaps staged as question cards. Redbud 186 MW is a question.",
+      "read": [
+        "https://opsportal.spp.org/Studies/GIActive",
+        "https://opsportal.spp.org/Studies/GenerateActiveCSV"
+      ],
+      "date": "2026-11-05"
+    },
+    "occ-pud-dockets": {
+      "status": "searched",
+      "how": "Searched Oklahoma Corporation Commission public utility dockets in WebLink for the causes PUD2025-000084, PUD2025-000064, PUD2026-000031 and PUD2026-000046 and read the applications, testimony and orders.",
+      "found": "PUD2025-000084 is a battery. PUD2026-000031 is Google service agreements and solar purchase agreements. PUD2026-000046 is a tariff. PUD2025-000064 approves Northeastern units 5 and 6, which GEM already has. No new gas unit.",
+      "read": [
+        "scopes/us-ok/work/psc/PUD2025-000084",
+        "scopes/us-ok/work/psc/PUD2025-000064",
+        "scopes/us-ok/work/psc/PUD2026-000031",
+        "scopes/us-ok/work/psc/PUD2026-000046",
+        "scopes/us-ok/work/psc/PUD2025-000038"
+      ],
+      "date": "2026-11-05"
+    },
+    "occ-ecf": {
+      "status": "searched",
+      "how": "Searched the commission's filing system by cause number for the same four causes and read the entries returned.",
+      "found": "The filings listed matched the WebLink copies, with no gas unit not already in GEM.",
+      "read": [
+        "scopes/us-ok/work/psc/PUD2025-000084",
+        "scopes/us-ok/work/psc/PUD2026-000031"
+      ],
+      "date": "2026-11-05"
+    },
+    "occ-weblink": {
+      "status": "searched",
+      "how": "Used the anonymous WebLink search service to list and download documents, and exported and read the scanned order for the Public Service Company of Oklahoma preapproval.",
+      "found": "Applications and testimony for the four causes were read. Scanned orders needed text recognition.",
+      "read": [
+        "scopes/us-ok/work/psc/PUD2025-000064/20892409",
+        "scopes/us-ok/work/psc/PUD2026-000031/21232026",
+        "scopes/us-ok/work/psc/PUD2026-000046/21354315"
+      ],
+      "date": "2026-11-05"
+    },
+    "occ-pud-reports": {
+      "status": "searched",
+      "how": "Read the OG&E 2025 resource plan copy and the March 2026 nuclear feasibility study in the commission reports folder.",
+      "found": "Nothing new for gas units beyond what GEM and the utility plans already carry.",
+      "read": [
+        "scopes/us-ok/work/irp/occ_2025_oge_irp.txt",
+        "scopes/us-ok/work/irp/occ_2026_nuclear_feasibility.txt"
+      ],
+      "date": "2026-11-05"
+    },
+    "oge-irp": {
+      "status": "searched",
+      "how": "Read the OG&E 2026 plan PDF, the state commission copy of the 2025 plan, and the OG&E annual report to the SEC.",
+      "found": "GEM already holds Horseshoe Lake units 11 to 15 and the Tinker project. No unsited committed gas unit is missing. The next full plan is the 2027 triennial plan.",
+      "read": [
+        "https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8",
+        "scopes/us-ok/work/irp/oge_2026_irp.txt",
+        "scopes/us-ok/work/irp/occ_2025_oge_irp.txt",
+        "https://www.sec.gov/Archives/edgar/data/1021635/000119312526055414/oge-20251231.htm"
+      ],
+      "date": "2026-11-05"
+    },
+    "pso-irp": {
+      "status": "searched",
+      "how": "Read the 2024 plan and the 2026 refresh report resource tables and text.",
+      "found": "Northeastern 5 and 6 start year is 2029, and the plan lists planning retirement years for six gas plants. The new 4,000 MW request for proposals names no site.",
+      "read": [
+        "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+        "scopes/us-ok/work/irp/PSO_2024_IRP_Report.txt",
+        "scopes/us-ok/work/irp/PSO_2026_IRP_Refresh_Final_Report.txt"
+      ],
+      "date": "2026-11-05"
+    },
+    "sec-edgar": {
+      "status": "searched",
+      "how": "Ran the EDGAR full text search for Horseshoe Lake and read the OG&E 2025 annual report.",
+      "found": "The report names Tinker Air Force Base and Horseshoe Lake units 11 to 14 as committed projects, all already in GEM.",
+      "read": [
+        "https://efts.sec.gov/LATEST/search-index?q=%22Horseshoe%20Lake%22&forms=10-K",
+        "https://www.sec.gov/Archives/edgar/data/1021635/000119312526055414/oge-20251231.htm"
+      ],
+      "date": "2026-11-05"
+    },
+    "wfec": {
+      "status": "searched",
+      "how": "Read the cooperative home page, tried its generation and news pages, and read trade press on the Hugo and Anadarko work.",
+      "found": "Hugo Site A and Site B and Anadarko Roulet 12 and 13 are already in GEM with matching size and dates. The cooperative home page names no further gas unit.",
+      "read": [
+        "https://www.wfec.com/",
+        "https://constructionreviewonline.com/1b-hugo-plant-expansion-western-farmers-electric-breaks-ground-on-nine-gas-turbines-in-oklahoma/",
+        "https://www.okenergytoday.com/2024/10/groundbreaking-for-expansion-of-western-farmers-electric-generating-plant-in-anadarko"
+      ],
+      "date": "2026-11-05"
+    },
+    "aeci": {
+      "status": "searched",
+      "how": "Read the Bristow Energy Center page and a trade press article on the turbine order.",
+      "found": "Bristow is a 420 MW net natural gas peaking plant owned by Associated Electric Cooperative, online in late 2029, which matches GEM.",
+      "read": [
+        "https://www.aeci.org/bristow-energy-center-1",
+        "https://www.turbomachinerymag.com/view/siemens-energy-aeci-sgt6-9000hl-bristow-energy-center-oklahoma",
+        "https://www.aeci.org/"
+      ],
+      "date": "2026-11-05"
+    },
+    "grda": {
+      "status": "searched",
+      "how": "Read the authority home page, trade press on Unit 4, and the Southwest Power Pool row for ASGI-2015-004.",
+      "found": "Unit 4 is a 426 MW simple cycle turbine dedicated in September 2026, matching GEM. The Nowata request ASGI-2015-004 matches the Coffeyville, Kansas city engine plant, which is in Kansas.",
+      "read": [
+        "https://grda.com/",
+        "https://www.publicpower.org/periodical/article/grand-river-dam-authority-formally-dedicates-unit-4-grand-river-energy-center",
+        "https://www.okenergytoday.com/2026/09/grda-to-dedicate-525-million-power-project/",
+        "https://www.coffeyville.com/352/Electric-Generation"
+      ],
+      "date": "2026-11-05"
+    },
+    "ompa": {
+      "status": "searched",
+      "how": "Read the authority news pages, the state air permit application, completeness letter and notice of filing.",
+      "found": "A second Lamb turbine, 90 MW, is in a Tier II construction permit review. It is added as a new unit.",
+      "read": [
+        "https://www.ompa.com/?p=6496",
+        "https://www.ompa.com/?p=6612",
+        "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Ac%C3%89PChnKuUSvuWZVQIFTvlUUq5X%C3%81Hzd9Glajj%C3%89H9yC3L05C3YHBOqpbheH2tQFiUXhjxRQlq2n6qKEna9J83FQI%3D/?ViewerMode=PDF&ForceDownload=true",
+        "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Aa4uMQdC7sAIwdopO3DGmSJ1fN6dFuZ2DF2LgcWnu1nPjwUZQst2jzAUeBwyDm8c3sU6S71OwLno%C3%81pg5HeNZltE%3D/?ViewerMode=PDF&ForceDownload=true"
+      ],
+      "date": "2026-11-05"
+    },
+    "evergy-irp": {
+      "status": "searched",
+      "how": "Read the 2026 plan update deck.",
+      "found": "The deck shows Evergy fleet additions and retirements as totals and names no Spring Creek change. Spring Creek stays as in GEM.",
+      "read": [
+        "https://investors.evergy.com/2026IRPUpdate"
+      ],
+      "date": "2026-11-05"
+    },
+    "tenaska-kiamichi": {
+      "status": "searched",
+      "how": "Read the Tenaska Kiamichi fact sheet from May 2026.",
+      "found": "The sheet gives owner Kiowa Power Partners, 1,220 MW, and operation since April 2003, matching GEM. It names no uprate or ownership change.",
+      "read": [
+        "https://www.tenaska.com/wp-content/uploads/2026/05/Kiamichi-Generating-Station.pdf"
+      ],
+      "date": "2026-11-05"
+    },
+    "eia-860m": {
+      "status": "searched",
+      "how": "Read the Operating, Planned, Retired and Canceled sheets of the September 2026 monthly file for Oklahoma, and compared each gas and oil plant with GEM unit by unit.",
+      "found": "Two plants GEM lacks at the threshold: Georgia-Pacific Muskogee and Centrahoma. Seven plants below 50 MW. Every planned unit matches GEM. Retirements since 2020 at 50 MW or more are already in GEM. Disagreements on Grand River, Ripley, Mustang, Horseshoe Lake, Northeastern and Mooreland are in question cards.",
+      "read": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+        "work/eia/september_generator2026.xlsx"
+      ],
+      "date": "2026-11-05"
+    },
+    "eia-860": {
+      "status": "searched",
+      "how": "Downloaded the 2025 annual survey and read the generator, plant and owner tables for Oklahoma.",
+      "found": "Addresses and points for the added plants, and owner shares that agree with GEM except at Kiamichi, which has a question card.",
+      "read": [
+        "https://www.eia.gov/electricity/data/eia860/",
+        "scopes/us-ok/work/eia860/y2025/3_1_Generator_Y2025.xlsx",
+        "scopes/us-ok/work/eia860/y2025/4___Owner_Y2025.xlsx",
+        "scopes/us-ok/work/eia860/y2025/2___Plant_Y2025.xlsx"
+      ],
+      "date": "2026-11-05"
+    },
+    "eip-oil-gas-watch": {
+      "status": "searched",
+      "how": "Read the matching list in the ID matching report, which carries the Environmental Integrity Project spreadsheet values, and opened each facility page. In a real Chrome window the four facility pages show page not found, and the Web Archive has no saved copy of them.",
+      "found": "The EIP status disagreements on Anadarko, Grand River, Horseshoe Lake and Northeastern are each settled with a question card that cites the federal file and an utility or press source. Chickasha stays cancelled.",
+      "read": [
+        "work/ids_us-oklahoma.md",
+        "https://oilandgaswatch.org/facility/rec_d4f1u58q7easr8ra1e8g",
+        "https://oilandgaswatch.org/facility/rec_d4f1u5gq7easr8ra1f40",
+        "https://oilandgaswatch.org/facility/rec_d4f1u5oq7easr8ra1f60",
+        "https://oilandgaswatch.org/facility/rec_d4f1u60q7easr8ra1fn0"
+      ],
+      "date": "2026-11-05"
+    },
+    "possible-updates-sheet": {
+      "status": "searched",
+      "how": "Read the gas and oil tab through the work profile in read-only mode and saved a copy under the scope work folder. Filtered by country and by plant names.",
+      "found": "Every Oklahoma row is marked done: the Mitsubishi coal-to-gas row, Green Country, the Chickasha data center, Northeastern, the Core Scientific Muskogee site, the two OG&E plan rows and the Grand River unit 4 row. Each is already matched by a GEM plant or by an existing record in this scope.",
+      "read": [
+        "scopes/us-ok/work/sheets/possible_updates_gasoil.json"
+      ],
+      "date": "2026-11-05"
+    },
+    "captive-lng-sheet": {
+      "status": "searched",
+      "how": "Read the captive LNG match file for Oklahoma.",
+      "found": "The file has no Oklahoma terminals. The only data center match is the Chickasha site. A search of Oklahoma LNG facilities found no on-site generation at 50 MW.",
+      "read": [
+        "work/captive_us-oklahoma.json"
+      ],
+      "date": "2026-11-05"
+    },
+    "state-news": {
+      "status": "searched",
+      "how": "Searched Oklahoma trade and local press since 2024 for the gas plants of each utility and chased each lead to a primary document.",
+      "found": "The Tinker turbines, the Horseshoe Lake approval, the Grand River unit 4 dedication and the Northeastern conversion plan were confirmed. No unlisted gas plant was found beyond the added ones.",
+      "read": [
+        "https://www.okenergytoday.com/2026/02/oge-and-tinker-air-force-base-celebrate-new-power-generation",
+        "https://www.okenergytoday.com/2025/11/oge-acts-promptly-on-energy-projects-approval",
+        "https://www.publicpower.org/periodical/article/grand-river-dam-authority-formally-dedicates-unit-4-grand-river-energy-center",
+        "https://docs.aep.com/docs/requiredpostings/elg/NEPSB-AnnualProgressReportforthePermanentCessationofCoalCombustionby12-31-2028-10102025.pdf",
+        "https://www.okenergytoday.com/2025/12/160-million-se-oklahoma-gas-pipeline-to-be-built-by-one-gas"
+      ],
+      "date": "2026-11-05"
+    }
   },
-  "local-planning-records": {
-   "status": "searched",
-   "how": "Searched the Enid planning pages and news for Project Thunderbird, the Chickasha park announcements, the Mustang and Canadian County records for the CBRE site, Pryor and Mayes County records for Google's campus, and Tulsa records for Atmoss.",
-   "found": "Read in full: the City of Mustang's 203 city council and planning commission agenda packets from January 2025 to November 2026, from the city's new records site, which name no power plant, generator fleet or data center. Also Stillwater's City Council, Economic Development Authority and Planning Commission papers from October 22 to November 3, 2026, which are the only ones the city's clerk system had published for that window. None names a data center, generator or gas plant. Reached but not read to the item level: Enid (the Project Thunderbird page and agenda addresses on enid.org return not found, the old agenda system returns an empty shell, and the Wayback Machine has no snapshot), Oklahoma City (agenda addresses on okc.gov return not found), Muskogee (agenda address returns not found), Pryor and Atoka (the usual city addresses gave no response, but the agenda centers on pryorcreek.org and atokaok.org were found and opened), Mayes County (a treasurer page only). News coverage says Enid held a special planning meeting on October 27, 2026 on three rezoning requests for Project Thunderbird and that Oklahoma City's council voted 6 to 3 to rezone land for a data center. Neither packet could be opened. A request to each clerk for the meeting packets is a decision for Baird. A state radio report of October 6, 2026 quotes Scale Datacenter describing a 100 megawatt plant in Oklahoma City and a second facility in southeast Oklahoma, but no document or location for that facility was found. Opened and read on November 5, 2026: the City of Atoka agenda center for March through November 2, 2026 (no data center, Artemis, generator or rezoning item, one unnamed land sale in the Heavy Industrial Park on the June 25, 2026 authority agenda), about fifty City of Pryor Creek agendas and minutes for 2026 (no Google, Myall or data center item in the searchable ones), and the five City of Tulsa council agendas for November 4, 2026 (no data center item).",
-   "read": [
-    "Stillwater City Council meeting of November 2, 2026, agenda and agenda packet: https://stillwaterok.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7577,plainText=false) and https://stillwaterok.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7578,plainText=false)",
-    "Stillwater Economic Development Authority meeting of November 2, 2026, agenda and packet: https://stillwaterok.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7581,plainText=false) and https://stillwaterok.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7582,plainText=false)",
-    "Stillwater Planning Commission agenda for November 3, 2026, cancelled: https://stillwaterok.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7560,plainText=false)",
-    "Stillwater Sister Cities Council agenda of October 22, 2026: https://stillwaterok.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7546,plainText=false)",
-    "https://www.canadiancounty.org/ (reached, no agenda list for the CBRE site)",
-    "https://oklahoma.gov/deq/deq-information-on-data-centers.html",
-    "https://www.okenergytoday.com/2025/06/more-details-about-the-proposed-chickasha-data-center",
-    "https://www.okenergytoday.com/2026/04/google-pushes-data-center-growth-with-natural-gas",
-    "https://www.kgou.org/energy/2026-08-06/some-data-centers-are-building-their-own-power-plants-in-oklahoma-most-want-to-plug-into-the-grid",
-    "https://www.kgou.org/energy/2026-10-06/oklahoma-city-data-center-campus-invests-in-off-grid-power-plant",
-    "https://www.atokaok.org/AgendaCenter",
-    "https://www.pryorcreek.org/AgendaCenter",
-    "https://www.cityoftulsa.org/apps/COTDisplayDocument/?DocumentType=Agenda&DocumentIdentifiers=32884",
-    "https://www.cityoftulsa.org/apps/COTDisplayDocument/?DocumentType=Agenda&DocumentIdentifiers=32885",
-    "https://www.cityoftulsa.org/apps/COTDisplayDocument/?DocumentType=Agenda&DocumentIdentifiers=32886",
-    "https://www.cityoftulsa.org/apps/COTDisplayDocument/?DocumentType=Agenda&DocumentIdentifiers=32887",
-    "https://www.cityoftulsa.org/apps/COTDisplayDocument/?DocumentType=Agenda&DocumentIdentifiers=32888",
-    "https://www.cityofmustang.org/documents/agendas%2Fminutes/408704 (203 council and planning commission packets, January 2025 to November 2026)"
-   ],
-   "date": "2026-11-05"
+  "ids_followup": {
+    "10362": {
+      "decision": "add",
+      "evidence": "The monthly federal generator file for September 2026 lists three operating natural gas steam turbines at Georgia-Pacific Muskogee, plant 10362: GEN1 25 MW from 1979, GEN2 44.5 MW from 1980 and GEN3 44.5 MW from 1982, 114 MW in total. A 2016 notice from the state environmental agency describes the mill's boilers feeding electric steam turbines. Added as a new plant, with a question card on GEM's Fort James plant.",
+      "gem_plant_id": ""
+    },
+    "63628": {
+      "decision": "already_in_gem",
+      "evidence": "Plant 63628 Tinker sits on the point of GEM's Tinker Air Force Base power station. The unit capacities differ, so a question card covers it.",
+      "gem_plant_id": "L100001063385"
+    }
   },
-  "odeq-ppr": {
-   "status": "searched",
-   "how": "Read the public review table entries and the saved permit files for each unmatched power-like facility.",
-   "found": "Peoples Electric engine fleets at three sites in Coal County and the OG&E River Valley construction permit are adds. Operating permits for Western Farmers, Grand River Dam Authority and city sites are not in the public document system.",
-   "read": [
-    "https://applications.deq.ok.gov/PermitsPublicReview/permitinformation.aspx?id=1062088",
-    "scopes/us-ok/work/permits/_unmatched.md"
-   ],
-   "date": "2026-11-05"
+  "data_centers": {
+    "6000-n-shartel-ave-llc-oklahoma-city": {
+      "decision": "add",
+      "record_id": "us-ok:new:okc2-scale-datacenter-power-station",
+      "summed_nameplate_mw": 161.82,
+      "note": "Nineteen natural gas engines, 161.82 megawatts, from the September 2026 application. Added as a new plant with two units. None of the first 11 engines is operating, because start-up is planned for the first quarter of 2027."
+    },
+    "tenmark-mustang-industri-cbre-okc-site": {
+      "decision": "no_generators",
+      "note": "The draft Title V permit renewal lists boilers, two fire pump engines of 215 and 340 horsepower and three emergency generator engines with no rating, at the former Xerox site in Canadian County. No data center is named in the permit, so no sum can be made, and nothing suggests the three generators reach 50 megawatts. Trade press says Tenmark Holdings bought the Xerox properties in a sale and leaseback with Xerox still leasing, and no report links the site to a data center. No Mustang, Canadian County or Oklahoma City agenda naming a data center there turned up in web searches."
+    },
+    "pry-data-storage-facilit-pry-data-storag": {
+      "decision": "add",
+      "record_id": "us-ok:new:myall-pryor-data-center-power-station",
+      "summed_nameplate_mw": null,
+      "note": "The permit evaluation of November 5, 2025 keeps the engine list confidential, so no sum can be made by hand. Added with capacity blank. Myall LLC bought the land for Google's Pryor campus, so this is very likely Google's Pryor campus at the MidAmerica Industrial Park, though the permit does not name Google."
+    },
+    "atmoss-data-center": {
+      "decision": "nothing_found",
+      "note": "The department list of permits issued in the past year shows permit 2026-0025-O for Atmoss LLC, ATMOSS Data Center, Wagoner County, issued January 15, 2026. The O class is a minor source permit, and the department's document store holds no documents for it. Atmoss LLC is the developer of Meta's Project Anthem campus in east Tulsa according to a data center directory, and no on-site gas plant is reported for it. No engine list exists in any public place found, so no sum can be made. A request for the permit file from the department's records office is a decision for Baird."
+    },
+    "saint-francis-hospital-data-center": {
+      "decision": "nothing_found",
+      "note": "The department list shows permit 2026-0469-O for Saint Francis Health System, Saint Francis Hospital Data Center, Tulsa, issued June 29, 2026. It is a minor source permit with no public documents in the document store. A hospital data center backup fleet is very unlikely to reach 50 megawatts. No engine list was found, so no sum is possible. The earlier Saint Francis evaluation in the notice store, permit 2016-1075-TVR, covers the hospital campus and not a data center fleet. Local records: the Tulsa City Council agendas for November 4, 2026 were opened, covering the regular meeting, the pre-regular meeting and the budget, public works and urban and economic development committee meetings. None names a Saint Francis data center, a generator fleet or a hospital item. News coverage of the Tulsa city council data center moratorium names no Saint Francis project either. Tulsa County zoning records were not opened."
+    },
+    "artemis-data-center-artemis-data-center": {
+      "decision": "nothing_found",
+      "note": "The department facility table lists Artemis Data Center, Atoka, with a water permit only and no air permit or generator documents. No gas or backup fleet is reported for it in the news results searched. Local records: the City of Atoka agenda center was opened for every city council and planning agenda and set of minutes from March through November 2, 2026. None names Artemis, a data center, a generator fleet or a rezoning. The Atoka Industrial Development Authority agenda of June 25, 2026 lists a land sale in the Heavy Industrial Park with the buyer not named. Atoka County records were not opened."
+    },
+    "one-nuclear-energy-one-nuclear-power-sta": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001082617",
+      "note": "GEM lists ONE Nuclear power station 1 as announced at 1,000 megawatts. No air permit or newer public record was found that changes it."
+    },
+    "lightfield-energy-chickasha": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001063386",
+      "note": "GEM lists the Chickasha industrial park power station as cancelled at 500 megawatts. The 2025 reports describe a plan by developer Chet Hitt and Lightfield Energy with no permit, and no 2026 report was found that revives it, so cancelled still fits."
+    },
+    "plainsmen-holdings-llc-1-enid": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001089336",
+      "note": "GEM lists Project Thunderbird Data Center power station as pre-construction at 3,300 megawatts. The City of Enid says only a rezoning request is under review and nothing is approved, so announced may fit better than pre-construction."
+    },
+    "core-scientific-inc-100-port-muskogee": {
+      "decision": "update",
+      "plant_id": "L100001081005",
+      "summed_nameplate_mw": 314.0,
+      "note": "The July 2026 application sums to 314.0 megawatts against GEM's 283.1. A question card covers it."
+    },
+    "citadel-asset-ventures-l-sperry": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001089312",
+      "summed_nameplate_mw": 297.0,
+      "note": "The 108 large engines match GEM. Ten smaller backup engines are not in GEM. A question card covers them."
+    },
+    "scale-southeast-oklahoma-facility": {
+      "decision": "nothing_found",
+      "note": "A state radio report of October 6, 2026 says Scale Datacenter is also building a facility in southeast Oklahoma. No permit, county record or news item naming its site or its power was found, and the department permit lists show no Scale application besides OKC2."
+    },
+    "other-operators-stack-skybox-prime-meta-microsoft": {
+      "decision": "nothing_found",
+      "note": "Searches for Stack, Skybox, Prime Data, Meta and Microsoft in Oklahoma found no air permit or report of an on-site gas or backup engine fleet. Meta's Project Anthem campus in east Tulsa is built by Atmoss LLC and no on-site plant is reported. A state radio report of August 6, 2026 says most Oklahoma data centers, including Luther Horizon, Project Mustang in Claremore and IREN's Kiowa campus, plan to buy grid power from local utilities. Local records: the Tulsa City Council agendas for November 4, 2026 were opened and name none of Stack, Skybox, Prime Data, Meta or Microsoft, and no generator fleet. The Oklahoma City council agenda addresses on okc.gov returned not found, so Oklahoma City council and planning records were not read."
+    },
+    "google-stillwater-and-pryor-expansion": {
+      "decision": "nothing_found",
+      "note": "Google and OG&E announced a grid supply deal in spring 2026 for the Muskogee and Stillwater data centers. An April 2026 trade report says no on-site gas project by Google has been publicly confirmed in Oklahoma. Stillwater's council papers of November 2, 2026 mention no data center. Local records: the City of Pryor Creek agenda center was opened for about fifty city council and planning agendas and minutes from January to October 2026. Many are scanned pages that could not be searched as text, and the searchable ones name no Google, Myall or data center item. The Stillwater City Council, Economic Development Authority and Planning Commission papers of October 22 to November 3, 2026 name no data center. Mayes County and Payne County planning records were not opened."
+    }
   },
-  "odeq-onbase": {
-   "status": "searched",
-   "how": "Searched the document system by permit number, facility, company and county, and downloaded the Peoples Electric, River Valley and Hugo files.",
-   "found": "The system holds only public-participation documents from 2016 on. Operating permits for the Western Farmers sites, Grand River Dam Authority sites and old 2001 plants are not in it, so the issued list is their only record.",
-   "read": [
-    "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Af6FiOuAWfwTfP7%C3%89lBObAZu2%C3%81jK627i0ruRb1YVA9ucGjOJwUUHCsEMbR%C3%81V4w%C3%819YC3Cw0VwM4maTrcJLCxoanak%3D/?ViewerMode=PDF&ForceDownload=true",
-    "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Aevth4xmYyMYEUksZxJwUqGnaRaWfTbuqstqjNNkWYX43sTZcmwOpZkwiQnIvBom5aPYVRnVFqOmoareNhLZSGg%3D/?ViewerMode=PDF&ForceDownload=true",
-    "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Adi%C3%81Uj4HU48j7TJinfPrZ7F99J8r2OmzRMCr78Mar5%C3%81iTb6ZjN92Z8hh1DZPsPqO7bKF3FxOM26IVudy91ABEfs%3D/?ViewerMode=PDF&ForceDownload=true"
-   ],
-   "date": "2026-11-05"
+  "queues": {
+    "SPP GEN-2024-286": {
+      "decision": "add",
+      "record_id": "L100000104121:new:3",
+      "plant_id": "L100000104121",
+      "evidence": "OG&E is the owner and the site is in Le Flore County near River Valley. OG&E's state air permit application for River Valley proposes five gas turbines of about 224.8 MW each. The queue figure of 496 MW is lower, so the permit figure is used.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive",
+        "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Af6FiOuAWfwTfP7%C3%89lBObAZu2%C3%81jK627i0ruRb1YVA9ucGjOJwUUHCsEMbR%C3%81V4w%C3%819YC3Cw0VwM4maTrcJLCxoanak%3D/?ViewerMode=PDF&ForceDownload=true"
+      ]
+    },
+    "SPP ASGI-2016-012": {
+      "decision": "add",
+      "record_id": "us-ok:new:peoples-electric-cooperative-centrahoma-power-station",
+      "evidence": "The 61.725 MW row for Centrahoma equals 25 Caterpillar G3520H engines at 2.469 MW each across the Peoples Electric Targa, Centrahoma and Little Dixie sites. It is in commercial operation and is added as one plant.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive",
+        "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Aevth4xmYyMYEUksZxJwUqGnaRaWfTbuqstqjNNkWYX43sTZcmwOpZkwiQnIvBom5aPYVRnVFqOmoareNhLZSGg%3D/?ViewerMode=PDF&ForceDownload=true",
+        "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Adi%C3%81Uj4HU48j7TJinfPrZ7F99J8r2OmzRMCr78Mar5%C3%81iTb6ZjN92Z8hh1DZPsPqO7bKF3FxOM26IVudy91ABEfs%3D/?ViewerMode=PDF&ForceDownload=true"
+      ]
+    },
+    "SPP GEN-2025-SR19": {
+      "decision": "add",
+      "record_id": "us-ok:new:spp-gen-2025-sr19-maid-diesel-engine-power-station",
+      "plant_id": "",
+      "evidence": "SPP's surplus study for GEN-2025-SR19 names 31 Cummins diesel engines totaling 100.76 MW at the Maid 161 kilovolt substation. The queue lists no fuel. The new plant record carries it as diesel, status pre-construction. The owner is not published.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2271_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR19_TechnicalReport_r1.pdf"
+      ]
+    },
+    "SPP GEN-2025-SR21": {
+      "decision": "add",
+      "record_id": "us-ok:new:spp-gen-2025-sr21-tulsa-power-station-diesel-engine-power-station",
+      "plant_id": "",
+      "evidence": "SPP's surplus study for GEN-2025-SR21 names 31 Cummins diesel engines totaling 100.76 MW at the Tulsa Power Station 138 kilovolt substation. The queue lists no fuel. The new plant record carries it as diesel, status announced. The owner is not published.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2279_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR21_TechnicalReport_r1.pdf"
+      ]
+    },
+    "SPP GEN-2025-SR22": {
+      "decision": "add",
+      "record_id": "us-ok:new:spp-gen-2025-sr22-horseshoe-lake-diesel-engine-power-station",
+      "plant_id": "",
+      "evidence": "SPP's surplus study for GEN-2025-SR22 names 31 Cummins diesel engines totaling 100.76 MW at the Horseshoe Lake 138 kilovolt substation. The queue lists no fuel. The new plant record carries it as diesel, status pre-construction. The owner is not published.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2255_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR22_TechnicalReport_r1.pdf"
+      ]
+    },
+    "SPP GEN-2025-SR23": {
+      "decision": "add",
+      "record_id": "us-ok:new:spp-gen-2025-sr23-mustang-diesel-engine-power-station",
+      "plant_id": "",
+      "evidence": "SPP's surplus study for GEN-2025-SR23 names 31 Cummins diesel engines totaling 100.76 MW at the Mustang 138 kilovolt substation. The queue lists no fuel. The new plant record carries it as diesel, status pre-construction. The owner is not published.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2297_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR23_TechnicalReport_r2.pdf"
+      ]
+    },
+    "SPP GEN-2025-SR25": {
+      "decision": "add",
+      "record_id": "us-ok:new:spp-gen-2025-sr25-tulsa-north-diesel-engine-power-station",
+      "plant_id": "",
+      "evidence": "SPP's surplus study for GEN-2025-SR25 names 62 Cummins diesel engines totaling 201.53 MW at the Tulsa North 138 kilovolt substation. The queue lists no fuel. The new plant record carries it as diesel, status announced. The owner is not published.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2266_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR25_TechnicalReport_r1.pdf"
+      ]
+    },
+    "SPP GEN-2025-SR9": {
+      "decision": "add",
+      "record_id": "L100000104124:new:7",
+      "plant_id": "L100000104124",
+      "evidence": "SPP's surplus study for GEN-2025-SR9 describes 20 INDAR and Ingeteam synchronous gas-fired units of 21.0812 MW each, 421.6 MW in all at the Muskogee 345 kilovolt substation, shared with Muskogee units 4, 5 and 6 (1,908 MW). GEM has the plant but no matching unit, so a new unit is added as announced. The owner is not published.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/FINAL_SPP_Report_GEN-2025-SR9_06112026.pdf"
+      ]
+    },
+    "SPP GEN-2025-SR10": {
+      "decision": "add",
+      "record_id": "L100000402165:new:4",
+      "plant_id": "L100000402165",
+      "evidence": "SPP's surplus study for GEN-2025-SR10 describes one GE gas-fired combustion turbine of 249 MW at the Seminole 345 kilovolt substation, shared with Seminole units 2 and 3. GEM has the plant but no matching unit, so a new unit is added as announced. The owner is not published.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/FINAL_SPP_Report_GEN-2025-SR10_06-19-2026.pdf"
+      ]
+    },
+    "SPP GEN-2025-SR13": {
+      "decision": "add",
+      "record_id": "L100000402165:new:5",
+      "plant_id": "L100000402165",
+      "evidence": "SPP's surplus study for GEN-2025-SR13 describes 6 INDAR and Ingeteam synchronous gas-fired units of 21.7534 MW each, 130.5 MW in all at the Seminole 138 kilovolt substation, shared with Seminole unit 1. GEM has the plant but no matching unit, so a new unit is added as announced. The owner is not published.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/FINAL_SPP_Report_GEN-2025-SR13_07-16-2026.pdf"
+      ]
+    },
+    "SPP GEN-2025-SR15": {
+      "decision": "add",
+      "record_id": "L100000401594:new:2",
+      "plant_id": "L100000401594",
+      "evidence": "SPP's surplus study for GEN-2025-SR15 describes 6 INDAR and Ingeteam synchronous gas-fired units of 21.7534 MW each, 130.5 MW in all at the McClain 138 kilovolt substation, shared with McClain units 1, 2 and 3 (648.6 MW). GEM has the plant but no matching unit, so a new unit is added as announced. The owner is not published.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive",
+        "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/FINAL_SPP_Report_GEN-2025-SR15.pdf"
+      ]
+    },
+    "SPP GEN-2024-341": {
+      "decision": "add",
+      "record_id": "us-ok:new:spp-gen-2024-341-pittsburg-county-gas-power-station",
+      "plant_id": "",
+      "evidence": "The SPP queue lists GEN-2024-341, 1077.8 MW of gas at the Pittsburgh 345 kilovolt substation (AEP), commercial operation November 10, 2031. GEM has no matching plant. It is added as announced with the owner blank because SPP does not publish the company.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP GEN-2024-340": {
+      "decision": "add",
+      "record_id": "us-ok:new:spp-gen-2024-340-creek-county-gas-power-station",
+      "plant_id": "",
+      "evidence": "The SPP queue lists GEN-2024-340, 1440 MW of gas at the Riverside to Redbud 345 kilovolt line (AEP), commercial operation January 1, 2032. GEM has no matching plant. It is added as announced with the owner blank because SPP does not publish the company.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP GEN-2024-334": {
+      "decision": "add",
+      "record_id": "L100000402166:new:2",
+      "evidence": "GEN-2024-334 is the new Lamb unit of the Oklahoma Municipal Power Authority, staged as Lamb Unit 2 from the May 2026 air permit application. The authority's board minutes of August 8, 2024 (https://www.ompa.com/wp-content/uploads/2025/02/August-Board-Minutes-2024.pdf), page 5, item 13, approve a Southwest Power Pool request of about 103 MW for the new Lamb unit, and the queue row shows 103 MW of gas in Kay County on the same 345 kV line as Lamb's existing turbine."
+    },
+    "SPP GEN-2024-321": {
+      "decision": "add",
+      "record_id": "us-ok:new:spp-gen-2024-321-seminole-gas-power-station",
+      "plant_id": "",
+      "evidence": "The SPP queue lists GEN-2024-321, 507 MW of gas at the Seminole 345 kilovolt substation (OG&E), commercial operation April 30, 2030. GEM has no matching plant. It is added as announced with the owner blank because SPP does not publish the company.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP GEN-2024-299": {
+      "decision": "add",
+      "record_id": "us-ok:new:spp-gen-2024-299-aes-5-345-kilovolt-gas-power-station",
+      "plant_id": "",
+      "evidence": "The SPP queue lists GEN-2024-299, 744 MW of gas at the AES 5 345 kilovolt substation (OG&E), commercial operation May 1, 2032. GEM has no matching plant. It is added as announced with the owner blank because SPP does not publish the company.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP GEN-2024-293": {
+      "decision": "add",
+      "record_id": "us-ok:new:spp-gen-2024-293-muskogee-345-kilovolt-gas-power-station",
+      "plant_id": "",
+      "evidence": "The SPP queue lists GEN-2024-293, 248 MW of gas at the Muskogee 345 kilovolt substation (OG&E), commercial operation May 1, 2033. GEM has no matching plant. It is added as announced with the owner blank because SPP does not publish the company.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP GEN-2024-128": {
+      "decision": "add",
+      "record_id": "us-ok:new:spp-gen-2024-128-anadarko-gas-power-station",
+      "plant_id": "",
+      "evidence": "The SPP queue lists GEN-2024-128, 726.9 MW of gas at the Gracemont to Lawton 345 kilovolt line (OG&E), commercial operation December 31, 2030. GEM has no matching plant. It is added as announced with the owner blank because SPP does not publish the company.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP GEN-2024-013": {
+      "decision": "add",
+      "record_id": "us-ok:new:spp-gen-2024-013-mcclain-county-gas-turbine-power-station",
+      "plant_id": "",
+      "evidence": "The SPP queue lists GEN-2024-013, 496 MW of gas at the Norman Hills 345 kilovolt substation (OG&E), commercial operation January 1, 2030. GEM has no matching plant. It is added as announced with the owner blank because SPP does not publish the company. The same 496 MW size appears at Horseshoe Lake in ERAS-2025-010, but that row is at a different substation, so the two are kept apart.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP GEN-2024-323": {
+      "decision": "update",
+      "record_id": "",
+      "plant_id": "L100000104123",
+      "evidence": "The SPP queue lists a 372 MW gas request at the ITC Hugo 7 substation in Choctaw County with commercial operation on May 1, 2029. GEM's Hugo Site B is 342 MW, pre-construction, 2029, owned by Western Farmers Electric Cooperative. They are probably the same project, so a question card is staged instead of a new plant. The question card is in the state shard.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP GEN-2026-SR34": {
+      "decision": "already_in_gem",
+      "record_id": "",
+      "plant_id": "L100000104123",
+      "evidence": "A 75 MW thermal surplus request at the WFEC Hugo 138 kilovolt point in Fort Towson, commercial operation April 1, 2029. GEM's Hugo Site A is 73.5 MW, pre-construction, 2029. It is the same project. No surplus study report is posted yet, so the 1.5 MW difference cannot be explained.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP GEN-2024-GR1": {
+      "decision": "already_in_gem",
+      "record_id": "",
+      "plant_id": "L100000402162",
+      "evidence": "A 492 MW combustion turbine replacement request at Horseshoe Lake 138 kilovolt, agreement fully executed, commercial operation December 31, 2026. GEM already carries Horseshoe Lake units 11 and 12 (224 MW each, 448 MW, operating 2026). The queue and GEM sizes differ by a few percent, which is a rating difference, so nothing is staged.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP GEN-2023-GR2": {
+      "decision": "already_in_gem",
+      "record_id": "",
+      "plant_id": "L100001063385",
+      "evidence": "A 94.2 MW gas replacement request at Tinker Air Force Base 138 kilovolt, agreement fully executed, commercial operation May 1, 2026. GEM already carries Tinker units 1 and 2 (96 MW, operating 2026). The queue and GEM sizes differ by a few percent, which is a rating difference, so nothing is staged.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP GEN-2023-GR1": {
+      "decision": "already_in_gem",
+      "record_id": "",
+      "plant_id": "L100000402369",
+      "evidence": "A 97.5 MW gas replacement request at Anadarko Power Plant 69 kilovolt, owned by Western Farmers Electric Cooperative, agreement fully executed, commercial operation December 1, 2025. GEM already carries Anadarko Roulet units 12 and 13 (50.2 MW each, construction 2026). The queue and GEM sizes differ by a few percent, which is a rating difference, so nothing is staged.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP ERAS-2025-026": {
+      "decision": "already_in_gem",
+      "record_id": "",
+      "plant_id": "L100000402231",
+      "evidence": "A 775.2 MW combined cycle request at the Oklaunion to Lawton East Side 345 kilovolt line in Lawton, agreement fully executed, commercial operation November 30, 2029. GEM's Comanche (OK) units CC2 and CC3 are 686.4 MW each, pre-construction, 2029, owned by Public Service Company of Oklahoma. This row and ERAS-2025-024 are the two blocks. A question card covers the size gap.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP ERAS-2025-024": {
+      "decision": "already_in_gem",
+      "record_id": "",
+      "plant_id": "L100000402231",
+      "evidence": "A 775.2 MW combined cycle request at the Comanche 138 kilovolt substation in Lawton, agreement fully executed, commercial operation November 30, 2029. It is the second block with ERAS-2025-026 and matches GEM's Comanche (OK) CC2 and CC3 in place and year. A question card covers the size gap.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP ERAS-2025-023": {
+      "decision": "already_in_gem",
+      "record_id": "",
+      "plant_id": "L100000104126",
+      "evidence": "A 513 MW combustion turbine request at the Northeastern 345 kilovolt substation in Oologah, agreement fully executed, commercial operation December 15, 2029. GEM's Northeastern units 5 and 6 are 225 MW each, 450 MW, pre-construction, due 2028. A question card covers the size and year gap.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP ERAS-2025-010": {
+      "decision": "already_in_gem",
+      "record_id": "",
+      "plant_id": "L100000402162",
+      "evidence": "A 496 MW combustion turbine request at Horseshoe Lake 138 kilovolt, agreement fully executed, commercial operation January 1, 2029. GEM's Horseshoe Lake units 13 and 14 are 224 MW each, 448 MW, pre-construction, due 2029. A question card covers the size gap.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP ERAS-2025-004": {
+      "decision": "already_in_gem",
+      "record_id": "",
+      "plant_id": "L100000402162",
+      "evidence": "A 756.2 MW combined cycle request at Horseshoe Lake 138 kilovolt, agreement fully executed, commercial operation October 3, 2030. GEM's Horseshoe Lake unit 15 is 755 MW, pre-construction, due 2031. The size matches. A question card covers the year.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP ERAS-2025-003": {
+      "decision": "update",
+      "record_id": "",
+      "plant_id": "L100000401595",
+      "evidence": "A 186 MW combined cycle request at the Redbud 345 kilovolt substation near Luther, agreement fully executed, in service date October 24, 2025 and commercial operation January 18, 2027. GEM's Redbud plant has four units of 358 MW, all operating, and no 186 MW unit. It may be an uprate of a Redbud unit or a new add-on. A question card asks which. The question card is in the state shard.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ]
+    },
+    "SPP ASGI-2015-004": {
+      "decision": "other_state",
+      "record_id": "",
+      "plant_id": "",
+      "evidence": "The SPP row lists 56.4 MW of reciprocating engines owned by the Grand River Dam Authority, in service November 2015, at the Coffeyville City 69 kilovolt point, with Nowata as the nearest town. The Coffeyville point is in Kansas, so the Nowata label looks like a queue data error. No Oklahoma plant is added.",
+      "urls": [
+        "https://opsportal.spp.org/Studies/GIActive"
+      ],
+      "also_seen_by_other": true
+    }
   },
-  "odeq-notice-store": {
-   "status": "searched",
-   "how": "Read the stored notice evaluations for Oklahoma Cogeneration, Cushing, University of Oklahoma, Peoples Electric Marietta and Buzzard and the OG&E and PSO renewals.",
-   "found": "Read memos for Cushing, the University of Oklahoma, Oklahoma Cogeneration, the Western Farmers Anadarko turbines and two small Peoples sites. Cushing and the University are under 50 MW.",
-   "read": [
-    "https://applications.deq.ok.gov/permitspublic/storedpermits/4318.pdf"
-   ],
-   "date": "2026-11-05"
+  "dedup": {
+    "us-ok:new:okc2-scale-datacenter-power-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-05",
+      "evidence": "The two batch neighbors are the separate SPP surplus diesel fleets at Horseshoe Lake and Mustang, which sit at other substations. OKC2 is a data center plant with Wartsila engines and no GEM plant of any fuel carries its name."
+    },
+    "us-ok:new:myall-pryor-data-center-power-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-05",
+      "evidence": "Chouteau power station is a gas plant 5.3 kilometers away and Grand River Energy Center is a utility plant 7.0 kilometers away. Neither is a data center and neither has the Myall emergency generator engines. The SPP SR19 diesel fleet is at the Maid substation, a different site."
+    },
+    "us-ok:new:spp-gen-2025-sr19-maid-diesel-engine-power-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-05",
+      "evidence": "Chouteau power station and Grand River Energy Center are existing plants in the same county with different fuels and owners. The SPP study describes 31 new diesel engines at the Maid substation, sharing the point of interconnection with a battery, so this is a separate new plant."
+    },
+    "us-ok:new:spp-gen-2025-sr21-tulsa-power-station-diesel-engine-power-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-05",
+      "evidence": "GEM has a Tulsa power station of gas units. The SPP surplus study describes 31 new diesel engines at the Tulsa Power Station substation, using spare grid capacity at the shared point, not the existing gas units. It is a separate diesel fleet and a separate plant."
+    },
+    "us-ok:new:spp-gen-2025-sr22-horseshoe-lake-diesel-engine-power-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-05",
+      "evidence": "GEM has a Horseshoe Lake power station of gas units. The SPP surplus study describes 31 new diesel engines at the Horseshoe Lake substation, using spare grid capacity at the shared point, so this is a separate diesel fleet and a separate plant."
+    },
+    "us-ok:new:spp-gen-2025-sr23-mustang-diesel-engine-power-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-05",
+      "evidence": "GEM has a Mustang gas power station. The SPP surplus study describes 31 new diesel engines at the Mustang substation, using spare grid capacity at the shared point, so this is a separate diesel fleet and a separate plant."
+    },
+    "us-ok:new:spp-gen-2025-sr25-tulsa-north-diesel-engine-power-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-05",
+      "evidence": "The Tulsa power station and the other Tulsa County plants in GEM are gas or other fuel plants. The SPP surplus study describes 62 new diesel engines at the Tulsa North substation, a different point from any GEM plant, so this is a separate plant."
+    },
+    "us-ok:new:spp-gen-2024-341-pittsburg-county-gas-power-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-05",
+      "evidence": "Kiamichi energy facility is an operating gas plant in the same county. The SPP row is a new 1,077.8 MW request at the Pittsburg 345 kilovolt substation, a different size and owner area, so it is not that plant."
+    },
+    "us-ok:new:spp-gen-2024-340-creek-county-gas-power-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-05",
+      "evidence": "Bristow Energy Center is a 420 MW project in the same county. The SPP row is a 1,440 MW request on the Riverside to Redbud line, a different size and place, so it is not that plant."
+    },
+    "us-ok:new:spp-gen-2024-321-seminole-gas-power-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-05",
+      "evidence": "Seminole power station and Cross Timbers Power Plant are in the same county. The SPP row is a new 507 MW request at the Seminole 345 kilovolt substation. The existing Seminole units are 1 to 3 and the other request in this batch is a surplus turbine, so this is a separate new project."
+    },
+    "us-ok:new:spp-gen-2024-293-muskogee-345-kilovolt-gas-power-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-05",
+      "evidence": "The Muskogee names in GEM are the Muskogee Generating Station and the Muskogee Data Center plant. The SPP row is a separate 248 MW request at the Muskogee 345 kilovolt substation, not one of those units, so it is a different project."
+    },
+    "us-ok:new:spp-gen-2024-128-anadarko-gas-power-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-05",
+      "evidence": "GEM has an Anadarko power station. Its units are the retired plant and the 2026 Roulet units. The SPP row is a separate 726.9 MW request on the Gracemont to Lawton 345 kilovolt line, so it is a different project."
+    },
+    "us-ok:new:spp-gen-2024-013-mcclain-county-gas-turbine-power-station": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-05",
+      "evidence": "GEM has the McClain energy facility, three operating units. The SPP row is a separate 496 MW turbine request at the Norman Hills 345 kilovolt substation, so it is a different project. The surplus request at McClain is a unit on the existing plant."
+    },
+    "us-ok:new:georgia-pacific-muskogee-mill-power-plant": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-05",
+      "evidence": "GEM lists Fort James Muskogee Mill power plant at the same mill, two retired coal units of 45.5 MW with a note about conversion to gas. The federal file lists three operating gas steam turbines of 25, 44.5 and 44.5 MW under the current owner. They may be the converted boilers. A separate question card asks the reviewer to check the air permit and to merge them if they are the same, so the new plant is kept until that is answered."
+    }
   },
-  "odeq-permit-lists": {
-   "status": "searched",
-   "how": "Read the four oklahoma.gov permit lists saved on 2026-11-05.",
-   "found": "Antlers South MW, Chimney Hill MW, Cleveland SW and Canadian SW are Western Farmers operating permits. Beaver Mountain, Watts and Woka are Grand River Dam Authority sites. Arnett is a MarkWest compressor station. The Anadarko generators are four City of Anadarko emergency generators. Solarity is a solar firm. None of the lists gives a generator size above a few megawatts.",
-   "read": [
-    "https://oklahoma.gov/content/dam/ok/en/deq/documents/air-quality/Permits_Issued_During_Past_Year.csv"
-   ],
-   "date": "2026-11-05"
-  },
-  "odeq-comment-pdfs": {
-   "status": "searched",
-   "how": "Read the saved public comment PDFs listed in the permit harvest.",
-   "found": "They repeat the permits already read. No power plant or data center beyond those named appeared.",
-   "read": [
-    "scopes/us-ok/work/permits/_unmatched.md"
-   ],
-   "date": "2026-11-05"
-  },
-  "odeq-air-pages": {
-   "status": "searched",
-   "how": "Opened the air permit list page. The old deq.ok.gov notice pages now redirect to oklahoma.gov/deq.html.",
-   "found": "The old deq.ok.gov air quality address redirects to the agency home page, the public review page on oklahoma.gov returns not found, and the Wayback Machine has no saved copy of the permit pages I tried.",
-   "read": [
-    "https://oklahoma.gov/deq.html",
-    "https://oklahoma.gov/deq/divisions/air-quality/air-permits.html"
-   ],
-   "date": "2026-11-05"
-  },
-  "spp-gi-active": {
-   "status": "searched",
-   "how": "Downloaded the active queue list as a spreadsheet file from the SPP generator interconnection page, and read every Oklahoma row. Then pulled SPP's posted surplus study reports for the SR requests from the studies page.",
-   "found": "31 gas or fuel-not-shown rows needed answers. Nine surplus requests at existing plants have posted study reports that name the equipment. DISIS rows carry no company name.",
-   "read": [
-    "https://opsportal.spp.org/Studies/GIActive",
-    "https://opsportal.spp.org/Studies/GenerateActiveCSV",
-    "https://opsportal.spp.org/Studies/Gen",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/FINAL_SPP_Report_GEN-2025-SR9_06112026.pdf",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/FINAL_SPP_Report_GEN-2025-SR10_06-19-2026.pdf",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/FINAL_SPP_Report_GEN-2025-SR13_07-16-2026.pdf",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/FINAL_SPP_Report_GEN-2025-SR15.pdf",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2271_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR19_TechnicalReport_r1.pdf",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2279_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR21_TechnicalReport_r1.pdf",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2255_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR22_TechnicalReport_r1.pdf",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2297_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR23_TechnicalReport_r2.pdf",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2266_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR25_TechnicalReport_r1.pdf"
-   ],
-   "date": "2026-11-05"
-  },
-  "spp-eras": {
-   "status": "searched",
-   "how": "Read the ERAS rows in the active queue list and the SPP resource adequacy and generator interconnection pages.",
-   "found": "Seven ERAS rows in Oklahoma, all with fully executed agreements. Sponsors are not published. Five match GEM units in place and year, with size gaps staged as question cards. Redbud 186 MW is a question.",
-   "read": [
-    "https://opsportal.spp.org/Studies/GIActive",
-    "https://opsportal.spp.org/Studies/GenerateActiveCSV"
-   ],
-   "date": "2026-11-05"
-  },
-  "occ-pud-dockets": {
-   "status": "searched",
-   "how": "Searched Oklahoma Corporation Commission public utility dockets in WebLink for the causes PUD2025-000084, PUD2025-000064, PUD2026-000031 and PUD2026-000046 and read the applications, testimony and orders.",
-   "found": "PUD2025-000084 is a battery. PUD2026-000031 is Google service agreements and solar purchase agreements. PUD2026-000046 is a tariff. PUD2025-000064 approves Northeastern units 5 and 6, which GEM already has. No new gas unit.",
-   "read": [
-    "scopes/us-ok/work/psc/PUD2025-000084",
-    "scopes/us-ok/work/psc/PUD2025-000064",
-    "scopes/us-ok/work/psc/PUD2026-000031",
-    "scopes/us-ok/work/psc/PUD2026-000046",
-    "scopes/us-ok/work/psc/PUD2025-000038"
-   ],
-   "date": "2026-11-05"
-  },
-  "occ-ecf": {
-   "status": "searched",
-   "how": "Searched the commission's filing system by cause number for the same four causes and read the entries returned.",
-   "found": "The filings listed matched the WebLink copies, with no gas unit not already in GEM.",
-   "read": [
-    "scopes/us-ok/work/psc/PUD2025-000084",
-    "scopes/us-ok/work/psc/PUD2026-000031"
-   ],
-   "date": "2026-11-05"
-  },
-  "occ-weblink": {
-   "status": "searched",
-   "how": "Used the anonymous WebLink search service to list and download documents, and exported and read the scanned order for the Public Service Company of Oklahoma preapproval.",
-   "found": "Applications and testimony for the four causes were read. Scanned orders needed text recognition.",
-   "read": [
-    "scopes/us-ok/work/psc/PUD2025-000064/20892409",
-    "scopes/us-ok/work/psc/PUD2026-000031/21232026",
-    "scopes/us-ok/work/psc/PUD2026-000046/21354315"
-   ],
-   "date": "2026-11-05"
-  },
-  "occ-pud-reports": {
-   "status": "searched",
-   "how": "Read the OG&E 2025 resource plan copy and the March 2026 nuclear feasibility study in the commission reports folder.",
-   "found": "Nothing new for gas units beyond what GEM and the utility plans already carry.",
-   "read": [
-    "scopes/us-ok/work/irp/occ_2025_oge_irp.txt",
-    "scopes/us-ok/work/irp/occ_2026_nuclear_feasibility.txt"
-   ],
-   "date": "2026-11-05"
-  },
-  "oge-irp": {
-   "status": "searched",
-   "how": "Read the OG&E 2026 plan PDF, the state commission copy of the 2025 plan, and the OG&E annual report to the SEC.",
-   "found": "GEM already holds Horseshoe Lake units 11 to 15 and the Tinker project. No unsited committed gas unit is missing. The next full plan is the 2027 triennial plan.",
-   "read": [
-    "https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8",
-    "scopes/us-ok/work/irp/oge_2026_irp.txt",
-    "scopes/us-ok/work/irp/occ_2025_oge_irp.txt",
-    "https://www.sec.gov/Archives/edgar/data/1021635/000119312526055414/oge-20251231.htm"
-   ],
-   "date": "2026-11-05"
-  },
-  "pso-irp": {
-   "status": "searched",
-   "how": "Read the 2024 plan and the 2026 refresh report resource tables and text.",
-   "found": "Northeastern 5 and 6 start year is 2029, and the plan lists planning retirement years for six gas plants. The new 4,000 MW request for proposals names no site.",
-   "read": [
-    "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
-    "scopes/us-ok/work/irp/PSO_2024_IRP_Report.txt",
-    "scopes/us-ok/work/irp/PSO_2026_IRP_Refresh_Final_Report.txt"
-   ],
-   "date": "2026-11-05"
-  },
-  "sec-edgar": {
-   "status": "searched",
-   "how": "Ran the EDGAR full text search for Horseshoe Lake and read the OG&E 2025 annual report.",
-   "found": "The report names Tinker Air Force Base and Horseshoe Lake units 11 to 14 as committed projects, all already in GEM.",
-   "read": [
-    "https://efts.sec.gov/LATEST/search-index?q=%22Horseshoe%20Lake%22&forms=10-K",
-    "https://www.sec.gov/Archives/edgar/data/1021635/000119312526055414/oge-20251231.htm"
-   ],
-   "date": "2026-11-05"
-  },
-  "wfec": {
-   "status": "searched",
-   "how": "Read the cooperative home page, tried its generation and news pages, and read trade press on the Hugo and Anadarko work.",
-   "found": "Hugo Site A and Site B and Anadarko Roulet 12 and 13 are already in GEM with matching size and dates. The cooperative home page names no further gas unit.",
-   "read": [
-    "https://www.wfec.com/",
-    "https://constructionreviewonline.com/1b-hugo-plant-expansion-western-farmers-electric-breaks-ground-on-nine-gas-turbines-in-oklahoma/",
-    "https://www.okenergytoday.com/2024/10/groundbreaking-for-expansion-of-western-farmers-electric-generating-plant-in-anadarko"
-   ],
-   "date": "2026-11-05"
-  },
-  "aeci": {
-   "status": "searched",
-   "how": "Read the Bristow Energy Center page and a trade press article on the turbine order.",
-   "found": "Bristow is a 420 MW net natural gas peaking plant owned by Associated Electric Cooperative, online in late 2029, which matches GEM.",
-   "read": [
-    "https://www.aeci.org/bristow-energy-center-1",
-    "https://www.turbomachinerymag.com/view/siemens-energy-aeci-sgt6-9000hl-bristow-energy-center-oklahoma",
-    "https://www.aeci.org/"
-   ],
-   "date": "2026-11-05"
-  },
-  "grda": {
-   "status": "searched",
-   "how": "Read the authority home page, trade press on Unit 4, and the Southwest Power Pool row for ASGI-2015-004.",
-   "found": "Unit 4 is a 426 MW simple cycle turbine dedicated in September 2026, matching GEM. The Nowata request ASGI-2015-004 matches the Coffeyville, Kansas city engine plant, which is in Kansas.",
-   "read": [
-    "https://grda.com/",
-    "https://www.publicpower.org/periodical/article/grand-river-dam-authority-formally-dedicates-unit-4-grand-river-energy-center",
-    "https://www.okenergytoday.com/2026/09/grda-to-dedicate-525-million-power-project/",
-    "https://www.coffeyville.com/352/Electric-Generation"
-   ],
-   "date": "2026-11-05"
-  },
-  "ompa": {
-   "status": "searched",
-   "how": "Read the authority news pages, the state air permit application, completeness letter and notice of filing.",
-   "found": "A second Lamb turbine, 90 MW, is in a Tier II construction permit review. It is added as a new unit.",
-   "read": [
-    "https://www.ompa.com/?p=6496",
-    "https://www.ompa.com/?p=6612",
-    "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Ac%C3%89PChnKuUSvuWZVQIFTvlUUq5X%C3%81Hzd9Glajj%C3%89H9yC3L05C3YHBOqpbheH2tQFiUXhjxRQlq2n6qKEna9J83FQI%3D/?ViewerMode=PDF&ForceDownload=true",
-    "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Aa4uMQdC7sAIwdopO3DGmSJ1fN6dFuZ2DF2LgcWnu1nPjwUZQst2jzAUeBwyDm8c3sU6S71OwLno%C3%81pg5HeNZltE%3D/?ViewerMode=PDF&ForceDownload=true"
-   ],
-   "date": "2026-11-05"
-  },
-  "evergy-irp": {
-   "status": "searched",
-   "how": "Read the 2026 plan update deck.",
-   "found": "The deck shows Evergy fleet additions and retirements as totals and names no Spring Creek change. Spring Creek stays as in GEM.",
-   "read": [
-    "https://investors.evergy.com/2026IRPUpdate"
-   ],
-   "date": "2026-11-05"
-  },
-  "tenaska-kiamichi": {
-   "status": "searched",
-   "how": "Read the Tenaska Kiamichi fact sheet from May 2026.",
-   "found": "The sheet gives owner Kiowa Power Partners, 1,220 MW, and operation since April 2003, matching GEM. It names no uprate or ownership change.",
-   "read": [
-    "https://www.tenaska.com/wp-content/uploads/2026/05/Kiamichi-Generating-Station.pdf"
-   ],
-   "date": "2026-11-05"
-  },
-  "eia-860m": {
-   "status": "searched",
-   "how": "Read the Operating, Planned, Retired and Canceled sheets of the September 2026 monthly file for Oklahoma, and compared each gas and oil plant with GEM unit by unit.",
-   "found": "Two plants GEM lacks at the threshold: Georgia-Pacific Muskogee and Centrahoma. Seven plants below 50 MW. Every planned unit matches GEM. Retirements since 2020 at 50 MW or more are already in GEM. Disagreements on Grand River, Ripley, Mustang, Horseshoe Lake, Northeastern and Mooreland are in question cards.",
-   "read": [
-    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
-    "work/eia/september_generator2026.xlsx"
-   ],
-   "date": "2026-11-05"
-  },
-  "eia-860": {
-   "status": "searched",
-   "how": "Downloaded the 2025 annual survey and read the generator, plant and owner tables for Oklahoma.",
-   "found": "Addresses and points for the added plants, and owner shares that agree with GEM except at Kiamichi, which has a question card.",
-   "read": [
-    "https://www.eia.gov/electricity/data/eia860/",
-    "scopes/us-ok/work/eia860/y2025/3_1_Generator_Y2025.xlsx",
-    "scopes/us-ok/work/eia860/y2025/4___Owner_Y2025.xlsx",
-    "scopes/us-ok/work/eia860/y2025/2___Plant_Y2025.xlsx"
-   ],
-   "date": "2026-11-05"
-  },
-  "eip-oil-gas-watch": {
-   "status": "searched",
-   "how": "Read the matching list in the ID matching report, which carries the Environmental Integrity Project spreadsheet values, and opened each facility page. In a real Chrome window the four facility pages show page not found, and the Web Archive has no saved copy of them.",
-   "found": "The EIP status disagreements on Anadarko, Grand River, Horseshoe Lake and Northeastern are each settled with a question card that cites the federal file and an utility or press source. Chickasha stays cancelled.",
-   "read": [
-    "work/ids_us-oklahoma.md",
-    "https://oilandgaswatch.org/facility/rec_d4f1u58q7easr8ra1e8g",
-    "https://oilandgaswatch.org/facility/rec_d4f1u5gq7easr8ra1f40",
-    "https://oilandgaswatch.org/facility/rec_d4f1u5oq7easr8ra1f60",
-    "https://oilandgaswatch.org/facility/rec_d4f1u60q7easr8ra1fn0"
-   ],
-   "date": "2026-11-05"
-  },
-  "possible-updates-sheet": {
-   "status": "searched",
-   "how": "Read the gas and oil tab through the work profile in read-only mode and saved a copy under the scope work folder. Filtered by country and by plant names.",
-   "found": "Every Oklahoma row is marked done: the Mitsubishi coal-to-gas row, Green Country, the Chickasha data center, Northeastern, the Core Scientific Muskogee site, the two OG&E plan rows and the Grand River unit 4 row. Each is already matched by a GEM plant or by an existing record in this scope.",
-   "read": [
-    "scopes/us-ok/work/sheets/possible_updates_gasoil.json"
-   ],
-   "date": "2026-11-05"
-  },
-  "captive-lng-sheet": {
-   "status": "searched",
-   "how": "Read the captive LNG match file for Oklahoma.",
-   "found": "The file has no Oklahoma terminals. The only data center match is the Chickasha site. A search of Oklahoma LNG facilities found no on-site generation at 50 MW.",
-   "read": [
-    "work/captive_us-oklahoma.json"
-   ],
-   "date": "2026-11-05"
-  },
-  "state-news": {
-   "status": "searched",
-   "how": "Searched Oklahoma trade and local press since 2024 for the gas plants of each utility and chased each lead to a primary document.",
-   "found": "The Tinker turbines, the Horseshoe Lake approval, the Grand River unit 4 dedication and the Northeastern conversion plan were confirmed. No unlisted gas plant was found beyond the added ones.",
-   "read": [
-    "https://www.okenergytoday.com/2026/02/oge-and-tinker-air-force-base-celebrate-new-power-generation",
-    "https://www.okenergytoday.com/2025/11/oge-acts-promptly-on-energy-projects-approval",
-    "https://www.publicpower.org/periodical/article/grand-river-dam-authority-formally-dedicates-unit-4-grand-river-energy-center",
-    "https://docs.aep.com/docs/requiredpostings/elg/NEPSB-AnnualProgressReportforthePermanentCessationofCoalCombustionby12-31-2028-10102025.pdf",
-    "https://www.okenergytoday.com/2025/12/160-million-se-oklahoma-gas-pipeline-to-be-built-by-one-gas"
-   ],
-   "date": "2026-11-05"
+  "irp_plans": {
+    "plan Oklahoma Gas and Electric Company": {
+      "pages": "All 45 PDF pages of the 2026 plan and all 38 PDF pages of the 2025 plan. 2026 plan: needs and retirements PDF pages 4 and 9 to 12 and 15 to 17; resource options PDF pages 20 to 21; action plan PDF pages 5 and 22 (page 5 is a picture with no text); RFP slide PDF page 32; technical conference PDF pages 29 to 44. 2025 plan: retirements and additions PDF pages 14 to 16; needs PDF pages 17 to 18; options PDF page 19; action plan PDF pages 20 and 32. Neither plan contains a modeled preferred portfolio or alternative portfolios.",
+      "additions": [
+        {
+          "what": "Horseshoe Lake units 11 and 12: two GE 7FA.05 gas combustion turbines, 448 MW total, selected from the 2022 Flexible Resource request for proposals and approved by the Oklahoma commission in October 2023. The 2026 plan says in service in late 2026 (2026 plan PDF pages 10, 15 and 22).",
+          "plant_id": "L100000402162"
+        },
+        {
+          "what": "Horseshoe Lake units 13 and 14: two gas combustion turbines nearly identical to units 11 and 12, planned for service in 2029, selected from the 2024 All Source request for proposals and approved by the commission in order 753440, case PUD2025-000038 (2026 plan PDF page 10; 2025 plan PDF pages 15 and 16; slides 2026 page 32).",
+          "plant_id": "L100000402162"
+        },
+        {
+          "what": "Horseshoe Lake unit 8 (gas steam turbine, 377 MW summer rating) retires in 2027 (2026 plan PDF pages 9 and 15; same in the 2025 plan PDF page 14).",
+          "plant_id": "L100000402162"
+        },
+        {
+          "what": "Horseshoe Lake units 9 and 10 (gas combustion turbines, 2000, about 45 and 46 MW summer rating) retire in 2035 (2026 plan PDF page 9).",
+          "plant_id": "L100000402162"
+        },
+        {
+          "what": "Tinker units 1 and 2: two GE LM6000 gas combustion turbines at Tinker Air Force Base, placed in service in March 2026 (2026 plan PDF pages 10 and 11).",
+          "plant_id": "L100001063385"
+        },
+        {
+          "what": "Mustang units 5A and 5B at Tinker Air Force Base retired in early 2026 after about 55 years (2026 plan PDF page 10).",
+          "plant_id": "L100001063385"
+        },
+        {
+          "what": "Seminole units 1, 2 and 3 (gas steam turbines) retire in early 2031, early 2033 and early 2035 (2026 plan PDF page 10). The action plan on PDF page 15 lists only Seminole 1 in early 2031.",
+          "plant_id": "L100000402165"
+        },
+        {
+          "what": "Five-year capacity purchase from the Tenaska Kiamichi combined cycle plant, selected from the 2024 All Source request for proposals and filed for approval in case PUD2025-000038 (2025 plan PDF page 16; named 'Kiamichi CPA' on the 2026 plan slide, PDF page 32). OG&E buys the output. It does not own the plant, so there is no new unit.",
+          "plant_id": "L100000401619"
+        },
+        {
+          "what": "Two 2026 requests for proposals (a Bridge Capacity request and an All Source request) were issued in early 2026 to fill the capacity need of 125 MW in 2027 growing to 1,613 MW in 2031 in summer (2026 plan PDF pages 4, 15 and 22; technical conference minutes PDF pages 42). No projects are named yet.",
+          "record_id": "us-ok:plant:monitor-2"
+        },
+        {
+          "what": "Horseshoe Lake Unit 15, a natural gas combined cycle unit of about 755 MW at the existing Horseshoe Lake plant, about $1.7 billion, service about 2031. OG&E filed for pre-approval with the Oklahoma commission on October 27, 2026. Source: OGE Energy's 10-Q for the third quarter of 2026, filed October 28, 2026, section Integrated Resource Plans (https://www.sec.gov/Archives/edgar/data/1021635/000102163526000036/oge-20260930.htm). GEM already lists it as Unit 15, 755 MW, pre-construction, 2031.",
+          "plant_id": "L100000402162"
+        }
+      ],
+      "options": [
+        {
+          "what": "Generic new gas combustion turbine options priced by Black and Veatch: 1x H class 360 MW, 1x F class 226 MW, 4x LM6000 207 MW (2026 plan PDF page 14). No site is named.",
+          "record_id": "us-ok:plant:monitor-2",
+          "why_not": "Generic technology menu with no site. It is a cost table, not a project, so it is not an add or watch item."
+        },
+        {
+          "what": "Generic new combined cycle options: 1x1 H class 516 MW, 1x1 F class 345 MW, 2x1 F class 692 MW (2026 plan PDF page 14). No site named.",
+          "record_id": "us-ok:plant:monitor-2",
+          "why_not": "Generic technology menu with no site or timing. A cost table is not a project, so it is not an add."
+        },
+        {
+          "what": "Generic reciprocating engine options, 3x 56 MW and 6x 111 MW (2026 plan PDF page 14).",
+          "record_id": "us-ok:plant:monitor-2",
+          "why_not": "Generic technology menu with no site named, so it cannot be tied to a plant or added."
+        },
+        {
+          "what": "2025 plan resource menu from the 2023 Burns and McDonnell study: aeroderivative CTs (LM2500, LM6000, LMS100), frame CTs (E, F, G/H class), combined cycles (1x1 J, 2x1 F and G/H) and reciprocating engines (2025 plan PDF page 19).",
+          "record_id": "us-ok:plant:monitor-2",
+          "why_not": "Generic technology menu with no site, repeated from the 2024 plan. Not a project, so not an add or watch item."
+        },
+        {
+          "what": "'Existing Unit Modification' appears as a capacity step on the 2025 and 2026 slide charts (2026 plan PDF page 32; 2025 plan PDF page 32). The plan text does not say which unit or what the change is.",
+          "record_id": "us-ok:plant:monitor-2",
+          "why_not": "No unit, size or date is named in the text, so there is nothing to add or watch. Ask OG&E which unit is meant."
+        },
+        {
+          "what": "Mustang units 5A and 5B retirement was set for late 2025 or early 2026 in the 2025 plan (PDF pages 14 and 15) and happened in early 2026 (2026 plan PDF page 10).",
+          "plant_id": "L100001063385",
+          "why_not": "This is an earlier forecast, not an alternative. The retirement is now done, so no separate watch item is needed."
+        },
+        {
+          "what": "Seminole retirement dates in the 2025 plan were the end of 2030, 2032 and 2034 (PDF page 15). The 2026 plan moved each about a few weeks later to early 2031, 2033 and 2035.",
+          "plant_id": "L100000402165",
+          "why_not": "This is an earlier forecast replaced by the 2026 plan, not a studied alternative. It is recorded so the date change is visible."
+        },
+        {
+          "what": "The plan studies small modular reactors (300 MW) and large nuclear (1,000 MW) as options (2026 plan PDF pages 13 to 14).",
+          "record_id": "us-ok:plant:monitor-2",
+          "why_not": "Nuclear is not gas or oil, so out of scope for the tracker."
+        }
+      ],
+      "evidence": "The 2026 plan was read in full and the 2025 plan to see changes. Both are interim updates with no portfolio modeling. The 2026 plan says the next full triennial plan is due in 2027 (technical conference minutes, PDF page 41). The 2026 plan was prepared around April 2026, with a technical conference on March 12, 2026. The 2025 plan had its technical conference on June 24, 2025. The preferred actions are Horseshoe Lake 11 and 12 (448 MW, late 2026), Horseshoe Lake 13 and 14 (2029), Tinker 1 and 2 (March 2026), the retirements of Horseshoe Lake 8 (2027) and 9 and 10 (2035) and Seminole 1, 2 and 3 (early 2031, 2033, 2035), plus a Kiamichi capacity purchase. Two new requests for proposals were issued in early 2026 and no winning sites are named yet. Alternatives are only a generic cost menu of combustion turbines, combined cycles, engines and nuclear (2026 plan PDF page 14). The batch records for Muskogee 7, Seminole 4 and 5, McClain 2, River Valley 3 and Horseshoe Lake 15 do not appear in either plan.",
+      "discrepancies": [
+        {
+          "plant_id": "L100001063385",
+          "unit": "1-2",
+          "gem_value": "96 MW",
+          "plan_value": "88 MW total in the 2025 plan; about 42 MW summer rating each in the 2026 plan table",
+          "field": "capacity",
+          "page": "2025 plan PDF page 16; 2026 plan PDF page 15",
+          "quote": "They will bring a total of 88 MW of capacity"
+        },
+        {
+          "plant_id": "L100000402162",
+          "unit": "11 and 12",
+          "gem_value": "operating, start 2026",
+          "plan_value": "not yet in service as of the 2026 plan: 'to be in service late 2026'. The same table also shows first year in service 2027.",
+          "field": "status and start year",
+          "page": "2026 plan PDF pages 10 and 15 (footnote 8)",
+          "quote": "Horseshoe Lake Units 11 and 12 are planned to go into service in 2026."
+        },
+        {
+          "plant_id": "L100000402162",
+          "unit": "13 and 14",
+          "gem_value": "pre-construction, start 2029",
+          "plan_value": "start 2029 matches; the plan says only 'planned' and 'approved by the Oklahoma commission', and never says construction has begun",
+          "field": "status",
+          "page": "2026 plan PDF page 10",
+          "quote": "Horseshoe Lake Units 13 and 14 are planned to go into service in 2029."
+        },
+        {
+          "plant_id": "L100000402162",
+          "unit": "8",
+          "gem_value": "443.0 MW",
+          "plan_value": "377 MW (summer tested capability in the 2026 plan and the same in the 2025 plan)",
+          "field": "capacity",
+          "page": "2026 plan PDF pages 9 and 15",
+          "quote": "Horseshoe Lake Unit 8 is a 377 MW natural gas-fired steam turbine unit"
+        },
+        {
+          "plant_id": "L100000402165",
+          "unit": "1, 2, 3",
+          "gem_value": "retire 2031, 2033, 2035",
+          "plan_value": "The 2026 plan matches (early 2031, 2033, 2035). The 2025 plan said end of 2030, 2032 and 2034. The action plan list (page 22) names only Seminole 1.",
+          "field": "planned retirement year",
+          "page": "2026 plan PDF page 10; 2025 plan PDF page 15",
+          "quote": "OG&E currently plans to retire Seminole 1 in early 2031,Seminole 2 in early 2033 and Seminole 3 in early 2035"
+        },
+        {
+          "plant_id": "L100000402162",
+          "unit": "15",
+          "gem_value": "pre-construction, 755 MW combined cycle, start 2031",
+          "plan_value": "not named anywhere in either plan",
+          "field": "existence",
+          "page": "2026 plan PDF pages 10 to 15",
+          "quote": "(no mention; Horseshoe Lake additions are only units 11 to 14)"
+        }
+      ],
+      "unmatched": [],
+      "newer_checked": "No plan newer than the April 2026 plan exists. OGE Energy's 10-Q for the third quarter of 2026, filed October 28, 2026, says OG&E issued its final 2026 plan to the Oklahoma and Arkansas commissions in April 2026. It also says more pre-approval filings from the January 2026 request for proposals may come from the fourth quarter of 2026. The first is Horseshoe Lake Unit 15. The Oklahoma commission reports page still listed the 2025 plan as the newest on November 6, 2026."
+    },
+    "plan Public Service Company of Oklahoma": {
+      "pages": "2024 IRP Report (October 1, 2024), all 156 PDF pages. Existing units Table 1 on p32 to 33; supply options pp57 to 71; candidate portfolios pp74 to 84; preferred plan Table 41 on p100; action plan p103; technical conference notes pp150 to 154. 2026 IRP Refresh (August 27, 2026, case PUD 2026-00075), all 40 pages; unit table Table 6 on p18.",
+      "additions": [
+        {
+          "what": "Northeastern Unit 3 continues on gas from 2026, 420 MW, about 15 years, retire 2041 (2024 IRP Table ES-1 p12, Table 41 p100, text p58 to 59; 2026 Refresh p18, p25: stopped burning coal December 31, 2025)",
+          "plant_id": "L100000104126"
+        },
+        {
+          "what": "Green Country combined cycle acquisition, 795 MW, listed as a new combined cycle in the preferred plan, pre-approval filed September 16, 2024 (2024 IRP Table 41 p100, p103); now owned and recovered under case 2024-000057, order 749854 (2026 Refresh p18, p25)",
+          "plant_id": "L100000401991"
+        },
+        {
+          "what": "Northeastern Units 5 and 6, two GE F-class gas turbines, about 450 MW, 2029, retire 2059, approved by the Corporation Commission on May 11, 2026 in order 757495 (2026 Refresh p11, p18). Not in the 2024 preferred plan, which adds no new gas turbine or combined cycle",
+          "plant_id": "L100000104126"
+        },
+        {
+          "what": "Planned retirement of Comanche 1 in 2035 (2024 IRP Table 1 p32; 2026 Refresh p18)",
+          "plant_id": "L100000402231"
+        },
+        {
+          "what": "Planned retirements of Southwestern 1 and 2 and Weleetka 4 and 5 in 2030 (2024 IRP Table 1 p32, p43 to 44; 2026 Refresh p11, p18)",
+          "plant_id": "L100000402234"
+        },
+        {
+          "what": "Planned retirement of Weleetka 4 and 5 in 2030 (same pages)",
+          "plant_id": "L100000402236"
+        },
+        {
+          "what": "Planned retirements of Tulsa 2 in 2033 or 2034 and Tulsa 4 in 2034 (2024 IRP Table 1 p32; 2026 Refresh p18)",
+          "plant_id": "L100000402235"
+        },
+        {
+          "what": "Planned retirements of Northeastern 2 (2035 or 2036) and Northeastern 1 combined cycle (2036) (2024 IRP p32; 2026 Refresh p18)",
+          "plant_id": "L100000104126"
+        },
+        {
+          "what": "Planned retirements of Southwestern 3 in 2037, Southwestern 4 and 5 in 2056 (2024 IRP p32; 2026 Refresh p18)",
+          "plant_id": "L100000402234"
+        },
+        {
+          "what": "Planned retirements of Riverside 1 (2039 or 2041), Riverside 2 (2041), Riverside 3 and 4 (2056) (2024 IRP p32; 2026 Refresh p18)",
+          "plant_id": "L100000402233"
+        }
+      ],
+      "options": [
+        {
+          "what": "Low Gas sensitivity adds a 760 MW F-class multi-shaft combined cycle in 2032 (2024 IRP Table 29 p82)",
+          "plant_id": null,
+          "why_not": "No site is named in the plan. It is a generic modeled build in one sensitivity, so there is no site, owner or permit to add as a plant."
+        },
+        {
+          "what": "High case adds a new 240 MW combustion turbine in 2031/32 (2024 IRP Table 25 p78)",
+          "plant_id": null,
+          "why_not": "No site is named in the plan. It is a generic F-class turbine block in a modeled high load portfolio, not a project."
+        },
+        {
+          "what": "Large economic development sensitivity adds 960 MW of new gas combustion turbines in 2031/32, 240 MW in 2032/33 and 240 MW in 2034/35, 1,440 MW in all (2024 IRP Table 30 p83)",
+          "plant_id": null,
+          "why_not": "No site is named in the plan. These are generic modeled turbines for a very large load case, with no site."
+        },
+        {
+          "what": "Enhanced environmental regulation case caps gas turbines at 20 percent and combined cycles at 40 percent capacity factor from 2032 and adds no gas (2024 IRP pp75, 80)",
+          "plant_id": null,
+          "why_not": "This case adds no gas unit and names no site. It only limits how much existing gas units may run, so there is nothing to add."
+        },
+        {
+          "what": "Generic supply options: H-class combined cycle 418 MW single shaft or 1,100 MW multi-shaft, F-class 760 MW, combined cycle with 90 percent carbon capture 390 MW, F-class simple cycle 240 MW blocks, aeroderivative 105 MW blocks, reciprocating engines 20 MW blocks, first years 2031 or 2032 (2024 IRP pp57 to 61, Table 18 p71)",
+          "plant_id": null,
+          "why_not": "These are cost and performance assumptions for the model. No site, owner or schedule is given for any of them."
+        },
+        {
+          "what": "Low, Base, High and EER cases and the high gas, storage cases pick no new gas besides Green Country and Northeastern 3 (2024 IRP Tables 24 to 31, pp77 to 84)",
+          "plant_id": null,
+          "why_not": "These portfolios repeat the preferred gas additions and add no other gas unit, so there is nothing further to match to a plant."
+        },
+        {
+          "what": "Short-term market purchases of 450 MW per year for 2025 to 2028 and 50 to 125 MW in some portfolios (2024 IRP pp57, 78, 83)",
+          "plant_id": null,
+          "why_not": "These are market purchases, not a generating unit, and no site is named."
+        },
+        {
+          "what": "2026 all-source request for proposals, issued January 2, 2026, seeks about 4,000 MW of accredited capacity including greenfield gas, bids received March 16, 2026, target commercial operation November 2029, approval filing delayed to about September 2026 (2026 Refresh pp7, 24, 38, 39)",
+          "why_not": "The plan names no bidder, site or unit, so no plant can be added yet.",
+          "record_id": "us-ok:plant:monitor-1"
+        },
+        {
+          "what": "Oneta power purchase agreement, 260 MW, 2023 to 2031, and Kiamichi power purchase agreement, 150 MW, 2025 to 2032 (2026 Refresh p18; 2024 IRP Table 2 p33 gives Oneta to 2030)",
+          "plant_id": null,
+          "why_not": "Both plants belong to other owners and are existing GEM plants. They are contracts, not new or changed PSO units, and the Oneta end year differs between the two plans."
+        },
+        {
+          "what": "Small modular nuclear reactor option, 2036 (2024 IRP pp57 to 71)",
+          "plant_id": null,
+          "why_not": "Not a gas or oil unit and no site is named."
+        }
+      ],
+      "evidence": "The 2024 IRP preferred plan keeps Northeastern 3 on gas from 2026 at 420 MW and buys the 795 MW Green Country combined cycle, with 200 MW of storage, 450 MW of solar and 200 MW of wind; it adds no new gas turbine or combined cycle (Table 41, p100). Every other portfolio also adds no new gas, except High (240 MW turbine, 2031), Low Gas (760 MW combined cycle, 2032) and the large load case (1,440 MW of turbines), all generic with no site (pp78, 82, 83). The 2026 Refresh has no preferred plan. It records the new Northeastern 5 and 6 turbines, about 450 MW in 2029, approved May 11, 2026 (p11, p18), and says a 4,000 MW request for proposals is open with a pre-approval filing expected around September 2026 (pp7, 38, 39). Neither plan names Comanche units 2 and 3 or Port of Inola, so the GEM and batch records for those are not supported or contradicted by these plans. The plans give planning retirement dates for most gas units, and the plan says these are for planning only (p32).",
+      "discrepancies": [
+        {
+          "plant_id": "L100000402231",
+          "unit": "CC1",
+          "field": "planned retirement",
+          "gem_value": "blank (the batch proposes 2035)",
+          "plan_value": "2035",
+          "page": "2024 IRP p32; 2026 Refresh p18",
+          "quote": "Comanche 1, Gas CC, retire 2035. The plan says dates are for planning only."
+        },
+        {
+          "plant_id": "L100000402231",
+          "unit": "CC1",
+          "field": "capacity",
+          "gem_value": "290 MW",
+          "plan_value": "220 MW (2024), 204 MW (2026)",
+          "page": "2024 IRP p32; 2026 Refresh p18",
+          "quote": "Planning rating is peak net dependable capability in summer, not nameplate. Not a true conflict."
+        },
+        {
+          "plant_id": "L100000104126",
+          "unit": "Unit 2",
+          "field": "planned retirement",
+          "gem_value": "blank",
+          "plan_value": "2035 (2024 IRP), 2036 (2026 Refresh)",
+          "page": "2024 IRP p32; 2026 Refresh p18",
+          "quote": "Northeastern 2, Gas steam, 1970, retire 2035 in the 2024 table and 2036 in the 2026 table."
+        },
+        {
+          "plant_id": "L100000104126",
+          "unit": "NE1S",
+          "field": "planned retirement",
+          "gem_value": "blank",
+          "plan_value": "2036",
+          "page": "2024 IRP p32; 2026 Refresh p18",
+          "quote": "Northeastern 1 combined cycle, retire 2036 in both plans."
+        },
+        {
+          "plant_id": "L100000104126",
+          "unit": "NE1S",
+          "field": "start year",
+          "gem_value": "2001",
+          "plan_value": "1980 (2024 IRP), 2001 (2026 Refresh)",
+          "page": "2024 IRP p32; 2026 Refresh p18",
+          "quote": "The 2024 table lists COD 1980. The 2026 table lists 2001 for Northeastern 1A and B, 1S, which matches GEM."
+        },
+        {
+          "plant_id": "L100000104126",
+          "unit": "Unit 3 timepoint 2",
+          "field": "planned retirement",
+          "gem_value": "2041",
+          "plan_value": "2041",
+          "page": "2026 Refresh p18",
+          "quote": "Northeastern 3 Conversion, fuel switch to gas, 2026, retire 2041, 420 MW. Matches GEM. The 2024 IRP gives no retire year for the gas continuation (it says about 15 years in the technical conference notes, p151)."
+        },
+        {
+          "plant_id": "L100000104126",
+          "unit": "Units 5 and 6",
+          "field": "capacity and start year",
+          "gem_value": "225 MW each, start 2028",
+          "plan_value": "About 450 MW together, 2029, retire 2059",
+          "page": "2026 Refresh p11, p18",
+          "quote": "Two GE F-class gas turbines, 450 MW, 2029, retire 2059, approved by the Corporation Commission in order 757495. Capacity matches in total. The start year is 2029 in the plan and 2028 in GEM. Also add retire 2059."
+        },
+        {
+          "plant_id": "L100000402233",
+          "unit": "Unit 1",
+          "field": "planned retirement",
+          "gem_value": "blank",
+          "plan_value": "2039 (2024 IRP), 2041 (2026 Refresh)",
+          "page": "2024 IRP p32; 2026 Refresh p18",
+          "quote": "Riverside 1, Gas steam, 1974."
+        },
+        {
+          "plant_id": "L100000402233",
+          "unit": "Unit 2",
+          "field": "planned retirement",
+          "gem_value": "blank",
+          "plan_value": "2041",
+          "page": "2024 IRP p32; 2026 Refresh p18",
+          "quote": "Riverside 2, Gas steam, 1976."
+        },
+        {
+          "plant_id": "L100000402233",
+          "unit": "Units 3 and 4",
+          "field": "planned retirement",
+          "gem_value": "blank",
+          "plan_value": "2056",
+          "page": "2024 IRP p32; 2026 Refresh p18",
+          "quote": "Riverside 3 and 4, Gas CT, 2008, retire 2056."
+        },
+        {
+          "plant_id": "L100000402234",
+          "unit": "Unit 1",
+          "field": "planned retirement",
+          "gem_value": "blank",
+          "plan_value": "2030",
+          "page": "2024 IRP p32; 2026 Refresh p18; 2026 Refresh p11",
+          "quote": "Southwestern 1, Gas steam, 1952, retire 2030. The 2026 Refresh says PSO plans to retire it by summer 2036 at the latest."
+        },
+        {
+          "plant_id": "L100000402234",
+          "unit": "Unit 2",
+          "field": "planned retirement",
+          "gem_value": "blank",
+          "plan_value": "2030",
+          "page": "2024 IRP p32; 2026 Refresh p18",
+          "quote": "Southwestern 2, Gas steam, 1954, retire 2030."
+        },
+        {
+          "plant_id": "L100000402234",
+          "unit": "Unit 3",
+          "field": "planned retirement",
+          "gem_value": "blank",
+          "plan_value": "2037",
+          "page": "2024 IRP p32; 2026 Refresh p18",
+          "quote": "Southwestern 3, Gas steam, 1967, retire 2037."
+        },
+        {
+          "plant_id": "L100000402234",
+          "unit": "Units 4 and 5",
+          "field": "planned retirement",
+          "gem_value": "blank",
+          "plan_value": "2056",
+          "page": "2024 IRP p32; 2026 Refresh p18",
+          "quote": "Southwestern 4 and 5, Gas CT, 2008, retire 2056."
+        },
+        {
+          "plant_id": "L100000402235",
+          "unit": "Unit 2",
+          "field": "planned retirement",
+          "gem_value": "blank",
+          "plan_value": "2033 (2024 IRP), 2034 (2026 Refresh)",
+          "page": "2024 IRP p32; 2026 Refresh p18",
+          "quote": "Tulsa 2, Gas steam."
+        },
+        {
+          "plant_id": "L100000402235",
+          "unit": "Unit 4",
+          "field": "planned retirement",
+          "gem_value": "blank",
+          "plan_value": "2034",
+          "page": "2024 IRP p32; 2026 Refresh p18",
+          "quote": "Tulsa 4, Gas steam."
+        },
+        {
+          "plant_id": "L100000402235",
+          "unit": "Units 2 and 4",
+          "field": "start year",
+          "gem_value": "1956 and 1958",
+          "plan_value": "1956 and 1958 (2024 IRP), 1963 and 1964 (2026 Refresh)",
+          "page": "2024 IRP p32; 2026 Refresh p18",
+          "quote": "The two plans disagree with each other. GEM matches the 2024 table. Treat as a plan inconsistency, do not change."
+        },
+        {
+          "plant_id": "L100000402236",
+          "unit": "Units 4 and 5",
+          "field": "planned retirement",
+          "gem_value": "2030",
+          "plan_value": "2030",
+          "page": "2024 IRP p32; 2026 Refresh p18",
+          "quote": "Weleetka 4 and 5, Gas CT, retire 2030. Matches GEM."
+        },
+        {
+          "plant_id": "L100000401991",
+          "unit": "G841, G842, G843",
+          "field": "capacity and retirement",
+          "gem_value": "903 MW total (3 x 301), no retire year, owner PSO",
+          "plan_value": "795 MW planning rating, retire 2055, now owned",
+          "page": "2026 Refresh p18; 2024 IRP p32",
+          "quote": "Green Country, now owned, existing, 2026, retire 2055, 795 MW. The MW difference is a net rating versus nameplate. Add retire 2055."
+        }
+      ],
+      "unmatched": [
+        {
+          "unit": "Diesel units: Comanche D1 and D2 (4 MW, retire 2036), Northeastern 1 and 2 D1 (3 MW, 2037), Northeastern 3 D1 (0 MW, 2041), Riverside D1 (2 MW, 2057), Southwestern D1 (2 MW, 2057), Tulsa D1 to D3 (8 MW, 2035)",
+          "page": "2026 Refresh p18",
+          "quote": "Diesel units listed in the unit table with small accredited capacities."
+        },
+        {
+          "unit": "Comanche units 2 and 3 (GEM pre-construction, 686.4 MW each, start 2029) and Port of Inola 1A and 1B (GEM pre-construction, 641 MW each, start 2030)",
+          "page": "2024 IRP p12, p32; 2026 Refresh p18",
+          "quote": "Neither plan lists these units. The PSO owned resource tables name no Comanche expansion and no Port of Inola. The 2026 Refresh has no portfolio and names no new site except Northeastern 5 and 6."
+        }
+      ]
+    },
+    "plan Liberty Utilities (Empire District Electric Company)": {
+      "pages": "2026 annual update (Missouri case EO-2026-0230, public report https://efis.psc.mo.gov/Document/Display/868469, filed March 13, 2026): all 31 pages read from start to end. Page 13 covers Riverton, pages 4 and 14 the State Line turbine, pages 22 to 23 the preferred plan table, page 24 the contingency plan. The update has no alternative plans and no new modeling. The load and capacity balance tables on pages 6 to 8, 10 to 11 and 27 to 28 are blank in the public version. Renew Missouri's comments (https://efis.psc.mo.gov/Document/Display/876466, 3 pages) were read in full. Earlier, for the 2025 triennial plan: Not every page was read line by line. Files 1, 5, 8, 10, 11 and 12 were handled by full-text search for every generation, gas, oil, retirement and Oklahoma passage, plus reading in full the preferred plan tables, the plan 1 to 12 descriptions (Vol. 6 PDF pages 33 to 38), the data center portfolios (Vol. 6 PDF pages 181 to 184), the co-location and Kings Point siting passages (Vol. 4 PDF page 75, Vol. 7 PDF page 48), the existing fleet tables and plant descriptions (Vol. 4 PDF pages 10 to 17) and the contingency plan section (Vol. 7 PDF page 41). Files 11 (Preferred Plan Update, 13 pages) and 12 (notice of change, 3 pages) were read in full. File 9 (reliability validation) was searched for gas and Oklahoma and its SPP regional model passage (PDF page 10) read. Files 2, 3, 4, 6 and 7 were searched for Oklahoma, gas and generation passages only; the only Oklahoma hits were a distribution switching scheme at Welch (file 6, PDF page 12), the former Oklahoma demand-side programs (file 8, PDF page 31) and a staff list (file 7). Files 14 to 17 (SPP interconnection facilities studies GEN-2017-060, -148, -082, -188) were opened at their summaries and each is a Missouri wind or solar project (PDF page 4 of each). Files 13 and 20 were searched only. Files 18 and 19 (SPP transmission plans) were searched for Oklahoma, Empire and Liberty and the matching passages read; they name only transmission projects and SPP-wide studies, no Liberty gas unit.",
+      "additions": [
+        {
+          "what": "Riverton Units 13 and 14, two dual fuel gas and jet fuel turbines of about 13.3 MW each, 27 MW in all, replacing Riverton 10 and 11, service in the third quarter of 2026 (2026 update page 13).",
+          "plant_id": "L100000103927",
+          "note": "Each unit is under the 50 MW threshold, and the plant is in Riverton, Kansas, outside this Oklahoma batch. Read again in the Kansas batch."
+        },
+        {
+          "what": "One F class gas frame turbine of about 240 MW at the State Line plant in Joplin, Missouri. Table 6.1 on page 23 gives 2029. The text on pages 4 and 14 gives the third quarter of 2030 and about 250 MW, with a certificate application filed October 24, 2025 in Missouri case EA-2025-0299. GEM lists it as State Line unit 3, 250 MW, pre-construction, 2030.",
+          "plant_id": "L100000401555",
+          "note": "Missouri, outside this Oklahoma batch. Read again in the Missouri batch."
+        },
+        {
+          "what": "A second 240 MW gas frame turbine in 2036, site not named (2026 update page 23).",
+          "plant_id": "L100001063162",
+          "note": "GEM's Liberty 2025 IRP power station 2 in Missouri, 240 MW, 2036, is this unit."
+        },
+        {
+          "what": "Small distributed gas engines of 24 MW in 2041, 8 MW in 2042, 8 MW in 2043 and 10 MW in 2044, site not named (2026 update pages 22 to 23). The 2041 amount rose from 2 MW in the 2025 plan.",
+          "plant_id": "L100001063162",
+          "note": "No site, and each year's amount is under the 50 MW threshold. Read again in the Missouri batch."
+        },
+        {
+          "what": "Retirements: Riverton 10 and 11 in 2026 when the new turbines are done (2026 update pages 13 to 14). Empire Energy Center units 1 and 2 in 2035 (2025 plan).",
+          "plant_id": "L100000103927",
+          "also_plant_ids": [
+            "L100000401905"
+          ],
+          "note": "Kansas and Missouri, outside this Oklahoma batch."
+        }
+      ],
+      "options": [
+        {
+          "what": "Plans 1, 2, 3, 5 and 6 add 200 to 250 MW of aeroderivative gas turbines (Plan 5 has five 50 MW units in 2029) plus 240 MW of frame turbines in 2036 and small gas engines (Vol. 6 PDF pages 33 to 36). Plan 12 adds 150 MW of aeroderivative, 240 to 480 MW of frame turbines and gas engines. A co-located 100 MW gas option at Kings Point wind farm is also modeled (Vol. 4 PDF page 75). Data center portfolios add gas aeroderivative, frame turbine and engine units from 2029 (Vol. 6 PDF pages 181 and 182). Plan 11 replaces the combined cycles with a hydrogen plant. No site is named for any of them beyond Energy Center and Kings Point in Missouri.",
+          "why_not": "Located in Missouri (or no site named), outside this Oklahoma batch; read again in the Missouri batch."
+        }
+      ],
+      "evidence": "Liberty's newest plan is the 2026 annual update, filed March 13, 2026 in Missouri case EO-2026-0230 (https://efis.psc.mo.gov/Case/Display/103847). It keeps the October 2025 preferred plan. Nothing in it is sited in Oklahoma. The only Oklahoma item is the Delaware to Monett 345 kV transmission line on page 15. The new gas units are at Riverton in Kansas and State Line in Missouri, and both are already in GEM. Nothing for this Oklahoma batch to stage. Liberty's 2025 plan was filed April 1, 2025 in Missouri case EO-2024-0280 and the preferred plan was changed on October 15, 2025 (notice of change, file 12). The preferred plan is Plan 4: a 27 MW gas turbine at Riverton in 2026, 240 MW gas frame turbines in 2029 and 2036, small gas engines from 2041, and retirement of Riverton 10 and 11 in 2026 and Energy Center 1 and 2 in 2035 (Vol. 1 PDF page 55; Update PDF pages 2 to 4). The October update drops a 175 MW solar project and the demand-side programs and raises 2041 gas engines to 24 MW (Update PDF page 4). Liberty's existing generating plants are all in Missouri, Kansas and Arkansas: Riverton and Riverton 13 and 14 in Kansas, Energy Center and State Line in Missouri, Iatan in Missouri, Plum Point in Arkansas (Vol. 4 PDF page 10). Oklahoma is only 3.2 percent of Liberty's sales across three counties (Vol. 1 PDF page 14), and no generation in Oklahoma, and no new gas or oil unit in Oklahoma, appears in the plan.",
+      "discrepancies": [],
+      "unmatched": [],
+      "read_by_hand": "The confidential version of the 2026 update (https://efis.psc.mo.gov/Document/Display/868468) needs a Missouri commission login and was not read. It holds only the blanked load and capacity tables. A person with access can open it. The Oklahoma commission reports page lists only Liberty's 2022 plan, so whether the 2025 plan was filed in Oklahoma is not confirmed.",
+      "newer_checked": "Checked the Missouri commission docket list for Liberty on November 6, 2026. The 2026 annual update in case EO-2026-0230 is the newest filing, with five items and no commission order. The next triennial plan is due in 2028."
+    },
+    "plan Evergy": {
+      "pages": "Missouri 2026 annual updates filed May 7, 2026: Evergy Missouri Metro (https://www.efis.psc.mo.gov/Document/Display/876123, 146 pages) and Evergy Missouri West (https://www.efis.psc.mo.gov/Document/Display/876130, 142 pages). In the Metro volume the plan, retirement and alternative plan sections, report pages 70 to 90, were read in full, with the preferred plan on PDF page 92 and the alternatives on PDF pages 98 to 101. The rest of both volumes, appendices included, was searched for gas, Oklahoma and Spring Creek. Missouri commission staff comments (https://www.efis.psc.mo.gov/Document/Display/884902, 11 pages, preferred plan tables on memo pages 2 and 3) and the August 31, 2026 testimony with revised plans in case EA-2026-0343 (https://www.efis.psc.mo.gov/Document/Display/888870, 30 pages) were read for plan facts. Earlier: All six pages of the Evergy 2026 IRP Update deck (June 2026) at https://investors.evergy.com/2026IRPUpdate: page 2 the whole company, page 3 Kansas Central, page 4 Metro, page 5 Missouri West. The deck shows only the preferred plans, 2025 against 2026. No alternative portfolios are in it.",
+      "additions": [
+        {
+          "what": "Metro preferred plan: Mullin Creek turbine 2 of 440 MW in 2031 (Metro volume report pages 78 and 85).",
+          "plant_id": "L100001042998",
+          "note": "Missouri, outside this batch."
+        },
+        {
+          "what": "Metro preferred plan: half a combined cycle of 355 MW in 2032, the Buchanan Bluffs share (staff comments memo page 2; testimony in case EA-2026-0343).",
+          "plant_id": "L100001088986",
+          "note": "Missouri, outside this batch."
+        },
+        {
+          "what": "Metro preferred plan, later years: turbines of 440 MW in 2035 and 2038, half combined cycles of 355 MW in 2040 and 2042, and engines of 148 MW in 2044, no sites named (staff comments memo page 2).",
+          "plant_id": "L100001063205",
+          "also_plant_ids": [
+            "L100001063207",
+            "L100001063208",
+            "L100001063210"
+          ],
+          "note": "GEM's Evergy Metro 2025 IRP placeholder stations. Checked again in the Missouri batch."
+        },
+        {
+          "what": "Missouri West preferred plan: combined cycles of 355 MW in 2029, 2030, 2032, 2036 and 2040, and a 440 MW turbine in 2030 (staff comments memo page 3). The Buchanan Bluffs plant of 710 MW is shared with Metro.",
+          "plant_id": "L100001063215",
+          "also_plant_ids": [
+            "L100001088986",
+            "L100001042998"
+          ],
+          "note": "Missouri. Checked again in the Missouri batch."
+        },
+        {
+          "what": "Kansas Central preferred plan, page 3: natural gas blocks of 710, 710, 355 and 355 MW between 2029 and 2035. All are in Kansas.",
+          "plant_id": "L100001043000",
+          "also_plant_ids": [
+            "L100001023601",
+            "L100001088911",
+            "L100001063351",
+            "L100001063352",
+            "L100001063353"
+          ],
+          "note": "The deck names no plants. GEM already lists Chisholm Trail, McNew, Crooked Creek and the three Kansas Central 2025 IRP placeholder stations. Matching each block is checked again in the Kansas batch."
+        }
+      ],
+      "options": [
+        {
+          "what": "Metro alternative plans ACAE, ACAD, ACAG, ACAH, ACAI and ACAJ move the turbine and half combined cycle years, or add solar or engines (Metro volume PDF pages 98 to 101).",
+          "why_not": "No site is named in any alternative and none is in Oklahoma; the preferred plan units are already in GEM."
+        },
+        {
+          "what": "The revised Missouri West plan of August 2026 adds 150 MW of storage in 2029 and moves coal retirements later (testimony in case EA-2026-0343).",
+          "why_not": "Storage and coal timing only, with no new gas or oil unit and nothing in Oklahoma."
+        }
+      ],
+      "evidence": "Evergy has no Oklahoma retail customers. Its Missouri 2026 updates name Mullin Creek and Buchanan Bluffs, both in Missouri and both in GEM. No document reached names an Oklahoma site. Evergy's Spring Creek plant in Edmond, Oklahoma, is not named in either Missouri volume, the staff comments or the testimony. Nothing for this Oklahoma batch to stage. Evergy has no Oklahoma retail customers; it is listed because its plan covers the Southwest Power Pool area next to Oklahoma. The June 2026 update deck shows natural gas additions only in Kansas and Missouri (pages 3 to 5) and retirements of 733 and 1,230 MW company wide (page 2). No page names an Oklahoma site, and Evergy's Spring Creek plant in Edmond, Oklahoma, is not mentioned. The deck has no alternative portfolios. Nothing for this batch to stage.",
+      "read_by_hand": "The Kansas Central 2026 update is at the Kansas commission, filing F-003871 (https://kcc-connect.kcc.ks.gov/s/filing/a1Acr000005gXzBEAU/f003871). The site loads as an empty page for scripts, even in a full browser load, so a person must open it, read the plan, and check whether Spring Creek in Edmond, Oklahoma, is named. In the Missouri volumes only the plan and alternatives sections were read word for word; the rest was searched.",
+      "newer_checked": "The Missouri updates of May 7, 2026 and the August 31, 2026 revised plans in case EA-2026-0343 are the newest Missouri filings found on November 6, 2026. The Kansas Central update in filing F-003871 is newer than the June 2026 investor deck but was not read, see read_by_hand."
+    },
+    "plan Grand River Dam Authority": {
+      "pages": "GRDA publishes no resource plan document. Its planning is in board minutes. Read in full: the special meeting minutes of September 29, 2025 (5 pages, https://grda.com/wp-content/uploads/2025/12/09292025-Approved-Minutes-Special-Meeting.pdf), where page 2 to 3 cover the Southwest Power Pool expedited study and the planning options, and the special meeting minutes of October 9, 2025 (5 pages, https://grda.com/wp-content/uploads/2026/01/10092025-Special-Board-Meeting-Approved-Minutes.pdf), where page 2 covers Glencoe and the Lenapah site. Also read the April 8, 2026 board agenda and request for quotes 2871 for Glencoe. Also read: the approved minutes of October, November and December 2025 and January 2026, and every agenda from October 2025 to October 2026. The January 14, 2026 minutes, item 9, page 5, put Unit 4 at 96.3 percent complete with first fire in February 2026. The April 8, 2026 agenda (https://grda.com/wp-content/uploads/2026/04/FINAL-AGENDA-FOR-04-08-2026-Mtg.pdf), page 3, Fuel and Long-Range Planning Committee item 2, is Phase II of the Southwest Power Pool study for the Glencoe Energy Center. The August 12, 2026 agenda (https://grda.com/wp-content/uploads/2026/08/FINAL-AGENDA-08122026-Board-Meeting-2.pdf), page 4, item 1 of the same committee, is a combustion turbine reservation agreement. A NonDoc article of February 17, 2025 on the bond bill was read in full.",
+      "additions": [
+        {
+          "what": "Glencoe Energy Center in Payne County: October 9, 2025 minutes page 2 give an engineering update with a Southwest Power Pool interconnection application, layout drawings, soil studies and a schedule. No fuel or size is stated.",
+          "record_id": "us-ok:plant:monitor-3"
+        },
+        {
+          "what": "Grand River Energy Center Unit 4, a new 426 MW gas simple cycle turbine. The January 14, 2026 minutes, item 9, page 5, say 96.3 percent complete with first fire targeted for February 6 to 20, 2026. GEM lists it as operating, 2026.",
+          "plant_id": "L100000104122"
+        }
+      ],
+      "options": [
+        {
+          "what": "Upgrade of Grand River Energy Center Unit 4 to a combined cycle, using the former Unit 1 grid connection (September 29, 2025 minutes page 3). The same page compares a Unit 4 steam turbine upgrade in two scenarios.",
+          "plant_id": "L100000104122"
+        },
+        {
+          "what": "Life extension of coal Unit 2 at Grand River Energy Center through the Southwest Power Pool expedited study, about $70 million (September 29, 2025 minutes pages 2 to 3).",
+          "plant_id": "L100000104122",
+          "note": "Coal, outside this tracker."
+        },
+        {
+          "what": "100-hour battery storage and a compressed air storage project for Google (September 29, 2025 minutes page 3).",
+          "why_not": "Storage, not a gas or oil unit, and no site is named for the batteries."
+        },
+        {
+          "what": "A site near Lenapah in Nowata County with an option agreement and a water permit application (October 9, 2025 minutes page 2).",
+          "why_not": "The minutes name no fuel, size or type of plant for the Lenapah site, and no Southwest Power Pool request or air permit names it yet."
+        },
+        {
+          "what": "House Bill 1422 raised GRDA's bond limit to pay for a 450 MW simple cycle gas unit, a 640 MW combined cycle gas unit, a refit of the Salina pumped storage plant and the retirement of a 492 MW coal unit (NonDoc, February 17, 2025, https://nondoc.com/2025/02/17/grda-bond-capacity-requrest-generating-controversy/). No site is given for the combined cycle.",
+          "plant_id": "L100000104122",
+          "note": "The 450 MW unit is Unit 4. The combined cycle matches the Unit 4 combined cycle upgrade in the September 29, 2025 minutes, page 3, already listed here."
+        },
+        {
+          "what": "A combustion turbine reservation agreement before the Fuel and Long-Range Planning Committee (August 12, 2026 agenda, page 4, item 1).",
+          "why_not": "The agenda gives no size, site or unit count, and the minutes for that meeting are not posted yet. It may belong to Glencoe, which is on the watch list."
+        }
+      ],
+      "evidence": "September 29, 2025 minutes page 3: GRDA is limited in its gas supply at the Grand River Energy Center, so anything added there would have to be something other than natural gas; upgrading Unit 4 adds no strain on gas supply. October 9, 2025 minutes page 2: engineering update on the planned Glencoe Energy Center in Payne County, and the Lenapah property in Nowata County is still available with an option agreement and a water permit application. Glencoe is staged as a watch item because no source gives its fuel or size.",
+      "read_by_hand": "GRDA minutes from February 2026 on are not posted, so only the agendas were read for those months. The November 2026 agenda is not posted. GRDA bond papers on EMMA, the municipal bond disclosure site, need its search form and were not read. A person should open the minutes for August 12, 2026 when posted to see what the turbine reservation is for.",
+      "newer_checked": "GRDA has never published a resource plan. Agendas through October 2026 were read on November 6, 2026 for any newer planning item; the newest are the Glencoe study and the turbine reservation."
+    },
+    "plan Oklahoma Municipal Power Authority": {
+      "pages": "OMPA publishes no plan document. Its planning is in its board minutes (index https://www.ompa.com/board-of-directors-minutes/). Read in full: the 15 sets of minutes from July 2024 to September 2025. Lamb is on August 8, 2024 page 5 item 13 (request of about 103 MW), September 2024 pages 4 to 5 item 8 (Sargent and Lundy study of two smaller units at Lamb), October 2024 page 6 (124 MW, two Siemens units), December 2024 page 6 (about $70 million for the new Lamb unit before service in 2029), April 2025 retreat page 6 (stay in the study at 124 MW and ask for bids), June 2025 page 4 item 13 (Southern Star gas transport of 24,000 dekatherms a day for the new Lamb unit), August 2025 page 4 (Resolution 2025-8-C, Lamb capacity upgrade) and September 2025 page 4 item 12 (one turbine bid, delivery not until 2029). July 2024 page 4 has Redbud and page 5 McClain.",
+      "additions": [
+        {
+          "what": "New gas turbine at the Charles D. Lamb plant in Kay County. Planned as two Siemens units at 124 MW in the October 2024 and April 2025 minutes, then one GE 7E.03 of 90 MW in the May 2026 air permit application. Southwest Power Pool request GEN-2024-334, 103 MW, service June 1, 2029.",
+          "record_id": "L100000402166:new:2"
+        },
+        {
+          "what": "Redbud upgrade, about 23 MW for OMPA in 2027 (minutes page 4).",
+          "plant_id": "L100000401595"
+        },
+        {
+          "what": "New turbines at the McClain site, which OMPA co-owns with OG&E at 23 percent of the land; OMPA approved a site control letter so OG&E can file its interconnection request (minutes page 5).",
+          "record_id": "L100000401594:new:2",
+          "also_record_ids": [
+            "us-ok:new:spp-gen-2024-013-mcclain-county-gas-turbine-power-station"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "what": "In July 2024 OMPA was studying another generator with Sargent and Lundy (minutes page 5).",
+          "record_id": "L100000402166:new:2",
+          "note": "The September 2024 minutes name the study's site as Lamb, so this is the new Lamb unit."
+        }
+      ],
+      "evidence": "OMPA's planning since July 2024 settles on one new gas turbine at Lamb, the Redbud upgrade and the McClain turbines. The Lamb unit is staged as Lamb Unit 2 and is Southwest Power Pool request GEN-2024-334. July 8, 2024 minutes page 4: OMPA expects a shortage of about 30 MW in 2026 and counts an estimated 72 MW from a solar plant and 23 MW from the Redbud upgrade in 2027. Page 5: OG&E is looking to add turbines at the McClain site, and OMPA is investigating adding a generator. Both are tied to plants or records already in this batch or in GEM.",
+      "read_by_hand": "On November 6, 2026 ompa.com refused every connection, from this computer and from a second network, so the 12 sets of minutes from October 2025 to September 2026 and the Fitch rating note of August 27, 2025 were not read. A Wayback Machine lookup hit its rate limit, and the only saved copy is from June 2025. A person should open those minutes on https://www.ompa.com/board-of-directors-minutes/ and check for any new unit, a size change at Lamb or a later start year. The 2025A bond official statement on ompabonds.com was not read.",
+      "newer_checked": "No OMPA plan document was found. A Fitch note quoted in search results says OMPA's generation plans follow a plan updated in 2024, which is not published. The minutes index lists sets through September 2026, see read_by_hand."
+    },
+    "plan Western Farmers Electric Cooperative": {
+      "pages": "Western Farmers keeps an internal resource plan, updated each year, that is not public. Read instead: the federal Rural Utilities Service environmental assessment for new generation at Hugo (https://www.rd.usda.gov/media/file/download/rus-ea-hugo-new-generation.pdf, 136 pages), whose purpose and need and alternatives sections describe the July 8, 2025 plan; the draft assessment for the Anadarko turbines (https://www.rd.usda.gov/media/file/download/usda-rd-anadarko-power-plant-combustion-turbine-draft-ea.pdf, 99 pages), section 1.2.3 and the project description, with the fleet table; and the 2024 and 2025 annual reports (2025: https://www.wfec.com/s/2026-Ann-Report_2026-04-20.pdf, page 6 on Hugo and Anadarko).",
+      "additions": [
+        {
+          "what": "Nine new simple cycle gas turbines at the Hugo plant in Choctaw County, 404 MW in the 2025 annual report page 6 and 415.5 MW in the Hugo assessment section 1, service in 2029, gas pipeline in the third quarter of 2028. GEM lists Hugo Site A and Site B, 415.5 MW together, pre-construction, 2029.",
+          "plant_id": "L100000104123"
+        },
+        {
+          "what": "Two GE LM6000 gas turbines, Roulet 12 and 13, 50.2 MW each, at the Anadarko plant in Caddo County, completion September 2026, replacing gas boilers 1R, 2R and 3 (Anadarko draft assessment section 1.2.3; 2025 annual report page 6). GEM lists Roulet 12 and 13 under construction, 2026, and unit 3 retired.",
+          "plant_id": "L100000402369"
+        }
+      ],
+      "options": [
+        {
+          "what": "The assessments compare batteries, a small modular reactor and gas turbines before choosing gas turbines (Hugo assessment alternatives section).",
+          "why_not": "The batteries and the reactor were rejected, and neither is a gas or oil unit."
+        },
+        {
+          "what": "Mooreland plant, three gas steam units of 329 MW (Anadarko draft assessment fleet table).",
+          "why_not": "No new unit or retirement date is given for Mooreland in any document read, so there is nothing to change."
+        }
+      ],
+      "evidence": "Western Farmers' plan, as described in the two Rural Utilities Service assessments, finds a capacity deficit and chooses gas turbines at Hugo and Anadarko. Both projects are already in GEM with matching size, status and year. No regulator filing of the plan exists; the Oklahoma commission's plan rule covers only utilities it regulates.",
+      "read_by_hand": "The plan itself is not public and no regulator holds it. The Hugo assessment was read for its plan sections only, not all 136 pages. The Western Area Power Administration plan list (https://apps.wapa.gov/IRP/IRPMain) gave no response, and Western Farmers is not known as one of its customers. Bond papers on EMMA were not read.",
+      "newer_checked": "The Hugo assessment cites the July 8, 2025 plan, the newest version found. The 2025 annual report of April 20, 2026 has the latest project news. A person could ask Western Farmers for the 2026 update.",
+      "names_checked": "Hugo Power Plant is GEM's Hugo power station, L100000104123. Orme Plant and the Genco units are 45 MW turbines at Anadarko, each under the 50 MW per unit threshold, so they are correctly absent from GEM. LCEC Generation Plant is in Lovington, New Mexico, at 42 MW in all, outside Oklahoma and under the threshold."
+    },
+    "plan Associated Electric Cooperative Inc": {
+      "pages": "Associated Electric's 2022 resource plan is not public. Read instead: the federal Rural Utilities Service final environmental assessment for the Ripley Energy Center (https://www.rd.usda.gov/media/file/download/usda-rd-ea-ripley-energy-center-09102024.pdf), the introduction, purpose and need, and alternatives sections, pages 1-1 to 1-6 and section 2.1; and the cooperative's pages on new gas generation (https://www.aeci.org/new-gas-generation), Bristow (https://www.aeci.org/bristow-energy-center-1, Fast Facts) and Ripley (https://www.aeci.org/ripleyenergycenter).",
+      "additions": [
+        {
+          "what": "Ripley Energy Center, one simple cycle gas turbine of 421 MW, 6.5 miles north of Ripley in Payne County (Ripley assessment pages 1-1 and 1-6). GEM lists 445 MW under construction, 2027.",
+          "plant_id": "L100001023579"
+        },
+        {
+          "what": "Bristow Energy Center, a gas peaking turbine of 420 MW net, 2 miles southeast of Bristow in Creek County, construction from 2027 over about two years (Bristow page, Fast Facts). GEM lists 420 MW, pre-construction, 2029.",
+          "plant_id": "L100001089274"
+        },
+        {
+          "what": "Chouteau combined cycle plant in Mayes County: no new unit or retirement in any document read.",
+          "plant_id": "L100000401723"
+        }
+      ],
+      "options": [
+        {
+          "what": "The 2022 plan found a need of 844 MW by winter 2027 and chose up to 900 MW of new gas across Missouri and Oklahoma after a request for proposals whose best bid cost about $200 million more than building its own (Ripley assessment section 2.1).",
+          "why_not": "The rejected bids are not named, and the chosen plants, Ripley and Bristow in Oklahoma and Turney in Missouri, are all tied here or in the Missouri batch."
+        }
+      ],
+      "evidence": "Associated Electric's 2022 plan is known through the Ripley assessment. Its Oklahoma outcome is two gas turbines of about 420 MW, at Ripley and at Bristow, both already in GEM. The Ripley size in GEM, 445 MW, differs from the assessment's 421 MW. The Ripley RP1 capacity card in this batch already proposes 419 MW, with a question on it.",
+      "read_by_hand": "The plan is not public. The Ripley assessment was read for its plan sections only, not every page. The reports page holds only audited financial statements on Issuu, which were not read. Bond papers on EMMA were not read.",
+      "newer_checked": "No newer plan than 2022 was found on aeci.org or in news on November 6, 2026. The Bristow page, live that day, is the newest project source."
+    }
   }
- },
- "ids_followup": {
-  "10362": {
-   "decision": "add",
-   "evidence": "The monthly federal generator file for September 2026 lists three operating natural gas steam turbines at Georgia-Pacific Muskogee, plant 10362: GEN1 25 MW from 1979, GEN2 44.5 MW from 1980 and GEN3 44.5 MW from 1982, 114 MW in total. A 2016 notice from the state environmental agency describes the mill's boilers feeding electric steam turbines. Added as a new plant, with a question card on GEM's Fort James plant.",
-   "gem_plant_id": ""
-  },
-  "63628": {
-   "decision": "already_in_gem",
-   "evidence": "Plant 63628 Tinker sits on the point of GEM's Tinker Air Force Base power station. The unit capacities differ, so a question card covers it.",
-   "gem_plant_id": "L100001063385"
-  }
- },
- "data_centers": {
-  "6000-n-shartel-ave-llc-oklahoma-city": {
-   "decision": "add",
-   "record_id": "us-ok:new:okc2-scale-datacenter-power-station",
-   "summed_nameplate_mw": 161.82,
-   "note": "Nineteen natural gas engines, 161.82 megawatts, from the September 2026 application. Added as a new plant with two units. None of the first 11 engines is operating, because start-up is planned for the first quarter of 2027."
-  },
-  "tenmark-mustang-industri-cbre-okc-site": {
-   "decision": "no_generators",
-   "note": "The draft Title V permit renewal lists boilers, two fire pump engines of 215 and 340 horsepower and three emergency generator engines with no rating, at the former Xerox site in Canadian County. No data center is named in the permit, so no sum can be made, and nothing suggests the three generators reach 50 megawatts. Trade press says Tenmark Holdings bought the Xerox properties in a sale and leaseback with Xerox still leasing, and no report links the site to a data center. No Mustang, Canadian County or Oklahoma City agenda naming a data center there turned up in web searches."
-  },
-  "pry-data-storage-facilit-pry-data-storag": {
-   "decision": "add",
-   "record_id": "us-ok:new:myall-pryor-data-center-power-station",
-   "summed_nameplate_mw": null,
-   "note": "The permit evaluation of November 5, 2025 keeps the engine list confidential, so no sum can be made by hand. Added with capacity blank. Myall LLC bought the land for Google's Pryor campus, so this is very likely Google's Pryor campus at the MidAmerica Industrial Park, though the permit does not name Google."
-  },
-  "atmoss-data-center": {
-   "decision": "nothing_found",
-   "note": "The department list of permits issued in the past year shows permit 2026-0025-O for Atmoss LLC, ATMOSS Data Center, Wagoner County, issued January 15, 2026. The O class is a minor source permit, and the department's document store holds no documents for it. Atmoss LLC is the developer of Meta's Project Anthem campus in east Tulsa according to a data center directory, and no on-site gas plant is reported for it. No engine list exists in any public place found, so no sum can be made. A request for the permit file from the department's records office is a decision for Baird."
-  },
-  "saint-francis-hospital-data-center": {
-   "decision": "nothing_found",
-   "note": "The department list shows permit 2026-0469-O for Saint Francis Health System, Saint Francis Hospital Data Center, Tulsa, issued June 29, 2026. It is a minor source permit with no public documents in the document store. A hospital data center backup fleet is very unlikely to reach 50 megawatts. No engine list was found, so no sum is possible. The earlier Saint Francis evaluation in the notice store, permit 2016-1075-TVR, covers the hospital campus and not a data center fleet. Local records: the Tulsa City Council agendas for November 4, 2026 were opened, covering the regular meeting, the pre-regular meeting and the budget, public works and urban and economic development committee meetings. None names a Saint Francis data center, a generator fleet or a hospital item. News coverage of the Tulsa city council data center moratorium names no Saint Francis project either. Tulsa County zoning records were not opened."
-  },
-  "artemis-data-center-artemis-data-center": {
-   "decision": "nothing_found",
-   "note": "The department facility table lists Artemis Data Center, Atoka, with a water permit only and no air permit or generator documents. No gas or backup fleet is reported for it in the news results searched. Local records: the City of Atoka agenda center was opened for every city council and planning agenda and set of minutes from March through November 2, 2026. None names Artemis, a data center, a generator fleet or a rezoning. The Atoka Industrial Development Authority agenda of June 25, 2026 lists a land sale in the Heavy Industrial Park with the buyer not named. Atoka County records were not opened."
-  },
-  "one-nuclear-energy-one-nuclear-power-sta": {
-   "decision": "already_in_gem",
-   "plant_id": "L100001082617",
-   "note": "GEM lists ONE Nuclear power station 1 as announced at 1,000 megawatts. No air permit or newer public record was found that changes it."
-  },
-  "lightfield-energy-chickasha": {
-   "decision": "already_in_gem",
-   "plant_id": "L100001063386",
-   "note": "GEM lists the Chickasha industrial park power station as cancelled at 500 megawatts. The 2025 reports describe a plan by developer Chet Hitt and Lightfield Energy with no permit, and no 2026 report was found that revives it, so cancelled still fits."
-  },
-  "plainsmen-holdings-llc-1-enid": {
-   "decision": "already_in_gem",
-   "plant_id": "L100001089336",
-   "note": "GEM lists Project Thunderbird Data Center power station as pre-construction at 3,300 megawatts. The City of Enid says only a rezoning request is under review and nothing is approved, so announced may fit better than pre-construction."
-  },
-  "core-scientific-inc-100-port-muskogee": {
-   "decision": "update",
-   "plant_id": "L100001081005",
-   "summed_nameplate_mw": 314.0,
-   "note": "The July 2026 application sums to 314.0 megawatts against GEM's 283.1. A question card covers it."
-  },
-  "citadel-asset-ventures-l-sperry": {
-   "decision": "already_in_gem",
-   "plant_id": "L100001089312",
-   "summed_nameplate_mw": 297.0,
-   "note": "The 108 large engines match GEM. Ten smaller backup engines are not in GEM. A question card covers them."
-  },
-  "scale-southeast-oklahoma-facility": {
-   "decision": "nothing_found",
-   "note": "A state radio report of October 6, 2026 says Scale Datacenter is also building a facility in southeast Oklahoma. No permit, county record or news item naming its site or its power was found, and the department permit lists show no Scale application besides OKC2."
-  },
-  "other-operators-stack-skybox-prime-meta-microsoft": {
-   "decision": "nothing_found",
-   "note": "Searches for Stack, Skybox, Prime Data, Meta and Microsoft in Oklahoma found no air permit or report of an on-site gas or backup engine fleet. Meta's Project Anthem campus in east Tulsa is built by Atmoss LLC and no on-site plant is reported. A state radio report of August 6, 2026 says most Oklahoma data centers, including Luther Horizon, Project Mustang in Claremore and IREN's Kiowa campus, plan to buy grid power from local utilities. Local records: the Tulsa City Council agendas for November 4, 2026 were opened and name none of Stack, Skybox, Prime Data, Meta or Microsoft, and no generator fleet. The Oklahoma City council agenda addresses on okc.gov returned not found, so Oklahoma City council and planning records were not read."
-  },
-  "google-stillwater-and-pryor-expansion": {
-   "decision": "nothing_found",
-   "note": "Google and OG&E announced a grid supply deal in spring 2026 for the Muskogee and Stillwater data centers. An April 2026 trade report says no on-site gas project by Google has been publicly confirmed in Oklahoma. Stillwater's council papers of November 2, 2026 mention no data center. Local records: the City of Pryor Creek agenda center was opened for about fifty city council and planning agendas and minutes from January to October 2026. Many are scanned pages that could not be searched as text, and the searchable ones name no Google, Myall or data center item. The Stillwater City Council, Economic Development Authority and Planning Commission papers of October 22 to November 3, 2026 name no data center. Mayes County and Payne County planning records were not opened."
-  }
- },
- "queues": {
-  "SPP GEN-2024-286": {
-   "decision": "add",
-   "record_id": "L100000104121:new:3",
-   "plant_id": "L100000104121",
-   "evidence": "OG&E is the owner and the site is in Le Flore County near River Valley. OG&E's state air permit application for River Valley proposes five gas turbines of about 224.8 MW each. The queue figure of 496 MW is lower, so the permit figure is used.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive",
-    "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Af6FiOuAWfwTfP7%C3%89lBObAZu2%C3%81jK627i0ruRb1YVA9ucGjOJwUUHCsEMbR%C3%81V4w%C3%819YC3Cw0VwM4maTrcJLCxoanak%3D/?ViewerMode=PDF&ForceDownload=true"
-   ]
-  },
-  "SPP ASGI-2016-012": {
-   "decision": "add",
-   "record_id": "us-ok:new:peoples-electric-cooperative-centrahoma-power-station",
-   "evidence": "The 61.725 MW row for Centrahoma equals 25 Caterpillar G3520H engines at 2.469 MW each across the Peoples Electric Targa, Centrahoma and Little Dixie sites. It is in commercial operation and is added as one plant.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive",
-    "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Aevth4xmYyMYEUksZxJwUqGnaRaWfTbuqstqjNNkWYX43sTZcmwOpZkwiQnIvBom5aPYVRnVFqOmoareNhLZSGg%3D/?ViewerMode=PDF&ForceDownload=true",
-    "https://okdeqonbaseexternal.databankcloud.com/pav/api/Document/Adi%C3%81Uj4HU48j7TJinfPrZ7F99J8r2OmzRMCr78Mar5%C3%81iTb6ZjN92Z8hh1DZPsPqO7bKF3FxOM26IVudy91ABEfs%3D/?ViewerMode=PDF&ForceDownload=true"
-   ]
-  },
-  "SPP GEN-2025-SR19": {
-   "decision": "add",
-   "record_id": "us-ok:new:spp-gen-2025-sr19-maid-diesel-engine-power-station",
-   "plant_id": "",
-   "evidence": "SPP's surplus study for GEN-2025-SR19 names 31 Cummins diesel engines totaling 100.76 MW at the Maid 161 kilovolt substation. The queue lists no fuel. The new plant record carries it as diesel, status pre-construction. The owner is not published.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2271_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR19_TechnicalReport_r1.pdf"
-   ]
-  },
-  "SPP GEN-2025-SR21": {
-   "decision": "add",
-   "record_id": "us-ok:new:spp-gen-2025-sr21-tulsa-power-station-diesel-engine-power-station",
-   "plant_id": "",
-   "evidence": "SPP's surplus study for GEN-2025-SR21 names 31 Cummins diesel engines totaling 100.76 MW at the Tulsa Power Station 138 kilovolt substation. The queue lists no fuel. The new plant record carries it as diesel, status announced. The owner is not published.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2279_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR21_TechnicalReport_r1.pdf"
-   ]
-  },
-  "SPP GEN-2025-SR22": {
-   "decision": "add",
-   "record_id": "us-ok:new:spp-gen-2025-sr22-horseshoe-lake-diesel-engine-power-station",
-   "plant_id": "",
-   "evidence": "SPP's surplus study for GEN-2025-SR22 names 31 Cummins diesel engines totaling 100.76 MW at the Horseshoe Lake 138 kilovolt substation. The queue lists no fuel. The new plant record carries it as diesel, status pre-construction. The owner is not published.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2255_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR22_TechnicalReport_r1.pdf"
-   ]
-  },
-  "SPP GEN-2025-SR23": {
-   "decision": "add",
-   "record_id": "us-ok:new:spp-gen-2025-sr23-mustang-diesel-engine-power-station",
-   "plant_id": "",
-   "evidence": "SPP's surplus study for GEN-2025-SR23 names 31 Cummins diesel engines totaling 100.76 MW at the Mustang 138 kilovolt substation. The queue lists no fuel. The new plant record carries it as diesel, status pre-construction. The owner is not published.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2297_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR23_TechnicalReport_r2.pdf"
-   ]
-  },
-  "SPP GEN-2025-SR25": {
-   "decision": "add",
-   "record_id": "us-ok:new:spp-gen-2025-sr25-tulsa-north-diesel-engine-power-station",
-   "plant_id": "",
-   "evidence": "SPP's surplus study for GEN-2025-SR25 names 62 Cummins diesel engines totaling 201.53 MW at the Tulsa North 138 kilovolt substation. The queue lists no fuel. The new plant record carries it as diesel, status announced. The owner is not published.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/REP2266_SPP_Surplus_Interconnection_Service_Impact_Study_GEN-2025-SR25_TechnicalReport_r1.pdf"
-   ]
-  },
-  "SPP GEN-2025-SR9": {
-   "decision": "add",
-   "record_id": "L100000104124:new:7",
-   "plant_id": "L100000104124",
-   "evidence": "SPP's surplus study for GEN-2025-SR9 describes 20 INDAR and Ingeteam synchronous gas-fired units of 21.0812 MW each, 421.6 MW in all at the Muskogee 345 kilovolt substation, shared with Muskogee units 4, 5 and 6 (1,908 MW). GEM has the plant but no matching unit, so a new unit is added as announced. The owner is not published.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/FINAL_SPP_Report_GEN-2025-SR9_06112026.pdf"
-   ]
-  },
-  "SPP GEN-2025-SR10": {
-   "decision": "add",
-   "record_id": "L100000402165:new:4",
-   "plant_id": "L100000402165",
-   "evidence": "SPP's surplus study for GEN-2025-SR10 describes one GE gas-fired combustion turbine of 249 MW at the Seminole 345 kilovolt substation, shared with Seminole units 2 and 3. GEM has the plant but no matching unit, so a new unit is added as announced. The owner is not published.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/FINAL_SPP_Report_GEN-2025-SR10_06-19-2026.pdf"
-   ]
-  },
-  "SPP GEN-2025-SR13": {
-   "decision": "add",
-   "record_id": "L100000402165:new:5",
-   "plant_id": "L100000402165",
-   "evidence": "SPP's surplus study for GEN-2025-SR13 describes 6 INDAR and Ingeteam synchronous gas-fired units of 21.7534 MW each, 130.5 MW in all at the Seminole 138 kilovolt substation, shared with Seminole unit 1. GEM has the plant but no matching unit, so a new unit is added as announced. The owner is not published.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/FINAL_SPP_Report_GEN-2025-SR13_07-16-2026.pdf"
-   ]
-  },
-  "SPP GEN-2025-SR15": {
-   "decision": "add",
-   "record_id": "L100000401594:new:2",
-   "plant_id": "L100000401594",
-   "evidence": "SPP's surplus study for GEN-2025-SR15 describes 6 INDAR and Ingeteam synchronous gas-fired units of 21.7534 MW each, 130.5 MW in all at the McClain 138 kilovolt substation, shared with McClain units 1, 2 and 3 (648.6 MW). GEM has the plant but no matching unit, so a new unit is added as announced. The owner is not published.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive",
-    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/FINAL_SPP_Report_GEN-2025-SR15.pdf"
-   ]
-  },
-  "SPP GEN-2024-341": {
-   "decision": "add",
-   "record_id": "us-ok:new:spp-gen-2024-341-pittsburg-county-gas-power-station",
-   "plant_id": "",
-   "evidence": "The SPP queue lists GEN-2024-341, 1077.8 MW of gas at the Pittsburgh 345 kilovolt substation (AEP), commercial operation November 10, 2031. GEM has no matching plant. It is added as announced with the owner blank because SPP does not publish the company.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP GEN-2024-340": {
-   "decision": "add",
-   "record_id": "us-ok:new:spp-gen-2024-340-creek-county-gas-power-station",
-   "plant_id": "",
-   "evidence": "The SPP queue lists GEN-2024-340, 1440 MW of gas at the Riverside to Redbud 345 kilovolt line (AEP), commercial operation January 1, 2032. GEM has no matching plant. It is added as announced with the owner blank because SPP does not publish the company.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP GEN-2024-334": {
-   "decision": "add",
-   "record_id": "us-ok:new:spp-gen-2024-334-kay-county-gas-power-station",
-   "plant_id": "",
-   "evidence": "The SPP queue lists GEN-2024-334, 103 MW of gas at the Ranch Road 345 kilovolt substation (OG&E), commercial operation June 1, 2029. GEM has no matching plant. It is added as announced with the owner blank because SPP does not publish the company.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP GEN-2024-321": {
-   "decision": "add",
-   "record_id": "us-ok:new:spp-gen-2024-321-seminole-gas-power-station",
-   "plant_id": "",
-   "evidence": "The SPP queue lists GEN-2024-321, 507 MW of gas at the Seminole 345 kilovolt substation (OG&E), commercial operation April 30, 2030. GEM has no matching plant. It is added as announced with the owner blank because SPP does not publish the company.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP GEN-2024-299": {
-   "decision": "add",
-   "record_id": "us-ok:new:spp-gen-2024-299-aes-5-345-kilovolt-gas-power-station",
-   "plant_id": "",
-   "evidence": "The SPP queue lists GEN-2024-299, 744 MW of gas at the AES 5 345 kilovolt substation (OG&E), commercial operation May 1, 2032. GEM has no matching plant. It is added as announced with the owner blank because SPP does not publish the company.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP GEN-2024-293": {
-   "decision": "add",
-   "record_id": "us-ok:new:spp-gen-2024-293-muskogee-345-kilovolt-gas-power-station",
-   "plant_id": "",
-   "evidence": "The SPP queue lists GEN-2024-293, 248 MW of gas at the Muskogee 345 kilovolt substation (OG&E), commercial operation May 1, 2033. GEM has no matching plant. It is added as announced with the owner blank because SPP does not publish the company.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP GEN-2024-128": {
-   "decision": "add",
-   "record_id": "us-ok:new:spp-gen-2024-128-anadarko-gas-power-station",
-   "plant_id": "",
-   "evidence": "The SPP queue lists GEN-2024-128, 726.9 MW of gas at the Gracemont to Lawton 345 kilovolt line (OG&E), commercial operation December 31, 2030. GEM has no matching plant. It is added as announced with the owner blank because SPP does not publish the company.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP GEN-2024-013": {
-   "decision": "add",
-   "record_id": "us-ok:new:spp-gen-2024-013-mcclain-county-gas-turbine-power-station",
-   "plant_id": "",
-   "evidence": "The SPP queue lists GEN-2024-013, 496 MW of gas at the Norman Hills 345 kilovolt substation (OG&E), commercial operation January 1, 2030. GEM has no matching plant. It is added as announced with the owner blank because SPP does not publish the company. The same 496 MW size appears at Horseshoe Lake in ERAS-2025-010, but that row is at a different substation, so the two are kept apart.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP GEN-2024-323": {
-   "decision": "update",
-   "record_id": "",
-   "plant_id": "L100000104123",
-   "evidence": "The SPP queue lists a 372 MW gas request at the ITC Hugo 7 substation in Choctaw County with commercial operation on May 1, 2029. GEM's Hugo Site B is 342 MW, pre-construction, 2029, owned by Western Farmers Electric Cooperative. They are probably the same project, so a question card is staged instead of a new plant. The question card is in the state shard.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP GEN-2026-SR34": {
-   "decision": "already_in_gem",
-   "record_id": "",
-   "plant_id": "L100000104123",
-   "evidence": "A 75 MW thermal surplus request at the WFEC Hugo 138 kilovolt point in Fort Towson, commercial operation April 1, 2029. GEM's Hugo Site A is 73.5 MW, pre-construction, 2029. It is the same project. No surplus study report is posted yet, so the 1.5 MW difference cannot be explained.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP GEN-2024-GR1": {
-   "decision": "already_in_gem",
-   "record_id": "",
-   "plant_id": "L100000402162",
-   "evidence": "A 492 MW combustion turbine replacement request at Horseshoe Lake 138 kilovolt, agreement fully executed, commercial operation December 31, 2026. GEM already carries Horseshoe Lake units 11 and 12 (224 MW each, 448 MW, operating 2026). The queue and GEM sizes differ by a few percent, which is a rating difference, so nothing is staged.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP GEN-2023-GR2": {
-   "decision": "already_in_gem",
-   "record_id": "",
-   "plant_id": "L100001063385",
-   "evidence": "A 94.2 MW gas replacement request at Tinker Air Force Base 138 kilovolt, agreement fully executed, commercial operation May 1, 2026. GEM already carries Tinker units 1 and 2 (96 MW, operating 2026). The queue and GEM sizes differ by a few percent, which is a rating difference, so nothing is staged.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP GEN-2023-GR1": {
-   "decision": "already_in_gem",
-   "record_id": "",
-   "plant_id": "L100000402369",
-   "evidence": "A 97.5 MW gas replacement request at Anadarko Power Plant 69 kilovolt, owned by Western Farmers Electric Cooperative, agreement fully executed, commercial operation December 1, 2025. GEM already carries Anadarko Roulet units 12 and 13 (50.2 MW each, construction 2026). The queue and GEM sizes differ by a few percent, which is a rating difference, so nothing is staged.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP ERAS-2025-026": {
-   "decision": "already_in_gem",
-   "record_id": "",
-   "plant_id": "L100000402231",
-   "evidence": "A 775.2 MW combined cycle request at the Oklaunion to Lawton East Side 345 kilovolt line in Lawton, agreement fully executed, commercial operation November 30, 2029. GEM's Comanche (OK) units CC2 and CC3 are 686.4 MW each, pre-construction, 2029, owned by Public Service Company of Oklahoma. This row and ERAS-2025-024 are the two blocks. A question card covers the size gap.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP ERAS-2025-024": {
-   "decision": "already_in_gem",
-   "record_id": "",
-   "plant_id": "L100000402231",
-   "evidence": "A 775.2 MW combined cycle request at the Comanche 138 kilovolt substation in Lawton, agreement fully executed, commercial operation November 30, 2029. It is the second block with ERAS-2025-026 and matches GEM's Comanche (OK) CC2 and CC3 in place and year. A question card covers the size gap.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP ERAS-2025-023": {
-   "decision": "already_in_gem",
-   "record_id": "",
-   "plant_id": "L100000104126",
-   "evidence": "A 513 MW combustion turbine request at the Northeastern 345 kilovolt substation in Oologah, agreement fully executed, commercial operation December 15, 2029. GEM's Northeastern units 5 and 6 are 225 MW each, 450 MW, pre-construction, due 2028. A question card covers the size and year gap.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP ERAS-2025-010": {
-   "decision": "already_in_gem",
-   "record_id": "",
-   "plant_id": "L100000402162",
-   "evidence": "A 496 MW combustion turbine request at Horseshoe Lake 138 kilovolt, agreement fully executed, commercial operation January 1, 2029. GEM's Horseshoe Lake units 13 and 14 are 224 MW each, 448 MW, pre-construction, due 2029. A question card covers the size gap.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP ERAS-2025-004": {
-   "decision": "already_in_gem",
-   "record_id": "",
-   "plant_id": "L100000402162",
-   "evidence": "A 756.2 MW combined cycle request at Horseshoe Lake 138 kilovolt, agreement fully executed, commercial operation October 3, 2030. GEM's Horseshoe Lake unit 15 is 755 MW, pre-construction, due 2031. The size matches. A question card covers the year.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP ERAS-2025-003": {
-   "decision": "update",
-   "record_id": "",
-   "plant_id": "L100000401595",
-   "evidence": "A 186 MW combined cycle request at the Redbud 345 kilovolt substation near Luther, agreement fully executed, in service date October 24, 2025 and commercial operation January 18, 2027. GEM's Redbud plant has four units of 358 MW, all operating, and no 186 MW unit. It may be an uprate of a Redbud unit or a new add-on. A question card asks which. The question card is in the state shard.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ]
-  },
-  "SPP ASGI-2015-004": {
-   "decision": "other_state",
-   "record_id": "",
-   "plant_id": "",
-   "evidence": "The SPP row lists 56.4 MW of reciprocating engines owned by the Grand River Dam Authority, in service November 2015, at the Coffeyville City 69 kilovolt point, with Nowata as the nearest town. The Coffeyville point is in Kansas, so the Nowata label looks like a queue data error. No Oklahoma plant is added.",
-   "urls": [
-    "https://opsportal.spp.org/Studies/GIActive"
-   ],
-   "also_seen_by_other": true
-  }
- },
- "dedup": {
-  "us-ok:new:okc2-scale-datacenter-power-station": {
-   "decision": "not_a_duplicate",
-   "checked": "2026-11-05",
-   "evidence": "The two batch neighbors are the separate SPP surplus diesel fleets at Horseshoe Lake and Mustang, which sit at other substations. OKC2 is a data center plant with Wartsila engines and no GEM plant of any fuel carries its name."
-  },
-  "us-ok:new:myall-pryor-data-center-power-station": {
-   "decision": "not_a_duplicate",
-   "checked": "2026-11-05",
-   "evidence": "Chouteau power station is a gas plant 5.3 kilometers away and Grand River Energy Center is a utility plant 7.0 kilometers away. Neither is a data center and neither has the Myall emergency generator engines. The SPP SR19 diesel fleet is at the Maid substation, a different site."
-  },
-  "us-ok:new:spp-gen-2025-sr19-maid-diesel-engine-power-station": {
-   "decision": "not_a_duplicate",
-   "checked": "2026-11-05",
-   "evidence": "Chouteau power station and Grand River Energy Center are existing plants in the same county with different fuels and owners. The SPP study describes 31 new diesel engines at the Maid substation, sharing the point of interconnection with a battery, so this is a separate new plant."
-  },
-  "us-ok:new:spp-gen-2025-sr21-tulsa-power-station-diesel-engine-power-station": {
-   "decision": "not_a_duplicate",
-   "checked": "2026-11-05",
-   "evidence": "GEM has a Tulsa power station of gas units. The SPP surplus study describes 31 new diesel engines at the Tulsa Power Station substation, using spare grid capacity at the shared point, not the existing gas units. It is a separate diesel fleet and a separate plant."
-  },
-  "us-ok:new:spp-gen-2025-sr22-horseshoe-lake-diesel-engine-power-station": {
-   "decision": "not_a_duplicate",
-   "checked": "2026-11-05",
-   "evidence": "GEM has a Horseshoe Lake power station of gas units. The SPP surplus study describes 31 new diesel engines at the Horseshoe Lake substation, using spare grid capacity at the shared point, so this is a separate diesel fleet and a separate plant."
-  },
-  "us-ok:new:spp-gen-2025-sr23-mustang-diesel-engine-power-station": {
-   "decision": "not_a_duplicate",
-   "checked": "2026-11-05",
-   "evidence": "GEM has a Mustang gas power station. The SPP surplus study describes 31 new diesel engines at the Mustang substation, using spare grid capacity at the shared point, so this is a separate diesel fleet and a separate plant."
-  },
-  "us-ok:new:spp-gen-2025-sr25-tulsa-north-diesel-engine-power-station": {
-   "decision": "not_a_duplicate",
-   "checked": "2026-11-05",
-   "evidence": "The Tulsa power station and the other Tulsa County plants in GEM are gas or other fuel plants. The SPP surplus study describes 62 new diesel engines at the Tulsa North substation, a different point from any GEM plant, so this is a separate plant."
-  },
-  "us-ok:new:spp-gen-2024-341-pittsburg-county-gas-power-station": {
-   "decision": "not_a_duplicate",
-   "checked": "2026-11-05",
-   "evidence": "Kiamichi energy facility is an operating gas plant in the same county. The SPP row is a new 1,077.8 MW request at the Pittsburg 345 kilovolt substation, a different size and owner area, so it is not that plant."
-  },
-  "us-ok:new:spp-gen-2024-340-creek-county-gas-power-station": {
-   "decision": "not_a_duplicate",
-   "checked": "2026-11-05",
-   "evidence": "Bristow Energy Center is a 420 MW project in the same county. The SPP row is a 1,440 MW request on the Riverside to Redbud line, a different size and place, so it is not that plant."
-  },
-  "us-ok:new:spp-gen-2024-334-kay-county-gas-power-station": {
-   "decision": "not_a_duplicate",
-   "checked": "2026-11-05",
-   "evidence": "Charles D. Lamb energy center and Ponca City power station are operating plants in the same county. The SPP row is a new 103 MW request at the Ranch Road substation, so it is a different project."
-  },
-  "us-ok:new:spp-gen-2024-321-seminole-gas-power-station": {
-   "decision": "not_a_duplicate",
-   "checked": "2026-11-05",
-   "evidence": "Seminole power station and Cross Timbers Power Plant are in the same county. The SPP row is a new 507 MW request at the Seminole 345 kilovolt substation. The existing Seminole units are 1 to 3 and the other request in this batch is a surplus turbine, so this is a separate new project."
-  },
-  "us-ok:new:spp-gen-2024-293-muskogee-345-kilovolt-gas-power-station": {
-   "decision": "not_a_duplicate",
-   "checked": "2026-11-05",
-   "evidence": "The Muskogee names in GEM are the Muskogee Generating Station and the Muskogee Data Center plant. The SPP row is a separate 248 MW request at the Muskogee 345 kilovolt substation, not one of those units, so it is a different project."
-  },
-  "us-ok:new:spp-gen-2024-128-anadarko-gas-power-station": {
-   "decision": "not_a_duplicate",
-   "checked": "2026-11-05",
-   "evidence": "GEM has an Anadarko power station. Its units are the retired plant and the 2026 Roulet units. The SPP row is a separate 726.9 MW request on the Gracemont to Lawton 345 kilovolt line, so it is a different project."
-  },
-  "us-ok:new:spp-gen-2024-013-mcclain-county-gas-turbine-power-station": {
-   "decision": "not_a_duplicate",
-   "checked": "2026-11-05",
-   "evidence": "GEM has the McClain energy facility, three operating units. The SPP row is a separate 496 MW turbine request at the Norman Hills 345 kilovolt substation, so it is a different project. The surplus request at McClain is a unit on the existing plant."
-  },
-  "us-ok:new:georgia-pacific-muskogee-mill-power-plant": {
-   "decision": "not_a_duplicate",
-   "checked": "2026-11-05",
-   "evidence": "GEM lists Fort James Muskogee Mill power plant at the same mill, two retired coal units of 45.5 MW with a note about conversion to gas. The federal file lists three operating gas steam turbines of 25, 44.5 and 44.5 MW under the current owner. They may be the converted boilers. A separate question card asks the reviewer to check the air permit and to merge them if they are the same, so the new plant is kept until that is answered."
-  }
- }
 }

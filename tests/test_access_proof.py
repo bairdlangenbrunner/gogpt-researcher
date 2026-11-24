@@ -273,3 +273,12 @@ def test_a_warm_address_is_opened_first_for_the_session_cookie(monkeypatch):
                      ("POST", "https://wl.example/WebLink/SearchService.aspx/GetSearchListing")]
     assert status == "200" and "warm_cookie" in notes and "direct_post" in notes
     assert access_check.check_kind("json", raw, text, ctype) == ""
+
+
+def test_frame_only_page_fails_html_proof():
+    shell = ('<html><head><title>OASIS</title></head>'
+             '<frameset><frame src="https://www.oasis.oati.com/webSmartOASIS/HomePage?ProviderName=PNM"></frameset></html>')
+    reason = access_check.check_kind("html", shell.encode(), shell, "text/html")
+    assert "frame" in reason
+    framed_with_text = ('<html><body><iframe src="x"></iframe><p>' + "queue row " * 60 + '</p></body></html>')
+    assert access_check.check_kind("html", framed_with_text.encode(), framed_with_text, "text/html") == ""

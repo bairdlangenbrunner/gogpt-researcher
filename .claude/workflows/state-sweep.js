@@ -123,13 +123,18 @@ in \`source_log\` that it is dead, and only after the full fetch ladder below ha
 \`python scripts/entity_lookup.py "<name>"\` (bare, no --country) and copy what it says into
 \`entities[].lookup_result\`. In \`not_found\` list the fields a task asked for that you could not
 fill. A value you notice in passing that looks wrong goes in \`qa\`, not in \`findings\`.
-Tasks marked **[Validation report]** come from the database's own validation report, and every one
-needs an answer, even when nothing is found. When the task names a field, a finding on that field
-answers it. Otherwise (an undated status step, a broken replacement link, a source nobody can find)
-write a \`qa\` item for that unit with \`concern_type\` "validation", \`checks: [7]\`, the answer
-(the year and month with the document that says so, the unit ID, or "not found" and where you
-looked) in \`recommendation\`, and the documents in \`refs\`. Never leave one unanswered: the
-gate after assembly fails on any validation item with no answer.`
+Tasks marked **[Validation report]** come from the database's own validation report. Every one
+is required, on a coal plant or a coal-to-gas conversion too (Baird 2026-11-06), and every one is
+cleared by an EDIT, not a question. A missing Data Source: find a document that states the value
+already in the export and report it as a finding on that field with the document (a finding that
+only adds the source is still a finding; if the document shows a different value, report that
+value). A required blank: fill it. An undated status step: report a finding on \`Status Detail\`
+(a new line on top, the date and what happened, with the document's link) and put the same date
+in that finding's \`milestones\` list with its source. Write a \`qa\` item with
+\`concern_type\` "validation" and \`checks: [7]\` only when you searched and nothing was found:
+\`recommendation\` says where you looked and that nothing was found, and \`refs\` hold what you
+opened. A question that only proposes the value does not answer the task. The gate after
+assembly fails on any validation item answered only that way, and on any with no answer.`
 
 const statusRule = MODE === 'blind'
   ? `blind mode has no current value to change, so a status gets \`high\` on one fully validated ref`
@@ -364,8 +369,10 @@ Cite the live URL when it works. When the live page is gone or refuses every rou
   \`{"status": "construction", "year": 2025, "period": "May", "sources": ["https://..."],
   "note": "the owner reported the frame finished by May 13, 2025"}\`. \`period\` is the finest the
   source gives: a full month name, or Q1 to Q4, or H1 or H2. Date each step by the event that marks
-  it: pre-construction by the permit application or approval filing, construction by the
-  reported start of work (never by a construction permit, which dates pre-construction only; with
+  it: pre-construction by the earliest date a construction or other official permit was applied
+  for (the application date, never the issue or approval date: an issued permit only allows
+  construction, so the unit stays pre-construction), construction by the
+  reported start of work (never by a construction permit or a ceremonial groundbreaking; with
   no start date, use the earliest report of work under way and say so in \`period_note\`),
   operating by commercial operation (for a data center backup fleet, the "began operation" date in
   the owner's annual emissions report counts), retired or cancelled by the reported date. If no month, quarter or half can be found, leave \`period\` blank
@@ -378,9 +385,24 @@ Cite the live URL when it works. When the live page is gone or refuses every rou
   never a national government. A single confirmed owner is \`Name [100%]\`.
 - \`Latitude\` and \`Longitude\` in decimal degrees, with \`Location accuracy\` exact or approximate.
 - Fuel as \`category: detail\` tokens, for example "fossil gas: natural gas, fossil liquids: fuel oil".
-  Technology long form: combined cycle, gas turbine, aeroderivative gas turbine, steam turbine,
-  internal combustion, or ICCC, ISCC, AFC, unknown. CHP is yes, no or not found, and "no" only when a
-  dataset explicitly says so.
+  \`Turbine/Engine Technology\` is the web form's dropdown, never a turbine model: combined cycle,
+  gas turbine, steam turbine, ICCC, ISCC, AFC, internal combustion, or unknown. Every unit of a new
+  plant or new unit stages it with its source (a planning document, news story or permit that says
+  combined cycle, peaker, simple cycle or engines), and "unknown" only after a comprehensive search finds
+  no source anywhere online that names the design: the queue entry and its studies, commission and
+  air permit dockets, local records, the resource plan, the developer's and utility's sites and
+  investor material, news and turbine maker announcements, every place searched listed in the
+  notes (Baird 2026-11-07); a turbine maker or model goes in the notes when found. Every new unit also
+  carries its milestone entry in the shape above (status, year, period, sources), never a date
+  string. state_gate.py gate \`add-basics\` fails the batch otherwise (Baird 2026-11-07). Every add
+  must also save cleanly in the web form (docs/reference/web_form_validation.md): a name no other
+  plant in the export carries, with no "phase" or "extension", no double space and none of
+  # < > [ ] { } % + ? |; distinct unit names; country, Latitude, Longitude and Location accuracy;
+  a nonzero capacity and a fuel on every unit; and a Data Source link for every value you fill
+  (owner, fuel, capacity, technology, location, captive, backup power, latest activity). Research
+  each of these as hard as the status. A required value you cannot find goes in \`not_found\` as
+  {"field": "what you searched and where"}, never left silently blank. CHP is yes,
+  no or not found, and "no" only when a dataset explicitly says so.
 - Never cite gem.wiki, globalenergymonitor.org, abarrelfull, or anything that footnotes GEM.
   Wikipedia, GridInfo, plant-map sites and the Sierra Club ID sheet are for finding leads only;
   cite the document they point to.
@@ -421,6 +443,8 @@ ${IS_US
 - \`Number Of Engines\` and \`Capacity Per Engine\` are filled for internal combustion sets and for
   aeroderivative gas turbine sets. A frame gas turbine is one turbine per unit, with its capacity
   in \`Capacity (MW)\` only.
+- \`Turbine/Engine Technology\` is one of the web form's dropdown values: combined cycle, gas turbine,
+  steam turbine, ICCC, ISCC, AFC, internal combustion, unknown. An aeroderivative set is gas turbine.
 - Captive fields (\`Captive industry use\`, \`Captive industry type\`, \`Captive non-industry use\`)
   are filled for every captive plant, including one that also exports; \`Captive non-industry use\`
   records the export (power, heat, both or none). They stay blank for a plant that sells to the
@@ -455,6 +479,10 @@ ${IS_US
   application or a press report names at this plant (status from the manual's ladder, capacity as
   stated or blank, start year blank when none is given). Only a request that may describe a unit
   the brief already lists is a \`qa\` duplicate question instead.
+- When the brief names a resource plan for this plant's utility, open the plan and read every part that
+  mentions the plant or its site: the preferred plan, every alternative portfolio, the action plan and
+  the tables of new and retiring resources. A plan that changes the plant's status, capacity, year,
+  fuel or technology is a finding; give the page and table.
 
 ## Location ladder
 Only for a plant whose brief has a location task${REVIEW === 'location' ? ' (this pass is a second look at the location only: research nothing else, and report only the three location fields and the `location` object)' : ''}. Work the rungs in order and stop at the first that settles the point.
@@ -511,6 +539,7 @@ repository. Write the way a careful colleague explains something across a desk.
 - Say what the source says, then what it means.
 - Every source a note names comes with its full URL right after the name. Never mention a petition,
   table, permit or article in a note without its link.
+- Every value a note gives comes with where to find it, so a researcher can check it without searching. Name the document and its link, the PDF page number (the page of the file, not a printed page number), the section or table name, and the row or sentence that holds the value, with the key words quoted exactly as the source writes them. Say what the source shows if it differs from the staged value, and why. Example: "Open the study at https://... and go to page 5, in the Executive Summary. The paragraph that starts 'The proposed configuration consists of' says one GE gas-fired unit at 249 MW. Table ES-2 on page 6 repeats it. The queue row reads 238 MW because the study caps what can be sent to the grid. The 249 MW is the equipment size, which is what we record." For a web page that is a table or built by scripts, name the row by its ID and the column. This applies to every staged value, every added unit and every question. Lay a note out so it can be scanned: a short first paragraph that says what this is, then one labeled section per value or topic (for example "Capacity and fuel:", "Why the queue shows a different number:", "Location:", "Status and start year:", "Owner:"), each followed by short lines that start with "- ", with a blank line between sections. Use real line breaks inside the note text. Never write one block of text.
 - Name sources by what they are: ${IS_US
     ? '"a Constellation press release from March 2026", "the EIA-860M\n  table for July 2026", "a Baltimore Sun article"'
     : `"a Uniper press release from March 2026", "the national regulator's power\n  plant list dated April 2026", "a local newspaper article"`}.

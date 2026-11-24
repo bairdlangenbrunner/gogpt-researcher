@@ -1,0 +1,904 @@
+{
+  "sources": {
+    "pjm-queue": {
+      "status": "searched",
+      "how": "Read the PJM serial queue file and the queue reader's Kentucky rows.",
+      "found": "Every Kentucky gas row is a GEM plant or is answered under queues.",
+      "read": [
+        "batches/us-ky/harvest/queues.json",
+        "https://www.pjm.com/pjmfiles/media/planning/queues-data/PlanningQueues.xml"
+      ],
+      "date": "2026-11-05"
+    },
+    "pjm-cycle": {
+      "status": "searched",
+      "how": "Read the PJM cycle file for the C01 cycle and opened the PJM project page for each Kentucky gas row.",
+      "found": "C01-1227 in Mason County is a new East Kentucky Power Cooperative gas plant and was added. C01-1325 in Lawrence County is Appalachian Power's and fits the two West Virginia placeholders from its 2025 resource plan. C01-1131 and C01-1228 are GEM plants.",
+      "read": [
+        "batches/us-ky/harvest/queues.json",
+        "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1227",
+        "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1325"
+      ],
+      "date": "2026-11-05"
+    },
+    "miso-queue": {
+      "status": "searched",
+      "how": "Read the MISO queue file for every Kentucky and Big Rivers row.",
+      "found": "S1073 is KYMEA Energy Center I. R5102 shows no fuel or size. J3089 is withdrawn.",
+      "read": [
+        "batches/us-ky/harvest/queues.json",
+        "https://www.misoenergy.org/api/giqueue/getprojects"
+      ],
+      "date": "2026-11-05"
+    },
+    "psc-case-list": {
+      "status": "searched",
+      "how": "Read the commission's whole-year case lists from 2021 to 2026 through the docket harvest and read the titles of every generation case.",
+      "found": "Every gas generation case matches a GEM plant. Unmatched generation cases are franchise, tariff and transmission cases, plus TeraWulf's service case 2026-00323.",
+      "read": [
+        "batches/us-ky/harvest/psc_dockets.md",
+        "https://psc.ky.gov/Case/searchCases/2026"
+      ],
+      "date": "2026-11-05"
+    },
+    "psc-case-filings": {
+      "status": "searched",
+      "how": "Read the filings pages of each key case through the docket harvest, including the Post tab of 2024-00370.",
+      "found": "No filing names a gas plant GEM lacks.",
+      "read": [
+        "batches/us-ky/harvest/psc_dockets.md",
+        "https://psc.ky.gov/Case/ViewCaseFilings/2024-00370"
+      ],
+      "date": "2026-11-05"
+    },
+    "psc-filing-pdf": {
+      "status": "searched",
+      "how": "Read the filed documents saved by the docket harvest for each key case.",
+      "found": "No new gas plant beyond those already in GEM. Kentucky Power's Lawrence County combined cycle is handled on the Big Sandy card.",
+      "read": [
+        "batches/us-ky/harvest/psc_dockets.md",
+        "https://psc.ky.gov/pscecf/2024-00370/allyson%40hloky.com/05192025050734/2024-00370_-_JI_-_Second_Supp_Response_JI_2-47.pdf"
+      ],
+      "date": "2026-11-05"
+    },
+    "psc-order-pdf": {
+      "status": "searched",
+      "how": "Read the orders saved by the docket harvest, including the Big Rivers plan order of August 20, 2024.",
+      "found": "No order approves a gas plant GEM lacks.",
+      "read": [
+        "batches/us-ky/harvest/psc_dockets.md",
+        "https://psc.ky.gov/pscscf/2023%20Cases/2023-00310/20240820_PSC_ORDER.pdf"
+      ],
+      "date": "2026-11-05"
+    },
+    "psc-irp-filings": {
+      "status": "searched",
+      "how": "Downloaded and read the newest plan of every utility that files one with the Kentucky Public Service Commission, plus the municipal agency plan, in full with pdftotext.",
+      "found": "Every gas addition in a preferred plan is already in GEM. The Kentucky Municipal Energy Agency plan also studies two engine options for after 2029, KYMEA Energy Center II (92 MW) and growing KYMEA Energy Center I to 129 MW; both are on the watch list as us-ky:plant:monitor-4.",
+      "read": [
+        "batches/us-ky/harvest/psc_dockets.md",
+        "https://psc.ky.gov/Case/ViewCaseFilings/2026-00268",
+        "https://psc.ky.gov/pscecf/2026-00268/senthia.santana%40bigrivers.com/09292026115438/2026_IRP_Public_Redacted_and_Appendices.pdf",
+        "https://psc.ky.gov/pscecf/2024-00197/e.rolfes-adkins%40duke-energy.com/09092024025857/DEK_IRP_PUBLIC_06212024.pdf",
+        "https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf",
+        "https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf",
+        "https://s3.amazonaws.com/kymea-twill/4031257f-39bb-4be9-99b8-87cfeaf6cff8/2025_06_IRP2023-Report-Draft-v.24_6_05_25.pdf",
+        "https://the-hendersonian.com/wp-content/uploads/2026/05/HMPL-2026-IRP-Report.pdf"
+      ],
+      "date": "2026-11-06"
+    },
+    "psc-siting-board": {
+      "status": "searched",
+      "how": "Read the siting board's merchant case list from 2021 to 2026.",
+      "found": "Every merchant case is solar, storage or transmission. No gas plant.",
+      "read": [
+        "https://psc.ky.gov/Home/EGTSB"
+      ],
+      "date": "2026-11-05"
+    },
+    "psc-ums-directory": {
+      "status": "searched",
+      "how": "Read the commission's utility directory for generation owners.",
+      "found": "No generating utility missing from the GEM owner list.",
+      "read": [
+        "https://psc.ky.gov/utility_master/reports/UMSDirectory.pdf"
+      ],
+      "date": "2026-11-05"
+    },
+    "daq-public-notices": {
+      "status": "searched",
+      "how": "Read the state air quality public notices page.",
+      "found": "Only the Dyno Nobel Graham draft permit and rule hearings are open. No power plant or data center engine fleet.",
+      "read": [
+        "https://eec.ky.gov/Environmental-Protection/Air/Pages/Public-Notices.aspx"
+      ],
+      "date": "2026-11-05"
+    },
+    "daq-draft-permit-pdf": {
+      "status": "searched",
+      "how": "Read the Bluegrass draft permit through the permit harvest.",
+      "found": "A permit revision at a GEM plant, handled on the Bluegrass card.",
+      "read": [
+        "batches/us-ky/harvest/facilities.json",
+        "https://eec.ky.gov/Environmental-Protection/Air/Draft%20Permit%20Documents/EKPC%20Bluegrass%20Gen%20Stn%20-%20Permit%20V-21-048%20R1%20Draft.pdf"
+      ],
+      "date": "2026-11-05"
+    },
+    "dep-esearch": {
+      "status": "searched",
+      "how": "Searched the state permit system through the permit harvest for every GEM plant and every power-like or data center facility, issued and pending.",
+      "found": "The unmatched power-like facilities are small engines, emergency generators, biomass or retired plants; none is a gas or oil plant of 50 MW or more missing from GEM when checked against the federal monthly generator file. Justified DataPower in Hawesville has a pending application with no documents posted.",
+      "read": [
+        "batches/us-ky/harvest/facilities.json",
+        "batches/us-ky/harvest/harvest_summary.md"
+      ],
+      "date": "2026-11-05"
+    },
+    "dep-esearch-document": {
+      "status": "searched",
+      "how": "Read the permit documents for each data center in the harvest and summed their generators.",
+      "found": "Amazon Florence has 37.5 MW of emergency generators, Bluegrass Cellular about 0.9 MW, Amazon Hebron about 1.2 MW; CyrusOne Florence and the first Amazon Florence permit name no generators.",
+      "read": [
+        "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/13843182",
+        "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/9738542",
+        "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10425562",
+        "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/11372464",
+        "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12031709"
+      ],
+      "date": "2026-11-05"
+    },
+    "louisville-apcd-proposed": {
+      "status": "searched",
+      "how": "Read the Louisville air district proposed actions page.",
+      "found": "Forth Technologies, Bakelite Synthetics, NexGen Contracting and Anderson Wood Products. No power plant or data center.",
+      "read": [
+        "https://louisvilleky.gov/government/air-pollution-control-district/services/proposed-actions-apcd"
+      ],
+      "date": "2026-11-05"
+    },
+    "louisville-apcd-permits": {
+      "status": "searched",
+      "how": "Read the Louisville air district active permit list through the permit harvest.",
+      "found": "Flexential Louisville Downtown is the only data center, at 7.05 MW. Mill Creek, Cane Run and Paddy's Run are GEM plants.",
+      "read": [
+        "batches/us-ky/harvest/facilities.json",
+        "https://louisvilleky.gov/government/air-pollution-control-district/active-air-pollution-operating-permits-louisville"
+      ],
+      "date": "2026-11-05"
+    },
+    "louisville-apcd-permit-pdf": {
+      "status": "searched",
+      "how": "Read the Flexential permit and the Mill Creek permit.",
+      "found": "Flexential has nine generators summing to 7.05 MW, below the threshold.",
+      "read": [
+        "https://louisvilleky.gov/sites/default/files/2023-09/20210609-permit-o-1785-21-m.pdf",
+        "https://louisvilleky.gov/sites/default/files/2025-11/20251113-permit-O-0126-25-V.pdf"
+      ],
+      "date": "2026-11-05"
+    },
+    "epa-echo": {
+      "status": "searched",
+      "how": "Compared the permit harvest's facility list, which covers the same state permits, with GEM; ECHO adds no generator ratings.",
+      "found": "No gas or oil plant of 50 MW or more missing from GEM.",
+      "read": [
+        "batches/us-ky/harvest/facilities.json",
+        "https://echo.epa.gov/facilities/facility-search"
+      ],
+      "date": "2026-11-05"
+    },
+    "epa-campd": {
+      "status": "searched",
+      "how": "Relied on the per-plant cards for operating hours and compared the federal monthly generator file for Kentucky.",
+      "found": "Every Kentucky gas or oil unit that reports to the federal emissions program is at a GEM plant.",
+      "read": [
+        "https://campd.epa.gov/",
+        "work/eia/september_generator2026.xlsx"
+      ],
+      "date": "2026-11-05"
+    },
+    "epa-rblc": {
+      "status": "searched",
+      "how": "Checked the permit harvest for new combustion turbine permits in Kentucky, which the federal control technology list copies.",
+      "found": "Only permits at GEM plants: Liberty, Mill Creek, Brown, Cooper and KYMEA.",
+      "read": [
+        "batches/us-ky/harvest/facilities.json",
+        "https://www.epa.gov/catc/rblc"
+      ],
+      "date": "2026-11-05"
+    },
+    "tva-nepa": {
+      "status": "searched",
+      "how": "Read TVA's environmental reviews page.",
+      "found": "Paradise and Colbert turbine plants, the Paradise retirement, Shawnee units 1 and 4 and solar projects. Paradise and Marshall are on their own cards. No new Kentucky gas plant.",
+      "read": [
+        "https://www.tva.com/environment/environmental-stewardship/environmental-reviews"
+      ],
+      "date": "2026-11-05"
+    },
+    "tva-irp": {
+      "status": "searched",
+      "how": "Read TVA's final 2026 plan page and the full final plan, volume 1, approved by the board in August 2026.",
+      "found": "Table 4-1 (page 4-3) plans 4 to 13 GW of combined cycle and 3 to 13 GW of combustion turbines through 2040 across the whole TVA area, with no site named. No Kentucky site appears in the plan.",
+      "read": [
+        "https://www.tva.com/environment/final-2026-integrated-resource-plan",
+        "https://tva-azr-eastus-cdn-ep-tvawcm-prd.azureedge.net/cdn-tvawcma/docs/default-source/environment/environmental-stewardship/integrated-resource-plan/2026-final-irp/final-2026-irp-(vol-1).pdf?sfvrsn=f9e7519b_3"
+      ],
+      "date": "2026-11-06"
+    },
+    "tva-newsroom": {
+      "status": "searched",
+      "how": "Read the TVA newsroom.",
+      "found": "No Kentucky gas announcement.",
+      "read": [
+        "https://www.tva.com/newsroom"
+      ],
+      "date": "2026-11-05"
+    },
+    "tva-oasis": {
+      "status": "searched",
+      "how": "Opened the TVA queue site. It returns only a sign-in page, so TVA's Kentucky requests were read from the Berkeley Lab Queued Up file and the January 2025 TVA queue list posted by WPLN, and checked against TVA's environmental reviews, plan and permits.",
+      "found": "Request 628, 1,600 MW of gas in Todd County, is a new plant and is staged. Request 657 is a 60 MW upgrade at the Paradise combined cycle and is a question. Request 417 is the Paradise turbines and request 55 is Marshall, both in GEM.",
+      "read": [
+        "https://www.oasis.oati.com/TVA/",
+        "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx",
+        "https://wpln.org/wp-content/uploads/sites/7/2025/05/TVA-Transmission-Queue-January-2025.pdf",
+        "https://www.tva.com/environment/environmental-stewardship/environmental-reviews"
+      ],
+      "date": "2026-11-07"
+    },
+    "lgee-oasis": {
+      "status": "searched",
+      "how": "Opened the LG&E and KU queue site. It returns only a sign-in page, so the Kentucky requests were read from the Berkeley Lab Queued Up file, entity LGE-KU, and checked against the commission cases and air permits.",
+      "found": "Every live gas request matches a GEM plant (Mill Creek 5 and 6, Brown 12, Cane Run 7, Trimble, KYMEA, Paducah Power) except request GIS-2024-006, 94 MW at the Cane Run turbine substation, which is a question.",
+      "read": [
+        "https://www.oasis.oati.com/LGEE/",
+        "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx"
+      ],
+      "date": "2026-11-07"
+    },
+    "lge-ku-newsroom": {
+      "status": "searched",
+      "how": "Read the LG&E and KU newsroom.",
+      "found": "Nothing new beyond the GEM units.",
+      "read": [
+        "https://lge-ku.com/newsroom"
+      ],
+      "date": "2026-11-05"
+    },
+    "ppl-investors": {
+      "status": "searched",
+      "how": "Read the PPL investor page and searched for the PPL and Blackstone venture.",
+      "found": "The investor page names no Kentucky gas plant beyond the LG&E and KU units in GEM. No Kentucky project for the PPL and Blackstone venture was found.",
+      "read": [
+        "https://investors.pplweb.com/"
+      ],
+      "date": "2026-11-05"
+    },
+    "kentucky-power-news": {
+      "status": "searched",
+      "how": "Read the Kentucky Power news page.",
+      "found": "Transmission work in Boyd County for the Muskie data center campus. No new plant beyond the Lawrence County combined cycle on the Big Sandy card.",
+      "read": [
+        "https://www.kentuckypower.com/company/news/"
+      ],
+      "date": "2026-11-05"
+    },
+    "duke-energy-news": {
+      "status": "searched",
+      "how": "Read the Duke Energy news page for Kentucky.",
+      "found": "No Kentucky gas announcement. East Bend is a GEM plant on its own card.",
+      "read": [
+        "https://news.duke-energy.com/"
+      ],
+      "date": "2026-11-05"
+    },
+    "ekpc-new-generation": {
+      "status": "searched",
+      "how": "Read East Kentucky Power Cooperative's new generation page.",
+      "found": "Cooper combined cycle, Cooper 2 and Spurlock co-firing and Liberty, all in GEM. The Mason County queue request is not on the page.",
+      "read": [
+        "https://www.ekpc.coop/new-generation"
+      ],
+      "date": "2026-11-05"
+    },
+    "big-rivers": {
+      "status": "searched",
+      "how": "Read the Big Rivers site.",
+      "found": "Nothing new beyond the 2026 plan, handled on the placeholder card.",
+      "read": [
+        "https://www.bigrivers.com/"
+      ],
+      "date": "2026-11-05"
+    },
+    "kymea": {
+      "status": "searched",
+      "how": "Read the KYMEA site.",
+      "found": "Nothing on a new gas plant. KYMEA Energy Center I is a GEM plant on its own card.",
+      "read": [
+        "https://www.kymea.org/"
+      ],
+      "date": "2026-11-05"
+    },
+    "omu-news": {
+      "status": "searched",
+      "how": "Read the Owensboro Municipal Utilities news page.",
+      "found": "A peak load story. The Elmer Smith site deal is on the Elmer Smith card.",
+      "read": [
+        "https://omu.org/news-information/"
+      ],
+      "date": "2026-11-05"
+    },
+    "paducah-power": {
+      "status": "searched",
+      "how": "Read the Paducah Power site.",
+      "found": "Nothing new beyond PPS No 1, a GEM plant.",
+      "read": [
+        "https://paducahpower.com/"
+      ],
+      "date": "2026-11-05"
+    },
+    "middle-river-power": {
+      "status": "searched",
+      "how": "Read the Middle River Power site.",
+      "found": "It names its Big Sandy purchase but no state. Handled on the Big Sandy Peaker card.",
+      "read": [
+        "https://middleriverpower.com/"
+      ],
+      "date": "2026-11-05"
+    },
+    "nrg": {
+      "status": "searched",
+      "how": "Read the NRG site.",
+      "found": "Nothing on Riverside beyond the GEM plant.",
+      "read": [
+        "https://www.nrg.com/"
+      ],
+      "date": "2026-11-05"
+    },
+    "sec-edgar": {
+      "status": "searched",
+      "how": "Ran the full-text filing search and relied on the per-plant cards for the plant-by-plant searches.",
+      "found": "No Kentucky gas plant GEM lacks.",
+      "read": [
+        "https://efts.sec.gov/LATEST/search-index?q=%22Mill%20Creek%22%20%22combined%20cycle%22&forms=10-K,10-Q,8-K"
+      ],
+      "date": "2026-11-05"
+    },
+    "eia-860m": {
+      "status": "searched",
+      "how": "Read the September 2026 monthly generator file for every Kentucky gas and oil generator.",
+      "found": "Every operating and planned plant of 50 MW or more is in GEM: Mill Creek, Liberty Station, KYMEA Energy Center I and the rest.",
+      "read": [
+        "work/eia/september_generator2026.xlsx",
+        "https://www.eia.gov/electricity/data/eia860m/"
+      ],
+      "date": "2026-11-05"
+    },
+    "eia-860": {
+      "status": "searched",
+      "how": "Compared the annual generator file through the ID matcher.",
+      "found": "No EIA plant of 50 MW or more missing from GEM.",
+      "read": [
+        "https://www.eia.gov/electricity/data/eia860/"
+      ],
+      "date": "2026-11-05"
+    },
+    "eip-oil-gas-watch": {
+      "status": "searched",
+      "how": "Searched the Oil and Gas Watch site for Kentucky power projects.",
+      "found": "Nothing beyond GEM plants.",
+      "read": [
+        "https://oilandgaswatch.org/"
+      ],
+      "date": "2026-11-05"
+    },
+    "possible-updates-sheet": {
+      "status": "searched",
+      "how": "Read the possible updates rows for Kentucky through the plant briefs.",
+      "found": "Each row is on its plant's card.",
+      "read": [
+        "batches/us-ky/briefs/_index.json"
+      ],
+      "date": "2026-11-05"
+    },
+    "captive-lng-sheet": {
+      "status": "searched",
+      "how": "Read the captive LNG step output for Kentucky.",
+      "found": "No Kentucky captive LNG power plant.",
+      "read": [
+        "batches/us-ky/briefs/_index.json"
+      ],
+      "date": "2026-11-05"
+    },
+    "industrial-cogeneration": {
+      "status": "searched",
+      "how": "Read the monthly generator file for industrial and commercial gas generators in Kentucky.",
+      "found": "The only one is DTE Calvert City at 26.7 MW, below the threshold. Domtar Hawesville has no gas generator.",
+      "read": [
+        "work/eia/september_generator2026.xlsx"
+      ],
+      "date": "2026-11-05"
+    },
+    "data-centers": {
+      "status": "searched",
+      "how": "Read the data center step output, the permit documents for each site, and news on Paducah, Mason County, Letcher County, TeraWulf and Louisville.",
+      "found": "Paducah gas plant added. Meta Mason County and Letcher County on the watch list. Every permitted data center fleet is below 50 MW.",
+      "read": [
+        "scopes/us-ky/work/permits/_data_centers.md",
+        "https://kentuckylantern.com/2026/07/29/hyperscale-data-center-natural-gas-fired-project-planned-for-paducahs-former-nuclear-plant/",
+        "https://www.datacenterdynamics.com/en/news/off-grid-data-center-proposed-for-letcher-county-kentucky-report/",
+        "https://kentuckylantern.com/2026/08/10/terawulf-tells-investors-it-could-double-the-size-of-one-of-its-ky-data-center-projects/"
+      ],
+      "date": "2026-11-05"
+    },
+    "business-registry": {
+      "status": "searched",
+      "how": "Checked entity names in the GEM entity list instead of the state registry for each add.",
+      "found": "NextEra and East Kentucky Power Cooperative exist. Crisham LLC is on the watch list only, so no entity is needed.",
+      "read": [
+        "https://sosbes.sos.ky.gov/BusSearchNProfile/Search.aspx"
+      ],
+      "date": "2026-11-05"
+    },
+    "state-news": {
+      "status": "searched",
+      "how": "Searched Kentucky Lantern, WKMS and WKYT for gas plant and data center stories.",
+      "found": "Paducah gas plant, TeraWulf, Letcher County, EKPC and LG&E and KU gas plants. Only Paducah is new and added.",
+      "read": [
+        "https://kentuckylantern.com/?s=gas+plant",
+        "https://www.wkms.org/business-economy/2026-07-29/100b-data-center-gas-fired-power-plant-to-be-developed-around-paducah-doe-site",
+        "https://www.wkyt.com/2026/07/17/proposed-off-grid-data-center-eyeing-letcher-co-industrial-park/"
+      ],
+      "date": "2026-11-05"
+    },
+    "public-notices": {
+      "status": "searched",
+      "how": "The keyword search fails, so read the Mason County listing and downloaded 41 Ledger Independent legal pages from October 15 to November 5, 2026.",
+      "found": "A reader letter of October 23 asks whether Meta's Mason County agreement allows a gas turbine, and a revenue bond notice of October 16 for Crisham LLC. No gas plant notice.",
+      "read": [
+        "https://kypublicnotice.com/index.php/main/search/0/Mason",
+        "https://kypublicnotice.com/KYLegals/2026/70190-2026-10-23_1002.pdf",
+        "https://kypublicnotice.com/KYLegals/2026/70190-2026-10-16_1002.pdf"
+      ],
+      "date": "2026-11-05"
+    },
+    "local-planning-records": {
+      "status": "searched",
+      "how": "Read the local records harvest: Louisville Metro Council through Legistar, Madisonville, Henderson County Fiscal Court and Planning and Zoning, City of Henderson, the Clark, Marshall, Hardin, Pulaski, Daviess, Mason, Oldham, Boone and Boyd fiscal courts, Somerset, Harrodsburg, the Owensboro planning commission, Elizabethtown, McCracken County Fiscal Court and Planning and Zoning, and Maysville.",
+      "found": "Maysville minutes mention a gas pipeline to Spurlock. Louisville records cover the Camp Ground Road data center and a data center zoning ordinance. Daviess and Meade counties adopted data center moratoriums. No local record names a gas plant GEM lacks. Not posted online: Lawrence, Casey, Mercer, Trimble, Muhlenberg, Hancock, Hopkins, Bullitt, Christian, Warren, Letcher, Webster and Union, and the cities of Owensboro, Paducah and Hopkinsville. The Henderson moratorium outcome of November 3, 2026 is not posted yet. Franklin and Simpson County records were added on November 7, 2026: 391 documents read, the TenKey development plan found and staged; Todd County posts no records and is listed for a person.",
+      "read": [
+        "batches/us-ky/harvest/local_records.md",
+        "batches/us-ky/harvest/local_records.json",
+        "https://louisville.legistar.com/",
+        "https://www.franklinky.gov/government/meetings_agendas_minutes.php",
+        "https://www.franklinky.gov/departments/planning_zoning/agendas_and_minutes.php",
+        "https://simpsoncountyky.gov/wp-json/wp/v2/media"
+      ],
+      "date": "2026-11-07"
+    },
+    "lbnl-queued-up": {
+      "status": "searched",
+      "how": "pull_queues.py --state KY downloaded the 2026 data file and read tab 03, Complete Queue Data: 38,201 requests, 66 Kentucky TVA rows and 125 Kentucky LG&E and KU rows.",
+      "found": "Thirteen gas or oil requests to answer, all answered under queues: one new plant (TVA 628, Todd County), two questions (TVA 657 and LG&E and KU GIS-2024-006), the rest GEM plants.",
+      "read": [
+        "https://emp.lbl.gov/queues",
+        "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx"
+      ],
+      "date": "2026-11-07"
+    }
+  },
+  "ids_followup": {},
+  "data_centers": {
+    "flexential-louisville-do-flexential-loui": {
+      "decision": "below_threshold",
+      "summed_nameplate_mw": 7.05,
+      "note": "Louisville permit O-1785-21-M lists nine generators summing to 7.05 MW."
+    },
+    "kentucky-utilities-co-10-burgin": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000103937",
+      "note": "This is E.W. Brown Generating Station, L100000103937, where Brown 12 serves data center load. Handled on its own card."
+    },
+    "bluegrass-cellular-llc-e-elizabethtown": {
+      "decision": "below_threshold",
+      "summed_nameplate_mw": 0.9,
+      "note": "The permit lists two emergency diesel generators, each under 600 horsepower, about 0.9 MW in all."
+    },
+    "amazon-florence": {
+      "decision": "no_generators",
+      "note": "Permit S-22-032 for the Amazon Florence site names no generator or engine. The Boone County Fiscal Court agendas and minutes were opened and name no generator plant for the site."
+    },
+    "amazon-florence-2": {
+      "decision": "below_threshold",
+      "summed_nameplate_mw": 37.5,
+      "note": "Permit F-25-027 lists 15 emergency generators of 2.5 MW each, 37.5 MW in all."
+    },
+    "cyrusone-florence": {
+      "decision": "no_generators",
+      "note": "The two CyrusOne Florence permit documents name no generator fleet to sum. The Boone County Fiscal Court agendas and minutes were opened and name no generator plant for the site."
+    },
+    "amazon-hebron": {
+      "decision": "below_threshold",
+      "summed_nameplate_mw": 1.2,
+      "note": "The permit letter lists three 551 horsepower engines, about 1.2 MW in all."
+    },
+    "louisville-gas-electric-louisville": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000103945",
+      "note": "This is Mill Creek Station, L100000103945, a GEM plant handled on its own card."
+    },
+    "paducah-american-energy-hub": {
+      "decision": "add",
+      "record_id": "us-ky:new:paducah-american-energy-hub-gas-plant",
+      "note": "NextEra plans up to 2,000 MW of gas generation for the data center at the former Paducah Gaseous Diffusion Plant. Added as a new plant."
+    },
+    "meta-crisham-mason-county": {
+      "decision": "nothing_found",
+      "record_id": "us-ky:plant:monitor-3",
+      "note": "No permit or plan names on-site generation at Meta's Mason County campus. A reader letter asks whether a gas turbine is allowed. On the watch list; the cooperative's 780 MW queue request in the county is added. The Mason County Fiscal Court and City of Maysville agendas and minutes were opened; they name no on-site generation."
+    },
+    "letcher-county-gateway": {
+      "decision": "nothing_found",
+      "record_id": "us-ky:plant:monitor-2",
+      "note": "An off-grid data center with Diversified Gas and Oil Corporation at the Gateway park. No generator size or permit found. On the watch list. Letcher County posts no fiscal court minutes online, so a person must ask the county clerk for them."
+    },
+    "justified-datapower-hawesville": {
+      "decision": "nothing_found",
+      "note": "TeraWulf's Hawesville site has a pending state air application with no documents posted, and commission case 2026-00115 is about grid service. No generator count or size found. Hancock County posts no fiscal court minutes online, so a person must ask the county clerk for them."
+    },
+    "db-long-hunts-terawulf": {
+      "decision": "nothing_found",
+      "note": "TeraWulf's Boyd County site will take grid power from Kentucky Power under case 2026-00323. No on-site generator permit found. The Boyd County Fiscal Court agenda center was opened and holds nothing newer than 2024."
+    },
+    "louisville-camp-ground-road": {
+      "decision": "nothing_found",
+      "note": "Louisville council records cover zoning for the Camp Ground Road data center but no air permit or generator fleet was found. Louisville Metro Council agendas and minutes and the city planning and zoning records in them were opened; they name no generator fleet."
+    },
+    "tenkey-franklin": {
+      "decision": "add",
+      "record_id": "us-ky:new:tenkey-franklin-data-center-gas-plant",
+      "note": "TenKey's Franklin campus in Simpson County plans on-site natural gas turbines as its main power, size not public. Found in the final internet check on November 7, 2026. No air permit application yet, but the Franklin Planning and Zoning Commission approved its development plan on March 3, 2026, so it is staged as pre-construction."
+    }
+  },
+  "queues": {
+    "MISO R5102": {
+      "decision": "fuel_not_published",
+      "evidence": "Big Rivers request R5102, queued August 6, 2026, shows no fuel, no size, no county and no study cycle. It is a replacement type request. No Big Rivers filing names a new gas unit that it could be; the 2026 plan adds no combined cycle.",
+      "urls": [
+        "https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/"
+      ]
+    },
+    "MISO S1073": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001026095",
+      "evidence": "A 75 MW surplus request by Big Rivers on the Hopkins to Reid 161 kV line, in service August 2026. It matches KYMEA Energy Center I, 75.2 MW of engines at Madisonville that connect through Big Rivers.",
+      "urls": [
+        "https://www.misoenergy.org/planning/resource-utilization/GI_Queue/gi-interactive-queue/"
+      ]
+    },
+    "PJM AH1-721 - moved to TC2": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000103935",
+      "evidence": "East Kentucky Power Cooperative's 786 MW gas request on the Laurel to Cooper 161 kV line is the Cooper combined cycle unit, a GEM unit at Cooper power station.",
+      "urls": [
+        "https://www.pjm.com/planning/service-requests/serial-service-request-status"
+      ]
+    },
+    "PJM AH1-721": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000103935",
+      "evidence": "The same Cooper combined cycle request as the serial row, now in transition cycle 2. A GEM unit at Cooper power station.",
+      "urls": [
+        "https://www.pjm.com/planning/m/cycle-service-request-status"
+      ]
+    },
+    "PJM C01-1131": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001062558",
+      "evidence": "Kentucky Power's 479 MW gas request at Baker 345 kV in Lawrence County, in service September 2030. It matches the 480 MW of turbines in Kentucky Power's plan, which GEM holds as KPCO 2023 IRP power station.",
+      "urls": [
+        "https://www.pjm.com/planning/m/cycle-service-request-status"
+      ]
+    },
+    "PJM C01-1227": {
+      "decision": "add",
+      "record_id": "us-ky:new:ekpc-mason-county-gas-plant-pjm-c01-1227",
+      "evidence": "East Kentucky Power Cooperative's 780 MW gas request on the Spurlock to Meldahl Dam line in Mason County. Added as a new plant.",
+      "urls": [
+        "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1227",
+        "https://interconnection.fyi/project/pjm-c01-1227"
+      ]
+    },
+    "PJM C01-1228": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001025720",
+      "evidence": "East Kentucky Power Cooperative's 212 MW gas request on the Casey County to Liberty line is Liberty Station, a GEM plant under construction.",
+      "urls": [
+        "https://www.pjm.com/planning/m/cycle-service-request-status"
+      ]
+    },
+    "PJM C01-1325": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001083287",
+      "record_id": "us-ky:plant:qa-duplicate-3",
+      "evidence": "Appalachian Power's 1,046 MW gas request at Baker 345 kV fits the combined cycle need in its 2025 resource plan, West Virginia case 25-0859-E-IRP, PDF pages 74 and 103, which GEM holds as two placeholders with guessed West Virginia points. Its 1,045 MW request C01-1326 in Wayne County, West Virginia is the other site option or the second plant.",
+      "urls": [
+        "https://www.psc.state.wv.us/scripts/WebDocket/ViewDocument.cfm?CaseActivityID=649716&NotType=WebDocket",
+        "https://www.appalachianpower.com/lib/docs/business/b2b/rfp/APCO/2026-CombinedCycleRFP/APCo_CC_RFP_2026_8_14_26.pdf",
+        "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1325",
+        "https://interconnection.fyi/project/pjm-c01-1325"
+      ]
+    },
+    "TVA 417": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000103946",
+      "evidence": "TVA request 417, 780 MW of gas at the Paradise 500 kV station in Muhlenberg County, queued February 2020 with an in service date of October 2022, is the three Paradise combustion turbines, units 4, 5 and 6 at 250 MW each, already in GEM. Source: Berkeley Lab Queued Up data file, tab 03. Complete Queue Data, row for TVA 417.",
+      "urls": [
+        "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx",
+        "https://wpln.org/wp-content/uploads/sites/7/2025/05/TVA-Transmission-Queue-January-2025.pdf"
+      ]
+    },
+    "TVA 55": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000402323",
+      "evidence": "TVA request 55, 640 MW in Marshall County, queued August 1999 and shown as operating with fuel listed as other, is the Marshall combustion turbine plant, eight 86 MW units already in GEM. Source: Berkeley Lab Queued Up data file, tab 03. Complete Queue Data, row for TVA 55.",
+      "urls": [
+        "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx"
+      ]
+    },
+    "TVA 628": {
+      "decision": "add",
+      "record_id": "us-ky:new:tva-628-todd-county-gas-plant",
+      "evidence": "TVA request 628, 1,600 MW of gas in Todd County on the Paradise to Montgomery 500 kV line, queued June 2024 with a 2030 in service date. No company is named. Staged as a new plant with owner blank. Sources: Berkeley Lab Queued Up data file, tab 03. Complete Queue Data, row for TVA 628, and the TVA transmission queue of January 2025 posted by WPLN.",
+      "urls": [
+        "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx",
+        "https://wpln.org/wp-content/uploads/sites/7/2025/05/TVA-Transmission-Queue-January-2025.pdf"
+      ]
+    },
+    "TVA 657": {
+      "decision": "update",
+      "plant_id": "L100000103946",
+      "record_id": "L100000103946:G100000401620:qa-capacity-tva-657",
+      "evidence": "TVA request 657 is a 60 MW increase at the Paradise combined cycle plant, project type Upgrade, due February 2030. It is an uprate of the existing unit, not a new unit. Staged as a question on Paradise CC1. Source: Berkeley Lab Queued Up data file, tab 03. Complete Queue Data, row for TVA 657.",
+      "urls": [
+        "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx",
+        "https://wpln.org/wp-content/uploads/sites/7/2025/05/TVA-Transmission-Queue-January-2025.pdf"
+      ]
+    },
+    "LGEE LGE-CS2025-002": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000103945",
+      "evidence": "LG&E request CS2025-002, 680 MW of gas at the Mill Creek 345 kV substation, is Mill Creek unit 6, 680 MW, already in GEM. Source: Berkeley Lab Queued Up data file, tab 03. Complete Queue Data, row for LGE-CS2025-002.",
+      "urls": [
+        "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx"
+      ]
+    },
+    "LGEE LGE-GIS-2022-003": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000103945",
+      "evidence": "LG&E request GIS-2022-003, 660 MW of gas at the Mill Creek 345 kV bus, is Mill Creek unit 5, the combined cycle under construction, already in GEM at 740 MW. Source: Berkeley Lab Queued Up data file, tab 03. Complete Queue Data, row for LGE-GIS-2022-003.",
+      "urls": [
+        "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx"
+      ]
+    },
+    "LGEE LGE-GIS-2023-002": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000103937",
+      "evidence": "KU request GIS-2023-002, 660 MW of gas at the Brown North 345 kV substation in Mercer County, is E.W. Brown unit 12, the planned combined cycle already in GEM. Source: Berkeley Lab Queued Up data file, tab 03. Complete Queue Data, row for LGE-GIS-2023-002.",
+      "urls": [
+        "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx"
+      ]
+    },
+    "LGEE LGE-GIS-2024-002": {
+      "decision": "already_in_gem",
+      "plant_id": "L100001026095",
+      "evidence": "Request GIS-2024-002, 75 MW of gas on the Madisonville to Earlington 69 kV line in Hopkins County, is KYMEA Energy Center I, 75.2 MW, already in GEM. Source: Berkeley Lab Queued Up data file, tab 03. Complete Queue Data, row for LGE-GIS-2024-002.",
+      "urls": [
+        "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx"
+      ]
+    },
+    "LGEE LGE-GIS-2024-006": {
+      "decision": "update",
+      "plant_id": "L100000103932",
+      "record_id": "L100000103932:G100000401618:qa-capacity-lge-gis-2024-006",
+      "evidence": "LG&E request GIS-2024-006, 94 MW of gas and oil at the Cane Run combustion turbine substation, agreement signed, in service May 2026. No filing names what it is. Staged as a question on Cane Run. Source: Berkeley Lab Queued Up data file, tab 03. Complete Queue Data, row for LGE-GIS-2024-006.",
+      "urls": [
+        "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx"
+      ]
+    },
+    "LGEE LGE-GIS-2010-001": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000103932",
+      "evidence": "LG&E request GIS-2010-001, 690 MW of gas at the Cane Run switching station, in service March 2015, is Cane Run unit 7, the combined cycle already in GEM. Source: Berkeley Lab Queued Up data file, tab 03. Complete Queue Data, row for LGE-GIS-2010-001.",
+      "urls": [
+        "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx"
+      ]
+    },
+    "LGEE LGE-GIS-2013-001": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000103932",
+      "evidence": "LG&E request GIS-2013-001, 691 MW of gas and oil at the Cane Run switching station, in service March 2015, is a second request for Cane Run unit 7, already in GEM. Source: Berkeley Lab Queued Up data file, tab 03. Complete Queue Data, row for LGE-GIS-2013-001.",
+      "urls": [
+        "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx"
+      ]
+    },
+    "LGEE LGE-GIS-2009-001": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000402189",
+      "evidence": "Request GIS-2009-001, 123 MW of gas in McCracken County on the Grahamville to South Paducah 161 kV line, in service May 2010, is the Paducah Power System plant, two 60 MW units from 2010, already in GEM. Source: Berkeley Lab Queued Up data file, tab 03. Complete Queue Data, row for LGE-GIS-2009-001.",
+      "urls": [
+        "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx"
+      ]
+    },
+    "LGEE LGE-GIS-2009-004": {
+      "decision": "already_in_gem",
+      "plant_id": "L100000103951",
+      "evidence": "KU request GIS-2009-004, 785 MW at the Trimble County 345 kV substation, queued December 2009 with an in service date of October 2010, matches Trimble County unit 2, the coal unit that started in 2011, although the file lists the fuel as gas. The Trimble gas turbines are already in GEM. No new gas unit at Trimble is named in any filing. Source: Berkeley Lab Queued Up data file, tab 03. Complete Queue Data, row for LGE-GIS-2009-004.",
+      "urls": [
+        "https://emp.lbl.gov/sites/default/files/2026-05/LBNL_Ix_Queue_Data_File_thru2025.xlsx"
+      ]
+    }
+  },
+  "dedup": {
+    "us-ky:new:paducah-american-energy-hub-gas-plant": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-05",
+      "evidence": "The McCracken County GEM plants are Shawnee Fossil Plant, a TVA coal plant, and PPS power plant No 1, Paducah Power's 120 MW engine plant. Neither is NextEra's and neither is at the former gaseous diffusion plant site."
+    },
+    "us-ky:new:ekpc-mason-county-gas-plant-pjm-c01-1227": {
+      "decision": "not_a_duplicate",
+      "checked": "2026-11-05",
+      "evidence": "The only Mason County GEM plant is Spurlock power station, whose rows are the four coal units and their gas co-firing steps. The 780 MW request is a new plant; a question asks whether it belongs at Spurlock."
+    }
+  },
+  "irp_plans": {
+    "plan Big Rivers Electric Corporation": {
+      "pages": "All 565 PDF pages. Preferred plan: section 6.11.1 on PDF pages 281 to 282; action plan on PDF page 283; the other portfolios' new gas tables in sections 6.9 and 6.10 on PDF pages 251 to 280.",
+      "additions": [],
+      "options": [
+        {
+          "what": "Retire the 65 MW Reid combustion turbine without replacing it (action plan item 1, PDF page 283)",
+          "plant_id": "L100000103947"
+        },
+        {
+          "what": "Green Fuel Oil Backup Project, fuel oil backup for the two Sebree gas units (PDF pages 281 to 283)",
+          "plant_id": "L100000103943"
+        },
+        {
+          "what": "The 635 MW gas plant from the 2023 plan is gone from the 2026 preferred plan",
+          "plant_id": "L100001062552"
+        },
+        {
+          "what": "Other portfolios add 250 to 300 MW of F-frame combustion turbines and 150 to 500 MW of combined cycle when Green or Wilson retires (PDF pages 255 to 264). No site, year or company decision is named.",
+          "why_not": "These are model results in portfolios the plan did not choose. No site is named, so there is nothing to add or watch."
+        }
+      ],
+      "evidence": "Big Rivers' 2026 plan, filed September 29, 2026 in case 2026-00268, chooses the Model Optimization Reference Case portfolio (PDF page 281). It keeps Green and Wilson running, adds fuel oil backup at Green and builds no new gas unit. That drops the 635 MW plant from the 2023 plan, which GEM carries as BREC 2023 IRP power station; a question in this batch asks whether to cancel it. The action plan on PDF page 283 also asks the commission to retire the Reid turbine; the Reid and Green questions in this batch cover both."
+    },
+    "plan Kentucky Power Company": {
+      "pages": "All 1,183 PDF pages of Volume A. Preferred plan: executive summary on PDF pages 13 to 16 and section on PDF pages 173 to 175; the combined cycle portfolio on PDF page 159.",
+      "additions": [
+        {
+          "what": "480 MW of new gas combustion turbines in 2029 (PDF pages 15 and 175)",
+          "plant_id": "L100001062558"
+        }
+      ],
+      "options": [
+        {
+          "what": "The combined cycle portfolio adds a 418 MW 1x1 combined cycle (PDF page 159). The utility's later certificate case 2026-00324 is a combined cycle in Lawrence County.",
+          "plant_id": "L100001062558"
+        }
+      ],
+      "evidence": "Kentucky Power's 2022 plan, filed March 20, 2023 in case 2023-00092, is still the newest; the next one is due March 2027. The preferred plan adds 480 MW of gas combustion turbines in 2029 (executive summary, PDF page 15). GEM has this as KPCO 2023 IRP power station. A question in this batch asks whether to fold that placeholder into the Lawrence County combined cycle in certificate case 2026-00324."
+    },
+    "plan Duke Energy Kentucky": {
+      "pages": "All 160 PDF pages. Preferred plan: Figure 1.2 on PDF page 4; the alternative plans on PDF pages 5 to 11.",
+      "additions": [
+        {
+          "what": "East Bend unit 2 dual fuel conversion in 2029 (Figure 1.2, PDF page 4)",
+          "plant_id": "L100000103938"
+        },
+        {
+          "what": "664 MW 1x1 combined cycle at East Bend from 2039 (Figure 1.2, PDF page 4)",
+          "plant_id": "L100000103938"
+        }
+      ],
+      "options": [
+        {
+          "what": "588 MW combined cycle with carbon capture at East Bend from 2036, in the plan without the federal carbon rule (Figure 1.3, PDF page 6)",
+          "plant_id": "L100000103938"
+        }
+      ],
+      "evidence": "Duke Energy Kentucky's 2024 plan, filed June 21, 2024 in case 2024-00197, is the newest. Case 2026-00167 only sets the date for the next one, due June 2027. Figure 1.2 on PDF page 4 shows East Bend running on coal and gas from 2029 and a 664 MW combined cycle from 2039; both are East Bend units in GEM. The 588 MW figure on PDF page 6 belongs to an alternative plan, so GEM's 664 MW stays. The Woodsdale turbines are in Ohio."
+    },
+    "plan East Kentucky Power Cooperative": {
+      "pages": "All 245 PDF pages. Resource additions on PDF pages 26 to 27 (Figure 1) and the action plan from PDF page 27; certificate cases on PDF pages 156 to 161.",
+      "additions": [
+        {
+          "what": "Liberty engine plant, 214 MW, Casey County (case 2024-00310)",
+          "plant_id": "L100001025720"
+        },
+        {
+          "what": "Cooper 745 MW combined cycle (case 2024-00370)",
+          "plant_id": "L100000103935"
+        },
+        {
+          "what": "Gas co-firing at Cooper unit 2",
+          "plant_id": "L100000103935"
+        },
+        {
+          "what": "Gas co-firing at Spurlock units 1 to 4",
+          "plant_id": "L100000103950"
+        }
+      ],
+      "options": [],
+      "evidence": "East Kentucky Power Cooperative's 2025 plan, filed April 1, 2025 in case 2025-00087, puts every addition from its three certificate cases into the base case (PDF page 26): the 214 MW Liberty engine plant, the 745 MW Cooper combined cycle and gas co-firing at Spurlock 1 to 4 and Cooper 2. All are in GEM. Figure 1 on PDF page 27 shows no other new gas. The cooperative's PJM request at Spurlock is answered separately as EKPC Mason County gas plant."
+    },
+    "plan Louisville Gas and Electric Company and Kentucky Utilities Company": {
+      "pages": "All 136 PDF pages of Volume I. Recommended plan: resource tables on PDF pages 114 to 115; summary on PDF pages 8 to 33.",
+      "additions": [
+        {
+          "what": "Mill Creek 5 combined cycle in 2027",
+          "plant_id": "L100000103945"
+        },
+        {
+          "what": "Combined cycle in 2030, Brown 12",
+          "plant_id": "L100000103937"
+        },
+        {
+          "what": "Combined cycle in 2031, Mill Creek 6",
+          "plant_id": "L100000103945"
+        }
+      ],
+      "options": [],
+      "evidence": "The LG&E and KU 2024 plan, filed October 18, 2024 in case 2024-00326, is the newest; the next one is due October 2027. The tables on PDF pages 114 and 115 list Mill Creek 5 in 2027 and say the recommended plan adds combined cycle units in 2030 and 2031: Brown 12 and Mill Creek 6, both in GEM. No new simple cycle turbine is in the recommended plan."
+    },
+    "plan Kentucky Municipal Energy Agency": {
+      "pages": "All 493 PDF pages. Preferred plan on PDF page 348; executive summary on PDF pages 11 to 37; the other plans, including Plan 4, on PDF pages 351 to 435; Section 16.2 on PDF pages 452 to 455.",
+      "additions": [
+        {
+          "what": "75 MW engine plant, KYMEA Energy Center I (preferred plan, PDF page 348)",
+          "plant_id": "L100001026095"
+        }
+      ],
+      "options": [
+        {
+          "what": "KYMEA Energy Center II, 92 MW (executive summary, PDF page 36)",
+          "record_id": "us-ky:plant:monitor-4"
+        },
+        {
+          "what": "Growing Energy Center I to 129 MW after 2029 (Section 16.2, PDF pages 452 to 455)",
+          "record_id": "us-ky:plant:monitor-4"
+        }
+      ],
+      "names_checked": "KYMEA Energy Center II is not in GEM; it is a plan option, watched in us-ky:plant:monitor-4. 'Fossil Fuel-Fired Power Plant' on PDF page 263 is a rule title, not a site.",
+      "evidence": "The Kentucky Municipal Energy Agency's IRP2023, approved by its board in January 2025, is posted on its own site, not filed with the commission. The preferred plan adds 75 MW of engines (PDF page 348); that is Energy Center I, in GEM at 75.2 MW and under construction. The plan also studies a 92 MW Energy Center II and an Energy Center I expansion to 129 MW. Neither is chosen, so both are watched."
+    },
+    "plan Tennessee Valley Authority": {
+      "pages": "All 246 PDF pages of the final Volume 1. Table 4-1 on PDF page 105 (printed page 4-3) and the executive summary table on PDF page 14.",
+      "additions": [],
+      "options": [
+        {
+          "what": "4 to 13 GW of combined cycle and 3 to 13 GW of combustion turbines system-wide by 2050 (Table 4-1)",
+          "why_not": "The plan names no site and no Kentucky plant. Projects come later as site-specific environmental reviews."
+        }
+      ],
+      "evidence": "TVA's board approved the final 2026 plan in August 2026. Table 4-1 on PDF page 105 sets system-wide ranges for new gas: 4 to 13 gigawatts of combined cycle and 3 to 13 of combustion turbines. The plan names no site, in Kentucky or anywhere else. TVA's Kentucky gas projects come through its own environmental reviews."
+    },
+    "plan Henderson Municipal Power & Light": {
+      "pages": "All 33 PDF pages. Table 5 on PDF page 23; portfolios on PDF pages 25 to 27; recommendations in section 6 on PDF pages 29 to 30.",
+      "additions": [],
+      "options": [
+        {
+          "what": "36 MW engine plant in 2030, recommended for development now (section 6, PDF pages 29 to 30)",
+          "record_id": "us-ky:plant:monitor-5"
+        },
+        {
+          "what": "79 MW share of a larger combustion turbine plant in 2036 (Table 5, PDF page 23)",
+          "record_id": "us-ky:plant:monitor-5"
+        }
+      ],
+      "evidence": "Henderson Municipal Power and Light's 2026 plan, dated March 31, 2026, is not on its own site; a copy was posted by the Hendersonian in May 2026. Section 6 recommends starting development of a 36 MW engine plant for 2030 (PDF pages 29 to 30). That is under the 50 MW threshold, so it is watched in us-ky:plant:monitor-5 with the 2036 turbine share."
+    }
+  }
+}

@@ -8,13 +8,53 @@
       "kind": "state",
       "slug": "mississippi",
       "quarter": "q4-2026",
-      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+      "csv": "scripts/gem_export_gogpt_scoped.csv"
     },
     "generated": "2026-10-27T11:46:30-04:00",
     "mode": "update",
     "counts": {
-      "records": 0
+      "records": 1
     }
   },
-  "records": []
+  "records": [
+    {
+      "gem_unit_id": "G100001101182",
+      "gem_plant_id": "L100001088949",
+      "plant_name": "Amazon Web Services Canton Data Center power station",
+      "unit_name": "1",
+      "country": "United States",
+      "record_id": "L100001088949:G100001101182:qa-status-1",
+      "concern_type": "Status",
+      "fields": {},
+      "question": "Should part of Canton unit 1 be operating, since five data center buildings at the site are already running?",
+      "finding": "Unit 1 holds all 326 large backup generators for the campus and is listed as construction. Amazon told Mississippi Today in June 2026 that five buildings are operating at Canton, and a newsletter citing the county economic development authority says they were running by summer 2025. The generators for those buildings are very likely installed and in service.",
+      "recommendation": "Split unit 1 into an operating unit for the first five buildings and a construction unit for the rest once a source gives the number of generators per building. Until then, keep unit 1 as construction and add the two links below to its Status Data Source box.",
+      "researcher_notes": "The air permit does not say how the 326 generators are spread across the 17 planned buildings, which is why the plant has one unit for all of them. Sources are the Mississippi Today article of June 9, 2026 and the Measured AI newsletter on Amazon's Mississippi data centers.",
+      "refs": {
+        "links": [
+          "https://mississippitoday.org/2026/06/09/amazon-data-centers-mississippi/",
+          "https://measuredai.substack.com/p/amazon-mississippi-data-centers"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://mississippitoday.org/2026/06/09/amazon-data-centers-mississippi/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Mississippi Today article of June 9, 2026. An Amazon spokesperson says five buildings are operating at the Canton site."
+        },
+        {
+          "url": "https://measuredai.substack.com/p/amazon-mississippi-data-centers",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Measured AI newsletter on Amazon's Mississippi data centers. Citing the Madison County Economic Development Authority, it says Amazon broke ground on the Canton campus in May 2024 and had foundation work under way on four of the five Phase I buildings by July 31, 2024, and that five buildings were operating by summer 2025."
+        }
+      ],
+      "checks": [
+        10
+      ]
+    }
+  ]
 }

@@ -54,18 +54,14 @@ def test_scope_brief_has_no_data_center_hold():
     assert "Data Center power station" in text
 
 
-def test_validation_optional_on_coal_plant_and_conversion(tmp_path):
+def test_validation_items_are_required_on_coal_plants_and_conversions():
     rows = [{"GEM unit ID": "G1", "Unit name": "1", "Conversion from/replacement of (fuel)": ""},
             {"GEM unit ID": "G2", "Unit name": "2", "Conversion from/replacement of (fuel)": "coal: bituminous"}]
     item = lambda uid: (uid, {"task": "Fix it.", "fields": [], "checks": [7], "section": "Other"})
-    unit, plant = bsb.validation_tasks([item("G1"), item("G2")], rows)
-    assert not unit["G1"][0][0].startswith("Optional")
-    assert unit["G2"][0][0].startswith("Optional under the manual")
-    unit, plant = bsb.validation_tasks([item("G1"), item(None)], rows, coal_plant=True)
-    assert unit["G1"][0][0].startswith("Optional") and plant[0][0].startswith("Optional")
-    f = tmp_path / "all.csv"
-    f.write_text("GEM location ID,Fuel\nL1,coal: bituminous\nL2,fossil gas: natural gas\n")
-    assert bsb.coal_plant_ids(f) == {"L1"}
+    unit, plant = bsb.validation_tasks([item("G1"), item("G2"), item(None)], rows)
+    assert unit["G1"][0][0] == "Fix it." and unit["G2"][0][0] == "Fix it."
+    assert plant[0][0] == "Fix it."
+    assert not hasattr(bsb, "OPTIONAL_VALIDATION")
 
 
 def test_december_rule_wording():

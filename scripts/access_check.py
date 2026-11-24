@@ -74,6 +74,19 @@ _SOFT_ERROR = re.compile(r"<title>[^<]*(?:not found|error|access denied|forbidde
 
 # ----------------------------------------------------------------- checks ---
 
+_FRAME_RX = re.compile(r"<\s*(frameset|frame|iframe)\b", re.I)
+FRAME_TEXT_MIN = 300   # visible characters a framed page needs to count as content
+
+
+def _frame_only(html: str) -> bool:
+    """True for a page that is a frame or iframe around another page and has almost no
+    visible text of its own, so a phrase such as 'OASIS' in its title proves nothing."""
+    if not _FRAME_RX.search(html or ""):
+        return False
+    body = re.sub(r"(?is)<(script|style|noscript|title|head)\b.*?</\1>", " ", html)
+    visible = re.sub(r"\s+", " ", re.sub(r"(?s)<[^>]+>", " ", body)).strip()
+    return len(visible) < FRAME_TEXT_MIN
+
 def check_kind(kind: str, raw: bytes, text: str, content_type: str, min_rows: int | None = None,
                ladder_pdf: bool = False) -> str:
     """'' when the body is the promised kind, else the reason it is not. `ladder_pdf` says
@@ -118,6 +131,9 @@ def check_kind(kind: str, raw: bytes, text: str, content_type: str, min_rows: in
             return "an empty body"
         if _SOFT_ERROR.search(text[:4000]):
             return f"a soft error page (title {re.search(r'<title>([^<]*)', text, re.I).group(1).strip()!r})"
+        if _frame_only(text):
+            return ("a frame around another page with almost no text of its own (the OATI OASIS "
+                    "shell is one); point the entry at the documents the frame loads")
         return ""
     return f"unknown kind {kind!r}: use one of {', '.join(KINDS)}"
 

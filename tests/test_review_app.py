@@ -859,16 +859,24 @@ def test_validation_errors_follow_the_answer_topic():
     assert vr.errors_for(status, [], tasks) == ['The unit\'s status history has a "mothballed" step with no date. (No longer on the current validation report.)']
 
 
-def test_chrome_rules_match_the_sop():
-    """The copy-for-Chrome message carries the rules of the browser-edits SOP §8 word for word (the
-    page's copy lives in the shared app, so a change to either is made in both)."""
+def test_chrome_message_points_at_the_public_instructions():
+    """The copy-for-Chrome message carries only the plant's specifics and points at the public
+    instructions page, docs/chrome_apply_instructions.md, for how to fill in the form. The message
+    names that page's sections by number, so those sections must exist under those numbers, and the
+    page is the one copy of the how-to: the shared app holds no rules of its own."""
     import re
     from review_app import GEM_REVIEW_APP
-    sop = (ROOT / "docs" / "sops" / "database-browser-edits.md").read_text(encoding="utf-8")
-    block = re.search(r"## §8.*?```\n(.*?)```", sop, re.S).group(1)
-    rules = [re.sub(r"^\d+\. ", "", ln) for ln in block.strip().splitlines()]
-    assert len(rules) == 7
+    doc = ROOT / "docs" / "chrome_apply_instructions.md"
+    text = doc.read_text(encoding="utf-8")
     ext = (GEM_REVIEW_APP / "trackers" / "gogpt" / "web" / "ext.js").read_text(encoding="utf-8")
-    js_rules = re.search(r"var CHROME_RULES = \[(.*?)\n    \];", ext, re.S).group(1)
-    js_rules = [m for m in re.findall(r'^\s*"(.*)",?$', js_rules, re.M)]
-    assert js_rules == rules
+    url = re.search(r'var INSTRUCTIONS_URL = "([^"]+)"', ext).group(1)
+    assert url == "https://raw.githubusercontent.com/bairdlangenbrunner/gogpt-researcher/main/docs/chrome_apply_instructions.md"
+    heads = dict(re.findall(r"^## (\d+)\. (.+)$", text, re.M))
+    assert heads["9"].startswith("New units and Research status")
+    assert heads["11"].startswith("When done")
+    for label in ("APPLIER", "DATE", "COUNTRY", "PLANT", "EDITS", "NEW UNITS", "NEW PLANT", "RESEARCH STATUS", "NOT INCLUDED", "ENTITIES"):
+        assert label in ext and label in text, label
+    for gone in ("CHROME_RULES", "UNIT_NAMES", "var FORM ", "FORM_DS"):
+        assert gone not in ext, gone
+    sop = (ROOT / "docs" / "sops" / "database-browser-edits.md").read_text(encoding="utf-8")
+    assert "chrome_apply_instructions.md" in sop and "raw.githubusercontent.com" in sop

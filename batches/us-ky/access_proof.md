@@ -1,6 +1,6 @@
 # Access proof: us-ky
 
-Checked 2026-11-04T17:02:55. 48 of 48 sources proven; 0 behind a person's action.
+Checked 2026-11-07T14:30:37. 49 of 49 sources proven; 0 behind a person's action.
 
 | id | ok | route | status | kind | bytes | reason or person |
 |---|---|---|---|---|---|---|
@@ -23,6 +23,7 @@ Checked 2026-11-04T17:02:55. 48 of 48 sources proven; 0 behind a person's action
 | industrial-cogeneration | yes | curl | 200 | html | 93611 |  |
 | kentucky-power-news | yes | curl | 200 | html | 186842 |  |
 | kymea | yes | curl | 200 | html | 221481 |  |
+| lbnl-queued-up | yes | cf_impersonate | 200 | html | 50388 |  |
 | lge-ku-newsroom | yes | curl | 200 | html | 271559 |  |
 | lgee-oasis | yes | insecure_tls | 200 | html | 444 |  |
 | local-planning-records | yes | curl | 200 | pdf | 197993 |  |

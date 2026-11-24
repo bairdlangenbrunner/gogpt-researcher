@@ -489,7 +489,12 @@ def load_irp(irp_path, staging_dir=None):
         sp = Path(staging_dir) / "irp_summary.json"
         if sp.exists():
             summary = json.loads(sp.read_text(encoding="utf-8"))
-    return {"data": data, "summary": summary, "path": str(path)}
+    plans = {}
+    if staging_dir is not None:
+        pp = Path(staging_dir).parent / "harvest" / "irp_plans.json"
+        if pp.exists():
+            plans = json.loads(pp.read_text(encoding="utf-8"))
+    return {"data": data, "summary": summary, "path": str(path), "plans": plans}
 
 
 def irp_utility_of(irp, rec):
@@ -573,10 +578,17 @@ def irp_notes_rows(lanes, irp, quarter=None):
         for rec in lanes.get(lane, []):
             if rec.get("irp"):
                 staged.setdefault(irp_utility_of(irp, rec), []).append((lane, rec))
+    # the plans irp_plans.py read in full: the draft names the plan actually read, and the
+    # tab's stale or missing rows become a correction line (the repo never writes the tab)
+    read = {u.get("sheet"): u for u in (irp.get("plans") or {}).get("utilities") or [] if u.get("sheet")}
+    fixes = {}
+    for c in (irp.get("plans") or {}).get("sheet_corrections") or []:
+        fixes.setdefault(c.get("utility"), []).append(c.get("line") or "")
     out = []
     for row in data.get("utilities") or []:
         util = row.get("utility") or ""
         plans = staged.get(util, [])
+        got = read.get(util)
         parts = []
         for lane, rec in plans:
             name = rec.get("plant_name") or rec.get("unit_name") or "?"
@@ -589,8 +601,9 @@ def irp_notes_rows(lanes, irp, quarter=None):
                 parts.append(f"{name} on the watch list")
             elif lane == "qa":
                 parts.append(f"a question about {name}")
-        plan = row.get("irp_year") or "the plan"
-        draft = (f"{quarter}: read {plan}" + (" (draft)" if row.get("is_draft") else "") + ". ")
+        plan = (got.get("plan") if got else None) or row.get("irp_year") or "the plan"
+        draft = (f"{quarter}: read {plan}" + (f" (case {got['case']})" if got and got.get("case") else "")
+                 + (" (draft)" if row.get("is_draft") and not got else "") + " in full. ")
         if parts:
             draft += "Staged in this batch: " + "; ".join(parts) + "."
         else:
@@ -602,12 +615,21 @@ def irp_notes_rows(lanes, irp, quarter=None):
             latest = " ".join(x for x in (latest.get("quarter"), latest.get("text")) if x)
         out.append([util, row.get("irp_year", ""), "yes" if row.get("is_draft") else "",
                     "; ".join(row.get("links") or []), row.get("next_irp_due", ""),
-                    latest, len(plans), draft])
+                    latest, len(plans), draft, " ".join(fixes.get(util, []))])
+    for u in (irp.get("plans") or {}).get("utilities") or []:
+        if u.get("sheet"):
+            continue
+        name = u.get("utility") or ""
+        recs = staged.get(name, [])
+        draft = f"{quarter}: read {u.get('plan') or 'the plan'} in full."
+        out.append([name, u.get("year", ""), "", "; ".join(d.get("url", "") for d in u.get("documents") or []),
+                    u.get("next_due", ""), "", len(recs), draft,
+                    "Not on the tab: add a row for this utility. " + (u.get("sheet_note") or "")])
     return out
 
 
 IRP_NOTES_HEADER = ["utility", "irp_year", "is_draft", "plan_links", "next_irp_due",
-                    "latest_note_on_tab", "records_from_this_plan", "draft_notes_line"]
+                    "latest_note_on_tab", "records_from_this_plan", "draft_notes_line", "sheet_correction"]
 
 
 def ref_col_for(value_col):
@@ -652,9 +674,20 @@ def ref_col_for(value_col):
         "Captive non-industry use": "Captive Data Source",
         "Employment Notes": "Employment Notes Data Source",
         "Conversion/replacement?": "Conversion/replacement Data Source",
+        **{c: "Conversion/replacement Data Source" for c in CONVERSION_DETAIL_COLUMNS},
     }
     return special.get(value_col, f"{value_col} Data Source")
 
+
+# the four columns that say which unit and fuel a conversion or replacement came
+# from or went to; the validation report asks for them, and they share the
+# Conversion/replacement Data Source box with Conversion/replacement?
+CONVERSION_DETAIL_COLUMNS = (
+    "Conversion from/replacement of (GEM unit ID)",
+    "Conversion from/replacement of (fuel)",
+    "Conversion to (GEM unit ID)",
+    "Conversion to (fuel)",
+)
 
 PLACE_COLUMNS = ("City", "State/Province", "Local area (taluk, county)",
                  "Major area (prefecture, district)")
@@ -666,7 +699,7 @@ def value_cols_for(ds_col):
     "Fuel Data Source" -> Fuel. The reverse of ref_col_for, for a finding that
     was keyed on the box instead of the value."""
     seen, out = set(), []
-    for col in list(RESEARCH_FIELDS) + list(PLACE_COLUMNS):
+    for col in list(RESEARCH_FIELDS) + list(PLACE_COLUMNS) + list(CONVERSION_DETAIL_COLUMNS):
         if col in seen:
             continue
         seen.add(col)

@@ -1,6 +1,6 @@
 # Duplicate check, us-ok
 
-Run 2026-11-05 12:08 against every combustion plant in the export, any fuel. A plant with any line below needs an answer in coverage.json under dedup.
+Run 2026-11-06 13:09 against every combustion plant in the export, any fuel. A plant with any line below needs an answer in coverage.json under dedup.
 
 ## OKC2 Scale Datacenter power station
 
@@ -50,7 +50,6 @@ No GEM plant of any fuel shares its name or sits in an unknown county. No other 
 ## SPP GEN-2025-SR23 Mustang diesel engine power station
 
 - Same name: Mustang (OK) power station (fossil gas, operating), GEM location L100000402164.
-- In this batch, same name: Mustang (OK) power station (L100000402164:plant:monitor-1).
 - In this batch, same name: Mustang (OK) power station (L100000402164:G100000403312:status).
 - In this batch, same name: Mustang (OK) power station (L100000402164:G100000403312:capacity-mw).
 - In this batch, same name: Mustang (OK) power station (L100000402164:G100000403312:backup-power).
@@ -73,11 +72,6 @@ No GEM plant of any fuel shares its name or sits in an unknown county. No other 
 ## SPP GEN-2024-340 Creek County gas power station
 
 - Nearby: Bristow Energy Center (fossil gas, pre-construction, same county), GEM location L100001089274.
-
-## SPP GEN-2024-334 Kay County gas power station
-
-- Nearby: Charles D. Lamb energy center (fossil gas, operating, same county), GEM location L100000402166.
-- Nearby: Ponca City power station (fossil gas, operating, same county), GEM location L100000402167.
 
 ## SPP GEN-2024-321 Seminole gas power station
 
@@ -116,6 +110,7 @@ No GEM plant of any fuel shares its name or sits in an unknown county. No other 
 - In this batch, same name: Muskogee Generating Station (L100000104124:G100001017850:backup-power).
 - In this batch, same name: Muskogee Generating Station (L100000104124:plant:owner-s).
 - In this batch, same name: Muskogee Generating Station (L100000104124:plant:location-source).
+- In this batch, same name: Muskogee Generating Station (L100000104124:G100001017849:ccs-attachment).
 
 ## SPP GEN-2024-128 Anadarko gas power station
 
@@ -161,3 +156,4 @@ No GEM plant of any fuel shares its name or sits in an unknown county. No other 
 - In this batch, same name: Muskogee Generating Station (L100000104124:G100001017850:backup-power).
 - In this batch, same name: Muskogee Generating Station (L100000104124:plant:owner-s).
 - In this batch, same name: Muskogee Generating Station (L100000104124:plant:location-source).
+- In this batch, same name: Muskogee Generating Station (L100000104124:G100001017849:ccs-attachment).

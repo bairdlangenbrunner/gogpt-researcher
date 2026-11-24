@@ -1,0 +1,307 @@
+{
+ "meta": {
+  "plant_id": "L100000402189",
+  "plant_name": "PPS power plant No 1",
+  "state": "Kentucky",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T19:35:00-05:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000403359",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 56556, generator 1, status operating, nameplate 60.0 MW, operating June 2010, with no planned retirement. The Kentucky air permit renewal issued in July 2024 also covers the plant. I found no retirement, mothballing or sale."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Pratt & Whitney FT8-3 SwiftPac 60",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Kentucky Division for Air Quality Title V permit V-23-038, issued July 2024 (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679), lists the turbines as Pratt and Whitney Power Systems FT8-3 SwiftPac 60 units. Each unit is one pair of turbines, with a nominal package output of 60.3 MW."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679",
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647678"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647678",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The permit summary (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647678) calls the plant a natural gas peaking power plant that sells power. The only emergency engine is a 1,490 horsepower diesel generator for the site, which is not a unit in the tracker. So no is correct."
+    },
+    "Number Of Engines": {
+     "value": "2",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Kentucky Division for Air Quality Title V permit V-23-038 from July 2024 (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679) lists emission unit 01 as one pair of turbines, EU-01a and EU-01b, with a nominal package output of 60.3 MW. So each tracker unit has two engines. The permit does not give a rating for each turbine."
+    },
+    "Operator(s)": {
+     "value": "Paducah Power System",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The same permit (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679) names Paducah Power System as the permittee for the plant. The permit does not use the word operator, so this is implied by the permittee."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Capacity Per Engine"
+   ],
+   "notes": "Still operating. No retirement, planned retirement, mothballing or change of owner was found in the EIA table, the 2024 permit or the Paducah-McCracken comprehensive plan. The rating of each turbine is not stated in the permit."
+  },
+  {
+   "gem_unit_id": "G100000403360",
+   "unit_name": "2",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 56556, generator 2, status operating, nameplate 60.0 MW, operating June 2010, with no planned retirement. The Kentucky air permit renewal issued in July 2024 also covers the plant. I found no retirement, mothballing or sale."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Pratt & Whitney FT8-3 SwiftPac 60",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Kentucky Division for Air Quality Title V permit V-23-038, issued July 2024 (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679), lists the turbines as Pratt and Whitney Power Systems FT8-3 SwiftPac 60 units. Each unit is one pair of turbines, with a nominal package output of 60.3 MW."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679",
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647678"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647678",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The permit summary (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647678) calls the plant a natural gas peaking power plant that sells power. The only emergency engine is a 1,490 horsepower diesel generator for the site, which is not a unit in the tracker. So no is correct."
+    },
+    "Number Of Engines": {
+     "value": "2",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Kentucky Division for Air Quality Title V permit V-23-038 from July 2024 (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679) lists emission unit 02 as one pair of turbines, EU-02a and EU-02b, with a nominal package output of 60.3 MW. So each tracker unit has two engines. The permit does not give a rating for each turbine."
+    },
+    "Operator(s)": {
+     "value": "Paducah Power System",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The same permit (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679) names Paducah Power System as the permittee for the plant. The permit does not use the word operator, so this is implied by the permittee."
+    }
+   },
+   "not_found": [
+    "Retired year",
+    "Planned retire",
+    "Capacity Per Engine"
+   ],
+   "notes": "Still operating. No retirement, planned retirement, mothballing or change of owner was found in the EIA table, the 2024 permit or the Paducah-McCracken comprehensive plan. The rating of each turbine is not stated in the permit."
+  }
+ ],
+ "plant_findings": {
+  "Owner(s)": {
+   "value": "Paducah Power System Co [100%]",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true
+    }
+   ],
+   "tier": "high",
+   "independent": false,
+   "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists the entity as Paducah Power System. The 2024 air permit names Paducah Power System as the permittee. The owner is unchanged."
+  }
+ },
+ "qa": [
+  {
+   "gem_unit_id": "G100000403359",
+   "concern_type": "Turbine/Engine Technology",
+   "question": "Should the turbine type for both units be aeroderivative gas turbine?",
+   "finding": "The 2024 Kentucky air permit (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679) names Pratt and Whitney FT8-3 SwiftPac 60 packages. The permit counts four turbines in two pairs, one pair for each tracker unit. The tracker shows gas turbine.",
+   "recommendation": "Change the technology to aeroderivative gas turbine for both units, and consider setting Number Of Engines to 2 and Capacity Per Engine to about 30 MW.",
+   "note": "I did not change the technology because the brief did not ask for a technology check. The per-turbine rating is not stated in the permit. Only the pair output of 60.3 MW is.",
+   "refs": [
+    "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679"
+   ],
+   "proposed_value": {
+    "Turbine/Engine Technology": "aeroderivative gas turbine"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Loaded; read plant 56556 rows in the downloaded copy."
+  },
+  {
+   "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647679",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Permit V-23-038 text names the model and 60.3 MW."
+  },
+  {
+   "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/12647678",
+   "used_for": [
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Executive summary calls it a natural gas peaking power plant."
+  },
+  {
+   "url": "https://mccrackencountyky.gov/wp-content/uploads/2025/03/Paducah-McCracken-Comprehensive-Plan-ADOPTED-City-01.28.25-County-02.17.25.pdf",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Opened and it loaded. It is a county land use and population plan that mentions Paducah but says nothing about the power plant, so it bears on no value."
+  },
+  {
+   "url": "https://mccrackencountyky.gov/wp-content/uploads/2024/09/September-23-2024-McCracken-Fiscal-Court-Agenda.pdf",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Opened and it loaded. The ordinance establishes a geographic information system consortium that includes Paducah Power System. It does not describe the power plant, so it bears on no value."
+  },
+  {
+   "url": "https://mccrackencountyky.gov/wp-content/uploads/2024/09/September-9-2024-McCracken-Fiscal-Court-Agenda.pdf",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Same geographic information system consortium ordinance as the September 23 agenda. It does not describe the power plant."
+  }
+ ]
+}

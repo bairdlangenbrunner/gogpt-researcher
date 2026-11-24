@@ -55,9 +55,9 @@ def pull_first(cfg, skip=False, puller=None):
     return True
 
 
-def render(data, reviewer, title=None, cfg=None):
-    """The page as one html string, from the shared builder with the GOGPT config."""
-    return core.render(data, reviewer, store.CONFIG, title=title, ledger_url=ledger_url(cfg), root=store.ROOT)
+def render(data, reviewer, title=None, cfg=None, reviewer_name=""):
+    """The page as one html string, from the shared builder with the GOGPT config. `reviewer` is the initials; `reviewer_name` the full name the copy for Chrome text uses."""
+    return core.render(data, reviewer, store.CONFIG, title=title, ledger_url=ledger_url(cfg), root=store.ROOT, reviewer_name=reviewer_name)
 
 
 def build(dirs, reviewer, export_csv=None, title=None, cfg=None, artifact=""):
@@ -67,7 +67,7 @@ def build(dirs, reviewer, export_csv=None, title=None, cfg=None, artifact=""):
     store.overlay(data, {label: Path(d) for label, d in zip(data["dirs"], dirs)})
     shown = list(dict.fromkeys(i["asset"] for i in core_assets.images_in(data)))
     missing = core_assets.fill_urls(data, core_assets.load_manifest(ASSETS), artifact) if shown else []
-    return render(data, store.initials(reviewer), title, cfg), data, {"artifact": artifact, "shown": shown, "missing": missing}
+    return render(data, store.initials(reviewer), title, cfg, reviewer_name=reviewer), data, {"artifact": artifact, "shown": shown, "missing": missing}
 
 
 def write_pictures(path, pictures):

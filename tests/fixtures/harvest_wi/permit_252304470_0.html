@@ -1,0 +1,816 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head id="ctl00_head1"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+	Permit Tracking
+</title><link href="https://apps.dnr.wi.gov/dnrexternalbranding/V01/css/sitePrint-f20.css" type="text/css" rel="stylesheet" media="print" /><link href="https://apps.dnr.wi.gov/dnrexternalbranding/V01/css/globalSiteAll_v2.14.3-f20.css" type="text/css" rel="stylesheet" media="screen" /><link href="https://apps.dnr.wi.gov/dnrexternalbranding/V01/css/DNRtopic.css" type="text/css" rel="stylesheet" media="screen" /><link href="https://apps.dnr.wi.gov/dnrexternalbranding/V01/css/DNRtopic_mobile-f20.css" type="text/css" rel="stylesheet" media="screen" /><link href="https://apps.dnr.wi.gov/dnrexternalbranding/V01/css/DNRtopic_HeadFootMods.css" type="text/css" rel="stylesheet" media="screen" />
+
+    
+    <script type="text/javascript" src="https://apps.dnr.wi.gov/dnrexternalbranding/V01/js/activetabs.js"></script>
+
+    
+
+<script type="text/javascript">
+    function FreezeHeader(gvId, gvHeight) {
+        var GridId = gvId
+        var ScrollHeight = gvHeight;
+        var grid = document.getElementById(GridId);
+        var gridWidth = grid.offsetWidth;
+        var gridHeight = grid.offsetHeight;
+        var headerCellWidths = new Array();
+        for (var i = 0; i < grid.getElementsByTagName("th").length; i++) {
+            headerCellWidths[i] = grid.getElementsByTagName("th")[i].offsetWidth;
+        }
+        grid.parentNode.appendChild(document.createElement("div"));
+        var parentDiv = grid.parentNode;
+
+        var table = document.createElement("table");
+        for (i = 0; i < grid.attributes.length; i++) {
+            if (grid.attributes[i].specified && grid.attributes[i].name != "id") {
+                table.setAttribute(grid.attributes[i].name, grid.attributes[i].value);
+            }
+        }
+        table.style.cssText = grid.style.cssText;
+        table.style.width = gridWidth + "px";
+        table.appendChild(document.createElement("tbody"));
+        table.getElementsByTagName("tbody")[0].appendChild(grid.getElementsByTagName("tr")[0]);
+        var cells = table.getElementsByTagName("th");
+
+        var gridRow = grid.getElementsByTagName("tr")[0];
+        for (var i = 0; i < cells.length; i++) {
+            var width;
+            if (headerCellWidths[i] > gridRow.getElementsByTagName("td")[i].offsetWidth) {
+                width = headerCellWidths[i]-48; // added '-48', which helped a bit.  SRB, 2/24/14.
+            }
+            else {
+                width = gridRow.getElementsByTagName("td")[i].offsetWidth;
+            }
+            cells[i].style.width = parseInt(width - 3) + "px";
+            gridRow.getElementsByTagName("td")[i].style.width = parseInt(width - 3) + "px";
+        }
+        parentDiv.removeChild(grid);
+
+        var dummyHeader = document.createElement("div");
+        dummyHeader.appendChild(table);
+        parentDiv.appendChild(dummyHeader);
+        var scrollableDiv = document.createElement("div");
+        if (parseInt(gridHeight) > ScrollHeight) {
+            gridWidth = parseInt(gridWidth) + 17;
+        }
+        scrollableDiv.style.cssText = "overflow:auto;height:" + ScrollHeight + "px;width:" + gridWidth + "px";
+        scrollableDiv.appendChild(grid);
+        parentDiv.appendChild(scrollableDiv);
+    }
+</script><!-- Google tag (gtag.js) --> 
+<script async src=https://www.googletagmanager.com/gtag/js?id=G-EHDMSRCYK1></script> 
+<script> 
+window.dataLayer = window.dataLayer || []; 
+function gtag(){dataLayer.push(arguments);} 
+gtag('js', new Date()); 
+gtag('config', 'G-EHDMSRCYK1'); 
+</script>
+    <style>
+    body {
+        margin: 0px;
+        display: block;
+    }
+    #dnrAppHead{
+	    font-size: .875em;
+	    visibility: visible;
+	    background: #0076A5;
+	    text-align: left;
+	    padding: 0 8px 2px;
+	    height:85px;
+    }
+    #headerLogo{
+	    font-size: .875em;
+	    visibility: visible;
+	    text-align: left;
+	    padding: 0;
+	    width: 180px;
+	    height: auto;
+	    margin: 12px;
+	    margin-left: 20px;
+	    margin-top: 17px;
+    }
+    #dnrAppFoot{
+	    font-size: .875em;
+	    color: #FFFFFF;
+	    visibility: visible;
+	    background: #003349;
+	    text-align: left;
+	    padding: 18px;
+	    padding-bottom: 20px;
+	    height: auto;
+        font-family: Arial;
+        line-height: 25px;
+    }
+    #dnrAppFoot > a{
+	    color: #FFFFFF;
+    }
+    .underline-on-hover:hover {
+    text-decoration: underline;
+    }
+    #wiGovLogo{
+	    margin-top: -75px;
+	    float:right;
+	    height: 40px;
+	    width: auto;
+	    margin-right: 20px;
+    }
+
+    @media only screen and (max-width: 1024px) {
+        #wiGovLogo {
+            display: none;
+        }
+    }
+</style>
+    <div id="dnrAppHead">
+		<a style="text-decoration: none;" href="https://dnr.wisconsin.gov"><img alt="Wisconsin Department of Natural Resources logo" id="headerLogo" src="Images/dnr-circle-logo-txt.svg" title="Wisconsin Department of Natural Resources"></a>
+	</div>
+
+<link href="App_Themes/AMInternal/AMInternal.css" type="text/css" rel="stylesheet" /><link href="App_Themes/AMInternal/DNRInt.css" type="text/css" rel="stylesheet" /><link href="App_Themes/AMInternal/DnrInt2.css" type="text/css" rel="stylesheet" /><link href="App_Themes/AMInternal/GridView.css" type="text/css" rel="stylesheet" /></head>
+
+<body id="minimal">
+    <div style="text-align:center; color:white; background-color:#003349;">
+        
+    </div>
+
+<!-- application banner/header -->
+<div style="text-align:center;">
+   Air Management Program
+</div>
+
+<!-- horizontal navigation banner -->
+
+
+
+
+<div id="contentWrapper">
+
+
+<!-- MAIN CONTENT BEGIN -->
+    <form name="aspnetForm" method="post" action="./AM_PermitTracking2.aspx?id=36662" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/warp_ext/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZKJC4MQQbeSY67AS1bleTgrwmwXZY9wiJ-WsMdflOxGcECnK9dEtp_0CTDuoyQQJrg2&amp;t=639190653332169432" type="text/javascript"></script>
+
+
+<script src="/warp_ext/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvoUvjrVbWtIjLKWwDajWYyiwhNKj75q2VYrWL2XNHR8ZH74-bCh8ZnvMaTVOqZCa6x-KC2yjT1AEQLna28Y4G6M2chvBGkfFhSzRb53zYf8bzOLX3RVPVd-1Go5pVT0hRBLzcQO2Bi0FtGA9PS8zSec1&amp;t=ffffffffbec1863d" type="text/javascript"></script>
+<script src="/warp_ext/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8ODuaEMBqqazEQyXqsiI_dCt5Nh5wp9Bn5itvZ7QxfdA342KgBtPkso4gFbaXnkdKZGZeOZ37Fp87iUTMCjVSXbzpXFNl-CL4FGZ68bza6ahXqKlIrky3tC_ksLP6xUfQ9Gp3c0rzKKNIb6lWQrgkYL81&amp;t=ffffffffbec1863d" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D42E7ADF" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="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" />
+</div>
+    <div>
+        
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ContentPlaceHolder1$sm1', 'aspnetForm', ['tctl00$ContentPlaceHolder1$upPdocs',''], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+    <script type="text/javascript">
+function hourglass() {
+    alert('abc');
+    document.body.style.cursor = "wait";
+}
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <style>
+        #ctl00_ContentPlaceHolder1_gvPermitProgress {
+            width: 1200px;
+            overflow-x: hidden;
+            text-align: left;
+        }
+
+        #ctl00_ContentPlaceHolder1_gvPermitProgress table {
+          position: relative;
+          overflow: hidden;
+          border-collapse: collapse;
+        }
+
+        /*tbody*/
+        #ctl00_ContentPlaceHolder1_gvPermitProgress tbody {
+          position: relative;
+          display: block; /*seperates the tbody from the header*/
+          max-height: 700px;
+          overflow: hidden;
+        }
+
+        #ctl00_ContentPlaceHolder1_gvPermitProgress tbody tr {
+          border: 3px solid grey;
+        }
+
+        #ctl00_ContentPlaceHolder1_gvPermitProgress tbody tr td:nth-child(n+4) {
+          border: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        #ctl00_ContentPlaceHolder1_gvPermitProgress tbody tr td:nth-child(-n+3) {
+          /*padding: 0 10px;*/
+          border: 1px solid black;
+        }
+
+        #ctl00_ContentPlaceHolder1_gvPermitProgress tbody td input {
+          width: 100%;
+          height: 100%;
+          text-align: center;
+        }
+
+        #ctl00_ContentPlaceHolder1_gvPermitProgress thead {
+            display: none;
+        }
+    </style>
+
+<table cellpadding="0" cellspacing="0" border="0" style="margin-left:10px" width="90%">
+<tr><td valign="top" style="height: 357px">
+
+<div class="tabber" id="myTab">
+
+    <div id="ctl00_ContentPlaceHolder1_GFI" class="tabbertab" title="General Facility Information">
+    <hr class="horzspacer1" />
+<table width="100%" style="border:solid 2px; border-collapse:collapse;"> 
+<tr>
+ <th align="left">
+   <span id="ctl00_ContentPlaceHolder1_lblTitle1">Facility Information for </span>
+   <span id="ctl00_ContentPlaceHolder1_lblTitle2">252304470 We Energies Paris RICE Generating Station</span>
+ </th>
+
+</tr>
+<tr>
+  <td>
+<div id="ctl00_ContentPlaceHolder1_pnlFacHub">
+	
+<table><tr>
+<td valign="top">
+    <table>
+        <tr>
+            <td align="left" >
+                <span id="ctl00_ContentPlaceHolder1_lblLocationTitle" style="font-weight:bold;text-decoration:underline;">Location Address</span>
+            </td>
+            <td>&nbsp;</td>
+            
+        </tr>
+        <tr>
+            <td style="border:solid 1px saddlebrown; padding-left:5px;">
+                <span id="ctl00_ContentPlaceHolder1_lblLocation1">13605 1St St</span><br />
+                <span id="ctl00_ContentPlaceHolder1_lblLocation2">Paris</span><br />
+                <span id="ctl00_ContentPlaceHolder1_lblLocation3">WI </span>
+            </td>
+            <td align="right">
+                <br />
+                <span id="ctl00_ContentPlaceHolder1_lblStartTitle" style="font-weight:bold;">Start Date:</span>
+                <input name="ctl00$ContentPlaceHolder1$txtStart" type="text" value="04/11/2024" readonly="readonly" id="ctl00_ContentPlaceHolder1_txtStart" class="fd" style="border-style:None;width:85px;" /><br />
+                <span id="ctl00_ContentPlaceHolder1_lblEndTitle" style="font-weight:bold;">     End Date:</span>
+                <input name="ctl00$ContentPlaceHolder1$txtEnd" type="text" readonly="readonly" id="ctl00_ContentPlaceHolder1_txtEnd" class="fd" style="border-style:None;width:85px;" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <hr />
+                <span id="ctl00_ContentPlaceHolder1_lblPrimaryActivity" style="font-weight:bold;text-decoration:underline;">Primary Activity:</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <input name="ctl00$ContentPlaceHolder1$txtPrimaryActivity" type="text" readonly="readonly" id="ctl00_ContentPlaceHolder1_txtPrimaryActivity" class="fd" style="border-style:Solid;width:600px;" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <hr />
+                <span id="ctl00_ContentPlaceHolder1_lblDescription" style="font-weight:bold;text-decoration:underline;">Site Description:</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <textarea name="ctl00$ContentPlaceHolder1$txtDescription" rows="2" cols="20" readonly="readonly" id="ctl00_ContentPlaceHolder1_txtDescription" class="fd" style="border-style:Solid;height:60px;width:600px;">
+</textarea>
+            </td>
+        </tr>
+    </table>
+</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td valign="top">
+   <table>
+        <tr>
+            <td align="right">
+                <span id="ctl00_ContentPlaceHolder1_lblPsd" style="font-size:Small;font-weight:bold;">Major Under PSD:</span>
+                <span id="ctl00_ContentPlaceHolder1_lblPsd2">&#9744;</span>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <span id="ctl00_ContentPlaceHolder1_lbl70" style="font-size:Small;font-weight:bold;">Major Under Part 70:</span>
+                <span id="ctl00_ContentPlaceHolder1_lbl702">&#9744;</span>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <span id="ctl00_ContentPlaceHolder1_lblNaa" style="font-size:Small;font-weight:bold;">Major NAA:</span>
+                <span id="ctl00_ContentPlaceHolder1_lblNaa2">&#9744;</span>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <span id="ctl00_ContentPlaceHolder1_lblCem" style="font-size:Small;font-weight:bold;">Monitoring with CEMS:</span>
+                <span id="ctl00_ContentPlaceHolder1_lblCem2">&#9744;</span>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <span id="ctl00_ContentPlaceHolder1_lblFed" style="font-size:Small;font-weight:bold;">Major for Federal Haps:</span>
+                <span id="ctl00_ContentPlaceHolder1_lblFed2">&#9744;</span>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <span id="ctl00_ContentPlaceHolder1_lblSynth" style="font-size:Small;font-weight:bold;">Synthetic Minor Under Title V:</span>
+                <span id="ctl00_ContentPlaceHolder1_lblSynth2">&#9744;</span>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <span id="ctl00_ContentPlaceHolder1_lblNat" style="font-size:Small;font-weight:bold;">Natural Minor:</span>
+                <span id="ctl00_ContentPlaceHolder1_lblNat2">&#9744;</span>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <span id="ctl00_ContentPlaceHolder1_lblExempt" style="font-size:Small;font-weight:bold;">Exempt from Permiting:</span>
+                <span id="ctl00_ContentPlaceHolder1_lblExempt2">&#9744;</span>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <span id="ctl00_ContentPlaceHolder1_lblEgu" style="font-size:Small;font-weight:bold;">Private Coal EGU:</span>
+                <span id="ctl00_ContentPlaceHolder1_lblEgu2">&#9744;</span>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <span id="ctl00_ContentPlaceHolder1_lblPortable" style="font-size:Small;font-weight:bold;">Portable:</span>
+                <span id="ctl00_ContentPlaceHolder1_lblPortable2">&#9744;</span>
+            </td>
+        </tr>
+   </table>
+</td>
+</tr>
+<tr>
+   <td colspan="3" valign="top">
+
+<div id="ctl00_ContentPlaceHolder1_pnlSicNaics" style="border-color:Black;border-width:1px;border-style:Solid;">
+		
+    <table style="margin-left:10px;">
+        <tr>
+            <td>
+            <span id="ctl00_ContentPlaceHolder1_lblSic" style="font-size:Small;font-weight:bold;">SIC</span><br />
+            <select size="4" name="ctl00$ContentPlaceHolder1$lstSic" id="ctl00_ContentPlaceHolder1_lstSic">
+			<option value="4911 ELECTRIC SERVICES">4911 ELECTRIC SERVICES</option>
+
+		</select>
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>
+            <span id="ctl00_ContentPlaceHolder1_lblNaics" style="font-size:Small;font-weight:bold;">NAICS</span><br />                            
+            <select size="4" name="ctl00$ContentPlaceHolder1$lstNaics" id="ctl00_ContentPlaceHolder1_lstNaics">
+			<option value="221122 Electric Power Distribution ">221122 Electric Power Distribution </option>
+
+		</select>
+            </td>
+        </tr>
+    </table>
+
+	</div>
+   </td>
+</tr>
+
+<tr>
+   <td>
+<div style="margin-left:25px;">
+<div id="ctl00_ContentPlaceHolder1_pnlSnglSrc">
+		
+    <table border="0">
+    <tr>
+        <td align="center" valign="middle">
+            
+            <img id="ctl00_ContentPlaceHolder1_imgSngl" src="./Images/SingleSrcOne.gif" style="height:50px;width:56px;border-width:0px;margin:3px 0px 5px 0px;" />
+            <br />
+        </td>
+        <td>&nbsp;&nbsp;</td>
+        <td align="left" valign="middle">
+            <div id="ctl00_ContentPlaceHolder1_pnlSnglSrcLinks">
+			
+            
+		</div>
+        </td>
+        <td style="vertical-align:top;"></asp:Label></td>
+        <td>
+            <div id="ctl00_ContentPlaceHolder1_pnlAttain">
+			
+                
+                         
+                         <a id="hre1" href="https://dnr.wisconsin.gov/topic/AirQuality/SO2.html" target="_blank"></a>
+                         <a id="hre2" href="https://dnr.wisconsin.gov/topic/AirQuality/Ozone.html" target="_blank"></a>
+                         <a id="hre3" href="https://dnr.wisconsin.gov/topic/AirQuality/Ozone.html" target="_blank"></a>
+                         
+                     
+		</div>
+        </td>
+    </tr>
+    </table>
+
+	</div>
+</div>
+   </td>
+</tr>
+
+</table>
+
+
+</div>
+  </td>
+</tr>
+</table> 
+    </div>
+
+    <div id="ctl00_ContentPlaceHolder1_fc" class="tabbertab" title="Facility Contacts">
+    <hr class="horzspacer1" />
+<table width="100%" style="border:solid 2px; border-collapse:collapse;" >
+<tr>
+ <th id="ctl00_ContentPlaceHolder1_th3" align="left">
+  <span id="ctl00_ContentPlaceHolder1_lblRoles">Facility Contacts</span>
+ </th>
+
+</tr>
+<tr>
+ <td>
+<div id="ctl00_ContentPlaceHolder1_pnlRoles" style="color:White;">
+	
+    <div>
+		<table class="gridViewStandard" cellspacing="0" rules="all" border="1" id="ctl00_ContentPlaceHolder1_gvFacilityRoles" style="border-collapse:collapse;">
+			<tr style="border-color:White;">
+				<th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvFacilityRoles&#39;,&#39;Sort$role&#39;)">Role</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvFacilityRoles&#39;,&#39;Sort$name&#39;)">Name</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvFacilityRoles&#39;,&#39;Sort$title&#39;)">Title</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvFacilityRoles&#39;,&#39;Sort$email&#39;)">Email</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvFacilityRoles&#39;,&#39;Sort$phone&#39;)">Phone #</a></th>
+			</tr><tr>
+				<td>Responsible Corporate Official</td><td>Kyle Hoops</td><td>Senior Vice President Generation</td><td>redacted@example.org</td><td>4142215350</td>
+			</tr><tr>
+				<td>Facility Air Management Contact</td><td>Mike Kolb</td><td>Director - Air Quality</td><td>redacted@example.org</td><td>4142212181</td>
+			</tr><tr>
+				<td>Facility Air Permit Contact</td><td>Mike Kolb</td><td>Director - Air Quality</td><td>redacted@example.org</td><td>4142212181</td>
+			</tr><tr>
+				<td>Facility Billing Contact</td><td>Mike Kolb</td><td>Director - Air Quality</td><td>redacted@example.org</td><td>4142212181</td>
+			</tr>
+		</table>
+	</div>
+
+</div>                        
+ </td>
+</tr>
+</table>
+    </div>
+
+    <div class="tabbertab" title="DNR Air Contacts">
+    <hr class="horzspacer1" />
+<table width="100%" style="border:solid 2px; border-collapse:collapse;">
+<tr>
+ <th id="ctl00_ContentPlaceHolder1_th5" align="left">
+  <span id="ctl00_ContentPlaceHolder1_lblContacts">DNR Air Contacts</span>                    
+ </th>
+
+</tr>
+<tr>
+ <td>
+<div id="ctl00_ContentPlaceHolder1_pnlAirContacts" style="border-width:0px;border-style:None;overflow-y:scroll;">
+	
+    <div>
+		<table class="gridViewStandard" cellspacing="0" rules="all" border="1" id="ctl00_ContentPlaceHolder1_gvAirContacts" style="border-collapse:collapse;">
+			<tr style="border-color:White;">
+				<th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvAirContacts&#39;,&#39;Sort$role&#39;)">Role</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvAirContacts&#39;,&#39;Sort$name&#39;)">Person</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvAirContacts&#39;,&#39;Sort$title&#39;)">Title</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvAirContacts&#39;,&#39;Sort$email&#39;)">Email</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvAirContacts&#39;,&#39;Sort$phone&#39;)">Phone #</a></th>
+			</tr><tr>
+				<td>DNR Compliance Engineer</td><td>Sensen Lin</td><td>Air Management Engineer-Adv</td><td>redacted@example.org</td><td>4147042343</td>
+			</tr><tr>
+				<td>DNR Facility Supervisor</td><td>Michael Szabo</td><td>Envir Engineer Supervisor</td><td>redacted@example.org</td><td>4142088989</td>
+			</tr>
+		</table>
+	</div>
+
+</div>
+ </td>
+</tr>
+</table>
+    </div>
+
+    <div class="tabbertab" id="permitTab" title="Permits and Permit Applications">
+    <hr class="horzspacer1" />
+
+     
+<table width="100%" style="border:solid 2px; border-collapse:collapse;">
+<tr>
+   <th align="left">
+      <span id="ctl00_ContentPlaceHolder1_Label2">Permits and Permit Applications<a name='Permits'</span>
+   </th>
+   <td>
+      <span style="display:inline-block;width:300px;"><input id="ctl00_ContentPlaceHolder1_chkInactive" type="checkbox" name="ctl00$ContentPlaceHolder1$chkInactive" checked="checked" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$chkInactive\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="ctl00_ContentPlaceHolder1_chkInactive">Show Inactive Permits</label></span>
+   </td>
+</tr>
+<tr><td colspan="2">
+<div style="overflow:auto; height:200px; margin-bottom:12px; border-bottom:2px solid #394e5f;">
+<div id="ctl00_ContentPlaceHolder1_pnlPermits" style="width:98%;">
+	
+    <div>
+		<table class="gridViewStandard" cellspacing="0" rules="all" border="1" id="ctl00_ContentPlaceHolder1_gvPermits" style="border-collapse:collapse;">
+			<tr style="border-color:White;">
+				<th scope="col">&nbsp;</th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermits&#39;,&#39;Sort$permit_no&#39;)">Permit #</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermits&#39;,&#39;Sort$permit_type&#39;)">Type</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermits&#39;,&#39;Sort$app_date&#39;)">App Received</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermits&#39;,&#39;Sort$comp_date&#39;)">App. Comp.</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermits&#39;,&#39;Sort$pub_notice_due_date&#39;)">Public Notice</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermits&#39;,&#39;Sort$iss_date&#39;)">Decision*</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermits&#39;,&#39;Sort$ActStatus&#39;)">Status</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermits&#39;,&#39;Sort$pwritter&#39;)">Permit Writer</a></th>
+			</tr><tr style="color:Black;background-color:Beige;font-weight:bold;">
+				<td style="width:50px;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermits&#39;,&#39;Select$0&#39;)" style="color:Black;">Select</a></td><td style="width:150px;">24-DMM-064</td><td style="width:70px;">Construction</td><td style="width:80px;">04/17/2024</td><td style="width:80px;">05/25/2024</td><td style="width:80px;">03/20/2025</td><td align="center" style="width:80px;">&nbsp;</td><td style="width:70px;">Inactive</td><td style="font-size:X-Small;width:100px;">Minkey, David M</td>
+			</tr><tr>
+				<td style="width:50px;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermits&#39;,&#39;Select$1&#39;)">Select</a></td><td style="width:150px;">25230447A-P01</td><td style="width:70px;">FOP</td><td style="width:80px;">04/17/2024</td><td style="width:80px;">05/25/2024</td><td style="width:80px;">03/20/2025</td><td align="center" style="width:80px;">&nbsp;</td><td style="width:70px;">Inactive</td><td style="font-size:X-Small;width:100px;">Minkey, David M</td>
+			</tr>
+		</table>
+	</div>
+
+</div>
+</div>
+</td></tr>
+<tr>
+    <td colspan="2" style="font-size:x-small;">
+        *Note: “Decision” could mean permit issuance date, permit denial date, registration or general permit coverage granted date, exemption approval date, consent order issuance date, or administrative order issuance date. If “X” is shown here (instead of a date), it means the Department acknowledged the notice of intent to construct and/or operate certain air emission unit(s) but the Department does not intend to evaluate the exemption claim. Please click “Select” next to the permit # for details on the submittal and decision documents.
+    </td>
+</tr>
+<tr><td colspan="2">Select a Permit to see related <strong>Documents</strong> and <strong>Milestones</strong>.</td></tr>
+</table>
+
+<center>
+<div id="ctl00_ContentPlaceHolder1_pnlDocsAndMilestones" style="width:100%;">
+	
+    <div>
+		<table class="gridViewStandard" cellspacing="0" rules="all" border="1" id="ctl00_ContentPlaceHolder1_gvPermitProgress" style="border-collapse:collapse;">
+			<tr style="border-color:White;">
+				<th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermitProgress&#39;,&#39;Sort$facility_name&#39;)">Facility Name</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermitProgress&#39;,&#39;Sort$FID&#39;)">FID</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermitProgress&#39;,&#39;Sort$permit_no&#39;)">Permit Number</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermitProgress&#39;,&#39;Sort$1039&#39;)">Application Request Partially Received</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermitProgress&#39;,&#39;Sort$1040&#39;)">Application Request Fully Received</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermitProgress&#39;,&#39;Sort$1060&#39;)">Permit Writer Assigned</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermitProgress&#39;,&#39;Sort$1080&#39;)">Additional Information Requested</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermitProgress&#39;,&#39;Sort$1090&#39;)">Additional Info Received</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermitProgress&#39;,&#39;Sort$1700&#39;)">Draft Ready for Peer Review</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermitProgress&#39;,&#39;Sort$1720&#39;)">Draft Ready for Compliance Review</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermitProgress&#39;,&#39;Sort$2000&#39;)">Permit Draft - Supervisor Signs Preliminary Determination</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermitProgress&#39;,&#39;Sort$2140&#39;)">Public Notice Published - Start of Public Comment Period</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermitProgress&#39;,&#39;Sort$2480&#39;)">Public Comment Period Ends</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermitProgress&#39;,&#39;Sort$2520&#39;)">Permit Proposed to EPA</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermitProgress&#39;,&#39;Sort$2555&#39;)">Proposed Period Ends</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvPermitProgress&#39;,&#39;Sort$3010&#39;)">Permit Authority Issues Permit</a></th>
+			</tr><tr style="font-size:Small;">
+				<td align="center" valign="middle" style="height:25px;width:600px;">
+                    <input name="ctl00$ContentPlaceHolder1$gvPermitProgress$ctl02$txtFacName" type="text" value="We Energies Paris RICE Generating Station" readonly="readonly" id="ctl00_ContentPlaceHolder1_gvPermitProgress_ctl02_txtFacName" title="Facility name: We Energies Paris RICE Generating Station" class="fd" style="border-style:None;" />
+                </td><td style="height:25px;width:80px;">
+                    <input name="ctl00$ContentPlaceHolder1$gvPermitProgress$ctl02$txtFID" type="text" value="252304470" readonly="readonly" id="ctl00_ContentPlaceHolder1_gvPermitProgress_ctl02_txtFID" title="FID: 252304470" class="fd" style="border-style:None;width:80px;" />
+                </td><td style="height:25px;width:450px;">
+                    <input name="ctl00$ContentPlaceHolder1$gvPermitProgress$ctl02$txtPermitNo" type="text" value="24-DMM-064" readonly="readonly" id="ctl00_ContentPlaceHolder1_gvPermitProgress_ctl02_txtPermitNo" title="Permit no: 24-DMM-064" class="fd" style="border-style:None;" />
+                </td><td style="height:25px;width:160px;">
+                    <input name="ctl00$ContentPlaceHolder1$gvPermitProgress$ctl02$txt1039" type="text" readonly="readonly" id="ctl00_ContentPlaceHolder1_gvPermitProgress_ctl02_txt1039" class="fd" style="color:White;background-color:#DCFEFF;border-style:None;" />
+                </td><td style="height:25px;width:160px;">
+                    <input name="ctl00$ContentPlaceHolder1$gvPermitProgress$ctl02$txt1040" type="text" readonly="readonly" id="ctl00_ContentPlaceHolder1_gvPermitProgress_ctl02_txt1040" title="Application Request Fully Received on 4/17/2024" class="fd" style="color:White;background-color:#C8EAFF;border-style:None;" />
+                </td><td style="height:25px;width:160px;">
+                    <input name="ctl00$ContentPlaceHolder1$gvPermitProgress$ctl02$txt1060" type="text" readonly="readonly" id="ctl00_ContentPlaceHolder1_gvPermitProgress_ctl02_txt1060" title="Permit Writer Assigned on 4/15/2024" class="fd" style="color:White;background-color:#B4D6FF;border-style:None;" />
+                </td><td style="height:25px;width:160px;">
+                    <input name="ctl00$ContentPlaceHolder1$gvPermitProgress$ctl02$txt1080" type="text" readonly="readonly" id="ctl00_ContentPlaceHolder1_gvPermitProgress_ctl02_txt1080" title="Additional Information Requested on 5/6/2024" class="fd" style="color:White;background-color:#A0C2FF;border-style:None;" />
+                </td><td style="height:25px;width:160px;">
+                    <input name="ctl00$ContentPlaceHolder1$gvPermitProgress$ctl02$txt1090" type="text" readonly="readonly" id="ctl00_ContentPlaceHolder1_gvPermitProgress_ctl02_txt1090" title="Additional Info Received on 5/10/2024" class="fd" style="color:White;background-color:#8CAEFF;border-style:None;" />
+                </td><td style="height:25px;width:160px;">
+                    <input name="ctl00$ContentPlaceHolder1$gvPermitProgress$ctl02$txt1700" type="text" readonly="readonly" id="ctl00_ContentPlaceHolder1_gvPermitProgress_ctl02_txt1700" title="Draft Ready for Peer Review on 2/7/2025" class="fd" style="color:White;background-color:#789AFF;border-style:None;" />
+                </td><td style="height:25px;width:160px;">
+                    <input name="ctl00$ContentPlaceHolder1$gvPermitProgress$ctl02$txt1720" type="text" readonly="readonly" id="ctl00_ContentPlaceHolder1_gvPermitProgress_ctl02_txt1720" title="Draft Ready for Compliance Review on 2/18/2025" class="fd" style="color:White;background-color:#6486FF;border-style:None;" />
+                </td><td style="height:25px;width:160px;">
+                    <input name="ctl00$ContentPlaceHolder1$gvPermitProgress$ctl02$txt2000" type="text" readonly="readonly" id="ctl00_ContentPlaceHolder1_gvPermitProgress_ctl02_txt2000" title="Permit Draft - Supervisor Signs Preliminary Determination on 3/13/2025" class="fd" style="color:White;background-color:#5072FF;border-style:None;" />
+                </td><td style="height:25px;width:160px;">
+                    <input name="ctl00$ContentPlaceHolder1$gvPermitProgress$ctl02$txt2140" type="text" readonly="readonly" id="ctl00_ContentPlaceHolder1_gvPermitProgress_ctl02_txt2140" title="Public Notice Published - Start of Public Comment Period on 3/20/2025" class="fd" style="color:White;background-color:#3C5EFF;border-style:None;" />
+                </td><td style="height:25px;width:160px;">
+                    <input name="ctl00$ContentPlaceHolder1$gvPermitProgress$ctl02$txt2480" type="text" readonly="readonly" id="ctl00_ContentPlaceHolder1_gvPermitProgress_ctl02_txt2480" title="Public Comment Period Ends on 4/19/2025" class="fd" style="color:White;background-color:#284AFF;border-style:None;" />
+                </td><td style="height:25px;width:160px;">
+                    <input name="ctl00$ContentPlaceHolder1$gvPermitProgress$ctl02$txt2520" type="text" readonly="readonly" id="ctl00_ContentPlaceHolder1_gvPermitProgress_ctl02_txt2520" class="fd" style="color:White;border-style:None;" />
+                </td><td style="height:25px;width:160px;">
+                    <input name="ctl00$ContentPlaceHolder1$gvPermitProgress$ctl02$txt2555" type="text" readonly="readonly" id="ctl00_ContentPlaceHolder1_gvPermitProgress_ctl02_txt2555" class="fd" style="color:White;border-style:None;" />
+                </td><td style="height:25px;width:160px;">
+                    <input name="ctl00$ContentPlaceHolder1$gvPermitProgress$ctl02$txt3010" type="text" readonly="readonly" id="ctl00_ContentPlaceHolder1_gvPermitProgress_ctl02_txt3010" class="fd" style="color:White;border-style:None;" />
+                </td>
+			</tr>
+		</table>
+	</div>
+    
+<table border="3">
+   <tr>
+        <th align="left" style="text-decoration:underline; width:50%;">
+             <span id="ctl00_ContentPlaceHolder1_lblDocuments">Permit Documents</span>
+             <span id="ctl00_ContentPlaceHolder1_lblDocuments2" style="font-size:Small;font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;24-DMM-064</span>
+        </th>
+   </tr>
+   <tr>
+     <td> 
+        <div style="overflow:auto; height:230px; width:100%;">
+            <div id="ctl00_ContentPlaceHolder1_upPdocs">
+		
+            <div>
+			<table class="gridViewStandard" cellspacing="0" rules="all" border="1" id="ctl00_ContentPlaceHolder1_gvDocuments" style="border-collapse:collapse;">
+				<tr style="border-color:White;">
+					<th scope="col">&nbsp;</th><th scope="col">&nbsp;</th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments&#39;,&#39;Sort$permit_no&#39;)">Permit&#160;#</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments&#39;,&#39;Sort$file_name&#39;)">Document Name</a></th>
+				</tr><tr>
+					<td style="width:50px;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments&#39;,&#39;Select$0&#39;)">Select</a></td><td>
+                            <a id="ctl00_ContentPlaceHolder1_gvDocuments_ctl02_lnkDownload" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments$ctl02$lnkDownload&#39;,&#39;&#39;)"></a>  
+                        </td><td style="white-space:nowrap;">24-DMM-064</td><td style="white-space:nowrap;">252304470_24-DMM-064_25230447A-P01_request_to_withdraw_application.pdf</td>
+				</tr><tr>
+					<td style="width:50px;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments&#39;,&#39;Select$1&#39;)">Select</a></td><td>
+                            <a id="ctl00_ContentPlaceHolder1_gvDocuments_ctl03_lnkDownload" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments$ctl03$lnkDownload&#39;,&#39;&#39;)"></a>  
+                        </td><td style="white-space:nowrap;">24-DMM-064</td><td style="white-space:nowrap;">252304470_24-DMM-064_25230447A-P01_summary_of_changes_and_comments_on_draft.pdf</td>
+				</tr><tr>
+					<td style="width:50px;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments&#39;,&#39;Select$2&#39;)">Select</a></td><td>
+                            <a id="ctl00_ContentPlaceHolder1_gvDocuments_ctl04_lnkDownload" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments$ctl04$lnkDownload&#39;,&#39;&#39;)"></a>  
+                        </td><td style="white-space:nowrap;">24-DMM-064</td><td style="white-space:nowrap;">252304470_24-DMM-064_25230447A-P01_public_comments_2025-04-10.pdf</td>
+				</tr><tr>
+					<td style="width:50px;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments&#39;,&#39;Select$3&#39;)">Select</a></td><td>
+                            <a id="ctl00_ContentPlaceHolder1_gvDocuments_ctl05_lnkDownload" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments$ctl05$lnkDownload&#39;,&#39;&#39;)"></a>  
+                        </td><td style="white-space:nowrap;">24-DMM-064</td><td style="white-space:nowrap;">252304470_24-DMM-064_25230447A-P01_public_comments_2025-04-07.pdf</td>
+				</tr><tr>
+					<td style="width:50px;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments&#39;,&#39;Select$4&#39;)">Select</a></td><td>
+                            <a id="ctl00_ContentPlaceHolder1_gvDocuments_ctl06_lnkDownload" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments$ctl06$lnkDownload&#39;,&#39;&#39;)"></a>  
+                        </td><td style="white-space:nowrap;">24-DMM-064</td><td style="white-space:nowrap;">252304470_24-DMM-064_25230447A-P01_public_comments_2025-04-06.pdf</td>
+				</tr><tr>
+					<td style="width:50px;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments&#39;,&#39;Select$5&#39;)">Select</a></td><td>
+                            <a id="ctl00_ContentPlaceHolder1_gvDocuments_ctl07_lnkDownload" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments$ctl07$lnkDownload&#39;,&#39;&#39;)"></a>  
+                        </td><td style="white-space:nowrap;">24-DMM-064</td><td style="white-space:nowrap;">252304470_24-DMM-064_25230447A-P01_public_comments_2025-04-03.pdf</td>
+				</tr><tr>
+					<td style="width:50px;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments&#39;,&#39;Select$6&#39;)">Select</a></td><td>
+                            <a id="ctl00_ContentPlaceHolder1_gvDocuments_ctl08_lnkDownload" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments$ctl08$lnkDownload&#39;,&#39;&#39;)"></a>  
+                        </td><td style="white-space:nowrap;">24-DMM-064</td><td style="white-space:nowrap;">252304470_24-DMM-064_25230447A-P01_public_comments_2025-04-02.pdf</td>
+				</tr><tr>
+					<td style="width:50px;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments&#39;,&#39;Select$7&#39;)">Select</a></td><td>
+                            <a id="ctl00_ContentPlaceHolder1_gvDocuments_ctl09_lnkDownload" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments$ctl09$lnkDownload&#39;,&#39;&#39;)"></a>  
+                        </td><td style="white-space:nowrap;">24-DMM-064</td><td style="white-space:nowrap;">252304470_24-DMM-064_25230447A-P01_public_comments_2025-04-01.pdf</td>
+				</tr><tr>
+					<td style="width:50px;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments&#39;,&#39;Select$8&#39;)">Select</a></td><td>
+                            <a id="ctl00_ContentPlaceHolder1_gvDocuments_ctl10_lnkDownload" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments$ctl10$lnkDownload&#39;,&#39;&#39;)"></a>  
+                        </td><td style="white-space:nowrap;">24-DMM-064</td><td style="white-space:nowrap;">252304470_24-DMM-064_25230447A-P01_public_comments_2025-03-30.pdf</td>
+				</tr><tr>
+					<td style="width:50px;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments&#39;,&#39;Select$9&#39;)">Select</a></td><td>
+                            <a id="ctl00_ContentPlaceHolder1_gvDocuments_ctl11_lnkDownload" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments$ctl11$lnkDownload&#39;,&#39;&#39;)"></a>  
+                        </td><td style="white-space:nowrap;">24-DMM-064</td><td style="white-space:nowrap;">252304470_24-DMM-064_25230447A-P01_public_notice.pdf</td>
+				</tr><tr>
+					<td style="width:50px;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments&#39;,&#39;Select$10&#39;)">Select</a></td><td>
+                            <a id="ctl00_ContentPlaceHolder1_gvDocuments_ctl12_lnkDownload" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments$ctl12$lnkDownload&#39;,&#39;&#39;)"></a>  
+                        </td><td style="white-space:nowrap;">24-DMM-064</td><td style="white-space:nowrap;">252304470_24-DMM-064_25230447A-P01_preliminary_approval_letter.pdf</td>
+				</tr><tr>
+					<td style="width:50px;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments&#39;,&#39;Select$11&#39;)">Select</a></td><td>
+                            <a id="ctl00_ContentPlaceHolder1_gvDocuments_ctl13_lnkDownload" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments$ctl13$lnkDownload&#39;,&#39;&#39;)"></a>  
+                        </td><td style="white-space:nowrap;">24-DMM-064</td><td style="white-space:nowrap;">252304470_24-DMM-064_25230447A-P01_draft_proposed_permit.pdf</td>
+				</tr><tr>
+					<td style="width:50px;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments&#39;,&#39;Select$12&#39;)">Select</a></td><td>
+                            <a id="ctl00_ContentPlaceHolder1_gvDocuments_ctl14_lnkDownload" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments$ctl14$lnkDownload&#39;,&#39;&#39;)"></a>  
+                        </td><td style="white-space:nowrap;">24-DMM-064</td><td style="white-space:nowrap;">252304470_24-DMM-064_25230447A-P01_preliminary_determination.pdf</td>
+				</tr><tr>
+					<td style="width:50px;"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments&#39;,&#39;Select$13&#39;)">Select</a></td><td>
+                            <a id="ctl00_ContentPlaceHolder1_gvDocuments_ctl15_lnkDownload" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvDocuments$ctl15$lnkDownload&#39;,&#39;&#39;)"></a>  
+                        </td><td style="white-space:nowrap;">24-DMM-064</td><td style="white-space:nowrap;">252304470_25230447A-P01_24-DMM-064_application.pdf</td>
+				</tr>
+			</table>
+		</div>
+                
+	</div>
+        </div>
+     </td>
+   </tr>
+</table>
+    
+
+</div>
+</center>
+    </div>
+
+    <div class="tabbertab" title="Emission Inventory Reports">
+    <hr class="horzspacer1" />
+<table width="100%" style="border:solid 2px; border-collapse:collapse;">
+<tr>
+ <th id="ctl00_ContentPlaceHolder1_th14" align="left">
+  <span id="ctl00_ContentPlaceHolder1_lblEIReports">Emission Inventory Reports</span>
+ </th>
+
+</tr>
+<tr>
+ <td>
+<div style="overflow:auto; height:300px; width:500px; margin-left:12px;">
+<div id="ctl00_ContentPlaceHolder1_pnlEIReports">
+	
+    <div>
+		<table class="gridViewStandard" cellspacing="0" rules="all" border="1" id="ctl00_ContentPlaceHolder1_gvEIReports" style="border-collapse:collapse;">
+			<tr style="white-space:nowrap;">
+				<td colspan="2">NO RECORDS FOUND</td>
+			</tr>
+		</table>
+	</div>
+
+</div>
+</div>
+ </td>
+</tr>
+</table>
+    </div>
+
+     <div class="tabbertab" title="Industrial Monitoring Data">
+    <hr class="horzspacer1" />
+<table width="100%" style="border:solid 2px; border-collapse:collapse;">
+<tr>
+ <th id="ctl00_ContentPlaceHolder1_th1" align="left">
+  <span id="ctl00_ContentPlaceHolder1_lblMonitoring">Industrial Monitoring Data</span>
+ </th>
+
+</tr>
+<tr>
+ <td>
+<div style="overflow:auto; height:300px; width:500px; margin-left:12px;">
+<div id="ctl00_ContentPlaceHolder1_pnlMonitoring">
+	
+    <div>
+		<table class="gridViewStandard" cellspacing="0" rules="all" border="1" id="ctl00_ContentPlaceHolder1_gvMonitoring" style="border-collapse:collapse;">
+			<tr style="white-space:nowrap;">
+				<td colspan="3">NO RECORDS FOUND</td>
+			</tr>
+		</table>
+	</div>
+
+</div>
+</div>
+ </td>
+</tr>
+</table>
+    </div>
+
+</div> 
+<div style="position:absolute; top:100px; right:50px;">
+<a id="ctl00_ContentPlaceHolder1_LinkButton2" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$LinkButton2&#39;,&#39;&#39;)">Search Again</a>
+</div>
+
+</td></tr></table>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#ctl00_ContentPlaceHolder1_gvPermitProgress tbody tr:eq(0)').remove();
+
+        })
+
+        const queryString = window.location.search;
+        console.log(queryString);
+        const urlParams = new URLSearchParams(queryString);
+        const from = urlParams.get('from')
+        console.log(from);
+
+        if (from == "pubNot") {
+            //$("#permitTab").addClass("tabberactive");
+            //document.getElementById('myTab').tabber.tabShow(3);
+            //console.log($("#myTab"));
+            //console.log($("#myTab").tabber);
+            //$("#myTab").tabShow(3);
+
+            var myTab = new tabberObj({ div: document.getElementById('myTab') });
+            console.log(myTab);
+            console.log(myTab.tabber);
+            //myTab.tabber.tabShow(3);
+            myTab.tabShow(3);
+        }
+    </script>
+
+
+    </div>
+    </form>
+<!-- MAIN CONTENT END -->
+</div>
+<!-- end of div#contentWrapper -->
+    <div id="dnrAppFoot">
+		<a style="text-decoration: none"; href="https://dnr.wisconsin.gov/"><span class="underline-on-hover">Wisconsin Department of Natural Resources</span></a><br/>
+		101 S. Webster Street PO Box 7921<br/>
+		Madison, WI 53707-7921<br/>
+		Call 1-888-936-7463 (TTY via relay: 711) from 7AM to 10PM<br/>
+		Email Customer Service: <a style="text-decoration: none"; href="mailto:redacted@example.org" title="Email DNR customer service"><span class="underline-on-hover">redacted@example.org</span></a><br/>
+		<a href="https://wisconsin.gov/"><img alt="wi.gov logo" class="d-none d-sm-none d-md-block" id="wiGovLogo" src="Images/WI.Gov_Symbol.png" title="wisconsin.gov"></a> 
+	</div>
+    
+
+</body>
+</html>

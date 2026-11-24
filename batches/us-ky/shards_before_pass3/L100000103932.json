@@ -1,0 +1,237 @@
+{
+ "meta": {
+  "plant_id": "L100000103932",
+  "plant_name": "Cane Run Station",
+  "state": "Kentucky",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T20:12:09-05:00",
+  "done": true,
+  "urls_attempted": 6,
+  "urls_verified": 5
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000401618",
+   "unit_name": "CR7",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf",
+      "https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "milestones": [
+      {
+       "status": "operating",
+       "year": 2015,
+       "period": "June",
+       "sources": [
+        "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+       ],
+       "note": "The EIA-860M table for September 2026 gives an operating month of June and year of 2015 for generators 7A, 7B and 7S.",
+       "period_note": "Month taken from the EIA-860M operating month for the three generators."
+      }
+     ],
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 1363 generators 7A, 7B and 7S as operating, with no planned retirement. The Louisville Air Pollution Control District statement of basis from November 2025 (https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf) describes the combined cycle unit as an active permitted source. The status is unchanged, so this re-verifies it. The 2024 integrated resource plan for the two utilities (https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf) lists Cane Run 7 as an existing unit that began operation in 2015, with no retirement planned. The neighboring coal unit, Cane Run 3, is not part of this plant row."
+    },
+    "Capacity (MW)": {
+     "value": "731.0",
+     "refs": [
+      "https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Louisville Air Pollution Control District statement of basis from November 2025 (https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf) gives the combined cycle unit a rated capacity of 731 MW. The EIA-860M table for September 2026 lists nameplate figures of 260 MW, 260 MW and 287 MW for the two turbines and the steam turbine, which add to 807 MW. The permit figure matches GEM, so I left the value as is. The 807 MW EIA total is raised as a question."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Siemens Energy SGT6-5000F.EE",
+     "refs": [
+      "https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Louisville Air Pollution Control District statement of basis from November 2025 (https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf) names both combustion turbines, GT-7A and GT-7B, as Siemens Energy model SGT6-5000F.EE, F class."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Louisville Air Pollution Control District statement of basis from November 2025 (https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf) says the station generates electric energy for local and remote distribution. It lists the combined cycle unit as a routine generator and the four 3,000 kilowatt diesel units as emergency generators for the plant. No document says the combined cycle unit is a backup unit, so the value stays no. The document implies this but does not state it."
+    },
+    "Operator(s)": {
+     "value": "Louisville Gas & Electric Co",
+     "refs": [
+      "https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Louisville Air Pollution Control District statement of basis from November 2025 (https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf) names Louisville Gas & Electric Company as the permit holder and source for Cane Run Generating Station, and the permit text refers to the station as LG&E Cane Run. I read that as the operator. The entity already exists in the database with 22 units."
+    },
+    "Owner(s)": {
+     "value": "Kentucky Utilities Co [78%]; Louisville Gas & Electric Co [22%]",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Table 8-4 of the 2024 integrated resource plan filed by the two utilities (https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf) shows Cane Run 7 with entitlements of 78 percent for Kentucky Utilities and 22 percent for Louisville Gas and Electric. This matches the value GEM already holds."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year"
+   ],
+   "notes": "Unit CR7 is still operating in the EIA-860M table for September 2026 with no planned retirement. The 2024 integrated resource plan lists no retirement or mothballing, and shows only a capacity uprate assumed for 2026. No change of owner was found. I read the two Kentucky Public Service Commission cases the harvest flagged. Case 2022-00098 is the East Kentucky Power Cooperative plan and has nothing on this plant. Case 2023-00122 is the retirement application for other LG&E and KU units, and its application does not name Cane Run."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000401618",
+   "concern_type": "Capacity (MW)",
+   "question": "Should CR7 capacity stay at 731 MW when EIA lists 807 MW?",
+   "finding": "The Louisville Air Pollution Control District statement of basis from November 2025 (https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf) rates the combined cycle unit at 731 MW. The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists nameplate figures of 260, 260 and 287 MW, which add to 807 MW.",
+   "recommendation": "Leave the capacity at 731 MW, which matches the permit and the existing note. Ask the project manager whether the 2024 turbine uprate should raise it toward the EIA total.",
+   "note": "The 2024 integrated resource plan (https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf) says output is limited to 691 MW until a transmission study and network upgrades allow 697 MW in summer and 759 MW in winter, assumed for 2026. I found no document saying the limit has been lifted. The EIA table shows no planned uprate.",
+   "refs": [
+    "https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf"
+   ],
+   "proposed_value": {
+    "Capacity (MW)": "807"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Louisville Gas & Electric Co",
+   "role": "operator",
+   "lookup_result": "Entity already exists and appears on 22 units in the United States. Reuse it."
+  },
+  {
+   "entity_name": "Kentucky Utilities Co",
+   "role": "owner",
+   "lookup_result": "Entity already exists and appears on 38 units in the United States. Reuse it."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Plant 1363, generators 7A 7B 7S operating, June 2015."
+  },
+  {
+   "url": "https://louisvilleky.gov/sites/default/files/2025-11/20251113-basis-O-0126-25-V.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "Equipment Manufacturer/Model",
+    "Backup Power",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read through fetch.py; 731 MW, Siemens SGT6-5000F.EE, diesel emergency generators found."
+  },
+  {
+   "url": "https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf",
+   "used_for": [
+    "Status",
+    "Owner(s)",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Volume I of the LG&E and KU 2024 plan. Table 8-4 gives 78 and 22 percent entitlements, 2015 operation and the 2026 uprate."
+  },
+  {
+   "url": "https://psc.ky.gov/pscecf/2023-00122/rick.lovekamp@lge-ku.com/05102023013339/02-LGE_KU_Joint_Application_2023-00122.pdf",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "The retirement application text does not contain the name Cane Run, so it does not bear on this plant."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2022-00098",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "The East Kentucky Power Cooperative plan case concerns another utility and does not bear on Cane Run."
+  },
+  {
+   "url": "https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156315/File",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "These Louisville Metro packets hold public comments on a data center zoning rule and do not describe Cane Run Station."
+  }
+ ]
+}

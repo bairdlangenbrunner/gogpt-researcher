@@ -1,0 +1,428 @@
+{
+ "meta": {
+  "plant_id": "L100001026095",
+  "plant_name": "KYMEA Energy Center I",
+  "state": "Kentucky",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-06T09:32:40-05:00",
+  "done": true,
+  "urls_attempted": 11,
+  "urls_verified": 11
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001031363",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "construction",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://www.kymea.org/kymea-energy-center-i/"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 68453, generators 1 to 4, status under construction more than 50 percent complete, nameplate 18.8 MW each, natural gas internal combustion engine, planned operation June 2027, county Hopkins"
+      },
+      {
+       "url": "https://www.kymea.org/kymea-energy-center-i/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "milestones": [
+      {
+       "status": "construction",
+       "year": 2025,
+       "period": "April",
+       "sources": [
+        "https://www.kymea.org/kymea-energy-center-i/"
+       ],
+       "note": "The owner's project timeline on its Energy Center I page lists plant construction as starting in April 2025.",
+       "period_note": "The owner held a groundbreaking ceremony on April 15, 2025. The timeline entry, not the ceremony, is used for the date."
+      }
+     ],
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists all four engines as under construction, more than 50 percent complete. The KYMEA Energy Center I page (https://www.kymea.org/kymea-energy-center-i/) reported about 73 percent completion in September 2026. This matches the current status, so nothing changes. The unit is already construction, so this is not a status change. The two sources are the owner's own page and EIA, which relies on owner reports, so they are not counted as independent."
+    },
+    "Capacity (MW)": {
+     "value": "75.2",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://s3.amazonaws.com/kymea-twill/4031257f-39bb-4be9-99b8-87cfeaf6cff8/2025_06_IRP2023-Report-Draft-v.24_6_05_25.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 68453, generators 1 to 4, status under construction more than 50 percent complete, nameplate 18.8 MW each, natural gas internal combustion engine, planned operation June 2027, county Hopkins"
+      },
+      {
+       "url": "https://s3.amazonaws.com/kymea-twill/4031257f-39bb-4be9-99b8-87cfeaf6cff8/2025_06_IRP2023-Report-Draft-v.24_6_05_25.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "The plan describes the 75 MW KYMEA Energy Center I."
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 lists four engines at 18.8 MW nameplate each, 75.2 MW in total. The KYMEA 2023 integrated resource plan (https://s3.amazonaws.com/kymea-twill/4031257f-39bb-4be9-99b8-87cfeaf6cff8/2025_06_IRP2023-Report-Draft-v.24_6_05_25.pdf) calls it the 75 MW Energy Center I, which matches within rounding.",
+     "irp": true
+    },
+    "Number Of Engines": {
+     "value": "4",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/13751619"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/13751619",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Air permit V-25-010 (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/13751619) authorizes emission units 01 to 04, four natural gas engines."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "W\u00e4rtsil\u00e4: 18V50SG",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/13751619"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/13751619",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Air permit V-25-010 (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/13751619) names the model as Wartsila 18V50SG, 2024 model year, 25,574 horsepower each."
+    },
+    "Turbine/Engine Technology": {
+     "value": "internal combustion",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/13751619",
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/13751619",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 68453, generators 1 to 4, status under construction more than 50 percent complete, nameplate 18.8 MW each, natural gas internal combustion engine, planned operation June 2027, county Hopkins"
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The air permit describes four reciprocating internal combustion engines. EIA lists natural gas internal combustion engines."
+    },
+    "Start year": {
+     "value": "2027",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://www.kymea.org/kymea-energy-center-i/",
+      "https://s3.amazonaws.com/kymea-twill/4031257f-39bb-4be9-99b8-87cfeaf6cff8/2025_06_IRP2023-Report-Draft-v.24_6_05_25.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 68453, generators 1 to 4, status under construction more than 50 percent complete, nameplate 18.8 MW each, natural gas internal combustion engine, planned operation June 2027, county Hopkins"
+      },
+      {
+       "url": "https://www.kymea.org/kymea-energy-center-i/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://s3.amazonaws.com/kymea-twill/4031257f-39bb-4be9-99b8-87cfeaf6cff8/2025_06_IRP2023-Report-Draft-v.24_6_05_25.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "The KYMEA 2023 integrated resource plan says Energy Center I, four Wartsila engines in Hopkins County, is expected to reach commercial operation by June 2027."
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 gives planned operation June 2027. The owner's timeline lists plant commissioning from December 2026 to May 2027. The human adds a new scheduled event for 2027 with source year 2026 only if one is not already there; an existing event is never changed. The KYMEA 2023 integrated resource plan (https://s3.amazonaws.com/kymea-twill/4031257f-39bb-4be9-99b8-87cfeaf6cff8/2025_06_IRP2023-Report-Draft-v.24_6_05_25.pdf) also gives commercial operation by June 2027, so the plan agrees with GEM.",
+     "irp": true
+    },
+    "Status Detail": {
+     "value": "Construction started in April 2025, according to the project timeline on the owner's Energy Center I page. As of September 2026 the owner reported Energy Center I about 73 percent complete, with the engines set and commissioning planned from December 2026 to May 2027. EIA lists planned operation for June 2027.",
+     "refs": [
+      "https://www.kymea.org/kymea-energy-center-i/",
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.kymea.org/kymea-energy-center-i/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Verified again with the expected string April 2025."
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 68453, generators 1 to 4, status under construction more than 50 percent complete, nameplate 18.8 MW each, natural gas internal combustion engine, planned operation June 2027, county Hopkins"
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "note": "The new text goes above the existing text, which says COD expected summer 2027.\n\nConstruction start:\n- Open the owner's page at https://www.kymea.org/kymea-energy-center-i/ and find the project timeline. It lists plant construction as starting in April 2025.\n- A groundbreaking ceremony was held on April 15, 2025, but a ceremony does not mark the start of work, so the timeline entry is used.",
+     "milestones": [
+      {
+       "status": "construction",
+       "year": 2025,
+       "period": "April",
+       "sources": [
+        "https://www.kymea.org/kymea-energy-center-i/"
+       ],
+       "note": "The owner's project timeline on its Energy Center I page lists plant construction as starting in April 2025.",
+       "period_note": "The owner held a groundbreaking ceremony on April 15, 2025. The timeline entry, not the ceremony, is used for the date."
+      }
+     ]
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/13751619"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/13751619",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true,
+       "note": "Air permit V-25-010 lists only emission units 01 to 04 (four natural gas engines) plus a 1 MMBtu per hour dew point heater and a small water heater. No emergency generator or fire pump engine is listed."
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "Air permit V-25-010 (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/13751619) lists the four natural gas engines, a dew point heater and a water heater. It lists no emergency generator or fire pump engine, and the engines serve peaking and continuous load. So the answer no stands, but the permit does not say the words backup power."
+    },
+    "Capacity Per Engine": {
+     "value": "18.8",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Plant 68453, generators 1 to 4, status under construction more than 50 percent complete, nameplate 18.8 MW each, natural gas internal combustion engine, planned operation June 2027, county Hopkins"
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists four engines at 18.8 MW nameplate each."
+    }
+   },
+   "not_found": [
+    "Cancellation year",
+    "Retired year",
+    "Planned retire",
+    "Conversion/replacement?",
+    "Latest Activity"
+   ],
+   "notes": "The unit is under construction and the owner posts monthly progress reports, so Latest Activity is not filled. No cancellation, retirement or conversion applies to a new engine plant."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001031363",
+   "concern_type": "location",
+   "question": "Should Hopkins be entered as the county for KYMEA Energy Center I?",
+   "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) gives Hopkins County. The air permit (https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/13751619) gives the address 1757 AC Slaton Road, Madisonville, and the commission order (https://psc.ky.gov/pscscf/2024%20Cases/2024-00290//20250402_PSC_ORDER.pdf) names Hopkins County.",
+   "recommendation": "Enter Hopkins in the Local area field, with the EIA table and the commission order as sources.",
+   "note": "The current point is already marked exact and was not reopened.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://psc.ky.gov/pscscf/2024%20Cases/2024-00290//20250402_PSC_ORDER.pdf"
+   ],
+   "proposed_value": {
+    "Local area": "Hopkins"
+   }
+  },
+  {
+   "gem_unit_id": "G100001031363",
+   "concern_type": "identity",
+   "question": "Is MISO queue row S1073 the interconnection request for KYMEA Energy Center I?",
+   "finding": "Row S1073 is 75 MW with no fuel shown, queued February 19, 2025, at the Hopkins to Reid 161 kV line owned by Big Rivers, with Webster County listed. The size and the Big Rivers connection fit the plant. The queue does not name KYMEA, and the KYMEA page says its switching station was transferred to LG&E and KU, whose area EIA lists as the balancing authority.",
+   "recommendation": "Treat S1073 as a probable match but do not cite it for any value. Ask KYMEA or check the interconnection agreement if a firm link is needed.",
+   "note": "I read the MISO project list file on November 5, 2026. Row J3089 is a withdrawn 696 MW Reid combined cycle and is unrelated. The queue page itself is a lead and was not run through the verifier.",
+   "refs": []
+  },
+  {
+   "gem_unit_id": "G100001031363",
+   "concern_type": "Owner(s)",
+   "question": "Is Kentucky Municipal Power Agency the same company as Kentucky Municipal Energy Agency?",
+   "finding": "GEM spells the owner Kentucky Municipal Power Agency. EIA, the air permit and the commission case all say Kentucky Municipal Energy Agency, and the KYMEA website uses KYMEA.",
+   "recommendation": "Leave the owner as is, or rename the entity to the spelling EIA and the commission use if the entity record allows it.",
+   "note": "No owner change is proposed, so the entity lookup was not needed.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://psc.ky.gov/pscscf/2024%20Cases/2024-00290//20250402_PSC_ORDER.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001031363",
+   "concern_type": "other",
+   "question": "Does the 2023 IRP of KYMEA differ from GEM for Energy Center I?",
+   "finding": "The KYMEA 2023 integrated resource plan at https://s3.amazonaws.com/kymea-twill/4031257f-39bb-4be9-99b8-87cfeaf6cff8/2025_06_IRP2023-Report-Draft-v.24_6_05_25.pdf says the 75 MW Energy Center I, four Wartsila engines in Hopkins County, is expected to reach commercial operation by June 2027. This matches GEM's capacity and start year.",
+   "recommendation": "Leave GEM as is and add an integrated resource plan note that the 2023 plan lists Energy Center I and no other new gas.",
+   "note": "The plan was read in full text on November 5, 2026. It is the draft dated June 2025 that the board approved in January 2025 per the resources page at https://www.kymea.org/irp/irp-resources/.",
+   "refs": [
+    "https://s3.amazonaws.com/kymea-twill/4031257f-39bb-4be9-99b8-87cfeaf6cff8/2025_06_IRP2023-Report-Draft-v.24_6_05_25.pdf",
+    "https://www.kymea.org/irp/irp-resources/"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.kymea.org/kymea-energy-center-i/",
+   "used_for": [
+    "Status",
+    "Start year",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Owner timeline and monthly updates."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Read the downloaded workbook, plant 68453."
+  },
+  {
+   "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/13751619",
+   "used_for": [
+    "Number Of Engines",
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Air permit V-25-010."
+  },
+  {
+   "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00290//20250402_PSC_ORDER.pdf",
+   "used_for": [
+    "County"
+   ],
+   "outcome": "verified",
+   "note": "Commission order granting the construction certificate."
+  },
+  {
+   "url": "https://www.powermag.com/kentucky-energy-group-breaks-ground-for-new-rice-power-plant/",
+   "used_for": [
+    "Backup Power"
+   ],
+   "outcome": "verified",
+   "note": "Peaking and continuous service."
+  },
+  {
+   "url": "https://www.kymea.org/kymea-announces-rice-power-plant-project/",
+   "used_for": [
+    "existing source"
+   ],
+   "outcome": "verified",
+   "note": "Existing link still works."
+  },
+  {
+   "url": "https://www.kymea.org/irp/irp-resources/",
+   "used_for": [
+    "IRP"
+   ],
+   "outcome": "verified",
+   "note": "Plan approved January 2025; plan PDF not opened."
+  },
+  {
+   "url": "https://www.misoenergy.org/api/giqueue/getprojects",
+   "used_for": [
+    "queue"
+   ],
+   "outcome": "not relevant",
+   "note": "Lead only, read for S1073."
+  },
+  {
+   "url": "https://s3.amazonaws.com/kymea-twill/4031257f-39bb-4be9-99b8-87cfeaf6cff8/2025_06_IRP2023-Report-Draft-v.24_6_05_25.pdf",
+   "used_for": [
+    "Start year",
+    "Capacity (MW)",
+    "IRP"
+   ],
+   "outcome": "verified",
+   "note": "KYMEA 2023 integrated resource plan; confirms 75 MW, four Wartsila engines and June 2027."
+  },
+  {
+   "url": "https://madisonvilleky.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=4876,plainText=false)",
+   "used_for": [
+    "Capacity (MW)",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Madisonville city council packet from July 2024 describes a 75 MW natural gas engine facility for KYMEA member utilities; consistent with the existing values."
+  },
+  {
+   "url": "https://madisonvilleky.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5042,plainText=false)",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "April and May 2025 council item is an electric department update on the plant; it adds no new value beyond the construction already recorded."
+  },
+  {
+   "url": "https://madisonvilleky.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5031,plainText=false)",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "April and May 2025 council item is an electric department update on the plant; it adds no new value beyond the construction already recorded."
+  },
+  {
+   "url": "https://madisonvilleky.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5032,plainText=false)",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "April and May 2025 council item is an electric department update on the plant; it adds no new value beyond the construction already recorded."
+  },
+  {
+   "url": "https://madisonvilleky.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5034,plainText=false)",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "April and May 2025 council item is an electric department update on the plant; it adds no new value beyond the construction already recorded."
+  }
+ ]
+}

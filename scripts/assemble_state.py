@@ -162,7 +162,8 @@ from build_review_package import (_split_urls, additive_value, inline_value,  # 
 from geo import distance_m, fmt5, parse_coord, pin_link, pin_point, valid_point  # noqa: E402
 from paths import gogpt_scoped_csv  # noqa: E402
 from schema_constants import (ADDITIVE_TEXT_COLUMNS, EVIDENCE_KEY, INLINE_SOURCE_COLUMNS,  # noqa: E402
-                              LOCATION_METHODS, RESEARCH_FIELDS, is_data_source_column)
+                              LOCATION_METHODS, RESEARCH_FIELDS, is_data_source_column,
+                              milestone_label)
 from review_app.checklist import (  # noqa: E402
     CONCERN_VOCAB, MONITOR_KINDS, name_key, normalize_concern_type)
 
@@ -187,7 +188,7 @@ LOCATION_MOVE_M = 500
 TIER_RANK = {"high": 2, "medium": 1, "low": 0}
 ENTITY_FIELDS = {"Owner(s)", "Operator(s)"}
 TECH_ABBR = {"CC": "combined cycle", "GT": "gas turbine",
-             "AGT": "aeroderivative gas turbine", "ST": "steam turbine",
+             "AGT": "gas turbine", "ST": "steam turbine",
              "IC": "internal combustion",
              "ICCC": "internal combustion combined cycle",
              "ISCC": "integrated solar combined cycle",
@@ -256,6 +257,8 @@ def norm_fuel(v):
 
 def norm_tech(v) -> str:
     s = ws(v)
+    if s.lower() == "aeroderivative gas turbine":
+        return "gas turbine"   # the web form has no aeroderivative option
     return TECH_ABBR.get(s.upper(), s.lower())
 
 
@@ -470,6 +473,43 @@ def build_action(kind, field, value, current, target, ref_col, n_urls,
         s += (" There is no link to add. The note explains how this status "
               "was worked out.")
     return s
+
+
+def split_status_detail(rec):
+    """A Status Detail edit that also dates status steps becomes two records (Baird
+    2026-11-06, after Cooper Unit 3): the Status Detail text alone, which the review page
+    files as minor, and a `<plant>:<unit>:status-timeline` record that holds the milestone
+    entries and the validation answer (check 7), which it files as major. Any other record
+    comes back unchanged, in a list of one. Status records keep their milestones."""
+    if list(rec.get("fields") or {}) != ["Status Detail"] or not rec.get("milestones"):
+        return [rec]
+    rid = rec["record_id"]
+    tl_id = (rid[: -len(":status-detail")] if rid.endswith(":status-detail") else rid) + ":status-timeline"
+    ms = list(rec["milestones"])
+    srcs = [u for m in ms for u in (m.get("sources") or []) if u]
+    steps = "; ".join(f"{m.get('status', '')}, {milestone_label(m) or 'no date'}" for m in ms)
+    timeline = {k: v for k, v in rec.items()
+                if k not in ("fields", "current", "refs", "additive", "action", "researcher_notes",
+                             "applies_to_all_units", "sibling_unit_ids", "sibling_current")}
+    timeline.update({
+        "record_id": tl_id, "fields": {}, "current": {}, "refs": {},
+        "verifications": [v for v in rec.get("verifications") or [] if v.get("url") in srcs],
+        # independent only when the steps' own links come from two publishers
+        "independent": bool(rec.get("independent")) and len({host_of(u) for u in srcs}) > 1,
+        "milestones": ms,
+        "researcher_notes": " ".join(
+            [m.get("note", "") for m in ms if m.get("note")]
+            + [f"The date is in {u}." for u in dict.fromkeys(srcs)]) or rec.get("researcher_notes", ""),
+        "action": (f"In the unit's Milestone Timeline, add this dated step: {steps}. "
+                   "Put the link in the entry's source."),
+    })
+    detail = {k: v for k, v in rec.items() if k != "milestones"}
+    checks = [c for c in rec.get("checks") or [] if c != 7]
+    if checks:
+        detail["checks"] = checks
+    else:
+        detail.pop("checks", None)
+    return [detail, timeline]
 
 
 def merge_plant_question(rec, qa_records, plant_unit_ids):
@@ -837,7 +877,8 @@ class Assembler:
             if additive:
                 rec["additive"] = True
             # a staged status carries its dated milestone entries (Baird 2026-11-02)
-            if field == "Status" and fd.get("milestones"):
+            # (a dated status step staged through Status Detail carries it too, 2026-11-06)
+            if field in ("Status", "Status Detail") and fd.get("milestones"):
                 rec["milestones"] = list(fd["milestones"])
         else:
             return
@@ -850,7 +891,7 @@ class Assembler:
             rec["sibling_unit_ids"] = list(siblings)
             rec["sibling_current"] = {u: (self.export.get(u) or {}).get(field, "")
                                       for u in siblings}
-        self.lanes["updates"].append(rec)
+        self.lanes["updates"].extend(split_status_detail(rec))
 
     # -- per plant
     def plant(self, p):

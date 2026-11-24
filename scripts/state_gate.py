@@ -85,12 +85,13 @@ Hard gates (any failure exits 1)
               brief task carrying check 7, and each fix or person item in the
               current work/validation_<tag>.json, needs a record in any lane
               for that unit (or a sibling) carrying check 7, or for a
-              whole-plant item a record on that plant. A finding that nothing
-              was found is a qa record with concern_type validation. An item
-              is optional under the manual (M198, M220) when the plant also
-              has coal units in the unfiltered export, or the unit is a coal
-              conversion; a record on that plant or unit whose text says
-              "optional under the manual" answers it. The
+              whole-plant item a record on that plant. There is no optional
+              exemption (Baird 2026-11-06): coal-only units are never in the
+              report's fix list, but every gas or oil unit's item, at a coal
+              plant or a coal conversion too, is cleared by an EDIT (an
+              updates, newunits or newplants record, or one already applied)
+              carrying check 7. A qa record alone answers it only when its
+              text says what was searched and not found. The
               validation file must exist and be under a day old (rerun
               validation_report.py; --allow-stale-validation downgrades the age
               check), so an item that appeared after the briefs were built is
@@ -219,6 +220,14 @@ Hard gates (any failure exits 1)
               that would stop the build anyway (qa records with fields, etc.)
   qc_checks   qc_checks.py --staged on each lane file present must exit 0
               (skipped with --no-qc)
+
+  add-basics  every new unit (a newplants unit or a newunits record) stages
+              Turbine/Engine Technology from the web form's dropdown (combined
+              cycle, gas turbine, steam turbine, ICCC, ISCC, AFC, internal
+              combustion, unknown) and a milestone entry for its status with a
+              year, a month, quarter or half, and a source that loaded (Baird
+              2026-11-07, after Paducah American Energy Hub went in with
+              neither)
 
 Advisory gates (reported, never fail the run)
   milestones    every staged Status carries a milestone entry for that status:
@@ -414,6 +423,7 @@ def gate_coverage(batch, index):
 def saved_copy_cited(shard, url):
     """True when the shard cites a Wayback snapshot of this address as verified."""
     path = url.split("://", 1)[-1]
+    path = path[4:] if path.startswith("www.") else path   # Wayback may hold the bare host
     return any(isinstance(x, dict) and x.get("outcome") == "verified"
                and "web.archive.org/web/" in (x.get("url") or "") and path in x["url"]
                for x in shard.get("source_log") or [])
@@ -524,6 +534,10 @@ def gate_orphans(lanes):
             # plus 2 (shelved) or 4 (cancelled) years (manual M637); the staged
             # record has no field for that year yet, so only the source is required.
             if rec.get("delete"):
+                continue
+            # a blank value, or a value the web form accepts without a source
+            # (Technology "unknown", CHP "not found"; ADD_PAIRED), is no orphan
+            if not ws(val) or ws(val).lower() in ADD_PAIRED.get(col, ("", ()))[1]:
                 continue
             rc = ref_col_for(col)
             if col in IDENTITY_COLUMNS:
@@ -693,6 +707,240 @@ def gate_milestones(lanes):
                 out.append((rid, f"the {st} milestone has no source"))
             elif ok and not any(u in ok for u in srcs):
                 out.append((rid, f"no source of the {st} milestone has a verification that loaded"))
+    return out
+
+
+TECHNOLOGY_DROPDOWN = {"combined cycle", "gas turbine", "steam turbine", "ICCC", "ISCC",
+                       "AFC", "internal combustion", "unknown"}
+
+
+def adds_not_yet_typed(lanes, applied_ids=(), names=None):
+    """The newplants and newunits records still waiting to be typed into the web form.
+    A record in applied_in_db.json is dropped. So is a new plant whose name a plant in
+    the database already carries: either it was typed in and not yet recorded, or it is
+    a duplicate, and the one line returned for it says so instead of a list of checks
+    on values that now live in the database."""
+    if names is None:
+        names = export_plant_names()
+    applied_ids = set(applied_ids or ())
+    kept, notes = {}, []
+    for lane in ("newplants", "newunits"):
+        keep = []
+        for i, rec in enumerate(lanes.get(lane) or []):
+            rid = rid_of(rec, lane, i)
+            if rid in applied_ids or rec.get("record_id") in applied_ids:
+                continue
+            pname = ws(rec.get("plant_name")).lower()
+            if lane == "newplants" and names and pname in names:
+                notes.append((rid, f"plant name {rec.get('plant_name')!r} is already in the database. "
+                                   "If this add was typed in, record it with browser_apply.py record or "
+                                   "move it to applied_in_db.json and stage any fix as an update; if not, "
+                                   "it is a duplicate and the web form will not save it"))
+                continue
+            keep.append(rec)
+        kept[lane] = keep
+    return kept, notes
+
+
+def gate_add_basics(lanes, applied_ids=(), names=None):
+    """Every new unit stages its Technology (the web form's dropdown, not a turbine
+    model) and a dated milestone for its status (Baird 2026-11-07), and passes the
+    web form's validation (gate_add_web_validation). The milestone rules are
+    gate_milestones' rules, hard for adds. Adds already typed into the database are
+    skipped (adds_not_yet_typed)."""
+    if names is None:
+        names = export_plant_names()
+    adds, out = adds_not_yet_typed(lanes, applied_ids, names)
+    lanes = adds
+    for lane, rid, rec in iter_records(lanes, ("newplants", "newunits")):
+        if rec.get("delete") or (lane == "newplants" and "/unit[" not in rid):
+            continue
+        tech = ws((rec.get("fields") or {}).get("Turbine/Engine Technology"))
+        if not tech:
+            out.append((rid, "new unit has no Turbine/Engine Technology; pick combined cycle, gas "
+                             "turbine, steam turbine, ICCC, ISCC, AFC, internal combustion or "
+                             "unknown, with its source"))
+        elif tech not in TECHNOLOGY_DROPDOWN:
+            out.append((rid, f"Technology {tech!r} is not a value in the web form's dropdown"))
+        if not ws((rec.get("fields") or {}).get("Status")):
+            out.append((rid, "new unit has no Status, so it has no milestone either"))
+    out += gate_milestones(adds)
+    out += gate_add_web_validation(adds, names=set())
+    return out
+
+
+# The web form's own save-time validation for a combustion project
+# (GEM-project-db projects/powerplant_views.py validate(), read 2026-11-07 at
+# origin/main a26b658: validate_required, validate_fuels, validate_datasources,
+# validate_locations, validate_name, validate_unit_name). Every add is checked
+# against it so a plant typed in from a batch opens with an empty Validation
+# Report (Baird 2026-11-07). docs/reference/web_form_validation.md lists each rule.
+ADD_REQUIRED_PLANT = ("Latitude", "Longitude", "Location accuracy")
+ADD_REQUIRED_UNIT = ("Capacity (MW)", "Fuel")
+# value column -> its Data Source column, for the pairs the web form checks; a
+# value in the skip set ("unknown", "not found") needs no source there
+ADD_PAIRED = {
+    "Owner(s)": ("Owners Data Source", ()),
+    "Operator(s)": ("Operators Data Source", ()),
+    "Fuel": ("Fuel Data Source", ()),
+    "Capacity (MW)": ("Capacity Data Source", ()),
+    "Number Of Engines": ("Capacity Data Source", ()),
+    "Capacity Per Engine": ("Capacity Data Source", ()),
+    "Turbine/Engine Technology": ("Turbine/Engine Technology Data Source", ("unknown",)),
+    "Equipment Manufacturer/Model": ("Turbine/Engine Equipment Data Source", ()),
+    "CHP": ("CHP Data Source", ("not found",)),
+    "CCS attachment?": ("CCS Data Source", ("not found",)),
+    "Backup Power": ("Backup Power Data Source", ("no",)),
+    "Captive industry use": ("Captive Data Source", ()),
+    "Captive industry type": ("Captive Data Source", ()),
+    "Captive non-industry use": ("Captive Data Source", ()),
+    "Latest Activity": ("Latest Activity Data Source", ()),
+    "Disrupted by conflict": ("Disrupted by conflict Data Source", ("no",)),
+    "Employment Notes": ("Employment Notes Data Source", ()),
+    "Latitude": ("Location Data Source", ()),
+    "Longitude": ("Location Data Source", ()),
+    "Location accuracy": ("Location Data Source", ()),
+    "City": ("Location Data Source", ()),
+    "State/Province": ("Location Data Source", ()),
+    "Local area (taluk, county)": ("Location Data Source", ()),
+    "Major area (prefecture, district)": ("Location Data Source", ()),
+}
+BLANK_ALIASES = {"Latitude": ("coordinate", "latitude", "point", "site"),
+                 "Longitude": ("coordinate", "longitude", "point", "site"),
+                 "Location accuracy": ("coordinate", "point", "site", "location"),
+                 "Capacity (MW)": ("capacity", "size", "megawatt"),
+                 "Fuel": ("fuel",)}
+NAME_BAD_CHARS = "#<>[]{}%+?|"
+TECH_WORDS_RE = re.compile(r"\b(technolog|turbine|engine|design|combined.cycle|simple.cycle|reciprocating)", re.I)
+NOT_FOUND_MIN = 40
+
+
+def not_found_reason(*recs):
+    """{field: what was searched} from the records' `not_found`. A dict entry
+    is the sentence; a bare list entry has no sentence and so explains nothing."""
+    out = {}
+    for r in recs:
+        nf = r.get("not_found") if r else None
+        if isinstance(nf, dict):
+            out.update({k: ws(v) for k, v in nf.items()})
+        elif isinstance(nf, list):
+            out.update({ws(k): out.get(ws(k), "") for k in nf})
+    return out
+
+
+def refs_of(*recs):
+    out = {}
+    for r in recs:
+        refs = (r or {}).get("refs") or {}
+        if isinstance(refs, dict):
+            for k, v in refs.items():
+                out.setdefault(k, []).extend(u for u in (v or []) if ws(u))
+    return out
+
+
+def export_plant_names(csv_path=None):
+    p = Path(csv_path) if csv_path else gem_export_csv()
+    if not p.exists():
+        return None
+    with open(p, encoding="utf-8-sig", newline="") as f:
+        return {ws(r.get("Plant name")).lower() for r in csv.DictReader(f)}
+
+
+def gate_add_web_validation(lanes, names=None):
+    """Each add against the web form's validation (Baird 2026-11-07). A required
+    value left blank passes only when `not_found` on the unit or the plant names
+    the field with a sentence of at least 40 characters saying what was searched;
+    the manual allows a blank capacity or an approximate point, the form still
+    reports it, and the reviewer needs to see the search."""
+    out = []
+    if names is None:
+        names = export_plant_names()
+
+    def blank_ok(rid, field, nf, what, notes=""):
+        reason = nf.get(field)
+        if reason == "" and notes:
+            # a shard's plain not_found list: the notes must say what was searched for it
+            words = BLANK_ALIASES.get(field, (field.lower(),))
+            if NOT_FOUND_RE.search(notes) and any(w in notes.lower() for w in words):
+                return
+        if reason is None:
+            out.append((rid, f"{what} is blank; the web form reports it as Required. Find it, or "
+                             f"put \"{field}\" in not_found with what was searched"))
+        elif len(reason) < NOT_FOUND_MIN:
+            out.append((rid, f"not_found for {field} needs a sentence saying where you looked"))
+
+    def pairs(rid, fields, refs):
+        for col, val in fields.items():
+            v = ws(val)
+            if col not in ADD_PAIRED or not v:
+                continue
+            ds, skip = ADD_PAIRED[col]
+            if v.lower() in skip:
+                continue
+            if not refs.get(ds) and not refs.get(col):
+                out.append((rid, f"{col} is filled but {ds} has no link; the web form asks for one"))
+
+    def name_checks(rid, name, what):
+        if "  " in name:
+            out.append((rid, f"{what} {name!r} has a double space"))
+        bad = [c for c in NAME_BAD_CHARS if c in name]
+        if bad:
+            out.append((rid, f"{what} {name!r} contains {''.join(bad)!r}, which the web form flags"))
+
+    for lane in ("newplants", "newunits"):
+        for i, rec in enumerate(lanes.get(lane) or []):
+            if rec.get("delete"):
+                continue
+            rid = rid_of(rec, lane, i)
+            pf = rec.get("fields") or {}
+            if lane == "newplants":
+                pname = ws(rec.get("plant_name"))
+                name_checks(rid, str(rec.get("plant_name") or "").strip(), "plant name")
+                for term in ("phase", "extension"):
+                    if term in re.sub(r"\W+", " ", pname.lower()).split():
+                        out.append((rid, f"plant name {pname!r} contains {term!r}; the web form flags it. "
+                                         "Put the phase in the unit name"))
+                if names is not None and pname.lower() in names:
+                    out.append((rid, f"plant name {pname!r} is already used by a plant in the database; "
+                                     "the web form will not save a second one"))
+                if not ws(rec.get("country")) and not ws(pf.get("Country/Area")):
+                    out.append((rid, "new plant has no country"))
+                nf = not_found_reason(rec)
+                for f in ADD_REQUIRED_PLANT:
+                    if not ws(pf.get(f)):
+                        blank_ok(rid, f, nf, f, ws(rec.get("researcher_notes")))
+                prefs = refs_of(rec)
+                if not prefs.get("Location Data Source"):
+                    out.append((rid, "new plant has no Location Data Source; the web form asks for one "
+                                     "on every plant (the country alone triggers it)"))
+                pairs(rid, pf, prefs)
+                units = rec.get("units") or []
+                unames = [ws(u.get("unit_name") or (u.get("fields") or {}).get("Unit name")) for u in units]
+                for n in {n for n in unames if n and unames.count(n) > 1}:
+                    out.append((rid, f"unit name {n!r} is used twice; the web form will not save it"))
+                if len([n for n in unames if n]) > 1 and any("--" in n for n in unames):
+                    out.append((rid, "a unit is named '--' but the plant has more than one unit"))
+                subs = [(f"{rid}/unit[{j}]", u, rec) for j, u in enumerate(units)]
+            else:
+                subs = [(rid, rec, None)]
+            for urid, u, parent in subs:
+                uf = u.get("fields") or {}
+                name_checks(urid, str(u.get("unit_name") or uf.get("Unit name") or "").strip(), "unit name")
+                nf = not_found_reason(parent, u)
+                for f in ADD_REQUIRED_UNIT:
+                    if not ws(uf.get(f)) and not (parent and ws(pf.get(f))):
+                        blank_ok(urid, f, nf, f, " ".join(ws((r or {}).get("researcher_notes"))
+                                                          for r in (parent, u)))
+                pairs(urid, uf, refs_of(parent, u))
+                # Technology "unknown" only after a comprehensive search finds no source naming
+                # the design, every place searched in the note (Baird 2026-11-07, controlled_vocab.md)
+                if ws(uf.get("Turbine/Engine Technology")).lower() == "unknown":
+                    tnotes = " ".join([ws((r or {}).get("researcher_notes")) for r in (parent, u)]
+                                      + [ws(v) for k, v in nf.items() if "techn" in k.lower()])
+                    if not (NOT_FOUND_RE.search(tnotes) and TECH_WORDS_RE.search(tnotes)):
+                        out.append((urid, 'Technology is "unknown" but no note says where the design was '
+                                          "searched for; search the permit, the queue entry, the developer, "
+                                          "the turbine maker and the news, and name each place in the note"))
     return out
 
 
@@ -1204,35 +1452,12 @@ def validation_file(index):
     return work_dir() / f"validation_{tag}.json"
 
 
-OPTIONAL_RE = re.compile(r"optional under the manual", re.I)
-
-
-def coal_plant_ids(csv_path=None):
-    """GEM location IDs of plants with at least one coal unit in the unfiltered
-    export (scripts/gem_export_gogpt.csv). Empty set when the file is missing."""
-    p = Path(csv_path) if csv_path else gem_export_csv()
-    if not p.exists():
-        return set()
-    out = set()
-    with open(p, encoding="utf-8-sig", newline="") as f:
-        reader = csv.reader(f)
-        header = next(reader, [])
-        try:
-            i_pid, i_fuel = header.index("GEM location ID"), header.index("Fuel")
-        except ValueError:
-            return set()
-        for row in reader:
-            if len(row) > max(i_pid, i_fuel) and "coal" in row[i_fuel].lower():
-                out.add(row[i_pid])
-    return out
-
-
-def is_coal_conversion(row):
-    """A unit whose Conversion/replacement? names a coal conversion: a conversion
-    from coal, or a value that says coal itself."""
-    conv = ws((row or {}).get("Conversion/replacement?")).lower()
-    frm = ws((row or {}).get("Conversion from/replacement of (fuel)")).lower()
-    return "coal" in conv or ("conversion" in conv and "coal" in frm)
+# A question answers a validation item only when it says the document was looked for and not
+# found (Baird 2026-11-06): the fix itself is an edit.
+NOT_FOUND_RE = re.compile(r"\b(?:not found|no (?:document|source|filing|record|page|link|permit|order|date)\b[^.]{0,80}"
+                          r"(?:found|states?|gives?|names?|shows?|says?)|could not (?:find|locate)|"
+                          r"found (?:nothing|no)|nothing (?:was )?found|searched|looked (?:in|at|for|through))", re.I)
+EDIT_LANES = ("updates", "newunits", "newplants", "applied", "entity")
 
 
 def narrow_focus(index):
@@ -1289,39 +1514,62 @@ def gate_validation(index, lanes, vpath=None, allow_stale=False, now=None, appli
                 info.append("warning: " + msg)
             else:
                 out.append((vpath.name, msg))
+        fresh = age is not None and age <= EXPORT_MAX_AGE_HOURS
+        live = {(e["plant_id"], e.get("unit_id")) for e in data.get("errors", [])}
+        live_plants = {pid for pid, _ in live}
+        if fresh:
+            # A brief task from an older report that today's report no longer lists, on a
+            # unit (or plant) with an edit already typed into the database, was cleared there.
+            typed_units = {r.get("gem_unit_id") for r in lanes.get("applied") or []}
+            typed_plants = {r.get("gem_plant_id") for r in lanes.get("applied") or []}
+            gone = [k for k in wanted
+                    if (k not in live if k[1] else k[0] not in live_plants)
+                    and (k[1] in typed_units if k[1] else k[0] in typed_plants)]
+            for k in gone:
+                del wanted[k]
+            if gone:
+                names = ", ".join(f"{p}:{u or 'plant'}" for p, u in gone)
+                info.append(f"{len(gone)} brief validation items no longer in today's report "
+                            f"(cleared in the database): {names}")
         for e in data.get("errors", []):
             if e.get("kind") in ("fix", "person"):
                 wanted.setdefault((e["plant_id"], e.get("unit_id")),
                                   f"{e.get('kind')}: {e.get('item', '')} {e.get('message', '')}"[:90])
-    answered_units, answered_plants = set(), set()
-    opt_units, opt_plants = set(), set()
-    for _, _, rec in iter_records(lanes):
-        text = " ".join(str(rec.get(k) or "") for k in PROSE_KEYS)
-        if OPTIONAL_RE.search(text):
-            opt_plants.add(rec.get("gem_plant_id"))
-            opt_units.add(rec.get("gem_unit_id"))
-            opt_units |= set(rec.get("sibling_unit_ids") or [])
+    edit_units, edit_plants = set(), set()        # cleared by an edit
+    nf_units, nf_plants = set(), set()            # a question that says nothing was found
+    seen_units, seen_plants = set(), set()        # any check 7 record
+    for lane, _, rec in iter_records(lanes):
         if 7 not in (rec.get("checks") or []):
             continue
-        answered_plants.add(rec.get("gem_plant_id"))
-        answered_units.add(rec.get("gem_unit_id"))
-        answered_units |= set(rec.get("sibling_unit_ids") or [])
-    coal = coal_plant_ids(unfiltered_csv) if wanted else set()
-    optional = 0
+        text = " ".join(str(rec.get(k) or "") for k in PROSE_KEYS)
+        units = {rec.get("gem_unit_id")} | set(rec.get("sibling_unit_ids") or [])
+        pid = rec.get("gem_plant_id")
+        seen_plants.add(pid)
+        seen_units |= units
+        if lane in EDIT_LANES and (rec.get("fields") or rec.get("proposed_value")
+                                   or rec.get("milestones") or lane == "applied"):
+            edit_plants.add(pid)
+            edit_units |= units
+        elif NOT_FOUND_RE.search(text):
+            nf_plants.add(pid)
+            nf_units |= units
     for (pid, uid), text in sorted(wanted.items(), key=lambda kv: (kv[0][0], kv[0][1] or "")):
-        if (uid and uid not in answered_units) or (not uid and pid not in answered_plants):
-            is_opt = pid in coal or (uid and is_coal_conversion((export or {}).get(uid)))
-            if is_opt:
-                optional += 1
-                if (uid and uid in opt_units) or pid in opt_plants:
-                    continue
-                out.append((f"{pid}:{uid or 'plant'}",
-                            f"optional under the manual (coal on the plant or a coal conversion), "
-                            f"but not answered: write a note saying \"optional under the manual\", "
-                            f"or fix it: {text}"))
-                continue
+        if uid:
+            ok = uid in edit_units or uid in nf_units
+            seen = uid in seen_units
+        else:
+            ok = pid in edit_plants or pid in nf_plants
+            seen = pid in seen_plants
+        if ok:
+            continue
+        if seen:
+            out.append((f"{pid}:{uid or 'plant'}",
+                        f"answered only by a question that does not say what was searched; stage the "
+                        f"fix as an edit with its source, or say where you looked and that it was not "
+                        f"found: {text}"))
+        else:
             out.append((f"{pid}:{uid or 'plant'}", f"no record with check 7 answers: {text}"))
-    info.append(f"validation items to answer: {len(wanted)} ({optional} unanswered but optional under the manual)")
+    info.append(f"validation items to answer: {len(wanted)}")
     return out, info
 
 
@@ -2050,6 +2298,99 @@ def gate_queues(index, lanes, batch, applied=None, today=None, settings=None):
             f"requests needing an answer: {len(need)} of {len(data.get('entries') or [])} entries"]
     return out, info
 
+IRP_MAX_AGE_DAYS = 7
+IRP_MIN_EVIDENCE = 80
+
+
+def gate_irp_plans(index, lanes, batch, applied=None, today=None, settings=None):
+    """Every utility, agency and system planner that serves the scope has its newest
+    resource plan read in full (Baird 2026-11-06, after the Kentucky batch missed the
+    KYMEA and Henderson plan options). scopes/<tag>/irp_plans.json lists the plans
+    (regulator dockets, utility sites, municipal and agency plans off the docket, and
+    for a country the national and grid operator plans); irp_plans.py downloads every
+    volume and writes batches/<tag>/harvest/irp_plans.json; each plan is answered in
+    coverage.json under `irp_plans`, keyed "plan <utility>", with the pages read, every
+    gas or oil addition and option in the plan tied to a GEM plant or a batch record
+    (or a why_not), and evidence. Narrow batches skip it. Returns (offenders, info)."""
+    w = index.get("where") or {}
+    if narrow_focus(index):
+        return [], [f"skipped: narrow batch ({narrow_focus(index)})"]
+    tag = Path(batch).name
+    flag = (f"--state {(w.get('postal') or '').upper()}" if w.get("kind") == "state"
+            else f"--country \"{w.get('country') or tag}\"")
+    settings_path = Path(settings) if settings else scope_dir(tag) / "irp_plans.json"
+    if not settings_path.exists():
+        return [("irp-plans", f"no plan list for this scope: write scopes/{scope_base(tag)}/irp_plans.json "
+                              "naming every utility, agency and system planner and its newest plan "
+                              "(Update SOP §3, step 8), then run irp_plans.py " + flag)], []
+    hp = Path(batch) / "harvest" / "irp_plans.json"
+    if not hp.exists():
+        return [("irp-plans", f"harvest/irp_plans.json is missing: run irp_plans.py {flag}")], []
+    data = json.loads(hp.read_text(encoding="utf-8"))
+    out = []
+    today = today or datetime.date.today()
+    try:
+        age = (today - datetime.date.fromisoformat(str(data.get("generated"))[:10])).days
+    except ValueError:
+        age = None
+    if age is None or age > IRP_MAX_AGE_DAYS:
+        out.append(("irp-plans", f"harvest/irp_plans.json is from {data.get('generated')}, more than "
+                                 f"{IRP_MAX_AGE_DAYS} days old: rerun irp_plans.py {flag}"))
+    for c in data.get("unlisted_cases") or []:
+        out.append((f"case {c}", "a regulator case about a resource plan is not in "
+                    "irp_plans.json: add it to its utility (plan or other_cases) and rerun"))
+    for o in data.get("owners_unlisted") or []:
+        out.append((f"owner {o}", "a utility-like owner of a plant in the scope is in neither utilities "
+                    "nor not_planners in irp_plans.json: search for its plan and list it"))
+    for r in data.get("sheet_unlisted") or []:
+        out.append((f"sheet {r}", "a utility on the US IRPs tab for this state is not in irp_plans.json"))
+    try:
+        answers = json.loads((Path(batch) / "coverage.json").read_text(encoding="utf-8")).get("irp_plans") or {}
+    except (OSError, ValueError, AttributeError):
+        answers = {}
+    lanes = dict(lanes or {})
+    if applied:
+        lanes["applied"] = list(applied)
+    rids = {rec.get("record_id") for _, _, rec in iter_records(lanes) if rec.get("record_id")}
+    for u in data.get("utilities") or []:
+        key = u.get("key") or f"plan {u.get('utility')}"
+        a = answers.get(key)
+        if not isinstance(a, dict):
+            out.append((key, f"{u.get('plan')} has no answer under irp_plans in coverage.json: read the "
+                             "whole plan, preferred and alternative portfolios, and answer it"))
+            continue
+        if len(ws(a.get("evidence"))) < IRP_MIN_EVIDENCE:
+            out.append((key, "needs `evidence`: which plan was read, the tables or pages that list the "
+                             "gas and oil additions, and what they say"))
+        if not ws(a.get("pages")):
+            out.append((key, "needs `pages`: the pages read, and where the preferred and alternative plans are"))
+        unread = [d for d in u.get("documents") or [] if not d.get("reached")]
+        if unread and len(ws(a.get("read_by_hand"))) < 40:
+            out.append((key, f"{len(unread)} plan document(s) did not load: read them by hand and say "
+                             "so under `read_by_hand`, or fix the address"))
+        if (u.get("newer_hints") or u.get("overdue")) and len(ws(a.get("newer_checked"))) < 40:
+            out.append((key, "the landing page names a later year or the next plan is overdue: say under "
+                             "`newer_checked` where you looked for a newer plan and what you found"))
+        if u.get("unmatched_names") and len(ws(a.get("names_checked"))) < 40:
+            out.append((key, "the plan names sites that did not match a GEM plant ("
+                             + ", ".join(list(u["unmatched_names"])[:5]) + "): answer each under `names_checked`"))
+        for kind in ("additions", "options"):
+            items = a.get(kind)
+            if items is None:
+                out.append((key, f"needs `{kind}` (an empty list when the plan has none)"))
+                continue
+            for it in items:
+                what = ws(it.get("what")) or "(unnamed)"
+                rid, pid, why = ws(it.get("record_id")), ws(it.get("plant_id")), ws(it.get("why_not"))
+                if rid and rid not in rids:
+                    out.append((key, f"{what}: record_id {rid!r} is not in the batch"))
+                elif not (rid or pid or (kind == "options" and len(why) >= 30)):
+                    out.append((key, f"{what}: tie it to a plant_id or a batch record_id"
+                                     + (", or give a why_not" if kind == "options" else "")))
+    info = [f"plan file {data.get('generated')}; plans: {len(data.get('utilities') or [])}",
+            f"answered: {sum(1 for u in data.get('utilities') or [] if (u.get('key') or '') in answers)}"]
+    return out, info
+
 
 def gate_qc(staging):
     out, ran = [], []
@@ -2102,6 +2443,10 @@ def run(args):
     add("dates", True, gate_dates(lanes))
     add("unit-names", True, gate_unit_names(lanes))
     add("latest-activity", True, gate_latest_activity(lanes, export))
+    applied_path = staging / "applied_in_db.json"
+    applied = (json.loads(applied_path.read_text(encoding="utf-8")).get("records") or []
+               if applied_path.exists() else [])
+    add("add-basics", True, gate_add_basics(lanes, {ws(r.get("record_id")) for r in applied}))
     add("milestones", False, gate_milestones(lanes))
     add("additive", True, gate_additive(lanes))
     add("location", True, gate_location(lanes, index, batch))
@@ -2130,6 +2475,8 @@ def run(args):
     add("dedup", True, dd, info=dd_info)
     qq, qq_info = gate_queues(index, lanes, batch, applied=applied)
     add("queues", True, qq, info=qq_info)
+    ip, ip_info = gate_irp_plans(index, lanes, batch, applied=applied)
+    add("irp-plans", True, ip, info=ip_info)
     add("build", True, gate_build(lanes))
     add("false-high", False, gate_false_high(lanes))
     add("independence", False, gate_independence(lanes))

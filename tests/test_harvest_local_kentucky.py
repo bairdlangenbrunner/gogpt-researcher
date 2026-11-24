@@ -107,3 +107,35 @@ def test_write_outputs(tmp_path):
     md = (tmp_path / "local_records.md").read_text()
     assert "### Liberty Station (L100001025720)" in md and "Justified Datapower" in md
     assert "Casey County Fiscal Court (Casey County)" in md and "GEM plants in the county: Liberty Station" in md
+
+
+def test_common_names_need_a_plant_word():
+    plants = [{"id": "L100000103937", "name_words": {"brown"}}, {"id": "L100000103951", "name_words": {"trimble"}}]
+    pats = h.plant_patterns(plants)
+    people = "Council Member Chappell introduced the Page for District 15, Colt Brown. Trimble County road paving was approved."
+    assert h.findings(people, pats, [])["named"] == []
+    plant = "LG&E and KU plan a new combined cycle unit at the E.W. Brown Generating Station near Trimble County Station."
+    assert sorted(h.findings(plant, pats, [])["named"]) == ["L100000103937", "L100000103951"]
+
+
+def test_legistar_file_names_are_unique():
+    base = "https://webapi.legistar.com/v1/louisville/Matters/65913/Attachments/"
+    a = h.doc_file(Path("/x"), {"url": base + "156372/File", "date": "2026-10-15", "kind": "packet"})
+    b = h.doc_file(Path("/x"), {"url": base + "156373/File", "date": "2026-10-15", "kind": "packet"})
+    assert a != b and a.name == "2026-10-15_packet_matter65913_attachment156372.pdf"
+
+
+def test_parse_links_follows_the_base_tag():
+    page = ('<base href="https://www.example.gov/" /><a href="Documents/Minutes/2026/October 20, 2026 Minutes.pdf?t=1">'
+            'October 20, 2026 Minutes</a>')
+    docs = h.parse_links(page, "https://www.example.gov/government/court/minutes.php", BODY, "2024-01-01")
+    assert docs[0]["url"] == "https://www.example.gov/Documents/Minutes/2026/October%2020,%202026%20Minutes.pdf?t=1"
+
+
+def test_franklin_and_simpson_bodies_and_todd_wall():
+    ids = {b["id"]: b for b in h.BODIES}
+    assert ids["franklin"]["reader"] == "pages" and ids["franklin"]["county"] == "Simpson"
+    assert ids["simpson-county"]["reader"] == "wpmedia"
+    assert any(n["county"] == "Todd" for n in h.NOT_POSTED)
+    import re
+    assert re.search(h.LEADS["TenKey LandCo"], "TenKey LandCo LLC rezoning", re.I)

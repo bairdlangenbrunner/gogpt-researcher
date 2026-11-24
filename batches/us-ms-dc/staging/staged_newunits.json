@@ -8,7 +8,7 @@
       "kind": "state",
       "slug": "mississippi",
       "quarter": "q4-2026",
-      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+      "csv": "scripts/gem_export_gogpt_scoped.csv"
     },
     "generated": "2026-10-27T11:46:30-04:00",
     "mode": "update",
@@ -20,18 +20,20 @@
     {
       "gem_plant_id": "L100001088949",
       "plant_name": "Amazon Web Services Canton Data Center power station",
-      "unit_name": "Unit 2",
+      "unit_name": "2",
       "fields": {
-        "Unit name": "Unit 2",
-        "Capacity (MW)": "7.8",
-        "Number Of Engines": "10",
+        "Unit name": "2",
+        "Capacity (MW)": "3.75",
+        "Number Of Engines": "5",
         "Fuel": "fossil liquids: diesel",
         "Status": "construction",
         "Turbine/Engine Technology": "internal combustion",
-        "Equipment Manufacturer/Model": "CAT: C18, CAT: 3512C, CAT: C15, CAT: C9",
+        "Equipment Manufacturer/Model": "CAT: C18",
         "Captive industry use": "power",
         "Captive industry type": "data center",
-        "Backup Power": "yes"
+        "Backup Power": "yes",
+        "Capacity Per Engine": "0.75",
+        "Captive non-industry use": "none"
       },
       "refs": {
         "Capacity Data Source": [
@@ -42,7 +44,9 @@
         ],
         "Status Data Source": [
           "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051",
-          "https://www.constructionequipmentguide.com/several-top-regional-contractors-are-building-10b-twin-aws-data-centers-in-mississippi/65887"
+          "https://web.archive.org/web/20241202065224/https://opc.deq.state.ms.us/ai_info.aspx?ai=86219",
+          "https://measuredai.substack.com/p/amazon-mississippi-data-centers",
+          "https://mississippitoday.org/2026/06/09/amazon-data-centers-mississippi/"
         ],
         "Turbine/Engine Technology Data Source": [
           "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
@@ -66,41 +70,382 @@
           "note": "Mississippi air permit 1720-00098 for Amazon Data Services in Canton, issued 2024-12-04 and modified 2025-12-16. It lists each generator with its kW rating."
         },
         {
-          "url": "https://www.constructionequipmentguide.com/several-top-regional-contractors-are-building-10b-twin-aws-data-centers-in-mississippi/65887",
+          "url": "https://web.archive.org/web/20241202065224/https://opc.deq.state.ms.us/ai_info.aspx?ai=86219",
           "ok": true,
           "contains_value": true,
           "name_found": true,
-          "note": "Construction Equipment Guide article of September 18, 2024, reprinted from the Magnolia Tribune. It says work began on the Madison County Megasite in Canton last fall, meaning fall 2023."
+          "note": "Saved copy of the Mississippi Department of Environmental Quality facility page for the Canton site, taken December 2, 2024. It shows the permit file start date of 01/18/2024 and air construction permit 1720-00098 in public comment."
+        },
+        {
+          "url": "https://measuredai.substack.com/p/amazon-mississippi-data-centers",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Measured AI newsletter on Amazon's Mississippi data centers. Citing the Madison County Economic Development Authority, it says Amazon broke ground on the Canton campus in May 2024 and had foundation work under way on four of the five Phase I buildings by July 31, 2024, and that five buildings were operating by summer 2025."
+        },
+        {
+          "url": "https://mississippitoday.org/2026/06/09/amazon-data-centers-mississippi/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Mississippi Today article of June 9, 2026. An Amazon spokesperson says five buildings are operating at the Canton site."
         }
       ],
       "tier": "high",
       "checks": [
         39
       ],
-      "note": "The Mississippi air permit for the Canton site lists 10 smaller generators that GEM does not carry. Five house generators are 750 kilowatts each, two water treatment generators are 1,500 kilowatts each, and three building generators are 400, 400 and 250 kilowatts. Together they are 7.8 megawatts. The permit lists them in addition to the 326 large generators that GEM already has as Unit 1. Ridgeland and Meridian already show their small generators as a separate unit, so this follows the same pattern. Not found: the exact start date for these generators.",
-      "researcher_notes": "The Mississippi Department of Environmental Quality air permit 1720-00098 for Amazon Data Services at Canton was issued on December 4, 2024 and modified on December 16, 2025. It lists 326 critical generators of 2,750 kilowatts each, which is 896.5 megawatts and matches GEM Unit 1. It also lists 5 house generators of 750 kilowatts, 2 water treatment generators of 1,500 kilowatts, 2 generators of 400 kilowatts and 1 of 250 kilowatts. Those 10 generators sum to 7.8 megawatts and are not in GEM. The permit total is 336 engines and 904.3 megawatts.",
-      "action": "Add Unit 2 to the Canton plant as a diesel internal combustion unit of 7.8 MW with 10 engines, status construction, Backup Power yes, captive power for a data center. Milestone timeline: add a construction milestone for 2023, when work began on the Canton site, with the Construction Equipment Guide article as the source. Add a pre-construction milestone for December 2024, when the state issued the air construction permit, with the permit as the source.",
+      "note": "The Mississippi air permit for the Canton site lists 10 smaller generators that GEM does not carry. Five house generators are 750 kilowatts each, two water treatment generators are 1,500 kilowatts each, and three building generators are 400, 400 and 250 kilowatts. Together they are 7.8 megawatts. The permit lists them in addition to the 326 large generators that GEM already has as Unit 1. Ridgeland and Meridian already show their small generators as a separate unit, so this follows the same pattern. Construction of the Canton campus started in May 2024, and foundation work was under way on four of the five first buildings by July 31, 2024, according to the Measured AI newsletter citing the county economic development authority. Amazon told Mississippi Today in June 2026 that five buildings are operating at the site. These generators serve that campus, so the status is construction. No report says when these particular generators were installed.",
+      "researcher_notes": "Mississippi Department of Environmental Quality air permit 1720-00098 for Amazon Data Services at Canton lists HEG 1-5, permit units AB-001 to AB-005, the 1,112 horsepower Caterpillar C18 engines for 750 kW generators. Each is printed with the engine horsepower and the generator kilowatt rating. The generator kilowatts are lower than the engine horsepower converted to kilowatts, so the printed kilowatts are electrical output and not shaft power. These house generators add to 3.75 MW. The permit was issued December 4, 2024 and modified December 16, 2025. Construction of the Canton campus started in May 2024, and foundation work was under way on four of the five first buildings by July 31, 2024, according to the Measured AI newsletter citing the county economic development authority. Amazon told Mississippi Today in June 2026 that five buildings are operating at the site. These generators serve that campus, so the status is construction. No report says when these particular generators were installed. The permit application date comes from the state facility page, not the permit.",
+      "action": "Add unit 2 to the Canton plant as 5 diesel internal combustion engines of 0.75 MW each, 3.75 MW in all, status construction, Backup Power yes, captive power for a data center. These are HEG 1-5, permit units AB-001 to AB-005. Milestone timeline: add a pre-construction milestone for January 2024, when the air construction permit application was received, with the saved copy of the Mississippi facility record as the source. Then add a construction milestone for July 2024, when foundation work was under way on the campus, with the Measured AI newsletter as the source. Add the Measured AI newsletter and the Mississippi Today article of June 9, 2026 to the Status Data Source box.",
       "country": "United States",
-      "record_id": "L100001088949:new:unit-2",
+      "record_id": "L100001088949:new:2",
       "milestones": [
-        {
-          "status": "construction",
-          "year": 2023,
-          "period": "",
-          "sources": [
-            "https://www.constructionequipmentguide.com/several-top-regional-contractors-are-building-10b-twin-aws-data-centers-in-mississippi/65887"
-          ],
-          "note": "A Construction Equipment Guide article of September 18, 2024 says work began on the Madison County Megasite in Canton the fall before.",
-          "period_note": "The article gives only last fall, so the month is not known. These ten generators are part of the same site work."
-        },
         {
           "status": "pre-construction",
           "year": 2024,
-          "period": "December",
+          "period": "January",
           "sources": [
+            "https://web.archive.org/web/20241202065224/https://opc.deq.state.ms.us/ai_info.aspx?ai=86219",
             "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
           ],
-          "note": "Mississippi air construction permit 1720-00098 for the Canton site was issued December 4, 2024 and modified December 16, 2025. It covers all 336 engines, including these 10 smaller ones."
+          "note": "The Mississippi Department of Environmental Quality facility page for the Canton site shows the permit file started January 18, 2024. Air construction permit 1720-00098 was issued December 4, 2024 and modified December 16, 2025. It covers all 336 engines, including these 10 smaller ones.",
+          "period_note": "The permit does not print the application date. The date is the start date on the state facility page."
+        },
+        {
+          "status": "construction",
+          "year": 2024,
+          "period": "July",
+          "sources": [
+            "https://measuredai.substack.com/p/amazon-mississippi-data-centers",
+            "https://mississippitoday.org/2026/06/09/amazon-data-centers-mississippi/"
+          ],
+          "note": "Amazon broke ground on the Canton campus in May 2024. Foundation work was under way on four of the five first buildings by July 31, 2024. Five buildings were operating by summer 2025, and Amazon confirmed five operating buildings in June 2026.",
+          "period_note": "No source gives a start date for these particular generators. The date is the earliest report of work under way on the campus they serve. The May 2024 groundbreaking is not used because a groundbreaking alone is not construction."
+        }
+      ]
+    },
+    {
+      "gem_plant_id": "L100001088949",
+      "plant_name": "Amazon Web Services Canton Data Center power station",
+      "unit_name": "3",
+      "fields": {
+        "Unit name": "3",
+        "Capacity (MW)": "3",
+        "Number Of Engines": "2",
+        "Fuel": "fossil liquids: diesel",
+        "Status": "construction",
+        "Turbine/Engine Technology": "internal combustion",
+        "Equipment Manufacturer/Model": "CAT: 3512C",
+        "Captive industry use": "power",
+        "Captive industry type": "data center",
+        "Backup Power": "yes",
+        "Capacity Per Engine": "1.5",
+        "Captive non-industry use": "none"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Fuel Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Status Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051",
+          "https://web.archive.org/web/20241202065224/https://opc.deq.state.ms.us/ai_info.aspx?ai=86219",
+          "https://measuredai.substack.com/p/amazon-mississippi-data-centers",
+          "https://mississippitoday.org/2026/06/09/amazon-data-centers-mississippi/"
+        ],
+        "Turbine/Engine Technology Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Captive Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Backup Power Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Turbine/Engine Equipment Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Mississippi air permit 1720-00098 for Amazon Data Services in Canton, issued 2024-12-04 and modified 2025-12-16. It lists each generator with its kW rating."
+        },
+        {
+          "url": "https://web.archive.org/web/20241202065224/https://opc.deq.state.ms.us/ai_info.aspx?ai=86219",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Saved copy of the Mississippi Department of Environmental Quality facility page for the Canton site, taken December 2, 2024. It shows the permit file start date of 01/18/2024 and air construction permit 1720-00098 in public comment."
+        },
+        {
+          "url": "https://measuredai.substack.com/p/amazon-mississippi-data-centers",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Measured AI newsletter on Amazon's Mississippi data centers. Citing the Madison County Economic Development Authority, it says Amazon broke ground on the Canton campus in May 2024 and had foundation work under way on four of the five Phase I buildings by July 31, 2024, and that five buildings were operating by summer 2025."
+        },
+        {
+          "url": "https://mississippitoday.org/2026/06/09/amazon-data-centers-mississippi/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Mississippi Today article of June 9, 2026. An Amazon spokesperson says five buildings are operating at the Canton site."
+        }
+      ],
+      "tier": "high",
+      "checks": [
+        39
+      ],
+      "note": "The Mississippi air permit for the Canton site lists 10 smaller generators that GEM does not carry. Five house generators are 750 kilowatts each, two water treatment generators are 1,500 kilowatts each, and three building generators are 400, 400 and 250 kilowatts. Together they are 7.8 megawatts. The permit lists them in addition to the 326 large generators that GEM already has as Unit 1. Ridgeland and Meridian already show their small generators as a separate unit, so this follows the same pattern. Construction of the Canton campus started in May 2024, and foundation work was under way on four of the five first buildings by July 31, 2024, according to the Measured AI newsletter citing the county economic development authority. Amazon told Mississippi Today in June 2026 that five buildings are operating at the site. These generators serve that campus, so the status is construction. No report says when these particular generators were installed.",
+      "researcher_notes": "Mississippi Department of Environmental Quality air permit 1720-00098 for Amazon Data Services at Canton lists WTP 1-2, permit units AC-001 and AC-002, the 2,206 horsepower Caterpillar 3512C engines for 1,500 kW generators. Each is printed with the engine horsepower and the generator kilowatt rating. The generator kilowatts are lower than the engine horsepower converted to kilowatts, so the printed kilowatts are electrical output and not shaft power. These water treatment generators add to 3 MW. The permit was issued December 4, 2024 and modified December 16, 2025. Construction of the Canton campus started in May 2024, and foundation work was under way on four of the five first buildings by July 31, 2024, according to the Measured AI newsletter citing the county economic development authority. Amazon told Mississippi Today in June 2026 that five buildings are operating at the site. These generators serve that campus, so the status is construction. No report says when these particular generators were installed. The permit application date comes from the state facility page, not the permit.",
+      "action": "Add unit 3 to the Canton plant as 2 diesel internal combustion engines of 1.5 MW each, 3 MW in all, status construction, Backup Power yes, captive power for a data center. These are WTP 1-2, permit units AC-001 and AC-002. Milestone timeline: add a pre-construction milestone for January 2024, when the air construction permit application was received, with the saved copy of the Mississippi facility record as the source. Then add a construction milestone for July 2024, when foundation work was under way on the campus, with the Measured AI newsletter as the source. Add the Measured AI newsletter and the Mississippi Today article of June 9, 2026 to the Status Data Source box.",
+      "country": "United States",
+      "record_id": "L100001088949:new:3",
+      "milestones": [
+        {
+          "status": "pre-construction",
+          "year": 2024,
+          "period": "January",
+          "sources": [
+            "https://web.archive.org/web/20241202065224/https://opc.deq.state.ms.us/ai_info.aspx?ai=86219",
+            "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+          ],
+          "note": "The Mississippi Department of Environmental Quality facility page for the Canton site shows the permit file started January 18, 2024. Air construction permit 1720-00098 was issued December 4, 2024 and modified December 16, 2025. It covers all 336 engines, including these 10 smaller ones.",
+          "period_note": "The permit does not print the application date. The date is the start date on the state facility page."
+        },
+        {
+          "status": "construction",
+          "year": 2024,
+          "period": "July",
+          "sources": [
+            "https://measuredai.substack.com/p/amazon-mississippi-data-centers",
+            "https://mississippitoday.org/2026/06/09/amazon-data-centers-mississippi/"
+          ],
+          "note": "Amazon broke ground on the Canton campus in May 2024. Foundation work was under way on four of the five first buildings by July 31, 2024. Five buildings were operating by summer 2025, and Amazon confirmed five operating buildings in June 2026.",
+          "period_note": "No source gives a start date for these particular generators. The date is the earliest report of work under way on the campus they serve. The May 2024 groundbreaking is not used because a groundbreaking alone is not construction."
+        }
+      ]
+    },
+    {
+      "gem_plant_id": "L100001088949",
+      "plant_name": "Amazon Web Services Canton Data Center power station",
+      "unit_name": "4",
+      "fields": {
+        "Unit name": "4",
+        "Capacity (MW)": "0.8",
+        "Number Of Engines": "2",
+        "Fuel": "fossil liquids: diesel",
+        "Status": "construction",
+        "Turbine/Engine Technology": "internal combustion",
+        "Equipment Manufacturer/Model": "CAT: C15",
+        "Captive industry use": "power",
+        "Captive industry type": "data center",
+        "Backup Power": "yes",
+        "Capacity Per Engine": "0.4",
+        "Captive non-industry use": "none"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Fuel Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Status Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051",
+          "https://web.archive.org/web/20241202065224/https://opc.deq.state.ms.us/ai_info.aspx?ai=86219",
+          "https://measuredai.substack.com/p/amazon-mississippi-data-centers",
+          "https://mississippitoday.org/2026/06/09/amazon-data-centers-mississippi/"
+        ],
+        "Turbine/Engine Technology Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Captive Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Backup Power Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Turbine/Engine Equipment Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Mississippi air permit 1720-00098 for Amazon Data Services in Canton, issued 2024-12-04 and modified 2025-12-16. It lists each generator with its kW rating."
+        },
+        {
+          "url": "https://web.archive.org/web/20241202065224/https://opc.deq.state.ms.us/ai_info.aspx?ai=86219",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Saved copy of the Mississippi Department of Environmental Quality facility page for the Canton site, taken December 2, 2024. It shows the permit file start date of 01/18/2024 and air construction permit 1720-00098 in public comment."
+        },
+        {
+          "url": "https://measuredai.substack.com/p/amazon-mississippi-data-centers",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Measured AI newsletter on Amazon's Mississippi data centers. Citing the Madison County Economic Development Authority, it says Amazon broke ground on the Canton campus in May 2024 and had foundation work under way on four of the five Phase I buildings by July 31, 2024, and that five buildings were operating by summer 2025."
+        },
+        {
+          "url": "https://mississippitoday.org/2026/06/09/amazon-data-centers-mississippi/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Mississippi Today article of June 9, 2026. An Amazon spokesperson says five buildings are operating at the Canton site."
+        }
+      ],
+      "tier": "high",
+      "checks": [
+        39
+      ],
+      "note": "The Mississippi air permit for the Canton site lists 10 smaller generators that GEM does not carry. Five house generators are 750 kilowatts each, two water treatment generators are 1,500 kilowatts each, and three building generators are 400, 400 and 250 kilowatts. Together they are 7.8 megawatts. The permit lists them in addition to the 326 large generators that GEM already has as Unit 1. Ridgeland and Meridian already show their small generators as a separate unit, so this follows the same pattern. Construction of the Canton campus started in May 2024, and foundation work was under way on four of the five first buildings by July 31, 2024, according to the Measured AI newsletter citing the county economic development authority. Amazon told Mississippi Today in June 2026 that five buildings are operating at the site. These generators serve that campus, so the status is construction. No report says when these particular generators were installed.",
+      "researcher_notes": "Mississippi Department of Environmental Quality air permit 1720-00098 for Amazon Data Services at Canton lists LCB 1 and CAB 1, permit units AD-001 and AD-002, the 619 horsepower Caterpillar C15 engines for 400 kW generators. Each is printed with the engine horsepower and the generator kilowatt rating. The generator kilowatts are lower than the engine horsepower converted to kilowatts, so the printed kilowatts are electrical output and not shaft power. These building generators add to 0.8 MW. The permit was issued December 4, 2024 and modified December 16, 2025. Construction of the Canton campus started in May 2024, and foundation work was under way on four of the five first buildings by July 31, 2024, according to the Measured AI newsletter citing the county economic development authority. Amazon told Mississippi Today in June 2026 that five buildings are operating at the site. These generators serve that campus, so the status is construction. No report says when these particular generators were installed. The permit application date comes from the state facility page, not the permit.",
+      "action": "Add unit 4 to the Canton plant as 2 diesel internal combustion engines of 0.4 MW each, 0.8 MW in all, status construction, Backup Power yes, captive power for a data center. These are LCB 1 and CAB 1, permit units AD-001 and AD-002. Milestone timeline: add a pre-construction milestone for January 2024, when the air construction permit application was received, with the saved copy of the Mississippi facility record as the source. Then add a construction milestone for July 2024, when foundation work was under way on the campus, with the Measured AI newsletter as the source. Add the Measured AI newsletter and the Mississippi Today article of June 9, 2026 to the Status Data Source box.",
+      "country": "United States",
+      "record_id": "L100001088949:new:4",
+      "milestones": [
+        {
+          "status": "pre-construction",
+          "year": 2024,
+          "period": "January",
+          "sources": [
+            "https://web.archive.org/web/20241202065224/https://opc.deq.state.ms.us/ai_info.aspx?ai=86219",
+            "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+          ],
+          "note": "The Mississippi Department of Environmental Quality facility page for the Canton site shows the permit file started January 18, 2024. Air construction permit 1720-00098 was issued December 4, 2024 and modified December 16, 2025. It covers all 336 engines, including these 10 smaller ones.",
+          "period_note": "The permit does not print the application date. The date is the start date on the state facility page."
+        },
+        {
+          "status": "construction",
+          "year": 2024,
+          "period": "July",
+          "sources": [
+            "https://measuredai.substack.com/p/amazon-mississippi-data-centers",
+            "https://mississippitoday.org/2026/06/09/amazon-data-centers-mississippi/"
+          ],
+          "note": "Amazon broke ground on the Canton campus in May 2024. Foundation work was under way on four of the five first buildings by July 31, 2024. Five buildings were operating by summer 2025, and Amazon confirmed five operating buildings in June 2026.",
+          "period_note": "No source gives a start date for these particular generators. The date is the earliest report of work under way on the campus they serve. The May 2024 groundbreaking is not used because a groundbreaking alone is not construction."
+        }
+      ]
+    },
+    {
+      "gem_plant_id": "L100001088949",
+      "plant_name": "Amazon Web Services Canton Data Center power station",
+      "unit_name": "5",
+      "fields": {
+        "Unit name": "5",
+        "Capacity (MW)": "0.25",
+        "Number Of Engines": "1",
+        "Fuel": "fossil liquids: diesel",
+        "Status": "construction",
+        "Turbine/Engine Technology": "internal combustion",
+        "Equipment Manufacturer/Model": "CAT: C9",
+        "Captive industry use": "power",
+        "Captive industry type": "data center",
+        "Backup Power": "yes",
+        "Capacity Per Engine": "0.25",
+        "Captive non-industry use": "none"
+      },
+      "refs": {
+        "Capacity Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Fuel Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Status Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051",
+          "https://web.archive.org/web/20241202065224/https://opc.deq.state.ms.us/ai_info.aspx?ai=86219",
+          "https://measuredai.substack.com/p/amazon-mississippi-data-centers",
+          "https://mississippitoday.org/2026/06/09/amazon-data-centers-mississippi/"
+        ],
+        "Turbine/Engine Technology Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Captive Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Backup Power Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ],
+        "Turbine/Engine Equipment Data Source": [
+          "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+        ]
+      },
+      "verifications": [
+        {
+          "url": "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Mississippi air permit 1720-00098 for Amazon Data Services in Canton, issued 2024-12-04 and modified 2025-12-16. It lists each generator with its kW rating."
+        },
+        {
+          "url": "https://web.archive.org/web/20241202065224/https://opc.deq.state.ms.us/ai_info.aspx?ai=86219",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Saved copy of the Mississippi Department of Environmental Quality facility page for the Canton site, taken December 2, 2024. It shows the permit file start date of 01/18/2024 and air construction permit 1720-00098 in public comment."
+        },
+        {
+          "url": "https://measuredai.substack.com/p/amazon-mississippi-data-centers",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Measured AI newsletter on Amazon's Mississippi data centers. Citing the Madison County Economic Development Authority, it says Amazon broke ground on the Canton campus in May 2024 and had foundation work under way on four of the five Phase I buildings by July 31, 2024, and that five buildings were operating by summer 2025."
+        },
+        {
+          "url": "https://mississippitoday.org/2026/06/09/amazon-data-centers-mississippi/",
+          "ok": true,
+          "contains_value": true,
+          "name_found": true,
+          "note": "Mississippi Today article of June 9, 2026. An Amazon spokesperson says five buildings are operating at the Canton site."
+        }
+      ],
+      "tier": "high",
+      "checks": [
+        39
+      ],
+      "note": "The Mississippi air permit for the Canton site lists 10 smaller generators that GEM does not carry. Five house generators are 750 kilowatts each, two water treatment generators are 1,500 kilowatts each, and three building generators are 400, 400 and 250 kilowatts. Together they are 7.8 megawatts. The permit lists them in addition to the 326 large generators that GEM already has as Unit 1. Ridgeland and Meridian already show their small generators as a separate unit, so this follows the same pattern. Construction of the Canton campus started in May 2024, and foundation work was under way on four of the five first buildings by July 31, 2024, according to the Measured AI newsletter citing the county economic development authority. Amazon told Mississippi Today in June 2026 that five buildings are operating at the site. These generators serve that campus, so the status is construction. No report says when these particular generators were installed.",
+      "researcher_notes": "Mississippi Department of Environmental Quality air permit 1720-00098 for Amazon Data Services at Canton lists ACB 1, permit unit AD-003, the 398 horsepower Caterpillar C9 engine for a 250 kW generator. Each is printed with the engine horsepower and the generator kilowatt rating. The generator kilowatts are lower than the engine horsepower converted to kilowatts, so the printed kilowatts are electrical output and not shaft power. These building generator add to 0.25 MW. The permit was issued December 4, 2024 and modified December 16, 2025. Construction of the Canton campus started in May 2024, and foundation work was under way on four of the five first buildings by July 31, 2024, according to the Measured AI newsletter citing the county economic development authority. Amazon told Mississippi Today in June 2026 that five buildings are operating at the site. These generators serve that campus, so the status is construction. No report says when these particular generators were installed. The permit application date comes from the state facility page, not the permit.",
+      "action": "Add unit 5 to the Canton plant as 1 diesel internal combustion engine of 0.25 MW each, 0.25 MW in all, status construction, Backup Power yes, captive power for a data center. These are ACB 1, permit unit AD-003. Milestone timeline: add a pre-construction milestone for January 2024, when the air construction permit application was received, with the saved copy of the Mississippi facility record as the source. Then add a construction milestone for July 2024, when foundation work was under way on the campus, with the Measured AI newsletter as the source. Add the Measured AI newsletter and the Mississippi Today article of June 9, 2026 to the Status Data Source box.",
+      "country": "United States",
+      "record_id": "L100001088949:new:5",
+      "milestones": [
+        {
+          "status": "pre-construction",
+          "year": 2024,
+          "period": "January",
+          "sources": [
+            "https://web.archive.org/web/20241202065224/https://opc.deq.state.ms.us/ai_info.aspx?ai=86219",
+            "https://opcgis.deq.state.ms.us/ensearchonline/get_doc.aspx?dt=finalp&id=1822051"
+          ],
+          "note": "The Mississippi Department of Environmental Quality facility page for the Canton site shows the permit file started January 18, 2024. Air construction permit 1720-00098 was issued December 4, 2024 and modified December 16, 2025. It covers all 336 engines, including these 10 smaller ones.",
+          "period_note": "The permit does not print the application date. The date is the start date on the state facility page."
+        },
+        {
+          "status": "construction",
+          "year": 2024,
+          "period": "July",
+          "sources": [
+            "https://measuredai.substack.com/p/amazon-mississippi-data-centers",
+            "https://mississippitoday.org/2026/06/09/amazon-data-centers-mississippi/"
+          ],
+          "note": "Amazon broke ground on the Canton campus in May 2024. Foundation work was under way on four of the five first buildings by July 31, 2024. Five buildings were operating by summer 2025, and Amazon confirmed five operating buildings in June 2026.",
+          "period_note": "No source gives a start date for these particular generators. The date is the earliest report of work under way on the campus they serve. The May 2024 groundbreaking is not used because a groundbreaking alone is not construction."
         }
       ]
     }

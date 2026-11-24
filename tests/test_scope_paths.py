@@ -24,6 +24,7 @@ def test_scope_tag_one_form_for_every_spelling():
 def test_run_variants_share_the_scope_folder():
     assert paths.scope_base("us-il-dc") == "us-il"
     assert paths.scope_base("germany-permits") == "germany"
+    assert paths.scope_base("germany-redo") == "germany"
     assert paths.scope_base("us-ms") == "us-ms"
     assert paths.scope_dir("us-il-val") == paths.SCOPES_DIR / "us-il"
 

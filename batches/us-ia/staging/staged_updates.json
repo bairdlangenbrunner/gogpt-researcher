@@ -8,7 +8,7 @@
       "kind": "state",
       "slug": "iowa",
       "quarter": "q4-2026",
-      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
+      "csv": "scripts/gem_export_gogpt_scoped.csv"
     },
     "generated": "2026-10-19T18:40:50-04:00",
     "mode": "update",
@@ -2021,10 +2021,22 @@
       "independent": false,
       "source_language": "en",
       "researcher_notes": "The EIA-860M table for August 2026 lists Plant 1217, generator 1, as operating with 37.5 MW and an operating year of 1960. It shows no planned retirement. Still operating. The conversion is confirmed but the year and the earlier unit's ID were not found.",
-      "action": "Leave Status of unit Unit 1, timepoint 2 (G100001054413) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there.",
+      "action": "Leave Status of unit Unit 1, timepoint 2 (G100001054413) as operating. It is still correct. Add the link below to the Status Data Source box. Keep the links already there. Milestone timeline: add an operating milestone for 1960 from the same table, which gives no month.",
       "checks": [
         43,
         50
+      ],
+      "milestones": [
+        {
+          "status": "operating",
+          "year": 1960,
+          "period": "",
+          "sources": [
+            "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx"
+          ],
+          "note": "The EIA-860M table for August 2026 lists this generator as operating with an operating year of 1960. That year may belong to the original unit before the conversion.",
+          "period_note": "The table gives only a year. I searched the table for a month and found none."
+        }
       ]
     },
     {

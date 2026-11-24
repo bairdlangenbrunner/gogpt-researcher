@@ -1,0 +1,472 @@
+{
+ "meta": {
+  "plant_id": "L100000103945",
+  "plant_name": "Mill Creek Station",
+  "state": "Kentucky",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T20:15:00-05:00",
+  "done": true,
+  "urls_attempted": 10,
+  "urls_verified": 10
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000413034",
+   "unit_name": "MC 5",
+   "findings": {
+    "Status": {
+     "value": "construction",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://lge-ku.com/newsroom/press-releases/2024/11/13/lge-and-ku-officially-break-ground-mill-creek-5"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://lge-ku.com/newsroom/press-releases/2024/11/13/lge-and-ku-officially-break-ground-mill-creek-5",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": true,
+     "milestones": [
+      {
+       "status": "construction",
+       "year": 2024,
+       "period": "November",
+       "sources": [
+        "https://lge-ku.com/newsroom/press-releases/2024/11/13/lge-and-ku-officially-break-ground-mill-creek-5"
+       ],
+       "note": "LG&E and KU held the official groundbreaking on November 13, 2024 and the release says the unit is under construction.",
+       "period_note": "The groundbreaking is the earliest report of work under way that I found. I did not find a date for the first work on site."
+      }
+     ],
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists plant 1364 generator 5 as under construction, more than 50 percent complete, with planned operation in June 2027. An LG&E and KU press release from November 2024 (https://lge-ku.com/newsroom/press-releases/2024/11/13/lge-and-ku-officially-break-ground-mill-creek-5) says the unit is under construction. This confirms the current status."
+    },
+    "Capacity (MW)": {
+     "value": "740.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx), Planned sheet, plant 1364 generator 5, gives a nameplate of 740.0 MW, 645 MW net summer and 660 MW net winter. This replaces the dead city permit link as the source for 740 MW. The draft permit figure of 660 MW matches the winter figure, not the nameplate. The saved copy of the city draft permit (https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf) says 660 MW net output, which matches the net winter figure and not the nameplate."
+    },
+    "Start year": {
+     "value": "2027",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) gives a planned operation date of June 2027 for generator 5. This is an existing scheduled event that the human leaves as it is."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas, fossil liquids: diesel",
+     "refs": [
+      "https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Louisville draft air permit for Mill Creek unit 5 is gone from the city site, so I read the saved copy from May 2026 (https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf). It describes a natural gas fired combined cycle unit and lists a diesel emergency generator of 2000 kilowatts and a diesel fire pump on the same permit. The diesel is burned in those small engines, not in the turbine, so the permit only partly supports the diesel entry. The EIA-860M table for September 2026 lists natural gas only for generator 5."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "GE Vernova: 7HA.03, GE Vernova: STF-D650",
+     "refs": [
+      "https://www.powermag.com/coal-fired-mill-creek-generating-station-readies-for-new-7ha-03-gas-fired-unit/",
+      "https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.powermag.com/coal-fired-mill-creek-generating-station-readies-for-new-7ha-03-gas-fired-unit/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "A POWER magazine article (https://www.powermag.com/coal-fired-mill-creek-generating-station-readies-for-new-7ha-03-gas-fired-unit/) names both the 7HA.03 gas turbine and the STF-D650 steam turbine for this unit. The saved copy of the draft air permit (https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf) also names the 7HA.03 turbine."
+    }
+   },
+   "not_found": [
+    "Backup Power"
+   ],
+   "notes": "Status, capacity, start year, fuel and equipment are covered. The permit lists only one 2000 kilowatt emergency generator and a fire pump for the unit, so I found no data center backup fleet and Backup Power stays no."
+  },
+  {
+   "gem_unit_id": "G100001053541",
+   "unit_name": "MC 6",
+   "findings": {
+    "Status": {
+     "value": "pre-construction",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2025-00313/andrea.fackler%40lge-ku.com/09302026113016/02-LGE-KU_MC6_Project_Update_Rpt_4.pdf",
+      "https://psc.ky.gov/pscecf/2025-00313/rick.lovekamp%40lge-ku.com/06052026025205/03-2025-00313_JI_DR1_LGE_KU_Attach_to_Q5%28c%29_-_MC6_Development_Timeline.pdf",
+      "https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2025-00313/andrea.fackler%40lge-ku.com/09302026113016/02-LGE-KU_MC6_Project_Update_Rpt_4.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscecf/2025-00313/rick.lovekamp%40lge-ku.com/06052026025205/03-2025-00313_JI_DR1_LGE_KU_Attach_to_Q5%28c%29_-_MC6_Development_Timeline.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The LG&E and KU fourth 60-day project update for Mill Creek Unit 6, filed September 30, 2026 (https://psc.ky.gov/pscecf/2025-00313/andrea.fackler%40lge-ku.com/09302026113016/02-LGE-KU_MC6_Project_Update_Rpt_4.pdf), says the engineering contract is still out to bid and the companies expect to sign it by the end of the first quarter of 2027. Only $43.7 million has been spent so far. The June 2026 development timeline (https://psc.ky.gov/pscecf/2025-00313/rick.lovekamp%40lge-ku.com/06052026025205/03-2025-00313_JI_DR1_LGE_KU_Attach_to_Q5%28c%29_-_MC6_Development_Timeline.pdf) shows construction starting after the contract is signed. So the unit is not under construction. The Energy and Information Project listing of under construction is not supported. This also gives a live source for the pre-construction status.",
+     "milestones": [
+      {
+       "status": "pre-construction",
+       "year": 2025,
+       "period": "May",
+       "sources": [
+        "https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf"
+       ],
+       "note": "The draft air permit's list of application documents shows the unit 6 construction application package filed on May 6, 2025 with the Louisville air district.",
+       "period_note": "Earlier, the companies filed their certificate application with the Kentucky Public Service Commission in February 2025. I used the air permit application date because the rule dates this step by the earliest permit application."
+      }
+     ]
+    },
+    "Capacity (MW)": {
+     "value": "680.0",
+     "refs": [
+      "https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The saved copy of the Louisville draft air permit for unit 6 (https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf) describes the natural gas combined cycle unit as rated at 680 MW power output. The September 2026 update to the Public Service Commission does not state a megawatt figure. The EIA planned table does not list unit 6. This is the only source I found for the number, and it is a rated output that may be net."
+    },
+    "Start year": {
+     "value": "2031",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2025-00313/rick.lovekamp%40lge-ku.com/06052026025205/03-2025-00313_JI_DR1_LGE_KU_Attach_to_Q5%28c%29_-_MC6_Development_Timeline.pdf",
+      "https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2025-00313/rick.lovekamp%40lge-ku.com/06052026025205/03-2025-00313_JI_DR1_LGE_KU_Attach_to_Q5%28c%29_-_MC6_Development_Timeline.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The June 2026 development timeline filed with the Kentucky Public Service Commission (https://psc.ky.gov/pscecf/2025-00313/rick.lovekamp%40lge-ku.com/06052026025205/03-2025-00313_JI_DR1_LGE_KU_Attach_to_Q5%28c%29_-_MC6_Development_Timeline.pdf) shows guaranteed commercial operation on June 1, 2031. This is the replacement source for the dead city permit link."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas, fossil liquids: diesel",
+     "refs": [
+      "https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The saved copy of the draft air permit for unit 6 (https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf) lists a natural gas combined cycle unit, a diesel emergency generator of 2,180 kilowatts (Kohler KD2000 or similar) and a diesel fire pump. The diesel is burned in the small engines only, so the permit supports the diesel entry only in part."
+    }
+   },
+   "not_found": [],
+   "notes": "Unit 6 is pre-construction with a 2031 start year. The Louisville permit file gives 680 MW, the application date of May 2025, and diesel emergency engines. Backup Power stays no because the engines are emergency equipment for the plant."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000413034",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "When did Mill Creek unit 5 reach the construction step?",
+   "finding": "An LG&E and KU press release from November 13, 2024 held the official groundbreaking and says the unit is under construction. I did not find a document that gives the first day of work on site.",
+   "recommendation": "Record the construction step as November 2024, and note that it rests on the groundbreaking date.",
+   "note": "Source: https://lge-ku.com/newsroom/press-releases/2024/11/13/lge-and-ku-officially-break-ground-mill-creek-5. A groundbreaking can come after site work starts, so the true date may be a little earlier.",
+   "refs": [
+    "https://lge-ku.com/newsroom/press-releases/2024/11/13/lge-and-ku-officially-break-ground-mill-creek-5"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001053541",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "When did Mill Creek unit 6 reach the pre-construction step?",
+   "finding": "The saved copy of the Louisville draft air permit lists the unit 6 construction application package as filed on May 6, 2025. The Kentucky Public Service Commission certificate application was filed on February 28, 2025.",
+   "recommendation": "Record the pre-construction step as May 2025, the air permit application date.",
+   "note": "Source: https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf. The commission case is at https://psc.ky.gov/Case/ViewCaseFilings/2025-00045.",
+   "refs": [
+    "https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001053541",
+   "concern_type": "Backup Power",
+   "question": "Should Backup Power stay no for Mill Creek unit 6?",
+   "finding": "The saved copy of the Louisville draft air permit lists one 2,180 kilowatt diesel emergency generator and one diesel fire pump for unit 6. The main unit is a combined cycle block and not a backup engine fleet.",
+   "recommendation": "Leave Backup Power as no for the unit. The small emergency generator is too small to add as its own unit.",
+   "note": "I read the saved copy of the permit at https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf. It lists only emergency equipment for the plant itself. The permit for unit 5 at https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf lists a 2000 kilowatt emergency generator and a fire pump in the same way. Neither permit names a data center or a backup fleet.",
+   "refs": [
+    "https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf",
+    "https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000413034",
+   "concern_type": "Capacity (MW)",
+   "question": "Is 740 MW or 660 MW the right nameplate for Mill Creek unit 5?",
+   "finding": "The EIA table for September 2026 gives 740 MW nameplate and 660 MW net winter. The draft city permit said 660 MW and the certificate application said 680 MW.",
+   "recommendation": "Keep 740 MW, which is the nameplate. Do not use the lower permit figure.",
+   "note": "Source: https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx. I could not open the dead city permit page to read the permit wording.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100000413034",
+   "concern_type": "other",
+   "question": "Do the coal unit 2 retirement notes need a human update?",
+   "finding": "The Status Detail text says coal unit 2 may run until at least 2031. EIA still lists unit 2 as operating with no planned retirement year. I made no change to the coal rows.",
+   "recommendation": "Leave the coal rows to the coal reviewer and add a note in the plant summary that unit 2 may run until at least 2031.",
+   "note": "The 2025-00313 filing from June 2026 titled for not retiring Mill Creek 2 is at https://psc.ky.gov/pscecf/2025-00313/rick.lovekamp%40lge-ku.com/06052026025205/09-2025-00313_JI_DR1_LGE_KU_Attach_to_Q8_-_Att_1_MC5_NGCC_Amendment_Not_Retire_MC2.pdf. It is a June 2026 filing in the same case.",
+   "refs": []
+  },
+  {
+   "gem_unit_id": "G100000413034",
+   "concern_type": "Fuel",
+   "question": "Should diesel stay in the fuel entry for Mill Creek units 5 and 6?",
+   "finding": "The EIA-860M table for September 2026 lists natural gas only for unit 5. The air permits show diesel only in emergency generators and fire pumps, not in the turbines.",
+   "recommendation": "Ask the project manager whether diesel belongs in the fuel entry. If the turbines have no diesel backup, change the fuel to natural gas only.",
+   "note": "Sources: https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf and https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf. I found no document that says the turbines can burn diesel.",
+   "refs": [
+    "https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf",
+    "https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf"
+   ],
+   "proposed_value": {
+    "Fuel": "fossil gas: natural gas"
+   }
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Planned sheet, plant 1364 generator 5."
+  },
+  {
+   "url": "https://lge-ku.com/newsroom/press-releases/2024/11/13/lge-and-ku-officially-break-ground-mill-creek-5",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": ""
+  },
+  {
+   "url": "https://psc.ky.gov/pscecf/2025-00313/andrea.fackler%40lge-ku.com/09302026113016/02-LGE-KU_MC6_Project_Update_Rpt_4.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Read with pdftotext."
+  },
+  {
+   "url": "https://psc.ky.gov/pscecf/2025-00313/rick.lovekamp%40lge-ku.com/06052026025205/03-2025-00313_JI_DR1_LGE_KU_Attach_to_Q5%28c%29_-_MC6_Development_Timeline.pdf",
+   "used_for": [
+    "Start year",
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": ""
+  },
+  {
+   "url": "https://www.powermag.com/coal-fired-mill-creek-generating-station-readies-for-new-7ha-03-gas-fired-unit/",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Existing source loads and names unit 5 and 2027."
+  },
+  {
+   "url": "https://oilandgaswatch.org/facility/rec_d4f1u5oq7easr8ra1fj0",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "dead",
+   "note": "The plain fetch returned an empty page shell. The real Chrome load in the repo fetcher returned a 404 Not Found page. The site's data calls need an access key and returned access denied or forbidden. The Wayback availability check found no saved copy of the address. The record has been taken down."
+  },
+  {
+   "url": "https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "Fuel"
+   ],
+   "outcome": "dead",
+   "note": "The live file is gone. The repo fetcher failed, so I read the Wayback copy https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf, which loaded and shows the 2000 kilowatt emergency generator and the 7HA.03 turbine. It shows 660 MW, not 740 MW."
+  },
+  {
+   "url": "https://web.archive.org/web/20260516170502/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-22-0046-V%20(R2)_Draft.pdf",
+   "used_for": [
+    "Fuel",
+    "Equipment Manufacturer/Model",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Saved copy of the unit 5 draft air permit."
+  },
+  {
+   "url": "https://web.archive.org/web/2026/https://louisvilleky.gov/sites/default/files/2026-05/C-0127-25-0007-V_Draft.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "Fuel",
+    "Status",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Saved copy of the unit 6 draft air permit; it names MC6, 680 MW and the May 6, 2025 application package."
+  },
+  {
+   "url": "https://www.powermag.com/coal-fired-mill-creek-generating-station-readies-for-new-7ha-03-gas-fired-unit/",
+   "used_for": [
+    "Equipment Manufacturer/Model"
+   ],
+   "outcome": "verified",
+   "note": "Names the 7HA.03 and STF-D650."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2022-00402",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "This 2023 certificate case covers the earlier LG&E and KU generation plan and solar contracts, and the harvest excerpt gives only system-wide capacity."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2023-00122",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "This case covers retirement of coal units, which are outside this plant's gas units."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2024-00317",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "This case covers cost recovery for the retired Mill Creek coal unit 1."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2022-00371",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "This is a special electric contract for a crypto customer and names no unit here."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2023-00123",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "This is a special electric contract for BlueOval SK and names no unit here."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2022-00350",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "This is a meter program for a different cooperative."
+  },
+  {
+   "url": "https://psc.ky.gov/Case/ViewCaseFilings/2023-00404",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "This is a small generator purchase rate tariff and does not bear on these units."
+  },
+  {
+   "url": "https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156318/File",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "These Louisville committee packets hold public comments on a data center zoning rule and name no generator at this plant."
+  }
+ ]
+}

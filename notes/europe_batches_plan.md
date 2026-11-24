@@ -2,16 +2,16 @@
 
 First drafted 2026-10-03 (Germany then Ireland). Rewritten 2026-10-29 after Baird's ruling: Dan's remaining countries are run one at a time on the North Dakota blueprint (`scopes/us-nd/plan.md`), each with its own harvesters, coverage list and gates. Germany's first packet (2026-10-05, `batches/germany/INDEX.md`) is the model for the review page; its redo comes after the tender awards.
 
-## Order and dates (Baird 2026-10-29)
+## Order and dates (Baird 2026-10-29, Germany moved first 2026-11-04)
 
 Dan's weekly schedule (Update V2 sheet, "Weekly schedule" tab, read 2026-10-29): Ireland to 11-02, Italy 11-02 to 11-09, Poland 11-09 to 11-13, Romania 11-13 to 11-19, United Kingdom 11-19 to 12-04.
 
 | order | country | packet ready by | plan |
 |---|---|---|---|
-| 1 | Poland | about 11-06 | `scopes/poland/plan.md` |
-| 2 | Romania | about 11-12 | to write |
-| 3 | United Kingdom | about 11-18 | to write |
-| 4 | Germany redo | after the StromVKG awards (due by 11-03) | `scopes/germany/` |
+| 1 | Germany redo | started 11-04, the day after the awards | `scopes/germany/plan.md` |
+| 2 | Poland | deferred (Baird 2026-11-04) | `scopes/poland/plan.md` |
+| 3 | Romania | to set | to write |
+| 4 | United Kingdom | to set | to write |
 
 Ireland and Italy are Dan's before a packet could land, so they run only as follow-up passes after he finishes them.
 

@@ -3,7 +3,7 @@
 **This is the one place for links to every GEM team document this repo relies on.**
 Edit it freely — add a row when a new doc appears, mark a row superseded when a
 cycle rolls over. Drive links need GEM Workspace access: read them via `gws-gem`
-(read-only) or the Drive MCP; this repo never modifies Drive files. The
+(read-only), never the Drive MCP connector; this repo never modifies Drive files. The
 Editing Manual and the current cycle's Update sheet are **referenced, not
 copied** — the repo's `docs/reference/` distillations carry only the working
 rules an agent needs at batch time, and the live doc always wins on conflict.

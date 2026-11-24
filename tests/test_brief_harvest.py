@@ -35,3 +35,21 @@ def test_load_harvest_tasks_and_brief(tmp_path):
     assert len(plant) == 2
     md = b.render_harvest_brief(data)
     assert "2025-UA-3" in md and "J888" in md and "2024-UA-18" not in md
+
+
+def test_local_records_reach_the_plant_and_the_harvest_brief(tmp_path):
+    rec = lambda i, date, named, leads=(): {"body": "henderson-county", "date": date, "kind": "minutes",
+                                            "title": f"Meeting {i}", "url": f"https://x.gov/{i}.pdf",
+                                            "named": list(named), "leads": list(leads),
+                                            "sentences": [f"Sentence {i} about the station."], "context": []}
+    records = [rec(i, f"2026-0{1 + i % 9}-01", ["P1"]) for i in range(10)] + [rec(99, "2026-10-01", [], ["Justified Datapower"])]
+    (tmp_path / "local_records.json").write_text(json.dumps({
+        "bodies": [{"id": "henderson-county", "name": "Henderson County Fiscal Court"}], "records": records,
+        "by_plant": {"P1": list(range(10)), "P2": []}}))
+    (tmp_path / "queues.json").write_text("{}")
+    tasks, data = b.load_harvest(tmp_path)
+    texts = [t["task"] for _, t in tasks["P1"]]
+    assert len(texts) == b.LOCAL_PER_PLANT + 1 and "2 more local records" in texts[-1]
+    assert "Henderson County Fiscal Court" in texts[0] and "https://x.gov/" in texts[0] and "P2" not in tasks
+    md = b.render_harvest_brief(data)
+    assert "Local planning and fiscal court records" in md and "Justified Datapower" in md and "99.pdf" in md

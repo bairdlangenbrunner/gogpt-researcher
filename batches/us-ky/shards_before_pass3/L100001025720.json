@@ -1,0 +1,471 @@
+{
+ "meta": {
+  "plant_id": "L100001025720",
+  "plant_name": "Liberty Station Power Plant",
+  "state": "Kentucky",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T20:11:01-05:00",
+  "done": true,
+  "urls_attempted": 19,
+  "urls_verified": 14
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100001030601",
+   "unit_name": "1",
+   "findings": {
+    "Status": {
+     "value": "construction",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/03202026030536/Closed/Letter_Liberty_RICE__construction_commencement.pdf",
+      "https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/06052026074625/Closed/PSC_semi-annual_Report_June_2026_-_Liberty_RICE.pdf",
+      "https://web.archive.org/web/20260614220816/https://www.ekpc.coop/sites/default/files/PDFs/2026/2026-05-20__EKPC_breaks_ground_on_Liberty_Station.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/03202026030536/Closed/Letter_Liberty_RICE__construction_commencement.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/06052026074625/Closed/PSC_semi-annual_Report_June_2026_-_Liberty_RICE.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://web.archive.org/web/20260614220816/https://www.ekpc.coop/sites/default/files/PDFs/2026/2026-05-20__EKPC_breaks_ground_on_Liberty_Station.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "EKPC told the Kentucky Public Service Commission on March 20, 2026 that site clearing would begin March 23, 2026, the groundbreaking would be May 20, 2026 and construction would start June 1, 2026. The June 2026 semi-annual report lists Construction Start as June 2026 at 0 percent and says the final air permit of March 6, 2026 pulled the schedule up. I did not find a dated report that work was actually under way. So the current status of construction is kept, but this is a single owner source and rests on planned dates. The press release of May 20, 2026 from EKPC, read as a saved copy at https://web.archive.org/web/20260614220816/https://www.ekpc.coop/sites/default/files/PDFs/2026/2026-05-20__EKPC_breaks_ground_on_Liberty_Station.pdf, says the same: construction is expected to begin in June 2026 and the plant should operate in late 2028.",
+     "milestones": [
+      {
+       "status": "construction",
+       "year": 2026,
+       "period": "June",
+       "period_note": "EKPC's press release of May 20, 2026 says construction is expected to begin in June 2026, and the June 2026 report to the commission gives the same start. No report says the date work actually began. The May 20 groundbreaking was a ceremony, so it is not used as the date.",
+       "sources": [
+        "https://web.archive.org/web/20260614220816/https://www.ekpc.coop/sites/default/files/PDFs/2026/2026-05-20__EKPC_breaks_ground_on_Liberty_Station.pdf",
+        "https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/06052026074625/Closed/PSC_semi-annual_Report_June_2026_-_Liberty_RICE.pdf"
+       ],
+       "note": "The owner's press release of May 20, 2026, read as a saved copy, and its June 2026 report to the commission both give June 2026 as the construction start."
+      }
+     ]
+    },
+    "Capacity (MW)": {
+     "value": "217.2",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "In the EIA-860M table for September 2026, plant 69726 Liberty Station lists generators L1 to L12, each with nameplate 18.1 MW, natural gas internal combustion engine, planned operation December 2028, status planned with regulatory approvals not initiated. Twelve engines at 18.1 MW give 217.2 MW. The commission order of May 20, 2025 gives 214 MW net, which is a lower figure, so the nameplate figure is kept."
+    },
+    "Number Of Engines": {
+     "value": "12",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14277421",
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14277421",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Kentucky air permit V-25-006 lists emission units 01-01 through 01-12, twelve Wartsila engines. In the EIA-860M table for September 2026, plant 69726 Liberty Station lists generators L1 to L12, each with nameplate 18.1 MW, natural gas internal combustion engine, planned operation December 2028, status planned with regulatory approvals not initiated."
+    },
+    "Capacity Per Engine": {
+     "value": "18.1",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "In the EIA-860M table for September 2026, plant 69726 Liberty Station lists generators L1 to L12, each with nameplate 18.1 MW, natural gas internal combustion engine, planned operation December 2028, status planned with regulatory approvals not initiated."
+    },
+    "Turbine/Engine Technology": {
+     "value": "internal combustion",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14277421",
+      "https://psc.ky.gov/pscecf/2024-00310/allyson%40hloky.com/09202024100053/Application_with_Exhibits.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14277421",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00310/allyson%40hloky.com/09202024100053/Application_with_Exhibits.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The air permit V-25-006 calls the units Wartsila compression ignition reciprocating internal combustion engines. The 2024 application describes a reciprocating internal combustion engine facility. This is also the replacement source for the dead EKPC page."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Wärtsilä: W18V50DF",
+     "refs": [
+      "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14277421",
+      "https://psc.ky.gov/pscecf/2024-00310/allyson%40hloky.com/09202024100053/Application_with_Exhibits.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14277421",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00310/allyson%40hloky.com/09202024100053/Application_with_Exhibits.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The air permit V-25-006 gives make and model Wartsila 18V50DF for all twelve units. The 2024 application names twelve Wartsila W18V50DF engine sets at 18.132 MW gross each."
+    },
+    "Fuel": {
+     "value": "fossil gas: natural gas, fossil liquids: diesel",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2024-00310/allyson%40hloky.com/09202024100053/Application_with_Exhibits.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00310/allyson%40hloky.com/09202024100053/Application_with_Exhibits.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The 2024 application says the engines burn pipeline natural gas as the primary fuel and can burn ultra-low sulfur diesel, with two on-site diesel tanks for 72 hours of full load. The air permit speaks of ultra-low sulfur fuel oil."
+    },
+    "Start year": {
+     "value": "2028",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+      "https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/06052026074625/Closed/PSC_semi-annual_Report_June_2026_-_Liberty_RICE.pdf",
+      "https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/06052026074625/Closed/PSC_semi-annual_Report_June_2026_-_Liberty_RICE.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "In the EIA-860M table for September 2026, plant 69726 Liberty Station lists generators L1 to L12, each with nameplate 18.1 MW, natural gas internal combustion engine, planned operation December 2028, status planned with regulatory approvals not initiated. The June 2026 semi-annual report lists startup and commissioning from May 2028 and construction end in December 2028. The human should add a scheduled event with Event Year 2028 and Source Year 2026 only if one is not already present. EKPC's 2025 integrated resource plan at https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf lists the Liberty RICE units as planned with commercial operation in 2028 in its Table 4-7 on PDF page 106.",
+     "irp": true
+    },
+    "Owner(s)": {
+     "value": "East Kentucky Power Cooperative Inc [100%]",
+     "refs": [
+      "https://psc.ky.gov/pscscf/2024%20Cases/2024-00310//20250520_PSC_ORDER.pdf",
+      "https://psc.ky.gov/pscecf/2024-00310/allyson%40hloky.com/09202024100053/Application_with_Exhibits.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00310//20250520_PSC_ORDER.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      },
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00310/allyson%40hloky.com/09202024100053/Application_with_Exhibits.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The commission order of May 20, 2025 grants East Kentucky Power Cooperative the certificate to build the Liberty RICE facility, and the application is filed by it. This is the replacement source for the dead EKPC page."
+    },
+    "Status Detail": {
+     "value": "EKPC told the Kentucky Public Service Commission on March 20, 2026 that construction at Liberty Station would start June 1, 2026 and finish by December 31, 2028, with a groundbreaking on May 20, 2026.",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/03202026030536/Closed/Letter_Liberty_RICE__construction_commencement.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/03202026030536/Closed/Letter_Liberty_RICE__construction_commencement.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The letter to the commission of March 20, 2026 gives the schedule."
+    }
+   },
+   "not_found": [
+    "CHP",
+    "Backup Power",
+    "Latest Activity",
+    "Retired year",
+    "Planned retire",
+    "Cancellation year",
+    "Conversion/replacement?"
+   ],
+   "notes": "Status stays construction on planned dates only. No document states CHP or Backup Power. Latest Activity is left alone because the project is moving. The owner's own web page at https://www.ekpc.coop/liberty-station-construction says 12 engine sets with 214 MW total net capacity, the same net figure as the commission order. Conversion/replacement is not filled because this is a new plant on a greenfield site. CHP is not filled because no document says whether the plant sells heat."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100001030601",
+   "concern_type": "Status",
+   "question": "Should Liberty Station stay at construction when EIA lists it as planned?",
+   "finding": "The EIA-860M table for September 2026 lists all 12 engines as planned with regulatory approvals not initiated, though the commission certificate was granted May 20, 2025 and the air permit was issued March 6, 2026. EKPC's own filings give planned dates for site work and a May 20, 2026 groundbreaking, and the June 2026 report shows construction start at 0 percent.",
+   "recommendation": "Leave the status as construction. Check EKPC's next semi-annual report, due about December 2026, for the actual construction start.",
+   "note": "I found a May 2026 press report of the groundbreaking at https://marcellusdrilling.com/?p=119142 and a trade piece at https://www.electric.coop/ekpcs-new-gas-plant-shows-strong-investment-in-rural-kentucky-community but no independent dated report of work under way. EIA is likely just behind the permits.",
+   "refs": [
+    "https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/03202026030536/Closed/Letter_Liberty_RICE__construction_commencement.pdf",
+    "https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/06052026074625/Closed/PSC_semi-annual_Report_June_2026_-_Liberty_RICE.pdf",
+    "https://psc.ky.gov/pscscf/2024%20Cases/2024-00310//20250520_PSC_ORDER.pdf",
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ],
+   "proposed_value": {
+    "Status": "construction"
+   }
+  },
+  {
+   "gem_unit_id": "G100001030601",
+   "concern_type": "validation",
+   "checks": [
+    7
+   ],
+   "question": "When did Liberty Station reach the construction step?",
+   "finding": "EKPC's letter of March 20, 2026 at https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/03202026030536/Closed/Letter_Liberty_RICE__construction_commencement.pdf planned tree clearing from March 23, 2026, a groundbreaking on May 20, 2026 and construction from June 1, 2026. The report at https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/06052026074625/Closed/PSC_semi-annual_Report_June_2026_-_Liberty_RICE.pdf lists construction start as June 2026 and not yet done as of the reporting period ending May 2026.",
+   "recommendation": "Date the construction step June 2026, the month EKPC says construction begins in its press release at https://web.archive.org/web/20260614220816/https://www.ekpc.coop/sites/default/files/PDFs/2026/2026-05-20__EKPC_breaks_ground_on_Liberty_Station.pdf and its June 2026 report to the commission. Update the date if a later EKPC report gives an earlier or later actual start.",
+   "note": "I read the commission docket for case 2024-00310, EKPC's construction page at https://www.ekpc.coop/liberty-station-construction, the press release of May 20, 2026 as a saved copy, and press coverage. All give planned dates. None says work actually began.",
+   "refs": [
+    "https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/03202026030536/Closed/Letter_Liberty_RICE__construction_commencement.pdf",
+    "https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/06052026074625/Closed/PSC_semi-annual_Report_June_2026_-_Liberty_RICE.pdf",
+    "https://web.archive.org/web/20260614220816/https://www.ekpc.coop/sites/default/files/PDFs/2026/2026-05-20__EKPC_breaks_ground_on_Liberty_Station.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001030601",
+   "concern_type": "Other IDs (location)",
+   "question": "Can EIA plant code 69726 be typed into Other IDs (location)?",
+   "finding": "The EIA-860M table for September 2026 lists Liberty Station, Casey County, Kentucky as plant 69726, generators L1 to L12.",
+   "recommendation": "Type EIA: 69726 into Other IDs (location) in the web form, next to the existing EIP code.",
+   "note": "The ID has no data source of its own.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001030601",
+   "concern_type": "Backup Power",
+   "question": "Should Backup Power stay no for Liberty Station?",
+   "finding": "The application describes a dual fuel peaking facility that sells to the grid, with diesel as an alternate fuel. No document calls the engines backup for another site.",
+   "recommendation": "Leave Backup Power as no. Backup Power applies to data center sites, and none was found here.",
+   "note": "Searched the application at https://psc.ky.gov/pscecf/2024-00310/allyson%40hloky.com/09202024100053/Application_with_Exhibits.pdf and the air permit. Nothing states the value either way. The air permit lists an emergency generator and a fire pump engine, but these support the plant itself and are not generating units sold to the grid.",
+   "refs": [
+    "https://psc.ky.gov/pscecf/2024-00310/allyson%40hloky.com/09202024100053/Application_with_Exhibits.pdf"
+   ]
+  },
+  {
+   "gem_unit_id": "G100001030601",
+   "concern_type": "IRP",
+   "question": "Does EKPC's 2025 plan list a different size for Liberty Station?",
+   "finding": "The US IRPs tab note says the plan lists 214 MW of engines at Liberty Station, which matches the net figure in the commission order and not GEM's 217.2 MW nameplate.",
+   "recommendation": "Leave capacity at 217.2 MW and add the plan to the IRP Notes line.",
+   "note": "I did not open the plan PDF itself, so no finding is marked as from the plan. Table 4-7 on PDF page 106 of the plan at https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf lists 12 units at 18.132 MW net each, planned, commercial operation 2028, which agrees with GEM's start year.",
+   "refs": [
+    "https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf"
+   ]
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "East Kentucky Power Cooperative",
+   "role": "owner",
+   "lookup_result": "not run; the name is already GEM's owner value and no change is proposed"
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/03202026030536/Closed/Letter_Liberty_RICE__construction_commencement.pdf",
+   "used_for": [
+    "Status",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Letter of March 20, 2026 with the planned schedule."
+  },
+  {
+   "url": "https://psc.ky.gov/pscecf/2024-00310/greg.cecil@ekpc.coop/06052026074625/Closed/PSC_semi-annual_Report_June_2026_-_Liberty_RICE.pdf",
+   "used_for": [
+    "Status",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "June 2026 semi-annual report."
+  },
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Capacity (MW)",
+    "Number Of Engines",
+    "Capacity Per Engine",
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "Row read from the downloaded file."
+  },
+  {
+   "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/14277421",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Turbine/Engine Technology"
+   ],
+   "outcome": "verified",
+   "note": "Air permit V-25-006."
+  },
+  {
+   "url": "https://psc.ky.gov/pscecf/2024-00310/allyson%40hloky.com/09202024100053/Application_with_Exhibits.pdf",
+   "used_for": [
+    "Fuel",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Application of September 2024."
+  },
+  {
+   "url": "https://psc.ky.gov/pscscf/2024%20Cases/2024-00310//20250520_PSC_ORDER.pdf",
+   "used_for": [
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Order of May 20, 2025."
+  },
+  {
+   "url": "https://www.electric.coop/ekpcs-new-gas-plant-shows-strong-investment-in-rural-kentucky-community",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Passes the check, not used as a ref."
+  },
+  {
+   "url": "https://www.ekpc.coop/new-generation",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "failed",
+   "note": "Loads but does not show 2028."
+  },
+  {
+   "url": "https://marcellusdrilling.com/?p=119142",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "verified",
+   "note": "Groundbreaking coverage; not used as a ref."
+  },
+  {
+   "url": "https://ekpc.coop/sites/default/files/PDFs/2026/2026-05-20__EKPC_breaks_ground_on_Liberty_Station.pdf",
+   "used_for": [
+    "Status"
+   ],
+   "outcome": "dead",
+   "note": "The live address no longer opened. I looked up the exact address in the Wayback Machine and found a saved copy from June 14, 2026, which shows the press release text."
+  },
+  {
+   "url": "https://web.archive.org/web/20260614220816/https://www.ekpc.coop/sites/default/files/PDFs/2026/2026-05-20__EKPC_breaks_ground_on_Liberty_Station.pdf",
+   "used_for": [
+    "Status",
+    "Status Detail"
+   ],
+   "outcome": "verified",
+   "note": "Saved copy of the EKPC press release of May 20, 2026. It says EKPC broke ground and construction is expected to begin in June 2026, with operation in late 2028."
+  },
+  {
+   "url": "https://www.ekpc.coop/liberty-station-construction",
+   "used_for": [
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "EKPC page that says 12 engine sets with 214 MW total net capacity. No construction progress report is posted."
+  },
+  {
+   "url": "https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "verified",
+   "note": "EKPC 2025 integrated resource plan. Table 4-7 on PDF page 106 lists the Liberty RICE units as planned for 2028. Page 196 describes 12 Wartsila 18V50DF engines."
+  },
+  {
+   "url": "https://www.pjm.com/planning/m/cycle-service-request-status",
+   "used_for": [
+    "Start year"
+   ],
+   "outcome": "failed",
+   "note": "I fetched the whole page and read the text, and downloaded PJM's PlanningQueues.xml file of November 2026. Neither lists entry C01-1228 or any Casey County project, so the queue entry could not be confirmed. It stays a lead only. It names 212.42 MW and December 2028, which agree with the other sources."
+  }
+ ]
+}

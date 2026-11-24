@@ -26,7 +26,8 @@ Writes (batch dir default ../batches/us-<postal> or ../batches/<country-slug>):
     briefs/_index.json               plants, brief paths, unit IDs, max priority,
                                      and each plant's tasks (text, fields, and
                                      the QC/Country checklist rows they serve)
-    briefs/_irp.md                   with --irp: the IRP block for the statewide agent
+    briefs/_irp.md                   with --irp: the IRP block for the statewide agent, plus
+                                     harvest/irp_plans.md (every plan read in full) when it exists
     (--existing-links)               adds a "links already in the database that are gone"
                                      section to each affected plant's brief
     briefs/_scope.md                 every scope: the add rule (when a project GEM lacks is a new
@@ -957,39 +958,15 @@ def location_task_text(e):
     return " ".join(parts)
 
 
-OPTIONAL_VALIDATION = ("Optional under the manual; answer it if cheap. The plant has coal "
-                       "units or this unit is a coal-to-gas conversion, and the manual does "
-                       "not require a fix for those errors. ")
-
-
-def is_coal_conversion(r):
-    """A unit converted from coal to gas (the converted-from fuel says coal)."""
-    return ws(r.get("Conversion from/replacement of (fuel)")).lower().startswith("coal")
-
-
-def coal_plant_ids(path):
-    """Location IDs of plants that have a coal unit in the unfiltered export at
-    `path` (any unit row whose Fuel contains coal); empty when the file is missing."""
-    p = Path(path)
-    if not p.exists():
-        return set()
-    with open(p, encoding="utf-8-sig", newline="") as f:
-        return {r.get(H_LOC, "").strip() for r in csv.DictReader(f)
-                if "coal" in (r.get("Fuel") or "").lower() and r.get(H_LOC)}
-
-
-def validation_tasks(items, rows, coal_plant=False):
+def validation_tasks(items, rows):
     """Split a plant's validation fixes into unit tasks and whole-plant tasks.
     A missing data source the gap list already asks about is not repeated.
-    With `coal_plant` (the plant has coal units in the unfiltered export) or on
-    a coal-to-gas conversion unit, a validation report item (row 7) is marked
-    optional (manual lines 198 and 220)."""
+    Every item is required (Baird 2026-11-06): no optional marking for a coal
+    plant or a coal conversion; coal-only units never reach this list."""
     by_uid = {r[H_UNIT]: r for r in rows}
     per_unit, plant = {}, []
     for uid, e in items:
         r = by_uid.get(uid)
-        if 7 in (e.get("checks") or []) and (coal_plant or (r is not None and is_coal_conversion(r))):
-            e = dict(e, task=OPTIONAL_VALIDATION + e["task"])
         if r is None:
             who = f"Unit {e.get('unit_name') or uid} ({uid}): " if uid else ""
             plant.append((who + e["task"], list(e.get("fields") or []),
@@ -1012,6 +989,9 @@ def task_line(text, checks):
     return f"{VALIDATION_MARK} {text}" if 7 in (checks or []) else text
 
 
+LOCAL_PER_PLANT = 8   # newest local records per plant briefed; the rest stay in local_records.md
+
+
 def load_harvest(folder):
     """The pre-sweep harvest of one scope (psc_dockets.json from the scope's harvest_psc.py and
     queues.json from pull_queues.py or the scope's own queue reader, both in `folder`) as
@@ -1019,6 +999,7 @@ def load_harvest(folder):
     and queue entries matched to the plant; the unmatched ones go to briefs/_harvest.md."""
     folder = Path(folder)
     psc_p, q_p = folder / "psc_dockets.json", folder / "queues.json"
+    loc_p = folder / "local_records.json"
     if not psc_p.exists() and not q_p.exists():
         sys.exit(f"ERROR: neither psc_dockets.json nor queues.json is in {folder}; run the "
                  "scope's harvesters first (scopes/<tag>/harvest_psc.py, scripts/pull_queues.py)")
@@ -1044,6 +1025,20 @@ def load_harvest(folder):
                     f"point of interconnection {e['poi']}" if e.get("poi") else ""]
             lines.setdefault(m["plant_id"], []).append(
                 "; ".join(b for b in bits if b) + f". A queue entry is a lead, not proof. Cite the queue page: {e['url']}")
+    local = json.loads(loc_p.read_text(encoding="utf-8")) if loc_p.exists() else {}
+    bname = {b["id"]: b["name"] for b in local.get("bodies") or []}
+    recs = local.get("records") or []
+    for pid, idx in (local.get("by_plant") or {}).items():
+        rows = sorted((recs[i] for i in idx), key=lambda r: r.get("date") or "", reverse=True)
+        for r in rows[:LOCAL_PER_PLANT]:
+            said = " ".join(f'"{s[:240]}"' for s in (r.get("sentences") or [])[:2])
+            lines.setdefault(pid, []).append(
+                f"{bname.get(r['body'], r['body'])}, {r.get('date') or 'date not shown'} {r['kind']}: "
+                f"{(r.get('title') or '')[:120]}. {said} A local record is a lead. Open it and cite it at {r['url']}")
+        if len(rows) > LOCAL_PER_PLANT:
+            lines.setdefault(pid, []).append(
+                f"{len(rows) - LOCAL_PER_PLANT} more local records name this plant; they are listed under the "
+                "plant in batches/<tag>/harvest/local_records.md")
     out = {}
     for pid, ls in lines.items():
         for text in ls:
@@ -1051,7 +1046,7 @@ def load_harvest(folder):
                 "kind": "fix", "section": "Harvest", "fields": [], "checks": [],
                 "task": "Pre-sweep harvest found this for the plant, read the source and use it when it "
                         "is evidence for a value: " + text}))
-    return out, {"psc": psc, "queues": queues}
+    return out, {"psc": psc, "queues": queues, "local": local}
 
 
 def render_harvest_brief(data):
@@ -1083,6 +1078,16 @@ def render_harvest_brief(data):
                          f"Citation page: {e['url']}")
     else:
         L.append("No unmatched entries.")
+    local = data.get("local") or {}
+    if local:
+        L += ["", "## Local planning and fiscal court records", "",
+              "Read local_records.md in the harvest folder in full. Each lead it names, and each power or data "
+              "center project it mentions with no GEM plant, is answered: a new plant, a monitor item or nothing, "
+              "with the reason. Bodies with no posted minutes are listed there too; say what a person must do "
+              "to read them."]
+        for r in local.get("records") or []:
+            if r.get("leads") and not r.get("named"):
+                L.append(f"- {r.get('date') or 'date not shown'}, {r['body']}: leads {', '.join(r['leads'])}. {r['url']}")
     return "\n".join(L) + "\n"
 
 
@@ -1155,8 +1160,11 @@ def render_brief(plant_id, rows, header, mode, wl, notes_text, notes_path, scope
               "question, not a change.", ""]
         if any(7 in c for ts in list(tasks.values()) + [plant_tasks] for _, _, c in ts):
             L += [f"{VALIDATION_MARK} tasks come from the database's validation report. "
-                  "Every one needs an answer: a finding with its source, or a question "
-                  "saying what you found or that nothing was found and where you looked.", ""]
+                  "Every one is required, on a coal plant or a coal conversion too, and every one "
+                  "is cleared by an EDIT: a finding with its source (the missing Data Source "
+                  "for the value already in the export, a value that is wrong, or a dated "
+                  "status step in Status Detail). A question answers one only when it says "
+                  "where you looked and that nothing was found.", ""]
         if plant_tasks:
             L += ["### Whole plant", ""]
             L += [f"- {task_line(t, c)}" for t, _, c in plant_tasks]
@@ -1285,9 +1293,9 @@ def main():
                     help="work/irp_us-<state-slug>.json from irp_sheet.py: the IRP research "
                          "step (update mode, US states)")
     ap.add_argument("--harvest", default=None,
-                    help="batches/<tag>/harvest folder with psc_dockets.json and queues.json (from "
-                         "the scope's harvest_psc.py and pull_queues.py): each plant's "
-                         "matched dockets and queue entries become tasks, the unmatched ones go to "
+                    help="batches/<tag>/harvest folder with psc_dockets.json, queues.json and local_records.json "
+                         "(from the scope's harvest_psc.py, pull_queues.py and harvest_local.py): each plant's "
+                         "matched dockets, queue entries and local records become tasks, the unmatched ones go to "
                          "briefs/_harvest.md (update mode)")
     ap.add_argument("--captive", default=None,
                     help="work/captive_<tag>.json from captive_lng.py: the captive LNG sheet "
@@ -1429,7 +1437,6 @@ def main():
     if missing_cap and not a.plants:
         print(f"WARNING: captive LNG tasks on plants not in {csv_path.name}: {missing_cap}; not briefed.")
 
-    coal_ids = coal_plant_ids(a.all_csv) if a.validation else set()
     peers = {}
     all_path = Path(a.all_csv)
     if a.mode == "update" and all_path.exists():
@@ -1447,8 +1454,7 @@ def main():
                                              location=bool(a.location))
                        for r in rows}
                       if a.mode == "update" else {})
-        val_unit, val_plant = validation_tasks(validation.get(pid, []), rows,
-                                               coal_plant=pid in coal_ids)
+        val_unit, val_plant = validation_tasks(validation.get(pid, []), rows)
         for uid, vt in val_unit.items():
             tasks[pid][uid] = tasks[pid].get(uid, []) + vt
         n_val += sum(len(v) for v in val_unit.values()) + len(val_plant)
@@ -1570,6 +1576,29 @@ def main():
                                    for u in irp_data.get("utilities") or []],
                      "links": links,
                      "irp_box_units": [u["unit_id"] for u in irp_data.get("irp_units") or []]}
+    # every plan read in full (irp_plans.py, every scope): its block goes under the sheet's
+    # block in briefs/_irp.md, and its documents count as plan links for the irp flag
+    plans_json = batch / "harvest" / "irp_plans.json"
+    if plans_json.exists():
+        plans = json.loads(plans_json.read_text(encoding="utf-8"))
+        irp_brief = batch / "briefs" / "_irp.md"
+        head = irp_brief.read_text(encoding="utf-8") if (irp_data is not None and irp_brief.exists()) else ""
+        md = (batch / "harvest" / "irp_plans.md")
+        block = ("\n\n## Every resource plan, read in full\n\n"
+                 "Read each plan below completely: the preferred plan and every alternative portfolio, "
+                 "the action plan, and the tables of new resources. Every gas or oil addition or option "
+                 "becomes an update on its GEM plant, a new plant, or a watch item. Answer each plan in "
+                 "coverage.json under `irp_plans` (Update SOP §3, step 8); gate `irp-plans` checks it.\n\n"
+                 + (md.read_text(encoding="utf-8") if md.exists() else ""))
+        irp_brief.write_text(head + block, encoding="utf-8")
+        plan_links = [d.get("url") for u in plans.get("utilities") or [] for d in u.get("documents") or []
+                      if d.get("url")]
+        if irp_index is None:
+            irp_index = {"brief_path": str(irp_brief.relative_to(REPO_ROOT)), "skipped": False,
+                         "utilities": [], "links": [], "irp_box_units": [], "read": None, "file": None}
+        irp_index["links"] = irp_index.get("links", []) + [x for x in plan_links if x not in irp_index.get("links", [])]
+        irp_index["plans"] = {"file": str(plans_json.relative_to(REPO_ROOT)), "generated": plans.get("generated"),
+                              "needs_answer": plans.get("needs_answer") or []}
     harvest_index = None
     if harvest_data is not None:
         hv_brief = batch / "briefs" / "_harvest.md"

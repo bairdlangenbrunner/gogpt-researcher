@@ -1,4 +1,4 @@
-"""Central path resolution — so nothing hard-codes /Users/baird/... .
+"""Central path resolution — so nothing hard-codes /Users/<name>/... .
 
 Repo layout is fixed relative to this file (scripts/paths.py). Scope files
 (note, coverage list, plan, harvesters, work outputs) live in scopes/<tag>/;
@@ -121,7 +121,7 @@ US_POSTAL = {
 
 # A batch folder can be one run of a scope: us-il-dc (data center catch-up),
 # us-il-val (validation answers), germany-permits. These share the scope's folder.
-RUN_SUFFIXES = ("-dc", "-val", "-permits")
+RUN_SUFFIXES = ("-dc", "-val", "-permits", "-redo")
 
 
 def scope_tag(state: str | None = None, country: str | None = None) -> str:

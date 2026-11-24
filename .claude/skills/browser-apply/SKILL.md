@@ -5,7 +5,7 @@ description: Type a reviewed GOGPT batch's accepted edits into the live GEM web 
 
 # Browser apply
 
-The rules are `docs/sops/database-browser-edits.md`. Read it first. This file is the recipe. Arguments: `$ARGUMENTS` (a batch folder name such as `us-ia`, and optionally `practice`).
+The rules are `docs/sops/database-browser-edits.md`. Read it first. This file is the recipe. Where each field is on the form, how the status timelines, Datasource boxes, unit names and Research status work, and the form's own checks are in `docs/chrome_apply_instructions.md`, the same page the pasted side-panel message points to. Read it too. Arguments: `$ARGUMENTS` (a batch folder name such as `us-ia`, and optionally `practice`).
 
 ## 0. Before anything
 
@@ -23,12 +23,14 @@ The rules are `docs/sops/database-browser-edits.md`. Read it first. This file is
 1. Skip a plant with `blocked_by` entries. Tell Baird which entity is missing. Come back only when Baird says it now exists.
 2. Open the plant's `edit_url` with `navigate`. Read the page. Check that it names this plant and its GEM ID. If it does not, stop.
 3. For each edit, read the current value on the page and compare it with the edit's `current`. If they differ, do not touch that field. Note it as changed by someone else.
-4. Fill the fields with `form_input`, exactly as `fields` says. Data Source boxes: add the `refs` links after the links already there, never remove one. Status Detail and Notes: the `fields` value is the whole box with the new entry on top. An edit with `applies_to_all_units` goes on every unit in `sibling_unit_ids` too.
-5. Before the save click, post the plant's change list in the chat: plant, unit, field, old value, and new value, one line each. Then say "Next click: Save on <plant>." The permission prompt for that click is Baird's approval. If Baird declines, leave the page without saving and ask what to change.
-6. Every other click or key gets one line first, saying what it is ("Next click: the unit GT2 tab"). Prefer `navigate` and `form_input`, so the clicks are mostly saves.
-7. After saving, reload, read each edited field back, and record each edit:
+4. Fill the fields with `form_input`, exactly as `fields` says. Technology "unknown" is a real dropdown choice: select it when `fields` says unknown, never leave the box blank. Data Source boxes: add the `refs` links after the links already there, never remove one. Status Detail and Notes: the `fields` value is the whole box with the new entry on top. An edit with `applies_to_all_units` goes on every unit in `sibling_unit_ids` too.
+5. Check the plant against the web form's validation list in `docs/reference/web_form_validation.md` (SOP §5 step 6): unique plant name with no "phase", "extension", double space or `# < > [ ] { } % + ? |`, distinct unit names, country, coordinates and accuracy, and on each unit a nonzero capacity, a fuel with its detail, a Technology and a dated current status, plus a Data Source link for every value typed. Name any gap in the change list; never invent a value to fill it.
+6. Before the save click, post the plant's change list in the chat: plant, unit, field, old value, and new value, one line each. Then say "Next click: Save on <plant>." The permission prompt for that click is Baird's approval. If Baird declines, leave the page without saving and ask what to change.
+7. Every other click or key gets one line first, saying what it is ("Next click: the unit GT2 tab"). Prefer `navigate` and `form_input`, so the clicks are mostly saves.
+8. After saving, reload, read each edited field back, and record each edit:
    `python scripts/browser_apply.py record --scope <scope> --record-id <id> --readback - <<'EOF'` with a JSON object of `{field: value as the page shows it}` for every field and Data Source box in that edit, then `EOF`. Add `--practice` on a practice run. If it prints NOT RECORDED, stop and show Baird.
-8. New rows (`new_rows`) come after the plant's edits, with their own change list and their own approved save.
+9. After recording, open the plant's Validation Report tab, read it, and note any warning on this plant for Baird's end-of-session list (SOP §5 step 7). Fix nothing that no queue row names.
+10. New rows (`new_rows`) come after the plant's edits, with their own change list and their own approved save.
 
 ## 2. Stop and hand back
 

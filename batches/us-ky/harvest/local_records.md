@@ -1,0 +1,4408 @@
+# Kentucky local planning and fiscal court records (2026-11-07)
+
+Agendas, packets, staff reports and minutes posted since 2024-01-01 by the bodies around the GEM plants and the leads, searched for plant and developer names and for power and data center words. A record is a lead: open the document at its address and cite it there. Copies are in scopes/us-ky/work/local/ and are not committed.
+
+## Bodies read
+
+- Louisville Metro Council (Jefferson County, legistar): 81 documents listed since 2024-01-01, 81 read
+- Louisville Metro Planning Commission (Jefferson County, legistar): 77 documents listed since 2024-01-01, 77 read
+- Louisville Metro Board of Zoning Adjustment (Jefferson County, legistar): 14 documents listed since 2024-01-01, 14 read
+- Louisville Metro Planning Committee (Jefferson County, legistar): 1 documents listed since 2024-01-01, 1 read
+- Louisville Metro Land Development and Transportation Committee (Jefferson County, legistar): 4 documents listed since 2024-01-01, 4 read
+- Louisville Metro Development Review Committee (Jefferson County, legistar): 14 documents listed since 2024-01-01, 14 read
+- Louisville Metro Planning and Zoning Committee (Jefferson County, legistar): 347 documents listed since 2024-01-01, 347 read
+- Louisville Metro Labor and Economic Development Committee (Jefferson County, legistar): 16 documents listed since 2024-01-01, 16 read
+- City of Madisonville (Hopkins County, civicclerk): 236 documents listed since 2024-01-01, 236 read
+- Henderson County Fiscal Court, Planning and Zoning (Henderson County, agendacenter): 74 documents listed since 2024-01-01, 74 read
+- City of Henderson (Henderson County, agendacenter): 64 documents listed since 2024-01-01, 64 read
+- Clark County Fiscal Court (Clark County, agendacenter): 37 documents listed since 2024-01-01, 37 read
+- Marshall County Fiscal Court (Marshall County, agendacenter): 45 documents listed since 2024-01-01, 45 read
+- Hardin County Fiscal Court and Planning (Hardin County, agendacenter): 82 documents listed since 2024-01-01, 81 read
+- Pulaski County Fiscal Court (Pulaski County, wpmedia): 124 documents listed since 2024-01-01, 122 read
+- Daviess County Fiscal Court (Daviess County, wpmedia): 25 documents listed since 2024-01-01, 25 read
+- City of Somerset (Pulaski County, wpmedia): 321 documents listed since 2024-01-01, 321 read
+- Mason County Fiscal Court (Mason County, pages): 71 documents listed since 2024-01-01, 71 read
+- City of Harrodsburg (Mercer County, pages): 54 documents listed since 2024-01-01, 54 read
+- Oldham County Fiscal Court (Oldham County, pages): 17 documents listed since 2024-01-01, 17 read
+- Boone County Fiscal Court (Boone County, pages): 80 documents listed since 2024-01-01, 80 read
+- Owensboro Metropolitan Planning Commission and Board of Adjustment (Daviess County, pages): 127 documents listed since 2024-01-01, 127 read
+- Boyd County Fiscal Court (Boyd County, agendacenter): 12 documents listed since 2024-01-01, 12 read
+- City of Elizabethtown (Hardin County, pages): 211 documents listed since 2024-01-01, 211 read (1 by OCR)
+- McCracken County Fiscal Court and Planning and Zoning (McCracken County, pages): 92 documents listed since 2024-01-01, 91 read
+- City of Maysville (Mason County, pages): 121 documents listed since 2024-01-01, 121 read
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning (Simpson County, pages): 169 documents listed since 2024-01-01, 169 read (73 by OCR)
+- Simpson County Fiscal Court (Simpson County, wpmedia): 222 documents listed since 2024-01-01, 222 read (106 by OCR)
+
+## Records that name a GEM plant
+
+### Cane Run Station (L100000103932), Jefferson County
+
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156315/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155686/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning Commission, 2026-08-05, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65650/Attachments/155512/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning Commission, 2026-07-27, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65606/Attachments/155306/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156315/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156315/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156315/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156315/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156315/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156315/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156315/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+
+### Cooper power station (L100000103935), Pulaski County
+
+- Pulaski County Fiscal Court, 2026-01-14, minutes: FCM-2025-combined, https://www.pulaskigov.com/wp-content/uploads/2026/01/FCM-2025-combined.pdf
+  - "This new pipeline will deliver natural gas to Cooper Power Plant."
+- Pulaski County Fiscal Court, 2025-03-11, minutes: FCM-3-11-25, https://www.pulaskigov.com/wp-content/uploads/2025/03/FCM-3-11-25.pdf
+  - "This new pipeline will deliver natural gas to Cooper Power Plant."
+
+### East Bend Generating Station (L100000103938), Boone County
+
+- Boone County Fiscal Court, 2026-07-28, minutes: Minutes, https://www.boonecountyky.org/Documents/Government/Boone%20County%20Fiscal%20Court/Fiscal%20Court%20Meeting%20Minutes/2026/July%2028,%202026%20Minutes.pdf?t=202608121002290
+  - Also mentions: map amendment
+  - "Judge Moore asked the Fiscal Court Clerk to read into the record, Second Reading of AN ORDINANCE OF THE BOONE COUNTY FISCAL COURT, KENTUCKY APPROVING A REQUEST OF KIRBY MYNHIER (APPLICANT) FOR KIRBY AND CHARMAINE MYNHIER (OWNERS) FOR A ZONING MAP AMENDMENT FROM AGRICULTURE (A-1) AND AGRICULTURE/SMAL"
+- Boone County Fiscal Court, 2026-07-14, minutes: Minutes, https://www.boonecountyky.org/Documents/Government/Boone%20County%20Fiscal%20Court/Fiscal%20Court%20Meeting%20Minutes/2026/July%2014,%202026%20Minutes.pdf?t=202607291145180
+  - Also mentions: map amendment, zone change
+  - "Kirby Mynhier Zoning Map Amendment — Lauren Elliott, Zoning Services Planner presented via PowerPoint on a zone change request on a 5-acre lot between East Bend Road and Rabbit Hash Road to subdivide tand to add one buildable lot for his son to build a house."
+  - "Judge Moore asked the Fiscal Court Clerk to read into the record, First Reading of AN ORDINANCE OF THE BOONE COUNTY FISCAL COURT, KENTUCKY APPROVING A REQUEST OF KIRBY MYNHIER (APPLICANT) FOR KIRBY AND CHARMAINE MYNHIER (QWNERS) FOR A ZONING MAP AMENDMENT FROM AGRICULTURE (A-1) AND AGRICULTURE/SMALL"
+  - "The following citizens spoke: e Roger Berger - spoke about Data Centers and asked about the power generator."
+- Boone County Fiscal Court, 2026-01-27, minutes: Minutes, https://www.boonecountyky.org/Documents/Government/Boone%20County%20Fiscal%20Court/Fiscal%20Court%20Meeting%20Minutes/2026/January%2027,%202026%20Minutes.pdf?t=202604230917380
+  - "Project 3, Williams Road to Garrison Creek, projects 4 & 5, KY 20 (Belleview Road) and projects 6 & 7, KY 338 and KY 18 (East Bend and McVille Roads)."
+- Boone County Fiscal Court, 2025-06-03, minutes: Minutes, https://www.boonecountyky.org/Documents/Government/Boone%20County%20Fiscal%20Court/Fiscal%20Court%20Meeting%20Minutes/2025/June%203,%202025%20Minutes.pdf?t=202604230917390
+  - "The first order is to complete storage to allow the county to divert the East Bend property."
+  - "Captain Geiman stated that the first phase will be to move out of the East Bend property, the second phase will be to add an office, and the third phase is to complete the dock."
+- Boone County Fiscal Court, 2024-04-23, minutes: Minutes, https://www.boonecountyky.org/Documents/Government/Boone%20County%20Fiscal%20Court/Fiscal%20Court%20Meeting%20Minutes/2024/April%2023,%202024%20Minutes.pdf?t=202604230917160
+  - "Projects that are being recommended are the resurfacing of a section of Big Bone Road (KY 1925), a section of Petersburg Road (KY 20), a section of East Bend Road (KY 338), and another section of KY 20 if funds allow."
+
+### Elmer Smith Station (L100000103939), Daviess County
+
+- Daviess County Fiscal Court, 2026-08-13, minutes: OB 43; 08-13-2026 Minutes, https://www.daviessky.org/wp-content/uploads/2026/08/OB-43-08-13-2026-Minutes.pdf
+  - "So, | just like to know why we are so quick to give up the biggest thoroughfare that we have right now where we could be involved more with what happens on that road in the future, especially with the proximity to the property that's possibly being considered for a data center.” Judge/Executive Cast"
+  - "She addressed the Court to warn against incoming data center projects, citing her personal visit to Memphis data centers to highlight negative local impacts."
+  - "She completed research on shell companies securing over 260 acres in East Daviess County alongside a proposed 545-megawatt power plant on the former Elmer Smith site."
+  - "He believed that Court should slow down the Data Center issues so they can protect the community."
+  - "She wanted the Court to really think about how it would be to have a data center making constant noise near their home."
+- Daviess County Fiscal Court, 2026-05-28, minutes: 05-28-2026 Minutes, https://www.daviessky.org/wp-content/uploads/2026/06/fully-executed-OB-42-05-28-2026-Minutes.pdf
+  - Leads named: Green River East GenCo
+  - "Infrastructure Facilities (Including Data Centers)."
+  - "It focuses on land acquisition and finance, power solutions for industrial and data centers, mega load customers, and related energy transition infrastructure projects."
+  - "The public can search for Green River East Load Company and Green River East Gen Company as party two on the county clerk records search website."
+  - "They include a long-term option to lease from Owensboro Municipal Utilities for over 100 acres of OMU controlled riverfront and Highway 60 land with associated easement rights near the site of the old power plant."
+  - "She was in favor of the moratorium, but strongly against having data centers."
+
+### J K Smith power station (L100000401893), Clark County
+
+- City of Henderson, 2026-06-09, agenda: Board of Commissioners Meeting on June 9th, 2026 (Telecommunications) agenda, https://www.hendersonky.gov/AgendaCenter/ViewFile/Agenda/_06092026-524
+  - "Information Technology Department Information Technology (IT) - Greg Nunn, IT Systems Director, reported that as the City has been utilizing the same software since 2016, the Microsoft Server Data Center 2025 and the SQL server will replace what has been being used, as it will no longer be supported"
+  - "Fixed Nuclear Facility (FNF) - Nuclear power plants, reactor fuel fabrication, or processing plants, test and research reactors, or any other facility using or producing large quantities of radioactive material. 1 May 2024 Version 6.0 BASIC PLAN 84 HENDERSON COUNTY EMERGENCY OPERATIONS PLAN "Buildin"
+  - "Jennings, DMD Secretary Commissioner Steve Austin Commissioner Chris Smith General Manager Bart Boles Senior Management Team Todd Bowley Kevin Roberts Chief Financial Officer Director of Operations Matt Calvert Josh Thompson Director of Engineer Treatment Superintendent Tim Fischbeck Kevin Sturgill "
+- City of Henderson, 2026-05-26, agenda: Board of Commissioners Meeting on May 26th, 2026 (Telecommunications) agenda, https://www.hendersonky.gov/AgendaCenter/ViewFile/Agenda/_05262026-523
+  - "Jennings, DMD Secretary Commissioner Steve Austin Commissioner Chris Smith General Manager Bart Boles Senior Management Team Todd Bowley Kevin Roberts Chief Financial Officer Director of Operations Matt Calvert Josh Thompson Director of Engineer Treatment Superintendent Tim Fischbeck Kevin Sturgill "
+
+### KYMEA Energy Center I (L100001026095), county blank County
+
+- City of Madisonville, 2025-05-05, packet: City Council Meeting Agenda Packet, https://madisonvilleky.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5042,plainText=false)
+  - "Electric Department - KYMEA Energy Center Presented by Brad Porter 8."
+- City of Madisonville, 2025-04-21, agenda: City Council Meeting Agenda, https://madisonvilleky.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5031,plainText=false)
+  - "Electric Department - KYMEA Energy Center 8."
+- City of Madisonville, 2025-04-21, packet: City Council Meeting Agenda Packet, https://madisonvilleky.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5032,plainText=false)
+  - "Electric Department - KYMEA Energy Center 8."
+- City of Madisonville, 2025-04-21, minutes: City Council Meeting Minutes, https://madisonvilleky.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5034,plainText=false)
+  - "Electric Department - KYMEA Energy Center Presented by Brad Porter 8."
+- City of Madisonville, 2024-07-15, packet: City Council Meeting Agenda Packet, https://madisonvilleky.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=4876,plainText=false)
+  - "Purchaser intends to construct, equip and operate a 75 MW Natural Gas Reciprocating Internal Combustion Engine Generating Facility to serve its member utilities (the “Project”)."
+  - "Doug Buresh 67 North Main Street 1700 Eastpoint Parkway, Suite 220 Madisonville, Kentucky 42461 Louisville, Kentucky 40223 Email: kcotton@madisonvillegov.com Email: dburesh@kymea.org 9."
+
+### Liberty Station Power Plant (L100001025720), Casey County
+
+- Simpson County Fiscal Court, 2024-10-15, minutes: 10.15.2024 CommissionMinutes, https://simpsoncountyky.gov/wp-content/uploads/2025/01/10.15.2024-CommissionMinutes.pdf
+  - "Edwards also purchased the Liberty Station Subdivision."
+
+### Mill Creek Station (L100000103945), Jefferson County
+
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156315/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Comment Forms_Pre Draft_Through 06-08-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156318/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, rezon, site plan
+  - "Entry Name Zip Code Comment 1 S. 40204 No data centers, not now, not ever."
+  - "A data center does not help the average Kentuckian, the spawn of them across the country is explicitly to buy as much hardware and processing power as possible, and offer it as a subscription/lease to a user."
+  - "Jones, I am a resident of Jefferson County and I want to provide my formal comment concerning the upcoming Planning Committee review of data center zoning regulations (Resolution 082) on Jan 2nd."
+  - "As you update your code on Land Development for Data Centers, I urge you to include the following provisions before you allow tech developers to build data centers in our city:"
+  - "The city should require the large tech companies that want to build data centers to pay for 100% of the new electrical infrastructure they require."
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Survey Comments_Pre Draft_10-22-25 to 12-22-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156325/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Flexential, Meta
+  - Also mentions: conditional use, plat, tax abatement, tax incentive, zone change
+  - "Its not a good fit for Louisville and Jefferson county. 4 Grey 40207 Fuel the data centers with RENEWABLE ENERGY Hold the large tech companies responsible for forming the renewable energy supply chain, the energy needed to fuel the data centers they depend on should be their duty."
+  - "If AI is the future and so lucrative for them, & that it is worth our government focusing on, then the corporations behind the data increase and need for these centers should be willing to invest in new processes, ones that consider longevity, efficiency & thus sustainability. 5 McFadden 40220 It se"
+  - "Why do you all want to make these issues worse? 6 Allen 40206 Data centers are proved to be detrimental to the physical and environmental health of communities where they are located."
+  - "While I do not want a data center of this size and caliber in my city at all, if it must be built then the benefits of it must outweigh the cost for the residents of Louisville."
+  - "The data center must be required to use a finite amount of water that is recycled throughout the center and it must be restricted from polluting our water and the Ohio River."
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155686/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Comment Forms_Pre Draft_Through 06-08-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155689/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use, map amendment, rezon, site plan
+  - "Entry Name Zip Code Comment 1 S. 40204 No data centers, not now, not ever."
+  - "A data center does not help the average Kentuckian, the spawn of them across the country is explicitly to buy as much hardware and processing power as possible, and offer it as a subscription/lease to a user."
+  - "Jones, I am a resident of Jefferson County and I want to provide my formal comment concerning the upcoming Planning Committee review of data center zoning regulations (Resolution 082) on Jan 2nd."
+  - "As you update your code on Land Development for Data Centers, I urge you to include the following provisions before you allow tech developers to build data centers in our city:"
+  - "The city should require the large tech companies that want to build data centers to pay for 100% of the new electrical infrastructure they require."
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Survey Comments_Pre Draft_10-22-25 to 12-22-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155696/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Flexential, Meta
+  - Also mentions: conditional use, plat, tax abatement, tax incentive, zone change
+  - "Its not a good fit for Louisville and Jefferson county. 4 Grey 40207 Fuel the data centers with RENEWABLE ENERGY Hold the large tech companies responsible for forming the renewable energy supply chain, the energy needed to fuel the data centers they depend on should be their duty."
+  - "If AI is the future and so lucrative for them, & that it is worth our government focusing on, then the corporations behind the data increase and need for these centers should be willing to invest in new processes, ones that consider longevity, efficiency & thus sustainability. 5 McFadden 40220 It se"
+  - "Why do you all want to make these issues worse? 6 Allen 40206 Data centers are proved to be detrimental to the physical and environmental health of communities where they are located."
+  - "While I do not want a data center of this size and caliber in my city at all, if it must be built then the benefits of it must outweigh the cost for the residents of Louisville."
+  - "The data center must be required to use a finite amount of water that is recycled throughout the center and it must be restricted from polluting our water and the Ohio River."
+- Louisville Metro Planning Commission, 2026-08-06, packet: 25-LDC-0014_Comment Forms_Pre Draft_Through 06-08-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65651/Attachments/155525/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use, map amendment, rezon, site plan
+  - "Entry Name Zip Code Comment 1 S. 40204 No data centers, not now, not ever."
+  - "A data center does not help the average Kentuckian, the spawn of them across the country is explicitly to buy as much hardware and processing power as possible, and offer it as a subscription/lease to a user."
+  - "Jones, I am a resident of Jefferson County and I want to provide my formal comment concerning the upcoming Planning Committee review of data center zoning regulations (Resolution 082) on Jan 2nd."
+  - "As you update your code on Land Development for Data Centers, I urge you to include the following provisions before you allow tech developers to build data centers in our city:"
+  - "The city should require the large tech companies that want to build data centers to pay for 100% of the new electrical infrastructure they require."
+- Louisville Metro Planning Commission, 2026-08-06, packet: 25-LDC-0014_Survey Comments_Pre Draft_10-22-25 to 12-22-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65651/Attachments/155532/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Flexential, Meta
+  - Also mentions: conditional use, plat, tax abatement, tax incentive, zone change
+  - "Its not a good fit for Louisville and Jefferson county. 4 Grey 40207 Fuel the data centers with RENEWABLE ENERGY Hold the large tech companies responsible for forming the renewable energy supply chain, the energy needed to fuel the data centers they depend on should be their duty."
+  - "If AI is the future and so lucrative for them, & that it is worth our government focusing on, then the corporations behind the data increase and need for these centers should be willing to invest in new processes, ones that consider longevity, efficiency & thus sustainability. 5 McFadden 40220 It se"
+  - "Why do you all want to make these issues worse? 6 Allen 40206 Data centers are proved to be detrimental to the physical and environmental health of communities where they are located."
+  - "While I do not want a data center of this size and caliber in my city at all, if it must be built then the benefits of it must outweigh the cost for the residents of Louisville."
+  - "The data center must be required to use a finite amount of water that is recycled throughout the center and it must be restricted from polluting our water and the Ohio River."
+- Louisville Metro Planning Commission, 2026-08-05, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65650/Attachments/155512/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning Commission, 2026-08-05, packet: 25-LDC-0014_Comment Forms_Pre Draft_Through 06-08-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65650/Attachments/155514/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use, map amendment, rezon, site plan
+  - "Entry Name Zip Code Comment 1 S. 40204 No data centers, not now, not ever."
+  - "A data center does not help the average Kentuckian, the spawn of them across the country is explicitly to buy as much hardware and processing power as possible, and offer it as a subscription/lease to a user."
+  - "Jones, I am a resident of Jefferson County and I want to provide my formal comment concerning the upcoming Planning Committee review of data center zoning regulations (Resolution 082) on Jan 2nd."
+  - "As you update your code on Land Development for Data Centers, I urge you to include the following provisions before you allow tech developers to build data centers in our city:"
+  - "The city should require the large tech companies that want to build data centers to pay for 100% of the new electrical infrastructure they require."
+- Louisville Metro Planning Commission, 2026-08-05, packet: 25-LDC-0014_Survey Comments_Pre Draft_10-22-25 to 12-22-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65650/Attachments/155521/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Flexential, Meta
+  - Also mentions: conditional use, plat, tax abatement, tax incentive, zone change
+  - "Its not a good fit for Louisville and Jefferson county. 4 Grey 40207 Fuel the data centers with RENEWABLE ENERGY Hold the large tech companies responsible for forming the renewable energy supply chain, the energy needed to fuel the data centers they depend on should be their duty."
+  - "If AI is the future and so lucrative for them, & that it is worth our government focusing on, then the corporations behind the data increase and need for these centers should be willing to invest in new processes, ones that consider longevity, efficiency & thus sustainability. 5 McFadden 40220 It se"
+  - "Why do you all want to make these issues worse? 6 Allen 40206 Data centers are proved to be detrimental to the physical and environmental health of communities where they are located."
+  - "While I do not want a data center of this size and caliber in my city at all, if it must be built then the benefits of it must outweigh the cost for the residents of Louisville."
+  - "The data center must be required to use a finite amount of water that is recycled throughout the center and it must be restricted from polluting our water and the Ohio River."
+- Louisville Metro Planning Commission, 2026-07-27, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65606/Attachments/155306/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning Commission, 2026-07-27, packet: 25-LDC-0014_Comment Forms_Pre Draft_Through 06-08-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65606/Attachments/155308/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use, map amendment, rezon, site plan
+  - "Entry Name Zip Code Comment 1 S. 40204 No data centers, not now, not ever."
+  - "A data center does not help the average Kentuckian, the spawn of them across the country is explicitly to buy as much hardware and processing power as possible, and offer it as a subscription/lease to a user."
+  - "Jones, I am a resident of Jefferson County and I want to provide my formal comment concerning the upcoming Planning Committee review of data center zoning regulations (Resolution 082) on Jan 2nd."
+  - "As you update your code on Land Development for Data Centers, I urge you to include the following provisions before you allow tech developers to build data centers in our city:"
+  - "The city should require the large tech companies that want to build data centers to pay for 100% of the new electrical infrastructure they require."
+- Louisville Metro Planning Commission, 2026-07-27, packet: 25-LDC-0014_Survey Comments_Pre Draft_10-22-25 to 12-22-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65606/Attachments/155315/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Flexential, Meta
+  - Also mentions: conditional use, plat, tax abatement, tax incentive, zone change
+  - "Its not a good fit for Louisville and Jefferson county. 4 Grey 40207 Fuel the data centers with RENEWABLE ENERGY Hold the large tech companies responsible for forming the renewable energy supply chain, the energy needed to fuel the data centers they depend on should be their duty."
+  - "If AI is the future and so lucrative for them, & that it is worth our government focusing on, then the corporations behind the data increase and need for these centers should be willing to invest in new processes, ones that consider longevity, efficiency & thus sustainability. 5 McFadden 40220 It se"
+  - "Why do you all want to make these issues worse? 6 Allen 40206 Data centers are proved to be detrimental to the physical and environmental health of communities where they are located."
+  - "While I do not want a data center of this size and caliber in my city at all, if it must be built then the benefits of it must outweigh the cost for the residents of Louisville."
+  - "The data center must be required to use a finite amount of water that is recycled throughout the center and it must be restricted from polluting our water and the Ohio River."
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156315/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Comment Forms_Pre Draft_Through 06-08-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156318/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, rezon, site plan
+  - "Entry Name Zip Code Comment 1 S. 40204 No data centers, not now, not ever."
+  - "A data center does not help the average Kentuckian, the spawn of them across the country is explicitly to buy as much hardware and processing power as possible, and offer it as a subscription/lease to a user."
+  - "Jones, I am a resident of Jefferson County and I want to provide my formal comment concerning the upcoming Planning Committee review of data center zoning regulations (Resolution 082) on Jan 2nd."
+  - "As you update your code on Land Development for Data Centers, I urge you to include the following provisions before you allow tech developers to build data centers in our city:"
+  - "The city should require the large tech companies that want to build data centers to pay for 100% of the new electrical infrastructure they require."
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Survey Comments_Pre Draft_10-22-25 to 12-22-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156325/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Flexential, Meta
+  - Also mentions: conditional use, plat, tax abatement, tax incentive, zone change
+  - "Its not a good fit for Louisville and Jefferson county. 4 Grey 40207 Fuel the data centers with RENEWABLE ENERGY Hold the large tech companies responsible for forming the renewable energy supply chain, the energy needed to fuel the data centers they depend on should be their duty."
+  - "If AI is the future and so lucrative for them, & that it is worth our government focusing on, then the corporations behind the data increase and need for these centers should be willing to invest in new processes, ones that consider longevity, efficiency & thus sustainability. 5 McFadden 40220 It se"
+  - "Why do you all want to make these issues worse? 6 Allen 40206 Data centers are proved to be detrimental to the physical and environmental health of communities where they are located."
+  - "While I do not want a data center of this size and caliber in my city at all, if it must be built then the benefits of it must outweigh the cost for the residents of Louisville."
+  - "The data center must be required to use a finite amount of water that is recycled throughout the center and it must be restricted from polluting our water and the Ohio River."
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156315/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Comment Forms_Pre Draft_Through 06-08-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156318/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, rezon, site plan
+  - "Entry Name Zip Code Comment 1 S. 40204 No data centers, not now, not ever."
+  - "A data center does not help the average Kentuckian, the spawn of them across the country is explicitly to buy as much hardware and processing power as possible, and offer it as a subscription/lease to a user."
+  - "Jones, I am a resident of Jefferson County and I want to provide my formal comment concerning the upcoming Planning Committee review of data center zoning regulations (Resolution 082) on Jan 2nd."
+  - "As you update your code on Land Development for Data Centers, I urge you to include the following provisions before you allow tech developers to build data centers in our city:"
+  - "The city should require the large tech companies that want to build data centers to pay for 100% of the new electrical infrastructure they require."
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Survey Comments_Pre Draft_10-22-25 to 12-22-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156325/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Flexential, Meta
+  - Also mentions: conditional use, plat, tax abatement, tax incentive, zone change
+  - "Its not a good fit for Louisville and Jefferson county. 4 Grey 40207 Fuel the data centers with RENEWABLE ENERGY Hold the large tech companies responsible for forming the renewable energy supply chain, the energy needed to fuel the data centers they depend on should be their duty."
+  - "If AI is the future and so lucrative for them, & that it is worth our government focusing on, then the corporations behind the data increase and need for these centers should be willing to invest in new processes, ones that consider longevity, efficiency & thus sustainability. 5 McFadden 40220 It se"
+  - "Why do you all want to make these issues worse? 6 Allen 40206 Data centers are proved to be detrimental to the physical and environmental health of communities where they are located."
+  - "While I do not want a data center of this size and caliber in my city at all, if it must be built then the benefits of it must outweigh the cost for the residents of Louisville."
+  - "The data center must be required to use a finite amount of water that is recycled throughout the center and it must be restricted from polluting our water and the Ohio River."
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156315/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Comment Forms_Pre Draft_Through 06-08-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156318/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, rezon, site plan
+  - "Entry Name Zip Code Comment 1 S. 40204 No data centers, not now, not ever."
+  - "A data center does not help the average Kentuckian, the spawn of them across the country is explicitly to buy as much hardware and processing power as possible, and offer it as a subscription/lease to a user."
+  - "Jones, I am a resident of Jefferson County and I want to provide my formal comment concerning the upcoming Planning Committee review of data center zoning regulations (Resolution 082) on Jan 2nd."
+  - "As you update your code on Land Development for Data Centers, I urge you to include the following provisions before you allow tech developers to build data centers in our city:"
+  - "The city should require the large tech companies that want to build data centers to pay for 100% of the new electrical infrastructure they require."
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Survey Comments_Pre Draft_10-22-25 to 12-22-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156325/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Flexential, Meta
+  - Also mentions: conditional use, plat, tax abatement, tax incentive, zone change
+  - "Its not a good fit for Louisville and Jefferson county. 4 Grey 40207 Fuel the data centers with RENEWABLE ENERGY Hold the large tech companies responsible for forming the renewable energy supply chain, the energy needed to fuel the data centers they depend on should be their duty."
+  - "If AI is the future and so lucrative for them, & that it is worth our government focusing on, then the corporations behind the data increase and need for these centers should be willing to invest in new processes, ones that consider longevity, efficiency & thus sustainability. 5 McFadden 40220 It se"
+  - "Why do you all want to make these issues worse? 6 Allen 40206 Data centers are proved to be detrimental to the physical and environmental health of communities where they are located."
+  - "While I do not want a data center of this size and caliber in my city at all, if it must be built then the benefits of it must outweigh the cost for the residents of Louisville."
+  - "The data center must be required to use a finite amount of water that is recycled throughout the center and it must be restricted from polluting our water and the Ohio River."
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156315/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Comment Forms_Pre Draft_Through 06-08-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156318/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, rezon, site plan
+  - "Entry Name Zip Code Comment 1 S. 40204 No data centers, not now, not ever."
+  - "A data center does not help the average Kentuckian, the spawn of them across the country is explicitly to buy as much hardware and processing power as possible, and offer it as a subscription/lease to a user."
+  - "Jones, I am a resident of Jefferson County and I want to provide my formal comment concerning the upcoming Planning Committee review of data center zoning regulations (Resolution 082) on Jan 2nd."
+  - "As you update your code on Land Development for Data Centers, I urge you to include the following provisions before you allow tech developers to build data centers in our city:"
+  - "The city should require the large tech companies that want to build data centers to pay for 100% of the new electrical infrastructure they require."
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Survey Comments_Pre Draft_10-22-25 to 12-22-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156325/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Flexential, Meta
+  - Also mentions: conditional use, plat, tax abatement, tax incentive, zone change
+  - "Its not a good fit for Louisville and Jefferson county. 4 Grey 40207 Fuel the data centers with RENEWABLE ENERGY Hold the large tech companies responsible for forming the renewable energy supply chain, the energy needed to fuel the data centers they depend on should be their duty."
+  - "If AI is the future and so lucrative for them, & that it is worth our government focusing on, then the corporations behind the data increase and need for these centers should be willing to invest in new processes, ones that consider longevity, efficiency & thus sustainability. 5 McFadden 40220 It se"
+  - "Why do you all want to make these issues worse? 6 Allen 40206 Data centers are proved to be detrimental to the physical and environmental health of communities where they are located."
+  - "While I do not want a data center of this size and caliber in my city at all, if it must be built then the benefits of it must outweigh the cost for the residents of Louisville."
+  - "The data center must be required to use a finite amount of water that is recycled throughout the center and it must be restricted from polluting our water and the Ohio River."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156315/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Pre Draft_Through 06-08-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156318/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, rezon, site plan
+  - "Entry Name Zip Code Comment 1 S. 40204 No data centers, not now, not ever."
+  - "A data center does not help the average Kentuckian, the spawn of them across the country is explicitly to buy as much hardware and processing power as possible, and offer it as a subscription/lease to a user."
+  - "Jones, I am a resident of Jefferson County and I want to provide my formal comment concerning the upcoming Planning Committee review of data center zoning regulations (Resolution 082) on Jan 2nd."
+  - "As you update your code on Land Development for Data Centers, I urge you to include the following provisions before you allow tech developers to build data centers in our city:"
+  - "The city should require the large tech companies that want to build data centers to pay for 100% of the new electrical infrastructure they require."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Survey Comments_Pre Draft_10-22-25 to 12-22-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156325/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Flexential, Meta
+  - Also mentions: conditional use, plat, tax abatement, tax incentive, zone change
+  - "Its not a good fit for Louisville and Jefferson county. 4 Grey 40207 Fuel the data centers with RENEWABLE ENERGY Hold the large tech companies responsible for forming the renewable energy supply chain, the energy needed to fuel the data centers they depend on should be their duty."
+  - "If AI is the future and so lucrative for them, & that it is worth our government focusing on, then the corporations behind the data increase and need for these centers should be willing to invest in new processes, ones that consider longevity, efficiency & thus sustainability. 5 McFadden 40220 It se"
+  - "Why do you all want to make these issues worse? 6 Allen 40206 Data centers are proved to be detrimental to the physical and environmental health of communities where they are located."
+  - "While I do not want a data center of this size and caliber in my city at all, if it must be built then the benefits of it must outweigh the cost for the residents of Louisville."
+  - "The data center must be required to use a finite amount of water that is recycled throughout the center and it must be restricted from polluting our water and the Ohio River."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156315/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Pre Draft_Through 06-08-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156318/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, rezon, site plan
+  - "Entry Name Zip Code Comment 1 S. 40204 No data centers, not now, not ever."
+  - "A data center does not help the average Kentuckian, the spawn of them across the country is explicitly to buy as much hardware and processing power as possible, and offer it as a subscription/lease to a user."
+  - "Jones, I am a resident of Jefferson County and I want to provide my formal comment concerning the upcoming Planning Committee review of data center zoning regulations (Resolution 082) on Jan 2nd."
+  - "As you update your code on Land Development for Data Centers, I urge you to include the following provisions before you allow tech developers to build data centers in our city:"
+  - "The city should require the large tech companies that want to build data centers to pay for 100% of the new electrical infrastructure they require."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Survey Comments_Pre Draft_10-22-25 to 12-22-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156325/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Flexential, Meta
+  - Also mentions: conditional use, plat, tax abatement, tax incentive, zone change
+  - "Its not a good fit for Louisville and Jefferson county. 4 Grey 40207 Fuel the data centers with RENEWABLE ENERGY Hold the large tech companies responsible for forming the renewable energy supply chain, the energy needed to fuel the data centers they depend on should be their duty."
+  - "If AI is the future and so lucrative for them, & that it is worth our government focusing on, then the corporations behind the data increase and need for these centers should be willing to invest in new processes, ones that consider longevity, efficiency & thus sustainability. 5 McFadden 40220 It se"
+  - "Why do you all want to make these issues worse? 6 Allen 40206 Data centers are proved to be detrimental to the physical and environmental health of communities where they are located."
+  - "While I do not want a data center of this size and caliber in my city at all, if it must be built then the benefits of it must outweigh the cost for the residents of Louisville."
+  - "The data center must be required to use a finite amount of water that is recycled throughout the center and it must be restricted from polluting our water and the Ohio River."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156315/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services, Meta
+  - Also mentions: conditional use, development agreement, map amendment, rezon, tax abatement, tax incentive, variance
+  - "Entry Name Zip Code Comment 76 Shartzer 40272 The proposed data center regula on does not consider the energy usage, water usage, noise pollu on, or addi onal energy genera on such as onsite diesel generators of the project."
+  - "Square footage alone is not an adequate measure of the impact a proposed data center will have on the community. 77 Stout 40217 Data Centers shouldn't exist and Louisville shouldn't allow them."
+  - "Data Centers put stress on the electrical grid, stress on ci zens bills, and pollute our water supply."
+  - "We are Louisville na ves, but with the state of city, we are already considering reloca ng, data centers being allowed would absolutely solidify our leaving. 78 Newton 40241 Not in Louisville."
+  - "Period. 79 Pucelj 40206 As a resident of Jeﬀerson County, Louisville, I am deeply concerned about data centers and their impact on not only are water usage but the increase in cost of electricity as a result of the data centers."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Pre Draft_Through 06-08-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156318/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, rezon, site plan
+  - "Entry Name Zip Code Comment 1 S. 40204 No data centers, not now, not ever."
+  - "A data center does not help the average Kentuckian, the spawn of them across the country is explicitly to buy as much hardware and processing power as possible, and offer it as a subscription/lease to a user."
+  - "Jones, I am a resident of Jefferson County and I want to provide my formal comment concerning the upcoming Planning Committee review of data center zoning regulations (Resolution 082) on Jan 2nd."
+  - "As you update your code on Land Development for Data Centers, I urge you to include the following provisions before you allow tech developers to build data centers in our city:"
+  - "The city should require the large tech companies that want to build data centers to pay for 100% of the new electrical infrastructure they require."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Survey Comments_Pre Draft_10-22-25 to 12-22-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156325/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Flexential, Meta
+  - Also mentions: conditional use, plat, tax abatement, tax incentive, zone change
+  - "Its not a good fit for Louisville and Jefferson county. 4 Grey 40207 Fuel the data centers with RENEWABLE ENERGY Hold the large tech companies responsible for forming the renewable energy supply chain, the energy needed to fuel the data centers they depend on should be their duty."
+  - "If AI is the future and so lucrative for them, & that it is worth our government focusing on, then the corporations behind the data increase and need for these centers should be willing to invest in new processes, ones that consider longevity, efficiency & thus sustainability. 5 McFadden 40220 It se"
+  - "Why do you all want to make these issues worse? 6 Allen 40206 Data centers are proved to be detrimental to the physical and environmental health of communities where they are located."
+  - "While I do not want a data center of this size and caliber in my city at all, if it must be built then the benefits of it must outweigh the cost for the residents of Louisville."
+  - "The data center must be required to use a finite amount of water that is recycled throughout the center and it must be restricted from polluting our water and the Ohio River."
+
+### PPS power plant No 1 (L100000402189), Mccracken County
+
+- McCracken County Fiscal Court and Planning and Zoning, 2025-01-28, document: Paducah-McCracken Comprehensive Plan (ADOPTED City 01.28.25 County 02.17.25), https://mccrackencountyky.gov/wp-content/uploads/2025/03/Paducah-McCracken-Comprehensive-Plan-ADOPTED-City-01.28.25-County-02.17.25.pdf
+  - "Adopted by City 01.28.25 | by County 02.17.25 GC-5 PADUCAH-McCRACKEN COUNTY COMPREHENSIVE PLAN City Boards and Commissions  Planning Commission  Urban Renewal and Community Development Agency County Boards and Commissions  Planning Commission Others  Paducah-McCracken County Industrial Developme"
+  - "The ﬁrst chart below from the Kentucky State Data Center shows how its earlier projections of population decline in McCracken County were revised upward based on the promising Census 2020 results for the area."
+  - "Census Bureau, Kentucky State Data Center, Kendig Keast midpoint among the diﬀerent Collaborative. scenarios."
+  - "Notably, this 2040 projection is higher than the Kentucky State Data Center’s 2050 projection of 71,761, by approximately 2,100 persons."
+  - "The illustration that follows the population projection scenarios chart highlights that the Midpoint projection would represent 8.8% growth in McCracken County’s population through 2040 relative to 3.9% under the Kentucky State Data Center’s projection – and relative to the Center’s forecast of 6.2%"
+- McCracken County Fiscal Court and Planning and Zoning, 2024-09-23, agenda: September 23, 2024 McCracken Fiscal Court Agenda, https://mccrackencountyky.gov/wp-content/uploads/2024/09/September-23-2024-McCracken-Fiscal-Court-Agenda.pdf
+  - "The actions effectuated in the present Ordinance are to establish a GIS Consortium between and among the City of Paducah , McCracken County Fiscal Court, Paducah Water Works, Electric Plant Board of the City of Paducah, Kentucky, d/b/a Paducah Power System , Paducah McCracken County Joint Sewer Agen"
+- McCracken County Fiscal Court and Planning and Zoning, 2024-09-09, agenda: September 9, 2024 McCracken Fiscal Court Agenda, https://mccrackencountyky.gov/wp-content/uploads/2024/09/September-9-2024-McCracken-Fiscal-Court-Agenda.pdf
+  - "The actions effectuated in the present Ordinance are to establish a GIS Consortium between and among the City of Paducah , McCracken County Fiscal Court, Paducah Water Works, Electric Plant Board of the City of Paducah, Kentucky, d/b/a Paducah Power System , Paducah McCracken County Joint Sewer Agen"
+
+### Paddys Run power station (L100000401571), Jefferson County
+
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Ohlman_08-2026_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156342/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "My name is Roger Ohlman 40217. | worked in a boiler room in the navy and briefly at LGE’s Paddys Run."
+  - "For 8 years | worked in a main frame data center that was converted to a server data center. | was a Disaster Recovery Planning Analysis, for over 14 years."
+  - "Those draft regulations ban hyperscale data centers...” This has been stated by the mayor and reported by the media, leaving many in the public satisfied this draft has solved the data center problem. lLouisville Metro Government and the media need to correct this misconception! https://www.wlky.com"
+  - "Data Center soft and MW numbers, a 500,000sqft data center would require 144MW of electric service, using 10% of the yearly electricity generated in Jefferson County by LGE."
+  - "A 2004-2024 study shows data centers create an average 5F increase ina 3mile radius."
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Ohlman_08-2026_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156342/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "My name is Roger Ohlman 40217. | worked in a boiler room in the navy and briefly at LGE’s Paddys Run."
+  - "For 8 years | worked in a main frame data center that was converted to a server data center. | was a Disaster Recovery Planning Analysis, for over 14 years."
+  - "Those draft regulations ban hyperscale data centers...” This has been stated by the mayor and reported by the media, leaving many in the public satisfied this draft has solved the data center problem. lLouisville Metro Government and the media need to correct this misconception! https://www.wlky.com"
+  - "Data Center soft and MW numbers, a 500,000sqft data center would require 144MW of electric service, using 10% of the yearly electricity generated in Jefferson County by LGE."
+  - "A 2004-2024 study shows data centers create an average 5F increase ina 3mile radius."
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Ohlman_08-2026_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156342/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "My name is Roger Ohlman 40217. | worked in a boiler room in the navy and briefly at LGE’s Paddys Run."
+  - "For 8 years | worked in a main frame data center that was converted to a server data center. | was a Disaster Recovery Planning Analysis, for over 14 years."
+  - "Those draft regulations ban hyperscale data centers...” This has been stated by the mayor and reported by the media, leaving many in the public satisfied this draft has solved the data center problem. lLouisville Metro Government and the media need to correct this misconception! https://www.wlky.com"
+  - "Data Center soft and MW numbers, a 500,000sqft data center would require 144MW of electric service, using 10% of the yearly electricity generated in Jefferson County by LGE."
+  - "A 2004-2024 study shows data centers create an average 5F increase ina 3mile radius."
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Ohlman_08-2026_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156342/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "My name is Roger Ohlman 40217. | worked in a boiler room in the navy and briefly at LGE’s Paddys Run."
+  - "For 8 years | worked in a main frame data center that was converted to a server data center. | was a Disaster Recovery Planning Analysis, for over 14 years."
+  - "Those draft regulations ban hyperscale data centers...” This has been stated by the mayor and reported by the media, leaving many in the public satisfied this draft has solved the data center problem. lLouisville Metro Government and the media need to correct this misconception! https://www.wlky.com"
+  - "Data Center soft and MW numbers, a 500,000sqft data center would require 144MW of electric service, using 10% of the yearly electricity generated in Jefferson County by LGE."
+  - "A 2004-2024 study shows data centers create an average 5F increase ina 3mile radius."
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Ohlman_08-2026_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156342/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "My name is Roger Ohlman 40217. | worked in a boiler room in the navy and briefly at LGE’s Paddys Run."
+  - "For 8 years | worked in a main frame data center that was converted to a server data center. | was a Disaster Recovery Planning Analysis, for over 14 years."
+  - "Those draft regulations ban hyperscale data centers...” This has been stated by the mayor and reported by the media, leaving many in the public satisfied this draft has solved the data center problem. lLouisville Metro Government and the media need to correct this misconception! https://www.wlky.com"
+  - "Data Center soft and MW numbers, a 500,000sqft data center would require 144MW of electric service, using 10% of the yearly electricity generated in Jefferson County by LGE."
+  - "A 2004-2024 study shows data centers create an average 5F increase ina 3mile radius."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Ohlman_08-2026_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156342/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "My name is Roger Ohlman 40217. | worked in a boiler room in the navy and briefly at LGE’s Paddys Run."
+  - "For 8 years | worked in a main frame data center that was converted to a server data center. | was a Disaster Recovery Planning Analysis, for over 14 years."
+  - "Those draft regulations ban hyperscale data centers...” This has been stated by the mayor and reported by the media, leaving many in the public satisfied this draft has solved the data center problem. lLouisville Metro Government and the media need to correct this misconception! https://www.wlky.com"
+  - "Data Center soft and MW numbers, a 500,000sqft data center would require 144MW of electric service, using 10% of the yearly electricity generated in Jefferson County by LGE."
+  - "A 2004-2024 study shows data centers create an average 5F increase ina 3mile radius."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Ohlman_08-2026_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156342/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "My name is Roger Ohlman 40217. | worked in a boiler room in the navy and briefly at LGE’s Paddys Run."
+  - "For 8 years | worked in a main frame data center that was converted to a server data center. | was a Disaster Recovery Planning Analysis, for over 14 years."
+  - "Those draft regulations ban hyperscale data centers...” This has been stated by the mayor and reported by the media, leaving many in the public satisfied this draft has solved the data center problem. lLouisville Metro Government and the media need to correct this misconception! https://www.wlky.com"
+  - "Data Center soft and MW numbers, a 500,000sqft data center would require 144MW of electric service, using 10% of the yearly electricity generated in Jefferson County by LGE."
+  - "A 2004-2024 study shows data centers create an average 5F increase ina 3mile radius."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Ohlman_08-2026_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156342/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "My name is Roger Ohlman 40217. | worked in a boiler room in the navy and briefly at LGE’s Paddys Run."
+  - "For 8 years | worked in a main frame data center that was converted to a server data center. | was a Disaster Recovery Planning Analysis, for over 14 years."
+  - "Those draft regulations ban hyperscale data centers...” This has been stated by the mayor and reported by the media, leaving many in the public satisfied this draft has solved the data center problem. lLouisville Metro Government and the media need to correct this misconception! https://www.wlky.com"
+  - "Data Center soft and MW numbers, a 500,000sqft data center would require 144MW of electric service, using 10% of the yearly electricity generated in Jefferson County by LGE."
+  - "A 2004-2024 study shows data centers create an average 5F increase ina 3mile radius."
+
+### Spurlock power station (L100000103950), Mason County
+
+- City of Maysville, 2025-04-10, minutes: Minutes, https://www.cityofmaysvilleky.gov/Document%20Center/Minutes/2025/041025%20CC%20regular.pdf?t=202505090921320
+  - "Economic Development Director Tyler McHugh announced a plan by TC Energy to run a 24-inch pipeline from Morehead to Spurlock Station."
+- City of Maysville, 2024-11-14, minutes: Minutes, https://www.cityofmaysvilleky.gov/Document%20Center/Minutes/2024/111424regular.pdf?t=202412131018430
+  - "PUBLIC COMMMENT Michael Hussy addressed the Board of Commissioners regarding the timeline of a gas pipeline to Spurlock Station."
+
+## Records that name a lead
+
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-11-26 to 07-24-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156316/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Meta
+  - Also mentions: conditional use, rezon, tax abatement, tax incentive
+  - "The citizens will always get the short end of the stick. 3984 Melody 40217 Please do not allow data centers to be built in the city."
+  - "It might sound like a good idea to some but we have to think about not only the people but our future as well. 3986 Mohr 40216 WE DO NOT WANT DATA CENTERS IN LOUISVILLE. 3987 Ruppel 40299 I support Louisville’s effort to establish clear regulations for data centers."
+  - "Data centers can bring construction activity, tax revenue, improved utility infrastructure, and opportunities for Louisville to participate in a growing part of the economy."
+  - "However, square footage alone is not an adequate measure of a data center’s impact."
+  - "Data centers are unusual industrial uses."
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_ULI Data Center Whitepaper_11-12-2024.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156326/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services
+  - Also mentions: rezon, variance
+  - "Local Guidelines for Data Center Development By the ULI Americas Data Center Product Council © 2024 by the Urban Land Institute 2001 L Street, NW | Suite 200 | Washington, DC 20036-4948 All rights reserved."
+  - "Urban Land Institute. “Local Guidelines for Data Center Development.” Washington, D.C.:"
+  - "It also aims to provide a roadmap to data center development for local officials, planners, and other municipal decision-makers."
+  - "Data centers are still a relatively new land use, and they are often misunderstood or miscategorized."
+  - "To be ready when data centers are proposed in your jurisdiction or to attract them, first it is important to understand their purpose in our society and how they function, as well as to have strategies to mitigate common challenges."
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Grace_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156329/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Meta
+  - "Data Center Message: | was deeply disappointed to read Mayor Greenberg's proposed data center regulations."
+  - "Louisvillians will be left holding the bill for these disastrous data centers."
+  - "Louisville should put a a temporary moratorium on all data centers, including the Camp Ground Road data center."
+  - "Protection of Louisvillians from rate hikes and/or poorer services as have happened in many other communities with data centers. 2."
+  - "Environmental protections that ensure waste water from cooling the center is clean and free of industrial bacteria (release of industrial bacteria happened recently at a Meta owned data center interrupting water services for the city). 3."
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-11-26 to 07-24-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155687/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Meta
+  - Also mentions: conditional use, rezon, tax abatement, tax incentive
+  - "The citizens will always get the short end of the stick. 3984 Melody 40217 Please do not allow data centers to be built in the city."
+  - "It might sound like a good idea to some but we have to think about not only the people but our future as well. 3986 Mohr 40216 WE DO NOT WANT DATA CENTERS IN LOUISVILLE. 3987 Ruppel 40299 I support Louisville’s effort to establish clear regulations for data centers."
+  - "Data centers can bring construction activity, tax revenue, improved utility infrastructure, and opportunities for Louisville to participate in a growing part of the economy."
+  - "However, square footage alone is not an adequate measure of a data center’s impact."
+  - "Data centers are unusual industrial uses."
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_ULI Data Center Whitepaper_11-12-2024.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155697/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Amazon Data Services
+  - Also mentions: rezon, variance
+  - "Local Guidelines for Data Center Development By the ULI Americas Data Center Product Council © 2024 by the Urban Land Institute 2001 L Street, NW | Suite 200 | Washington, DC 20036-4948 All rights reserved."
+  - "Urban Land Institute. “Local Guidelines for Data Center Development.” Washington, D.C.:"
+  - "It also aims to provide a roadmap to data center development for local officials, planners, and other municipal decision-makers."
+  - "Data centers are still a relatively new land use, and they are often misunderstood or miscategorized."
+  - "To be ready when data centers are proposed in your jurisdiction or to attract them, first it is important to understand their purpose in our society and how they function, as well as to have strategies to mitigate common challenges."
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Grace_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155744/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Meta
+  - "Data Center Message: | was deeply disappointed to read Mayor Greenberg's proposed data center regulations."
+  - "Louisvillians will be left holding the bill for these disastrous data centers."
+  - "Louisville should put a a temporary moratorium on all data centers, including the Camp Ground Road data center."
+  - "Protection of Louisvillians from rate hikes and/or poorer services as have happened in many other communities with data centers. 2."
+  - "Environmental protections that ensure waste water from cooling the center is clean and free of industrial bacteria (release of industrial bacteria happened recently at a Meta owned data center interrupting water services for the city). 3."
+- Louisville Metro Planning Commission, 2026-08-06, packet: 25-LDC-0014_ULI Data Center Whitepaper_11-12-2024.pdf, https://webapi.legistar.com/v1/louisville/Matters/65651/Attachments/155533/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Amazon Data Services
+  - Also mentions: rezon, variance
+  - "Local Guidelines for Data Center Development By the ULI Americas Data Center Product Council © 2024 by the Urban Land Institute 2001 L Street, NW | Suite 200 | Washington, DC 20036-4948 All rights reserved."
+  - "Urban Land Institute. “Local Guidelines for Data Center Development.” Washington, D.C.:"
+  - "It also aims to provide a roadmap to data center development for local officials, planners, and other municipal decision-makers."
+  - "Data centers are still a relatively new land use, and they are often misunderstood or miscategorized."
+  - "To be ready when data centers are proposed in your jurisdiction or to attract them, first it is important to understand their purpose in our society and how they function, as well as to have strategies to mitigate common challenges."
+- Louisville Metro Planning Commission, 2026-08-05, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-11-26 to 07-24-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65650/Attachments/155513/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Meta
+  - Also mentions: conditional use, rezon, tax abatement, tax incentive
+  - "The citizens will always get the short end of the stick. 3984 Melody 40217 Please do not allow data centers to be built in the city."
+  - "It might sound like a good idea to some but we have to think about not only the people but our future as well. 3986 Mohr 40216 WE DO NOT WANT DATA CENTERS IN LOUISVILLE. 3987 Ruppel 40299 I support Louisville’s effort to establish clear regulations for data centers."
+  - "Data centers can bring construction activity, tax revenue, improved utility infrastructure, and opportunities for Louisville to participate in a growing part of the economy."
+  - "However, square footage alone is not an adequate measure of a data center’s impact."
+  - "Data centers are unusual industrial uses."
+- Louisville Metro Planning Commission, 2026-08-05, packet: 25-LDC-0014_ULI Data Center Whitepaper_11-12-2024.pdf, https://webapi.legistar.com/v1/louisville/Matters/65650/Attachments/155522/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Amazon Data Services
+  - Also mentions: rezon, variance
+  - "Local Guidelines for Data Center Development By the ULI Americas Data Center Product Council © 2024 by the Urban Land Institute 2001 L Street, NW | Suite 200 | Washington, DC 20036-4948 All rights reserved."
+  - "Urban Land Institute. “Local Guidelines for Data Center Development.” Washington, D.C.:"
+  - "It also aims to provide a roadmap to data center development for local officials, planners, and other municipal decision-makers."
+  - "Data centers are still a relatively new land use, and they are often misunderstood or miscategorized."
+  - "To be ready when data centers are proposed in your jurisdiction or to attract them, first it is important to understand their purpose in our society and how they function, as well as to have strategies to mitigate common challenges."
+- Louisville Metro Planning Commission, 2026-07-27, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-11-26 to 07-24-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65606/Attachments/155307/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Meta
+  - Also mentions: conditional use, rezon, tax abatement, tax incentive
+  - "The citizens will always get the short end of the stick. 3984 Melody 40217 Please do not allow data centers to be built in the city."
+  - "It might sound like a good idea to some but we have to think about not only the people but our future as well. 3986 Mohr 40216 WE DO NOT WANT DATA CENTERS IN LOUISVILLE. 3987 Ruppel 40299 I support Louisville’s effort to establish clear regulations for data centers."
+  - "Data centers can bring construction activity, tax revenue, improved utility infrastructure, and opportunities for Louisville to participate in a growing part of the economy."
+  - "However, square footage alone is not an adequate measure of a data center’s impact."
+  - "Data centers are unusual industrial uses."
+- Louisville Metro Planning Commission, 2026-07-27, packet: 25-LDC-0014_ULI Data Center Whitepaper_11-12-2024.pdf, https://webapi.legistar.com/v1/louisville/Matters/65606/Attachments/155316/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Leads named: Amazon Data Services
+  - Also mentions: rezon, variance
+  - "Local Guidelines for Data Center Development By the ULI Americas Data Center Product Council © 2024 by the Urban Land Institute 2001 L Street, NW | Suite 200 | Washington, DC 20036-4948 All rights reserved."
+  - "Urban Land Institute. “Local Guidelines for Data Center Development.” Washington, D.C.:"
+  - "It also aims to provide a roadmap to data center development for local officials, planners, and other municipal decision-makers."
+  - "Data centers are still a relatively new land use, and they are often misunderstood or miscategorized."
+  - "To be ready when data centers are proposed in your jurisdiction or to attract them, first it is important to understand their purpose in our society and how they function, as well as to have strategies to mitigate common challenges."
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-11-26 to 07-24-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156316/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Meta
+  - Also mentions: conditional use, rezon, tax abatement, tax incentive
+  - "The citizens will always get the short end of the stick. 3984 Melody 40217 Please do not allow data centers to be built in the city."
+  - "It might sound like a good idea to some but we have to think about not only the people but our future as well. 3986 Mohr 40216 WE DO NOT WANT DATA CENTERS IN LOUISVILLE. 3987 Ruppel 40299 I support Louisville’s effort to establish clear regulations for data centers."
+  - "Data centers can bring construction activity, tax revenue, improved utility infrastructure, and opportunities for Louisville to participate in a growing part of the economy."
+  - "However, square footage alone is not an adequate measure of a data center’s impact."
+  - "Data centers are unusual industrial uses."
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_ULI Data Center Whitepaper_11-12-2024.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156326/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services
+  - Also mentions: rezon, variance
+  - "Local Guidelines for Data Center Development By the ULI Americas Data Center Product Council © 2024 by the Urban Land Institute 2001 L Street, NW | Suite 200 | Washington, DC 20036-4948 All rights reserved."
+  - "Urban Land Institute. “Local Guidelines for Data Center Development.” Washington, D.C.:"
+  - "It also aims to provide a roadmap to data center development for local officials, planners, and other municipal decision-makers."
+  - "Data centers are still a relatively new land use, and they are often misunderstood or miscategorized."
+  - "To be ready when data centers are proposed in your jurisdiction or to attract them, first it is important to understand their purpose in our society and how they function, as well as to have strategies to mitigate common challenges."
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Grace_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156329/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Meta
+  - "Data Center Message: | was deeply disappointed to read Mayor Greenberg's proposed data center regulations."
+  - "Louisvillians will be left holding the bill for these disastrous data centers."
+  - "Louisville should put a a temporary moratorium on all data centers, including the Camp Ground Road data center."
+  - "Protection of Louisvillians from rate hikes and/or poorer services as have happened in many other communities with data centers. 2."
+  - "Environmental protections that ensure waste water from cooling the center is clean and free of industrial bacteria (release of industrial bacteria happened recently at a Meta owned data center interrupting water services for the city). 3."
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-11-26 to 07-24-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156316/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Meta
+  - Also mentions: conditional use, rezon, tax abatement, tax incentive
+  - "The citizens will always get the short end of the stick. 3984 Melody 40217 Please do not allow data centers to be built in the city."
+  - "It might sound like a good idea to some but we have to think about not only the people but our future as well. 3986 Mohr 40216 WE DO NOT WANT DATA CENTERS IN LOUISVILLE. 3987 Ruppel 40299 I support Louisville’s effort to establish clear regulations for data centers."
+  - "Data centers can bring construction activity, tax revenue, improved utility infrastructure, and opportunities for Louisville to participate in a growing part of the economy."
+  - "However, square footage alone is not an adequate measure of a data center’s impact."
+  - "Data centers are unusual industrial uses."
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_ULI Data Center Whitepaper_11-12-2024.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156326/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services
+  - Also mentions: rezon, variance
+  - "Local Guidelines for Data Center Development By the ULI Americas Data Center Product Council © 2024 by the Urban Land Institute 2001 L Street, NW | Suite 200 | Washington, DC 20036-4948 All rights reserved."
+  - "Urban Land Institute. “Local Guidelines for Data Center Development.” Washington, D.C.:"
+  - "It also aims to provide a roadmap to data center development for local officials, planners, and other municipal decision-makers."
+  - "Data centers are still a relatively new land use, and they are often misunderstood or miscategorized."
+  - "To be ready when data centers are proposed in your jurisdiction or to attract them, first it is important to understand their purpose in our society and how they function, as well as to have strategies to mitigate common challenges."
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Grace_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156329/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Meta
+  - "Data Center Message: | was deeply disappointed to read Mayor Greenberg's proposed data center regulations."
+  - "Louisvillians will be left holding the bill for these disastrous data centers."
+  - "Louisville should put a a temporary moratorium on all data centers, including the Camp Ground Road data center."
+  - "Protection of Louisvillians from rate hikes and/or poorer services as have happened in many other communities with data centers. 2."
+  - "Environmental protections that ensure waste water from cooling the center is clean and free of industrial bacteria (release of industrial bacteria happened recently at a Meta owned data center interrupting water services for the city). 3."
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-11-26 to 07-24-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156316/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Meta
+  - Also mentions: conditional use, rezon, tax abatement, tax incentive
+  - "The citizens will always get the short end of the stick. 3984 Melody 40217 Please do not allow data centers to be built in the city."
+  - "It might sound like a good idea to some but we have to think about not only the people but our future as well. 3986 Mohr 40216 WE DO NOT WANT DATA CENTERS IN LOUISVILLE. 3987 Ruppel 40299 I support Louisville’s effort to establish clear regulations for data centers."
+  - "Data centers can bring construction activity, tax revenue, improved utility infrastructure, and opportunities for Louisville to participate in a growing part of the economy."
+  - "However, square footage alone is not an adequate measure of a data center’s impact."
+  - "Data centers are unusual industrial uses."
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_ULI Data Center Whitepaper_11-12-2024.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156326/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services
+  - Also mentions: rezon, variance
+  - "Local Guidelines for Data Center Development By the ULI Americas Data Center Product Council © 2024 by the Urban Land Institute 2001 L Street, NW | Suite 200 | Washington, DC 20036-4948 All rights reserved."
+  - "Urban Land Institute. “Local Guidelines for Data Center Development.” Washington, D.C.:"
+  - "It also aims to provide a roadmap to data center development for local officials, planners, and other municipal decision-makers."
+  - "Data centers are still a relatively new land use, and they are often misunderstood or miscategorized."
+  - "To be ready when data centers are proposed in your jurisdiction or to attract them, first it is important to understand their purpose in our society and how they function, as well as to have strategies to mitigate common challenges."
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Grace_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156329/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Meta
+  - "Data Center Message: | was deeply disappointed to read Mayor Greenberg's proposed data center regulations."
+  - "Louisvillians will be left holding the bill for these disastrous data centers."
+  - "Louisville should put a a temporary moratorium on all data centers, including the Camp Ground Road data center."
+  - "Protection of Louisvillians from rate hikes and/or poorer services as have happened in many other communities with data centers. 2."
+  - "Environmental protections that ensure waste water from cooling the center is clean and free of industrial bacteria (release of industrial bacteria happened recently at a Meta owned data center interrupting water services for the city). 3."
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-11-26 to 07-24-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156316/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Meta
+  - Also mentions: conditional use, rezon, tax abatement, tax incentive
+  - "The citizens will always get the short end of the stick. 3984 Melody 40217 Please do not allow data centers to be built in the city."
+  - "It might sound like a good idea to some but we have to think about not only the people but our future as well. 3986 Mohr 40216 WE DO NOT WANT DATA CENTERS IN LOUISVILLE. 3987 Ruppel 40299 I support Louisville’s effort to establish clear regulations for data centers."
+  - "Data centers can bring construction activity, tax revenue, improved utility infrastructure, and opportunities for Louisville to participate in a growing part of the economy."
+  - "However, square footage alone is not an adequate measure of a data center’s impact."
+  - "Data centers are unusual industrial uses."
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_ULI Data Center Whitepaper_11-12-2024.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156326/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services
+  - Also mentions: rezon, variance
+  - "Local Guidelines for Data Center Development By the ULI Americas Data Center Product Council © 2024 by the Urban Land Institute 2001 L Street, NW | Suite 200 | Washington, DC 20036-4948 All rights reserved."
+  - "Urban Land Institute. “Local Guidelines for Data Center Development.” Washington, D.C.:"
+  - "It also aims to provide a roadmap to data center development for local officials, planners, and other municipal decision-makers."
+  - "Data centers are still a relatively new land use, and they are often misunderstood or miscategorized."
+  - "To be ready when data centers are proposed in your jurisdiction or to attract them, first it is important to understand their purpose in our society and how they function, as well as to have strategies to mitigate common challenges."
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Grace_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156329/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Meta
+  - "Data Center Message: | was deeply disappointed to read Mayor Greenberg's proposed data center regulations."
+  - "Louisvillians will be left holding the bill for these disastrous data centers."
+  - "Louisville should put a a temporary moratorium on all data centers, including the Camp Ground Road data center."
+  - "Protection of Louisvillians from rate hikes and/or poorer services as have happened in many other communities with data centers. 2."
+  - "Environmental protections that ensure waste water from cooling the center is clean and free of industrial bacteria (release of industrial bacteria happened recently at a Meta owned data center interrupting water services for the city). 3."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-11-26 to 07-24-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156316/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Meta
+  - Also mentions: conditional use, rezon, tax abatement, tax incentive
+  - "The citizens will always get the short end of the stick. 3984 Melody 40217 Please do not allow data centers to be built in the city."
+  - "It might sound like a good idea to some but we have to think about not only the people but our future as well. 3986 Mohr 40216 WE DO NOT WANT DATA CENTERS IN LOUISVILLE. 3987 Ruppel 40299 I support Louisville’s effort to establish clear regulations for data centers."
+  - "Data centers can bring construction activity, tax revenue, improved utility infrastructure, and opportunities for Louisville to participate in a growing part of the economy."
+  - "However, square footage alone is not an adequate measure of a data center’s impact."
+  - "Data centers are unusual industrial uses."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_ULI Data Center Whitepaper_11-12-2024.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156326/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services
+  - Also mentions: rezon, variance
+  - "Local Guidelines for Data Center Development By the ULI Americas Data Center Product Council © 2024 by the Urban Land Institute 2001 L Street, NW | Suite 200 | Washington, DC 20036-4948 All rights reserved."
+  - "Urban Land Institute. “Local Guidelines for Data Center Development.” Washington, D.C.:"
+  - "It also aims to provide a roadmap to data center development for local officials, planners, and other municipal decision-makers."
+  - "Data centers are still a relatively new land use, and they are often misunderstood or miscategorized."
+  - "To be ready when data centers are proposed in your jurisdiction or to attract them, first it is important to understand their purpose in our society and how they function, as well as to have strategies to mitigate common challenges."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Grace_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156329/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Meta
+  - "Data Center Message: | was deeply disappointed to read Mayor Greenberg's proposed data center regulations."
+  - "Louisvillians will be left holding the bill for these disastrous data centers."
+  - "Louisville should put a a temporary moratorium on all data centers, including the Camp Ground Road data center."
+  - "Protection of Louisvillians from rate hikes and/or poorer services as have happened in many other communities with data centers. 2."
+  - "Environmental protections that ensure waste water from cooling the center is clean and free of industrial bacteria (release of industrial bacteria happened recently at a Meta owned data center interrupting water services for the city). 3."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-11-26 to 07-24-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156316/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Meta
+  - Also mentions: conditional use, rezon, tax abatement, tax incentive
+  - "The citizens will always get the short end of the stick. 3984 Melody 40217 Please do not allow data centers to be built in the city."
+  - "It might sound like a good idea to some but we have to think about not only the people but our future as well. 3986 Mohr 40216 WE DO NOT WANT DATA CENTERS IN LOUISVILLE. 3987 Ruppel 40299 I support Louisville’s effort to establish clear regulations for data centers."
+  - "Data centers can bring construction activity, tax revenue, improved utility infrastructure, and opportunities for Louisville to participate in a growing part of the economy."
+  - "However, square footage alone is not an adequate measure of a data center’s impact."
+  - "Data centers are unusual industrial uses."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_ULI Data Center Whitepaper_11-12-2024.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156326/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services
+  - Also mentions: rezon, variance
+  - "Local Guidelines for Data Center Development By the ULI Americas Data Center Product Council © 2024 by the Urban Land Institute 2001 L Street, NW | Suite 200 | Washington, DC 20036-4948 All rights reserved."
+  - "Urban Land Institute. “Local Guidelines for Data Center Development.” Washington, D.C.:"
+  - "It also aims to provide a roadmap to data center development for local officials, planners, and other municipal decision-makers."
+  - "Data centers are still a relatively new land use, and they are often misunderstood or miscategorized."
+  - "To be ready when data centers are proposed in your jurisdiction or to attract them, first it is important to understand their purpose in our society and how they function, as well as to have strategies to mitigate common challenges."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Grace_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156329/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Meta
+  - "Data Center Message: | was deeply disappointed to read Mayor Greenberg's proposed data center regulations."
+  - "Louisvillians will be left holding the bill for these disastrous data centers."
+  - "Louisville should put a a temporary moratorium on all data centers, including the Camp Ground Road data center."
+  - "Protection of Louisvillians from rate hikes and/or poorer services as have happened in many other communities with data centers. 2."
+  - "Environmental protections that ensure waste water from cooling the center is clean and free of industrial bacteria (release of industrial bacteria happened recently at a Meta owned data center interrupting water services for the city). 3."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-11-26 to 07-24-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156316/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Meta
+  - Also mentions: conditional use, rezon, tax abatement, tax incentive
+  - "The citizens will always get the short end of the stick. 3984 Melody 40217 Please do not allow data centers to be built in the city."
+  - "It might sound like a good idea to some but we have to think about not only the people but our future as well. 3986 Mohr 40216 WE DO NOT WANT DATA CENTERS IN LOUISVILLE. 3987 Ruppel 40299 I support Louisville’s effort to establish clear regulations for data centers."
+  - "Data centers can bring construction activity, tax revenue, improved utility infrastructure, and opportunities for Louisville to participate in a growing part of the economy."
+  - "However, square footage alone is not an adequate measure of a data center’s impact."
+  - "Data centers are unusual industrial uses."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_ULI Data Center Whitepaper_11-12-2024.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156326/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Amazon Data Services
+  - Also mentions: rezon, variance
+  - "Local Guidelines for Data Center Development By the ULI Americas Data Center Product Council © 2024 by the Urban Land Institute 2001 L Street, NW | Suite 200 | Washington, DC 20036-4948 All rights reserved."
+  - "Urban Land Institute. “Local Guidelines for Data Center Development.” Washington, D.C.:"
+  - "It also aims to provide a roadmap to data center development for local officials, planners, and other municipal decision-makers."
+  - "Data centers are still a relatively new land use, and they are often misunderstood or miscategorized."
+  - "To be ready when data centers are proposed in your jurisdiction or to attract them, first it is important to understand their purpose in our society and how they function, as well as to have strategies to mitigate common challenges."
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Grace_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156329/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Leads named: Meta
+  - "Data Center Message: | was deeply disappointed to read Mayor Greenberg's proposed data center regulations."
+  - "Louisvillians will be left holding the bill for these disastrous data centers."
+  - "Louisville should put a a temporary moratorium on all data centers, including the Camp Ground Road data center."
+  - "Protection of Louisvillians from rate hikes and/or poorer services as have happened in many other communities with data centers. 2."
+  - "Environmental protections that ensure waste water from cooling the center is clean and free of industrial bacteria (release of industrial bacteria happened recently at a Meta owned data center interrupting water services for the city). 3."
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2026-07-27, minutes: Minutes, https://www.franklinky.gov/07-27-2026.pdf?t=202608131456370
+  - Leads named: TenKey LandCo
+  - "Commissioner Bush Motion passed four(4)to one (1). 7 -397- Motion was made by Commissioner Stewart and seconded by Commissioner Powell to authorize entering into an agreement with Tenkey Landco,LLC and Tenkey Roadco,LLC and further authorized the Mayor to sign the agreement on behalf of the City."
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2026-03-03, agenda: Agenda, https://www.franklinky.gov/P&Z%20Agenda%2003-03-26.pdf?t=202604221655160
+  - Leads named: TenKey LandCo
+  - "TenKey LandCo I LLC to request a Preliminary Development Plan for a data storage and service center with power manufacturing located at 421 Steele Road. a."
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2026-03-03, minutes: Minutes, https://www.franklinky.gov/03-03-26%20P&Z%20Comm.%20Signed%20Minutes.pdf?t=202604301210580
+  - Leads named: TenKey LandCo
+  - "TenKey LandCo I LLC to request a Preliminary Development Plan for a data storage and service center with power manufacturing located at 421 Steele Road. ~ Derrick Kepley makes a motion to bring the Preliminary Plan off the table for a data storage and service center with power manufacturing located "
+  - "Multiple people from the board inquired the Planning and Zoning administrator and the representatives from TenKey LandCo I LLC about the development of the project."
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2026-02-05, agenda: Agenda, https://www.franklinky.gov/P&Z%20Agenda%2002-05-26%20-%20Special%20Called%20Meeting.pdf?t=202604221653090
+  - Leads named: TenKey LandCo
+  - "General Business • Discussion and/or possible action regarding TenKey LandCo I LLC – Remove from Table • Discussion and/or possible action regarding TenKey LandCo I LLC – Request for Approval for Preliminary Development Plan for a data storage and service center with power manufacturing located at 4"
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2026-02-05, minutes: Minutes, https://www.franklinky.gov/02-05-26%20Comm.%20Signed%20Minutes.pdf?t=202604301209540
+  - Leads named: TenKey LandCo
+  - Also mentions: conditional use
+  - "John Mayeur opened the meeting with a prayer. _ A motion was made by John Mayeur to bring the preliminary plan for TenKey LandCo I LLC back on the table for discussion."
+  - "TenKey LandCo I LLC to request a preliminary development plan for a data storage and service center with power manufacturing located at 421 Steele Road."
+  - "Dutton states that the data center is the primary use and that power generation is an ancillary use to the center."
+  - "That means that the power generated is exclusively for the data center."
+  - "Dutton states that it is correct, the data center cannot operate without power generation."
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2026-01-20, agenda: Agenda, https://www.franklinky.gov/P&Z%20Agenda%2001-20-26.pdf?t=202604221649440
+  - Leads named: TenKey LandCo
+  - "TenKey LandCo I LLC to request a preliminary development plan for a data storage and service center with power manufacturing located at 421 Steele Road. a."
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2026-01-20, minutes: Minutes, https://www.franklinky.gov/01-20-26%20P&Z%20Comm.%20Signed%20Minutes.pdf?t=202604301208420
+  - Leads named: TenKey LandCo
+  - "Barnes also states that there was a meeting in the past that discussed certain regulations pertaining to a data center and that those regulations were not approved by the board and that there have been no further discussions since."
+  - "Also, he believes that there is no legal standing to proceed with the preliminary plan review until there are regulations pertaining to the data center. ‘ Derrick Kepley states that they are present because the developer states that the data storage and service center fits into the I-2 zone and a de"
+  - "Also, in an earlier commission meeting the 一 city attorney stated that arguably there is nothing under the current regulations that would allow a data center. _ TenKey LandCo I LLC to request a preliminary development plan for a data storage and service center with power manufacturing located at 421"
+  - "Gregory Dutton, the attorney for TenKey I LLC, states that in their application packet that the requirements for sewer have been met."
+  - "Felix, another representative for TenKey I LLC, stated that the water that escapes the closed cooling system will have occasional minor replenishment needs."
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2026-01-08, agenda: Agenda, https://www.franklinky.gov/P&Z%20Agenda%2001-08-26.pdf?t=202604221546480
+  - Leads named: TenKey LandCo
+  - "TenKey LandCo I LLC to request a preliminary development plan for a data storage and service center with power manufacturing located at 421 Steele Road."
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2025-06-09, minutes: Minutes, https://www.franklinky.gov/06-09-2025.pdf?t=202507101027010
+  - Leads named: TenKey LandCo
+  - Also mentions: annex
+  - "The request to annex the property was submitted by the property owner, Tenkey Lanco I, LLC."
+- Simpson County Fiscal Court, 2026-08-04, minutes: 8.4.26 Minutes, https://simpsoncountyky.gov/wp-content/uploads/2026/08/8.4.26-Minutes.pdf
+  - Leads named: TenKey LandCo
+  - "Thursday, August 6th at 9:00AM at the Simpson County Circuit Courtroom will be the oral argument on the TenKey case, where they have sued Simpson County Fiscal Court."
+- Simpson County Fiscal Court, 2026-06-02, minutes: 6.2.2026 Minutes, https://simpsoncountyky.gov/wp-content/uploads/2026/06/6.2.2026-Minutes.pdf
+  - Leads named: TenKey LandCo
+  - "More land has been purchased by TenKey on the north side of Steele Road, with more coming up available."
+- Simpson County Fiscal Court, 2026-04-21, minutes: 4.21.26 Minutes, https://simpsoncountyky.gov/wp-content/uploads/2026/05/4.21.26-Minutes.pdf
+  - Leads named: TenKey LandCo
+  - "Monday, May 4" is the next status hearing in the TenKey lawsuit at 1:30PM."
+- Simpson County Fiscal Court, 2026-04-17, minutes: March 17th Meeting Minutes, https://simpsoncountyky.gov/wp-content/uploads/2026/04/March-17th-Meeting-Minutes.pdf
+  - Leads named: TenKey LandCo
+  - "On Monday in the Circuit Courtroom the meeting took place between the County and Tenkey Land Co."
+  - "(developers of the proposed Data Center)."
+  - "The judge gave TenKey until March 275 to respond to the county's counsel rebuttal on the dismissal."
+  - "Tenkey has alleged that before the lawsuit was filed, they had hired a separate lawyer at the same law firm had written a cease-and-desist letter to one of the citizens in the county who was making social media post about the proposed Data Center and TenKey in an unflattering way."
+
+## Other power or data center mentions (check whether they are a new project)
+
+- Louisville Metro Council, 2026-09-10, agenda: Louisville Metro Council agenda 2026-09-10, https://legistar2.granicus.com/louisville/meetings/2026/9/11393_A_Metro_Council_26-09-10_Meeting_Agenda.pdf
+  - "O-251-26 AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014)."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, minutes: Louisville Metro Council minutes 2026-09-10, https://legistar2.granicus.com/louisville/meetings/2026/9/11393_M_Metro_Council_26-09-10_Action_Summary.pdf
+  - "O-251-26 AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014)."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-24-26 (9AM) to 07-31-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156317/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "(as in specific distance) 4170 Reed 40023 They do not belong in Kentucky in any way, shape or form. 4171 Mansilla 40299 NO Data Centers, NONE!! 4172 McCoy 40211 Simple- stay out of Louisville."
+  - "We don't need data centers complicating our lives. 4173 Walters 40213 No new data centers in Louisville!"
+  - "Anywhere a datacenter has been approved have seen their local utility resources rise in price and lower in quality."
+  - "The whole AI money machine is just several companies handing the same money back and forth and calling it operating profit. 4174 Leonard 40220 Data Centers don't support the health and well-being of our residents."
+  - "The future of Jefferson county depends on other employment opportunities. 4175 Williams 40218 Data centers are critical infrastructure that support hospitals, schools, emergency services, businesses, and the everyday digital tools residents rely on."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-24-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156319/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Data Centers_Survey_01-01-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156320/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Data Center Survey and Results Total Submittals: 3590 Question 1:"
+  - "How much do you know about Data Centers?"
+  - "Affirmative Percentage Responses I'm not sure / prefer not to answer 114 3.2% I know very little about Data Centers 60 1.7% I know some things about Data Centers 1878 52.3% I know a lot about Data Centers 1538 42.8% 3590 100.0% *Limited to single choice Question 5:"
+  - "What size of Data Centers are ok in Jefferson County?"
+  - "(Required) Affirmative Percentage of Total Responses Respondents Selecting Data Centers of any size are 2963 82.5% inappropriate Small (under 10,000 sq ft) 556 15.5% Medium (10,000 to 50,000 sq ft) 241 6.7% Large (50,001 to 100,000 sq ft) 94 2.6% “Hyperscale" (Over 100,000 sq ft) 73 2.0% I'm not sur"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Emailed Comments_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156321/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, rezon, variance
+  - "FFEA does not want to see vague, “Accessory Uses” regarding data centers – please remove this terminology and any reference due to oodles of wiggle-room to the possible detriment of the public."
+  - "Also some reports by neighbors of temperatures increasing up to 12 degrees close to data centers due to waste heat – so please do more research."
+  - "And, since people need and like to eat, farmland should never be used for data centers; instead, keep the land to INDUSTRIAL zoning areas."
+  - "Likewise, our park’s lands should never be used for data centers; instead, keep them to INDUSTRIAL zoning only."
+  - "Gas turbines create the need for Texas Gas Pipelines intrusion into farmland, parks, homes, etc. and will bring noise, emissions, etc."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Emailed Comments_Pre Draft_Through 6-8-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156322/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Louisville Metro Council Resolution Number 082, Series 2025 Zoning Code Updates re Hyper-Scale Data Centers Dear Mr."
+  - "But in the case of hyper-scale data centers, Big Tech can pad its power, water and land requirements at others’ expense."
+  - "If the data centers don’t end up needing that much power or water, LG&E and the Louisville Water Co. must pass the costs of their stranded assets to their other customers."
+  - "Energy efficiency, solar power and battery storage are the cheapest, cleanest and fastest sources of power, yet the incentives to use them at data centers is undermined because the costs of the new power plants they require will be externalized (see #3). 5."
+  - "New, gas-fired power plants are very expensive and operate for at least 40 years."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Kentucky Resources Council Recommended Ordinance_Version 1.4.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156323/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, site plan
+  - "Data centers and data center development have recently become a concern across the country, as the development of new “artificial intelligence” tools has multiplied the demand for computer processing power, and correlative energy, water, and other resource needs."
+  - "At its base, a data center is a warehouse filled with racks of computer servers, often running all hours of the day and night."
+  - "As the size of data centers have grown, so has the need for ancillary equipment and resources both on- and off-site."
+  - "On-site, a data center also 1 This ordinance was developed for consideration and use by communities in the Commonwealth by the Kentucky Resources Council, Inc."
+  - "In addition, they also contain significant on-site backup or "behind-the-meter” power generating equipment, such as diesel generators, gas turbines, and battery energy storage systems."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Metro Council Resolution 082 2025.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156324/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "RESOLUTION NO. 082 SERIES 2025 A RESOLUTION REQUESTING THE PLANNING COMMISSION REVIEW THE METRO LAND DEVELOPMENT CODE REGULATIONS WITH REGARD TO DATA CENTERS."
+  - "The Planning Commission should undertake a review of and consider amendments to the current LDC to address data centers, including a consideration of best practices and regulatory framework from comparable jurisdictions, and to consider the various impacts of data centers, to better define telecommu"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_ATT_08-04-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156327/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data center regulations proposal - latest telecom industry feedback Date:"
+  - "Circling back to you with additional telecommunications industry feedback on the latest Louisville Metro proposed data center regulations."
+  - "To address our continued concerns, we propose the following modifications to the Telecommunication Data Center definition."
+  - "The new language is in red. “Data Center, Telecommunication – A newly constructed Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - "Existing telecommunications data centers and any possible expansions are grandfathered as nonconforming to the permitting requirements in this section.” The industry agrees that the two changes above would resolve our concerns about potential impediments to our Louisville Metro customer service."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156328/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, plat
+  - "I understand that the water that is often discharged from data centers are highly polluted so if we can limit that, that would be great. 4190 Blackburn 40207 This is a proposal that has proven to cause environmental harm and human harm."
+  - "I vote for a ban on data centers in all counties Kentucky until we have done more research. 4191 Kahn 40213 I am particularly concerned that data centers would be placed in West End neighborhoods, extending the historical burden placed disproportionately on lower income residents of our city."
+  - "Data centers are too new to have any data on long-term health or environmental effects on the people and areas located near them, or even to know how far the impacts would extend."
+  - "Placing centers here without understanding the full consequences puts people of our city at risk and the benefits do not appear to outweigh the risks. 4192 Morris 40213 No data centers in Jefferson county please."
+  - "There may be a short-term benefit to allowing them to build in our neighborhoods, but the damage will far outweigh any meager benefit. 4193 Swilley 40205 I don’t want any data centers at all anywhere around Louisville."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_KRC_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156330/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, rezon
+  - "Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org August 7, 2026 Joseph Haberman, AICP Planning & Design Manager Via email Re: 25 LDC 0014 Revised Text Amendment to Land Development Code For Data Centers Dear Mr."
+  - "(KRC) regarding the proposed revised Louisville Metro Government Draft Data Center Land Development Code Text Amendment (Case No. 25-LDC- 0014, July 20, 2026, Draft)."
+  - "Sincerely, Ashley Wilmes Executive Director and Attorney Kentucky Resources Council Tom FitzGerald Of Counsel Kentucky Resources Council Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org KRC Recommended Revisions to Louisville Metro Revised Draft Data Center Tex"
+  - "Introduction These recommendations are intended to ensure public notice and input, as well as a comprehensive and meaningful framework for regulating the location, operation, and decommissioning of all data centers."
+  - "The recommendations continue to suggest inclusion of many of the provisions in the Kentucky Resources Council (KRC) Model Data Center Zoning Ordinance, with respect to strengthening the review process, the quality of information submitted in applications, and the standards of performance for data ce"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Lee_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156331/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Contact the Office of Planning [#1167] Name Virginia Lee Email * Subject Data Center proposal Comment * I live in 40206."
+  - "Louisvillians want a true moratorium on all data centers while the work is done to fully understand the full impacts and what the right balance is for our community."
+  - "This should apply to 100% of all hyper-data centers including the one that was proposed by Steve Poe’s company."
+  - "Just stop all development of data centers until we are ready to properly permit them."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_LG&E_KU_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156332/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Proposed Data Center Regulations -- Feedback from LG&E/KU Date:"
+  - "I wanted to follow-up with you and provide additional feedback from LG&E/KU on the latest Louisville Metro proposed data center regulations."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Porter_08-03-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156333/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Porter Attorney-at-Law 3109 Westone Way Louisville, KY 40241-3115 stpinlou@aol.com 502-905-9991 Proposed Changes Data Center Text Amendment 4.2.60.C."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Williams_07-02-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156334/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Alignment with Datacenter Regulations and Recommendation on Square‑Foot Cap Adjustment Date:"
+  - "Members of the Planning Commission, Thank you for the thoughtful and comprehensive work reflected in the current draft of Louisville’s data center zoning recommendations."
+  - "I want to begin by stating clearly that I fully support the Commission’s goal of establishing responsible, community‑focused datacenter regulations."
+  - "Louisville should regulate datacenters."
+  - "Where I believe a small adjustment is needed is in the proposed 500,000 sq ft cap for data centers outside Rubbertown."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Written Comments Received at 08-05-26 Hearing.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156335/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Ray Eblers, FFEA Vice President Date: 7-4-26 Re: 25-LDC-0014 DATA CENTER COMMENTS Floyds Fork Environmental Association, FFEA, MISSION is to protect, conserve and preserve Floyds Fork Creek and its Watershed."
+  - "Comments on data centers with the following requests: * Jefferson County must institute a Moratorium to allow more study and make the best standards to protect the welfare of the public which must Limon BA include intensity of many issues."
+  - "How will government protect the public? * How will data centers dangerous chemicals (including diesel fuel) be monitored?"
+  - "The last 1/3 of Jefferson County is more karstified and PDS has the mapping which must be included. * How will the federally endangered Indiana Bat (Mvodis sodalis) be protected or the KY endangered Glade Cress and Running buffalo clover (Trifolium stoloniferum) which is protected under KY law. * Wh"
+  - "Even home generator noise is obnoxious and intrusive— whereas data centers might have more than one and must test periodically."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_08-07-26 (3PM) to 08-19-26 (4PM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156336/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Entry Name Zip Comment Code 4227 Swepson 40215 Data centers should not exist before universal healthcare, homelessness is eradicated, or there are true humans rights for all."
+  - "I hope you receive the karma you deserve. 4228 Mayes 40216 As a Metro District 1 resident only about 1 mile away from the data center being built on Camp Ground Road, I am totally opposed to all hyperscale data centers because of the negative environmental, health, and financial impacts on our commu"
+  - "I realize that these regulations, if approved by Metro Council, won't apply to the data center on Camp Ground Road, but I believe they should be as restrictive as possible to dissuade as many future data centers as possible from locating in Jefferson County."
+  - "(I would have submitted them here, but this form will not allow files to be attached.) I will also be submitting them to all Metro Council members for their consideration. 4229 Hohman 40205 Put ALL data centers in the rich, white east end of town 4230 Michael 40205 I am concerned about the impact of"
+  - "It does not define energy systems, and thus opens the door for more air pollution with only an encouraging of "green energy." The regulations need to be strengthened. 4231 Mills 40211 The cost/benefit of data centers does not stand in the consumer's favor."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Curtis_08-11-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156337/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Protecting Communities in the Age of Data Centers Date:"
+  - "Dear Office of Planning colleagues, The Metropolitan Housing Coalition (MHC) released the following policy paper entitled "Protecting Communities in the Age of Data Centers:"
+  - "This policy paper seeks to provide a clear overview of the effect of data center development on affordability and health in our community, implications of increased cost and usage, and community priorities."
+  - "Additionally, this paper provides focused policy recommendations to ensure communities are protected in this new age of data center development."
+  - "I wanted to make sure to share this policy paper with you directly to add to the ongoing public discourse on data center regulations in our community."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-25-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156338/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Dries_01-06-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156339/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Center comments on the LDC Draft Text Amendment (25-LDC-0014) Date:"
+  - "For your consideration, following are my comments on the LDC Draft Text Amendment for Data Centers (1-2-2026): 1."
+  - "It appears to me that the Draft Text Amendment is significantly overly restrictive and unnecessarily complicated related to Data Centers."
+  - "Data Centers appear to be a way of life for today's economy."
+  - "Most individuals and businesses use Data Center products."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Gaus_08-10-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156340/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Joseph, This is a good opportunity to pause and plan refinements to mitigate the many hazards connected with unregulated data centers."
+  - "As far as mitigations go, I have attached results from an AI risk assessment of the Campground Rd data center development."
+  - "Donna, to answer your earlier question, the governor’s executive order addresses some of the concerns with data centers at the state-level, but it does not appear to have any impact local zoning regulations and decisions."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Herron_08-11-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156341/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Tuesday, August 11, 2026 12:34:06 PM Attachments: clarksvilledatacenterordinance.zip CAUTION:"
+  - "Thanks to you and your team for the professionalism shown in how you all have managed the public input process for the data center regulations."
+  - "I just want to note that our neighbors across the bridge in Indiana have instituted a one year moratorium in Jeffersonville and Clarksville has banned data centers by right."
+  - "Clarksville officials have determined that data centers do not comply with the comprehensive plan and do not belong in their community."
+  - "I suggest we use our comp plan to show how the data centers do or do not align with the long term goals set forth in the plan."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Simon_08-11-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156343/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, rezon
+  - "Dear members of the Louisville Metro Planning Commission (Jim Mims, Sharon Bond, Steve Lannert, Bill Fischer, Te’andre Sistrunk, Travis Fletcher, Russ Lohan, and Beth Stuber), Attached is documentation for 36 additional people who have signed at least one of two petitions in opposition to the constr"
+  - "Thanks for your time in considering this public opposition to the expansion of data centers, -- Dr."
+  - "Reply to vote to Table ITEM O-135-26 — Temporary Moratorium on Rezoning, Conditional Use Permits and Plan Certain, Category 2B and 3 Development Plan Applications Relating to Telecommunication Hotels and Data Centers The undersigned, as one of the People, speaks only for the undersigned and does not"
+  - "The undersigned previously placed Louisville Metro Council members on notice that hyperscale data centers and telecommunication hotels are not ordinary commercial office uses."
+  - "IL NOTICE OF LIABILITY AND BOND DEMAND Effective immediately, Louisville Metro and all public and private actors involved in approval, construction, zoning, permitting, development-plan review, financing, operation, utility coordination, or maintenance of any data center, telecommunication hotel, hy"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Written Comments Received at 08-10-26 Hearing.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156344/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Feedback on Revised Draft Regulations on Data Centers Dear Commissioners, Louisville Climate Action Network (LCAN) consists of 68 entities —36 non-profit groups, 17 forprofit businesses, 1] faith-based organizations and four educational institutions—plus well over 3,000 individuals, all concerned ab"
+  - "Citizens all over the US are calling on local governments to protect them from the harms posed by hyper-scale data centers, especially huge demands for power and water—risking reliability and rate hikes for everyone—air pollution and noise."
+  - "Data center power demands and diesel-powered backup generators alone demand that LCAN respond to the latest revised draft ordinance changes now before you on behalf of our members."
+  - "As written, the much touted “ban” on data centers larger than 500,00 ft? is flawed, since the ordinance doesn’t preclude two, side-by-side 499,000 ft? data centers on adjacent tracts."
+  - "OPO —— Council Dee 126 www.kyrc.org ol KRC Summary of Revisions to Louisville Data Center Ordinance This document reviews the changes in the provisions of the proposed Louisville Metro Government (“LMG”) Draft Data Center Land Development Code Text Amendment (Case No. 25-LDC-0014, June 9, 2026, Draf"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 20260806_Executive-Order_2026-494_Related-to-Data-Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156345/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "As Kentucky looks toward the future, the rapid expansion of digital infrastructure has led to surging demand for data centers and energy resources across our country."
+  - "Data center companies looking to do business in Kentucky, at a minimum, must demonstrate they will be good neighbors by investing responsibly, operating transparently, and working in partnership with our people and communities to make certain these projects deliver lasting benefits for Kentucky’s wo"
+  - "Data center project developers are required to submit an energy plan to the Energy and Environment Cabinet showing how it will protect residential ratepayers, including assurances it can meet its energy needs now, into the near term, and long term without imposing additional costs on other utility r"
+  - "The Public Service Commission shall not allow a utility to increase rates paid by other ratepayers to recover costs caused by the development and operation of a data center."
+  - "The Energy and Environment Cabinet is directed to deny any permitting applications where a data center would negatively impact Kentucky’s air quality, water use, water quality, water supply, federal jurisdictional wetlands, or natural resources."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Data Center_ 09-03-26 DRAFT Amendments (Conceptually Approved by PC on 8-20-26).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156346/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_PCMinutes_07272026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156347/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Centers Applicant:"
+  - "Williams explained the difference between a mega data center and the kind of data center that stores data for devices."
+  - "Fowler asked that a moratorium be placed on data center construction."
+  - "Holsclaw believes that any clean up should be dealt with by the developer and applicant the data center."
+  - "(see recording for details) 2 PLANNING COMMISSION MINUTES July 27, 2026 PUBLIC HEARING CASE NO. 25-LDC-0014 00:31:40 Lee Fahey asked the Commission that the guidelines be better outlined before any further data centers be built."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_PCMinutes_08052026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156348/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "Koppert urged the Planning Commission enact a mortarium on the construction of data centers until more research about the impacts of data centers on communities can be performed."
+  - "(see recording for details) 00:22:13 Glenn Eisenbray shared with the Commission the water and energy consumption of differing sizes of data centers."
+  - "Eisenbray shared the impacts that data centers can have on the environment."
+  - "(see recording for details) 2 PLANNING COMMISSION MINUTES August 5, 2026 PUBLIC HEARING CASE NO. 25-LDC-0014 00:25:53 Kurt Wallace supports a ban on data center construction."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_PCMinutes_08062026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156349/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "(see recording for details) Public Testimony: 00:14:41 Lindsay Gray questioned why the amendments are accommodating data centers and their developers, when community members do not want hyper-scale data centers."
+  - "(see recording for details) 00:22:04 N Lobo shared concerns about the environmental impact that data centers will cause."
+  - "Lobo worried about the negative impacts of data centers and hoped for stricter regulations and water quality protections."
+  - "(see recording for details) 00:25:50 Bryan Reed shared concerns about the sample size that was taken for the community data center feedback."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_PCMinutes_08102026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156350/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "(Staff report is part of the case file maintained in the Office of Planning, 444 South 5th Street.) Public Testimony: 00:03:55 William Mayes stated that he lived within a mile of the Campground Road data center."
+  - "Mayes urged the Commission to vote to recommend that the Metro Council ban all future data center construction."
+  - "(see recording for details) 00:07:20 Sherri Thompson shared concerns about sound frequencies that are emitted by data centers."
+  - "(see recording for details) 00:14:15 Maxwell Corbett shared his thoughts of how data centers interact with his religious beliefs."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_PCMinutes_08202026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156351/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_Data Center_ 09-03-26 PC Recommendation.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156446/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: 25-LDC-0014_PCMinutes_09032026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156463/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Centers Applicant:"
+  - "Haberman also stated staff has included some additional additions that add some of the standards that were added to data centers over 50,000 square feet to the regulations for data centers under 50,000 square feet, as well as some additional modifications."
+  - "Assistant County Attorney Laura Ferguson pointed out the language regarding Generators in the Accessory Data Centers did not have the Monday through Friday restrictions on testing times."
+  - "Text Amendment to the Louisville Metro Land Development Code (LDC) in Regards to Data Centers On a motion by Commissioner Mims, seconded by Commissioner Steff, the following resolution, based on the staff report, the staff analysis, and the evidence and testimony heard today, was adopted: 2 PLANNING"
+  - "RESOLVED, that the Louisville Metro Planning Commission does hereby RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the following Text Amendment to the Louisville Metro Land Development Code (LDC) in regards to data centers with the recommended "
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-09-10, packet: O-251-26 V.1 091026 Amend Land Development Code Regarding Data Centers .pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156537/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "ORDINANCE NO. _______________, SERIES 2026 ..title AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25- LDC-0014). ..body SPONSORED BY:"
+  - "Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "This may include data services associated with off-site users directly affiliated with the on-site Principal Use, Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunications Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, agenda: Louisville Metro Council agenda 2026-08-13, https://legistar2.granicus.com/louisville/meetings/2026/8/11391_A_Metro_Council_26-08-13_Meeting_Agenda.pdf
+  - Also mentions: conditional use, rezon
+  - "O-135-26 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISSION (AS AMENDED)."
+  - "O-135-26 V.2 CAM 080426 Temporary Moratorium on Data Centers.pdf O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf Legislative History Louisville Metro Government Page 16 Printed on 8/13/2026 Metro Council Meeting Agenda - Final August 13, 2026 5/14/26 Metro Council assigned to the Planni"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, minutes: Louisville Metro Council minutes 2026-08-13, https://legistar2.granicus.com/louisville/meetings/2026/8/11391_M_Metro_Council_26-08-13_Action_Summary.pdf
+  - Also mentions: conditional use, rezon
+  - "O-135-26 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISSION (AS AMENDED)."
+  - "O-135-26 V.3 FAM 081326 Temporary Moratorium on Data Centers.pdf O-135-26 V.2 CAM 080426 Temporary Moratorium on Data Centers.pdf O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf ORD 151 2026.pdf A motion was made by Council Member Piagentini, seconded by Council Member Seum, that this O"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses." The following spoke to t"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, packet: O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/154041/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "O’Connell Jefferson County Attorney By: ________________________________ O-135-26 Temporary Moratorium On Data Centers.docx (TF 5-7-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, packet: O-135-26 V.3 FAM 081326 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155888/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, packet: ORD 151 2026.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155968/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. | 5 | , SERIES 2026 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISS"
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There 16 hereby imposed_a_moratorium_on_the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, packet: O-135-26 V.2 CAM 080426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/156222/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - "O’Connell Jefferson County Attorney By: ____________________________ O-135-25 Temporary Moratorium On Data Centers.docx (as amended) (lf) 8-04-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, packet: O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/154041/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "O’Connell Jefferson County Attorney By: ________________________________ O-135-26 Temporary Moratorium On Data Centers.docx (TF 5-7-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, packet: O-135-26 V.3 FAM 081326 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155888/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, packet: ORD 151 2026.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155968/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. | 5 | , SERIES 2026 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISS"
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There 16 hereby imposed_a_moratorium_on_the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, packet: O-135-26 V.2 CAM 080426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/156222/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - "O’Connell Jefferson County Attorney By: ____________________________ O-135-25 Temporary Moratorium On Data Centers.docx (as amended) (lf) 8-04-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, packet: O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/154041/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "O’Connell Jefferson County Attorney By: ________________________________ O-135-26 Temporary Moratorium On Data Centers.docx (TF 5-7-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, packet: O-135-26 V.3 FAM 081326 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155888/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, packet: ORD 151 2026.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155968/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. | 5 | , SERIES 2026 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISS"
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There 16 hereby imposed_a_moratorium_on_the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, packet: O-135-26 V.2 CAM 080426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/156222/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - "O’Connell Jefferson County Attorney By: ____________________________ O-135-25 Temporary Moratorium On Data Centers.docx (as amended) (lf) 8-04-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, packet: O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/154041/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "O’Connell Jefferson County Attorney By: ________________________________ O-135-26 Temporary Moratorium On Data Centers.docx (TF 5-7-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, packet: O-135-26 V.3 FAM 081326 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155888/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, packet: ORD 151 2026.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155968/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. | 5 | , SERIES 2026 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISS"
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There 16 hereby imposed_a_moratorium_on_the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-08-13, packet: O-135-26 V.2 CAM 080426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/156222/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - "O’Connell Jefferson County Attorney By: ____________________________ O-135-25 Temporary Moratorium On Data Centers.docx (as amended) (lf) 8-04-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-05-14, agenda: Louisville Metro Council agenda 2026-05-14, https://legistar2.granicus.com/louisville/meetings/2026/5/11204_A_Metro_Council_26-05-14_Meeting_Agenda.pdf
+  - Also mentions: conditional use, rezon
+  - "O-135-26 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISSION."
+  - "O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf 66."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-05-14, minutes: Louisville Metro Council minutes 2026-05-14, https://legistar2.granicus.com/louisville/meetings/2026/5/11204_M_Metro_Council_26-05-14_Action_Summary.pdf
+  - Also mentions: conditional use, rezon
+  - "O-135-26 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISSION."
+  - "O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf 66."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-05-14, packet: O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/154041/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "O’Connell Jefferson County Attorney By: ________________________________ O-135-26 Temporary Moratorium On Data Centers.docx (TF 5-7-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-05-14, packet: O-135-26 V.3 FAM 081326 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155888/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-05-14, packet: ORD 151 2026.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155968/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. | 5 | , SERIES 2026 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISS"
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There 16 hereby imposed_a_moratorium_on_the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Council, 2026-05-14, packet: O-135-26 V.2 CAM 080426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/156222/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - "O’Connell Jefferson County Attorney By: ____________________________ O-135-25 Temporary Moratorium On Data Centers.docx (as amended) (lf) 8-04-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-09-03, agenda: Louisville Metro Planning Commission agenda 2026-09-03, https://legistar2.granicus.com/louisville/meetings/2026/9/11621_A_Planning_Commission_26-09-03_Agenda.pdf
+  - "Data Centers Applicant:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-09-03, packet: 25-LDC-0014_Data Center_ 09-03-26 DRAFT Amendments (Conceptually Approved by PC on 8-20-26).pdf, https://webapi.legistar.com/v1/louisville/Matters/65779/Attachments/156310/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-20, agenda: Louisville Metro Planning Commission agenda 2026-08-20, https://legistar2.granicus.com/louisville/meetings/2026/8/11526_A_Planning_Commission_26-08-20_Agenda.pdf
+  - "Call To Order Approval Of Minutes 1. 07.30.2026 PC Minutes 2. 08.06.2026 PC Minutes 3. 07.27.2026 PC Minutes 4. 08.05.2026 PC Minutes 5. 08.06.2026 Data Center Minutes 6. 08.10.2026 PC Minutes Consent Agenda Louisville Metro Government Page 1 Printed on 8/19/2026 Planning Commission Agenda - Final-r"
+  - "Data Centers Applicant:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-20, packet: 08.06.2026 PC Data Center Minutes.pdf, https://webapi.legistar.com/v1/louisville/Matters/65800/Attachments/155962/File
+  - Agenda item: 08.06.2026 Data Center Minutes
+  - "Data Centers Applicant:"
+  - "(see recording for details) Public Testimony: 00:14:41 Lindsay Gray questioned why the amendments are accommodating data centers and their developers, when community members do not want hyper-scale data centers."
+  - "(see recording for details) 00:22:04 N Lobo shared concerns about the environmental impact that data centers will cause."
+  - "Lobo worried about the negative impacts of data centers and hoped for stricter regulations and water quality protections."
+  - "(see recording for details) 00:25:50 Bryan Reed shared concerns about the sample size that was taken for the community data center feedback."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-20, packet: 25-LDC-0014_Data Center_ 09-03-26 DRAFT Amendments (Conceptually Approved by PC on 8-20-26).pdf, https://webapi.legistar.com/v1/louisville/Matters/65779/Attachments/156310/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-10, agenda: Louisville Metro Planning Commission agenda 2026-08-10, https://legistar2.granicus.com/louisville/meetings/2026/8/11498_A_Planning_Commission_26-08-10_Agenda.pdf
+  - "Data Centers Applicant:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-24-26 (9AM) to 07-31-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155688/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - "(as in specific distance) 4170 Reed 40023 They do not belong in Kentucky in any way, shape or form. 4171 Mansilla 40299 NO Data Centers, NONE!! 4172 McCoy 40211 Simple- stay out of Louisville."
+  - "We don't need data centers complicating our lives. 4173 Walters 40213 No new data centers in Louisville!"
+  - "Anywhere a datacenter has been approved have seen their local utility resources rise in price and lower in quality."
+  - "The whole AI money machine is just several companies handing the same money back and forth and calling it operating profit. 4174 Leonard 40220 Data Centers don't support the health and well-being of our residents."
+  - "The future of Jefferson county depends on other employment opportunities. 4175 Williams 40218 Data centers are critical infrastructure that support hospitals, schools, emergency services, businesses, and the everyday digital tools residents rely on."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-24-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155690/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Data Centers_Survey_01-01-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155691/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use
+  - "25-LDC-0014 Data Center Survey and Results Total Submittals: 3590 Question 1:"
+  - "How much do you know about Data Centers?"
+  - "Affirmative Percentage Responses I'm not sure / prefer not to answer 114 3.2% I know very little about Data Centers 60 1.7% I know some things about Data Centers 1878 52.3% I know a lot about Data Centers 1538 42.8% 3590 100.0% *Limited to single choice Question 5:"
+  - "What size of Data Centers are ok in Jefferson County?"
+  - "(Required) Affirmative Percentage of Total Responses Respondents Selecting Data Centers of any size are 2963 82.5% inappropriate Small (under 10,000 sq ft) 556 15.5% Medium (10,000 to 50,000 sq ft) 241 6.7% Large (50,001 to 100,000 sq ft) 94 2.6% “Hyperscale" (Over 100,000 sq ft) 73 2.0% I'm not sur"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Emailed Comments_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155692/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use, map amendment, rezon, variance
+  - "FFEA does not want to see vague, “Accessory Uses” regarding data centers – please remove this terminology and any reference due to oodles of wiggle-room to the possible detriment of the public."
+  - "Also some reports by neighbors of temperatures increasing up to 12 degrees close to data centers due to waste heat – so please do more research."
+  - "And, since people need and like to eat, farmland should never be used for data centers; instead, keep the land to INDUSTRIAL zoning areas."
+  - "Likewise, our park’s lands should never be used for data centers; instead, keep them to INDUSTRIAL zoning only."
+  - "Gas turbines create the need for Texas Gas Pipelines intrusion into farmland, parks, homes, etc. and will bring noise, emissions, etc."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Emailed Comments_Pre Draft_Through 6-8-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155693/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - "Louisville Metro Council Resolution Number 082, Series 2025 Zoning Code Updates re Hyper-Scale Data Centers Dear Mr."
+  - "But in the case of hyper-scale data centers, Big Tech can pad its power, water and land requirements at others’ expense."
+  - "If the data centers don’t end up needing that much power or water, LG&E and the Louisville Water Co. must pass the costs of their stranded assets to their other customers."
+  - "Energy efficiency, solar power and battery storage are the cheapest, cleanest and fastest sources of power, yet the incentives to use them at data centers is undermined because the costs of the new power plants they require will be externalized (see #3). 5."
+  - "New, gas-fired power plants are very expensive and operate for at least 40 years."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Kentucky Resources Council Recommended Ordinance_Version 1.4.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155694/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use, map amendment, site plan
+  - "Data centers and data center development have recently become a concern across the country, as the development of new “artificial intelligence” tools has multiplied the demand for computer processing power, and correlative energy, water, and other resource needs."
+  - "At its base, a data center is a warehouse filled with racks of computer servers, often running all hours of the day and night."
+  - "As the size of data centers have grown, so has the need for ancillary equipment and resources both on- and off-site."
+  - "On-site, a data center also 1 This ordinance was developed for consideration and use by communities in the Commonwealth by the Kentucky Resources Council, Inc."
+  - "In addition, they also contain significant on-site backup or "behind-the-meter” power generating equipment, such as diesel generators, gas turbines, and battery energy storage systems."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Metro Council Resolution 082 2025.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155695/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - "RESOLUTION NO. 082 SERIES 2025 A RESOLUTION REQUESTING THE PLANNING COMMISSION REVIEW THE METRO LAND DEVELOPMENT CODE REGULATIONS WITH REGARD TO DATA CENTERS."
+  - "The Planning Commission should undertake a review of and consider amendments to the current LDC to address data centers, including a consideration of best practices and regulatory framework from comparable jurisdictions, and to consider the various impacts of data centers, to better define telecommu"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_ATT_08-04-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155740/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - "Data center regulations proposal - latest telecom industry feedback Date:"
+  - "Circling back to you with additional telecommunications industry feedback on the latest Louisville Metro proposed data center regulations."
+  - "To address our continued concerns, we propose the following modifications to the Telecommunication Data Center definition."
+  - "The new language is in red. “Data Center, Telecommunication – A newly constructed Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - "Existing telecommunications data centers and any possible expansions are grandfathered as nonconforming to the permitting requirements in this section.” The industry agrees that the two changes above would resolve our concerns about potential impediments to our Louisville Metro customer service."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155742/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use, plat
+  - "I understand that the water that is often discharged from data centers are highly polluted so if we can limit that, that would be great. 4190 Blackburn 40207 This is a proposal that has proven to cause environmental harm and human harm."
+  - "I vote for a ban on data centers in all counties Kentucky until we have done more research. 4191 Kahn 40213 I am particularly concerned that data centers would be placed in West End neighborhoods, extending the historical burden placed disproportionately on lower income residents of our city."
+  - "Data centers are too new to have any data on long-term health or environmental effects on the people and areas located near them, or even to know how far the impacts would extend."
+  - "Placing centers here without understanding the full consequences puts people of our city at risk and the benefits do not appear to outweigh the risks. 4192 Morris 40213 No data centers in Jefferson county please."
+  - "There may be a short-term benefit to allowing them to build in our neighborhoods, but the damage will far outweigh any meager benefit. 4193 Swilley 40205 I don’t want any data centers at all anywhere around Louisville."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Lee_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155745/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - "Contact the Office of Planning [#1167] Name Virginia Lee Email * Subject Data Center proposal Comment * I live in 40206."
+  - "Louisvillians want a true moratorium on all data centers while the work is done to fully understand the full impacts and what the right balance is for our community."
+  - "This should apply to 100% of all hyper-data centers including the one that was proposed by Steve Poe’s company."
+  - "Just stop all development of data centers until we are ready to properly permit them."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_LG&E_KU_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155746/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - "Proposed Data Center Regulations -- Feedback from LG&E/KU Date:"
+  - "I wanted to follow-up with you and provide additional feedback from LG&E/KU on the latest Louisville Metro proposed data center regulations."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Porter_08-03-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155747/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - "Porter Attorney-at-Law 3109 Westone Way Louisville, KY 40241-3115 stpinlou@aol.com 502-905-9991 Proposed Changes Data Center Text Amendment 4.2.60.C."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Williams_07-02-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155748/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - "Alignment with Datacenter Regulations and Recommendation on Square‑Foot Cap Adjustment Date:"
+  - "Members of the Planning Commission, Thank you for the thoughtful and comprehensive work reflected in the current draft of Louisville’s data center zoning recommendations."
+  - "I want to begin by stating clearly that I fully support the Commission’s goal of establishing responsible, community‑focused datacenter regulations."
+  - "Louisville should regulate datacenters."
+  - "Where I believe a small adjustment is needed is in the proposed 500,000 sq ft cap for data centers outside Rubbertown."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_Written Comments Received at 08-05-26 Hearing.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155749/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - "Ray Eblers, FFEA Vice President Date: 7-4-26 Re: 25-LDC-0014 DATA CENTER COMMENTS Floyds Fork Environmental Association, FFEA, MISSION is to protect, conserve and preserve Floyds Fork Creek and its Watershed."
+  - "Comments on data centers with the following requests: * Jefferson County must institute a Moratorium to allow more study and make the best standards to protect the welfare of the public which must Limon BA include intensity of many issues."
+  - "How will government protect the public? * How will data centers dangerous chemicals (including diesel fuel) be monitored?"
+  - "The last 1/3 of Jefferson County is more karstified and PDS has the mapping which must be included. * How will the federally endangered Indiana Bat (Mvodis sodalis) be protected or the KY endangered Glade Cress and Running buffalo clover (Trifolium stoloniferum) which is protected under KY law. * Wh"
+  - "Even home generator noise is obnoxious and intrusive— whereas data centers might have more than one and must test periodically."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-10, packet: 25-LDC-0014_KRC_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65710/Attachments/155750/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use, rezon
+  - "Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org August 7, 2026 Joseph Haberman, AICP Planning & Design Manager Via email Re: 25 LDC 0014 Revised Text Amendment to Land Development Code For Data Centers Dear Mr."
+  - "(KRC) regarding the proposed revised Louisville Metro Government Draft Data Center Land Development Code Text Amendment (Case No. 25-LDC- 0014, July 20, 2026, Draft)."
+  - "Sincerely, Ashley Wilmes Executive Director and Attorney Kentucky Resources Council Tom FitzGerald Of Counsel Kentucky Resources Council Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org KRC Recommended Revisions to Louisville Metro Revised Draft Data Center Tex"
+  - "Introduction These recommendations are intended to ensure public notice and input, as well as a comprehensive and meaningful framework for regulating the location, operation, and decommissioning of all data centers."
+  - "The recommendations continue to suggest inclusion of many of the provisions in the Kentucky Resources Council (KRC) Model Data Center Zoning Ordinance, with respect to strengthening the review process, the quality of information submitted in applications, and the standards of performance for data ce"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-06, agenda: Louisville Metro Planning Commission agenda 2026-08-06, https://legistar2.granicus.com/louisville/meetings/2026/8/11497_A_Planning_Commission_26-08-06_Agenda.pdf
+  - "Data Centers Applicant:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-06, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-24-26 (9AM) to 07-31-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65651/Attachments/155524/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - "(as in specific distance) 4170 Reed 40023 They do not belong in Kentucky in any way, shape or form. 4171 Mansilla 40299 NO Data Centers, NONE!! 4172 McCoy 40211 Simple- stay out of Louisville."
+  - "We don't need data centers complicating our lives. 4173 Walters 40213 No new data centers in Louisville!"
+  - "Anywhere a datacenter has been approved have seen their local utility resources rise in price and lower in quality."
+  - "The whole AI money machine is just several companies handing the same money back and forth and calling it operating profit. 4174 Leonard 40220 Data Centers don't support the health and well-being of our residents."
+  - "The future of Jefferson county depends on other employment opportunities. 4175 Williams 40218 Data centers are critical infrastructure that support hospitals, schools, emergency services, businesses, and the everyday digital tools residents rely on."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-06, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-24-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65651/Attachments/155526/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-06, packet: 25-LDC-0014_Data Centers_Survey_01-01-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65651/Attachments/155527/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use
+  - "25-LDC-0014 Data Center Survey and Results Total Submittals: 3590 Question 1:"
+  - "How much do you know about Data Centers?"
+  - "Affirmative Percentage Responses I'm not sure / prefer not to answer 114 3.2% I know very little about Data Centers 60 1.7% I know some things about Data Centers 1878 52.3% I know a lot about Data Centers 1538 42.8% 3590 100.0% *Limited to single choice Question 5:"
+  - "What size of Data Centers are ok in Jefferson County?"
+  - "(Required) Affirmative Percentage of Total Responses Respondents Selecting Data Centers of any size are 2963 82.5% inappropriate Small (under 10,000 sq ft) 556 15.5% Medium (10,000 to 50,000 sq ft) 241 6.7% Large (50,001 to 100,000 sq ft) 94 2.6% “Hyperscale" (Over 100,000 sq ft) 73 2.0% I'm not sur"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-06, packet: 25-LDC-0014_Emailed Comments_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65651/Attachments/155528/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use, map amendment, rezon, variance
+  - "FFEA does not want to see vague, “Accessory Uses” regarding data centers – please remove this terminology and any reference due to oodles of wiggle-room to the possible detriment of the public."
+  - "Also some reports by neighbors of temperatures increasing up to 12 degrees close to data centers due to waste heat – so please do more research."
+  - "And, since people need and like to eat, farmland should never be used for data centers; instead, keep the land to INDUSTRIAL zoning areas."
+  - "Likewise, our park’s lands should never be used for data centers; instead, keep them to INDUSTRIAL zoning only."
+  - "Gas turbines create the need for Texas Gas Pipelines intrusion into farmland, parks, homes, etc. and will bring noise, emissions, etc."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-06, packet: 25-LDC-0014_Emailed Comments_Pre Draft_Through 6-8-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65651/Attachments/155529/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - "Louisville Metro Council Resolution Number 082, Series 2025 Zoning Code Updates re Hyper-Scale Data Centers Dear Mr."
+  - "But in the case of hyper-scale data centers, Big Tech can pad its power, water and land requirements at others’ expense."
+  - "If the data centers don’t end up needing that much power or water, LG&E and the Louisville Water Co. must pass the costs of their stranded assets to their other customers."
+  - "Energy efficiency, solar power and battery storage are the cheapest, cleanest and fastest sources of power, yet the incentives to use them at data centers is undermined because the costs of the new power plants they require will be externalized (see #3). 5."
+  - "New, gas-fired power plants are very expensive and operate for at least 40 years."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-06, packet: 25-LDC-0014_Kentucky Resources Council Recommended Ordinance_Version 1.4.pdf, https://webapi.legistar.com/v1/louisville/Matters/65651/Attachments/155530/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use, map amendment, site plan
+  - "Data centers and data center development have recently become a concern across the country, as the development of new “artificial intelligence” tools has multiplied the demand for computer processing power, and correlative energy, water, and other resource needs."
+  - "At its base, a data center is a warehouse filled with racks of computer servers, often running all hours of the day and night."
+  - "As the size of data centers have grown, so has the need for ancillary equipment and resources both on- and off-site."
+  - "On-site, a data center also 1 This ordinance was developed for consideration and use by communities in the Commonwealth by the Kentucky Resources Council, Inc."
+  - "In addition, they also contain significant on-site backup or "behind-the-meter” power generating equipment, such as diesel generators, gas turbines, and battery energy storage systems."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-06, packet: 25-LDC-0014_Metro Council Resolution 082 2025.pdf, https://webapi.legistar.com/v1/louisville/Matters/65651/Attachments/155531/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - "RESOLUTION NO. 082 SERIES 2025 A RESOLUTION REQUESTING THE PLANNING COMMISSION REVIEW THE METRO LAND DEVELOPMENT CODE REGULATIONS WITH REGARD TO DATA CENTERS."
+  - "The Planning Commission should undertake a review of and consider amendments to the current LDC to address data centers, including a consideration of best practices and regulatory framework from comparable jurisdictions, and to consider the various impacts of data centers, to better define telecommu"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-05, agenda: Louisville Metro Planning Commission agenda 2026-08-05, https://legistar2.granicus.com/louisville/meetings/2026/8/11496_A_Planning_Commission_26-08-05_Agenda.pdf
+  - "Data Centers Applicant:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-05, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-24-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65650/Attachments/155515/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-05, packet: 25-LDC-0014_Data Centers_Survey_01-01-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65650/Attachments/155516/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use
+  - "25-LDC-0014 Data Center Survey and Results Total Submittals: 3590 Question 1:"
+  - "How much do you know about Data Centers?"
+  - "Affirmative Percentage Responses I'm not sure / prefer not to answer 114 3.2% I know very little about Data Centers 60 1.7% I know some things about Data Centers 1878 52.3% I know a lot about Data Centers 1538 42.8% 3590 100.0% *Limited to single choice Question 5:"
+  - "What size of Data Centers are ok in Jefferson County?"
+  - "(Required) Affirmative Percentage of Total Responses Respondents Selecting Data Centers of any size are 2963 82.5% inappropriate Small (under 10,000 sq ft) 556 15.5% Medium (10,000 to 50,000 sq ft) 241 6.7% Large (50,001 to 100,000 sq ft) 94 2.6% “Hyperscale" (Over 100,000 sq ft) 73 2.0% I'm not sur"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-05, packet: 25-LDC-0014_Emailed Comments_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65650/Attachments/155517/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use, map amendment, rezon, variance
+  - "FFEA does not want to see vague, “Accessory Uses” regarding data centers – please remove this terminology and any reference due to oodles of wiggle-room to the possible detriment of the public."
+  - "Also some reports by neighbors of temperatures increasing up to 12 degrees close to data centers due to waste heat – so please do more research."
+  - "And, since people need and like to eat, farmland should never be used for data centers; instead, keep the land to INDUSTRIAL zoning areas."
+  - "Likewise, our park’s lands should never be used for data centers; instead, keep them to INDUSTRIAL zoning only."
+  - "Gas turbines create the need for Texas Gas Pipelines intrusion into farmland, parks, homes, etc. and will bring noise, emissions, etc."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-05, packet: 25-LDC-0014_Emailed Comments_Pre Draft_Through 6-8-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65650/Attachments/155518/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - "Louisville Metro Council Resolution Number 082, Series 2025 Zoning Code Updates re Hyper-Scale Data Centers Dear Mr."
+  - "But in the case of hyper-scale data centers, Big Tech can pad its power, water and land requirements at others’ expense."
+  - "If the data centers don’t end up needing that much power or water, LG&E and the Louisville Water Co. must pass the costs of their stranded assets to their other customers."
+  - "Energy efficiency, solar power and battery storage are the cheapest, cleanest and fastest sources of power, yet the incentives to use them at data centers is undermined because the costs of the new power plants they require will be externalized (see #3). 5."
+  - "New, gas-fired power plants are very expensive and operate for at least 40 years."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-05, packet: 25-LDC-0014_Kentucky Resources Council Recommended Ordinance_Version 1.4.pdf, https://webapi.legistar.com/v1/louisville/Matters/65650/Attachments/155519/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use, map amendment, site plan
+  - "Data centers and data center development have recently become a concern across the country, as the development of new “artificial intelligence” tools has multiplied the demand for computer processing power, and correlative energy, water, and other resource needs."
+  - "At its base, a data center is a warehouse filled with racks of computer servers, often running all hours of the day and night."
+  - "As the size of data centers have grown, so has the need for ancillary equipment and resources both on- and off-site."
+  - "On-site, a data center also 1 This ordinance was developed for consideration and use by communities in the Commonwealth by the Kentucky Resources Council, Inc."
+  - "In addition, they also contain significant on-site backup or "behind-the-meter” power generating equipment, such as diesel generators, gas turbines, and battery energy storage systems."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-05, packet: 25-LDC-0014_Metro Council Resolution 082 2025.pdf, https://webapi.legistar.com/v1/louisville/Matters/65650/Attachments/155520/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - "RESOLUTION NO. 082 SERIES 2025 A RESOLUTION REQUESTING THE PLANNING COMMISSION REVIEW THE METRO LAND DEVELOPMENT CODE REGULATIONS WITH REGARD TO DATA CENTERS."
+  - "The Planning Commission should undertake a review of and consider amendments to the current LDC to address data centers, including a consideration of best practices and regulatory framework from comparable jurisdictions, and to consider the various impacts of data centers, to better define telecommu"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-08-05, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-24-26 (9AM) to 07-31-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65650/Attachments/155523/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - "(as in specific distance) 4170 Reed 40023 They do not belong in Kentucky in any way, shape or form. 4171 Mansilla 40299 NO Data Centers, NONE!! 4172 McCoy 40211 Simple- stay out of Louisville."
+  - "We don't need data centers complicating our lives. 4173 Walters 40213 No new data centers in Louisville!"
+  - "Anywhere a datacenter has been approved have seen their local utility resources rise in price and lower in quality."
+  - "The whole AI money machine is just several companies handing the same money back and forth and calling it operating profit. 4174 Leonard 40220 Data Centers don't support the health and well-being of our residents."
+  - "The future of Jefferson county depends on other employment opportunities. 4175 Williams 40218 Data centers are critical infrastructure that support hospitals, schools, emergency services, businesses, and the everyday digital tools residents rely on."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-07-27, agenda: Louisville Metro Planning Commission agenda 2026-07-27, https://legistar2.granicus.com/louisville/meetings/2026/7/11495_A_Planning_Commission_26-07-27_Agenda.pdf
+  - "Data Centers Applicant:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-07-27, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-24-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65606/Attachments/155309/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-07-27, packet: 25-LDC-0014_Data Centers_Survey_01-01-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65606/Attachments/155310/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use
+  - "25-LDC-0014 Data Center Survey and Results Total Submittals: 3590 Question 1:"
+  - "How much do you know about Data Centers?"
+  - "Affirmative Percentage Responses I'm not sure / prefer not to answer 114 3.2% I know very little about Data Centers 60 1.7% I know some things about Data Centers 1878 52.3% I know a lot about Data Centers 1538 42.8% 3590 100.0% *Limited to single choice Question 5:"
+  - "What size of Data Centers are ok in Jefferson County?"
+  - "(Required) Affirmative Percentage of Total Responses Respondents Selecting Data Centers of any size are 2963 82.5% inappropriate Small (under 10,000 sq ft) 556 15.5% Medium (10,000 to 50,000 sq ft) 241 6.7% Large (50,001 to 100,000 sq ft) 94 2.6% “Hyperscale" (Over 100,000 sq ft) 73 2.0% I'm not sur"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-07-27, packet: 25-LDC-0014_Emailed Comments_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65606/Attachments/155311/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use, map amendment, rezon, variance
+  - "FFEA does not want to see vague, “Accessory Uses” regarding data centers – please remove this terminology and any reference due to oodles of wiggle-room to the possible detriment of the public."
+  - "Also some reports by neighbors of temperatures increasing up to 12 degrees close to data centers due to waste heat – so please do more research."
+  - "And, since people need and like to eat, farmland should never be used for data centers; instead, keep the land to INDUSTRIAL zoning areas."
+  - "Likewise, our park’s lands should never be used for data centers; instead, keep them to INDUSTRIAL zoning only."
+  - "Gas turbines create the need for Texas Gas Pipelines intrusion into farmland, parks, homes, etc. and will bring noise, emissions, etc."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-07-27, packet: 25-LDC-0014_Emailed Comments_Pre Draft_Through 6-8-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65606/Attachments/155312/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - "Louisville Metro Council Resolution Number 082, Series 2025 Zoning Code Updates re Hyper-Scale Data Centers Dear Mr."
+  - "But in the case of hyper-scale data centers, Big Tech can pad its power, water and land requirements at others’ expense."
+  - "If the data centers don’t end up needing that much power or water, LG&E and the Louisville Water Co. must pass the costs of their stranded assets to their other customers."
+  - "Energy efficiency, solar power and battery storage are the cheapest, cleanest and fastest sources of power, yet the incentives to use them at data centers is undermined because the costs of the new power plants they require will be externalized (see #3). 5."
+  - "New, gas-fired power plants are very expensive and operate for at least 40 years."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-07-27, packet: 25-LDC-0014_Kentucky Resources Council Recommended Ordinance_Version 1.4.pdf, https://webapi.legistar.com/v1/louisville/Matters/65606/Attachments/155313/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - Also mentions: conditional use, map amendment, site plan
+  - "Data centers and data center development have recently become a concern across the country, as the development of new “artificial intelligence” tools has multiplied the demand for computer processing power, and correlative energy, water, and other resource needs."
+  - "At its base, a data center is a warehouse filled with racks of computer servers, often running all hours of the day and night."
+  - "As the size of data centers have grown, so has the need for ancillary equipment and resources both on- and off-site."
+  - "On-site, a data center also 1 This ordinance was developed for consideration and use by communities in the Commonwealth by the Kentucky Resources Council, Inc."
+  - "In addition, they also contain significant on-site backup or "behind-the-meter” power generating equipment, such as diesel generators, gas turbines, and battery energy storage systems."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning Commission, 2026-07-27, packet: 25-LDC-0014_Metro Council Resolution 082 2025.pdf, https://webapi.legistar.com/v1/louisville/Matters/65606/Attachments/155314/File
+  - Agenda item: Request: Text Amendment to the Land Development Code Project Name: Data Centers Applicant: Louisville Metro Jurisdiction: Louisville Metro Council District: All Council Districts Case Manager: Joseph 
+  - "RESOLUTION NO. 082 SERIES 2025 A RESOLUTION REQUESTING THE PLANNING COMMISSION REVIEW THE METRO LAND DEVELOPMENT CODE REGULATIONS WITH REGARD TO DATA CENTERS."
+  - "The Planning Commission should undertake a review of and consider amendments to the current LDC to address data centers, including a consideration of best practices and regulatory framework from comparable jurisdictions, and to consider the various impacts of data centers, to better define telecommu"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, agenda: Louisville Metro Planning and Zoning Committee agenda 2026-11-03, https://legistar2.granicus.com/louisville/meetings/2026/11/11348_A_Planning_and_Zoning_Committee_26-11-03_Meeting_Agenda.pdf
+  - "ID 26-1652 DATA CENTER DISCUSSION:"
+  - "ACCESSORY DATA CENTERS AND TELECOMMUNICATION HOTELS;"
+  - "O-251-26 AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014)."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, minutes: Louisville Metro Planning and Zoning Committee minutes 2026-11-03, https://legistar2.granicus.com/louisville/meetings/2026/11/11348_M_Planning_and_Zoning_Committee_26-11-03_Action_Summary.pdf
+  - "ID 26-1652 DATA CENTER DISCUSSION:"
+  - "ACCESSORY DATA CENTERS AND TELECOMMUNICATION HOTELS;"
+  - "O-251-26 AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014)."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: Proposed Amendments — Internet Exchange Points.docx, https://webapi.legistar.com/v1/louisville/Matters/66305/Attachments/158943/File
+  - Agenda item: DATA CENTER DISCUSSION: ACCESSORY DATA CENTERS AND TELECOMMUNICATION HOTELS; DECOMMISSIONING - Tom Ferree, Connected Nation ID 26-1652
+  - "Section I (LDC 1.2.2, Definitions)</w:t></w:r></w:p><w:p><w:pPr></w:pPr><w:r><w:t xml:space="preserve">Amend the definition of Telecommunication Data Center and add a new definition of Internet Exchange Point, as follows:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle w:val="Quote"/></w:pPr><w:r><w:t xml:sp"
+  - "Section V (LDC 4.3.36, Telecommunication Data Centers)</w:t></w:r></w:p><w:p><w:pPr></w:pPr><w:r><w:t xml:space="preserve">Amend subsections A, K, and R of Section 4.3.36 as follows."
+  - "The Data Center shall be directly associated with a Telecommunications Facility and/or exclusively serve a telecommunication service provider that provides telecommunications services to clients or customers in Louisville Metro**, or shall be an Internet Exchange Point**.</w:t></w:r></w:p><w:p><w:pP"
+  - "Any Power Plant or Alternative Energy System that is part of the development shall be permitted independently as a Power Plant or Alternative Energy System, accessory or non-accessory, pursuant to Chapter 4, Parts 2 and 3 of this Land Development Code. </w:t></w:r><w:r><w:rPr><w:b/><w:bCs/></w:rPr><"
+  - "Adding a second, narrowly defined path leaves the existing test unchanged for every other facility.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle w:val="ListParagraph"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="3"/></w:numPr></w:pPr><w:r><w:rPr><w:b/><w:bCs/></w:rPr><w:t xml:space="preserve">Why it is no"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-24-26 (9AM) to 07-31-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156317/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "(as in specific distance) 4170 Reed 40023 They do not belong in Kentucky in any way, shape or form. 4171 Mansilla 40299 NO Data Centers, NONE!! 4172 McCoy 40211 Simple- stay out of Louisville."
+  - "We don't need data centers complicating our lives. 4173 Walters 40213 No new data centers in Louisville!"
+  - "Anywhere a datacenter has been approved have seen their local utility resources rise in price and lower in quality."
+  - "The whole AI money machine is just several companies handing the same money back and forth and calling it operating profit. 4174 Leonard 40220 Data Centers don't support the health and well-being of our residents."
+  - "The future of Jefferson county depends on other employment opportunities. 4175 Williams 40218 Data centers are critical infrastructure that support hospitals, schools, emergency services, businesses, and the everyday digital tools residents rely on."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-24-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156319/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Data Centers_Survey_01-01-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156320/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Data Center Survey and Results Total Submittals: 3590 Question 1:"
+  - "How much do you know about Data Centers?"
+  - "Affirmative Percentage Responses I'm not sure / prefer not to answer 114 3.2% I know very little about Data Centers 60 1.7% I know some things about Data Centers 1878 52.3% I know a lot about Data Centers 1538 42.8% 3590 100.0% *Limited to single choice Question 5:"
+  - "What size of Data Centers are ok in Jefferson County?"
+  - "(Required) Affirmative Percentage of Total Responses Respondents Selecting Data Centers of any size are 2963 82.5% inappropriate Small (under 10,000 sq ft) 556 15.5% Medium (10,000 to 50,000 sq ft) 241 6.7% Large (50,001 to 100,000 sq ft) 94 2.6% “Hyperscale" (Over 100,000 sq ft) 73 2.0% I'm not sur"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Emailed Comments_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156321/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, rezon, variance
+  - "FFEA does not want to see vague, “Accessory Uses” regarding data centers – please remove this terminology and any reference due to oodles of wiggle-room to the possible detriment of the public."
+  - "Also some reports by neighbors of temperatures increasing up to 12 degrees close to data centers due to waste heat – so please do more research."
+  - "And, since people need and like to eat, farmland should never be used for data centers; instead, keep the land to INDUSTRIAL zoning areas."
+  - "Likewise, our park’s lands should never be used for data centers; instead, keep them to INDUSTRIAL zoning only."
+  - "Gas turbines create the need for Texas Gas Pipelines intrusion into farmland, parks, homes, etc. and will bring noise, emissions, etc."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Emailed Comments_Pre Draft_Through 6-8-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156322/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Louisville Metro Council Resolution Number 082, Series 2025 Zoning Code Updates re Hyper-Scale Data Centers Dear Mr."
+  - "But in the case of hyper-scale data centers, Big Tech can pad its power, water and land requirements at others’ expense."
+  - "If the data centers don’t end up needing that much power or water, LG&E and the Louisville Water Co. must pass the costs of their stranded assets to their other customers."
+  - "Energy efficiency, solar power and battery storage are the cheapest, cleanest and fastest sources of power, yet the incentives to use them at data centers is undermined because the costs of the new power plants they require will be externalized (see #3). 5."
+  - "New, gas-fired power plants are very expensive and operate for at least 40 years."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Kentucky Resources Council Recommended Ordinance_Version 1.4.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156323/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, site plan
+  - "Data centers and data center development have recently become a concern across the country, as the development of new “artificial intelligence” tools has multiplied the demand for computer processing power, and correlative energy, water, and other resource needs."
+  - "At its base, a data center is a warehouse filled with racks of computer servers, often running all hours of the day and night."
+  - "As the size of data centers have grown, so has the need for ancillary equipment and resources both on- and off-site."
+  - "On-site, a data center also 1 This ordinance was developed for consideration and use by communities in the Commonwealth by the Kentucky Resources Council, Inc."
+  - "In addition, they also contain significant on-site backup or "behind-the-meter” power generating equipment, such as diesel generators, gas turbines, and battery energy storage systems."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Metro Council Resolution 082 2025.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156324/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "RESOLUTION NO. 082 SERIES 2025 A RESOLUTION REQUESTING THE PLANNING COMMISSION REVIEW THE METRO LAND DEVELOPMENT CODE REGULATIONS WITH REGARD TO DATA CENTERS."
+  - "The Planning Commission should undertake a review of and consider amendments to the current LDC to address data centers, including a consideration of best practices and regulatory framework from comparable jurisdictions, and to consider the various impacts of data centers, to better define telecommu"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_ATT_08-04-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156327/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data center regulations proposal - latest telecom industry feedback Date:"
+  - "Circling back to you with additional telecommunications industry feedback on the latest Louisville Metro proposed data center regulations."
+  - "To address our continued concerns, we propose the following modifications to the Telecommunication Data Center definition."
+  - "The new language is in red. “Data Center, Telecommunication – A newly constructed Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - "Existing telecommunications data centers and any possible expansions are grandfathered as nonconforming to the permitting requirements in this section.” The industry agrees that the two changes above would resolve our concerns about potential impediments to our Louisville Metro customer service."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156328/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, plat
+  - "I understand that the water that is often discharged from data centers are highly polluted so if we can limit that, that would be great. 4190 Blackburn 40207 This is a proposal that has proven to cause environmental harm and human harm."
+  - "I vote for a ban on data centers in all counties Kentucky until we have done more research. 4191 Kahn 40213 I am particularly concerned that data centers would be placed in West End neighborhoods, extending the historical burden placed disproportionately on lower income residents of our city."
+  - "Data centers are too new to have any data on long-term health or environmental effects on the people and areas located near them, or even to know how far the impacts would extend."
+  - "Placing centers here without understanding the full consequences puts people of our city at risk and the benefits do not appear to outweigh the risks. 4192 Morris 40213 No data centers in Jefferson county please."
+  - "There may be a short-term benefit to allowing them to build in our neighborhoods, but the damage will far outweigh any meager benefit. 4193 Swilley 40205 I don’t want any data centers at all anywhere around Louisville."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_KRC_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156330/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, rezon
+  - "Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org August 7, 2026 Joseph Haberman, AICP Planning & Design Manager Via email Re: 25 LDC 0014 Revised Text Amendment to Land Development Code For Data Centers Dear Mr."
+  - "(KRC) regarding the proposed revised Louisville Metro Government Draft Data Center Land Development Code Text Amendment (Case No. 25-LDC- 0014, July 20, 2026, Draft)."
+  - "Sincerely, Ashley Wilmes Executive Director and Attorney Kentucky Resources Council Tom FitzGerald Of Counsel Kentucky Resources Council Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org KRC Recommended Revisions to Louisville Metro Revised Draft Data Center Tex"
+  - "Introduction These recommendations are intended to ensure public notice and input, as well as a comprehensive and meaningful framework for regulating the location, operation, and decommissioning of all data centers."
+  - "The recommendations continue to suggest inclusion of many of the provisions in the Kentucky Resources Council (KRC) Model Data Center Zoning Ordinance, with respect to strengthening the review process, the quality of information submitted in applications, and the standards of performance for data ce"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Lee_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156331/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Contact the Office of Planning [#1167] Name Virginia Lee Email * Subject Data Center proposal Comment * I live in 40206."
+  - "Louisvillians want a true moratorium on all data centers while the work is done to fully understand the full impacts and what the right balance is for our community."
+  - "This should apply to 100% of all hyper-data centers including the one that was proposed by Steve Poe’s company."
+  - "Just stop all development of data centers until we are ready to properly permit them."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_LG&E_KU_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156332/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Proposed Data Center Regulations -- Feedback from LG&E/KU Date:"
+  - "I wanted to follow-up with you and provide additional feedback from LG&E/KU on the latest Louisville Metro proposed data center regulations."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Porter_08-03-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156333/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Porter Attorney-at-Law 3109 Westone Way Louisville, KY 40241-3115 stpinlou@aol.com 502-905-9991 Proposed Changes Data Center Text Amendment 4.2.60.C."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Williams_07-02-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156334/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Alignment with Datacenter Regulations and Recommendation on Square‑Foot Cap Adjustment Date:"
+  - "Members of the Planning Commission, Thank you for the thoughtful and comprehensive work reflected in the current draft of Louisville’s data center zoning recommendations."
+  - "I want to begin by stating clearly that I fully support the Commission’s goal of establishing responsible, community‑focused datacenter regulations."
+  - "Louisville should regulate datacenters."
+  - "Where I believe a small adjustment is needed is in the proposed 500,000 sq ft cap for data centers outside Rubbertown."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Written Comments Received at 08-05-26 Hearing.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156335/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Ray Eblers, FFEA Vice President Date: 7-4-26 Re: 25-LDC-0014 DATA CENTER COMMENTS Floyds Fork Environmental Association, FFEA, MISSION is to protect, conserve and preserve Floyds Fork Creek and its Watershed."
+  - "Comments on data centers with the following requests: * Jefferson County must institute a Moratorium to allow more study and make the best standards to protect the welfare of the public which must Limon BA include intensity of many issues."
+  - "How will government protect the public? * How will data centers dangerous chemicals (including diesel fuel) be monitored?"
+  - "The last 1/3 of Jefferson County is more karstified and PDS has the mapping which must be included. * How will the federally endangered Indiana Bat (Mvodis sodalis) be protected or the KY endangered Glade Cress and Running buffalo clover (Trifolium stoloniferum) which is protected under KY law. * Wh"
+  - "Even home generator noise is obnoxious and intrusive— whereas data centers might have more than one and must test periodically."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_08-07-26 (3PM) to 08-19-26 (4PM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156336/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Entry Name Zip Comment Code 4227 Swepson 40215 Data centers should not exist before universal healthcare, homelessness is eradicated, or there are true humans rights for all."
+  - "I hope you receive the karma you deserve. 4228 Mayes 40216 As a Metro District 1 resident only about 1 mile away from the data center being built on Camp Ground Road, I am totally opposed to all hyperscale data centers because of the negative environmental, health, and financial impacts on our commu"
+  - "I realize that these regulations, if approved by Metro Council, won't apply to the data center on Camp Ground Road, but I believe they should be as restrictive as possible to dissuade as many future data centers as possible from locating in Jefferson County."
+  - "(I would have submitted them here, but this form will not allow files to be attached.) I will also be submitting them to all Metro Council members for their consideration. 4229 Hohman 40205 Put ALL data centers in the rich, white east end of town 4230 Michael 40205 I am concerned about the impact of"
+  - "It does not define energy systems, and thus opens the door for more air pollution with only an encouraging of "green energy." The regulations need to be strengthened. 4231 Mills 40211 The cost/benefit of data centers does not stand in the consumer's favor."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Curtis_08-11-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156337/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Protecting Communities in the Age of Data Centers Date:"
+  - "Dear Office of Planning colleagues, The Metropolitan Housing Coalition (MHC) released the following policy paper entitled "Protecting Communities in the Age of Data Centers:"
+  - "This policy paper seeks to provide a clear overview of the effect of data center development on affordability and health in our community, implications of increased cost and usage, and community priorities."
+  - "Additionally, this paper provides focused policy recommendations to ensure communities are protected in this new age of data center development."
+  - "I wanted to make sure to share this policy paper with you directly to add to the ongoing public discourse on data center regulations in our community."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-25-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156338/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Dries_01-06-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156339/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Center comments on the LDC Draft Text Amendment (25-LDC-0014) Date:"
+  - "For your consideration, following are my comments on the LDC Draft Text Amendment for Data Centers (1-2-2026): 1."
+  - "It appears to me that the Draft Text Amendment is significantly overly restrictive and unnecessarily complicated related to Data Centers."
+  - "Data Centers appear to be a way of life for today's economy."
+  - "Most individuals and businesses use Data Center products."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Gaus_08-10-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156340/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Joseph, This is a good opportunity to pause and plan refinements to mitigate the many hazards connected with unregulated data centers."
+  - "As far as mitigations go, I have attached results from an AI risk assessment of the Campground Rd data center development."
+  - "Donna, to answer your earlier question, the governor’s executive order addresses some of the concerns with data centers at the state-level, but it does not appear to have any impact local zoning regulations and decisions."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Herron_08-11-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156341/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Tuesday, August 11, 2026 12:34:06 PM Attachments: clarksvilledatacenterordinance.zip CAUTION:"
+  - "Thanks to you and your team for the professionalism shown in how you all have managed the public input process for the data center regulations."
+  - "I just want to note that our neighbors across the bridge in Indiana have instituted a one year moratorium in Jeffersonville and Clarksville has banned data centers by right."
+  - "Clarksville officials have determined that data centers do not comply with the comprehensive plan and do not belong in their community."
+  - "I suggest we use our comp plan to show how the data centers do or do not align with the long term goals set forth in the plan."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Simon_08-11-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156343/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, rezon
+  - "Dear members of the Louisville Metro Planning Commission (Jim Mims, Sharon Bond, Steve Lannert, Bill Fischer, Te’andre Sistrunk, Travis Fletcher, Russ Lohan, and Beth Stuber), Attached is documentation for 36 additional people who have signed at least one of two petitions in opposition to the constr"
+  - "Thanks for your time in considering this public opposition to the expansion of data centers, -- Dr."
+  - "Reply to vote to Table ITEM O-135-26 — Temporary Moratorium on Rezoning, Conditional Use Permits and Plan Certain, Category 2B and 3 Development Plan Applications Relating to Telecommunication Hotels and Data Centers The undersigned, as one of the People, speaks only for the undersigned and does not"
+  - "The undersigned previously placed Louisville Metro Council members on notice that hyperscale data centers and telecommunication hotels are not ordinary commercial office uses."
+  - "IL NOTICE OF LIABILITY AND BOND DEMAND Effective immediately, Louisville Metro and all public and private actors involved in approval, construction, zoning, permitting, development-plan review, financing, operation, utility coordination, or maintenance of any data center, telecommunication hotel, hy"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Written Comments Received at 08-10-26 Hearing.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156344/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Feedback on Revised Draft Regulations on Data Centers Dear Commissioners, Louisville Climate Action Network (LCAN) consists of 68 entities —36 non-profit groups, 17 forprofit businesses, 1] faith-based organizations and four educational institutions—plus well over 3,000 individuals, all concerned ab"
+  - "Citizens all over the US are calling on local governments to protect them from the harms posed by hyper-scale data centers, especially huge demands for power and water—risking reliability and rate hikes for everyone—air pollution and noise."
+  - "Data center power demands and diesel-powered backup generators alone demand that LCAN respond to the latest revised draft ordinance changes now before you on behalf of our members."
+  - "As written, the much touted “ban” on data centers larger than 500,00 ft? is flawed, since the ordinance doesn’t preclude two, side-by-side 499,000 ft? data centers on adjacent tracts."
+  - "OPO —— Council Dee 126 www.kyrc.org ol KRC Summary of Revisions to Louisville Data Center Ordinance This document reviews the changes in the provisions of the proposed Louisville Metro Government (“LMG”) Draft Data Center Land Development Code Text Amendment (Case No. 25-LDC-0014, June 9, 2026, Draf"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 20260806_Executive-Order_2026-494_Related-to-Data-Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156345/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "As Kentucky looks toward the future, the rapid expansion of digital infrastructure has led to surging demand for data centers and energy resources across our country."
+  - "Data center companies looking to do business in Kentucky, at a minimum, must demonstrate they will be good neighbors by investing responsibly, operating transparently, and working in partnership with our people and communities to make certain these projects deliver lasting benefits for Kentucky’s wo"
+  - "Data center project developers are required to submit an energy plan to the Energy and Environment Cabinet showing how it will protect residential ratepayers, including assurances it can meet its energy needs now, into the near term, and long term without imposing additional costs on other utility r"
+  - "The Public Service Commission shall not allow a utility to increase rates paid by other ratepayers to recover costs caused by the development and operation of a data center."
+  - "The Energy and Environment Cabinet is directed to deny any permitting applications where a data center would negatively impact Kentucky’s air quality, water use, water quality, water supply, federal jurisdictional wetlands, or natural resources."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Data Center_ 09-03-26 DRAFT Amendments (Conceptually Approved by PC on 8-20-26).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156346/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_PCMinutes_07272026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156347/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Centers Applicant:"
+  - "Williams explained the difference between a mega data center and the kind of data center that stores data for devices."
+  - "Fowler asked that a moratorium be placed on data center construction."
+  - "Holsclaw believes that any clean up should be dealt with by the developer and applicant the data center."
+  - "(see recording for details) 2 PLANNING COMMISSION MINUTES July 27, 2026 PUBLIC HEARING CASE NO. 25-LDC-0014 00:31:40 Lee Fahey asked the Commission that the guidelines be better outlined before any further data centers be built."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_PCMinutes_08052026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156348/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "Koppert urged the Planning Commission enact a mortarium on the construction of data centers until more research about the impacts of data centers on communities can be performed."
+  - "(see recording for details) 00:22:13 Glenn Eisenbray shared with the Commission the water and energy consumption of differing sizes of data centers."
+  - "Eisenbray shared the impacts that data centers can have on the environment."
+  - "(see recording for details) 2 PLANNING COMMISSION MINUTES August 5, 2026 PUBLIC HEARING CASE NO. 25-LDC-0014 00:25:53 Kurt Wallace supports a ban on data center construction."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_PCMinutes_08062026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156349/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "(see recording for details) Public Testimony: 00:14:41 Lindsay Gray questioned why the amendments are accommodating data centers and their developers, when community members do not want hyper-scale data centers."
+  - "(see recording for details) 00:22:04 N Lobo shared concerns about the environmental impact that data centers will cause."
+  - "Lobo worried about the negative impacts of data centers and hoped for stricter regulations and water quality protections."
+  - "(see recording for details) 00:25:50 Bryan Reed shared concerns about the sample size that was taken for the community data center feedback."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_PCMinutes_08102026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156350/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "(Staff report is part of the case file maintained in the Office of Planning, 444 South 5th Street.) Public Testimony: 00:03:55 William Mayes stated that he lived within a mile of the Campground Road data center."
+  - "Mayes urged the Commission to vote to recommend that the Metro Council ban all future data center construction."
+  - "(see recording for details) 00:07:20 Sherri Thompson shared concerns about sound frequencies that are emitted by data centers."
+  - "(see recording for details) 00:14:15 Maxwell Corbett shared his thoughts of how data centers interact with his religious beliefs."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_PCMinutes_08202026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156351/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_Data Center_ 09-03-26 PC Recommendation.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156446/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: 25-LDC-0014_PCMinutes_09032026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156463/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Centers Applicant:"
+  - "Haberman also stated staff has included some additional additions that add some of the standards that were added to data centers over 50,000 square feet to the regulations for data centers under 50,000 square feet, as well as some additional modifications."
+  - "Assistant County Attorney Laura Ferguson pointed out the language regarding Generators in the Accessory Data Centers did not have the Monday through Friday restrictions on testing times."
+  - "Text Amendment to the Louisville Metro Land Development Code (LDC) in Regards to Data Centers On a motion by Commissioner Mims, seconded by Commissioner Steff, the following resolution, based on the staff report, the staff analysis, and the evidence and testimony heard today, was adopted: 2 PLANNING"
+  - "RESOLVED, that the Louisville Metro Planning Commission does hereby RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the following Text Amendment to the Louisville Metro Land Development Code (LDC) in regards to data centers with the recommended "
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-11-03, packet: O-251-26 V.1 091026 Amend Land Development Code Regarding Data Centers .pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156537/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "ORDINANCE NO. _______________, SERIES 2026 ..title AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25- LDC-0014). ..body SPONSORED BY:"
+  - "Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "This may include data services associated with off-site users directly affiliated with the on-site Principal Use, Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunications Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, agenda: Louisville Metro Planning and Zoning Committee agenda 2026-10-27, https://legistar2.granicus.com/louisville/meetings/2026/10/12804_A_Planning_and_Zoning_Committee_26-10-27_Meeting_Agenda.pdf
+  - Also mentions: conditional use
+  - "ID 26-1651 DATA CENTER DISCUSSION: - ZONING CLASSIFICATIONS AND THE CONDITIONAL USE PERMIT PROCESS - SEPARATION FROM SPECIAL USES - SIZE DISTINCTIONS, INCLUDING MAXIMUM SQUARE FOOTAGE AND SETBACKS Pending Legislation 2."
+  - "O-251-26 AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014)."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, minutes: Louisville Metro Planning and Zoning Committee minutes 2026-10-27, https://legistar2.granicus.com/louisville/meetings/2026/10/12804_M_Planning_and_Zoning_Committee_26-10-27_Action_Summary.pdf
+  - Also mentions: conditional use
+  - "ID 26-1651 DATA CENTER DISCUSSION: - ZONING CLASSIFICATIONS AND THE CONDITIONAL USE PERMIT PROCESS - SEPARATION FROM SPECIAL USES - SIZE DISTINCTIONS, INCLUDING MAXIMUM SQUARE FOOTAGE AND SETBACKS Attachments:"
+  - "Special Meeting 10-27 Data Centers_Metro Council Presentation Slide 5.pdf Special Meeting 10-27 M1 Only.pdf Special Meeting 10-27 M2M3260602.pdf The following spoke to this item: - Chair Owen - Julia Williams, Office of Planning - Brian Davis, Office of Planning - Council Member Piagentini - Committ"
+  - "O-251-26 AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014)."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: Special Meeting 10-27 Data Centers_Metro Council Presentation Slide 5.pdf, https://webapi.legistar.com/v1/louisville/Matters/66304/Attachments/158858/File
+  - Agenda item: DATA CENTER DISCUSSION: - ZONING CLASSIFICATIONS AND THE CONDITIONAL USE PERMIT PROCESS - SEPARATION FROM SPECIAL USES - SIZE DISTINCTIONS, INCLUDING MAXIMUM SQUARE FOOTAGE AND SETBACKS ID 26-1651
+  - "DATA CENTERS IN LOUISVILLE METRO The number of existing data centers is not tracked by any Louisville Metro Government agency Based on available information, at a minimum, there are over 20 data centers listed in Louisville"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-24-26 (9AM) to 07-31-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156317/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "(as in specific distance) 4170 Reed 40023 They do not belong in Kentucky in any way, shape or form. 4171 Mansilla 40299 NO Data Centers, NONE!! 4172 McCoy 40211 Simple- stay out of Louisville."
+  - "We don't need data centers complicating our lives. 4173 Walters 40213 No new data centers in Louisville!"
+  - "Anywhere a datacenter has been approved have seen their local utility resources rise in price and lower in quality."
+  - "The whole AI money machine is just several companies handing the same money back and forth and calling it operating profit. 4174 Leonard 40220 Data Centers don't support the health and well-being of our residents."
+  - "The future of Jefferson county depends on other employment opportunities. 4175 Williams 40218 Data centers are critical infrastructure that support hospitals, schools, emergency services, businesses, and the everyday digital tools residents rely on."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-24-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156319/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Data Centers_Survey_01-01-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156320/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Data Center Survey and Results Total Submittals: 3590 Question 1:"
+  - "How much do you know about Data Centers?"
+  - "Affirmative Percentage Responses I'm not sure / prefer not to answer 114 3.2% I know very little about Data Centers 60 1.7% I know some things about Data Centers 1878 52.3% I know a lot about Data Centers 1538 42.8% 3590 100.0% *Limited to single choice Question 5:"
+  - "What size of Data Centers are ok in Jefferson County?"
+  - "(Required) Affirmative Percentage of Total Responses Respondents Selecting Data Centers of any size are 2963 82.5% inappropriate Small (under 10,000 sq ft) 556 15.5% Medium (10,000 to 50,000 sq ft) 241 6.7% Large (50,001 to 100,000 sq ft) 94 2.6% “Hyperscale" (Over 100,000 sq ft) 73 2.0% I'm not sur"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Emailed Comments_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156321/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, rezon, variance
+  - "FFEA does not want to see vague, “Accessory Uses” regarding data centers – please remove this terminology and any reference due to oodles of wiggle-room to the possible detriment of the public."
+  - "Also some reports by neighbors of temperatures increasing up to 12 degrees close to data centers due to waste heat – so please do more research."
+  - "And, since people need and like to eat, farmland should never be used for data centers; instead, keep the land to INDUSTRIAL zoning areas."
+  - "Likewise, our park’s lands should never be used for data centers; instead, keep them to INDUSTRIAL zoning only."
+  - "Gas turbines create the need for Texas Gas Pipelines intrusion into farmland, parks, homes, etc. and will bring noise, emissions, etc."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Emailed Comments_Pre Draft_Through 6-8-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156322/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Louisville Metro Council Resolution Number 082, Series 2025 Zoning Code Updates re Hyper-Scale Data Centers Dear Mr."
+  - "But in the case of hyper-scale data centers, Big Tech can pad its power, water and land requirements at others’ expense."
+  - "If the data centers don’t end up needing that much power or water, LG&E and the Louisville Water Co. must pass the costs of their stranded assets to their other customers."
+  - "Energy efficiency, solar power and battery storage are the cheapest, cleanest and fastest sources of power, yet the incentives to use them at data centers is undermined because the costs of the new power plants they require will be externalized (see #3). 5."
+  - "New, gas-fired power plants are very expensive and operate for at least 40 years."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Kentucky Resources Council Recommended Ordinance_Version 1.4.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156323/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, site plan
+  - "Data centers and data center development have recently become a concern across the country, as the development of new “artificial intelligence” tools has multiplied the demand for computer processing power, and correlative energy, water, and other resource needs."
+  - "At its base, a data center is a warehouse filled with racks of computer servers, often running all hours of the day and night."
+  - "As the size of data centers have grown, so has the need for ancillary equipment and resources both on- and off-site."
+  - "On-site, a data center also 1 This ordinance was developed for consideration and use by communities in the Commonwealth by the Kentucky Resources Council, Inc."
+  - "In addition, they also contain significant on-site backup or "behind-the-meter” power generating equipment, such as diesel generators, gas turbines, and battery energy storage systems."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Metro Council Resolution 082 2025.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156324/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "RESOLUTION NO. 082 SERIES 2025 A RESOLUTION REQUESTING THE PLANNING COMMISSION REVIEW THE METRO LAND DEVELOPMENT CODE REGULATIONS WITH REGARD TO DATA CENTERS."
+  - "The Planning Commission should undertake a review of and consider amendments to the current LDC to address data centers, including a consideration of best practices and regulatory framework from comparable jurisdictions, and to consider the various impacts of data centers, to better define telecommu"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_ATT_08-04-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156327/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data center regulations proposal - latest telecom industry feedback Date:"
+  - "Circling back to you with additional telecommunications industry feedback on the latest Louisville Metro proposed data center regulations."
+  - "To address our continued concerns, we propose the following modifications to the Telecommunication Data Center definition."
+  - "The new language is in red. “Data Center, Telecommunication – A newly constructed Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - "Existing telecommunications data centers and any possible expansions are grandfathered as nonconforming to the permitting requirements in this section.” The industry agrees that the two changes above would resolve our concerns about potential impediments to our Louisville Metro customer service."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156328/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, plat
+  - "I understand that the water that is often discharged from data centers are highly polluted so if we can limit that, that would be great. 4190 Blackburn 40207 This is a proposal that has proven to cause environmental harm and human harm."
+  - "I vote for a ban on data centers in all counties Kentucky until we have done more research. 4191 Kahn 40213 I am particularly concerned that data centers would be placed in West End neighborhoods, extending the historical burden placed disproportionately on lower income residents of our city."
+  - "Data centers are too new to have any data on long-term health or environmental effects on the people and areas located near them, or even to know how far the impacts would extend."
+  - "Placing centers here without understanding the full consequences puts people of our city at risk and the benefits do not appear to outweigh the risks. 4192 Morris 40213 No data centers in Jefferson county please."
+  - "There may be a short-term benefit to allowing them to build in our neighborhoods, but the damage will far outweigh any meager benefit. 4193 Swilley 40205 I don’t want any data centers at all anywhere around Louisville."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_KRC_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156330/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, rezon
+  - "Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org August 7, 2026 Joseph Haberman, AICP Planning & Design Manager Via email Re: 25 LDC 0014 Revised Text Amendment to Land Development Code For Data Centers Dear Mr."
+  - "(KRC) regarding the proposed revised Louisville Metro Government Draft Data Center Land Development Code Text Amendment (Case No. 25-LDC- 0014, July 20, 2026, Draft)."
+  - "Sincerely, Ashley Wilmes Executive Director and Attorney Kentucky Resources Council Tom FitzGerald Of Counsel Kentucky Resources Council Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org KRC Recommended Revisions to Louisville Metro Revised Draft Data Center Tex"
+  - "Introduction These recommendations are intended to ensure public notice and input, as well as a comprehensive and meaningful framework for regulating the location, operation, and decommissioning of all data centers."
+  - "The recommendations continue to suggest inclusion of many of the provisions in the Kentucky Resources Council (KRC) Model Data Center Zoning Ordinance, with respect to strengthening the review process, the quality of information submitted in applications, and the standards of performance for data ce"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Lee_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156331/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Contact the Office of Planning [#1167] Name Virginia Lee Email * Subject Data Center proposal Comment * I live in 40206."
+  - "Louisvillians want a true moratorium on all data centers while the work is done to fully understand the full impacts and what the right balance is for our community."
+  - "This should apply to 100% of all hyper-data centers including the one that was proposed by Steve Poe’s company."
+  - "Just stop all development of data centers until we are ready to properly permit them."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_LG&E_KU_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156332/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Proposed Data Center Regulations -- Feedback from LG&E/KU Date:"
+  - "I wanted to follow-up with you and provide additional feedback from LG&E/KU on the latest Louisville Metro proposed data center regulations."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Porter_08-03-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156333/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Porter Attorney-at-Law 3109 Westone Way Louisville, KY 40241-3115 stpinlou@aol.com 502-905-9991 Proposed Changes Data Center Text Amendment 4.2.60.C."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Williams_07-02-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156334/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Alignment with Datacenter Regulations and Recommendation on Square‑Foot Cap Adjustment Date:"
+  - "Members of the Planning Commission, Thank you for the thoughtful and comprehensive work reflected in the current draft of Louisville’s data center zoning recommendations."
+  - "I want to begin by stating clearly that I fully support the Commission’s goal of establishing responsible, community‑focused datacenter regulations."
+  - "Louisville should regulate datacenters."
+  - "Where I believe a small adjustment is needed is in the proposed 500,000 sq ft cap for data centers outside Rubbertown."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Written Comments Received at 08-05-26 Hearing.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156335/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Ray Eblers, FFEA Vice President Date: 7-4-26 Re: 25-LDC-0014 DATA CENTER COMMENTS Floyds Fork Environmental Association, FFEA, MISSION is to protect, conserve and preserve Floyds Fork Creek and its Watershed."
+  - "Comments on data centers with the following requests: * Jefferson County must institute a Moratorium to allow more study and make the best standards to protect the welfare of the public which must Limon BA include intensity of many issues."
+  - "How will government protect the public? * How will data centers dangerous chemicals (including diesel fuel) be monitored?"
+  - "The last 1/3 of Jefferson County is more karstified and PDS has the mapping which must be included. * How will the federally endangered Indiana Bat (Mvodis sodalis) be protected or the KY endangered Glade Cress and Running buffalo clover (Trifolium stoloniferum) which is protected under KY law. * Wh"
+  - "Even home generator noise is obnoxious and intrusive— whereas data centers might have more than one and must test periodically."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_08-07-26 (3PM) to 08-19-26 (4PM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156336/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Entry Name Zip Comment Code 4227 Swepson 40215 Data centers should not exist before universal healthcare, homelessness is eradicated, or there are true humans rights for all."
+  - "I hope you receive the karma you deserve. 4228 Mayes 40216 As a Metro District 1 resident only about 1 mile away from the data center being built on Camp Ground Road, I am totally opposed to all hyperscale data centers because of the negative environmental, health, and financial impacts on our commu"
+  - "I realize that these regulations, if approved by Metro Council, won't apply to the data center on Camp Ground Road, but I believe they should be as restrictive as possible to dissuade as many future data centers as possible from locating in Jefferson County."
+  - "(I would have submitted them here, but this form will not allow files to be attached.) I will also be submitting them to all Metro Council members for their consideration. 4229 Hohman 40205 Put ALL data centers in the rich, white east end of town 4230 Michael 40205 I am concerned about the impact of"
+  - "It does not define energy systems, and thus opens the door for more air pollution with only an encouraging of "green energy." The regulations need to be strengthened. 4231 Mills 40211 The cost/benefit of data centers does not stand in the consumer's favor."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Curtis_08-11-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156337/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Protecting Communities in the Age of Data Centers Date:"
+  - "Dear Office of Planning colleagues, The Metropolitan Housing Coalition (MHC) released the following policy paper entitled "Protecting Communities in the Age of Data Centers:"
+  - "This policy paper seeks to provide a clear overview of the effect of data center development on affordability and health in our community, implications of increased cost and usage, and community priorities."
+  - "Additionally, this paper provides focused policy recommendations to ensure communities are protected in this new age of data center development."
+  - "I wanted to make sure to share this policy paper with you directly to add to the ongoing public discourse on data center regulations in our community."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-25-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156338/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Dries_01-06-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156339/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Center comments on the LDC Draft Text Amendment (25-LDC-0014) Date:"
+  - "For your consideration, following are my comments on the LDC Draft Text Amendment for Data Centers (1-2-2026): 1."
+  - "It appears to me that the Draft Text Amendment is significantly overly restrictive and unnecessarily complicated related to Data Centers."
+  - "Data Centers appear to be a way of life for today's economy."
+  - "Most individuals and businesses use Data Center products."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Gaus_08-10-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156340/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Joseph, This is a good opportunity to pause and plan refinements to mitigate the many hazards connected with unregulated data centers."
+  - "As far as mitigations go, I have attached results from an AI risk assessment of the Campground Rd data center development."
+  - "Donna, to answer your earlier question, the governor’s executive order addresses some of the concerns with data centers at the state-level, but it does not appear to have any impact local zoning regulations and decisions."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Herron_08-11-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156341/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Tuesday, August 11, 2026 12:34:06 PM Attachments: clarksvilledatacenterordinance.zip CAUTION:"
+  - "Thanks to you and your team for the professionalism shown in how you all have managed the public input process for the data center regulations."
+  - "I just want to note that our neighbors across the bridge in Indiana have instituted a one year moratorium in Jeffersonville and Clarksville has banned data centers by right."
+  - "Clarksville officials have determined that data centers do not comply with the comprehensive plan and do not belong in their community."
+  - "I suggest we use our comp plan to show how the data centers do or do not align with the long term goals set forth in the plan."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Simon_08-11-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156343/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, rezon
+  - "Dear members of the Louisville Metro Planning Commission (Jim Mims, Sharon Bond, Steve Lannert, Bill Fischer, Te’andre Sistrunk, Travis Fletcher, Russ Lohan, and Beth Stuber), Attached is documentation for 36 additional people who have signed at least one of two petitions in opposition to the constr"
+  - "Thanks for your time in considering this public opposition to the expansion of data centers, -- Dr."
+  - "Reply to vote to Table ITEM O-135-26 — Temporary Moratorium on Rezoning, Conditional Use Permits and Plan Certain, Category 2B and 3 Development Plan Applications Relating to Telecommunication Hotels and Data Centers The undersigned, as one of the People, speaks only for the undersigned and does not"
+  - "The undersigned previously placed Louisville Metro Council members on notice that hyperscale data centers and telecommunication hotels are not ordinary commercial office uses."
+  - "IL NOTICE OF LIABILITY AND BOND DEMAND Effective immediately, Louisville Metro and all public and private actors involved in approval, construction, zoning, permitting, development-plan review, financing, operation, utility coordination, or maintenance of any data center, telecommunication hotel, hy"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Written Comments Received at 08-10-26 Hearing.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156344/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Feedback on Revised Draft Regulations on Data Centers Dear Commissioners, Louisville Climate Action Network (LCAN) consists of 68 entities —36 non-profit groups, 17 forprofit businesses, 1] faith-based organizations and four educational institutions—plus well over 3,000 individuals, all concerned ab"
+  - "Citizens all over the US are calling on local governments to protect them from the harms posed by hyper-scale data centers, especially huge demands for power and water—risking reliability and rate hikes for everyone—air pollution and noise."
+  - "Data center power demands and diesel-powered backup generators alone demand that LCAN respond to the latest revised draft ordinance changes now before you on behalf of our members."
+  - "As written, the much touted “ban” on data centers larger than 500,00 ft? is flawed, since the ordinance doesn’t preclude two, side-by-side 499,000 ft? data centers on adjacent tracts."
+  - "OPO —— Council Dee 126 www.kyrc.org ol KRC Summary of Revisions to Louisville Data Center Ordinance This document reviews the changes in the provisions of the proposed Louisville Metro Government (“LMG”) Draft Data Center Land Development Code Text Amendment (Case No. 25-LDC-0014, June 9, 2026, Draf"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 20260806_Executive-Order_2026-494_Related-to-Data-Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156345/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "As Kentucky looks toward the future, the rapid expansion of digital infrastructure has led to surging demand for data centers and energy resources across our country."
+  - "Data center companies looking to do business in Kentucky, at a minimum, must demonstrate they will be good neighbors by investing responsibly, operating transparently, and working in partnership with our people and communities to make certain these projects deliver lasting benefits for Kentucky’s wo"
+  - "Data center project developers are required to submit an energy plan to the Energy and Environment Cabinet showing how it will protect residential ratepayers, including assurances it can meet its energy needs now, into the near term, and long term without imposing additional costs on other utility r"
+  - "The Public Service Commission shall not allow a utility to increase rates paid by other ratepayers to recover costs caused by the development and operation of a data center."
+  - "The Energy and Environment Cabinet is directed to deny any permitting applications where a data center would negatively impact Kentucky’s air quality, water use, water quality, water supply, federal jurisdictional wetlands, or natural resources."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Data Center_ 09-03-26 DRAFT Amendments (Conceptually Approved by PC on 8-20-26).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156346/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_PCMinutes_07272026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156347/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Centers Applicant:"
+  - "Williams explained the difference between a mega data center and the kind of data center that stores data for devices."
+  - "Fowler asked that a moratorium be placed on data center construction."
+  - "Holsclaw believes that any clean up should be dealt with by the developer and applicant the data center."
+  - "(see recording for details) 2 PLANNING COMMISSION MINUTES July 27, 2026 PUBLIC HEARING CASE NO. 25-LDC-0014 00:31:40 Lee Fahey asked the Commission that the guidelines be better outlined before any further data centers be built."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_PCMinutes_08052026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156348/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "Koppert urged the Planning Commission enact a mortarium on the construction of data centers until more research about the impacts of data centers on communities can be performed."
+  - "(see recording for details) 00:22:13 Glenn Eisenbray shared with the Commission the water and energy consumption of differing sizes of data centers."
+  - "Eisenbray shared the impacts that data centers can have on the environment."
+  - "(see recording for details) 2 PLANNING COMMISSION MINUTES August 5, 2026 PUBLIC HEARING CASE NO. 25-LDC-0014 00:25:53 Kurt Wallace supports a ban on data center construction."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_PCMinutes_08062026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156349/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "(see recording for details) Public Testimony: 00:14:41 Lindsay Gray questioned why the amendments are accommodating data centers and their developers, when community members do not want hyper-scale data centers."
+  - "(see recording for details) 00:22:04 N Lobo shared concerns about the environmental impact that data centers will cause."
+  - "Lobo worried about the negative impacts of data centers and hoped for stricter regulations and water quality protections."
+  - "(see recording for details) 00:25:50 Bryan Reed shared concerns about the sample size that was taken for the community data center feedback."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_PCMinutes_08102026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156350/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "(Staff report is part of the case file maintained in the Office of Planning, 444 South 5th Street.) Public Testimony: 00:03:55 William Mayes stated that he lived within a mile of the Campground Road data center."
+  - "Mayes urged the Commission to vote to recommend that the Metro Council ban all future data center construction."
+  - "(see recording for details) 00:07:20 Sherri Thompson shared concerns about sound frequencies that are emitted by data centers."
+  - "(see recording for details) 00:14:15 Maxwell Corbett shared his thoughts of how data centers interact with his religious beliefs."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_PCMinutes_08202026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156351/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_Data Center_ 09-03-26 PC Recommendation.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156446/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: 25-LDC-0014_PCMinutes_09032026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156463/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Centers Applicant:"
+  - "Haberman also stated staff has included some additional additions that add some of the standards that were added to data centers over 50,000 square feet to the regulations for data centers under 50,000 square feet, as well as some additional modifications."
+  - "Assistant County Attorney Laura Ferguson pointed out the language regarding Generators in the Accessory Data Centers did not have the Monday through Friday restrictions on testing times."
+  - "Text Amendment to the Louisville Metro Land Development Code (LDC) in Regards to Data Centers On a motion by Commissioner Mims, seconded by Commissioner Steff, the following resolution, based on the staff report, the staff analysis, and the evidence and testimony heard today, was adopted: 2 PLANNING"
+  - "RESOLVED, that the Louisville Metro Planning Commission does hereby RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the following Text Amendment to the Louisville Metro Land Development Code (LDC) in regards to data centers with the recommended "
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-27, packet: O-251-26 V.1 091026 Amend Land Development Code Regarding Data Centers .pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156537/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "ORDINANCE NO. _______________, SERIES 2026 ..title AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25- LDC-0014). ..body SPONSORED BY:"
+  - "Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "This may include data services associated with off-site users directly affiliated with the on-site Principal Use, Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunications Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, agenda: Louisville Metro Planning and Zoning Committee agenda 2026-10-20, https://legistar2.granicus.com/louisville/meetings/2026/10/11235_A_Planning_and_Zoning_Committee_26-10-20_Meeting_Agenda.pdf
+  - "ID 26-1650 DATA CENTER DISCUSSION:"
+  - "O-251-26 AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014)."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, minutes: Louisville Metro Planning and Zoning Committee minutes 2026-10-20, https://legistar2.granicus.com/louisville/meetings/2026/10/11235_M_Planning_and_Zoning_Committee_26-10-20_Action_Summary.pdf
+  - "ID 26-1650 DATA CENTER DISCUSSION:"
+  - "O-251-26 AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014)."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-24-26 (9AM) to 07-31-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156317/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "(as in specific distance) 4170 Reed 40023 They do not belong in Kentucky in any way, shape or form. 4171 Mansilla 40299 NO Data Centers, NONE!! 4172 McCoy 40211 Simple- stay out of Louisville."
+  - "We don't need data centers complicating our lives. 4173 Walters 40213 No new data centers in Louisville!"
+  - "Anywhere a datacenter has been approved have seen their local utility resources rise in price and lower in quality."
+  - "The whole AI money machine is just several companies handing the same money back and forth and calling it operating profit. 4174 Leonard 40220 Data Centers don't support the health and well-being of our residents."
+  - "The future of Jefferson county depends on other employment opportunities. 4175 Williams 40218 Data centers are critical infrastructure that support hospitals, schools, emergency services, businesses, and the everyday digital tools residents rely on."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-24-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156319/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Data Centers_Survey_01-01-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156320/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Data Center Survey and Results Total Submittals: 3590 Question 1:"
+  - "How much do you know about Data Centers?"
+  - "Affirmative Percentage Responses I'm not sure / prefer not to answer 114 3.2% I know very little about Data Centers 60 1.7% I know some things about Data Centers 1878 52.3% I know a lot about Data Centers 1538 42.8% 3590 100.0% *Limited to single choice Question 5:"
+  - "What size of Data Centers are ok in Jefferson County?"
+  - "(Required) Affirmative Percentage of Total Responses Respondents Selecting Data Centers of any size are 2963 82.5% inappropriate Small (under 10,000 sq ft) 556 15.5% Medium (10,000 to 50,000 sq ft) 241 6.7% Large (50,001 to 100,000 sq ft) 94 2.6% “Hyperscale" (Over 100,000 sq ft) 73 2.0% I'm not sur"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Emailed Comments_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156321/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, rezon, variance
+  - "FFEA does not want to see vague, “Accessory Uses” regarding data centers – please remove this terminology and any reference due to oodles of wiggle-room to the possible detriment of the public."
+  - "Also some reports by neighbors of temperatures increasing up to 12 degrees close to data centers due to waste heat – so please do more research."
+  - "And, since people need and like to eat, farmland should never be used for data centers; instead, keep the land to INDUSTRIAL zoning areas."
+  - "Likewise, our park’s lands should never be used for data centers; instead, keep them to INDUSTRIAL zoning only."
+  - "Gas turbines create the need for Texas Gas Pipelines intrusion into farmland, parks, homes, etc. and will bring noise, emissions, etc."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Emailed Comments_Pre Draft_Through 6-8-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156322/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Louisville Metro Council Resolution Number 082, Series 2025 Zoning Code Updates re Hyper-Scale Data Centers Dear Mr."
+  - "But in the case of hyper-scale data centers, Big Tech can pad its power, water and land requirements at others’ expense."
+  - "If the data centers don’t end up needing that much power or water, LG&E and the Louisville Water Co. must pass the costs of their stranded assets to their other customers."
+  - "Energy efficiency, solar power and battery storage are the cheapest, cleanest and fastest sources of power, yet the incentives to use them at data centers is undermined because the costs of the new power plants they require will be externalized (see #3). 5."
+  - "New, gas-fired power plants are very expensive and operate for at least 40 years."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Kentucky Resources Council Recommended Ordinance_Version 1.4.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156323/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, site plan
+  - "Data centers and data center development have recently become a concern across the country, as the development of new “artificial intelligence” tools has multiplied the demand for computer processing power, and correlative energy, water, and other resource needs."
+  - "At its base, a data center is a warehouse filled with racks of computer servers, often running all hours of the day and night."
+  - "As the size of data centers have grown, so has the need for ancillary equipment and resources both on- and off-site."
+  - "On-site, a data center also 1 This ordinance was developed for consideration and use by communities in the Commonwealth by the Kentucky Resources Council, Inc."
+  - "In addition, they also contain significant on-site backup or "behind-the-meter” power generating equipment, such as diesel generators, gas turbines, and battery energy storage systems."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Metro Council Resolution 082 2025.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156324/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "RESOLUTION NO. 082 SERIES 2025 A RESOLUTION REQUESTING THE PLANNING COMMISSION REVIEW THE METRO LAND DEVELOPMENT CODE REGULATIONS WITH REGARD TO DATA CENTERS."
+  - "The Planning Commission should undertake a review of and consider amendments to the current LDC to address data centers, including a consideration of best practices and regulatory framework from comparable jurisdictions, and to consider the various impacts of data centers, to better define telecommu"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_ATT_08-04-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156327/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data center regulations proposal - latest telecom industry feedback Date:"
+  - "Circling back to you with additional telecommunications industry feedback on the latest Louisville Metro proposed data center regulations."
+  - "To address our continued concerns, we propose the following modifications to the Telecommunication Data Center definition."
+  - "The new language is in red. “Data Center, Telecommunication – A newly constructed Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - "Existing telecommunications data centers and any possible expansions are grandfathered as nonconforming to the permitting requirements in this section.” The industry agrees that the two changes above would resolve our concerns about potential impediments to our Louisville Metro customer service."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156328/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, plat
+  - "I understand that the water that is often discharged from data centers are highly polluted so if we can limit that, that would be great. 4190 Blackburn 40207 This is a proposal that has proven to cause environmental harm and human harm."
+  - "I vote for a ban on data centers in all counties Kentucky until we have done more research. 4191 Kahn 40213 I am particularly concerned that data centers would be placed in West End neighborhoods, extending the historical burden placed disproportionately on lower income residents of our city."
+  - "Data centers are too new to have any data on long-term health or environmental effects on the people and areas located near them, or even to know how far the impacts would extend."
+  - "Placing centers here without understanding the full consequences puts people of our city at risk and the benefits do not appear to outweigh the risks. 4192 Morris 40213 No data centers in Jefferson county please."
+  - "There may be a short-term benefit to allowing them to build in our neighborhoods, but the damage will far outweigh any meager benefit. 4193 Swilley 40205 I don’t want any data centers at all anywhere around Louisville."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_KRC_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156330/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, rezon
+  - "Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org August 7, 2026 Joseph Haberman, AICP Planning & Design Manager Via email Re: 25 LDC 0014 Revised Text Amendment to Land Development Code For Data Centers Dear Mr."
+  - "(KRC) regarding the proposed revised Louisville Metro Government Draft Data Center Land Development Code Text Amendment (Case No. 25-LDC- 0014, July 20, 2026, Draft)."
+  - "Sincerely, Ashley Wilmes Executive Director and Attorney Kentucky Resources Council Tom FitzGerald Of Counsel Kentucky Resources Council Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org KRC Recommended Revisions to Louisville Metro Revised Draft Data Center Tex"
+  - "Introduction These recommendations are intended to ensure public notice and input, as well as a comprehensive and meaningful framework for regulating the location, operation, and decommissioning of all data centers."
+  - "The recommendations continue to suggest inclusion of many of the provisions in the Kentucky Resources Council (KRC) Model Data Center Zoning Ordinance, with respect to strengthening the review process, the quality of information submitted in applications, and the standards of performance for data ce"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Lee_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156331/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Contact the Office of Planning [#1167] Name Virginia Lee Email * Subject Data Center proposal Comment * I live in 40206."
+  - "Louisvillians want a true moratorium on all data centers while the work is done to fully understand the full impacts and what the right balance is for our community."
+  - "This should apply to 100% of all hyper-data centers including the one that was proposed by Steve Poe’s company."
+  - "Just stop all development of data centers until we are ready to properly permit them."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_LG&E_KU_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156332/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Proposed Data Center Regulations -- Feedback from LG&E/KU Date:"
+  - "I wanted to follow-up with you and provide additional feedback from LG&E/KU on the latest Louisville Metro proposed data center regulations."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Porter_08-03-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156333/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Porter Attorney-at-Law 3109 Westone Way Louisville, KY 40241-3115 stpinlou@aol.com 502-905-9991 Proposed Changes Data Center Text Amendment 4.2.60.C."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Williams_07-02-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156334/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Alignment with Datacenter Regulations and Recommendation on Square‑Foot Cap Adjustment Date:"
+  - "Members of the Planning Commission, Thank you for the thoughtful and comprehensive work reflected in the current draft of Louisville’s data center zoning recommendations."
+  - "I want to begin by stating clearly that I fully support the Commission’s goal of establishing responsible, community‑focused datacenter regulations."
+  - "Louisville should regulate datacenters."
+  - "Where I believe a small adjustment is needed is in the proposed 500,000 sq ft cap for data centers outside Rubbertown."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Written Comments Received at 08-05-26 Hearing.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156335/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Ray Eblers, FFEA Vice President Date: 7-4-26 Re: 25-LDC-0014 DATA CENTER COMMENTS Floyds Fork Environmental Association, FFEA, MISSION is to protect, conserve and preserve Floyds Fork Creek and its Watershed."
+  - "Comments on data centers with the following requests: * Jefferson County must institute a Moratorium to allow more study and make the best standards to protect the welfare of the public which must Limon BA include intensity of many issues."
+  - "How will government protect the public? * How will data centers dangerous chemicals (including diesel fuel) be monitored?"
+  - "The last 1/3 of Jefferson County is more karstified and PDS has the mapping which must be included. * How will the federally endangered Indiana Bat (Mvodis sodalis) be protected or the KY endangered Glade Cress and Running buffalo clover (Trifolium stoloniferum) which is protected under KY law. * Wh"
+  - "Even home generator noise is obnoxious and intrusive— whereas data centers might have more than one and must test periodically."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_08-07-26 (3PM) to 08-19-26 (4PM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156336/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Entry Name Zip Comment Code 4227 Swepson 40215 Data centers should not exist before universal healthcare, homelessness is eradicated, or there are true humans rights for all."
+  - "I hope you receive the karma you deserve. 4228 Mayes 40216 As a Metro District 1 resident only about 1 mile away from the data center being built on Camp Ground Road, I am totally opposed to all hyperscale data centers because of the negative environmental, health, and financial impacts on our commu"
+  - "I realize that these regulations, if approved by Metro Council, won't apply to the data center on Camp Ground Road, but I believe they should be as restrictive as possible to dissuade as many future data centers as possible from locating in Jefferson County."
+  - "(I would have submitted them here, but this form will not allow files to be attached.) I will also be submitting them to all Metro Council members for their consideration. 4229 Hohman 40205 Put ALL data centers in the rich, white east end of town 4230 Michael 40205 I am concerned about the impact of"
+  - "It does not define energy systems, and thus opens the door for more air pollution with only an encouraging of "green energy." The regulations need to be strengthened. 4231 Mills 40211 The cost/benefit of data centers does not stand in the consumer's favor."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Curtis_08-11-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156337/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Protecting Communities in the Age of Data Centers Date:"
+  - "Dear Office of Planning colleagues, The Metropolitan Housing Coalition (MHC) released the following policy paper entitled "Protecting Communities in the Age of Data Centers:"
+  - "This policy paper seeks to provide a clear overview of the effect of data center development on affordability and health in our community, implications of increased cost and usage, and community priorities."
+  - "Additionally, this paper provides focused policy recommendations to ensure communities are protected in this new age of data center development."
+  - "I wanted to make sure to share this policy paper with you directly to add to the ongoing public discourse on data center regulations in our community."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-25-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156338/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Dries_01-06-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156339/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Center comments on the LDC Draft Text Amendment (25-LDC-0014) Date:"
+  - "For your consideration, following are my comments on the LDC Draft Text Amendment for Data Centers (1-2-2026): 1."
+  - "It appears to me that the Draft Text Amendment is significantly overly restrictive and unnecessarily complicated related to Data Centers."
+  - "Data Centers appear to be a way of life for today's economy."
+  - "Most individuals and businesses use Data Center products."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Gaus_08-10-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156340/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Joseph, This is a good opportunity to pause and plan refinements to mitigate the many hazards connected with unregulated data centers."
+  - "As far as mitigations go, I have attached results from an AI risk assessment of the Campground Rd data center development."
+  - "Donna, to answer your earlier question, the governor’s executive order addresses some of the concerns with data centers at the state-level, but it does not appear to have any impact local zoning regulations and decisions."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Herron_08-11-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156341/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Tuesday, August 11, 2026 12:34:06 PM Attachments: clarksvilledatacenterordinance.zip CAUTION:"
+  - "Thanks to you and your team for the professionalism shown in how you all have managed the public input process for the data center regulations."
+  - "I just want to note that our neighbors across the bridge in Indiana have instituted a one year moratorium in Jeffersonville and Clarksville has banned data centers by right."
+  - "Clarksville officials have determined that data centers do not comply with the comprehensive plan and do not belong in their community."
+  - "I suggest we use our comp plan to show how the data centers do or do not align with the long term goals set forth in the plan."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Simon_08-11-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156343/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, rezon
+  - "Dear members of the Louisville Metro Planning Commission (Jim Mims, Sharon Bond, Steve Lannert, Bill Fischer, Te’andre Sistrunk, Travis Fletcher, Russ Lohan, and Beth Stuber), Attached is documentation for 36 additional people who have signed at least one of two petitions in opposition to the constr"
+  - "Thanks for your time in considering this public opposition to the expansion of data centers, -- Dr."
+  - "Reply to vote to Table ITEM O-135-26 — Temporary Moratorium on Rezoning, Conditional Use Permits and Plan Certain, Category 2B and 3 Development Plan Applications Relating to Telecommunication Hotels and Data Centers The undersigned, as one of the People, speaks only for the undersigned and does not"
+  - "The undersigned previously placed Louisville Metro Council members on notice that hyperscale data centers and telecommunication hotels are not ordinary commercial office uses."
+  - "IL NOTICE OF LIABILITY AND BOND DEMAND Effective immediately, Louisville Metro and all public and private actors involved in approval, construction, zoning, permitting, development-plan review, financing, operation, utility coordination, or maintenance of any data center, telecommunication hotel, hy"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Written Comments Received at 08-10-26 Hearing.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156344/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Feedback on Revised Draft Regulations on Data Centers Dear Commissioners, Louisville Climate Action Network (LCAN) consists of 68 entities —36 non-profit groups, 17 forprofit businesses, 1] faith-based organizations and four educational institutions—plus well over 3,000 individuals, all concerned ab"
+  - "Citizens all over the US are calling on local governments to protect them from the harms posed by hyper-scale data centers, especially huge demands for power and water—risking reliability and rate hikes for everyone—air pollution and noise."
+  - "Data center power demands and diesel-powered backup generators alone demand that LCAN respond to the latest revised draft ordinance changes now before you on behalf of our members."
+  - "As written, the much touted “ban” on data centers larger than 500,00 ft? is flawed, since the ordinance doesn’t preclude two, side-by-side 499,000 ft? data centers on adjacent tracts."
+  - "OPO —— Council Dee 126 www.kyrc.org ol KRC Summary of Revisions to Louisville Data Center Ordinance This document reviews the changes in the provisions of the proposed Louisville Metro Government (“LMG”) Draft Data Center Land Development Code Text Amendment (Case No. 25-LDC-0014, June 9, 2026, Draf"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 20260806_Executive-Order_2026-494_Related-to-Data-Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156345/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "As Kentucky looks toward the future, the rapid expansion of digital infrastructure has led to surging demand for data centers and energy resources across our country."
+  - "Data center companies looking to do business in Kentucky, at a minimum, must demonstrate they will be good neighbors by investing responsibly, operating transparently, and working in partnership with our people and communities to make certain these projects deliver lasting benefits for Kentucky’s wo"
+  - "Data center project developers are required to submit an energy plan to the Energy and Environment Cabinet showing how it will protect residential ratepayers, including assurances it can meet its energy needs now, into the near term, and long term without imposing additional costs on other utility r"
+  - "The Public Service Commission shall not allow a utility to increase rates paid by other ratepayers to recover costs caused by the development and operation of a data center."
+  - "The Energy and Environment Cabinet is directed to deny any permitting applications where a data center would negatively impact Kentucky’s air quality, water use, water quality, water supply, federal jurisdictional wetlands, or natural resources."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Data Center_ 09-03-26 DRAFT Amendments (Conceptually Approved by PC on 8-20-26).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156346/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_PCMinutes_07272026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156347/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Centers Applicant:"
+  - "Williams explained the difference between a mega data center and the kind of data center that stores data for devices."
+  - "Fowler asked that a moratorium be placed on data center construction."
+  - "Holsclaw believes that any clean up should be dealt with by the developer and applicant the data center."
+  - "(see recording for details) 2 PLANNING COMMISSION MINUTES July 27, 2026 PUBLIC HEARING CASE NO. 25-LDC-0014 00:31:40 Lee Fahey asked the Commission that the guidelines be better outlined before any further data centers be built."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_PCMinutes_08052026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156348/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "Koppert urged the Planning Commission enact a mortarium on the construction of data centers until more research about the impacts of data centers on communities can be performed."
+  - "(see recording for details) 00:22:13 Glenn Eisenbray shared with the Commission the water and energy consumption of differing sizes of data centers."
+  - "Eisenbray shared the impacts that data centers can have on the environment."
+  - "(see recording for details) 2 PLANNING COMMISSION MINUTES August 5, 2026 PUBLIC HEARING CASE NO. 25-LDC-0014 00:25:53 Kurt Wallace supports a ban on data center construction."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_PCMinutes_08062026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156349/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "(see recording for details) Public Testimony: 00:14:41 Lindsay Gray questioned why the amendments are accommodating data centers and their developers, when community members do not want hyper-scale data centers."
+  - "(see recording for details) 00:22:04 N Lobo shared concerns about the environmental impact that data centers will cause."
+  - "Lobo worried about the negative impacts of data centers and hoped for stricter regulations and water quality protections."
+  - "(see recording for details) 00:25:50 Bryan Reed shared concerns about the sample size that was taken for the community data center feedback."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_PCMinutes_08102026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156350/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "(Staff report is part of the case file maintained in the Office of Planning, 444 South 5th Street.) Public Testimony: 00:03:55 William Mayes stated that he lived within a mile of the Campground Road data center."
+  - "Mayes urged the Commission to vote to recommend that the Metro Council ban all future data center construction."
+  - "(see recording for details) 00:07:20 Sherri Thompson shared concerns about sound frequencies that are emitted by data centers."
+  - "(see recording for details) 00:14:15 Maxwell Corbett shared his thoughts of how data centers interact with his religious beliefs."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_PCMinutes_08202026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156351/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_Data Center_ 09-03-26 PC Recommendation.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156446/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: 25-LDC-0014_PCMinutes_09032026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156463/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Centers Applicant:"
+  - "Haberman also stated staff has included some additional additions that add some of the standards that were added to data centers over 50,000 square feet to the regulations for data centers under 50,000 square feet, as well as some additional modifications."
+  - "Assistant County Attorney Laura Ferguson pointed out the language regarding Generators in the Accessory Data Centers did not have the Monday through Friday restrictions on testing times."
+  - "Text Amendment to the Louisville Metro Land Development Code (LDC) in Regards to Data Centers On a motion by Commissioner Mims, seconded by Commissioner Steff, the following resolution, based on the staff report, the staff analysis, and the evidence and testimony heard today, was adopted: 2 PLANNING"
+  - "RESOLVED, that the Louisville Metro Planning Commission does hereby RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the following Text Amendment to the Louisville Metro Land Development Code (LDC) in regards to data centers with the recommended "
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-20, packet: O-251-26 V.1 091026 Amend Land Development Code Regarding Data Centers .pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156537/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "ORDINANCE NO. _______________, SERIES 2026 ..title AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25- LDC-0014). ..body SPONSORED BY:"
+  - "Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "This may include data services associated with off-site users directly affiliated with the on-site Principal Use, Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunications Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, agenda: Louisville Metro Planning and Zoning Committee agenda 2026-10-06, https://legistar2.granicus.com/louisville/meetings/2026/10/12716_A_Planning_and_Zoning_Committee_26-10-06_Meeting_Agenda.pdf
+  - "O-251-26 AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014)."
+  - "ID 26-1517 MASSIVE DATA CENTER EXPERIENCE FROM LOCAL LAND DEVELOPMENT CODE PERSPECTIVE - Robin Palm, AICP, Village of Mt."
+  - "ID 26-1484 REVIEWING KENTUCKY RESOURCE COUNCIL DATA CENTER RECOMMENDATIONS - Tom Fitzgerald, KRC Adjournment Note:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, minutes: Louisville Metro Planning and Zoning Committee minutes 2026-10-06, https://legistar2.granicus.com/louisville/meetings/2026/10/12716_M_Planning_and_Zoning_Committee_26-10-06_Action_Summary.pdf
+  - "O-251-26 AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014)."
+  - "ID 26-1517 MASSIVE DATA CENTER EXPERIENCE FROM LOCAL LAND DEVELOPMENT CODE PERSPECTIVE - Robin Palm, AICP, Village of Mt."
+  - "ID 26-1484 REVIEWING KENTUCKY RESOURCE COUNCIL DATA CENTER RECOMMENDATIONS - Tom Fitzgerald, KRC The following spoke to this item: - Tom Fitzgerald, Kentucky Resource Council - Chair Owen - Committee Member Hudson - Committee Member Parrish-Wright - Council Member Lyninger - Council Member Hawkins -"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-24-26 (9AM) to 07-31-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156317/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "(as in specific distance) 4170 Reed 40023 They do not belong in Kentucky in any way, shape or form. 4171 Mansilla 40299 NO Data Centers, NONE!! 4172 McCoy 40211 Simple- stay out of Louisville."
+  - "We don't need data centers complicating our lives. 4173 Walters 40213 No new data centers in Louisville!"
+  - "Anywhere a datacenter has been approved have seen their local utility resources rise in price and lower in quality."
+  - "The whole AI money machine is just several companies handing the same money back and forth and calling it operating profit. 4174 Leonard 40220 Data Centers don't support the health and well-being of our residents."
+  - "The future of Jefferson county depends on other employment opportunities. 4175 Williams 40218 Data centers are critical infrastructure that support hospitals, schools, emergency services, businesses, and the everyday digital tools residents rely on."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-24-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156319/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Data Centers_Survey_01-01-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156320/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Data Center Survey and Results Total Submittals: 3590 Question 1:"
+  - "How much do you know about Data Centers?"
+  - "Affirmative Percentage Responses I'm not sure / prefer not to answer 114 3.2% I know very little about Data Centers 60 1.7% I know some things about Data Centers 1878 52.3% I know a lot about Data Centers 1538 42.8% 3590 100.0% *Limited to single choice Question 5:"
+  - "What size of Data Centers are ok in Jefferson County?"
+  - "(Required) Affirmative Percentage of Total Responses Respondents Selecting Data Centers of any size are 2963 82.5% inappropriate Small (under 10,000 sq ft) 556 15.5% Medium (10,000 to 50,000 sq ft) 241 6.7% Large (50,001 to 100,000 sq ft) 94 2.6% “Hyperscale" (Over 100,000 sq ft) 73 2.0% I'm not sur"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Emailed Comments_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156321/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, rezon, variance
+  - "FFEA does not want to see vague, “Accessory Uses” regarding data centers – please remove this terminology and any reference due to oodles of wiggle-room to the possible detriment of the public."
+  - "Also some reports by neighbors of temperatures increasing up to 12 degrees close to data centers due to waste heat – so please do more research."
+  - "And, since people need and like to eat, farmland should never be used for data centers; instead, keep the land to INDUSTRIAL zoning areas."
+  - "Likewise, our park’s lands should never be used for data centers; instead, keep them to INDUSTRIAL zoning only."
+  - "Gas turbines create the need for Texas Gas Pipelines intrusion into farmland, parks, homes, etc. and will bring noise, emissions, etc."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Emailed Comments_Pre Draft_Through 6-8-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156322/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Louisville Metro Council Resolution Number 082, Series 2025 Zoning Code Updates re Hyper-Scale Data Centers Dear Mr."
+  - "But in the case of hyper-scale data centers, Big Tech can pad its power, water and land requirements at others’ expense."
+  - "If the data centers don’t end up needing that much power or water, LG&E and the Louisville Water Co. must pass the costs of their stranded assets to their other customers."
+  - "Energy efficiency, solar power and battery storage are the cheapest, cleanest and fastest sources of power, yet the incentives to use them at data centers is undermined because the costs of the new power plants they require will be externalized (see #3). 5."
+  - "New, gas-fired power plants are very expensive and operate for at least 40 years."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Kentucky Resources Council Recommended Ordinance_Version 1.4.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156323/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, site plan
+  - "Data centers and data center development have recently become a concern across the country, as the development of new “artificial intelligence” tools has multiplied the demand for computer processing power, and correlative energy, water, and other resource needs."
+  - "At its base, a data center is a warehouse filled with racks of computer servers, often running all hours of the day and night."
+  - "As the size of data centers have grown, so has the need for ancillary equipment and resources both on- and off-site."
+  - "On-site, a data center also 1 This ordinance was developed for consideration and use by communities in the Commonwealth by the Kentucky Resources Council, Inc."
+  - "In addition, they also contain significant on-site backup or "behind-the-meter” power generating equipment, such as diesel generators, gas turbines, and battery energy storage systems."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Metro Council Resolution 082 2025.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156324/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "RESOLUTION NO. 082 SERIES 2025 A RESOLUTION REQUESTING THE PLANNING COMMISSION REVIEW THE METRO LAND DEVELOPMENT CODE REGULATIONS WITH REGARD TO DATA CENTERS."
+  - "The Planning Commission should undertake a review of and consider amendments to the current LDC to address data centers, including a consideration of best practices and regulatory framework from comparable jurisdictions, and to consider the various impacts of data centers, to better define telecommu"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_ATT_08-04-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156327/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data center regulations proposal - latest telecom industry feedback Date:"
+  - "Circling back to you with additional telecommunications industry feedback on the latest Louisville Metro proposed data center regulations."
+  - "To address our continued concerns, we propose the following modifications to the Telecommunication Data Center definition."
+  - "The new language is in red. “Data Center, Telecommunication – A newly constructed Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - "Existing telecommunications data centers and any possible expansions are grandfathered as nonconforming to the permitting requirements in this section.” The industry agrees that the two changes above would resolve our concerns about potential impediments to our Louisville Metro customer service."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156328/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, plat
+  - "I understand that the water that is often discharged from data centers are highly polluted so if we can limit that, that would be great. 4190 Blackburn 40207 This is a proposal that has proven to cause environmental harm and human harm."
+  - "I vote for a ban on data centers in all counties Kentucky until we have done more research. 4191 Kahn 40213 I am particularly concerned that data centers would be placed in West End neighborhoods, extending the historical burden placed disproportionately on lower income residents of our city."
+  - "Data centers are too new to have any data on long-term health or environmental effects on the people and areas located near them, or even to know how far the impacts would extend."
+  - "Placing centers here without understanding the full consequences puts people of our city at risk and the benefits do not appear to outweigh the risks. 4192 Morris 40213 No data centers in Jefferson county please."
+  - "There may be a short-term benefit to allowing them to build in our neighborhoods, but the damage will far outweigh any meager benefit. 4193 Swilley 40205 I don’t want any data centers at all anywhere around Louisville."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_KRC_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156330/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, rezon
+  - "Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org August 7, 2026 Joseph Haberman, AICP Planning & Design Manager Via email Re: 25 LDC 0014 Revised Text Amendment to Land Development Code For Data Centers Dear Mr."
+  - "(KRC) regarding the proposed revised Louisville Metro Government Draft Data Center Land Development Code Text Amendment (Case No. 25-LDC- 0014, July 20, 2026, Draft)."
+  - "Sincerely, Ashley Wilmes Executive Director and Attorney Kentucky Resources Council Tom FitzGerald Of Counsel Kentucky Resources Council Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org KRC Recommended Revisions to Louisville Metro Revised Draft Data Center Tex"
+  - "Introduction These recommendations are intended to ensure public notice and input, as well as a comprehensive and meaningful framework for regulating the location, operation, and decommissioning of all data centers."
+  - "The recommendations continue to suggest inclusion of many of the provisions in the Kentucky Resources Council (KRC) Model Data Center Zoning Ordinance, with respect to strengthening the review process, the quality of information submitted in applications, and the standards of performance for data ce"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Lee_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156331/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Contact the Office of Planning [#1167] Name Virginia Lee Email * Subject Data Center proposal Comment * I live in 40206."
+  - "Louisvillians want a true moratorium on all data centers while the work is done to fully understand the full impacts and what the right balance is for our community."
+  - "This should apply to 100% of all hyper-data centers including the one that was proposed by Steve Poe’s company."
+  - "Just stop all development of data centers until we are ready to properly permit them."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_LG&E_KU_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156332/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Proposed Data Center Regulations -- Feedback from LG&E/KU Date:"
+  - "I wanted to follow-up with you and provide additional feedback from LG&E/KU on the latest Louisville Metro proposed data center regulations."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Porter_08-03-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156333/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Porter Attorney-at-Law 3109 Westone Way Louisville, KY 40241-3115 stpinlou@aol.com 502-905-9991 Proposed Changes Data Center Text Amendment 4.2.60.C."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Williams_07-02-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156334/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Alignment with Datacenter Regulations and Recommendation on Square‑Foot Cap Adjustment Date:"
+  - "Members of the Planning Commission, Thank you for the thoughtful and comprehensive work reflected in the current draft of Louisville’s data center zoning recommendations."
+  - "I want to begin by stating clearly that I fully support the Commission’s goal of establishing responsible, community‑focused datacenter regulations."
+  - "Louisville should regulate datacenters."
+  - "Where I believe a small adjustment is needed is in the proposed 500,000 sq ft cap for data centers outside Rubbertown."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Written Comments Received at 08-05-26 Hearing.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156335/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Ray Eblers, FFEA Vice President Date: 7-4-26 Re: 25-LDC-0014 DATA CENTER COMMENTS Floyds Fork Environmental Association, FFEA, MISSION is to protect, conserve and preserve Floyds Fork Creek and its Watershed."
+  - "Comments on data centers with the following requests: * Jefferson County must institute a Moratorium to allow more study and make the best standards to protect the welfare of the public which must Limon BA include intensity of many issues."
+  - "How will government protect the public? * How will data centers dangerous chemicals (including diesel fuel) be monitored?"
+  - "The last 1/3 of Jefferson County is more karstified and PDS has the mapping which must be included. * How will the federally endangered Indiana Bat (Mvodis sodalis) be protected or the KY endangered Glade Cress and Running buffalo clover (Trifolium stoloniferum) which is protected under KY law. * Wh"
+  - "Even home generator noise is obnoxious and intrusive— whereas data centers might have more than one and must test periodically."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_08-07-26 (3PM) to 08-19-26 (4PM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156336/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Entry Name Zip Comment Code 4227 Swepson 40215 Data centers should not exist before universal healthcare, homelessness is eradicated, or there are true humans rights for all."
+  - "I hope you receive the karma you deserve. 4228 Mayes 40216 As a Metro District 1 resident only about 1 mile away from the data center being built on Camp Ground Road, I am totally opposed to all hyperscale data centers because of the negative environmental, health, and financial impacts on our commu"
+  - "I realize that these regulations, if approved by Metro Council, won't apply to the data center on Camp Ground Road, but I believe they should be as restrictive as possible to dissuade as many future data centers as possible from locating in Jefferson County."
+  - "(I would have submitted them here, but this form will not allow files to be attached.) I will also be submitting them to all Metro Council members for their consideration. 4229 Hohman 40205 Put ALL data centers in the rich, white east end of town 4230 Michael 40205 I am concerned about the impact of"
+  - "It does not define energy systems, and thus opens the door for more air pollution with only an encouraging of "green energy." The regulations need to be strengthened. 4231 Mills 40211 The cost/benefit of data centers does not stand in the consumer's favor."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Curtis_08-11-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156337/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Protecting Communities in the Age of Data Centers Date:"
+  - "Dear Office of Planning colleagues, The Metropolitan Housing Coalition (MHC) released the following policy paper entitled "Protecting Communities in the Age of Data Centers:"
+  - "This policy paper seeks to provide a clear overview of the effect of data center development on affordability and health in our community, implications of increased cost and usage, and community priorities."
+  - "Additionally, this paper provides focused policy recommendations to ensure communities are protected in this new age of data center development."
+  - "I wanted to make sure to share this policy paper with you directly to add to the ongoing public discourse on data center regulations in our community."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-25-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156338/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Dries_01-06-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156339/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Center comments on the LDC Draft Text Amendment (25-LDC-0014) Date:"
+  - "For your consideration, following are my comments on the LDC Draft Text Amendment for Data Centers (1-2-2026): 1."
+  - "It appears to me that the Draft Text Amendment is significantly overly restrictive and unnecessarily complicated related to Data Centers."
+  - "Data Centers appear to be a way of life for today's economy."
+  - "Most individuals and businesses use Data Center products."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Gaus_08-10-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156340/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Joseph, This is a good opportunity to pause and plan refinements to mitigate the many hazards connected with unregulated data centers."
+  - "As far as mitigations go, I have attached results from an AI risk assessment of the Campground Rd data center development."
+  - "Donna, to answer your earlier question, the governor’s executive order addresses some of the concerns with data centers at the state-level, but it does not appear to have any impact local zoning regulations and decisions."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Herron_08-11-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156341/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Tuesday, August 11, 2026 12:34:06 PM Attachments: clarksvilledatacenterordinance.zip CAUTION:"
+  - "Thanks to you and your team for the professionalism shown in how you all have managed the public input process for the data center regulations."
+  - "I just want to note that our neighbors across the bridge in Indiana have instituted a one year moratorium in Jeffersonville and Clarksville has banned data centers by right."
+  - "Clarksville officials have determined that data centers do not comply with the comprehensive plan and do not belong in their community."
+  - "I suggest we use our comp plan to show how the data centers do or do not align with the long term goals set forth in the plan."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Simon_08-11-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156343/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, rezon
+  - "Dear members of the Louisville Metro Planning Commission (Jim Mims, Sharon Bond, Steve Lannert, Bill Fischer, Te’andre Sistrunk, Travis Fletcher, Russ Lohan, and Beth Stuber), Attached is documentation for 36 additional people who have signed at least one of two petitions in opposition to the constr"
+  - "Thanks for your time in considering this public opposition to the expansion of data centers, -- Dr."
+  - "Reply to vote to Table ITEM O-135-26 — Temporary Moratorium on Rezoning, Conditional Use Permits and Plan Certain, Category 2B and 3 Development Plan Applications Relating to Telecommunication Hotels and Data Centers The undersigned, as one of the People, speaks only for the undersigned and does not"
+  - "The undersigned previously placed Louisville Metro Council members on notice that hyperscale data centers and telecommunication hotels are not ordinary commercial office uses."
+  - "IL NOTICE OF LIABILITY AND BOND DEMAND Effective immediately, Louisville Metro and all public and private actors involved in approval, construction, zoning, permitting, development-plan review, financing, operation, utility coordination, or maintenance of any data center, telecommunication hotel, hy"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Written Comments Received at 08-10-26 Hearing.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156344/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Feedback on Revised Draft Regulations on Data Centers Dear Commissioners, Louisville Climate Action Network (LCAN) consists of 68 entities —36 non-profit groups, 17 forprofit businesses, 1] faith-based organizations and four educational institutions—plus well over 3,000 individuals, all concerned ab"
+  - "Citizens all over the US are calling on local governments to protect them from the harms posed by hyper-scale data centers, especially huge demands for power and water—risking reliability and rate hikes for everyone—air pollution and noise."
+  - "Data center power demands and diesel-powered backup generators alone demand that LCAN respond to the latest revised draft ordinance changes now before you on behalf of our members."
+  - "As written, the much touted “ban” on data centers larger than 500,00 ft? is flawed, since the ordinance doesn’t preclude two, side-by-side 499,000 ft? data centers on adjacent tracts."
+  - "OPO —— Council Dee 126 www.kyrc.org ol KRC Summary of Revisions to Louisville Data Center Ordinance This document reviews the changes in the provisions of the proposed Louisville Metro Government (“LMG”) Draft Data Center Land Development Code Text Amendment (Case No. 25-LDC-0014, June 9, 2026, Draf"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 20260806_Executive-Order_2026-494_Related-to-Data-Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156345/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "As Kentucky looks toward the future, the rapid expansion of digital infrastructure has led to surging demand for data centers and energy resources across our country."
+  - "Data center companies looking to do business in Kentucky, at a minimum, must demonstrate they will be good neighbors by investing responsibly, operating transparently, and working in partnership with our people and communities to make certain these projects deliver lasting benefits for Kentucky’s wo"
+  - "Data center project developers are required to submit an energy plan to the Energy and Environment Cabinet showing how it will protect residential ratepayers, including assurances it can meet its energy needs now, into the near term, and long term without imposing additional costs on other utility r"
+  - "The Public Service Commission shall not allow a utility to increase rates paid by other ratepayers to recover costs caused by the development and operation of a data center."
+  - "The Energy and Environment Cabinet is directed to deny any permitting applications where a data center would negatively impact Kentucky’s air quality, water use, water quality, water supply, federal jurisdictional wetlands, or natural resources."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Data Center_ 09-03-26 DRAFT Amendments (Conceptually Approved by PC on 8-20-26).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156346/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_PCMinutes_07272026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156347/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Centers Applicant:"
+  - "Williams explained the difference between a mega data center and the kind of data center that stores data for devices."
+  - "Fowler asked that a moratorium be placed on data center construction."
+  - "Holsclaw believes that any clean up should be dealt with by the developer and applicant the data center."
+  - "(see recording for details) 2 PLANNING COMMISSION MINUTES July 27, 2026 PUBLIC HEARING CASE NO. 25-LDC-0014 00:31:40 Lee Fahey asked the Commission that the guidelines be better outlined before any further data centers be built."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_PCMinutes_08052026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156348/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "Koppert urged the Planning Commission enact a mortarium on the construction of data centers until more research about the impacts of data centers on communities can be performed."
+  - "(see recording for details) 00:22:13 Glenn Eisenbray shared with the Commission the water and energy consumption of differing sizes of data centers."
+  - "Eisenbray shared the impacts that data centers can have on the environment."
+  - "(see recording for details) 2 PLANNING COMMISSION MINUTES August 5, 2026 PUBLIC HEARING CASE NO. 25-LDC-0014 00:25:53 Kurt Wallace supports a ban on data center construction."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_PCMinutes_08062026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156349/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "(see recording for details) Public Testimony: 00:14:41 Lindsay Gray questioned why the amendments are accommodating data centers and their developers, when community members do not want hyper-scale data centers."
+  - "(see recording for details) 00:22:04 N Lobo shared concerns about the environmental impact that data centers will cause."
+  - "Lobo worried about the negative impacts of data centers and hoped for stricter regulations and water quality protections."
+  - "(see recording for details) 00:25:50 Bryan Reed shared concerns about the sample size that was taken for the community data center feedback."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_PCMinutes_08102026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156350/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "(Staff report is part of the case file maintained in the Office of Planning, 444 South 5th Street.) Public Testimony: 00:03:55 William Mayes stated that he lived within a mile of the Campground Road data center."
+  - "Mayes urged the Commission to vote to recommend that the Metro Council ban all future data center construction."
+  - "(see recording for details) 00:07:20 Sherri Thompson shared concerns about sound frequencies that are emitted by data centers."
+  - "(see recording for details) 00:14:15 Maxwell Corbett shared his thoughts of how data centers interact with his religious beliefs."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_PCMinutes_08202026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156351/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_Data Center_ 09-03-26 PC Recommendation.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156446/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: 25-LDC-0014_PCMinutes_09032026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156463/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Centers Applicant:"
+  - "Haberman also stated staff has included some additional additions that add some of the standards that were added to data centers over 50,000 square feet to the regulations for data centers under 50,000 square feet, as well as some additional modifications."
+  - "Assistant County Attorney Laura Ferguson pointed out the language regarding Generators in the Accessory Data Centers did not have the Monday through Friday restrictions on testing times."
+  - "Text Amendment to the Louisville Metro Land Development Code (LDC) in Regards to Data Centers On a motion by Commissioner Mims, seconded by Commissioner Steff, the following resolution, based on the staff report, the staff analysis, and the evidence and testimony heard today, was adopted: 2 PLANNING"
+  - "RESOLVED, that the Louisville Metro Planning Commission does hereby RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the following Text Amendment to the Louisville Metro Land Development Code (LDC) in regards to data centers with the recommended "
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-10-06, packet: O-251-26 V.1 091026 Amend Land Development Code Regarding Data Centers .pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156537/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "ORDINANCE NO. _______________, SERIES 2026 ..title AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25- LDC-0014). ..body SPONSORED BY:"
+  - "Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "This may include data services associated with off-site users directly affiliated with the on-site Principal Use, Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunications Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, agenda: Louisville Metro Planning and Zoning Committee agenda 2026-09-15, https://legistar2.granicus.com/louisville/meetings/2026/9/11232_A_Planning_and_Zoning_Committee_26-09-15_Meeting_Agenda.pdf
+  - "O-251-26 AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014)."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, minutes: Louisville Metro Planning and Zoning Committee minutes 2026-09-15, https://legistar2.granicus.com/louisville/meetings/2026/9/11232_M_Planning_and_Zoning_Committee_26-09-15_Action_Summary.pdf
+  - "O-251-26 AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014)."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-24-26 (9AM) to 07-31-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156317/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "(as in specific distance) 4170 Reed 40023 They do not belong in Kentucky in any way, shape or form. 4171 Mansilla 40299 NO Data Centers, NONE!! 4172 McCoy 40211 Simple- stay out of Louisville."
+  - "We don't need data centers complicating our lives. 4173 Walters 40213 No new data centers in Louisville!"
+  - "Anywhere a datacenter has been approved have seen their local utility resources rise in price and lower in quality."
+  - "The whole AI money machine is just several companies handing the same money back and forth and calling it operating profit. 4174 Leonard 40220 Data Centers don't support the health and well-being of our residents."
+  - "The future of Jefferson county depends on other employment opportunities. 4175 Williams 40218 Data centers are critical infrastructure that support hospitals, schools, emergency services, businesses, and the everyday digital tools residents rely on."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-24-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156319/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Data Centers_Survey_01-01-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156320/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Data Center Survey and Results Total Submittals: 3590 Question 1:"
+  - "How much do you know about Data Centers?"
+  - "Affirmative Percentage Responses I'm not sure / prefer not to answer 114 3.2% I know very little about Data Centers 60 1.7% I know some things about Data Centers 1878 52.3% I know a lot about Data Centers 1538 42.8% 3590 100.0% *Limited to single choice Question 5:"
+  - "What size of Data Centers are ok in Jefferson County?"
+  - "(Required) Affirmative Percentage of Total Responses Respondents Selecting Data Centers of any size are 2963 82.5% inappropriate Small (under 10,000 sq ft) 556 15.5% Medium (10,000 to 50,000 sq ft) 241 6.7% Large (50,001 to 100,000 sq ft) 94 2.6% “Hyperscale" (Over 100,000 sq ft) 73 2.0% I'm not sur"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Emailed Comments_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156321/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, rezon, variance
+  - "FFEA does not want to see vague, “Accessory Uses” regarding data centers – please remove this terminology and any reference due to oodles of wiggle-room to the possible detriment of the public."
+  - "Also some reports by neighbors of temperatures increasing up to 12 degrees close to data centers due to waste heat – so please do more research."
+  - "And, since people need and like to eat, farmland should never be used for data centers; instead, keep the land to INDUSTRIAL zoning areas."
+  - "Likewise, our park’s lands should never be used for data centers; instead, keep them to INDUSTRIAL zoning only."
+  - "Gas turbines create the need for Texas Gas Pipelines intrusion into farmland, parks, homes, etc. and will bring noise, emissions, etc."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Emailed Comments_Pre Draft_Through 6-8-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156322/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Louisville Metro Council Resolution Number 082, Series 2025 Zoning Code Updates re Hyper-Scale Data Centers Dear Mr."
+  - "But in the case of hyper-scale data centers, Big Tech can pad its power, water and land requirements at others’ expense."
+  - "If the data centers don’t end up needing that much power or water, LG&E and the Louisville Water Co. must pass the costs of their stranded assets to their other customers."
+  - "Energy efficiency, solar power and battery storage are the cheapest, cleanest and fastest sources of power, yet the incentives to use them at data centers is undermined because the costs of the new power plants they require will be externalized (see #3). 5."
+  - "New, gas-fired power plants are very expensive and operate for at least 40 years."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Kentucky Resources Council Recommended Ordinance_Version 1.4.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156323/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, site plan
+  - "Data centers and data center development have recently become a concern across the country, as the development of new “artificial intelligence” tools has multiplied the demand for computer processing power, and correlative energy, water, and other resource needs."
+  - "At its base, a data center is a warehouse filled with racks of computer servers, often running all hours of the day and night."
+  - "As the size of data centers have grown, so has the need for ancillary equipment and resources both on- and off-site."
+  - "On-site, a data center also 1 This ordinance was developed for consideration and use by communities in the Commonwealth by the Kentucky Resources Council, Inc."
+  - "In addition, they also contain significant on-site backup or "behind-the-meter” power generating equipment, such as diesel generators, gas turbines, and battery energy storage systems."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Metro Council Resolution 082 2025.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156324/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "RESOLUTION NO. 082 SERIES 2025 A RESOLUTION REQUESTING THE PLANNING COMMISSION REVIEW THE METRO LAND DEVELOPMENT CODE REGULATIONS WITH REGARD TO DATA CENTERS."
+  - "The Planning Commission should undertake a review of and consider amendments to the current LDC to address data centers, including a consideration of best practices and regulatory framework from comparable jurisdictions, and to consider the various impacts of data centers, to better define telecommu"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_ATT_08-04-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156327/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data center regulations proposal - latest telecom industry feedback Date:"
+  - "Circling back to you with additional telecommunications industry feedback on the latest Louisville Metro proposed data center regulations."
+  - "To address our continued concerns, we propose the following modifications to the Telecommunication Data Center definition."
+  - "The new language is in red. “Data Center, Telecommunication – A newly constructed Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - "Existing telecommunications data centers and any possible expansions are grandfathered as nonconforming to the permitting requirements in this section.” The industry agrees that the two changes above would resolve our concerns about potential impediments to our Louisville Metro customer service."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156328/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, plat
+  - "I understand that the water that is often discharged from data centers are highly polluted so if we can limit that, that would be great. 4190 Blackburn 40207 This is a proposal that has proven to cause environmental harm and human harm."
+  - "I vote for a ban on data centers in all counties Kentucky until we have done more research. 4191 Kahn 40213 I am particularly concerned that data centers would be placed in West End neighborhoods, extending the historical burden placed disproportionately on lower income residents of our city."
+  - "Data centers are too new to have any data on long-term health or environmental effects on the people and areas located near them, or even to know how far the impacts would extend."
+  - "Placing centers here without understanding the full consequences puts people of our city at risk and the benefits do not appear to outweigh the risks. 4192 Morris 40213 No data centers in Jefferson county please."
+  - "There may be a short-term benefit to allowing them to build in our neighborhoods, but the damage will far outweigh any meager benefit. 4193 Swilley 40205 I don’t want any data centers at all anywhere around Louisville."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_KRC_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156330/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, rezon
+  - "Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org August 7, 2026 Joseph Haberman, AICP Planning & Design Manager Via email Re: 25 LDC 0014 Revised Text Amendment to Land Development Code For Data Centers Dear Mr."
+  - "(KRC) regarding the proposed revised Louisville Metro Government Draft Data Center Land Development Code Text Amendment (Case No. 25-LDC- 0014, July 20, 2026, Draft)."
+  - "Sincerely, Ashley Wilmes Executive Director and Attorney Kentucky Resources Council Tom FitzGerald Of Counsel Kentucky Resources Council Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org KRC Recommended Revisions to Louisville Metro Revised Draft Data Center Tex"
+  - "Introduction These recommendations are intended to ensure public notice and input, as well as a comprehensive and meaningful framework for regulating the location, operation, and decommissioning of all data centers."
+  - "The recommendations continue to suggest inclusion of many of the provisions in the Kentucky Resources Council (KRC) Model Data Center Zoning Ordinance, with respect to strengthening the review process, the quality of information submitted in applications, and the standards of performance for data ce"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Lee_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156331/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Contact the Office of Planning [#1167] Name Virginia Lee Email * Subject Data Center proposal Comment * I live in 40206."
+  - "Louisvillians want a true moratorium on all data centers while the work is done to fully understand the full impacts and what the right balance is for our community."
+  - "This should apply to 100% of all hyper-data centers including the one that was proposed by Steve Poe’s company."
+  - "Just stop all development of data centers until we are ready to properly permit them."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_LG&E_KU_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156332/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Proposed Data Center Regulations -- Feedback from LG&E/KU Date:"
+  - "I wanted to follow-up with you and provide additional feedback from LG&E/KU on the latest Louisville Metro proposed data center regulations."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Porter_08-03-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156333/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Porter Attorney-at-Law 3109 Westone Way Louisville, KY 40241-3115 stpinlou@aol.com 502-905-9991 Proposed Changes Data Center Text Amendment 4.2.60.C."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Williams_07-02-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156334/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Alignment with Datacenter Regulations and Recommendation on Square‑Foot Cap Adjustment Date:"
+  - "Members of the Planning Commission, Thank you for the thoughtful and comprehensive work reflected in the current draft of Louisville’s data center zoning recommendations."
+  - "I want to begin by stating clearly that I fully support the Commission’s goal of establishing responsible, community‑focused datacenter regulations."
+  - "Louisville should regulate datacenters."
+  - "Where I believe a small adjustment is needed is in the proposed 500,000 sq ft cap for data centers outside Rubbertown."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Written Comments Received at 08-05-26 Hearing.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156335/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Ray Eblers, FFEA Vice President Date: 7-4-26 Re: 25-LDC-0014 DATA CENTER COMMENTS Floyds Fork Environmental Association, FFEA, MISSION is to protect, conserve and preserve Floyds Fork Creek and its Watershed."
+  - "Comments on data centers with the following requests: * Jefferson County must institute a Moratorium to allow more study and make the best standards to protect the welfare of the public which must Limon BA include intensity of many issues."
+  - "How will government protect the public? * How will data centers dangerous chemicals (including diesel fuel) be monitored?"
+  - "The last 1/3 of Jefferson County is more karstified and PDS has the mapping which must be included. * How will the federally endangered Indiana Bat (Mvodis sodalis) be protected or the KY endangered Glade Cress and Running buffalo clover (Trifolium stoloniferum) which is protected under KY law. * Wh"
+  - "Even home generator noise is obnoxious and intrusive— whereas data centers might have more than one and must test periodically."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_08-07-26 (3PM) to 08-19-26 (4PM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156336/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Entry Name Zip Comment Code 4227 Swepson 40215 Data centers should not exist before universal healthcare, homelessness is eradicated, or there are true humans rights for all."
+  - "I hope you receive the karma you deserve. 4228 Mayes 40216 As a Metro District 1 resident only about 1 mile away from the data center being built on Camp Ground Road, I am totally opposed to all hyperscale data centers because of the negative environmental, health, and financial impacts on our commu"
+  - "I realize that these regulations, if approved by Metro Council, won't apply to the data center on Camp Ground Road, but I believe they should be as restrictive as possible to dissuade as many future data centers as possible from locating in Jefferson County."
+  - "(I would have submitted them here, but this form will not allow files to be attached.) I will also be submitting them to all Metro Council members for their consideration. 4229 Hohman 40205 Put ALL data centers in the rich, white east end of town 4230 Michael 40205 I am concerned about the impact of"
+  - "It does not define energy systems, and thus opens the door for more air pollution with only an encouraging of "green energy." The regulations need to be strengthened. 4231 Mills 40211 The cost/benefit of data centers does not stand in the consumer's favor."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Curtis_08-11-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156337/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Protecting Communities in the Age of Data Centers Date:"
+  - "Dear Office of Planning colleagues, The Metropolitan Housing Coalition (MHC) released the following policy paper entitled "Protecting Communities in the Age of Data Centers:"
+  - "This policy paper seeks to provide a clear overview of the effect of data center development on affordability and health in our community, implications of increased cost and usage, and community priorities."
+  - "Additionally, this paper provides focused policy recommendations to ensure communities are protected in this new age of data center development."
+  - "I wanted to make sure to share this policy paper with you directly to add to the ongoing public discourse on data center regulations in our community."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-25-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156338/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Dries_01-06-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156339/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Center comments on the LDC Draft Text Amendment (25-LDC-0014) Date:"
+  - "For your consideration, following are my comments on the LDC Draft Text Amendment for Data Centers (1-2-2026): 1."
+  - "It appears to me that the Draft Text Amendment is significantly overly restrictive and unnecessarily complicated related to Data Centers."
+  - "Data Centers appear to be a way of life for today's economy."
+  - "Most individuals and businesses use Data Center products."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Gaus_08-10-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156340/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Joseph, This is a good opportunity to pause and plan refinements to mitigate the many hazards connected with unregulated data centers."
+  - "As far as mitigations go, I have attached results from an AI risk assessment of the Campground Rd data center development."
+  - "Donna, to answer your earlier question, the governor’s executive order addresses some of the concerns with data centers at the state-level, but it does not appear to have any impact local zoning regulations and decisions."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Herron_08-11-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156341/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Tuesday, August 11, 2026 12:34:06 PM Attachments: clarksvilledatacenterordinance.zip CAUTION:"
+  - "Thanks to you and your team for the professionalism shown in how you all have managed the public input process for the data center regulations."
+  - "I just want to note that our neighbors across the bridge in Indiana have instituted a one year moratorium in Jeffersonville and Clarksville has banned data centers by right."
+  - "Clarksville officials have determined that data centers do not comply with the comprehensive plan and do not belong in their community."
+  - "I suggest we use our comp plan to show how the data centers do or do not align with the long term goals set forth in the plan."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Simon_08-11-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156343/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, rezon
+  - "Dear members of the Louisville Metro Planning Commission (Jim Mims, Sharon Bond, Steve Lannert, Bill Fischer, Te’andre Sistrunk, Travis Fletcher, Russ Lohan, and Beth Stuber), Attached is documentation for 36 additional people who have signed at least one of two petitions in opposition to the constr"
+  - "Thanks for your time in considering this public opposition to the expansion of data centers, -- Dr."
+  - "Reply to vote to Table ITEM O-135-26 — Temporary Moratorium on Rezoning, Conditional Use Permits and Plan Certain, Category 2B and 3 Development Plan Applications Relating to Telecommunication Hotels and Data Centers The undersigned, as one of the People, speaks only for the undersigned and does not"
+  - "The undersigned previously placed Louisville Metro Council members on notice that hyperscale data centers and telecommunication hotels are not ordinary commercial office uses."
+  - "IL NOTICE OF LIABILITY AND BOND DEMAND Effective immediately, Louisville Metro and all public and private actors involved in approval, construction, zoning, permitting, development-plan review, financing, operation, utility coordination, or maintenance of any data center, telecommunication hotel, hy"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Written Comments Received at 08-10-26 Hearing.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156344/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Feedback on Revised Draft Regulations on Data Centers Dear Commissioners, Louisville Climate Action Network (LCAN) consists of 68 entities —36 non-profit groups, 17 forprofit businesses, 1] faith-based organizations and four educational institutions—plus well over 3,000 individuals, all concerned ab"
+  - "Citizens all over the US are calling on local governments to protect them from the harms posed by hyper-scale data centers, especially huge demands for power and water—risking reliability and rate hikes for everyone—air pollution and noise."
+  - "Data center power demands and diesel-powered backup generators alone demand that LCAN respond to the latest revised draft ordinance changes now before you on behalf of our members."
+  - "As written, the much touted “ban” on data centers larger than 500,00 ft? is flawed, since the ordinance doesn’t preclude two, side-by-side 499,000 ft? data centers on adjacent tracts."
+  - "OPO —— Council Dee 126 www.kyrc.org ol KRC Summary of Revisions to Louisville Data Center Ordinance This document reviews the changes in the provisions of the proposed Louisville Metro Government (“LMG”) Draft Data Center Land Development Code Text Amendment (Case No. 25-LDC-0014, June 9, 2026, Draf"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 20260806_Executive-Order_2026-494_Related-to-Data-Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156345/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "As Kentucky looks toward the future, the rapid expansion of digital infrastructure has led to surging demand for data centers and energy resources across our country."
+  - "Data center companies looking to do business in Kentucky, at a minimum, must demonstrate they will be good neighbors by investing responsibly, operating transparently, and working in partnership with our people and communities to make certain these projects deliver lasting benefits for Kentucky’s wo"
+  - "Data center project developers are required to submit an energy plan to the Energy and Environment Cabinet showing how it will protect residential ratepayers, including assurances it can meet its energy needs now, into the near term, and long term without imposing additional costs on other utility r"
+  - "The Public Service Commission shall not allow a utility to increase rates paid by other ratepayers to recover costs caused by the development and operation of a data center."
+  - "The Energy and Environment Cabinet is directed to deny any permitting applications where a data center would negatively impact Kentucky’s air quality, water use, water quality, water supply, federal jurisdictional wetlands, or natural resources."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Data Center_ 09-03-26 DRAFT Amendments (Conceptually Approved by PC on 8-20-26).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156346/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_07272026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156347/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Centers Applicant:"
+  - "Williams explained the difference between a mega data center and the kind of data center that stores data for devices."
+  - "Fowler asked that a moratorium be placed on data center construction."
+  - "Holsclaw believes that any clean up should be dealt with by the developer and applicant the data center."
+  - "(see recording for details) 2 PLANNING COMMISSION MINUTES July 27, 2026 PUBLIC HEARING CASE NO. 25-LDC-0014 00:31:40 Lee Fahey asked the Commission that the guidelines be better outlined before any further data centers be built."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_08052026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156348/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "Koppert urged the Planning Commission enact a mortarium on the construction of data centers until more research about the impacts of data centers on communities can be performed."
+  - "(see recording for details) 00:22:13 Glenn Eisenbray shared with the Commission the water and energy consumption of differing sizes of data centers."
+  - "Eisenbray shared the impacts that data centers can have on the environment."
+  - "(see recording for details) 2 PLANNING COMMISSION MINUTES August 5, 2026 PUBLIC HEARING CASE NO. 25-LDC-0014 00:25:53 Kurt Wallace supports a ban on data center construction."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_08062026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156349/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "(see recording for details) Public Testimony: 00:14:41 Lindsay Gray questioned why the amendments are accommodating data centers and their developers, when community members do not want hyper-scale data centers."
+  - "(see recording for details) 00:22:04 N Lobo shared concerns about the environmental impact that data centers will cause."
+  - "Lobo worried about the negative impacts of data centers and hoped for stricter regulations and water quality protections."
+  - "(see recording for details) 00:25:50 Bryan Reed shared concerns about the sample size that was taken for the community data center feedback."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_08102026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156350/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "(Staff report is part of the case file maintained in the Office of Planning, 444 South 5th Street.) Public Testimony: 00:03:55 William Mayes stated that he lived within a mile of the Campground Road data center."
+  - "Mayes urged the Commission to vote to recommend that the Metro Council ban all future data center construction."
+  - "(see recording for details) 00:07:20 Sherri Thompson shared concerns about sound frequencies that are emitted by data centers."
+  - "(see recording for details) 00:14:15 Maxwell Corbett shared his thoughts of how data centers interact with his religious beliefs."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_08202026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156351/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Data Center_ 09-03-26 PC Recommendation.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156446/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_09032026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156463/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Centers Applicant:"
+  - "Haberman also stated staff has included some additional additions that add some of the standards that were added to data centers over 50,000 square feet to the regulations for data centers under 50,000 square feet, as well as some additional modifications."
+  - "Assistant County Attorney Laura Ferguson pointed out the language regarding Generators in the Accessory Data Centers did not have the Monday through Friday restrictions on testing times."
+  - "Text Amendment to the Louisville Metro Land Development Code (LDC) in Regards to Data Centers On a motion by Commissioner Mims, seconded by Commissioner Steff, the following resolution, based on the staff report, the staff analysis, and the evidence and testimony heard today, was adopted: 2 PLANNING"
+  - "RESOLVED, that the Louisville Metro Planning Commission does hereby RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the following Text Amendment to the Louisville Metro Land Development Code (LDC) in regards to data centers with the recommended "
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: O-251-26 V.1 091026 Amend Land Development Code Regarding Data Centers .pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156537/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "ORDINANCE NO. _______________, SERIES 2026 ..title AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25- LDC-0014). ..body SPONSORED BY:"
+  - "Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "This may include data services associated with off-site users directly affiliated with the on-site Principal Use, Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunications Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-24-26 (9AM) to 07-31-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156317/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "(as in specific distance) 4170 Reed 40023 They do not belong in Kentucky in any way, shape or form. 4171 Mansilla 40299 NO Data Centers, NONE!! 4172 McCoy 40211 Simple- stay out of Louisville."
+  - "We don't need data centers complicating our lives. 4173 Walters 40213 No new data centers in Louisville!"
+  - "Anywhere a datacenter has been approved have seen their local utility resources rise in price and lower in quality."
+  - "The whole AI money machine is just several companies handing the same money back and forth and calling it operating profit. 4174 Leonard 40220 Data Centers don't support the health and well-being of our residents."
+  - "The future of Jefferson county depends on other employment opportunities. 4175 Williams 40218 Data centers are critical infrastructure that support hospitals, schools, emergency services, businesses, and the everyday digital tools residents rely on."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-24-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156319/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Data Centers_Survey_01-01-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156320/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Data Center Survey and Results Total Submittals: 3590 Question 1:"
+  - "How much do you know about Data Centers?"
+  - "Affirmative Percentage Responses I'm not sure / prefer not to answer 114 3.2% I know very little about Data Centers 60 1.7% I know some things about Data Centers 1878 52.3% I know a lot about Data Centers 1538 42.8% 3590 100.0% *Limited to single choice Question 5:"
+  - "What size of Data Centers are ok in Jefferson County?"
+  - "(Required) Affirmative Percentage of Total Responses Respondents Selecting Data Centers of any size are 2963 82.5% inappropriate Small (under 10,000 sq ft) 556 15.5% Medium (10,000 to 50,000 sq ft) 241 6.7% Large (50,001 to 100,000 sq ft) 94 2.6% “Hyperscale" (Over 100,000 sq ft) 73 2.0% I'm not sur"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Emailed Comments_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156321/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, rezon, variance
+  - "FFEA does not want to see vague, “Accessory Uses” regarding data centers – please remove this terminology and any reference due to oodles of wiggle-room to the possible detriment of the public."
+  - "Also some reports by neighbors of temperatures increasing up to 12 degrees close to data centers due to waste heat – so please do more research."
+  - "And, since people need and like to eat, farmland should never be used for data centers; instead, keep the land to INDUSTRIAL zoning areas."
+  - "Likewise, our park’s lands should never be used for data centers; instead, keep them to INDUSTRIAL zoning only."
+  - "Gas turbines create the need for Texas Gas Pipelines intrusion into farmland, parks, homes, etc. and will bring noise, emissions, etc."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Emailed Comments_Pre Draft_Through 6-8-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156322/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Louisville Metro Council Resolution Number 082, Series 2025 Zoning Code Updates re Hyper-Scale Data Centers Dear Mr."
+  - "But in the case of hyper-scale data centers, Big Tech can pad its power, water and land requirements at others’ expense."
+  - "If the data centers don’t end up needing that much power or water, LG&E and the Louisville Water Co. must pass the costs of their stranded assets to their other customers."
+  - "Energy efficiency, solar power and battery storage are the cheapest, cleanest and fastest sources of power, yet the incentives to use them at data centers is undermined because the costs of the new power plants they require will be externalized (see #3). 5."
+  - "New, gas-fired power plants are very expensive and operate for at least 40 years."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Kentucky Resources Council Recommended Ordinance_Version 1.4.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156323/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, site plan
+  - "Data centers and data center development have recently become a concern across the country, as the development of new “artificial intelligence” tools has multiplied the demand for computer processing power, and correlative energy, water, and other resource needs."
+  - "At its base, a data center is a warehouse filled with racks of computer servers, often running all hours of the day and night."
+  - "As the size of data centers have grown, so has the need for ancillary equipment and resources both on- and off-site."
+  - "On-site, a data center also 1 This ordinance was developed for consideration and use by communities in the Commonwealth by the Kentucky Resources Council, Inc."
+  - "In addition, they also contain significant on-site backup or "behind-the-meter” power generating equipment, such as diesel generators, gas turbines, and battery energy storage systems."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Metro Council Resolution 082 2025.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156324/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "RESOLUTION NO. 082 SERIES 2025 A RESOLUTION REQUESTING THE PLANNING COMMISSION REVIEW THE METRO LAND DEVELOPMENT CODE REGULATIONS WITH REGARD TO DATA CENTERS."
+  - "The Planning Commission should undertake a review of and consider amendments to the current LDC to address data centers, including a consideration of best practices and regulatory framework from comparable jurisdictions, and to consider the various impacts of data centers, to better define telecommu"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_ATT_08-04-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156327/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data center regulations proposal - latest telecom industry feedback Date:"
+  - "Circling back to you with additional telecommunications industry feedback on the latest Louisville Metro proposed data center regulations."
+  - "To address our continued concerns, we propose the following modifications to the Telecommunication Data Center definition."
+  - "The new language is in red. “Data Center, Telecommunication – A newly constructed Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - "Existing telecommunications data centers and any possible expansions are grandfathered as nonconforming to the permitting requirements in this section.” The industry agrees that the two changes above would resolve our concerns about potential impediments to our Louisville Metro customer service."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156328/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, plat
+  - "I understand that the water that is often discharged from data centers are highly polluted so if we can limit that, that would be great. 4190 Blackburn 40207 This is a proposal that has proven to cause environmental harm and human harm."
+  - "I vote for a ban on data centers in all counties Kentucky until we have done more research. 4191 Kahn 40213 I am particularly concerned that data centers would be placed in West End neighborhoods, extending the historical burden placed disproportionately on lower income residents of our city."
+  - "Data centers are too new to have any data on long-term health or environmental effects on the people and areas located near them, or even to know how far the impacts would extend."
+  - "Placing centers here without understanding the full consequences puts people of our city at risk and the benefits do not appear to outweigh the risks. 4192 Morris 40213 No data centers in Jefferson county please."
+  - "There may be a short-term benefit to allowing them to build in our neighborhoods, but the damage will far outweigh any meager benefit. 4193 Swilley 40205 I don’t want any data centers at all anywhere around Louisville."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_KRC_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156330/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, rezon
+  - "Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org August 7, 2026 Joseph Haberman, AICP Planning & Design Manager Via email Re: 25 LDC 0014 Revised Text Amendment to Land Development Code For Data Centers Dear Mr."
+  - "(KRC) regarding the proposed revised Louisville Metro Government Draft Data Center Land Development Code Text Amendment (Case No. 25-LDC- 0014, July 20, 2026, Draft)."
+  - "Sincerely, Ashley Wilmes Executive Director and Attorney Kentucky Resources Council Tom FitzGerald Of Counsel Kentucky Resources Council Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org KRC Recommended Revisions to Louisville Metro Revised Draft Data Center Tex"
+  - "Introduction These recommendations are intended to ensure public notice and input, as well as a comprehensive and meaningful framework for regulating the location, operation, and decommissioning of all data centers."
+  - "The recommendations continue to suggest inclusion of many of the provisions in the Kentucky Resources Council (KRC) Model Data Center Zoning Ordinance, with respect to strengthening the review process, the quality of information submitted in applications, and the standards of performance for data ce"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Lee_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156331/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Contact the Office of Planning [#1167] Name Virginia Lee Email * Subject Data Center proposal Comment * I live in 40206."
+  - "Louisvillians want a true moratorium on all data centers while the work is done to fully understand the full impacts and what the right balance is for our community."
+  - "This should apply to 100% of all hyper-data centers including the one that was proposed by Steve Poe’s company."
+  - "Just stop all development of data centers until we are ready to properly permit them."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_LG&E_KU_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156332/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Proposed Data Center Regulations -- Feedback from LG&E/KU Date:"
+  - "I wanted to follow-up with you and provide additional feedback from LG&E/KU on the latest Louisville Metro proposed data center regulations."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Porter_08-03-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156333/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Porter Attorney-at-Law 3109 Westone Way Louisville, KY 40241-3115 stpinlou@aol.com 502-905-9991 Proposed Changes Data Center Text Amendment 4.2.60.C."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Williams_07-02-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156334/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Alignment with Datacenter Regulations and Recommendation on Square‑Foot Cap Adjustment Date:"
+  - "Members of the Planning Commission, Thank you for the thoughtful and comprehensive work reflected in the current draft of Louisville’s data center zoning recommendations."
+  - "I want to begin by stating clearly that I fully support the Commission’s goal of establishing responsible, community‑focused datacenter regulations."
+  - "Louisville should regulate datacenters."
+  - "Where I believe a small adjustment is needed is in the proposed 500,000 sq ft cap for data centers outside Rubbertown."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Written Comments Received at 08-05-26 Hearing.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156335/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Ray Eblers, FFEA Vice President Date: 7-4-26 Re: 25-LDC-0014 DATA CENTER COMMENTS Floyds Fork Environmental Association, FFEA, MISSION is to protect, conserve and preserve Floyds Fork Creek and its Watershed."
+  - "Comments on data centers with the following requests: * Jefferson County must institute a Moratorium to allow more study and make the best standards to protect the welfare of the public which must Limon BA include intensity of many issues."
+  - "How will government protect the public? * How will data centers dangerous chemicals (including diesel fuel) be monitored?"
+  - "The last 1/3 of Jefferson County is more karstified and PDS has the mapping which must be included. * How will the federally endangered Indiana Bat (Mvodis sodalis) be protected or the KY endangered Glade Cress and Running buffalo clover (Trifolium stoloniferum) which is protected under KY law. * Wh"
+  - "Even home generator noise is obnoxious and intrusive— whereas data centers might have more than one and must test periodically."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_08-07-26 (3PM) to 08-19-26 (4PM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156336/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Entry Name Zip Comment Code 4227 Swepson 40215 Data centers should not exist before universal healthcare, homelessness is eradicated, or there are true humans rights for all."
+  - "I hope you receive the karma you deserve. 4228 Mayes 40216 As a Metro District 1 resident only about 1 mile away from the data center being built on Camp Ground Road, I am totally opposed to all hyperscale data centers because of the negative environmental, health, and financial impacts on our commu"
+  - "I realize that these regulations, if approved by Metro Council, won't apply to the data center on Camp Ground Road, but I believe they should be as restrictive as possible to dissuade as many future data centers as possible from locating in Jefferson County."
+  - "(I would have submitted them here, but this form will not allow files to be attached.) I will also be submitting them to all Metro Council members for their consideration. 4229 Hohman 40205 Put ALL data centers in the rich, white east end of town 4230 Michael 40205 I am concerned about the impact of"
+  - "It does not define energy systems, and thus opens the door for more air pollution with only an encouraging of "green energy." The regulations need to be strengthened. 4231 Mills 40211 The cost/benefit of data centers does not stand in the consumer's favor."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Curtis_08-11-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156337/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Protecting Communities in the Age of Data Centers Date:"
+  - "Dear Office of Planning colleagues, The Metropolitan Housing Coalition (MHC) released the following policy paper entitled "Protecting Communities in the Age of Data Centers:"
+  - "This policy paper seeks to provide a clear overview of the effect of data center development on affordability and health in our community, implications of increased cost and usage, and community priorities."
+  - "Additionally, this paper provides focused policy recommendations to ensure communities are protected in this new age of data center development."
+  - "I wanted to make sure to share this policy paper with you directly to add to the ongoing public discourse on data center regulations in our community."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-25-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156338/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Dries_01-06-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156339/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Center comments on the LDC Draft Text Amendment (25-LDC-0014) Date:"
+  - "For your consideration, following are my comments on the LDC Draft Text Amendment for Data Centers (1-2-2026): 1."
+  - "It appears to me that the Draft Text Amendment is significantly overly restrictive and unnecessarily complicated related to Data Centers."
+  - "Data Centers appear to be a way of life for today's economy."
+  - "Most individuals and businesses use Data Center products."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Gaus_08-10-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156340/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Joseph, This is a good opportunity to pause and plan refinements to mitigate the many hazards connected with unregulated data centers."
+  - "As far as mitigations go, I have attached results from an AI risk assessment of the Campground Rd data center development."
+  - "Donna, to answer your earlier question, the governor’s executive order addresses some of the concerns with data centers at the state-level, but it does not appear to have any impact local zoning regulations and decisions."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Herron_08-11-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156341/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Tuesday, August 11, 2026 12:34:06 PM Attachments: clarksvilledatacenterordinance.zip CAUTION:"
+  - "Thanks to you and your team for the professionalism shown in how you all have managed the public input process for the data center regulations."
+  - "I just want to note that our neighbors across the bridge in Indiana have instituted a one year moratorium in Jeffersonville and Clarksville has banned data centers by right."
+  - "Clarksville officials have determined that data centers do not comply with the comprehensive plan and do not belong in their community."
+  - "I suggest we use our comp plan to show how the data centers do or do not align with the long term goals set forth in the plan."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Simon_08-11-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156343/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, rezon
+  - "Dear members of the Louisville Metro Planning Commission (Jim Mims, Sharon Bond, Steve Lannert, Bill Fischer, Te’andre Sistrunk, Travis Fletcher, Russ Lohan, and Beth Stuber), Attached is documentation for 36 additional people who have signed at least one of two petitions in opposition to the constr"
+  - "Thanks for your time in considering this public opposition to the expansion of data centers, -- Dr."
+  - "Reply to vote to Table ITEM O-135-26 — Temporary Moratorium on Rezoning, Conditional Use Permits and Plan Certain, Category 2B and 3 Development Plan Applications Relating to Telecommunication Hotels and Data Centers The undersigned, as one of the People, speaks only for the undersigned and does not"
+  - "The undersigned previously placed Louisville Metro Council members on notice that hyperscale data centers and telecommunication hotels are not ordinary commercial office uses."
+  - "IL NOTICE OF LIABILITY AND BOND DEMAND Effective immediately, Louisville Metro and all public and private actors involved in approval, construction, zoning, permitting, development-plan review, financing, operation, utility coordination, or maintenance of any data center, telecommunication hotel, hy"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Written Comments Received at 08-10-26 Hearing.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156344/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Feedback on Revised Draft Regulations on Data Centers Dear Commissioners, Louisville Climate Action Network (LCAN) consists of 68 entities —36 non-profit groups, 17 forprofit businesses, 1] faith-based organizations and four educational institutions—plus well over 3,000 individuals, all concerned ab"
+  - "Citizens all over the US are calling on local governments to protect them from the harms posed by hyper-scale data centers, especially huge demands for power and water—risking reliability and rate hikes for everyone—air pollution and noise."
+  - "Data center power demands and diesel-powered backup generators alone demand that LCAN respond to the latest revised draft ordinance changes now before you on behalf of our members."
+  - "As written, the much touted “ban” on data centers larger than 500,00 ft? is flawed, since the ordinance doesn’t preclude two, side-by-side 499,000 ft? data centers on adjacent tracts."
+  - "OPO —— Council Dee 126 www.kyrc.org ol KRC Summary of Revisions to Louisville Data Center Ordinance This document reviews the changes in the provisions of the proposed Louisville Metro Government (“LMG”) Draft Data Center Land Development Code Text Amendment (Case No. 25-LDC-0014, June 9, 2026, Draf"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 20260806_Executive-Order_2026-494_Related-to-Data-Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156345/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "As Kentucky looks toward the future, the rapid expansion of digital infrastructure has led to surging demand for data centers and energy resources across our country."
+  - "Data center companies looking to do business in Kentucky, at a minimum, must demonstrate they will be good neighbors by investing responsibly, operating transparently, and working in partnership with our people and communities to make certain these projects deliver lasting benefits for Kentucky’s wo"
+  - "Data center project developers are required to submit an energy plan to the Energy and Environment Cabinet showing how it will protect residential ratepayers, including assurances it can meet its energy needs now, into the near term, and long term without imposing additional costs on other utility r"
+  - "The Public Service Commission shall not allow a utility to increase rates paid by other ratepayers to recover costs caused by the development and operation of a data center."
+  - "The Energy and Environment Cabinet is directed to deny any permitting applications where a data center would negatively impact Kentucky’s air quality, water use, water quality, water supply, federal jurisdictional wetlands, or natural resources."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Data Center_ 09-03-26 DRAFT Amendments (Conceptually Approved by PC on 8-20-26).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156346/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_07272026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156347/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Centers Applicant:"
+  - "Williams explained the difference between a mega data center and the kind of data center that stores data for devices."
+  - "Fowler asked that a moratorium be placed on data center construction."
+  - "Holsclaw believes that any clean up should be dealt with by the developer and applicant the data center."
+  - "(see recording for details) 2 PLANNING COMMISSION MINUTES July 27, 2026 PUBLIC HEARING CASE NO. 25-LDC-0014 00:31:40 Lee Fahey asked the Commission that the guidelines be better outlined before any further data centers be built."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_08052026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156348/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "Koppert urged the Planning Commission enact a mortarium on the construction of data centers until more research about the impacts of data centers on communities can be performed."
+  - "(see recording for details) 00:22:13 Glenn Eisenbray shared with the Commission the water and energy consumption of differing sizes of data centers."
+  - "Eisenbray shared the impacts that data centers can have on the environment."
+  - "(see recording for details) 2 PLANNING COMMISSION MINUTES August 5, 2026 PUBLIC HEARING CASE NO. 25-LDC-0014 00:25:53 Kurt Wallace supports a ban on data center construction."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_08062026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156349/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "(see recording for details) Public Testimony: 00:14:41 Lindsay Gray questioned why the amendments are accommodating data centers and their developers, when community members do not want hyper-scale data centers."
+  - "(see recording for details) 00:22:04 N Lobo shared concerns about the environmental impact that data centers will cause."
+  - "Lobo worried about the negative impacts of data centers and hoped for stricter regulations and water quality protections."
+  - "(see recording for details) 00:25:50 Bryan Reed shared concerns about the sample size that was taken for the community data center feedback."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_08102026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156350/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "(Staff report is part of the case file maintained in the Office of Planning, 444 South 5th Street.) Public Testimony: 00:03:55 William Mayes stated that he lived within a mile of the Campground Road data center."
+  - "Mayes urged the Commission to vote to recommend that the Metro Council ban all future data center construction."
+  - "(see recording for details) 00:07:20 Sherri Thompson shared concerns about sound frequencies that are emitted by data centers."
+  - "(see recording for details) 00:14:15 Maxwell Corbett shared his thoughts of how data centers interact with his religious beliefs."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_08202026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156351/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Data Center_ 09-03-26 PC Recommendation.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156446/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_09032026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156463/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Centers Applicant:"
+  - "Haberman also stated staff has included some additional additions that add some of the standards that were added to data centers over 50,000 square feet to the regulations for data centers under 50,000 square feet, as well as some additional modifications."
+  - "Assistant County Attorney Laura Ferguson pointed out the language regarding Generators in the Accessory Data Centers did not have the Monday through Friday restrictions on testing times."
+  - "Text Amendment to the Louisville Metro Land Development Code (LDC) in Regards to Data Centers On a motion by Commissioner Mims, seconded by Commissioner Steff, the following resolution, based on the staff report, the staff analysis, and the evidence and testimony heard today, was adopted: 2 PLANNING"
+  - "RESOLVED, that the Louisville Metro Planning Commission does hereby RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the following Text Amendment to the Louisville Metro Land Development Code (LDC) in regards to data centers with the recommended "
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: O-251-26 V.1 091026 Amend Land Development Code Regarding Data Centers .pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156537/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "ORDINANCE NO. _______________, SERIES 2026 ..title AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25- LDC-0014). ..body SPONSORED BY:"
+  - "Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "This may include data services associated with off-site users directly affiliated with the on-site Principal Use, Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunications Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_07-24-26 (9AM) to 07-31-26 (9AM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156317/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "(as in specific distance) 4170 Reed 40023 They do not belong in Kentucky in any way, shape or form. 4171 Mansilla 40299 NO Data Centers, NONE!! 4172 McCoy 40211 Simple- stay out of Louisville."
+  - "We don't need data centers complicating our lives. 4173 Walters 40213 No new data centers in Louisville!"
+  - "Anywhere a datacenter has been approved have seen their local utility resources rise in price and lower in quality."
+  - "The whole AI money machine is just several companies handing the same money back and forth and calling it operating profit. 4174 Leonard 40220 Data Centers don't support the health and well-being of our residents."
+  - "The future of Jefferson county depends on other employment opportunities. 4175 Williams 40218 Data centers are critical infrastructure that support hospitals, schools, emergency services, businesses, and the everyday digital tools residents rely on."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-24-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156319/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Data Centers_Survey_01-01-25.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156320/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Data Center Survey and Results Total Submittals: 3590 Question 1:"
+  - "How much do you know about Data Centers?"
+  - "Affirmative Percentage Responses I'm not sure / prefer not to answer 114 3.2% I know very little about Data Centers 60 1.7% I know some things about Data Centers 1878 52.3% I know a lot about Data Centers 1538 42.8% 3590 100.0% *Limited to single choice Question 5:"
+  - "What size of Data Centers are ok in Jefferson County?"
+  - "(Required) Affirmative Percentage of Total Responses Respondents Selecting Data Centers of any size are 2963 82.5% inappropriate Small (under 10,000 sq ft) 556 15.5% Medium (10,000 to 50,000 sq ft) 241 6.7% Large (50,001 to 100,000 sq ft) 94 2.6% “Hyperscale" (Over 100,000 sq ft) 73 2.0% I'm not sur"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Emailed Comments_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156321/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, rezon, variance
+  - "FFEA does not want to see vague, “Accessory Uses” regarding data centers – please remove this terminology and any reference due to oodles of wiggle-room to the possible detriment of the public."
+  - "Also some reports by neighbors of temperatures increasing up to 12 degrees close to data centers due to waste heat – so please do more research."
+  - "And, since people need and like to eat, farmland should never be used for data centers; instead, keep the land to INDUSTRIAL zoning areas."
+  - "Likewise, our park’s lands should never be used for data centers; instead, keep them to INDUSTRIAL zoning only."
+  - "Gas turbines create the need for Texas Gas Pipelines intrusion into farmland, parks, homes, etc. and will bring noise, emissions, etc."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Emailed Comments_Pre Draft_Through 6-8-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156322/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Louisville Metro Council Resolution Number 082, Series 2025 Zoning Code Updates re Hyper-Scale Data Centers Dear Mr."
+  - "But in the case of hyper-scale data centers, Big Tech can pad its power, water and land requirements at others’ expense."
+  - "If the data centers don’t end up needing that much power or water, LG&E and the Louisville Water Co. must pass the costs of their stranded assets to their other customers."
+  - "Energy efficiency, solar power and battery storage are the cheapest, cleanest and fastest sources of power, yet the incentives to use them at data centers is undermined because the costs of the new power plants they require will be externalized (see #3). 5."
+  - "New, gas-fired power plants are very expensive and operate for at least 40 years."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Kentucky Resources Council Recommended Ordinance_Version 1.4.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156323/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, map amendment, site plan
+  - "Data centers and data center development have recently become a concern across the country, as the development of new “artificial intelligence” tools has multiplied the demand for computer processing power, and correlative energy, water, and other resource needs."
+  - "At its base, a data center is a warehouse filled with racks of computer servers, often running all hours of the day and night."
+  - "As the size of data centers have grown, so has the need for ancillary equipment and resources both on- and off-site."
+  - "On-site, a data center also 1 This ordinance was developed for consideration and use by communities in the Commonwealth by the Kentucky Resources Council, Inc."
+  - "In addition, they also contain significant on-site backup or "behind-the-meter” power generating equipment, such as diesel generators, gas turbines, and battery energy storage systems."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Metro Council Resolution 082 2025.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156324/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "RESOLUTION NO. 082 SERIES 2025 A RESOLUTION REQUESTING THE PLANNING COMMISSION REVIEW THE METRO LAND DEVELOPMENT CODE REGULATIONS WITH REGARD TO DATA CENTERS."
+  - "The Planning Commission should undertake a review of and consider amendments to the current LDC to address data centers, including a consideration of best practices and regulatory framework from comparable jurisdictions, and to consider the various impacts of data centers, to better define telecommu"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_ATT_08-04-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156327/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data center regulations proposal - latest telecom industry feedback Date:"
+  - "Circling back to you with additional telecommunications industry feedback on the latest Louisville Metro proposed data center regulations."
+  - "To address our continued concerns, we propose the following modifications to the Telecommunication Data Center definition."
+  - "The new language is in red. “Data Center, Telecommunication – A newly constructed Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - "Existing telecommunications data centers and any possible expansions are grandfathered as nonconforming to the permitting requirements in this section.” The industry agrees that the two changes above would resolve our concerns about potential impediments to our Louisville Metro customer service."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Draft 30 Day Period_06-09-26 to 07-10-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156328/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, plat
+  - "I understand that the water that is often discharged from data centers are highly polluted so if we can limit that, that would be great. 4190 Blackburn 40207 This is a proposal that has proven to cause environmental harm and human harm."
+  - "I vote for a ban on data centers in all counties Kentucky until we have done more research. 4191 Kahn 40213 I am particularly concerned that data centers would be placed in West End neighborhoods, extending the historical burden placed disproportionately on lower income residents of our city."
+  - "Data centers are too new to have any data on long-term health or environmental effects on the people and areas located near them, or even to know how far the impacts would extend."
+  - "Placing centers here without understanding the full consequences puts people of our city at risk and the benefits do not appear to outweigh the risks. 4192 Morris 40213 No data centers in Jefferson county please."
+  - "There may be a short-term benefit to allowing them to build in our neighborhoods, but the damage will far outweigh any meager benefit. 4193 Swilley 40205 I don’t want any data centers at all anywhere around Louisville."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_KRC_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156330/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, rezon
+  - "Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org August 7, 2026 Joseph Haberman, AICP Planning & Design Manager Via email Re: 25 LDC 0014 Revised Text Amendment to Land Development Code For Data Centers Dear Mr."
+  - "(KRC) regarding the proposed revised Louisville Metro Government Draft Data Center Land Development Code Text Amendment (Case No. 25-LDC- 0014, July 20, 2026, Draft)."
+  - "Sincerely, Ashley Wilmes Executive Director and Attorney Kentucky Resources Council Tom FitzGerald Of Counsel Kentucky Resources Council Post Office Box 1070 Frankfort, Kentucky 40602 502-875-2428 hello@kyrc.org www.kyrc.org KRC Recommended Revisions to Louisville Metro Revised Draft Data Center Tex"
+  - "Introduction These recommendations are intended to ensure public notice and input, as well as a comprehensive and meaningful framework for regulating the location, operation, and decommissioning of all data centers."
+  - "The recommendations continue to suggest inclusion of many of the provisions in the Kentucky Resources Council (KRC) Model Data Center Zoning Ordinance, with respect to strengthening the review process, the quality of information submitted in applications, and the standards of performance for data ce"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Lee_08-05-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156331/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Contact the Office of Planning [#1167] Name Virginia Lee Email * Subject Data Center proposal Comment * I live in 40206."
+  - "Louisvillians want a true moratorium on all data centers while the work is done to fully understand the full impacts and what the right balance is for our community."
+  - "This should apply to 100% of all hyper-data centers including the one that was proposed by Steve Poe’s company."
+  - "Just stop all development of data centers until we are ready to properly permit them."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_LG&E_KU_08-07-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156332/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Proposed Data Center Regulations -- Feedback from LG&E/KU Date:"
+  - "I wanted to follow-up with you and provide additional feedback from LG&E/KU on the latest Louisville Metro proposed data center regulations."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Porter_08-03-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156333/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Porter Attorney-at-Law 3109 Westone Way Louisville, KY 40241-3115 stpinlou@aol.com 502-905-9991 Proposed Changes Data Center Text Amendment 4.2.60.C."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Williams_07-02-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156334/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Alignment with Datacenter Regulations and Recommendation on Square‑Foot Cap Adjustment Date:"
+  - "Members of the Planning Commission, Thank you for the thoughtful and comprehensive work reflected in the current draft of Louisville’s data center zoning recommendations."
+  - "I want to begin by stating clearly that I fully support the Commission’s goal of establishing responsible, community‑focused datacenter regulations."
+  - "Louisville should regulate datacenters."
+  - "Where I believe a small adjustment is needed is in the proposed 500,000 sq ft cap for data centers outside Rubbertown."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Written Comments Received at 08-05-26 Hearing.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156335/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Ray Eblers, FFEA Vice President Date: 7-4-26 Re: 25-LDC-0014 DATA CENTER COMMENTS Floyds Fork Environmental Association, FFEA, MISSION is to protect, conserve and preserve Floyds Fork Creek and its Watershed."
+  - "Comments on data centers with the following requests: * Jefferson County must institute a Moratorium to allow more study and make the best standards to protect the welfare of the public which must Limon BA include intensity of many issues."
+  - "How will government protect the public? * How will data centers dangerous chemicals (including diesel fuel) be monitored?"
+  - "The last 1/3 of Jefferson County is more karstified and PDS has the mapping which must be included. * How will the federally endangered Indiana Bat (Mvodis sodalis) be protected or the KY endangered Glade Cress and Running buffalo clover (Trifolium stoloniferum) which is protected under KY law. * Wh"
+  - "Even home generator noise is obnoxious and intrusive— whereas data centers might have more than one and must test periodically."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Comment Forms_Post Draft 30 Day Period_08-07-26 (3PM) to 08-19-26 (4PM).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156336/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Entry Name Zip Comment Code 4227 Swepson 40215 Data centers should not exist before universal healthcare, homelessness is eradicated, or there are true humans rights for all."
+  - "I hope you receive the karma you deserve. 4228 Mayes 40216 As a Metro District 1 resident only about 1 mile away from the data center being built on Camp Ground Road, I am totally opposed to all hyperscale data centers because of the negative environmental, health, and financial impacts on our commu"
+  - "I realize that these regulations, if approved by Metro Council, won't apply to the data center on Camp Ground Road, but I believe they should be as restrictive as possible to dissuade as many future data centers as possible from locating in Jefferson County."
+  - "(I would have submitted them here, but this form will not allow files to be attached.) I will also be submitting them to all Metro Council members for their consideration. 4229 Hohman 40205 Put ALL data centers in the rich, white east end of town 4230 Michael 40205 I am concerned about the impact of"
+  - "It does not define energy systems, and thus opens the door for more air pollution with only an encouraging of "green energy." The regulations need to be strengthened. 4231 Mills 40211 The cost/benefit of data centers does not stand in the consumer's favor."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Curtis_08-11-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156337/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Protecting Communities in the Age of Data Centers Date:"
+  - "Dear Office of Planning colleagues, The Metropolitan Housing Coalition (MHC) released the following policy paper entitled "Protecting Communities in the Age of Data Centers:"
+  - "This policy paper seeks to provide a clear overview of the effect of data center development on affordability and health in our community, implications of increased cost and usage, and community priorities."
+  - "Additionally, this paper provides focused policy recommendations to ensure communities are protected in this new age of data center development."
+  - "I wanted to make sure to share this policy paper with you directly to add to the ongoing public discourse on data center regulations in our community."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Data Centers_Planning Commission SR_07-25-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156338/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "25-LDC-0014 Planning Commission Staff Report July 25, 2026 Text Amendment to the Land Development Code – Data Center Location:"
+  - "Text Amendment to the Land Development Code (LDC) related to Data Centers • Staff finds the text amendment is in keeping with Plan 2040 and recommends that the Planning Commission RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the text amendmen"
+  - "Data centers are buildings that house computer hardware that stores and processes digital information."
+  - "Currently, data centers are not classified as a specific use in the LDC."
+  - "Data centers that are in accessory in nature can be permitted in any zoning district in accordance with the accessory use standards."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Dries_01-06-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156339/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Center comments on the LDC Draft Text Amendment (25-LDC-0014) Date:"
+  - "For your consideration, following are my comments on the LDC Draft Text Amendment for Data Centers (1-2-2026): 1."
+  - "It appears to me that the Draft Text Amendment is significantly overly restrictive and unnecessarily complicated related to Data Centers."
+  - "Data Centers appear to be a way of life for today's economy."
+  - "Most individuals and businesses use Data Center products."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Gaus_08-10-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156340/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Joseph, This is a good opportunity to pause and plan refinements to mitigate the many hazards connected with unregulated data centers."
+  - "As far as mitigations go, I have attached results from an AI risk assessment of the Campground Rd data center development."
+  - "Donna, to answer your earlier question, the governor’s executive order addresses some of the concerns with data centers at the state-level, but it does not appear to have any impact local zoning regulations and decisions."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Herron_08-11-26_Redacted.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156341/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Tuesday, August 11, 2026 12:34:06 PM Attachments: clarksvilledatacenterordinance.zip CAUTION:"
+  - "Thanks to you and your team for the professionalism shown in how you all have managed the public input process for the data center regulations."
+  - "I just want to note that our neighbors across the bridge in Indiana have instituted a one year moratorium in Jeffersonville and Clarksville has banned data centers by right."
+  - "Clarksville officials have determined that data centers do not comply with the comprehensive plan and do not belong in their community."
+  - "I suggest we use our comp plan to show how the data centers do or do not align with the long term goals set forth in the plan."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Simon_08-11-26.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156343/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use, rezon
+  - "Dear members of the Louisville Metro Planning Commission (Jim Mims, Sharon Bond, Steve Lannert, Bill Fischer, Te’andre Sistrunk, Travis Fletcher, Russ Lohan, and Beth Stuber), Attached is documentation for 36 additional people who have signed at least one of two petitions in opposition to the constr"
+  - "Thanks for your time in considering this public opposition to the expansion of data centers, -- Dr."
+  - "Reply to vote to Table ITEM O-135-26 — Temporary Moratorium on Rezoning, Conditional Use Permits and Plan Certain, Category 2B and 3 Development Plan Applications Relating to Telecommunication Hotels and Data Centers The undersigned, as one of the People, speaks only for the undersigned and does not"
+  - "The undersigned previously placed Louisville Metro Council members on notice that hyperscale data centers and telecommunication hotels are not ordinary commercial office uses."
+  - "IL NOTICE OF LIABILITY AND BOND DEMAND Effective immediately, Louisville Metro and all public and private actors involved in approval, construction, zoning, permitting, development-plan review, financing, operation, utility coordination, or maintenance of any data center, telecommunication hotel, hy"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Written Comments Received at 08-10-26 Hearing.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156344/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Feedback on Revised Draft Regulations on Data Centers Dear Commissioners, Louisville Climate Action Network (LCAN) consists of 68 entities —36 non-profit groups, 17 forprofit businesses, 1] faith-based organizations and four educational institutions—plus well over 3,000 individuals, all concerned ab"
+  - "Citizens all over the US are calling on local governments to protect them from the harms posed by hyper-scale data centers, especially huge demands for power and water—risking reliability and rate hikes for everyone—air pollution and noise."
+  - "Data center power demands and diesel-powered backup generators alone demand that LCAN respond to the latest revised draft ordinance changes now before you on behalf of our members."
+  - "As written, the much touted “ban” on data centers larger than 500,00 ft? is flawed, since the ordinance doesn’t preclude two, side-by-side 499,000 ft? data centers on adjacent tracts."
+  - "OPO —— Council Dee 126 www.kyrc.org ol KRC Summary of Revisions to Louisville Data Center Ordinance This document reviews the changes in the provisions of the proposed Louisville Metro Government (“LMG”) Draft Data Center Land Development Code Text Amendment (Case No. 25-LDC-0014, June 9, 2026, Draf"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 20260806_Executive-Order_2026-494_Related-to-Data-Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156345/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "As Kentucky looks toward the future, the rapid expansion of digital infrastructure has led to surging demand for data centers and energy resources across our country."
+  - "Data center companies looking to do business in Kentucky, at a minimum, must demonstrate they will be good neighbors by investing responsibly, operating transparently, and working in partnership with our people and communities to make certain these projects deliver lasting benefits for Kentucky’s wo"
+  - "Data center project developers are required to submit an energy plan to the Energy and Environment Cabinet showing how it will protect residential ratepayers, including assurances it can meet its energy needs now, into the near term, and long term without imposing additional costs on other utility r"
+  - "The Public Service Commission shall not allow a utility to increase rates paid by other ratepayers to recover costs caused by the development and operation of a data center."
+  - "The Energy and Environment Cabinet is directed to deny any permitting applications where a data center would negatively impact Kentucky’s air quality, water use, water quality, water supply, federal jurisdictional wetlands, or natural resources."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Data Center_ 09-03-26 DRAFT Amendments (Conceptually Approved by PC on 8-20-26).pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156346/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_07272026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156347/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Centers Applicant:"
+  - "Williams explained the difference between a mega data center and the kind of data center that stores data for devices."
+  - "Fowler asked that a moratorium be placed on data center construction."
+  - "Holsclaw believes that any clean up should be dealt with by the developer and applicant the data center."
+  - "(see recording for details) 2 PLANNING COMMISSION MINUTES July 27, 2026 PUBLIC HEARING CASE NO. 25-LDC-0014 00:31:40 Lee Fahey asked the Commission that the guidelines be better outlined before any further data centers be built."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_08052026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156348/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "Koppert urged the Planning Commission enact a mortarium on the construction of data centers until more research about the impacts of data centers on communities can be performed."
+  - "(see recording for details) 00:22:13 Glenn Eisenbray shared with the Commission the water and energy consumption of differing sizes of data centers."
+  - "Eisenbray shared the impacts that data centers can have on the environment."
+  - "(see recording for details) 2 PLANNING COMMISSION MINUTES August 5, 2026 PUBLIC HEARING CASE NO. 25-LDC-0014 00:25:53 Kurt Wallace supports a ban on data center construction."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_08062026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156349/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "(see recording for details) Public Testimony: 00:14:41 Lindsay Gray questioned why the amendments are accommodating data centers and their developers, when community members do not want hyper-scale data centers."
+  - "(see recording for details) 00:22:04 N Lobo shared concerns about the environmental impact that data centers will cause."
+  - "Lobo worried about the negative impacts of data centers and hoped for stricter regulations and water quality protections."
+  - "(see recording for details) 00:25:50 Bryan Reed shared concerns about the sample size that was taken for the community data center feedback."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_08102026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156350/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - "(Staff report is part of the case file maintained in the Office of Planning, 444 South 5th Street.) Public Testimony: 00:03:55 William Mayes stated that he lived within a mile of the Campground Road data center."
+  - "Mayes urged the Commission to vote to recommend that the Metro Council ban all future data center construction."
+  - "(see recording for details) 00:07:20 Sherri Thompson shared concerns about sound frequencies that are emitted by data centers."
+  - "(see recording for details) 00:14:15 Maxwell Corbett shared his thoughts of how data centers interact with his religious beliefs."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_08202026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156351/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - "Data Centers Applicant:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_Data Center_ 09-03-26 PC Recommendation.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156446/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Text Amendment to the Land Development Code for Data Centers APPLICANT:"
+  - "Chapter 1, Part 2 Definitions **** Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: 25-LDC-0014_PCMinutes_09032026.pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156463/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "Data Centers Applicant:"
+  - "Haberman also stated staff has included some additional additions that add some of the standards that were added to data centers over 50,000 square feet to the regulations for data centers under 50,000 square feet, as well as some additional modifications."
+  - "Assistant County Attorney Laura Ferguson pointed out the language regarding Generators in the Accessory Data Centers did not have the Monday through Friday restrictions on testing times."
+  - "Text Amendment to the Louisville Metro Land Development Code (LDC) in Regards to Data Centers On a motion by Commissioner Mims, seconded by Commissioner Steff, the following resolution, based on the staff report, the staff analysis, and the evidence and testimony heard today, was adopted: 2 PLANNING"
+  - "RESOLVED, that the Louisville Metro Planning Commission does hereby RECOMMEND that the Louisville Metro Council and other legislative bodies with zoning authority APPROVE the following Text Amendment to the Louisville Metro Land Development Code (LDC) in regards to data centers with the recommended "
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-09-15, packet: O-251-26 V.1 091026 Amend Land Development Code Regarding Data Centers .pdf, https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156537/File
+  - Agenda item: AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25-LDC-0014). O-251-26
+  - Also mentions: conditional use
+  - "ORDINANCE NO. _______________, SERIES 2026 ..title AN ORDINANCE AMENDING THE LOUISVILLE METRO LAND DEVELOPMENT CODE REGARDING DATA CENTERS (CASE NO. 25- LDC-0014). ..body SPONSORED BY:"
+  - "Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "This may include data services associated with off-site users directly affiliated with the on-site Principal Use, Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunications Facility and/or a telecommunications service provider or providers."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-08-04, agenda: Louisville Metro Planning and Zoning Committee agenda 2026-08-04, https://legistar2.granicus.com/louisville/meetings/2026/8/11229_A_Planning_and_Zoning_Committee_26-08-04_Meeting_Agenda.pdf
+  - Also mentions: conditional use, rezon
+  - "O-135-26 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISSION."
+  - "O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf Legislative History Louisville Metro Government Page 2 Printed on 8/3/2026 Planning and Zoning Committee Meeting Agenda - Final August 4, 2026 5/14/26 Metro Council assigned to the Planning and Zoning Committee Action Required By:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-08-04, minutes: Louisville Metro Planning and Zoning Committee minutes 2026-08-04, https://legistar2.granicus.com/louisville/meetings/2026/8/11229_M_Planning_and_Zoning_Committee_26-08-04_Action_Summary.pdf
+  - Also mentions: conditional use, rezon
+  - "O-135-26 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISSION (AS AMENDED)."
+  - "O-135-26 V.3 FAM 081326 Temporary Moratorium on Data Centers.pdf O-135-26 V.2 CAM 080426 Temporary Moratorium on Data Centers.pdf O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf A motion was made by Committee Member Ruhe, seconded by Committee Member Hudson, that this Ordinance be retur"
+  - "The following spoke to the proposed amendment: - Council Member Chappell - Laura Ferguson, Jefferson County Attorney's Office A motion was made by Committee Member Parrish-Wright, seconded by Committee Member Ruhe, that Whereas clause #4 of this Ordinance be amended as shown in the attached document"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-08-04, packet: O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/154041/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "O’Connell Jefferson County Attorney By: ________________________________ O-135-26 Temporary Moratorium On Data Centers.docx (TF 5-7-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-08-04, packet: O-135-26 V.3 FAM 081326 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155888/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-08-04, packet: ORD 151 2026.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155968/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. | 5 | , SERIES 2026 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISS"
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There 16 hereby imposed_a_moratorium_on_the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-08-04, packet: O-135-26 V.2 CAM 080426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/156222/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - "O’Connell Jefferson County Attorney By: ____________________________ O-135-25 Temporary Moratorium On Data Centers.docx (as amended) (lf) 8-04-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-08-04, packet: O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/154041/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "O’Connell Jefferson County Attorney By: ________________________________ O-135-26 Temporary Moratorium On Data Centers.docx (TF 5-7-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-08-04, packet: O-135-26 V.3 FAM 081326 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155888/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-08-04, packet: ORD 151 2026.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155968/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. | 5 | , SERIES 2026 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISS"
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There 16 hereby imposed_a_moratorium_on_the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-08-04, packet: O-135-26 V.2 CAM 080426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/156222/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - "O’Connell Jefferson County Attorney By: ____________________________ O-135-25 Temporary Moratorium On Data Centers.docx (as amended) (lf) 8-04-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-08-04, packet: O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/154041/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "O’Connell Jefferson County Attorney By: ________________________________ O-135-26 Temporary Moratorium On Data Centers.docx (TF 5-7-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-08-04, packet: O-135-26 V.3 FAM 081326 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155888/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-08-04, packet: ORD 151 2026.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155968/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. | 5 | , SERIES 2026 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISS"
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There 16 hereby imposed_a_moratorium_on_the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-08-04, packet: O-135-26 V.2 CAM 080426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/156222/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - "O’Connell Jefferson County Attorney By: ____________________________ O-135-25 Temporary Moratorium On Data Centers.docx (as amended) (lf) 8-04-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-07-21, agenda: Louisville Metro Planning and Zoning Committee agenda 2026-07-21, https://legistar2.granicus.com/louisville/meetings/2026/7/11482_A_Planning_and_Zoning_Committee_26-07-21_Meeting_Agenda.pdf
+  - Also mentions: conditional use, rezon
+  - "O-135-26 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISSION."
+  - "O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf Legislative History 5/14/26 Metro Council assigned to the Planning and Zoning Committee Action Required By:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-07-21, minutes: Louisville Metro Planning and Zoning Committee minutes 2026-07-21, https://legistar2.granicus.com/louisville/meetings/2026/7/11482_M_Planning_and_Zoning_Committee_26-07-21_Action_Summary.pdf
+  - Also mentions: conditional use, rezon
+  - "O-135-26 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISSION."
+  - "O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf This item remained postponed. 3."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-07-21, packet: O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/154041/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "O’Connell Jefferson County Attorney By: ________________________________ O-135-26 Temporary Moratorium On Data Centers.docx (TF 5-7-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-07-21, packet: O-135-26 V.3 FAM 081326 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155888/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-07-21, packet: ORD 151 2026.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155968/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. | 5 | , SERIES 2026 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISS"
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There 16 hereby imposed_a_moratorium_on_the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-07-21, packet: O-135-26 V.2 CAM 080426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/156222/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - "O’Connell Jefferson County Attorney By: ____________________________ O-135-25 Temporary Moratorium On Data Centers.docx (as amended) (lf) 8-04-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-16, agenda: Louisville Metro Planning and Zoning Committee agenda 2026-06-16, https://legistar2.granicus.com/louisville/meetings/2026/6/11227_A_Planning_and_Zoning_Committee_26-06-16_Meeting_Agenda.pdf
+  - Also mentions: conditional use, rezon
+  - "ID 26-0641 RECENTLY PUBLISHED DATA CENTER REGULATIONS - Brian Davis, Office of Planning Pending Legislation 2."
+  - "O-135-26 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISSION."
+  - "O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf Legislative History 5/14/26 Metro Council assigned to the Planning and Zoning Committee Action Required By:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-16, minutes: Louisville Metro Planning and Zoning Committee minutes 2026-06-16, https://legistar2.granicus.com/louisville/meetings/2026/6/11227_M_Planning_and_Zoning_Committee_26-06-16_Action_Summary.pdf
+  - Also mentions: conditional use, rezon
+  - "ID 26-0641 RECENTLY PUBLISHED DATA CENTER REGULATIONS - Brian Davis, Office of Planning Attachments:"
+  - "Data Center Draft Overview.pdf Joe Haberman, Office of Planning, gave a presentation (see attached)."
+  - "O-135-26 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISSION."
+  - "O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf A motion was made by Committee Member Batshon, seconded by Committee Member Hudson, that this Ordinance be returned to the table."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-16, packet: Data Center Draft Overview.pdf, https://webapi.legistar.com/v1/louisville/Matters/65311/Attachments/154520/File
+  - Agenda item: RECENTLY PUBLISHED DATA CENTER REGULATIONS - Brian Davis, Office of Planning ID 26-0641
+  - "DEFINITIONS Data Center – All or portion of a facility used primarily for data services, including the storage, processing, management, and distribution of data through the use of computer systems, servers, networking equipment, and related components."
+  - "Data Center, Accessory – A Data Center that serves a Principal Use on the same lot, while subordinate in purpose to other on-site activities of the Principal Use."
+  - "Although an Accessory Data Center’s primary purpose is to provide data infrastructure supporting the operation of an on-site Principal Use, it may support the enterprise functions of the business, institution, or organization associated with the on-site Principal Use."
+  - "Data Center, Telecommunication – A Data Center that exclusively serves a Telecommunication Facility and/or a telecommunications service provider."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-16, packet: O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/154041/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "O’Connell Jefferson County Attorney By: ________________________________ O-135-26 Temporary Moratorium On Data Centers.docx (TF 5-7-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-16, packet: O-135-26 V.3 FAM 081326 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155888/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-16, packet: ORD 151 2026.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155968/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. | 5 | , SERIES 2026 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISS"
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There 16 hereby imposed_a_moratorium_on_the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-16, packet: O-135-26 V.2 CAM 080426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/156222/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - "O’Connell Jefferson County Attorney By: ____________________________ O-135-25 Temporary Moratorium On Data Centers.docx (as amended) (lf) 8-04-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-16, packet: O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/154041/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "O’Connell Jefferson County Attorney By: ________________________________ O-135-26 Temporary Moratorium On Data Centers.docx (TF 5-7-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-16, packet: O-135-26 V.3 FAM 081326 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155888/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-16, packet: ORD 151 2026.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155968/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. | 5 | , SERIES 2026 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISS"
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There 16 hereby imposed_a_moratorium_on_the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-16, packet: O-135-26 V.2 CAM 080426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/156222/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - "O’Connell Jefferson County Attorney By: ____________________________ O-135-25 Temporary Moratorium On Data Centers.docx (as amended) (lf) 8-04-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-02, agenda: Louisville Metro Planning and Zoning Committee agenda 2026-06-02, https://legistar2.granicus.com/louisville/meetings/2026/6/11225_A_Planning_and_Zoning_Committee_26-06-02_Meeting_Agenda.pdf
+  - Also mentions: conditional use, rezon
+  - "O-135-26 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISSION."
+  - "O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf Legislative History 5/14/26 Metro Council assigned to the Planning and Zoning Committee Action Required By:"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-02, minutes: Louisville Metro Planning and Zoning Committee minutes 2026-06-02, https://legistar2.granicus.com/louisville/meetings/2026/6/11225_M_Planning_and_Zoning_Committee_26-06-02_Action_Summary.pdf
+  - Also mentions: conditional use, rezon
+  - "O-135-26 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISSION."
+  - "O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf A motion was made by Committee Member Parrish-Wright, seconded by Committee Member Ruhe, that this Ordinance be recommended for approval."
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-02, packet: O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/154041/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "O’Connell Jefferson County Attorney By: ________________________________ O-135-26 Temporary Moratorium On Data Centers.docx (TF 5-7-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-02, packet: O-135-26 V.3 FAM 081326 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155888/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-02, packet: ORD 151 2026.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155968/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. | 5 | , SERIES 2026 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISS"
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There 16 hereby imposed_a_moratorium_on_the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-02, packet: O-135-26 V.2 CAM 080426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/156222/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - "O’Connell Jefferson County Attorney By: ____________________________ O-135-25 Temporary Moratorium On Data Centers.docx (as amended) (lf) 8-04-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-02, packet: O-135-26 V.1 051426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/154041/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "O’Connell Jefferson County Attorney By: ________________________________ O-135-26 Temporary Moratorium On Data Centers.docx (TF 5-7-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-02, packet: O-135-26 V.3 FAM 081326 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155888/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-02, packet: ORD 151 2026.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/155968/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. | 5 | , SERIES 2026 AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE PLANNING COMMISS"
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "There 16 hereby imposed_a_moratorium_on_the acceptance and further processing by Metro staff of any building permit application in connection with the repurposing of an existing structure for telecommunications hotels and/or data centers as one or more of the proposed uses."
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- Louisville Metro Planning and Zoning Committee, 2026-06-02, packet: O-135-26 V.2 CAM 080426 Temporary Moratorium on Data Centers.pdf, https://webapi.legistar.com/v1/louisville/Matters/64969/Attachments/156222/File
+  - Agenda item: AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTER
+  - Also mentions: conditional use, rezon
+  - "ORDINANCE NO. ______________, SERIES 2026 ..title AN ORDINANCE IMPOSING A TEMPORARY MORATORIUM ON REZONING, CONDITIONAL USE PERMITS AND PLAN CERTAIN, CATEGORY 2B AND 3 DEVELOPMENT PLAN APPLICATIONS RELATING TO TELECOMMUNICATION HOTELS AND DATA CENTERS PENDING A REVIEW AND RECOMMENDED CHANGES BY THE "
+  - "COUNCIL MEMBERS CHAPPELL, PARRISH-WRIGHT, AND HAWKINS WHEREAS, the Legislative Council of the Louisville/Jefferson County Metro Government (the “Council”) passed Resolution No. 082, Series 2025 requesting the Planning Commission review the Land Development Code regarding Data Centers on September 25"
+  - "There is hereby imposed a moratorium on the acceptance and further processing by Louisville Metro Planning & Design Services, Louisville/Jefferson County Metro Planning Commission, and Louisville/Jefferson County Board of Zoning Adjustment of any applications for rezoning, conditional use permits, a"
+  - "This Ordinance shall take effect upon its passage and approval or otherwise becoming law and shall remain in effect for a period of one hundred eighty (180) calendar days after its effective date unless repealed, extended, or this Council takes final action on proposed changes to the Land Developmen"
+  - "O’Connell Jefferson County Attorney By: ____________________________ O-135-25 Temporary Moratorium On Data Centers.docx (as amended) (lf) 8-04-26) 3"
+  - GEM plants in the same county: Cane Run Station, Mill Creek Station, Paddys Run power station
+- City of Madisonville, 2026-10-19, agenda: Annexation & Zoning Committee Meeting Agenda, https://madisonvilleky.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5378,plainText=false)
+  - "Discussion of amending Chapter 156 of the City of Madisonville Code of Ordinances relating to General Industrial and an Ordinance adopting Section 156.037 to establish Data Center Development Standards. 1"
+- City of Madisonville, 2026-10-19, packet: Annexation & Zoning Committee Meeting Draft Ordinance, https://madisonvilleky.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=5383,plainText=false)
+  - "AN ORDINANCE AMENDING CHAPTER 156 OF THE CITY OF MADISONVILLE CODE OF ORDINANCES TO ESTABLISH §156.037, DATA CENTER DEVELOPMENT STANDARDS."
+  - "(2) The requirements of this section apply only to data centers and their accessory uses and structures."
+  - "(3) A data center shall comply with all generally applicable requirements of this chapter, including §156.031 and §156.075, except as expressly modified by this section."
+  - "If a requirement of this section conflicts with a generally applicable requirement, the more specific data center requirement shall control."
+  - "(B) Definitions DATA CENTER."
+- Henderson County Fiscal Court, Planning and Zoning, 2026-11-03, agenda: November 3rd,2026 Planning Commission Agenda agenda, https://www.hendersoncountyky.gov/AgendaCenter/ViewFile/Agenda/_11032026-563
+  - "The Henderson City-County Planning Commission will hold a Public Hearing regarding the possibility of a Proposed Two-Year Moratorium on Data Centers and Possible Zoning Text Amendment:"
+  - "November 3, 2026, Agenda 1 Henderson City-County Planning Commission ~ 1990 Barret Court, Suite C ~ 270-831-1289 www.hendersonplanning.org Discussion and possible action concerning a recommendation to the Henderson County Fiscal Court and to conduct a public hearing to receive comments on a proposed"
+  - GEM plants in the same county: Green Station, BREC 2023 IRP power station
+- Henderson County Fiscal Court, Planning and Zoning, 2026-10-06, agenda: October 6th,2026 Planning Commission Agenda agenda, https://www.hendersoncountyky.gov/AgendaCenter/ViewFile/Agenda/_10062026-558
+  - "ADMINISTRATIVE BUSINESS – Data Center Resolution Discussion V."
+  - GEM plants in the same county: Green Station, BREC 2023 IRP power station
+- Henderson County Fiscal Court, Planning and Zoning, 2026-07-14, minutes: Regular Fiscal Court Meeting minutes, https://www.hendersoncountyky.gov/AgendaCenter/ViewFile/Minutes/_07142026-546
+  - "Planning Commission Zoning Ordinance Recommendation — Executive Director Brian Bishop With a lot of public concern about the possibility of data centers applying for permits to operate within the county, Mr."
+  - "Bishop explained that the Planning Commission has been working on a summary for a proposed data center ordinance."
+  - "It is built on the Kentucky Resources Council (KRC) Model Data Center Siting Ordinance."
+  - "It includes things tike increased setbacks, decreased noise limits, increased public notice and stronger compliance reporting, It calls for language that definitively states a permit expires after one year where no action has been taken and property protections that will force data centers to repair"
+  - "There will be required systems to monitor water usage to determine that it has no negative effect on citizens and cach data center must provide documentation from utility providers ensuring that operating the facilities will not increase rates for citizens."
+  - GEM plants in the same county: Green Station, BREC 2023 IRP power station
+- Henderson County Fiscal Court, Planning and Zoning, 2026-06-23, minutes: Regular Fiscal Court Meeting minutes, https://www.hendersoncountyky.gov/AgendaCenter/ViewFile/Minutes/_06232026-543
+  - "New Business Judge Schneider reported that there have been community concerns over the potential of the development of data centers and the expression of desire to develop an ordinance regarding such."
+  - "Bickwermert asked if one of the Magistrates could request that a Moratorium be placed on Data Centers today."
+  - "Hortin also asked for further clarification as to why a moratorium on Data Centers could not be initiated today."
+  - GEM plants in the same county: Green Station, BREC 2023 IRP power station
+- Henderson County Fiscal Court, Planning and Zoning, 2026-05-12, minutes: Regular Fiscal Court Meeting minutes, https://www.hendersoncountyky.gov/AgendaCenter/ViewFile/Minutes/_05122026-538
+  - "The City is donating the property which is the old HMPL Power Plant that is on Water Street."
+  - GEM plants in the same county: Green Station, BREC 2023 IRP power station
+- Henderson County Fiscal Court, Planning and Zoning, 2026-04-07, minutes: April 7th, 2026 Planning Commission Agenda minutes, https://www.hendersoncountyky.gov/AgendaCenter/ViewFile/Minutes/_04072026-533
+  - "I respectfully as the Commission to apply this same principle consistently if large-scale solar is considered incompatible with residential and agricultural areas then the same standard should apply to battery energy storage systems, industrial wind turbines, and data centers."
+  - "There is a lot of facilities these days that are coming out here, warehouses, car plants, data centers, which there are a lot of people against data centers, and you’ll find that a lot of people have their own opinion depending on how it benefits them."
+  - "If there is new industry that wants to come into the community, I believe there is a lot of controversy about data centers but regardless of whatever that industry may be, it’s going to require energy."
+  - GEM plants in the same county: Green Station, BREC 2023 IRP power station
+- City of Henderson, 2026-05-12, agenda: Board of Commissioners Called Work Session 05-12-2026 agenda, https://www.hendersonky.gov/AgendaCenter/ViewFile/Agenda/_05122026-522
+  - "The purchase of Microsoft Server Datacenter 2025, and the purchase of Microsoft SQL Server 2025."
+  - GEM plants in the same county: Green Station, BREC 2023 IRP power station
+- City of Henderson, 2026-05-12, minutes: Board of Commissioners Called Work Session 05-12-2026 minutes, https://www.hendersonky.gov/AgendaCenter/ViewFile/Minutes/_05122026-522
+  - "Information Technology Department Information Technology (IT) – Greg Nunn, IT Systems Director, reported that as the City has been utilizing the same software since 2016, the Microsoft Server Data Center 2025 and the SQL server will replace what has been being used, as it will no longer be supported"
+  - GEM plants in the same county: Green Station, BREC 2023 IRP power station
+- Hardin County Fiscal Court and Planning, 2026-10-13, agenda: Hardin County Fiscal Court Regular Voting Meeting agenda, https://www.hardincountyky.gov/AgendaCenter/ViewFile/Agenda/_10132026-282
+  - Also mentions: conditional use, rezon
+  - "An Ordinance Imposing a Temporary Moratorium on Rezoning and Conditional Use Permits Relating to Data Centers Pending Review and Recommended Changes by the Planning Commission iii."
+- Hardin County Fiscal Court and Planning, 2026-10-13, minutes: Hardin County Fiscal Court Regular Voting Meeting minutes, https://www.hardincountyky.gov/AgendaCenter/ViewFile/Minutes/_10132026-282
+  - Also mentions: conditional use, rezon
+  - "An Ordinance Imposing a Temporary Moratorium on Rezoning and Conditional Use Pennits Relating to Data Centers Pending Review and Recommended Changes by the Planning Commission."
+- Hardin County Fiscal Court and Planning, 2026-09-22, agenda: Hardin County Fiscal Court Regular Voting Meeting agenda, https://www.hardincountyky.gov/AgendaCenter/ViewFile/Agenda/_09222026-281
+  - Also mentions: conditional use, rezon
+  - "An Ordinance Imposing a Temporary Moratorium on Rezoning and Conditional Use Permits Relating to Data Centers Pending Review and Recommended Changes by the Planning Commission ii."
+- Hardin County Fiscal Court and Planning, 2026-09-22, minutes: Hardin County Fiscal Court Regular Voting Meeting minutes, https://www.hardincountyky.gov/AgendaCenter/ViewFile/Minutes/_09222026-281
+  - Also mentions: conditional use, rezon
+  - "An Ordinance Imposing a Temporary Moratorium on Rezoning and Conditional Use Permits Relating to Data Centers Pending Review and Recommended Changes by the Planning Commission Motion to Approve by Squire Pennington and seconded by Squire Whitehead."
+  - "Judge Taul read the ordinance aloud, which defines a "data center," imposes a 180-day moratorium on the acceptance of applications related to data centers, and notes this is to preserve the status quo while the Planning Commission reviews the matter."
+  - "Based on what he knows, he would not be in favor of data centers at all right now but is willing to listen and learn."
+  - "He clarified that while there has been a "soft moratorium" because data centers aren't mentioned in zoning, this formalizes it to prevent being caught off guard."
+  - "He added that information about data centers is changing quickly, and he is confident they can create good amendments to protect citizens."
+- Hardin County Fiscal Court and Planning, 2026-09-09, minutes: Hardin County Government Regularly scheduled monthly meeting of the Public Works Committee, held in the 3rd floor confer, https://www.hardincountyky.gov/AgendaCenter/ViewFile/Minutes/_09092026-278
+  - "Judge Taul discussed a moratorium on data centers."
+  - "Should we pursue a resolution or an ordinance to place a 6 month moratorium on data centers?"
+- Daviess County Fiscal Court, 2026-09-24, minutes: 9-24-2026 Minutes, https://www.daviessky.org/wp-content/uploads/2026/10/9-24-2026-Minutes.pdf
+  - "Counselor, on page three out of fifteen that you just read, or that you were alluding to, where it talks about merchant electric generation facilities. | know down at the bottom it mentions KRS 100.324 and, some of the things | have read, and it does say it does not include thermal electric generati"
+  - "He stated that he and Commissioner Castlen both had reached out to Attorney Pat Pace to have him explain the thermal electric generating facility."
+  - "She thanked the Court for working on the solar issue and she hoped the Court could do the same for data centers."
+  - GEM plants in the same county: Elmer Smith Station
+- Daviess County Fiscal Court, 2026-09-10, minutes: (fully executed)2A. OB 43; 09-10-2026 Minutes, https://www.daviessky.org/wp-content/uploads/2026/09/fully-executed2A.-OB-43-09-10-2026-Minutes.pdf
+  - "She stated that on September 8, 2026, Woodford County became the first in Kentucky to permanently ban data centers, large battery storage systems, and certain landfills through a unanimous ordinance passed alongside the cities of Versailles and Midway."
+  - "She pointed out that Daviess County Fiscal Court has said that local governments cannot ban specific businesses, but Woodford County signed a legally binding measure that blocks future data center development in both incorporated and unincorporated areas."
+  - "He asked the Court if the landfill was receiving contaminated soil from the Hancock County data center worksite."
+  - "She highlighted several key barriers, including the lack of a fairness ordinance, the potential introduction of unpopular data centers, and restrictive library policies that limit free expression and access to diverse history."
+  - "And I've visited a lot of counties in Kentucky. | have an Airbnb in Woodford County and that is a very pleasant place to visit and I'm glad that they're banning their data centers. | think that's great. | did hear that Lexington and Fayette County may be allowing one and that shocks me, quite frankl"
+  - GEM plants in the same county: Elmer Smith Station
+- Daviess County Fiscal Court, 2026-07-16, minutes: (fully executed) OB 43; 07-16-2026 Minutes, https://www.daviessky.org/wp-content/uploads/2026/07/fully-executed-OB-43-07-16-2026-Minutes.pdf
+  - "They need the power to power the new power plant that they will also need."
+  - "So, they'll need the natural gas to power the power plant to power a data center should that come."
+  - GEM plants in the same county: Elmer Smith Station
+- Daviess County Fiscal Court, 2026-06-30, minutes: OB 42; 06-30-2026 Minutes, https://www.daviessky.org/wp-content/uploads/2026/08/OB-42-06-30-2026-Minutes.pdf
+  - "She spoke as a concerned Daviess County resident and urged the local officials to strictly regulate and block large-scale data center developments, warning that massive tech corporations are quietly exploiting the community's land and resources."
+  - "She detailed how energy infrastructure firms, like ETX Upstream and NextEra Energy, are partnering with Owensboro Municipal Utilities (OMU) to secure land for a natural gas plant and a 1,200-acre industrial solar farm."
+  - "She also argued that the projects were not meant to benefit local residents, but rather to establish an electrical foundation to power a massive, predatory data center once the county's moratorium expires in May 2027."
+  - GEM plants in the same county: Elmer Smith Station
+- Daviess County Fiscal Court, 2026-06-30, minutes: (fully executed) 1A. OB 42; 06-30-2026 Minutes, https://www.daviessky.org/wp-content/uploads/2026/07/fully-executed-1A.-OB-42-06-30-2026-Minutes.pdf
+  - "She spoke as a concerned Daviess County resident and urged the local officials to strictly regulate and block large-scale data center developments, warning that massive tech corporations are quietly exploiting the community's land and resources."
+  - "She detailed how energy infrastructure firms, like ETX Upstream and NextEra Energy, are partnering with Owensboro Municipal Utilities (OMU) to secure land for a natural gas plant and a 1,200-acre industrial solar farm."
+  - "She also argued that the projects were not meant to benefit local residents, but rather to establish an electrical foundation to power a massive, predatory data center once the county's moratorium expires in May 2027."
+  - GEM plants in the same county: Elmer Smith Station
+- Daviess County Fiscal Court, 2026-06-25, minutes: OB 42; 06-25-2026 Minutes, https://www.daviessky.org/wp-content/uploads/2026/08/OB-42-06-25-2026-Minutes.pdf
+  - "McCarthy challenged Daviess County and Owensboro leaders to look past traditional farming and into recent city-focused Al data center debates in order to aggressively pursue future-focused economic progress."
+  - GEM plants in the same county: Elmer Smith Station
+- Daviess County Fiscal Court, 2026-06-11, minutes: (fully executed) OB 42; 06-11-2026 Minutes, https://www.daviessky.org/wp-content/uploads/2026/06/fully-executed-OB-42-06-11-2026-Minutes.pdf
+  - Also mentions: rezon
+  - "So, if a landowner goes to Planning and Zoning to get their property rezoned to some sort of industrial zoning, I'm just asking the question, will they have to state specifically what they want to put there or will the Planning and Zoning put some kind of a restriction saying that they cannot have a"
+  - GEM plants in the same county: Elmer Smith Station
+- City of Somerset, 2026-11-09, agenda: Agenda 11-9-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-11-9-26.pdf
+  - "The Somerset City Council will meet in regular session on Monday November 9 2026 at 6:00 PM ET (5:00 PM CT) at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-10-26, agenda: Agenda 10-26-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-10-26-26.pdf
+  - "The Somerset City Council will meet in regular session on Monday October 26 2026 at 6:00 PM ET (5:00 PM CT) at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-10-12, agenda: Agenda 10-12-26 (1) – jba revied 10-6, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-10-12-26-1-jba-revied-10-6.pdf
+  - "The Somerset City Council will meet in regular session on Monday October 12 2026 at 6:00 PM ET (5:00 PM CT) at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-09-28, agenda: Agenda 9-28-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-9-28-26.pdf
+  - "The Somerset City Council will meet in regular session on Monday September 28, 2026 at 6:00 PM ET (5:00 PM CT) at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-09-14, agenda: Agenda 9-14-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-9-14-26.pdf
+  - "The Somerset City Council will meet in regular session on Monday September 14 2026 at 6:00 PM ET (5:00 PM CT) at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-08-24, agenda: Agenda 8-24-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-8-24-26.pdf
+  - "The Somerset City Council will meet in regular session on Monday, August 24 2026 at 6:00 PM ET (5:00 PM CT) at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-08-10, agenda: Agenda 8-10-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-8-10-26.pdf
+  - "The Somerset City Council will meet in regular session on Monday August 10, 2026 at 6:00 PM ET (5:00 PM CT) at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-07-27, agenda: Agenda 7-27-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-7-27-26.pdf
+  - "The Somerset City Council will meet in regular session on Monday July 27 2026 at 6:00 PM ET (5:00 PM CT) at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-07-13, agenda: Agenda 7-13-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-7-13-26.pdf
+  - "Box 989 Somerset, KY 42501 Somerset, KY 42502 Phone: 606.679.6366 cityofsomerset.com © @cityofsomersetky Fax: 606.679.2481 The Somerset City Council will meet in regular session on Monday July 13 2026 at 6:00 PM ET (5:00 PM CT) at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-06-22, agenda: Agenda 6-22-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-6-22-26-1.pdf
+  - "The Somerset City Council will meet in regular session on Monday June 22 2026 at 6:00 PM ET (5:00 PM CT) at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-06-22, agenda: Agenda 6-22-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-6-22-26.pdf
+  - "The Somerset City Council will meet in regular session on Monday June 22 2026 at 6:00 PM ET (5:00 PM CT) at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-06-08, agenda: Agenda 6-8-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-6-8-26.pdf
+  - "The Somerset City Council will meet in regular session on Monday June 8 2026 at 6:00 PM ET (5:00 PM CT) at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-06-01, document: Ordinance 26-06 – Annexation (340 Pumphouse Road), https://www.cityofsomerset.com/wp-content/uploads/2026/06/Ordinance-26-06-Annexation-340-Pumphouse-Road.pdf
+  - Also mentions: map amendment
+  - "FLOOR OF THE SOMERSET ENERGY CENTER) FOUR {4} WEEKS PRIOR TO THE MEETING DATE. | CITY OF SOMERSET, KENTUCKY PLANNING AND ZONING COMMISSION FINDINGS OF FACT, CONCLUSIONS AND RECOMMENDED MAP AMENDMENT CASE NO:"
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-05-11, agenda: Agenda 5-11-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-5-11-26.pdf
+  - "The Somerset City Council will meet in regular session on Monday May 11 2026 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-04-27, agenda: Agenda 4-27-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-4-27-26.pdf
+  - "The Somerset City Council will meet in regular session on Monday April 27, 2026 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-04-13, agenda: Agenda 4-13-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-4-13-26.pdf
+  - "The Somerset City Council will meet in regular session on April 13, 2026 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-03-23, agenda: Agenda 3-23-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-3-23-26.pdf
+  - "The Somerset City Council will meet in regular session on Monday March 23, 2026 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-03-09, agenda: Agenda 3-9-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-3-9-26-1.pdf
+  - "The Somerset City Council will meet in regular session on Monday March 9, 2026 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-03-09, agenda: Agenda 3-9-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-3-9-26.pdf
+  - "The Somerset City Council will meet in regular session on Monday March 9, 2026 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-02-23, agenda: Agenda 2-23-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-2-23-26.pdf
+  - "The Somerset City Council will meet in regular session on Monday February 23, 2026 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-02-09, agenda: Agenda 2-9-26, https://www.cityofsomerset.com/wp-content/uploads/2025/12/Agenda-2-9-26.pdf
+  - "The Somerset City Council will meet in regular session on Monday February 9, 2026 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-01-30, document: Ordinance 25-28 – Annexation (4700 S Hwy 27), https://www.cityofsomerset.com/wp-content/uploads/2026/01/Ordinance-25-28-Annexation-4700-S-Hwy-27.pdf
+  - "THE APPLICATION MUST BE RETURNED TQ THE OFFICE OF P&Z (LOCATED ON 2° FLOOR OF THE SOMERSET ENERGY CENTER} FOUR (4) WEEKS PRIOR TO THE MEETING DATE."
+  - "The Energy Center City Council Chambers 306 East Mount Vernon Street Somerset, KY 42501 APPLICATION #: 20 2025-_CS> APPLICANT MUST PROVIDE:"
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-01-26, agenda: Agenda 1-26-26, https://www.cityofsomerset.com/wp-content/uploads/2025/11/Agenda-1-26-26.pdf
+  - "The Somerset City Council will meet in regular session on Monday January 26, 2026 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-01-12, agenda: Agenda 1-12-26, https://www.cityofsomerset.com/wp-content/uploads/2025/11/Agenda-1-12-26-1.pdf
+  - "The Somerset City Council will meet in regular session on Monday January 12, 2026 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2026-01-12, agenda: Agenda 1-12-26, https://www.cityofsomerset.com/wp-content/uploads/2025/11/Agenda-1-12-26.pdf
+  - "The Somerset City Council will meet in regular session on Monday January 12, 2026 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-12-08, agenda: Agenda 12-8-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-12-8-25.pdf
+  - "The Somerset City Council will meet in regular session on Monday December 8, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-11-10, agenda: Agenda 11-10-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-11-10-25.pdf
+  - "The Somerset City Council will meet in regular session on Monday November 10, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-10-27, agenda: Agenda 10-27-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-10-27-25.pdf
+  - "The Somerset City Council will meet in regular session on Monday October 27, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-10-13, agenda: Agenda 10-13-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-10-13-25.pdf
+  - "The Somerset City Council will meet in regular session on Monday October 13, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-09-22, agenda: Agenda 9-22-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-9-22-25.pdf
+  - "Box 989 Somerset, KY 42501 2 Somerset, KY 42502 Phone: 606.679.6366 cityofsomerset.com € @CityofSomerset.KY W @CityofSomerset Fax: 606.679.2481 The Somerset City Council will meet in regular session on Monday September 22, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-09-08, agenda: Agenda 9-8-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-9-8-25.pdf
+  - "Box 989 Somerset, KY 42501 Somerset, KY 42502 Phone: 606.679.6366 cityofsomerset.com € @CityofSomerset.KY W @CityofSomerset Fax: 606.679.2481 The Somerset City Council will meet in regular session on Monday September 8, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-08-25, agenda: Agenda 8-25-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-8-25-25.pdf
+  - "The Somerset City Council will meet in regular session on Monday August 25, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-08-11, agenda: Agenda 8-11-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-8-11-25.pdf
+  - "_ 办 somerset Somerset KY 42501, 100014.66016.000000 Somerset, KY 42902 Phone: 606.679.6366 cityofsomerset.com © @CityofSomerset.KY YW @CityofSomerset Fax: 606.679.2481 The Somerset City Council will meet in regular session on Monday August 11, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-07-28, agenda: Agenda 7-28-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-7-28-25.pdf
+  - "The Somerset City Council will meet in regular session on Monday July 28, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-07-14, agenda: Agenda 7-14-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-7-14-25.pdf
+  - "The Somerset City Council will meet in regular session on Monday July 14, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-06-23, agenda: Agenda 6-23-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-6-23-25.pdf
+  - "somerset Somerset KY 42501, eee ee, RANT Somerset, KY 42502 Phone: 606.679.6366 cityofsomerset.com € @CityofSomerset.KY W @CityofSomerset Fax: 606.679.2481 The Somerset City Council will meet in regular session on Monday June 23, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-06-09, agenda: Agenda 6-9-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-6-9-25.pdf
+  - "Box 989 Somerset, KY 42501 Somerset, KY 42502 Phone: 606.679.6366 cityofsomerset.com € @CityofSomerset.KY W @CityofSomerset Fax: 606.679.2481 The Somerset City Council will meet in regular session on Monday June 9, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-06-05, document: Resolution-22-08 Recognition of Teresa Ave. Resolution, https://www.cityofsomerset.com/wp-content/uploads/2025/06/Resolution-22-08-Recognition-of-Teresa-Ave.-Resolution.pdf
+  - "Keck, Mayor Nick City Clerk 1. mw in zum on om A pomzon or me m A new sumv was pmsonnm av wsa: ai mm: me smwsou om soumwuss. nsmencen ummm is mon me mms sm xv soum 2. mo T s. mm A 2* Muuinuu cw srmvm rzneuson cm Au. ips me s,·¤· man asm: ur mus ·· •’ 4. me wie mtu. wma vmsnss sm 1 s. waves: smznznn "
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-05-12, agenda: Agenda 5-12-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-5-12-25.pdf
+  - "The Somerset City Council will meet in regular session on Monday May 12, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-04-28, agenda: Agenda 4-28-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-4-28-25.pdf
+  - "The Somerset City Council will meet in regular session on Monday April 28, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-04-14, agenda: Agenda 4-14-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-4-14-25.pdf
+  - "The Somerset City Council will meet in regular session on Monday April 14, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-03-24, agenda: Agenda 3-24-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-3-24-25.pdf
+  - "The Somerset City Council will meet in regular session on Monday March 24, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-03-10, agenda: Agenda 3-10-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-3-10-25.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday March 10, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-02-24, agenda: Agenda 2-24-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-2-24-25.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday February 24, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-02-19, document: Ordinance 25-06 – Amend Zoning Ordinance (Haley St R-2 to R-1A), https://www.cityofsomerset.com/wp-content/uploads/2025/02/Ordinance-25-06-Amend-Zoning-Ordinance-Haley-St-R-2-to-R-1A.pdf
+  - "FLOOR OF THE SOMERSET ENERGY CENTER) FOUR (4) WEEKS PRIOR TO THE MEETING DATE."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-02-10, agenda: Agenda 2-10-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-2-10-25.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday February 10, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-01-27, agenda: Agenda 1-27-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-1-27-25.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday January 27, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2025-01-13, agenda: Agenda 1-13-25, https://www.cityofsomerset.com/wp-content/uploads/2024/12/Agenda-1-13-25.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday January 13, 2025 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-12-09, agenda: Agenda 12-9-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-12-9-24.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday December 9, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-11-21, document: Ordinance 24-10 – Annex areas in and around Pitman Creek Wastewater Plant, https://www.cityofsomerset.com/wp-content/uploads/2024/11/Ordinance-24-10-Annex-areas-in-and-around-Pitman-Creek-Wastewater-Plant.pdf
+  - "E= r xm g ;;s t s- #-.4. . .- -. ;. ., 5. -- a- r 2 .. s- —é |>= ._ .. ,. 1 .4 mw Ja- »2 mc wmv J" cv ,, v. .,,3;- ........ ..... ... ..... f· ···· |-‘ .... ---- 4.,. _ 4, 2. . z ~. ”s |· . ·· .2 : im 2. ` ,............... ·.....,_ · j; s-; ‘- |M. -2 ... .... .. .. ._ .... ‘· .... |·='`·‘ .... |...."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-11-11, minutes: Minutes-11-11-24, https://www.cityofsomerset.com/wp-content/uploads/2026/03/Minutes-11-11-24.pdf
+  - "Eastham. uumunucr retmnun2•· zv 35 mw |ESM -—~·—“i~`“*“"""‘"‘“"‘“"`°"”"“‘”“`""°"’°'s°"“"“""""‘" I NOW l'IlLI.IJ·0R|Lb¤n\c•¢n¤rIby\I1¤l;i\y|(Summa.Knvnadr I PdtnrhnIpynnctlngvchlehsor kin upon Ielln. pnhlltd."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-11-11, agenda: Agenda 11-11-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-11-11-24.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday November 11, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-10-28, agenda: Agenda 10-28-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-10-28-24.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday October 28, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-10-14, agenda: Agenda 10-14-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-10-14-24.pdf
+  - "Box 989 Somerset, KY 42501 Somerset, KY 42502 Phone: 606.679.6366 cityofsomerset.com € @CityofSomerset.KY W @CityofSomerset Fax: 606.679.2481 NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday October 14, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-09-23, agenda: Agenda 9-23-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-9-23-24.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday September 23, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-09-09, agenda: Agenda 9-9-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-9-9-24.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday September 9, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-08-26, agenda: Agenda 8-26-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-8-26-24.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday August 26, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-08-12, agenda: Agenda 8-12-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-8-12-24.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday August 12, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-07-22, agenda: Agenda 7-22-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-7-22-24.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday July 22, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-07-08, minutes: Minutes-7-8-24, https://www.cityofsomerset.com/wp-content/uploads/2026/03/Minutes-7-8-24.pdf
+  - "P>|||Y6 FH ¢.$mID bmah r ta. ¤·4l•L»·n_yn:»·•¤ »•v1Ln-4 mw wagon l ¤hhmd|¤iI\¤Hi•w;Imn¤~¢!¤N¤•||D|l}'¤||lDI¤3lJ•.T|I¢at|hH\3I¤ P$\TOFII§|IlIlIh|¤w••n:¤1¤mnIxl••uhdr¤·¤m\:iMn*qll1lII\|d0NT| mn KI.!16 hurl FIM)."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-07-08, agenda: Agenda 7-8-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-7-8-24.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday July 8, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-06-24, minutes: Minutes-6-24-24, https://www.cityofsomerset.com/wp-content/uploads/2026/03/Minutes-6-24-24.pdf
+  - "INI! 1¥IJ0 FIIIII HKD SING IAITALIGIICEI/NAM PIIIIIAIQIGIIK uvmmmscntnl I 2 nsw mm nurml umcuvnnrun! 1 Mw will LFI IIAINOTEIIGNIS 1 1@ HHN CIHIIN 3 IIIXD !P® IICIIIYDIIIIDIIG 1 17$¤.I !@ UWTBIIIII 7 Bill!"
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-06-24, agenda: Agenda 6-24-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-6-24-24.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday June 24, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-06-10, agenda: Agenda 6-10-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-6-10-24.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday June 10, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-05-13, agenda: Agenda 5-13-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-5-13-24.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday May 13, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-04-22, agenda: Agenda 4-22-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-4-22-24.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday April 22, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-04-08, agenda: Agenda 4-8-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-4-8-24.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday April 8, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-03-25, agenda: Agenda 3-25-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-3-25-24.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday March 25, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-03-18, agenda: Agenda 3-18-24, https://www.cityofsomerset.com/wp-content/uploads/2024/03/Agenda-3-18-24.pdf
+  - "NOTICE OF SPECIAL CALL MEETING The Somerset City Council will have a Special Call Meeting on Monday March 18, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-02-26, agenda: Agenda 2-26-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-2-26-24.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday February 26, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-02-12, agenda: Agenda 2-12-24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-2-12-24.pdf
+  - "NOTICE OF MEETING The Somerset City Council will meet in regular session on Monday February 12, 2024 at 6:00 pm at the Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-01-22, agenda: Agenda 1.22.24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-1.22.24-1.pdf
+  - "Monday, January 22, 2024, at Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-01-22, agenda: Agenda 1.22.24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-1.22.24.pdf
+  - "Monday, January 22, 2024, at Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2024-01-08, agenda: Agenda 1.8.24, https://www.cityofsomerset.com/wp-content/uploads/2024/01/Agenda-1.8.24.pdf
+  - "Monday, January 8, 2024, at Somerset Energy Center."
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2023-10-23, minutes: Minutes-10-23-23, https://www.cityofsomerset.com/wp-content/uploads/2026/03/Minutes-10-23-23.pdf
+  - "MAP IH R1;H.l·l I SAIII .\!•II NIINIIVI. [I-\\II) UN Iltt Hh[llNl1$ UF FMT ‘y 11 ¤••M•¤· M.-11.11 uk Im 1·1..\>.'~1~11. 1*111 1¢1Nw1. 11111H11_ ’\`ll)l\.’\\1 mw ·. {P - ._ IIO'1RD‘$ III ( OXIIII NIHIII ·*· Ul »\ /¤•\\· I N \N¤* I- Bb ll IIRDAINIII II\' TIII H»\I\I4N HH PIU;"
+  - GEM plants in the same county: Cooper power station
+- City of Somerset, 2023-06-26, minutes: Minutes-6-26-23, https://www.cityofsomerset.com/wp-content/uploads/2026/03/Minutes-6-26-23.pdf
+  - "INIOIMATIDNYEIZNNOLDGV I BOM TTM LIFISIAIIDNYEQINIGANS 1 ISDN Slim cowauum nzvrwmzur 1 wom susan FAWYY ¤*’¢¤¤¤N5 1 mw soma U I TOURISM I 35®0 65000 TEENPICIANS II 23000 52000 ABCADMIHIHIATDR 1 4¤¤¤ ESOM BENEMLIAIOR I 23000 UM ll 1 3WXl 48500 SPECIALOPERAIIONS 2 275IlI I AICASSSYANY nnruuuuunmnu;"
+  - GEM plants in the same county: Cooper power station
+- Mason County Fiscal Court, 2026-10-06, minutes: Special Meeting, https://masoncountykentucky.us/Minutes%20October%206,%202026.pdf?t=202610140922580
+  - "Parsons has been hired by Mason County Fiscal Court as special counsel to represent the county in negotiations with the data center project."
+  - GEM plants in the same county: Spurlock power station
+- Mason County Fiscal Court, 2026-09-15, minutes: Regular Meeting, https://masoncountykentucky.us/Minutes%20September%2015,%202026.pdf?t=202610140922220
+  - "Commissioner McKay — Yes Commissioner O’Hearn - Yes Commissioner Frame - Yes Judge/Executive McNeill - Yes Update on Negotiations with Jim Parsons Judge/Executive McNeill said next month fiscal court will have some special called meetings to outline the community benefits being negotiated with the p"
+  - "This does not include the additional construction jobs that will be needed to construct the data center."
+  - GEM plants in the same county: Spurlock power station
+- Mason County Fiscal Court, 2026-05-18, agenda: Special Meeting, https://masoncountykentucky.us/Agenda%20May%2018,%202026%20Special%20Meeting.pdf?t=202605180933250
+  - "Discussion regarding negotiations for data center project - No action to be taken, and discussion will be held in closed session pursuant to KRS 61.810(1)(g), as involving discussion between County and business entity regarding the siting of a possible project that could be jeopardized if discussed "
+  - GEM plants in the same county: Spurlock power station
+- Mason County Fiscal Court, 2026-04-14, minutes: Regular Meeting, https://masoncountykentucky.us/Minutes%20Regular%20Meeting%204-14-26.pdf?t=202605131607480
+  - "New Business County Attorney Estill explained to members of the court that a lawsuit has been filed in Mason Circuit Court by the We Are Mason County group regarding the data center project."
+  - GEM plants in the same county: Spurlock power station
+- Mason County Fiscal Court, 2026-03-10, document: Regular Meeting, https://masoncountykentucky.us/Regular%20meeting%203-10-26.pdf?t=202604141514410
+  - "Parsons to help with contracts and protections should the data center project come to fruition."
+  - "Commissioner McKay — Yes Commissioner O’Hearn — Yes Commissioner Frame — Yes Judge/Executive McNeill - Yes Next, members of the court discussed entering into a contract with a group that would independently perform economic analysis if needed if the data center project were to happen."
+  - "The proposed data center application was expected to be received either yesterday or today."
+  - GEM plants in the same county: Spurlock power station
+- Mason County Fiscal Court, 2026-02-27, minutes: Special Meeting, https://masoncountykentucky.us/2-27-26%20minutes.pdf?t=202603111428490
+  - "Commissioner McKay — Yes Commissioner O’ Hearn - Yes Commissioner Frame — Yes Judge/Executive McNeill — Yes Ordinance 26-01 — Text Amendment for Data Centers — 2"!"
+  - "Changes to the ordinance from the first reading include increasing the setback to 750 feet for any data center, setting the noise regulation to 50dB(A) which would also apply to nighttime operations, and requiring both electric and water utility providers to submit letters reading they can support t"
+  - "Public Comments Julie Burton spoke to members of the court saying none of the changes mentioned addressed protecting prime farmland and the health impacts from data centers have also not been addressed."
+  - GEM plants in the same county: Spurlock power station
+- Mason County Fiscal Court, 2026-02-17, agenda: Special Meeting, https://masoncountykentucky.us/Special%20Meeting%20Agenda%202-17-26.pdf?t=202602161135050
+  - "Ordinance No. 26-01 — Consideration of Text Amendment for Data Centers (1*t Reading) 4."
+  - "At the meeting on February 17, 2026, the Court will consider argument style presentations from proponents of data centers and from opponents of data centers."
+  - "The presenters for the proponents of data centers were determined by attorney Tanner Nichols of Frost Brown Todd, which represents the prospect considering Mason County for a data center project."
+  - GEM plants in the same county: Spurlock power station
+- Mason County Fiscal Court, 2026-02-10, minutes: Regular Meeting, https://masoncountykentucky.us/2-10-26%20minutes.pdf?t=202603111427290
+  - "New Business Judge/Executive McNeill thanked the volunteer members of the Joint Planning Commission for their work on the data center text amendment."
+  - "Judge/Executive McNeill explained the next step is to establish rules for acting on the recommendation for an application for a text amendment for a data center."
+  - "The court will also consider argument-style presentations from both proponents and opponents of data centers."
+  - "Hank Graddy, attorney for We Are Mason County, asked the court to consider holding both the February 17 and February 24 meetings, relating to the data center text amendment, in the judicial center at 5 p.m."
+  - GEM plants in the same county: Spurlock power station
+- Mason County Fiscal Court, 2026-02-10, agenda: Regular Meeting, https://masoncountykentucky.us/Agenda,%20February%2010,%202026.pdf?t=202602091534480
+  - "Recommendation of Joint Planning Commission er to Data Center Text Amendment 20."
+  - GEM plants in the same county: Spurlock power station
+- Mason County Fiscal Court, 2025-10-17, minutes: Regular Meeting, https://masoncountykentucky.us/Regular%20Meeting%20Minutes%20%2010-17-2025.pdf?t=202510171158100
+  - "Old Business Resolution 25-18 — Data Center Regulations Motion by Commissioner McKay, seconded by Commissioner O’Hearn to adopt Resolution 25-18, which requests the Mason County Joint Planning Commission to develop a text amendment to define “data center” and create development standards and regulat"
+  - "Graddy has been retained by We Are Mason County, KY Inc. to provide legal representation following the announcements of a proposal to construct a large-scale data center in Mason County."
+  - GEM plants in the same county: Spurlock power station
+- Mason County Fiscal Court, 2025-08-12, minutes: Regualr Meeting, https://masoncountykentucky.us/August%2012%202025%20Minutes.pdf?t=202509121051530
+  - "The plan calls for a technology campus with single story data center buildings, class A office space, support areas, green space, parking areas for employees and visitors and landscaping and stormwater management."
+  - "Public Comment Jennifer Setty Botkin spoke to members of the court about the speculation that the data center will be located next to the Highland Heights subdivision, which is where she lives."
+  - "She voiced concerns about the affects of a data center on the community."
+  - "Laura Moran also listed her concems about the proposed data center project being located in Mason County."
+  - GEM plants in the same county: Spurlock power station
+- City of Harrodsburg, 2026-08-10, minutes: Meeting Minutes, https://www.harrodsburgky.gov/assets/AgendaMinutes/5441630abe91465a9cac8d30c4c6a40b.pdf
+  - "Page 6 of 6 CITY ATTORNEY SPOKE Norrie Currens, City Attorney said the only thing I have is it has been suggested to me, I believe tomorrow on the Fiscal Court agenda, they have a second reading on an ordinance that establishes a moratorium on data centers for the next year, and it has been suggeste"
+  - "I make a motion that we allow our city attorney to draft an ordinance for moratorium on data centers for the next year."
+  - "ALLOW OUR CITY ATTORNEY TO DRAFT AN ORDINANCE FOR MORATORIUM ON DATA CENTERS FOR THE NEXT YEAR Motion by/seconded, Mayor Williams/Commissioner Anness to allow our city attorney to draft an ordinance for moratorium on data centers for the next year."
+  - GEM plants in the same county: E.W. Brown Generating Station
+- City of Harrodsburg, 2026-07-13, minutes: Meeting Minutes, https://www.harrodsburgky.gov/assets/AgendaMinutes/4162b336e2714385ab46c2c1970b4bfe.pdf
+  - "Commissioner Coleman said well they couldn’t do anything without us anyway if they had a data center."
+  - GEM plants in the same county: E.W. Brown Generating Station
+- Oldham County Fiscal Court, 2026-10-07, document: September 15, https://irp.cdn-website.com/fd0fc3bd/files/uploaded/scan_tschaaf_2026-10-07-08-21-48.pdf
+  - "OH FSsr. 고 o wv xi m 00 mw Zen © 는 wo."
+  - GEM plants in the same county: Bluegrass generating station
+- Oldham County Fiscal Court, 2026-10-06, minutes: October 6, https://irp.cdn-website.com/fd0fc3bd/files/uploaded/MinutesSIGNED+10.06.26.pdf
+  - "Motion carried unanimously. 2" Reading — KOC 26-920-38 — Text Amendment to Comprehensive Zoning Ordinance — Section 250-340 Data Centers Planning Director Ryan Fischer presented Ordinance KOC 26-920-38 and responded to questions from the court."
+  - GEM plants in the same county: Bluegrass generating station
+- Oldham County Fiscal Court, 2026-08-18, agenda: August 18, https://irp.cdn-website.com/fd0fc3bd/files/uploaded/AGENDA+08-18-2026+V3.pdf
+  - "PAYABLES COMMUNITY BUSINESS b. 2nd READING – KOC 26-920-7 ZONING TEXT AMENDMENT – OLDHAM COUNTY COMPREHENSIVE ZONING ORDINANCE CREATING DATA CENTER REGULATIONS SECTION 250-340 CONTRACTS & RESOLUTIONS c."
+  - GEM plants in the same county: Bluegrass generating station
+- Oldham County Fiscal Court, 2026-08-04, agenda: August 4, https://irp.cdn-website.com/fd0fc3bd/files/uploaded/OCFC+Agenda+V2+08-04-2026.pdf
+  - "PAYABLES b. 1st READING ORDINANCE RELATING TO THE ANNUAL BUDGET AND AMENDMENT #1 COMMUNITY BUSINESS c. 1st READING KOC 26-920-7 ZONING TEXT AMENDMENT-OLDHAM COUNTY COMPREHENSIVE ZONING ORDINANCE CREATING DATA CENTER REGULATIONS SECTION 250-340 CONTRACTS & RESOLUTIONS d."
+  - GEM plants in the same county: Bluegrass generating station
+- Oldham County Fiscal Court, 2026-02-17, minutes: February 17, https://irp.cdn-website.com/fd0fc3bd/files/uploaded/SIGNED+2.17.26+Minutes.pdf
+  - "Preventative Maintenance Agreement — Back Up Generator at Courthouse Motion made by Magistrate Jeffries and seconded by Magistrate Haunz to approve the preventative maintenance agreement for the backup generator at the Courthouse, as presented."
+  - GEM plants in the same county: Bluegrass generating station
+- Oldham County Fiscal Court, 2025-01-01, minutes: 2025 Fiscal Court Meeting Minutes Combined, https://irp.cdn-website.com/fd0fc3bd/files/uploaded/2025+All+In+One+Minutes-75d8b7fa.pdf
+  - "Blaine Anderson of 1414 Grandview Court, LaGrange, asked for clarification as to whether the Fiscal Court will have the opportunity to vote on the proposed Data Centers."
+  - "Magistrate Hawkins had no update or announcement to share but wished to clarify the 3-week time frame of knowledge related to the proposed data center."
+  - "Notified the court that his knowledge of the proposed data center has only been the last few days."
+  - "Michael Slider - 7004 Colton Rd Alex LeBlanc - 5327 Brookswood Rd Louis Knupp- 308 Crystal Wash Drive The following residents expressed their concerns regarding the proposed data center construction in LaGrange:"
+  - "Request made by Magistrate Woosley to move the Data Center Moratorium Proposed Ordinance item on the agenda , up to be reviewed following public comment."
+  - GEM plants in the same county: Bluegrass generating station
+- Boone County Fiscal Court, 2026-05-26, minutes: Minutes, https://www.boonecountyky.org/Documents/Government/Boone%20County%20Fiscal%20Court/Fiscal%20Court%20Meeting%20Minutes/2026/May%2026,%202026%20Minutes.pdf?t=202606101228330
+  - "Berger spoke about data centers."
+  - GEM plants in the same county: East Bend Generating Station
+- Boone County Fiscal Court, 2026-05-05, minutes: Minutes, https://www.boonecountyky.org/Documents/Government/Boone%20County%20Fiscal%20Court/Fiscal%20Court%20Meeting%20Minutes/2026/May%205,%202026%20Minutes.pdf?t=202605271527180
+  - Also mentions: conditional use
+  - "Judge Moore asked the Fiscal Court Clerk to read into the record, ARESOLUTION RELATING TO THE BOONE COUNTY FISCAL COURT APPROVING THE PURCHASE OF A BACKUP GENERATOR AND ASSOCIATED EQUIPMENT FROM BUCKEYE POWER FOR THE NEW EM/PSCC FACILITY UTILIZING THE APPROVED PURCHASING NETWORK, SOURCEWELL."
+  - "Matt Dowling reported that a backup generator is in the design plans for the new facility."
+  - "Commissioner Hand asked if there were any zoning regulations that addressed data centers."
+  - "Data Centers are allowed as a conditional use in the I-1 and I-2 zones, and any conditional use requests would be heard before the appropriate Board of Adjustment and would not come to the Fiscal Court."
+  - "Michael Schwartz read the regulations for data centers, found in article 31, section 3163 of the Boone County Zoning Regulations."
+  - GEM plants in the same county: East Bend Generating Station
+- City of Elizabethtown, 2026-08-17, agenda: Agenda, https://www.elizabethtownky.org/Documents/Government/Agenda%20and%20Minutes/2026/AGENDA%202026-08-17%20Regular%20Meeting.pdf?t=202608190835570
+  - "Zoning Code; establishing text amendments related to data centers Motion to Read: __________, Seconded by: __________ Discussion Motion to Adopt: __________, Seconded by: _________ Roll Call Vote:"
+- City of Elizabethtown, 2026-08-17, minutes: Minutes, https://www.elizabethtownky.org/Documents/Government/Agenda%20and%20Minutes/Minutes%202026%20Council/MINUTES%202026-08-17%20REGULAR%20MEETING.docx.pdf?t=202609230949320
+  - "Zoning Code; establishing text amendments related to data centers It was moved by Council Member Springsteen, seconded by Council Member Tyler and carried to read the above Ordinance."
+  - "Tom Kane, non-city resident, spoke against data centers."
+- City of Elizabethtown, 2026-08-03, agenda: Agenda, https://www.elizabethtownky.org/Documents/Government/Agenda%20and%20Minutes/2026/AGENDA%202026-08-03%20Regular%20Meeting.pdf?t=202608190835540
+  - "Zoning Code; establishing text amendments related to data centers Motion to Read: __________, Seconded by: __________ Discussion 10."
+- City of Elizabethtown, 2026-08-03, minutes: Minutes, https://www.elizabethtownky.org/Documents/Government/Agenda%20and%20Minutes/Minutes%202026%20Council/MINUTES%202026-08-03%20REGULAR%20MEETING.docx.pdf?t=202609230941010
+  - "Zoning Code; establishing text amendments related to data centers It was moved by Council Member Tyler, seconded by Council Member Fulkerson, and carried to read the above Ordinance."
+  - "Mayor Gregory stated that everyone (council, himself, planning commission) is against hyper scale data centers."
+  - "Mayor Gregory stated this ordinance will protect our land usage plan regarding data centers."
+  - "We currently have accessory data centers, by amending the language we can keep our current ones conforming to regulations and prevent any hyperscale from applying."
+  - "The City believes that by having stronger ordinance language increasing regulations this is a better defense against hyperscale data centers than a moratorium."
+- City of Maysville, 2026-03-12, minutes: Minutes, https://www.cityofmaysvilleky.gov/Document%20Center/Minutes/2026/031226%20CC%20regular.pdf?t=202604101023540
+  - Also mentions: rezon
+  - "Zoning Administrator Larger mentioned two upcoming public hearings for data center rezoning."
+  - GEM plants in the same county: Spurlock power station
+- City of Maysville, 2025-11-13, minutes: Minutes, https://www.cityofmaysvilleky.gov/Document%20Center/Minutes/2025/111325%20CC%20minutes.pdf?t=202511241327340
+  - "Zoning Administrator Larger announced public data center text amendment meetings on Dec. 3, and two-part meetings on Dec. 9th and 10th at MCTC as well as a data center information page on the City website."
+  - GEM plants in the same county: Spurlock power station
+- City of Maysville, 2025-09-11, minutes: Minutes, https://www.cityofmaysvilleky.gov/Document%20Center/Minutes/2025/091125%20CC%20regular.pdf?t=202511241330380
+  - "Public Comment Bryan Helphenstine asked how many people in the room had not signed an NDA regarding the proposed data center west of the City."
+  - GEM plants in the same county: Spurlock power station
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2026-10-12, minutes: Minutes, https://www.franklinky.gov/10-12-2026.pdf?t=202611021725280
+  - "Motion carried unanimously. -_ | -431- Commissioner Bush asked that the previously proposed committee to study data centers be formed now that an Executive Director for the Franklin-Simpson Industrial Authority had been ~ named."
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2026-04-27, minutes: Minutes, https://www.franklinky.gov/04-27-2026.pdf?t=202606011322200
+  - "Motion was made by Commissioner Stewart and seconded by Commissioner McCreary to approve Qk4, Inc. to provide independent engineering review services and public interaction as necessary for any new data center projects proposed within the City of Frankhn in the amount of$40,000.00 and further author"
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2026-04-07, minutes: Minutes, https://www.franklinky.gov/04-07-26%20P&Z%20Comm.%20Signed%20Minutes.pdf?t=202606171554170
+  - "Kenton Powell, the City Manager, states that the City Commission has authorized the Planning and Zoning Commission to consult an engineering group about the Data Center development plan."
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2026-03-23, minutes: Minutes, https://www.franklinky.gov/03-23-2026.pdf?t=202604221433120
+  - "City Manager Kenton Powell asked the Commission to consider contracting professional support services for the data center development."
+  - "The Franklin Planning and Zoning Commission approved the preliminary development plan for the data center at the March 3, 2026, meeting with the condition of monthly updates from the developers to the Planning and Zoning Commission."
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2026-02-09, minutes: Minutes, https://www.franklinky.gov/02-09-2026.pdf?t=202603191136470
+  - "She requested that permitting for the proposed data center be turned over to the Franklin Planning and Zoning Board of Adjustments rather than the Franklin Planning and Zoning Commission. 1 -311- 、 | No Commission action was taken regarding this matter. | ㆍ | APPROVAL OF MINUTES PP | Motion was made"
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2025-12-08, minutes: Minutes, https://www.franklinky.gov/12-08-2025.pdf?t=202601221146220
+  - "Powell also presented the award for Employee of the Year to Jeremy Perring. —_= Congratulations to these employees on their career milestones. : 1 ㆍ -296- | | Michael Simon, Kentucky League of Cities Employment Law Attorney, led the Workplace Violence in City Government presentation highlighting awa"
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2025-11-10, minutes: Minutes, https://www.franklinky.gov/11-10-2025.pdf?t=202512041403280
+  - "HEAR THE PUBLIC | Kristin Bailey Wilson addressed the Commission regarding the proposed text amendment to : the Franklin Planning & Zoning Regulations that would regulate data centers."
+  - "Wilson indicated that she had emailed the Commission members additional material regarding data centers."
+  - "Motion carried unanimously. 一 Motion was made by Commissioner Bush and seconded by Commissioner Powell to form an advisory committee made up of no less than seven (7) individuals, including the Industrial Authority Director, and no more than fifteen (15) individuals, including the Industrial Authori"
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2025-09-22, minutes: Minutes, https://www.franklinky.gov/09-22-2025.pdf?t=202510231522330
+  - "OTHER COMMISSION BUSINESS Motion was made by Commissioner Bush and seconded by Commissioner McCreary to not send the text amendment regarding data centers to Planning & Zoning, to pull that back for further discussion until we can fully understand, if there is a project and what the project is and t"
+- City of Franklin, city commission and Franklin-Simpson Planning and Zoning, 2025-08-25, minutes: Minutes, https://www.franklinky.gov/08-25-2025.pdf?t=202509181118180
+  - "Motion was made by Commissioner Powell and seconded by Commissioner Stewart to recommend the proposed text amendment as presented to the Franklin Planning & Zoning Regulations expanding the uses of the Heavy Industrial District (1-2) to include advanced technology centers, data centers and power gen"
+- Simpson County Fiscal Court, 2026-04-21, document: Zoning Regulations Manual – Amended 4.21.2026, https://simpsoncountyky.gov/wp-content/uploads/2026/04/Zoning-Regulations-Manual-Amended-4.21.2026.pdf
+  - "Ground level compounds such as equipment shelters, backup generators, etc. should be heavily screened from view."
+- Simpson County Fiscal Court, 2026-04-17, minutes: March 3rd Meeting Minutes, https://simpsoncountyky.gov/wp-content/uploads/2026/04/March-3rd-Meeting-Minutes.pdf
+  - "Tonight, Tuesday March 2° the Frenkin Planting & 20000 Commission wil hol her painnary plan hearing forthe Data Center a he Frenkin Police Department at 6:30."
+- Simpson County Fiscal Court, 2026-02-03, document: Zoning Regulations Manual – Amended 2.3.2026, https://simpsoncountyky.gov/wp-content/uploads/2026/02/Zoning-Regulations-Manual-Amended-2.3.2026.pdf
+  - "Ground level compounds such as equipment shelters, backup generators, etc. should be heavily screened from view."
+- Simpson County Fiscal Court, 2026-01-30, document: Ordinance No. 440.70 – Data Centers, https://simpsoncountyky.gov/wp-content/uploads/2026/01/Ordinance-No.-440.70-Data-Centers.pdf
+  - "Advanced Technology Centers - Data centers used primarily for the housing, operation, and management of computer servers, communications, networking equipment, and related technologies, and including cooling systems, power supply equipment, data storage systems, and on-site power generation systems,"
+
+## Bodies whose records are not posted or sit behind a portal a person opens
+
+- Lawrence County Fiscal Court (Lawrence County): lawrencecountyky.gov posts events only; ask the fiscal court clerk; the Big Sandy News and The Levisa Lazer report meetings. GEM plants in the county: Big Sandy Plant, Riverside Generating (KY) power station.
+- Casey County Fiscal Court (Casey County): no working county site (caseycountyky.gov does not resolve); ask the clerk; chasinthebuck.com reports meetings. GEM plants in the county: Liberty Station Power Plant.
+- Mercer County Fiscal Court (Mercer County): mercercounty.ky.gov lists officers and no minutes; ask the clerk. GEM plants in the county: E.W. Brown Generating Station.
+- Trimble County Fiscal Court (Trimble County): trimblecountyky.gov posts events and an open records page, no minutes. GEM plants in the county: Trimble County power station.
+- Muhlenberg County Fiscal Court (Muhlenberg County): muhlenbergcounty.org has a fiscal court page and no minutes. GEM plants in the county: Paradise Fossil Plant.
+- Hancock County Fiscal Court (Hancock County): hancockky.us posts no minutes.
+- Hopkins County Fiscal Court (Hopkins County): hopkinscounty.ky.gov minutes stop around 2014.
+- Bullitt County Fiscal Court (Bullitt County): site under construction.
+- Christian County Fiscal Court (Christian County): christiancountyky.gov posts no minutes.
+- Warren County Fiscal Court (Warren County): agendas and minutes are in Google Drive folders linked from warrencountyky.gov; a person opens them.
+- City of Owensboro (Daviess County): agendas on the KSBA portal (portal.ksba.org, agency 4396) and minutes in Laserfiche WebLink (laserfiche.owensboro.org); a person browses them. GEM plants in the county: Elmer Smith Station.
+- City of Paducah (McCracken County): minutes and packets in Laserfiche WebLink (citydocs.paducahky.gov); action forms at paducahky.gov/files/<n>/; a person browses them.
+- City of Hopkinsville (Christian County): Laserfiche portal; a person browses it.
+- Webster County Fiscal Court (Webster County): webstercountyky.com answers a bot challenge; the sweep opens it with fetch.py --render.
+- Todd County Fiscal Court (Todd County): toddcountyky.com, the old county address, now serves an unrelated foreign site; no county site posts minutes; ask the fiscal court clerk in Elkton; the Todd County Standard reports meetings.
+- Union County Fiscal Court (Union County): unioncountyky.org needs the browser-fingerprint route; the sweep opens it through fetch.py.

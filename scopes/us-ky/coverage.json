@@ -262,7 +262,7 @@
     "id": "tva-oasis",
     "name": "Tennessee Valley Authority OASIS (transmission reservations and generator interconnection queue)",
     "url": "https://www.oasis.oati.com/TVA/",
-    "what": "TVA's interconnection queue is posted behind the OATI OASIS sign-in; the public pages give only the site. A Kentucky request to TVA (Paradise, Marshall, Shawnee, a data center plant in the TVA area) is answered as market TVA from TVA's own documents and the environmental reviews; if a queue number is needed, a person reads it.",
+    "what": "TVA's interconnection queue is posted behind the OATI OASIS sign-in. pull_queues.py --state KY reads TVA's Kentucky requests from the Berkeley Lab Queued Up file instead (entry lbnl-queued-up), and the January 2025 TVA queue list that WPLN posted is a public copy to cite. Requests filed after the file's cutoff are answered from TVA's own documents and the environmental reviews; if a newer queue number is needed, a person reads it.",
     "proof": {
       "kind": "html",
       "insecure": true
@@ -273,12 +273,22 @@
     "id": "lgee-oasis",
     "name": "LG&E and KU OASIS (the LGEE balancing area's interconnection queue)",
     "url": "https://www.oasis.oati.com/LGEE/",
-    "what": "LG&E and KU run their own balancing area outside PJM and MISO; their generator interconnection queue (the Mill Creek 5 and 6, Brown 12 and any Louisville data center plant requests) is behind the OATI sign-in. Answer every LG&E and KU project as market LGEE from the commission cases, the air permits and the company's own documents; the queue number is read by a person if it matters.",
+    "what": "LG&E and KU run their own balancing area outside PJM and MISO; their generator interconnection queue is behind the OATI sign-in. pull_queues.py --state KY reads the LG&E and KU requests from the Berkeley Lab Queued Up file (entry lbnl-queued-up, entity LGE-KU). Requests filed after the file's cutoff are answered from the commission cases, the air permits and the company's own documents; the queue number is read by a person if it matters.",
     "proof": {
       "kind": "html",
       "insecure": true
     },
     "human_wall": "The LGEE OASIS queue needs an OATI account; Baird reads the queue by hand if a request number matters and saves the page under scopes/us-ky/work/queues/. No script signs in."
+  },
+  {
+    "id": "lbnl-queued-up",
+    "name": "Lawrence Berkeley National Laboratory Queued Up data file (every ISO and about 40 utility queues, TVA and LG&E and KU included)",
+    "url": "https://emp.lbl.gov/queues",
+    "what": "pull_queues.py --state KY downloads the newest data file linked from this page and reads tab 03 for the Kentucky rows under entity TVA and LGE-KU. Every gas, oil or fuel-blank request that is live, at 50 MW or of unknown size, is answered under queues as market TVA or market LGEE. The file is refreshed once a year (the 2026 edition runs through the end of 2025), so newer requests come from the posted TVA queue lists and the company documents.",
+    "proof": {
+      "kind": "html",
+      "expect": "LBNL_Ix_Queue_Data_File"
+    }
   },
   {
     "id": "lge-ku-newsroom",

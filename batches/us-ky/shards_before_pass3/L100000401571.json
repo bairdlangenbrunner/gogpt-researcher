@@ -1,0 +1,215 @@
+{
+ "meta": {
+  "plant_id": "L100000401571",
+  "plant_name": "Paddys Run power station",
+  "state": "Kentucky",
+  "mode": "update",
+  "model": "sonnet",
+  "generated": "2026-11-05T20:12:41-05:00",
+  "done": true,
+  "urls_attempted": 4,
+  "urls_verified": 4
+ },
+ "units": [
+  {
+   "gem_unit_id": "G100000402285",
+   "unit_name": "13",
+   "findings": {
+    "Status": {
+     "value": "operating",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) lists Paddys Run plant 1366 generator 13 as operating, nameplate 178.0 MW, natural gas combustion turbine, operating June 2001, with no planned retirement date. I read this in the Operating sheet of the file."
+    },
+    "Capacity (MW)": {
+     "value": "178.0",
+     "refs": [
+      "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx"
+     ],
+     "verifications": [
+      {
+       "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) shows nameplate 178.0 MW for generator 13, which matches GEM. The Louisville air permit (https://louisvilleky.gov/sites/default/files/2024-02/20210506-permit-o-0125-23-v.pdf) and the 2024 LG&E and KU resource plan (https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf) both give 175 MW, which is a rating and not a reason to change the nameplate."
+    },
+    "Equipment Manufacturer/Model": {
+     "value": "Siemens Westinghouse V84.3A2",
+     "refs": [
+      "https://louisvilleky.gov/sites/default/files/2024-02/20210506-permit-o-0125-23-v.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://louisvilleky.gov/sites/default/files/2024-02/20210506-permit-o-0125-23-v.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The Louisville Metro Air Pollution Control District Title V operating permit O-0125-23-V, effective February 2024 (https://louisvilleky.gov/sites/default/files/2024-02/20210506-permit-o-0125-23-v.pdf), describes GT13 as a 175 MW simple cycle Siemens Westinghouse turbine, model V84.3A2, natural gas fueled, 2001. The brief shows this field blank."
+    },
+    "Turbine/Engine Technology": {
+     "value": "gas turbine",
+     "refs": [
+      "https://louisvilleky.gov/sites/default/files/2024-02/20210506-permit-o-0125-23-v.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://louisvilleky.gov/sites/default/files/2024-02/20210506-permit-o-0125-23-v.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "The same air permit calls GT13 one simple cycle combustion turbine, so gas turbine stands."
+    },
+    "Backup Power": {
+     "value": "no",
+     "refs": [
+      "https://louisvilleky.gov/sites/default/files/2024-02/20210506-permit-o-0125-23-v.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://louisvilleky.gov/sites/default/files/2024-02/20210506-permit-o-0125-23-v.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The air permit (https://louisvilleky.gov/sites/default/files/2024-02/20210506-permit-o-0125-23-v.pdf) lists emergency generators at the station, but they serve the station's own needs. It names no data center or backup fleet that supplies power to one, so the value no stands. The permit does not state the value in words, so a second source would help."
+    },
+    "Owner(s)": {
+     "value": "Louisville Gas & Electric Co [53%]; Kentucky Utilities Co [47%]",
+     "refs": [
+      "https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "high",
+     "independent": false,
+     "note": "Table 8-4 of the 2024 joint resource plan filed by Louisville Gas and Electric and Kentucky Utilities (https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf) lists Paddy's Run unit 13 with a 47 percent entitlement for Kentucky Utilities and 53 percent for Louisville Gas and Electric. This matches the shares GEM already shows. The Louisville air permit (https://louisvilleky.gov/sites/default/files/2024-02/20210506-permit-o-0125-23-v.pdf) names Louisville Gas and Electric Company as the owner of the plant site. No sale or change of owner was found."
+    },
+    "Operator(s)": {
+     "value": "Louisville Gas & Electric Co",
+     "refs": [
+      "https://louisvilleky.gov/sites/default/files/2024-02/20210506-permit-o-0125-23-v.pdf"
+     ],
+     "verifications": [
+      {
+       "url": "https://louisvilleky.gov/sites/default/files/2024-02/20210506-permit-o-0125-23-v.pdf",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true
+      }
+     ],
+     "tier": "medium",
+     "independent": false,
+     "note": "The Louisville Metro Air Pollution Control District Title V permit (https://louisvilleky.gov/sites/default/files/2024-02/20210506-permit-o-0125-23-v.pdf) is issued to Louisville Gas and Electric Company for the plant at 4600 Bells Lane. The permit does not use the word operator for a separate company, so the operator is taken to be the permit holder."
+    }
+   },
+   "not_found": [
+    "Planned retire",
+    "Retired year",
+    "Conversion/replacement?"
+   ],
+   "notes": "Unit 13 is still operating in the EIA-860M table for September 2026 with no retirement date. Table 8-4 of the 2024 joint resource plan lists no retirement for unit 13, while it lists a 2025 retirement for unit 12. No planned retirement, retirement, conversion or replacement was found for unit 13, so those fields stay blank."
+  }
+ ],
+ "plant_findings": {},
+ "qa": [
+  {
+   "gem_unit_id": "G100000402285",
+   "concern_type": "existence",
+   "question": "Should Paddys Run unit 12 (32.6 MW, 1968) be tracked?",
+   "finding": "The EIA-860M table for September 2026 (https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx) still lists generator 12 as operating at 32.6 MW. The 2024 LG&E and KU resource plan (https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf) says it would retire in 2025. GEM has no record for it.",
+   "recommendation": "Leave unit 12 out, because 32.6 MW is under the 50 MW threshold. Ask the project manager only if the threshold should not apply here.",
+   "note": "The EIA-860M table for September 2026 still shows generator 12 as operating with no planned retirement date, so the 2025 retirement in the resource plan table 8-4 (https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf) has not been confirmed by EIA. The air permit (https://louisvilleky.gov/sites/default/files/2024-02/20210506-permit-o-0125-23-v.pdf) covers unit 12 as turbine GT12 and its 2024 version still lists it. The permit also lists emergency generators, which serve the station itself and not a data center.",
+   "refs": [
+    "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+    "https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf"
+   ],
+   "proposed_value": {}
+  }
+ ],
+ "monitor": [],
+ "newunits": [],
+ "entities": [
+  {
+   "entity_name": "Louisville Gas & Electric Co",
+   "role": "owner",
+   "lookup_result": "Entity exists; appears on 22 units in the United States. Reuse the existing entity."
+  },
+  {
+   "entity_name": "Kentucky Utilities Co",
+   "role": "owner",
+   "lookup_result": "Entity exists; appears on 38 units in the United States. Reuse the existing entity."
+  }
+ ],
+ "source_log": [
+  {
+   "url": "https://www.eia.gov/electricity/data/eia860m/xls/september_generator2026.xlsx",
+   "used_for": [
+    "Status",
+    "Capacity (MW)"
+   ],
+   "outcome": "verified",
+   "note": "Read Operating and Retired sheets for plant 1366."
+  },
+  {
+   "url": "https://louisvilleky.gov/sites/default/files/2024-02/20210506-permit-o-0125-23-v.pdf",
+   "used_for": [
+    "Equipment Manufacturer/Model",
+    "Turbine/Engine Technology",
+    "Backup Power",
+    "Operator(s)",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Verified through the impersonation route; text read with fetch.py."
+  },
+  {
+   "url": "https://psc.ky.gov/pscecf/2024-00326/rick.lovekamp%40lge-ku.com/10182024014139/06-LGE_KU_2024_IRP_Volume_I.pdf",
+   "used_for": [
+    "Capacity (MW)",
+    "Planned retire",
+    "Owner(s)"
+   ],
+   "outcome": "verified",
+   "note": "Table 8-4 lists unit 13 at 175 MW winter, KU 47 percent and LG&E 53 percent, no retirement. Unit 12 retires in 2025."
+  },
+  {
+   "url": "https://webapi.legistar.com/v1/louisville/Matters/65905/Attachments/156342/File",
+   "used_for": [],
+   "outcome": "not relevant",
+   "note": "Opened and read. It is a public comment from a former employee who worked briefly at Paddys Run. It names no capacity, owner, status or retirement for unit 13."
+  }
+ ]
+}

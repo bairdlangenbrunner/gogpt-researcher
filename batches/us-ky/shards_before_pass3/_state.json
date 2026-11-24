@@ -1,0 +1,584 @@
+{
+ "meta": {
+  "state": "Kentucky",
+  "kind": "statewide",
+  "generated": "2026-11-05",
+  "done": true,
+  "urls_attempted": 18,
+  "urls_verified": 16,
+  "searched": [
+   "Read the PJM cycle file and the PJM project pages for every Kentucky gas row, and the MISO queue file for the Big Rivers rows.",
+   "Read the commission's 2021 to 2026 merchant siting board case list; every case is solar, storage or transmission.",
+   "Read the state air quality public notices and the Louisville air district proposed actions; none is a power plant or data center engine fleet.",
+   "Read the harvested state permit documents for each data center and summed their generators.",
+   "Downloaded 41 Ledger Independent legal pages from October 15 to November 5, 2026 and searched them for the Mason County Meta site.",
+   "Read the local records harvest for Louisville, Madisonville, Henderson, Owensboro, Elizabethtown, Maysville, Paducah's county and nine other county courts.",
+   "Read the news pages of each Kentucky utility, TVA's environmental reviews and plan pages, and Kentucky Lantern, WKMS and WKYT stories on gas and data centers.",
+   "Compared the September 2026 federal monthly generator file for Kentucky gas and oil plants with GEM; every plant of 50 MW or more is in GEM.",
+   "Read NextEra's Paducah fact sheet and project page and added the Paducah gas plant.",
+   "Checked owner names in the GEM entity list for NextEra, East Kentucky Power Cooperative, Appalachian Power and Diversified Energy."
+  ],
+  "irp_summary": [
+   "Kentucky Power: the 2022 plan's 480 MW of turbines is now a 760 MW combined cycle plant in Lawrence County, noticed in case 2026-00324 on October 30, 2026; nothing new staged here, and the next plan is due March 20, 2027.",
+   "Duke Energy Kentucky: the 2024 plan adds diesel firing at East Bend in 2030 and a combined cycle unit 3 in 2039, both already in GEM; the next plan is due June 2027.",
+   "East Kentucky Power Cooperative: the 2025 plan adds Liberty Station, the Cooper combined cycle and gas co-firing at Cooper 2 and Spurlock 1 to 4, all already in GEM; its PJM request in Mason County is not in the plan and was added as a plant without the plan box.",
+   "LG&E and KU: the 2024 plan adds Brown 12 and Mill Creek 6, both already in GEM; the next plan is due October 19, 2027.",
+   "Kentucky Municipal Energy Agency: the 2023 plan adds no gas beyond KYMEA Energy Center I, which is already in GEM.",
+   "Big Rivers: the 2026 plan filed September 29, 2026 in case 2026-00268 is handled on the placeholder plant's own card; nothing new staged here.",
+   "TVA: the 2026 draft plan names no new gas unit in Kentucky; Paradise and Marshall are handled on their own cards."
+  ]
+ },
+ "qa": [
+  {
+   "gem_plant_id": "",
+   "plant_name": "Paducah American Energy Hub gas plant",
+   "concern_type": "location",
+   "question": "Should the Paducah American Energy Hub gas plant stay at the former Paducah Gaseous Diffusion Plant point?",
+   "finding": "NextEra's fact sheet and the Kentucky Lantern say the gas plants will be built at or near the former Paducah plant in McCracken County. No permit or site plan gives a final point yet.",
+   "recommendation": "Keep the point as approximate at the former plant site and move it when an air permit application gives the site.",
+   "researcher_notes": "The fact sheet also lists up to 2.6 gigawatts of battery storage, which is not in scope. The fact sheet says the data center could reach 8 gigawatts.",
+   "refs": [
+    "https://www.project.nexteraenergyresources.com/hubfs/paducah-american-energy-hub-fact-sheet.pdf?hsLang=en",
+    "https://kentuckylantern.com/2026/07/29/hyperscale-data-center-natural-gas-fired-project-planned-for-paducahs-former-nuclear-plant/"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.project.nexteraenergyresources.com/hubfs/paducah-american-energy-hub-fact-sheet.pdf?hsLang=en",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "NextEra fact sheet for the Paducah American Energy Hub. It says McCracken County, natural gas generation of up to 2,000 MW, and commercial operation as early as 2032."
+    },
+    {
+     "url": "https://kentuckylantern.com/2026/07/29/hyperscale-data-center-natural-gas-fired-project-planned-for-paducahs-former-nuclear-plant/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Kentucky Lantern story of July 29, 2026. It says NextEra will install two gigawatts of natural gas-fired generation at or near the former Paducah plant in McCracken County."
+    }
+   ],
+   "proposed_value": {}
+  },
+  {
+   "gem_plant_id": "",
+   "plant_name": "EKPC Mason County gas plant (PJM C01-1227)",
+   "concern_type": "existence",
+   "question": "Should East Kentucky Power Cooperative's PJM request C01-1227 be a new plant, or a new unit at Spurlock power station?",
+   "finding": "The request connects to the Spurlock to Meldahl Dam 345 kV line in Mason County, which starts at Spurlock. No filing names a site, and the cooperative's 2025 plan names no new Spurlock unit.",
+   "recommendation": "Add it as a new plant now, and move it to Spurlock as a new unit if a commission case puts it at the Spurlock site.",
+   "researcher_notes": "Meta's Crisham LLC campus is planned in the same county, so the request may serve it. The Spurlock plant's own research wrote a watch item for the same row; drop that one if this add is accepted.",
+   "refs": [
+    "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1227",
+    "https://interconnection.fyi/project/pjm-c01-1227"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1227",
+     "ok": true,
+     "contains_value": false,
+     "name_found": true,
+     "note": "PJM project page for request C01-1227. It names the Spurlock to Meldahl Dam 345 kV line, the developer East Kentucky Power Cooperative, Inc., and status C01 Phase 1 Active. It does not show the megawatts."
+    },
+    {
+     "url": "https://interconnection.fyi/project/pjm-c01-1227",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Interconnection.fyi page for PJM request C01-1227. It shows gas, 780 MW, Mason County, Kentucky, East Kentucky Power Cooperative, and a planned completion date in 2031. This site is a lead only."
+    }
+   ],
+   "proposed_value": {}
+  },
+  {
+   "gem_plant_id": "",
+   "plant_name": "Appalachian Power gas plant at Baker 345 kV (PJM C01-1325)",
+   "concern_type": "duplicate",
+   "question": "Is Appalachian Power's PJM request C01-1325 in Lawrence County, Kentucky one of GEM's two Appalachian Power plan placeholders in West Virginia?",
+   "finding": "Request C01-1325 is 1,046 MW of gas at Baker 345 kV in Lawrence County, Kentucky, and request C01-1326 is 1,045 MW of gas in Wayne County, West Virginia, both from Appalachian Power and filed three days apart. GEM has two Appalachian Power plan placeholders of 1,227 MW in West Virginia.",
+   "recommendation": "Leave the Kentucky request on the watch list and tie it to a placeholder only when Appalachian Power names its site.",
+   "researcher_notes": "GEM's two West Virginia placeholders are Appalachian Power 2025 IRP power station 1 and 2, L100001083287 and L100001083288. Both requests list completion in September 2031.",
+   "refs": [
+    "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1325",
+    "https://interconnection.fyi/project/pjm-c01-1325"
+   ],
+   "verifications": [
+    {
+     "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1325",
+     "ok": true,
+     "contains_value": false,
+     "name_found": true,
+     "note": "PJM project page for request C01-1325. It names the Baker 345 kV point, the developer Appalachian Power, and status Active. It does not show the megawatts."
+    },
+    {
+     "url": "https://interconnection.fyi/project/pjm-c01-1325",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Interconnection.fyi page for PJM request C01-1325. It shows gas, 1,046 MW, Lawrence County, Kentucky, and Appalachian Power. This site is a lead only."
+    }
+   ],
+   "proposed_value": {}
+  }
+ ],
+ "monitor": [
+  {
+   "plant_name": "Appalachian Power gas plant at Baker 345 kV (PJM C01-1325)",
+   "watch_case": "duplicate_check",
+   "recheck_by": "2027-05",
+   "monitor_kind": "new_to_tracker",
+   "irp": false,
+   "owner": "Appalachian Power",
+   "capacity_mw": 1046,
+   "refs": {
+    "links": [
+     "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1325",
+     "https://interconnection.fyi/project/pjm-c01-1325"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1325",
+     "ok": true,
+     "contains_value": false,
+     "name_found": true,
+     "note": "PJM project page for request C01-1325. It names the Baker 345 kV point, the developer Appalachian Power, and status Active. It does not show the megawatts."
+    },
+    {
+     "url": "https://interconnection.fyi/project/pjm-c01-1325",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Interconnection.fyi page for PJM request C01-1325. It shows gas, 1,046 MW, Lawrence County, Kentucky, and Appalachian Power. This site is a lead only."
+    }
+   ],
+   "researcher_notes": "Appalachian Power filed PJM request C01-1325 on April 24, 2026 for 1,046 MW of gas at the Baker 345 kV substation in Lawrence County, Kentucky, with completion planned for September 2031. Three days later it filed C01-1326 for 1,045 MW of gas on the Broadford to Baker 765 kV line in Wayne County, West Virginia. These look like two site options for the same plant. GEM already has two Appalachian Power plan placeholders in West Virginia of 1,227 MW each. Kentucky Power, a sister company, also plans a 760 MW combined cycle plant in Lawrence County. Local records opened: none are posted for Lawrence County Fiscal Court; Boyd County Fiscal Court records were read and have nothing newer than 2024. Recheck when Appalachian Power files a certificate case in West Virginia or Kentucky."
+  },
+  {
+   "plant_name": "Letcher County Gateway park off-grid data center power",
+   "watch_case": "no_generation",
+   "recheck_by": "2027-05",
+   "monitor_kind": "new_to_tracker",
+   "irp": false,
+   "owner": "Diversified Gas and Oil Corporation",
+   "capacity_mw": "",
+   "refs": {
+    "links": [
+     "https://www.wkyt.com/2026/07/17/proposed-off-grid-data-center-eyeing-letcher-co-industrial-park/",
+     "https://www.datacenterdynamics.com/en/news/off-grid-data-center-proposed-for-letcher-county-kentucky-report/"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.wkyt.com/2026/07/17/proposed-off-grid-data-center-eyeing-letcher-co-industrial-park/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "WKYT story of July 17, 2026. It says the regional development authority signed an agreement with Diversified Gas and Oil Corporation and Maverick Holdings for about 100 acres at the Gateway park in Letcher County. It names no power plant."
+    },
+    {
+     "url": "https://www.datacenterdynamics.com/en/news/off-grid-data-center-proposed-for-letcher-county-kentucky-report/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Data Center Dynamics story. It calls the Letcher County project off-grid, names Diversified Gas and Oil Corporation, and says the site is tied to the gas network of Kentucky Frontier Gas. It names no generator size."
+    }
+   ],
+   "researcher_notes": "In July 2026 the regional development authority signed an agreement with Diversified Gas and Oil Corporation and Maverick Holdings to buy about 100 acres at the Gateway park in Letcher County for an off-grid data center. The site is tied to a local gas network. No story names a power plant, a size or an engine count, and no air permit application was found in the state permit system. Local records opened: none, because Letcher County Fiscal Court posts no minutes online and is not in the local records harvest. Recheck for an air permit application or a county agreement."
+  },
+  {
+   "plant_name": "Meta Mason County data center on-site power (Crisham LLC)",
+   "watch_case": "not_committed",
+   "recheck_by": "2027-05",
+   "monitor_kind": "new_to_tracker",
+   "irp": false,
+   "owner": "Crisham LLC",
+   "capacity_mw": "",
+   "refs": {
+    "links": [
+     "https://kypublicnotice.com/KYLegals/2026/70190-2026-10-23_1002.pdf",
+     "https://kypublicnotice.com/KYLegals/2026/70190-2026-10-16_1002.pdf"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://kypublicnotice.com/KYLegals/2026/70190-2026-10-23_1002.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Ledger Independent opinion page of October 23, 2026. A reader letter asks whether Mason County's agreement with Crisham LLC, which is Meta, allows a gas turbine or a small reactor on the 2,900 acre site."
+    },
+    {
+     "url": "https://kypublicnotice.com/KYLegals/2026/70190-2026-10-16_1002.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Ledger Independent legal page of October 16, 2026. A notice from Mason County approves industrial building revenue bonds for a facility leased to Crisham LLC."
+    }
+   ],
+   "researcher_notes": "Meta is planning a data center campus in Mason County under the name Crisham LLC. A reader letter in the Ledger Independent of October 23, 2026 asks whether the county's revenue agreement with Crisham LLC allows a gas turbine plant or a small reactor on the 2,900 acre site. That is a question, not a plan. On October 16, 2026 the county gave notice of revenue bonds for the Crisham project. No permit, plan or company statement names on-site gas generation. Local records opened: Mason County Fiscal Court and City of Maysville agendas and minutes, and the Ledger Independent legal notice pages from October 15 to November 5, 2026. East Kentucky Power Cooperative's 780 MW queue request in the same county is added as its own plant. Recheck for an air permit application at the site."
+  }
+ ],
+ "newplants": [
+  {
+   "record_id": "us-ky:new:paducah-american-energy-hub",
+   "plant_name": "Paducah American Energy Hub gas plant",
+   "gem_plant_id": "",
+   "country": "United States",
+   "fields": {
+    "State/Province": "Kentucky",
+    "Local area (taluk, county)": "McCracken",
+    "City": "",
+    "Other Name(s)": "Paducah American Energy Hub",
+    "Latitude": "37.1167",
+    "Longitude": "-88.8036",
+    "Location accuracy": "approximate",
+    "Owner(s)": "Nextera Energy Resources [100%]"
+   },
+   "refs": {
+    "Location Data Source": [
+     "https://www.project.nexteraenergyresources.com/hubfs/paducah-american-energy-hub-fact-sheet.pdf?hsLang=en",
+     "https://kentuckylantern.com/2026/07/29/hyperscale-data-center-natural-gas-fired-project-planned-for-paducahs-former-nuclear-plant/"
+    ],
+    "Owners Data Source": [
+     "https://www.project.nexteraenergyresources.com/hubfs/paducah-american-energy-hub-fact-sheet.pdf?hsLang=en"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.project.nexteraenergyresources.com/hubfs/paducah-american-energy-hub-fact-sheet.pdf?hsLang=en",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "NextEra fact sheet for the Paducah American Energy Hub. It says McCracken County, natural gas generation of up to 2,000 MW, and commercial operation as early as 2032."
+    },
+    {
+     "url": "https://www.wkms.org/business-economy/2026-07-29/100b-data-center-gas-fired-power-plant-to-be-developed-around-paducah-doe-site",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "WKMS public radio story of July 29, 2026. It says NextEra will build gas-fired power near the former Paducah Gaseous Diffusion Plant in McCracken County."
+    },
+    {
+     "url": "https://kentuckylantern.com/2026/07/29/hyperscale-data-center-natural-gas-fired-project-planned-for-paducahs-former-nuclear-plant/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Kentucky Lantern story of July 29, 2026. It says NextEra will install two gigawatts of natural gas-fired generation at or near the former Paducah plant in McCracken County."
+    }
+   ],
+   "tier": "high",
+   "researcher_notes": "GEM does not list this plant. NextEra Energy Resources and the Department of Energy announced on July 29, 2026 a large data center and power project at the former Paducah Gaseous Diffusion Plant in McCracken County. NextEra's fact sheet says the project includes natural gas generation of up to 2,000 MW, with commercial operation as early as 2032. A WKMS radio story and a Kentucky Lantern story of the same day say the same. No air permit application or siting board case was found yet, so the status is announced. The point is the former plant site and is approximate, because the fact sheet says the plant will be at or near it. The owner name is spelled as it already is in the GEM entity list. GEM's Shawnee Fossil Plant and the Paducah Power plant are in the same county but are different plants.",
+   "action": "Create Paducah American Energy Hub gas plant in McCracken County, Kentucky, owned by Nextera Energy Resources (existing entity), then add the unit below.",
+   "irp": false,
+   "checks": [],
+   "units": [
+    {
+     "unit_name": "1",
+     "fields": {
+      "Capacity (MW)": "2000",
+      "Fuel": "fossil gas: natural gas",
+      "Status": "announced",
+      "Start year": "2032"
+     },
+     "refs": {
+      "Capacity Data Source": [
+       "https://www.project.nexteraenergyresources.com/hubfs/paducah-american-energy-hub-fact-sheet.pdf?hsLang=en",
+       "https://kentuckylantern.com/2026/07/29/hyperscale-data-center-natural-gas-fired-project-planned-for-paducahs-former-nuclear-plant/"
+      ],
+      "Fuel Data Source": [
+       "https://www.project.nexteraenergyresources.com/hubfs/paducah-american-energy-hub-fact-sheet.pdf?hsLang=en"
+      ],
+      "Status Data Source": [
+       "https://www.project.nexteraenergyresources.com/hubfs/paducah-american-energy-hub-fact-sheet.pdf?hsLang=en",
+       "https://www.wkms.org/business-economy/2026-07-29/100b-data-center-gas-fired-power-plant-to-be-developed-around-paducah-doe-site",
+       "https://kentuckylantern.com/2026/07/29/hyperscale-data-center-natural-gas-fired-project-planned-for-paducahs-former-nuclear-plant/"
+      ],
+      "Start Year Data Source": [
+       "https://www.project.nexteraenergyresources.com/hubfs/paducah-american-energy-hub-fact-sheet.pdf?hsLang=en"
+      ]
+     },
+     "verifications": [
+      {
+       "url": "https://www.project.nexteraenergyresources.com/hubfs/paducah-american-energy-hub-fact-sheet.pdf?hsLang=en",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "NextEra fact sheet for the Paducah American Energy Hub. It says McCracken County, natural gas generation of up to 2,000 MW, and commercial operation as early as 2032."
+      },
+      {
+       "url": "https://kentuckylantern.com/2026/07/29/hyperscale-data-center-natural-gas-fired-project-planned-for-paducahs-former-nuclear-plant/",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Kentucky Lantern story of July 29, 2026. It says NextEra will install two gigawatts of natural gas-fired generation at or near the former Paducah plant in McCracken County."
+      },
+      {
+       "url": "https://www.wkms.org/business-economy/2026-07-29/100b-data-center-gas-fired-power-plant-to-be-developed-around-paducah-doe-site",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "WKMS public radio story of July 29, 2026. It says NextEra will build gas-fired power near the former Paducah Gaseous Diffusion Plant in McCracken County."
+      }
+     ],
+     "milestones": [
+      {
+       "date": "2026-07-29",
+       "event": "announced",
+       "source": "https://www.project.nexteraenergyresources.com/hubfs/paducah-american-energy-hub-fact-sheet.pdf?hsLang=en"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "record_id": "us-ky:new:ekpc-mason-county-gas-plant",
+   "plant_name": "EKPC Mason County gas plant (PJM C01-1227)",
+   "gem_plant_id": "",
+   "country": "United States",
+   "fields": {
+    "State/Province": "Kentucky",
+    "Local area (taluk, county)": "Mason",
+    "City": "",
+    "Latitude": "38.7001",
+    "Longitude": "-83.8173",
+    "Location accuracy": "approximate",
+    "Owner(s)": "East Kentucky Power Cooperative Inc [100%]"
+   },
+   "refs": {
+    "Location Data Source": [
+     "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1227",
+     "https://interconnection.fyi/project/pjm-c01-1227"
+    ],
+    "Owners Data Source": [
+     "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1227"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1227",
+     "ok": true,
+     "contains_value": false,
+     "name_found": true,
+     "note": "PJM project page for request C01-1227. It names the Spurlock to Meldahl Dam 345 kV line, the developer East Kentucky Power Cooperative, Inc., and status C01 Phase 1 Active. It does not show the megawatts."
+    },
+    {
+     "url": "https://interconnection.fyi/project/pjm-c01-1227",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "Interconnection.fyi page for PJM request C01-1227. It shows gas, 780 MW, Mason County, Kentucky, East Kentucky Power Cooperative, and a planned completion date in 2031. This site is a lead only."
+    }
+   ],
+   "tier": "medium",
+   "researcher_notes": "GEM does not list this plant. East Kentucky Power Cooperative filed PJM request C01-1227 on April 27, 2026 for a gas plant that connects to the Spurlock to Meldahl Dam 345 kV line in Mason County. PJM's project page names the line and the cooperative. Interconnection.fyi, which copies the PJM queue, shows 780 MW (758 MW in summer) and a planned completion at the end of 2031. GEM records the higher figure. The megawatts rest on that site and on the PJM cycle file, which is not at a fixed address, so the record stays at medium. No commission case, air permit or plan names this plant yet. The point is the Spurlock power station, where the line starts, and is approximate. Meta's 2.2 gigawatt data center campus under the name Crisham LLC is planned in the same county, which may be the reason for this request. The Spurlock plant's own research also raised this queue row as a watch item, so keep only one of the two.",
+   "action": "Create EKPC Mason County gas plant (PJM C01-1227) in Mason County, Kentucky, owned by East Kentucky Power Cooperative Inc (existing entity), then add the unit below.",
+   "irp": false,
+   "checks": [],
+   "units": [
+    {
+     "unit_name": "1",
+     "fields": {
+      "Capacity (MW)": "780",
+      "Fuel": "fossil gas: natural gas",
+      "Status": "announced",
+      "Start year": "2031"
+     },
+     "refs": {
+      "Capacity Data Source": [
+       "https://interconnection.fyi/project/pjm-c01-1227"
+      ],
+      "Fuel Data Source": [
+       "https://interconnection.fyi/project/pjm-c01-1227"
+      ],
+      "Status Data Source": [
+       "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1227",
+       "https://interconnection.fyi/project/pjm-c01-1227"
+      ],
+      "Start Year Data Source": [
+       "https://interconnection.fyi/project/pjm-c01-1227"
+      ]
+     },
+     "verifications": [
+      {
+       "url": "https://interconnection.fyi/project/pjm-c01-1227",
+       "ok": true,
+       "contains_value": true,
+       "name_found": true,
+       "note": "Interconnection.fyi page for PJM request C01-1227. It shows gas, 780 MW, Mason County, Kentucky, East Kentucky Power Cooperative, and a planned completion date in 2031. This site is a lead only."
+      },
+      {
+       "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1227",
+       "ok": true,
+       "contains_value": false,
+       "name_found": true,
+       "note": "PJM project page for request C01-1227. It names the Spurlock to Meldahl Dam 345 kV line, the developer East Kentucky Power Cooperative, Inc., and status C01 Phase 1 Active. It does not show the megawatts."
+      }
+     ],
+     "milestones": [
+      {
+       "date": "2026-04-27",
+       "event": "interconnection request filed",
+       "source": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1227"
+      }
+     ],
+     "researcher_notes": "PJM's project page for request C01-1227 shows the request as active in Phase 1 of the first cycle. It names East Kentucky Power Cooperative as the developer. An active queue request is the announced step on the status ladder, so the status is announced. The PJM page does not show the megawatts or the fuel. Those come from Interconnection.fyi, which copies the PJM queue, so they rest on one lead site until a filing or permit states them."
+    }
+   ]
+  }
+ ],
+ "newunits": [],
+ "source_log": [
+  {
+   "url": "https://www.project.nexteraenergyresources.com/hubfs/paducah-american-energy-hub-fact-sheet.pdf?hsLang=en",
+   "used_for": [
+    "newplants"
+   ],
+   "outcome": "verified",
+   "note": "Paducah gas capacity, county and year"
+  },
+  {
+   "url": "https://www.wkms.org/business-economy/2026-07-29/100b-data-center-gas-fired-power-plant-to-be-developed-around-paducah-doe-site",
+   "used_for": [
+    "newplants"
+   ],
+   "outcome": "verified",
+   "note": "Paducah announcement"
+  },
+  {
+   "url": "https://kentuckylantern.com/2026/07/29/hyperscale-data-center-natural-gas-fired-project-planned-for-paducahs-former-nuclear-plant/",
+   "used_for": [
+    "newplants"
+   ],
+   "outcome": "verified",
+   "note": "Paducah two gigawatts of gas"
+  },
+  {
+   "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1227",
+   "used_for": [
+    "newplants",
+    "queues"
+   ],
+   "outcome": "verified",
+   "note": "C01-1227 developer and line; no megawatts on the page"
+  },
+  {
+   "url": "https://interconnection.fyi/project/pjm-c01-1227",
+   "used_for": [
+    "newplants",
+    "queues"
+   ],
+   "outcome": "verified",
+   "note": "C01-1227 megawatts and year; lead site"
+  },
+  {
+   "url": "https://www.pjm.com/m/ProjectTransition/SISReportDetails?queueNumber=C01-1325",
+   "used_for": [
+    "monitor",
+    "queues"
+   ],
+   "outcome": "verified",
+   "note": "C01-1325 developer and point"
+  },
+  {
+   "url": "https://interconnection.fyi/project/pjm-c01-1325",
+   "used_for": [
+    "monitor",
+    "queues"
+   ],
+   "outcome": "verified",
+   "note": "C01-1325 megawatts; lead site"
+  },
+  {
+   "url": "https://kypublicnotice.com/KYLegals/2026/70190-2026-10-23_1002.pdf",
+   "used_for": [
+    "monitor",
+    "data_centers"
+   ],
+   "outcome": "verified",
+   "note": "Meta Mason County letter on a gas turbine"
+  },
+  {
+   "url": "https://kypublicnotice.com/KYLegals/2026/70190-2026-10-16_1002.pdf",
+   "used_for": [
+    "monitor",
+    "data_centers"
+   ],
+   "outcome": "verified",
+   "note": "Crisham revenue bond notice"
+  },
+  {
+   "url": "https://www.wkyt.com/2026/07/17/proposed-off-grid-data-center-eyeing-letcher-co-industrial-park/",
+   "used_for": [
+    "monitor",
+    "data_centers"
+   ],
+   "outcome": "verified",
+   "note": "Letcher County off-grid site"
+  },
+  {
+   "url": "https://www.datacenterdynamics.com/en/news/off-grid-data-center-proposed-for-letcher-county-kentucky-report/",
+   "used_for": [
+    "monitor",
+    "data_centers"
+   ],
+   "outcome": "verified",
+   "note": "Letcher County gas network"
+  },
+  {
+   "url": "https://kentuckylantern.com/2026/08/10/terawulf-tells-investors-it-could-double-the-size-of-one-of-its-ky-data-center-projects/",
+   "used_for": [
+    "data_centers"
+   ],
+   "outcome": "verified",
+   "note": "TeraWulf Kentucky sites"
+  },
+  {
+   "url": "https://louisvilleky.gov/sites/default/files/2023-09/20210609-permit-o-1785-21-m.pdf",
+   "used_for": [
+    "data_centers"
+   ],
+   "outcome": "verified",
+   "note": "Flexential Louisville generators"
+  },
+  {
+   "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/13843182",
+   "used_for": [
+    "data_centers"
+   ],
+   "outcome": "verified",
+   "note": "Amazon Florence generators"
+  },
+  {
+   "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/9738542",
+   "used_for": [
+    "data_centers"
+   ],
+   "outcome": "verified",
+   "note": "Bluegrass Cellular generators"
+  },
+  {
+   "url": "https://dep.gateway.ky.gov/eSearch.WebApi/api/documentGenerate/getDocument/10425562",
+   "used_for": [
+    "data_centers"
+   ],
+   "outcome": "verified",
+   "note": "Amazon Hebron engines"
+  },
+  {
+   "url": "https://www.pjm.com/m/ProjectTransition/GenerateXMLTransitionProjectsAll",
+   "used_for": [
+    "queues"
+   ],
+   "outcome": "failed",
+   "note": "Answers 404 and has no saved copy; the cycle rows were read from the PJM cycle file instead."
+  },
+  {
+   "url": "https://www.pjm.com/pjmfiles/media/planning/queues-data/PlanningQueues.xml",
+   "used_for": [
+    "queues"
+   ],
+   "outcome": "failed",
+   "note": "The serial queue file does not hold the C01 cycle rows."
+  }
+ ]
+}

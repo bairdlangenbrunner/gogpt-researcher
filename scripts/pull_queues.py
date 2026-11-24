@@ -82,6 +82,27 @@ with a blank fuel is a fuel-unknown lead (the Pioneer phase IV rows at Judson
 are like that). Size is the nameplate capacity when above zero, else the
 capacity, else the summer MW.
 
+LBNL (utility queues with no public file of their own; built 2026-11-07 after
+Kentucky). Lawrence Berkeley National Laboratory's "Queued Up" data file,
+`https://emp.lbl.gov/queues`, is one open workbook (about 15 MB, plain GET, no
+login) covering every ISO and about 40 utility queues, refreshed once a year
+(the 2026 edition holds requests through the end of 2025). Tab "03. Complete
+Queue Data" has one row per request: q_id, q_status (active, suspended,
+operational, withdrawn), queue and proposed dates, county, state, point of
+interconnection, entity (the queue's owner: TVA, LGE-KU, SOCO, Duke and so on),
+developer, cluster, project_type (Generation or Upgrade), type_1 to type_3,
+type_clean and mw_1. It is the public way into queues that sit behind a sign-in
+(TVA and LG&E and KU on OATI). A settings market other than MISO, PJM and SPP
+is read from this file when `lbnl_entities` maps it to the file's entity code,
+for example {"TVA": "TVA", "LGEE": "LGE-KU"}; the market name stays the key
+prefix ("TVA 628"). The file lags the live queue by up to a year, so a request
+filed since the cutoff is missing: the `how` line says so, and the live queue is
+still read by hand when it can be. The workbook is cached a week in
+work/lbnl/. Gas or oil: type_clean or type_1 to type_3 naming Gas, Oil or
+Diesel; a type of Other or blank is fuel not shown. Size is mw_1. An Upgrade row
+is kept and its project type shown, since an uprate at a GEM plant is a Status
+Detail line, not a new unit.
+
 Output (batches/us-<st>/harvest/): `queues.json` and `queues.md`, the shape
 `build_state_brief.py --harvest` reads (same keys as the Mississippi output).
 
@@ -122,12 +143,16 @@ PJM_CYCLE_POST = "https://www.pjm.com/m/ProjectTransition/GenerateXMLTransitionP
 PJM_CYCLE_PAGE = "https://www.pjm.com/planning/m/cycle-service-request-status"
 SPP_CSV = "https://opsportal.spp.org/Studies/GenerateActiveCSV"
 SPP_PAGE = "https://opsportal.spp.org/Studies/GIActive"
+LBNL_PAGE = "https://emp.lbl.gov/queues"
+LBNL_SHEET = "03. Complete Queue Data"
+LBNL_CACHE = REPO / "work" / "lbnl"
+LBNL_MAX_AGE_DAYS = 7
 
 READERS = ("MISO", "PJM", "SPP")
 # rows each full file held when last seen, roughly halved: fewer means a broken download
-MIN_ROWS = {"MISO": 2000, "PJM serial": 4500, "PJM cycle": 900, "SPP": 500}
+MIN_ROWS = {"MISO": 2000, "PJM serial": 4500, "PJM cycle": 900, "SPP": 500, "LBNL": 20000}
 WITHDRAWN = re.compile(r"withdrawn|terminated|cancel+ed|deactivated", re.I)
-IN_SERVICE = re.compile(r"^\s*in service\s*$|commercial operation", re.I)  # not "partially in service"
+IN_SERVICE = re.compile(r"^\s*in service\s*$|commercial operation|^operational$", re.I)  # not "partially in service"
 
 GAS_OIL = re.compile(r"natural gas|\bgas\b|ulsd|fuel oil|\boil\b|diesel|syngas|combustion turbine|"
                      r"combined cycle|reciprocating", re.I)
@@ -399,6 +424,95 @@ def fetch_spp():
     return page.text
 
 
+# ---------------------------------------------------------------- LBNL ---
+
+LBNL_GAS_OIL = re.compile(r"\b(gas|oil|diesel)\b", re.I)
+
+
+def lbnl_file_url():
+    """The current data file's address, read from the Queued Up page (the file name carries the year)."""
+    page = fetch_page(LBNL_PAGE, timeout=60)
+    if page.status != "200":
+        raise RuntimeError(f"LBNL page HTTP {page.status}")
+    m = re.search(r'href="([^"]*LBNL_Ix_Queue_Data_File[^"]*\.xlsx)"', page.text, re.I)
+    if not m:
+        raise RuntimeError("LBNL page names no LBNL_Ix_Queue_Data_File*.xlsx link")
+    href = m.group(1)
+    return href if href.startswith("http") else "https://emp.lbl.gov" + href
+
+
+def fetch_lbnl():
+    """Path to the cached workbook and its address; downloads again when older than a week."""
+    import subprocess
+    LBNL_CACHE.mkdir(parents=True, exist_ok=True)
+    url = lbnl_file_url()
+    dest = LBNL_CACHE / url.rsplit("/", 1)[-1]
+    fresh = dest.exists() and (dt.datetime.now().timestamp() - dest.stat().st_mtime) < LBNL_MAX_AGE_DAYS * 86400
+    if not fresh:
+        tmp = dest.with_suffix(".part")
+        subprocess.run(["curl", "-sSL", "--compressed", "-A", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36",
+                        "-o", str(tmp), "--fail", url], check=True, timeout=600)
+        if tmp.read_bytes()[:4] != b"PK\x03\x04":
+            raise RuntimeError(f"LBNL download is not a workbook: {url}")
+        tmp.replace(dest)
+    return dest, url
+
+
+def lbnl_rows(path):
+    """Every row of the complete queue tab as a dict (the header is the second row)."""
+    import openpyxl
+    wb = openpyxl.load_workbook(path, read_only=True)
+    it = wb[LBNL_SHEET].iter_rows(values_only=True)
+    next(it)
+    head = [str(h).strip() if h is not None else "" for h in next(it)]
+    rows = [dict(zip(head, r)) for r in it if any(v is not None for v in r)]
+    wb.close()
+    return rows
+
+
+def lbnl_day(v):
+    return v.date().isoformat() if isinstance(v, dt.datetime) else (str(v)[:10] if v else "")
+
+
+def lbnl_entries(rows, cfg, state, market, url):
+    """The state's requests in one utility queue (the settings map market -> LBNL entity code)."""
+    code = (cfg.get("lbnl_entities") or {}).get(market)
+    out = []
+    for r in rows:
+        if r.get("state") != state or r.get("entity") != code:
+            continue
+        types = " ".join(str(r.get(k) or "") for k in ("type_clean", "type_1", "type_2", "type_3"))
+        gas_oil = bool(LBNL_GAS_OIL.search(types))
+        status = str(r.get("q_status") or "")
+        try:
+            mw = float(r["mw_1"]) if r.get("mw_1") not in (None, "") else None
+        except (TypeError, ValueError):
+            mw = None
+        out.append({
+            "source": market,
+            "queue_id": str(r.get("q_id")),
+            "project_name": clean_ws(r.get("project_name") or ""),
+            "county": clean_ws(r.get("county") or ""),
+            "state": state,
+            "fuel": clean_ws(r.get("type_clean") or "") or "(not shown)",
+            "facility_type": clean_ws(r.get("project_type") or ""),
+            "mw": mw,
+            "status": status,
+            "stage": " / ".join(clean_ws(x) for x in [r.get("cluster"), r.get("IA_phase_clean")] if x),
+            "queue_date": lbnl_day(r.get("q_date")),
+            "in_service": lbnl_day(r.get("on_date") or r.get("prop_date")),
+            "withdrawn": lbnl_day(r.get("wd_date")) if status == "withdrawn" else "",
+            "poi": clean_ws(r.get("poi_name") or ""),
+            "owner": clean_ws(r.get("developer") or ""),
+            "url": url,
+            "note": f"Berkeley Lab file row for {market} request {r.get('q_id')}, project type {r.get('project_type')}",
+            "gas_oil": gas_oil,
+            "fuel_unknown": not gas_oil and bool(re.fullmatch(r"\s*(other)?\s*", str(r.get("type_clean") or ""), re.I)),
+        })
+    return out
+
+
 # ---------------------------------------------------------------- match ---
 
 def load_plants(state_name, known, csv_path=None):
@@ -626,8 +740,27 @@ def main():
             except Exception as e:  # noqa: BLE001
                 log(f"SPP failed: {e}")
                 sources.append(source_record("SPP", "SPP", SPP_PAGE, f"NOT REACHED: {e}"))
+        lbnl_markets = [m for m in cfg["markets"] if m in (cfg.get("lbnl_entities") or {})]
+        if lbnl_markets:
+            try:
+                path, url = fetch_lbnl()
+                rows = lbnl_rows(path)
+                cutoff = max((r.get("q_date") for r in rows if isinstance(r.get("q_date"), dt.datetime)), default=None)
+                for m in lbnl_markets:
+                    le = lbnl_entries(rows, cfg, st, m, url)
+                    entries += le
+                    sources.append(source_record(
+                        f"{m} queue, read from the Berkeley Lab Queued Up file", m, url,
+                        f"open workbook {url}, tab \"{LBNL_SHEET}\", plain GET; {len(rows)} requests in the file, "
+                        f"{len(le)} {cfg['name']} requests in the {cfg['lbnl_entities'][m]} queue; newest queue date in the file "
+                        f"{lbnl_day(cutoff) or 'not shown'}, so requests filed after that are missing",
+                        rows=len(rows), state_rows=len(le), entries=le, floor="LBNL"))
+            except Exception as e:  # noqa: BLE001
+                log(f"LBNL failed: {e}")
+                for m in lbnl_markets:
+                    sources.append(source_record(m, m, LBNL_PAGE, f"NOT REACHED: {e}"))
         for m in cfg["markets"]:
-            if m not in READERS:
+            if m not in READERS and m not in lbnl_markets:
                 sources.append(source_record(
                     m, m, "", f"NO READER: pull_queues.py cannot read the {m} queue yet; read it by hand "
                               "and answer it in coverage.json under queues, key \"market " + m + "\""))

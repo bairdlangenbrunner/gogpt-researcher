@@ -122,7 +122,11 @@ def check_record(fields, ident, findings):
 
     if "technology" in fields and get("technology"):
         tech = get("technology")
-        if tech.upper() not in TECHNOLOGIES \
+        if tech.upper() == "AGT" or tech.lower() == "aeroderivative gas turbine":
+            findings.append(Finding("ERROR", "technology-vocab", ident,
+                                    f"technology {tech!r} is not in the web form's "
+                                    "dropdown; enter an aeroderivative set as gas turbine"))
+        elif tech.upper() not in TECHNOLOGIES \
                 and tech.lower() not in TECHNOLOGY_LONG_FORMS:
             findings.append(Finding("ERROR", "technology-vocab", ident,
                                     f"technology {tech!r} not in "

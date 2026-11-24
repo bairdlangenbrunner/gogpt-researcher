@@ -1,93 +1,138 @@
 {
-  "meta": {
-    "lane": "monitor",
-    "scope": {
-      "country": "United States",
-      "state": "Oklahoma",
-      "postal": "ok",
-      "kind": "state",
-      "slug": "oklahoma",
-      "quarter": "q4-2026",
-      "csv": "/Users/baird/Dropbox/_git_ALL/_github-repos-gem/gogpt-researcher/scripts/gem_export_gogpt_scoped.csv"
-    },
-    "generated": "2026-11-05T15:12:34-05:00",
-    "mode": "update",
-    "counts": {
-      "records": 3
-    }
+ "meta": {
+  "lane": "monitor",
+  "scope": {
+   "country": "United States",
+   "state": "Oklahoma",
+   "postal": "ok",
+   "kind": "state",
+   "slug": "oklahoma",
+   "quarter": "q4-2026",
+   "csv": "scripts/gem_export_gogpt_scoped.csv"
   },
-  "records": [
+  "generated": "2026-11-05T15:12:34-05:00",
+  "mode": "update",
+  "counts": {
+   "records": 3
+  }
+ },
+ "records": [
+  {
+   "gem_plant_id": "L100000402235",
+   "monitor_kind": "existing_plant",
+   "monitor_reason": "Southwest Power Pool request GEN-2025-SR21 (100 MW, fuel not shown) connects at the Tulsa Power Station 138 kV substation.",
+   "recheck_by": "2027-03",
+   "watch_case": "no_generation",
+   "capacity_mw": 100,
+   "refs": {},
+   "plant_name": "Tulsa power station",
+   "country": "United States",
+   "fields": {},
+   "researcher_notes": "Watch the Southwest Power Pool request GEN-2025-SR21, a 100 MW request at the Tulsa Power Station 138 kV substation. No document names a generating unit or fuel for it.\n\nWhere to find it:\n- Southwest Power Pool queue list at https://opsportal.spp.org/Studies/GenerateActiveCSV. Find the row with Generation Interconnection Number GEN-2025-SR21.\n- That row reads the column after the queue numbers reads Surplus, Nearest Town or County Tulsa, State OK, TO at POI AEP, Commercial Operation Date 5/31/2028, Capacity 100, Generation Type Thermal, Substation or Line Tulsa Power Station 138kV Substation, Request Received 6/12/2025, Status IA PENDING. The Fuel Type column is blank.\n\nNot found:\n- No document names a generating unit or fuel. I did not find a filing, news item or permit for this request.",
+   "record_id": "L100000402235:plant:monitor-1"
+  },
+  {
+   "plant_name": "Public Service Company of Oklahoma 2026 all-source request for proposals",
+   "watch_case": "not_committed",
+   "recheck_by": "2027-03",
+   "monitor_kind": "new_to_tracker",
+   "irp": true,
+   "owner": "Public Service Company of Oklahoma",
+   "capacity_mw": "4000 accredited, mixed resources",
+   "refs": {
+    "links": [
+     "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf"
+    ]
+   },
+   "verifications": [
     {
-      "gem_plant_id": "L100000402235",
-      "monitor_kind": "existing_plant",
-      "monitor_reason": "Southwest Power Pool request GEN-2025-SR21 (100 MW, fuel not shown) connects at the Tulsa Power Station 138 kV substation.",
-      "recheck_by": "2027-03",
-      "watch_case": "no_generation",
-      "capacity_mw": 100,
-      "refs": {},
-      "plant_name": "Tulsa power station",
-      "country": "United States",
-      "fields": {},
-      "researcher_notes": "No document names a generating unit or fuel.",
-      "record_id": "L100000402235:plant:monitor-1"
-    },
-    {
-      "plant_name": "Public Service Company of Oklahoma 2026 all-source request for proposals",
-      "watch_case": "not_committed",
-      "recheck_by": "2027-03",
-      "monitor_kind": "new_to_tracker",
-      "irp": true,
-      "owner": "Public Service Company of Oklahoma",
-      "capacity_mw": "4000 accredited, mixed resources",
-      "refs": {
-        "links": [
-          "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf"
-        ]
-      },
-      "verifications": [
-        {
-          "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
-          "ok": true,
-          "contains_value": true,
-          "name_found": true,
-          "note": "The page loaded and carries the expected values."
-        }
-      ],
-      "researcher_notes": "The Public Service Company of Oklahoma issued an all-source request for proposals on January 2, 2026 for about 4,000 MW of accredited capacity, and received bids on March 16, 2026. No gas site or unit is named, and the utility has not picked winners. Recheck after the shortlist is filed with the state commission.",
-      "gem_plant_id": "",
-      "country": "United States",
-      "fields": {},
-      "record_id": "us-ok:plant:monitor-1",
-      "monitor_reason": "The Public Service Company of Oklahoma issued an all-source request for proposals on January 2, 2026 for about 4,000 MW of accredited capacity, and received bids on March 16, 2026."
-    },
-    {
-      "plant_name": "OG&E 2026 requests for proposals",
-      "watch_case": "not_committed",
-      "recheck_by": "2027-03",
-      "monitor_kind": "new_to_tracker",
-      "irp": true,
-      "owner": "Oklahoma Gas and Electric",
-      "capacity_mw": "",
-      "refs": {
-        "links": [
-          "https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8"
-        ]
-      },
-      "verifications": [
-        {
-          "url": "https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8",
-          "ok": true,
-          "contains_value": true,
-          "name_found": true,
-          "note": "The page loaded and carries the expected values."
-        }
-      ],
-      "researcher_notes": "The OG&E 2026 plan says its 2026 requests for proposals are open to cover current capacity needs. The plan names no new gas site beyond Horseshoe Lake units 11 to 15 and the Tinker project, which GEM already lists. Recheck when OG&E files a pre-approval case for any new unit.",
-      "gem_plant_id": "",
-      "country": "United States",
-      "fields": {},
-      "record_id": "us-ok:plant:monitor-2",
-      "monitor_reason": "The OG&E 2026 plan says its 2026 requests for proposals are open to cover current capacity needs."
+     "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "The page loaded and carries the expected values."
     }
-  ]
+   ],
+   "researcher_notes": "This is a watch item, not an addition. The Public Service Company of Oklahoma issued an all-source request for proposals on January 2, 2026 for about 4,000 MW of accredited capacity, and received bids on March 16, 2026. No gas site or unit is named yet, so nothing can be added until the utility picks winners. Recheck after the shortlist is filed with the state commission.\n\nWhere to find it:\n- Open https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf (the 2026 Integrated Resource Plan refresh report of the Public Service Company of Oklahoma).\n- Page 7 of the PDF, section 2.3 \"Current Request for Proposals for New Resources\".\n- The first sentence reads \"PSO issued an All-Source RFP on January 2, 2026, seeking approximately 4,000 MW of accredited capacity within the Southwest Power Pool (SPP).\"\n- The next sentence reads \"Proposals were received on March 16, 2026.\"\n- The section then says the request covers \"greenfield natural gas, wind, solar, and battery energy storage (BESS) projects\" and that \"PSO is currently evaluating the proposals\". The printed page number matches the PDF page.\n\nNot found:\n- The section names no gas site, unit or developer. I read the whole of section 2.3 and the action plan on pages 24 to 26.\n- Winners have not been named in this report.\n\nNext check:\n- Page 38 of the PDF holds the notes of a stakeholder meeting. One answer there says \"PSO is anticipating having a short list to share later this summer.\" The question it answers calls the request the \"2025 capacity RFP\", so I cannot tell whether it is the same request as the January 2026 one.\n- Watch for the shortlist or a pre-approval filing at the Oklahoma Corporation Commission.",
+   "gem_plant_id": "",
+   "country": "United States",
+   "fields": {},
+   "record_id": "us-ok:plant:monitor-1",
+   "monitor_reason": "The Public Service Company of Oklahoma issued an all-source request for proposals on January 2, 2026 for about 4,000 MW of accredited capacity, and received bids on March 16, 2026."
+  },
+  {
+   "plant_name": "OG&E 2026 requests for proposals",
+   "watch_case": "not_committed",
+   "recheck_by": "2027-03",
+   "monitor_kind": "new_to_tracker",
+   "irp": true,
+   "owner": "Oklahoma Gas and Electric",
+   "capacity_mw": "",
+   "refs": {
+    "links": [
+     "https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "The page loaded and carries the expected values."
+    }
+   ],
+   "researcher_notes": "This is a watch item, not an addition. The OG&E 2026 plan says its 2026 requests for proposals are open to cover current capacity needs. The plan names no new gas site beyond the Horseshoe Lake units and the Tinker project, which GEM already lists. Recheck when OG&E files a pre-approval case for any new unit.\n\nWhere to find it:\n- Open https://ogeenergy.gcs-web.com/static-files/80b39a4f-b2b2-45cc-b848-efc9ba018dd8 (the 2026 Integrated Resource Plan of Oklahoma Gas and Electric).\n- Page 4 of the PDF, printed page iii, executive summary: \"The Company issued two RFPs in early 2026 to address capacity needs identified in this 2026 IRP\".\n- Page 22 of the PDF, printed page 15, section \"II. H. Requests for Proposals\" repeats that sentence.\n- Page 32 of the PDF, printed page B-4, a resource chart carries the line \"OG&E is actively engaged in a Bridge Capacity and All Source RFP to continue progress towards meeting capacity needs\".\n\nGas units the plan already names:\n- Page 17 of the PDF, printed page 10, section \"II. B. 2. Planned Resource Additions\". Horseshoe Lake units 11 and 12 are two GE 7FA.05 combustion turbines, 448 MW in total, planned for 2026.\n- The same page says \"Horseshoe Lake Units 13 and 14 are planned to go into service in 2029\" and were approved by the commission in Order 753440, Case PUD2025-000038.\n- The same page says \"Tinker units 1 and 2 ... were placed into service in March 2026\".\n\nWhy this differs:\n- The earlier note said Horseshoe Lake units 11 to 15. I found units 11 to 14 in the plan and no unit 15.\n\nNot found:\n- No new gas site is named. The only open future item on page 18 is the Frontier Energy Storage Project, a battery, in Case PUD2025-000084.",
+   "gem_plant_id": "",
+   "country": "United States",
+   "fields": {},
+   "record_id": "us-ok:plant:monitor-2",
+   "monitor_reason": "The OG&E 2026 plan says its 2026 requests for proposals are open to cover current capacity needs."
+  },
+  {
+   "plant_name": "Glencoe Energy Center",
+   "watch_case": "no_generation",
+   "recheck_by": "2027-03",
+   "monitor_kind": "new_to_tracker",
+   "irp": true,
+   "owner": "Grand River Dam Authority",
+   "capacity_mw": "",
+   "refs": {
+    "links": [
+     "https://grda.com/wp-content/uploads/2026/01/10092025-Special-Board-Meeting-Approved-Minutes.pdf",
+     "https://grda.com/wp-content/uploads/2026/04/FINAL-AGENDA-FOR-04-08-2026-Mtg.pdf",
+     "https://grda.com/bids/rfq-2871-bid-express/"
+    ]
+   },
+   "verifications": [
+    {
+     "url": "https://grda.com/wp-content/uploads/2026/01/10092025-Special-Board-Meeting-Approved-Minutes.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "The page loaded and names the Glencoe Energy Center in Payne County."
+    },
+    {
+     "url": "https://grda.com/wp-content/uploads/2026/04/FINAL-AGENDA-FOR-04-08-2026-Mtg.pdf",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "The page loaded and names the Glencoe Energy Center interconnection study."
+    },
+    {
+     "url": "https://grda.com/bids/rfq-2871-bid-express/",
+     "ok": true,
+     "contains_value": true,
+     "name_found": true,
+     "note": "The page loaded and gives the Glencoe Energy Center site address."
+    }
+   ],
+   "researcher_notes": "This is a watch item, not an addition. The Grand River Dam Authority is planning a new plant called the Glencoe Energy Center near Glencoe in Payne County. GEM does not list it. No source names its fuel, its units or its size, so it cannot be added yet. Add it as soon as a document names a gas or oil unit.\n\nWhere to find it:\n- Open https://grda.com/wp-content/uploads/2026/01/10092025-Special-Board-Meeting-Approved-Minutes.pdf (minutes of the authority's board meeting of October 9 and 10, 2025). Page 1, item \"Generation Planning\": Mr. Ladd \"provided an engineering update on the planned “Glencoe Energy Center” in Payne County, including the Southwest Power Pool (SPP) Interconnection application, general arrangement drawings, geotechnical investigations, cost estimates, schedule and other details to develop the site.\"\n- Open https://grda.com/wp-content/uploads/2026/04/FINAL-AGENDA-FOR-04-08-2026-Mtg.pdf (agenda of the board meeting of April 8, 2026). Committee reports, Fuel and Long-Range Planning Committee, item 2: \"Phase II of the Southwest Power Pool (SPP) Interconnection Study of the Glencoe Energy Center Point of Interconnect\".\n- Open https://grda.com/bids/rfq-2871-bid-express/ (the authority's bid notice for request for quotes 2871, a site soil study). It places the site at 8410 N Brush Creek Rd, Glencoe, OK 74032, latitude 36.215659, longitude -97.016531: https://www.google.com/maps?q=36.215659,-97.016531\n\nNot found:\n- No document names the fuel, a turbine or engine, or a capacity. The September 29, 2025 board minutes say gas supply at the Grand River Energy Center is limited, which may be why a second site is being studied, but they do not say what Glencoe will burn.\n- The Southwest Power Pool queue we read for this batch has no request under the authority's name in Payne County. The only authority request there is ASGI-2014-014, an older 56.4 MW connection at the Ferguson substation that GEM already ties to plant L100000409256.\n- Payne County records: I opened the county commissioners' minutes of September 21, 2026 and a Stillwater news item on a county road agreement for energy projects. Neither names the authority or the Glencoe Energy Center.\n- The Oklahoma air permit lists we harvested for this batch have no application from the authority in Payne County.",
+   "gem_plant_id": "",
+   "country": "United States",
+   "fields": {},
+   "record_id": "us-ok:plant:monitor-3",
+   "monitor_reason": "The Grand River Dam Authority is studying a new Glencoe Energy Center in Payne County, but no source names its fuel or size."
+  }
+ ]
 }

@@ -135,3 +135,39 @@ def test_write_outputs_keys_match_what_the_brief_reads(tmp_path):
     out, d = b.load_harvest(tmp_path)
     assert "L100000402411" in out and "LX" in out
     assert "J4500" in b.render_harvest_brief(d)
+
+
+def test_lbnl_entries_read_utility_queues_from_the_berkeley_lab_file():
+    import datetime as dt
+    rows = [
+        {"q_id": 628, "q_status": "active", "q_date": dt.datetime(2024, 6, 12), "prop_date": dt.datetime(2030, 6, 1),
+         "county": "Todd", "state": "KY", "entity": "TVA", "project_type": "Generation", "type_clean": "Gas",
+         "mw_1": 1600, "poi_name": "PARADISE - MONTGOMERY 500 KV", "cluster": "TC25"},
+        {"q_id": 657, "q_status": "active", "state": "KY", "entity": "TVA", "project_type": "Upgrade",
+         "type_clean": "Gas", "mw_1": 60},
+        {"q_id": 55, "q_status": "operational", "state": "KY", "entity": "TVA", "type_clean": "Other", "mw_1": 640},
+        {"q_id": 700, "q_status": "active", "state": "KY", "entity": "TVA", "type_clean": "Solar", "mw_1": 200},
+        {"q_id": "GIS-2024-006", "q_status": "active", "state": "KY", "entity": "LGE-KU", "type_clean": "Gas+Oil",
+         "mw_1": 94},
+        {"q_id": 628, "q_status": "active", "state": "TN", "entity": "TVA", "type_clean": "Gas", "mw_1": 500},
+        {"q_id": 1, "q_status": "withdrawn", "wd_date": dt.datetime(2025, 1, 2), "state": "KY", "entity": "TVA",
+         "type_clean": "Gas", "mw_1": 300},
+    ]
+    cfg = {"lbnl_entities": {"TVA": "TVA", "LGEE": "LGE-KU"}}
+    tva = q.lbnl_entries(rows, cfg, "KY", "TVA", "https://emp.lbl.gov/x.xlsx")
+    assert [e["queue_id"] for e in tva] == ["628", "657", "55", "700", "1"]
+    e = tva[0]
+    assert (e["source"], e["mw"], e["gas_oil"], e["queue_date"], e["in_service"]) == ("TVA", 1600.0, True, "2024-06-12", "2030-06-01")
+    assert tva[1]["facility_type"] == "Upgrade"
+    assert tva[2]["fuel_unknown"] and not tva[2]["gas_oil"]
+    assert not tva[3]["gas_oil"] and not tva[3]["fuel_unknown"]
+    assert tva[4]["withdrawn"] == "2025-01-02"
+    lg = q.lbnl_entries(rows, cfg, "KY", "LGEE", "u")
+    assert [(x["source"], x["queue_id"], x["gas_oil"]) for x in lg] == [("LGEE", "GIS-2024-006", True)]
+    keys = [q.entry_key(x) for x in q.needs_answer(tva + lg)]
+    assert "TVA 628" in keys and "LGEE GIS-2024-006" in keys and "TVA 700" not in keys and "TVA 1" not in keys
+
+
+def test_kentucky_settings_read_tva_and_lgee_from_the_berkeley_lab_file():
+    ky = json.loads((Path(__file__).resolve().parents[1] / "scopes/us-ky/queues.json").read_text())
+    assert {"TVA", "LGEE"} <= set(ky["markets"]) and ky["lbnl_entities"] == {"TVA": "TVA", "LGEE": "LGE-KU"}

@@ -255,7 +255,10 @@ def severity_of(kind, reverified, column, fields, current, current_ref):
     """minor: the value stands and only a link is added (reverified; or the proposed value equals
     the current cell, which already has a Data Source link; hidden characters such as a
     non-breaking hyphen do not count as a difference), or the edit is to Status Detail.
-    major: a cell value moves."""
+    major: a cell value moves. (update_line also makes a line major when it carries milestone
+    entries, a status or status timeline step; a Status Detail text edit stays minor even when it
+    answers a validation report item, since assemble_state.split_status_detail moves the dated
+    steps and the answer onto their own status-timeline record: Baird 2026-11-06.)"""
     if reverified or column == "Status Detail":
         return "minor"
     if kind in ("fill", "change") and fields and current_ref:
@@ -456,7 +459,9 @@ def update_line(r, label, export_rows, us=True):
     reverified = bool(r.get("reverified") or r.get("verdict") == "match")
     line = {
         "key": f"{label}::{r['record_id']}", "dir": label, "record_id": r["record_id"],
-        "kind": kind, "reverified": reverified, "severity": severity_of(kind, reverified, column, fields, current, current_ref),
+        "kind": kind, "reverified": reverified,
+        "severity": "major" if r.get("milestones") and not reverified
+        else severity_of(kind, reverified, column, fields, current, current_ref),
         "column": column, "columns": cols, "ref_col": ref_col,
         "gem_unit_id": uid, "unit_name": r.get("unit_name") or "",
         "current": current, "current_ref": current_ref,
